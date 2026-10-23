@@ -203,6 +203,20 @@ class AttemptProvenanceRegression(unittest.TestCase):
                        'mode': 'WORKING_CANDIDATES', 'input_receipts': before}
             self.assertIn('STALE_RECEIPT:evidence/transcript.txt', integration_core.check_receipt(receipt, after, 'WORKING_CANDIDATES'))
 
+    def test_cumulative_receipt_uses_relative_names_through_root_alias(self):
+        with TemporaryDirectory() as directory:
+            real = Path(directory).resolve() / 'companion'
+            real.mkdir()
+            root = real.parent / 'alias'
+            root.symlink_to(real, target_is_directory=True)
+            report, _, candidate, _, _ = self.observed_fixture(root)
+            paths = {'implementation': candidate,
+                     'implementation_report': write(root / 'report.json', report)}
+            with patch.object(integration_core, 'ROOT', root), patch.object(integration_core, 'SHARED_INPUTS', []):
+                receipts = integration_core.receipt_inputs(paths)
+            self.assertEqual({'candidate.py', 'report.json', 'evidence/observation.json',
+                              'evidence/transcript.txt'}, set(receipts))
+
 
 class PendingReviewRegression(unittest.TestCase):
     def setUp(self):

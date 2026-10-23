@@ -4,6 +4,11 @@
 
 ## Advanced and maintainer material
 
+For the latest fresh-clone installation, example execution and portability fixes, see the [execution audit](EXAMPLE_TEST_REPORT.md). Its local test results do not close the external observation protocols below.
+
+To repeat the successful guided local-model CSV workflow, use the
+[environment and reproduction guide](../practice/native_client/REPRODUCE_GUIDED_CSV.md).
+
 This folder is for collecting and evaluating external observations, not the ordinary Chapters 1–14 regression suite. Core learners can skip it. Readers following the optional native-client tutorial must keep it: that tutorial calls the collector scripts here.
 
 - [Native-host collection guide](NATIVE_HOST_COLLECTION.md): preparation and evidence capture.

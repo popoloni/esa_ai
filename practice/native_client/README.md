@@ -2,6 +2,10 @@
 
 [Home](../../README.md) · [Practice catalogue](../README.md) · [Chapter routes](../../navigation/CHAPTER_ROUTES.md)
 
+For virtual-environment setup and the successful Apple Silicon guided CSV run,
+follow the [detailed reproduction guide](REPRODUCE_GUIDED_CSV.md). It covers reuse
+or fresh installation, effective permissions, prompts, independent checks and cleanup.
+
 The Treasury router has a small but consequential defect: it sends zero and
 negative amounts to the ordinary queue and raises an exception for some invalid
 inputs. The approved Chapter 1 change is to reject those inputs while preserving
@@ -68,6 +72,14 @@ alone is 2,497,280,256 bytes; allow additional disk and memory for the client,
 server, model context and evidence. This is a CPU recipe, not a minimum-memory
 or completion-time guarantee.
 
+The Linux server also needs the OpenMP runtime. Minimal Debian/Ubuntu images may
+not include it: if startup reports `libgomp.so.1: cannot open shared object file`,
+install `libgomp1` using that environment's package manager (for example,
+`sudo apt-get install libgomp1` on Debian/Ubuntu). In a container, install it
+inside the container, not on the macOS/Windows host. The supplied Ubuntu archive
+is x86-64; an ARM host needs a compatible Linux x86-64 environment for this exact
+recipe. Do not substitute a different build and label it the same observation.
+
 From the **unchanged companion root**, choose unused sibling directories:
 
 ```bash
@@ -101,6 +113,7 @@ verification to get past them.
 ```bash
 tar -xzf "$ESA_RUNTIME/downloads/llama-b11799-bin-ubuntu-x64.tar.gz" \
   -C "$ESA_RUNTIME/llama_cpp"
+"$ESA_RUNTIME/llama_cpp/llama-b11799/llama-server" --version
 python3 - <<'PY'
 import os
 from pathlib import Path
@@ -116,6 +129,8 @@ npm --prefix "$ESA_RUNTIME/opencode" \
 ```
 
 Keep the generated `package.json`, `package-lock.json` and installation output.
+Require the server version check to succeed and identify build 11799 before
+starting inference; resolve missing shared libraries or architecture errors first.
 The supplied [setup/](setup/) receipts identify the author's installed package
 and binary; your own version check is still required. The delivered companion
 contains neither runtime binaries nor model weights.
@@ -145,6 +160,49 @@ Expect HTTP 200 with `status: ok`. If startup or connection fails, retain the
 server log and actual error. Check the executable, model hash, port and permitted
 local networking before altering model or client settings. Stop the launcher
 with Ctrl-C after the exercise so it can retain the final lifecycle receipt.
+
+### Apple Silicon: avoid emulating the inference server
+
+The Linux x86-64 recipe above remains unchanged. On an Apple Silicon host,
+emulating that CPU-only server can consume most of the client deadline before
+the first tool call. Both launchers now accept `--server-binary PATH` and
+`--n-gpu-layers N`; the default is still the original runtime layout and CPU-only
+execution (`0`). An explicit binary override is not automatic artifact verification.
+
+For a native observation, use the **b11799 macOS ARM64** archive, not the Ubuntu
+binary: [official release artifact](https://github.com/ggml-org/llama.cpp/releases/download/b11799/llama-b11799-bin-macos-arm64.tar.gz),
+16,136,376 bytes, SHA-256
+`51c3471c9212b41e51a6696c0b966628fa45d625385fdb024c4483e8d3154dca`.
+Verify it before extraction and keep it separate from the Linux runtime. Install
+OpenCode 1.19.3 for the native host in that separate prefix too; Linux executable
+files and virtual environments cannot simply be reused on macOS. The verified
+Qwen GGUF weights are platform-independent and need not be downloaded again.
+
+For the existing verified runtime directories created by the execution audit,
+run from the companion root, choosing a new evidence name:
+
+```bash
+export ESA_RUNTIME="$(cd ../esa_ai_native_runtime_darwin_01 && pwd)"
+export ESA_MODEL_RUNTIME="$(cd ../esa_ai_native_runtime_01 && pwd)"
+python3 -B practice/native_client/run_local_model_d8.py \
+  --runtime-root "$ESA_MODEL_RUNTIME" \
+  --server-binary "$ESA_RUNTIME/llama_cpp/llama-b11799/llama-server" \
+  --n-gpu-layers 99 --ctx-size 16384 \
+  --cache-type-k q8_0 --cache-type-v q8_0 \
+  --threads 6 --batch-size 256 --ubatch-size 128 \
+  --max-runtime-seconds 1500 --shutdown-grace-seconds 10 \
+  --evidence "$ESA_RUNTIME/server_metal_NEW"
+```
+
+Confirm health and inspect the server log for actual Metal offload; a requested
+GPU-layer count alone is not proof of acceleration. Use the native `ESA_RUNTIME`
+for client configuration in the following steps. Keep the client task deadline
+finite and shorter than the server's lifetime, with room for startup and review.
+The receipts record the selected binary hash, host architecture and exact argv.
+This is a separately observed macOS/Metal route, not a reproduction of the
+historical Linux CPU runtime. Faster inference does not guarantee correct edits:
+retain failed checks and independently review the resulting files. See the
+[execution audit](../../validation/EXAMPLE_TEST_REPORT.md) for timings and outcomes.
 
 ## 3. Preserve the starting problem before asking for a repair
 

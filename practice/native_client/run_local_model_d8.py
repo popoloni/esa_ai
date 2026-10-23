@@ -12,6 +12,7 @@ import hashlib
 import json
 import math
 import os
+import platform
 from pathlib import Path
 import resource
 import signal
@@ -28,6 +29,10 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--runtime-root", type=Path, required=True)
     parser.add_argument("--evidence", type=Path, required=True)
+    parser.add_argument("--server-binary", type=Path,
+                        help="Explicit separately verified platform-native server; default retains the pinned runtime layout.")
+    parser.add_argument("--n-gpu-layers", type=int, default=0,
+                        help="Layers to offload to an available GPU backend; default 0 preserves the CPU recipe.")
     parser.add_argument("--ctx-size", type=int, default=22528,
                         help="Per-slot context size; d8 startup candidate is 22528, pending memory/token gates.")
     parser.add_argument("--cache-type-k", choices=("f16", "q8_0", "q4_0"), default="f16",
@@ -44,6 +49,8 @@ def main() -> int:
     parser.add_argument("--print-plan", action="store_true",
                         help="Print argv/identity plan without creating evidence or starting any child.")
     args = parser.parse_args()
+    if args.n_gpu_layers < 0:
+        parser.error("--n-gpu-layers must be nonnegative")
     if args.ctx_size <= 0:
         parser.error("--ctx-size must be positive")
     if not math.isfinite(args.shutdown_grace_seconds) or args.shutdown_grace_seconds <= 0:
@@ -54,12 +61,13 @@ def main() -> int:
         parser.error("--max-runtime-seconds must be finite and positive")
     runtime = args.runtime_root.resolve()
     evidence = args.evidence.resolve()
-    binary = runtime / "llama_cpp/llama-b11799/llama-server"
+    binary = (args.server_binary.expanduser().resolve() if args.server_binary else
+              runtime / "llama_cpp/llama-b11799/llama-server")
     model = runtime / "downloads/Qwen3-4B-Q4_K_M.gguf"
     argv = [str(binary), "--model", str(model), "--alias", "esa-qwen3-4b",
             "--host", "127.0.0.1", "--port", "18080", "--ctx-size", str(args.ctx_size),
             "--parallel", "1", "--threads", str(args.threads), "--threads-batch", str(args.threads),
-            "--n-gpu-layers", "0", "--batch-size", str(args.batch_size),
+            "--n-gpu-layers", str(args.n_gpu_layers), "--batch-size", str(args.batch_size),
             "--ubatch-size", str(args.ubatch_size), "--jinja", "--reasoning", "off",
             "--no-repack", "--no-warmup", "--no-context-shift", "--verbosity", "4",
             "--n-predict", "3072",
@@ -75,6 +83,7 @@ def main() -> int:
                "launcher_identity": {"path": str(Path(__file__).resolve()),
                                      "sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest()},
                "python": {"executable": sys.executable, "version": sys.version},
+               "host": {"system": platform.system(), "machine": platform.machine()},
                "startup_status": "No inference authorized by launcher; health, memory and token budget require separate review",
                "maximum_runtime_seconds": args.max_runtime_seconds,
                "shutdown_policy": {"grace_seconds": args.shutdown_grace_seconds,
@@ -89,8 +98,9 @@ def main() -> int:
         receipt.pop("launcher_pid", None)
         print(json.dumps(receipt, indent=2))
         return 0
-    if not binary.is_file() or not model.is_file():
-        parser.error("Pinned server executable and model file must already exist")
+    if not binary.is_file() or not os.access(binary, os.X_OK) or not model.is_file():
+        parser.error("Pinned executable server and model file must already exist")
+    receipt["server_identity"] = {"path": str(binary), "sha256": hashlib.sha256(binary.read_bytes()).hexdigest()}
     evidence.mkdir(parents=True, exist_ok=False)
     start = time.monotonic()
     with (evidence / "stdout.txt").open("xb") as out, (evidence / "stderr.txt").open("xb") as err:
@@ -148,7 +158,9 @@ def main() -> int:
                     "wall_seconds": time.monotonic() - start,
                     "child_user_cpu_seconds": usage.ru_utime,
                     "child_system_cpu_seconds": usage.ru_stime,
-                    "child_max_rss_kib": usage.ru_maxrss,
+                    "child_max_rss_raw": usage.ru_maxrss,
+                    "child_max_rss_raw_unit": "bytes" if platform.system() == "Darwin" else "KiB",
+                    "child_max_rss_kib": usage.ru_maxrss / 1024 if platform.system() == "Darwin" else usage.ru_maxrss,
                     "shutdown_result": ("FORCED_EXIT_AFTER_GRACE" if kill_sent else
                                         "EXIT_AFTER_STOP_REQUEST" if stop_requested is not None else
                                         "EXIT_WITHOUT_STOP_REQUEST")})

@@ -12,6 +12,7 @@ import hashlib
 import json
 import math
 import os
+import platform
 from pathlib import Path
 import resource
 import signal
@@ -28,6 +29,10 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--runtime-root", type=Path, required=True)
     parser.add_argument("--evidence", type=Path, required=True)
+    parser.add_argument("--server-binary", type=Path,
+                        help="Explicit separately verified platform-native server; default retains the pinned runtime layout.")
+    parser.add_argument("--n-gpu-layers", type=int, default=0,
+                        help="Layers to offload to an available GPU backend; default 0 preserves the CPU recipe.")
     parser.add_argument("--ctx-size", type=int, default=16384,
                         help="Per-slot context size; the observed Chapter 1 default is 16384.")
     parser.add_argument("--cache-type-k", choices=("q8_0", "q4_0"), default="q8_0",
@@ -37,19 +42,24 @@ def main() -> int:
     parser.add_argument("--shutdown-grace-seconds", type=float, default=30.0,
                         help="Grace after the first stop request before SIGKILL to this launcher's still-running child.")
     args = parser.parse_args()
+    if args.n_gpu_layers < 0:
+        parser.error("--n-gpu-layers must be nonnegative")
     if args.ctx_size <= 0:
         parser.error("--ctx-size must be positive")
     if not math.isfinite(args.shutdown_grace_seconds) or args.shutdown_grace_seconds <= 0:
         parser.error("--shutdown-grace-seconds must be finite and positive")
     runtime = args.runtime_root.resolve()
     evidence = args.evidence.resolve()
-    evidence.mkdir(parents=True, exist_ok=False)
-    binary = runtime / "llama_cpp/llama-b11799/llama-server"
+    binary = (args.server_binary.expanduser().resolve() if args.server_binary else
+              runtime / "llama_cpp/llama-b11799/llama-server")
     model = runtime / "downloads/Qwen3-4B-Q4_K_M.gguf"
+    if not binary.is_file() or not os.access(binary, os.X_OK) or not model.is_file():
+        parser.error("Pinned executable server and model file must already exist")
+    evidence.mkdir(parents=True, exist_ok=False)
     argv = [str(binary), "--model", str(model), "--alias", "esa-qwen3-4b",
             "--host", "127.0.0.1", "--port", "18080", "--ctx-size", str(args.ctx_size),
             "--parallel", "1", "--threads", "8", "--threads-batch", "8",
-            "--n-gpu-layers", "0", "--ubatch-size", "128", "--jinja",
+            "--n-gpu-layers", str(args.n_gpu_layers), "--ubatch-size", "128", "--jinja",
             "--chat-template-kwargs", '{"enable_thinking":false}',
             "--no-agent", "--no-ui-mcp-proxy", "--no-webui", "--metrics",
             "--timeout", "300", "--cache-ram", "0", "--ctx-checkpoints", "0",
@@ -63,6 +73,8 @@ def main() -> int:
                "launcher_identity": {"path": str(Path(__file__).resolve()),
                                      "sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest()},
                "python": {"executable": sys.executable, "version": sys.version},
+               "host": {"system": platform.system(), "machine": platform.machine()},
+               "server_identity": {"path": str(binary), "sha256": hashlib.sha256(binary.read_bytes()).hexdigest()},
                "shutdown_policy": {"grace_seconds": args.shutdown_grace_seconds,
                                    "clock": "monotonic", "poll_seconds": 0.2,
                                    "repeated_signals_reset_deadline": False,
@@ -122,7 +134,9 @@ def main() -> int:
                     "wall_seconds": time.monotonic() - start,
                     "child_user_cpu_seconds": usage.ru_utime,
                     "child_system_cpu_seconds": usage.ru_stime,
-                    "child_max_rss_kib": usage.ru_maxrss,
+                    "child_max_rss_raw": usage.ru_maxrss,
+                    "child_max_rss_raw_unit": "bytes" if platform.system() == "Darwin" else "KiB",
+                    "child_max_rss_kib": usage.ru_maxrss / 1024 if platform.system() == "Darwin" else usage.ru_maxrss,
                     "shutdown_result": ("FORCED_EXIT_AFTER_GRACE" if kill_sent else
                                         "EXIT_AFTER_STOP_REQUEST" if stop_requested is not None else
                                         "EXIT_WITHOUT_STOP_REQUEST")})

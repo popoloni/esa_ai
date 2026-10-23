@@ -2,11 +2,13 @@
 from contextlib import contextmanager
 import json
 from pathlib import Path
+import platform
 import shutil
 import subprocess
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 
 TOOLS = Path(__file__).resolve().parents[1] / "tools"
 sys.path.insert(0, str(TOOLS))
@@ -224,11 +226,22 @@ class LearningTests(unittest.TestCase):
                         self.root, synthetic=False, clock=self.clock())
         self.assertFalse(self.owner.exists())
 
+    @unittest.skipUnless(platform.system() == "Linux" and Path("/proc/sys/kernel/random/boot_id").is_file(),
+                         "Real owner clock requires Linux with a kernel boot ID; synthetic checks remain portable")
     def test_actual_owner_clock_reports_real_host_samples_without_human_claim(self):
         first, second = owner_clock(), owner_clock()
         self.assertEqual(first["kind"], "OWNER_HOST_CLOCK")
         self.assertEqual(first["host_boot"], second["host_boot"])
         self.assertGreaterEqual(second["monotonic_ns"], first["monotonic_ns"])
+
+    def test_owner_clock_rejects_unsupported_hosts_and_missing_boot_identity(self):
+        for system in ("Darwin", "Windows"):
+            with self.subTest(system=system), patch("learning_pilot_core.platform.system", return_value=system):
+                with self.assertRaisesRegex(ValueError, "REAL_CLOCK_REQUIRES_SUPPORTED_LINUX_HOST_BOOT"):
+                    owner_clock()
+        with patch("learning_pilot_core.platform.system", return_value="Linux"), patch.object(Path, "is_file", return_value=False):
+            with self.assertRaisesRegex(ValueError, "REAL_CLOCK_REQUIRES_SUPPORTED_LINUX_HOST_BOOT"):
+                owner_clock()
 
     def test_clock_rollback_jump_and_host_change_fail_closed(self):
         first = self.clock()

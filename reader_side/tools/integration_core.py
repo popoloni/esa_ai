@@ -64,12 +64,13 @@ def input_paths(reference=False, candidate=None, report=None):
 
 
 def receipt_inputs(paths):
-    evidence = set(observed_evidence_paths(read_json(paths['implementation_report']), root=ROOT))
-    all_paths = set(paths.values()) | {ROOT / rel for rel in SHARED_INPUTS} | evidence
+    root = ROOT.resolve()
+    evidence = set(observed_evidence_paths(read_json(paths['implementation_report']), root=root))
+    all_paths = set(paths.values()) | {root / rel for rel in SHARED_INPUTS} | evidence
     receipts = {}
     for path in sorted(all_paths, key=str):
         path = path.resolve()
-        name = path.relative_to(ROOT).as_posix() if path.is_relative_to(ROOT) else str(path)
+        name = path.relative_to(root).as_posix() if path.is_relative_to(root) else str(path)
         receipts[name] = 'MISSING' if path in evidence and not path.is_file() else sha256(path.read_bytes()).hexdigest()
     return receipts
 

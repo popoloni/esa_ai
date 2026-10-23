@@ -2,6 +2,10 @@
 
 [Home](../../README.md) · [Practice catalogue](../README.md) · [Chapter routes](../../navigation/CHAPTER_ROUTES.md)
 
+For the later passing guided run, including virtual environments and complete
+commands, see the [reproduction guide](../native_client/REPRODUCE_GUIDED_CSV.md).
+That new observation does not change the historical outcome recorded below.
+
 This optional route uses the existing [CSV exercise](../csv_export/README.md)
 and one installed OpenCode client. The useful result is a CSV response for the
 same actor-visible, status-filtered orders as the existing JSON response. It
@@ -137,6 +141,30 @@ diagnostics showed 0.8. The correction and observed 0.2 for the continuation
 are retained in [the configuration finding](observed/recorded/CONFIGURATION_FINDING_01.json).
 The helper now includes the capability. This change is disclosed, without
 attributing quality improvements to it.
+
+## Recover from generated-code failures
+
+A client exit code of zero only means the client stopped normally. Require a
+passing supplied contract check and a separate independent review on the final
+candidate bytes before calling the implementation successful.
+
+If a small local model deletes the API, invents an undefined helper, or repeatedly
+duplicates fragments, preserve that failed project and its trace. Start a new,
+explicitly guided attempt from an untouched starter instead of accumulating
+repairs on corrupted code. Keep the same contract and checks.
+
+Useful guidance is to read the existing API and selection dependency first,
+preserve the function signature and JSON branch, and add the smallest CSV branch
+using Python's standard CSV writer and an in-memory text buffer. Hand-joining
+fields does not handle quoted delimiters and embedded newlines. Keep field order,
+literal values, authorization/filtering and the empty-result header unchanged.
+This is implementation guidance, not an autonomous or blind evaluation; retain
+the exact prompt and any added read permissions in the new evidence packet.
+
+Keep selection, fixtures and checkers unchanged. Run the original checker after
+the edit, then independently review the final bytes, permitted file scope and
+both JSON/CSV demos. Preserve unsuccessful attempts as well as any eventual pass.
+Do not replace the shipped intentional starter with a generated answer.
 
 ## Evidence and teaching text
 
