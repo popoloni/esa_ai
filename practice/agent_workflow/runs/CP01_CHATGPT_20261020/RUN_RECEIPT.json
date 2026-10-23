@@ -1,0 +1,64 @@
+{
+  "schema": "observed-agent-work/v1",
+  "run_id": "CP01_CHATGPT_20261020",
+  "status": "SELECTED_CHECKS_PASS_HUMAN_REVIEW_PENDING",
+  "origin": "current_chatgpt_tool_session",
+  "client": "ChatGPT workspace tool session",
+  "agent_actor": "current ChatGPT assistant /root/plan_reconciliation",
+  "model": null,
+  "model_identity_note": "No model identifier independently captured from executed client metadata.",
+  "human_review": "pending",
+  "prior_solution_exposure": true,
+  "prior_solution_exposure_note": "Assistant read the chapter reference and protected source during the authorized editorial audit before this observed repair.",
+  "task_file": "TASK.md",
+  "source_companion": "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_CR_Implementation_20261020/companion",
+  "disposable_working_copy": "/workspace/scratch/efa0a59e0545/tmp/cr01_chatgpt_observed_20261020",
+  "prepared_source_files": 235,
+  "python_version": "3.12.14",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "baseline": {
+    "file": "RED_RESULT.json",
+    "sha256": "39c5afc8888b748c8e96147f1bc143839dedfe73963bf5675f3e8ebf4978457a",
+    "pass": 3,
+    "fail": 2,
+    "error": 2,
+    "exit_code": 1
+  },
+  "candidate": {
+    "file": "candidate_routing.py",
+    "sha256": "409d124e99bd46dde0f985ca889c9f166f90d892a7f5502dc316b1646c11cad1",
+    "pass": 7,
+    "fail": 0,
+    "error": 0,
+    "exit_code": 0
+  },
+  "protected_inputs_unchanged": {
+    "reader_side/intent/INT-001.md": true,
+    "reader_side/acceptance/test_routing.py": true
+  },
+  "protected_hashes_after": {
+    "reader_side/intent/INT-001.md": "209ee2f218448d83178bd02fd5947cf68b021657a72b38e682e4a895fa102947",
+    "reader_side/acceptance/test_routing.py": "6e5aa5706dd989bdbbeec9374a84d13c41cf6f36e23a5e5d2762a3b16e551c9b"
+  },
+  "integrity_before": [],
+  "integrity_after": [],
+  "recorded_project_edit_paths": [
+    "repo/src/treasury/routing.py"
+  ],
+  "scope_evidence": "The exact apply_patch payload and source diff show the recorded source edit. No full-tree pre-edit scope snapshot was captured; do not interpret this as independent OS-level scope enforcement.",
+  "patch_file": "candidate.patch",
+  "commands_file": "commands.jsonl",
+  "raw_tool_action": "AGENT_PATCH.tool.txt",
+  "timing_semantics": "elapsed_ns measures local subprocess intervals only, not human effort or a controlled performance comparison.",
+  "actual_human_effort_hours": null,
+  "actual_vendor_cost": null,
+  "tokens": null,
+  "claims": {
+    "named_vendor_client_trial": false,
+    "independent_human_review": false,
+    "blind_agent_evaluation": false,
+    "productivity_gain": false,
+    "production_release": false,
+    "payment_authorized": false
+  }
+}

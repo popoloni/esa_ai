@@ -1,0 +1,162 @@
+{
+  "review_kind": "One observed ChatGPT collaboration review; not a benchmark or human verdict",
+  "scope": "Five independent supplied snippets, judged solely against input/CONTRACT.md",
+  "method": "Source inspection plus 34 observed local Python executions. Snippets executed independently without modification.",
+  "cases": [
+    {
+      "case": "C01",
+      "file": "input/C01.py",
+      "verdict": "contract_defect_found",
+      "confidence": "high",
+      "findings": [
+        {
+          "title": "Equality at EUR 5,000 enters the wrong queue",
+          "line": 22,
+          "behavior": "The <= comparison includes the threshold in STANDARD_QUEUE/BELOW_LIMIT. The contract requires equality to take HUMAN_REVIEW/AT_OR_ABOVE_LIMIT.",
+          "discriminating_input": "5000.00",
+          "actual": {
+            "route": "STANDARD_QUEUE",
+            "reason": "BELOW_LIMIT",
+            "policy_version": "BR-001/v1"
+          },
+          "expected": {
+            "route": "HUMAN_REVIEW",
+            "reason": "AT_OR_ABOVE_LIMIT",
+            "policy_version": "BR-001/v1"
+          },
+          "recommended_change": "Use amount < THRESHOLD_EUR for the standard-queue branch.",
+          "evidence": "Executed and observed in EXECUTION_OBSERVATIONS.json."
+        }
+      ],
+      "unknowns": [
+        "Execution sampled boundary and invalid values; did not exhaust all strings."
+      ]
+    },
+    {
+      "case": "C02",
+      "file": "input/C02.py",
+      "verdict": "no_contract_defect_found",
+      "confidence": "high",
+      "findings": [],
+      "rationale": "The strict less-than comparison implements the required boundary; parse failures, nonfinite values and nonpositive values are rejected; the policy identity is v1.",
+      "discriminating_input": "5000.00",
+      "actual": {
+        "route": "HUMAN_REVIEW",
+        "reason": "AT_OR_ABOVE_LIMIT",
+        "policy_version": "BR-001/v1"
+      },
+      "expected": {
+        "route": "HUMAN_REVIEW",
+        "reason": "AT_OR_ABOVE_LIMIT",
+        "policy_version": "BR-001/v1"
+      },
+      "unknowns": [
+        "No exhaustive lexical or execution-environment exploration was performed; inputs outside strings are excluded by contract."
+      ]
+    },
+    {
+      "case": "C03",
+      "file": "input/C03.py",
+      "verdict": "contract_defect_found",
+      "confidence": "high",
+      "findings": [
+        {
+          "title": "A standard queue is falsely presented as payment authorization",
+          "line": 4,
+          "behavior": "The expression is True for STANDARD_QUEUE. The presenter must always add payment_authorized=False.",
+          "discriminating_input": {
+            "route": "STANDARD_QUEUE",
+            "reason_code": "BELOW_LIMIT",
+            "policy_version": "BR-001/v1"
+          },
+          "actual": {
+            "route": "STANDARD_QUEUE",
+            "reason_code": "BELOW_LIMIT",
+            "policy_version": "BR-001/v1",
+            "payment_authorized": true
+          },
+          "expected": {
+            "route": "STANDARD_QUEUE",
+            "reason_code": "BELOW_LIMIT",
+            "policy_version": "BR-001/v1",
+            "payment_authorized": false
+          },
+          "recommended_change": "Set payment_authorized to the literal False for every accepted decision.",
+          "evidence": "Observed for both v1 and v2 in EXECUTION_OBSERVATIONS.json."
+        }
+      ],
+      "unknowns": []
+    },
+    {
+      "case": "C04",
+      "file": "input/C04.py",
+      "verdict": "no_contract_defect_found",
+      "confidence": "high",
+      "findings": [],
+      "rationale": "The comprehension copies exactly the three required values, preserving historical and new policy identities, and assigns the literal False to payment_authorized. No particular copying style is required.",
+      "discriminating_input": {
+        "route": "STANDARD_QUEUE",
+        "reason_code": "BELOW_LIMIT",
+        "policy_version": "BR-001/v2"
+      },
+      "actual": {
+        "route": "STANDARD_QUEUE",
+        "reason_code": "BELOW_LIMIT",
+        "policy_version": "BR-001/v2",
+        "payment_authorized": false
+      },
+      "expected": {
+        "route": "STANDARD_QUEUE",
+        "reason_code": "BELOW_LIMIT",
+        "policy_version": "BR-001/v2",
+        "payment_authorized": false
+      },
+      "unknowns": [
+        "No claims are made about inputs lacking required keys or arbitrary custom object behaviors outside the exercise."
+      ]
+    },
+    {
+      "case": "C05",
+      "file": "input/C05.py",
+      "verdict": "contract_defect_found",
+      "confidence": "high",
+      "findings": [
+        {
+          "title": "The presenter relabels new v2 decisions as v1",
+          "line": 3,
+          "behavior": "A fixed BR-001/v1 value overwrites the supplied policy identity, violating exact preservation.",
+          "discriminating_input": {
+            "route": "HUMAN_REVIEW",
+            "reason_code": "AT_OR_ABOVE_LIMIT",
+            "policy_version": "BR-001/v2"
+          },
+          "actual": {
+            "route": "HUMAN_REVIEW",
+            "reason_code": "AT_OR_ABOVE_LIMIT",
+            "policy_version": "BR-001/v1",
+            "payment_authorized": false
+          },
+          "expected": {
+            "route": "HUMAN_REVIEW",
+            "reason_code": "AT_OR_ABOVE_LIMIT",
+            "policy_version": "BR-001/v2",
+            "payment_authorized": false
+          },
+          "recommended_change": "Use decision[\"policy_version\"] as the output policy_version.",
+          "evidence": "All three executed v2 examples were relabeled v1 in EXECUTION_OBSERVATIONS.json."
+        }
+      ],
+      "unknowns": []
+    }
+  ],
+  "uncertain_observations": [],
+  "limitations": [
+    "Single observed AI review, without a human verdict or independent reference inspection.",
+    "Finite sample executions support the findings; they are not an exhaustive test suite.",
+    "Decimal string lexical grammar is not further specified in the supplied contract; no additional grammar rules were invented.",
+    "The cases are independent; no incompatibility between assess return objects and present input mappings is alleged."
+  ],
+  "network_used": false,
+  "helper_agents_used": false,
+  "snippets_modified": false
+}

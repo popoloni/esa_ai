@@ -1,0 +1,79 @@
+{
+  "schema": "observed-run-files/v1",
+  "created_utc": "2026-10-20T15:10:46.021276+00:00",
+  "files": {
+    "AGENT_PATCH.tool.txt": {
+      "bytes": 955,
+      "sha256": "7aef4c6cc26b6203721ab979eaefd500f0bfcc24b60f8f19278934d9ebf97bff"
+    },
+    "CMD01_PREPARE.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "CMD01_PREPARE.stdout.log": {
+      "bytes": 765,
+      "sha256": "c00a3c3c661aca3b514732ad2f14c276d4841fcfe7411011d7dec28c64df7ce0"
+    },
+    "CMD02_RED_BASELINE.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "CMD02_RED_BASELINE.stdout.log": {
+      "bytes": 5972,
+      "sha256": "defb1cb475ec5107b864713def5eeef184c49606e637b300184f61ba460798a1"
+    },
+    "CMD03_GREEN_CANDIDATE.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "CMD03_GREEN_CANDIDATE.stdout.log": {
+      "bytes": 1945,
+      "sha256": "d280eaac6908543cf330c2137ea76223dc3af0a2b6f2bcbaf0303ecb0962baf1"
+    },
+    "GREEN_RESULT.json": {
+      "bytes": 1945,
+      "sha256": "d280eaac6908543cf330c2137ea76223dc3af0a2b6f2bcbaf0303ecb0962baf1"
+    },
+    "RED_RESULT.json": {
+      "bytes": 5972,
+      "sha256": "defb1cb475ec5107b864713def5eeef184c49606e637b300184f61ba460798a1"
+    },
+    "RUN_RECEIPT.json": {
+      "bytes": 2722,
+      "sha256": "9c27a526ef1f24f110e730b5ebb6acfdff1dc6ebcbfd65e37617e825cb15af47"
+    },
+    "TASK.md": {
+      "bytes": 911,
+      "sha256": "be529ee79104a74cdda6d107342ef105e428dd71452cf1f2f85cf49b2bb8e3c1"
+    },
+    "baseline_acceptance.py": {
+      "bytes": 1207,
+      "sha256": "6e5aa5706dd989bdbbeec9374a84d13c41cf6f36e23a5e5d2762a3b16e551c9b"
+    },
+    "baseline_hashes.json": {
+      "bytes": 320,
+      "sha256": "a88275f2b3f44fd9cfa3036588826cd354a4b5c74f0f3a1e75682db8bd7e21b5"
+    },
+    "baseline_intent.md": {
+      "bytes": 993,
+      "sha256": "209ee2f218448d83178bd02fd5947cf68b021657a72b38e682e4a895fa102947"
+    },
+    "baseline_router.py": {
+      "bytes": 671,
+      "sha256": "39c5afc8888b748c8e96147f1bc143839dedfe73963bf5675f3e8ebf4978457a"
+    },
+    "candidate.patch": {
+      "bytes": 741,
+      "sha256": "ac924b9c780d60cdb89dfac603936a82251d3937f166f0b5ad3840fbf35cf53f"
+    },
+    "candidate_routing.py": {
+      "bytes": 938,
+      "sha256": "409d124e99bd46dde0f985ca889c9f166f90d892a7f5502dc316b1646c11cad1"
+    },
+    "commands.jsonl": {
+      "bytes": 1762,
+      "sha256": "804518a5a22bc587a61d77fb8de2f45d75aea29aaf1d37591ddf6e95a801d01f"
+    }
+  },
+  "self_hash": "Excluded to avoid recursion."
+}

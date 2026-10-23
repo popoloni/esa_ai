@@ -1,0 +1,19 @@
+Tool: apply_patch, invoked by the current ChatGPT assistant after reading RED_RESULT.json.
+The exact source-file patch payload was:
+
+*** Begin Patch
+*** Update File: /workspace/scratch/efa0a59e0545/tmp/cr01_chatgpt_observed_20261020/repo/src/treasury/routing.py
+@@
+-    amount = Decimal(amount_eur)
++    try:
++        amount = Decimal(amount_eur)
++    except (InvalidOperation, TypeError, ValueError):
++        return RoutingDecision("REJECTED", "INVALID_AMOUNT", POLICY_VERSION)
++    if not amount.is_finite() or amount <= 0:
++        return RoutingDecision("REJECTED", "INVALID_AMOUNT", POLICY_VERSION)
+*** End Patch
+
+Decision: retain all valid positive routing branches, the threshold, policy identifier,
+intent and acceptance cases. Catch the constructor's invalid-input exceptions;
+test finite and positive before the threshold comparison. No reference file was
+copied into the candidate. Prior reference exposure is explicitly disclosed in TASK.md.

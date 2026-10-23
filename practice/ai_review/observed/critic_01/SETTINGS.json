@@ -1,0 +1,43 @@
+{
+  "interface": "ChatGPT collaboration sub-agent using functions.exec / tools.exec_command",
+  "agent_task_name": "/root/actual_critic_calibration",
+  "model_identity_supplied_in_instruction": "GPT-6 Astra Pro",
+  "independently_exposed_runtime_model_id": null,
+  "model_identifier_caveat": "The supplied identity is an instruction label; no independently verifiable runtime model identifier was exposed to this review.",
+  "temperature": null,
+  "top_p": null,
+  "random_seed": null,
+  "reasoning_effort": null,
+  "input_tokens": null,
+  "output_tokens": null,
+  "total_tokens": null,
+  "cost": null,
+  "unavailable_values_reason": "These settings and accounting values were not exposed through the review interface.",
+  "prior_exposure": {
+    "visible_before_case_inspection": [
+      "Delegated bounded review prompt",
+      "General system/developer environment and tool instructions",
+      "TASK.txt"
+    ],
+    "case_reference_or_expected_verdict_exposure": "None observed; no reference or other review inspected.",
+    "training_data_exposure": "Unknown; cannot be independently established."
+  },
+  "start_timestamp_utc": "2026-10-21T16:03:21.552767+00:00",
+  "start_timestamp_semantics": "First explicit local UTC clock observation, after initial TASK.txt read. Exact launch and initial-read timestamps were not separately measured.",
+  "end_timestamp_utc": "2026-10-21T16:05:04.075104+00:00",
+  "end_timestamp_semantics": "Local UTC clock observation after review, prompt and raw-response artifacts were written, immediately before settings and journal were written.",
+  "elapsed_seconds_between_clock_observations": 102.522337,
+  "execution_observation_timestamp_utc": "2026-10-21T16:03:44.768675+00:00",
+  "network_used": false,
+  "helper_agents_used": false,
+  "read_scope": [
+    "observed/critic_01/TASK.txt",
+    "input/CONTRACT.md",
+    "input/C01.py",
+    "input/C02.py",
+    "input/C03.py",
+    "input/C04.py",
+    "input/C05.py"
+  ],
+  "write_scope": "observed/critic_01 only"
+}

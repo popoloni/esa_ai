@@ -1,0 +1,16 @@
+{
+  "schema": "chapter01-preparation/v1",
+  "status": "PASS",
+  "source_companion": "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_CR_Implementation_20261020/companion",
+  "destination": "/workspace/scratch/efa0a59e0545/tmp/cr01_chatgpt_observed_20261020",
+  "installed_candidate": "repo/src/treasury/routing.py",
+  "candidate_sha256": "39c5afc8888b748c8e96147f1bc143839dedfe73963bf5675f3e8ebf4978457a",
+  "copied_source_files": 235,
+  "changed_source_paths": [
+    "repo/src/treasury/routing.py"
+  ],
+  "reader_side_unchanged": true,
+  "source_companion_unchanged": true,
+  "findings": [],
+  "meaning": "A new full cumulative lab with only the CP01 editable router set to its known faulty starter; no payment or release authority."
+}

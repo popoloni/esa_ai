@@ -1,0 +1,57 @@
+{
+  "schema": "esa-critic-reference/v1",
+  "prepared_utc": "2026-10-21T16:02:57.207449+00:00",
+  "prepared_before_critic_output": true,
+  "prepared_by": "root editorial agent, separate from critic invocation",
+  "human_independence": false,
+  "cases": [
+    {
+      "case": "C01",
+      "kind": "SEEDED_DEFECT",
+      "required_findings": [
+        {
+          "id": "EQUALITY_ROUTE",
+          "behavior": "5000.00 must require human review; <= returns standard queue"
+        }
+      ]
+    },
+    {
+      "case": "C02",
+      "kind": "CLEAN_CONTROL",
+      "required_findings": []
+    },
+    {
+      "case": "C03",
+      "kind": "SEEDED_DEFECT",
+      "required_findings": [
+        {
+          "id": "PAYMENT_AUTHORITY",
+          "behavior": "standard queue must still set payment_authorized false"
+        }
+      ]
+    },
+    {
+      "case": "C04",
+      "kind": "CLEAN_CONTROL",
+      "required_findings": []
+    },
+    {
+      "case": "C05",
+      "kind": "SEEDED_DEFECT",
+      "required_findings": [
+        {
+          "id": "POLICY_IDENTITY",
+          "behavior": "a provided BR-001/v2 decision is wrongly labeled BR-001/v1"
+        }
+      ]
+    }
+  ],
+  "case_sha256": {
+    "C01.py": "50cb000ce1a58511d105a378f6f84ab25abb6031c31ad081b314c746d2d63c89",
+    "C05.py": "98d89be64579d44e70ab73efa931d5923be955a89d69bfcf965ae8b5160678f5",
+    "C03.py": "8c4ff4959c8c4f4707cde33c84973724f4cbaf1a16f48fe826c5a7258b07a42d",
+    "CONTRACT.md": "511f417a8768943d9dcdc4fbe6f77df8e77f228e0cc986c0fe20bf4d3dd54d7a",
+    "C02.py": "14d186a327a418dddb405144bfefb5810ed27e626b981424c9ad3b66742e8b32",
+    "C04.py": "c40efcb34c0629c957e8e36cc71265c7b9c39cab1e6604efeaaf950116bc8f79"
+  }
+}

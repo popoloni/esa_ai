@@ -1,0 +1,402 @@
+{
+  "observed_at_utc": "2026-10-21T16:03:44.768675+00:00",
+  "method": "Execute each snippet independently via compile/exec in isolated namespaces; no input modification or import cache files.",
+  "records": [
+    {
+      "case": "C01",
+      "input": "4999.99",
+      "actual": {
+        "route": "STANDARD_QUEUE",
+        "reason": "BELOW_LIMIT",
+        "policy_version": "BR-001/v1"
+      }
+    },
+    {
+      "case": "C01",
+      "input": "5000.00",
+      "actual": {
+        "route": "STANDARD_QUEUE",
+        "reason": "BELOW_LIMIT",
+        "policy_version": "BR-001/v1"
+      }
+    },
+    {
+      "case": "C01",
+      "input": "5000.01",
+      "actual": {
+        "route": "HUMAN_REVIEW",
+        "reason": "AT_OR_ABOVE_LIMIT",
+        "policy_version": "BR-001/v1"
+      }
+    },
+    {
+      "case": "C01",
+      "input": "0",
+      "actual": {
+        "route": "REJECTED",
+        "reason": "INVALID_AMOUNT",
+        "policy_version": "BR-001/v1"
+      }
+    },
+    {
+      "case": "C01",
+      "input": "-1",
+      "actual": {
+        "route": "REJECTED",
+        "reason": "INVALID_AMOUNT",
+        "policy_version": "BR-001/v1"
+      }
+    },
+    {
+      "case": "C01",
+      "input": "NaN",
+      "actual": {
+        "route": "REJECTED",
+        "reason": "INVALID_AMOUNT",
+        "policy_version": "BR-001/v1"
+      }
+    },
+    {
+      "case": "C01",
+      "input": "Infinity",
+      "actual": {
+        "route": "REJECTED",
+        "reason": "INVALID_AMOUNT",
+        "policy_version": "BR-001/v1"
+      }
+    },
+    {
+      "case": "C01",
+      "input": "garbage",
+      "actual": {
+        "route": "REJECTED",
+        "reason": "INVALID_AMOUNT",
+        "policy_version": "BR-001/v1"
+      }
+    },
+    {
+      "case": "C02",
+      "input": "4999.99",
+      "actual": {
+        "route": "STANDARD_QUEUE",
+        "reason": "BELOW_LIMIT",
+        "policy_version": "BR-001/v1"
+      }
+    },
+    {
+      "case": "C02",
+      "input": "5000.00",
+      "actual": {
+        "route": "HUMAN_REVIEW",
+        "reason": "AT_OR_ABOVE_LIMIT",
+        "policy_version": "BR-001/v1"
+      }
+    },
+    {
+      "case": "C02",
+      "input": "5000.01",
+      "actual": {
+        "route": "HUMAN_REVIEW",
+        "reason": "AT_OR_ABOVE_LIMIT",
+        "policy_version": "BR-001/v1"
+      }
+    },
+    {
+      "case": "C02",
+      "input": "0",
+      "actual": {
+        "route": "REJECTED",
+        "reason": "INVALID_AMOUNT",
+        "policy_version": "BR-001/v1"
+      }
+    },
+    {
+      "case": "C02",
+      "input": "-1",
+      "actual": {
+        "route": "REJECTED",
+        "reason": "INVALID_AMOUNT",
+        "policy_version": "BR-001/v1"
+      }
+    },
+    {
+      "case": "C02",
+      "input": "NaN",
+      "actual": {
+        "route": "REJECTED",
+        "reason": "INVALID_AMOUNT",
+        "policy_version": "BR-001/v1"
+      }
+    },
+    {
+      "case": "C02",
+      "input": "Infinity",
+      "actual": {
+        "route": "REJECTED",
+        "reason": "INVALID_AMOUNT",
+        "policy_version": "BR-001/v1"
+      }
+    },
+    {
+      "case": "C02",
+      "input": "garbage",
+      "actual": {
+        "route": "REJECTED",
+        "reason": "INVALID_AMOUNT",
+        "policy_version": "BR-001/v1"
+      }
+    },
+    {
+      "case": "C03",
+      "input": {
+        "route": "STANDARD_QUEUE",
+        "reason_code": "BELOW_LIMIT",
+        "policy_version": "BR-001/v1"
+      },
+      "actual": {
+        "route": "STANDARD_QUEUE",
+        "reason_code": "BELOW_LIMIT",
+        "policy_version": "BR-001/v1",
+        "payment_authorized": true
+      }
+    },
+    {
+      "case": "C03",
+      "input": {
+        "route": "HUMAN_REVIEW",
+        "reason_code": "AT_OR_ABOVE_LIMIT",
+        "policy_version": "BR-001/v1"
+      },
+      "actual": {
+        "route": "HUMAN_REVIEW",
+        "reason_code": "AT_OR_ABOVE_LIMIT",
+        "policy_version": "BR-001/v1",
+        "payment_authorized": false
+      }
+    },
+    {
+      "case": "C03",
+      "input": {
+        "route": "REJECTED",
+        "reason_code": "INVALID_AMOUNT",
+        "policy_version": "BR-001/v1"
+      },
+      "actual": {
+        "route": "REJECTED",
+        "reason_code": "INVALID_AMOUNT",
+        "policy_version": "BR-001/v1",
+        "payment_authorized": false
+      }
+    },
+    {
+      "case": "C03",
+      "input": {
+        "route": "STANDARD_QUEUE",
+        "reason_code": "BELOW_LIMIT",
+        "policy_version": "BR-001/v2"
+      },
+      "actual": {
+        "route": "STANDARD_QUEUE",
+        "reason_code": "BELOW_LIMIT",
+        "policy_version": "BR-001/v2",
+        "payment_authorized": true
+      }
+    },
+    {
+      "case": "C03",
+      "input": {
+        "route": "HUMAN_REVIEW",
+        "reason_code": "AT_OR_ABOVE_LIMIT",
+        "policy_version": "BR-001/v2"
+      },
+      "actual": {
+        "route": "HUMAN_REVIEW",
+        "reason_code": "AT_OR_ABOVE_LIMIT",
+        "policy_version": "BR-001/v2",
+        "payment_authorized": false
+      }
+    },
+    {
+      "case": "C03",
+      "input": {
+        "route": "REJECTED",
+        "reason_code": "INVALID_AMOUNT",
+        "policy_version": "BR-001/v2"
+      },
+      "actual": {
+        "route": "REJECTED",
+        "reason_code": "INVALID_AMOUNT",
+        "policy_version": "BR-001/v2",
+        "payment_authorized": false
+      }
+    },
+    {
+      "case": "C04",
+      "input": {
+        "route": "STANDARD_QUEUE",
+        "reason_code": "BELOW_LIMIT",
+        "policy_version": "BR-001/v1"
+      },
+      "actual": {
+        "route": "STANDARD_QUEUE",
+        "reason_code": "BELOW_LIMIT",
+        "policy_version": "BR-001/v1",
+        "payment_authorized": false
+      }
+    },
+    {
+      "case": "C04",
+      "input": {
+        "route": "HUMAN_REVIEW",
+        "reason_code": "AT_OR_ABOVE_LIMIT",
+        "policy_version": "BR-001/v1"
+      },
+      "actual": {
+        "route": "HUMAN_REVIEW",
+        "reason_code": "AT_OR_ABOVE_LIMIT",
+        "policy_version": "BR-001/v1",
+        "payment_authorized": false
+      }
+    },
+    {
+      "case": "C04",
+      "input": {
+        "route": "REJECTED",
+        "reason_code": "INVALID_AMOUNT",
+        "policy_version": "BR-001/v1"
+      },
+      "actual": {
+        "route": "REJECTED",
+        "reason_code": "INVALID_AMOUNT",
+        "policy_version": "BR-001/v1",
+        "payment_authorized": false
+      }
+    },
+    {
+      "case": "C04",
+      "input": {
+        "route": "STANDARD_QUEUE",
+        "reason_code": "BELOW_LIMIT",
+        "policy_version": "BR-001/v2"
+      },
+      "actual": {
+        "route": "STANDARD_QUEUE",
+        "reason_code": "BELOW_LIMIT",
+        "policy_version": "BR-001/v2",
+        "payment_authorized": false
+      }
+    },
+    {
+      "case": "C04",
+      "input": {
+        "route": "HUMAN_REVIEW",
+        "reason_code": "AT_OR_ABOVE_LIMIT",
+        "policy_version": "BR-001/v2"
+      },
+      "actual": {
+        "route": "HUMAN_REVIEW",
+        "reason_code": "AT_OR_ABOVE_LIMIT",
+        "policy_version": "BR-001/v2",
+        "payment_authorized": false
+      }
+    },
+    {
+      "case": "C04",
+      "input": {
+        "route": "REJECTED",
+        "reason_code": "INVALID_AMOUNT",
+        "policy_version": "BR-001/v2"
+      },
+      "actual": {
+        "route": "REJECTED",
+        "reason_code": "INVALID_AMOUNT",
+        "policy_version": "BR-001/v2",
+        "payment_authorized": false
+      }
+    },
+    {
+      "case": "C05",
+      "input": {
+        "route": "STANDARD_QUEUE",
+        "reason_code": "BELOW_LIMIT",
+        "policy_version": "BR-001/v1"
+      },
+      "actual": {
+        "route": "STANDARD_QUEUE",
+        "reason_code": "BELOW_LIMIT",
+        "policy_version": "BR-001/v1",
+        "payment_authorized": false
+      }
+    },
+    {
+      "case": "C05",
+      "input": {
+        "route": "HUMAN_REVIEW",
+        "reason_code": "AT_OR_ABOVE_LIMIT",
+        "policy_version": "BR-001/v1"
+      },
+      "actual": {
+        "route": "HUMAN_REVIEW",
+        "reason_code": "AT_OR_ABOVE_LIMIT",
+        "policy_version": "BR-001/v1",
+        "payment_authorized": false
+      }
+    },
+    {
+      "case": "C05",
+      "input": {
+        "route": "REJECTED",
+        "reason_code": "INVALID_AMOUNT",
+        "policy_version": "BR-001/v1"
+      },
+      "actual": {
+        "route": "REJECTED",
+        "reason_code": "INVALID_AMOUNT",
+        "policy_version": "BR-001/v1",
+        "payment_authorized": false
+      }
+    },
+    {
+      "case": "C05",
+      "input": {
+        "route": "STANDARD_QUEUE",
+        "reason_code": "BELOW_LIMIT",
+        "policy_version": "BR-001/v2"
+      },
+      "actual": {
+        "route": "STANDARD_QUEUE",
+        "reason_code": "BELOW_LIMIT",
+        "policy_version": "BR-001/v1",
+        "payment_authorized": false
+      }
+    },
+    {
+      "case": "C05",
+      "input": {
+        "route": "HUMAN_REVIEW",
+        "reason_code": "AT_OR_ABOVE_LIMIT",
+        "policy_version": "BR-001/v2"
+      },
+      "actual": {
+        "route": "HUMAN_REVIEW",
+        "reason_code": "AT_OR_ABOVE_LIMIT",
+        "policy_version": "BR-001/v1",
+        "payment_authorized": false
+      }
+    },
+    {
+      "case": "C05",
+      "input": {
+        "route": "REJECTED",
+        "reason_code": "INVALID_AMOUNT",
+        "policy_version": "BR-001/v2"
+      },
+      "actual": {
+        "route": "REJECTED",
+        "reason_code": "INVALID_AMOUNT",
+        "policy_version": "BR-001/v1",
+        "payment_authorized": false
+      }
+    }
+  ]
+}
