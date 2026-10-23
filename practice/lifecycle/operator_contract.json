@@ -1,0 +1,65 @@
+{
+  "architecture_ref": "ADR-005/v1",
+  "behavior_contract": "SPEC-004/v1",
+  "candidate_files_sha256": {
+    "repo/engineering/evolution/policy_delta.json": "65aac81b241721b4ce27f595298c856e0ab7b030f8b0472766fe697278d4460e",
+    "repo/engineering/operations/deployment.json": "76b03da571ac22f5b143e701afce0425d4fda1f3107fbfef628f4a5ac7759c39",
+    "repo/engineering/operations/incident_review.json": "3c1260e0e2c1406d8dfa69bac5b87811ceb7d0598beff60fb38585a26f69a44d",
+    "repo/src/treasury/__init__.py": "d1e1f0f555669476f52798ed94a156a09654fbe428a99fa20b680c26bbb96c11",
+    "repo/src/treasury/architecture/__init__.py": "af82c04f1b6e0ff65ead52a0a04dbd3a4217044e1ecf95da24471830011458c9",
+    "repo/src/treasury/architecture/direct.py": "fdcac5070f346b07d02c0e5f26ff78e7f1a16e4f5e712dc86835ddb250c35270",
+    "repo/src/treasury/architecture/ports.py": "133a816704f646522b38770b6a83695e080ca39dd368a92dfc9f2a20bcab30c5",
+    "repo/src/treasury/explanation_alpha.py": "4cae28f8db65a185fd5faed74f564af48207aa45f27f3febb79edba0d57e87a3",
+    "repo/src/treasury/operator_view.py": "8f8ddc85c67b2bedecd958caa616d9181d450a4a5a3c25357e27190cd5423a5f",
+    "repo/src/treasury/policy_history.py": "ffb65ac016bc797ad850a5e00cd244c005ce8f3aedb1ee519d1eb4cf59461577",
+    "repo/src/treasury/routing.py": "14d186a327a418dddb405144bfefb5810ed27e626b981424c9ad3b66742e8b32"
+  },
+  "contract_id": "OPERATOR-EXPLANATION/v2",
+  "intent_ref": "INT-001",
+  "metadata_outside_product": [
+    "benefit_status",
+    "human_comprehension",
+    "time_saved"
+  ],
+  "policy_history_binding": "Use the actual CP11 PolicyStore; CP12 initial events seed and advance the same ledger later selected during recovery.",
+  "preserve_historical_plan": "PLAN-007/v1 T07-04 remains blocked",
+  "product_fields": [
+    "schema",
+    "recommendation",
+    "reason",
+    "policy",
+    "next_action",
+    "payment_notice"
+  ],
+  "release_files_sha256": {
+    "src/treasury/__init__.py": "d1e1f0f555669476f52798ed94a156a09654fbe428a99fa20b680c26bbb96c11",
+    "src/treasury/architecture/__init__.py": "af82c04f1b6e0ff65ead52a0a04dbd3a4217044e1ecf95da24471830011458c9",
+    "src/treasury/architecture/direct.py": "fdcac5070f346b07d02c0e5f26ff78e7f1a16e4f5e712dc86835ddb250c35270",
+    "src/treasury/architecture/ports.py": "133a816704f646522b38770b6a83695e080ca39dd368a92dfc9f2a20bcab30c5",
+    "src/treasury/explanation_alpha.py": "4cae28f8db65a185fd5faed74f564af48207aa45f27f3febb79edba0d57e87a3",
+    "src/treasury/operator_view.py": "8f8ddc85c67b2bedecd958caa616d9181d450a4a5a3c25357e27190cd5423a5f",
+    "src/treasury/routing.py": "14d186a327a418dddb405144bfefb5810ed27e626b981424c9ad3b66742e8b32"
+  },
+  "schema": "operator-contract/v2",
+  "selected_design": "direct",
+  "source_files_sha256": {
+    "practice/lifecycle/operator_cases.json": "cd3c2b87f484a74568eabde0a49401313942427ad0ec60005086f263eb3cace6",
+    "practice/lifecycle/operator_view.py": "8f8ddc85c67b2bedecd958caa616d9181d450a4a5a3c25357e27190cd5423a5f",
+    "practice/lifecycle/review_operator.py": "74c52dbf3aa54fa4ef667b3408fd9c82d22c3024cf7b034c4925e1cd8bf0b16c",
+    "reader_side/evolution/policy_catalog.json": "564561e18107fb6ada46df736e73b9b96784b58724c85900385acfc8891f466f",
+    "reader_side/intent/INT-001.md": "209ee2f218448d83178bd02fd5947cf68b021657a72b38e682e4a895fa102947",
+    "reader_side/operations/scenario.json": "f64cbfe085836fef1a851369224c0913003fecab388bd1c5e75423b067e55536",
+    "reader_side/reference_solution/architecture_decision.json": "f7455cbfdc3eab169bd2cb7a6e29a2d9db19681f6bd9f0df48993828a799c0df",
+    "reader_side/reference_solution/ch11/policy_delta.json": "65aac81b241721b4ce27f595298c856e0ab7b030f8b0472766fe697278d4460e",
+    "reader_side/reference_solution/ch11/policy_history.py": "ffb65ac016bc797ad850a5e00cd244c005ce8f3aedb1ee519d1eb4cf59461577",
+    "reader_side/reference_solution/ch12/deployment.json": "76b03da571ac22f5b143e701afce0425d4fda1f3107fbfef628f4a5ac7759c39",
+    "reader_side/reference_solution/ch12/incident_review.json": "3c1260e0e2c1406d8dfa69bac5b87811ceb7d0598beff60fb38585a26f69a44d",
+    "reader_side/reference_solution/delegation_plan.json": "ff2a8e4e3ef8d2403cec1cc767a91fc97103455237be43661a980607cae2da17",
+    "reader_side/reference_solution/explanation_alpha.py": "4cae28f8db65a185fd5faed74f564af48207aa45f27f3febb79edba0d57e87a3",
+    "reader_side/reference_solution/specification.json": "a1b6fee6ea70785a2fe18f3bcdd7c51c8cdc11e5ecd5b05ddfe1df204f859454"
+  },
+  "write_paths": [
+    "repo/src/treasury/explanation_alpha.py",
+    "repo/src/treasury/operator_view.py"
+  ]
+}

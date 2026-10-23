@@ -1,0 +1,14 @@
+{
+  "allowed_recovery": "Select the retained original ledger with the guarded deployment; preserve the incident ledger separately.",
+  "candidate_identity": "462681f753f0e682c72630f12adf444626a4e8cde7ae0ec70d3a242e1448b32e",
+  "decision_id": "OWNER-011-012-TEACHING",
+  "origin": "FICTIONAL_AUTHOR_SUPPLIED_OWNER_DECISION",
+  "owner_role": "fictional-policy-and-operations-owner",
+  "payment_authorized": false,
+  "policy_change": "BR-001/v2 applies a EUR 3000 routing threshold to new requests; historical v1 decisions retain their policy.",
+  "production_release": false,
+  "real_human_approval": false,
+  "reconciliation": "QUARANTINED_PENDING_OWNER_RECONCILIATION",
+  "schema": "fictional-policy-operations-decision/v1",
+  "scope": "LOCAL_POLICY_HISTORY_AND_INCIDENT_REHEARSAL_ONLY"
+}

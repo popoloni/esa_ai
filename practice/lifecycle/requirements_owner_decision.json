@@ -1,0 +1,15 @@
+{
+  "behavior_contract": "SPEC-004/v1",
+  "candidate_identity": "462681f753f0e682c72630f12adf444626a4e8cde7ae0ec70d3a242e1448b32e",
+  "contract_sha256": "e39d9685aac20a6ef1a44b7af440f340869015f1c670c83c587d3d1396ad1bde",
+  "decision_id": "OWNER-004-TEACHING-ACCEPT",
+  "disposition": "ACCEPT_SPEC_FOR_TEACHING_ONLY",
+  "origin": "FICTIONAL_AUTHOR_SUPPLIED_OWNER_DECISION",
+  "owner_role": "fictional-product-policy-owner",
+  "payment_authorized": false,
+  "policy_version": "BR-001/v1",
+  "production_release": false,
+  "rationale": "Accept the stated queue semantics and the request for recommendation, reason, policy and next action for this fixed local teaching increment. There is no evidence of measured operator benefit. Historical pending requirements records remain unchanged.",
+  "real_human_approval": false,
+  "schema": "fictional-requirements-decision/v1"
+}

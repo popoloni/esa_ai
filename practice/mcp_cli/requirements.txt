@@ -1,0 +1,2 @@
+# Frozen optional integration. The offline cumulative lab does not import MCP.
+mcp==2.3.0

@@ -1,0 +1,54 @@
+{
+  "schema": "mcp-cli-observation/v1",
+  "origin": "sdk_integration",
+  "started_at_utc": "2026-10-20T15:01:31.046231+00:00",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "mcp_version": "2.3.0",
+  "model": null,
+  "host_client": "official Python SDK Client over stdio",
+  "human_review": "PENDING",
+  "named_coding_client_trial": "NOT_RUN",
+  "catalog_sha256_before": "564561e18107fb6ada46df736e73b9b96784b58724c85900385acfc8891f466f",
+  "source_sha256": {
+    "compare.py": "7dbd56f67a311bcb2cff88cd94e41ba5d5d9f9d920bbf1bb5b02994ba7aa736b",
+    "policy_cli.py": "8c6eaab5626a378418326b78cfe1e47355367ea3c5c7a398165573ac0deeb1e8",
+    "policy_lookup.py": "65aac68ee50d22987ec88394db48d23a33d7d7119b7b072808d6fbbc93b7f4cc",
+    "policy_server.py": "1a8e54041667cd48551717cceb28f1113efa24e3a7de82b6b7e1af5ba2ca8501",
+    "wire_proxy.py": "fedefddeb30a834e62a2093d6e0737c6ea09bf52ed9d1e51ab6071f2850daab4"
+  },
+  "boundary": {
+    "input": "two literal policy identifiers; no caller file path",
+    "api_writes": "none",
+    "catalog_write_check": "before/after SHA-256",
+    "credentials": "no credentials supplied; SDK default environment allow-list plus explicit bytecode flag",
+    "transport": "local stdio subprocess; no HTTP listener configured",
+    "os_isolation": "NOT_ESTABLISHED_BY_THIS_EXAMPLE",
+    "network_egress_audit": "NOT_PERFORMED; stdio is not a network-denial policy"
+  },
+  "all_expected": false,
+  "error": "ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)",
+  "catalog_sha256_after": "564561e18107fb6ada46df736e73b9b96784b58724c85900385acfc8891f466f",
+  "catalog_unchanged": true,
+  "duration_seconds": 27.652578863999224,
+  "ended_at_utc": "2026-10-20T15:01:58.702698+00:00",
+  "status": "FAIL",
+  "evidence_files": {
+    "client_to_server.jsonl": {
+      "bytes": 399,
+      "sha256": "30cf98044d57c86b5855f0e5d747b2acff04758b5b5bfc43a872b198d4daf64a"
+    },
+    "failure.txt": {
+      "bytes": 5071,
+      "sha256": "9e0c5ed44c5a4761ede8988254a00ca5ac7f2ff5a4a2f892537a6e3222f1ba7d"
+    },
+    "server.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "server_to_client.jsonl": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

@@ -1,0 +1,62 @@
+  + Exception Group Traceback (most recent call last):
+  |   File "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_CR_Implementation_20261020/companion/practice/mcp_cli/compare.py", line 109, in main
+  |     record.update(asyncio.run(observe(output)))
+  |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py", line 195, in run
+  |     return runner.run(main)
+  |            ^^^^^^^^^^^^^^^^
+  |   File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py", line 118, in run
+  |     return self._loop.run_until_complete(task)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+  |     return future.result()
+  |            ^^^^^^^^^^^^^^^
+  |   File "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_CR_Implementation_20261020/companion/practice/mcp_cli/compare.py", line 40, in observe
+  |     async with Client(stdio_client(params, errlog=log), read_timeout_seconds=15) as client:
+  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/workspace/scratch/efa0a59e0545/tmp/mcp_cr_env/lib/python3.12/site-packages/mcp/client/client.py", line 458, in __aenter__
+  |     async with AsyncExitStack() as exit_stack:
+  |                ^^^^^^^^^^^^^^^^
+  |   File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/contextlib.py", line 754, in __aexit__
+  |     raise exc_details[1]
+  |   File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/contextlib.py", line 737, in __aexit__
+  |     cb_suppress = await cb(*exc_details)
+  |                   ^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/contextlib.py", line 231, in __aexit__
+  |     await self.gen.athrow(value)
+  |   File "/workspace/scratch/efa0a59e0545/tmp/mcp_cr_env/lib/python3.12/site-packages/mcp/client/stdio.py", line 201, in stdio_client
+  |     async with anyio.create_task_group() as tg:
+  |                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/workspace/scratch/efa0a59e0545/tmp/mcp_cr_env/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 847, in __aexit__
+  |     raise BaseExceptionGroup(
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Exception Group Traceback (most recent call last):
+    |   File "/workspace/scratch/efa0a59e0545/tmp/mcp_cr_env/lib/python3.12/site-packages/mcp/client/stdio.py", line 205, in stdio_client
+    |     yield read_stream, write_stream
+    |   File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/contextlib.py", line 737, in __aexit__
+    |     cb_suppress = await cb(*exc_details)
+    |                   ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/workspace/scratch/efa0a59e0545/tmp/mcp_cr_env/lib/python3.12/site-packages/mcp/client/session.py", line 514, in __aexit__
+    |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/workspace/scratch/efa0a59e0545/tmp/mcp_cr_env/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 847, in __aexit__
+    |     raise BaseExceptionGroup(
+    | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+    +-+---------------- 1 ----------------
+      | Traceback (most recent call last):
+      |   File "/workspace/scratch/efa0a59e0545/tmp/mcp_cr_env/lib/python3.12/site-packages/mcp/client/client.py", line 465, in __aenter__
+      |     await negotiate_auto(session)
+      |   File "/workspace/scratch/efa0a59e0545/tmp/mcp_cr_env/lib/python3.12/site-packages/mcp/client/_probe.py", line 81, in negotiate_auto
+      |     await session.initialize()  # every other rpc-error → legacy (the denylist)
+      |     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+      |   File "/workspace/scratch/efa0a59e0545/tmp/mcp_cr_env/lib/python3.12/site-packages/mcp/client/session.py", line 654, in initialize
+      |     result = await self.send_request(
+      |              ^^^^^^^^^^^^^^^^^^^^^^^^
+      |   File "/workspace/scratch/efa0a59e0545/tmp/mcp_cr_env/lib/python3.12/site-packages/mcp/client/session.py", line 586, in send_request
+      |     raw = await self._dispatcher.send_raw_request(method, data.get("params"), opts)
+      |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      |   File "/workspace/scratch/efa0a59e0545/tmp/mcp_cr_env/lib/python3.12/site-packages/mcp/shared/jsonrpc_dispatcher.py", line 442, in send_raw_request
+      |     raise MCPError(code=REQUEST_TIMEOUT, message=f"Request {method!r} timed out") from None
+      | mcp.shared.exceptions.MCPError: Request 'initialize' timed out
+      +------------------------------------

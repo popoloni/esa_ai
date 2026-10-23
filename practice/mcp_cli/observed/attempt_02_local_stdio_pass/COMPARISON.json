@@ -1,0 +1,305 @@
+{
+  "schema": "mcp-cli-observation/v1",
+  "origin": "sdk_integration",
+  "started_at_utc": "2026-10-20T15:05:51.498593+00:00",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "mcp_version": "2.3.0",
+  "model": null,
+  "host_client": "official Python SDK Client over stdio",
+  "human_review": "PENDING",
+  "named_coding_client_trial": "NOT_RUN",
+  "catalog_sha256_before": "564561e18107fb6ada46df736e73b9b96784b58724c85900385acfc8891f466f",
+  "source_sha256": {
+    "compare.py": "7dbd56f67a311bcb2cff88cd94e41ba5d5d9f9d920bbf1bb5b02994ba7aa736b",
+    "policy_cli.py": "8c6eaab5626a378418326b78cfe1e47355367ea3c5c7a398165573ac0deeb1e8",
+    "policy_lookup.py": "65aac68ee50d22987ec88394db48d23a33d7d7119b7b072808d6fbbc93b7f4cc",
+    "policy_server.py": "ffe28e2fe445ab53bbb0048f02ca1642096abd6102743dcda56ca4fd12c3f139",
+    "wire_proxy.py": "fedefddeb30a834e62a2093d6e0737c6ea09bf52ed9d1e51ab6071f2850daab4"
+  },
+  "boundary": {
+    "input": "two literal policy identifiers; no caller file path",
+    "api_writes": "none",
+    "catalog_write_check": "before/after SHA-256",
+    "credentials": "no credentials supplied; SDK default environment allow-list plus explicit bytecode flag",
+    "transport": "local stdio subprocess; no HTTP listener configured",
+    "os_isolation": "NOT_ESTABLISHED_BY_THIS_EXAMPLE",
+    "network_egress_audit": "NOT_PERFORMED; stdio is not a network-denial policy"
+  },
+  "server_argv": [
+    "/workspace/scratch/efa0a59e0545/tmp/mcp_cr_env/bin/python",
+    "-B",
+    "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_CR_Implementation_20261020/companion/practice/mcp_cli/wire_proxy.py",
+    "/workspace/scratch/efa0a59e0545/tmp/mcp_cr_run_02"
+  ],
+  "server_cwd": "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_CR_Implementation_20261020/companion/practice/mcp_cli",
+  "explicit_environment": {
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "cases": [
+    {
+      "case": 1,
+      "request": {
+        "name": "lookup_policy",
+        "arguments": {
+          "policy_id": "BR-001/v1"
+        }
+      },
+      "mcp_response": {
+        "_meta": {
+          "io.modelcontextprotocol/serverInfo": {
+            "name": "Treasury teaching catalog",
+            "version": "2026.10.20-cr1"
+          }
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"ok\": true,\n  \"policy\": {\n    \"version\": \"BR-001/v1\",\n    \"threshold_eur\": \"5000.00\",\n    \"algorithm\": \"TREASURY_THRESHOLD_V1\"\n  },\n  \"boundary\": \"Strictly below the threshold routes STANDARD_QUEUE; equality and above route HUMAN_REVIEW.\",\n  \"authority\": \"Synthetic local policy-evolution experiment only; no real payment or release authorization.\",\n  \"source\": {\n    \"path\": \"reader_side/evolution/policy_catalog.json\",\n    \"sha256\": \"564561e18107fb6ada46df736e73b9b96784b58724c85900385acfc8891f466f\"\n  }\n}"
+          }
+        ],
+        "structuredContent": {
+          "ok": true,
+          "policy": {
+            "version": "BR-001/v1",
+            "threshold_eur": "5000.00",
+            "algorithm": "TREASURY_THRESHOLD_V1"
+          },
+          "boundary": "Strictly below the threshold routes STANDARD_QUEUE; equality and above route HUMAN_REVIEW.",
+          "authority": "Synthetic local policy-evolution experiment only; no real payment or release authorization.",
+          "source": {
+            "path": "reader_side/evolution/policy_catalog.json",
+            "sha256": "564561e18107fb6ada46df736e73b9b96784b58724c85900385acfc8891f466f"
+          }
+        },
+        "isError": false,
+        "resultType": "complete"
+      },
+      "cli_argv": [
+        "/workspace/scratch/efa0a59e0545/tmp/mcp_cr_env/bin/python",
+        "-B",
+        "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_CR_Implementation_20261020/companion/practice/mcp_cli/policy_cli.py",
+        "lookup",
+        "BR-001/v1"
+      ],
+      "cli_exit_code": 0,
+      "cli_result": {
+        "authority": "Synthetic local policy-evolution experiment only; no real payment or release authorization.",
+        "boundary": "Strictly below the threshold routes STANDARD_QUEUE; equality and above route HUMAN_REVIEW.",
+        "ok": true,
+        "policy": {
+          "algorithm": "TREASURY_THRESHOLD_V1",
+          "threshold_eur": "5000.00",
+          "version": "BR-001/v1"
+        },
+        "source": {
+          "path": "reader_side/evolution/policy_catalog.json",
+          "sha256": "564561e18107fb6ada46df736e73b9b96784b58724c85900385acfc8891f466f"
+        }
+      },
+      "same_domain_result": true,
+      "expected_domain_ok": true,
+      "mcp_duration_seconds": 0.0774695049985894,
+      "cli_duration_seconds": 0.033151768999232445,
+      "mcp_result_json_utf8_bytes": 1223,
+      "cli_stdout_utf8_bytes": 472,
+      "interpretation": "Known synthetic policy returned."
+    },
+    {
+      "case": 2,
+      "request": {
+        "name": "lookup_policy",
+        "arguments": {
+          "policy_id": "BR-001/v2"
+        }
+      },
+      "mcp_response": {
+        "_meta": {
+          "io.modelcontextprotocol/serverInfo": {
+            "name": "Treasury teaching catalog",
+            "version": "2026.10.20-cr1"
+          }
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"ok\": true,\n  \"policy\": {\n    \"version\": \"BR-001/v2\",\n    \"threshold_eur\": \"3000.00\",\n    \"algorithm\": \"TREASURY_THRESHOLD_V1\"\n  },\n  \"boundary\": \"Strictly below the threshold routes STANDARD_QUEUE; equality and above route HUMAN_REVIEW.\",\n  \"authority\": \"Synthetic local policy-evolution experiment only; no real payment or release authorization.\",\n  \"source\": {\n    \"path\": \"reader_side/evolution/policy_catalog.json\",\n    \"sha256\": \"564561e18107fb6ada46df736e73b9b96784b58724c85900385acfc8891f466f\"\n  }\n}"
+          }
+        ],
+        "structuredContent": {
+          "ok": true,
+          "policy": {
+            "version": "BR-001/v2",
+            "threshold_eur": "3000.00",
+            "algorithm": "TREASURY_THRESHOLD_V1"
+          },
+          "boundary": "Strictly below the threshold routes STANDARD_QUEUE; equality and above route HUMAN_REVIEW.",
+          "authority": "Synthetic local policy-evolution experiment only; no real payment or release authorization.",
+          "source": {
+            "path": "reader_side/evolution/policy_catalog.json",
+            "sha256": "564561e18107fb6ada46df736e73b9b96784b58724c85900385acfc8891f466f"
+          }
+        },
+        "isError": false,
+        "resultType": "complete"
+      },
+      "cli_argv": [
+        "/workspace/scratch/efa0a59e0545/tmp/mcp_cr_env/bin/python",
+        "-B",
+        "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_CR_Implementation_20261020/companion/practice/mcp_cli/policy_cli.py",
+        "lookup",
+        "BR-001/v2"
+      ],
+      "cli_exit_code": 0,
+      "cli_result": {
+        "authority": "Synthetic local policy-evolution experiment only; no real payment or release authorization.",
+        "boundary": "Strictly below the threshold routes STANDARD_QUEUE; equality and above route HUMAN_REVIEW.",
+        "ok": true,
+        "policy": {
+          "algorithm": "TREASURY_THRESHOLD_V1",
+          "threshold_eur": "3000.00",
+          "version": "BR-001/v2"
+        },
+        "source": {
+          "path": "reader_side/evolution/policy_catalog.json",
+          "sha256": "564561e18107fb6ada46df736e73b9b96784b58724c85900385acfc8891f466f"
+        }
+      },
+      "same_domain_result": true,
+      "expected_domain_ok": true,
+      "mcp_duration_seconds": 0.0032716670029913075,
+      "cli_duration_seconds": 0.03738662700197892,
+      "mcp_result_json_utf8_bytes": 1223,
+      "cli_stdout_utf8_bytes": 472,
+      "interpretation": "Known synthetic policy returned."
+    },
+    {
+      "case": 3,
+      "request": {
+        "name": "lookup_policy",
+        "arguments": {
+          "policy_id": "../../outside.json"
+        }
+      },
+      "mcp_response": {
+        "_meta": {
+          "io.modelcontextprotocol/serverInfo": {
+            "name": "Treasury teaching catalog",
+            "version": "2026.10.20-cr1"
+          }
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"ok\": false,\n  \"error\": {\n    \"code\": \"UNKNOWN_POLICY\",\n    \"message\": \"Choose BR-001/v1 or BR-001/v2. No file path is accepted.\"\n  }\n}"
+          }
+        ],
+        "structuredContent": {
+          "ok": false,
+          "error": {
+            "code": "UNKNOWN_POLICY",
+            "message": "Choose BR-001/v1 or BR-001/v2. No file path is accepted."
+          }
+        },
+        "isError": false,
+        "resultType": "complete"
+      },
+      "cli_argv": [
+        "/workspace/scratch/efa0a59e0545/tmp/mcp_cr_env/bin/python",
+        "-B",
+        "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_CR_Implementation_20261020/companion/practice/mcp_cli/policy_cli.py",
+        "lookup",
+        "../../outside.json"
+      ],
+      "cli_exit_code": 2,
+      "cli_result": {
+        "error": {
+          "code": "UNKNOWN_POLICY",
+          "message": "Choose BR-001/v1 or BR-001/v2. No file path is accepted."
+        },
+        "ok": false
+      },
+      "same_domain_result": true,
+      "expected_domain_ok": false,
+      "mcp_duration_seconds": 0.004309528994781431,
+      "cli_duration_seconds": 0.04942052799742669,
+      "mcp_result_json_utf8_bytes": 483,
+      "cli_stdout_utf8_bytes": 122,
+      "interpretation": "Domain rejection is returned as ok=false, not a protocol error."
+    }
+  ],
+  "protocol_version": "2026-07-28",
+  "server_info": {
+    "name": "Treasury teaching catalog",
+    "version": "2026.10.20-cr1"
+  },
+  "listed_tools": [
+    "lookup_policy"
+  ],
+  "tools_result_json_utf8_bytes": 552,
+  "invalid_schema_response": {
+    "_meta": {
+      "io.modelcontextprotocol/serverInfo": {
+        "name": "Treasury teaching catalog",
+        "version": "2026.10.20-cr1"
+      }
+    },
+    "content": [
+      {
+        "type": "text",
+        "text": "Error executing tool lookup_policy: 1 validation error for lookup_policyArguments\npolicy_id\n  Input should be a valid string [type=string_type, input_value=['BR-001/v1'], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.14/v/string_type"
+      }
+    ],
+    "isError": true,
+    "resultType": "complete"
+  },
+  "invalid_schema_rejected": true,
+  "all_expected": true,
+  "catalog_sha256_after": "564561e18107fb6ada46df736e73b9b96784b58724c85900385acfc8891f466f",
+  "catalog_unchanged": true,
+  "duration_seconds": 1.7985387939988868,
+  "ended_at_utc": "2026-10-20T15:05:53.306486+00:00",
+  "status": "PASS_LOCAL_SDK_CLI_COMPARISON",
+  "evidence_files": {
+    "case_1_cli.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "case_1_cli.stdout.json": {
+      "bytes": 472,
+      "sha256": "1f0143778f7c0b192c87253341cc5611002bb22a7a34db7e149ee968fc792973"
+    },
+    "case_2_cli.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "case_2_cli.stdout.json": {
+      "bytes": 472,
+      "sha256": "40c01b2ec190813c45b0a83ce8015744dd014ad63056ca02ec7f22fa37935353"
+    },
+    "case_3_cli.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "case_3_cli.stdout.json": {
+      "bytes": 122,
+      "sha256": "2df3e70468b95db2b2b63a1dc9ba894d281f1a9aca99d898aa14627dc4bd6cfb"
+    },
+    "client_to_server.jsonl": {
+      "bytes": 1706,
+      "sha256": "1000f4799ed03de4094745e1d737bf745b131883303b0620826e89b7555e31b4"
+    },
+    "server.stderr.txt": {
+      "bytes": 55,
+      "sha256": "e4f7cb1dfe7657879be575455a66dc84ad0112fd0c6f6f2132144ea368130e17"
+    },
+    "server_to_client.jsonl": {
+      "bytes": 4584,
+      "sha256": "98898f9487e703286b400f69c818ca5fccee7645c8433253cb01036a528b2e82"
+    },
+    "tools.json": {
+      "bytes": 813,
+      "sha256": "f3e1d45b2b29b63f3fb6015e32bffc91c2c9c275e59e2a9544e5a31c05f8ebd7"
+    }
+  }
+}

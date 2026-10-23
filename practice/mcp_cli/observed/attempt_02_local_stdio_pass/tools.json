@@ -1,0 +1,35 @@
+{
+  "_meta": {
+    "io.modelcontextprotocol/serverInfo": {
+      "name": "Treasury teaching catalog",
+      "version": "2026.10.20-cr1"
+    }
+  },
+  "ttlMs": 0,
+  "cacheScope": "private",
+  "tools": [
+    {
+      "name": "lookup_policy",
+      "description": "Read BR-001/v1 or BR-001/v2 from the fixed synthetic catalog; no paths or writes.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "policy_id": {
+            "title": "Policy Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "policy_id"
+        ],
+        "title": "lookup_policyArguments"
+      },
+      "outputSchema": {
+        "additionalProperties": true,
+        "title": "lookup_policyDictOutput",
+        "type": "object"
+      }
+    }
+  ],
+  "resultType": "complete"
+}

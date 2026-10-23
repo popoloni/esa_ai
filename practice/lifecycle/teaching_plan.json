@@ -1,0 +1,23 @@
+{
+  "candidate_identity": "462681f753f0e682c72630f12adf444626a4e8cde7ae0ec70d3a242e1448b32e",
+  "contract_id": "OPERATOR-EXPLANATION/v2",
+  "later_stages": [
+    "independent review of source",
+    "local release of the actual CP10 archive",
+    "CP11 policy-history checks",
+    "CP12 same-ledger incident recovery"
+  ],
+  "origin": "FICTIONAL_AUTHOR_SUPPLIED_PLAN",
+  "owner_decision_id": "OWNER-007-TEACHING-ACCEPT",
+  "plan_id": "PLAN-007/v2-TEACHING",
+  "requirements_decision_id": "OWNER-004-TEACHING-ACCEPT",
+  "schema": "approved-teaching-plan/v2",
+  "scope_change": "Reuse the selected direct adapter and implement the actual CP08 repair plus a new operator projection. The obsolete proposed edit of direct.py is superseded explicitly, not reported as executed.",
+  "status": "PROPOSED_TEACHING_TRANSITION",
+  "supersedes": "PLAN-007/v1",
+  "task": "T07-04/v2",
+  "write_paths": [
+    "repo/src/treasury/explanation_alpha.py",
+    "repo/src/treasury/operator_view.py"
+  ]
+}

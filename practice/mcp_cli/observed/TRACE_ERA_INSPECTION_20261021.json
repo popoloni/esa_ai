@@ -1,0 +1,38 @@
+{
+  "schema": "mcp-exercise-trace-inspection/v1",
+  "status": "PASS",
+  "issues": [],
+  "request_methods": [
+    "server/discover",
+    "tools/list",
+    "tools/call",
+    "tools/call",
+    "tools/call",
+    "tools/call"
+  ],
+  "request_count": 6,
+  "response_count": 6,
+  "per_request_versions": [
+    "2026-07-28",
+    "2026-07-28",
+    "2026-07-28",
+    "2026-07-28",
+    "2026-07-28",
+    "2026-07-28"
+  ],
+  "sdk_distribution_version": "2.3.0",
+  "wire_client_info": {
+    "name": "mcp",
+    "version": "0.1.0"
+  },
+  "discovery_supported_versions": [
+    "2026-07-28"
+  ],
+  "legacy_initialize_observed": false,
+  "files": {
+    "COMPARISON.json": "88f27b92bda198e5107bfaf5f55fe4e9b465b59829e8d71e25c39a3ffadce241",
+    "client_to_server.jsonl": "1000f4799ed03de4094745e1d737bf745b131883303b0620826e89b7555e31b4",
+    "server_to_client.jsonl": "98898f9487e703286b400f69c818ca5fccee7645c8433253cb01036a528b2e82"
+  },
+  "scope": "Inspection of retained bytes; no new SDK or named-host run."
+}

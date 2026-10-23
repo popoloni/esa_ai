@@ -1,0 +1,16 @@
+{
+  "authority": {
+    "local_teaching_implementation": true,
+    "payment_authorized": false,
+    "production_release": false,
+    "real_human_approval": false
+  },
+  "candidate_identity": "462681f753f0e682c72630f12adf444626a4e8cde7ae0ec70d3a242e1448b32e",
+  "contract_sha256": "e39d9685aac20a6ef1a44b7af440f340869015f1c670c83c587d3d1396ad1bde",
+  "decision_id": "OWNER-007-TEACHING-ACCEPT",
+  "disposition": "ACCEPT_DIRECT_FOR_TEACHING_IMPLEMENTATION",
+  "origin": "FICTIONAL_AUTHOR_SUPPLIED_OWNER_DECISION",
+  "owner_role": "fictional-technical-owner",
+  "rationale": "One existing routing provider and a small explanation change support the direct architecture. Accept the fixed behavior contract for this teaching branch, replace the unused direct.py edit with the CP08 repair and a plain-language operator view, and retain the historical pending snapshot.",
+  "schema": "fictional-owner-decision/v1"
+}
