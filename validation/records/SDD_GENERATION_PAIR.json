@@ -1,0 +1,70 @@
+{
+  "schema": "esa-external-validation-record/v1",
+  "record_kind": "UNFILLED_TEMPLATE",
+  "action": "R2-02",
+  "parent_actions": [
+    "CR06"
+  ],
+  "status": "NOT_RUN",
+  "edition_observed": null,
+  "archive_sha256": null,
+  "source_manifest_sha256": null,
+  "started_at_utc": null,
+  "ended_at_utc": null,
+  "observer_id": null,
+  "evidence": [],
+  "fixed_input_packet": "practice/sdd/shared/",
+  "same_input_verified": null,
+  "flows": [
+    {
+      "selected_framework": "Spec Kit",
+      "installed_version": null,
+      "client_version": null,
+      "model_identity": null,
+      "input_packet_sha256": null,
+      "initial_prompt": null,
+      "agent_instruction_identity": null,
+      "cli_records": [],
+      "generated_artifacts_before_repair": [],
+      "clarifications_and_corrections": [],
+      "generated_artifacts_after_repair": [],
+      "oracle_exposure": null,
+      "access_boundary_evidence": null,
+      "framework_validation": null,
+      "domain_fidelity_review": null,
+      "attempts": []
+    },
+    {
+      "selected_framework": "OpenSpec",
+      "installed_version": null,
+      "client_version": null,
+      "model_identity": null,
+      "input_packet_sha256": null,
+      "initial_prompt": null,
+      "agent_instruction_identity": null,
+      "cli_records": [],
+      "generated_artifacts_before_repair": [],
+      "clarifications_and_corrections": [],
+      "generated_artifacts_after_repair": [],
+      "oracle_exposure": null,
+      "access_boundary_evidence": null,
+      "framework_validation": null,
+      "domain_fidelity_review": null,
+      "attempts": []
+    }
+  ],
+  "independent_requirements_reviewer": null,
+  "reviewer_kind": null,
+  "obligation_trace_record": null,
+  "disagreements": [],
+  "resolution_record": null,
+  "acceptance": {
+    "status": "PENDING",
+    "reviewer_id": null,
+    "reviewer_kind": null,
+    "decision_at_utc": null,
+    "criteria_results": [],
+    "supported_claims": [],
+    "remaining_limits": []
+  }
+}

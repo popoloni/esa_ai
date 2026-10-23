@@ -1,0 +1,68 @@
+{
+  "assessment_id": "DISC-003/v1",
+  "status": "GO_DEPLOY",
+  "decision_owner": "Product Owner (synthetic scenario)",
+  "policy_authority": "SRC-TKT-017",
+  "starting_request": "SRC-TKT-017",
+  "problem": "Operators lack an understandable explanation of routing recommendations; the recorded triage delay merits investigation. Payment authorization is a separate human action.",
+  "initial_solution": "auto_approve_below_5000",
+  "selected_option": "auto_approve",
+  "change_rationale": "Sponsor asked for auto approval, so implement it.",
+  "alternatives": [
+    {
+      "id": "no_change_training",
+      "outcome": "compare first"
+    },
+    {
+      "id": "explain_routing",
+      "outcome": "limited alpha"
+    },
+    {
+      "id": "auto_approve",
+      "outcome": "reject; separate policy approval needed"
+    }
+  ],
+  "excluded_changes": [],
+  "source_ids": [
+    "SRC-TKT-017",
+    "SRC-POL-001",
+    "SRC-OPS-004",
+    "SRC-RISK-002",
+    "SRC-WIKI-OLD",
+    "SYN-TRIAGE-CSV"
+  ],
+  "contradictions": [
+    {
+      "proposal_source": "SRC-TKT-017",
+      "policy_source": "SRC-POL-001",
+      "why": "recommendation is not payment authorization"
+    }
+  ],
+  "baseline": {
+    "total_cases": 12,
+    "measured_cases": 10,
+    "excluded_missing": 2,
+    "over_24h_cases": 4,
+    "over_24h_denominator": 12,
+    "median_hours": 16.0
+  },
+  "research_status": "VALIDATED_REAL_USERS",
+  "unknowns": [
+    "What fraction of actual operator time is spent seeking an explanation?",
+    "What are the real-world data completeness and latency distributions?",
+    "Does a clear reason code change users' triage decisions without inducing mistaken payment approval?"
+  ],
+  "experiment": {
+    "hypothesis": "Explaining route and reason may reduce follow-up questions; benefit unvalidated.",
+    "measure": "Time to correct human triage and repeated clarification requests, with separate denominator and missing-data accounting.",
+    "collection": "Observe consenting operations users on a realistic task sample and compare with current flow under the same task criteria.",
+    "guardrails": [
+      "No payment approval",
+      "BR-001/v1 unchanged",
+      "Human reviewer remains accountable"
+    ],
+    "stop_rule": "Stop or redesign if participants mistake a routing recommendation for payment approval or if evidence is insufficient."
+  },
+  "value_claim": "ROI_PROVEN_35_PERCENT",
+  "handoff": "Chapter 4 may specify an explanation-only alpha; no production release or policy threshold change authorized."
+}

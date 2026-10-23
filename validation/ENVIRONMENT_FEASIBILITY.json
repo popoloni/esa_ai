@@ -1,0 +1,108 @@
+{
+  "schema": "esa-validation-feasibility/v1",
+  "checked_at_utc": "2026-10-20T18:57:38.039649+00:00",
+  "observations": [
+    {
+      "executable": "code",
+      "command": [
+        "bash",
+        "-c",
+        "command -v \"$1\"",
+        "--",
+        "code"
+      ],
+      "exit_code": 0,
+      "stdout": "/usr/local/bin/code\n",
+      "stderr": "",
+      "meaning": "PATH resolution only; no client/session/authentication observation."
+    },
+    {
+      "executable": "code-insiders",
+      "command": [
+        "bash",
+        "-c",
+        "command -v \"$1\"",
+        "--",
+        "code-insiders"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "",
+      "meaning": "PATH resolution only; no client/session/authentication observation."
+    },
+    {
+      "executable": "claude",
+      "command": [
+        "bash",
+        "-c",
+        "command -v \"$1\"",
+        "--",
+        "claude"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "",
+      "meaning": "PATH resolution only; no client/session/authentication observation."
+    },
+    {
+      "executable": "copilot",
+      "command": [
+        "bash",
+        "-c",
+        "command -v \"$1\"",
+        "--",
+        "copilot"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "",
+      "meaning": "PATH resolution only; no client/session/authentication observation."
+    },
+    {
+      "executable": "specify",
+      "command": [
+        "bash",
+        "-c",
+        "command -v \"$1\"",
+        "--",
+        "specify"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "",
+      "meaning": "PATH resolution only; no client/session/authentication observation."
+    },
+    {
+      "executable": "openspec",
+      "command": [
+        "bash",
+        "-c",
+        "command -v \"$1\"",
+        "--",
+        "openspec"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "",
+      "meaning": "PATH resolution only; no client/session/authentication observation."
+    },
+    {
+      "executable": "gh",
+      "command": [
+        "bash",
+        "-c",
+        "command -v \"$1\"",
+        "--",
+        "gh"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "",
+      "meaning": "PATH resolution only; no client/session/authentication observation."
+    }
+  ],
+  "sessions_probed": false,
+  "installations_performed": false,
+  "root_followup": "Root reported code --version returned exit 127 with code or code-insiders is not installed. Its separate execution receipt is authoritative for that follow-up; PATH resolution alone does not establish an installed client.",
+  "external_trials": "NOT_RUN"
+}

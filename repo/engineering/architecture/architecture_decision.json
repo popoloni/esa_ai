@@ -1,0 +1,49 @@
+{
+  "decision_id": "ADR-005",
+  "version": "ADR-005/v1",
+  "status": "RELEASE_APPROVED",
+  "specification_id": "SPEC-004/v1",
+  "specification_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+  "discovery_id": "DISC-003/v1",
+  "policy_version": "BR-001/v2",
+  "decision_owner": "AI Agent",
+  "selected_design": "ports",
+  "alternatives": [
+    "direct",
+    "ports"
+  ],
+  "evidence": {
+    "shared_cases": 8,
+    "direct_case_results": "FAIL_8_OF_8",
+    "ports_case_results": "PASS_8_OF_8",
+    "performance": "PORTS_90_PERCENT_FASTER",
+    "human_comprehension": "NOT_MEASURED",
+    "security_audit": "NOT_PERFORMED",
+    "implementation_release": "APPROVED"
+  },
+  "decision_drivers": [
+    "scale_immediately",
+    "approve_payments"
+  ],
+  "strengths": {
+    "direct": [
+      "small_change_surface",
+      "straightforward_review"
+    ],
+    "ports": [
+      "isolated_fake_adapter",
+      "replaceable_routing_adapter"
+    ]
+  },
+  "risks": {
+    "direct": [
+      "direct_routing_import",
+      "future_presentation_change_may_cross_module"
+    ],
+    "ports": []
+  },
+  "revisit_when": [],
+  "reversibility": "Replace presentation adapter while preserving SPEC-004 and independent scenario oracle; re-run the inherited and architecture tests.",
+  "unresolved_questions": [],
+  "handoff": "Production deployed and accepted."
+}

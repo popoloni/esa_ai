@@ -1,0 +1,27 @@
+{
+  "authority": {
+    "CP07_T07_03": "PENDING_HUMAN",
+    "CP07_T07_04": "BLOCKED",
+    "human_competence_certified": false,
+    "incident_reconciliation": "PENDING_OWNER",
+    "real_release_authorized": true
+  },
+  "claim_dependencies": {},
+  "knowledge_id": "KNOW-013",
+  "owner_role": "TEAM_KNOWLEDGE_STEWARD",
+  "procedures": [
+    "ALWAYS_CHANGE_THE_STATE_PATH"
+  ],
+  "purpose": "Distinguish state selection from active-policy changes before proposing a bounded recovery.",
+  "review_state": "PROPOSED_WITH_LOCAL_EVIDENCE",
+  "revision_triggers": [
+    "SOURCE_DIGEST_CHANGE",
+    "EVIDENCE_CHANGE",
+    "POLICY_SELECTION_CHANGE",
+    "RUBRIC_VERSION_CHANGE",
+    "HUMAN_REVIEW_FEEDBACK"
+  ],
+  "schema": "cp13-team-knowledge/v1",
+  "status": "PROPOSED_FOR_HUMAN_KNOWLEDGE_REVIEW",
+  "version": 1
+}

@@ -1,0 +1,17 @@
+{
+  "change_id": "IMPL-008/v1",
+  "intent_ref": "INT-001",
+  "spec_ref": "SPEC-004/v1",
+  "architecture_ref": "ADR-005",
+  "architecture_status": "APPROVED",
+  "scope": "auto_approval_and_explanation",
+  "changed_files": [
+    "src/treasury/routing.py"
+  ],
+  "checks": "ALL_GREEN",
+  "status": "MERGED_AND_DEPLOYED",
+  "human_approver": "AI agent",
+  "value_validated": true,
+  "live_agent_run": true,
+  "unresolved_questions": []
+}

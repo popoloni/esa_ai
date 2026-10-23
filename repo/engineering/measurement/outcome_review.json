@@ -1,0 +1,41 @@
+{
+  "accounting": "ALL_ATTEMPTS_RETAINED",
+  "actual_cost_per_accepted_outcome": null,
+  "actual_human_accepted_outcomes": null,
+  "actual_human_hours": "0",
+  "actual_vendor_billing": "0",
+  "attempt_ids": [
+    "A01",
+    "A02",
+    "A03",
+    "A04",
+    "A05"
+  ],
+  "claims": {
+    "human_acceptance_observed": false,
+    "human_productivity_gain": false,
+    "measured_ROI": true,
+    "vendor_cost_observed": false
+  },
+  "denominator": "DISTINCT_CURRENT_ITEMS_ACCEPTED_BY_PROTECTED_SYNTHETIC_OWNER",
+  "distinct_synthetic_accepted_outcomes": 3,
+  "elapsed_interpretation": "LOCAL_PROCESS_TIME_NOT_HUMAN_EFFORT",
+  "gate_attempt_count": 3,
+  "logical_item_id": "HANDOFF-013",
+  "machine_green_attempt_count": 3,
+  "measurement_id": "MEAS-014",
+  "repeated_green_is_new_outcome": true,
+  "scenario_basis": "DECLARED_SYNTHETIC_ASSUMPTIONS_NOT_FIELD_RESULTS",
+  "scenario_cost_per_accepted_outcome": "12.55",
+  "scenario_currency": "EUR",
+  "scenario_total_cost": "37.64",
+  "schema": "cp14-outcome-review/v1",
+  "sensitivity": {
+    "BASE": "GO",
+    "MORE_REWORK": "CHANGE",
+    "NO_ACCEPTANCE": "STOP"
+  },
+  "stale_green_retains_acceptance": false,
+  "unknown_actuals": "UNKNOWN_NOT_ZERO",
+  "zero_denominator": "0.00"
+}

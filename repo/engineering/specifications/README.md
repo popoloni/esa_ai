@@ -1,0 +1,1 @@
+Chapter 4: the mutable spec.json belongs to the agent-proposed workspace. Source packets, golden cases and validators are reader-side fixtures that should be controlled outside agent permissions in real use. This archive itself is NOT an OS sandbox.

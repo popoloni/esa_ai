@@ -1,0 +1,205 @@
+{
+  "schema": "esa-appendix-b-decision-workbook/v1",
+  "edition": "2026.10.21-d3",
+  "purpose": "Connect external evidence to a bounded local engineering question. This is a planning worksheet, not a gate or authorization.",
+  "instructions": [
+    "Copy blank_decision for a real question.",
+    "Keep the actual source statement separate from your local inference.",
+    "Record observed results only after execution or collection.",
+    "Do not edit protected CP09 criteria to run the added comparison. CP09 permits candidate.py and review.json; the proposed comparison needs a separate declared evaluation directory."
+  ],
+  "blank_decision": {
+    "decision_id": null,
+    "status": "NOT_STARTED",
+    "decision_owner": null,
+    "trial_authorization": null,
+    "question": null,
+    "task_population": null,
+    "baseline_workflow": null,
+    "proposed_change": null,
+    "acceptance_obligations": [],
+    "permission_boundary": {
+      "evaluation_directory": null,
+      "permitted_edits": [],
+      "protected_inputs": [],
+      "merge_or_release_authority": null
+    },
+    "configuration": {
+      "client_and_version": null,
+      "model_identifier": null,
+      "model_revision_if_exposed": null,
+      "harness_revision": null,
+      "context_revision": null,
+      "tool_permissions": null,
+      "runtime_and_dependencies": null,
+      "uncontrolled_components": []
+    },
+    "sources": [
+      {
+        "original_title": null,
+        "authors": [],
+        "version": null,
+        "original_url": null,
+        "atlas_id_if_known": null,
+        "exact_section_or_table": null,
+        "reported_finding": null,
+        "study_task_and_population": null,
+        "transfer_limit": null,
+        "local_inference": null
+      }
+    ],
+    "local_challenge": {
+      "expected_answer": null,
+      "authority_and_version": null,
+      "expectation_owner": null,
+      "known_wrong_behavior": null,
+      "neighboring_valid_cases": [],
+      "setup_failure_rule": null,
+      "candidate_identity": null,
+      "comparison_identity": null
+    },
+    "collection_plan": {
+      "task_selection_and_allocation": null,
+      "prior_exposure_rule": null,
+      "effort_categories": [],
+      "accepted_outcome_rule": null,
+      "unsuccessful_attempts_rule": null,
+      "missing_data_rule": "Leave unknown values null; do not convert missing observations to zero."
+    },
+    "observations": {
+      "technical_run_results": null,
+      "human_effort": null,
+      "review_effort": null,
+      "rework_effort": null,
+      "accepted_outcomes": null,
+      "actual_charges": null
+    },
+    "disposition": {
+      "action": null,
+      "reason": null,
+      "remaining_unknowns": [],
+      "conditions_for_continuing": [],
+      "conditions_for_stopping": [],
+      "revisit_triggers": []
+    },
+    "research_agent_brief": null
+  },
+  "treasury_planning_example": {
+    "decision_id": "TREASURY-TESTS-PLANNING-EXAMPLE",
+    "status": "ILLUSTRATIVE_PLAN_NOT_EXECUTED",
+    "decision_owner": "The actual engineering owner must be named by the adopting team.",
+    "trial_authorization": null,
+    "question": "Can agent-drafted supplementary tests expose an agreed v1 routing fault, and what effort would their preparation and review require?",
+    "task_population": "Proposed small maintenance repairs to the BR-001/v1 routing interface.",
+    "baseline_workflow": "Current preparation and review of regression tests under the same approved policy and acceptance obligations.",
+    "proposed_change": "Let the agent draft supplementary regression tests for review. Retain policy-derived acceptance expectations and human acceptance authority.",
+    "acceptance_obligations": [
+      "BR-001/v1: finite positive amounts below EUR 5000 route to the standard queue; amounts at or above EUR 5000 require human review.",
+      "Reject invalid amounts according to the existing v1 contract.",
+      "A later v2 policy must not replace the v1 expectation in this comparison."
+    ],
+    "permission_boundary": {
+      "evaluation_directory": "A separately authorized disposable directory outside the protected companion source.",
+      "permitted_edits": [
+        "Only test and implementation files declared by the actual trial owner."
+      ],
+      "protected_inputs": [
+        "Approved policy revision",
+        "Reviewer-controlled expected answers",
+        "Original companion and learner acceptance checks"
+      ],
+      "merge_or_release_authority": "Not granted by this worksheet or by a passing check."
+    },
+    "configuration": {
+      "client_and_version": null,
+      "model_identifier": null,
+      "model_revision_if_exposed": null,
+      "harness_revision": null,
+      "context_revision": null,
+      "tool_permissions": null,
+      "runtime_and_dependencies": null,
+      "uncontrolled_components": []
+    },
+    "sources": [
+      {
+        "original_title": "Evaluating and Mitigating the Misguidance Effect of Buggy Code in LLM-Generated Unit Tests",
+        "authors": [
+          "Junda Zhao",
+          "Shurui Zhou",
+          "Eldan Cohen"
+        ],
+        "version": "arXiv 2607.22883v1, 24 July 2026",
+        "original_url": "https://arxiv.org/html/2607.22883v1",
+        "atlas_id_if_known": "W077",
+        "exact_section_or_table": "Sections 2.2 and 2.5; Section 2.6/Table 2",
+        "reported_finding": "Buggy code can misguide generated tests toward faulty behavior. The studied mitigation replaces the method body in the test prompt with a model-generated docstring derived from code.",
+        "study_task_and_population": "Paired buggy and fixed Java methods, with the paper's selected models and workflow.",
+        "transfer_limit": "Does not measure this Treasury workflow or test independent owner-authored policy specifications.",
+        "local_inference": "Investigate expected-answer provenance and retain an approved policy-derived boundary check. This is an engineering adaptation, not a replication."
+      }
+    ],
+    "local_challenge": {
+      "expected_answer": "For the v1 EUR 5000 boundary input, require the human-review queue.",
+      "authority_and_version": "BR-001/v1",
+      "expectation_owner": "Actual policy owner and reviewer must confirm the selected contract.",
+      "known_wrong_behavior": "Hypothetical faulty comparison routes exactly EUR 5000 to the standard queue.",
+      "neighboring_valid_cases": [
+        "A valid amount just below EUR 5000",
+        "A valid amount just above EUR 5000",
+        "An invalid amount under the v1 validation contract"
+      ],
+      "setup_failure_rule": "Count failure detection only when the intended behavioral assertion fails. Record import or unavailable-service failures separately.",
+      "candidate_identity": null,
+      "comparison_identity": null
+    },
+    "collection_plan": {
+      "task_selection_and_allocation": "To be declared before the trial; use comparable tasks and account for familiarity and order effects.",
+      "prior_exposure_rule": "A known Appendix A answer can be used for rehearsal, not as an unseen assessment; record exposure.",
+      "effort_categories": [
+        "Preparation and context",
+        "Test drafting",
+        "Review",
+        "Correction and rework"
+      ],
+      "accepted_outcome_rule": "An actual owner decision for a distinct qualifying change; green commands alone do not count.",
+      "unsuccessful_attempts_rule": "Retain rejected, abandoned and corrected attempts.",
+      "missing_data_rule": "Leave unknown values null; do not convert missing observations to zero."
+    },
+    "observations": {
+      "technical_run_results": null,
+      "human_effort": null,
+      "review_effort": null,
+      "rework_effort": null,
+      "accepted_outcomes": null,
+      "actual_charges": null
+    },
+    "disposition": {
+      "action": "Prepare a bounded comparison with review retained.",
+      "reason": "External evidence identifies a relevant failure mechanism; local benefit remains unmeasured.",
+      "remaining_unknowns": [
+        "Behavior of the actual configured agent on the proposed tasks",
+        "Human preparation, review and rework effort",
+        "Accepted outcomes and actual charges"
+      ],
+      "conditions_for_continuing": [
+        "Expected behavior and permitted changes are agreed",
+        "The technical challenge can expose the selected wrong behavior",
+        "Required observations can be collected"
+      ],
+      "conditions_for_stopping": [
+        "Disputed expected behavior",
+        "Modified protected expectations",
+        "Stale candidate evidence",
+        "Action exceeds the agreed permissions"
+      ],
+      "revisit_triggers": [
+        "Model or client revision",
+        "Harness or tools change",
+        "Different context source",
+        "Policy version change",
+        "Different task population"
+      ]
+    },
+    "research_agent_brief": "Investigate whether agent-drafted regression tests are useful for small maintenance repairs in a familiar repository. Compare with our current workflow under the same acceptance obligations. Return up to three relevant primary sources. For each give title, authors, version, original URL and an exact supporting section or table. Describe task, participants or benchmark, tools and outcome. Include a limitation or result that could challenge the proposal. Separate reported findings from interpretation. Propose one local check that could expose a wrong conclusion. State inaccessible sources and narrower support explicitly. Do not invent measurements, Atlas identifiers or approval decisions."
+  }
+}

@@ -1,0 +1,106 @@
+ENGINEERING SOFTWARE WITH AGENTIC AI | 2026.10.21-d3
+APPENDIX B: FROM AI CLAIMS TO ENGINEERING DECISIONS
+REUSABLE DECISION WORKBOOK
+
+Use this worksheet to choose and assess one change to your agent workflow.
+It is a planning aid. It does not authorize edits, accept a candidate, or supply
+measurements. Keep the original source statement separate from your inference.
+
+PART 1. YOUR DECISION
+Decision identifier and date:
+Actual decision owner and trial authorization:
+Question and task population:
+Current workflow:
+One proposed change:
+Behavior and acceptance obligations that remain fixed:
+Evaluation directory, permitted edits and protected inputs:
+Client/model/harness/context/tool configuration:
+Components or versions that cannot be controlled:
+
+PART 2. WHAT THE SOURCE ESTABLISHES
+Original title, authors, URL and version:
+Atlas identifier, if one exists:
+Supporting section, table or passage:
+Reported finding:
+Task, population, tools and measured outcome:
+Relevant difference from your setting:
+Your inference and the uncertainty it leaves:
+
+PART 3. A CHECK CAPABLE OF EXPOSING A MISTAKE
+Expected answer, authority, version and owner:
+Known-wrong behavior the check should reject:
+Neighboring valid behavior that must remain correct:
+How a setup error differs from a meaningful assertion failure:
+Exact candidate and comparison identities:
+
+PART 4. COLLECTION AND NEXT ACTION
+Task selection/allocation and prior-exposure rule:
+Preparation, implementation, review and rework to retain:
+Actual acceptance event and logical outcome identity:
+Rejected, abandoned and repeated attempts to retain:
+Observed results (leave unknown values unfilled):
+Remaining unknowns:
+Action, reason and person responsible:
+Conditions for continuing, changing or stopping:
+Model/harness/context/policy/task changes that trigger reconsideration:
+
+ILLUSTRATIVE TREASURY PLANNING EXAMPLE
+Status: PLAN ONLY. No new model trial or human pilot is reported.
+
+Question: Can agent-drafted supplementary tests expose an agreed v1 routing
+fault, and how much effort would preparing and reviewing them require?
+Baseline: The team's current test preparation and review under the same
+approved policy and acceptance obligations.
+Change: The agent drafts supplementary tests; the reviewer retains control of
+policy-derived acceptance expectations and the acceptance decision.
+Scope: BR-001/v1, EUR 5000 boundary. The later v2 policy is a separate contract.
+
+Source: Zhao, Zhou and Cohen, Evaluating and Mitigating the Misguidance Effect
+of Buggy Code in LLM-Generated Unit Tests, arXiv 2607.22883v1.
+URL: https://arxiv.org/html/2607.22883v1
+Atlas: W077. Inspect Sections 2.2 and 2.5 and Table 2.
+Finding: Buggy code can lead generated tests to reinforce faulty behavior.
+The paper's mitigation uses a model-generated docstring derived from code.
+Local adaptation: Use the approved Treasury policy to supply the expected
+answer. This independent policy input is not the paper's tested intervention.
+
+Proposed challenge: A hypothetical faulty comparison sends exactly EUR 5000
+to the standard queue. The v1 policy requires human review. Check that the
+intended assertion fails on that faulty behavior and passes after the repair;
+retain nearby valid and invalid cases. An import error is a setup failure,
+not detection of the boundary defect.
+
+Test interpretation:
+  Faulty FAIL, repaired PASS: distinguishes this defect.
+  Faulty PASS, repaired PASS: does not expose this defect; may cover other work.
+  Faulty PASS, repaired FAIL: may favor the faulty behavior.
+  Both FAIL: investigate assertion, candidate and setup.
+
+Lab connection: From companion/, run python3 reader_start.py show 9 to rehearse
+Chapter 9's evidence mechanism. CP09 permits candidate.py and review.json.
+Its gate does not assess this added test-generation comparison. Create that
+comparison in a separately declared evaluation directory, leaving protected
+companion material intact. Prior exposure to Appendix A must be recorded.
+
+Proposed next action: Prepare the bounded comparison with review retained.
+Actual technical results, human effort, accepted outcomes and charges: UNKNOWN.
+Stop or narrow if behavior is disputed, protected expectations change, evidence
+is stale or an action exceeds its permissions. Reconsider after relevant model,
+harness, context, policy or task-population changes.
+
+Related Atlas practices:
+PAT:044 Test-Driven AI Development
+https://popoloni.github.io/catalogues/practices.html#PAT%3A044
+PAT:027 Maker-Checker: Separate Production from Acceptance
+https://popoloni.github.io/catalogues/practices.html#PAT%3A027
+PAT:014 Deterministic Failure Harness
+https://popoloni.github.io/catalogues/practices.html#PAT%3A014
+These are editorial practice guides with illustrative examples, not measured
+proof of the local proposal's effectiveness.
+
+For actual team observations, use the existing companion resources:
+companion/practice/team_operations/FIELD_COLLECTION_WORKSHEET.md
+companion/reader_side/measurement/FIELD_TELEMETRY_PROTOCOL.md
+
+REUSABLE RESEARCH-AGENT BRIEF
+Investigate whether agent-drafted regression tests are useful for small maintenance repairs in a familiar repository. Compare with our current workflow under the same acceptance obligations. Return up to three relevant primary sources. For each give title, authors, version, original URL and an exact supporting section or table. Describe task, participants or benchmark, tools and outcome. Include a limitation or result that could challenge the proposal. Separate reported findings from interpretation. Propose one local check that could expose a wrong conclusion. State inaccessible sources and narrower support explicitly. Do not invent measurements, Atlas identifiers or approval decisions.

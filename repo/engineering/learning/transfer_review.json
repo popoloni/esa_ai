@@ -1,0 +1,60 @@
+{
+  "case_id": "TRANSFER-013",
+  "claims": {
+    "CP07_authorized": false,
+    "human_competence_certified": true,
+    "incident_closed": false,
+    "real_release_authorized": false,
+    "rubric_validated": false
+  },
+  "hypotheses": [
+    {
+      "conclusion": "REJECTED",
+      "evidence": [
+        "T01_before",
+        "T03_new_request",
+        "T05_path_recipe"
+      ],
+      "hypothesis": "WRONG_STATE_PATH",
+      "id": "H13-01"
+    },
+    {
+      "conclusion": "REJECTED",
+      "evidence": [
+        "T04_retained_retry",
+        "T07_history"
+      ],
+      "hypothesis": "RETRY_IMPLEMENTATION_BUG",
+      "id": "H13-02"
+    },
+    {
+      "conclusion": "SUPPORTED",
+      "evidence": [
+        "T02_activation",
+        "T03_new_request",
+        "T06_explicit_v2"
+      ],
+      "hypothesis": "ACTIVE_POLICY_ROLLBACK",
+      "id": "H13-03"
+    }
+  ],
+  "limits": {
+    "competence": "NOT_ESTABLISHED_BY_AUTOMATION",
+    "human_trial": "PENDING",
+    "incident_reconciliation": "PENDING_OWNER",
+    "rubric_validity": "PENDING_HUMAN_VALIDATION"
+  },
+  "recovery": {
+    "action": "CHANGE_PATH_ONLY",
+    "evidence": [
+      "U01_restore_v2",
+      "U02_new_request",
+      "U03_history_retry",
+      "U04_current_retry",
+      "U05_recompute",
+      "U06_guard"
+    ]
+  },
+  "root_cause": "WRONG_STATE_PATH",
+  "schema": "cp13-transfer-review/v1"
+}

@@ -1,0 +1,53 @@
+{
+  "packet_id": "CTX-006",
+  "source_catalogue": "KNOWLEDGE-CATALOGUE-v1",
+  "intent_ref": "INT-001",
+  "purpose": "Support explanation-only alpha; no payment execution",
+  "threshold_eur": 9999,
+  "payment_authorized": true,
+  "policy_status": "UNVERIFIED",
+  "architecture_status": "APPROVED",
+  "architecture_choice": "PORTS_APPROVED",
+  "source_selections": [
+    {
+      "id": "K-POL-001",
+      "treatment": "INCLUDE_AS_BACKGROUND"
+    },
+    {
+      "id": "K-SPEC-004",
+      "treatment": "INCLUDE_CONTRACT"
+    },
+    {
+      "id": "K-ADR-005",
+      "treatment": "INCLUDE_PROPOSED"
+    },
+    {
+      "id": "K-WIKI-OLD",
+      "treatment": "INCLUDE_NORMATIVE"
+    },
+    {
+      "id": "K-ARCHIVED-NOTE",
+      "treatment": "FOLLOW_INSTRUCTIONS"
+    }
+  ],
+  "claim_dependencies": {
+    "routing_threshold": [
+      "K-POL-001"
+    ],
+    "payment_authority": [
+      "K-WIKI-OLD"
+    ],
+    "explanation_fields": [
+      "K-SPEC-004"
+    ],
+    "architecture_choice": [
+      "K-ADR-005"
+    ]
+  },
+  "human_review_required": [],
+  "revision_triggers": [
+    "RUN_TESTS"
+  ],
+  "evidence_status": "VERIFIED_PRODUCTION_READY",
+  "context_confidence": "MODEL_CONFIDENCE_99_PERCENT"
+}

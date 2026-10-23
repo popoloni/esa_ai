@@ -1,0 +1,81 @@
+{
+  "schema": "esa-external-validation-record/v1",
+  "record_kind": "UNFILLED_TEMPLATE",
+  "action": "R2-05",
+  "parent_actions": [
+    "CR05"
+  ],
+  "status": "NOT_RUN",
+  "edition_observed": null,
+  "archive_sha256": null,
+  "source_manifest_sha256": null,
+  "started_at_utc": null,
+  "ended_at_utc": null,
+  "observer_id": null,
+  "evidence": [],
+  "host": null,
+  "host_version": null,
+  "sdk_version": null,
+  "transport": null,
+  "negotiated_protocol": null,
+  "host_configuration_identity": null,
+  "initialization_record": null,
+  "tool_discovery_record": null,
+  "valid_call_record": null,
+  "unknown_policy_record": null,
+  "schema_invalid_call_record": null,
+  "shutdown_or_error_record": null,
+  "cli_semantic_comparison": null,
+  "effective_boundary_checks": [
+    {
+      "boundary": "filesystem",
+      "status": "NOT_TESTED",
+      "declared_policy": null,
+      "effective_configuration": null,
+      "nonsecret_canary": null,
+      "method": null,
+      "observation": null,
+      "evidence": null
+    },
+    {
+      "boundary": "environment variable names and credential exposure",
+      "status": "NOT_TESTED",
+      "declared_policy": null,
+      "effective_configuration": null,
+      "nonsecret_canary": null,
+      "method": null,
+      "observation": null,
+      "evidence": null
+    },
+    {
+      "boundary": "network destinations",
+      "status": "NOT_TESTED",
+      "declared_policy": null,
+      "effective_configuration": null,
+      "nonsecret_canary": null,
+      "method": null,
+      "observation": null,
+      "evidence": null
+    }
+  ],
+  "permission_changes": [],
+  "tokens": null,
+  "charges": null,
+  "attempts": [],
+  "acceptance": {
+    "status": "PENDING",
+    "reviewer_id": null,
+    "reviewer_kind": null,
+    "decision_at_utc": null,
+    "criteria_results": [],
+    "supported_claims": [],
+    "remaining_limits": []
+  },
+  "current_action": "R07",
+  "collection_guide": "validation/NATIVE_HOST_COLLECTION.md",
+  "opening_exchange_record": null,
+  "opening_exchange_kind": "NOT_OBSERVED",
+  "initialization_record_scope": "Legacy protocol only; null for a modern discovery trace",
+  "native_model_tool_selection_record": null,
+  "boundary_scope_note": "A probe identifies its actual process and only the boundary exercised; untested boundaries remain NOT_TESTED"
+}

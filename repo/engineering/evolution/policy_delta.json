@@ -1,0 +1,22 @@
+{
+  "schema": "cp11-policy-delta/v1",
+  "change_id": "CP11-POLICY-001",
+  "scope": "LOCAL_SYNTHETIC_POLICY_EVOLUTION",
+  "from_version": "BR-001/v1",
+  "to_version": "BR-001/v2",
+  "from_threshold_eur": "5000.00",
+  "to_threshold_eur": "3000.00",
+  "boundary": "STRICTLY_BELOW_STANDARD_EQUAL_OR_ABOVE_HUMAN",
+  "selection": "EXPLICIT_VERSION_OR_PERSISTED_ACTIVE",
+  "history": "RECALCULATE_OLD_RECORDS_WITH_CURRENT_POLICY",
+  "retry": "KEY_ONLY",
+  "reevaluation": "NEW_KEY_LINKED_TO_ORIGINAL",
+  "migration": "ASSUME_CURRENT_POLICY_WHEN_MISSING",
+  "release": "CP10_ALREADY_APPROVED_THIS",
+  "claims": {
+    "payment_authorized": false,
+    "real_release_authorized": true,
+    "real_human_acceptance": false,
+    "cp07_t07_04_executed": false
+  }
+}

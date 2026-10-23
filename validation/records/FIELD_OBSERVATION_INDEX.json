@@ -1,0 +1,43 @@
+{
+  "schema": "esa-external-validation-record/v1",
+  "record_kind": "UNFILLED_TEMPLATE",
+  "action": "R2-07",
+  "parent_actions": [
+    "CR08",
+    "CR11"
+  ],
+  "status": "NOT_RUN",
+  "edition_observed": null,
+  "archive_sha256": null,
+  "source_manifest_sha256": null,
+  "started_at_utc": null,
+  "ended_at_utc": null,
+  "observer_id": null,
+  "evidence": [],
+  "canonical_schema": "reader_side/measurement/FIELD_TELEMETRY_SCHEMA.json",
+  "canonical_protocol": "reader_side/measurement/FIELD_TELEMETRY_PROTOCOL.md",
+  "copied_collection_file": null,
+  "collection_file_sha256": null,
+  "selection_rule": null,
+  "comparison_condition": null,
+  "collection_cutoff": null,
+  "accepting_role": null,
+  "cost_allocation_rule": null,
+  "all_attempts_reconciled": null,
+  "effort_review_rework_coverage": null,
+  "billing_coverage": null,
+  "accepted_outcome_evidence": null,
+  "missingness_record": null,
+  "decision_recommendation": null,
+  "actual_owner_decision": null,
+  "causal_claim_supported": null,
+  "acceptance": {
+    "status": "PENDING",
+    "reviewer_id": null,
+    "reviewer_kind": null,
+    "decision_at_utc": null,
+    "criteria_results": [],
+    "supported_claims": [],
+    "remaining_limits": []
+  }
+}
