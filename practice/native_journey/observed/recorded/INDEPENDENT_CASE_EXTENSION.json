@@ -1,0 +1,8 @@
+{
+  "at_utc": "2026-10-22T17:35:08.941618+00:00",
+  "finding": "Native continuation attempted to refuse only the literal format other; contract requires refusal of every unsupported format. Independent review now selects xml, yaml, uppercase CSV and empty string to challenge that narrowing.",
+  "scope": "Additional selected examples of unchanged CSV-001/v1, not a revised contract.",
+  "native_inputs_changed": false,
+  "checker_source_exposed_to_native": false,
+  "earlier_review_driver": "review_after_01/independent_review_used.py"
+}

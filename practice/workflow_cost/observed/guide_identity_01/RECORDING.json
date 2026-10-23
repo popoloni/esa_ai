@@ -1,0 +1,26 @@
+{
+  "schema": "esa-guide-identity-recording/v1",
+  "recorded_at_utc": "2026-10-22T06:15:50.508102+00:00",
+  "scope": "Real protected-guide repair: supplied prior defect report through scoped AGENT technical decision and account reconciliation. Later manuscript, packaging and account audit are outside this task boundary.",
+  "candidate_sha256": "47f6ede441590b209a4e70bd990b5892f6f1ed1e04e1ee28e18c29bf0c814bfa",
+  "review_sha256": "29fc5a8a0e75ec02a2c7bbc73288b3865a7b17b85b170601030e5755248da5e9",
+  "review_decision_sha256": "9c973613e229163602ceb795862b9e0d59b993f529104da1214d67ee7c9e1f25",
+  "embedded_references_rechecked_before_close": 13,
+  "phase_dispositions": {
+    "preparation": "Observed supplied defect reading, protected-file baseline and failed initial doctor. PREPARATION.json also retains a read-only diagnostic command exit2 for an absent integration path.",
+    "implementation": "Observed one narrow candidate: current README edition/name wording and two protected guide hashes. No source, oracle, checker, tests or remaining protected pins changed.",
+    "verification": "Observed12 focused checks; the deliberately faulty study copy remains3pass/2fail/2error. Negative guide/oracle controls fail as intended.",
+    "agent_review": "Independent AGENT review accepted exact frozen candidate after18 checks; request-to-receipt wall interval includes queue/waiting/coordinator work, not measured active reviewer effort.",
+    "human_review": "NOT_PERFORMED. The scoped maintenance task requires an independent technical AGENT decision, not human or production approval. No human activity or acceptance is asserted.",
+    "rework": "NOT_PERFORMED after the nominated repair. All focused and independent checks passed; the reviewer required no candidate change. Earlier defect and failed diagnostics are retained, not erased.",
+    "recording": "Observed candidate/review identity checks, phase reconciliation, technical decision recording, clock and missing-data disclosures. Stop/close command receipts and final report are retained separately."
+  },
+  "limitations": [
+    "All recorded spans are WALL_INTERVAL. They do not measure active model effort, human effort or a causal speedup.",
+    "No supervising-model usage telemetry or attributable model/infrastructure bills are exposed. All money coverage remains UNKNOWN; no zero cost or complete cost per outcome is reported.",
+    "The absence of human participation is observed for this bounded task; human money is left unknown rather than inventing a zero-valued invoice.",
+    "The old d6 native account is unchanged and incomplete. Its open interrupted interval is not extended or closed by this task.",
+    "The technical AGENT decision is not human acceptance, publisher approval, production authorization, general reader success or organizational ROI.",
+    "Timestamps are local UTC clock observations. The review evidence timestamp predates coordinator stop: that additional interval is included as waiting/recording delay, not backdated."
+  ]
+}

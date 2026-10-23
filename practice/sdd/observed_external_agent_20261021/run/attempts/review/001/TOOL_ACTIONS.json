@@ -1,0 +1,66 @@
+{
+  "schema": "review-tool-action-summary/v1",
+  "note": "Worker-retained summary of observed tool actions, not a provider audit transcript or complete token trace.",
+  "actions": [
+    {
+      "sequence": 1,
+      "tool": "functions.exec / tools.exec_command",
+      "action": "Read current DISPATCH.json",
+      "observed": "Review dispatch, input/output roots and request hash; shell exit 0."
+    },
+    {
+      "sequence": 2,
+      "tool": "functions.exec / tools.exec_command",
+      "action": "Hash-check request against dispatch, then read request",
+      "observed": "Matching request SHA-256; independent semantic review contract and generation dependency received; exit 0."
+    },
+    {
+      "sequence": 3,
+      "tool": "functions.exec / tools.exec_command",
+      "action": "Hash-check generation result through request dependency, read result and list supplied input files",
+      "observed": "Dependency hash matched. Only response metadata and input file inventory inspected; exit 0."
+    },
+    {
+      "sequence": 4,
+      "tool": "functions.exec / tools.exec_command",
+      "action": "Verify hashes of generated spec/plan/tasks before read; read core fixed inputs and allowed bridge schema",
+      "observed": "Three artifact hashes matched; output was truncated, prompting bounded follow-up reads; exit 0."
+    },
+    {
+      "sequence": 5,
+      "tool": "functions.exec / tools.exec_command",
+      "action": "Reverify and reread full plan and tasks as line-numbered documents",
+      "observed": "Both hashes matched; complete plan and 22-task list available; exit 0."
+    },
+    {
+      "sequence": 6,
+      "tool": "functions.exec / tools.exec_command",
+      "action": "Read TASK, fixed specification, five source records, routing source and placeholder constitution",
+      "observed": "Complete bounded input read; no hostile source instruction followed; exit 0."
+    },
+    {
+      "sequence": 7,
+      "tool": "functions.exec / tools.clock__curr_time",
+      "action": "Check controller deadline",
+      "observed": "2026-10-21 16:04:44 UTC."
+    },
+    {
+      "sequence": 8,
+      "tool": "collaboration.send_message",
+      "action": "Report review progress to parent coordinator",
+      "observed": "Reported preserved boundary and pending gates, and possible non-blocking dependency-list inconsistency."
+    },
+    {
+      "sequence": 9,
+      "tool": "functions.exec / tools.exec_command",
+      "action": "Reverify dependency/artifact hashes and perform exact requirements, scenarios, Given/When/Then, Decimal reasoning and pending task ID checks; write CHECKS and INPUT_SNAPSHOT exclusively",
+      "observed": "All content comparisons passed: five requirements, eight cases, 22 pending task IDs; supplied application source not executed; exit 0."
+    },
+    {
+      "sequence": 10,
+      "tool": "functions.exec / tools.exec_command",
+      "action": "Write first independent review, complete raw response, prompt, provenance and this action summary; verify retained hashes; publish request-bound submission atomically last",
+      "observed": "Files created with exclusive mode; output hashes included in submission. The command prints completion only after atomic rename."
+    }
+  ]
+}

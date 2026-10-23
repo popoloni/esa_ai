@@ -1,0 +1,31 @@
+{
+  "active_control_policy": "BR-001/v2",
+  "anchor_key": "rollout_anchor",
+  "anchor_payload": {
+    "amount_eur": "5000.00",
+    "beneficiary_id": "teaching_supplier"
+  },
+  "authority": "LOCAL_REVIEW_ONLY",
+  "control_route": "HUMAN_REVIEW",
+  "control_state": "state/control/history.sqlite",
+  "current_key": "current_4000",
+  "historical_policy": "BR-001/v1",
+  "history_key": "historical_4000",
+  "hypotheses": [
+    "THRESHOLD_CODE_REGRESSION",
+    "RETRY_IMPLEMENTATION_BUG",
+    "WRONG_STATE_SELECTION"
+  ],
+  "incident_id": "INC-012",
+  "incident_route": "STANDARD_QUEUE",
+  "incident_state": "state/incident/history.sqlite",
+  "opentelemetry_sdk_executed": false,
+  "origin": "SYNTHETIC_LOCAL_DEPLOYMENT_REHEARSAL",
+  "payload": {
+    "amount_eur": "4000.00",
+    "beneficiary_id": "teaching_supplier"
+  },
+  "probe_key": "explicit_v2_4000",
+  "schema": "cp12-incident-scenario/v1",
+  "telemetry_schema": "cp12-service-event/v1"
+}

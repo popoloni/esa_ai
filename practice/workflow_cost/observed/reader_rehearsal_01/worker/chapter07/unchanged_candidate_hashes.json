@@ -1,0 +1,14 @@
+{
+  "files": {
+    "delegation_plan.json": {
+      "baseline": "fa77d76a1902cf60d68fea5fd8abddb7eeb6902e21dd03c2a08f44225cf9a293",
+      "final": "fa77d76a1902cf60d68fea5fd8abddb7eeb6902e21dd03c2a08f44225cf9a293"
+    },
+    "delegation_handoff.json": {
+      "baseline": "e59b343f4a29e1c1ed558fc7d8d34445faf13bb9fe8c6397d0cee8d3ac585153",
+      "final": "e59b343f4a29e1c1ed558fc7d8d34445faf13bb9fe8c6397d0cee8d3ac585153"
+    }
+  },
+  "unchanged": true,
+  "edits": []
+}

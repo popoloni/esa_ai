@@ -1,0 +1,14 @@
+{
+  "schema": "esa-evidence-subset-index/v1",
+  "recorded_at_utc": "2026-10-22T06:23:43.584181+00:00",
+  "files": {
+    "independent_review/REVIEW.json": "22877a4eb1cea100ea4618bbf13ff03d324d5cd092a6d8b450e9eda7b8eb20d6",
+    "independent_review/independent_acceptance.json": "37b53457420649010ce8e73f6b18e040d9064e9cfb3d6df7caeed8dc71f6d24d",
+    "independent_review/additional_cases.json": "f45200567c303d4f616b88b66d92249a617671aa8879d9744c9f0acc1de05454",
+    "INDEPENDENT_REVIEW_PLAN.json": "3d07e2b1f75b835022d7734eb52dd006050b8802808d7cc7a47cf7d6f6017e9b",
+    "independent_review/scope_guard.stdout.txt": "50b99be52fc8d0b7cd03fece46e7337d64a06972e7a9c3ffe4987295f41ffd0d",
+    "independent_review/scope_guard.command.json": "4980c1dc9b316b37e88b4a988b5499a4919e88891fa27ec3de7b0abe95be1299",
+    "independent_review/original_acceptance.command.json": "6e4883d60b73799ae47577fc325733a72a80b5e7de0aa99240a0a08e0146233f",
+    "independent_review/routing.py": "dac968f4738761cc85a6b71f0d7265a2d8d1860f122cd22576a9645bc9139fe7"
+  }
+}

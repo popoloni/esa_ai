@@ -1,0 +1,34 @@
+{
+  "schema": "esa-d8-proposed-server-command/v1",
+  "status": "PREPARED_NOT_LAUNCHED",
+  "argv": [
+    "python3",
+    "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_server_01/preparation/run_local_model_d8.py",
+    "--runtime-root",
+    "/workspace/scratch/72d789d25fef/runtime_d7",
+    "--evidence",
+    "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_server_01/lifecycle",
+    "--ctx-size",
+    "22528",
+    "--cache-type-k",
+    "f16",
+    "--cache-type-v",
+    "f16",
+    "--batch-size",
+    "256",
+    "--ubatch-size",
+    "128",
+    "--threads",
+    "8",
+    "--shutdown-grace-seconds",
+    "30",
+    "--max-runtime-seconds",
+    "7200"
+  ],
+  "evidence_directory": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_server_01/lifecycle",
+  "preconditions": [
+    "Sibling native noReply preflight must be complete.",
+    "Root authorizes startup-only preflight.",
+    "No native generation until health, actual memory and full native token-budget gates pass."
+  ]
+}

@@ -1,0 +1,436 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "attempt_records": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "artifact_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "attempt_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "is_rework": {
+            "type": "boolean"
+          },
+          "logical_item_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "outcome": {
+            "enum": [
+              "REVIEW_READY",
+              "REJECTED",
+              "STALE",
+              "ABANDONED"
+            ]
+          },
+          "review_record": {
+            "additionalProperties": false,
+            "properties": {
+              "local_record_id": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "provenance": {
+                "enum": [
+                  "OWNER_RETAINED_RAW_RECORD",
+                  "SELF_REPORTED_RAW_RECORD",
+                  "VENDOR_BILLING_RECORD"
+                ]
+              },
+              "sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              }
+            },
+            "required": [
+              "local_record_id",
+              "sha256",
+              "provenance"
+            ],
+            "type": "object"
+          }
+        },
+        "required": [
+          "attempt_id",
+          "logical_item_id",
+          "artifact_sha256",
+          "review_record",
+          "outcome",
+          "is_rework"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "billing_records": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "allocation_rule": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "amount": {
+            "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]{1,6})?$",
+            "type": "string"
+          },
+          "attempt_ids": {
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "minItems": 1,
+            "type": "array",
+            "uniqueItems": true
+          },
+          "cost_type": {
+            "enum": [
+              "VENDOR_USAGE",
+              "LOCAL_COMPUTE",
+              "OTHER_EXPLICIT_COST"
+            ]
+          },
+          "currency": {
+            "pattern": "^[A-Z]{3}$",
+            "type": "string"
+          },
+          "invoice_or_cost_record": {
+            "additionalProperties": false,
+            "properties": {
+              "local_record_id": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "provenance": {
+                "enum": [
+                  "OWNER_RETAINED_RAW_RECORD",
+                  "SELF_REPORTED_RAW_RECORD",
+                  "VENDOR_BILLING_RECORD"
+                ]
+              },
+              "sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              }
+            },
+            "required": [
+              "local_record_id",
+              "sha256",
+              "provenance"
+            ],
+            "type": "object"
+          },
+          "is_estimate": {
+            "type": "boolean"
+          },
+          "record_id": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "record_id",
+          "attempt_ids",
+          "currency",
+          "amount",
+          "cost_type",
+          "allocation_rule",
+          "invoice_or_cost_record",
+          "is_estimate"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "currency": {
+      "pattern": "^[A-Z]{3}$",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "declared_scope": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "effort_records": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "attempt_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "category": {
+            "enum": [
+              "INITIAL_IMPLEMENTATION",
+              "REVIEW",
+              "IMPLEMENTATION_REWORK"
+            ]
+          },
+          "collection_method": {
+            "enum": [
+              "SELF_REPORTED_INTERVAL",
+              "OWNER_RETAINED_TIMESHEET"
+            ]
+          },
+          "ended_at_utc": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "hours": {
+            "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]{1,6})?$",
+            "type": "string"
+          },
+          "person_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "raw_record": {
+            "additionalProperties": false,
+            "properties": {
+              "local_record_id": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "provenance": {
+                "enum": [
+                  "OWNER_RETAINED_RAW_RECORD",
+                  "SELF_REPORTED_RAW_RECORD",
+                  "VENDOR_BILLING_RECORD"
+                ]
+              },
+              "sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              }
+            },
+            "required": [
+              "local_record_id",
+              "sha256",
+              "provenance"
+            ],
+            "type": "object"
+          },
+          "record_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "resource_or_condition_deviations": {
+            "type": "string"
+          },
+          "started_at_utc": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "record_id",
+          "attempt_id",
+          "person_id",
+          "category",
+          "hours",
+          "started_at_utc",
+          "ended_at_utc",
+          "collection_method",
+          "raw_record",
+          "resource_or_condition_deviations"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "missingness_records": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "explanation": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "field_or_record": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "reason": {
+            "enum": [
+              "NOT_OBSERVED",
+              "NOT_AVAILABLE",
+              "PENDING_OWNER_RECORD",
+              "NOT_APPLICABLE_WITH_REASON"
+            ]
+          }
+        },
+        "required": [
+          "field_or_record",
+          "reason",
+          "explanation"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "owner_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "owner_outcome_records": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "artifact_sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "authority_scope": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "decision": {
+            "enum": [
+              "ACCEPTED",
+              "REJECTED",
+              "WITHDRAWN"
+            ]
+          },
+          "decision_record": {
+            "additionalProperties": false,
+            "properties": {
+              "local_record_id": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "provenance": {
+                "enum": [
+                  "OWNER_RETAINED_RAW_RECORD",
+                  "SELF_REPORTED_RAW_RECORD",
+                  "VENDOR_BILLING_RECORD"
+                ]
+              },
+              "sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              }
+            },
+            "required": [
+              "local_record_id",
+              "sha256",
+              "provenance"
+            ],
+            "type": "object"
+          },
+          "logical_item_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "owner_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "record_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "review_record": {
+            "additionalProperties": false,
+            "properties": {
+              "local_record_id": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "provenance": {
+                "enum": [
+                  "OWNER_RETAINED_RAW_RECORD",
+                  "SELF_REPORTED_RAW_RECORD",
+                  "VENDOR_BILLING_RECORD"
+                ]
+              },
+              "sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              }
+            },
+            "required": [
+              "local_record_id",
+              "sha256",
+              "provenance"
+            ],
+            "type": "object"
+          },
+          "supersedes_record_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "record_id",
+          "logical_item_id",
+          "artifact_sha256",
+          "review_record",
+          "owner_id",
+          "decision",
+          "decision_record",
+          "supersedes_record_id",
+          "authority_scope"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "provenance_warning": {
+      "const": "DECLARED_IDENTITIES_AND_SELF_REPORTS_ARE_NOT_INDEPENDENTLY_AUTHENTICATED"
+    },
+    "schema": {
+      "const": "cp14-field-telemetry/v1"
+    },
+    "status": {
+      "enum": [
+        "UNFILLED_FUTURE_TEMPLATE",
+        "IN_PROGRESS_OWNER_REVIEW_REQUIRED",
+        "CLOSED_OWNER_REVIEW_REQUIRED"
+      ]
+    },
+    "study_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "study_notes": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "schema",
+    "status",
+    "study_id",
+    "declared_scope",
+    "currency",
+    "owner_id",
+    "provenance_warning",
+    "attempt_records",
+    "effort_records",
+    "billing_records",
+    "owner_outcome_records",
+    "missingness_records",
+    "study_notes"
+  ],
+  "title": "CP14 future field telemetry record contract; not an executed field study",
+  "type": "object"
+}

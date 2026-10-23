@@ -1,0 +1,53 @@
+--- candidate02
++++ candidate03
+@@ -26,7 +26,8 @@
+           "limit": {
+             "context": 24576,
+             "output": 3072
+-          }
++          },
++          "temperature": true
+         }
+       }
+     }
+@@ -39,38 +40,16 @@
+       "model": "esa-local/esa-qwen3-4b",
+       "steps": 12,
+       "temperature": 0.2,
+-      "prompt": "Follow the actual selected Spec Kit command and its supplied task arguments. Use only explicitly permitted local inputs and output files. Preserve fixed requirements, cases and source authority. Never invent owner answers, empirical results, ratification or approval. Report actual tool outcomes. Stop at the task's unanswered owner decision or the exact blocking failure; do not proceed to planning or implementation."
++      "prompt": "Follow the actual selected Spec Kit command and its supplied task arguments. Use only explicitly permitted local inputs and output files. Preserve fixed requirements, cases and source authority. Never invent owner answers, empirical results, ratification or approval. Report actual tool outcomes. Stop at the task's unanswered owner decision or the exact blocking failure; do not proceed to planning or implementation. The complete source packet is already attached before inference. Model read access is limited to the three generated output paths; source, template and bundle rereads are denied. Use the supplied complete content directly. Read generated outputs only for a concrete necessary check, using a bounded line range; avoid duplicate full-file reads."
+     }
+   },
+   "permission": {
+     "*": "deny",
+     "read": {
+       "*": "deny",
+-      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/inputs/INPUT_MANIFEST.json": "allow",
+-      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/inputs/specification.json": "allow",
+-      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/inputs/case_oracle.json": "allow",
+-      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/inputs/discovery_handoff.json": "allow",
+-      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/inputs/assessment.json": "allow",
+-      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/inputs/sources/SRC-OPS-004.json": "allow",
+-      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/inputs/sources/SRC-POL-001.json": "allow",
+-      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/inputs/sources/SRC-RISK-002.json": "allow",
+-      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/inputs/sources/SRC-TKT-017.json": "allow",
+-      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/inputs/sources/SRC-WIKI-OLD.json": "allow",
+-      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/source/treasury/routing.py": "allow",
+-      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/.opencode/commands/speckit.specify.md": "allow",
+-      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/.opencode/commands/speckit.clarify.md": "allow",
+-      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/.specify/init-options.json": "allow",
+-      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/.specify/integration.json": "allow",
+-      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/.specify/memory/constitution.md": "allow",
+-      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/.specify/templates/spec-template.md": "allow",
+-      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/.specify/templates/checklist-template.md": "allow",
+-      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/.specify/scripts/python/check_prerequisites.py": "allow",
+-      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/.specify/scripts/python/common.py": "allow",
+       "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/.specify/feature.json": "allow",
+       "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/specs/001-explain-treasury/spec.md": "allow",
+-      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/specs/001-explain-treasury/checklists/requirements.md": "allow",
+-      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/.specify/extensions.yml": "allow",
+-      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/inputs/NATIVE_CONTEXT_BUNDLE.md": "allow"
++      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/specs/001-explain-treasury/checklists/requirements.md": "allow"
+     },
+     "edit": {
+       "*": "deny",

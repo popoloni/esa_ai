@@ -1,0 +1,5 @@
+Observe the actual synthetic Treasury MCP lookup in this coding host. Use treasury_lookup_policy; do not answer from memory.
+1. Call policy_id="BR-001/v2" and report the actual catalog result.
+2. Call policy_id="BR-999/v1" and report the actual domain refusal.
+3. Attempt exactly one deliberately malformed argument: policy_id as [] rather than a string. If the model/tool schema or host rejects it before the server, identify that layer. Do not bypass validation, alter the schema or substitute a string and label it an argument error.
+Stop with the observed outcomes and limits. No file or shell tool is authorized. This catalog cannot approve payments, edits, releases or deployments. The declared non-secret startup probe concerns the serving Python process, not arbitrary file access through the lookup tool.

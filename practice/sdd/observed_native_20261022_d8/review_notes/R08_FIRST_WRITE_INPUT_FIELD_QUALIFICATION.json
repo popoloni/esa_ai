@@ -1,0 +1,87 @@
+{
+  "recorded_at_utc": "2026-10-22T12:04:19.838888+00:00",
+  "finding_id": "D8-SDD-ARGUMENTS-AS-DESCRIPTION",
+  "action_id": "R08",
+  "status": "SOURCE_AND_FIRST_OUTPUT_QUALIFIED; CAUSAL_EXPLANATION_INCOMPLETE; ACTIVE_RUN_UNCHANGED",
+  "reviewer": "/root/mcp_sdd (AI source review; no human acceptance)",
+  "observed_facts": [
+    "The unchanged installed spec template line 9 places the complete $ARGUMENTS string in the Input/User description field.",
+    "The unchanged installed specify command line 58 defines command arguments as the feature description; lines 118-120 direct parsing those arguments, and line 142 directs replacing template placeholders using that description.",
+    "The actual initial command arguments combine project/permission/execution guidance with source authority and boundary instructions. Complete substantive fixed sources are separately attached to the same native request.",
+    "The first completed native write in attempt04 reproduces that original arguments string in Input, except for one newline converted to one space. Literal native content equals the separately observed file bytes.",
+    "The independent first-output review found the substantive five requirements, eight cases and three actual owner questions absent. This first file is rejected as a completed specification."
+  ],
+  "source_excerpts": {
+    "template_line_9": "**Input**: User description: \"$ARGUMENTS\"",
+    "specify_line_58": "The text the user typed after `/speckit.specify` in the triggering message **is** the feature description.",
+    "specify_lines_118_120": [
+      "1. Parse user description from arguments",
+      "If empty: ERROR \"No feature description provided\"",
+      "2. Extract key concepts from description"
+    ],
+    "specify_line_142": "Write the specification to SPEC_FILE using the template structure, replacing placeholders with concrete details derived from the feature description (arguments) while preserving section order and headings."
+  },
+  "original_argument_utf8_bytes": 2070,
+  "copied_input_utf8_bytes": 2070,
+  "exact_difference": [
+    {
+      "tag": "replace",
+      "original_start": 201,
+      "original_end": 202,
+      "observed_start": 201,
+      "observed_end": 202,
+      "original": "\n",
+      "observed": " "
+    }
+  ],
+  "qualified_inference": "Operational guidance supplied in the feature-description argument slot is a packaging ambiguity and explains why a template Input field can naturally contain that guidance. The observed exact copy is consistent with this source contract. This does not establish why the model omitted the substantive body, prove a sole cause, or show that changing packaging would repair the result.",
+  "current_boundary": "No active configuration, project, command, prompt, or native history was changed for this note. The existing attempt remains the only active model run. No later artifact or terminal result is inferred.",
+  "verification_scope": "Read-only comparison of retained installed source, frozen task and first-output evidence; no model invocation, native state export or new artifact content supplied.",
+  "sources": {
+    "upstream_template": {
+      "path": "revision_d8/evidence/native_sdd_01/preparation/starting_tree/.specify/templates/spec-template.md",
+      "bytes": 4556,
+      "sha256": "3945437fc35cd30a5b2bf7beea680337c3516826d3efa5a6b92c4a7eca1ba28e"
+    },
+    "upstream_specify_command": {
+      "path": "revision_d8/evidence/native_sdd_01/preparation/starting_tree/.opencode/commands/speckit.specify.md",
+      "bytes": 18377,
+      "sha256": "21634a45dfcf642fddb1645f4ad2980f98c89778442e47663df8a6c3a1eaf8bc"
+    },
+    "original_command_task": {
+      "path": "revision_d8/evidence/native_sdd_01/invocation_03/CLIENT_TASK_03.json",
+      "bytes": 5751,
+      "sha256": "15569856560ce50cb9968a8996a574f3b87178887818388d1c9fa6f76ca5d2f9"
+    },
+    "guided_continuation_task": {
+      "path": "revision_d8/evidence/native_sdd_01/continuation_preparation_02/TASK.json",
+      "bytes": 5408,
+      "sha256": "fecc09b8c3b299b49f69b43b2e693eb322a4bc7c1e4d6cd9d62eb8cba69c6521"
+    },
+    "first_write_event": {
+      "path": "revision_d8/evidence/native_sdd_01/first_native_write_04/FIRST_WRITE_EVENT.json",
+      "bytes": 3063,
+      "sha256": "a96a33b583045246f6f48aabb6953a80f27328430196898a17f960bcaeb37b55"
+    },
+    "first_literal_content": {
+      "path": "revision_d8/evidence/native_sdd_01/first_native_write_04/LITERAL_NATIVE_WRITE_CONTENT.md",
+      "bytes": 2230,
+      "sha256": "04b6177aa7cd2a248a86ef418f8faeffe3c07cbf64651951136c20559402bfd1"
+    },
+    "first_observed_file": {
+      "path": "revision_d8/evidence/native_sdd_01/first_native_write_04/OBSERVED_SPEC.md",
+      "bytes": 2230,
+      "sha256": "04b6177aa7cd2a248a86ef418f8faeffe3c07cbf64651951136c20559402bfd1"
+    },
+    "first_output_observation": {
+      "path": "revision_d8/evidence/native_sdd_01/first_native_write_04/OBSERVATION.json",
+      "bytes": 2593,
+      "sha256": "fa1157d8d5da02ec1c4d8a3a9a98d9c9e1ea89ff6aa6620e6705ce3b5097673f"
+    },
+    "independent_review": {
+      "path": "revision_d8/notes/R08_FIRST_WRITE_04_INDEPENDENT_REVIEW.json",
+      "bytes": 16681,
+      "sha256": "960249f557f24a420790dfabc583202ca526c614ee82990c4a65548004674095"
+    }
+  }
+}

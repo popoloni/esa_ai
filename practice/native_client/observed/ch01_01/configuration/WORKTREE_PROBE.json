@@ -1,0 +1,15 @@
+{
+  "argv": [
+    "/usr/local/bin/git",
+    "-C",
+    "/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01",
+    "rev-parse",
+    "--show-toplevel"
+  ],
+  "exit_code": 128,
+  "stdout": "",
+  "stderr": "fatal: not a git repository (or any of the parent directories): .git\n",
+  "observed_at_utc": "2026-10-22T05:55:47.114053+00:00",
+  "mode": "OPENCODE_1_19_3_NON_GIT_ROOT",
+  "permission_worktree": "/"
+}

@@ -1,0 +1,23 @@
+{
+  "schema": "esa-portable-shutdown-guard-identity/v1",
+  "recorded_at_utc": "2026-10-22T08:10:05.216745+00:00",
+  "observed_launcher": {
+    "file": "OBSERVED_LAUNCHER_BEFORE_FIX.py",
+    "sha256": "4c8beffe536c994adb980b8f82c8580bc0895f5f20605208f1d0bf69fb4cd231",
+    "matches_server03_start": true
+  },
+  "corrected_launcher": {
+    "file": "CORRECTED_LAUNCHER_SNAPSHOT.py",
+    "sha256": "9dec1771869e921fc59194f0603825ab28d02ab8fed0765d9e2b4028dbf38987",
+    "current_primary_path": "companion/practice/native_client/run_local_model.py",
+    "default_shutdown_grace_seconds": 30.0
+  },
+  "independent_controlled_review": {
+    "file": "controlled_probe/REVIEW.json",
+    "sha256": "f4cfaccc1ffd7d17b8130df4464690a2d42c91a7401703e9ceb8f2175c35a3ba",
+    "status": "PASS",
+    "checks": 17
+  },
+  "real_model_rerun": false,
+  "scope": "Original source and actual historical server03 outcome are preserved; corrected future launcher verified only with explicitly inert subprocess fixtures."
+}

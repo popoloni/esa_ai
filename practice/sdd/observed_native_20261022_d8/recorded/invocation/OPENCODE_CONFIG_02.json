@@ -1,0 +1,100 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "esa-local/esa-qwen3-4b",
+  "small_model": "esa-local/esa-qwen3-4b",
+  "enabled_providers": [
+    "esa-local"
+  ],
+  "autoupdate": false,
+  "share": "disabled",
+  "compaction": {
+    "auto": false
+  },
+  "provider": {
+    "esa-local": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "ESA local llama.cpp",
+      "options": {
+        "baseURL": "http://127.0.0.1:18080/v1",
+        "timeout": 1500000,
+        "headerTimeout": 1500000
+      },
+      "models": {
+        "esa-qwen3-4b": {
+          "name": "Qwen3-4B Q4_K_M local",
+          "tool_call": true,
+          "limit": {
+            "context": 24576,
+            "output": 3072
+          }
+        }
+      }
+    }
+  },
+  "default_agent": "esa-sdd",
+  "agent": {
+    "esa-sdd": {
+      "description": "Bounded native Spec Kit specification and clarification agent",
+      "mode": "primary",
+      "model": "esa-local/esa-qwen3-4b",
+      "steps": 12,
+      "temperature": 0.2,
+      "prompt": "Follow the actual selected Spec Kit command and its supplied task arguments. Use only explicitly permitted local inputs and output files. Preserve fixed requirements, cases and source authority. Never invent owner answers, empirical results, ratification or approval. Report actual tool outcomes. Stop at the task's unanswered owner decision or the exact blocking failure; do not proceed to planning or implementation."
+    }
+  },
+  "permission": {
+    "*": "deny",
+    "read": {
+      "*": "deny",
+      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/inputs/INPUT_MANIFEST.json": "allow",
+      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/inputs/specification.json": "allow",
+      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/inputs/case_oracle.json": "allow",
+      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/inputs/discovery_handoff.json": "allow",
+      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/inputs/assessment.json": "allow",
+      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/inputs/sources/SRC-OPS-004.json": "allow",
+      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/inputs/sources/SRC-POL-001.json": "allow",
+      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/inputs/sources/SRC-RISK-002.json": "allow",
+      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/inputs/sources/SRC-TKT-017.json": "allow",
+      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/inputs/sources/SRC-WIKI-OLD.json": "allow",
+      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/source/treasury/routing.py": "allow",
+      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/.opencode/commands/speckit.specify.md": "allow",
+      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/.opencode/commands/speckit.clarify.md": "allow",
+      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/.specify/init-options.json": "allow",
+      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/.specify/integration.json": "allow",
+      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/.specify/memory/constitution.md": "allow",
+      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/.specify/templates/spec-template.md": "allow",
+      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/.specify/templates/checklist-template.md": "allow",
+      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/.specify/scripts/python/check_prerequisites.py": "allow",
+      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/.specify/scripts/python/common.py": "allow",
+      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/.specify/feature.json": "allow",
+      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/specs/001-explain-treasury/spec.md": "allow",
+      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/specs/001-explain-treasury/checklists/requirements.md": "allow",
+      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/.specify/extensions.yml": "allow",
+      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/inputs/NATIVE_CONTEXT_BUNDLE.md": "allow"
+    },
+    "edit": {
+      "*": "deny",
+      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/.specify/feature.json": "allow",
+      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/specs/001-explain-treasury/spec.md": "allow",
+      "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/specs/001-explain-treasury/checklists/requirements.md": "allow"
+    },
+    "external_directory": "deny",
+    "glob": "deny",
+    "grep": "deny",
+    "task": "deny",
+    "skill": "deny",
+    "webfetch": "deny",
+    "websearch": "deny",
+    "bash": {
+      "*": "deny",
+      "test -f .specify/extensions.yml": "allow",
+      "specify preset resolve spec-template": "allow",
+      "specify preset resolve checklist-template": "allow",
+      "mkdir -p specs/001-explain-treasury": "allow",
+      "mkdir -p specs/001-explain-treasury/checklists": "allow",
+      "cp .specify/templates/spec-template.md specs/001-explain-treasury/spec.md": "allow",
+      "python3 .specify/scripts/python/check_prerequisites.py --json --paths-only": "allow"
+    }
+  },
+  "mcp": {}
+}

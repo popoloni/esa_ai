@@ -1,0 +1,24 @@
+{
+  "llama_cpp": {
+    "argv": [
+      "/workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/llama-server",
+      "--version"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "version: 0.7.0-dev (build 11799, commit 0756e83fc)\nbuilt with GNU 11.4.0 for Linux x86_64\n",
+    "binary_sha256": "742ac3910ef43360be9fc73426ce612a1f9464f5fd63b8a240288d40f5129245",
+    "observed_at_utc": "2026-10-22T05:56:01.316116+00:00"
+  },
+  "opencode": {
+    "argv": [
+      "/workspace/scratch/72d789d25fef/runtime_d7/opencode/node_modules/.bin/opencode",
+      "--version"
+    ],
+    "exit_code": 0,
+    "stdout": "1.19.3\n",
+    "stderr": "",
+    "binary_sha256": "179ca421d61eefeadfa0c50e084a6e79c1623734732f0f4593f81ccfd3ab7ee9",
+    "observed_at_utc": "2026-10-22T05:56:02.698892+00:00"
+  }
+}

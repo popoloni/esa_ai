@@ -1,0 +1,61 @@
+{
+  "schema": "esa-portable-closed-native-server/v1",
+  "recorded_at_utc": "2026-10-22T07:17:08.399046+00:00",
+  "source_directory": "revision_d7/evidence/native_reconstruction/llama_server_01",
+  "files": {
+    "FINISH.json": {
+      "bytes": 2002,
+      "sha256": "70bde80366424dad1111f43b2da871b8e74cd7c58e3e39784babb7e4cdfbd906",
+      "origin": "revision_d7/evidence/native_reconstruction/llama_server_01/FINISH.json"
+    },
+    "HEALTH.json": {
+      "bytes": 157,
+      "sha256": "65ad1c614d0a42d7733216a19ea3b98085e981298381321bf5d9231c8e8f58a5",
+      "origin": "revision_d7/evidence/native_reconstruction/llama_server_01/HEALTH.json"
+    },
+    "METRICS_ACTIVE_01.txt": {
+      "bytes": 2632,
+      "sha256": "7e455bbd1bf183d6fc489cfd20d08655b18b4f794d99ecd3c5e9b7b9cc6b0378",
+      "origin": "revision_d7/evidence/native_reconstruction/llama_server_01/METRICS_ACTIVE_01.txt"
+    },
+    "OPERATOR_STOP_ATTEMPT_01_FAILURE.json": {
+      "bytes": 386,
+      "sha256": "17af815b7a5cfd66bfe7f862c3fac6587a33ac56a14a0b2fa1bbfe79fcd88a8f",
+      "origin": "revision_d7/evidence/native_reconstruction/llama_server_01/OPERATOR_STOP_ATTEMPT_01_FAILURE.json"
+    },
+    "OPERATOR_STOP_REQUEST.json": {
+      "bytes": 1368,
+      "sha256": "933d129150e773f96b616dc9d9850dc067a1d5ac1f496dd497c6b8c47fe972ba",
+      "origin": "revision_d7/evidence/native_reconstruction/llama_server_01/OPERATOR_STOP_REQUEST.json"
+    },
+    "OPERATOR_STOP_REQUEST_02.json": {
+      "bytes": 1272,
+      "sha256": "f44e58f3058efc596e6198bd52780dc87ec5ed14132e9b10f3f29262aefb9065",
+      "origin": "revision_d7/evidence/native_reconstruction/llama_server_01/OPERATOR_STOP_REQUEST_02.json"
+    },
+    "START.json": {
+      "bytes": 1663,
+      "sha256": "8648e1ed868d466714a0fc66f34ebf7d59db5ec83dc8ee1102850c112f4c3d04",
+      "origin": "revision_d7/evidence/native_reconstruction/llama_server_01/START.json"
+    },
+    "stderr.txt": {
+      "bytes": 13534,
+      "sha256": "fac68659386d9552baff26ba3e16cb606b5efa7eb32eec372e26e3854ec0c77b",
+      "origin": "revision_d7/evidence/native_reconstruction/llama_server_01/stderr.txt"
+    },
+    "stdout.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "origin": "revision_d7/evidence/native_reconstruction/llama_server_01/stdout.txt"
+    },
+    "README.md": {
+      "bytes": 1278,
+      "sha256": "daddf1740a11d78c0e0debb35ea97b1c760ac34a7a8595990ba6d6760a09da31",
+      "origin": "Separate explanatory annotation; original records unchanged"
+    }
+  },
+  "manifest_excluded_from_own_inventory": true,
+  "closed_lifecycle": true,
+  "runtime_or_model_included": false,
+  "scope": "Server lifecycle and resource evidence; client task acceptance and complete costs are not inferred."
+}

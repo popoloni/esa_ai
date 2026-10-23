@@ -1,0 +1,15 @@
+{
+  "proposal": {
+    "development_memory": {},
+    "response_fields": [
+      "route"
+    ],
+    "routing_strategy": "cached_estimate",
+    "runtime_budget": {
+      "max_process_executions": 1000000
+    },
+    "schema": "treasury-harness/v1"
+  },
+  "reason": "Harness keys must be exactly the four allowed configuration fields",
+  "status": "REJECTED_BEFORE_EXECUTION"
+}

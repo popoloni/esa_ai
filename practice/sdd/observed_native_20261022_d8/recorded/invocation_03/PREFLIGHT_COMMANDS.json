@@ -1,0 +1,83 @@
+{
+  "at_utc": "2026-10-22T10:40:24.515362+00:00",
+  "calls": [
+    {
+      "name": "EFFECTIVE_CONFIG_03",
+      "argv": [
+        "/workspace/scratch/72d789d25fef/runtime_d7/opencode/node_modules/.bin/opencode",
+        "--pure",
+        "debug",
+        "config"
+      ],
+      "cwd": "/workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01",
+      "started_at_utc": "2026-10-22T10:40:15.115198+00:00",
+      "model_call": false,
+      "exit_code": 0,
+      "finished_at_utc": "2026-10-22T10:40:16.487046+00:00"
+    },
+    {
+      "name": "EFFECTIVE_AGENT_03",
+      "argv": [
+        "/workspace/scratch/72d789d25fef/runtime_d7/opencode/node_modules/.bin/opencode",
+        "--pure",
+        "debug",
+        "agent",
+        "esa-sdd"
+      ],
+      "cwd": "/workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01",
+      "started_at_utc": "2026-10-22T10:40:16.487080+00:00",
+      "model_call": false,
+      "exit_code": 0,
+      "finished_at_utc": "2026-10-22T10:40:17.806144+00:00"
+    },
+    {
+      "name": "PRIOR_EFFECTIVE_MODEL_02",
+      "argv": [
+        "/workspace/scratch/72d789d25fef/runtime_d7/opencode/node_modules/.bin/opencode",
+        "--pure",
+        "models",
+        "esa-local",
+        "--verbose"
+      ],
+      "cwd": "/workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01",
+      "started_at_utc": "2026-10-22T10:40:17.806182+00:00",
+      "model_call": false,
+      "exit_code": 0,
+      "finished_at_utc": "2026-10-22T10:40:19.678195+00:00"
+    },
+    {
+      "name": "NOREPLY_PREFLIGHT_03",
+      "argv": [
+        "python3",
+        "-B",
+        "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/invocation_03/verify_native_attachment_03.py",
+        "--preparation",
+        "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/invocation_03",
+        "--output",
+        "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/invocation_03/native_attachment_preflight_03"
+      ],
+      "cwd": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8",
+      "started_at_utc": "2026-10-22T10:40:19.678328+00:00",
+      "model_call": false,
+      "exit_code": 0,
+      "finished_at_utc": "2026-10-22T10:40:24.514057+00:00"
+    }
+  ],
+  "backend_token_and_activity_metrics_before": {
+    "llamacpp:requests_processing": "0",
+    "llamacpp:requests_deferred": "0",
+    "llamacpp:spec_decode_num_draft_tokens_total": "0",
+    "llamacpp:spec_decode_num_accepted_tokens_total": "0",
+    "llamacpp:prompt_tokens_total": "17670"
+  },
+  "backend_token_and_activity_metrics_after": {
+    "llamacpp:requests_processing": "0",
+    "llamacpp:requests_deferred": "0",
+    "llamacpp:spec_decode_num_draft_tokens_total": "0",
+    "llamacpp:spec_decode_num_accepted_tokens_total": "0",
+    "llamacpp:prompt_tokens_total": "17670"
+  },
+  "unchanged_backend_generation_token_and_activity_counters": true,
+  "model_call": false,
+  "scope": "Bounded configuration/model-list diagnostics and native noReply user attachment. No inference endpoint invoked."
+}

@@ -1,0 +1,41 @@
+{
+  "schema": "esa-native-client-preparation/v1",
+  "status": "PREPARED_NOT_RUN",
+  "prepared_at_utc": "2026-10-22T05:55:47.116016+00:00",
+  "required_client_version": "1.19.3",
+  "work": "/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01",
+  "runtime_root": "/workspace/scratch/72d789d25fef/runtime_d7",
+  "permission_worktree": "/",
+  "automatic_compaction": false,
+  "initial_report": "reader_side/evidence/CH01_NATIVE_INITIAL_01.json",
+  "scope_baseline": "reader_side/evidence/CP01_NATIVE_BASELINE_01.json",
+  "candidate_report": "reader_side/evidence/CH01_NATIVE_AGENT_01.json",
+  "input_sha256": {
+    "repo/src/treasury/routing.py": "39c5afc8888b748c8e96147f1bc143839dedfe73963bf5675f3e8ebf4978457a",
+    "reader_side/intent/INT-001.md": "209ee2f218448d83178bd02fd5947cf68b021657a72b38e682e4a895fa102947",
+    "reader_side/acceptance/test_routing.py": "6e5aa5706dd989bdbbeec9374a84d13c41cf6f36e23a5e5d2762a3b16e551c9b",
+    "repo/AGENTS.md": "9ff8ff050502e69432140c9162cf32567174943d54099e67fd5ef61eb96c5c6c",
+    "reader_side/evidence/CH01_NATIVE_INITIAL_01.json": "b477c19df39c6c19f9ffaf63f6d615858d733f4eda05adcb210783a7d12e868a",
+    "reader_side/evidence/CP01_NATIVE_BASELINE_01.json": "b988e2f7866f2f0d3502c631b22d9c76433927a3871324a10a150000ead1c8fc",
+    "reader_side/protected_sha256.json": "b43b2b6a88c3e681b4aac0b95a7284dd37dd2f9279678475bfdab9b692485c9f"
+  },
+  "files_sha256": {
+    "AGENT_TASK.json": "5e62c92f47c74a06f6ad1c1daf55f506fa4e1fcbc793eb6c84d76ce23341902a",
+    "CLIENT_TASK.json": "e10ad89556b1f55bca64419ddb5a44585070d017b281e8f9add40f92a9ddd52b",
+    "CONFIG_TASK.json": "00c3fc530737c652522bead6a0b47cc96dd21431f3d4487469db579c8a32e86e",
+    "ENVIRONMENT.json": "a9c38f363d07311782de2dc8e5c7ee24e4cf6981397b56197b302893e34b585c",
+    "OPENCODE_CONFIG.json": "153e3dbb94a7a598613c0081fad6b1176a843da0eedfa1e7f3f1ed18c201e7af",
+    "TASK_PROMPT.txt": "ad930602dd95b3ceb954b1f4770fe55014c7e557ddd4bf9249606efdd86acd22",
+    "VERSION_TASK.json": "11f646f889e88a1a1e4fc40e51fadbac70cd71470320945e5a0b8424ded17143",
+    "WORKTREE_PROBE.json": "cc7950332b81167a59ea5ca7da3abae69840e92815d2e54683eddfabd9c7a821"
+  },
+  "limits": [
+    "No inference or candidate change performed by this helper.",
+    "Configured model and required client identities are declarations pending actual diagnostics.",
+    "Application allowlists are not OS process containment.",
+    "The 600-second per-request and 1800-second outer deadlines are bounded CPU-study settings, not expected durations.",
+    "Automatic compaction is explicitly disabled after the retained continued session began compaction after its final-looking text; inspect actual process completion separately.",
+    "Disabling optional plugins did not prevent every background package attempt in the retained author run.",
+    "Worked solutions ship in the companion; the author had prior exposure, so this is not a blind benchmark."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "finding_id": "D7-SDD-PORTABLE",
+  "status": "IMPLEMENTED_PREPARATION_VERIFIED",
+  "source": "scripts/configure_d6_native_sdd.py",
+  "source_sha256": "cee906ea4347a61b90b73d7f6c1c0530eedaa33f4ebe1775adc0df52b6f05002",
+  "output": "companion/practice/native_client/configure_sdd.py",
+  "output_sha256": "339360a6fc1a4ba53ee70343eaae645fc3e5bb8aeb90fecd2c290efec73679aa",
+  "changes": [
+    "Make native Spec Kit setup available in standalone companion.",
+    "Disable automatic compaction for bounded task independent of base configuration.",
+    "Verify complete upstream native command body equality and literal arguments placeholder.",
+    "Remove implied new owner authorization requirement; record actual environment and study scope.",
+    "Optional transparent fixed-input bundle reduces separate native reads; retains all input bytes and authority without substituting framework commands."
+  ],
+  "historical_author_helper": "PRESERVED_UNCHANGED",
+  "generation_observation": "First native attempt failed before artifact generation; separately prepared 1200-second recovery currently running.",
+  "verification": "revision_d7/evidence/sdd_native_recovery_01/CONFIGURATION_NOTES.json",
+  "verification_scope": "Actual installed OpenCode reports18 passing preflight checks; all prepared framework/input files unchanged; no generation implied. New source adds config hash-stability recording for future preparations after that run, with separate observed config stability receipt.",
+  "implementation_history": [
+    {
+      "stage": "portable helper with individual-source reads",
+      "output_sha256": "273e6c711da6f1bee4baccf72aabe66bac1b852a95dce9430a58d1ddd8513c65",
+      "verification": "revision_d7/evidence/sdd_native_02/CONFIGURATION_NOTES.json"
+    },
+    {
+      "stage": "optional exact-input bundle",
+      "output_sha256": "353d509df8795c27a9af8a61b306b2cb877103a47bfc7c7b6cbba0e39071be12",
+      "verification": "revision_d7/evidence/sdd_native_02/compact_input_preparation/CONFIGURATION_NOTES.json",
+      "scope": "Nine fixed JSON sources plus original router; source hashes checked, full upstream command bodies unchanged."
+    },
+    {
+      "stage": "transparent complete compact context and explicit timeout/title/schema configuration",
+      "output_sha256": "339360a6fc1a4ba53ee70343eaae645fc3e5bb8aeb90fecd2c290efec73679aa",
+      "previous_output_sha256": "353d509df8795c27a9af8a61b306b2cb877103a47bfc7c7b6cbba0e39071be12",
+      "verification": "revision_d7/evidence/sdd_native_recovery_01/CONFIGURATION_NOTES.json",
+      "followup_configuration_stability": "revision_d7/evidence/sdd_native_recovery_01/CONFIGURATION_STABILITY.json",
+      "scope": "Complete source values preserved; model generation is separately observed."
+    }
+  ],
+  "updated_at_utc": "2026-10-22T07:05:22.084758+00:00"
+}

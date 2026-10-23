@@ -1,0 +1,6 @@
+{
+  "candidate_may_edit_budget": false,
+  "max_process_executions": 80,
+  "model_calls": 0,
+  "timeout_seconds_per_process": 5
+}

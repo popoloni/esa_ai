@@ -1,0 +1,228 @@
+{
+  "id": "openspec_status_scaffold",
+  "tool": "OpenSpec",
+  "version": "1.14.1",
+  "origin": "cli_scaffold",
+  "model": null,
+  "named_agent_execution": false,
+  "human_review": "pending",
+  "argv": [
+    "/workspace/scratch/efa0a59e0545/tmp/sdd_workflow_trial_20261020/node_env/node_modules/.bin/openspec",
+    "status",
+    "--change",
+    "explain-treasury",
+    "--json"
+  ],
+  "cwd": "/workspace/scratch/efa0a59e0545/tmp/sdd_workflow_trial_20261020/workspaces/openspec",
+  "started_utc": "2026-10-20T15:01:12.413830+00:00",
+  "finished_utc": "2026-10-20T15:01:12.706968+00:00",
+  "duration_seconds": 0.293138,
+  "exit_code": 0,
+  "logs": {
+    "stdout": {
+      "file": "openspec_status_scaffold.stdout.txt",
+      "sha256": "843a96cda9cdf33e228f7e39b0c34e8fa0fd460a715b5fa5961744d3d5096ae2",
+      "bytes": 3130
+    },
+    "stderr": {
+      "file": "openspec_status_scaffold.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  },
+  "input_inventory": {
+    ".agents/skills/.openspec-target": {
+      "sha256": "243b0dc9b847e66c440dca985e10fe0ce9e29c379b018ddd5747ba8948f84cc8",
+      "bytes": 6
+    },
+    ".agents/skills/openspec-apply-change/SKILL.md": {
+      "sha256": "491fbd2617e7cd3070066acf322d0b647b7b405c03219d0ff5c894f108a1ef44",
+      "bytes": 11579
+    },
+    ".agents/skills/openspec-archive-change/SKILL.md": {
+      "sha256": "0b0a3e43dd6d1d3b7c3b23527b8d50976b527ba294eef9649696600f584df032",
+      "bytes": 16645
+    },
+    ".agents/skills/openspec-explore/SKILL.md": {
+      "sha256": "31a4c7543ceb40a2c4b45a184de87f4cb2921a1f98a69688acc51de3ac3e177f",
+      "bytes": 23134
+    },
+    ".agents/skills/openspec-propose/SKILL.md": {
+      "sha256": "bd3d2fef6701ef39e5181e54a258f43a3b58a67369f4dfac8926b9b7e9229a26",
+      "bytes": 16312
+    },
+    ".agents/skills/openspec-sync-specs/SKILL.md": {
+      "sha256": "0631ef731343aaa75d6466fe36ce3f2deecd57cc07e135026159fcdec93f2eb8",
+      "bytes": 15826
+    },
+    ".agents/skills/openspec-update-change/SKILL.md": {
+      "sha256": "f764f832630d0d7672861f5d18c519ca96907ce12100b47544920136130461f8",
+      "bytes": 11597
+    },
+    "TASK.md": {
+      "sha256": "ea50cf0ca5059c32fa62c3a1a65dcf2984c50bb2f85d3b3b73e55335d4841b76",
+      "bytes": 692
+    },
+    "inputs/INPUT_MANIFEST.json": {
+      "sha256": "354fa9f799f466d5cab6078dec65dd455b7c3d1360cbbaf2a1c51788e894230d",
+      "bytes": 1915
+    },
+    "inputs/assessment.json": {
+      "sha256": "7f4f2dd4bc486e75e304eddf967f29587c8e49113afe5591aa207619a58b20ab",
+      "bytes": 2745
+    },
+    "inputs/case_oracle.json": {
+      "sha256": "11f86f4a19d1587f4eabf5ad00da22f03111ffad7a834729ae130b908f4686b2",
+      "bytes": 2358
+    },
+    "inputs/discovery_handoff.json": {
+      "sha256": "8b20a7f95c439f4157895edbc77bbf43fa3f1852106ff142579fc4b30a686656",
+      "bytes": 387
+    },
+    "inputs/sources/SRC-OPS-004.json": {
+      "sha256": "5a45af05025f00f2971c240e97a6e40c4f2df47406b48832494e11e95d8985c5",
+      "bytes": 448
+    },
+    "inputs/sources/SRC-POL-001.json": {
+      "sha256": "1de2d20f2fe72c4a2ae698093078deb2a05b5d7fd85eec819438cabb7928aacb",
+      "bytes": 543
+    },
+    "inputs/sources/SRC-RISK-002.json": {
+      "sha256": "9d21561fb3ae43782375451c42edab29e2104bd06b76c871eb7c8759d0300794",
+      "bytes": 458
+    },
+    "inputs/sources/SRC-TKT-017.json": {
+      "sha256": "108f533303f738227a4342bd61c61df203d0e1b59c505714e3e4f9fdc3af0007",
+      "bytes": 395
+    },
+    "inputs/sources/SRC-WIKI-OLD.json": {
+      "sha256": "85294ab0c9627da940dbce25820f5caed54ceacde4b49a6f4ad5ea5417cdfc93",
+      "bytes": 434
+    },
+    "inputs/specification.json": {
+      "sha256": "a1b6fee6ea70785a2fe18f3bcdd7c51c8cdc11e5ecd5b05ddfe1df204f859454",
+      "bytes": 7889
+    },
+    "openspec/changes/archive/.gitkeep": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "openspec/changes/explain-treasury/.openspec.yaml": {
+      "sha256": "ff4326f8b42dcf8851877f4f3989c7fecb8f97d8154686d7d74b7281b70e6b9b",
+      "bytes": 40
+    },
+    "openspec/config.yaml": {
+      "sha256": "f0082e9c22e8ce1d611c0f3b4d4915ce445e7ff2553cda6b713b6c25f390984c",
+      "bytes": 998
+    },
+    "openspec/specs/.gitkeep": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "source/treasury/routing.py": {
+      "sha256": "14d186a327a418dddb405144bfefb5810ed27e626b981424c9ad3b66742e8b32",
+      "bytes": 938
+    }
+  },
+  "output_inventory": {
+    ".agents/skills/.openspec-target": {
+      "sha256": "243b0dc9b847e66c440dca985e10fe0ce9e29c379b018ddd5747ba8948f84cc8",
+      "bytes": 6
+    },
+    ".agents/skills/openspec-apply-change/SKILL.md": {
+      "sha256": "491fbd2617e7cd3070066acf322d0b647b7b405c03219d0ff5c894f108a1ef44",
+      "bytes": 11579
+    },
+    ".agents/skills/openspec-archive-change/SKILL.md": {
+      "sha256": "0b0a3e43dd6d1d3b7c3b23527b8d50976b527ba294eef9649696600f584df032",
+      "bytes": 16645
+    },
+    ".agents/skills/openspec-explore/SKILL.md": {
+      "sha256": "31a4c7543ceb40a2c4b45a184de87f4cb2921a1f98a69688acc51de3ac3e177f",
+      "bytes": 23134
+    },
+    ".agents/skills/openspec-propose/SKILL.md": {
+      "sha256": "bd3d2fef6701ef39e5181e54a258f43a3b58a67369f4dfac8926b9b7e9229a26",
+      "bytes": 16312
+    },
+    ".agents/skills/openspec-sync-specs/SKILL.md": {
+      "sha256": "0631ef731343aaa75d6466fe36ce3f2deecd57cc07e135026159fcdec93f2eb8",
+      "bytes": 15826
+    },
+    ".agents/skills/openspec-update-change/SKILL.md": {
+      "sha256": "f764f832630d0d7672861f5d18c519ca96907ce12100b47544920136130461f8",
+      "bytes": 11597
+    },
+    "TASK.md": {
+      "sha256": "ea50cf0ca5059c32fa62c3a1a65dcf2984c50bb2f85d3b3b73e55335d4841b76",
+      "bytes": 692
+    },
+    "inputs/INPUT_MANIFEST.json": {
+      "sha256": "354fa9f799f466d5cab6078dec65dd455b7c3d1360cbbaf2a1c51788e894230d",
+      "bytes": 1915
+    },
+    "inputs/assessment.json": {
+      "sha256": "7f4f2dd4bc486e75e304eddf967f29587c8e49113afe5591aa207619a58b20ab",
+      "bytes": 2745
+    },
+    "inputs/case_oracle.json": {
+      "sha256": "11f86f4a19d1587f4eabf5ad00da22f03111ffad7a834729ae130b908f4686b2",
+      "bytes": 2358
+    },
+    "inputs/discovery_handoff.json": {
+      "sha256": "8b20a7f95c439f4157895edbc77bbf43fa3f1852106ff142579fc4b30a686656",
+      "bytes": 387
+    },
+    "inputs/sources/SRC-OPS-004.json": {
+      "sha256": "5a45af05025f00f2971c240e97a6e40c4f2df47406b48832494e11e95d8985c5",
+      "bytes": 448
+    },
+    "inputs/sources/SRC-POL-001.json": {
+      "sha256": "1de2d20f2fe72c4a2ae698093078deb2a05b5d7fd85eec819438cabb7928aacb",
+      "bytes": 543
+    },
+    "inputs/sources/SRC-RISK-002.json": {
+      "sha256": "9d21561fb3ae43782375451c42edab29e2104bd06b76c871eb7c8759d0300794",
+      "bytes": 458
+    },
+    "inputs/sources/SRC-TKT-017.json": {
+      "sha256": "108f533303f738227a4342bd61c61df203d0e1b59c505714e3e4f9fdc3af0007",
+      "bytes": 395
+    },
+    "inputs/sources/SRC-WIKI-OLD.json": {
+      "sha256": "85294ab0c9627da940dbce25820f5caed54ceacde4b49a6f4ad5ea5417cdfc93",
+      "bytes": 434
+    },
+    "inputs/specification.json": {
+      "sha256": "a1b6fee6ea70785a2fe18f3bcdd7c51c8cdc11e5ecd5b05ddfe1df204f859454",
+      "bytes": 7889
+    },
+    "openspec/changes/archive/.gitkeep": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "openspec/changes/explain-treasury/.openspec.yaml": {
+      "sha256": "ff4326f8b42dcf8851877f4f3989c7fecb8f97d8154686d7d74b7281b70e6b9b",
+      "bytes": 40
+    },
+    "openspec/config.yaml": {
+      "sha256": "f0082e9c22e8ce1d611c0f3b4d4915ce445e7ff2553cda6b713b6c25f390984c",
+      "bytes": 998
+    },
+    "openspec/specs/.gitkeep": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "source/treasury/routing.py": {
+      "sha256": "14d186a327a418dddb405144bfefb5810ed27e626b981424c9ad3b66742e8b32",
+      "bytes": 938
+    }
+  },
+  "environment_controls": {
+    "CI": "1",
+    "DO_NOT_TRACK": "1",
+    "OPENSPEC_TELEMETRY": "0",
+    "credentials": "not inherited",
+    "network": "normal sandbox network restriction; no credentials or external write commands"
+  }
+}

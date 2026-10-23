@@ -1,0 +1,22 @@
+Guided recovery of a failed bounded task. The preceding native attempt read routing.py, ran acceptance BEFORE editing, and failed (3 passes, 2 failures, 2 errors). Do not repeat that sequence. This is assisted execution, not a blind benchmark.
+
+Authoritative intent supplied verbatim from /workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/reader_side/intent/INT-001.md:
+# INT-001: reject non-positive and malformed routing amounts
+
+- **Business decision owner (synthetic):** Operations policy owner
+- **Recorded decision:** BR-001/v1 amendment for input validation only
+- **Intended behavior:** An amount must be a finite, parseable decimal strictly greater than zero to be routed. For zero, negative, nonnumeric or nonfinite values return `REJECTED / INVALID_AMOUNT`.
+- **Preserve:** Positive values strictly below EUR 5,000 use `STANDARD_QUEUE / BELOW_LIMIT`. Values at or above EUR 5,000 use `HUMAN_REVIEW / AT_OR_ABOVE_LIMIT`.
+- **Non-goals:** No change to the EUR 5,000 threshold; no payments, ledger, API, DB or historical replay in Chapter 1.
+- **Authority:** The agent may propose code; it cannot revise this decision.
+- **Acceptance:** External acceptance cases pass without changes to `acceptance/`. A human reviews the diff and records the verdict.
+- **Limitation:** This policy was invented for the educational case; it is not a real Treasury policy.
+
+
+Do exactly these operations in order:
+1. Read /workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/repo/src/treasury/routing.py once.
+2. Use the write tool to replace that file with the repaired version. Preserve imports, RoutingDecision dataclass, function signature, BR-001/v1, and EUR5000 boundary. Repair the assess body. API guidance: Decimal.is_finite() rejects NaN, sNaN, and infinities. Check finiteness BEFORE any ordering comparison. Reject invalid/nonpositive amounts with REJECTED/INVALID_AMOUNT. Below5000 uses STANDARD_QUEUE/BELOW_LIMIT; at/above5000 uses HUMAN_REVIEW/AT_OR_ABOVE_LIMIT. Every result retains POLICY_VERSION. Do not insert duplicate bodies.
+3. Only AFTER the write, run this exact command once:
+python3 -B reader_side/tools/run_acceptance.py --output reader_side/evidence/CH01_NATIVE_RECOVERY_02.json
+
+Edit no other source or protected file. Read no worked answer. Report only actual counts; if all seven pass say READY_FOR_HUMAN_REVIEW_NOT_ACCEPTED, otherwise FAILED_ACCEPTANCE. No human acceptance or payment is authorized. If a tool fails, stop. The working directory is /workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01.

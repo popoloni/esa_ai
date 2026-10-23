@@ -1,0 +1,24 @@
+{
+  "attempt": 1,
+  "authority": "Read supplied inputs; write only this attempt's outputs. No acceptance or release authority.",
+  "dependencies": {},
+  "input_root": "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Competitive_Revision_20261021/companion/practice/sdd/observed_external_agent_20261021/inputs",
+  "schema": "treasury-worker-request/v1",
+  "task": {
+    "depends_on": [],
+    "id": "generate",
+    "idempotent": false,
+    "kind": "worker",
+    "max_attempts": 1,
+    "parameters": {
+      "instruction_file": "TASK.md",
+      "required_artifacts": [
+        "artifacts/spec.md",
+        "artifacts/plan.md",
+        "artifacts/tasks.md"
+      ]
+    },
+    "response": "result.json",
+    "timeout_seconds": 480
+  }
+}

@@ -1,0 +1,2 @@
+{"server_pid": 6, "evidence": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_server_01/preparation/controlled_probe_evidence"}
+{"exit_code": -9, "finished_at_utc": "2026-10-22T10:13:38.809340+00:00"}

@@ -1,0 +1,16 @@
+{
+  "schema": "esa-native-journey-plan/v1",
+  "recorded_at_utc": "2026-10-22T06:00:03.014738+00:00",
+  "edition": "2026.10.22-d7",
+  "source": "CP07 full archive canonical companion, independently restored; CP11 reader-entry failed due stale protected README hashes",
+  "source_contract": "BR-001/v1, EUR 5000 threshold, INT-001, seven protected acceptance cases unchanged",
+  "fresh_runtime": true,
+  "historical_CP11_attempt06": "UNKNOWN; unfinished files were not in checkpoint",
+  "known_before_run": "Initial seven cases reproduce 3 PASS, 2 FAIL, 2 ERROR with no integrity findings. Author had prior solution exposure; current run owner read earlier API-level recovery guidance but not a worked solution.",
+  "execution_bounds": {
+    "max_attempts": 2,
+    "first_outer_timeout_seconds": 600,
+    "paid_model_requests": 0
+  },
+  "decision_boundary": "Agent-produced candidate can be checked and reviewed by an agent. No actual human acceptance, payment or deployment is implied."
+}

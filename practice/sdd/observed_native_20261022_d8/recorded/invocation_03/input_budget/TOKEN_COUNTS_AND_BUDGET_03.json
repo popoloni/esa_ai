@@ -1,0 +1,79 @@
+{
+  "status": "PASS_CONSERVATIVE_TOKEN_ARITHMETIC",
+  "at_utc": "2026-10-22T10:41:17.368737+00:00",
+  "counts": {
+    "FULL_NATIVE_COMMAND": {
+      "tokens": 4830,
+      "bytes": 22136,
+      "sha256": "35e40d9fff0739a8dbf0511156eaf0bcf841a0a1c771d70268911b2b9931f50d"
+    },
+    "COMPLETE_USER_CONTENT": {
+      "tokens": 13013,
+      "bytes": 49214,
+      "sha256": "1dad8c1dbdafc027fea9363d7ef00a7f1316bb14049d765652470866321beaaf"
+    },
+    "MINIMUM_FORMATTED_INPUT": {
+      "tokens": 13025,
+      "bytes": 49283,
+      "sha256": "c78f279ccef75c7f421a9f19bf3b9523429979af41bdfd55b5455bf715cee8d5"
+    }
+  },
+  "calls": [
+    {
+      "name": "FULL_NATIVE_COMMAND",
+      "endpoint": "/tokenize",
+      "started_at_utc": "2026-10-22T10:41:17.292657+00:00",
+      "finished_at_utc": "2026-10-22T10:41:17.312332+00:00",
+      "http_status": 200,
+      "request_sha256": "b975c550d6d5be4c644658afbf2ac0fd3352c4fdfb49ff300b8f9e0d05abef11",
+      "response_sha256": "269ba54c4da7a2a99f4a03a044838afc42d6858b824ce4db5e0dec12ae2bee37",
+      "no_inference": true
+    },
+    {
+      "name": "COMPLETE_USER_CONTENT",
+      "endpoint": "/tokenize",
+      "started_at_utc": "2026-10-22T10:41:17.313120+00:00",
+      "finished_at_utc": "2026-10-22T10:41:17.340999+00:00",
+      "http_status": 200,
+      "request_sha256": "7009dcee848baf410f95a3b7b1e97e4903231dd1ef889018cea10f7d287f30e2",
+      "response_sha256": "1c596c60b58fe35c2458631594509078c5bc527460689e1dcaaed29011e461ea",
+      "no_inference": true
+    },
+    {
+      "name": "MINIMUM_USER_CHAT_TEMPLATE",
+      "endpoint": "/apply-template",
+      "started_at_utc": "2026-10-22T10:41:17.342349+00:00",
+      "finished_at_utc": "2026-10-22T10:41:17.344793+00:00",
+      "http_status": 200,
+      "request_sha256": "d4974c936da908885fb9cafae600671404ccf7377eeec8910f9c9e98a254e63e",
+      "response_sha256": "d5f3c8d370b702f14df11d9da26e24754c0bf719cc316ec2a56a07f91b60e928",
+      "no_inference": true
+    },
+    {
+      "name": "MINIMUM_FORMATTED_INPUT",
+      "endpoint": "/tokenize",
+      "started_at_utc": "2026-10-22T10:41:17.345407+00:00",
+      "finished_at_utc": "2026-10-22T10:41:17.367781+00:00",
+      "http_status": 200,
+      "request_sha256": "53bbe85f51e26bf2a7fc33c68cc32b47fd11e5be2075cea0c206665562f67fcf",
+      "response_sha256": "b300e73c1a0b42b3fbd802a944d945943c536b1bdb63b55c8e818ec971231204",
+      "no_inference": true
+    }
+  ],
+  "base_tokens": 13025,
+  "reserves": {
+    "native_system_tools_message_overhead": 3072,
+    "cumulative_prior_output_tool_history": 4096,
+    "maximum_current_response_output": 3072
+  },
+  "total_with_reserves": 23265,
+  "context_tokens": 24576,
+  "remaining_tokens": 1311,
+  "complete_native_attachment_identical_to_preflight01": true,
+  "full_framework_command_preserved": true,
+  "prior_observed_actual_first_prompt": 15622,
+  "prior_observed_envelope_overhead": 2785,
+  "source_read_guard": "Source/bundle/template reads denied; only generated outputs allowed; no bash cat allowance. Genuine model-selected guard refusal remains unobserved.",
+  "limits": "This tokenization covers complete command and actual native preload with explicit reserves, not the exact system/tool provider envelope. The larger agent guard is included within the3072 envelope reserve. Output rereads or repeated writes can still exceed the4096 history reserve and must be preserved as actual failures; no silent source shortening.",
+  "model_inference": false
+}

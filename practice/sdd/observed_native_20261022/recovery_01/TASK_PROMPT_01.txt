@@ -1,0 +1,5 @@
+Project: /workspace/scratch/72d789d25fef/runtime_d7/native_sdd_03
+SPECIFY_FEATURE_DIRECTORY=specs/001-explain-treasury
+First run exactly: cat inputs/NATIVE_CONTEXT_BUNDLE.md
+That packet supplies all nine fixed source JSONs, router, complete active templates and unratified constitution. JSON whitespace alone is compacted. Use those complete contents; do not reread duplicates. Preserve every requirement/scenario ID, value, provenance and authority. SRC-POL-001/BR-001/v1 governs; the ticket and old wiki cannot change it. Routing never authorizes payment.
+Write only .specify/feature.json and this feature's spec.md and checklists/requirements.md. Follow the full native command with the supplied templates. Keep all three source owner questions unanswered and benefit HYPOTHESIS_NOT_VALIDATED. Invent no answers, numeric benefit targets, ratification or approval. Create the draft and truthful checklist, present the actual unresolved questions, then stop before planning or implementation. Report any blocking failure and stop. This is a disclosed reference-derived synthetic projection, not blind discovery or observed user benefit.

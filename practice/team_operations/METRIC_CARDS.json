@@ -1,0 +1,87 @@
+{
+  "schema": "team-metric-definitions/v1",
+  "status": "DEFINITIONS_ONLY_NO_FIELD_OBSERVATIONS",
+  "metrics": [
+    {
+      "id": "M01",
+      "name": "Age of work waiting for review",
+      "unit": "elapsed hours per open item",
+      "numerator": "cutoff_utc minus ready_for_review_utc for each still-open review item",
+      "denominator": "number of eligible open review items; show item ages and count rather than dividing elapsed times by all started work",
+      "window": "Snapshot at the declared cutoff; include blocked review items with reason",
+      "source": "Versioned work board or review-request event history",
+      "owner": "Review coordinator",
+      "missingness": "Missing ready time is UNKNOWN; report known-time coverage and excluded IDs. With no open items, count is zero and age is NOT_APPLICABLE.",
+      "decision": "Pause new implementation starts, help the oldest item, or change staffing/priority under its owner.",
+      "limit": "Clock age is not active reviewer effort and does not establish the cause of delay."
+    },
+    {
+      "id": "M02",
+      "name": "Pull-request cycle time",
+      "unit": "elapsed hours per merged pull request",
+      "numerator": "merged_at minus opened_at for each PR merged in the interval",
+      "denominator": "eligible merged PR count; show individual observations or declared distribution summary",
+      "window": "Merge-event cohort within the declared interval, with open-age and closed-unmerged counts alongside",
+      "source": "Repository PR event history and source revision",
+      "owner": "Delivery lead",
+      "missingness": "Missing events are UNKNOWN; report event coverage. No merged PRs means an undefined distribution, not zero-duration delivery.",
+      "decision": "Investigate a review or integration delay while examining defect and effort signals together.",
+      "limit": "Different task mixes, open work and excluded abandoned PRs can bias a comparison; this is not DORA commit-to-production lead time."
+    },
+    {
+      "id": "M03",
+      "name": "Human review effort per accepted work item",
+      "unit": "person-hours per distinct accepted item",
+      "numerator": "Recorded review effort for all attempts in the declared work cohort, including rejected/stale/abandoned work",
+      "denominator": "distinct logical items with an applicable accepted owner record at cutoff",
+      "window": "A fixed admitted-work cohort and cutoff; report pending/rejected items beside accepted count",
+      "source": "Pseudonymous effort intervals plus versioned owner dispositions and artifact links",
+      "owner": "Outcome/effort owner",
+      "missingness": "Any missing required effort or acceptance evidence makes the complete-cohort ratio UNKNOWN; show known subtotal and coverage. Known zero accepted items gives UNDEFINED.",
+      "decision": "Improve the review preparation or verification path before adding generation capacity.",
+      "limit": "Self-reported effort remains self-report; elapsed process time cannot fill the field, and one person interval is counted once."
+    },
+    {
+      "id": "M04",
+      "name": "Confirmed escaped defects per 100 eligible deployed changes",
+      "unit": "confirmed defects per 100 changes",
+      "numerator": "Confirmed post-release defects discovered within each eligible change's predeclared follow-up window and attributed to that change cohort under the stated review rule; declare how multi-change defects are counted.",
+      "denominator": "deployed changes with completed, equally defined follow-up windows",
+      "window": "Declare follow-up duration before collection; retain immature changes and unlinked incidents separately",
+      "source": "Incident/defect records joined to deployment and review records",
+      "owner": "Service quality owner",
+      "missingness": "Missing attribution or follow-up is UNKNOWN, not no defects; show investigated and pending cases. No deployments in the local lab means NOT_APPLICABLE.",
+      "decision": "Narrow rollout or improve a missed control when corroborated by the incident evidence.",
+      "limit": "A ratio can exceed one defect per change; correlation does not identify an AI cause and zero observed defects is not zero residual risk.",
+      "calculation": "100 * confirmed in-window attributed defects / eligible changes with completed follow-up; undefined for a known zero denominator."
+    },
+    {
+      "id": "M05",
+      "name": "Incorrect-review-finding share",
+      "unit": "percent of adjudicated findings",
+      "numerator": "findings that the nominated technical reviewer judged incorrect under the declared criteria",
+      "denominator": "all findings adjudicated in the chosen cohort; report untriaged count separately",
+      "window": "Fixed reviewer/tool/version and task cohort at cutoff",
+      "source": "Finding, disposition, rationale, reviewer and exact candidate references",
+      "owner": "Review-tool maintainer",
+      "missingness": "No adjudicated findings means UNDEFINED; untriaged or unresolved cases are not correct findings. Report adjudication coverage.",
+      "decision": "Tune, narrow, suspend or retire a noisy reviewer while retaining useful findings.",
+      "limit": "Adjudication can itself be wrong; a high precision on a selected triaged subset does not establish recall or independence.",
+      "calculation": "100 * adjudicated incorrect findings / all adjudicated findings; undefined for a known zero denominator."
+    },
+    {
+      "id": "M06",
+      "name": "Complete cost per accepted outcome",
+      "unit": "declared currency per distinct accepted item",
+      "numerator": "All in-scope effort valuation, service charges, allocated setup/infrastructure and unsuccessful attempts without overlap",
+      "denominator": "same accepted-item rule and cutoff as M03",
+      "window": "Same fixed cohort and reporting cutoff; declare allocation and currency rules",
+      "source": "Effort ledger, rate assumptions, attributable invoices/usage evidence, allocation record and owner decisions",
+      "owner": "Cost and outcome owner",
+      "missingness": "Unknown required costs or acceptance make the complete ratio UNKNOWN; zero known accepted denominator is UNDEFINED. Preserve partial subtotal and coverage.",
+      "decision": "Continue a bounded pilot, change the workflow or stop under the previously declared rule.",
+      "limit": "A cost using assumed rates or vendor telemetry estimates is modeled/estimated at those inputs; it is not silently relabeled paid expenditure or causal savings."
+    }
+  ],
+  "source_note": "Original operational definitions for this book. Chapter 14 distinguishes these from DORA delivery metrics; no empirical benefit is established by collecting them."
+}

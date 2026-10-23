@@ -1,0 +1,43 @@
+{
+  "schema": "esa-native-csv-protocol/v1",
+  "prepared_at_utc": "2026-10-22T17:18:53.850133+00:00",
+  "budget": {
+    "total_inference_wall_seconds": 2700,
+    "maximum_native_invocations": 4,
+    "per_invocation_seconds": 900,
+    "policy": "Stop on budget; preserve incomplete outcomes as open."
+  },
+  "route": "Compact authored specification-first CSV route using OpenCode; not a new Spec Kit invocation.",
+  "client": "OpenCode 1.19.3",
+  "model": "Qwen3-4B Q4_K_M local llama.cpp b11799",
+  "source_contract": {
+    "path": "/workspace/scratch/72d789d25fef/runtime_d9/native_csv_01/CURRENT_CONTRACT.md",
+    "sha256": "2cd3b8d8924d57bc37cf3b36fc30bc8f31924de99136f6379342d117fb8238ba"
+  },
+  "exposure": {
+    "native_inputs": [
+      "CURRENT_CONTRACT.md",
+      "api.py",
+      "selection.py",
+      "demo.py"
+    ],
+    "native_solution_exposed": false,
+    "native_checker_source_exposed": false,
+    "author_exposure": "Authoring assistant has seen the supplied checker and prior case description; no reference implementation is supplied to the native client.",
+    "disclosed_guidance": "The prompt enumerates existing contract properties and suggests the Python standard library. It supplies no solution patch."
+  },
+  "authority": "CSV-CONSUMER-01 is the existing authored fictional teaching decision. No real business approval or observed user benefit.",
+  "permissions": "Application tool rules, not an OS sandbox; localhost model routing does not prove the application makes no other connections.",
+  "scope_extension": "Spec.md and plan.md are new teaching records in this separate native project. Existing CSV implementation scope remains api.py plus optional presenter.py.",
+  "checker": {
+    "path": "/workspace/scratch/72d789d25fef/revision_20261022_d9/Engineering_Software_with_Agentic_AI_20261022_d9/companion/practice/csv_export/checks/check.py",
+    "sha256": "7781e80dddf13e6727959252b198e913f35d8a22e10476af1f983b2c188c9336",
+    "argv": [
+      "python3",
+      "-B",
+      "/workspace/scratch/72d789d25fef/revision_20261022_d9/Engineering_Software_with_Agentic_AI_20261022_d9/companion/practice/csv_export/checks/check.py",
+      "--candidate",
+      "/workspace/scratch/72d789d25fef/runtime_d9/native_csv_01"
+    ]
+  }
+}

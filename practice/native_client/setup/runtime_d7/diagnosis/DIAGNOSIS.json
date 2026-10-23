@@ -1,0 +1,58 @@
+{
+  "schema": "esa-pinned-client-behavior-diagnosis/v1",
+  "recorded_at_utc": "2026-10-22T06:36:03.873376+00:00",
+  "client_version": "OpenCode1.19.3",
+  "active_config_or_process_modified": false,
+  "sources": {
+    "cli_run.ts": "e040e90d4c81cdd59b9568ee90a53c0209cd9ddf1b8b207d1a8685b2e26d57d0",
+    "provider.ts": "8d31296a58bc7955a1adb8b6d60da53a34ab7540d85644bab212a8ee27b8b69d",
+    "config.ts": "87a9071af1ddb04d65947dba49be3fb4c94ecf63e120f17ce46ee81ff25dd45a",
+    "session_prompt.ts": "f0c5bc64c0f0e966693d4a57f7ede1e9d6e188b396152f04b55303dc75b9b768"
+  },
+  "observed_log_source": "revision_d7/evidence/sdd_native_02/compact_input_preparation/attempt_01/stderr.txt",
+  "log_extract": [
+    {
+      "line": 27,
+      "text": "timestamp=2026-10-22T06:20:48.385Z level=INFO run=661b6426 message=stream providerID=esa-local modelID=esa-qwen3-4b session.id=ses_e9dbb1007ffeHRexxQi4HCqple small=true agent=title mode=primary"
+    },
+    {
+      "line": 34,
+      "text": "timestamp=2026-10-22T06:20:49.774Z level=INFO run=661b6426 message=stream providerID=esa-local modelID=esa-qwen3-4b session.id=ses_e9dbb1007ffeHRexxQi4HCqple small=false agent=esa-sdd mode=primary"
+    },
+    {
+      "line": 39,
+      "text": "timestamp=2026-10-22T06:25:49.861Z level=ERROR run=661b6426 message=\"stream error\" providerID=esa-local modelID=esa-qwen3-4b session.id=ses_e9dbb1007ffeHRexxQi4HCqple small=false agent=esa-sdd mode=primary error.error=\"ProviderHeaderTimeoutError: Provider response headers timed out after 300000ms\""
+    },
+    {
+      "line": 40,
+      "text": "timestamp=2026-10-22T06:25:52.150Z level=INFO run=661b6426 message=stream providerID=esa-local modelID=esa-qwen3-4b session.id=ses_e9dbb1007ffeHRexxQi4HCqple small=false agent=esa-sdd mode=primary"
+    }
+  ],
+  "findings": [
+    {
+      "id": "HEADER_TIMEOUT_SEPARATE_FROM_OVERALL_TIMEOUT",
+      "observed": "Native main-agent stream raised ProviderHeaderTimeoutError after300000ms despite options.timeout600000.",
+      "source": "provider.ts lines85-125 and1852-1854",
+      "mechanism": "headerTimeout defaults300000ms independently of timeout; a separate header AbortSignal is combined with the overall timeout and cleared when fetch resolves. chunkTimeout has its own300000ms default.",
+      "future_configuration_fix": "Set bounded provider.options.headerTimeout explicitly alongside timeout; preserve every observed configuration unchanged."
+    },
+    {
+      "id": "AUTOMATIC_TITLE_MODEL_REQUEST",
+      "observed": "Native log starts small=true agent=title at06:20:48.385Z and small=false agent=esa-sdd at06:20:49.774Z.",
+      "source": "session_prompt.ts lines193-253 and1133-1139; cli_run.ts lines451-454 and519-522",
+      "mechanism": "A default-title, first-real-user-message session forks title generation using the title agent and small model, initial message context, no tools and its own retries. Explicit nondefault title returns before that request.",
+      "future_configuration_fix": "Give bounded SDD run an explicit human-authored --title. Do not modify the full upstream command or already observed input.",
+      "attribution_limit": "The title request is observed directly in client logs. Exact mapping of server task1009 to that request was not captured at the HTTP-request level; do not treat timing inference as a direct wire mapping."
+    },
+    {
+      "id": "AUTOMATIC_SCHEMA_METADATA_ADDITION",
+      "observed": "R06 current config differs from its preparation hash only by added $schema; prior bytes reconstruct to the exact recorded SHA256.",
+      "source": "config.ts lines242-249",
+      "mechanism": "Loading a file with a path and no $schema inserts https://opencode.ai/config.json and writes the amended text back to that path.",
+      "future_configuration_fix": "Declare the same schema metadata in newly generated configs. Preserve historical manifest/current config reconciliation and prior-byte reconstruction."
+    }
+  ],
+  "retry_cache_benefit": "NOT_ESTABLISHED. Later server task1015 reports a larger prompt; no controlled same-prompt timing or completed matching usage receipt establishes benefit.",
+  "unobserved_cost": "Title generation may be absent from ordinary task-step usage totals; source/log diagnosis is not a complete monetary or token ledger.",
+  "delegation": "Sibling mcp_sdd owns future helper header/schema/title edits; root owns new action integration."
+}

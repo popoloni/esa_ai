@@ -1,0 +1,76 @@
+{
+  "schema": "esa-d8-native-attempt-independent-review/v1",
+  "recorded_at_utc": "2026-10-22T10:41:52.563545+00:00",
+  "reviewer": {
+    "kind": "AGENT",
+    "name": "acceptance_audit",
+    "independent_of_native_generation": true
+  },
+  "status": "PASS_EVIDENCE_CONSISTENCY_R08_REMAINS_PARTIAL",
+  "scope": "Read-only examination of the retained first attempt, its exact native export and captured server log; no model call or test execution.",
+  "evidence_sha256": {
+    "revision_d8/evidence/native_sdd_01/ATTEMPT_01_DISPOSITION.json": "e30eb8a724ca4797969c2f1b2187a1a4ab9a67f99af4581d20a749a59ccbb184",
+    "revision_d8/evidence/native_sdd_01/terminal_collection_01/COLLECTION_RECEIPT.json": "48c088c50cac3495bffc6df2eeecee5fa6326bc4a1e4bf3f8b4b9db8b477eac8",
+    "revision_d8/evidence/native_sdd_01/terminal_collection_01/native-session.json": "9b41d52544c78fbe6a9d295b30a11ebd27c57b82eff225802eed47fad61f0e5d",
+    "revision_d8/evidence/native_sdd_01/attempt_01/RECEIPT.json": "ec150345e35bd56167694b9e0e275d8e6927d505e927f6f490830a12a1fdbdc1",
+    "revision_d8/evidence/native_sdd_01/INTERVENTION_01.json": "5605508dbf3be777d8285fe863ddd61c2194c0c3bf6dae27fbf2c11c4aec0d97",
+    "revision_d8/evidence/native_server_01/inference_observation/OBSERVATION_SUMMARY.json": "93e338aefa35b3e5ce80b094689ff3a3ce1eeb7dcb8f227cf3bc7b7ecfdd8285",
+    "revision_d8/evidence/native_server_01/inference_observation/snapshot_006/server_log_observed.txt": "161df1463b1b8a9ef51cc3bd622a211c8b7977179ded9e31edcc26db99c98205"
+  },
+  "observed": {
+    "session_id": "ses_e9cdbe2b5ffe5Bsfi3cviA8Zsb",
+    "command_exit_code": -2,
+    "command_duration_seconds": 614.5414498190003,
+    "terminal_cause": "Root SIGINT after observed second-request context reserve exhaustion. This is an intervention, not a reached clarification or policy stop.",
+    "completed_model_tool_actions": 1,
+    "action": "read inputs/NATIVE_CONTEXT_BUNDLE.md, offset1/limit2000; completed and untruncated",
+    "input_read_already_attached": true,
+    "full_input_lines": 342,
+    "native_write_or_edit_actions": 0,
+    "assistant_text_parts": 0,
+    "generated_artifacts": 0,
+    "changed_files": [],
+    "retained_project_files": 49,
+    "starting_and_final_file_bytes_identical": true,
+    "first_completed_response_tokens": {
+      "input": 15622,
+      "output": 63
+    },
+    "second_response": "Incomplete assistant message, no completion, no parts and no completed usage. Placeholder zero fields are not observed zero consumption.",
+    "observed_second_prompt_tokens": 23836,
+    "server_context": 24576,
+    "remaining_context": 740,
+    "declared_output_reserve": 3072,
+    "observed_temperature": 0.8,
+    "configured_agent_intent": 0.2,
+    "human_review": "ABSENT",
+    "financial_cost": "UNKNOWN",
+    "human_effort": "UNKNOWN"
+  },
+  "consistency_review": {
+    "all_60_collection_entries_match_retained_hashes_and_sizes": true,
+    "all_disposition_evidence_bindings_match": true,
+    "actual_command_task_and_stream_hashes_match": true,
+    "session_linkage_and_redundant_full_read_independently_confirmed": true,
+    "unchanged_49_file_membership_and_bytes_independently_confirmed": true,
+    "raw_server_timing_context_sampler_and_cancellation_support_disposition": true,
+    "false_generation_or_clarification_claim_found": false,
+    "historical_raw_labels": "The unchanged receipt origin ends not_yet_executed and human_review is PENDING. These are retained preparation labels; actual timestamps/events establish execution, and no human review is supplied."
+  },
+  "original_criteria": [
+    {
+      "verbatim": "Artifacts are linked to actual prompts/commands and retained first output.",
+      "assessment": "Not closed: prompts/commands and first model action are retained, but there is no generated specification/checklist artifact to assess."
+    },
+    {
+      "verbatim": "Generation is distinguished from scaffold creation and intentionally seeded faults.",
+      "assessment": "The distinction is correctly maintained: all 49 files are pre-existing scaffold/input content and no native generation is claimed. This truthful distinction does not complete the requested journey."
+    },
+    {
+      "verbatim": "One observed route is sufficient for the tutorial; a second observed route is required before a measured paired comparison is claimed.",
+      "assessment": "No measured paired comparison is claimed. One successfully observed primary journey remains sufficient; no second framework or implementation phase is added as a condition."
+    }
+  ],
+  "recommendation": "Retain the first attempt and disposition unchanged. R08 remains PARTIAL pending useful native-generated first outputs, actual reached clarification disposition/progression and independently attributed semantic review. A corrected candidate must remain a separately declared intervention/session.",
+  "limits": "Evidence-consistency review only; no semantic acceptance is possible without a generated artifact. No inference is made about eventual native capability, human approval, validated benefit or comparative performance. This review changes no register or original criterion."
+}

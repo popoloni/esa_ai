@@ -1,0 +1,10 @@
+{
+  "recorded_at_utc": "2026-10-22T12:15:13.687793+00:00",
+  "execution_context": "APPROVED_HOST_CONTEXT",
+  "owned_launcher_pid": 56439,
+  "owned_server_pid": 56440,
+  "launcher_proc_exists": false,
+  "server_proc_exists": false,
+  "finish_receipt_sha256": "e90c888a7d1903f05b27b1359e8119ab4b23c05f05e06bb1acc0f059fe1a3775",
+  "exec_session_poll": "Session 24171 no longer known to tool; terminal state is established by actual lifecycle finish receipt and this host process check, not by that tool error."
+}

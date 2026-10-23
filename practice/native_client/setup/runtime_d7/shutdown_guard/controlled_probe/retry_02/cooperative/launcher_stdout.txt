@@ -1,0 +1,2 @@
+{"server_pid": 23090, "evidence": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/native_shutdown_fix/controlled_probe/retry_02/cooperative/lifecycle"}
+{"exit_code": 0, "finished_at_utc": "2026-10-22T08:05:13.280330+00:00"}

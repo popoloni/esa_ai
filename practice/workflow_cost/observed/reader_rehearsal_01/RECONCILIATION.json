@@ -1,0 +1,11 @@
+{
+  "recorded_at_utc": "2026-10-21T18:25:27.490478+00:00",
+  "boundary": "Preparation of a fresh AI-only route rehearsal through root review and bounded documented corrections. Later final book build and full release verification are outside this account.",
+  "activity": "Preparation, AI attempt, root review, rework, focused correction verification and recording have retained intervals. Intervals cover orchestration, waiting and concurrent unrelated work; no active agent or human effort is inferred.",
+  "first_failure_retention": "Worker journal retains two operator cwd errors, expected initial routing/CSV/planning failures and one contract lookup error. Original outputs remain unchanged.",
+  "human_review": "No human participant or reviewer took part. Intended-reader validation remains outstanding under R17.",
+  "acceptance": "One AGENT decision about the exact correction snapshot, by root who also implemented it. This is editorial self-acceptance only, not independent review or a human learning outcome. Worker code checks are retained evidence, not extra accepted reader-route items.",
+  "money": "Provider model usage and charges, attributable infrastructure charges, historical/shared preparation and human review costs are not available. No assumptions or zero replacements entered.",
+  "closure": "This closes the bounded observation, not R17 or R21. No total cost, cost per human-accepted item, learning gain or ROI can be derived.",
+  "timing_correction": "Stop invocations occurred after worker results became available; intervals include notification/integration delay. One invalid stop enum was rejected before mutation and is retained in ROOT_FINDINGS_REVIEW.json."
+}

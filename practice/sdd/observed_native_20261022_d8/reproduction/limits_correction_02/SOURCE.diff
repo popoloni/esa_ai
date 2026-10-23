@@ -1,0 +1,11 @@
+--- configure_sdd_d8.before.py
++++ configure_sdd_d8.py
+@@ -335,7 +335,7 @@
+ The only files you may create or edit are these three exact absolute paths:
+ """ + "\n".join(str(project / name) for name in WRITE_PATHS) + """
+ Use ordinary file read/edit/write tools and only these exact bash commands when needed, from the actual project working directory (do not combine them with shell separators or add commands):
+-""" + "\n".join(BASH_COMMANDS) + """
++""" + "\n".join(BASH_COMMANDS) + f"""
+ The two preset-resolve commands return human-readable template locations, not JSON. The paths-only prerequisite command resolves paths; it does not prove a generated spec exists. Do not call any plan, tasks, implementation, workflow-run, commit, deployment, network or additional agent command. Do not read prior reference outputs or change inputs, source, scripts, templates or framework commands.
+ 
+ Keep all three owner questions explicitly unresolved in the generated spec and checklist:

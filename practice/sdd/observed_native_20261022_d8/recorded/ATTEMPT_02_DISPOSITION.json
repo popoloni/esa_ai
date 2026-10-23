@@ -1,0 +1,34 @@
+{
+  "schema": "esa-native-attempt-disposition/v1",
+  "recorded_at_utc": "2026-10-22T11:11:53.235594+00:00",
+  "attempt": "02",
+  "session": "ses_e9cc44d15ffewxo9hTP3f5v23l",
+  "status": "TERMINAL_SCAFFOLD_ONLY_NO_GENERATION_OR_CLARIFICATION",
+  "process_exit": 0,
+  "duration_seconds": 990.2142903620006,
+  "native_calls": 11,
+  "completed_tool_calls": 6,
+  "refused_tool_calls": 5,
+  "native_write_or_edit_calls": 0,
+  "assistant_text_parts": 0,
+  "final_native_reason": "stop",
+  "final_reported_output_tokens": 1,
+  "original_project_files_unchanged": 49,
+  "additional_file": {
+    "path": "specs/001-explain-treasury/spec.md",
+    "bytes": 4556,
+    "sha256": "3945437fc35cd30a5b2bf7beea680337c3516826d3efa5a6b92c4a7eca1ba28e",
+    "attribution": "Unchanged upstream template copied by the recorded native bash tool; not generated feature content."
+  },
+  "clarification_disposition": "NOT_REACHED",
+  "R08_resolution_status": "PARTIAL",
+  "source_bindings": {
+    "revision_d8/evidence/native_sdd_01/attempt_02/RECEIPT.json": "c5ca377daab7610918ddf2163cd12bd9e3a8dcac6c5ba79412f2d91690cf02b9",
+    "revision_d8/evidence/native_sdd_01/terminal_collection_02/COLLECTION_RECEIPT.json": "47c289aec7c2b064ecb806d4f68a7365f5863085a428e764eeb84660dcb88853",
+    "revision_d8/evidence/native_sdd_01/terminal_collection_02/native-session.json": "f261470cb68a23ca69b5b91acf8a62d4856ffe9eb9350057a764f37b17aabe8e",
+    "revision_d8/notes/R08_ATTEMPT_02_INDEPENDENT_REVIEW.json": "5b21844780ceceadb53b2fcfe9a718a3253b98ff667a0b445d935f0e08907b5d",
+    "revision_d8/evidence/native_server_01/inference_observation_02/OBSERVATION_SUMMARY.json": "5651da30494028f695c58cc1b6b30ea53ddcec9fbd11fba346ce2126158d987b"
+  },
+  "next_step": "Prepare a separately bounded same-session continuation with short native file-tool guidance. Reuse the complete retained source context without reattachment. Preserve this terminal attempt and its empty stop. No draft content or owner answers will be supplied.",
+  "authorization": "The user requested finalization of R08 and improvements to the package; this continuation stays within that authorized native specification and clarification route."
+}

@@ -1,0 +1,9 @@
+{
+  "captured_at_utc": "2026-10-22T05:56:20.168616+00:00",
+  "expected_pins": 41,
+  "actual_pins": 41,
+  "mismatches": {},
+  "extra_pins": {},
+  "status": "PASS_EXACT_LOCK",
+  "python_executable": "/workspace/scratch/72d789d25fef/runtime_d7/sdd_venv/bin/python"
+}

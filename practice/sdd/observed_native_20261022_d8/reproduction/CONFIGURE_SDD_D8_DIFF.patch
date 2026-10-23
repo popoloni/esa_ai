@@ -1,0 +1,72 @@
+--- revision_d8/evidence/native_sdd_01/preparation/configure_sdd_d8.py
++++ companion/practice/native_client/configure_sdd_d8.py
+@@ -55,6 +55,9 @@
+ )
+ 
+ 
++PRELOADED_INPUT_GUARD = 'The complete source packet is already attached before inference. Model read access is limited to the three generated output paths; source, template and bundle rereads are denied. Use the supplied complete content directly. Read generated outputs only for a concrete necessary check, using a bounded line range; avoid duplicate full-file reads.'
++
++
+ def now():
+     return dt.datetime.now(dt.timezone.utc).isoformat()
+ 
+@@ -126,7 +129,7 @@
+     parser.add_argument("--bundle-inputs", action="store_true",
+                         help="package unchanged fixed inputs into one hash-attributed read")
+     parser.add_argument("--compact-context", action="store_true",
+-                        help="compact JSON whitespace, include complete framework inputs, and allow one exact cat read")
++                        help="package complete inputs with line-safe JSON whitespace for native @absolute-file attachment")
+     parser.add_argument("--provider-timeout-ms", type=int, required=True)
+     parser.add_argument("--outer-timeout-seconds", type=int, required=True)
+     parser.add_argument("--output-tokens", type=int, required=True)
+@@ -282,23 +285,24 @@
+     config["provider"]["esa-local"]["models"]["esa-qwen3-4b"]["limit"] = {
+         "context": args.context_tokens, "output": args.output_tokens,
+     }
++    config["provider"]["esa-local"]["models"]["esa-qwen3-4b"]["temperature"] = True
+     config["default_agent"] = "esa-sdd"
+     config["agent"] = {"esa-sdd": {
+         "description": "Bounded native Spec Kit specification and clarification agent",
+         "mode": "primary", "model": "esa-local/esa-qwen3-4b", "steps": 12, "temperature": 0.2,
+         "prompt": "Follow the actual selected Spec Kit command and its supplied task arguments. Use only explicitly permitted local inputs and output files. Preserve fixed requirements, cases and source authority. Never invent owner answers, empirical results, ratification or approval. Report actual tool outcomes. Stop at the task's unanswered owner decision or the exact blocking failure; do not proceed to planning or implementation.",
+     }}
++    config["agent"]["esa-sdd"]["prompt"] += " " + PRELOADED_INPUT_GUARD
+     config["permission"] = {
+-        "*": "deny", "read": {"*": "deny", **{prefix + p: "allow" for p in READ_PATHS}},
++        "*": "deny", "read": {"*": "deny", **{prefix + p: "allow" for p in WRITE_PATHS}},
+         "edit": {"*": "deny", **{prefix + p: "allow" for p in WRITE_PATHS}},
+         "external_directory": "deny", "glob": "deny", "grep": "deny", "task": "deny",
+         "skill": "deny", "webfetch": "deny", "websearch": "deny",
+         "bash": {"*": "deny", **{cmd: "allow" for cmd in BASH_COMMANDS}},
+     }
+-    if bundle_record:
+-        config["permission"]["read"][prefix + Path(bundle_record["path"]).relative_to(project).as_posix()] = "allow"
+-    # Native user-selected attachments resolve before inference. Keep bounded
+-    # read access available for genuine generated-artifact review/clarification.
++    # Native user-selected attachments resolve before inference through the
++    # pinned client's direct attachment path. Later model reads are restricted
++    # to generated outputs; source and bundle rereads return no source content.
+     config["mcp"] = {}
+     config.pop("command", None)  # Discovery must load actual generated files, not injected replacements.
+     save_json(evidence / "OPENCODE_CONFIG_01.json", config, exclusive=True)
+@@ -356,9 +360,10 @@
+ Execute the full native command now using actual tools: create the feature draft and truthful checklist, not just an announcement of future work. Write only .specify/feature.json, specs/001-explain-treasury/spec.md and specs/001-explain-treasury/checklists/requirements.md. Use permitted bash commands individually, without chaining. No extensions.yml exists; test exit1 means absent. Preset resolution returns a text path.
+ Keep all three source owner questions unanswered and benefit HYPOTHESIS_NOT_VALIDATED. Invent no owner answers, numeric benefit targets, ratification or approval. Present the actual unresolved questions and wait at that boundary; stop before planning/implementation. Leave failed readiness checks visibly incomplete. Report any blocking failure truthfully. This is a disclosed synthetic reference projection, not blind discovery or observed user benefit.
+ """
++    prompt += "\nRead-scope guard: " + PRELOADED_INPUT_GUARD + " No output files exist at the start. This guard supplies no draft text or owner answers and does not alter the full installed framework command.\n"
+     (evidence / "TASK_PROMPT_01.txt").write_text(prompt, encoding="utf-8")
+     native_argv = [str(opencode), "--pure", "--print-logs", "--log-level", "DEBUG", "run",
+-                   "--title", "ESA d8 native Spec Kit generation and owner-clarification boundary",
++                   "--title", "ESA d8 guarded native Spec Kit generation and owner-clarification boundary",
+                    "--command", "speckit.specify", "--format", "json", "--agent", "esa-sdd",
+                    "--model", "esa-local/esa-qwen3-4b", prompt]
+     wrapped_argv = ["/usr/bin/env", "-i", *[key + "=" + val for key, val in environment.items()], *native_argv]
+@@ -415,6 +420,8 @@
+         checks["explicit_schema_metadata"] = resolved.get("$schema") == "https://opencode.ai/config.json"
+         checks["declared_model_limits"] = resolved["provider"]["esa-local"]["models"]["esa-qwen3-4b"]["limit"] == {"context": args.context_tokens, "output": args.output_tokens}
+         checks["local_small_model"] = resolved.get("small_model") == "esa-local/esa-qwen3-4b"
++        checks["declared_temperature_capability"] = resolved["provider"]["esa-local"]["models"]["esa-qwen3-4b"].get("temperature") is True
++        checks["read_rules_only_generated_outputs"] = resolved["permission"]["read"] == {"*": "deny", **{prefix + p: "allow" for p in WRITE_PATHS}}
+     except (ValueError, KeyError, TypeError) as exc:
+         notes["failures"].append({"diagnostic": "effective-config-json-or-fields", "failure": str(exc)})
+         checks["effective_config_parse"] = False

@@ -1,0 +1,43 @@
+{
+  "schema": "esa-guided-native-sdd-continuation/v1",
+  "prepared_at_utc": "2026-10-22T07:20:57.114645+00:00",
+  "status": "PREPARED_NO_INFERENCE_AWAITING_SERVER03",
+  "checks": {
+    "same_native_session_id": true,
+    "original_full_command_retained": true,
+    "only_timeout_fields_changed_in_configuration": true,
+    "all_diagnostics_exit_zero": true,
+    "run_help_has_explicit_session": false,
+    "actual_context_24576": true,
+    "explicit_overall_header_1500000": true,
+    "tools_unchanged": true,
+    "no_project_file_change": true,
+    "no_artifact_or_answer_supplied": true
+  },
+  "original_configuration": {
+    "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/sdd_native_recovery_01/OPENCODE_CONFIG_01.json",
+    "sha256": "9131e6a1455cf8bb7684a745279ff50740e3766dc31423342cf4f904c89c0742"
+  },
+  "new_configuration": {
+    "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/sdd_native_continuation_01/OPENCODE_CONFIG_01.json",
+    "sha256": "1c36254cc7239aaa379bc846ac7b1e21aae481ebf652365018245b9cc12c25d7"
+  },
+  "source_support": "Pinned cli_run.ts retrieves args.session without forking; its non-command branch calls session.prompt with the new text. Full previous native history remains in the same database and is preserved in PRIOR_NATIVE_SESSION.json.",
+  "intervention": "Explicitly ask the model to execute the exact allowed input read and actually write the three allowed artifacts after it previously stopped with only future-tense prose. No authored draft, source value, new owner answer or acceptance is supplied.",
+  "same_state_and_project": true,
+  "same_input_packet_sha256": "51da598ef2a1d7116869cca05fe637b0120039cf8389f057ab0e6e81b301ae44",
+  "native_command_bodies_unchanged": true,
+  "prior_exposure": "The controller has seen reference materials and the first output. The native model retains its original command and own short-name response; this is a guided continuation, not a fresh blind trial.",
+  "prospective_bounds": {
+    "outer_seconds": 1800,
+    "provider_timeout_ms": 1500000,
+    "provider_header_timeout_ms": 1500000,
+    "max_agent_steps": 12,
+    "per_response_output_limit": 2048,
+    "context_tokens": 24576
+  },
+  "latency_basis": "The preceding cold-server request completed in 702.330 seconds. One input read and later artifact generation can still exceed the new bound; this is no completion guarantee.",
+  "prompt_bytes": 573,
+  "budget_preliminary": "Prior23950-token plan plus at most one token per new ASCII prompt byte remains below24576 before counting reserve overlap; actual tokenizer and server health to follow.",
+  "finality": "This is the final authorized model continuation in the episode. No new model retry after it; retain terminal outcome."
+}

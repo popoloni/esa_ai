@@ -1,0 +1,63 @@
+{
+  "schema": "prospective-cost-estimate/v1",
+  "status": "UNFILLED_ESTIMATE",
+  "work_item_or_cohort": null,
+  "currency": null,
+  "scope": null,
+  "reporting_cutoff_or_horizon": null,
+  "estimated_accepted_outcomes": null,
+  "hours_and_rates": [
+    {
+      "activity": "initial_work",
+      "person_hours": null,
+      "hourly_rate": null,
+      "hours_evidence_class": "ESTIMATED",
+      "rate_source": null
+    },
+    {
+      "activity": "review",
+      "person_hours": null,
+      "hourly_rate": null,
+      "hours_evidence_class": "ESTIMATED",
+      "rate_source": null
+    },
+    {
+      "activity": "rework",
+      "person_hours": null,
+      "hourly_rate": null,
+      "hours_evidence_class": "ESTIMATED",
+      "rate_source": null
+    },
+    {
+      "activity": "allocated_setup",
+      "person_hours": null,
+      "hourly_rate": null,
+      "hours_evidence_class": "ESTIMATED",
+      "rate_source": null
+    }
+  ],
+  "charges": [
+    {
+      "category": "vendor",
+      "amount": null,
+      "evidence_class": "ESTIMATED",
+      "source_or_allocation_rule": null
+    },
+    {
+      "category": "compute_or_ci",
+      "amount": null,
+      "evidence_class": "ESTIMATED",
+      "source_or_allocation_rule": null
+    }
+  ],
+  "included_failures_and_abandonment": null,
+  "overlap_check": null,
+  "excluded_costs_and_reason": [],
+  "decision_ceiling_per_outcome": null,
+  "complete_estimate": null,
+  "actual_human_hours": null,
+  "actual_billing": null,
+  "actual_accepted_outcomes": null,
+  "actual_field_cpa": null,
+  "meaning": "Prospective assumptions only; blanks are unknown, not zero. Filling this record creates no acceptance or purchase authority."
+}

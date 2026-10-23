@@ -1,0 +1,249 @@
+{
+  "format_version": 1,
+  "status": "PASS",
+  "artifact_root": "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_CR_Implementation_20261020/companion/practice/sdd/fixtures/after",
+  "shared_manifest_sha256": "354fa9f799f466d5cab6078dec65dd455b7c3d1360cbbaf2a1c51788e894230d",
+  "shared_input_issues": [],
+  "flows": [
+    {
+      "flow": "speckit",
+      "status": "PASS",
+      "issues": [],
+      "requirements_present": [
+        "REQ-EXPL-001",
+        "REQ-EXPL-002",
+        "REQ-EXPL-003",
+        "REQ-EXPL-004",
+        "REQ-EXPL-005"
+      ],
+      "cases_present": [
+        "SC-EXPL-001",
+        "SC-EXPL-002",
+        "SC-EXPL-003",
+        "SC-EXPL-004",
+        "SC-EXPL-005",
+        "SC-EXPL-006",
+        "SC-EXPL-007",
+        "SC-EXPL-008"
+      ],
+      "case_values": {
+        "SC-EXPL-001": {
+          "input_amount_eur": "4999.99",
+          "expected_route": "STANDARD_QUEUE",
+          "expected_reason": "BELOW_LIMIT",
+          "expected_policy_version": "BR-001/v1",
+          "payment_authorized": false,
+          "notice": "ROUTING_ONLY_NOT_PAYMENT_APPROVAL",
+          "requirement_id": "REQ-EXPL-001"
+        },
+        "SC-EXPL-002": {
+          "input_amount_eur": "5000",
+          "expected_route": "HUMAN_REVIEW",
+          "expected_reason": "AT_OR_ABOVE_LIMIT",
+          "expected_policy_version": "BR-001/v1",
+          "payment_authorized": false,
+          "notice": "ROUTING_ONLY_NOT_PAYMENT_APPROVAL",
+          "requirement_id": "REQ-EXPL-001"
+        },
+        "SC-EXPL-003": {
+          "input_amount_eur": "5000.01",
+          "expected_route": "HUMAN_REVIEW",
+          "expected_reason": "AT_OR_ABOVE_LIMIT",
+          "expected_policy_version": "BR-001/v1",
+          "payment_authorized": false,
+          "notice": "ROUTING_ONLY_NOT_PAYMENT_APPROVAL",
+          "requirement_id": "REQ-EXPL-001"
+        },
+        "SC-EXPL-004": {
+          "input_amount_eur": "0",
+          "expected_route": "REJECTED",
+          "expected_reason": "INVALID_AMOUNT",
+          "expected_policy_version": "BR-001/v1",
+          "payment_authorized": false,
+          "notice": "ROUTING_ONLY_NOT_PAYMENT_APPROVAL",
+          "requirement_id": "REQ-EXPL-003"
+        },
+        "SC-EXPL-005": {
+          "input_amount_eur": "-10",
+          "expected_route": "REJECTED",
+          "expected_reason": "INVALID_AMOUNT",
+          "expected_policy_version": "BR-001/v1",
+          "payment_authorized": false,
+          "notice": "ROUTING_ONLY_NOT_PAYMENT_APPROVAL",
+          "requirement_id": "REQ-EXPL-003"
+        },
+        "SC-EXPL-006": {
+          "input_amount_eur": "nonsense",
+          "expected_route": "REJECTED",
+          "expected_reason": "INVALID_AMOUNT",
+          "expected_policy_version": "BR-001/v1",
+          "payment_authorized": false,
+          "notice": "ROUTING_ONLY_NOT_PAYMENT_APPROVAL",
+          "requirement_id": "REQ-EXPL-003"
+        },
+        "SC-EXPL-007": {
+          "input_amount_eur": "NaN",
+          "expected_route": "REJECTED",
+          "expected_reason": "INVALID_AMOUNT",
+          "expected_policy_version": "BR-001/v1",
+          "payment_authorized": false,
+          "notice": "ROUTING_ONLY_NOT_PAYMENT_APPROVAL",
+          "requirement_id": "REQ-EXPL-003"
+        },
+        "SC-EXPL-008": {
+          "input_amount_eur": "1",
+          "expected_route": "STANDARD_QUEUE",
+          "expected_reason": "BELOW_LIMIT",
+          "expected_policy_version": "BR-001/v1",
+          "payment_authorized": false,
+          "notice": "ROUTING_ONLY_NOT_PAYMENT_APPROVAL",
+          "requirement_id": "REQ-EXPL-004"
+        }
+      },
+      "artifacts": {
+        "speckit/spec.md": {
+          "sha256": "14e1b8e6257652c56e83d2f5cea2795929aa97d776c6b3cd1085f8afa24e6608",
+          "bytes": 5538
+        },
+        "speckit/plan.md": {
+          "sha256": "ac74bbb92a833998e2f5530f690b9671e1b069d3eb2660b71a0b843eb2b20982",
+          "bytes": 1965
+        },
+        "speckit/tasks.md": {
+          "sha256": "76b39234a96c7db02fd585e8867e141612233b9eb8de26911bb05a19a7a04f53",
+          "bytes": 1499
+        },
+        "speckit/ORIGIN.json": {
+          "sha256": "d2c35c8a95bbf16cb734e9e490fa64e1995c437d227e0dac718c47500b2d612d",
+          "bytes": 446
+        }
+      },
+      "scope": "Fixed wording, metadata, source/owner trace and selected case values in the actual Markdown; no semantic or human-acceptance proof."
+    },
+    {
+      "flow": "openspec",
+      "status": "PASS",
+      "issues": [],
+      "requirements_present": [
+        "REQ-EXPL-001",
+        "REQ-EXPL-002",
+        "REQ-EXPL-003",
+        "REQ-EXPL-004",
+        "REQ-EXPL-005"
+      ],
+      "cases_present": [
+        "SC-EXPL-001",
+        "SC-EXPL-002",
+        "SC-EXPL-003",
+        "SC-EXPL-004",
+        "SC-EXPL-005",
+        "SC-EXPL-006",
+        "SC-EXPL-007",
+        "SC-EXPL-008"
+      ],
+      "case_values": {
+        "SC-EXPL-001": {
+          "input_amount_eur": "4999.99",
+          "expected_route": "STANDARD_QUEUE",
+          "expected_reason": "BELOW_LIMIT",
+          "expected_policy_version": "BR-001/v1",
+          "payment_authorized": false,
+          "notice": "ROUTING_ONLY_NOT_PAYMENT_APPROVAL",
+          "requirement_id": "REQ-EXPL-001"
+        },
+        "SC-EXPL-002": {
+          "input_amount_eur": "5000",
+          "expected_route": "HUMAN_REVIEW",
+          "expected_reason": "AT_OR_ABOVE_LIMIT",
+          "expected_policy_version": "BR-001/v1",
+          "payment_authorized": false,
+          "notice": "ROUTING_ONLY_NOT_PAYMENT_APPROVAL",
+          "requirement_id": "REQ-EXPL-001"
+        },
+        "SC-EXPL-003": {
+          "input_amount_eur": "5000.01",
+          "expected_route": "HUMAN_REVIEW",
+          "expected_reason": "AT_OR_ABOVE_LIMIT",
+          "expected_policy_version": "BR-001/v1",
+          "payment_authorized": false,
+          "notice": "ROUTING_ONLY_NOT_PAYMENT_APPROVAL",
+          "requirement_id": "REQ-EXPL-001"
+        },
+        "SC-EXPL-004": {
+          "input_amount_eur": "0",
+          "expected_route": "REJECTED",
+          "expected_reason": "INVALID_AMOUNT",
+          "expected_policy_version": "BR-001/v1",
+          "payment_authorized": false,
+          "notice": "ROUTING_ONLY_NOT_PAYMENT_APPROVAL",
+          "requirement_id": "REQ-EXPL-003"
+        },
+        "SC-EXPL-005": {
+          "input_amount_eur": "-10",
+          "expected_route": "REJECTED",
+          "expected_reason": "INVALID_AMOUNT",
+          "expected_policy_version": "BR-001/v1",
+          "payment_authorized": false,
+          "notice": "ROUTING_ONLY_NOT_PAYMENT_APPROVAL",
+          "requirement_id": "REQ-EXPL-003"
+        },
+        "SC-EXPL-006": {
+          "input_amount_eur": "nonsense",
+          "expected_route": "REJECTED",
+          "expected_reason": "INVALID_AMOUNT",
+          "expected_policy_version": "BR-001/v1",
+          "payment_authorized": false,
+          "notice": "ROUTING_ONLY_NOT_PAYMENT_APPROVAL",
+          "requirement_id": "REQ-EXPL-003"
+        },
+        "SC-EXPL-007": {
+          "input_amount_eur": "NaN",
+          "expected_route": "REJECTED",
+          "expected_reason": "INVALID_AMOUNT",
+          "expected_policy_version": "BR-001/v1",
+          "payment_authorized": false,
+          "notice": "ROUTING_ONLY_NOT_PAYMENT_APPROVAL",
+          "requirement_id": "REQ-EXPL-003"
+        },
+        "SC-EXPL-008": {
+          "input_amount_eur": "1",
+          "expected_route": "STANDARD_QUEUE",
+          "expected_reason": "BELOW_LIMIT",
+          "expected_policy_version": "BR-001/v1",
+          "payment_authorized": false,
+          "notice": "ROUTING_ONLY_NOT_PAYMENT_APPROVAL",
+          "requirement_id": "REQ-EXPL-004"
+        }
+      },
+      "artifacts": {
+        "openspec/openspec/changes/explain-treasury/specs/explanation/spec.md": {
+          "sha256": "f899c75fff0c321d7f0d10ec6f53d39e569c5de59861cc1efe91384e216436ec",
+          "bytes": 5533
+        },
+        "openspec/openspec/changes/explain-treasury/design.md": {
+          "sha256": "ac74bbb92a833998e2f5530f690b9671e1b069d3eb2660b71a0b843eb2b20982",
+          "bytes": 1965
+        },
+        "openspec/openspec/changes/explain-treasury/tasks.md": {
+          "sha256": "76b39234a96c7db02fd585e8867e141612233b9eb8de26911bb05a19a7a04f53",
+          "bytes": 1499
+        },
+        "openspec/openspec/changes/explain-treasury/proposal.md": {
+          "sha256": "d498b2544b6cebf6aa4ac4a5eef9d527dc0f6e71fff070140756932a1e06999b",
+          "bytes": 880
+        },
+        "openspec/ORIGIN.json": {
+          "sha256": "c141a537ce520a584367b4e73d7c0e29d81ec2f64d34d74f5e7b0a6bc8b560fd",
+          "bytes": 447
+        }
+      },
+      "scope": "Fixed wording, metadata, source/owner trace and selected case values in the actual Markdown; no semantic or human-acceptance proof."
+    }
+  ],
+  "pair_case_values_equal": true,
+  "pair_equality_is_sufficient": false,
+  "human_review": "pending",
+  "named_agent_execution": false,
+  "framework_performance_comparison": false,
+  "interpretation": "Each flow is checked against unchanged external exercise obligations before parity is reported. Agreement between two incomplete artifacts is not acceptance."
+}

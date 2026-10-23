@@ -1,0 +1,42 @@
+{
+  "schema": "first-independent-review-output/v1",
+  "created_at_utc": "2026-10-21T16:07:23.845323+00:00",
+  "first_outputs_preserved": true,
+  "artifacts": [
+    {
+      "path": "review.json",
+      "sha256": "ef9b97ee65fde6e62dce094230e9031e828c747ee5e9d1df5f1f7954e47a88d4",
+      "bytes": 19197
+    },
+    {
+      "path": "PROMPT.md",
+      "sha256": "033ac860c3a1e6fea7434718fb4833b7770e2855d081180bf09895723c2771dc",
+      "bytes": 5310
+    },
+    {
+      "path": "PROVENANCE.json",
+      "sha256": "dcce5fc26f8361742d679898beb6c37b6603b126f178cc15da1a5aaeb70b2201",
+      "bytes": 1480
+    },
+    {
+      "path": "TOOL_ACTIONS.json",
+      "sha256": "1bc7e5b014ed60a4754ee5f58a368cdf1b331b51ab24e63681476b03fc6ce79f",
+      "bytes": 3226
+    },
+    {
+      "path": "INPUT_SNAPSHOT.json",
+      "sha256": "752304249009408fbdaf89bd65192c7cb8ce90cf3edc35ca7dcde547e2432e31",
+      "bytes": 2255
+    },
+    {
+      "path": "CHECKS.json",
+      "sha256": "8c41e552766f5ea76ae85e2ed4f1534fa427d7dd1b8a551535ea07ea95063a42",
+      "bytes": 10525
+    },
+    {
+      "path": "RAW_RESPONSE.md",
+      "sha256": "a0bbc4b47b3679e8ff5f1a5321bb32258de2d55623e1ad8035bfbdf0012e4c8e",
+      "bytes": 6108
+    }
+  ]
+}

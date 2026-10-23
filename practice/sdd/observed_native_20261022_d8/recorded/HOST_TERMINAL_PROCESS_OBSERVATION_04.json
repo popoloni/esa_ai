@@ -1,0 +1,13 @@
+{
+  "observed_at_utc": "2026-10-22T12:12:53.917090+00:00",
+  "inspection_context": "approved host context",
+  "live_native_run_processes": [],
+  "actual_capture_receipt_sha256": "990e17c96269855f1a2613dbcab6db60abc7ea0a2d9a0464888aa0bafb21bdc8",
+  "actual_exit_code": 0,
+  "actual_started_at_utc": "2026-10-22T11:46:25.383278+00:00",
+  "actual_ended_at_utc": "2026-10-22T12:05:40.713363+00:00",
+  "authoritative_terminal_evidence": "Actual capture receipt is written after its subprocess exits; this host-context scan independently checks for an exact-project opencode run process.",
+  "default_context_qualification": "Default sandbox /proc is not used to establish host-process absence.",
+  "model_call": false,
+  "historical_records_rewritten": false
+}

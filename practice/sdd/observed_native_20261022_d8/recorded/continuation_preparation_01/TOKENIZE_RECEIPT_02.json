@@ -1,0 +1,10 @@
+{
+  "at_utc": "2026-10-22T11:12:18.900557+00:00",
+  "endpoint": "http://127.0.0.1:18080/tokenize",
+  "model_inference": false,
+  "http_status": 200,
+  "prompt_sha256": "6f14a0005a6970cbd1413f1cb03c4dfc623d58ff9461a82197f304a5d2efc6d8",
+  "prompt_tokens": 372,
+  "response_sha256": "3771a08f587d7d569291cfdb711e10ef66be940ae1c70b5c17f1d9b7bcb9f877",
+  "supersedes": "First prompt draft was tightened from2600 to1800 target artifact tokens before launch; first prompt and raw tokenizer receipts retained."
+}

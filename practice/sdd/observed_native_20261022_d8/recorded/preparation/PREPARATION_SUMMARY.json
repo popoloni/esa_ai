@@ -1,0 +1,68 @@
+{
+  "status": "PREPARED_NATIVE_INPUT_VERIFIED_GENERATION_NOT_RUN",
+  "frozen_at_utc": "2026-10-22T10:12:21.365240+00:00",
+  "project": "/workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01",
+  "preparation_session": "ses_e9ce93103ffeCb4inKDgfNGJQr",
+  "session_reuse_for_generation": "FORBIDDEN",
+  "full_framework_commands_preserved": true,
+  "fresh_installed_scaffold": true,
+  "fixed_json_inputs": 9,
+  "source_bodies_in_attachment": 13,
+  "input_bundle": {
+    "path": "/workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/inputs/NATIVE_CONTEXT_BUNDLE.md",
+    "sha256": "bbaf6d82364e6e6e2fa543f9c9c1cf407ffe315aa2a75d63be4caf09ae25d718",
+    "bytes": 25149,
+    "native_read_bounds": {
+      "lines": 342,
+      "max_line_utf16_units": 984,
+      "bytes": 25149,
+      "line_limit": 2000,
+      "per_line_limit": 2000,
+      "byte_limit": 51200
+    }
+  },
+  "actual_native_attachment": {
+    "bytes": 26924,
+    "sha256": "7c5fd58661c8d05a44f6284cf0c9eb254b7add1be56d954707f274ec4e86671f",
+    "source_checks": 13,
+    "status": "PASS_NATIVE_FULL_ATTACHMENT_NOREPLY_NO_INFERENCE"
+  },
+  "config_checks_passed": 19,
+  "config_sha256": "477886742b5c9ecaa55ade5f6dcd73228a28c30d831bbf700e4f0873c253dc69",
+  "prospective_limits": {
+    "steps": 12,
+    "provider_timeout_ms": 1500000,
+    "provider_header_timeout_ms": 1500000,
+    "outer_timeout_seconds": 5400,
+    "context_tokens": 22528,
+    "output_tokens": 3072,
+    "exact_prompt_token_count": "Not measured during preparation; no inference/tokenizer request made.",
+    "policy": "Preserve full upstream command. Record overflow, compaction, timeout or truncation rather than silently shortening instructions."
+  },
+  "native_command": "speckit.specify",
+  "task_path": "CLIENT_TASK_01.json",
+  "allowed_artifact_paths": [
+    ".specify/feature.json",
+    "specs/001-explain-treasury/spec.md",
+    "specs/001-explain-treasury/checklists/requirements.md"
+  ],
+  "minimal_acceptance_journey": "Actual installed specify invocation produces useful native spec/checklist bytes, retains first output and omissions, and reaches the authentic unanswered-owner clarification boundary. Independent assessment follows. A separate clarify invocation is needed only if specify has not reached that disposition; no invented answers, plan/implementation or all-green checklist are required.",
+  "owner_questions_available": false,
+  "exposure": "Supplied authored inputs/specification.json contract plus all fixed source material. No previous generated Markdown, exercise answers, reviews or owner answers supplied.",
+  "runtime_gates_pending": [
+    "Root verifies actual f16/no-repack server health and sustained memory headroom.",
+    "Root tokenizes complete expanded command plus actual attachment output and includes all native system/tool/chat overhead and cumulative history/output reserve.",
+    "Root freezes the exact prospective command/runtime/time bounds before inference.",
+    "Actual generation starts a new explicitly titled session; do not use the noReply preparation session."
+  ],
+  "cleanup": {
+    "pid": 52586,
+    "pgid": 52586,
+    "started_at_utc": "2026-10-22T10:10:02.516447+00:00",
+    "sigterm_sent": true,
+    "returncode": -15,
+    "finished_at_utc": "2026-10-22T10:10:02.548059+00:00",
+    "owned_process_stopped": true
+  },
+  "frozen_evidence": "PREPARATION_MANIFEST.json binds this completed preparation. Later tokenizer/runtime/observations belong in new sibling evidence, never by rewriting this preparation."
+}

@@ -1,0 +1,11 @@
+{
+  "schema": "esa-owned-native-server-stop/v1",
+  "requested_at_utc": "2026-10-22T07:53:19.429241+00:00",
+  "launcher_pid": 17418,
+  "server_pid": 17421,
+  "signal": 15,
+  "verified_launcher_cmdline": "python3 -B work/Engineering_Software_with_Agentic_AI_20261021_d5/companion/practice/native_client/run_local_model.py --runtime-root /workspace/scratch/72d789d25fef/runtime_d7 --evidence /workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/native_reconstruction/llama_server_03 --ctx-size 24576 --cache-type-k q4_0 --cache-type-v q4_0 ",
+  "verified_server_cmdline": "/workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/llama-server --model /workspace/scratch/72d789d25fef/runtime_d7/downloads/Qwen3-4B-Q4_K_M.gguf --alias esa-qwen3-4b --host 127.0.0.1 --port 18080 --ctx-size 24576 --parallel 1 --threads 8 --threads-batch 8 --n-gpu-layers 0 --ubatch-size 128 --jinja --chat-template-kwargs {\"enable_thinking\":false} --no-agent --no-ui-mcp-proxy --no-webui --metrics --timeout 300 --cache-ram 0 --ctx-checkpoints 0 --cache-type-k q4_0 --cache-type-v q4_0 --flash-attn on ",
+  "reason": "Final bounded same-session native SDD continuation has ended and the owning agent has permanently released inference; no later model request is planned.",
+  "method": "SIGTERM to exact owned launcher; its retained signal handler terminates and waits for its own server child."
+}

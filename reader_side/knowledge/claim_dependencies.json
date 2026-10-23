@@ -1,0 +1,15 @@
+{
+  "routing_threshold": [
+    "K-POL-001"
+  ],
+  "payment_authority": [
+    "K-POL-001",
+    "K-SPEC-004"
+  ],
+  "explanation_fields": [
+    "K-SPEC-004"
+  ],
+  "architecture_choice": [
+    "K-ADR-005"
+  ]
+}

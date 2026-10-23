@@ -1,0 +1,44 @@
+Create the baseline specification for an explanation-only treasury routing alpha by executing this actual speckit.specify command. This is a bounded framework projection and clarification task, using supplied synthetic, reference-derived inputs. It is not blind discovery or evidence of real-world user benefit.
+
+The actual project working directory is:
+/workspace/scratch/72d789d25fef/runtime_d7/native_sdd_02
+SPECIFY_FEATURE_DIRECTORY=specs/001-explain-treasury
+Use that exact feature directory. Do not create a different numbered feature or a Git branch.
+
+Read the complete fixed-input bundle first at this exact absolute path:
+/workspace/scratch/72d789d25fef/runtime_d7/native_sdd_02/inputs/NATIVE_INPUT_BUNDLE.md
+The bundle includes the unchanged nine fixed JSON sources and original router with their source paths and hashes. The individual source files remain available for focused checks; no separate read of every duplicate source is required. This packaging does not replace the complete upstream Spec Kit command.
+
+The source inputs contain the feature request, the approved synthetic policy, conflicting historical/request material, discovery assessment and fixed contract. Trace claims to their actual source IDs and paths. SRC-POL-001 is the policy authority for BR-001/v1; the initial SRC-TKT-017 request and SRC-WIKI-OLD are not authority to change it. SYN-TRIAGE-CSV references remain synthetic; do not imply new user research. Canonical routing.py is supplied implementation context, not permission to edit it or override the contract.
+
+Preserve all five requirement IDs REQ-EXPL-001 through REQ-EXPL-005 and their meaning/source links, plus all eight scenario IDs SC-EXPL-001 through SC-EXPL-008 with their exact amounts, routes, reason codes, BR-001/v1 provenance and payment_authorized=false. In particular, 5000 belongs to HUMAN_REVIEW with AT_OR_ABOVE_LIMIT. Preserve invalid/non-positive/NaN rejection semantics. The output explains an unchanged routing recommendation; payment authorization stays a separate human process. Do not infer a new policy, threshold, payment permission or release authority.
+
+Follow the discovered upstream command, its template section order and quality-checklist flow. These are exact framework read paths:
+/workspace/scratch/72d789d25fef/runtime_d7/native_sdd_02/.specify/init-options.json
+/workspace/scratch/72d789d25fef/runtime_d7/native_sdd_02/.specify/integration.json
+/workspace/scratch/72d789d25fef/runtime_d7/native_sdd_02/.specify/templates/spec-template.md
+/workspace/scratch/72d789d25fef/runtime_d7/native_sdd_02/.specify/templates/checklist-template.md
+/workspace/scratch/72d789d25fef/runtime_d7/native_sdd_02/.specify/memory/constitution.md
+The constitution is an UNRATIFIED UPSTREAM TEMPLATE. Preserve it unchanged; its placeholders and example comments are not adopted principles. No extensions.yml was present during preparation. If checking its existence, use the permitted test command; an exit code of 1 means it is absent, not a framework failure.
+
+The only files you may create or edit are these three exact absolute paths:
+/workspace/scratch/72d789d25fef/runtime_d7/native_sdd_02/.specify/feature.json
+/workspace/scratch/72d789d25fef/runtime_d7/native_sdd_02/specs/001-explain-treasury/spec.md
+/workspace/scratch/72d789d25fef/runtime_d7/native_sdd_02/specs/001-explain-treasury/checklists/requirements.md
+Use ordinary file read/edit/write tools and only these exact bash commands when needed, from the actual project working directory (do not combine them with shell separators or add commands):
+test -f .specify/extensions.yml
+specify preset resolve spec-template
+specify preset resolve checklist-template
+mkdir -p specs/001-explain-treasury
+mkdir -p specs/001-explain-treasury/checklists
+cp .specify/templates/spec-template.md specs/001-explain-treasury/spec.md
+python3 .specify/scripts/python/check_prerequisites.py --json --paths-only
+The two preset-resolve commands return human-readable template locations, not JSON. The paths-only prerequisite command resolves paths; it does not prove a generated spec exists. Do not call any plan, tasks, implementation, workflow-run, commit, deployment, network or additional agent command. Do not read prior reference outputs or change inputs, source, scripts, templates or framework commands.
+
+Keep all three owner questions explicitly unresolved in the generated spec and checklist:
+1. Which explanation vocabulary do real operators understand?
+2. Does the interface accidentally induce payment approval?
+3. How will actual user benefit be measured in a pilot?
+No owner is available to answer during this observation. Preserve the source status as ready for human requirements review only, with benefit HYPOTHESIS_NOT_VALIDATED. Do not invent owner responses, accept your own recommendation, ratify the constitution, fabricate measured savings/ROI or choose unprovided numeric benefit targets. Proposed evaluation methods may be clearly marked as proposals requiring owner review, never as accepted criteria or observed results. A complete initial draft can still contain unresolved questions; leave related quality checks incomplete and state why. Do not report planning readiness or human approval.
+
+Create the initial draft and truthful quality checklist within the allowed scope, present the actual unanswered owner questions, and stop at the human review boundary. If a tool or permission fails, retain/report the actual failure and stop; do not claim an artifact or check exists without observing it. There are at most 12 agent steps, a 16384-token context and 2048 output tokens per response. Preserve the full upstream command; do not silently abbreviate or replace it. Stop without running another phase when this bounded command is complete or blocked.

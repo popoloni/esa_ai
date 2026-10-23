@@ -1,0 +1,23 @@
+{
+  "writes_and_template_copies": [
+    {
+      "tool_sequence": 7,
+      "call_id": "ejD5xbhOrjCDiCLnquJRvmCb2LjNVOCT",
+      "tool": "bash",
+      "status": "completed",
+      "message_id": "msg_1634663de001PK1BXfW4qscZMo",
+      "native_input": {
+        "command": "cp .specify/templates/spec-template.md specs/001-explain-treasury/spec.md",
+        "timeout": 120000
+      },
+      "content_basis": "Exact initial framework template and completed native cp exit0",
+      "classification": "FRAMEWORK_TEMPLATE_COPY_NOT_GENERATED_FEATURE_CONTENT",
+      "relative_path": "specs/001-explain-treasury/spec.md",
+      "reconstructed_sha256": "3945437fc35cd30a5b2bf7beea680337c3516826d3efa5a6b92c4a7eca1ba28e",
+      "reconstructed_bytes": 4556,
+      "matches_final_file_bytes": true
+    }
+  ],
+  "scope": "First completed tool-input content reconstruction is not an independent observation of every intermediate filesystem version. Exact final bytes are retained separately. Scaffold copies and template-equivalent content do not establish useful generation.",
+  "semantic_acceptance": "Independent review required; this collector supplies no owner answer or acceptance verdict."
+}

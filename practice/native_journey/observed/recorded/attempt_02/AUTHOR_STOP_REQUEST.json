@@ -1,0 +1,9 @@
+{
+  "at_utc": "2026-10-22T17:36:53.576543+00:00",
+  "reason": "Bounded early stop after repeated unchanged unsupported-format failure and an identical rejected edit. Preserve the useful spec/plan, then narrow the next native task to this single defect.",
+  "pid": 105281,
+  "signal": "SIGTERM_PROCESS_GROUP",
+  "author_candidate_edits": false,
+  "observed_checker_failure": "unsupported_format_refused",
+  "status": "REQUESTED"
+}

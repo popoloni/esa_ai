@@ -1,0 +1,19 @@
+The previous attempt did not complete the task. Every file path you constructed omitted the native_work_01 directory and therefore pointed outside the allowed study copy. The permissions have NOT changed. Do not request broader access or reuse those incorrect parent-directory paths.
+
+The actual working directory is:
+/workspace/scratch/efa0a59e0545/runtime_d6/native_work_01
+
+Read these exact absolute file paths (copy them literally):
+/workspace/scratch/efa0a59e0545/runtime_d6/native_work_01/reader_side/intent/INT-001.md
+/workspace/scratch/efa0a59e0545/runtime_d6/native_work_01/reader_side/acceptance/test_routing.py
+/workspace/scratch/efa0a59e0545/runtime_d6/native_work_01/repo/src/treasury/routing.py
+/workspace/scratch/efa0a59e0545/runtime_d6/native_work_01/reader_side/evidence/CH01_INITIAL_D6_NATIVE_01.json
+/workspace/scratch/efa0a59e0545/runtime_d6/native_work_01/repo/AGENTS.md
+
+Use the same Chapter 1 intent and make the smallest justified change only to:
+/workspace/scratch/efa0a59e0545/runtime_d6/native_work_01/repo/src/treasury/routing.py
+
+Do not read a reference solution. Do not edit any other source, intent, acceptance case or checker. After the edit run exactly once, from the existing working directory:
+python3 -B reader_side/tools/run_acceptance.py --output reader_side/evidence/CH01_AGENT_D6_NATIVE_01.json
+
+If a tool or check fails again, report the actual error and stop rather than claiming success. If the seven cases pass, report that bounded result and stop at READY_FOR_HUMAN_REVIEW_NOT_ACCEPTED. No human decision, payment, merge or deployment is authorized.

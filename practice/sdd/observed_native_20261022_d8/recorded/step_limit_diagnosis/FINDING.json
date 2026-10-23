@@ -1,0 +1,33 @@
+{
+  "finding_id": "D8-NATIVE-STEP-INTENT",
+  "recorded_at_utc": "2026-10-22T11:11:03.106736+00:00",
+  "status": "DIAGNOSED_SOURCE_QUALIFICATION",
+  "summary": "Configured agent.steps=12 is a final-step prompt trigger in the pinned inspected native model loop, not a mechanically enforced subprocess or tool-call limit.",
+  "source": {
+    "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/preparation/pinned_client_sources/session_prompt.ts",
+    "sha256": "f0c5bc64c0f0e966693d4a57f7ede1e9d6e188b396152f04b55303dc75b9b768",
+    "excerpts": [
+      {
+        "first_line": 1178,
+        "last_line": 1179,
+        "text": "          const maxSteps = agent.steps ?? Infinity\n          const isLastStep = step >= maxSteps"
+      },
+      {
+        "first_line": 1279,
+        "last_line": 1285,
+        "text": "              messages: [\n                ...modelMsgs,\n                ...(isLastStep ? [{ role: \"assistant\" as const, content: MAX_STEPS_PROMPT }] : []),\n              ],\n              tools,\n              model,\n              toolChoice: format.type === \"json_schema\" ? \"required\" : undefined,"
+      }
+    ]
+  },
+  "observed_attempt02": {
+    "native_steps": 12,
+    "native_tool_parts": 11,
+    "final_finish_reason": "stop",
+    "assistant_text_parts": 0,
+    "exceeded_configured_steps": false,
+    "terminal_receipt": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/attempt_02/RECEIPT.json",
+    "terminal_receipt_sha256": "c5ca377daab7610918ddf2163cd12bd9e3a8dcac6c5ba79412f2d91690cf02b9"
+  },
+  "effective_bound": "The original task outer5400s bound was not reached. A prospective continuation has outer3600s; provider and model output settings remain unchanged.",
+  "limits": "This is source-path qualification, not a claim that steps were exceeded or all client components lack bounds. No frozen preparation, observed config or historical claims were rewritten. No model invocation or source change occurred."
+}

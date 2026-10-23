@@ -1,0 +1,11 @@
+{
+  "status": "PREPARED",
+  "input_files": 1512,
+  "task_sha256": "243ae3f4868921de08477b469bdbce30ec0b2583b55d647ce1a10e6f8aaae829",
+  "input_manifest_sha256": "7634c1938a9a9e636e293dc693571b4b487b0836b50a081cbda7197ecedc532f",
+  "actor_type": "AI_ONLY",
+  "human_participants": 0,
+  "no_outreach": true,
+  "fresh_fork_requested": true,
+  "shared_filesystem_is_not_isolation": true
+}

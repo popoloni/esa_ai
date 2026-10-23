@@ -1,0 +1,9 @@
+{
+  "status": "IN_PROGRESS_SUBSTANTIVE_SPEC_NOT_YET_ACCEPTABLE",
+  "at_utc": "2026-10-22T17:23:05.701860+00:00",
+  "finding": "First actual native spec has blank Actor/Status and yes/no shorthand; file existence is not sufficient. No manual edit to native project.",
+  "files": {
+    "first_spec.md": "d0ccf0087d9235b2afc63fc7ff33ec2d93a107a00efa9be3b6baaa1a3414bcba",
+    "native_events_snapshot.jsonl": "ebe4b29f13bfb6c16ebe1b2c28a7b33e45e18673b096801d6ad6e23c0000365a"
+  }
+}

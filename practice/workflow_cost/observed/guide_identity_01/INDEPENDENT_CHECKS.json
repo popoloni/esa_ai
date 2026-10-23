@@ -1,0 +1,231 @@
+{
+  "schema": "esa-guide-identity-independent-checks/v1",
+  "reviewer": {
+    "actor_kind": "AGENT",
+    "agent": "/root/acceptance_audit"
+  },
+  "started_at_utc": "2026-10-22T06:12:48.598501+00:00",
+  "finished_at_utc": "2026-10-22T06:12:50.227015+00:00",
+  "candidate_record_sha256": "47f6ede441590b209a4e70bd990b5892f6f1ed1e04e1ee28e18c29bf0c814bfa",
+  "status": "PASS",
+  "passed": 18,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "candidate_record_identity",
+      "passed": true,
+      "detail": "47f6ede441590b209a4e70bd990b5892f6f1ed1e04e1ee28e18c29bf0c814bfa"
+    },
+    {
+      "name": "before_manifest_matches_baseline",
+      "passed": true,
+      "detail": "b43b2b6a88c3e681b4aac0b95a7284dd37dd2f9279678475bfdab9b692485c9f"
+    },
+    {
+      "name": "supplied_defect_has_two_real_stale_pins",
+      "passed": true,
+      "detail": [
+        "README.md",
+        "adapters/README.md"
+      ]
+    },
+    {
+      "name": "identical_213_manifest_keys",
+      "passed": true,
+      "detail": {
+        "before": 213,
+        "after": 213
+      }
+    },
+    {
+      "name": "exactly_two_authorized_digest_changes",
+      "passed": true,
+      "detail": [
+        "README.md",
+        "adapters/README.md"
+      ]
+    },
+    {
+      "name": "frozen_and_live_candidates_match_record",
+      "passed": true,
+      "detail": {
+        "README.md": "7e1535bd8748870a14f43bb738a41672a5e1dcf74adea9b05f5198615a7e5a4e",
+        "adapters/README.md": "c18e57368f7823f37e29111aa146b806dda9b6b3ccdedd52ac3e8aac54a022ed",
+        "reader_side/protected_sha256.json": "abbfb6434079eec42f45f4f486541ef69b7c061f672d62ca98c85e2d25ce33df"
+      }
+    },
+    {
+      "name": "all_current_protected_bytes_match",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "all_211_other_protected_bytes_preserved",
+      "passed": true,
+      "detail": {
+        "count": 211,
+        "problems": []
+      }
+    },
+    {
+      "name": "exact_repository_inventory_preserved",
+      "passed": true,
+      "detail": {
+        "count": 37,
+        "changes": []
+      }
+    },
+    {
+      "name": "independent_before_integrity_reproduces_defect",
+      "passed": true,
+      "detail": [
+        "README.md",
+        "adapters/README.md"
+      ]
+    },
+    {
+      "name": "independent_candidate_integrity",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "independent_doctor_pass",
+      "passed": true,
+      "detail": {
+        "schema": "reader-doctor/v1",
+        "status": "PASS_PREREQUISITES_ONLY",
+        "python": "3.12.14",
+        "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+        "git": "git version 2.51.1",
+        "git_merge_tree_write_tree": true,
+        "protected_findings": [],
+        "chapter_cards": 14,
+        "release_starter_findings": [],
+        "meaning": "Prerequisite and source checks, not candidate readiness, interpreter certification or human acceptance. Chapter 13 real pilot has additional host, delay and reviewer requirements."
+      }
+    },
+    {
+      "name": "independent_fresh_study_copy",
+      "passed": true,
+      "detail": {
+        "exit_code": 0,
+        "protected_findings": []
+      }
+    },
+    {
+      "name": "independent_faulty_starter_retained",
+      "passed": true,
+      "detail": {
+        "schema": "chapter01-routing-result/v1",
+        "timestamp_utc": "2026-10-22T06:12:49.998621+00:00",
+        "python_version": "3.12.14",
+        "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+        "status": "FAIL",
+        "candidate": "repo/src/treasury/routing.py",
+        "candidate_sha256": "39c5afc8888b748c8e96147f1bc143839dedfe73963bf5675f3e8ebf4978457a",
+        "intent_sha256": "209ee2f218448d83178bd02fd5947cf68b021657a72b38e682e4a895fa102947",
+        "acceptance_sha256": "6e5aa5706dd989bdbbeec9374a84d13c41cf6f36e23a5e5d2762a3b16e551c9b",
+        "integrity_before": [],
+        "integrity_after": [],
+        "exit_code": 1,
+        "stdout": "",
+        "test_log": "test_above_boundary_requires_review (chapter01_owner_acceptance.RoutingAcceptance.test_above_boundary_requires_review) ... ok\ntest_exact_boundary_requires_review (chapter01_owner_acceptance.RoutingAcceptance.test_exact_boundary_requires_review) ... ok\ntest_negative_amount_rejected (chapter01_owner_acceptance.RoutingAcceptance.test_negative_amount_rejected) ... FAIL\ntest_nonfinite_amount_rejected (chapter01_owner_acceptance.RoutingAcceptance.test_nonfinite_amount_rejected) ... ERROR\ntest_nonnumeric_amount_rejected (chapter01_owner_acceptance.RoutingAcceptance.test_nonnumeric_amount_rejected) ... ERROR\ntest_positive_below_limit (chapter01_owner_acceptance.RoutingAcceptance.test_positive_below_limit) ... ok\ntest_zero_amount_rejected (chapter01_owner_acceptance.RoutingAcceptance.test_zero_amount_rejected) ... FAIL\n\n======================================================================\nERROR: test_nonfinite_amount_rejected (chapter01_owner_acceptance.RoutingAcceptance.test_nonfinite_amount_rejected)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/esa-d7-guide-independent-q35jcj4n/study/reader_side/acceptance/test_routing.py\", line 30, in test_nonfinite_amount_rejected\n    self.check(\"NaN\", \"REJECTED\", \"INVALID_AMOUNT\")\n  File \"/tmp/esa-d7-guide-independent-q35jcj4n/study/reader_side/acceptance/test_routing.py\", line 7, in check\n    result = assess(raw)\n             ^^^^^^^^^^^\n  File \"/tmp/esa-d7-guide-independent-q35jcj4n/study/repo/src/treasury/routing.py\", line 17, in assess\n    if amount < THRESHOLD_EUR:\n       ^^^^^^^^^^^^^^^^^^^^^^\ndecimal.InvalidOperation: [<class 'decimal.InvalidOperation'>]\n\n======================================================================\nERROR: test_nonnumeric_amount_rejected (chapter01_owner_acceptance.RoutingAcceptance.test_nonnumeric_amount_rejected)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/esa-d7-guide-independent-q35jcj4n/study/reader_side/acceptance/test_routing.py\", line 27, in test_nonnumeric_amount_rejected\n    self.check(\"not-an-amount\", \"REJECTED\", \"INVALID_AMOUNT\")\n  File \"/tmp/esa-d7-guide-independent-q35jcj4n/study/reader_side/acceptance/test_routing.py\", line 7, in check\n    result = assess(raw)\n             ^^^^^^^^^^^\n  File \"/tmp/esa-d7-guide-independent-q35jcj4n/study/repo/src/treasury/routing.py\", line 16, in assess\n    amount = Decimal(amount_eur)\n             ^^^^^^^^^^^^^^^^^^^\ndecimal.InvalidOperation: [<class 'decimal.ConversionSyntax'>]\n\n======================================================================\nFAIL: test_negative_amount_rejected (chapter01_owner_acceptance.RoutingAcceptance.test_negative_amount_rejected)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/esa-d7-guide-independent-q35jcj4n/study/reader_side/acceptance/test_routing.py\", line 21, in test_negative_amount_rejected\n    self.check(\"-0.01\", \"REJECTED\", \"INVALID_AMOUNT\")\n  File \"/tmp/esa-d7-guide-independent-q35jcj4n/study/reader_side/acceptance/test_routing.py\", line 8, in check\n    self.assertEqual((result.route, result.reason, result.policy_version),\nAssertionError: Tuples differ: ('STANDARD_QUEUE', 'BELOW_LIMIT', 'BR-001/v1') != ('REJECTED', 'INVALID_AMOUNT', 'BR-001/v1')\n\nFirst differing element 0:\n'STANDARD_QUEUE'\n'REJECTED'\n\n- ('STANDARD_QUEUE', 'BELOW_LIMIT', 'BR-001/v1')\n+ ('REJECTED', 'INVALID_AMOUNT', 'BR-001/v1')\n\n======================================================================\nFAIL: test_zero_amount_rejected (chapter01_owner_acceptance.RoutingAcceptance.test_zero_amount_rejected)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/esa-d7-guide-independent-q35jcj4n/study/reader_side/acceptance/test_routing.py\", line 24, in test_zero_amount_rejected\n    self.check(\"0.00\", \"REJECTED\", \"INVALID_AMOUNT\")\n  File \"/tmp/esa-d7-guide-independent-q35jcj4n/study/reader_side/acceptance/test_routing.py\", line 8, in check\n    self.assertEqual((result.route, result.reason, result.policy_version),\nAssertionError: Tuples differ: ('STANDARD_QUEUE', 'BELOW_LIMIT', 'BR-001/v1') != ('REJECTED', 'INVALID_AMOUNT', 'BR-001/v1')\n\nFirst differing element 0:\n'STANDARD_QUEUE'\n'REJECTED'\n\n- ('STANDARD_QUEUE', 'BELOW_LIMIT', 'BR-001/v1')\n+ ('REJECTED', 'INVALID_AMOUNT', 'BR-001/v1')\n\n----------------------------------------------------------------------\nRan 7 tests in 0.001s\n\nFAILED (failures=2, errors=2)\n",
+        "stderr": "",
+        "meaning": "Seven owner-side cases for known local teaching code; not a security sandbox, payment approval or release approval.",
+        "candidate_sha256_after": "39c5afc8888b748c8e96147f1bc143839dedfe73963bf5675f3e8ebf4978457a",
+        "tests_total": 7,
+        "passed": 3,
+        "failures": 2,
+        "errors": 2,
+        "skipped": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0,
+        "findings": [
+          "ACCEPTANCE_REJECTED"
+        ]
+      }
+    },
+    {
+      "name": "independent_tamper_detection:README.md",
+      "passed": true,
+      "detail": [
+        "README.md"
+      ]
+    },
+    {
+      "name": "independent_tamper_detection:reader_side/specs/case_oracle.json",
+      "passed": true,
+      "detail": [
+        "reader_side/specs/case_oracle.json"
+      ]
+    },
+    {
+      "name": "independent_negative_controls_restored",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "canonical_candidate_still_exact",
+      "passed": true,
+      "detail": {
+        "README.md": "7e1535bd8748870a14f43bb738a41672a5e1dcf74adea9b05f5198615a7e5a4e",
+        "adapters/README.md": "c18e57368f7823f37e29111aa146b806dda9b6b3ccdedd52ac3e8aac54a022ed",
+        "reader_side/protected_sha256.json": "abbfb6434079eec42f45f4f486541ef69b7c061f672d62ca98c85e2d25ce33df"
+      }
+    }
+  ],
+  "commands": [
+    {
+      "name": "doctor",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "reader_start.py",
+        "doctor"
+      ],
+      "cwd": "/tmp/esa-d7-guide-independent-q35jcj4n/source",
+      "started_at_utc": "2026-10-22T06:12:49.128434+00:00",
+      "ended_at_utc": "2026-10-22T06:12:49.208746+00:00",
+      "exit_code": 0,
+      "stdout": "{\n  \"schema\": \"reader-doctor/v1\",\n  \"status\": \"PASS_PREREQUISITES_ONLY\",\n  \"python\": \"3.12.14\",\n  \"platform\": \"Linux-6.18.55-x86_64-with-glibc2.39\",\n  \"git\": \"git version 2.51.1\",\n  \"git_merge_tree_write_tree\": true,\n  \"protected_findings\": [],\n  \"chapter_cards\": 14,\n  \"release_starter_findings\": [],\n  \"meaning\": \"Prerequisite and source checks, not candidate readiness, interpreter certification or human acceptance. Chapter 13 real pilot has additional host, delay and reviewer requirements.\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "new_chapter1",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "reader_start.py",
+        "new",
+        "1",
+        "--destination",
+        "/tmp/esa-d7-guide-independent-q35jcj4n/study"
+      ],
+      "cwd": "/tmp/esa-d7-guide-independent-q35jcj4n/source",
+      "started_at_utc": "2026-10-22T06:12:49.208828+00:00",
+      "ended_at_utc": "2026-10-22T06:12:49.945156+00:00",
+      "exit_code": 0,
+      "stdout": "{\n  \"schema\": \"chapter01-preparation/v1\",\n  \"status\": \"PASS\",\n  \"source_companion\": \"/tmp/esa-d7-guide-independent-q35jcj4n/source\",\n  \"destination\": \"/tmp/esa-d7-guide-independent-q35jcj4n/study\",\n  \"installed_candidate\": \"repo/src/treasury/routing.py\",\n  \"candidate_sha256\": \"39c5afc8888b748c8e96147f1bc143839dedfe73963bf5675f3e8ebf4978457a\",\n  \"copied_source_files\": 1618,\n  \"changed_source_paths\": [\n    \"repo/src/treasury/routing.py\"\n  ],\n  \"reader_side_unchanged\": true,\n  \"source_companion_unchanged\": true,\n  \"findings\": [],\n  \"meaning\": \"A new full cumulative lab with only the CP01 editable router set to its known faulty starter; no payment or release authority.\"\n}\nPrepared /tmp/esa-d7-guide-independent-q35jcj4n/study\nFrom that directory run: python3 reader_start.py show 1\n",
+      "stderr": ""
+    },
+    {
+      "name": "faulty_starter",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "reader_side/tools/run_acceptance.py",
+        "--output",
+        "/tmp/esa-d7-guide-independent-q35jcj4n/acceptance.json"
+      ],
+      "cwd": "/tmp/esa-d7-guide-independent-q35jcj4n/study",
+      "started_at_utc": "2026-10-22T06:12:49.953888+00:00",
+      "ended_at_utc": "2026-10-22T06:12:50.068243+00:00",
+      "exit_code": 1,
+      "stdout": "{\n  \"schema\": \"chapter01-routing-result/v1\",\n  \"timestamp_utc\": \"2026-10-22T06:12:49.998621+00:00\",\n  \"python_version\": \"3.12.14\",\n  \"platform\": \"Linux-6.18.55-x86_64-with-glibc2.39\",\n  \"status\": \"FAIL\",\n  \"candidate\": \"repo/src/treasury/routing.py\",\n  \"candidate_sha256\": \"39c5afc8888b748c8e96147f1bc143839dedfe73963bf5675f3e8ebf4978457a\",\n  \"intent_sha256\": \"209ee2f218448d83178bd02fd5947cf68b021657a72b38e682e4a895fa102947\",\n  \"acceptance_sha256\": \"6e5aa5706dd989bdbbeec9374a84d13c41cf6f36e23a5e5d2762a3b16e551c9b\",\n  \"integrity_before\": [],\n  \"integrity_after\": [],\n  \"exit_code\": 1,\n  \"stdout\": \"\",\n  \"test_log\": \"test_above_boundary_requires_review (chapter01_owner_acceptance.RoutingAcceptance.test_above_boundary_requires_review) ... ok\\ntest_exact_boundary_requires_review (chapter01_owner_acceptance.RoutingAcceptance.test_exact_boundary_requires_review) ... ok\\ntest_negative_amount_rejected (chapter01_owner_acceptance.RoutingAcceptance.test_negative_amount_rejected) ... FAIL\\ntest_nonfinite_amount_rejected (chapter01_owner_acceptance.RoutingAcceptance.test_nonfinite_amount_rejected) ... ERROR\\ntest_nonnumeric_amount_rejected (chapter01_owner_acceptance.RoutingAcceptance.test_nonnumeric_amount_rejected) ... ERROR\\ntest_positive_below_limit (chapter01_owner_acceptance.RoutingAcceptance.test_positive_below_limit) ... ok\\ntest_zero_amount_rejected (chapter01_owner_acceptance.RoutingAcceptance.test_zero_amount_rejected) ... FAIL\\n\\n======================================================================\\nERROR: test_nonfinite_amount_rejected (chapter01_owner_acceptance.RoutingAcceptance.test_nonfinite_amount_rejected)\\n----------------------------------------------------------------------\\nTraceback (most recent call last):\\n  File \\\"/tmp/esa-d7-guide-independent-q35jcj4n/study/reader_side/acceptance/test_routing.py\\\", line 30, in test_nonfinite_amount_rejected\\n    self.check(\\\"NaN\\\", \\\"REJECTED\\\", \\\"INVALID_AMOUNT\\\")\\n  File \\\"/tmp/esa-d7-guide-independent-q35jcj4n/study/reader_side/acceptance/test_routing.py\\\", line 7, in check\\n    result = assess(raw)\\n             ^^^^^^^^^^^\\n  File \\\"/tmp/esa-d7-guide-independent-q35jcj4n/study/repo/src/treasury/routing.py\\\", line 17, in assess\\n    if amount < THRESHOLD_EUR:\\n       ^^^^^^^^^^^^^^^^^^^^^^\\ndecimal.InvalidOperation: [<class 'decimal.InvalidOperation'>]\\n\\n======================================================================\\nERROR: test_nonnumeric_amount_rejected (chapter01_owner_acceptance.RoutingAcceptance.test_nonnumeric_amount_rejected)\\n----------------------------------------------------------------------\\nTraceback (most recent call last):\\n  File \\\"/tmp/esa-d7-guide-independent-q35jcj4n/study/reader_side/acceptance/test_routing.py\\\", line 27, in test_nonnumeric_amount_rejected\\n    self.check(\\\"not-an-amount\\\", \\\"REJECTED\\\", \\\"INVALID_AMOUNT\\\")\\n  File \\\"/tmp/esa-d7-guide-independent-q35jcj4n/study/reader_side/acceptance/test_routing.py\\\", line 7, in check\\n    result = assess(raw)\\n             ^^^^^^^^^^^\\n  File \\\"/tmp/esa-d7-guide-independent-q35jcj4n/study/repo/src/treasury/routing.py\\\", line 16, in assess\\n    amount = Decimal(amount_eur)\\n             ^^^^^^^^^^^^^^^^^^^\\ndecimal.InvalidOperation: [<class 'decimal.ConversionSyntax'>]\\n\\n======================================================================\\nFAIL: test_negative_amount_rejected (chapter01_owner_acceptance.RoutingAcceptance.test_negative_amount_rejected)\\n----------------------------------------------------------------------\\nTraceback (most recent call last):\\n  File \\\"/tmp/esa-d7-guide-independent-q35jcj4n/study/reader_side/acceptance/test_routing.py\\\", line 21, in test_negative_amount_rejected\\n    self.check(\\\"-0.01\\\", \\\"REJECTED\\\", \\\"INVALID_AMOUNT\\\")\\n  File \\\"/tmp/esa-d7-guide-independent-q35jcj4n/study/reader_side/acceptance/test_routing.py\\\", line 8, in check\\n    self.assertEqual((result.route, result.reason, result.policy_version),\\nAssertionError: Tuples differ: ('STANDARD_QUEUE', 'BELOW_LIMIT', 'BR-001/v1') != ('REJECTED', 'INVALID_AMOUNT', 'BR-001/v1')\\n\\nFirst differing element 0:\\n'STANDARD_QUEUE'\\n'REJECTED'\\n\\n- ('STANDARD_QUEUE', 'BELOW_LIMIT', 'BR-001/v1')\\n+ ('REJECTED', 'INVALID_AMOUNT', 'BR-001/v1')\\n\\n======================================================================\\nFAIL: test_zero_amount_rejected (chapter01_owner_acceptance.RoutingAcceptance.test_zero_amount_rejected)\\n----------------------------------------------------------------------\\nTraceback (most recent call last):\\n  File \\\"/tmp/esa-d7-guide-independent-q35jcj4n/study/reader_side/acceptance/test_routing.py\\\", line 24, in test_zero_amount_rejected\\n    self.check(\\\"0.00\\\", \\\"REJECTED\\\", \\\"INVALID_AMOUNT\\\")\\n  File \\\"/tmp/esa-d7-guide-independent-q35jcj4n/study/reader_side/acceptance/test_routing.py\\\", line 8, in check\\n    self.assertEqual((result.route, result.reason, result.policy_version),\\nAssertionError: Tuples differ: ('STANDARD_QUEUE', 'BELOW_LIMIT', 'BR-001/v1') != ('REJECTED', 'INVALID_AMOUNT', 'BR-001/v1')\\n\\nFirst differing element 0:\\n'STANDARD_QUEUE'\\n'REJECTED'\\n\\n- ('STANDARD_QUEUE', 'BELOW_LIMIT', 'BR-001/v1')\\n+ ('REJECTED', 'INVALID_AMOUNT', 'BR-001/v1')\\n\\n----------------------------------------------------------------------\\nRan 7 tests in 0.001s\\n\\nFAILED (failures=2, errors=2)\\n\",\n  \"stderr\": \"\",\n  \"meaning\": \"Seven owner-side cases for known local teaching code; not a security sandbox, payment approval or release approval.\",\n  \"candidate_sha256_after\": \"39c5afc8888b748c8e96147f1bc143839dedfe73963bf5675f3e8ebf4978457a\",\n  \"tests_total\": 7,\n  \"passed\": 3,\n  \"failures\": 2,\n  \"errors\": 2,\n  \"skipped\": 0,\n  \"expected_failures\": 0,\n  \"unexpected_successes\": 0,\n  \"findings\": [\n    \"ACCEPTANCE_REJECTED\"\n  ]\n}\n",
+      "stderr": ""
+    }
+  ],
+  "review_diagnostic": "An earlier read-only rg query included three guessed nonexistent tool paths and returned exit2; actual reader_start.py imports were then followed to scope_guard.py and prepare_chapter01.py. No candidate bytes were changed.",
+  "disposable_copy_retained": false,
+  "scope_limitation": "Focused independent review of protected guide repair; not OS containment, human review, production approval, or a full-book test."
+}

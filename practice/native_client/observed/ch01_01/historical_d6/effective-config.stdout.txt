@@ -1,0 +1,75 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "esa-local/esa-qwen3-4b",
+  "small_model": "esa-local/esa-qwen3-4b",
+  "enabled_providers": [
+    "esa-local"
+  ],
+  "autoupdate": false,
+  "share": "disabled",
+  "provider": {
+    "esa-local": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "ESA local llama.cpp",
+      "options": {
+        "baseURL": "http://127.0.0.1:18080/v1",
+        "timeout": 180000
+      },
+      "models": {
+        "esa-qwen3-4b": {
+          "name": "Qwen3-4B Q4_K_M local",
+          "tool_call": true,
+          "limit": {
+            "context": 16384,
+            "output": 2048
+          }
+        }
+      }
+    }
+  },
+  "default_agent": "esa-bounded",
+  "agent": {
+    "esa-bounded": {
+      "description": "Bounded ESA local-only validation agent",
+      "mode": "primary",
+      "model": "esa-local/esa-qwen3-4b",
+      "steps": 8,
+      "temperature": 0.2,
+      "prompt": "You are assisting with a bounded software engineering exercise. Inspect the supplied task and permitted files, make only explicitly authorized changes, and report actual tool results. Do not claim a check passed unless you observed it. Stop after the bounded task or report the exact blocker.",
+      "options": {},
+      "permission": {}
+    }
+  },
+  "permission": {
+    "*": "deny",
+    "read": {
+      "*": "deny",
+      "workspace/scratch/efa0a59e0545/runtime_d6/native_work_01/repo/AGENTS.md": "allow",
+      "workspace/scratch/efa0a59e0545/runtime_d6/native_work_01/repo/src/treasury/routing.py": "allow",
+      "workspace/scratch/efa0a59e0545/runtime_d6/native_work_01/reader_side/intent/INT-001.md": "allow",
+      "workspace/scratch/efa0a59e0545/runtime_d6/native_work_01/reader_side/acceptance/test_routing.py": "allow",
+      "workspace/scratch/efa0a59e0545/runtime_d6/native_work_01/reader_side/evidence/CH01_INITIAL_D6_NATIVE_01.json": "allow",
+      "workspace/scratch/efa0a59e0545/runtime_d6/native_work_01/reader_side/evidence/CH01_AGENT_D6_NATIVE_01.json": "allow"
+    },
+    "edit": {
+      "*": "deny",
+      "workspace/scratch/efa0a59e0545/runtime_d6/native_work_01/repo/src/treasury/routing.py": "allow"
+    },
+    "shell": {
+      "*": "deny",
+      "python3 -B reader_side/tools/run_acceptance.py --output reader_side/evidence/CH01_AGENT_D6_NATIVE_01.json": "allow"
+    },
+    "external_directory": "deny",
+    "glob": "deny",
+    "grep": "deny",
+    "task": "deny",
+    "skill": "deny",
+    "webfetch": "deny",
+    "websearch": "deny"
+  },
+  "mcp": {},
+  "mode": {},
+  "plugin": [],
+  "command": {},
+  "username": "unknown"
+}

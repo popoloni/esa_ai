@@ -1,0 +1,22 @@
+{
+  "origin": "external_model_agent",
+  "client": "ChatGPT collaboration.spawn_agent; generation and file work through functions.exec / tools.exec_command",
+  "model": "GPT-6 Astra Pro (developer-exposed label; not independently authenticated)",
+  "model_version": null,
+  "model_api_id": null,
+  "usage": null,
+  "cost": null,
+  "framework": "Spec Kit 1.2.2 retained templates and skills applied in ChatGPT collaboration",
+  "native_framework_slash_invocation": false,
+  "commercial_model_cli_invocation": false,
+  "prior_exposure": "Fresh task context. No parent book, neighboring authored outputs, reference solutions, or prior independent findings were read. Supplied INPUT_MANIFEST.json names reference-origin paths as metadata; those paths were not followed. Blank spec/plan seeds inside input_root were read.",
+  "context_boundary": "Instruction boundary in shared filesystem, not technical isolation.",
+  "scope": "Read current dispatch/request and supplied input_root; additionally read allowed practice/orchestration/external_worker.py. Write only attempt_output_root.",
+  "human_requirements_approval": "PENDING",
+  "engineering_acceptance": "PENDING_INDEPENDENT_REVIEW",
+  "implementation_authority": false,
+  "release_authority": false,
+  "payment_authority": false,
+  "helper_attempt": "A read-only bounded extraction helper spawn was attempted but failed with agent thread limit reached. No helper ran or contributed.",
+  "created_at_utc": "2026-10-21T16:01:48.989944+00:00"
+}

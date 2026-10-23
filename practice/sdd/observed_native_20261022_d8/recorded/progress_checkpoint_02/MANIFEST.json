@@ -1,0 +1,21 @@
+{
+  "created_at_utc": "2026-10-22T11:38:07.664962+00:00",
+  "files": {
+    "HOST_PROCESS_OBSERVATION.json": {
+      "bytes": 778,
+      "sha256": "959cd563d4e8427696c8e03f915832b6ebbf2dc867e1050b1f430f8e0b6ad683"
+    },
+    "PROGRESS.json": {
+      "bytes": 2691,
+      "sha256": "b4483d5bca03d9ccc75be1324e3072a35cdd66e6eaf001530f9dab34e38837d1"
+    },
+    "stderr.txt": {
+      "bytes": 5766,
+      "sha256": "bf28f5aea122483e2fd7f57a521bd50f525e8e03da49a71d2f4feeaa0a00c91c"
+    },
+    "stdout.txt": {
+      "bytes": 250,
+      "sha256": "574844c86979f8d92ed7e0a7eb9d306f704abd55853fe1f72733d437ccecf0b8"
+    }
+  }
+}

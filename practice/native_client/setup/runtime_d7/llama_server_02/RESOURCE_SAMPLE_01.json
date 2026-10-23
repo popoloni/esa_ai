@@ -1,0 +1,36 @@
+{
+  "schema": "esa-active-native-resource-sample/v1",
+  "recorded_at_utc": "2026-10-22T07:08:33.801607+00:00",
+  "purpose": "One requested lightweight memory/OOM sample during the single bounded SDD recovery; no inference or process mutation",
+  "server_pid": 14941,
+  "verified_cmdline": "/workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/llama-server --model /workspace/scratch/72d789d25fef/runtime_d7/downloads/Qwen3-4B-Q4_K_M.gguf --alias esa-qwen3-4b --host 127.0.0.1 --port 18080 --ctx-size 24576 --parallel 1 --threads 8 --threads-batch 8 --n-gpu-layers 0 --ubatch-size 128 --jinja --chat-template-kwargs {\"enable_thinking\":false} --no-agent --no-ui-mcp-proxy --no-webui --metrics --timeout 300 --cache-ram 0 --ctx-checkpoints 0 --cache-type-k q4_0 --cache-type-v q4_0 --flash-attn on ",
+  "server_status": "Name:\tllama-server\nUmask:\t0022\nState:\tR (running)\nTgid:\t14941\nNgid:\t0\nPid:\t14941\nPPid:\t14938\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t14941\nNSpid:\t14941\nNSpgid:\t14938\nNSsid:\t14938\nKthread:\t0\nVmPeak:\t 6138056 kB\nVmSize:\t 6138056 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t 5213292 kB\nVmRSS:\t 5075420 kB\nRssAnon:\t 2804400 kB\nRssFile:\t 2271020 kB\nRssShmem:\t       0 kB\nVmData:\t 3036036 kB\nVmStk:\t     132 kB\nVmExe:\t       4 kB\nVmLib:\t   20008 kB\nVmPTE:\t   10456 kB\nVmSwap:\t       0 kB\nHugetlbPages:\t       0 kB\nCoreDumping:\t0\nTHP_enabled:\t1\nuntag_mask:\t0xffffffffffffffff\nThreads:\t20\nSigQ:\t0/39792\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000000000000\nSigIgn:\t0000000000001005\nSigCgt:\t0000000100004002\nCapInh:\t0000000000000000\nCapPrm:\t00000000800405fb\nCapEff:\t00000000800405fb\nCapBnd:\t00000000800405fb\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSeccomp_filters:\t0\nSpeculation_Store_Bypass:\tvulnerable\nSpeculationIndirectBranch:\talways enabled\nCpus_allowed:\t1ff\nCpus_allowed_list:\t0-8\nMems_allowed:\t00000000,00000001\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t1964\nnonvoluntary_ctxt_switches:\t12982\n",
+  "server_stat": "14941 (llama-server) R 14938 14938 14938 0 -1 4194304 743457 0 6242 0 270214 852 0 0 20 0 20 0 710728 6285369344 1268646 18446744073709551615 1 1 0 0 0 0 0 4101 16386 0 0 0 17 5 0 0 0 0 0 0 0 0 0 0 0 0 0\n",
+  "cgroup": {
+    "cpu.max": "800000 100000\n",
+    "cpu.stat": "usage_usec 21794016483\nuser_usec 19530086088\nsystem_usec 2263930394\nnice_usec 0\nnr_periods 62658\nnr_throttled 17672\nthrottled_usec 930390081\nnr_bursts 0\nburst_usec 0\n",
+    "memory.max": "8589934592\n",
+    "memory.current": "8397201408\n",
+    "memory.events": "low 0\nhigh 0\nmax 103211\noom 0\noom_kill 0\noom_group_kill 0\n",
+    "memory.stat": "anon 3436900352\nfile 4344541184\nkernel 614387712\nkernel_stack 1425408\npagetables 16494592\nsec_pagetables 0\npercpu 7260\nsock 0\nvmalloc 4096\nshmem 0\nfile_mapped 2415849472\nfile_dirty 5357568\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 1207959552\nshmem_thp 0\ninactive_anon 3436560384\nactive_anon 81920\ninactive_file 605208576\nactive_file 3739328512\nunevictable 0\nslab_reclaimable 592763384\nslab_unreclaimable 3645984\nslab 596409368\nworkingset_refault_anon 0\nworkingset_refault_file 3245306\nworkingset_activate_anon 0\nworkingset_activate_file 1609469\nworkingset_restore_anon 0\nworkingset_restore_file 313741\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgscan 6824586\npgsteal 6320056\npswpin 0\npswpout 0\npgscan_kswapd 0\npgscan_direct 6824586\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 0\npgsteal_direct 6320056\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 37701362\npgmajfault 6598\npgrefill 2730849\npgactivate 2532425\npgdeactivate 2713399\npglazyfree 64\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\n"
+  },
+  "server_log_prefix_at_sample": {
+    "bytes": 1705,
+    "sha256": "ec4d91f796481f1170c790b6e62d018bd9bd4fe550ff96e9ebd5ffa38dd052aa",
+    "last_lines": [
+      "0.00.030.326 W srv  llama_server: security: no API key is set and CORS allows all origins (see https://github.com/ggml-org/llama.cpp/pull/25655)",
+      "0.00.032.084 I srv    load_model: loading model '/workspace/scratch/72d789d25fef/runtime_d7/downloads/Qwen3-4B-Q4_K_M.gguf'",
+      "0.00.374.904 W load: control-looking token: 128247 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden",
+      "0.07.016.789 I cmn          init: llama threadpool init, n_threads = 8",
+      "0.07.245.895 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 24576, kv_unified = 'false'",
+      "0.07.246.045 W srv          init: --cache-idle-slots requires --cache-ram, disabling",
+      "0.07.253.308 I srv  llama_server: model loaded",
+      "0.07.253.326 I srv  llama_server: listening on http://127.0.0.1:18080",
+      "3.30.243.375 I slot get_availabl: id  0 | task -1 | selected slot by LRU, n_tokens = 0, t_last = -1",
+      "3.30.244.092 I slot launch_slot_: id  0 | task 1 | processing task, is_child = 0",
+      "4.50.620.015 I slot print_timing: id  0 | task 1 | prompt processing, n_tokens =   2048, progress = 0.30, t =  80.38 s / 25.48 tokens per second",
+      "7.53.697.418 I slot print_timing: id  0 | task 1 | prompt processing, n_tokens =   4096, progress = 0.60, t = 263.45 s / 15.55 tokens per second"
+    ]
+  },
+  "interpretation_limit": "This dated resource point is not an isolated latency experiment or a complete effort/cost measure."
+}

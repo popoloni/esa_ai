@@ -1,0 +1,88 @@
+Repair one remaining defect in /workspace/scratch/72d789d25fef/runtime_d9/native_csv_01/api.py, then run the native check and complete the handoff. The useful spec.md and plan.md already exist from the earlier native session and must remain unchanged. This is a fresh native session continuing the same recorded project after an unproductive loop; author guidance is disclosed.
+
+The contract accepts exactly two format strings: json and csv. Both successful branches already return. Every other format must raise ValueError in orders_response. The existing conditional for the literal word other is wrong: xml, yaml, uppercase CSV and an empty string are also unsupported. Remove that literal-word condition and place the refusal after the two supported returns in orders_response, before the next function definition. Remove the unreachable raise below the return in csv_formatter. Do not change the working CSV formatter, selector, specification, plan, contract or checks.
+
+Use the edit tool to make that small actual control-flow repair. After it, execute this exact allowed command:
+python3 -B /workspace/scratch/72d789d25fef/revision_20261022_d9/Engineering_Software_with_Agentic_AI_20261022_d9/companion/practice/csv_export/checks/check.py --candidate /workspace/scratch/72d789d25fef/runtime_d9/native_csv_01
+Inspect the returned status. If the check passes, finish with an actual short handoff naming changed file, observed status and the limits (machine-importer literal values; authentication, spreadsheet viewing and deployment untested). Stop. Write the final facts rather than an announcement of future work.
+
+Complete current file contents follow. The checker source and reference implementation are not included.
+
+## CURRENT_CONTRACT.md
+```
+# CSV-001/v1: add one presentation
+
+The existing orders API selects rows for a supplied actor and optional status.
+This local exercise starts after authentication; actor establishment and HTTP
+transport are outside its scope. CSV must use exactly the same authorized,
+filtered rows and order as the JSON path. Do not change selection.py.
+
+Preserve the existing JSON result and input data. Add `format="csv"` returning
+content_type `text/csv; charset=utf-8` and a CSV string in body. Columns, in order:
+order_id, status, customer, amount_eur, note. The output has a header even when
+there are no rows. A standard CSV parser must recover each selected field,
+including commas, double quotes, embedded newlines and Unicode. Unsupported
+formats raise ValueError. Serialization must not alter or persist source rows.
+
+Fictional owner decision CSV-CONSUMER-01: the target is a machine CSV importer,
+not a spreadsheet. Preserve field values literally, including formula-like
+strings. Do not silently prefix apostrophes. Spreadsheet viewing needs a
+separately approved consumer format and checks; the CSV label alone gives no
+assurance about spreadsheet interpretation. There are no production records.
+
+Allowed implementation scope: api.py and an optional new presenter.py. Keep
+selection, demo, fixtures and contract unchanged. A direct formatter or a small
+presenter is valid if behavior meets this contract. Avoid new external packages.
+
+Before editing, identify the row-selection dependency and state the constraints.
+Keep the first failure, diff, independent checks and a compact fresh-session
+handoff. The canonical worked solution is one choice, not a required syntax.
+
+```
+
+## api.py
+```
+"""Existing JSON presentation; add CSV after the same selection boundary."""
+from selection import selected_orders, public_order
+
+def orders_response(rows, actor, format="json", status=None):
+    selected = selected_orders(rows, actor, status)
+    public = [public_order(row) for row in selected]
+    if format == "json":
+        return {"content_type": "application/json", "body": public}
+    if format == "csv":
+        return {"content_type": "text/csv; charset=utf-8", "body": csv_formatter(selected)}
+    if format == "other":
+        raise ValueError("unsupported format")
+
+def csv_formatter(rows):
+    import csv
+    import io
+    output = io.StringIO()
+    csv.writer(output).writerow(['order_id', 'status', 'customer', 'amount_eur', 'note'])
+    for row in rows:
+        csv.writer(output).writerow([row['order_id'], row['status'], row['customer'], row['amount_eur'], row['note']])
+    return output.getvalue()
+    raise ValueError("unsupported format")
+
+```
+
+## spec.md
+```
+CSV-CONSUMER-01: Specification
+
+This specification defines the CSV output format for the orders API. The CSV must use exactly the same actor-visible, status-filtered rows and their order as the JSON presentation. JSON and input rows are preserved unchanged. The CSV includes five ordered fields: order_id, status, customer, amount_eur, note. A header is included even when there are no rows. Special characters like commas, double quotes, embedded newlines, and Unicode are round-tripped exactly as they appear. Unsupported formats raise ValueError. The machine-importer literal-value decision is preserved as per the fictional owner's decision. Spreadsheet viewing, authentication, and deployment are deferred to separate approvals.
+```
+
+## plan.md
+```
+Selected orders remains the selection authority.
+A direct formatter is proportionate for this single output; a presenter would be reconsidered if another exporter appeared.
+
+Task: Implement CSV presentation in api.py.
+Check command: python3 -B /workspace/scratch/72d789d25fef/revision_20261022_d9/Engineering_Software_with_Agentic_AI_20261022_d9/companion/practice/csv_export/checks/check.py --candidate /workspace/scratch/72d789d25fef/runtime_d9/native_csv_01
+
+Preserve the refusal of unsupported formats in orders_response.
+Remove the unrelated module mutations from csv.registered_reader/registered_writer.
+Keep selection and the contract unchanged.
+```

@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/uv",
+    "--cache-dir",
+    "/workspace/scratch/72d789d25fef/runtime_d7/python-cache",
+    "pip",
+    "install",
+    "--python",
+    "/workspace/scratch/72d789d25fef/runtime_d7/mcp_venv/bin/python",
+    "--default-index",
+    "https://pypi.org/simple",
+    "-r",
+    "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion/practice/mcp_cli/requirements.lock"
+  ],
+  "cwd": "/workspace/scratch/72d789d25fef/runtime_d7",
+  "started_at_utc": "2026-10-22T05:55:11.613221+00:00",
+  "finished_at_utc": "2026-10-22T05:55:12.833338+00:00",
+  "elapsed_seconds": 1.2201293050002278,
+  "exit_code": 0
+}

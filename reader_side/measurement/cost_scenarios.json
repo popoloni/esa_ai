@@ -1,0 +1,91 @@
+{
+  "attempt_costs": [
+    {
+      "attempt_id": "A01",
+      "compute_cost": "0.01",
+      "currency": "EUR",
+      "initial_hours": "0.20",
+      "origin": "SYNTHETIC_SCENARIO_ASSUMPTIONS",
+      "review_hours": "0.10",
+      "rework_hours": "0",
+      "vendor_cost": "0.02"
+    },
+    {
+      "attempt_id": "A02",
+      "compute_cost": "0.01",
+      "currency": "EUR",
+      "initial_hours": "0",
+      "origin": "SYNTHETIC_SCENARIO_ASSUMPTIONS",
+      "review_hours": "0.10",
+      "rework_hours": "0.15",
+      "vendor_cost": "0.03"
+    },
+    {
+      "attempt_id": "A03",
+      "compute_cost": "0.01",
+      "currency": "EUR",
+      "initial_hours": "0",
+      "origin": "SYNTHETIC_SCENARIO_ASSUMPTIONS",
+      "review_hours": "0.05",
+      "rework_hours": "0",
+      "vendor_cost": "0.01"
+    },
+    {
+      "attempt_id": "A04",
+      "compute_cost": "0.01",
+      "currency": "EUR",
+      "initial_hours": "0",
+      "origin": "SYNTHETIC_SCENARIO_ASSUMPTIONS",
+      "review_hours": "0.05",
+      "rework_hours": "0.05",
+      "vendor_cost": "0.01"
+    },
+    {
+      "attempt_id": "A05",
+      "compute_cost": "0.01",
+      "currency": "EUR",
+      "initial_hours": "0",
+      "origin": "SYNTHETIC_SCENARIO_ASSUMPTIONS",
+      "review_hours": "0.05",
+      "rework_hours": "0.10",
+      "vendor_cost": "0.02"
+    }
+  ],
+  "currency": "EUR",
+  "effort_categories": "MUTUALLY_EXCLUSIVE_INITIAL_IMPLEMENTATION_REVIEW_AND_IMPLEMENTATION_REWORK",
+  "field_result": false,
+  "origin": "SYNTHETIC_SCENARIO_ASSUMPTIONS",
+  "pilot_ceiling_per_accepted_outcome": "50.00",
+  "rates_per_hour": {
+    "initial": "40.00",
+    "review": "50.00",
+    "rework": "40.00"
+  },
+  "scenarios": [
+    {
+      "extra_rework_hours": "0",
+      "id": "BASE",
+      "retain_final_acceptance": true
+    },
+    {
+      "extra_rework_hours": "0.50",
+      "id": "MORE_REWORK",
+      "retain_final_acceptance": true
+    },
+    {
+      "extra_rework_hours": "0",
+      "id": "NO_ACCEPTANCE",
+      "retain_final_acceptance": false
+    }
+  ],
+  "schema": "cp14-scenario-costs/v1",
+  "unknown_actual_fields": [
+    "initial_hours",
+    "review_hours",
+    "rework_hours",
+    "vendor_cost",
+    "compute_cost",
+    "real_human_accepted_outcomes",
+    "cost_per_accepted_outcome"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "created_at_utc": "2026-10-22T12:06:52.700397+00:00",
+  "files": {
+    "CAPTURE_RECEIPT.json": {
+      "bytes": 15969,
+      "sha256": "990e17c96269855f1a2613dbcab6db60abc7ea0a2d9a0464888aa0bafb21bdc8"
+    },
+    "NATIVE_FINAL_TEXT.md": {
+      "bytes": 5530,
+      "sha256": "0b8ce1854906b37eb2c0249e97a7e0d5dc1ce3e2597b6289c9a54fb6eacbec77"
+    },
+    "PROGRESS.json": {
+      "bytes": 3146,
+      "sha256": "6f36be41e9e29cd74d008e5ae3a83bb68b7b143a514e6596c2529803994f0130"
+    },
+    "stderr.txt": {
+      "bytes": 7774,
+      "sha256": "b85fbd2f686c336c1eddcf3da85c784f808e1608e5ff5351330c9787a3e8b516"
+    },
+    "stdout.txt": {
+      "bytes": 10220,
+      "sha256": "80485ace0c7c59c109777bc0980cf767fcfea009ab950fe02dd48c5307d78256"
+    }
+  }
+}

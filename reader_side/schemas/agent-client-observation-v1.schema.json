@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Retained client attempt observation",
+  "type": "object",
+  "required": [
+    "schema",
+    "record_kind",
+    "execution_mode",
+    "change_id",
+    "claim_scope",
+    "run_id",
+    "environment",
+    "client",
+    "started_at",
+    "ended_at",
+    "outcome",
+    "candidate_sha256",
+    "transcript_ref"
+  ],
+  "properties": {
+    "schema": {
+      "const": "agent-client-observation/v1"
+    },
+    "record_kind": {
+      "const": "ACTUAL_EXECUTION_RECORD"
+    },
+    "execution_mode": {
+      "const": "ACTUAL_AGENT_CLIENT"
+    },
+    "change_id": {
+      "const": "IMPL-008/v1"
+    },
+    "claim_scope": {
+      "const": "CLIENT_ATTEMPT_ONLY_NOT_ACCEPTANCE"
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "environment": {
+      "type": "string",
+      "minLength": 1
+    },
+    "client": {
+      "type": "object",
+      "required": [
+        "name",
+        "version",
+        "model"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "model": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "started_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "ended_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "outcome": {
+      "enum": [
+        "COMPLETED",
+        "FAILED",
+        "INTERRUPTED"
+      ]
+    },
+    "candidate_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "transcript_ref": {
+      "type": "object",
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "description": "Schema validity is not external authentication; provenance_core.py additionally checks chronology, candidate digest and transcript bytes."
+}

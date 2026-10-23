@@ -1,0 +1,105 @@
+{
+  "schema": "esa-native-sdd-terminal-review/v1",
+  "reviewed_at_utc": "2026-10-22T07:55:00.901193+00:00",
+  "reviewer": "Controller ChatGPT assistant; separate from the named local model, not blind or human review",
+  "status": "TASK_INCOMPLETE_OUTER_TIMEOUT_AFTER_FULL_INPUT_READ",
+  "r08_recommendation": "PARTIAL",
+  "client_process_status": "OBSERVED_WITH_FINDINGS",
+  "framework": "Spec Kit 1.2.2",
+  "client": "OpenCode 1.19.3",
+  "model": "Pinned Qwen3-4B Q4_K_M through llama.cpp b11799",
+  "session_id": "ses_e9d953008ffe5prRJYzw7HWDMP",
+  "started_at_utc": "2026-10-22T07:23:02.277235+00:00",
+  "ended_at_utc": "2026-10-22T07:53:02.359954+00:00",
+  "duration_seconds": 1800.0826279609992,
+  "client_exit_code": 124,
+  "stop_reason": "The command recorder enforced the prospectively declared 1800-second outer limit while the second primary request remained incomplete. This was not a model-selected clarification stop or a provider header error.",
+  "actual_primary_tool_calls": 1,
+  "completed_read": {
+    "timestamp_ms": 1792654531399,
+    "session_id": "ses_e9d953008ffe5prRJYzw7HWDMP",
+    "call_id": "gtZjJu17PxRlHruulByRJaRXPn6278Lg",
+    "tool": "bash",
+    "status": "completed",
+    "input": {
+      "command": "cat inputs/NATIVE_CONTEXT_BUNDLE.md",
+      "workdir": "/workspace/scratch/72d789d25fef/runtime_d7/native_sdd_03"
+    },
+    "output_bytes": 25044,
+    "output_sha256": "51da598ef2a1d7116869cca05fe637b0120039cf8389f057ab0e6e81b301ae44",
+    "exit": 0,
+    "truncated": false,
+    "matches_complete_preflight_packet": true
+  },
+  "first_model_action": "FIRST_CONTINUATION_MODEL_ACTION.json contains the exact native tool event. There was no new model text response.",
+  "first_generated_artifacts": {
+    ".specify/feature.json": "NOT_PRODUCED",
+    "specs/001-explain-treasury/spec.md": "NOT_PRODUCED",
+    "specs/001-explain-treasury/checklists/requirements.md": "NOT_PRODUCED"
+  },
+  "original_files_unchanged": true,
+  "final_file_count": 49,
+  "diff": "FINAL_DIFF.patch is empty; recorder before/after and an independent rescan match all 49 file hashes.",
+  "same_session_history": "The original expanded native command and earlier short-name response remain in the export with their message parts exactly unchanged. The appended execution request matches pinned CLI serialization, including its added outer quotes.",
+  "prior_solution_exposure": "The fixed inputs explicitly include the authored inputs/specification.json reference contract, all eight scenario expectations, source authority, router and other reference-derived context. This is a disclosed synthetic projection, not blind elicitation. Earlier generated outputs, before/after Markdown answers and owner responses were excluded.",
+  "wording_qualification": "Earlier preparation exclusion wording and the older guide phrase no authored specification were too broad. Their recorded bytes/hashes are preserved; the current guide/helper explicitly distinguish the supplied authored JSON contract from excluded generated/Markdown answers. See the terminal follow-up note for D7-SDD-PORTABLE.",
+  "owner_questions": [
+    "Which explanation vocabulary do real operators understand?",
+    "Does the interface accidentally induce payment approval?",
+    "How will actual user benefit be measured in a pilot?"
+  ],
+  "owner_answers": "ABSENT",
+  "native_clarification_dialogue": "NOT_REACHED",
+  "native_requirements_checklist": "NOT_PRODUCED",
+  "planning_or_implementation": "NOT_RUN",
+  "human_review": "ABSENT",
+  "reported_usage": {
+    "total": 7019,
+    "input": 6964,
+    "output": 55,
+    "reasoning": 0,
+    "cache": {
+      "write": 0,
+      "read": 0
+    }
+  },
+  "client_reported_cost": 0,
+  "usage_qualification": "Only this continuation's one completed native step is counted here. The second assistant entry has no completion and its zero token fields are not evidence of zero work. Earlier same-session usage is preserved separately and must not be double-counted from the new full-session export. The first failed episode/title/retry also lacks complete usage receipts. Client cost 0 is not total workflow cost.",
+  "bounds": {
+    "outer_seconds": 1800,
+    "provider_timeout_ms": 1500000,
+    "provider_header_timeout_ms": 1500000,
+    "context_tokens": 24576,
+    "max_agent_steps": 12,
+    "per_response_output_limit": 2048
+  },
+  "budget_qualification": "The 120 measured added tokens are the raw prompt argument. Native quote serialization is explicitly retained and falls under the declared system/tools/envelopes reserve. Reserves are planning allocations, not a capture of the complete HTTP request.",
+  "background_dependency_activity": "Actual stderr retains unsuccessful nonblocking @opencode-ai/plugin registry fetches. Local model inference does not establish an offline host or OS containment.",
+  "failure_layer": "Controller outer-duration boundary after an actual client/model-selected input read; no generated specification, native requirements review or owner decision was reached.",
+  "no_further_model_attempt": "The final declared continuation ended. No later model request or tokenizer request is planned or needed for this evidence review.",
+  "remaining_requirement": "Retain actual native specification/checklist generation, its real omissions and a clarification disposition or documented reached stop. This attempt does not provide those artifacts and must not be relabeled as a completed native SDD generation journey.",
+  "comparison_claim": "None; different context/cache/deadline/input packaging and disclosed guidance prevent a controlled performance or framework comparison.",
+  "native_export_sha256": "6ce3cab5fc7c468ff1ddcdfda7aa5666c62441def9f85ef91dd9dfa31771fe60",
+  "record_consistency_checks": {
+    "terminal_receipt_exit124_timeout": true,
+    "recorded_outer_bound1800": true,
+    "single_declared_session": true,
+    "both_prior_message_parts_unchanged": true,
+    "appended_prompt_matches_pinned_cli_serialization": true,
+    "one_actual_native_packet_read": true,
+    "complete_packet_bytes_match": true,
+    "tool_exit0_not_truncated": true,
+    "all49_original_files_unchanged": true,
+    "before_after_receipt_matches_rescan": true,
+    "no_out_of_scope_changes": true,
+    "actual_diff_empty": true,
+    "native_configuration_bytes_unchanged": true,
+    "no_generated_artifact_files": true,
+    "exact_native_client_stopped": true,
+    "no_new_text_answer": true
+  },
+  "raw_receipt_metadata_qualification": {
+    "origin": "The immutable RECEIPT.origin value prepared_final_guided_same_native_session_continuation_not_yet_executed was copied from the prospective task declaration. It is not the terminal execution verdict. Actual timestamps, exit124/TIMEOUT, the completed native tool event and session export establish that the continuation ran.",
+    "human_review": "The generic raw receipt retains human_review=PENDING. This does not record a review; the terminal assessment explicitly records human review ABSENT."
+  }
+}

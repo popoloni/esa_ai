@@ -1,0 +1,22 @@
+timestamp=2026-10-22T07:53:29.895Z level=INFO run=9baca27c message="creating instance" directory=/workspace/scratch/72d789d25fef/runtime_d7/native_sdd_03
+timestamp=2026-10-22T07:53:29.898Z level=INFO run=9baca27c message=fromDirectory directory=/workspace/scratch/72d789d25fef/runtime_d7/native_sdd_03
+timestamp=2026-10-22T07:53:30.031Z level=INFO run=9baca27c message=bootstrapping directory=/workspace/scratch/72d789d25fef/runtime_d7/native_sdd_03
+timestamp=2026-10-22T07:53:30.052Z level=INFO run=9baca27c message=loading path=/workspace/scratch/72d789d25fef/runtime_d7/sdd_client_state_recovery_01/config/opencode/config.json
+timestamp=2026-10-22T07:53:30.075Z level=INFO run=9baca27c message=loading path=/workspace/scratch/72d789d25fef/runtime_d7/sdd_client_state_recovery_01/config/opencode/opencode.json
+timestamp=2026-10-22T07:53:30.091Z level=INFO run=9baca27c message=loading path=/workspace/scratch/72d789d25fef/runtime_d7/sdd_client_state_recovery_01/config/opencode/opencode.jsonc
+timestamp=2026-10-22T07:53:30.093Z level=INFO run=9baca27c message=loading path=/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/sdd_native_continuation_01/OPENCODE_CONFIG_01.json
+timestamp=2026-10-22T07:53:30.124Z level=DEBUG run=9baca27c message="loaded custom config" path=/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/sdd_native_continuation_01/OPENCODE_CONFIG_01.json
+timestamp=2026-10-22T07:53:30.156Z level=DEBUG run=9baca27c message="loading config from OPENCODE_CONFIG_DIR" path=/workspace/scratch/72d789d25fef/runtime_d7/sdd_client_state_recovery_01/empty-config
+timestamp=2026-10-22T07:53:30.185Z level=DEBUG run=9baca27c message="loading config from /workspace/scratch/72d789d25fef/runtime_d7/native_sdd_03/.opencode/opencode.json"
+timestamp=2026-10-22T07:53:30.185Z level=INFO run=9baca27c message=loading path=/workspace/scratch/72d789d25fef/runtime_d7/native_sdd_03/.opencode/opencode.json
+timestamp=2026-10-22T07:53:30.186Z level=DEBUG run=9baca27c message="loading config from /workspace/scratch/72d789d25fef/runtime_d7/native_sdd_03/.opencode/opencode.jsonc"
+timestamp=2026-10-22T07:53:30.186Z level=INFO run=9baca27c message=loading path=/workspace/scratch/72d789d25fef/runtime_d7/native_sdd_03/.opencode/opencode.jsonc
+timestamp=2026-10-22T07:53:30.457Z level=DEBUG run=9baca27c message="loading config from /workspace/scratch/72d789d25fef/runtime_d7/sdd_client_state_recovery_01/empty-config/opencode.json"
+timestamp=2026-10-22T07:53:30.457Z level=INFO run=9baca27c message=loading path=/workspace/scratch/72d789d25fef/runtime_d7/sdd_client_state_recovery_01/empty-config/opencode.json
+timestamp=2026-10-22T07:53:30.463Z level=DEBUG run=9baca27c message="loading config from /workspace/scratch/72d789d25fef/runtime_d7/sdd_client_state_recovery_01/empty-config/opencode.jsonc"
+timestamp=2026-10-22T07:53:30.463Z level=INFO run=9baca27c message=loading path=/workspace/scratch/72d789d25fef/runtime_d7/sdd_client_state_recovery_01/empty-config/opencode.jsonc
+timestamp=2026-10-22T07:53:30.558Z level=INFO run=9baca27c message="all LSPs are disabled"
+timestamp=2026-10-22T07:53:30.559Z level=INFO run=9baca27c message="all formatters are disabled"
+timestamp=2026-10-22T07:53:30.559Z level=INFO run=9baca27c message=init
+Exporting session: ses_e9d953008ffe5prRJYzw7HWDMP
+timestamp=2026-10-22T07:53:30.568Z level=INFO run=9baca27c message="disposing instance" directory=/workspace/scratch/72d789d25fef/runtime_d7/native_sdd_03

@@ -1,0 +1,43 @@
+{
+  "schema": "treasury-orchestrator/v1",
+  "worker_kind": "DETERMINISTIC_PYTHON",
+  "max_parallel": 2,
+  "max_wall_seconds": 60,
+  "max_output_bytes": 1048576,
+  "adapter_argv": [
+    "{python}",
+    "{worker}",
+    "--request",
+    "{request}",
+    "--response",
+    "{response}"
+  ],
+  "tasks": [
+    {
+      "id": "failure",
+      "kind": "worker",
+      "depends_on": [],
+      "idempotent": true,
+      "max_attempts": 1,
+      "timeout_seconds": 3,
+      "response": "result.json",
+      "parameters": {
+        "mode": "fail"
+      }
+    },
+    {
+      "id": "dependent",
+      "kind": "worker",
+      "depends_on": [
+        "failure"
+      ],
+      "idempotent": true,
+      "max_attempts": 1,
+      "timeout_seconds": 3,
+      "response": "result.json",
+      "parameters": {
+        "mode": "echo"
+      }
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "recorded_at_utc": "2026-10-22T05:55:19.989012+00:00",
+  "argv": [
+    "python3",
+    "-B",
+    "reader_start.py",
+    "new",
+    "1",
+    "--destination",
+    "/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01"
+  ],
+  "cwd": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion",
+  "exit_code": 2,
+  "stderr": "Reader entry failed: new study copies require the unchanged release starter; continue current work with show, or extract a fresh release: README.md, adapters/README.md",
+  "outcome": "NO_STUDY_COPY_CREATED",
+  "recovery": "Use retained d6 starting_tree representing CP07-equivalent unchanged source, with same protected code contract. Do not change the protected manifest to pass."
+}

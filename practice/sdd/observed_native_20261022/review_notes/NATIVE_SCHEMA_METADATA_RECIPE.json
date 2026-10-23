@@ -1,0 +1,36 @@
+{
+  "finding_id": "D7-NATIVE-SCHEMA-METADATA",
+  "status": "COMMON_CAUSE_DIAGNOSED_FUTURE_RECIPE_VERIFIED",
+  "updated_at_utc": "2026-10-22T07:05:22.084524+00:00",
+  "issue": "Pinned OpenCode automatically adds missing $schema metadata to a config during loading, after preparation hashing.",
+  "exact_schema": "https://opencode.ai/config.json",
+  "primary_source": "companion/practice/native_client/setup/runtime_d7/diagnosis/README.md",
+  "historical_qualified_identity_notes": [
+    "revision_d7/evidence/native_ch01_01/CONFIGURATION_IDENTITY_NOTE.json",
+    "revision_d7/evidence/mcp_host_01/CONFIGURATION_IDENTITY_NOTE.json"
+  ],
+  "preservation": "Original manifests, current observed files and labeled hash-matching reconstructions remain unchanged; no historical commitment was refreshed to conceal the mismatch.",
+  "future_fix": "All three helpers include the exact upstream schema value at creation.",
+  "helper_identities": {
+    "companion/practice/native_client/configure_chapter1.py": {
+      "sha256": "93b5d5abbb7a763755bda71e799661d6d7978c3ab41ef5eb381825e5a0d3e09d",
+      "ast_parse": "PASS",
+      "explicit_schema_literal": true,
+      "explicit_header_timeout": true
+    },
+    "companion/practice/native_client/configure_mcp.py": {
+      "sha256": "354e061af071a231f2e290ca76952c5e58e1d5199c4f1df7e8876968a8bfc6bc",
+      "ast_parse": "PASS",
+      "explicit_schema_literal": true,
+      "explicit_header_timeout": true
+    },
+    "companion/practice/native_client/configure_sdd.py": {
+      "sha256": "339360a6fc1a4ba53ee70343eaae645fc3e5bb8aeb90fecd2c290efec73679aa",
+      "ast_parse": "PASS",
+      "explicit_schema_literal": true,
+      "explicit_header_timeout": true
+    }
+  },
+  "actual_stability_check": "revision_d7/evidence/sdd_native_recovery_01/CONFIGURATION_STABILITY.json",
+  "verification_scope": "The new SDD config contains explicit metadata, passes actual effective config diagnostics, and is byte-identical before/after a separately recorded debug-config read."
+}

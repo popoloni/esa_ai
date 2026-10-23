@@ -1,0 +1,65 @@
+{
+  "schema": "esa-immutable-observation-manifest/v1",
+  "files": [
+    {
+      "path": "OBSERVATION.json",
+      "bytes": 18883,
+      "sha256": "733470346a0840aaf0ceaeeb9edebace7dd33bbf94bb1b062728f34f22328c3d"
+    },
+    {
+      "path": "cgroup_cpu_max.txt",
+      "bytes": 14,
+      "sha256": "3dafc4b2d6a8bfd8c1910a28fd3bb15f053a47cebaff7b5cdd6cf42c39f8f880"
+    },
+    {
+      "path": "cgroup_cpu_stat.txt",
+      "bytes": 168,
+      "sha256": "7ef9aa3bb0f33637f1f017dc9fe8773ac40e1924940d10ba71df005521cfbd5b"
+    },
+    {
+      "path": "cgroup_memory_current.txt",
+      "bytes": 11,
+      "sha256": "8fcd6ce03b7a2eee6e4c5555033c89b6206b6c76a1561dd29fc14cba1748e28f"
+    },
+    {
+      "path": "cgroup_memory_events.txt",
+      "bytes": 58,
+      "sha256": "0173d8035493b23530c77f928aa4b03c3d0f67012ed654eb2d99c304d5b5c190"
+    },
+    {
+      "path": "cgroup_memory_max.txt",
+      "bytes": 11,
+      "sha256": "8528d39f97fdd9c9689c4373fe4c7b18f2c3bef6b044a2c4be74b07bf9cd07d8"
+    },
+    {
+      "path": "cgroup_memory_stat.txt",
+      "bytes": 1158,
+      "sha256": "06f0a5bd5e64a1b727741a5c01249b203788616a74ed497fa15d2a1b417c27af"
+    },
+    {
+      "path": "process_maps.txt",
+      "bytes": 16565,
+      "sha256": "e3f6b02c55110c298290b20ab7715603eeaec2ea3aeccc1a3c76309a9fe841dd"
+    },
+    {
+      "path": "process_stat.txt",
+      "bytes": 345,
+      "sha256": "33a66a17b2f68166241c776fcac9fa4cb0e37c5722749f8be50d43eebf6efd7e"
+    },
+    {
+      "path": "process_status.txt",
+      "bytes": 1160,
+      "sha256": "e648765367f0d44bfc350eebc3c745ffdeec741535e4757a80fe138c4f6b78f5"
+    },
+    {
+      "path": "server_log_observed.txt",
+      "bytes": 119229,
+      "sha256": "1e49cf62d05db08976cc08692895c41708b555f5617fe560d674352dc0c51833"
+    },
+    {
+      "path": "server_metrics.prom",
+      "bytes": 2596,
+      "sha256": "0cbdf94248c65c3d46106e3f7213994c7d5f830f1ad580b30d05c7e4a555e2e5"
+    }
+  ]
+}

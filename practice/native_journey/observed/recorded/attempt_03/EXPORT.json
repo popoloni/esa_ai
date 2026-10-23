@@ -1,0 +1,14 @@
+{
+  "started_at_utc": "2026-10-22T17:41:25.923039+00:00",
+  "argv": [
+    "/workspace/scratch/72d789d25fef/runtime_d7/opencode/node_modules/.bin/opencode",
+    "--pure",
+    "export",
+    "ses_e9b4f1083ffe4Bq2EWzFzmd2yh"
+  ],
+  "cwd": "/workspace/scratch/72d789d25fef/runtime_d9/native_csv_01",
+  "scope": "Native export; no inference.",
+  "ended_at_utc": "2026-10-22T17:41:27.292287+00:00",
+  "exit_code": 0,
+  "json_valid": true
+}

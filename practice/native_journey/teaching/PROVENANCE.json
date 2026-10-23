@@ -1,0 +1,16 @@
+{
+  "schema": "esa-native-teaching-derivative/v1",
+  "at_utc": "2026-10-22T17:38:59.965680+00:00",
+  "author": "ChatGPT authoring assistant, separately attributed editorial teaching edit",
+  "native_output_sha256": "c82786261fba2e6bf149db1baa074fc16cbb7f6540568c62daa7aac58c41bcf6",
+  "source_contract_sha256": "2cd3b8d8924d57bc37cf3b36fc30bc8f31924de99136f6379342d117fb8238ba",
+  "teaching_spec_sha256": "79c12d84370d3782987bbf4e62dc4a585cf3ce9a444d592e3a81848a5b920e71",
+  "edits": [
+    "Use contract ID CSV-001/v1 as the heading and separate the CSV-CONSUMER-01 owner decision.",
+    "Add explicit links to the actual native file and existing source contract.",
+    "Expand literal-value policy and existing fixture examples using the unchanged contract and supplied synthetic data.",
+    "Separate intended behavior, consumer decision, deferred work and examples."
+  ],
+  "native_project_modified": false,
+  "claims": "This file is an authored teaching revision. It is not a native artifact, real business approval or human-learning observation."
+}

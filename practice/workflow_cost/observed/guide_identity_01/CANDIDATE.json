@@ -1,0 +1,17 @@
+{
+  "schema": "esa-guide-identity-repair/v1",
+  "edition": "2026.10.22-d7",
+  "status": "IMPLEMENTED_AWAITING_CHECKS_AND_REVIEW",
+  "manifest_entries": 213,
+  "changed_manifest_entries": [
+    "README.md",
+    "adapters/README.md"
+  ],
+  "unchanged_other_manifest_entries": 211,
+  "candidate_files": {
+    "README.md": "7e1535bd8748870a14f43bb738a41672a5e1dcf74adea9b05f5198615a7e5a4e",
+    "adapters/README.md": "c18e57368f7823f37e29111aa146b806dda9b6b3ccdedd52ac3e8aac54a022ed",
+    "reader_side/protected_sha256.json": "abbfb6434079eec42f45f4f486541ef69b7c061f672d62ca98c85e2d25ce33df"
+  },
+  "scope": "Two reviewed guide identities only; no starter, check, test or other protected hash was rebased."
+}

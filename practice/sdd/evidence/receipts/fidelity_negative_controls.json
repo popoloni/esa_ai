@@ -1,0 +1,224 @@
+{
+  "id": "fidelity_negative_controls",
+  "tool": "Python unittest",
+  "version": "3.12.14",
+  "origin": "author_exercise",
+  "model": null,
+  "named_agent_execution": false,
+  "human_review": "pending",
+  "argv": [
+    "/workspace/scratch/efa0a59e0545/tmp/sdd_workflow_trial_20261020/python_env/bin/python",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_CR_Implementation_20261020/companion/practice/sdd",
+    "-p",
+    "test_check.py",
+    "-v"
+  ],
+  "cwd": "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_CR_Implementation_20261020/companion/practice/sdd",
+  "started_utc": "2026-10-20T15:03:07.377516+00:00",
+  "finished_utc": "2026-10-20T15:03:07.521291+00:00",
+  "duration_seconds": 0.143775,
+  "exit_code": 0,
+  "logs": {
+    "stdout": {
+      "file": "fidelity_negative_controls.stdout.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "stderr": {
+      "file": "fidelity_negative_controls.stderr.txt",
+      "sha256": "7d3aba3d925582b3122baedcb3b1a66d1a9f1dba5652da8e8408f0c24c6974f5",
+      "bytes": 1911
+    }
+  },
+  "input_inventory": {
+    "after/openspec/ORIGIN.json": {
+      "sha256": "c141a537ce520a584367b4e73d7c0e29d81ec2f64d34d74f5e7b0a6bc8b560fd",
+      "bytes": 447
+    },
+    "after/openspec/openspec/changes/explain-treasury/.openspec.yaml": {
+      "sha256": "ff4326f8b42dcf8851877f4f3989c7fecb8f97d8154686d7d74b7281b70e6b9b",
+      "bytes": 40
+    },
+    "after/openspec/openspec/changes/explain-treasury/design.md": {
+      "sha256": "ac74bbb92a833998e2f5530f690b9671e1b069d3eb2660b71a0b843eb2b20982",
+      "bytes": 1965
+    },
+    "after/openspec/openspec/changes/explain-treasury/proposal.md": {
+      "sha256": "d498b2544b6cebf6aa4ac4a5eef9d527dc0f6e71fff070140756932a1e06999b",
+      "bytes": 880
+    },
+    "after/openspec/openspec/changes/explain-treasury/specs/explanation/spec.md": {
+      "sha256": "f899c75fff0c321d7f0d10ec6f53d39e569c5de59861cc1efe91384e216436ec",
+      "bytes": 5533
+    },
+    "after/openspec/openspec/changes/explain-treasury/tasks.md": {
+      "sha256": "76b39234a96c7db02fd585e8867e141612233b9eb8de26911bb05a19a7a04f53",
+      "bytes": 1499
+    },
+    "after/openspec/openspec/config.yaml": {
+      "sha256": "9d079214443edb45ad9e85c7608475b38081a33baed390350242fc2e986c0a23",
+      "bytes": 206
+    },
+    "after/speckit/ORIGIN.json": {
+      "sha256": "d2c35c8a95bbf16cb734e9e490fa64e1995c437d227e0dac718c47500b2d612d",
+      "bytes": 446
+    },
+    "after/speckit/plan.md": {
+      "sha256": "ac74bbb92a833998e2f5530f690b9671e1b069d3eb2660b71a0b843eb2b20982",
+      "bytes": 1965
+    },
+    "after/speckit/spec.md": {
+      "sha256": "14e1b8e6257652c56e83d2f5cea2795929aa97d776c6b3cd1085f8afa24e6608",
+      "bytes": 5538
+    },
+    "after/speckit/tasks.md": {
+      "sha256": "76b39234a96c7db02fd585e8867e141612233b9eb8de26911bb05a19a7a04f53",
+      "bytes": 1499
+    },
+    "before/openspec/ORIGIN.json": {
+      "sha256": "d985d3aa85666cc9d964a2885a7a54475ee5dae1c6b91b1971208b3a8170755f",
+      "bytes": 457
+    },
+    "before/openspec/openspec/changes/explain-treasury/.openspec.yaml": {
+      "sha256": "ff4326f8b42dcf8851877f4f3989c7fecb8f97d8154686d7d74b7281b70e6b9b",
+      "bytes": 40
+    },
+    "before/openspec/openspec/changes/explain-treasury/design.md": {
+      "sha256": "ac74bbb92a833998e2f5530f690b9671e1b069d3eb2660b71a0b843eb2b20982",
+      "bytes": 1965
+    },
+    "before/openspec/openspec/changes/explain-treasury/proposal.md": {
+      "sha256": "d498b2544b6cebf6aa4ac4a5eef9d527dc0f6e71fff070140756932a1e06999b",
+      "bytes": 880
+    },
+    "before/openspec/openspec/changes/explain-treasury/specs/explanation/spec.md": {
+      "sha256": "eee81b994e2ffec9fbd51cb67f88d8dab7145108766b660b65fdf712dd6f5d20",
+      "bytes": 5188
+    },
+    "before/openspec/openspec/changes/explain-treasury/tasks.md": {
+      "sha256": "76b39234a96c7db02fd585e8867e141612233b9eb8de26911bb05a19a7a04f53",
+      "bytes": 1499
+    },
+    "before/openspec/openspec/config.yaml": {
+      "sha256": "9d079214443edb45ad9e85c7608475b38081a33baed390350242fc2e986c0a23",
+      "bytes": 206
+    },
+    "before/speckit/ORIGIN.json": {
+      "sha256": "a98e34a731ee6a8905cd47ef4efbde7dadf2f5afd89c5970fb058f7a4b92ba2a",
+      "bytes": 456
+    },
+    "before/speckit/plan.md": {
+      "sha256": "ac74bbb92a833998e2f5530f690b9671e1b069d3eb2660b71a0b843eb2b20982",
+      "bytes": 1965
+    },
+    "before/speckit/spec.md": {
+      "sha256": "9ab2d96d5a0731125b91145c0c0878c81a659371b99201450109f4cacd5e3a24",
+      "bytes": 5193
+    },
+    "before/speckit/tasks.md": {
+      "sha256": "76b39234a96c7db02fd585e8867e141612233b9eb8de26911bb05a19a7a04f53",
+      "bytes": 1499
+    }
+  },
+  "output_inventory": {
+    "after/openspec/ORIGIN.json": {
+      "sha256": "c141a537ce520a584367b4e73d7c0e29d81ec2f64d34d74f5e7b0a6bc8b560fd",
+      "bytes": 447
+    },
+    "after/openspec/openspec/changes/explain-treasury/.openspec.yaml": {
+      "sha256": "ff4326f8b42dcf8851877f4f3989c7fecb8f97d8154686d7d74b7281b70e6b9b",
+      "bytes": 40
+    },
+    "after/openspec/openspec/changes/explain-treasury/design.md": {
+      "sha256": "ac74bbb92a833998e2f5530f690b9671e1b069d3eb2660b71a0b843eb2b20982",
+      "bytes": 1965
+    },
+    "after/openspec/openspec/changes/explain-treasury/proposal.md": {
+      "sha256": "d498b2544b6cebf6aa4ac4a5eef9d527dc0f6e71fff070140756932a1e06999b",
+      "bytes": 880
+    },
+    "after/openspec/openspec/changes/explain-treasury/specs/explanation/spec.md": {
+      "sha256": "f899c75fff0c321d7f0d10ec6f53d39e569c5de59861cc1efe91384e216436ec",
+      "bytes": 5533
+    },
+    "after/openspec/openspec/changes/explain-treasury/tasks.md": {
+      "sha256": "76b39234a96c7db02fd585e8867e141612233b9eb8de26911bb05a19a7a04f53",
+      "bytes": 1499
+    },
+    "after/openspec/openspec/config.yaml": {
+      "sha256": "9d079214443edb45ad9e85c7608475b38081a33baed390350242fc2e986c0a23",
+      "bytes": 206
+    },
+    "after/speckit/ORIGIN.json": {
+      "sha256": "d2c35c8a95bbf16cb734e9e490fa64e1995c437d227e0dac718c47500b2d612d",
+      "bytes": 446
+    },
+    "after/speckit/plan.md": {
+      "sha256": "ac74bbb92a833998e2f5530f690b9671e1b069d3eb2660b71a0b843eb2b20982",
+      "bytes": 1965
+    },
+    "after/speckit/spec.md": {
+      "sha256": "14e1b8e6257652c56e83d2f5cea2795929aa97d776c6b3cd1085f8afa24e6608",
+      "bytes": 5538
+    },
+    "after/speckit/tasks.md": {
+      "sha256": "76b39234a96c7db02fd585e8867e141612233b9eb8de26911bb05a19a7a04f53",
+      "bytes": 1499
+    },
+    "before/openspec/ORIGIN.json": {
+      "sha256": "d985d3aa85666cc9d964a2885a7a54475ee5dae1c6b91b1971208b3a8170755f",
+      "bytes": 457
+    },
+    "before/openspec/openspec/changes/explain-treasury/.openspec.yaml": {
+      "sha256": "ff4326f8b42dcf8851877f4f3989c7fecb8f97d8154686d7d74b7281b70e6b9b",
+      "bytes": 40
+    },
+    "before/openspec/openspec/changes/explain-treasury/design.md": {
+      "sha256": "ac74bbb92a833998e2f5530f690b9671e1b069d3eb2660b71a0b843eb2b20982",
+      "bytes": 1965
+    },
+    "before/openspec/openspec/changes/explain-treasury/proposal.md": {
+      "sha256": "d498b2544b6cebf6aa4ac4a5eef9d527dc0f6e71fff070140756932a1e06999b",
+      "bytes": 880
+    },
+    "before/openspec/openspec/changes/explain-treasury/specs/explanation/spec.md": {
+      "sha256": "eee81b994e2ffec9fbd51cb67f88d8dab7145108766b660b65fdf712dd6f5d20",
+      "bytes": 5188
+    },
+    "before/openspec/openspec/changes/explain-treasury/tasks.md": {
+      "sha256": "76b39234a96c7db02fd585e8867e141612233b9eb8de26911bb05a19a7a04f53",
+      "bytes": 1499
+    },
+    "before/openspec/openspec/config.yaml": {
+      "sha256": "9d079214443edb45ad9e85c7608475b38081a33baed390350242fc2e986c0a23",
+      "bytes": 206
+    },
+    "before/speckit/ORIGIN.json": {
+      "sha256": "a98e34a731ee6a8905cd47ef4efbde7dadf2f5afd89c5970fb058f7a4b92ba2a",
+      "bytes": 456
+    },
+    "before/speckit/plan.md": {
+      "sha256": "ac74bbb92a833998e2f5530f690b9671e1b069d3eb2660b71a0b843eb2b20982",
+      "bytes": 1965
+    },
+    "before/speckit/spec.md": {
+      "sha256": "9ab2d96d5a0731125b91145c0c0878c81a659371b99201450109f4cacd5e3a24",
+      "bytes": 5193
+    },
+    "before/speckit/tasks.md": {
+      "sha256": "76b39234a96c7db02fd585e8867e141612233b9eb8de26911bb05a19a7a04f53",
+      "bytes": 1499
+    }
+  },
+  "environment_controls": {
+    "CI": "1",
+    "DO_NOT_TRACK": "1",
+    "OPENSPEC_TELEMETRY": "0",
+    "credentials": "not inherited",
+    "network": "normal sandbox network restriction; no credentials or external write commands"
+  }
+}

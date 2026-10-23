@@ -1,0 +1,218 @@
+{
+  "schema": "esa-d8-native-inference-observation-summary/v1",
+  "status": "FROZEN_TERMINAL_NATIVE_OUTPUTS_REVIEW_SEPARATE",
+  "recorded_at_utc": "2026-10-22T12:14:51.979305+00:00",
+  "snapshot_count": 7,
+  "observation_range_utc": [
+    "2026-10-22T11:48:27.287515+00:00",
+    "2026-10-22T12:06:52.363593+00:00"
+  ],
+  "server_lifecycle": "revision_d8/evidence/native_server_01/lifecycle_04",
+  "server_start_sha256": "9e0c7e87b2f8b217bebac4fb785367fe1096322bc689b8d9b81ed4a05bc265cd",
+  "server_left_running": true,
+  "execution_scope": "Compact guided continuation in the same genuine OpenCode session that had run the installed Spec Kit command; no new source attachment or independently authored draft was supplied in this continuation.",
+  "completed_server_requests": [
+    {
+      "task_id": 3263,
+      "prompt_tokens": 18599,
+      "context_tokens": 24576,
+      "remaining_after_prompt": 5977,
+      "remaining_after_declared_1536_response_reserve": 4441,
+      "source_line": "59.39.930.218 I slot   operator(): id  0 | task 3263 | new prompt, n_ctx_slot = 24576, n_keep = 0, task.n_tokens = 18599",
+      "prefill": {
+        "seconds": 17.422150000000002,
+        "tokens": 255,
+        "source_line": "64.53.391.655 I slot print_timing: id  0 | task 3263 | prompt eval time =   17422.15 ms /   255 tokens (   68.32 ms per token,    14.64 tokens per second)"
+      },
+      "generation": {
+        "seconds": 296.037,
+        "tokens": 553,
+        "source_line": "64.53.391.671 I slot print_timing: id  0 | task 3263 |        eval time =  296037.00 ms /   553 tokens (  536.30 ms per token,     1.86 tokens per second)"
+      },
+      "total": {
+        "seconds": 313.45916,
+        "tokens": 808,
+        "source_line": "64.53.391.671 I slot print_timing: id  0 | task 3263 |       total time =  313459.16 ms /   808 tokens"
+      },
+      "release_line": "64.53.400.199 I slot      release: id  0 | task 3263 | stop processing: n_tokens = 19151, truncated = 0"
+    },
+    {
+      "task_id": 3818,
+      "prompt_tokens": 19169,
+      "context_tokens": 24576,
+      "remaining_after_prompt": 5407,
+      "remaining_after_declared_1536_response_reserve": 3871,
+      "source_line": "64.53.531.745 I slot   operator(): id  0 | task 3818 | new prompt, n_ctx_slot = 24576, n_keep = 0, task.n_tokens = 19169",
+      "prefill": {
+        "seconds": 68.13695,
+        "tokens": 574,
+        "source_line": "78.51.410.002 I slot print_timing: id  0 | task 3818 | prompt eval time =   68136.95 ms /   574 tokens (  118.71 ms per token,     8.42 tokens per second)"
+      },
+      "generation": {
+        "seconds": 769.73951,
+        "tokens": 1393,
+        "source_line": "78.51.410.015 I slot print_timing: id  0 | task 3818 |        eval time =  769739.51 ms /  1393 tokens (  552.97 ms per token,     1.81 tokens per second)"
+      },
+      "total": {
+        "seconds": 837.87646,
+        "tokens": 1967,
+        "source_line": "78.51.410.016 I slot print_timing: id  0 | task 3818 |       total time =  837876.46 ms /  1967 tokens"
+      },
+      "release_line": "78.51.411.951 I slot      release: id  0 | task 3818 | stop processing: n_tokens = 20561, truncated = 0"
+    }
+  ],
+  "actual_context_reserve_assessments": [
+    {
+      "task_id": 3263,
+      "additional_prompt_occupancy_since_first": 0,
+      "remaining_of_original_1664_history_reserve": 1664,
+      "original_history_reserve_exceeded": false,
+      "tokens_after_remaining_history_and_1536_output": 2777
+    },
+    {
+      "task_id": 3818,
+      "additional_prompt_occupancy_since_first": 570,
+      "remaining_of_original_1664_history_reserve": 1094,
+      "original_history_reserve_exceeded": false,
+      "tokens_after_remaining_history_and_1536_output": 2777
+    }
+  ],
+  "actual_sampler_temperatures": [
+    0.2
+  ],
+  "backend_terminal": {
+    "metrics_source": {
+      "path": "snapshot_007/server_metrics.prom",
+      "sha256": "b5920b77417c12ccbc345cfee897612e31f4dbb081da5388b613a30a41f95f3d"
+    },
+    "metrics_baseline_sha256": "ac45e644bb23ca2f66ee0986b0debcf55a949ab5436a4c74b3d41af0f0a0c84d",
+    "metrics_delta_from_terminal03": {
+      "prompt_tokens_total": 829.0,
+      "prompt_tokens_cached_total": 36939.0,
+      "prompt_seconds_total": 85.55499999999995,
+      "tokens_predicted_total": 1946.0,
+      "tokens_predicted_seconds_total": 1065.7800000000002,
+      "n_decode_total": 1948.0
+    },
+    "requests_processing": 0.0,
+    "requests_deferred": 0.0,
+    "log_source": {
+      "path": "snapshot_007/server_log_observed.txt",
+      "sha256": "caed50470326be4339705c2eb5bec29d56af08acac7393883e4139c45b6b41b0"
+    },
+    "qualification": "Per-request timing lines, metrics deltas and native usage fields are retained separately. Their units/accounting differ; decode calls are not relabeled as generated or accepted content."
+  },
+  "native_terminal": {
+    "source_receipt": {
+      "path": "revision_d8/evidence/native_sdd_01/attempt_04/RECEIPT.json",
+      "sha256": "990e17c96269855f1a2613dbcab6db60abc7ea0a2d9a0464888aa0bafb21bdc8"
+    },
+    "retained_receipt": "native_terminal_binding/RECEIPT.json",
+    "retained_stdout": {
+      "path": "native_terminal_binding/stdout.txt",
+      "sha256": "80485ace0c7c59c109777bc0980cf767fcfea009ab950fe02dd48c5307d78256"
+    },
+    "task_sha256": "fecc09b8c3b299b49f69b43b2e693eb322a4bc7c1e4d6cd9d62eb8cba69c6521",
+    "exit_code": 0,
+    "duration_seconds": 1155.330055745002,
+    "ended_at_utc": "2026-10-22T12:05:40.713363+00:00",
+    "event_types": [
+      "step_start",
+      "tool_use",
+      "step_finish",
+      "step_start",
+      "text",
+      "step_finish"
+    ],
+    "changed_files": [
+      "specs/001-explain-treasury/spec.md"
+    ],
+    "out_of_scope_changes": [],
+    "receipt_tokens_field": null,
+    "receipt_billable_cost_field": null,
+    "actual_native_step_usage": [
+      {
+        "reason": "tool-calls",
+        "tokens": {
+          "total": 19152,
+          "input": 255,
+          "output": 553,
+          "reasoning": 0,
+          "cache": {
+            "write": 0,
+            "read": 18344
+          }
+        },
+        "cost_field": 0
+      },
+      {
+        "reason": "stop",
+        "tokens": {
+          "total": 20562,
+          "input": 574,
+          "output": 1393,
+          "reasoning": 0,
+          "cache": {
+            "write": 0,
+            "read": 18595
+          }
+        },
+        "cost_field": 0
+      }
+    ],
+    "actual_native_step_usage_sum": {
+      "input_uncached": 829,
+      "cache_read": 36939,
+      "output": 1946,
+      "reasoning": 0,
+      "total": 39714
+    },
+    "usage_qualification": "The generic capture receipt leaves tokens and billable_cost null. Actual completed native step usage is present in stdout and retained here with its original fields. The reported local cost0 is not a measured monetary charge or a claim that wider setup/review effort cost nothing.",
+    "first_file_write": {
+      "tool_status": "completed",
+      "relative_target": "specs/001-explain-treasury/spec.md",
+      "retained_literal_tool_content": "native_terminal_binding/FIRST_WRITE_TOOL_CONTENT.md",
+      "bytes": 2230,
+      "sha256": "04b6177aa7cd2a248a86ef418f8faeffe3c07cbf64651951136c20559402bfd1",
+      "matches_capture_after_hash": true,
+      "attribution": "These retained bytes are the actual native write input and match the independently captured after-file digest. The first file content was separately reviewed as header/input/operator instructions; its existence is not semantic acceptance."
+    },
+    "final_assistant_output": {
+      "retained_literal_text": "native_terminal_binding/FINAL_ASSISTANT_TEXT.txt",
+      "bytes": 5530,
+      "sha256": "0b8ce1854906b37eb2c0249e97a7e0d5dc1ce3e2597b6289c9a54fb6eacbec77",
+      "matches_terminal_collection": {
+        "path": "revision_d8/evidence/native_sdd_01/terminal_collection_04/FIRST_ASSISTANT_TEXT.txt",
+        "sha256": "0b8ce1854906b37eb2c0249e97a7e0d5dc1ce3e2597b6289c9a54fb6eacbec77"
+      },
+      "final_step_finish_reason": "stop",
+      "subsequent_write_event_count": 0,
+      "attribution": "A real final native Markdown response exists independently of the failed file content. Its proposed specification and unresolved-owner-question boundary are evaluated under the original R08 criteria by the separate acceptance review; this monitor imposes no additional file-count requirement and makes no semantic/human-approval decision."
+    }
+  },
+  "memory": {
+    "minimum_sampled_conservative_headroom_bytes": 665919080,
+    "maximum_sampled_rss_kib": 6181756,
+    "new_oom_events": 0,
+    "new_oom_kill_events": 0,
+    "post_terminal_headroom_bytes": 1181294184,
+    "limitations": "Sparse observations with a CP29 write hold, not continuous peak measurement. The full-mapped-file plus cgroup anon/kernel/shmem estimate is conservative and not a future-allocation guarantee. Startup768MiB was a startup gate, not an automatic runtime-abort threshold."
+  },
+  "output_and_context_limits": {
+    "context_tokens": 24576,
+    "configured_current_response_cap": 1536,
+    "content_target_guidance": 650,
+    "configured_post_first_request_history_reserve": 1664,
+    "actual_request_cap_field_observed": false,
+    "independent_server_cap_enforcement_claim": false,
+    "scope": "Both observed prompts fit the declared current-response and remaining original history reserves. No third request was issued. The final1393-token assistant text would affect any future continuation; this observation does not authorize or certify an unlimited later history. Both responses are below1536, which alone does not prove cap enforcement."
+  },
+  "checkpoint_prefix": {
+    "path": "../checkpoint_progress_30",
+    "summary_sha256": "ea839b35f6ea676417ebb80859db3251b86ae325fdb6189ea68988ddb876fc0f",
+    "manifest_sha256": "7aeee56bf74606ec2f7e74d255c451f59f8017fa25848e8484cf71cf9ca8bbb1",
+    "scope": "The frozen checkpoint prefix and its terminal-pending-review disposition remain unchanged. This final monitor packet adds exact native output bindings and usage attribution."
+  },
+  "scope": "Read-only exact-owned-server logs/process/cgroup and permitted metrics GET. No model/task request, runtime change or process stop by this monitor. Server04 was observed idle after terminal collection and remains under root control.",
+  "acceptance_boundary": "Process completion, native text generation, written-file correctness, question/answer boundaries and human acceptance are separate claims. This packet records the first two and the exact output identities; the authoritative R08 review determines closure without retroactively changing earlier failed outputs."
+}

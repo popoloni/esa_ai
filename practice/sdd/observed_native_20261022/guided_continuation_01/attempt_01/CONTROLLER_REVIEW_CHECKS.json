@@ -1,0 +1,27 @@
+{
+  "reviewed_at_utc": "2026-10-22T07:55:00.901193+00:00",
+  "status": "PASS_TERMINAL_RECORD_CONSISTENCY_TASK_INCOMPLETE",
+  "checks": {
+    "terminal_receipt_exit124_timeout": true,
+    "recorded_outer_bound1800": true,
+    "single_declared_session": true,
+    "both_prior_message_parts_unchanged": true,
+    "appended_prompt_matches_pinned_cli_serialization": true,
+    "one_actual_native_packet_read": true,
+    "complete_packet_bytes_match": true,
+    "tool_exit0_not_truncated": true,
+    "all49_original_files_unchanged": true,
+    "before_after_receipt_matches_rescan": true,
+    "no_out_of_scope_changes": true,
+    "actual_diff_empty": true,
+    "native_configuration_bytes_unchanged": true,
+    "no_generated_artifact_files": true,
+    "exact_native_client_stopped": true,
+    "no_new_text_answer": true
+  },
+  "pass_count": 16,
+  "total_checks": 16,
+  "scope": "Checks establish consistency of this observed terminal record; they do not satisfy missing generation, grant human acceptance or close R08.",
+  "r08_recommendation": "PARTIAL",
+  "human_review": "ABSENT"
+}

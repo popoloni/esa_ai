@@ -1,0 +1,1 @@
+Row-selection dependency: orders_response calls selected_orders(rows, actor, status), then public_order; CSV must serialize that same public list. Only api.py will change; JSON, selection, demo, fixtures and contract stay unchanged. Preserve values literally for machine import; use csv.DictWriter for quoting, Unicode and embedded newlines, and emit a header for empty selections.

@@ -1,0 +1,24 @@
+--- preimage/configure_sdd_d8.py
++++ current/configure_sdd_d8.py
+@@ -238,7 +238,9 @@
+             "owner_answers_available": False,
+             "constitution": "Unratified upstream template; placeholder examples are not project governance.",
+         },
+-        "limits": {"steps": 12, "provider_timeout_ms": args.provider_timeout_ms,
++        "limits": {"steps": 12,
++                   "steps_enforcement": "Pinned OpenCode uses steps as a last-step instruction; it does not mechanically cap tool calls in the inspected loop. The outer capture timeout is the subprocess bound.",
++                   "provider_timeout_ms": args.provider_timeout_ms,
+                    "provider_header_timeout_ms": args.provider_timeout_ms, "outer_timeout_seconds": args.outer_timeout_seconds,
+                    "context_tokens": args.context_tokens, "output_tokens": args.output_tokens,
+                    "exact_prompt_token_count": "Not measured during preparation; no inference/tokenizer request made.",
+@@ -342,9 +344,8 @@
+ 3. How will actual user benefit be measured in a pilot?
+ No owner is available to answer during this observation. Preserve the source status as ready for human requirements review only, with benefit HYPOTHESIS_NOT_VALIDATED. Do not invent owner responses, accept your own recommendation, ratify the constitution, fabricate measured savings/ROI or choose unprovided numeric benefit targets. Proposed evaluation methods may be clearly marked as proposals requiring owner review, never as accepted criteria or observed results. A complete initial draft can still contain unresolved questions; leave related quality checks incomplete and state why. Do not report planning readiness or human approval.
+ 
+-Create the initial draft and truthful quality checklist within the allowed scope, present the actual unanswered owner questions, and stop at the human review boundary. If a tool or permission fails, retain/report the actual failure and stop; do not claim an artifact or check exists without observing it. There are at most 12 agent steps, a 16384-token context and 2048 output tokens per response. Preserve the full upstream command; do not silently abbreviate or replace it. Stop without running another phase when this bounded command is complete or blocked.
++Create the initial draft and truthful quality checklist within the allowed scope, present the actual unanswered owner questions, and stop at the human review boundary. If a tool or permission fails, retain/report the actual failure and stop; do not claim an artifact or check exists without observing it. The configured 12 steps trigger a last-step instruction, not a mechanical tool-call limit. The model context is {args.context_tokens} tokens and the output limit is {args.output_tokens} tokens per response; the outer capture timeout of {args.outer_timeout_seconds} seconds is the subprocess bound. Preserve the full upstream command; do not silently abbreviate or replace it. Stop without running another phase when this bounded command is complete or blocked.
+ """
+-    prompt = prompt.replace("a 16384-token context", f"a {args.context_tokens}-token context")
+     if bundle_record:
+         original_reads = "Read these exact absolute fixed-input paths; copy their paths literally:\n" + "\n".join(str(project / name) for name in READ_PATHS[:11]) + "\n"
+         compact_reads = "Read the complete fixed-input bundle first at this exact absolute path:\n" + bundle_record["path"] + "\nThe bundle includes the unchanged nine fixed JSON sources and original router with their source paths and hashes. The individual source files remain available for focused checks; no separate read of every duplicate source is required. This packaging does not replace the complete upstream Spec Kit command.\n"

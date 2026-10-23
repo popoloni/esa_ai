@@ -1,0 +1,10 @@
+{
+  "schema": "esa-evidence-subset-index/v1",
+  "recorded_at_utc": "2026-10-22T06:23:43.578980+00:00",
+  "files": {
+    "CLIENT_IDENTITIES.json": "b46e61edca8c28784aef1c757622c652f7b29c0a65de080b9554bc4633ba1f74",
+    "MODEL_DOWNLOAD.json": "ccf866eb10d0e6ba479249632cac6f6a7f57294b31bf63953b9bf30945f4f3c0",
+    "version/stdout.txt": "577a2e518704a9ee9ebfa4ce98063388fcc7bd840cb71a455f51fa59116e98c3",
+    "server_snapshot/START.json": "8648e1ed868d466714a0fc66f34ebf7d59db5ec83dc8ee1102850c112f4c3d04"
+  }
+}

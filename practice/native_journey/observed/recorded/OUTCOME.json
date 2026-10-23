@@ -1,0 +1,85 @@
+{
+  "schema": "esa-native-csv-outcome/v1",
+  "at_utc": "2026-10-22T17:55:23.390511+00:00",
+  "action_id": "CR04",
+  "status": "OPEN_PARTIAL_BUDGET_EXHAUSTED",
+  "budget": {
+    "maximum_invocations": 4,
+    "actual_invocations": 4,
+    "maximum_client_wall_seconds": 2700,
+    "actual_client_wall_seconds": 1274.4019249870034,
+    "limit_reached": "invocation_count",
+    "time_limit_reached": false
+  },
+  "useful_result": "Actual native specification, plan and CSV implementation persist. Final demo returns only Alice open A1 order with original values; JSON and selection preserved in selected checks.",
+  "native_completion_gap": "No native post-cleanup check occurred on final attempt 04 bytes. Handoff reused previous PASS. Remaining criterion: actual check on final bytes followed by accurate native handoff.",
+  "native_checked_project": "project_after_03/",
+  "final_project": "project_after_04/",
+  "native_checked_api_sha256": "ae0492552f141f5e90c47a56670cf078a9f695303667468dfc61c85fb807c4b3",
+  "final_api_sha256": "ffbe0de916d89cb78824f02e046fda730c744c662f2936ba15aeb16ffafe8451",
+  "native_written_files": [
+    "api.py",
+    "spec.md",
+    "plan.md"
+  ],
+  "manual_candidate_edits": false,
+  "independent_result": {
+    "status": "PASS_SELECTED_CONTRACT_AND_SCOPE",
+    "selected_review_checks": 17,
+    "supplied_contract_checks": 7,
+    "findings": [],
+    "source": "independent_final_review/REVIEW.json"
+  },
+  "decision_source": "Existing CURRENT_CONTRACT.md, authored fictional CSV-CONSUMER-01; explicit deferrals in native spec.md. No real business approval.",
+  "route": "Compact authored specification-first workflow, not a new Spec Kit execution.",
+  "runtime": {
+    "client": "OpenCode 1.19.3",
+    "model": "Qwen3-4B Q4_K_M",
+    "server": "llama.cpp b11799",
+    "context_tokens": 16384,
+    "accelerator": "CPU",
+    "sampler_finding": "First agent temperature request 0.2 was not sent because model temperature capability was omitted; server used 0.8. Later configuration supplied capability and server logged 0.2.",
+    "versions_source": "HOST_AND_SERVER_VERSION.json",
+    "identity_source": "RUNTIME_PREFLIGHT.json"
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "exit_code": 0,
+      "client_wall_seconds": 324.3601130809984,
+      "receipt": "attempt_01/RECEIPT.json",
+      "native_events": "attempt_01/stdout.txt",
+      "native_session_export": "attempt_01/native-session.json"
+    },
+    {
+      "attempt": 2,
+      "exit_code": -15,
+      "client_wall_seconds": 601.587271946999,
+      "receipt": "attempt_02/RECEIPT.json",
+      "native_events": "attempt_02/stdout.txt",
+      "native_session_export": "attempt_02/native-session.json"
+    },
+    {
+      "attempt": 3,
+      "exit_code": 0,
+      "client_wall_seconds": 207.9070430360007,
+      "receipt": "attempt_03/RECEIPT.json",
+      "native_events": "attempt_03/stdout.txt",
+      "native_session_export": "attempt_03/native-session.json"
+    },
+    {
+      "attempt": 4,
+      "exit_code": 0,
+      "client_wall_seconds": 140.54749692300538,
+      "receipt": "attempt_04/RECEIPT.json",
+      "native_events": "attempt_04/stdout.txt",
+      "native_session_export": "attempt_04/native-session.json"
+    }
+  ],
+  "preserved_history": "Earlier R06/R08 native episodes and original R17 external dependency retain prior outcomes.",
+  "OP05": "NOT_PERFORMED: author supplied direct-formatter choice; no agent-led assumption challenge observed.",
+  "human_validation": "NOT_PERFORMED",
+  "server_stopped": true,
+  "server_lifecycle_source": "server_01/FINISH.json",
+  "remaining_action": "Keep episode open. Future native continuation requires separate declared budget and must retain this four-invocation history. No fifth call in this revision."
+}

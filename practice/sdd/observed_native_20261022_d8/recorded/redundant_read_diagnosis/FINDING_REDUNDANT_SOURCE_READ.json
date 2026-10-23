@@ -1,0 +1,19 @@
+{
+  "id": "D8-SDD-REDUNDANT-SOURCE-READ",
+  "detected_at_utc": "2026-10-22T10:42:21.074594+00:00",
+  "status": "CONFIGURATION_CORRECTED_AND_NATIVE_PRELOAD_VERIFIED_GENERATION_PENDING",
+  "finding": "A native model selected a full read of the already preloaded source bundle. The next actual server prompt grew from15622 to23836 tokens, leaving740 of24576 context tokens and no declared output reserve. Root interrupted the client; no project files changed.",
+  "actual_first_attempt": {
+    "receipt": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/attempt_01/RECEIPT.json",
+    "receipt_sha256": "ec150345e35bd56167694b9e0e275d8e6927d505e927f6f490830a12a1fdbdc1",
+    "exit_code": -2,
+    "native_export": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/terminal_collection_01/native-session.json",
+    "native_export_sha256": "9b41d52544c78fbe6a9d295b30a11ebd27c57b82eff225802eed47fad61f0e5d",
+    "generated_artifacts": 0
+  },
+  "correction": "Fresh candidate03 permits model read only on three generated output files and supplies an explicit guard. All13 complete source bodies remain in the native initial attachment. Exact bash allowlist has no cat/general source-reader command.",
+  "verification": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/invocation_03/EFFECTIVE_CONFIGURATION_CHECK_03.json",
+  "native_noReply": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/invocation_03/native_attachment_preflight_03/RESULT.json",
+  "current_boundary": "Actual candidate03 generation and model-selected guard behavior are not yet observed. Generated-output rereads or repeated writes may still exhaust the finite history reserve.",
+  "verification_scope": "Actual effective config/agent and complete native user attachment; source-grounded read decisions; no model call, no OS containment claim."
+}

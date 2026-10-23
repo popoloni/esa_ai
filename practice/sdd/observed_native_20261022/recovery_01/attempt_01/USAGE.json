@@ -1,0 +1,28 @@
+{
+  "source": "stdout.txt",
+  "completed_native_steps": [
+    {
+      "session_id": "ses_e9d953008ffe5prRJYzw7HWDMP",
+      "message_id": "msg_1626ad6870013rq3jBK4tytPm1",
+      "part_id": "prt_1627580660014k01ErZeqrxLBM",
+      "timestamp_ms": 1792653230200,
+      "tokens": {
+        "total": 6834,
+        "input": 6773,
+        "output": 61,
+        "reasoning": 0,
+        "cache": {
+          "write": 0,
+          "read": 0
+        }
+      },
+      "client_reported_cost": 0,
+      "reason": "stop"
+    }
+  ],
+  "unparsed_output_lines": [],
+  "sessions": [
+    "ses_e9d953008ffe5prRJYzw7HWDMP"
+  ],
+  "scope": "Attributable native completion events. Local client zero charge is not total workflow cost. Incomplete/unreported calls remain unknown."
+}

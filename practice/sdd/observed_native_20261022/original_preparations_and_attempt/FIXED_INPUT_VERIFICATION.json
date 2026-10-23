@@ -1,0 +1,16 @@
+{
+  "recorded_at_utc": "2026-10-22T06:09:07.125500+00:00",
+  "status": "PASS_FIXED_INPUT_BYTES",
+  "checks": {
+    "specification.json": true,
+    "case_oracle.json": true,
+    "discovery_handoff.json": true,
+    "assessment.json": true,
+    "sources/SRC-OPS-004.json": true,
+    "sources/SRC-POL-001.json": true,
+    "sources/SRC-RISK-002.json": true,
+    "sources/SRC-TKT-017.json": true,
+    "sources/SRC-WIKI-OLD.json": true
+  },
+  "inference_requested": false
+}

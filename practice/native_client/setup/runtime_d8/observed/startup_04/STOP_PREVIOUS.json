@@ -1,0 +1,115 @@
+{
+  "schema": "esa-d8-owned-server-transition/v1",
+  "recorded_at_utc": "2026-10-22T10:46:25.857131+00:00",
+  "signal_sent_to_launcher": 53651,
+  "server_pid": 53652,
+  "elapsed_seconds": 0.40061112200055504,
+  "server_proc_exists": false,
+  "launcher_proc_exists": false,
+  "finish_exists": true,
+  "finish_sha256": "eef806457ccc736497c10e2cb82ea81fe78156540fc6a893a06970587ca4f7bf",
+  "finish": {
+    "schema": "esa-local-server-lifecycle/v2",
+    "argv": [
+      "/workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/llama-server",
+      "--model",
+      "/workspace/scratch/72d789d25fef/runtime_d7/downloads/Qwen3-4B-Q4_K_M.gguf",
+      "--alias",
+      "esa-qwen3-4b",
+      "--host",
+      "127.0.0.1",
+      "--port",
+      "18080",
+      "--ctx-size",
+      "24576",
+      "--parallel",
+      "1",
+      "--threads",
+      "8",
+      "--threads-batch",
+      "8",
+      "--n-gpu-layers",
+      "0",
+      "--batch-size",
+      "256",
+      "--ubatch-size",
+      "128",
+      "--jinja",
+      "--reasoning",
+      "off",
+      "--no-repack",
+      "--no-warmup",
+      "--no-context-shift",
+      "--verbosity",
+      "4",
+      "--n-predict",
+      "3072",
+      "--no-agent",
+      "--no-ui-mcp-proxy",
+      "--no-webui",
+      "--metrics",
+      "--timeout",
+      "1500",
+      "--cache-ram",
+      "0",
+      "--ctx-checkpoints",
+      "0",
+      "--cache-type-k",
+      "f16",
+      "--cache-type-v",
+      "f16",
+      "--flash-attn",
+      "on"
+    ],
+    "cwd": "/workspace/scratch/72d789d25fef/runtime_d7",
+    "environment": {
+      "PATH": "/root/.codex/tmp/arg0/codex-arg0BiuUUo:/opt/codex/codex-path:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/override:/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/fallback",
+      "LANG": "C.UTF-8",
+      "LC_ALL": "C.UTF-8",
+      "TZ": "UTC"
+    },
+    "started_at_utc": "2026-10-22T10:20:52.962120+00:00",
+    "launcher_pid": 53651,
+    "launcher_identity": {
+      "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_server_01/preparation/run_local_model_d8.py",
+      "sha256": "c9bc0eb8e64725c7b1ba92687cdfcf4ffd87c5648c0c3abb2e08d4854c3c5b4f"
+    },
+    "python": {
+      "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "version": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]"
+    },
+    "startup_status": "No inference authorized by launcher; health, memory and token budget require separate review",
+    "maximum_runtime_seconds": 7200.0,
+    "shutdown_policy": {
+      "grace_seconds": 30.0,
+      "clock": "monotonic",
+      "poll_seconds": 0.2,
+      "repeated_signals_reset_deadline": false,
+      "escalation_target": "Only the exact still-running direct child created by this launcher",
+      "timing_limit": "Escalation is checked after the grace interval; scheduling and I/O can add delay."
+    },
+    "scope": "Loopback inference only; no built-in server agent tools or MCP hosts enabled.",
+    "server_pid": 53652,
+    "termination_signals": [
+      {
+        "signal": 15,
+        "at_utc": "2026-10-22T10:46:25.456692+00:00"
+      }
+    ],
+    "first_stop_requested_at_utc": "2026-10-22T10:46:25.456772+00:00",
+    "shutdown_events": [
+      {
+        "action": "SIGTERM_SENT",
+        "server_pid": 53652,
+        "at_utc": "2026-10-22T10:46:25.456868+00:00"
+      }
+    ],
+    "finished_at_utc": "2026-10-22T10:46:25.703192+00:00",
+    "exit_code": 0,
+    "wall_seconds": 1532.7408793719987,
+    "child_user_cpu_seconds": 4472.546692,
+    "child_system_cpu_seconds": 9.157389,
+    "child_max_rss_kib": 6079152,
+    "shutdown_result": "EXIT_AFTER_STOP_REQUEST"
+  }
+}

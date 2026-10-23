@@ -1,0 +1,11 @@
+{
+  "at_utc": "2026-10-22T17:37:33.270495+00:00",
+  "reason": "Recorded unsupported-format failure repeated without effective change; narrow to one control-flow correction and check.",
+  "previous_invocations": 2,
+  "used_client_wall_seconds": 925.9473850279974,
+  "remaining_budget_seconds": 1774.0526149720026,
+  "author_candidate_edits": false,
+  "source_exposure": "Current contract and actual project files; no checker source or reference solution. Author provides explicit semantic control-flow guidance, not a code patch.",
+  "session_change": "New native session on the same project; previous raw sessions and states retained.",
+  "configuration_change": "Edit permission reduced to api.py; steps hint 6, outer bound remains finite."
+}

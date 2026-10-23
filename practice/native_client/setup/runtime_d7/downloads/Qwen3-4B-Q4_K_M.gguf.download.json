@@ -1,0 +1,19 @@
+{
+  "schema": "esa-public-dependency-download/v1",
+  "artifact": {
+    "name": "Qwen3-4B-Q4_K_M.gguf",
+    "url": "https://huggingface.co/Qwen/Qwen3-4B-GGUF/resolve/a9a60d009fa7ff9606305047c2bf77ac25dbec49/Qwen3-4B-Q4_K_M.gguf",
+    "sha256": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+    "maximum_bytes": 3000000000,
+    "publisher": "Qwen",
+    "revision": "a9a60d009fa7ff9606305047c2bf77ac25dbec49"
+  },
+  "started_at_utc": "2026-10-22T05:54:01.508776+00:00",
+  "status": "PASS_HASH_VERIFIED",
+  "bytes_received": 2497280256,
+  "http_status": 200,
+  "declared_content_length": "2497280256",
+  "observed_sha256": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+  "finished_at_utc": "2026-10-22T05:55:16.323562+00:00",
+  "elapsed_seconds": 74.8148092890001
+}

@@ -1,0 +1,90 @@
+{
+  "schema": "team-field-dashboard/v1",
+  "status": "UNFILLED_FIELD_DASHBOARD",
+  "scope": null,
+  "cohort_definition": null,
+  "period_start_utc": null,
+  "cutoff_utc": null,
+  "owner": null,
+  "values": [
+    {
+      "metric_id": "M01",
+      "value": null,
+      "unit": "elapsed hours per open item",
+      "eligible_count": null,
+      "known_count": null,
+      "source_refs": [],
+      "missing_reason": "NOT_COLLECTED",
+      "decision": null,
+      "aggregation_rule": null,
+      "observations": [],
+      "value_format": "Per-item observations, or a named distribution summary with its aggregation rule; do not mix elapsed age with active effort."
+    },
+    {
+      "metric_id": "M02",
+      "value": null,
+      "unit": "elapsed hours per merged pull request",
+      "eligible_count": null,
+      "known_count": null,
+      "source_refs": [],
+      "missing_reason": "NOT_COLLECTED",
+      "decision": null,
+      "aggregation_rule": null,
+      "observations": [],
+      "value_format": "Per-item observations, or a named distribution summary with its aggregation rule; do not mix elapsed age with active effort."
+    },
+    {
+      "metric_id": "M03",
+      "value": null,
+      "unit": "person-hours per distinct accepted item",
+      "eligible_count": null,
+      "known_count": null,
+      "source_refs": [],
+      "missing_reason": "NOT_COLLECTED",
+      "decision": null,
+      "aggregation_rule": null
+    },
+    {
+      "metric_id": "M04",
+      "value": null,
+      "unit": "confirmed defects per 100 changes",
+      "eligible_count": null,
+      "known_count": null,
+      "source_refs": [],
+      "missing_reason": "NOT_COLLECTED",
+      "decision": null,
+      "aggregation_rule": null,
+      "follow_up_window": null
+    },
+    {
+      "metric_id": "M05",
+      "value": null,
+      "unit": "percent of adjudicated findings",
+      "eligible_count": null,
+      "known_count": null,
+      "source_refs": [],
+      "missing_reason": "NOT_COLLECTED",
+      "decision": null,
+      "aggregation_rule": null,
+      "untriaged_count": null
+    },
+    {
+      "metric_id": "M06",
+      "value": null,
+      "unit": "declared currency per distinct accepted item",
+      "eligible_count": null,
+      "known_count": null,
+      "source_refs": [],
+      "missing_reason": "NOT_COLLECTED",
+      "decision": null,
+      "aggregation_rule": null
+    }
+  ],
+  "claims": {
+    "human_learning_validated": false,
+    "causal_adoption_gain_established": false,
+    "field_cost_complete": false
+  },
+  "currency": null,
+  "allocation_rule": null
+}

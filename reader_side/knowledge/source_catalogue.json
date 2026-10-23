@@ -1,0 +1,52 @@
+[
+  {
+    "id": "K-POL-001",
+    "type": "current-policy",
+    "relative_path": "reader_side/intent/INT-001.md",
+    "sha256": "209ee2f218448d83178bd02fd5947cf68b021657a72b38e682e4a895fa102947",
+    "classification": "NORMATIVE_REFERENCE",
+    "status": "CURRENT",
+    "source_id": "INT-001",
+    "summary": "Approved routing policy remains EUR 5,000; no payment authority."
+  },
+  {
+    "id": "K-SPEC-004",
+    "type": "alpha-specification",
+    "relative_path": "reader_side/reference_solution/specification.json",
+    "sha256": "a1b6fee6ea70785a2fe18f3bcdd7c51c8cdc11e5ecd5b05ddfe1df204f859454",
+    "classification": "REVIEWED_REFERENCE",
+    "status": "CURRENT",
+    "source_id": "SPEC-004",
+    "summary": "Explanation-only fields, reason and policy version; no payment approval."
+  },
+  {
+    "id": "K-ADR-005",
+    "type": "architecture-decision",
+    "relative_path": "reader_side/reference_solution/architecture_decision.json",
+    "sha256": "f7455cbfdc3eab169bd2cb7a6e29a2d9db19681f6bd9f0df48993828a799c0df",
+    "classification": "DESIGN_PROPOSAL",
+    "status": "PROPOSED_FOR_HUMAN_ARCHITECTURE_REVIEW",
+    "source_id": "ADR-005",
+    "summary": "Direct adapter recommended for limited alpha, not yet accepted."
+  },
+  {
+    "id": "K-WIKI-OLD",
+    "type": "old-wiki",
+    "relative_path": "reader_side/discovery/sources/SRC-WIKI-OLD.json",
+    "sha256": "85294ab0c9627da940dbce25820f5caed54ceacde4b49a6f4ad5ea5417cdfc93",
+    "classification": "UNTRUSTED_BACKGROUND",
+    "status": "SUPERSEDED",
+    "source_id": "WIKI-OLD",
+    "summary": "Old wiki conflicts with current policy; not a normative source."
+  },
+  {
+    "id": "K-ARCHIVED-NOTE",
+    "type": "archived-note",
+    "relative_path": "reader_side/mcp/archived_note.json",
+    "sha256": "21ab3bf2378706c2bf50b2a7c745beace20999a67e52784892c891b51cf3ca7b",
+    "classification": "UNTRUSTED_BACKGROUND",
+    "status": "UNTRUSTED",
+    "source_id": "ARCH-NOTE",
+    "summary": "Instruction-shaped archived text is not a tool instruction."
+  }
+]

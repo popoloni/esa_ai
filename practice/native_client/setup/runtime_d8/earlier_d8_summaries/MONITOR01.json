@@ -1,0 +1,124 @@
+{
+  "schema": "esa-d8-native-inference-monitoring-summary/v1",
+  "recorded_at_utc": "2026-10-22T10:36:31.732478+00:00",
+  "status": "MONITORING_COMPLETE_AT_ROOT_INTERVENTION",
+  "scope": "Existing owned-server logs/process/resources only. No backend/model request, configuration mutation, process termination or benchmark by this monitor.",
+  "observed_interval_utc": [
+    "2026-10-22T10:25:34.058176+00:00",
+    "2026-10-22T10:35:23.874266+00:00"
+  ],
+  "snapshot_count": 6,
+  "first_actual_request": {
+    "task_id": 0,
+    "prompt_tokens": 15622,
+    "prompt_eval_seconds": 477.40029,
+    "prompt_eval_tokens_per_second": 32.72,
+    "generated_tokens": 63,
+    "generation_seconds": 25.38822,
+    "generation_tokens_per_second": 2.44,
+    "total_seconds": 502.78851,
+    "minimal_native_user_wrapper_tokens": 12837,
+    "derived_system_tool_message_overhead_tokens": 2785,
+    "declared_overhead_reserve_tokens": 3072,
+    "source_sha256": "161df1463b1b8a9ef51cc3bd622a211c8b7977179ded9e31edcc26db99c98205",
+    "timing_lines": [
+      "12.04.737.020 I slot print_timing: id  0 | task 0 | prompt eval time =  477400.29 ms / 15622 tokens (   30.56 ms per token,    32.72 tokens per second)",
+      "12.04.737.037 I slot print_timing: id  0 | task 0 |        eval time =   25388.22 ms /    63 tokens (  409.49 ms per token,     2.44 tokens per second)",
+      "12.04.737.037 I slot print_timing: id  0 | task 0 |       total time =  502788.51 ms / 15685 tokens"
+    ]
+  },
+  "second_actual_request": {
+    "task_id": 125,
+    "prompt_tokens": 23836,
+    "prompt_increase_tokens": 8214,
+    "available_context_after_prompt_tokens": 740,
+    "declared_current_response_reserve_tokens": 3072,
+    "prompt_plus_response_reserve_tokens": 26908,
+    "excess_over_context_tokens": 2332,
+    "last_complete_progress_observation": {
+      "newly_processed_tokens": 1792,
+      "seconds": 101.39,
+      "tokens_per_second": 17.67
+    },
+    "terminal_server_evidence": [
+      "13.53.904.558 W srv          stop: cancel task, id_task = 125",
+      "14.01.241.155 I slot      release: id  0 | task 125 | stop processing: n_tokens = 17666, truncated = 0"
+    ],
+    "disposition": "Root intervened after the client redundantly read the complete already attached packet, exhausting the declared context reserve. This monitor did not interrupt or stop the client/server. No completed second-response output is shown in the retained log."
+  },
+  "memory": {
+    "minimum_conservative_headroom_bytes": 789864040,
+    "maximum_observed_server_rss_kib": 6073124,
+    "maximum_observed_cgroup_current_bytes": 8575557632,
+    "new_oom_events": 0,
+    "new_oom_kill_events": 0,
+    "post_intervention_headroom_bytes": 1323421288,
+    "meaning": "Startup reserve was an initial gate, not an automatic runtime abort condition. No observed OOM/kill or sustained allocation failure; context reserve triggered root intervention."
+  },
+  "temperature": {
+    "configured_agent_intent": 0.2,
+    "actual_task0_sampler": 0.8,
+    "evidence": "SAMPLER_SETTING_DISCLOSURE.json",
+    "source_condition": {
+      "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/input_budget/output_cap_sources/request.ts",
+      "sha256": "90077551a9a46e11a37f44279c584832918d722c0ba0407ff8cad8d3437dd0de",
+      "excerpt": [
+        {
+          "line": 120,
+          "text": "      provider: input.provider,"
+        },
+        {
+          "line": 121,
+          "text": "      message: input.user,"
+        },
+        {
+          "line": 122,
+          "text": "    },"
+        },
+        {
+          "line": 123,
+          "text": "    {"
+        },
+        {
+          "line": 124,
+          "text": "      temperature: input.model.capabilities.temperature"
+        },
+        {
+          "line": 125,
+          "text": "        ? (input.agent.temperature ?? ProviderTransform.temperature(input.model))"
+        },
+        {
+          "line": 126,
+          "text": "        : undefined,"
+        },
+        {
+          "line": 127,
+          "text": "      topP: input.agent.topP ?? ProviderTransform.topP(input.model),"
+        },
+        {
+          "line": 128,
+          "text": "      topK: ProviderTransform.topK(input.model),"
+        },
+        {
+          "line": 129,
+          "text": "      maxOutputTokens: ProviderTransform.maxOutputTokens(input.model, input.flags.outputTokenMax),"
+        }
+      ]
+    },
+    "explanation_limit": "Pinned request preparation suppresses agent temperature when model.capabilities.temperature is false. This is a source-supported possible cause; the concrete resolved capability has not been independently captured here. No actual0.2 claim and no active correction."
+  },
+  "output_limit": {
+    "configured_client_output_tokens": 3072,
+    "request_specific_cap_visible_in_captured_server_logs": false,
+    "server_props_independent_cap_claim": false,
+    "source_config_binding": "Sibling native_sdd_01/input_budget/CLIENT_OUTPUT_CAP_SOURCE_BINDING.json remains distinct from observed request evidence."
+  },
+  "performance_limit": "Actual first-request throughput is recorded. Several settings and the request composition changed relative to d7; this is not an isolated benchmark or proof that one flag caused the improvement.",
+  "native_receipt_binding": {
+    "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/attempt_01/RECEIPT.json",
+    "sha256": "ec150345e35bd56167694b9e0e275d8e6927d505e927f6f490830a12a1fdbdc1"
+  },
+  "monitored_server_lifecycle": "../lifecycle_03",
+  "server_left_running": "No server stop by this monitor; subsequent ownership remains with root.",
+  "historical_evidence_preserved": true
+}

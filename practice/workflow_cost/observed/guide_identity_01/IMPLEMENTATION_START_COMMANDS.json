@@ -1,0 +1,46 @@
+[
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "companion/practice/workflow_cost/workflow_cost.py",
+      "stop",
+      "revision_d7/evidence/guide_identity_workflow/ACCOUNT.json",
+      "--id",
+      "preparation-01",
+      "--outcome",
+      "PASSED",
+      "--evidence",
+      "revision_d7/evidence/guide_identity_workflow/PREPARATION.json"
+    ],
+    "started_at_utc": "2026-10-22T06:07:33.532799+00:00",
+    "ended_at_utc": "2026-10-22T06:07:33.572161+00:00",
+    "exit_code": 0,
+    "stdout": "{\"status\": \"RECORDED\", \"command\": \"stop\", \"account\": \"revision_d7/evidence/guide_identity_workflow/ACCOUNT.json\"}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "companion/practice/workflow_cost/workflow_cost.py",
+      "start",
+      "revision_d7/evidence/guide_identity_workflow/ACCOUNT.json",
+      "--id",
+      "implementation-01",
+      "--phase",
+      "implementation",
+      "--actor",
+      "root-maintenance-agent",
+      "--actor-kind",
+      "AGENT",
+      "--evidence",
+      "revision_d7/evidence/guide_identity_workflow/PREPARATION.json"
+    ],
+    "started_at_utc": "2026-10-22T06:07:33.572173+00:00",
+    "ended_at_utc": "2026-10-22T06:07:33.607876+00:00",
+    "exit_code": 0,
+    "stdout": "{\"status\": \"RECORDED\", \"command\": \"start\", \"account\": \"revision_d7/evidence/guide_identity_workflow/ACCOUNT.json\"}\n",
+    "stderr": ""
+  }
+]

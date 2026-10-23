@@ -1,0 +1,8 @@
+{
+  "route": "HUMAN_REVIEW",
+  "policy_version": "BR-001/v2",
+  "payment_authorized": false,
+  "policy": {
+    "version": "BR-001/v2"
+  }
+}

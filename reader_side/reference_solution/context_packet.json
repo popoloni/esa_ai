@@ -1,0 +1,59 @@
+{
+  "packet_id": "CTX-006",
+  "source_catalogue": "KNOWLEDGE-CATALOGUE-v1",
+  "intent_ref": "INT-001",
+  "purpose": "Support explanation-only alpha; no payment execution",
+  "threshold_eur": 5000,
+  "payment_authorized": false,
+  "policy_status": "CURRENT",
+  "architecture_status": "PROPOSED_FOR_HUMAN_ARCHITECTURE_REVIEW",
+  "architecture_choice": "DIRECT_ADAPTER_PROPOSED",
+  "source_selections": [
+    {
+      "id": "K-POL-001",
+      "treatment": "INCLUDE_NORMATIVE"
+    },
+    {
+      "id": "K-SPEC-004",
+      "treatment": "INCLUDE_CONTRACT"
+    },
+    {
+      "id": "K-ADR-005",
+      "treatment": "INCLUDE_PROPOSED"
+    },
+    {
+      "id": "K-WIKI-OLD",
+      "treatment": "EXCLUDE_SUPERSEDED"
+    },
+    {
+      "id": "K-ARCHIVED-NOTE",
+      "treatment": "EXCLUDE_UNTRUSTED"
+    }
+  ],
+  "claim_dependencies": {
+    "routing_threshold": [
+      "K-POL-001"
+    ],
+    "payment_authority": [
+      "K-POL-001",
+      "K-SPEC-004"
+    ],
+    "explanation_fields": [
+      "K-SPEC-004"
+    ],
+    "architecture_choice": [
+      "K-ADR-005"
+    ]
+  },
+  "human_review_required": [
+    "ADR-005",
+    "OPERATOR_COPY"
+  ],
+  "revision_triggers": [
+    "INTENT_CHANGE",
+    "SOURCE_DIGEST_CHANGE",
+    "ADR_STATUS_CHANGE"
+  ],
+  "evidence_status": "OFFLINE_SOURCE_CHECK_NOT_HUMAN_APPROVAL",
+  "context_confidence": "SOURCE_SCOPED_NOT_MODEL_CONFIDENCE"
+}

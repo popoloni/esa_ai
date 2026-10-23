@@ -1,0 +1,32 @@
+Your seven selected behavior checks passed. The actual api.py still ends with an unreachable raise below the return in csv_formatter, although your handoff claimed that cleanup was done. Complete only that tiny cleanup now with the edit tool: delete the unreachable final raise in csv_formatter. Keep the working unsupported-format refusal inside orders_response. Keep every other file unchanged. No code has been manually repaired for you.
+
+Then run this exact allowed check command after the actual edit:
+python3 -B /workspace/scratch/72d789d25fef/revision_20261022_d9/Engineering_Software_with_Agentic_AI_20261022_d9/companion/practice/csv_export/checks/check.py --candidate /workspace/scratch/72d789d25fef/runtime_d9/native_csv_01
+Read the actual result. Give only three short factual sentences: the cleanup you actually made in api.py; the observed selected-check status; the limits (machine-importer literal values, no HTTP authentication, spreadsheet, deployment or human approval). Do not claim that selected cases prove every behavior. Stop. This is the final invocation in the declared budget.
+
+Actual current api.py:
+```python
+"""Existing JSON presentation; add CSV after the same selection boundary."""
+from selection import selected_orders, public_order
+
+def orders_response(rows, actor, format="json", status=None):
+    selected = selected_orders(rows, actor, status)
+    public = [public_order(row) for row in selected]
+    if format == "json":
+        return {"content_type": "application/json", "body": public}
+    if format == "csv":
+        return {"content_type": "text/csv; charset=utf-8", "body": csv_formatter(selected)}
+    if format not in ("json", "csv"):
+        raise ValueError("unsupported format")
+
+def csv_formatter(rows):
+    import csv
+    import io
+    output = io.StringIO()
+    csv.writer(output).writerow(['order_id', 'status', 'customer', 'amount_eur', 'note'])
+    for row in rows:
+        csv.writer(output).writerow([row['order_id'], row['status'], row['customer'], row['amount_eur'], row['note']])
+    return output.getvalue()
+    raise ValueError("unsupported format")
+
+```

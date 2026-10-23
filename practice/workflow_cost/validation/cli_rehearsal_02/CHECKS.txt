@@ -1,0 +1,33 @@
+test_acceptance_and_declared_absence_of_human_review_conflict (test_workflow_cost.AccountingControls.test_acceptance_and_declared_absence_of_human_review_conflict) ... ok
+test_acceptance_without_measured_human_effort_remains_partial (test_workflow_cost.AccountingControls.test_acceptance_without_measured_human_effort_remains_partial) ... ok
+test_agent_cannot_be_human_review (test_workflow_cost.AccountingControls.test_agent_cannot_be_human_review) ... ok
+test_assumed_rate_not_inserted_into_observed_money (test_workflow_cost.AccountingControls.test_assumed_rate_not_inserted_into_observed_money) ... ok
+test_automated_pass_does_not_supply_human_denominator (test_workflow_cost.AccountingControls.test_automated_pass_does_not_supply_human_denominator) ... ok
+test_changed_source_is_not_silently_rebound (test_workflow_cost.AccountingControls.test_changed_source_is_not_silently_rebound) ... ok
+test_cli_preserves_existing_account (test_workflow_cost.AccountingControls.test_cli_preserves_existing_account) ... ok
+test_closed_account_open_span_refused (test_workflow_cost.AccountingControls.test_closed_account_open_span_refused) ... ok
+test_distinct_people_effort_is_summed_but_elapsed_is_unioned (test_workflow_cost.AccountingControls.test_distinct_people_effort_is_summed_but_elapsed_is_unioned) ... ok
+test_duplicate_charge_is_rejected (test_workflow_cost.AccountingControls.test_duplicate_charge_is_rejected) ... ok
+test_failed_attempt_retained_in_time_and_report (test_workflow_cost.AccountingControls.test_failed_attempt_retained_in_time_and_report) ... ok
+test_human_acceptance_needs_explicit_attribution (test_workflow_cost.AccountingControls.test_human_acceptance_needs_explicit_attribution) ... ok
+test_incomplete_phase_prevents_whole_workflow_total (test_workflow_cost.AccountingControls.test_incomplete_phase_prevents_whole_workflow_total) ... ok
+test_later_rejection_revokes_earlier_count (test_workflow_cost.AccountingControls.test_later_rejection_revokes_earlier_count) ... ok
+test_missing_evidence_is_not_reported_as_verified (test_workflow_cost.AccountingControls.test_missing_evidence_is_not_reported_as_verified) ... ok
+test_multiple_currencies_not_added (test_workflow_cost.AccountingControls.test_multiple_currencies_not_added) ... ok
+test_negative_duration_refused (test_workflow_cost.AccountingControls.test_negative_duration_refused) ... ok
+test_negative_nan_and_infinite_money_refused (test_workflow_cost.AccountingControls.test_negative_nan_and_infinite_money_refused) ... ok
+test_no_roi_even_when_cost_and_acceptance_complete (test_workflow_cost.AccountingControls.test_no_roi_even_when_cost_and_acceptance_complete) ... ok
+test_overlap_is_not_added_to_elapsed (test_workflow_cost.AccountingControls.test_overlap_is_not_added_to_elapsed) ... ok
+test_relative_evidence_survives_moving_complete_tree (test_workflow_cost.AccountingControls.test_relative_evidence_survives_moving_complete_tree) ... ok
+test_report_cannot_overwrite_its_evidence (test_workflow_cost.AccountingControls.test_report_cannot_overwrite_its_evidence) ... ok
+test_roi_claim_refused (test_workflow_cost.AccountingControls.test_roi_claim_refused) ... ok
+test_same_human_concurrent_entries_union_before_person_effort (test_workflow_cost.AccountingControls.test_same_human_concurrent_entries_union_before_person_effort) ... ok
+test_timezone_required (test_workflow_cost.AccountingControls.test_timezone_required) ... ok
+test_two_passes_of_same_item_count_once (test_workflow_cost.AccountingControls.test_two_passes_of_same_item_count_once) ... ok
+test_unknown_money_not_replaced_with_zero (test_workflow_cost.AccountingControls.test_unknown_money_not_replaced_with_zero) ... ok
+test_zero_denominator_is_undefined (test_workflow_cost.AccountingControls.test_zero_denominator_is_undefined) ... ok
+
+----------------------------------------------------------------------
+Ran 28 tests in 0.009s
+
+OK

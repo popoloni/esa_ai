@@ -1,0 +1,405 @@
+{
+  "schema": "esa-d8-native-inference-monitoring-summary/v1",
+  "recorded_at_utc": "2026-10-22T11:08:45.700643+00:00",
+  "status": "MONITORING_COMPLETE_AFTER_NATIVE_TERMINAL_RECEIPT",
+  "observed_interval_utc": [
+    "2026-10-22T10:51:18.959067+00:00",
+    "2026-10-22T11:07:25.105787+00:00"
+  ],
+  "snapshot_count": 5,
+  "completed_server_request_count": 12,
+  "requests": [
+    {
+      "task_id": 0,
+      "prompt_tokens": 15872,
+      "prefill": {
+        "seconds": 488.56672,
+        "tokens": 15872,
+        "source_line": "12.06.149.692 I slot print_timing: id  0 | task 0 | prompt eval time =  488566.72 ms / 15872 tokens (   30.78 ms per token,    32.49 tokens per second)"
+      },
+      "generation": {
+        "seconds": 26.07731,
+        "tokens": 63,
+        "source_line": "12.06.149.707 I slot print_timing: id  0 | task 0 |        eval time =   26077.31 ms /    63 tokens (  420.60 ms per token,     2.38 tokens per second)"
+      },
+      "total": {
+        "seconds": 514.64404,
+        "tokens": 15935,
+        "source_line": "12.06.149.708 I slot print_timing: id  0 | task 0 |       total time =  514644.04 ms / 15935 tokens"
+      }
+    },
+    {
+      "task_id": 125,
+      "prompt_tokens": 16199,
+      "prefill": {
+        "seconds": 21.04485,
+        "tokens": 331,
+        "source_line": "12.51.625.565 I slot print_timing: id  0 | task 125 | prompt eval time =   21044.85 ms /   331 tokens (   63.58 ms per token,    15.73 tokens per second)"
+      },
+      "generation": {
+        "seconds": 24.351599999999998,
+        "tokens": 64,
+        "source_line": "12.51.625.606 I slot print_timing: id  0 | task 125 |        eval time =   24351.60 ms /    64 tokens (  386.53 ms per token,     2.59 tokens per second)"
+      },
+      "total": {
+        "seconds": 45.396440000000005,
+        "tokens": 395,
+        "source_line": "12.51.625.614 I slot print_timing: id  0 | task 125 |       total time =   45396.44 ms /   395 tokens"
+      }
+    },
+    {
+      "task_id": 191,
+      "prompt_tokens": 16497,
+      "prefill": {
+        "seconds": 31.90738,
+        "tokens": 302,
+        "source_line": "13.38.190.041 I slot print_timing: id  0 | task 191 | prompt eval time =   31907.38 ms /   302 tokens (  105.65 ms per token,     9.46 tokens per second)"
+      },
+      "generation": {
+        "seconds": 14.55292,
+        "tokens": 35,
+        "source_line": "13.38.190.059 I slot print_timing: id  0 | task 191 |        eval time =   14552.92 ms /    35 tokens (  428.03 ms per token,     2.34 tokens per second)"
+      },
+      "total": {
+        "seconds": 46.460300000000004,
+        "tokens": 337,
+        "source_line": "13.38.190.060 I slot print_timing: id  0 | task 191 |       total time =   46460.30 ms /   337 tokens"
+      }
+    },
+    {
+      "task_id": 228,
+      "prompt_tokens": 16589,
+      "prefill": {
+        "seconds": 6.91834,
+        "tokens": 96,
+        "source_line": "14.04.556.314 I slot print_timing: id  0 | task 228 | prompt eval time =    6918.34 ms /    96 tokens (   72.07 ms per token,    13.88 tokens per second)"
+      },
+      "generation": {
+        "seconds": 19.009400000000003,
+        "tokens": 35,
+        "source_line": "14.04.556.329 I slot print_timing: id  0 | task 228 |        eval time =   19009.40 ms /    35 tokens (  559.10 ms per token,     1.79 tokens per second)"
+      },
+      "total": {
+        "seconds": 25.92774,
+        "tokens": 131,
+        "source_line": "14.04.556.330 I slot print_timing: id  0 | task 228 |       total time =   25927.74 ms /   131 tokens"
+      }
+    },
+    {
+      "task_id": 264,
+      "prompt_tokens": 16684,
+      "prefill": {
+        "seconds": 6.93342,
+        "tokens": 99,
+        "source_line": "14.29.501.952 I slot print_timing: id  0 | task 264 | prompt eval time =    6933.42 ms /    99 tokens (   70.03 ms per token,    14.28 tokens per second)"
+      },
+      "generation": {
+        "seconds": 17.66614,
+        "tokens": 42,
+        "source_line": "14.29.501.957 I slot print_timing: id  0 | task 264 |        eval time =   17666.14 ms /    42 tokens (  430.88 ms per token,     2.32 tokens per second)"
+      },
+      "total": {
+        "seconds": 24.59956,
+        "tokens": 141,
+        "source_line": "14.29.501.958 I slot print_timing: id  0 | task 264 |       total time =   24599.56 ms /   141 tokens"
+      }
+    },
+    {
+      "task_id": 307,
+      "prompt_tokens": 16741,
+      "prefill": {
+        "seconds": 22.737740000000002,
+        "tokens": 61,
+        "source_line": "15.10.686.909 I slot print_timing: id  0 | task 307 | prompt eval time =   22737.74 ms /    61 tokens (  372.75 ms per token,     2.68 tokens per second)"
+      },
+      "generation": {
+        "seconds": 18.36241,
+        "tokens": 44,
+        "source_line": "15.10.686.926 I slot print_timing: id  0 | task 307 |        eval time =   18362.41 ms /    44 tokens (  427.03 ms per token,     2.34 tokens per second)"
+      },
+      "total": {
+        "seconds": 41.10015,
+        "tokens": 105,
+        "source_line": "15.10.686.928 I slot print_timing: id  0 | task 307 |       total time =   41100.15 ms /   105 tokens"
+      }
+    },
+    {
+      "task_id": 352,
+      "prompt_tokens": 16800,
+      "prefill": {
+        "seconds": 25.277189999999997,
+        "tokens": 63,
+        "source_line": "15.58.539.838 I slot print_timing: id  0 | task 352 | prompt eval time =   25277.19 ms /    63 tokens (  401.23 ms per token,     2.49 tokens per second)"
+      },
+      "generation": {
+        "seconds": 22.48874,
+        "tokens": 49,
+        "source_line": "15.58.539.851 I slot print_timing: id  0 | task 352 |        eval time =   22488.74 ms /    49 tokens (  468.52 ms per token,     2.13 tokens per second)"
+      },
+      "total": {
+        "seconds": 47.76593,
+        "tokens": 112,
+        "source_line": "15.58.539.852 I slot print_timing: id  0 | task 352 |       total time =   47765.93 ms /   112 tokens"
+      }
+    },
+    {
+      "task_id": 402,
+      "prompt_tokens": 16864,
+      "prefill": {
+        "seconds": 10.20305,
+        "tokens": 68,
+        "source_line": "16.37.195.252 I slot print_timing: id  0 | task 402 | prompt eval time =   10203.05 ms /    68 tokens (  150.04 ms per token,     6.66 tokens per second)"
+      },
+      "generation": {
+        "seconds": 28.365009999999998,
+        "tokens": 53,
+        "source_line": "16.37.195.270 I slot print_timing: id  0 | task 402 |        eval time =   28365.01 ms /    53 tokens (  545.48 ms per token,     1.83 tokens per second)"
+      },
+      "total": {
+        "seconds": 38.568059999999996,
+        "tokens": 121,
+        "source_line": "16.37.195.272 I slot print_timing: id  0 | task 402 |       total time =   38568.06 ms /   121 tokens"
+      }
+    },
+    {
+      "task_id": 456,
+      "prompt_tokens": 17151,
+      "prefill": {
+        "seconds": 33.11023,
+        "tokens": 291,
+        "source_line": "17.34.409.485 I slot print_timing: id  0 | task 456 | prompt eval time =   33110.23 ms /   291 tokens (  113.78 ms per token,     8.79 tokens per second)"
+      },
+      "generation": {
+        "seconds": 23.944869999999998,
+        "tokens": 45,
+        "source_line": "17.34.409.499 I slot print_timing: id  0 | task 456 |        eval time =   23944.87 ms /    45 tokens (  544.20 ms per token,     1.84 tokens per second)"
+      },
+      "total": {
+        "seconds": 57.055099999999996,
+        "tokens": 336,
+        "source_line": "17.34.409.500 I slot print_timing: id  0 | task 456 |       total time =   57055.10 ms /   336 tokens"
+      }
+    },
+    {
+      "task_id": 503,
+      "prompt_tokens": 17409,
+      "prefill": {
+        "seconds": 17.59797,
+        "tokens": 262,
+        "source_line": "18.13.177.350 I slot print_timing: id  0 | task 503 | prompt eval time =   17597.97 ms /   262 tokens (   67.17 ms per token,    14.89 tokens per second)"
+      },
+      "generation": {
+        "seconds": 21.06271,
+        "tokens": 47,
+        "source_line": "18.13.177.363 I slot print_timing: id  0 | task 503 |        eval time =   21062.71 ms /    47 tokens (  457.89 ms per token,     2.18 tokens per second)"
+      },
+      "total": {
+        "seconds": 38.66068,
+        "tokens": 309,
+        "source_line": "18.13.177.364 I slot print_timing: id  0 | task 503 |       total time =   38660.68 ms /   309 tokens"
+      }
+    },
+    {
+      "task_id": 552,
+      "prompt_tokens": 17690,
+      "prefill": {
+        "seconds": 30.741490000000002,
+        "tokens": 285,
+        "source_line": "19.05.032.117 I slot print_timing: id  0 | task 552 | prompt eval time =   30741.49 ms /   285 tokens (  107.86 ms per token,     9.27 tokens per second)"
+      },
+      "generation": {
+        "seconds": 20.90879,
+        "tokens": 47,
+        "source_line": "19.05.032.137 I slot print_timing: id  0 | task 552 |        eval time =   20908.79 ms /    47 tokens (  454.54 ms per token,     2.20 tokens per second)"
+      },
+      "total": {
+        "seconds": 51.65028,
+        "tokens": 332,
+        "source_line": "19.05.032.138 I slot print_timing: id  0 | task 552 |       total time =   51650.28 ms /   332 tokens"
+      }
+    },
+    {
+      "task_id": 601,
+      "prompt_tokens": 18129,
+      "prefill": {
+        "seconds": 53.56614,
+        "tokens": 443,
+        "source_line": "19.58.685.098 I slot print_timing: id  0 | task 601 | prompt eval time =   53566.14 ms /   443 tokens (  120.92 ms per token,     8.27 tokens per second)"
+      },
+      "generation": {
+        "seconds": 0.0,
+        "tokens": 1,
+        "source_line": "19.58.685.111 I slot print_timing: id  0 | task 601 |        eval time =       0.00 ms /     1 tokens (    0.00 ms per token,     0.00 tokens per second)"
+      },
+      "total": {
+        "seconds": 53.56614,
+        "tokens": 444,
+        "source_line": "19.58.685.112 I slot print_timing: id  0 | task 601 |       total time =   53566.14 ms /   444 tokens"
+      }
+    }
+  ],
+  "actual_request_contexts": [
+    {
+      "task_id": 0,
+      "prompt_tokens": 15872,
+      "context_tokens": 24576,
+      "remaining_after_prompt": 8704,
+      "remaining_after_declared_3072_response_reserve": 5632,
+      "source_line": "3.31.505.469 I slot   operator(): id  0 | task 0 | new prompt, n_ctx_slot = 24576, n_keep = 0, task.n_tokens = 15872"
+    },
+    {
+      "task_id": 125,
+      "prompt_tokens": 16199,
+      "context_tokens": 24576,
+      "remaining_after_prompt": 8377,
+      "remaining_after_declared_3072_response_reserve": 5305,
+      "source_line": "12.06.228.817 I slot   operator(): id  0 | task 125 | new prompt, n_ctx_slot = 24576, n_keep = 0, task.n_tokens = 16199"
+    },
+    {
+      "task_id": 191,
+      "prompt_tokens": 16497,
+      "context_tokens": 24576,
+      "remaining_after_prompt": 8079,
+      "remaining_after_declared_3072_response_reserve": 5007,
+      "source_line": "12.51.729.709 I slot   operator(): id  0 | task 191 | new prompt, n_ctx_slot = 24576, n_keep = 0, task.n_tokens = 16497"
+    },
+    {
+      "task_id": 228,
+      "prompt_tokens": 16589,
+      "context_tokens": 24576,
+      "remaining_after_prompt": 7987,
+      "remaining_after_declared_3072_response_reserve": 4915,
+      "source_line": "13.38.628.547 I slot   operator(): id  0 | task 228 | new prompt, n_ctx_slot = 24576, n_keep = 0, task.n_tokens = 16589"
+    },
+    {
+      "task_id": 264,
+      "prompt_tokens": 16684,
+      "context_tokens": 24576,
+      "remaining_after_prompt": 7892,
+      "remaining_after_declared_3072_response_reserve": 4820,
+      "source_line": "14.04.902.247 I slot   operator(): id  0 | task 264 | new prompt, n_ctx_slot = 24576, n_keep = 0, task.n_tokens = 16684"
+    },
+    {
+      "task_id": 307,
+      "prompt_tokens": 16741,
+      "context_tokens": 24576,
+      "remaining_after_prompt": 7835,
+      "remaining_after_declared_3072_response_reserve": 4763,
+      "source_line": "14.29.586.597 I slot   operator(): id  0 | task 307 | new prompt, n_ctx_slot = 24576, n_keep = 0, task.n_tokens = 16741"
+    },
+    {
+      "task_id": 352,
+      "prompt_tokens": 16800,
+      "context_tokens": 24576,
+      "remaining_after_prompt": 7776,
+      "remaining_after_declared_3072_response_reserve": 4704,
+      "source_line": "15.10.773.731 I slot   operator(): id  0 | task 352 | new prompt, n_ctx_slot = 24576, n_keep = 0, task.n_tokens = 16800"
+    },
+    {
+      "task_id": 402,
+      "prompt_tokens": 16864,
+      "context_tokens": 24576,
+      "remaining_after_prompt": 7712,
+      "remaining_after_declared_3072_response_reserve": 4640,
+      "source_line": "15.58.627.159 I slot   operator(): id  0 | task 402 | new prompt, n_ctx_slot = 24576, n_keep = 0, task.n_tokens = 16864"
+    },
+    {
+      "task_id": 456,
+      "prompt_tokens": 17151,
+      "context_tokens": 24576,
+      "remaining_after_prompt": 7425,
+      "remaining_after_declared_3072_response_reserve": 4353,
+      "source_line": "16.37.350.511 I slot   operator(): id  0 | task 456 | new prompt, n_ctx_slot = 24576, n_keep = 0, task.n_tokens = 17151"
+    },
+    {
+      "task_id": 503,
+      "prompt_tokens": 17409,
+      "context_tokens": 24576,
+      "remaining_after_prompt": 7167,
+      "remaining_after_declared_3072_response_reserve": 4095,
+      "source_line": "17.34.516.634 I slot   operator(): id  0 | task 503 | new prompt, n_ctx_slot = 24576, n_keep = 0, task.n_tokens = 17409"
+    },
+    {
+      "task_id": 552,
+      "prompt_tokens": 17690,
+      "context_tokens": 24576,
+      "remaining_after_prompt": 6886,
+      "remaining_after_declared_3072_response_reserve": 3814,
+      "source_line": "18.13.381.691 I slot   operator(): id  0 | task 552 | new prompt, n_ctx_slot = 24576, n_keep = 0, task.n_tokens = 17690"
+    },
+    {
+      "task_id": 601,
+      "prompt_tokens": 18129,
+      "context_tokens": 24576,
+      "remaining_after_prompt": 6447,
+      "remaining_after_declared_3072_response_reserve": 3375,
+      "source_line": "19.05.118.916 I slot   operator(): id  0 | task 601 | new prompt, n_ctx_slot = 24576, n_keep = 0, task.n_tokens = 18129"
+    }
+  ],
+  "actual_sampler_temperatures": [
+    0.2
+  ],
+  "sampler_record_count": 12,
+  "configured_temperature_now_observed": true,
+  "last_request_remaining_context_tokens": 6447,
+  "last_request_remaining_after_3072_current_output_reserve": 3375,
+  "context_limit": "No current-response reserve violation observed in these captured requests. A4,096-token cumulative-history reservation was prospective, not a guarantee for every possible continuation. Future appended context needs a fresh bound.",
+  "memory": {
+    "minimum_observed_conservative_headroom_bytes": 828075624,
+    "maximum_observed_rss_kib": 6181704,
+    "new_oom_events": 0,
+    "new_oom_kill_events": 0,
+    "post_terminal_headroom_bytes": 1147051624,
+    "limitations": "Sparse snapshots at roughly2-minute cadence with a checkpoint write hold. Includes conservative full-mapped-file/cgroup-anon/kernel estimate; not an exact instantaneous available-memory reading or a future allocation guarantee. The768MiB reserve was a startup gate, not a runtime termination rule."
+  },
+  "terminal_metrics": {
+    "path": "terminal_metrics/metrics.prom",
+    "sha256": "c6064314770447a92be4d02d9586f120904b0a6d2bdb7e52ae21ee9710a73a73"
+  },
+  "output_cap": {
+    "configured_client_max_output_tokens": 3072,
+    "actual_request_cap_field_observed": false,
+    "independent_server_enforcement_claim": false,
+    "limits": "No request-specific max_tokens/n_predict field appears in captured server logs. Configuration/source serialization evidence and actual usage remain distinct."
+  },
+  "native_terminal_receipt": {
+    "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/attempt_02/RECEIPT.json",
+    "sha256": "c5ca377daab7610918ddf2163cd12bd9e3a8dcac6c5ba79412f2d91690cf02b9",
+    "keys": [
+      "schema",
+      "origin",
+      "tool",
+      "tool_version",
+      "model",
+      "human_review",
+      "argv",
+      "cwd",
+      "inventory_root",
+      "python",
+      "platform",
+      "started_at_utc",
+      "task_sha256",
+      "before",
+      "allowed_changed_files",
+      "os_isolation",
+      "human_effort_seconds",
+      "billable_cost",
+      "tokens",
+      "exit_code",
+      "duration_seconds",
+      "ended_at_utc",
+      "after",
+      "changed_files",
+      "out_of_scope_changes",
+      "status",
+      "evidence_sha256"
+    ]
+  },
+  "artifact_acceptance_boundary": "Server-request completion and native exit status do not prove substantive specification generation. Parent/sibling reports a copied scaffold only; native tool/artifact review is separate. No R08 closure, accepted specification or clarification claim from this monitor.",
+  "step_bound_limit": "Root reports pinned steps setting provides a last-step instruction rather than a mechanical process cap. The actual outer deadline is separate. This monitor does not infer why the last one-token response stopped.",
+  "checkpoint_prefix": {
+    "path": "../checkpoint_progress_27",
+    "note": "Stable nonterminal snapshot001\u2013004 copy remains unchanged; snapshot005 and terminal metrics complete this observation."
+  },
+  "scope": "Read-only exact-owned-server logs/process/cgroup and explicitly permitted metrics GET only. No model/task requests, changes or process stops. Server04 left running under root control."
+}

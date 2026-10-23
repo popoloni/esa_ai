@@ -1,0 +1,28 @@
+{
+  "schema": "first-output-retention/v1",
+  "retained_at_utc": "2026-10-21T16:03:33.751845+00:00",
+  "correction_requested_or_applied": false,
+  "files": [
+    {
+      "path": "artifacts/spec.md",
+      "sha256": "3c3edb571b50791d15ade127baa266d4d82d6508d2b7e3b075f2b6db54908045",
+      "bytes": 16540
+    },
+    {
+      "path": "artifacts/plan.md",
+      "sha256": "d19527a0d40e6068f9f23019de8e1a6228eb0ea2bbc209a776b211f579a32275",
+      "bytes": 11308
+    },
+    {
+      "path": "artifacts/tasks.md",
+      "sha256": "62ccfb17dbdc87855f67b5a48a5eeb5d6e51731dbd2a622cacc3e9048018e0c8",
+      "bytes": 11928
+    },
+    {
+      "path": "artifacts/checklists/requirements.md",
+      "sha256": "9aee6a43de59237a12e75108483c78267d9e7c9ce694b1cb585ca6c2d64f9336",
+      "bytes": 2207
+    }
+  ],
+  "meaning": "Hashes of first generated candidates before any independent reviewer feedback. No guarantee of business correctness or approval."
+}

@@ -1,0 +1,248 @@
+{
+  "schema": "esa-workflow-cost/v1",
+  "run_id": "D7-GUIDE-IDENTITY-001",
+  "purpose": "Observe a concrete protected-guide repair through independent agent technical decision",
+  "evidence_mode": "OBSERVED",
+  "claim_scope": "DESCRIPTIVE_SINGLE_WORKFLOW_NO_CAUSAL_OR_ROI_CLAIM",
+  "identity": {
+    "interface": "ChatGPT agent and local Python tools",
+    "client_version": "UNKNOWN_NOT_EXPOSED",
+    "model": "UNKNOWN_NOT_EXPOSED",
+    "model_version": "UNKNOWN_NOT_EXPOSED"
+  },
+  "boundary": {
+    "description": "Supplied defect report through exact candidate review and recording",
+    "start_utc": "2026-10-22T06:06:56.721563+00:00",
+    "finish_utc": "2026-10-22T06:15:50.860351+00:00",
+    "exclusions": [
+      "Earlier discovery/CP11 editing/archive recovery and later full-release packaging are separate work; no human review or acceptance is claimed"
+    ]
+  },
+  "spans": [
+    {
+      "id": "preparation-01",
+      "phase": "preparation",
+      "actor": "root-maintenance-agent",
+      "actor_kind": "AGENT",
+      "measure": "WALL_INTERVAL",
+      "start_utc": "2026-10-22T06:06:56.833527+00:00",
+      "finish_utc": "2026-10-22T06:07:33.566790+00:00",
+      "outcome": "PASSED",
+      "evidence": [
+        {
+          "path": "TASK.txt",
+          "sha256": "693293c3742a77bf68e86a80c0e68ef90f9f0caa639fca84401cc39df8e61118"
+        },
+        {
+          "path": "PREPARATION.json",
+          "sha256": "1c12ce0815bae73d37fb0ae2ddb5e60bdd35f8cedd14569b04a6dd1ee229ad26"
+        }
+      ]
+    },
+    {
+      "id": "implementation-01",
+      "phase": "implementation",
+      "actor": "root-maintenance-agent",
+      "actor_kind": "AGENT",
+      "measure": "WALL_INTERVAL",
+      "start_utc": "2026-10-22T06:07:33.603019+00:00",
+      "finish_utc": "2026-10-22T06:08:53.314212+00:00",
+      "outcome": "PASSED",
+      "evidence": [
+        {
+          "path": "PREPARATION.json",
+          "sha256": "1c12ce0815bae73d37fb0ae2ddb5e60bdd35f8cedd14569b04a6dd1ee229ad26"
+        },
+        {
+          "path": "CANDIDATE.json",
+          "sha256": "47f6ede441590b209a4e70bd990b5892f6f1ed1e04e1ee28e18c29bf0c814bfa"
+        }
+      ]
+    },
+    {
+      "id": "verification-01",
+      "phase": "verification",
+      "actor": "root-focused-checker",
+      "actor_kind": "AUTOMATION",
+      "measure": "WALL_INTERVAL",
+      "start_utc": "2026-10-22T06:08:53.352813+00:00",
+      "finish_utc": "2026-10-22T06:09:09.074610+00:00",
+      "outcome": "PASSED",
+      "evidence": [
+        {
+          "path": "CANDIDATE.json",
+          "sha256": "47f6ede441590b209a4e70bd990b5892f6f1ed1e04e1ee28e18c29bf0c814bfa"
+        },
+        {
+          "path": "VERIFICATION.json",
+          "sha256": "28bb50c5f8ef17cc8dd4bdaa4a947c6d11ce977ea6982137db6c719f843ee89b"
+        }
+      ]
+    },
+    {
+      "id": "agent-review-01",
+      "phase": "agent_review",
+      "actor": "independent-acceptance-audit-agent",
+      "actor_kind": "AGENT",
+      "measure": "WALL_INTERVAL",
+      "start_utc": "2026-10-22T06:09:09.119427+00:00",
+      "finish_utc": "2026-10-22T06:15:03.065432+00:00",
+      "outcome": "PASSED",
+      "evidence": [
+        {
+          "path": "CANDIDATE.json",
+          "sha256": "47f6ede441590b209a4e70bd990b5892f6f1ed1e04e1ee28e18c29bf0c814bfa"
+        },
+        {
+          "path": "REVIEW.json",
+          "sha256": "29fc5a8a0e75ec02a2c7bbc73288b3865a7b17b85b170601030e5755248da5e9"
+        }
+      ]
+    },
+    {
+      "id": "recording-01",
+      "phase": "recording",
+      "actor": "root-maintenance-agent",
+      "actor_kind": "AGENT",
+      "measure": "WALL_INTERVAL",
+      "start_utc": "2026-10-22T06:15:03.138792+00:00",
+      "finish_utc": "2026-10-22T06:15:50.820378+00:00",
+      "outcome": "PASSED",
+      "evidence": [
+        {
+          "path": "REVIEW_DECISION.json",
+          "sha256": "9c973613e229163602ceb795862b9e0d59b993f529104da1214d67ee7c9e1f25"
+        },
+        {
+          "path": "RECORDING.json",
+          "sha256": "f8b0b0589b42143c9e9b89f426ada9fee770ed94f1aedd7ea765b922a73f0496"
+        }
+      ]
+    }
+  ],
+  "usage": [],
+  "acceptance": [
+    {
+      "id": "agent-technical-decision-01",
+      "item": "d7-reader-guide-identity-repair",
+      "kind": "AGENT",
+      "decision": "ACCEPTED",
+      "reviewer": "/root/acceptance_audit",
+      "candidate": {
+        "path": "CANDIDATE.json",
+        "sha256": "47f6ede441590b209a4e70bd990b5892f6f1ed1e04e1ee28e18c29bf0c814bfa"
+      },
+      "evidence": {
+        "path": "REVIEW_DECISION.json",
+        "sha256": "9c973613e229163602ceb795862b9e0d59b993f529104da1214d67ee7c9e1f25"
+      },
+      "at_utc": "2026-10-22T06:15:50.545555+00:00",
+      "human_attestation": null
+    }
+  ],
+  "assumptions": [],
+  "coverage": {
+    "preparation": {
+      "state": "OBSERVED",
+      "reason": "Completed attributed interval; this does not prove the phase contains every relevant activity",
+      "evidence": [
+        {
+          "path": "PREPARATION.json",
+          "sha256": "1c12ce0815bae73d37fb0ae2ddb5e60bdd35f8cedd14569b04a6dd1ee229ad26"
+        }
+      ]
+    },
+    "implementation": {
+      "state": "OBSERVED",
+      "reason": "Completed attributed interval; this does not prove the phase contains every relevant activity",
+      "evidence": [
+        {
+          "path": "CANDIDATE.json",
+          "sha256": "47f6ede441590b209a4e70bd990b5892f6f1ed1e04e1ee28e18c29bf0c814bfa"
+        }
+      ]
+    },
+    "verification": {
+      "state": "OBSERVED",
+      "reason": "Completed attributed interval; this does not prove the phase contains every relevant activity",
+      "evidence": [
+        {
+          "path": "VERIFICATION.json",
+          "sha256": "28bb50c5f8ef17cc8dd4bdaa4a947c6d11ce977ea6982137db6c719f843ee89b"
+        }
+      ]
+    },
+    "agent_review": {
+      "state": "OBSERVED",
+      "reason": "Completed attributed interval; this does not prove the phase contains every relevant activity",
+      "evidence": [
+        {
+          "path": "REVIEW.json",
+          "sha256": "29fc5a8a0e75ec02a2c7bbc73288b3865a7b17b85b170601030e5755248da5e9"
+        }
+      ]
+    },
+    "human_review": {
+      "state": "NOT_PERFORMED",
+      "reason": "No human review occurred or was required for the declared technical maintenance task; no human acceptance is claimed.",
+      "evidence": [
+        {
+          "path": "RECORDING.json",
+          "sha256": "f8b0b0589b42143c9e9b89f426ada9fee770ed94f1aedd7ea765b922a73f0496"
+        }
+      ]
+    },
+    "rework": {
+      "state": "NOT_PERFORMED",
+      "reason": "The nominated repair passed focused and independent review without candidate rework; earlier failed diagnostics are preserved.",
+      "evidence": [
+        {
+          "path": "REVIEW.json",
+          "sha256": "29fc5a8a0e75ec02a2c7bbc73288b3865a7b17b85b170601030e5755248da5e9"
+        }
+      ]
+    },
+    "recording": {
+      "state": "OBSERVED",
+      "reason": "Completed attributed interval; this does not prove the phase contains every relevant activity",
+      "evidence": [
+        {
+          "path": "RECORDING.json",
+          "sha256": "f8b0b0589b42143c9e9b89f426ada9fee770ed94f1aedd7ea765b922a73f0496"
+        }
+      ]
+    }
+  },
+  "money_coverage": {
+    "model": {
+      "state": "UNKNOWN",
+      "reason": "No complete attributable financial record exists for this component; unknown is not zero.",
+      "evidence": [
+        {
+          "path": "RECORDING.json",
+          "sha256": "f8b0b0589b42143c9e9b89f426ada9fee770ed94f1aedd7ea765b922a73f0496"
+        }
+      ]
+    },
+    "human": {
+      "state": "UNKNOWN",
+      "reason": "No complete attributable financial record exists for this component; unknown is not zero.",
+      "evidence": [
+        {
+          "path": "RECORDING.json",
+          "sha256": "f8b0b0589b42143c9e9b89f426ada9fee770ed94f1aedd7ea765b922a73f0496"
+        }
+      ]
+    },
+    "infrastructure": {
+      "state": "UNKNOWN",
+      "reason": "No complete attributable financial record exists for this component; unknown is not zero.",
+      "evidence": [
+        {
+          "path": "RECORDING.json",
+          "sha256": "f8b0b0589b42143c9e9b89f426ada9fee770ed94f1aedd7ea765b922a73f0496"
+        }
+      ]
+    }
+  }
+}

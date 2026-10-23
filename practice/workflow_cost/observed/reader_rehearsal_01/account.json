@@ -1,0 +1,253 @@
+{
+  "schema": "esa-workflow-cost/v1",
+  "run_id": "ESA-D5-READER-REHEARSAL-01",
+  "purpose": "Find and repair reader-route instructions through an actual AI-only dry run",
+  "evidence_mode": "OBSERVED",
+  "claim_scope": "DESCRIPTIVE_SINGLE_WORKFLOW_NO_CAUSAL_OR_ROI_CLAIM",
+  "identity": {
+    "interface": "ChatGPT collaboration and local shell; exact model version unavailable",
+    "client_version": "UNKNOWN_NOT_EXPOSED",
+    "model": "UNKNOWN_NOT_EXPOSED",
+    "model_version": "UNKNOWN_NOT_EXPOSED"
+  },
+  "boundary": {
+    "description": "Prospectively recorded preparation, AI attempt, root review and resulting bounded fixes",
+    "start_utc": "2026-10-21T18:08:27.244061+00:00",
+    "finish_utc": "2026-10-21T18:25:27.620954+00:00",
+    "exclusions": [
+      "Historical book/kit and recorder construction before this record; unallocated shared preparation, so no full cost-per-outcome claim"
+    ]
+  },
+  "spans": [
+    {
+      "id": "preparation_01",
+      "phase": "preparation",
+      "actor": "root",
+      "actor_kind": "AGENT",
+      "measure": "WALL_INTERVAL",
+      "start_utc": "2026-10-21T18:08:27.283422+00:00",
+      "finish_utc": "2026-10-21T18:09:18.604794+00:00",
+      "outcome": "PASSED",
+      "evidence": [
+        {
+          "path": "BOUNDARY.txt",
+          "sha256": "648fbeca1830a51c6898cbb6fc0d4ced32fe9682dbbb9d121ae45e9a85724b1f"
+        },
+        {
+          "path": "PREPARATION.json",
+          "sha256": "37530bda08e3392fb2edb98725d18e3ba19a287531a585395210c4b99c48d352"
+        }
+      ]
+    },
+    {
+      "id": "rehearsal_01",
+      "phase": "implementation",
+      "actor": "fresh_reader_agent",
+      "actor_kind": "AGENT",
+      "measure": "WALL_INTERVAL",
+      "start_utc": "2026-10-21T18:09:18.642996+00:00",
+      "finish_utc": "2026-10-21T18:22:57.808052+00:00",
+      "outcome": "PASSED",
+      "evidence": [
+        {
+          "path": "TASK.txt",
+          "sha256": "243ae3f4868921de08477b469bdbce30ec0b2583b55d647ce1a10e6f8aaae829"
+        },
+        {
+          "path": "worker/RESULT.json",
+          "sha256": "a0f9c80fe1e4e5b9f19a0cf0407e943ddc0ae42f7c2791f3436d1e8d7db2321e"
+        }
+      ]
+    },
+    {
+      "id": "agent_review_01",
+      "phase": "agent_review",
+      "actor": "root",
+      "actor_kind": "AGENT",
+      "measure": "WALL_INTERVAL",
+      "start_utc": "2026-10-21T18:22:32.741582+00:00",
+      "finish_utc": "2026-10-21T18:22:57.901534+00:00",
+      "outcome": "PASSED",
+      "evidence": [
+        {
+          "path": "worker/RESULT.json",
+          "sha256": "a0f9c80fe1e4e5b9f19a0cf0407e943ddc0ae42f7c2791f3436d1e8d7db2321e"
+        },
+        {
+          "path": "ROOT_FINDINGS_REVIEW.json",
+          "sha256": "798a2267317e5b19ea0f4d790e091c75958c753771ef4c4c3f22a3396eaa058b"
+        }
+      ]
+    },
+    {
+      "id": "rework_01",
+      "phase": "rework",
+      "actor": "root",
+      "actor_kind": "AGENT",
+      "measure": "WALL_INTERVAL",
+      "start_utc": "2026-10-21T18:22:57.949960+00:00",
+      "finish_utc": "2026-10-21T18:24:48.357466+00:00",
+      "outcome": "PASSED",
+      "evidence": [
+        {
+          "path": "ROOT_FINDINGS_REVIEW.json",
+          "sha256": "798a2267317e5b19ea0f4d790e091c75958c753771ef4c4c3f22a3396eaa058b"
+        },
+        {
+          "path": "CORRECTIONS_SNAPSHOT.json",
+          "sha256": "25da690207c340d0dc656bd1ce519f61e135a55f7372008bc37e36149d0c74ad"
+        }
+      ]
+    },
+    {
+      "id": "verification_01",
+      "phase": "verification",
+      "actor": "local-checker",
+      "actor_kind": "AUTOMATION",
+      "measure": "WALL_INTERVAL",
+      "start_utc": "2026-10-21T18:24:48.398953+00:00",
+      "finish_utc": "2026-10-21T18:24:48.800068+00:00",
+      "outcome": "PASSED",
+      "evidence": [
+        {
+          "path": "CORRECTIONS_SNAPSHOT.json",
+          "sha256": "25da690207c340d0dc656bd1ce519f61e135a55f7372008bc37e36149d0c74ad"
+        },
+        {
+          "path": "CORRECTION_VERIFICATION.json",
+          "sha256": "dd0dd99fd564d1ee2b8f248ae0a949b703c571ae15950e28797b225199b3380d"
+        }
+      ]
+    },
+    {
+      "id": "recording_01",
+      "phase": "recording",
+      "actor": "root",
+      "actor_kind": "AGENT",
+      "measure": "WALL_INTERVAL",
+      "start_utc": "2026-10-21T18:24:48.890277+00:00",
+      "finish_utc": "2026-10-21T18:25:27.579075+00:00",
+      "outcome": "PASSED",
+      "evidence": [
+        {
+          "path": "CORRECTION_VERIFICATION.json",
+          "sha256": "dd0dd99fd564d1ee2b8f248ae0a949b703c571ae15950e28797b225199b3380d"
+        },
+        {
+          "path": "RECONCILIATION.json",
+          "sha256": "27f426d24ec4523feb9cf682706c127bed8e0288de5cdafc9854697b64865eca"
+        }
+      ]
+    }
+  ],
+  "usage": [],
+  "acceptance": [
+    {
+      "id": "agent-decision-1",
+      "item": "reader-route-corrections-1",
+      "kind": "AGENT",
+      "decision": "ACCEPTED",
+      "reviewer": "root-agent-also-implementer",
+      "candidate": {
+        "path": "CORRECTIONS_SNAPSHOT.json",
+        "sha256": "25da690207c340d0dc656bd1ce519f61e135a55f7372008bc37e36149d0c74ad"
+      },
+      "evidence": {
+        "path": "CORRECTION_VERIFICATION.json",
+        "sha256": "dd0dd99fd564d1ee2b8f248ae0a949b703c571ae15950e28797b225199b3380d"
+      },
+      "at_utc": "2026-10-21T18:24:48.848430+00:00",
+      "human_attestation": null
+    }
+  ],
+  "assumptions": [],
+  "coverage": {
+    "preparation": {
+      "state": "OBSERVED",
+      "reason": "Completed attributed interval; this does not prove the phase contains every relevant activity",
+      "evidence": [
+        {
+          "path": "PREPARATION.json",
+          "sha256": "37530bda08e3392fb2edb98725d18e3ba19a287531a585395210c4b99c48d352"
+        }
+      ]
+    },
+    "implementation": {
+      "state": "OBSERVED",
+      "reason": "Completed attributed interval; this does not prove the phase contains every relevant activity",
+      "evidence": [
+        {
+          "path": "worker/RESULT.json",
+          "sha256": "a0f9c80fe1e4e5b9f19a0cf0407e943ddc0ae42f7c2791f3436d1e8d7db2321e"
+        }
+      ]
+    },
+    "verification": {
+      "state": "OBSERVED",
+      "reason": "Completed attributed interval; this does not prove the phase contains every relevant activity",
+      "evidence": [
+        {
+          "path": "CORRECTION_VERIFICATION.json",
+          "sha256": "dd0dd99fd564d1ee2b8f248ae0a949b703c571ae15950e28797b225199b3380d"
+        }
+      ]
+    },
+    "agent_review": {
+      "state": "OBSERVED",
+      "reason": "Completed attributed interval; this does not prove the phase contains every relevant activity",
+      "evidence": [
+        {
+          "path": "ROOT_FINDINGS_REVIEW.json",
+          "sha256": "798a2267317e5b19ea0f4d790e091c75958c753771ef4c4c3f22a3396eaa058b"
+        }
+      ]
+    },
+    "human_review": {
+      "state": "NOT_PERFORMED",
+      "reason": "No human participant or reviewer in this bounded AI rehearsal; independent human confirmation remains outstanding",
+      "evidence": [
+        {
+          "path": "RECONCILIATION.json",
+          "sha256": "27f426d24ec4523feb9cf682706c127bed8e0288de5cdafc9854697b64865eca"
+        }
+      ]
+    },
+    "rework": {
+      "state": "OBSERVED",
+      "reason": "Completed attributed interval; this does not prove the phase contains every relevant activity",
+      "evidence": [
+        {
+          "path": "CORRECTIONS_SNAPSHOT.json",
+          "sha256": "25da690207c340d0dc656bd1ce519f61e135a55f7372008bc37e36149d0c74ad"
+        }
+      ]
+    },
+    "recording": {
+      "state": "OBSERVED",
+      "reason": "Completed attributed interval; this does not prove the phase contains every relevant activity",
+      "evidence": [
+        {
+          "path": "RECONCILIATION.json",
+          "sha256": "27f426d24ec4523feb9cf682706c127bed8e0288de5cdafc9854697b64865eca"
+        }
+      ]
+    }
+  },
+  "money_coverage": {
+    "model": {
+      "state": "UNKNOWN",
+      "reason": "No complete attributable record",
+      "evidence": []
+    },
+    "human": {
+      "state": "UNKNOWN",
+      "reason": "No complete attributable record",
+      "evidence": []
+    },
+    "infrastructure": {
+      "state": "UNKNOWN",
+      "reason": "No complete attributable record",
+      "evidence": []
+    }
+  }
+}

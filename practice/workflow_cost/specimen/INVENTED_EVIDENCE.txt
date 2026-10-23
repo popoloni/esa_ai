@@ -1,0 +1,8 @@
+SYNTHETIC TEACHING CASE. Every time, person, task, charge and decision below is invented.
+Case: a bounded formatting change prepared, attempted, checked, repaired and reviewed.
+The first check fails; repair and an independent check overlap for 10 seconds.
+Human reviewer Alex records 60 seconds of active review and accepts change-1.
+Fictional complete charges: model USD 0.40, human USD 1.50, infrastructure USD 0.10.
+The human charge is a fictional receipt, not calculated from the illustrative rate.
+The later automated acceptance repeats the same logical item; it adds no new outcome.
+The illustrative USD 90/hour assumption is excluded from observed money fields.

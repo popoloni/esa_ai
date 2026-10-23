@@ -1,0 +1,112 @@
+{
+  "schema": "esa-controlled-probe-manifest/v1",
+  "created_at_utc": "2026-10-22T08:05:14.791891+00:00",
+  "files": {
+    "PROBE.py": {
+      "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/native_shutdown_fix/controlled_probe/retry_02/PROBE.py",
+      "bytes": 9756,
+      "sha256": "a40a4bdb36d4a441a16a56c0b19009301190f7ae2199de6073d46555fe5d74ff"
+    },
+    "REPORT.json": {
+      "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/native_shutdown_fix/controlled_probe/retry_02/REPORT.json",
+      "bytes": 17516,
+      "sha256": "ce7140a9cae8a90e09e01d04812f571e2055afcdc13a161f9fc515120949e4f7"
+    },
+    "cooperative/INERT_FIXTURE.py": {
+      "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/native_shutdown_fix/controlled_probe/retry_02/cooperative/INERT_FIXTURE.py",
+      "bytes": 491,
+      "sha256": "9d6481ca53b366b35846b172117a228dd9cd71499200421eea133053a47568a9"
+    },
+    "cooperative/REQUEST.json": {
+      "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/native_shutdown_fix/controlled_probe/retry_02/cooperative/REQUEST.json",
+      "bytes": 1453,
+      "sha256": "e49923e20f57a4acfb9d0f62f2b1d906dbb069c89b692a42837c789e54645301"
+    },
+    "cooperative/RESULT.json": {
+      "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/native_shutdown_fix/controlled_probe/retry_02/cooperative/RESULT.json",
+      "bytes": 6838,
+      "sha256": "e8c9132cc8d135d63889a7a0f7acc4ef5946242caf34dce48d7ded34eeba495e"
+    },
+    "cooperative/launcher_stderr.txt": {
+      "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/native_shutdown_fix/controlled_probe/retry_02/cooperative/launcher_stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "cooperative/launcher_stdout.txt": {
+      "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/native_shutdown_fix/controlled_probe/retry_02/cooperative/launcher_stdout.txt",
+      "bytes": 284,
+      "sha256": "9373c943d711664e9e686f3d934c786b08d6833344d2aaa9c0b8364338b2a553"
+    },
+    "cooperative/lifecycle/FINISH.json": {
+      "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/native_shutdown_fix/controlled_probe/retry_02/cooperative/lifecycle/FINISH.json",
+      "bytes": 3191,
+      "sha256": "dbeee4cf47b3b6cf0d59642db2a800018efcf651c3a051fa0bf9a69e936bd090"
+    },
+    "cooperative/lifecycle/START.json": {
+      "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/native_shutdown_fix/controlled_probe/retry_02/cooperative/lifecycle/START.json",
+      "bytes": 2587,
+      "sha256": "0a170301ad47ce02e1c5dea30440144554f9570429f193c9a176b90d4c22ffdc"
+    },
+    "cooperative/lifecycle/stderr.txt": {
+      "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/native_shutdown_fix/controlled_probe/retry_02/cooperative/lifecycle/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "cooperative/lifecycle/stdout.txt": {
+      "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/native_shutdown_fix/controlled_probe/retry_02/cooperative/lifecycle/stdout.txt",
+      "bytes": 886,
+      "sha256": "2bcc667a9f2c4f1884959c8c77ee43d5dde8ba9df5f50146de86c272a27ab882"
+    },
+    "ignoring_repeated_signals/INERT_FIXTURE.py": {
+      "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/native_shutdown_fix/controlled_probe/retry_02/ignoring_repeated_signals/INERT_FIXTURE.py",
+      "bytes": 374,
+      "sha256": "d148272fa711a4832244573dba414f0ae2b36fc8de5078766599936423d902fd"
+    },
+    "ignoring_repeated_signals/REQUEST.json": {
+      "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/native_shutdown_fix/controlled_probe/retry_02/ignoring_repeated_signals/REQUEST.json",
+      "bytes": 1523,
+      "sha256": "17be18fc2e1ef9c471c72e80c5d105aa526c56bb0ef7197bb5d78cb3152b1399"
+    },
+    "ignoring_repeated_signals/RESULT.json": {
+      "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/native_shutdown_fix/controlled_probe/retry_02/ignoring_repeated_signals/RESULT.json",
+      "bytes": 7995,
+      "sha256": "46272e02fae907aeb26f3a04a82a91a8232c684ad8a377069a2e685fdf0ae596"
+    },
+    "ignoring_repeated_signals/launcher_stderr.txt": {
+      "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/native_shutdown_fix/controlled_probe/retry_02/ignoring_repeated_signals/launcher_stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ignoring_repeated_signals/launcher_stdout.txt": {
+      "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/native_shutdown_fix/controlled_probe/retry_02/ignoring_repeated_signals/launcher_stdout.txt",
+      "bytes": 299,
+      "sha256": "c6263e6023e1f0e2d54a2c96962a08fdc7079b473027e3d02a4488475fcdbf6d"
+    },
+    "ignoring_repeated_signals/lifecycle/FINISH.json": {
+      "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/native_shutdown_fix/controlled_probe/retry_02/ignoring_repeated_signals/lifecycle/FINISH.json",
+      "bytes": 3843,
+      "sha256": "7c1df4f06ec14f647d541222eeb5dd12b4ea7c53911c69c36789ef840246dfc4"
+    },
+    "ignoring_repeated_signals/lifecycle/SHUTDOWN.json": {
+      "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/native_shutdown_fix/controlled_probe/retry_02/ignoring_repeated_signals/lifecycle/SHUTDOWN.json",
+      "bytes": 3561,
+      "sha256": "cb16e422e6253ad15c1001392f5db178bf8418044a0480a4fee6fe2d661edfe4"
+    },
+    "ignoring_repeated_signals/lifecycle/START.json": {
+      "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/native_shutdown_fix/controlled_probe/retry_02/ignoring_repeated_signals/lifecycle/START.json",
+      "bytes": 2629,
+      "sha256": "1f8d755076f284810b4efcffd4289f67c6a47b23c7db298c53ab1024a9748c7d"
+    },
+    "ignoring_repeated_signals/lifecycle/stderr.txt": {
+      "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/native_shutdown_fix/controlled_probe/retry_02/ignoring_repeated_signals/lifecycle/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ignoring_repeated_signals/lifecycle/stdout.txt": {
+      "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/native_shutdown_fix/controlled_probe/retry_02/ignoring_repeated_signals/lifecycle/stdout.txt",
+      "bytes": 861,
+      "sha256": "005e79ab373a9db082d7d93179edbda9b5cc24df03b1a8b281cae4b4455567af"
+    }
+  },
+  "manifest_excluded_from_own_inventory": true
+}

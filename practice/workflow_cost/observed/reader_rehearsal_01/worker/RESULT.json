@@ -1,0 +1,95 @@
+{
+  "schema": "ai-reader-rehearsal/v1",
+  "timestamp_utc": "2026-10-21 18:15:54 UTC",
+  "original_task_sha256": "243ae3f4868921de08477b469bdbce30ec0b2583b55d647ce1a10e6f8aaae829",
+  "study_type": "fresh experienced AI worker rehearsal, not human observation",
+  "prior_solution_exposure": "No supplied prior solution exposure; allowed ordinary Chapter 1 explanatory repair text read before editing; no protected reference implementations or completed episode files opened.",
+  "tasks": [
+    {
+      "id": 1,
+      "name": "Setup",
+      "status": "COMPLETE_PREREQUISITES_ONLY",
+      "completed": true,
+      "actual_errors": [
+        "Two initial Errno 2 failures due to omitted workdir; corrected explicitly."
+      ],
+      "observed": "doctor PASS_PREREQUISITES_ONLY; prepared new chapter01 copy",
+      "owner_approved": false
+    },
+    {
+      "id": 2,
+      "name": "First bounded repair",
+      "status": "COMPLETE_READY_FOR_HUMAN_REVIEW",
+      "completed": true,
+      "actual_errors": [
+        "Expected baseline: 2 assertion failures and 2 Decimal InvalidOperation errors, 3 passes"
+      ],
+      "observed": "Repaired only routing.py; seven acceptance cases pass; scope guard passes",
+      "owner_approved": false
+    },
+    {
+      "id": 3,
+      "name": "Enter Chapter 7 and hand off",
+      "status": "ENTRY_HANDOFF_COMPLETE_CORE_WORK_INCOMPLETE",
+      "completed": true,
+      "full_chapter_completed": false,
+      "actual_errors": [
+        "Expected untouched starter planning gate: FAIL with 24 findings"
+      ],
+      "observed": "Separate new 7 copy created; no candidates edited; CP06 and prior cumulative work explicitly outstanding; HANDOFF.txt retained",
+      "owner_approved": false
+    },
+    {
+      "id": 4,
+      "name": "CSV transfer",
+      "status": "COMPLETE_SELECTED_CONTRACT_READY_FOR_REVIEW",
+      "completed": true,
+      "actual_errors": [
+        "Expected first CSV command: NotImplementedError",
+        "One contract-path lookup failed; located correct contract in copied starter"
+      ],
+      "observed": "Only api.py edited; independent checker PASS_SELECTED_CONTRACT, 7 named checks; source hashes confirm scope",
+      "owner_approved": false
+    }
+  ],
+  "scope_limits": [
+    "No independent human or novice observation",
+    "No learning, benchmark or production claim",
+    "No external accounts/services, coding client, additional subagent or approval action",
+    "Ordinary chapter guidance is task-time exposure",
+    "Shared filesystem; protected gates can read reference/check data internally",
+    "Authored input unchanged; one proven task-created bytecode cache removed; full pre-run input manifest unavailable",
+    "Chapter 7 is entry/handoff only, not completion of Chapters 2\u20137"
+  ],
+  "actual_interventions": [
+    "Correct working directory after initial operator mistakes",
+    "Use copied starter CURRENT_CONTRACT.md after missing-path error",
+    "Defer reference-example command under first-attempt rule",
+    "Remove generated input bytecode to restore input hygiene"
+  ],
+  "immutable_output_paths": {
+    "journal": "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Competitive_Revision_d5_20261021/revision_d5/evidence/reader_rehearsal/worker/COMMAND_JOURNAL.json",
+    "chapter01": "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Competitive_Revision_d5_20261021/revision_d5/evidence/reader_rehearsal/worker/chapter01",
+    "chapter07_handoff": "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Competitive_Revision_d5_20261021/revision_d5/evidence/reader_rehearsal/worker/chapter07/HANDOFF.txt",
+    "csv_handoff": "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Competitive_Revision_d5_20261021/revision_d5/evidence/reader_rehearsal/worker/csv/HANDOFF.txt",
+    "explanations": "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Competitive_Revision_d5_20261021/revision_d5/evidence/reader_rehearsal/worker/EXPLANATIONS.txt",
+    "instruction_findings": "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Competitive_Revision_d5_20261021/revision_d5/evidence/reader_rehearsal/worker/INSTRUCTION_FINDINGS.json",
+    "hash_manifest": "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Competitive_Revision_d5_20261021/revision_d5/evidence/reader_rehearsal/worker/SHA256SUMS.json"
+  },
+  "immutability_meaning": "Run-specific retained paths and SHA-256 manifest; not host-enforced immutability or signed attestation.",
+  "budget": "About eight-minute cap; all four requested task scopes completed within it. Chapter 7 full repair intentionally out of scope and remains incomplete.",
+  "late_input_cache_observation": "After initial cleanup, final verification unexpectedly saw the same cache with its original mtime. No intervening worker command imported input source. Cause is unverified; the exact known cache hash was checked and the same generated cache removed again. No authored input was edited.",
+  "final_cache_absent": true,
+  "final_input_manifest_verification": {
+    "timestamp_utc": "2026-10-21T18:18:33.625896+00:00",
+    "manifest_path": "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Competitive_Revision_d5_20261021/revision_d5/evidence/reader_rehearsal/INPUT_MANIFEST.json",
+    "manifest_sha256": "7634c1938a9a9e636e293dc693571b4b487b0836b50a081cbda7197ecedc532f",
+    "checked_source_files": 1512,
+    "missing": [],
+    "changed": [],
+    "added_files": [],
+    "authored_input_unchanged": true,
+    "authority": "Parent follow-up explicitly requested input-manifest verification after first attempts. Only manifest metadata and file hashes were inspected; protected source content was not opened."
+  },
+  "manifest_followup_note": "A parent-provided pre-run manifest became available during finalization. Earlier absence-of-manifest statements describe the initial capture limit; this final verification checks every listed input source."
+}

@@ -1,0 +1,11 @@
+{
+  "started_at_utc": "2026-10-22T11:11:29.146244+00:00",
+  "finished_at_utc": "2026-10-22T11:11:29.154521+00:00",
+  "endpoint": "http://127.0.0.1:18080/tokenize",
+  "model_inference": false,
+  "http_status": 200,
+  "prompt_sha256": "a261a64f263c00a2b9dd8bdacf64776e9121a752dc4db2d5c4339e5fdb53a08f",
+  "prompt_tokens": 372,
+  "response_sha256": "a38328c756dcdccb69926bfe165c46d68c5024981ff68d4d486e564d3cd0c483",
+  "prompt_bytes": 1743
+}

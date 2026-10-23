@@ -1,0 +1,94 @@
+{
+  "id": "R08",
+  "priority": "P1",
+  "status": "Partially resolved",
+  "title": "Complete one actual SDD generation journey",
+  "where": "Ch3–4; practice/sdd; A.4",
+  "problem": "Pinned CLI scaffold creation was run. The populated specification, design/plan and tasks remain author-written specimens; model generation is NOT_RUN.",
+  "change": "Use the existing validation protocol to run the installed framework and coding client from the fixed input through actual generated artifacts, clarification and independent assessment. Preserve first outputs and real omissions. Use the second framework as a clearly scoped contrast.",
+  "acceptance": [
+    "Artifacts are linked to actual prompts/commands and retained first output.",
+    "Generation is distinguished from scaffold creation and intentionally seeded faults.",
+    "One observed route is sufficient for the tutorial; a second observed route is required before a measured paired comparison is claimed."
+  ],
+  "dependencies": [
+    "R05",
+    "R06"
+  ],
+  "suggested_owner_role": "Technical author with client access",
+  "assigned_to": "ESA revision team",
+  "due_date": "",
+  "effort": "M",
+  "origin": "Carried forward; still open",
+  "prior_action_refs": "R2-02",
+  "evidence": [
+    "lab_review: LAB-06",
+    "practice/sdd/README.md:55–75",
+    "validation/README.md:55–74"
+  ],
+  "requirement": "Competitive improvement",
+  "completion_evidence": "revision_d5/notes/ACCEPTANCE_AUDIT_R08_R12_R22.json; revision_d5/notes/ACCEPTANCE_AUDIT_R08_R12_R22.identity_checks.json; manuscript/chapters/chapter04.tex",
+  "notes": "",
+  "resolution_status": "PARTIAL",
+  "resolution_summary": "Preserved the earlier external generation and independent review plus three actual native invocations: provider failure, completed short-name prose with no tools, and disclosed same-session continuation that read the full fixed packet then reached its prospective 1800-second limit. No native specification/checklist/feature metadata or reached clarification disposition was produced; all 49 project files were unchanged. Portable evidence, provenance qualifications and current manuscript wording are independently verified.",
+  "resolution_evidence": [
+    "companion/practice/sdd/observed_external_agent_20261021/OBSERVATION_SUMMARY.json",
+    "companion/practice/sdd/observed_external_agent_20261021/reviewed_revision_02/REVISION.json",
+    "revision_d5/notes/ACCEPTANCE_AUDIT_R08_R12_R22.json",
+    "revision_d5/notes/ACCEPTANCE_AUDIT_R08_R12_R22.identity_checks.json",
+    "manuscript/chapters/chapter04.tex",
+    "revision_d7/evidence/sdd_native_02/compact_input_preparation/attempt_01/OUTCOME_REVIEW.json",
+    "revision_d7/evidence/sdd_native_recovery_01/attempt_01/OUTCOME_REVIEW.json",
+    "revision_d7/notes/SDD_EMPTY_NATIVE_RESPONSE_REVIEW.json",
+    "revision_d7/evidence/sdd_native_continuation_01/FINAL_PREFLIGHT.json",
+    "revision_d7/notes/R08_ACCEPTANCE_AUDIT.json",
+    "revision_d7/notes/SDD_NATIVE_TERMINAL_FOLLOWUP.json",
+    "companion/practice/sdd/observed_native_20261022/OBSERVATION_SUMMARY.json",
+    "companion/practice/sdd/native_review_20261022/INDEPENDENT_R08_REVIEW.json"
+  ],
+  "remaining_external_requirement": "Useful actual native-generated artifacts linked to retained first output, independent semantic assessment, and an authentic reached clarification disposition or documented stop remain outstanding. A second framework, implementation phase or positive human approval is not imposed for the bounded tutorial scope.",
+  "status_history": [
+    {
+      "date": "2026-10-21",
+      "status": "OPEN",
+      "note": "User authorized implementation of all 22 actions where possible."
+    },
+    {
+      "date": "2026-10-21",
+      "status": "IN_PROGRESS",
+      "note": "Implementation and capability verification started; no closure claimed."
+    },
+    {
+      "at_utc": "2026-10-21T16:19:38.541102+00:00",
+      "status": "PARTIAL",
+      "note": "Ran a fresh installed Spec Kit 1.2.2 scaffold/helpers, then actual externally dispatched generation and independent agent review. Preserved first outputs and the minor dependency correction in a separate revision."
+    },
+    {
+      "at_utc": "2026-10-21T18:26:32.779566+00:00",
+      "status": "PARTIAL",
+      "note": "Audited actual scaffold, external ChatGPT generation, first outputs and independent agent review; corrected Chapter 4 stale NOT_RUN language and the false two-observed-framework requirement. The generated plan still has three unresolved clarifications and explicitly unpassed readiness gates."
+    },
+    {
+      "at_utc": "2026-10-22T07:32:35.319153+00:00",
+      "status": "PARTIAL",
+      "note": "Retained two actual native attempts without generated artifacts. Final guided same-session continuation is active under an unchanged prospective outer limit; pending outcome is not counted as closure."
+    },
+    {
+      "at_utc": "2026-10-22T08:10:53.751313+00:00",
+      "status": "PARTIAL",
+      "note": "Final bounded native continuation and independent audit are complete: full packet read, unchanged 49 files, no generated native artifacts or reached clarification disposition. All 36 evidence/scope checks pass; evidence completeness is not task completion."
+    }
+  ],
+  "inherited_resolution_before_d7": {
+    "resolution_status": "PARTIAL",
+    "resolution_summary": "Audited actual scaffold, external ChatGPT generation, first outputs and independent agent review; corrected Chapter 4 stale NOT_RUN language and the false two-observed-framework requirement. The generated plan still has three unresolved clarifications and explicitly unpassed readiness gates.",
+    "resolution_evidence": [
+      "companion/practice/sdd/observed_external_agent_20261021/OBSERVATION_SUMMARY.json",
+      "companion/practice/sdd/observed_external_agent_20261021/reviewed_revision_02/REVISION.json",
+      "revision_d5/notes/ACCEPTANCE_AUDIT_R08_R12_R22.json",
+      "revision_d5/notes/ACCEPTANCE_AUDIT_R08_R12_R22.identity_checks.json",
+      "manuscript/chapters/chapter04.tex"
+    ],
+    "remaining_external_requirement": "Native installed-framework/coding-client phase progression remains unobserved. Actual owner answers or a documented stop are still needed for unresolved clarifications; a generated plan alone is not a passed phase gate."
+  }
+}

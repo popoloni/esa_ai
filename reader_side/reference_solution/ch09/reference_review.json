@@ -1,0 +1,23 @@
+{
+  "review_id": "VER-009/v1",
+  "candidate_sha256": "d6ea58707fa2a15aef6a4c1e64b1752301caa51703b4370076611d1977a3f334",
+  "contract_id": "SPEC-004/v1",
+  "policy_version": "BR-001/v1",
+  "oracle_source": "reader_side/specs/case_oracle.json",
+  "status": "READY_FOR_HUMAN_REVIEW_NOT_ACCEPTED",
+  "decision_owner": "human_technical_owner_pending",
+  "claim": "SELECTED_CHECKS_ONLY_NO_RELEASE_AUTHORITY",
+  "test_evidence": {
+    "case_count": 8,
+    "case_passed": 8,
+    "injected_faults_killed": 3,
+    "injected_faults_total": 3
+  },
+  "remaining_uncertainty": [
+    "owner_policy_confirmation",
+    "operator_comprehension",
+    "security_scope_review"
+  ],
+  "human_review_required": true,
+  "release_authorized": false
+}

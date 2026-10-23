@@ -1,0 +1,80 @@
+{
+  "schema": "esa-native-observation/v1",
+  "prepared_at_utc": "2026-10-22T05:55:46.891981+00:00",
+  "record_kind": "COMPLETED_OBSERVATION_WITH_NATIVE_TIMEOUT",
+  "execution_kind": "ACTUAL_NAMED_CLIENT",
+  "actions": [
+    "R06"
+  ],
+  "client": {
+    "name": "OpenCode",
+    "version": "1.19.3",
+    "model_identity": "Qwen3-4B Q4_K_M; GGUF SHA256 7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5; served by llama.cpp b11799 as esa-local/esa-qwen3-4b",
+    "model_identity_availability": "EXPOSED"
+  },
+  "prior_solution_exposure": "Author had worked-answer exposure. D7 agent had historical recovery/API guidance exposure. Guided recovery included verbatim approved intent, explicit sequencing and Decimal.is_finite guidance, but no implementation patch. Not a blind benchmark.",
+  "contrast": {
+    "status": "UNOBSERVED",
+    "same_contract": "Would use the same INT-001, acceptance and scope on separate fresh copies",
+    "meaningful_difference": "VS Code/Copilot IDE approval and streamed-edit route documented but not run here; actual OpenCode route is noninteractive with predeclared application permissions",
+    "paired_performance_claim": false
+  },
+  "starting_manifest": {
+    "path": "STARTING_MANIFEST.json",
+    "sha256": "5d17f059a31260fcd8d94c7e35a6f6a954f5d77a960301f9318e11505b84399d"
+  },
+  "artifacts": {
+    "client_identity": {
+      "path": "IDENTITY_INDEX.json",
+      "sha256": "de9bc41ebed31ec429490c41ec305561adbea6e2dfbf8fb54760e132f89cd959"
+    },
+    "effective_configuration": {
+      "path": "CONFIGURATION_INDEX.json",
+      "sha256": "7e9565ff54ab2dc9f34a7d004bb29dc8f4ca51d4298a9a5a21b57b8c9f6c86eb"
+    },
+    "task_prompt": {
+      "path": "PROMPT_INDEX.json",
+      "sha256": "9a7bcca76cbec884204cd6cdd00b76e9f4e932edc7ac903d4a2db8c149f499dd"
+    },
+    "initial_checks": {
+      "path": "independent_review/initial_acceptance.json",
+      "sha256": "b477c19df39c6c19f9ffaf63f6d615858d733f4eda05adcb210783a7d12e868a"
+    },
+    "tool_actions": {
+      "path": "TOOL_ACTIONS.json",
+      "sha256": "8fd1dae510963540cf811d9e4409a2655d76a5855e91c608501f96396f2b3e50"
+    },
+    "first_output": {
+      "path": "attempt_01/stdout.txt",
+      "sha256": "aaec2caf6ad807d5887089276153408c6d44761234c8c7d077b411f7dd4e08d0"
+    },
+    "failure_and_recovery": {
+      "path": "OUTCOME.json",
+      "sha256": "89ac462e4d8718b3361ec281476614b366025e39838f860d064aac1ac48fad87"
+    },
+    "final_diff": {
+      "path": "independent_review/routing.diff",
+      "sha256": "bad13adf6caee6e1527b837af53392ffb7ba88f023254e6e0cfb4c8abdc146a4"
+    },
+    "independent_checks": {
+      "path": "CHECK_INDEX.json",
+      "sha256": "5abc0eca9eee1a7118199661415f719aa66b61b96bceded7495eeb06f629d1fe"
+    },
+    "reproduction_instructions": {
+      "path": "REPRODUCTION.md",
+      "sha256": "61a5ea09a74614206b2f342092808eb010e09e65970ebd8db55f0458db0a0980"
+    }
+  },
+  "protocol_era": "NOT_OBSERVED",
+  "native_tool_selection": "OBSERVED",
+  "boundary_scope": "Application allowlists and before/after inventory observed; no OS isolation demonstrated.",
+  "unknown_values": [
+    "d6 excluded attempt06 outcome",
+    "complete token usage for two interrupted requests",
+    "total financial cost",
+    "human effort and human acceptance"
+  ],
+  "human_acceptance": "PENDING",
+  "structural_check_scope": "EVIDENCE_CONSISTENCY_ONLY_NOT_AUTHENTICITY_OR_ACCEPTANCE",
+  "completed_at_utc": "2026-10-22T06:23:43.584651+00:00"
+}

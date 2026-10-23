@@ -1,0 +1,27 @@
+{
+  "status": "PREPARED_DIAGNOSTICS_PASS_NO_INFERENCE",
+  "checks": {
+    "version_is_1_19_3": true,
+    "native_specify_discovered": true,
+    "native_clarify_discovered": true,
+    "full_upstream_commands_preserved": true,
+    "no_injected_command_override": true,
+    "only_local_provider_enabled": true,
+    "explicit_provider_timeout": true,
+    "explicit_header_timeout": true,
+    "explicit_schema_metadata": true,
+    "declared_model_limits": true,
+    "local_small_model": true,
+    "bash_enabled": true,
+    "read_matches_context_mode": true,
+    "edit_enabled": true,
+    "write_enabled": true,
+    "steps_12": true,
+    "all_prepared_files_unchanged": true,
+    "no_feature_artifacts_created": true
+  },
+  "diagnostic_project_added_files": [
+    ".opencode/.gitignore"
+  ],
+  "notes": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/sdd_native_recovery_01/CONFIGURATION_NOTES.json"
+}

@@ -1,0 +1,458 @@
+\section{Advanced path: choose what the learning claim must establish}\label{sec:ch13-claims}
+
+Use the advanced path when the team needs evidence about what people can explain later or apply to a changed problem. The preceding agreement and mentoring routine remain useful without that study. The following sections first develop the assessment reasoning, then show how the technical rehearsal and the separate participant protocol put it into practice.
+
+Think back to the colleague in the mentoring exchange. After help, the colleague produces a correct explanation. That is useful, but it leaves two questions open: could the colleague reconstruct the reasoning later without the same help, and could they use it when the next fault has a different cause? We need separate activities to answer those questions.
+
+\begin{conceptbox}{Completion, retention and transfer}
+\textbf{Completion} asks whether the present task was done under its recorded assistance conditions. \textbf{Retention} asks what can be recalled or performed after a declared delay. \textbf{Transfer} asks whether a principle can be selected and applied to a changed problem.
+
+A correct answer immediately after a worked example establishes neither later retention nor transfer. To investigate either one, specify what the participant will see, when they will respond and how the response will be reviewed.
+\end{conceptbox}
+
+State the intended claim before choosing the activity. This keeps a convenient automated result from being used to answer a human-learning question it never examined.
+
+Immediate completion concerns the work performed in the current session. The engineer produces an artifact that satisfies its selected checks and explains the result under the conditions in which they worked. Those conditions include access to an assistant, references, examples and help from colleagues. Record them. A good assisted outcome is still useful work; it simply does not answer every question about independent capability.
+
+Delayed retention asks what the person can explain or do after a declared interval. The interval and available resources are part of the assessment contract. A later timestamp on a copied response does not show retained understanding. Nor does reopening a complete solution and replaying its commands answer the same question as reconstructing the causal argument from a limited evidence packet.
+
+Transfer concerns a changed problem. The new case must require selecting and applying a principle rather than recognizing a filename or repeating the previous diagnosis. For our Treasury work, the important principle is to identify the effective policy, state and request semantics before choosing a repair. The answer \enquote{wrong database path} should not become a reflex that every later exercise rewards.
+
+\begin{table}[H]\centering\small
+\caption{Different claims require different evidence.}\label{tab:ch13-learning-claims}
+\begin{tabularx}{\textwidth}{@{}p{0.24\textwidth}X X@{}}\toprule
+\textbf{Claim} & \textbf{Observation to retain} & \textbf{Conclusion still unavailable}\\\midrule
+Task completion & Current artifact, execution evidence, explanation and permitted assistance. & Retention after a delay or transfer to a changed problem.\\
+Delayed retention & Later response, declared delay, resource conditions and independent scoring. & Performance outside the sampled knowledge and conditions.\\
+Transfer & Explanation and action on a case with a different discriminating mechanism. & General competence across all incidents.\\
+Team knowledge & Versioned procedure, usable evidence links, maintainers and review history. & Understanding by every team member.\\
+Decision authority & A current owner decision within a defined scope. & Permission inferred solely from technical skill.\\\bottomrule
+\end{tabularx}
+\end{table}
+
+\Needspace{5\baselineskip}
+Team knowledge is a property of the shared record and how people maintain and use it. A runbook can preserve an excellent lesson even while a new colleague is still learning it. Conversely, one expert's understanding can be difficult to transfer if the decisive evidence exists only in that person's memory. Evaluate the knowledge artifact and the people who use it separately.
+
+Decision authority adds another boundary. Understanding a migration does not authorize it; a high explanation score does not make its author the release owner. The earlier chapters already separated artifact quality from approval. The same distinction belongs in mentoring and team governance, where confidence and seniority can otherwise substitute for an explicit decision.
+
+The predecessor's proposed delayed assessment and anchored-review approach is a conceptual starting point, not a completed study validating our protocol or rubric.\autocite{papaliniNDSE2} CP13 has its own timing, cases and synthetic checks; actual human validation remains pending.
+
+Research on immediate learning also needs its own boundary. Shen and Tamkin's preprint studies programmers learning the unfamiliar Trio library through short tasks and an immediate unaided assessment. Its chat-based assistance condition is not a delayed-retention or contemporary agentic-workflow trial.\autocite{shenTamkinSkills2026} It illustrates why an evaluation should specify the capability, assistance and timing it measures. It supplies no observed result for our participants.
+
+\section{Extract a lesson that another person can inspect}\label{sec:ch13-handoff}
+
+The learning material begins with the actual CP12 evidence. Preserve the symptom, the competing hypotheses, the observations that distinguish them and the recovery's remaining limits. A short instruction to select the control path is insufficient because it hides why that path was correct and which facts would make the instruction unsafe to reuse.
+
+A useful handoff answers five connected questions. What claim did the incident challenge? Which observation changed the diagnosis? What was held constant in the comparison? Which action restored the selected behavior? What remained unresolved? In this case, the path-only comparison isolates state selection, while the within-ledger retry and explicit-policy probe test alternative explanations. The incident-only history remains an owner reconciliation problem.
+
+Keep the deterministic-identity trap in the lesson. The wrong ledger could recreate a historical decision with the same identifier, so response equality did not prove continuity. A handoff that says only \enquote{compare decision IDs} would turn the incident's warning into a misleading rule. The recipient needs the operation status, selected ledger and state transition as well as the identifier.
+
+Separate the principle from the instance. The principle is to bind an operational claim to effective inputs and preserved history. The instance contains particular paths, event identifiers and the synthetic \path{rollout_anchor}. Those details make the recorded exercise reproducible. They do not make the anchor an authenticated identifier for every future database or make the same path correct in another deployment.
+
+The handoff also states its prerequisites. It assumes the selected policy-history contract, the meaning of the recorded worker events and the integrity of the retained evidence. If a future service changes its retry semantics, initialization behavior or policy selection, the procedure needs review. A document that omits its prerequisites may remain easy to execute long after it has stopped being a reliable guide.
+
+Let the recipient explain the causal argument before receiving a polished answer. Ask why the threshold hypothesis was rejected, why the repeated-key result mattered, and what observation would have supported a different conclusion. Then show the feedback and identify the evidence the response missed. This creates a reviewable mentoring conversation rather than a contest to reproduce the author's wording.
+
+An assistant can help prepare an evidence index, find broken references and propose questions. It can also leak the solution into a supposedly independent assessment or supply a convincing explanation that the learner does not understand. Declare its permitted role for each phase. The useful question is which capability the exercise actually assessed under its recorded assistance conditions.
+
+\section{Make the delayed assessment an explicit protocol}\label{sec:ch13-delay}
+
+A \textbf{protocol} is the agreed sequence of activities and conditions used to collect comparable observations. For this learning exercise, it specifies the material, permitted help, delay, response order and review procedure. Without that sequence, a later polished answer might contain feedback that an earlier answer did not have.
+
+Walk through the order before reading the command names. First save the immediate explanation and the material available while it was written. Next wait for the declared interval. Obtain the retention explanation under its stated resource conditions, and seal that response. Only then release the changed case and obtain its response. Give solution feedback after both later responses have been saved. Sealing here means retaining the submitted version and its identity, so later revisions are additional records rather than replacements.
+
+The delay is an assessment choice, not a result. Choose it before seeing the responses and document why it is suitable for the team's use case. A protocol can test whether a phase opens too early; that technical check does not establish that a real person spent the interval away from the answer. Human participation and resource use need their own records and review.
+
+Do not treat timestamps as a complete account of learning. A timestamp can establish when the local tool accepted a submission under its clock assumptions. It cannot tell whether the participant rehearsed privately, received help or opened an unrecorded answer. The protocol should state the conditions it requests and the limits of what it can verify.
+
+Retention and transfer should have separate responses and separate feedback. First ask the participant to reconstruct the original causal principle under the declared resource conditions. Then introduce a changed case whose observations must be interpreted anew. If the original answer is revealed before both responses are frozen, the transfer result has different conditions and should be labeled accordingly.
+
+\begin{figure}[H]\centering
+\begin{tikzpicture}[>=Latex,node distance=8mm,
+  box/.style={draw=accent!65,fill=accent!5,rounded corners=1mm,align=center,font=\scriptsize,minimum height=11mm,text width=38mm},
+  wide/.style={box,text width=84mm}]
+\node[wide] (material) {Versioned incident evidence and declared assistance conditions};
+\node[box,below=12mm of material.south,xshift=-25mm] (immediate) {Immediate work\\artifact and explanation};
+\node[box,below=12mm of material.south,xshift=25mm] (delayed) {Declared later assessment\\retention and changed case};
+\node[box,below=of immediate] (completion) {Completion evidence\\under the recorded conditions};
+\node[box,below=of delayed] (review) {Independent explanation scores\\separate retention and transfer};
+\draw[->] (material.south west) -- (immediate.north);
+\draw[->] (material.south east) -- (delayed.north);
+\draw[->] (immediate) -- (completion);
+\draw[->] (delayed) -- (review);
+\end{tikzpicture}
+\caption{The assessment branches produce different evidence. A successful immediate artifact cannot fill the delayed-response or transfer-review fields.}\label{fig:ch13-learning-evidence}
+\end{figure}
+
+Keep assessment integrity proportionate to its purpose. This is a developmental team exercise, not a claim to certify every participant's professional competence. A clear record of resources, submissions, feedback and review is more useful than an elaborate gate whose limitations are hidden. If the conditions change, preserve the work and narrow the conclusion rather than forcing the record into a preselected success label.
+
+\section{Score an explanation without pretending to read a mind}\label{sec:ch13-rubric}
+
+An explanation can be evaluated for the reasoning it makes available. It cannot expose every mental process that produced it. Our proposed rubric therefore asks reviewers to judge specific evidence: whether the explanation distinguishes causes, connects claims with observations, preserves history and identity, and states appropriate limits and next actions.
+
+Use the same four dimensions for the immediate explanation, delayed retention and transfer response, while retaining their different prompts and evidence. Reviewers should see the relevant case and resource conditions. A correct statement about the old incident may be an incorrect diagnosis of the transfer case, so a common rubric does not imply a common answer.
+
+\begin{table}[H]\centering\small
+\caption{The proposed explanation rubric requires inspectable reasoning.}\label{tab:ch13-rubric}
+\begin{tabularx}{\textwidth}{@{}p{0.28\textwidth}X@{}}\toprule
+\textbf{Dimension} & \textbf{What the reviewer examines}\\\midrule
+Causal discrimination & Does the response use a comparison that separates the proposed cause from a plausible alternative?\\
+Evidence linkage & Can the reviewer trace the claim to the correct event, state or input, and distinguish observation from interpretation?\\
+History and identity & Does the response preserve recorded policy decisions and distinguish a new evaluation, replay and recreated identity?\\
+Limits and next action & Does the response propose an appropriately bounded action and preserve unresolved ownership or approval decisions?\\\bottomrule
+\end{tabularx}
+\end{table}
+
+\Needspace{5\baselineskip}
+The provisional scale is zero to three for each dimension. The anchors describe observable differences, from an absent or contradicted explanation to an adequately supported and bounded one. A reviewer records four ratings and a task rationale that explains them. The rationale identifies the relevant response passage and evidence; a number by itself is not useful feedback.
+
+Do not hide the profile behind one total. A response can identify the correct cause while proposing to erase the wrong ledger, or preserve history while giving no causal evidence. Those weaknesses demand different feedback. The four ratings help locate the disagreement. No proficiency threshold or demonstrated learning gain follows merely because the ratings can be added.
+
+\begin{examplebox}{Apply one rubric dimension step by step}
+Consider the authored sample answer, ``The database path was wrong.'' First identify the claim: it names a cause. Next look for evidence separating that cause from alternatives. None is supplied, so the causal-discrimination description for score~1 fits: a plausible cause is named without separating competing explanations.
+
+Now add, ``The same request and source gave different routes when only the path changed.'' That supplies the main contrast, but the reviewer must still ask how the threshold and retry alternatives were examined. The top anchor also requires a \textbf{falsifier}: an observation that would make the proposed explanation inadequate. If the intended ledger produced the same fault under the controlled comparison, the path-only account would need revision.
+
+Choose a rating from the complete response and write why. These samples explain the provisional anchors; they are not participant scores or competence judgments.
+\end{examplebox}
+
+Use two reviewers for the planned pilot, with each submitting their initial judgment independently. Preserve both raw forms. Compare their ratings and rationales before any discussion of a common decision. If they disagree, record whether they interpreted the prompt differently, applied an anchor differently or found different evidence in the response. The disagreement may reveal a rubric problem rather than a learner problem.
+
+An adjudicated result, when used, is a separate record with its reason and owner. It must not replace the original reviews. If an anchor changes, increment the rubric version and decide explicitly whether earlier responses need another review. Comparing scores across versions without that decision would combine different assessment contracts.
+
+Automation can check that a submitted rating is in range, the response and rubric hashes match, required rationales are present and the reviewer records are distinct under the local protocol. Those checks do not make the raters independent people or establish that a rationale is sound. Keyword matching would be especially misleading here: a response could mention \enquote{active policy} and \enquote{history} while drawing the wrong conclusion from both.
+
+\begin{conceptbox}{Consistency and validity answer different questions}
+\textbf{Consistency} asks whether reviewers apply the rubric similarly. \textbf{Validity} asks whether the resulting judgment supports its intended use. Two reviewers might agree because both reward the phrase ``active policy,'' even when the explanation uses that phrase incorrectly. Their agreement would not make the judgment useful.
+
+The companion's \textbf{synthetic calibration} feeds invented responses and ratings through the machinery to check forms, ordering and disagreement calculations. It prepares the mechanism for a pilot. Validation needs actual responses and review of what the rubric rewards.
+\end{conceptbox}
+
+For the first human pilot, retain partially correct and conflicting explanations as well as clear ones. Ask reviewers where an anchor was ambiguous and which evidence would resolve their disagreement. Improve the instrument using those observations before treating its ratings as a reliable basis for a stronger decision. The delivered exercise leaves that empirical work pending.
+
+\section{Transfer the principle to a different cause}\label{sec:ch13-transfer}
+
+The transfer case keeps the Chapter~11 \texttt{PolicyStore} and the intended persistent ledger. The database path is correct. The code is unchanged. The ledger contains a legitimate version~1 history and a current request recorded under version~2. The new event is an actual activation back to \texttt{BR-001/v1}, retained in the audit history.
+
+A new EUR~4,000 request now follows version~1 and returns the standard queue. Replaying the earlier current request still returns its recorded version~2 human-review decision. Both results can be consistent with their selected semantics. The operational fault concerns which policy is active for new work, not a rule that every EUR~4,000 response must become identical.
+
+\begin{figure}[H]\centering
+\begin{tikzpicture}[>=Latex,node distance=8mm,
+  box/.style={draw=accent!65,fill=accent!5,rounded corners=1mm,align=center,font=\scriptsize,minimum height=11mm,text width=38mm},
+  wide/.style={box,text width=84mm}]
+\node[wide] (ledger) {Same retained ledger and policy implementation};
+\node[box,below=12mm of ledger.south,xshift=-25mm] (recorded) {Existing request\\recorded under v2};
+\node[box,below=12mm of ledger.south,xshift=25mm] (activation) {Audited activation to v1\\new request uses v1};
+\node[box,below=of recorded] (replay) {Replay keeps the recorded\\human-review result};
+\node[box,below=of activation] (new) {New evaluation returns\\the standard queue};
+\draw[->] (ledger.south west) -- (recorded.north);
+\draw[->] (ledger.south east) -- (activation.north);
+\draw[->] (recorded) -- (replay);
+\draw[->] (activation) -- (new);
+\end{tikzpicture}
+\caption{The transfer symptom arises inside the correct ledger. Recorded policy and active policy explain different operations; a path change alone cannot restore the intended default.}\label{fig:ch13-transfer}
+\end{figure}
+
+This case deliberately resists the old path recipe. Selecting the same correct file again does not change its active policy. A response that diagnoses another missing ledger should predict evidence of initialization or absent history; the retained state and activation record can contradict that prediction. The earlier CP12 deployment guard also has a useful role: it should refuse the unexpected active version rather than silently call the service healthy.
+
+The explanation should follow the effective inputs. Which operation was replayed? Which request was new? What policy was recorded with each decision? What audit event changed the active default? Which evidence shows that the database and its earlier records remained present? Answering those questions uses the principle from Chapter~12 without assuming its conclusion.
+
+The bounded recovery demonstrates activation of version~2 on a copy. Earlier decisions retain their recorded policies and outcomes, including the new decision created while version~1 was active. A fresh request can then demonstrate the intended default. Rewriting the intervening decision would make the visible results tidier while destroying the history needed to explain what happened.
+
+A good transfer response also distinguishes the local experiment from an operational instruction. The synthetic work order defines the allowed copy and action. A real unexpected activation could require investigation of who or what requested it, the permitted change process and downstream effects. The exercise does not supply those real-world facts, and its learner must not invent an authorization from the presence of an activation method.
+
+Do not show this complete causal account as the prompt in an independent transfer pilot. The participant packet should contain the symptom and evidence needed to investigate; the facilitator retains the explanation and scoring guidance until the response is committed. Readers studying the worked example have seen its answer. Their later exercise needs a declared exposure condition or a different reserved case before it can support an unseen-transfer claim.
+
+\section{Maintain the knowledge and the right to change it}\label{sec:ch13-governance}
+
+Turn the explanation into a \textbf{knowledge card}: a small maintained record that tells a colleague when a procedure applies, what evidence to inspect and when to ask for help. Begin with the practical question, ``Why did this request receive this route?'' Then give the checks in their reasoning order: identify the effective ledger, distinguish active policy from the policy saved with the request, compare a new request with a retry, and inspect activation history before reusing an earlier repair.
+
+The card needs both an example and a counterexample. Chapter~12 shows that selecting the wrong ledger can cause the symptom. The changed case shows why that explanation cannot be assumed every time. Link both observations, name the maintainer, and record which changes to policy selection or event format would require reviewing the procedure. That is how the card remains usable after its author is no longer present to explain it.
+
+For this case, the card should teach readers to compare effective state, active policy and recorded policy before repairing a routing symptom. It should preserve the counterexample to a universal path diagnosis. Its history obligation remains explicit: a new evaluation and a replay can correctly produce different results, and restoring an active default does not rewrite earlier decisions.
+
+Version the card when its instructions or evidence change. A version label alone is insufficient; retain the difference, the reason for it and the review that accepted it. If the event schema changes, an old evidence-linking recipe may no longer be executable. If the policy service changes, the same words may imply a different action. These are concrete invalidation conditions, not an instruction to rewrite every document whenever a dependency is updated.
+
+Claude Code provides a concrete packaging path for a later approved skill: a project directory such as \path{.claude/skills/diagnosing-policy-state/} containing \path{SKILL.md}, with YAML frontmatter and Markdown instructions. Supporting files can hold detail needed for particular tasks.\autocite{claudeSkills2026} The metadata should describe when the diagnostic procedure is relevant; the instructions should state its prerequisites, evidence checks and escalation boundary. This chapter's lab retains a knowledge-card proposal. It does not install or demonstrate invocation of a new Claude skill.
+
+Anthropic's authoring guidance recommends beginning with evaluations and representative tasks, then iterating on the skill.\autocite{anthropicSkillPracticesCh13} For our proposal, include both the original path fault and the active-policy transfer case in that evaluation set. A procedure that succeeds only on the example used to write it has not faced the intended contrast. Enterprise guidance adds ownership, versions, review and evaluation to the skill's lifecycle.\autocite{anthropicSkillsEnterpriseCh13} Those records concern the maintained artifact; they do not establish human retention.
+
+GitHub supplies a contrasting review mechanism. A \path{CODEOWNERS} file routes review requests according to the pull request's base branch; requiring owner approval is a separate repository policy.\autocite{githubCodeOwnersCh13} Pull request reviews can comment, approve or request changes.\autocite{githubReviewCh13} A team can use these mechanisms to review a knowledge-card revision while keeping a learner's assessment and the operational decision in their own records. An approval on the document does not certify a person's competence.
+
+DORA's research guidance associates a high-trust culture and useful information flow with delivery and organizational performance.\autocite{doraCultureCh13} Its AI capabilities model, developed through interviews and survey work, includes a clear organizational stance, internal data and technical practices.\autocite{doraCapabilitiesCh13} These findings support examining the conditions in which team knowledge circulates. They do not validate this rubric or establish that this exercise causes learning gains. Here the concrete question is whether a colleague can surface uncertainty, find the evidence and obtain the appropriate review.
+
+\begin{table}[H]\centering\small
+\caption{Responsibilities for shared knowledge and its use.}\label{tab:ch13-governance}
+\begin{tabularx}{\textwidth}{@{}p{0.26\textwidth}X X@{}}\toprule
+\textbf{Responsibility} & \textbf{Reviewable contribution} & \textbf{Authority limit}\\\midrule
+Knowledge maintainer & Version, dependencies, evidence links and proposed revisions. & Cannot turn a procedural edit into operational approval.\\
+Technical reviewer & Checks the causal argument and the behavior of the selected procedure. & Does not certify every user's understanding.\\
+Learning reviewer & Rates a declared response against the nominated rubric. & Does not grant release or incident authority.\\
+Decision owner & Accepts or rejects a requested action within the defined scope. & A prior decision does not automatically cover changed inputs.\\\bottomrule
+\end{tabularx}
+\end{table}
+
+\Needspace{5\baselineskip}
+Keep those responsibilities visible even when one person performs more than one role. A small team may not have four different job titles. It can still distinguish proposing a card, checking its evidence, reviewing a learner's explanation and authorizing an operation. This functional separation follows the explicit authority, verification and escalation roles discussed in \emph{Non-Deterministic Loop Engineering}.\autocite{papaliniNDLE} The record should reveal which judgment was made and under which responsibility.
+
+Mentoring fits inside this structure. The reviewer can give specific feedback, invite a revised explanation and record what changed. The first attempt remains valuable because it shows what the feedback addressed. Replacing it with the polished result would make the mentoring look successful without preserving the evidence of how the understanding developed.
+
+Team governance also concerns the use of assessment records. State why the pilot collects responses, who may review them and how results will be reported. A developmental exercise should not quietly become an individual performance ranking. If a team intends a different use, it needs an explicit assessment design and decision process; the synthetic rubric supplied here does not establish that suitability.
+
+\section{Lab: build the transfer and knowledge record}
+\begin{readerbox}{Enter the advanced exercise}
+From the companion root run \texttt{python3 reader\_start.py show 13}. Follow the chapter card for the unchanged learner starting point or the protected worked route. Appendix A.13 in the main book contains the connected solution; reading it before an unseen-transfer task must be recorded as prior exposure.
+\end{readerbox}
+
+\label{sec:ch13-lab}
+
+Continue in the existing lab working-copy root. Complete the earlier current-candidate exercises and retain the CP12 incident session. Read \path{reader_side/learning/WORK_ORDER_CP13.md}. This exercise permits edits only to \path{repo/engineering/learning/transfer_review.json} and \path{repo/engineering/learning/team_knowledge.json}. The policy service, rubrics, protocol and owner evidence remain outside that candidate scope.
+
+\Needspace{9\baselineskip}
+\begin{warningbox}{What a protocol pass establishes}
+\path{PASS_LEARNING_PROTOCOL_REVIEW_ONLY} is a local verdict about the selected transfer evidence, candidate records and protocol checks. It does not establish retained human understanding, independent human participation or a valid learning rubric. The automated delivery keeps the human pilot pending. CP07's decisions and CP12's owner reconciliation remain pending or blocked as before; no operational or release authority is added.
+\end{warningbox}
+
+\subsection{Bind the transfer to the incident evidence}
+
+Capture a CP13 edit baseline, then create the transfer session from the retained current-source incident session. Adjust the example session path if your Chapter~12 run used another new directory.
+
+\Needspace{10\baselineskip}
+\begin{lstlisting}
+python3 reader_side/tools/scope_guard.py \
+  --chapter CP13 \
+  --capture reader_side/evidence/CP13_EDIT_BASELINE.json
+
+python3 reader_side/tools/rehearse_transfer.py \
+  --learning-session reader_side/evidence/CP12_SESSION_01 \
+  --output reader_side/evidence/CP13_TRANSFER_01
+\end{lstlisting}
+
+Read the command from left to right. \texttt{--learning-session} points to the preserved Chapter~12 incident evidence from which the new exercise is derived. \texttt{--output} names a fresh directory for the changed case. The rehearsal checks the nominated recovery, retains its source evidence and creates new observations on copied state. You can then compare the two cases without rewriting the first one.
+
+Open \path{TRANSFER_SESSION.json} and follow its recorded process outputs. Before reading the worked causal review, predict whether the old path remedy should be sufficient and state which observation would decide. This is an investigation over executed local state, so the explanation must fit its events rather than merely repeat a desired label.
+
+The transfer evidence has stable identifiers. \path{T01_before} records the retained starting state. \path{T02_activation} records the active-policy change. \path{T03_new_request} and \path{T04_retained_retry} separate a new evaluation from a recorded version~2 decision. \path{T05_path_recipe} tests the familiar path remedy, \path{T06_explicit_v2} tests explicit selection, and \path{T07_history} inspects the retained history. Follow those comparisons before changing either candidate.
+
+The recovery observations beginning with \texttt{U} show restoration of version~2 on a new copy, a new request, retained retries, historical recomputation and the guard. Preserve both the faulty case and recovery evidence. The restored default does not make the intervening version~1 request disappear from history.
+
+\subsection{Write the review and the knowledge proposal}
+
+The transfer review records \path{ACTIVE_POLICY_ROLLBACK} as the cause for this fixture. It rejects the wrong-path and general retry hypotheses using the named observations, and supports the active-policy explanation with the activation, new-request and explicit-version evidence. Its recovery action is \path{RESTORE_ACTIVE_V2_ON_NEW_COPY}. Those values are checkable claims, not a substitute for the accompanying causal explanation.
+
+The knowledge proposal is \path{KNOW-013}, version~1, with a nominated team knowledge steward. It describes how to distinguish state selection from active-policy changes before proposing a recovery. The procedures require checking resolved state, separating active from recorded policy, comparing new requests with retries, locating activation evidence and preserving history while escalating reconciliation.
+
+Bind each claim to the dependencies that make it meaningful. The state-selection lesson depends on CP12 evidence and configuration. The activation lesson depends on the transfer session, policy history and catalog. The learning evaluation depends on the rubric, protocol and selected transfer evidence. Knowledge-governance claims retain the connection to the earlier context packet and skill exercise.
+
+The card's review state remains a proposal with local evidence. A valid record identifies its owner and revision triggers; it does not invent a human acceptance. If a dependency changes, review the affected claim rather than copying an old approval onto the new version. Use the protected reference records to understand the fixed exercise contract, while keeping the learner's explanation grounded in the actual events.
+
+\subsection{Check the candidates and retain the result}
+
+Run the learning gate with the recorded edit baseline. Every output directory must be new; failed attempts remain useful evidence of what the earlier candidate claimed.
+
+\Needspace{8\baselineskip}
+\begin{lstlisting}
+python3 reader_side/tools/learning_gate.py \
+  --transfer-session reader_side/evidence/CP13_TRANSFER_01 \
+  --output reader_side/evidence/CP13_REVIEW_01 \
+  --scope-baseline reader_side/evidence/CP13_EDIT_BASELINE.json
+\end{lstlisting}
+
+Read \path{LEARNING_RESULT.json} beneath that review directory. Examine the mode, input identities, findings and checks, not just the aggregate status. A passing record still reports the human trial and rubric validity as pending. The presence of a score-shaped field in a candidate cannot supply missing participant evidence.
+
+For a separate protected worked example, add \path{--reference} to both the transfer rehearsal and gate, use the corresponding protected-reference CP12 session, and choose fresh output directories. To challenge that reference session with the protected unsafe candidates, use \path{--unsafe-control} on the gate. Current and reference sessions do not certify each other.
+
+An earlier successful result can be nominated with \path{--receipt}, preserving its directory and writing the new result elsewhere:
+
+\Needspace{8\baselineskip}
+\begin{lstlisting}
+python3 reader_side/tools/learning_gate.py \
+  --transfer-session reader_side/evidence/CP13_TRANSFER_01 \
+  --output reader_side/evidence/CP13_REVIEW_02 \
+  --receipt reader_side/evidence/CP13_REVIEW_01/LEARNING_RESULT.json
+\end{lstlisting}
+
+A changed source, candidate or evidence record requires the corresponding fresh review. The earlier result still describes its recorded inputs. Do not update its hashes to make the old verdict appear to cover a revised knowledge card.
+
+\subsection{Exercise the protocol without inventing participants}
+
+The protected calibration path uses fictional explanations, reviewers and clock observations. It exercises ordering, score records and disagreement handling promptly, without waiting for a human trial.
+
+\Needspace{7\baselineskip}
+\begin{lstlisting}
+python3 reader_side/tools/learning_pilot.py calibrate \
+  --transfer-session reader_side/evidence/CP13_TRANSFER_01 \
+  --output reader_side/evidence/CP13_CALIBRATION_01
+\end{lstlisting}
+
+Its label is \path{SYNTHETIC_CALIBRATION}. The fixed clocks belong to that testing path; they do not show that 24 hours elapsed for a participant. Preserve the distinction when discussing the result. A successful calculation of two fictional reviewers' disagreement verifies a mechanism, not the reliability of human scoring.
+
+The shared runner can require the current cumulative learning-protocol exercise once the prerequisite chapters are complete:
+
+\Needspace{8\baselineskip}
+\begin{lstlisting}
+python3 reader_side/tools/run_checks.py \
+  --incident-rehearsal reader_side/evidence/CP12_SESSION_01 \
+  --transfer-session reader_side/evidence/CP13_TRANSFER_01 \
+  --require-learning \
+  --output reader_side/evidence/CP13_CUMULATIVE_RESULT.json
+\end{lstlisting}
+
+This requirement concerns the current prior workflow and CP13's local records. It does not turn the synthetic calibration into a human assessment or renew Chapter~10's separate release decision. Retain the dedicated transfer, gate and calibration directories for review.
+
+\section{Run the human pilot as a separate, declared study}\label{sec:ch13-pilot}
+
+Use this section only when organizing the separate human study. The synthetic lab above can be completed promptly; it does not require waiting for a participant. A human study adds a person, a declared resource policy, a real interval and independent reviews to the technical sequence.
+
+The delivered protocol, \path{PILOT-013/v1}, proposes at least 24 hours between saving the baseline explanation and releasing the retention phase. The delay is a teaching design choice rather than a validated optimum. Its four-dimension \path{RUBRIC-013/v1} uses scores from zero to three as descriptive feedback, with no competence pass threshold. A coordinator should understand those limits before inviting anyone to participate.
+
+Before starting, name the participant, two reviewers and coordinator using distinct pseudonymous identifiers. Explain the purpose, permitted resources, retained records and intended reporting. Confirm that the participant has not seen the transfer solution. This chapter and its open reference fixtures expose that solution; a reader who has studied them cannot supply an unseen-transfer result for the same case merely by selecting a different identifier.
+
+The baseline permits the CP12 learning packet. The transfer-derived \path{KNOW-013} card is withheld until the transfer answer is sealed, so it cannot cue the initial or delayed response. The delayed retention phase requests an explanation without the packet or an assistant. The transfer phase permits the released case evidence. These conditions are reported by the operator; the local program cannot observe every resource a person uses. Record a deviation honestly and interpret the affected response under its actual conditions.
+
+\begin{readerbox}{Why the real pilot checks two clocks}
+Wall time is the calendar clock used for dates and timestamps. A monotonic clock measures elapsed time without following ordinary calendar-clock adjustments. The pilot compares the two elapsed intervals to detect a discontinuity that could make the declared delay unreliable.
+
+The supplied implementation requires Linux and a readable \path{/proc/sys/kernel/random/boot_id}. Keep the same host and boot throughout the trial. A difference greater than the protocol's 120-second tolerance blocks continuation. Reboot, host change, suspension or substantial clock adjustment can therefore invalidate the session. Plan the host first; preserve an interrupted trial and start a new one. Synthetic calibration uses a separate clock path and does not demonstrate a real elapsed delay.
+\end{readerbox}
+
+\subsection{Start and commit the immediate explanation}
+
+The following is an owner-run pilot template for real, eligible participants. Replace the example identities and use an owner-controlled location outside the public trial directory. Local directory names alone do not establish access control. The no-prior-exposure flag is an attestation to confirm, not a switch that makes a previously exposed reader eligible.
+
+\Needspace{12\baselineskip}
+\begin{lstlisting}
+CP13_OWNER=reader_side/evidence/CP13_PILOT_OWNER_01
+CP13_PUBLIC=reader_side/evidence/CP13_PILOT_PUBLIC_01
+python3 reader_side/tools/learning_pilot.py start \
+  --transfer-session reader_side/evidence/CP13_TRANSFER_01 \
+  --owner-state "$CP13_OWNER" --trial-output "$CP13_PUBLIC" \
+  --participant learner_01 --reviewer reviewer_a \
+  --reviewer reviewer_b --coordinator coordinator_01 \
+  --attest-no-prior-transfer-exposure
+\end{lstlisting}
+
+Keep these directory paths for the whole trial. If you return in a new shell, set the variables to the same paths and continue the existing trial. After the participant submits the actual immediate explanation, commit its file. The delay begins at this submission, not when the pilot directory was created:
+
+\Needspace{6\baselineskip}
+\begin{lstlisting}
+python3 reader_side/tools/learning_pilot.py submit-baseline \
+  --owner-state "$CP13_OWNER" --file immediate_explanation.md
+\end{lstlisting}
+
+The owner record binds the session, roles, response and rubric. Its key stays outside public artifacts. This supports detecting unauthorized changes under the stated owner boundary; it does not authenticate the humans or defend against an owner who controls the checker, host and key.
+
+\subsection{Release the delayed phases in order}
+
+After the real interval, request the retention phase. The real path accepts no supplied timestamp or clock override. It compares wall and monotonic elapsed time on the same Linux host and boot. A host or clock discontinuity blocks continuation; preserve the old trial and arrange a new one rather than editing its start time.
+
+\Needspace{6\baselineskip}
+\begin{lstlisting}
+python3 reader_side/tools/learning_pilot.py release-retention \
+  --owner-state "$CP13_OWNER"
+\end{lstlisting}
+
+A premature release must fail without advancing the phase. Once eligible, obtain the participant's retention explanation under the declared resource conditions and submit it. Only then release the transfer packet:
+
+\Needspace{9\baselineskip}
+\begin{lstlisting}
+python3 reader_side/tools/learning_pilot.py submit-retention \
+  --owner-state "$CP13_OWNER" --file delayed_retention.md
+
+python3 reader_side/tools/learning_pilot.py release-transfer \
+  --owner-state "$CP13_OWNER"
+\end{lstlisting}
+
+The public transfer packet contains fault observations, not the recovery answer record. The retention response is already sealed, so learning from the new case cannot silently replace the earlier response. Obtain and commit the transfer explanation before supplying solution feedback:
+
+\Needspace{6\baselineskip}
+\begin{lstlisting}
+python3 reader_side/tools/learning_pilot.py submit-transfer \
+  --owner-state "$CP13_OWNER" --file transfer_explanation.md
+\end{lstlisting}
+
+\subsection{Preserve independent ratings and disagreements}
+
+At the review phase, blank forms appear under the public trial's \path{review_forms/} directory. They bind the trial, rubric and transfer-session identities and the hashes of all three answers. The published templates are immutable; copy them outside both the public and owner directories before completing them:
+
+\Needspace{6\baselineskip}
+\begin{lstlisting}
+cp "$CP13_PUBLIC/review_forms/reviewer_a.json" reviewer_a.json
+cp "$CP13_PUBLIC/review_forms/reviewer_b.json" reviewer_b.json
+\end{lstlisting}
+
+Each reviewer fills their own copy with four ratings for each task and a task rationale. Arrange the review so neither reviewer sees the other's scores before submitting the completed files:
+
+\Needspace{9\baselineskip}
+\begin{lstlisting}
+python3 reader_side/tools/learning_pilot.py score \
+  --owner-state "$CP13_OWNER" \
+  --reviewer reviewer_a --file reviewer_a.json
+
+python3 reader_side/tools/learning_pilot.py score \
+  --owner-state "$CP13_OWNER" \
+  --reviewer reviewer_b --file reviewer_b.json
+\end{lstlisting}
+
+The form records declarations that the review is human, independent and completed without seeing the other scores. Validation of those fields is not verification of their truth. The coordinator remains responsible for the process and for investigating a contradictory record.
+
+Inspect both profiles and the per-dimension disagreements. After both raw reviews are sealed, the public \path{adjudication_form.json} template becomes available. If adjudication is appropriate, copy it outside both the public and owner directories:
+
+\Needspace{5\baselineskip}
+\begin{lstlisting}
+cp "$CP13_PUBLIC/adjudication_form.json" adjudication.json
+\end{lstlisting}
+
+Complete that copy with the coordinator's rationale and revised profile, retaining its binding to both original review hashes. Submit it separately, then inspect the status. If adjudication is unnecessary, preserve the disagreement and use only the status command.
+
+\Needspace{8\baselineskip}
+\begin{lstlisting}
+python3 reader_side/tools/learning_pilot.py adjudicate \
+  --owner-state "$CP13_OWNER" --file adjudication.json
+
+python3 reader_side/tools/learning_pilot.py status \
+  --owner-state "$CP13_OWNER"
+\end{lstlisting}
+
+\subsection{Use the pilot to improve the assessment}
+
+The first pilot should inspect the protocol as well as the responses. Were the instructions understandable? Did participants receive the intended resources? Could the reviewers distinguish the score anchors? Did the case expose a reasoning difference, or merely reward prior familiarity? Record those observations before deciding whether to revise the prompt, case or rubric.
+
+Report actual participation and missingness. A participant who does not return after the delay contributes a baseline response, not a zero-valued retention score. A contaminated transfer response remains an observation under exposed conditions. A scoring disagreement remains a disagreement until reviewed; averaging it automatically would hide the question the pilot needs to answer.
+
+Interpret differences between phases against their conditions. The baseline permits the learning packet, whereas retention excludes it; a score change therefore cannot isolate forgetting from the change in resources. The transfer prompt also changes the task. This local protocol contains no randomized comparison of AI assistance with an alternative, so even completed human records would not identify AI's causal effect. A later comparative study needs its own allocation, comparable task forms and analysis plan before recruitment.
+
+Use actual human evidence to examine whether the rubric supports useful judgments. Do not call the instrument validated because its JSON schema rejects malformed forms. The delivered protocol makes that later work concrete and reviewable, while leaving empirical retention, transfer and scoring-reliability conclusions open.
+
+\section{Review the learning record and its limits}\label{sec:ch13-review}
+
+Review the finished work in two passes. First ask whether the team can use it: can a colleague find the procedure, its examples, its owner and the conditions that require revision? Then ask what learning evidence exists: an assisted explanation, a later response, a changed-case response, or only an automated protocol demonstration? Retain the materials supporting each answer.
+
+\begin{practicebox}{Choose the next observation}
+A colleague completes the incident exercise with a mentor and an assistant. What can the team record now, and what remains to investigate?
+
+Record completion under those assistance conditions, including the original explanation and feedback. To investigate retention, collect a later response under a declared resource policy. To investigate transfer, use an appropriately reserved changed case. The present success supplies a starting observation; it cannot fill either later response slot.
+\end{practicebox}
+
+The package retains the source incident, changed case, bounded recovery, knowledge proposal, protocol and rubric. Actual human explanations and independent reviews are additional evidence when the separate pilot is performed.
+
+\Needspace{10\baselineskip}
+\begin{readerbox}{Review rubric for this chapter's deliverable}
+\textbf{Separation:} completion, retention, transfer, team knowledge and authority have distinct evidence.
+\textbf{Transfer:} the changed case requires identifying active-policy selection, not repeating the old path diagnosis.
+\textbf{Traceability:} candidate claims and ratings bind to the correct source, case, answer and rubric.
+\textbf{Review:} raw judgments, disagreements and any adjudication remain separate.
+\textbf{Governance:} the knowledge proposal names ownership and revision triggers without inventing acceptance.
+\textbf{Honesty:} automated protocol checks and a real human pilot retain different statuses.
+\end{readerbox}
+
+\Needspace{13\baselineskip}
+\begin{readerbox}{Observed local execution, 20 October 2026}
+The original checkpoint accounting is retained under \path{reader_side/provenance/}. Run the current chapter and cumulative checks for the selected candidates; their reports identify the actual scope. The real delayed human trial, independent human scoring and rubric validation remain pending. No learning gain or new operational authority follows from the local protocol checks.
+\end{readerbox}
+
+\section{Hand the evidence to outcome evaluation}\label{sec:ch13-next}
+
+The ordinary path produces an operating agreement, a bounded experiment decision and a mentoring record. The advanced path adds a versioned incident lesson, a changed case and a human-pilot design with explicit resources, timing, raw reviews and limits. Neither path supplies an observed adoption benefit or independent learning result until the relevant people and work have actually been studied.
+
+Chapter~14 uses accepted outcomes and the work required to achieve them to evaluate practices and tool choices. Carry forward the evidence scopes, failed attempts, review records and unresolved decisions. The next evaluation can then ask what the approach delivers and costs without treating a green protocol check as human competence or an unreviewed artifact as an accepted outcome.

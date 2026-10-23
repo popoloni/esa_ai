@@ -1,0 +1,44 @@
+{
+  "status": "INSTALLED_FRAMEWORK_SCAFFOLD_CREATED",
+  "started_at_utc": "2026-10-22T10:04:25.292816+00:00",
+  "argv": [
+    "/workspace/scratch/72d789d25fef/runtime_d7/sdd_venv/bin/specify",
+    "init",
+    "native_sdd_01",
+    "--integration",
+    "opencode",
+    "--script",
+    "py",
+    "--non-interactive"
+  ],
+  "cwd": "/workspace/scratch/72d789d25fef/runtime_d8",
+  "env_keys": [
+    "CI",
+    "DO_NOT_TRACK",
+    "GIT_CONFIG_GLOBAL",
+    "GIT_CONFIG_NOSYSTEM",
+    "HTTPS_PROXY",
+    "HTTP_PROXY",
+    "LANG",
+    "NO_PROXY",
+    "PATH",
+    "PYTHONDONTWRITEBYTECODE",
+    "REQUESTS_CA_BUNDLE",
+    "SSL_CERT_FILE",
+    "TZ"
+  ],
+  "pinned_runtime_reused_read_only": "/workspace/scratch/72d789d25fef/runtime_d7",
+  "project": "/workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01",
+  "model_call": false,
+  "generated_feature_outputs": false,
+  "exit_code": 0,
+  "finished_at_utc": "2026-10-22T10:04:26.414381+00:00",
+  "scaffold.stdout.txt": {
+    "sha256": "0683ce2430fff9f9e4f2471b07760385d5f2d3c57cf3e5aecfce3bf0106c481c",
+    "bytes": 6512
+  },
+  "scaffold.stderr.txt": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  }
+}

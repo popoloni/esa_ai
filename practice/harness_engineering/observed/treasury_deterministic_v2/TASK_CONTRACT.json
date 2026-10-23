@@ -1,0 +1,19 @@
+{
+  "additional_fields_allowed": false,
+  "field_types": {
+    "payment_authorized": "boolean, always false",
+    "policy_version": "string",
+    "reason": "string",
+    "route": "string"
+  },
+  "required_fields": [
+    "route",
+    "reason",
+    "policy_version",
+    "payment_authorized"
+  ],
+  "scope": "Read-only recommendation responses; no implementation, architecture acceptance, payment or release.",
+  "source_policy": "reader_side/discovery/sources/SRC-POL-001.json",
+  "source_tool": "repo/src/treasury/routing.py",
+  "task": "Return the routing recommendation for each supplied amount using BR-001/v1; no payment is authorized."
+}

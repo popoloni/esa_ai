@@ -1,0 +1,75 @@
+{
+  "schema": "treasury-external-worker-submission/v1",
+  "request_sha256": "e4856cf0c5f84a315efd3d7004aa7b3388dece75b86e834bd5a7ccec64acfef3",
+  "task_id": "generate",
+  "status": "COMPLETED",
+  "provenance": {
+    "origin": "external_model_agent",
+    "client": "ChatGPT collaboration.spawn_agent; generation and file work through functions.exec / tools.exec_command",
+    "model": "GPT-6 Astra Pro (developer-exposed label; not independently authenticated)",
+    "model_version": null,
+    "model_api_id": null,
+    "usage": null,
+    "cost": null,
+    "framework": "Spec Kit 1.2.2 retained templates and skills applied in ChatGPT collaboration",
+    "native_framework_slash_invocation": false,
+    "commercial_model_cli_invocation": false,
+    "prior_exposure": "Fresh task context. No parent book, neighboring authored outputs, reference solutions, or prior independent findings were read. Supplied INPUT_MANIFEST.json names reference-origin paths as metadata; those paths were not followed. Blank spec/plan seeds inside input_root were read.",
+    "context_boundary": "Instruction boundary in shared filesystem, not technical isolation.",
+    "scope": "Read current dispatch/request and supplied input_root; additionally read allowed practice/orchestration/external_worker.py. Write only attempt_output_root.",
+    "human_requirements_approval": "PENDING",
+    "engineering_acceptance": "PENDING_INDEPENDENT_REVIEW",
+    "implementation_authority": false,
+    "release_authority": false,
+    "payment_authority": false,
+    "helper_attempt": "A read-only bounded extraction helper spawn was attempted but failed with agent thread limit reached. No helper ran or contributed.",
+    "created_at_utc": "2026-10-21T16:01:48.989944+00:00"
+  },
+  "summary": "Generated and retained first candidate spec, conditional plan and 22-task list using supplied Spec Kit 1.2.2 scaffold through actual ChatGPT collaboration. All five requirement statements/owners/source IDs and eight exact scenarios are preserved. Document/hash checks passed; human requirements approval, independent engineering acceptance, design/implementation authorization and release remain pending or blocked. No native framework or commercial CLI run, application implementation, payment or deployment occurred.",
+  "artifacts": [
+    {
+      "path": "artifacts/spec.md",
+      "sha256": "3c3edb571b50791d15ade127baa266d4d82d6508d2b7e3b075f2b6db54908045"
+    },
+    {
+      "path": "artifacts/plan.md",
+      "sha256": "d19527a0d40e6068f9f23019de8e1a6228eb0ea2bbc209a776b211f579a32275"
+    },
+    {
+      "path": "artifacts/tasks.md",
+      "sha256": "62ccfb17dbdc87855f67b5a48a5eeb5d6e51731dbd2a622cacc3e9048018e0c8"
+    },
+    {
+      "path": "artifacts/checklists/requirements.md",
+      "sha256": "9aee6a43de59237a12e75108483c78267d9e7c9ce694b1cb585ca6c2d64f9336"
+    },
+    {
+      "path": "PROMPT.md",
+      "sha256": "63bed3487d73098cea61f15a862f610fabc6865a8002ba223cf5f0c03b62acca"
+    },
+    {
+      "path": "PROVENANCE.json",
+      "sha256": "e08879283fe3efb57caa0e5592c2520dead9cd73184b854b05197ca18f4ba115"
+    },
+    {
+      "path": "TOOL_ACTIONS.json",
+      "sha256": "4f90e6bf74f01c69aee42bc74df5867059a852e6311b17d3c481ca92157a153a"
+    },
+    {
+      "path": "INPUT_SNAPSHOT.json",
+      "sha256": "0a6d9ca1c8eb22e163eef9e75b082a4a72c128f382535d57d1ade1c49aeba7c4"
+    },
+    {
+      "path": "CHECKS.json",
+      "sha256": "6481aadc50bdf41a805d1d48de84b9698067592c9ac3c4d6040ce55950192da6"
+    },
+    {
+      "path": "FIRST_OUTPUT_MANIFEST.json",
+      "sha256": "7e15609e647d7cebebe898618a1442eb4f3e7d01c4c55dedc628db2be2ef4e19"
+    }
+  ],
+  "raw_output": {
+    "path": "RAW_RESPONSE.md",
+    "sha256": "05b86242f166073418cd34fac0470d5a9a4c43e149e16b6f4f8b43edda642976"
+  }
+}

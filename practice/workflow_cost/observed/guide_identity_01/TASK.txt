@@ -1,0 +1,9 @@
+Repair the current companion reader-guide identities
+
+Input: CP11 changed README.md and adapters/README.md while retaining earlier protected hashes. A real reader_start preparation refused the source. The supplied prior defect report is copied into inputs.
+
+Deliverable: align the current release's reader-guide wording and only their authorized protected entries; preserve all exercise source, tests, checkers and other protection entries. A fresh Chapter 1 study-copy preparation must work; its original faulty starter must still fail the same seven-case check. Deliberate protected-document or oracle tampering must remain detectable.
+
+Technical decision: a separate agent reviews exact before/after bytes, test outcomes and preserved source boundaries. The task ends at that technical decision and recorded account reconciliation. No human acceptance, release authorization or production deployment is part of this maintenance task.
+
+Boundary: accepting this supplied defect report through preparation, repair, focused verification, independent agent review, any rework and recording. Earlier discovery, CP11 authoring, archive recovery, general book editing, unrelated native inference, and later full-edition publication packaging are predecessor or separate work. Their costs are not attributed here. All intervals are wall-clock intervals and may contain waiting. Supervising-model tokens, active reasoning time, infrastructure money and human costs are unmeasured; no estimates replace unknowns.

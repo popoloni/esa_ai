@@ -1,0 +1,33 @@
+{
+  "authority": {
+    "CP07_T07_03": "PENDING_HUMAN",
+    "CP07_T07_04": "BLOCKED",
+    "human_learning_trial": "PENDING",
+    "incident_reconciliation": "PENDING_OWNER",
+    "procurement_authorized": false,
+    "real_release_authorized": false,
+    "rubric_validity": "PENDING_HUMAN_VALIDATION"
+  },
+  "capability_record_ids": [
+    "LOCAL-CONTROL",
+    "VSCODE-COPILOT",
+    "GITHUB-COPILOT-CLOUD",
+    "CLAUDE-CODE"
+  ],
+  "current_control": "LOCAL_DETERMINISTIC_GATES",
+  "decision": "CHANGE",
+  "decision_id": "DECISION-014",
+  "live_tool_comparison": "PENDING",
+  "real_pilot_owner_approval": "PENDING",
+  "reason": [
+    "COLLECT_ACTUAL_REVIEW_AND_REWORK_EFFORT",
+    "COLLECT_ACTUAL_ACCEPTED_OUTCOME_RECORDS",
+    "COLLECT_APPLICABLE_VENDOR_BILLING",
+    "COMPARE_TO_LOCAL_CONTROL_ON_MATCHED_ITEMS"
+  ],
+  "scenario_decisions": "CONDITIONAL_ON_DECLARED_COSTS_AND_SYNTHETIC_ACCEPTANCE",
+  "schema": "cp14-tool-decision/v1",
+  "scope": "PROPOSED_BOUNDED_PILOT_ONLY",
+  "selection_claim": "NO_EMPIRICAL_MARKET_WINNER",
+  "tool_options_basis": "DATED_PRIMARY_DOCUMENTATION_ONLY"
+}

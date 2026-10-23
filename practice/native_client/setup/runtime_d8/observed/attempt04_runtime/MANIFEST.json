@@ -1,0 +1,496 @@
+{
+  "schema": "esa-d8-native-inference-observation-manifest/v1",
+  "file_count": 98,
+  "files": [
+    {
+      "path": "MONITORING_START.json",
+      "bytes": 1501,
+      "sha256": "c84f815bcd4948fe092156d47ab83e3c3a169080b13b90989907aac24aa14d0a"
+    },
+    {
+      "path": "OBSERVATION_SUMMARY.json",
+      "bytes": 10652,
+      "sha256": "6dcd87df7b5ad6c98e35b599887d76ec0b6fa80a7c603d6c296d6151dba9a1d7"
+    },
+    {
+      "path": "collect_snapshot.py",
+      "bytes": 11615,
+      "sha256": "64dfe64f8fa6fd1321a25579d68b42c6e02095b8db8ed45a8ca80b246d2263bb"
+    },
+    {
+      "path": "native_terminal_binding/FINAL_ASSISTANT_TEXT.txt",
+      "bytes": 5530,
+      "sha256": "0b8ce1854906b37eb2c0249e97a7e0d5dc1ce3e2597b6289c9a54fb6eacbec77"
+    },
+    {
+      "path": "native_terminal_binding/FIRST_WRITE_TOOL_CONTENT.md",
+      "bytes": 2230,
+      "sha256": "04b6177aa7cd2a248a86ef418f8faeffe3c07cbf64651951136c20559402bfd1"
+    },
+    {
+      "path": "native_terminal_binding/RECEIPT.json",
+      "bytes": 15969,
+      "sha256": "990e17c96269855f1a2613dbcab6db60abc7ea0a2d9a0464888aa0bafb21bdc8"
+    },
+    {
+      "path": "native_terminal_binding/stdout.txt",
+      "bytes": 10220,
+      "sha256": "80485ace0c7c59c109777bc0980cf767fcfea009ab950fe02dd48c5307d78256"
+    },
+    {
+      "path": "snapshot_001/MANIFEST.json",
+      "bytes": 1924,
+      "sha256": "8a9e6f307f2eb912b271e433f3686acccd9a18f6df1729e9897277a8cc3e821d"
+    },
+    {
+      "path": "snapshot_001/OBSERVATION.json",
+      "bytes": 10657,
+      "sha256": "fa68a3cc8b4d96b424c3738c26de4efe1f1aee13c764ce368d7d1908dd287428"
+    },
+    {
+      "path": "snapshot_001/cgroup_cpu_max.txt",
+      "bytes": 14,
+      "sha256": "3dafc4b2d6a8bfd8c1910a28fd3bb15f053a47cebaff7b5cdd6cf42c39f8f880"
+    },
+    {
+      "path": "snapshot_001/cgroup_cpu_stat.txt",
+      "bytes": 168,
+      "sha256": "b0bc2ff7e947487970f783affaff9c457630f370c095f8ead289ac7472a1330a"
+    },
+    {
+      "path": "snapshot_001/cgroup_memory_current.txt",
+      "bytes": 11,
+      "sha256": "b574d8b622da44e666ae8187d42ba13e0d3f1cb3aa02dc9b79fcc26da6f7dd34"
+    },
+    {
+      "path": "snapshot_001/cgroup_memory_events.txt",
+      "bytes": 58,
+      "sha256": "702e545d9a72d8d116517b5f156077a93ff4791f629d2c2445c2929ccdc80d82"
+    },
+    {
+      "path": "snapshot_001/cgroup_memory_max.txt",
+      "bytes": 11,
+      "sha256": "8528d39f97fdd9c9689c4373fe4c7b18f2c3bef6b044a2c4be74b07bf9cd07d8"
+    },
+    {
+      "path": "snapshot_001/cgroup_memory_stat.txt",
+      "bytes": 1160,
+      "sha256": "38aa168caf06a674a7e4d40ffdfca81bea7cb753293d16e5ddf9f80ac7f79410"
+    },
+    {
+      "path": "snapshot_001/process_maps.txt",
+      "bytes": 16565,
+      "sha256": "e5f7492cb18626591e60b030f35c24843063d029e3af19a776855e447461179a"
+    },
+    {
+      "path": "snapshot_001/process_stat.txt",
+      "bytes": 344,
+      "sha256": "2c511ffcec65bbb4e9a1b46f2ef23b328b49ee751a3b7071310f9777129fbc23"
+    },
+    {
+      "path": "snapshot_001/process_status.txt",
+      "bytes": 1160,
+      "sha256": "663694638978866b887c6456ff8fd1117782cb29461466bd840d2d66389959c6"
+    },
+    {
+      "path": "snapshot_001/server_log_observed.txt",
+      "bytes": 110178,
+      "sha256": "8791986aee492f8d43aaa0154d9a39da9f4503630b9679ff7434a405774e07a1"
+    },
+    {
+      "path": "snapshot_001/server_metrics.prom",
+      "bytes": 2587,
+      "sha256": "00fa9b0dfaf965aa96c0b7275ec206b10193b2078d5074ead90b11b1c82d874d"
+    },
+    {
+      "path": "snapshot_002/MANIFEST.json",
+      "bytes": 1924,
+      "sha256": "f2bc59523ee4b099c5962257f11551ac73f5c6efe3eeea965216ed49c69263fe"
+    },
+    {
+      "path": "snapshot_002/OBSERVATION.json",
+      "bytes": 18883,
+      "sha256": "733470346a0840aaf0ceaeeb9edebace7dd33bbf94bb1b062728f34f22328c3d"
+    },
+    {
+      "path": "snapshot_002/cgroup_cpu_max.txt",
+      "bytes": 14,
+      "sha256": "3dafc4b2d6a8bfd8c1910a28fd3bb15f053a47cebaff7b5cdd6cf42c39f8f880"
+    },
+    {
+      "path": "snapshot_002/cgroup_cpu_stat.txt",
+      "bytes": 168,
+      "sha256": "7ef9aa3bb0f33637f1f017dc9fe8773ac40e1924940d10ba71df005521cfbd5b"
+    },
+    {
+      "path": "snapshot_002/cgroup_memory_current.txt",
+      "bytes": 11,
+      "sha256": "8fcd6ce03b7a2eee6e4c5555033c89b6206b6c76a1561dd29fc14cba1748e28f"
+    },
+    {
+      "path": "snapshot_002/cgroup_memory_events.txt",
+      "bytes": 58,
+      "sha256": "0173d8035493b23530c77f928aa4b03c3d0f67012ed654eb2d99c304d5b5c190"
+    },
+    {
+      "path": "snapshot_002/cgroup_memory_max.txt",
+      "bytes": 11,
+      "sha256": "8528d39f97fdd9c9689c4373fe4c7b18f2c3bef6b044a2c4be74b07bf9cd07d8"
+    },
+    {
+      "path": "snapshot_002/cgroup_memory_stat.txt",
+      "bytes": 1158,
+      "sha256": "06f0a5bd5e64a1b727741a5c01249b203788616a74ed497fa15d2a1b417c27af"
+    },
+    {
+      "path": "snapshot_002/process_maps.txt",
+      "bytes": 16565,
+      "sha256": "e3f6b02c55110c298290b20ab7715603eeaec2ea3aeccc1a3c76309a9fe841dd"
+    },
+    {
+      "path": "snapshot_002/process_stat.txt",
+      "bytes": 345,
+      "sha256": "33a66a17b2f68166241c776fcac9fa4cb0e37c5722749f8be50d43eebf6efd7e"
+    },
+    {
+      "path": "snapshot_002/process_status.txt",
+      "bytes": 1160,
+      "sha256": "e648765367f0d44bfc350eebc3c745ffdeec741535e4757a80fe138c4f6b78f5"
+    },
+    {
+      "path": "snapshot_002/server_log_observed.txt",
+      "bytes": 119229,
+      "sha256": "1e49cf62d05db08976cc08692895c41708b555f5617fe560d674352dc0c51833"
+    },
+    {
+      "path": "snapshot_002/server_metrics.prom",
+      "bytes": 2596,
+      "sha256": "0cbdf94248c65c3d46106e3f7213994c7d5f830f1ad580b30d05c7e4a555e2e5"
+    },
+    {
+      "path": "snapshot_003/MANIFEST.json",
+      "bytes": 1924,
+      "sha256": "3e577f5e48dac4cf987a68c3918c4d6a94ee6d6c821a49efb9cc057bdd76f8c5"
+    },
+    {
+      "path": "snapshot_003/OBSERVATION.json",
+      "bytes": 22419,
+      "sha256": "f6d98c3f771deff9fdc5dfcc18eaa6a99e38f8fb8de00d42d9a8d13fed0f9b06"
+    },
+    {
+      "path": "snapshot_003/cgroup_cpu_max.txt",
+      "bytes": 14,
+      "sha256": "3dafc4b2d6a8bfd8c1910a28fd3bb15f053a47cebaff7b5cdd6cf42c39f8f880"
+    },
+    {
+      "path": "snapshot_003/cgroup_cpu_stat.txt",
+      "bytes": 168,
+      "sha256": "bcedf5e519b522a5d5a8cc78b753241a624ab1161fb355a3c9b8dc5d36c45db9"
+    },
+    {
+      "path": "snapshot_003/cgroup_memory_current.txt",
+      "bytes": 11,
+      "sha256": "82879f72d93e507be0d48d65000d32315a5c9789f79b493a011bbc1deea740f3"
+    },
+    {
+      "path": "snapshot_003/cgroup_memory_events.txt",
+      "bytes": 58,
+      "sha256": "77c70c3a975e3a85a610b321ec19805fd06a602c3c83c9be6a7b2ea0d0d7941b"
+    },
+    {
+      "path": "snapshot_003/cgroup_memory_max.txt",
+      "bytes": 11,
+      "sha256": "8528d39f97fdd9c9689c4373fe4c7b18f2c3bef6b044a2c4be74b07bf9cd07d8"
+    },
+    {
+      "path": "snapshot_003/cgroup_memory_stat.txt",
+      "bytes": 1158,
+      "sha256": "c00a4a9ffc93a72535a310bd1bb83a6e3e01f6c46d6ca5a2eec805168069f586"
+    },
+    {
+      "path": "snapshot_003/process_maps.txt",
+      "bytes": 16565,
+      "sha256": "e3f6b02c55110c298290b20ab7715603eeaec2ea3aeccc1a3c76309a9fe841dd"
+    },
+    {
+      "path": "snapshot_003/process_stat.txt",
+      "bytes": 345,
+      "sha256": "da3edbcb3534879bbfcf1348171808a123670cd10d0898b0059f1e69687bc30d"
+    },
+    {
+      "path": "snapshot_003/process_status.txt",
+      "bytes": 1160,
+      "sha256": "67d159cbe905f991cbe44d8d219c5237aee6e6350f550177d86cbb1bef874ed0"
+    },
+    {
+      "path": "snapshot_003/server_log_observed.txt",
+      "bytes": 122653,
+      "sha256": "158f8ab566b206589d963dec72441f6108ac70b61a1e642babb0e7e3e4fe22ef"
+    },
+    {
+      "path": "snapshot_003/server_metrics.prom",
+      "bytes": 2584,
+      "sha256": "acadbcf0b7b45655fccdb2ab7e2075b4aa342b81e6261a2edc7ff6c60b5367ec"
+    },
+    {
+      "path": "snapshot_004/MANIFEST.json",
+      "bytes": 1924,
+      "sha256": "31ee98d40e8e753ac3443118929cff1b3515f4187ac55ef6af9057ad28e7957e"
+    },
+    {
+      "path": "snapshot_004/OBSERVATION.json",
+      "bytes": 27908,
+      "sha256": "4912a27b0d4f4cb0264f72ddf5145a4ba87b2fb06ebccaf5345c688fef6d0dff"
+    },
+    {
+      "path": "snapshot_004/cgroup_cpu_max.txt",
+      "bytes": 14,
+      "sha256": "3dafc4b2d6a8bfd8c1910a28fd3bb15f053a47cebaff7b5cdd6cf42c39f8f880"
+    },
+    {
+      "path": "snapshot_004/cgroup_cpu_stat.txt",
+      "bytes": 168,
+      "sha256": "25527401c8a80bf932d373211d574e48be8cd1f8d79d8beaf87114091ac48989"
+    },
+    {
+      "path": "snapshot_004/cgroup_memory_current.txt",
+      "bytes": 11,
+      "sha256": "4ef2f756c613a167df24c4f4524972e15fd407311846c8daab06da1edfe7b0d0"
+    },
+    {
+      "path": "snapshot_004/cgroup_memory_events.txt",
+      "bytes": 58,
+      "sha256": "1d6b805327e0c86bbced8583de387106325174316c93c7e25347f9b866d063bf"
+    },
+    {
+      "path": "snapshot_004/cgroup_memory_max.txt",
+      "bytes": 11,
+      "sha256": "8528d39f97fdd9c9689c4373fe4c7b18f2c3bef6b044a2c4be74b07bf9cd07d8"
+    },
+    {
+      "path": "snapshot_004/cgroup_memory_stat.txt",
+      "bytes": 1158,
+      "sha256": "cd16f30a8701824d26c4ffdd8f4b3a9ae4c926d7069b9d2f1d5087b78829360f"
+    },
+    {
+      "path": "snapshot_004/process_maps.txt",
+      "bytes": 16565,
+      "sha256": "e3f6b02c55110c298290b20ab7715603eeaec2ea3aeccc1a3c76309a9fe841dd"
+    },
+    {
+      "path": "snapshot_004/process_stat.txt",
+      "bytes": 345,
+      "sha256": "d71175beb96fac7ccc7f199a19a6e6133dd25c5ad0e288311c66f7e132af0a33"
+    },
+    {
+      "path": "snapshot_004/process_status.txt",
+      "bytes": 1160,
+      "sha256": "411e16768d94fca08101393d17021de451b70d13836237f7b53e69c565202777"
+    },
+    {
+      "path": "snapshot_004/server_log_observed.txt",
+      "bytes": 127896,
+      "sha256": "25bb00e6bf7e21dda3eaa4904e7985e288a86960008127c5521f1ce0fffb2fd2"
+    },
+    {
+      "path": "snapshot_004/server_metrics.prom",
+      "bytes": 2584,
+      "sha256": "3d7f4fa83e0097675d096258553b34c9e8112fa5bfedf4b2fc10fde83e3aa475"
+    },
+    {
+      "path": "snapshot_005/MANIFEST.json",
+      "bytes": 1924,
+      "sha256": "247520f9164031d2a955ac67bd05fec9d1747ee375ab067075d18922872d8188"
+    },
+    {
+      "path": "snapshot_005/OBSERVATION.json",
+      "bytes": 34178,
+      "sha256": "b552a4934fa8deea51c00205b495299000bd9645879c0fb0eb52273151259689"
+    },
+    {
+      "path": "snapshot_005/cgroup_cpu_max.txt",
+      "bytes": 14,
+      "sha256": "3dafc4b2d6a8bfd8c1910a28fd3bb15f053a47cebaff7b5cdd6cf42c39f8f880"
+    },
+    {
+      "path": "snapshot_005/cgroup_cpu_stat.txt",
+      "bytes": 168,
+      "sha256": "1104fd723823247dfe0d8906998f7f81c86cb2294d96043b09646057caa6f03c"
+    },
+    {
+      "path": "snapshot_005/cgroup_memory_current.txt",
+      "bytes": 11,
+      "sha256": "f86c90f69f2b30859726dc5eac1c189b26ac0b9bfb327ed3e2a23cc7b676ba8c"
+    },
+    {
+      "path": "snapshot_005/cgroup_memory_events.txt",
+      "bytes": 58,
+      "sha256": "199de4f1e2e6b712e7f7afb1b3ee6c89cac76ec0efa4100aff499a442000db1b"
+    },
+    {
+      "path": "snapshot_005/cgroup_memory_max.txt",
+      "bytes": 11,
+      "sha256": "8528d39f97fdd9c9689c4373fe4c7b18f2c3bef6b044a2c4be74b07bf9cd07d8"
+    },
+    {
+      "path": "snapshot_005/cgroup_memory_stat.txt",
+      "bytes": 1158,
+      "sha256": "f23fd03a73c19bedaa7c31de756bc5273d3a7f7c4c234924d7ab5070e9a99055"
+    },
+    {
+      "path": "snapshot_005/process_maps.txt",
+      "bytes": 16565,
+      "sha256": "e3f6b02c55110c298290b20ab7715603eeaec2ea3aeccc1a3c76309a9fe841dd"
+    },
+    {
+      "path": "snapshot_005/process_stat.txt",
+      "bytes": 345,
+      "sha256": "8e9e46ceda5aeb24bffd102ab732fb14e18fb8ae759ea572ba666df3353bed44"
+    },
+    {
+      "path": "snapshot_005/process_status.txt",
+      "bytes": 1160,
+      "sha256": "474547e9e21bfa8e14288fc274a75b5f537d5d0dba4f1cd0fc47654a72cc34fb"
+    },
+    {
+      "path": "snapshot_005/server_log_observed.txt",
+      "bytes": 133781,
+      "sha256": "bd906ea7ca0afdabf38629a8872d4d2afda7f22a89bb72f0d74a16d00b2b8193"
+    },
+    {
+      "path": "snapshot_005/server_metrics.prom",
+      "bytes": 2584,
+      "sha256": "ee9fc08bdb737c009286b91e20ba19ffb5bd4280202cf91c0abfc94d52b73195"
+    },
+    {
+      "path": "snapshot_006/MANIFEST.json",
+      "bytes": 1924,
+      "sha256": "e6fb6648c6b9c170e35b83f92cbf6b088aaeede66081287c7039f12441dd3eaf"
+    },
+    {
+      "path": "snapshot_006/OBSERVATION.json",
+      "bytes": 39536,
+      "sha256": "e0f974b47474b73bb0680f81e3b9b484b1bf3a2797bb12f96747bf718f3f6ab2"
+    },
+    {
+      "path": "snapshot_006/cgroup_cpu_max.txt",
+      "bytes": 14,
+      "sha256": "3dafc4b2d6a8bfd8c1910a28fd3bb15f053a47cebaff7b5cdd6cf42c39f8f880"
+    },
+    {
+      "path": "snapshot_006/cgroup_cpu_stat.txt",
+      "bytes": 168,
+      "sha256": "bd228352552b4fa0e7c333b02ef5e32492fc9e720ad1b5e211d72f3431d47780"
+    },
+    {
+      "path": "snapshot_006/cgroup_memory_current.txt",
+      "bytes": 11,
+      "sha256": "7d47200f3a89075fb2d4e1b772c8e8cdf82c286c32b1b70eb261769d364486eb"
+    },
+    {
+      "path": "snapshot_006/cgroup_memory_events.txt",
+      "bytes": 58,
+      "sha256": "199de4f1e2e6b712e7f7afb1b3ee6c89cac76ec0efa4100aff499a442000db1b"
+    },
+    {
+      "path": "snapshot_006/cgroup_memory_max.txt",
+      "bytes": 11,
+      "sha256": "8528d39f97fdd9c9689c4373fe4c7b18f2c3bef6b044a2c4be74b07bf9cd07d8"
+    },
+    {
+      "path": "snapshot_006/cgroup_memory_stat.txt",
+      "bytes": 1158,
+      "sha256": "7f55cec51fc2bad10c9fcc49023e8c3da149e46b6b761250e12e73b75366a114"
+    },
+    {
+      "path": "snapshot_006/process_maps.txt",
+      "bytes": 16565,
+      "sha256": "e3f6b02c55110c298290b20ab7715603eeaec2ea3aeccc1a3c76309a9fe841dd"
+    },
+    {
+      "path": "snapshot_006/process_stat.txt",
+      "bytes": 345,
+      "sha256": "6adf5ec6c4c157ab31b7612ce2afb1e36a640730e0d8091b526fb43d4790e143"
+    },
+    {
+      "path": "snapshot_006/process_status.txt",
+      "bytes": 1160,
+      "sha256": "3b4a830cce99cf9543e5b90775bf59f8ebe69737d2484c4880f15e116f1acc0a"
+    },
+    {
+      "path": "snapshot_006/server_log_observed.txt",
+      "bytes": 138810,
+      "sha256": "d8a6a2e162c2a1ab01244ab58744a841a70d403c7b1d307df6eaf1c0cc09098c"
+    },
+    {
+      "path": "snapshot_006/server_metrics.prom",
+      "bytes": 2584,
+      "sha256": "d4f92905d5d812c842c8f318896d00ad41c7cbed296474c6fac5ca65297dc47d"
+    },
+    {
+      "path": "snapshot_007/MANIFEST.json",
+      "bytes": 1924,
+      "sha256": "cf3d96f7533e28fafdee2cca488c346ce754044ab3e8e8b5e357b9bf2ee6f510"
+    },
+    {
+      "path": "snapshot_007/OBSERVATION.json",
+      "bytes": 43546,
+      "sha256": "3b863ced7ecfcaa753823bb3749aa6043db0bc23fa4ab4e696a72bc961f2cff9"
+    },
+    {
+      "path": "snapshot_007/cgroup_cpu_max.txt",
+      "bytes": 14,
+      "sha256": "3dafc4b2d6a8bfd8c1910a28fd3bb15f053a47cebaff7b5cdd6cf42c39f8f880"
+    },
+    {
+      "path": "snapshot_007/cgroup_cpu_stat.txt",
+      "bytes": 168,
+      "sha256": "6bb7a6a5ed437986e5b4ef7b028834583174c1496abe263c8e9b16a4b6306216"
+    },
+    {
+      "path": "snapshot_007/cgroup_memory_current.txt",
+      "bytes": 11,
+      "sha256": "81884697a58df0b1e208aec22cc3f4f8e91c0e0be55f900f0c4bc45bffab5386"
+    },
+    {
+      "path": "snapshot_007/cgroup_memory_events.txt",
+      "bytes": 58,
+      "sha256": "199de4f1e2e6b712e7f7afb1b3ee6c89cac76ec0efa4100aff499a442000db1b"
+    },
+    {
+      "path": "snapshot_007/cgroup_memory_max.txt",
+      "bytes": 11,
+      "sha256": "8528d39f97fdd9c9689c4373fe4c7b18f2c3bef6b044a2c4be74b07bf9cd07d8"
+    },
+    {
+      "path": "snapshot_007/cgroup_memory_stat.txt",
+      "bytes": 1157,
+      "sha256": "e199229de39c659573679542484210605eec4f01a2ed570467b8d31effed68e0"
+    },
+    {
+      "path": "snapshot_007/process_maps.txt",
+      "bytes": 16565,
+      "sha256": "e3f6b02c55110c298290b20ab7715603eeaec2ea3aeccc1a3c76309a9fe841dd"
+    },
+    {
+      "path": "snapshot_007/process_stat.txt",
+      "bytes": 345,
+      "sha256": "6dd9de26b72a0a796066a1c4f30fc00118196424d09e6700dddaf7a7c7561908"
+    },
+    {
+      "path": "snapshot_007/process_status.txt",
+      "bytes": 1161,
+      "sha256": "28d9446be3cbbc965ce7bf1b2fd06b6f0d13cc122bc733ef353e5e137f1ce060"
+    },
+    {
+      "path": "snapshot_007/server_log_observed.txt",
+      "bytes": 143129,
+      "sha256": "caed50470326be4339705c2eb5bec29d56af08acac7393883e4139c45b6b41b0"
+    },
+    {
+      "path": "snapshot_007/server_metrics.prom",
+      "bytes": 2589,
+      "sha256": "b5920b77417c12ccbc345cfee897612e31f4dbb081da5388b613a30a41f95f3d"
+    }
+  ]
+}

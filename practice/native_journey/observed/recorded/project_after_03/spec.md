@@ -1,0 +1,3 @@
+CSV-CONSUMER-01: Specification
+
+This specification defines the CSV output format for the orders API. The CSV must use exactly the same actor-visible, status-filtered rows and their order as the JSON presentation. JSON and input rows are preserved unchanged. The CSV includes five ordered fields: order_id, status, customer, amount_eur, note. A header is included even when there are no rows. Special characters like commas, double quotes, embedded newlines, and Unicode are round-tripped exactly as they appear. Unsupported formats raise ValueError. The machine-importer literal-value decision is preserved as per the fictional owner's decision. Spreadsheet viewing, authentication, and deployment are deferred to separate approvals.

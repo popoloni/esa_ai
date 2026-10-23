@@ -1,0 +1,155 @@
+% Based on the typography, KOMA-Script class, colors, headers and 6x9 dimensions
+% of Non-Deterministic Loop Engineering. Rebuilt to be self-contained.
+\usepackage[english]{babel}
+% Latin Modern Sans is the book's original face. Use its Unicode OpenType version
+% with XeLaTeX so euros, arrows and typographic punctuation are not silently lost.
+\usepackage{fontspec}
+\setmainfont{lmsans10-regular.otf}[BoldFont=lmsans10-bold.otf, ItalicFont=lmsans10-oblique.otf, BoldItalicFont=lmsans10-boldoblique.otf]
+\setsansfont{lmsans10-regular.otf}[BoldFont=lmsans10-bold.otf, ItalicFont=lmsans10-oblique.otf, BoldItalicFont=lmsans10-boldoblique.otf]
+\setmonofont{lmmono10-regular.otf}[BoldFont=lmmonolt10-bold.otf, ItalicFont=lmmono10-italic.otf]
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{newunicodechar}
+\newunicodechar{χ}{\ensuremath{\chi}}
+\newunicodechar{≈}{\ensuremath{\approx}}
+\newunicodechar{⁻}{\textsuperscript{-}}
+\newunicodechar{⁶}{\textsuperscript{6}}
+\usepackage{textcomp}
+\usepackage[final]{microtype}
+\usepackage[table]{xcolor}
+\definecolor{primaryblue}{RGB}{41,128,185}
+\definecolor{secondaryblue}{RGB}{52,152,219}
+\definecolor{darkgray}{RGB}{52,73,94}
+\definecolor{lightgray}{RGB}{236,240,241}
+\definecolor{successgreen}{RGB}{39,174,96}
+\definecolor{warningyellow}{RGB}{241,196,15}
+\usepackage[
+ paperwidth=\bookwidth,paperheight=\bookheight,
+ top=0.75in,bottom=0.75in,outer=0.625in,inner=0.875in,
+ includehead,includefoot,heightrounded
+]{geometry}
+\usepackage{setspace}
+\setstretch{1.055}
+\usepackage{ragged2e}
+\AtBeginDocument{\justifying}
+\usepackage[automark,headsepline]{scrlayer-scrpage}
+\clearpairofpagestyles
+\automark[chapter]{chapter}
+\ohead{\footnotesize\itshape\leftmark}
+\cfoot*{\pagemark}
+\renewcommand*{\chapterpagestyle}{plain}
+\renewcommand*{\partpagestyle}{empty}
+\renewcommand*{\chaptermarkformat}{}
+\setkomafont{pageheadfoot}{\footnotesize\normalfont\sffamily}
+\setkomafont{pagenumber}{\small\normalfont\sffamily}
+\setkomafont{disposition}{\normalfont\sffamily\bfseries}
+\setkomafont{chapter}{\normalfont\sffamily\huge\bfseries\color{primaryblue}}
+\setkomafont{section}{\normalfont\sffamily\Large\bfseries\color{darkgray}}
+\setkomafont{subsection}{\normalfont\sffamily\large\bfseries\color{darkgray}}
+\setkomafont{part}{\normalfont\sffamily\Huge\bfseries\color{primaryblue}}
+\RedeclareSectionCommand[beforeskip=0pt,afterskip=2.2\baselineskip]{chapter}
+\RedeclareSectionCommand[beforeskip=-0.8\baselineskip,afterskip=.45\baselineskip]{section}
+\RedeclareSectionCommand[beforeskip=-0.6\baselineskip,afterskip=.25\baselineskip]{subsection}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx,booktabs,tabularx,longtable,array,multirow}
+\usepackage{enumitem}
+\setlist{topsep=0.25em,partopsep=0pt,itemsep=0.15em,parsep=0pt,leftmargin=*}
+\usepackage{fancyvrb}
+\usepackage{fvextra}
+\DefineVerbatimEnvironment{verbatim}{Verbatim}{breaklines=true,breakanywhere=true,fontsize=\footnotesize}
+\usepackage{csquotes}
+\usepackage{float} % stable placement for original practitioner agency schematic
+\usepackage{eso-pic}
+\usepackage[most]{tcolorbox}
+
+% Didactic edition: explanatory boxes can split naturally across pages.
+\newtcolorbox{conceptbox}[1]{enhanced,breakable,colback=primaryblue!4,
+ colframe=primaryblue!60,colbacktitle=primaryblue!13,coltitle=darkgray,
+ boxrule=.5pt,arc=.8mm,title={Concept: #1},fonttitle=\bfseries\small,
+ before skip=8pt,after skip=8pt,left=1.7mm,right=1.7mm,top=1mm,bottom=1mm}
+\newtcolorbox{examplebox}[1]{enhanced,breakable,colback=successgreen!3,
+ colframe=successgreen!52!black,colbacktitle=successgreen!11,coltitle=darkgray,
+ boxrule=.5pt,arc=.8mm,title={Worked example: #1},fonttitle=\bfseries\small,
+ before skip=8pt,after skip=8pt,left=1.7mm,right=1.7mm,top=1mm,bottom=1mm}
+\newtcolorbox{practicebox}[1]{enhanced,breakable,colback=warningyellow!6,
+ colframe=warningyellow!60!black,colbacktitle=warningyellow!16,coltitle=darkgray,
+ boxrule=.5pt,arc=.8mm,title={Check your understanding: #1},fonttitle=\bfseries\small,
+ before skip=8pt,after skip=8pt,left=1.7mm,right=1.7mm,top=1mm,bottom=1mm}
+
+\newtcolorbox{bookconcept}[1][]{colback=primaryblue!4,colframe=primaryblue!60,boxrule=0.5pt,title={#1},fonttitle=\bfseries}
+% Short learning and key-concept boxes stay intact across page boundaries.
+\newtcolorbox{bookkeyconcept}[1][]{%
+ colback=lightgray!32,colframe=primaryblue!54,colbacktitle=primaryblue!11,
+ coltitle=darkgray,boxrule=.48pt,title={#1},fonttitle=\bfseries\footnotesize,
+ fontupper=\small,left=1.4mm,right=1.4mm,top=.65mm,bottom=.65mm,
+ before skip=.65em,after skip=.65em}
+
+\usepackage[backend=biber,style=numeric-comp,sorting=nyt,doi=true,url=true,isbn=true,maxnames=2,giveninits=true]{biblatex}
+\addbibresource{bib/references.bib} % All fourteen chapters; aliases preserve checkpoint keys.
+\newcommand{\oroszcite}[1]{\workref{#1}\,\autocite{#1}}
+
+% Selected stable Atlas identifiers, separate from BibLaTeX's generated numbers.
+% The source guide explains the scope; this book does not reproduce the full Atlas.
+\DeclareFieldFormat{bookworkid}{\textcolor{primaryblue}{\sffamily\bfseries #1}}
+\renewbibmacro*{begentry}{%
+  \iffieldundef{usera}{}{% 
+    \printfield[bookworkid]{usera}\addspace
+    \textcolor{darkgray}{\textbullet}\addspace
+  }%
+}
+% Print the stable identifier carried by a cited entry's usera field.
+\DeclareCiteCommand{\workref}
+  {}
+  {\printtext[bibhyperref]{\printfield[bookworkid]{usera}}}
+  {\multicitedelim}
+  {}
+% Cite Osmani's durable Oxxx ID beside the generated bibliography number.
+\newcommand{\osmanicite}[1]{\workref{#1}\,\autocite{#1}}
+\defbibnote{sourceidlegend}{%
+  \noindent\small\textbf{Reading the references.}
+  Bracketed numbers are generated for this edition. Blue identifiers, where supplied, locate a selected record in the Knowledge Atlas. They are source identifiers, not evidence ratings. Appendix~\ref{sec:source-guide} explains how to use sources and practice guides to investigate an engineering question.\par\medskip
+}
+
+% Resolve original editorial work-ID genitives as authored attribution with a citation,
+% avoiding typographically and grammatically incorrect expressions such as `[38]'s`.
+\DeclareRobustCommand{\workposs}[1]{\citeauthor{#1}\textquotesingle s~\autocite{#1}}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=primaryblue,citecolor=primaryblue,urlcolor=secondaryblue,pdftitle={\booktitle},pdfsubject={\booksubtitle},pdfauthor={\authorname},pdfkeywords={software engineering, AI coding agents, independent verification, accepted change}}
+\usepackage{bookmark}
+\urlstyle{same}
+\tolerance=1300
+\emergencystretch=2em
+\hbadness=1900
+
+% Reader exercise metadata; worked examples are placed in their chapters.
+\newcommand{\exercisemeta}[2]{\noindent\textbf{Time:} #1\hspace{1.4em}\textbf{Deliverable:} #2\par\smallskip}
+
+% Three-digit page numbers need a wider TOC field; retain the existing type size.
+\makeatletter
+\renewcommand{\@pnumwidth}{2.5em}
+\renewcommand{\@tocrmarg}{3.5em}
+\makeatother
+
+% Prevent 10.10/11.10 and B.2.12 labels from touching TOC titles.
+\DeclareTOCStyleEntry[numwidth=3.0em]{tocline}{section}
+\DeclareTOCStyleEntry[numwidth=3.8em]{tocline}{subsection}
+
+
+% --- Engineering Software with Agentic AI book adaptations -----------------
+% NDSE2 base uses 6x9 KOMA, Latin Modern Sans, blue headings, headers and callouts.
+% All fourteen chapters use these listings, diagrams and named boxes.
+\usepackage{needspace}
+\usepackage{xurl}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc,fit}
+\usepackage{listings}
+\colorlet{ink}{darkgray}
+\colorlet{accent}{primaryblue}
+\colorlet{pale}{lightgray}
+\definecolor{codebg}{HTML}{F3F5F5}
+\lstdefinestyle{lab}{basicstyle=\ttfamily\scriptsize,breaklines=true,backgroundcolor=\color{codebg},frame=single,framerule=0.25pt,rulecolor=\color{darkgray!40},xleftmargin=4pt,xrightmargin=4pt,aboveskip=6pt,belowskip=6pt,columns=fullflexible,keepspaces=true,showstringspaces=false}
+\lstset{style=lab}
+% These short callouts each fit on one page; keep their argument intact.
+\newtcolorbox{readerbox}[1]{enhanced,colback=primaryblue!4,colframe=primaryblue!58,boxrule=.5pt,arc=.8mm,title={#1},fonttitle=\bfseries\footnotesize,before skip=6pt,after skip=6pt}
+\newtcolorbox{warningbox}[1]{enhanced,colback=warningyellow!8,colframe=warningyellow!70!black,boxrule=.5pt,arc=.8mm,title={#1},fonttitle=\bfseries\footnotesize,before skip=6pt,after skip=6pt}
+\setcounter{tocdepth}{1}
+\emergencystretch=3em

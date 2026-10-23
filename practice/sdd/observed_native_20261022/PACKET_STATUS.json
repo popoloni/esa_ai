@@ -1,0 +1,13 @@
+{
+  "status": "TERMINAL_OBSERVED_INPUT_READ_NATIVE_GENERATION_PARTIAL",
+  "updated_at_utc": "2026-10-22T08:02:10.614958+00:00",
+  "first_attempt": "FAILED_BEFORE_NATIVE_ARTIFACT_GENERATION",
+  "recovery": "TASK_INCOMPLETE_MODEL_STOP_NO_TOOL_CALL",
+  "guided_continuation": "TASK_INCOMPLETE_OUTER_TIMEOUT_AFTER_FULL_INPUT_READ",
+  "historical_absolute_paths": "Preserved as recorded; use NATIVE_ROUTE.md and current helper to reproduce in new reader paths.",
+  "human_review": "ABSENT",
+  "generation_claim": "No native specification, checklist or feature metadata was generated in these three recorded invocations. The final continuation completed only the full fixed-input read.",
+  "r08_recommendation": "PARTIAL",
+  "independent_audit": "../native_review_20261022/INDEPENDENT_R08_REVIEW.json",
+  "further_model_attempts": "NONE_AFTER_FINAL_DECLARED_CONTINUATION"
+}

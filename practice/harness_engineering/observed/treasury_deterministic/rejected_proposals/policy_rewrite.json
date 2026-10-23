@@ -1,0 +1,13 @@
+{
+  "proposal": {
+    "development_memory": {},
+    "policy_threshold_eur": "3000.00",
+    "response_fields": [
+      "route"
+    ],
+    "routing_strategy": "cached_estimate",
+    "schema": "treasury-harness/v1"
+  },
+  "reason": "Harness keys must be exactly the four allowed configuration fields",
+  "status": "REJECTED_BEFORE_EXECUTION"
+}

@@ -1,0 +1,37 @@
+{
+  "schema": "esa-native-attempt-outcome/v1",
+  "recorded_at_utc": "2026-10-22T06:21:11.892138+00:00",
+  "attempt": "attempt_02",
+  "native_session_id": "ses_e9dc53064ffes94dIoRs5Jj30n",
+  "process_result": {
+    "exit_code": 124,
+    "execution_error": "TIMEOUT",
+    "duration_seconds": 360.1077457909996
+  },
+  "native_completed_actions": [
+    "read routing.py (with automatic repo/AGENTS.md inclusion)",
+    "edit assess function in routing.py"
+  ],
+  "prompt_requested_edit_mechanism": "write",
+  "actual_edit_mechanism": "edit",
+  "native_acceptance_command_completed": false,
+  "native_final_summary_completed": false,
+  "candidate_sha256": "dac968f4738761cc85a6b71f0d7265a2d8d1860f122cd22576a9645bc9139fe7",
+  "native_task_status": "SOURCE_EDIT_COMPLETED_CHECK_AND_SUMMARY_NOT_COMPLETED",
+  "independent_disposition": "READY_FOR_HUMAN_REVIEW_NOT_ACCEPTED",
+  "independent_checks": {
+    "original_cases_passed": 7,
+    "original_cases_total": 7,
+    "additional_planned_cases_passed": 14,
+    "additional_planned_cases_total": 14,
+    "case_sets_overlap": true,
+    "scope_guard": "PASS",
+    "findings": []
+  },
+  "human_acceptance": "PENDING",
+  "changed_files": [
+    "repo/src/treasury/routing.py"
+  ],
+  "out_of_scope_changes": [],
+  "assistance": "Verbatim approved intent, sequencing instruction, Decimal.is_finite guidance before comparisons, new session and tighter outer/step bounds; author prior solution exposure. No ready-made implementation patch supplied."
+}

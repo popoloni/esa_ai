@@ -1,0 +1,39 @@
+{
+  "status": "PREPARED_CANDIDATE03_ALL_PREFLIGHT_GATES_PASS_NO_GENERATION",
+  "at_utc": "2026-10-22T10:42:21.074594+00:00",
+  "task": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/invocation_03/CLIENT_TASK_03.json",
+  "task_sha256": "15569856560ce50cb9968a8996a574f3b87178887818388d1c9fa6f76ca5d2f9",
+  "config_sha256": "044c5deaa96cb5c5e88e7d55770d3d0c399669a926045f5b3fab470359d83941",
+  "environment_sha256": "47c2971eef37fa3b12015eaedce33d515e35052c126c3f1e68f2269718b62d2c",
+  "prompt_sha256": "b782fa17ec9a79d288e40ca31018d53de6a24312a89cb1bb41a4a3a0df9de16d",
+  "passed_checks": 21,
+  "failed_checks": 0,
+  "noReply_session_id": "ses_e9ccd6102ffe0oFU1hOYxlLZbh",
+  "noReply_session_reuse": "FORBIDDEN; actual generation must start a fresh native session",
+  "attachment_bytes": 26924,
+  "attachment_lines": 342,
+  "bundle_bytes": 25149,
+  "budget": {
+    "base_tokens": 13025,
+    "total_with_reserves": 23265,
+    "context_tokens": 24576,
+    "remaining_tokens": 1311
+  },
+  "generation": "NOT_RUN; root owns checkpoint and release",
+  "project_files": 49,
+  "source_files_modified": false,
+  "human_review": "ABSENT",
+  "declared_changes": [
+    "Model read access now covers only the three generated outputs; all source/bundle/template read calls denied.",
+    "Agent and task guard explicitly require using complete preloaded input without redundant source reads.",
+    "Custom model temperature capability explicitly true so supported request path can serialize intended agent temperature0.2.",
+    "Fresh isolated client state and explicit candidate03 session title; no prior session reuse."
+  ],
+  "remaining_limits": [
+    "An effective read guard is not proof of actual model compliance or OS containment.",
+    "Finite cumulative history can still exceed4096 reserved tokens.",
+    "Outputcap3072 has client serialization evidence; no independent server cap claimed.",
+    "Actual temperature0.2 awaits request/sampler observation.",
+    "No owner answers or output artifact prose are supplied."
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "status": "PASS_NATIVE_FULL_ATTACHMENT_NOREPLY_NO_INFERENCE",
+  "session_id": "ses_e9ccd6102ffe0oFU1hOYxlLZbh",
+  "source_checks": 13,
+  "errors": [],
+  "result": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/invocation_03/native_attachment_preflight_03/RESULT.json"
+}

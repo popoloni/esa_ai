@@ -1,0 +1,76 @@
+{
+  "schema": "esa-portable-closed-native-server/v1",
+  "recorded_at_utc": "2026-10-22T07:57:23.063086+00:00",
+  "source_directory": "revision_d7/evidence/native_reconstruction/llama_server_03",
+  "files": {
+    "FINISH.json": {
+      "bytes": 2458,
+      "sha256": "eafb9af4650ad51e3c448299cce4b92c653829792e108a4bd5f7a08c00d411e8",
+      "origin": "revision_d7/evidence/native_reconstruction/llama_server_03/FINISH.json"
+    },
+    "HEALTH_AND_RESOURCES.json": {
+      "bytes": 13915,
+      "sha256": "ea04bacfe1080e63ae219ad90a512b75eb10222f809400a0b37ba093b63d7a1c",
+      "origin": "revision_d7/evidence/native_reconstruction/llama_server_03/HEALTH_AND_RESOURCES.json"
+    },
+    "OPERATOR_FORCE_STOP_REQUEST.json": {
+      "bytes": 3245,
+      "sha256": "77bf3bf0962e3f9fad59f8f606bdf64f36bcc47f57636a8c28d804d391fd83f2",
+      "origin": "revision_d7/evidence/native_reconstruction/llama_server_03/OPERATOR_FORCE_STOP_REQUEST.json"
+    },
+    "OPERATOR_STOP_REQUEST.json": {
+      "bytes": 1439,
+      "sha256": "19c82ad289c7f439ccb749171edc15ba4d3597d8bba2609df0858eb0f1028f4b",
+      "origin": "revision_d7/evidence/native_reconstruction/llama_server_03/OPERATOR_STOP_REQUEST.json"
+    },
+    "POST_STOP.json": {
+      "bytes": 421,
+      "sha256": "96963a591e6c044394b948b4473ee0f163394b3f54a2c90155f02e8b6065e5b2",
+      "origin": "revision_d7/evidence/native_reconstruction/llama_server_03/POST_STOP.json"
+    },
+    "PRE_START.json": {
+      "bytes": 3012,
+      "sha256": "5affc2de673c3fb7baee2370c0670d88920c004f964919c6f4d2595fd00d84bf",
+      "origin": "revision_d7/evidence/native_reconstruction/llama_server_03/PRE_START.json"
+    },
+    "PRE_STOP_RESOURCES.json": {
+      "bytes": 18888,
+      "sha256": "a18ead1b6ca4e4ac7003ef33fee8ff746edfbb0d926d7ac7c1c25dbb67697e9b",
+      "origin": "revision_d7/evidence/native_reconstruction/llama_server_03/PRE_STOP_RESOURCES.json"
+    },
+    "RESOURCE_SAMPLE_01.json": {
+      "bytes": 5659,
+      "sha256": "a991685245cfb2e8605ab4a88ae3d584092c4d5c8d5e6b21aacbf606d0940a65",
+      "origin": "revision_d7/evidence/native_reconstruction/llama_server_03/RESOURCE_SAMPLE_01.json"
+    },
+    "RESOURCE_SAMPLE_02.json": {
+      "bytes": 10962,
+      "sha256": "49dad94b49c2834066f110b8d55d2ebd0a128fa24b40780dd7b39306cffcec1b",
+      "origin": "revision_d7/evidence/native_reconstruction/llama_server_03/RESOURCE_SAMPLE_02.json"
+    },
+    "START.json": {
+      "bytes": 2114,
+      "sha256": "1b2fccc2397129dc04d236d71b73df97b23e342dac85548699a119bf77531fd5",
+      "origin": "revision_d7/evidence/native_reconstruction/llama_server_03/START.json"
+    },
+    "stderr.txt": {
+      "bytes": 3140,
+      "sha256": "64e6a32360adf2a466f0ca64aecdb157c0e0b3918628dba68d95a28812fb25db",
+      "origin": "revision_d7/evidence/native_reconstruction/llama_server_03/stderr.txt"
+    },
+    "stdout.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "origin": "revision_d7/evidence/native_reconstruction/llama_server_03/stdout.txt"
+    },
+    "README.md": {
+      "bytes": 3432,
+      "sha256": "de1ed07196ccaed5a24bb7affe7df3a5975cb144d96c350f813fa617b15b7651",
+      "origin": "Separate explanatory annotation; original records unchanged"
+    }
+  },
+  "manifest_excluded_from_own_inventory": true,
+  "closed_lifecycle": true,
+  "runtime_or_model_included": false,
+  "scope": "Server lifecycle and resource evidence; forced cleanup is preserved separately from native task timeout, acceptance and complete costs."
+}

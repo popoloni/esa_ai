@@ -1,0 +1,53 @@
+{
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Orchestration_Harness_20261020/companion/practice/harness_engineering/worker.py",
+    "--config",
+    "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Orchestration_Harness_20261020/companion/practice/harness_engineering/observed/treasury_deterministic_v3/candidates/base/harness.json",
+    "--router",
+    "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Orchestration_Harness_20261020/companion/practice/harness_engineering/observed/treasury_deterministic_v3/source_snapshot/routing.py"
+  ],
+  "candidate": "base",
+  "execution": {
+    "case_id": "HOLD-01",
+    "config_sha256": "afa88c36328367f7ac9f937870ec6417417ba38a7a3171011fab8923c9aff731",
+    "model_calls": 0,
+    "response": {
+      "route": "STANDARD_QUEUE"
+    },
+    "schema": "deterministic-harness-execution/v1",
+    "trace": [
+      {
+        "amount_eur": "4999.99",
+        "event": "context",
+        "model_calls": 0,
+        "strategy": "cached_estimate"
+      },
+      {
+        "event": "cached_estimate",
+        "input": "4999.99",
+        "note": "Fixed float-based shortcut; no domain tool executed"
+      },
+      {
+        "event": "response_emitted",
+        "fields": [
+          "route"
+        ]
+      }
+    ]
+  },
+  "execution_number": 21,
+  "phase": "held_out",
+  "raw_process": {
+    "elapsed_seconds": 0.04318189899640856,
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "{\"case_id\": \"HOLD-01\", \"config_sha256\": \"afa88c36328367f7ac9f937870ec6417417ba38a7a3171011fab8923c9aff731\", \"model_calls\": 0, \"response\": {\"route\": \"STANDARD_QUEUE\"}, \"schema\": \"deterministic-harness-execution/v1\", \"trace\": [{\"amount_eur\": \"4999.99\", \"event\": \"context\", \"model_calls\": 0, \"strategy\": \"cached_estimate\"}, {\"event\": \"cached_estimate\", \"input\": \"4999.99\", \"note\": \"Fixed float-based shortcut; no domain tool executed\"}, {\"event\": \"response_emitted\", \"fields\": [\"route\"]}]}\n",
+    "timed_out": false
+  },
+  "request": {
+    "amount_eur": "4999.99",
+    "case_id": "HOLD-01"
+  },
+  "validation": "ACCEPTED_FOR_EVALUATION"
+}

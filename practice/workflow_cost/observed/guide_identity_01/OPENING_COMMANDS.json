@@ -1,0 +1,50 @@
+[
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "companion/practice/workflow_cost/workflow_cost.py",
+      "init",
+      "revision_d7/evidence/guide_identity_workflow/ACCOUNT.json",
+      "--run-id",
+      "D7-GUIDE-IDENTITY-001",
+      "--purpose",
+      "Observe a concrete protected-guide repair through independent agent technical decision",
+      "--interface",
+      "ChatGPT agent and local Python tools",
+      "--boundary",
+      "Supplied defect report through exact candidate review and recording",
+      "--exclusion",
+      "Earlier discovery/CP11 editing/archive recovery and later full-release packaging are separate work; no human review or acceptance is claimed"
+    ],
+    "started_at_utc": "2026-10-22T06:06:56.622504+00:00",
+    "ended_at_utc": "2026-10-22T06:06:56.748773+00:00",
+    "exit_code": 0,
+    "stdout": "{\"status\": \"RECORDED\", \"command\": \"init\", \"account\": \"revision_d7/evidence/guide_identity_workflow/ACCOUNT.json\"}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "companion/practice/workflow_cost/workflow_cost.py",
+      "start",
+      "revision_d7/evidence/guide_identity_workflow/ACCOUNT.json",
+      "--id",
+      "preparation-01",
+      "--phase",
+      "preparation",
+      "--actor",
+      "root-maintenance-agent",
+      "--actor-kind",
+      "AGENT",
+      "--evidence",
+      "revision_d7/evidence/guide_identity_workflow/TASK.txt"
+    ],
+    "started_at_utc": "2026-10-22T06:06:56.748797+00:00",
+    "ended_at_utc": "2026-10-22T06:06:56.862079+00:00",
+    "exit_code": 0,
+    "stdout": "{\"status\": \"RECORDED\", \"command\": \"start\", \"account\": \"revision_d7/evidence/guide_identity_workflow/ACCOUNT.json\"}\n",
+    "stderr": ""
+  }
+]

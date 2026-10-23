@@ -1,0 +1,374 @@
+{
+  "schema": "esa-workflow-cost/v1",
+  "run_id": "SYNTHETIC-ACCOUNT-001",
+  "purpose": "Teach interval unions, distinct outcomes and missingness",
+  "evidence_mode": "SYNTHETIC_TEACHING_CASE",
+  "claim_scope": "DESCRIPTIVE_SINGLE_WORKFLOW_NO_CAUSAL_OR_ROI_CLAIM",
+  "identity": {
+    "interface": "Invented teaching interface",
+    "client_version": "UNKNOWN_NOT_EXPOSED",
+    "model": "UNKNOWN_NOT_EXPOSED",
+    "model_version": "UNKNOWN_NOT_EXPOSED"
+  },
+  "boundary": {
+    "description": "Invented preparation through recorded decision",
+    "start_utc": "2026-10-21T09:00:00+00:00",
+    "finish_utc": "2026-10-21T09:04:10+00:00",
+    "exclusions": [
+      "No actual people, model calls, invoices or business outcomes"
+    ]
+  },
+  "spans": [
+    {
+      "id": "prepare",
+      "phase": "preparation",
+      "actor": "author",
+      "actor_kind": "AGENT",
+      "measure": "WALL_INTERVAL",
+      "start_utc": "2026-10-21T09:00:00+00:00",
+      "finish_utc": "2026-10-21T09:00:30+00:00",
+      "outcome": "PASSED",
+      "evidence": [
+        {
+          "path": "INVENTED_EVIDENCE.txt",
+          "sha256": "52317750afbc4a75433e08416b40e252f20b9a5b51d20052c8833722b7715144"
+        }
+      ]
+    },
+    {
+      "id": "attempt-1",
+      "phase": "implementation",
+      "actor": "author",
+      "actor_kind": "AGENT",
+      "measure": "WALL_INTERVAL",
+      "start_utc": "2026-10-21T09:00:30+00:00",
+      "finish_utc": "2026-10-21T09:01:30+00:00",
+      "outcome": "PASSED",
+      "evidence": [
+        {
+          "path": "INVENTED_EVIDENCE.txt",
+          "sha256": "52317750afbc4a75433e08416b40e252f20b9a5b51d20052c8833722b7715144"
+        }
+      ]
+    },
+    {
+      "id": "first-check",
+      "phase": "verification",
+      "actor": "checker",
+      "actor_kind": "AUTOMATION",
+      "measure": "WALL_INTERVAL",
+      "start_utc": "2026-10-21T09:01:30+00:00",
+      "finish_utc": "2026-10-21T09:01:50+00:00",
+      "outcome": "FAILED",
+      "evidence": [
+        {
+          "path": "INVENTED_EVIDENCE.txt",
+          "sha256": "52317750afbc4a75433e08416b40e252f20b9a5b51d20052c8833722b7715144"
+        }
+      ]
+    },
+    {
+      "id": "repair",
+      "phase": "rework",
+      "actor": "author",
+      "actor_kind": "AGENT",
+      "measure": "WALL_INTERVAL",
+      "start_utc": "2026-10-21T09:01:50+00:00",
+      "finish_utc": "2026-10-21T09:02:30+00:00",
+      "outcome": "PASSED",
+      "evidence": [
+        {
+          "path": "INVENTED_EVIDENCE.txt",
+          "sha256": "52317750afbc4a75433e08416b40e252f20b9a5b51d20052c8833722b7715144"
+        }
+      ]
+    },
+    {
+      "id": "overlapping-check",
+      "phase": "verification",
+      "actor": "checker",
+      "actor_kind": "AUTOMATION",
+      "measure": "WALL_INTERVAL",
+      "start_utc": "2026-10-21T09:02:20+00:00",
+      "finish_utc": "2026-10-21T09:02:40+00:00",
+      "outcome": "PASSED",
+      "evidence": [
+        {
+          "path": "INVENTED_EVIDENCE.txt",
+          "sha256": "52317750afbc4a75433e08416b40e252f20b9a5b51d20052c8833722b7715144"
+        }
+      ]
+    },
+    {
+      "id": "agent-review",
+      "phase": "agent_review",
+      "actor": "second-agent",
+      "actor_kind": "AGENT",
+      "measure": "WALL_INTERVAL",
+      "start_utc": "2026-10-21T09:02:40+00:00",
+      "finish_utc": "2026-10-21T09:03:00+00:00",
+      "outcome": "PASSED",
+      "evidence": [
+        {
+          "path": "INVENTED_EVIDENCE.txt",
+          "sha256": "52317750afbc4a75433e08416b40e252f20b9a5b51d20052c8833722b7715144"
+        }
+      ]
+    },
+    {
+      "id": "human-review",
+      "phase": "human_review",
+      "actor": "Alex",
+      "actor_kind": "HUMAN",
+      "measure": "DECLARED_ACTIVE_HUMAN_INTERVAL",
+      "start_utc": "2026-10-21T09:03:00+00:00",
+      "finish_utc": "2026-10-21T09:04:00+00:00",
+      "outcome": "PASSED",
+      "evidence": [
+        {
+          "path": "INVENTED_EVIDENCE.txt",
+          "sha256": "52317750afbc4a75433e08416b40e252f20b9a5b51d20052c8833722b7715144"
+        }
+      ]
+    },
+    {
+      "id": "record",
+      "phase": "recording",
+      "actor": "author",
+      "actor_kind": "AGENT",
+      "measure": "WALL_INTERVAL",
+      "start_utc": "2026-10-21T09:04:00+00:00",
+      "finish_utc": "2026-10-21T09:04:10+00:00",
+      "outcome": "PASSED",
+      "evidence": [
+        {
+          "path": "INVENTED_EVIDENCE.txt",
+          "sha256": "52317750afbc4a75433e08416b40e252f20b9a5b51d20052c8833722b7715144"
+        }
+      ]
+    }
+  ],
+  "usage": [
+    {
+      "id": "charge-1",
+      "kind": "MONEY",
+      "component": "model",
+      "value": "0.40",
+      "unit": "USD",
+      "charge_key": "INVENTED-INVOICE/1",
+      "at_utc": "2026-10-21T09:04:09+00:00",
+      "evidence": {
+        "path": "INVENTED_EVIDENCE.txt",
+        "sha256": "52317750afbc4a75433e08416b40e252f20b9a5b51d20052c8833722b7715144"
+      }
+    },
+    {
+      "id": "charge-2",
+      "kind": "MONEY",
+      "component": "human",
+      "value": "1.50",
+      "unit": "USD",
+      "charge_key": "INVENTED-INVOICE/2",
+      "at_utc": "2026-10-21T09:04:09+00:00",
+      "evidence": {
+        "path": "INVENTED_EVIDENCE.txt",
+        "sha256": "52317750afbc4a75433e08416b40e252f20b9a5b51d20052c8833722b7715144"
+      }
+    },
+    {
+      "id": "charge-3",
+      "kind": "MONEY",
+      "component": "infrastructure",
+      "value": "0.10",
+      "unit": "USD",
+      "charge_key": "INVENTED-INVOICE/3",
+      "at_utc": "2026-10-21T09:04:09+00:00",
+      "evidence": {
+        "path": "INVENTED_EVIDENCE.txt",
+        "sha256": "52317750afbc4a75433e08416b40e252f20b9a5b51d20052c8833722b7715144"
+      }
+    }
+  ],
+  "acceptance": [
+    {
+      "id": "machine-first",
+      "item": "change-1",
+      "kind": "AUTOMATED",
+      "decision": "ACCEPTED",
+      "reviewer": "AUTOMATED",
+      "at_utc": "2026-10-21T09:02:40+00:00",
+      "candidate": {
+        "path": "CANDIDATE.txt",
+        "sha256": "d5e97f1ac884b59f91a6c3324cece9f9c29ace725f7eca6f6ebbe44cdd499260"
+      },
+      "evidence": {
+        "path": "INVENTED_EVIDENCE.txt",
+        "sha256": "52317750afbc4a75433e08416b40e252f20b9a5b51d20052c8833722b7715144"
+      },
+      "human_attestation": null
+    },
+    {
+      "id": "machine-repeat",
+      "item": "change-1",
+      "kind": "AUTOMATED",
+      "decision": "ACCEPTED",
+      "reviewer": "AUTOMATED",
+      "at_utc": "2026-10-21T09:02:50+00:00",
+      "candidate": {
+        "path": "CANDIDATE.txt",
+        "sha256": "d5e97f1ac884b59f91a6c3324cece9f9c29ace725f7eca6f6ebbe44cdd499260"
+      },
+      "evidence": {
+        "path": "INVENTED_EVIDENCE.txt",
+        "sha256": "52317750afbc4a75433e08416b40e252f20b9a5b51d20052c8833722b7715144"
+      },
+      "human_attestation": null
+    },
+    {
+      "id": "agent",
+      "item": "change-1",
+      "kind": "AGENT",
+      "decision": "ACCEPTED",
+      "reviewer": "AGENT",
+      "at_utc": "2026-10-21T09:03:00+00:00",
+      "candidate": {
+        "path": "CANDIDATE.txt",
+        "sha256": "d5e97f1ac884b59f91a6c3324cece9f9c29ace725f7eca6f6ebbe44cdd499260"
+      },
+      "evidence": {
+        "path": "INVENTED_EVIDENCE.txt",
+        "sha256": "52317750afbc4a75433e08416b40e252f20b9a5b51d20052c8833722b7715144"
+      },
+      "human_attestation": null
+    },
+    {
+      "id": "human",
+      "item": "change-1",
+      "kind": "HUMAN",
+      "decision": "ACCEPTED",
+      "reviewer": "Alex",
+      "at_utc": "2026-10-21T09:04:00+00:00",
+      "candidate": {
+        "path": "CANDIDATE.txt",
+        "sha256": "d5e97f1ac884b59f91a6c3324cece9f9c29ace725f7eca6f6ebbe44cdd499260"
+      },
+      "evidence": {
+        "path": "INVENTED_EVIDENCE.txt",
+        "sha256": "52317750afbc4a75433e08416b40e252f20b9a5b51d20052c8833722b7715144"
+      },
+      "human_attestation": "Invented Alex decision; no human participant exists"
+    }
+  ],
+  "assumptions": [
+    {
+      "name": "Illustrative alternative hourly rate",
+      "value": "90",
+      "unit": "USD/hour",
+      "basis": "Sensitivity scenario only; never used in the observed-charge arithmetic"
+    }
+  ],
+  "coverage": {
+    "preparation": {
+      "state": "OBSERVED",
+      "reason": "Invented specimen interval",
+      "evidence": [
+        {
+          "path": "INVENTED_EVIDENCE.txt",
+          "sha256": "52317750afbc4a75433e08416b40e252f20b9a5b51d20052c8833722b7715144"
+        }
+      ]
+    },
+    "implementation": {
+      "state": "OBSERVED",
+      "reason": "Invented specimen interval",
+      "evidence": [
+        {
+          "path": "INVENTED_EVIDENCE.txt",
+          "sha256": "52317750afbc4a75433e08416b40e252f20b9a5b51d20052c8833722b7715144"
+        }
+      ]
+    },
+    "verification": {
+      "state": "OBSERVED",
+      "reason": "Invented specimen interval",
+      "evidence": [
+        {
+          "path": "INVENTED_EVIDENCE.txt",
+          "sha256": "52317750afbc4a75433e08416b40e252f20b9a5b51d20052c8833722b7715144"
+        }
+      ]
+    },
+    "agent_review": {
+      "state": "OBSERVED",
+      "reason": "Invented specimen interval",
+      "evidence": [
+        {
+          "path": "INVENTED_EVIDENCE.txt",
+          "sha256": "52317750afbc4a75433e08416b40e252f20b9a5b51d20052c8833722b7715144"
+        }
+      ]
+    },
+    "human_review": {
+      "state": "OBSERVED",
+      "reason": "Invented specimen interval",
+      "evidence": [
+        {
+          "path": "INVENTED_EVIDENCE.txt",
+          "sha256": "52317750afbc4a75433e08416b40e252f20b9a5b51d20052c8833722b7715144"
+        }
+      ]
+    },
+    "rework": {
+      "state": "OBSERVED",
+      "reason": "Invented specimen interval",
+      "evidence": [
+        {
+          "path": "INVENTED_EVIDENCE.txt",
+          "sha256": "52317750afbc4a75433e08416b40e252f20b9a5b51d20052c8833722b7715144"
+        }
+      ]
+    },
+    "recording": {
+      "state": "OBSERVED",
+      "reason": "Invented specimen interval",
+      "evidence": [
+        {
+          "path": "INVENTED_EVIDENCE.txt",
+          "sha256": "52317750afbc4a75433e08416b40e252f20b9a5b51d20052c8833722b7715144"
+        }
+      ]
+    }
+  },
+  "money_coverage": {
+    "model": {
+      "state": "COMPLETE",
+      "reason": "Invented complete receipt for this specimen",
+      "evidence": [
+        {
+          "path": "INVENTED_EVIDENCE.txt",
+          "sha256": "52317750afbc4a75433e08416b40e252f20b9a5b51d20052c8833722b7715144"
+        }
+      ]
+    },
+    "human": {
+      "state": "COMPLETE",
+      "reason": "Invented complete receipt for this specimen",
+      "evidence": [
+        {
+          "path": "INVENTED_EVIDENCE.txt",
+          "sha256": "52317750afbc4a75433e08416b40e252f20b9a5b51d20052c8833722b7715144"
+        }
+      ]
+    },
+    "infrastructure": {
+      "state": "COMPLETE",
+      "reason": "Invented complete receipt for this specimen",
+      "evidence": [
+        {
+          "path": "INVENTED_EVIDENCE.txt",
+          "sha256": "52317750afbc4a75433e08416b40e252f20b9a5b51d20052c8833722b7715144"
+        }
+      ]
+    }
+  }
+}

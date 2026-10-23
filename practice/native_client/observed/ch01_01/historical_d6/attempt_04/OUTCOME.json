@@ -1,0 +1,34 @@
+{
+  "schema": "esa-native-attempt-outcome/v1",
+  "recorded_at_utc": "2026-10-21T22:07:32.503205+00:00",
+  "attempt": 4,
+  "client_process_exit_code": -15,
+  "task_status": "FAILED_ACCEPTANCE_INTERRUPTED_DURING_COMPACTION",
+  "independent_human_acceptance": "NOT_OBSERVED",
+  "acceptance": {
+    "status": "FAIL",
+    "tests_total": 7,
+    "passed": 6,
+    "failures": 0,
+    "errors": 1,
+    "candidate_sha256": "0d6a4e79a68350c6a7a80bbca1ab0ce93b532f3e803eb1541cef8a7cbbff138b"
+  },
+  "source_review": [
+    "Candidate again omits a finite-value guard; Decimal NaN comparison raises InvalidOperation.",
+    "Another unreachable duplicate body was inserted after the function heading.",
+    "Final native narrative correctly statesFAILED_ACCEPTANCE.",
+    "OpenCode began automatic compaction after that narrative; root agent interrupted this optional continuation before a fresh native-session recovery."
+  ],
+  "scope": "Only authorized candidate and acceptance report changed; no out-of-scope changes in collector inventory.",
+  "next_action": "Fresh native session, compaction disabled after actual config diagnostic, explicit Decimal.is_finite guidance and complete-function replacement instruction; no source patch supplied.",
+  "interrupted_compaction_usage": "UNKNOWN_UNLESS_COMPLETED_NATIVE_USAGE_EXPOSED",
+  "files": {
+    "routing.py": "0d6a4e79a68350c6a7a80bbca1ab0ce93b532f3e803eb1541cef8a7cbbff138b",
+    "acceptance-result.json": "06da30824bea415297dfdcf77527c3ff34787e0a267fa122b7438e25a07c9ff7",
+    "candidate.diff": "70a9bfa0bc5fbf56067dd09b3c352b6498ac7a843699a5eef33b08236ca44712",
+    "INTERRUPTION.json": "c30af1cb2a38d74b784d850f1015c8dfdd811fc9d4dec72c6d95552c099a4915",
+    "RECEIPT.json": "8552d97004da2e66c011317b6c974a1e7da81e9d409816db0a427b5a30ec49a0",
+    "stdout.txt": "a6098c30f5d94a471b43ce0f7c0026e6205dc3e763e1ba7d5593a151ff66e61a",
+    "stderr.txt": "597f93d623c80d716f29fee4c66298ce22ac35a99390eaedc4884ee75a5e81f0"
+  }
+}

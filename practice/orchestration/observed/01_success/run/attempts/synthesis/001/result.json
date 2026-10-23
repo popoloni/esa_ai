@@ -1,0 +1,62 @@
+{
+  "task_id": "synthesis",
+  "status": "COMPLETED",
+  "worker_kind": "DETERMINISTIC_PYTHON",
+  "attempt": 1,
+  "acceptance_authority": false,
+  "release_authority": false,
+  "dependency_results": {
+    "policy": {
+      "task_id": "policy",
+      "status": "COMPLETED",
+      "worker_kind": "DETERMINISTIC_PYTHON",
+      "attempt": 1,
+      "acceptance_authority": false,
+      "release_authority": false,
+      "source_sha256": "209ee2f218448d83178bd02fd5947cf68b021657a72b38e682e4a895fa102947",
+      "findings": {
+        "intent_mentions_5000": true,
+        "original_architecture_decision": "PENDING_HUMAN",
+        "original_implementation": "BLOCKED"
+      }
+    },
+    "routing": {
+      "task_id": "routing",
+      "status": "COMPLETED",
+      "worker_kind": "DETERMINISTIC_PYTHON",
+      "attempt": 1,
+      "acceptance_authority": false,
+      "release_authority": false,
+      "source_sha256": "14d186a327a418dddb405144bfefb5810ed27e626b981424c9ad3b66742e8b32",
+      "policy_version": "BR-001/v1",
+      "observations": [
+        {
+          "amount": "4999.99",
+          "route": "STANDARD_QUEUE",
+          "reason": "BELOW_LIMIT"
+        },
+        {
+          "amount": "5000.00",
+          "route": "HUMAN_REVIEW",
+          "reason": "AT_OR_ABOVE_LIMIT"
+        },
+        {
+          "amount": "5000.01",
+          "route": "HUMAN_REVIEW",
+          "reason": "AT_OR_ABOVE_LIMIT"
+        },
+        {
+          "amount": "0",
+          "route": "REJECTED",
+          "reason": "INVALID_AMOUNT"
+        },
+        {
+          "amount": "NaN",
+          "route": "REJECTED",
+          "reason": "INVALID_AMOUNT"
+        }
+      ]
+    }
+  },
+  "conclusion": "Observations are ready for a human review. No architecture, payment or release decision is supplied."
+}

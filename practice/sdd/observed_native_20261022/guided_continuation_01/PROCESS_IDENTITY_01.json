@@ -1,0 +1,15 @@
+{
+  "schema": "esa-native-process-identity/v1",
+  "observed_at_utc": "2026-10-22T07:39:39.313734+00:00",
+  "recorded_at_utc": "2026-10-22T07:40:39.186236+00:00",
+  "source": "Read-only /proc executable, cwd, cmdline, status and start-time fields in the authorized runtime process view; no process mutation.",
+  "pid": 17826,
+  "ppid": 17822,
+  "start_ticks": "856770",
+  "exe": "/workspace/scratch/72d789d25fef/runtime_d7/opencode/node_modules/opencode-ai/bin/opencode.exe",
+  "cwd": "/workspace/scratch/72d789d25fef/runtime_d7/native_sdd_03",
+  "argv_matches_declared_native_client_argv": true,
+  "task_sha256": "6a727bfa9f7ba14615fb38cf8a9fb493bfc4e2d79370e6981303d06422686b33",
+  "session_id": "ses_e9d953008ffe5prRJYzw7HWDMP",
+  "qualification": "Earlier non-escalated /proc reads did not expose the runtime client. Their empty result was not treated as evidence that the active client had exited. Identity must be rechecked before any terminal cleanup."
+}

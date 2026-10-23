@@ -1,0 +1,28 @@
+              ███████╗██████╗ ███████╗ ██████╗██╗███████╗██╗   ██╗              
+              ██╔════╝██╔══██╗██╔════╝██╔════╝██║██╔════╝╚██╗ ██╔╝              
+              ███████╗██████╔╝█████╗  ██║     ██║█████╗   ╚████╔╝               
+              ╚════██║██╔═══╝ ██╔══╝  ██║     ██║██╔══╝    ╚██╔╝                
+              ███████║██║     ███████╗╚██████╗██║██║        ██║                 
+              ╚══════╝╚═╝     ╚══════╝ ╚═════╝╚═╝╚═╝        ╚═╝                 
+                                                                                
+               GitHub Spec Kit - Spec-Driven Development Toolkit                
+
+╭──────────────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│  Specify Project Setup                                                       │
+│                                                                              │
+│  Project         native_sdd_03                                               │
+│  Working Path    /workspace/scratch/72d789d25fef/runtime_d7                  │
+│  Target Path     /workspace/scratch/72d789d25fef/runtime_d7/native_sdd_03    │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+╭─────────────────────────── Agent Detection Error ────────────────────────────╮
+│                                                                              │
+│  opencode not found                                                          │
+│  Install from: https://opencode.ai                                           │
+│  opencode is required to continue with this project type.                    │
+│                                                                              │
+│  Tip: Use --ignore-agent-tools to skip this check                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯

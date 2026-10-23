@@ -1,0 +1,9 @@
+{
+  "schema": "esa-controlled-probe-environment-limit/v1",
+  "recorded_at_utc": "2026-10-22T08:04:59.995586+00:00",
+  "first_attempt_status": "CONTROLLER_ENVIRONMENT_ERROR_BEFORE_TEST_SIGNALS",
+  "cause": "Default sandbox Popen PID values and the mounted /proc view did not share the same namespace. Identity assertions failed before the intended cooperative/repeated-signal tests. This does not establish a launcher shutdown defect.",
+  "original_records": "PROBE.py, REPORT.json, PROBE_MANIFEST.json and both first case directories are retained unchanged. Their manifest is the inventory at that first collection time, before this annotation and the separate retry were added.",
+  "matching_leftover_inert_children_terminated": [],
+  "next_attempt": "retry_02 uses the authorized host process view and a fresh fake runtime. No real model/server/network."
+}

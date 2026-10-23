@@ -1,0 +1,325 @@
+{
+  "schema": "treasury-independent-review-checks/v1",
+  "created_at_utc": "2026-10-21T16:05:39.575038+00:00",
+  "request_sha256": "95d407afd9c2885856f87b113c5ba03d84277edcf44006e2d008700d67c243cc",
+  "dependency_response_sha256": "3f51ec070fe727286f2c9565a15de9517af6e001defdbe2a7e515ea518d32a3a",
+  "verified_generated_artifacts": [
+    {
+      "path": "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Competitive_Revision_20261021/companion/practice/sdd/observed_external_agent_20261021/run/attempts/generate/001/artifacts/spec.md",
+      "sha256": "3c3edb571b50791d15ade127baa266d4d82d6508d2b7e3b075f2b6db54908045",
+      "expected_sha256": "3c3edb571b50791d15ade127baa266d4d82d6508d2b7e3b075f2b6db54908045",
+      "verified_before_use": true,
+      "bytes": 16540
+    },
+    {
+      "path": "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Competitive_Revision_20261021/companion/practice/sdd/observed_external_agent_20261021/run/attempts/generate/001/artifacts/plan.md",
+      "sha256": "d19527a0d40e6068f9f23019de8e1a6228eb0ea2bbc209a776b211f579a32275",
+      "expected_sha256": "d19527a0d40e6068f9f23019de8e1a6228eb0ea2bbc209a776b211f579a32275",
+      "verified_before_use": true,
+      "bytes": 11308
+    },
+    {
+      "path": "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Competitive_Revision_20261021/companion/practice/sdd/observed_external_agent_20261021/run/attempts/generate/001/artifacts/tasks.md",
+      "sha256": "62ccfb17dbdc87855f67b5a48a5eeb5d6e51731dbd2a622cacc3e9048018e0c8",
+      "expected_sha256": "62ccfb17dbdc87855f67b5a48a5eeb5d6e51731dbd2a622cacc3e9048018e0c8",
+      "verified_before_use": true,
+      "bytes": 11928
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-EXPL-001",
+      "checks": {
+        "id_present": true,
+        "name_preserved": true,
+        "statement_verbatim": true,
+        "owner_preserved": true,
+        "source_ids_preserved": true
+      },
+      "pass": true
+    },
+    {
+      "id": "REQ-EXPL-002",
+      "checks": {
+        "id_present": true,
+        "name_preserved": true,
+        "statement_verbatim": true,
+        "owner_preserved": true,
+        "source_ids_preserved": true
+      },
+      "pass": true
+    },
+    {
+      "id": "REQ-EXPL-003",
+      "checks": {
+        "id_present": true,
+        "name_preserved": true,
+        "statement_verbatim": true,
+        "owner_preserved": true,
+        "source_ids_preserved": true
+      },
+      "pass": true
+    },
+    {
+      "id": "REQ-EXPL-004",
+      "checks": {
+        "id_present": true,
+        "name_preserved": true,
+        "statement_verbatim": true,
+        "owner_preserved": true,
+        "source_ids_preserved": true
+      },
+      "pass": true
+    },
+    {
+      "id": "REQ-EXPL-005",
+      "checks": {
+        "id_present": true,
+        "name_preserved": true,
+        "statement_verbatim": true,
+        "owner_preserved": true,
+        "source_ids_preserved": true
+      },
+      "pass": true
+    }
+  ],
+  "cases": [
+    {
+      "id": "SC-EXPL-001",
+      "expected": {
+        "id": "SC-EXPL-001",
+        "requirement_id": "REQ-EXPL-001",
+        "input_amount_eur": "4999.99",
+        "expected_route": "STANDARD_QUEUE",
+        "expected_reason": "BELOW_LIMIT",
+        "expected_policy_version": "BR-001/v1",
+        "payment_authorized": false
+      },
+      "actual_spec_row": {
+        "id": "SC-EXPL-001",
+        "requirement_id": "REQ-EXPL-001",
+        "input_amount_eur": "4999.99",
+        "expected_route": "STANDARD_QUEUE",
+        "expected_reason": "BELOW_LIMIT",
+        "expected_policy_version": "BR-001/v1",
+        "payment_authorized": false
+      },
+      "matrix_equal_to_oracle": true,
+      "fixed_spec_consistent_with_oracle": true,
+      "given_when_then_preserved": true,
+      "independent_decimal_reasoning_matches_oracle": true,
+      "pass": true
+    },
+    {
+      "id": "SC-EXPL-002",
+      "expected": {
+        "id": "SC-EXPL-002",
+        "requirement_id": "REQ-EXPL-001",
+        "input_amount_eur": "5000",
+        "expected_route": "HUMAN_REVIEW",
+        "expected_reason": "AT_OR_ABOVE_LIMIT",
+        "expected_policy_version": "BR-001/v1",
+        "payment_authorized": false
+      },
+      "actual_spec_row": {
+        "id": "SC-EXPL-002",
+        "requirement_id": "REQ-EXPL-001",
+        "input_amount_eur": "5000",
+        "expected_route": "HUMAN_REVIEW",
+        "expected_reason": "AT_OR_ABOVE_LIMIT",
+        "expected_policy_version": "BR-001/v1",
+        "payment_authorized": false
+      },
+      "matrix_equal_to_oracle": true,
+      "fixed_spec_consistent_with_oracle": true,
+      "given_when_then_preserved": true,
+      "independent_decimal_reasoning_matches_oracle": true,
+      "pass": true
+    },
+    {
+      "id": "SC-EXPL-003",
+      "expected": {
+        "id": "SC-EXPL-003",
+        "requirement_id": "REQ-EXPL-001",
+        "input_amount_eur": "5000.01",
+        "expected_route": "HUMAN_REVIEW",
+        "expected_reason": "AT_OR_ABOVE_LIMIT",
+        "expected_policy_version": "BR-001/v1",
+        "payment_authorized": false
+      },
+      "actual_spec_row": {
+        "id": "SC-EXPL-003",
+        "requirement_id": "REQ-EXPL-001",
+        "input_amount_eur": "5000.01",
+        "expected_route": "HUMAN_REVIEW",
+        "expected_reason": "AT_OR_ABOVE_LIMIT",
+        "expected_policy_version": "BR-001/v1",
+        "payment_authorized": false
+      },
+      "matrix_equal_to_oracle": true,
+      "fixed_spec_consistent_with_oracle": true,
+      "given_when_then_preserved": true,
+      "independent_decimal_reasoning_matches_oracle": true,
+      "pass": true
+    },
+    {
+      "id": "SC-EXPL-004",
+      "expected": {
+        "id": "SC-EXPL-004",
+        "requirement_id": "REQ-EXPL-003",
+        "input_amount_eur": "0",
+        "expected_route": "REJECTED",
+        "expected_reason": "INVALID_AMOUNT",
+        "expected_policy_version": "BR-001/v1",
+        "payment_authorized": false
+      },
+      "actual_spec_row": {
+        "id": "SC-EXPL-004",
+        "requirement_id": "REQ-EXPL-003",
+        "input_amount_eur": "0",
+        "expected_route": "REJECTED",
+        "expected_reason": "INVALID_AMOUNT",
+        "expected_policy_version": "BR-001/v1",
+        "payment_authorized": false
+      },
+      "matrix_equal_to_oracle": true,
+      "fixed_spec_consistent_with_oracle": true,
+      "given_when_then_preserved": true,
+      "independent_decimal_reasoning_matches_oracle": true,
+      "pass": true
+    },
+    {
+      "id": "SC-EXPL-005",
+      "expected": {
+        "id": "SC-EXPL-005",
+        "requirement_id": "REQ-EXPL-003",
+        "input_amount_eur": "-10",
+        "expected_route": "REJECTED",
+        "expected_reason": "INVALID_AMOUNT",
+        "expected_policy_version": "BR-001/v1",
+        "payment_authorized": false
+      },
+      "actual_spec_row": {
+        "id": "SC-EXPL-005",
+        "requirement_id": "REQ-EXPL-003",
+        "input_amount_eur": "-10",
+        "expected_route": "REJECTED",
+        "expected_reason": "INVALID_AMOUNT",
+        "expected_policy_version": "BR-001/v1",
+        "payment_authorized": false
+      },
+      "matrix_equal_to_oracle": true,
+      "fixed_spec_consistent_with_oracle": true,
+      "given_when_then_preserved": true,
+      "independent_decimal_reasoning_matches_oracle": true,
+      "pass": true
+    },
+    {
+      "id": "SC-EXPL-006",
+      "expected": {
+        "id": "SC-EXPL-006",
+        "requirement_id": "REQ-EXPL-003",
+        "input_amount_eur": "nonsense",
+        "expected_route": "REJECTED",
+        "expected_reason": "INVALID_AMOUNT",
+        "expected_policy_version": "BR-001/v1",
+        "payment_authorized": false
+      },
+      "actual_spec_row": {
+        "id": "SC-EXPL-006",
+        "requirement_id": "REQ-EXPL-003",
+        "input_amount_eur": "nonsense",
+        "expected_route": "REJECTED",
+        "expected_reason": "INVALID_AMOUNT",
+        "expected_policy_version": "BR-001/v1",
+        "payment_authorized": false
+      },
+      "matrix_equal_to_oracle": true,
+      "fixed_spec_consistent_with_oracle": true,
+      "given_when_then_preserved": true,
+      "independent_decimal_reasoning_matches_oracle": true,
+      "pass": true
+    },
+    {
+      "id": "SC-EXPL-007",
+      "expected": {
+        "id": "SC-EXPL-007",
+        "requirement_id": "REQ-EXPL-003",
+        "input_amount_eur": "NaN",
+        "expected_route": "REJECTED",
+        "expected_reason": "INVALID_AMOUNT",
+        "expected_policy_version": "BR-001/v1",
+        "payment_authorized": false
+      },
+      "actual_spec_row": {
+        "id": "SC-EXPL-007",
+        "requirement_id": "REQ-EXPL-003",
+        "input_amount_eur": "NaN",
+        "expected_route": "REJECTED",
+        "expected_reason": "INVALID_AMOUNT",
+        "expected_policy_version": "BR-001/v1",
+        "payment_authorized": false
+      },
+      "matrix_equal_to_oracle": true,
+      "fixed_spec_consistent_with_oracle": true,
+      "given_when_then_preserved": true,
+      "independent_decimal_reasoning_matches_oracle": true,
+      "pass": true
+    },
+    {
+      "id": "SC-EXPL-008",
+      "expected": {
+        "id": "SC-EXPL-008",
+        "requirement_id": "REQ-EXPL-004",
+        "input_amount_eur": "1",
+        "expected_route": "STANDARD_QUEUE",
+        "expected_reason": "BELOW_LIMIT",
+        "expected_policy_version": "BR-001/v1",
+        "payment_authorized": false
+      },
+      "actual_spec_row": {
+        "id": "SC-EXPL-008",
+        "requirement_id": "REQ-EXPL-004",
+        "input_amount_eur": "1",
+        "expected_route": "STANDARD_QUEUE",
+        "expected_reason": "BELOW_LIMIT",
+        "expected_policy_version": "BR-001/v1",
+        "payment_authorized": false
+      },
+      "matrix_equal_to_oracle": true,
+      "fixed_spec_consistent_with_oracle": true,
+      "given_when_then_preserved": true,
+      "independent_decimal_reasoning_matches_oracle": true,
+      "pass": true
+    }
+  ],
+  "requirement_count": 5,
+  "case_count": 8,
+  "pending_task_ids": [
+    "T001",
+    "T002",
+    "T003",
+    "T004",
+    "T005",
+    "T006",
+    "T007",
+    "T008",
+    "T009",
+    "T010",
+    "T011",
+    "T012",
+    "T013",
+    "T014",
+    "T015",
+    "T016",
+    "T017",
+    "T018",
+    "T019",
+    "T020",
+    "T021",
+    "T022"
+  ],
+  "application_code_executed": false,
+  "review_scope": "Document equality checks and independent Decimal case reasoning; no implementation or UI test, no field study.",
+  "all_content_comparisons_pass": true
+}

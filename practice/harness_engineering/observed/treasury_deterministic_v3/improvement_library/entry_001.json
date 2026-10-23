@@ -1,0 +1,33 @@
+{
+  "adopted_harness_sha256": "fb5d1e03988ab9ab77c4a05ff5aa666bfc0da25f74f1ceb5e751aaf4807686ec",
+  "entry_id": "treasury-output-contract-001",
+  "evidence": [
+    "COMPOSITION_DECISION.json",
+    "IMPROVER_INPUT.json",
+    "probes/composed/development"
+  ],
+  "lessons": [
+    "Call the domain router for each amount instead of duplicating its arithmetic.",
+    "Emit every field required by the current public task contract."
+  ],
+  "required_fields": [
+    "route",
+    "reason",
+    "policy_version",
+    "payment_authorized"
+  ],
+  "reusable_components": {
+    "development_memory": {},
+    "response_fields": [
+      "route",
+      "reason",
+      "policy_version",
+      "payment_authorized"
+    ],
+    "routing_strategy": "router_tool"
+  },
+  "schema": "harness-improvement-library-entry/v1",
+  "scope": "A deterministic behavior-guided teaching lesson for the same router and contract; no correctness or transfer guarantee",
+  "selection_used_acceptance_scores": false,
+  "source_router_sha256": "14d186a327a418dddb405144bfefb5810ed27e626b981424c9ad3b66742e8b32"
+}

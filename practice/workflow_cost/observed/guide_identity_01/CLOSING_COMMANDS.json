@@ -1,0 +1,190 @@
+[
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "companion/practice/workflow_cost/workflow_cost.py",
+      "accept",
+      "revision_d7/evidence/guide_identity_workflow/ACCOUNT.json",
+      "--id",
+      "agent-technical-decision-01",
+      "--kind",
+      "AGENT",
+      "--item",
+      "d7-reader-guide-identity-repair",
+      "--decision",
+      "ACCEPTED",
+      "--reviewer",
+      "/root/acceptance_audit",
+      "--candidate",
+      "revision_d7/evidence/guide_identity_workflow/CANDIDATE.json",
+      "--evidence",
+      "revision_d7/evidence/guide_identity_workflow/REVIEW_DECISION.json"
+    ],
+    "started_at_utc": "2026-10-22T06:15:50.508425+00:00",
+    "ended_at_utc": "2026-10-22T06:15:50.552635+00:00",
+    "exit_code": 0,
+    "stdout": "{\"status\": \"RECORDED\", \"command\": \"accept\", \"account\": \"revision_d7/evidence/guide_identity_workflow/ACCOUNT.json\"}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "companion/practice/workflow_cost/workflow_cost.py",
+      "coverage",
+      "revision_d7/evidence/guide_identity_workflow/ACCOUNT.json",
+      "--category",
+      "human_review",
+      "--state",
+      "NOT_PERFORMED",
+      "--reason",
+      "No human review occurred or was required for the declared technical maintenance task; no human acceptance is claimed.",
+      "--evidence",
+      "revision_d7/evidence/guide_identity_workflow/RECORDING.json"
+    ],
+    "started_at_utc": "2026-10-22T06:15:50.552651+00:00",
+    "ended_at_utc": "2026-10-22T06:15:50.591878+00:00",
+    "exit_code": 0,
+    "stdout": "{\"status\": \"RECORDED\", \"command\": \"coverage\", \"account\": \"revision_d7/evidence/guide_identity_workflow/ACCOUNT.json\"}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "companion/practice/workflow_cost/workflow_cost.py",
+      "coverage",
+      "revision_d7/evidence/guide_identity_workflow/ACCOUNT.json",
+      "--category",
+      "rework",
+      "--state",
+      "NOT_PERFORMED",
+      "--reason",
+      "The nominated repair passed focused and independent review without candidate rework; earlier failed diagnostics are preserved.",
+      "--evidence",
+      "revision_d7/evidence/guide_identity_workflow/REVIEW.json"
+    ],
+    "started_at_utc": "2026-10-22T06:15:50.591899+00:00",
+    "ended_at_utc": "2026-10-22T06:15:50.636993+00:00",
+    "exit_code": 0,
+    "stdout": "{\"status\": \"RECORDED\", \"command\": \"coverage\", \"account\": \"revision_d7/evidence/guide_identity_workflow/ACCOUNT.json\"}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "companion/practice/workflow_cost/workflow_cost.py",
+      "money-coverage",
+      "revision_d7/evidence/guide_identity_workflow/ACCOUNT.json",
+      "--category",
+      "model",
+      "--state",
+      "UNKNOWN",
+      "--reason",
+      "No complete attributable financial record exists for this component; unknown is not zero.",
+      "--evidence",
+      "revision_d7/evidence/guide_identity_workflow/RECORDING.json"
+    ],
+    "started_at_utc": "2026-10-22T06:15:50.637012+00:00",
+    "ended_at_utc": "2026-10-22T06:15:50.686270+00:00",
+    "exit_code": 0,
+    "stdout": "{\"status\": \"RECORDED\", \"command\": \"money-coverage\", \"account\": \"revision_d7/evidence/guide_identity_workflow/ACCOUNT.json\"}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "companion/practice/workflow_cost/workflow_cost.py",
+      "money-coverage",
+      "revision_d7/evidence/guide_identity_workflow/ACCOUNT.json",
+      "--category",
+      "human",
+      "--state",
+      "UNKNOWN",
+      "--reason",
+      "No complete attributable financial record exists for this component; unknown is not zero.",
+      "--evidence",
+      "revision_d7/evidence/guide_identity_workflow/RECORDING.json"
+    ],
+    "started_at_utc": "2026-10-22T06:15:50.686290+00:00",
+    "ended_at_utc": "2026-10-22T06:15:50.738759+00:00",
+    "exit_code": 0,
+    "stdout": "{\"status\": \"RECORDED\", \"command\": \"money-coverage\", \"account\": \"revision_d7/evidence/guide_identity_workflow/ACCOUNT.json\"}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "companion/practice/workflow_cost/workflow_cost.py",
+      "money-coverage",
+      "revision_d7/evidence/guide_identity_workflow/ACCOUNT.json",
+      "--category",
+      "infrastructure",
+      "--state",
+      "UNKNOWN",
+      "--reason",
+      "No complete attributable financial record exists for this component; unknown is not zero.",
+      "--evidence",
+      "revision_d7/evidence/guide_identity_workflow/RECORDING.json"
+    ],
+    "started_at_utc": "2026-10-22T06:15:50.738781+00:00",
+    "ended_at_utc": "2026-10-22T06:15:50.787581+00:00",
+    "exit_code": 0,
+    "stdout": "{\"status\": \"RECORDED\", \"command\": \"money-coverage\", \"account\": \"revision_d7/evidence/guide_identity_workflow/ACCOUNT.json\"}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "companion/practice/workflow_cost/workflow_cost.py",
+      "stop",
+      "revision_d7/evidence/guide_identity_workflow/ACCOUNT.json",
+      "--id",
+      "recording-01",
+      "--outcome",
+      "PASSED",
+      "--evidence",
+      "revision_d7/evidence/guide_identity_workflow/RECORDING.json"
+    ],
+    "started_at_utc": "2026-10-22T06:15:50.787602+00:00",
+    "ended_at_utc": "2026-10-22T06:15:50.826136+00:00",
+    "exit_code": 0,
+    "stdout": "{\"status\": \"RECORDED\", \"command\": \"stop\", \"account\": \"revision_d7/evidence/guide_identity_workflow/ACCOUNT.json\"}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "companion/practice/workflow_cost/workflow_cost.py",
+      "close",
+      "revision_d7/evidence/guide_identity_workflow/ACCOUNT.json"
+    ],
+    "started_at_utc": "2026-10-22T06:15:50.826152+00:00",
+    "ended_at_utc": "2026-10-22T06:15:50.866909+00:00",
+    "exit_code": 0,
+    "stdout": "{\"status\": \"RECORDED\", \"command\": \"close\", \"account\": \"revision_d7/evidence/guide_identity_workflow/ACCOUNT.json\"}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "companion/practice/workflow_cost/workflow_cost.py",
+      "report",
+      "revision_d7/evidence/guide_identity_workflow/ACCOUNT.json",
+      "--output",
+      "revision_d7/evidence/guide_identity_workflow/REPORT.json"
+    ],
+    "started_at_utc": "2026-10-22T06:15:50.866923+00:00",
+    "ended_at_utc": "2026-10-22T06:15:50.906893+00:00",
+    "exit_code": 0,
+    "stdout": "{\n  \"schema\": \"esa-workflow-cost-report/v1\",\n  \"run_id\": \"D7-GUIDE-IDENTITY-001\",\n  \"evidence_mode\": \"OBSERVED\",\n  \"claim_scope\": \"DESCRIPTIVE_SINGLE_WORKFLOW_NO_CAUSAL_OR_ROI_CLAIM\",\n  \"identity\": {\n    \"interface\": \"ChatGPT agent and local Python tools\",\n    \"client_version\": \"UNKNOWN_NOT_EXPOSED\",\n    \"model\": \"UNKNOWN_NOT_EXPOSED\",\n    \"model_version\": \"UNKNOWN_NOT_EXPOSED\"\n  },\n  \"status\": \"VALID_ACCOUNT_WITH_EXPLICIT_LIMITS\",\n  \"boundary\": {\n    \"description\": \"Supplied defect report through exact candidate review and recording\",\n    \"start_utc\": \"2026-10-22T06:06:56.721563+00:00\",\n    \"finish_utc\": \"2026-10-22T06:15:50.860351+00:00\",\n    \"exclusions\": [\n      \"Earlier discovery/CP11 editing/archive recovery and later full-release packaging are separate work; no human review or acceptance is claimed\"\n    ]\n  },\n  \"workflow_elapsed_seconds\": 534.138788,\n  \"completed_span_count\": 5,\n  \"open_span_count\": 0,\n  \"failed_span_ids\": [],\n  \"abandoned_span_ids\": [],\n  \"sum_of_interval_seconds_not_elapsed\": 533.793844,\n  \"observed_interval_union_seconds\": 533.793844,\n  \"overlap_seconds_removed_from_elapsed_coverage\": 0.0,\n  \"per_actor_interval_union_seconds_not_active_effort\": {\n    \"root-maintenance-agent\": 164.126042,\n    \"root-focused-checker\": 15.721797,\n    \"independent-acceptance-audit-agent\": 353.946005\n  },\n  \"declared_active_human_seconds_by_person\": {},\n  \"declared_active_human_seconds_total\": null,\n  \"acceptance\": {\n    \"AUTOMATED\": {\n      \"accepted_distinct_items\": null,\n      \"latest_items\": {}\n    },\n    \"AGENT\": {\n      \"accepted_distinct_items\": 1,\n      \"latest_items\": {\n        \"d7-reader-guide-identity-repair\": {\n          \"decision\": \"ACCEPTED\",\n          \"candidate_sha256\": \"47f6ede441590b209a4e70bd990b5892f6f1ed1e04e1ee28e18c29bf0c814bfa\",\n          \"evidence\": {\n            \"path\": \"REVIEW_DECISION.json\",\n            \"sha256\": \"9c973613e229163602ceb795862b9e0d59b993f529104da1214d67ee7c9e1f25\"\n          }\n        }\n      }\n    },\n    \"HUMAN\": {\n      \"accepted_distinct_items\": null,\n      \"latest_items\": {}\n    }\n  },\n  \"observed_money_subtotals_by_currency\": {},\n  \"observed_usage_records\": [],\n  \"money_coverage_complete_by_declaration\": false,\n  \"activity_coverage_complete_by_declaration\": true,\n  \"complete_workflow_money\": null,\n  \"currency\": null,\n  \"cost_per_human_accepted_item\": null,\n  \"assumptions_excluded_from_observed_totals\": [],\n  \"roi\": null,\n  \"roi_reason\": \"A descriptive account does not establish attributable business benefit or a counterfactual\",\n  \"warnings\": [\n    \"Incomplete monetary component: model\",\n    \"Incomplete monetary component: human\",\n    \"Incomplete monetary component: infrastructure\",\n    \"Human acceptance is unobserved; an automated or agent decision cannot supply its denominator\"\n  ],\n  \"verification_boundary\": \"Evidence file bytes and accounting consistency are checked. Human identity, true completeness, active model time and provider billing are not independently authenticated.\"\n}\n",
+    "stderr": ""
+  }
+]

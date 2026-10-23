@@ -1,0 +1,76 @@
+{
+  "schema": "esa-workflow-cost-report/v1",
+  "run_id": "D7-GUIDE-IDENTITY-001",
+  "evidence_mode": "OBSERVED",
+  "claim_scope": "DESCRIPTIVE_SINGLE_WORKFLOW_NO_CAUSAL_OR_ROI_CLAIM",
+  "identity": {
+    "interface": "ChatGPT agent and local Python tools",
+    "client_version": "UNKNOWN_NOT_EXPOSED",
+    "model": "UNKNOWN_NOT_EXPOSED",
+    "model_version": "UNKNOWN_NOT_EXPOSED"
+  },
+  "status": "VALID_ACCOUNT_WITH_EXPLICIT_LIMITS",
+  "boundary": {
+    "description": "Supplied defect report through exact candidate review and recording",
+    "start_utc": "2026-10-22T06:06:56.721563+00:00",
+    "finish_utc": "2026-10-22T06:15:50.860351+00:00",
+    "exclusions": [
+      "Earlier discovery/CP11 editing/archive recovery and later full-release packaging are separate work; no human review or acceptance is claimed"
+    ]
+  },
+  "workflow_elapsed_seconds": 534.138788,
+  "completed_span_count": 5,
+  "open_span_count": 0,
+  "failed_span_ids": [],
+  "abandoned_span_ids": [],
+  "sum_of_interval_seconds_not_elapsed": 533.793844,
+  "observed_interval_union_seconds": 533.793844,
+  "overlap_seconds_removed_from_elapsed_coverage": 0.0,
+  "per_actor_interval_union_seconds_not_active_effort": {
+    "root-maintenance-agent": 164.126042,
+    "root-focused-checker": 15.721797,
+    "independent-acceptance-audit-agent": 353.946005
+  },
+  "declared_active_human_seconds_by_person": {},
+  "declared_active_human_seconds_total": null,
+  "acceptance": {
+    "AUTOMATED": {
+      "accepted_distinct_items": null,
+      "latest_items": {}
+    },
+    "AGENT": {
+      "accepted_distinct_items": 1,
+      "latest_items": {
+        "d7-reader-guide-identity-repair": {
+          "decision": "ACCEPTED",
+          "candidate_sha256": "47f6ede441590b209a4e70bd990b5892f6f1ed1e04e1ee28e18c29bf0c814bfa",
+          "evidence": {
+            "path": "REVIEW_DECISION.json",
+            "sha256": "9c973613e229163602ceb795862b9e0d59b993f529104da1214d67ee7c9e1f25"
+          }
+        }
+      }
+    },
+    "HUMAN": {
+      "accepted_distinct_items": null,
+      "latest_items": {}
+    }
+  },
+  "observed_money_subtotals_by_currency": {},
+  "observed_usage_records": [],
+  "money_coverage_complete_by_declaration": false,
+  "activity_coverage_complete_by_declaration": true,
+  "complete_workflow_money": null,
+  "currency": null,
+  "cost_per_human_accepted_item": null,
+  "assumptions_excluded_from_observed_totals": [],
+  "roi": null,
+  "roi_reason": "A descriptive account does not establish attributable business benefit or a counterfactual",
+  "warnings": [
+    "Incomplete monetary component: model",
+    "Incomplete monetary component: human",
+    "Incomplete monetary component: infrastructure",
+    "Human acceptance is unobserved; an automated or agent decision cannot supply its denominator"
+  ],
+  "verification_boundary": "Evidence file bytes and accounting consistency are checked. Human identity, true completeness, active model time and provider billing are not independently authenticated."
+}

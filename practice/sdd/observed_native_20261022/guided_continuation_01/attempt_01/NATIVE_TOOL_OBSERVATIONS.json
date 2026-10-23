@@ -1,0 +1,22 @@
+{
+  "source": "stdout.txt",
+  "tools": [
+    {
+      "timestamp_ms": 1792654531399,
+      "session_id": "ses_e9d953008ffe5prRJYzw7HWDMP",
+      "call_id": "gtZjJu17PxRlHruulByRJaRXPn6278Lg",
+      "tool": "bash",
+      "status": "completed",
+      "input": {
+        "command": "cat inputs/NATIVE_CONTEXT_BUNDLE.md",
+        "workdir": "/workspace/scratch/72d789d25fef/runtime_d7/native_sdd_03"
+      },
+      "output_bytes": 25044,
+      "output_sha256": "51da598ef2a1d7116869cca05fe637b0120039cf8389f057ab0e6e81b301ae44",
+      "exit": 0,
+      "truncated": false,
+      "matches_complete_preflight_packet": true
+    }
+  ],
+  "scope": "Completed or error events actually emitted by this continuation; prior-session steps are excluded."
+}

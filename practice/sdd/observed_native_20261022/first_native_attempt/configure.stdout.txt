@@ -1,0 +1,22 @@
+{
+  "status": "PREPARED_DIAGNOSTICS_PASS_NO_INFERENCE",
+  "checks": {
+    "version_is_1_19_3": true,
+    "native_specify_discovered": true,
+    "native_clarify_discovered": true,
+    "full_upstream_commands_preserved": true,
+    "no_injected_command_override": true,
+    "only_local_provider_enabled": true,
+    "provider_timeout_600000": true,
+    "local_small_model": true,
+    "bash_enabled": true,
+    "read_enabled": true,
+    "edit_enabled": true,
+    "write_enabled": true,
+    "steps_12": true,
+    "all_prepared_files_unchanged": true,
+    "no_feature_artifacts_created": true
+  },
+  "diagnostic_project_added_files": [],
+  "notes": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/sdd_native_02/compact_input_preparation/CONFIGURATION_NOTES.json"
+}

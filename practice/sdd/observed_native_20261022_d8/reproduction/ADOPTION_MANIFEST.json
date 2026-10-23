@@ -1,0 +1,28 @@
+{
+  "at_utc": "2026-10-22T10:53:17.538279+00:00",
+  "status": "FROZEN_SOURCE_ONLY_PORTABLE_ADOPTION",
+  "files": {
+    "revision_d8/evidence/portable_helper_adoption/CONFIGURE_SDD_D8_DIFF.patch": {
+      "sha256": "c82193e1a32d0e02df50dbc77ce6fdd2e39c882cb876e0f19cf2a02a739bc939",
+      "bytes": 6301
+    },
+    "revision_d8/evidence/portable_helper_adoption/FUTURE_NATIVE_ROUTE_RECIPE.md": {
+      "sha256": "4f7d7fcb838f2a984a5d9f790301f5e0d102715405d69776fcb16ab597b9c39c",
+      "bytes": 7820
+    },
+    "revision_d8/evidence/portable_helper_adoption/ORIGIN_AND_REVIEW.json": {
+      "sha256": "abc55eea7b2f0ea6c8f0821f6ec43e93393290f8b11b9f861902f64cccb7d56b",
+      "bytes": 3057
+    },
+    "companion/practice/native_client/configure_sdd_d8.py": {
+      "sha256": "2bb9ce79248c0ece53ce474f5120a044d8a2f6c5d2db1930cdd3333872ec7a41",
+      "bytes": 34282
+    },
+    "companion/practice/native_client/run_local_model_d8.py": {
+      "sha256": "c9bc0eb8e64725c7b1ba92687cdfcf4ffd87c5648c0c3abb2e08d4854c3c5b4f",
+      "bytes": 9359
+    }
+  },
+  "file_count": 5,
+  "scope": "New portable helper copies, exact origin/diff and future recipe. No active task/project/config/state changed; no model or diagnostic invocation by these copies; outcome integration deferred."
+}

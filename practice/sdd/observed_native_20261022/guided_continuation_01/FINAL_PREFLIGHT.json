@@ -1,0 +1,40 @@
+{
+  "schema": "esa-final-continuation-preflight/v1",
+  "started_at_utc": "2026-10-22T07:22:53.055876+00:00",
+  "finished_at_utc": "2026-10-22T07:22:53.065642+00:00",
+  "no_inference": true,
+  "actual_tokenizer_continuation_prompt_tokens": 120,
+  "token_budget": {
+    "retained_complete_original_command": 4452,
+    "appended_guidance": 120,
+    "complete_input_packet_when_read": 6698,
+    "system_tools_envelopes_reserve": 4096,
+    "aggregate_assistant_history_and_output_reserve_including_prior_61_output_tokens": 8192,
+    "other_tool_results_reserve": 512
+  },
+  "total_planned_tokens": 24070,
+  "unallocated_margin_tokens": 506,
+  "checks": {
+    "health_ok": true,
+    "actual_context_24576": true,
+    "actual_one_slot": true,
+    "all_corrected_native_preparation_checks_pass": true,
+    "budget_fits": true,
+    "cold_server_no_claimed_cache_reuse": true
+  },
+  "status": "PASS_FINAL_BOUNDED_CONTINUATION_PREFLIGHT",
+  "resource_record": {
+    "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/native_reconstruction/llama_server_03/HEALTH_AND_RESOURCES.json",
+    "sha256": "ea04bacfe1080e63ae219ad90a512b75eb10222f809400a0b37ba093b63d7a1c"
+  },
+  "actual_health": {
+    "status": 200,
+    "body": {
+      "status": "ok"
+    }
+  },
+  "qualification": "The complete original framework command remains in the same native session. The 8,192-token reserve includes its prior 61-token response. These are planning reserves, not a claimed exact future full HTTP request. No output is truncated or replaced to pass this budget.",
+  "prospective_bound_seconds": 1800,
+  "provider_overall_and_header_ms": 1500000,
+  "performance_limit": "A cold first request and the later full-packet request may still exceed the bound. The prior 702.330-second one-response observation is disclosed. This is a final bounded chance to execute tools, not a completion guarantee; no later model attempt."
+}

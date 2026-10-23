@@ -1,0 +1,45 @@
+timestamp=2026-10-22T06:20:46.825Z level=INFO run=661b6426 message="creating instance" directory=/workspace/scratch/72d789d25fef/runtime_d7/native_sdd_02
+timestamp=2026-10-22T06:20:46.848Z level=INFO run=661b6426 message=fromDirectory directory=/workspace/scratch/72d789d25fef/runtime_d7/native_sdd_02
+timestamp=2026-10-22T06:20:46.883Z level=INFO run=661b6426 message=bootstrapping directory=/workspace/scratch/72d789d25fef/runtime_d7/native_sdd_02
+timestamp=2026-10-22T06:20:46.898Z level=INFO run=661b6426 message=loading path=/workspace/scratch/72d789d25fef/runtime_d7/sdd_client_state_compact_01/config/opencode/config.json
+timestamp=2026-10-22T06:20:46.900Z level=INFO run=661b6426 message=loading path=/workspace/scratch/72d789d25fef/runtime_d7/sdd_client_state_compact_01/config/opencode/opencode.json
+timestamp=2026-10-22T06:20:46.900Z level=INFO run=661b6426 message=loading path=/workspace/scratch/72d789d25fef/runtime_d7/sdd_client_state_compact_01/config/opencode/opencode.jsonc
+timestamp=2026-10-22T06:20:46.902Z level=INFO run=661b6426 message=loading path=/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/sdd_native_02/compact_input_preparation/OPENCODE_CONFIG_01.json
+timestamp=2026-10-22T06:20:46.916Z level=DEBUG run=661b6426 message="loaded custom config" path=/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/sdd_native_02/compact_input_preparation/OPENCODE_CONFIG_01.json
+timestamp=2026-10-22T06:20:46.934Z level=DEBUG run=661b6426 message="loading config from OPENCODE_CONFIG_DIR" path=/workspace/scratch/72d789d25fef/runtime_d7/sdd_client_state_compact_01/empty-config
+timestamp=2026-10-22T06:20:46.956Z level=DEBUG run=661b6426 message="loading config from /workspace/scratch/72d789d25fef/runtime_d7/native_sdd_02/.opencode/opencode.json"
+timestamp=2026-10-22T06:20:46.956Z level=INFO run=661b6426 message=loading path=/workspace/scratch/72d789d25fef/runtime_d7/native_sdd_02/.opencode/opencode.json
+timestamp=2026-10-22T06:20:46.957Z level=DEBUG run=661b6426 message="loading config from /workspace/scratch/72d789d25fef/runtime_d7/native_sdd_02/.opencode/opencode.jsonc"
+timestamp=2026-10-22T06:20:46.957Z level=INFO run=661b6426 message=loading path=/workspace/scratch/72d789d25fef/runtime_d7/native_sdd_02/.opencode/opencode.jsonc
+timestamp=2026-10-22T06:20:47.185Z level=DEBUG run=661b6426 message="loading config from /workspace/scratch/72d789d25fef/runtime_d7/sdd_client_state_compact_01/empty-config/opencode.json"
+timestamp=2026-10-22T06:20:47.185Z level=INFO run=661b6426 message=loading path=/workspace/scratch/72d789d25fef/runtime_d7/sdd_client_state_compact_01/empty-config/opencode.json
+timestamp=2026-10-22T06:20:47.188Z level=DEBUG run=661b6426 message="loading config from /workspace/scratch/72d789d25fef/runtime_d7/sdd_client_state_compact_01/empty-config/opencode.jsonc"
+timestamp=2026-10-22T06:20:47.188Z level=INFO run=661b6426 message=loading path=/workspace/scratch/72d789d25fef/runtime_d7/sdd_client_state_compact_01/empty-config/opencode.jsonc
+timestamp=2026-10-22T06:20:47.290Z level=INFO run=661b6426 message="all LSPs are disabled"
+timestamp=2026-10-22T06:20:47.291Z level=INFO run=661b6426 message="all formatters are disabled"
+timestamp=2026-10-22T06:20:47.291Z level=INFO run=661b6426 message=init
+timestamp=2026-10-22T06:20:47.481Z level=INFO run=661b6426 message=created id=ses_e9dbb1007ffeHRexxQi4HCqple slug=hidden-circuit version=1.19.3 projectID=global directory=/workspace/scratch/72d789d25fef/runtime_d7/native_sdd_02 path=workspace/scratch/72d789d25fef/runtime_d7/native_sdd_02 workspaceID=undefined parentID=undefined title="New session - 2026-10-22T06:20:47.481Z" agent=undefined model=undefined metadata=undefined permission="[{\"permission\":\"question\",\"pattern\":\"*\",\"action\":\"deny\"},{\"permission\":\"plan_enter\",\"pattern\":\"*\",\"action\":\"deny\"},{\"permission\":\"plan_exit\",\"pattern\":\"*\",\"action\":\"deny\"}]" cost=0 tokens.input=0 tokens.output=0 tokens.reasoning=0 tokens.cache.read=0 tokens.cache.write=0 time.created=1792650047481 time.updated=1792650047481
+timestamp=2026-10-22T06:20:47.564Z level=INFO run=661b6426 message="event connected"
+timestamp=2026-10-22T06:20:47.574Z level=INFO run=661b6426 message=command session.id=ses_e9dbb1007ffeHRexxQi4HCqple command=speckit.specify agent=esa-sdd
+timestamp=2026-10-22T06:20:47.576Z level=INFO run=661b6426 message=init count=1
+timestamp=2026-10-22T06:20:48.325Z level=INFO run=661b6426 message=loop session.id=ses_e9dbb1007ffeHRexxQi4HCqple step=0
+timestamp=2026-10-22T06:20:48.341Z level=INFO run=661b6426 message="shell tool using shell" shell=/usr/bin/bash
+timestamp=2026-10-22T06:20:48.385Z level=INFO run=661b6426 message=stream providerID=esa-local modelID=esa-qwen3-4b session.id=ses_e9dbb1007ffeHRexxQi4HCqple small=true agent=title mode=primary
+timestamp=2026-10-22T06:20:48.406Z level=INFO run=661b6426 message="llm runtime selected" llm.runtime=ai-sdk llm.provider=esa-local llm.model=esa-qwen3-4b
+timestamp=2026-10-22T06:20:48.888Z level=INFO run=661b6426 message="watcher backend" directory=/workspace/scratch/72d789d25fef/runtime_d7/native_sdd_02 platform=linux backend=inotify
+timestamp=2026-10-22T06:20:48.921Z level=INFO run=661b6426 message="project copy refresh started" projectID=global
+timestamp=2026-10-22T06:20:48.923Z level=INFO run=661b6426 message="project copy refresh done" projectID=global updated=[] removed=[]
+timestamp=2026-10-22T06:20:49.081Z level=INFO run=661b6426 message="booting location services" directory=/workspace/scratch/72d789d25fef/runtime_d7/native_sdd_02 workspaceID=undefined
+timestamp=2026-10-22T06:20:49.772Z level=INFO run=661b6426 message=process session.id=ses_e9dbb1007ffeHRexxQi4HCqple messageID=msg_16244f349001oo5Mw2r8LIVRhp
+timestamp=2026-10-22T06:20:49.774Z level=INFO run=661b6426 message=stream providerID=esa-local modelID=esa-qwen3-4b session.id=ses_e9dbb1007ffeHRexxQi4HCqple small=false agent=esa-sdd mode=primary
+timestamp=2026-10-22T06:20:49.792Z level=INFO run=661b6426 message="llm runtime selected" llm.runtime=ai-sdk llm.provider=esa-local llm.model=esa-qwen3-4b
+timestamp=2026-10-22T06:21:57.577Z level=WARN run=661b6426 message="background dependency install failed" dir=/workspace/scratch/72d789d25fef/runtime_d7/native_sdd_02/.opencode error="Cause([Fail(NpmInstallFailedError (cause: FetchError: request to https://registry.npmjs.org/@opencode-ai%2fplugin failed, reason: ECONNREFUSED))])"
+timestamp=2026-10-22T06:21:57.633Z level=WARN run=661b6426 message="background dependency install failed" dir=/workspace/scratch/72d789d25fef/runtime_d7/sdd_client_state_compact_01/config/opencode error="Cause([Fail(NpmInstallFailedError (cause: FetchError: request to https://registry.npmjs.org/@opencode-ai%2fplugin failed, reason: Was there a typo in the url or port?))])"
+timestamp=2026-10-22T06:22:03.476Z level=WARN run=661b6426 message="background dependency install failed" dir=/workspace/scratch/72d789d25fef/runtime_d7/sdd_client_state_compact_01/empty-config error="Cause([Fail(NpmInstallFailedError (cause: FetchError: request to https://registry.npmjs.org/@opencode-ai%2fplugin failed, reason: ECONNREFUSED))])"
+timestamp=2026-10-22T06:25:49.861Z level=ERROR run=661b6426 message="stream error" providerID=esa-local modelID=esa-qwen3-4b session.id=ses_e9dbb1007ffeHRexxQi4HCqple small=false agent=esa-sdd mode=primary error.error="ProviderHeaderTimeoutError: Provider response headers timed out after 300000ms"
+timestamp=2026-10-22T06:25:52.150Z level=INFO run=661b6426 message=stream providerID=esa-local modelID=esa-qwen3-4b session.id=ses_e9dbb1007ffeHRexxQi4HCqple small=false agent=esa-sdd mode=primary
+timestamp=2026-10-22T06:25:52.157Z level=INFO run=661b6426 message="llm runtime selected" llm.runtime=ai-sdk llm.provider=esa-local llm.model=esa-qwen3-4b
+timestamp=2026-10-22T06:35:52.233Z level=ERROR run=661b6426 message=process session.id=ses_e9dbb1007ffeHRexxQi4HCqple messageID=msg_16244f349001oo5Mw2r8LIVRhp error="The operation timed out." stack=""
+timestamp=2026-10-22T06:35:52.293Z level=INFO run=661b6426 message="disposing instance" directory=/workspace/scratch/72d789d25fef/runtime_d7/native_sdd_02
+timestamp=2026-10-22T06:35:52.396Z level=INFO run=661b6426 message=loading path=/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/sdd_native_02/compact_input_preparation/OPENCODE_CONFIG_01.json
+timestamp=2026-10-22T06:35:52.417Z level=DEBUG run=661b6426 message="loaded custom config" path=/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/sdd_native_02/compact_input_preparation/OPENCODE_CONFIG_01.json

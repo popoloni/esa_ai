@@ -1,0 +1,13 @@
+{
+  "schema": "esa-observation-account-span/v1",
+  "started_at_utc": "2026-10-22T10:24:32.073441+00:00",
+  "initiator": "Assistant observation controller, not a human requirements owner",
+  "task": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/invocation/CLIENT_TASK_02.json",
+  "task_sha256": "ca901a675262709719aa9cc6ebc8febe488e15a51026fe6a92f1d71f67d7f9a6",
+  "completed_checkpoint": "CP25",
+  "measurement_scope": "Native command capture wall time only; excludes preparation, later independent review and integration.",
+  "human_effort_seconds": null,
+  "billable_cost": null,
+  "financial_cost_status": "NOT_RECORDED_NOT_INFERRED_ZERO",
+  "timeout_seconds": 5400
+}

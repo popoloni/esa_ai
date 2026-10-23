@@ -1,0 +1,57 @@
+{
+  "schema": "harness-implementation-validation/v1",
+  "observed_at_utc": "2026-10-20T16:21:49.820868+00:00",
+  "status": "PASS_LOCAL_DETERMINISTIC_SCOPE",
+  "test_count": 14,
+  "commands": [
+    {
+      "name": "experiment_v2",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "practice/harness_engineering/run_experiment.py",
+        "--output",
+        "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Orchestration_Harness_20261020/companion/practice/harness_engineering/observed/treasury_deterministic_v2"
+      ],
+      "cwd": "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Orchestration_Harness_20261020/companion",
+      "returncode": 0,
+      "stdout": "observed/experiment_v2.stdout.txt",
+      "stderr": "observed/experiment_v2.stderr.txt"
+    },
+    {
+      "name": "tests_v2",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "practice/harness_engineering/tests",
+        "-v"
+      ],
+      "cwd": "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Orchestration_Harness_20261020/companion",
+      "returncode": 0,
+      "stdout": "observed/tests_v2.stdout.txt",
+      "stderr": "observed/tests_v2.stderr.txt"
+    }
+  ],
+  "report": "companion/practice/harness_engineering/observed/treasury_deterministic_v2/REPORT.json",
+  "report_sha256": "a13622728df47487d7b1d158933b5abf296f1738ff834f2f009f34cc184d4d7a",
+  "model_calls": 0,
+  "process_executions": 63,
+  "source_files_unchanged": true,
+  "fixes": [
+    {
+      "id": "OH02-PROTECTED-OUTPUT",
+      "status": "FIXED",
+      "finding": "A new output directory inside repo or reader_side could create untracked files without changing pinned existing files.",
+      "resolution": "Reject protected core, fixture and test tree destinations before mkdir; test proves no tree mutation."
+    }
+  ],
+  "historical_report": "companion/practice/harness_engineering/observed/treasury_deterministic/REPORT.json",
+  "remaining_acceptance": [
+    "No live model-driven editor or responder observed in this adaptation.",
+    "No blind held-out or statistical generalization study.",
+    "No OS security sandbox demonstration.",
+    "Independent human reader trial remains separate."
+  ]
+}

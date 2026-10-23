@@ -1,0 +1,105 @@
+{
+  "status": "TEXT_TOKENIZATION_COMPLETE_CONTEXT_GATE_REQUIRES_ASSESSMENT",
+  "at_utc": "2026-10-22T10:17:02.708865+00:00",
+  "counts": {
+    "FULL_NATIVE_COMMAND": {
+      "tokens": 4642,
+      "utf8_bytes": 21122,
+      "sha256": "c25f92738b757ed0979878d04fa62554ddf4717ded7d4b9dac10f2fa027162d8"
+    },
+    "ACTUAL_ATTACHMENT_READ": {
+      "tokens": 8138,
+      "utf8_bytes": 26924,
+      "sha256": "7c5fd58661c8d05a44f6284cf0c9eb254b7add1be56d954707f274ec4e86671f"
+    },
+    "ACTUAL_ATTACHMENT_INTRO": {
+      "tokens": 44,
+      "utf8_bytes": 150,
+      "sha256": "dbb3c6268309ffb99ebf5c29129c700f2abd837b3f505784f3ecbb88f65e1967"
+    },
+    "COMPLETE_USER_CONTENT": {
+      "tokens": 12825,
+      "utf8_bytes": 48200,
+      "sha256": "f0f476a67aacfa3454f9c5cd1d712f619b9347109d021a9c60cae207f448ab00"
+    },
+    "MINIMUM_FORMATTED_INPUT": {
+      "tokens": 12837,
+      "utf8_bytes": 48269,
+      "sha256": "4277f3b4d06d0d353a2f019f03ff3480872716c9e453090bffd9b2d027ebb3b7"
+    }
+  },
+  "calls": [
+    {
+      "name": "FULL_NATIVE_COMMAND",
+      "endpoint": "/tokenize",
+      "started_at_utc": "2026-10-22T10:17:02.602251+00:00",
+      "finished_at_utc": "2026-10-22T10:17:02.621846+00:00",
+      "http_status": 200,
+      "request_sha256": "b84c08de19275aaf7e7b18dab7166898802f7497f4cd1535adeb841f432506d8",
+      "response_sha256": "0bc5137372ab8460a0654ebd267dc04f8029995cdf2698819c1f9517a84b2d7f",
+      "no_inference": true
+    },
+    {
+      "name": "ACTUAL_ATTACHMENT_READ",
+      "endpoint": "/tokenize",
+      "started_at_utc": "2026-10-22T10:17:02.622446+00:00",
+      "finished_at_utc": "2026-10-22T10:17:02.638162+00:00",
+      "http_status": 200,
+      "request_sha256": "4825747e9447ab8a9f5a1f7ba71e9ed57084d0ac08cb4530503106be52d86454",
+      "response_sha256": "9cf6104c5595c15d9da4d4267d0661665dcede4f8185b5fd8837a0dcd6d13bc0",
+      "no_inference": true
+    },
+    {
+      "name": "ACTUAL_ATTACHMENT_INTRO",
+      "endpoint": "/tokenize",
+      "started_at_utc": "2026-10-22T10:17:02.639315+00:00",
+      "finished_at_utc": "2026-10-22T10:17:02.640386+00:00",
+      "http_status": 200,
+      "request_sha256": "c25685feeb93290a98a44e2bfccd035bd782fb9926afdf1b101b31eb24a833e8",
+      "response_sha256": "843ddec8ac49e17eec9fb7c73802f0c6987a00cea9391b50dd91445bed6bbdf4",
+      "no_inference": true
+    },
+    {
+      "name": "COMPLETE_USER_CONTENT",
+      "endpoint": "/tokenize",
+      "started_at_utc": "2026-10-22T10:17:02.640667+00:00",
+      "finished_at_utc": "2026-10-22T10:17:02.663342+00:00",
+      "http_status": 200,
+      "request_sha256": "11ce2b67e542e47dd712f5d88a5ee9e14924e47da6154772620fefbf5e171078",
+      "response_sha256": "3a59843413ff41ca2817960b5155373b01ff449342e3672a63db63593d5dc3d7",
+      "no_inference": true
+    },
+    {
+      "name": "MINIMUM_USER_CHAT_TEMPLATE",
+      "endpoint": "/apply-template",
+      "started_at_utc": "2026-10-22T10:17:02.664424+00:00",
+      "finished_at_utc": "2026-10-22T10:17:02.666747+00:00",
+      "http_status": 200,
+      "request_sha256": "b59e9c9d8b52a8a64ee593032827d949f47c2d38de4ac28e5ed7948f8c86a1d2",
+      "response_sha256": "0a675d7f1bebd0fdfd8f16ea9699080c3c2d8ddffbe963fa13417c2fd8e9294e",
+      "no_inference": true
+    },
+    {
+      "name": "MINIMUM_FORMATTED_INPUT",
+      "endpoint": "/tokenize",
+      "started_at_utc": "2026-10-22T10:17:02.667574+00:00",
+      "finished_at_utc": "2026-10-22T10:17:02.707609+00:00",
+      "http_status": 200,
+      "request_sha256": "0f06e9e4b49acdea00501375a3cf088dbe6b6c2cf2d0883206bfaca420a0b8ba",
+      "response_sha256": "c9a3ec90910fe8c28607e25a85c0986ebcbc974dc9515b2c6e9735a25ae08fc5",
+      "no_inference": true
+    }
+  ],
+  "base_tokens": 12837,
+  "conservative_reserves": {
+    "unobserved_native_system_tools_message_overhead": 3072,
+    "cumulative_prior_output_tool_history": 4096,
+    "maximum_current_response_output": 3072
+  },
+  "total_with_reserves": 23077,
+  "declared_context": 22528,
+  "remaining_tokens": -549,
+  "passes_this_arithmetic": false,
+  "scope": "Actual server tokenization of complete unshortened command and actual native attachment content. The simple one-user-message apply-template is a minimum wrapper measurement, not a captured native full provider request. Native system prompts, all tool schemas and subsequent conversation are covered by explicitly declared conservative reserves rather than claimed observed bytes. No inference endpoint was called.",
+  "owner_gate": "Root must assess reserve sufficiency and actual client output cap before invocation. If budget fails, do not truncate source semantics or the installed command; revise runtime or stop."
+}

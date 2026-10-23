@@ -1,0 +1,76 @@
+{
+  "schema": "esa-workflow-cost-report/v1",
+  "run_id": "ESA-D5-READER-REHEARSAL-01",
+  "evidence_mode": "OBSERVED",
+  "claim_scope": "DESCRIPTIVE_SINGLE_WORKFLOW_NO_CAUSAL_OR_ROI_CLAIM",
+  "identity": {
+    "interface": "ChatGPT collaboration and local shell; exact model version unavailable",
+    "client_version": "UNKNOWN_NOT_EXPOSED",
+    "model": "UNKNOWN_NOT_EXPOSED",
+    "model_version": "UNKNOWN_NOT_EXPOSED"
+  },
+  "status": "VALID_ACCOUNT_WITH_EXPLICIT_LIMITS",
+  "boundary": {
+    "description": "Prospectively recorded preparation, AI attempt, root review and resulting bounded fixes",
+    "start_utc": "2026-10-21T18:08:27.244061+00:00",
+    "finish_utc": "2026-10-21T18:25:27.620954+00:00",
+    "exclusions": [
+      "Historical book/kit and recorder construction before this record; unallocated shared preparation, so no full cost-per-outcome claim"
+    ]
+  },
+  "workflow_elapsed_seconds": 1020.376893,
+  "completed_span_count": 6,
+  "open_span_count": 0,
+  "failed_span_ids": [],
+  "abandoned_span_ids": [],
+  "sum_of_interval_seconds_not_elapsed": 1045.143799,
+  "observed_interval_union_seconds": 1020.0773290000001,
+  "overlap_seconds_removed_from_elapsed_coverage": 25.066469999999867,
+  "per_actor_interval_union_seconds_not_active_effort": {
+    "root": 225.57762799999998,
+    "fresh_reader_agent": 819.165056,
+    "local-checker": 0.401115
+  },
+  "declared_active_human_seconds_by_person": {},
+  "declared_active_human_seconds_total": null,
+  "acceptance": {
+    "AUTOMATED": {
+      "accepted_distinct_items": null,
+      "latest_items": {}
+    },
+    "AGENT": {
+      "accepted_distinct_items": 1,
+      "latest_items": {
+        "reader-route-corrections-1": {
+          "decision": "ACCEPTED",
+          "candidate_sha256": "25da690207c340d0dc656bd1ce519f61e135a55f7372008bc37e36149d0c74ad",
+          "evidence": {
+            "path": "CORRECTION_VERIFICATION.json",
+            "sha256": "dd0dd99fd564d1ee2b8f248ae0a949b703c571ae15950e28797b225199b3380d"
+          }
+        }
+      }
+    },
+    "HUMAN": {
+      "accepted_distinct_items": null,
+      "latest_items": {}
+    }
+  },
+  "observed_money_subtotals_by_currency": {},
+  "observed_usage_records": [],
+  "money_coverage_complete_by_declaration": false,
+  "activity_coverage_complete_by_declaration": true,
+  "complete_workflow_money": null,
+  "currency": null,
+  "cost_per_human_accepted_item": null,
+  "assumptions_excluded_from_observed_totals": [],
+  "roi": null,
+  "roi_reason": "A descriptive account does not establish attributable business benefit or a counterfactual",
+  "warnings": [
+    "Incomplete monetary component: model",
+    "Incomplete monetary component: human",
+    "Incomplete monetary component: infrastructure",
+    "Human acceptance is unobserved; an automated or agent decision cannot supply its denominator"
+  ],
+  "verification_boundary": "Evidence file bytes and accounting consistency are checked. Human identity, true completeness, active model time and provider billing are not independently authenticated."
+}

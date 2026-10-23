@@ -1,0 +1,6 @@
+{
+  "at_utc": "2026-10-22T05:57:36.147572+00:00",
+  "source": "CLIENT_TASK.json",
+  "actual_spec": "CLIENT_TASK_BOUNDED.json",
+  "only_change": "Outer collector deadline reduced from 1800 to 600 seconds for a bounded continuation attempt. Client prompts and permissions unchanged."
+}

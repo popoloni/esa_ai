@@ -1,0 +1,136 @@
+{
+  "schema": "esa-d8-native-inference-observation-summary/v1",
+  "status": "FROZEN_TERMINAL_CLIENT_TIMEOUT_BACKEND_CANCELLED",
+  "recorded_at_utc": "2026-10-22T11:42:55.489713+00:00",
+  "snapshot_count": 10,
+  "observation_range_utc": [
+    "2026-10-22T11:14:31.795031+00:00",
+    "2026-10-22T11:41:21.173133+00:00"
+  ],
+  "server_lifecycle": "revision_d8/evidence/native_server_01/lifecycle_04",
+  "server_start_sha256": "9e0c7e87b2f8b217bebac4fb785367fe1096322bc689b8d9b81ed4a05bc265cd",
+  "server_left_running": true,
+  "actual_requests": [
+    {
+      "task_id": 606,
+      "prompt_tokens": 18350,
+      "context_tokens": 24576,
+      "remaining_after_prompt": 6226,
+      "remaining_after_declared_3072_response_reserve": 3154,
+      "source_line": "26.21.049.287 I slot   operator(): id  0 | task 606 | new prompt, n_ctx_slot = 24576, n_keep = 0, task.n_tokens = 18350"
+    }
+  ],
+  "actual_sampler_temperatures": [
+    0.2
+  ],
+  "initial_history_reserve_assessment": {
+    "task_id": 606,
+    "additional_prompt_occupancy_since_first": 0,
+    "remaining_of_original_2560_history_reserve": 2560,
+    "original_history_reserve_exceeded": false,
+    "tokens_after_remaining_history_and_3072_output": 594
+  },
+  "backend_terminal": {
+    "task_id": 606,
+    "outcome": "CANCELLED_AFTER_NATIVE_CLIENT_TIMEOUT",
+    "cancellation_line": "51.21.205.471 W srv          stop: cancel task, id_task = 606",
+    "release_line": "51.21.882.703 I slot      release: id  0 | task 606 | stop processing: n_tokens = 20992, truncated = 0",
+    "last_generation_progress_line": "51.21.205.811 I slot print_timing: id  0 | task 606 | n_gen =   2642, tg =   1.79 t/s, tg_3s =   1.75 t/s",
+    "last_generation_progress_n_gen": 2642,
+    "slot_tokens_at_release": 20992,
+    "truncated_flag": 0,
+    "metrics_delta_from_terminal02": {
+      "prompt_tokens_total": 385.0,
+      "prompt_tokens_cached_total": 17965.0,
+      "prompt_seconds_total": 24.621999999999957,
+      "tokens_predicted_total": 2643.0,
+      "tokens_predicted_seconds_total": 1476.21,
+      "n_decode_total": 2644.0
+    },
+    "requests_processing_at_snapshot": 0.0,
+    "requests_deferred_at_snapshot": 0.0,
+    "metrics_source": {
+      "path": "snapshot_010/server_metrics.prom",
+      "sha256": "ac45e644bb23ca2f66ee0986b0debcf55a949ab5436a4c74b3d41af0f0a0c84d"
+    },
+    "raw_log_source": {
+      "path": "snapshot_010/server_log_observed.txt",
+      "sha256": "d9e3d491f3abceab6ed1690fb04abba30e8c108538b8e0db40f860bfd49bf165"
+    },
+    "counter_qualification": "The final progress counter n_gen=2642, metrics predicted-token delta=2643 and decode-call delta=2644 are different server accounting fields. They are retained as observed, not silently reconciled or relabeled as native completed usage or a completed artifact."
+  },
+  "native_terminal": {
+    "receipt_source": {
+      "path": "revision_d8/evidence/native_sdd_01/attempt_03/RECEIPT.json",
+      "sha256": "6e7c892d79755e2395318638e4ca554705b1c2289c497461bb7cfeb0f57d5e23"
+    },
+    "retained_receipt": "native_terminal_binding/RECEIPT.json",
+    "retained_stdout": {
+      "path": "native_terminal_binding/stdout.txt",
+      "sha256": "bfa42f67c98b7d7e906e9215e63d45684747de6ad538e8df42fcb8027f53b3d9"
+    },
+    "exit_code": 1,
+    "ended_at_utc": "2026-10-22T11:38:10.810304+00:00",
+    "duration_seconds": 1503.7998322519998,
+    "reported_usage": null,
+    "billable_cost": null,
+    "stdout_event_types": [
+      "step_start",
+      "error"
+    ],
+    "error_events": [
+      {
+        "type": "error",
+        "timestamp": 1792669090275,
+        "sessionID": "ses_e9cc44d15ffewxo9hTP3f5v23l",
+        "error": {
+          "name": "UnknownError",
+          "data": {
+            "message": "The operation timed out."
+          }
+        }
+      }
+    ],
+    "completed_tool_events": 0,
+    "changed_files": [],
+    "out_of_scope_changes": [],
+    "usage_limit": "Unreported native usage/cost is unknown, not zero. Server counters are separately attributed and do not fill this field.",
+    "artifact_limit": "No completed native write or changed project file in this continuation. The existing upstream scaffold belongs to attempt02; no useful specification or clarification outcome is claimed."
+  },
+  "resource_observation": {
+    "warm_prefill_new_prompt_tokens": 385.0,
+    "warm_prefill_cached_prompt_tokens": 17965.0,
+    "warm_prefill_seconds_delta": 24.621999999999957,
+    "generation_seconds_delta": 1476.21,
+    "interpretation": "This request reused the cached prompt; the observed timeout occurred after prolonged generation. These are observed counters for this journey, not an isolated performance benchmark.",
+    "minimum_sampled_conservative_headroom_bytes": 659996264,
+    "maximum_sampled_rss_kib": 6178796,
+    "new_oom_events": 0,
+    "new_oom_kill_events": 0,
+    "post_terminal_headroom_bytes": 1139240552,
+    "limitations": "Sparse snapshots with checkpoint write holds; not a continuous peak record. The conservative full-mapped-file plus cgroup anon/kernel/shmem estimate is not exact available memory or a future-allocation guarantee. Startup768MiB was a startup gate, not automatic runtime termination."
+  },
+  "context_limits": {
+    "context_tokens": 24576,
+    "configured_current_response_reserve": 3072,
+    "configured_history_reserve": 2560,
+    "prompt_tokens": 18350,
+    "next_prompt_observed": false,
+    "qualification": "The observed initial prompt fit its prospective reserves. Generation continued beyond the1800-token content guidance and reached server counters above the2560 history reservation, but no subsequent native prompt was issued. Slot occupancy at cancellation is not a measurement of what the next native request will include; a new invocation requires its own session/config/input budget."
+  },
+  "output_cap": {
+    "configured_client_max_output_tokens": 3072,
+    "actual_request_cap_field_observed": false,
+    "independent_server_enforcement_claim": false,
+    "qualification": "No request-specific max_tokens or n_predict field appears in retained server logs. The timeout before completion does not establish cap enforcement."
+  },
+  "checkpoint_prefix": {
+    "path": "../checkpoint_progress_29",
+    "summary_sha256": "46a8980339a53868d45c436412b058367afd1e304d1e7786a65cee9550971755",
+    "manifest_sha256": "56b9d42c208bbc74f94042e6e2d9865584d15551b678eaf36a7be58b59ab9116",
+    "boundary": "Stable nonterminal snapshots001-009 remain unchanged; terminal snapshot010 and this summary do not rewrite that checkpoint status."
+  },
+  "scope": "Read-only exact-owned-server log/process/cgroup and permitted metricsGET observations. No model requests, runtime mutation or stop by this monitor. Server04 remains under root control.",
+  "acceptance_boundary": "No R08 closure, accepted specification, clarification dialogue, human review or downstream readiness claim.",
+  "summary_pre_freeze_correction": "pre_freeze_correction_01/CORRECTION.json"
+}

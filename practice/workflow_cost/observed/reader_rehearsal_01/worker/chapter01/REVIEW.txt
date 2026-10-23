@@ -1,0 +1,16 @@
+INT-001 REVIEW — AI REHEARSAL ONLY
+Candidate: attempts/chapter01/repo/src/treasury/routing.py.
+Candidate SHA-256: 228d10d097b2ddf94a32d541de222af6d6217f7adfaefd8d0f3e497faed76d22.
+Interface: ChatGPT collaboration worker, identified by system as GPT-6 Astra Pro, functions.exec and tools.exec_command, bash, Python 3.12.14, Linux, Git 2.51.1. No native coding client, additional agent or external service was launched.
+Protected intent hash: 209ee2f218448d83178bd02fd5947cf68b021657a72b38e682e4a895fa102947 before and after.
+Acceptance hash: 6e5aa5706dd989bdbbeec9374a84d13c41cf6f36e23a5e5d2762a3b16e551c9b before and after.
+Baseline: CH01_BASELINE_R17.json, 3 passes, 2 failures, 2 errors.
+Candidate: CH01_ROUTING_R17.json, 7 passes, zero failures/errors.
+Scope guard: PASS; only permitted routing.py candidate changed.
+Diff: Decimal construction catches InvalidOperation; nonfinite and nonpositive amounts return REJECTED/INVALID_AMOUNT before comparison. Threshold EUR 5000.00 and policy BR-001/v1 remain unchanged.
+Boundary: exactly EUR 5000.00 requires HUMAN_REVIEW; strict less-than remains unchanged.
+Review: self-inspected AI candidate, READY FOR HUMAN REVIEW. No independent human reviewer or owner acceptance.
+Unverified: behavior beyond the seven selected cases, host isolation, production deployment, payments. Text input is the function contract; no unrelated type-handling expansion was attempted.
+Policy owner: synthetic teaching authority only. No new approval supplied.
+Human effort: not measured. This is an experienced model rehearsal, not a novice or human timing study.
+Source and reports are preserved; the protected later-chapter reference router was NOT adopted, so this copy is not claimed as a completed CP02–CP06 baseline.

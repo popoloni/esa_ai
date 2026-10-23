@@ -1,0 +1,14 @@
+{
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/uv",
+    "--cache-dir",
+    "/workspace/scratch/72d789d25fef/runtime_d7/python-cache",
+    "venv",
+    "/workspace/scratch/72d789d25fef/runtime_d7/mcp_venv"
+  ],
+  "cwd": "/workspace/scratch/72d789d25fef/runtime_d7",
+  "started_at_utc": "2026-10-22T05:55:11.437336+00:00",
+  "finished_at_utc": "2026-10-22T05:55:11.612822+00:00",
+  "elapsed_seconds": 0.17548221200013359,
+  "exit_code": 0
+}

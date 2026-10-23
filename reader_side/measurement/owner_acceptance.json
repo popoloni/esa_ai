@@ -1,0 +1,13 @@
+{
+  "accepted_attempt": "A05",
+  "actor_id": "synthetic_pilot_owner",
+  "decision": "ACCEPT_SCENARIO_ONLY",
+  "logical_item_id": "HANDOFF-013",
+  "origin": "PROTECTED_SYNTHETIC_OWNER_FIXTURE",
+  "real_human_acceptance": false,
+  "real_release_authorized": false,
+  "requires_current_success_receipt": true,
+  "requires_final_artifact_identity": true,
+  "rule_id": "OWNER-014/v1",
+  "schema": "cp14-synthetic-owner-rule/v1"
+}

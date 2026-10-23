@@ -1,0 +1,15 @@
+{
+  "status": "PREPARATION_COMPLETE",
+  "at_utc": "2026-10-22T06:07:33.532678+00:00",
+  "actual_precheck_exit": 1,
+  "actual_precheck": "PRECHECK.stdout.txt",
+  "authorized_change": "Update current release label in README.md and only README.md/adapters/README.md protected digests after exact semantic review; preserve other entries and starter/tests/checkers.",
+  "planned_checks": [
+    "Manifest diff permits exactly two entries",
+    "All other protected/repo bytes unchanged",
+    "doctor pass and fresh Chapter1 copy",
+    "Original faulty starter retains3pass2fail2error",
+    "Negative protected-document and oracle tampering detected in disposable copy"
+  ],
+  "prior_tool_diagnostic": "During preparation, a search included nonexistent reader_side/integration and returned exit2. Relevant references were still found in scope_guard.py and integration_core.py; no source mutation resulted."
+}

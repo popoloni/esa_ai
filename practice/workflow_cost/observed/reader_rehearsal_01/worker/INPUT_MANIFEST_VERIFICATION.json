@@ -1,0 +1,11 @@
+{
+  "timestamp_utc": "2026-10-21T18:18:33.625896+00:00",
+  "manifest_path": "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Competitive_Revision_d5_20261021/revision_d5/evidence/reader_rehearsal/INPUT_MANIFEST.json",
+  "manifest_sha256": "7634c1938a9a9e636e293dc693571b4b487b0836b50a081cbda7197ecedc532f",
+  "checked_source_files": 1512,
+  "missing": [],
+  "changed": [],
+  "added_files": [],
+  "authored_input_unchanged": true,
+  "authority": "Parent follow-up explicitly requested input-manifest verification after first attempts. Only manifest metadata and file hashes were inspected; protected source content was not opened."
+}

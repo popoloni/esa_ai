@@ -1,0 +1,33 @@
+{
+  "schema": "esa-agent-disposition/v1",
+  "recorded_at_utc": "2026-10-22T06:19:08.251403+00:00",
+  "reviewer_kind": "ASSISTANT_REVIEW_OUTSIDE_NATIVE_CLIENT",
+  "decision": "READY_FOR_HUMAN_REVIEW_NOT_ACCEPTED",
+  "candidate_sha256": "dac968f4738761cc85a6b71f0d7265a2d8d1860f122cd22576a9645bc9139fe7",
+  "original_acceptance": {
+    "passed": 7,
+    "total": 7,
+    "path": "independent_acceptance.json"
+  },
+  "additional_cases": {
+    "passed": 14,
+    "total": 14,
+    "path": "additional_cases.json"
+  },
+  "scope_guard": {
+    "exit_code": 0,
+    "path": "scope_guard.stdout.txt"
+  },
+  "findings": [],
+  "review_notes": [
+    "Diff changes assess body only; imports, RoutingDecision fields, public string-input signature, POLICY_VERSION and THRESHOLD_EUR remain unchanged.",
+    "Finite check occurs before ordering comparisons; malformed Decimal parsing returns REJECTED/INVALID_AMOUNT.",
+    "Original intent and acceptance hashes equal initial values.",
+    "Native recovery completed source edit but timed out before its planned checker or final summary. Independent checker and this disposition are outside the native session."
+  ],
+  "human_acceptance": "PENDING",
+  "limitations": [
+    "One expressly guided candidate; author already exposed to worked solutions.",
+    "No controlled comparison of clients, no OS isolation claim, no productivity or paid-token cost inference."
+  ]
+}

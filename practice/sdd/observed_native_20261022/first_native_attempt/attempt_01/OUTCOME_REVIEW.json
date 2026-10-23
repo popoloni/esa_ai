@@ -1,0 +1,48 @@
+{
+  "schema": "esa-native-sdd-attempt-review/v1",
+  "reviewed_at_utc": "2026-10-22T07:05:22.062104+00:00",
+  "reviewer": "ChatGPT assistant; no human owner review",
+  "status": "FAILED_BEFORE_NATIVE_ARTIFACT_GENERATION",
+  "session_id": "ses_e9dbb1007ffeHRexxQi4HCqple",
+  "actual_framework": "Spec Kit 1.2.2 native speckit.specify command",
+  "actual_client": "OpenCode 1.19.3",
+  "started_at_utc": "2026-10-22T06:20:45.765639+00:00",
+  "ended_at_utc": "2026-10-22T06:35:52.533423+00:00",
+  "duration_seconds": 906.7677544349999,
+  "exit_code": 1,
+  "process_outcome": "Provider deadline; not the declared 1200-second outer cap and not a manual stop.",
+  "first_request_error": {
+    "at_utc": "2026-10-22T06:25:49.861Z",
+    "name": "ProviderHeaderTimeoutError",
+    "header_timeout_ms": 300000
+  },
+  "automatic_retry": {
+    "started_at_utc": "2026-10-22T06:25:52.150Z",
+    "ended_with_error_at_utc": "2026-10-22T06:35:52.233Z",
+    "configured_overall_timeout_ms": 600000,
+    "final_error": "The operation timed out."
+  },
+  "actual_primary_native_tool_calls": 0,
+  "generated_artifacts": [],
+  "changed_files": [],
+  "out_of_scope_changes": [],
+  "artifact_absence": [
+    ".specify/feature.json",
+    "specs/001-explain-treasury/spec.md",
+    "specs/001-explain-treasury/checklists/requirements.md"
+  ],
+  "first_primary_output": "stdout.txt retains the native error event. No primary model text or usable generated specification was observed.",
+  "automatic_title": {
+    "native_export_title": "Generate a title for this conversation:",
+    "interpretation": "Pinned source and changed default title support that automatic title generation occurred. Do not assign a specific backend task ID or completed title usage from temporal proximity alone."
+  },
+  "usage_scope": "No completed primary step usage receipt. Native zero fields do not establish zero total token use; background title and interrupted requests remain unreported.",
+  "owner_questions": "All three source owner questions remain unresolved; no generated clarification interaction occurred.",
+  "human_review": "ABSENT; historical receipt PENDING is not positive acceptance.",
+  "os_containment": "NOT_ESTABLISHED; native registry fetch warnings are retained.",
+  "first_output_preserved": true,
+  "native_export_sha256": "ca9358c248f575b10b3abb2436a7c88956a22d596d2c276c24de5a85ea6ef4d8",
+  "expanded_command_filename_qualification": "EXPANDED_NATIVE_COMMAND_FIRST_OUTPUT.txt is the actual native-expanded user command extracted from export, not a generated model answer.",
+  "attempted_stop_check": "A later scoped process-identity check found the recorded client PID already absent; no signal was sent and no stop receipt was fabricated.",
+  "subsequent_work": "A separately named, bounded recovery corrects provider header/title/context preparation; this failed attempt is not rewritten."
+}

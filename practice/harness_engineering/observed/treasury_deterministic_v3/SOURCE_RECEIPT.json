@@ -1,0 +1,22 @@
+{
+  "code_files": {
+    "common.py": "d2bf2e336d6be14cd25dcb57a28d5a068eb70eddf4802eb5a768110212490a34",
+    "run_experiment.py": "2ddbdef29b8bc59742f402af2c78a1db23b6afb4144115b2b5f2425488f9eda6",
+    "worker.py": "e99be6979f17e8745e7efe4b2a7ddbd9a74bd7ed402b06297f8f9dc97cbef320"
+  },
+  "companion_files": {
+    "reader_side/acceptance/test_routing.py": "6e5aa5706dd989bdbbeec9374a84d13c41cf6f36e23a5e5d2762a3b16e551c9b",
+    "reader_side/discovery/sources/SRC-POL-001.json": "1de2d20f2fe72c4a2ae698093078deb2a05b5d7fd85eec819438cabb7928aacb",
+    "reader_side/reference_solution/delegation_plan.json": "ff2a8e4e3ef8d2403cec1cc767a91fc97103455237be43661a980607cae2da17",
+    "repo/engineering/planning/delegation_plan.json": "fa77d76a1902cf60d68fea5fd8abddb7eeb6902e21dd03c2a08f44225cf9a293",
+    "repo/src/treasury/routing.py": "14d186a327a418dddb405144bfefb5810ed27e626b981424c9ad3b66742e8b32"
+  },
+  "fixed_router_sha256": "14d186a327a418dddb405144bfefb5810ed27e626b981424c9ad3b66742e8b32",
+  "fixture_files": {
+    "SOURCE_PINS.json": "645f9c0b2bf006b0b09b201eabf882de8d70b89fcb0fca71937ae06fa60f4c24",
+    "evaluation_oracle.json": "1f9d790cb944c978adcf6206452c7ab80fe140fdfb5964f978ca1ae26bdd5d75",
+    "tasks.json": "5ca0cee04391cff9a6af70b6ec9ad128871e67a5126b73b7beafa4de2edb0d6a"
+  },
+  "protection": "Closed configuration schema, before/after identity checks and read-only copy; not an OS sandbox",
+  "source": "current cumulative companion, copied without repair"
+}

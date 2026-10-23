@@ -1,0 +1,8 @@
+{
+  "development_memory": {},
+  "response_fields": [
+    "route"
+  ],
+  "routing_strategy": "router_tool",
+  "schema": "treasury-harness/v1"
+}

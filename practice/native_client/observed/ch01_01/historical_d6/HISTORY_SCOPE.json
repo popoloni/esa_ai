@@ -1,0 +1,15 @@
+{
+  "schema": "esa-historical-native-extract/v1",
+  "source": "revision_d6/evidence/native_ch01_01 in hash-verified CP11 overlay",
+  "copied_without_modification": true,
+  "attempts_included": [
+    "attempt_01",
+    "attempt_02",
+    "attempt_03",
+    "attempt_04",
+    "attempt_05"
+  ],
+  "attempt_06": "UNKNOWN: active path deliberately excluded from CP11; no result reconstructed",
+  "full_starting_tree": "Retained in author archive, not duplicated in this thin reader extract",
+  "source_records_preserve_historical_claims": "New d7 outcomes do not alter those records."
+}

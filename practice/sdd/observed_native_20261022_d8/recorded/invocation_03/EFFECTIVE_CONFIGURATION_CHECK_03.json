@@ -1,0 +1,53 @@
+{
+  "status": "PASS_NO_INFERENCE_PREFLIGHT",
+  "at_utc": "2026-10-22T10:42:21.074594+00:00",
+  "checks": {
+    "effective_read_rules_exact": true,
+    "all_14_source_or_bundle_read_paths_denied": true,
+    "three_output_reads_allowed": true,
+    "no_bash_cat_allowance": true,
+    "required_tools_remain_available": true,
+    "full_specify_clarify_commands_preserved": true,
+    "prior_effective_temperature_capability_false": true,
+    "current_effective_temperature_capability_true": true,
+    "agent_temperature_remains_0_2": true,
+    "complete_native_attachment_identical": true,
+    "all_13_sources_verified": true,
+    "noReply_one_user_message_no_inference": true,
+    "preflight_backend_generation_counters_unchanged": true,
+    "preflight_owned_server_stopped": true,
+    "49_project_files_unchanged": true,
+    "no_output_artifacts_authored": true,
+    "context_budget_pass": true,
+    "fixed_context_output_limits": true,
+    "explicit_timeout_bounds": true,
+    "steps12_no_compaction": true,
+    "no_command_override": true
+  },
+  "source_read_decisions_from_exact_effective_rules": {
+    "inputs/specification.json": "deny",
+    "inputs/case_oracle.json": "deny",
+    "inputs/discovery_handoff.json": "deny",
+    "inputs/assessment.json": "deny",
+    "inputs/sources/SRC-OPS-004.json": "deny",
+    "inputs/sources/SRC-POL-001.json": "deny",
+    "inputs/sources/SRC-RISK-002.json": "deny",
+    "inputs/sources/SRC-TKT-017.json": "deny",
+    "inputs/sources/SRC-WIKI-OLD.json": "deny",
+    "source/treasury/routing.py": "deny",
+    ".specify/templates/spec-template.md": "deny",
+    ".specify/templates/checklist-template.md": "deny",
+    ".specify/memory/constitution.md": "deny",
+    "inputs/NATIVE_CONTEXT_BUNDLE.md": "deny"
+  },
+  "generated_output_read_decisions": {
+    ".specify/feature.json": "allow",
+    "specs/001-explain-treasury/spec.md": "allow",
+    "specs/001-explain-treasury/checklists/requirements.md": "allow"
+  },
+  "qualification": "Read denials evaluated from actual effective rules and pinned precedence implementation; an actual model-selected denial is not asserted. Actual native user attachment was resolved despite those denials.",
+  "full_command_checks": {
+    "speckit.specify": true,
+    "speckit.clarify": true
+  }
+}

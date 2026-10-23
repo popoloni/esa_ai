@@ -1,0 +1,88 @@
+{
+  "checked_at": "2026-10-20",
+  "options": [
+    {
+      "actual_human_effort": "UNKNOWN",
+      "actual_vendor_billing": "UNKNOWN",
+      "capabilities": [
+        "Known author-created workflow checks and raw local command telemetry"
+      ],
+      "checked_at": "2026-10-20",
+      "constraints": [
+        "Only local synthetic Treasury exercises; no vendor comparison or human productivity claim"
+      ],
+      "evidence_basis": "ACTUAL_LOCAL_ATTEMPT_RECEIPTS_REQUIRED",
+      "id": "LOCAL-CONTROL",
+      "live_comparative_benchmark": "UNKNOWN",
+      "name": "Local deterministic CP13 gates",
+      "primary_urls": [],
+      "tested_status": "SEE_BOUND_MEASUREMENT_SESSION"
+    },
+    {
+      "actual_human_effort": "UNKNOWN",
+      "actual_vendor_billing": "UNKNOWN",
+      "capabilities": [
+        "Selected built-in, MCP and extension tools can inspect, edit and test a local project"
+      ],
+      "checked_at": "2026-10-20",
+      "constraints": [
+        "Tool availability does not grant approval",
+        "Approval configuration and terminal sandboxing are separate; not all tools are sandbox-covered"
+      ],
+      "evidence_basis": "PRIMARY_DOCUMENTATION",
+      "id": "VSCODE-COPILOT",
+      "live_comparative_benchmark": "UNKNOWN",
+      "name": "VS Code Copilot agent workflow",
+      "primary_urls": [
+        "https://code.visualstudio.com/docs/agents/run/tools",
+        "https://code.visualstudio.com/docs/agents/run/approvals"
+      ],
+      "tested_status": "DOCUMENTED_NOT_EXECUTED"
+    },
+    {
+      "actual_human_effort": "UNKNOWN",
+      "actual_vendor_billing": "UNKNOWN",
+      "capabilities": [
+        "Delegated asynchronous branch work and pull-request creation for review"
+      ],
+      "checked_at": "2026-10-20",
+      "constraints": [
+        "Returned work still requires the selected review workflow",
+        "Documentation does not establish a cost or quality ranking"
+      ],
+      "evidence_basis": "PRIMARY_DOCUMENTATION",
+      "id": "GITHUB-COPILOT-CLOUD",
+      "live_comparative_benchmark": "UNKNOWN",
+      "name": "GitHub Copilot cloud agent",
+      "primary_urls": [
+        "https://docs.github.com/en/copilot/concepts/agent-capabilities/about-agents/about-github-copilot-agents"
+      ],
+      "tested_status": "DOCUMENTED_NOT_EXECUTED"
+    },
+    {
+      "actual_human_effort": "UNKNOWN",
+      "actual_vendor_billing": "UNKNOWN",
+      "capabilities": [
+        "Documented skill packaging",
+        "Configured OpenTelemetry usage, cost and tool telemetry"
+      ],
+      "checked_at": "2026-10-20",
+      "constraints": [
+        "Exported cost is approximate; provider billing is authoritative",
+        "No Claude Code client, SDK, exporter or billing integration was run in CP14"
+      ],
+      "evidence_basis": "PRIMARY_DOCUMENTATION",
+      "id": "CLAUDE-CODE",
+      "live_comparative_benchmark": "UNKNOWN",
+      "name": "Claude Code",
+      "primary_urls": [
+        "https://code.claude.com/docs/en/skills",
+        "https://code.claude.com/docs/en/monitoring-usage"
+      ],
+      "tested_status": "DOCUMENTED_NOT_EXECUTED"
+    }
+  ],
+  "purpose": "Screen documented capabilities and constraints for a proposed pilot; no empirical market winner",
+  "refresh_trigger": "Recheck primary documentation and local access configuration before a real pilot or tool decision",
+  "schema": "cp14-tool-capabilities/v1"
+}

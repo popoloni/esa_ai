@@ -1,0 +1,9 @@
+{
+  "finding": "Requested agent temperature=0.2 was not sent by the initial provider configuration, whose model declaration omitted temperature support. Actual llama server sampler recorded temp=0.800.",
+  "initial_configuration": "preparation/OPENCODE_CONFIG.json",
+  "actual_receipt": "server_01/stderr.txt",
+  "status": "INITIAL_OBSERVATION_RETAINED_FUTURE_PREPARATION_CORRECTED",
+  "at_utc": "2026-10-22T17:25:00.134955+00:00",
+  "correction": "Current preparation script declares model temperature=true. Any later invocation must use a separately retained corrected configuration; initial files and in-progress invocation are unchanged.",
+  "limits": "Different sampler configuration does not support a controlled quality comparison."
+}

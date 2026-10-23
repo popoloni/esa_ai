@@ -1,0 +1,57 @@
+{
+  "writes_and_template_copies": [
+    {
+      "tool_sequence": 7,
+      "call_id": "ejD5xbhOrjCDiCLnquJRvmCb2LjNVOCT",
+      "tool": "bash",
+      "status": "completed",
+      "message_id": "msg_1634663de001PK1BXfW4qscZMo",
+      "native_input": {
+        "command": "cp .specify/templates/spec-template.md specs/001-explain-treasury/spec.md",
+        "timeout": 120000
+      },
+      "content_basis": "Exact initial framework template and completed native cp exit0",
+      "classification": "FRAMEWORK_TEMPLATE_COPY_NOT_GENERATED_FEATURE_CONTENT",
+      "relative_path": "specs/001-explain-treasury/spec.md",
+      "reconstructed_sha256": "3945437fc35cd30a5b2bf7beea680337c3516826d3efa5a6b92c4a7eca1ba28e",
+      "reconstructed_bytes": 4556,
+      "matches_final_file_bytes": false
+    },
+    {
+      "tool_sequence": 12,
+      "call_id": "ckfEqbCxSTwBljYk8xqn6m6ijnBYMOZf",
+      "tool": "write",
+      "status": "error",
+      "message_id": "msg_163509c68001Ev7l3g5LnG3aWX",
+      "native_input": {},
+      "content_basis": null,
+      "classification": "ATTEMPTED_CONTENT_WRITE_NOT_CONFIRMED",
+      "relative_path": null
+    },
+    {
+      "tool_sequence": 13,
+      "call_id": "eAWLdruLFmtABLHFQsQnkLgC82UsZvHW",
+      "tool": "write",
+      "status": "completed",
+      "message_id": "msg_1636f1c66001O96YP7jMDzCqI1",
+      "native_input": {
+        "content": "## Feature Specification: Explain Routing\n\n**Feature Branch**: 001-explain-treasury\n\n**Created**: 2026-10-22\n\n**Status**: Draft\n\n**Input**: User description: \"Project: /workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01\nSPECIFY_FEATURE_DIRECTORY=specs/001-explain-treasury\nThe native client attaches this complete source packet before your first response: @/workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/inputs/NATIVE_CONTEXT_BUNDLE.md\nIt contains all nine fixed JSONs including the authored reference contract, router, complete templates and unratified constitution. JSON whitespace alone changed. Use the attached full contents without rereading duplicates. Preserve every requirement/scenario ID, value, provenance and authority. SRC-POL-001/BR-001/v1 governs; ticket/wiki cannot change it. Routing never authorizes payment.\nExecute the full native command now using actual tools: create the feature draft and truthful checklist, not just an announcement of future work. Write only .specify/feature.json, specs/001-explain-treasury/spec.md and specs/001-explain-treasury/checklists/requirements.md. Use permitted bash commands individually, without chaining. No extensions.yml exists; test exit1 means absent. Preset resolution returns a text path.\nKeep all three source owner questions unanswered and benefit HYPOTHESIS_NOT_VALIDATED. Invent no owner answers, numeric benefit targets, ratification or approval. Present the actual unresolved questions and wait at that boundary; stop before planning/implementation. Leave failed readiness checks visibly incomplete. Report any blocking failure truthfully. This is a disclosed synthetic reference projection, not blind discovery or observed user benefit.\n\nRead-scope guard: The complete source packet is already attached before inference. Model read access is limited to the three generated output paths; source, template and bundle rereads are denied. Use the supplied complete content directly. Read generated outputs only for a concrete necessary check, using a bounded line range; avoid duplicate full-file reads. No output files exist at the start. This guard supplies no draft text or owner answers and does not alter the full installed framework command.\n\"",
+        "filePath": "/workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/specs/001-explain-treasury/spec.md"
+      },
+      "content_basis": "Reconstructed from completed native write input; post-write formatter effects are not assumed",
+      "classification": "COMPLETED_NATIVE_CONTENT_WRITE",
+      "retained_input_content": {
+        "path": "write_input_013.txt",
+        "sha256": "04b6177aa7cd2a248a86ef418f8faeffe3c07cbf64651951136c20559402bfd1",
+        "bytes": 2230
+      },
+      "relative_path": "specs/001-explain-treasury/spec.md",
+      "reconstructed_sha256": "04b6177aa7cd2a248a86ef418f8faeffe3c07cbf64651951136c20559402bfd1",
+      "reconstructed_bytes": 2230,
+      "matches_final_file_bytes": true,
+      "first_reconstructed_content_path": "first_reconstructed_native_content/specs/001-explain-treasury/spec.md"
+    }
+  ],
+  "scope": "First completed tool-input content reconstruction is not an independent observation of every intermediate filesystem version. Exact final bytes are retained separately. Scaffold copies and template-equivalent content do not establish useful generation.",
+  "semantic_acceptance": "Independent review required; this collector supplies no owner answer or acceptance verdict."
+}

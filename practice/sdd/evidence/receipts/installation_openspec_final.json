@@ -1,0 +1,27 @@
+[
+  {
+    "id": "openspec_install_fixedconfig",
+    "argv": [
+      "npm",
+      "install",
+      "--prefix",
+      "/workspace/scratch/efa0a59e0545/tmp/sdd_workflow_trial_20261020/node_env",
+      "--registry",
+      "https://registry.npmjs.org",
+      "--ignore-scripts",
+      "--no-audit",
+      "--no-fund",
+      "--save-exact",
+      "/workspace/scratch/efa0a59e0545/tmp/sdd_workflow_trial_20261020/openspec-1.14.1.tgz"
+    ],
+    "cwd": "/workspace/scratch/efa0a59e0545/tmp/sdd_workflow_trial_20261020",
+    "started_utc": "2026-10-20T14:57:11.073472+00:00",
+    "finished_utc": "2026-10-20T14:57:14.457812+00:00",
+    "duration_seconds": 3.38434,
+    "exit_code": 0,
+    "stdout_file": "openspec_install_fixedconfig.stdout.txt",
+    "stderr_file": "openspec_install_fixedconfig.stderr.txt",
+    "credential_environment": "not inherited; proxy/certificate settings retained without logging values",
+    "global_installation": false
+  }
+]

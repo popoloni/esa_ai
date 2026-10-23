@@ -1,0 +1,7 @@
+{
+  "recorded_at_utc": "2026-10-22T06:25:04.562261+00:00",
+  "correction": "Descriptive starting-snapshot count 1,585 corrected to manifest-verified 1,584. Actual starting snapshot and manifest bytes unchanged.",
+  "previous_observation_sha256": "db45cb1cd4915ce7ab4b939f624ba6c40a8dd03edf062c01433600091941c9ef",
+  "previous_portable_manifest_sha256": "6cd9f28a1179ce1b2d5f30ecb0f22f37061b9280bc45afdd32a30dfdc4d77190",
+  "new_observation_sha256": "7844a6067e941237b4e6bb68d0ad37346609241030e74921d28ecde52f36611e"
+}

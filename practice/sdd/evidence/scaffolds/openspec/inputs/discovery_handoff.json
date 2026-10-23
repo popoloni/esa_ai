@@ -1,0 +1,9 @@
+{
+  "assessment_id": "DISC-003/v1",
+  "status": "CONDITIONAL_GO_TO_LIMITED_ALPHA",
+  "selected_option": "explain_routing",
+  "policy_authority": "SRC-POL-001",
+  "decision_owner": "Product Owner (synthetic scenario)",
+  "value_claim": "HYPOTHESIS_NOT_PROVEN",
+  "handoff": "Chapter 4 may specify an explanation-only alpha; no production release or policy threshold change authorized."
+}

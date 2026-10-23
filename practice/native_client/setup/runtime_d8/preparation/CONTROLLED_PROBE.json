@@ -1,0 +1,37 @@
+{
+  "schema": "esa-d8-inert-lifetime-probe/v1",
+  "status": "PASS",
+  "started_at_utc": "2026-10-22T10:13:37.563252+00:00",
+  "finished_at_utc": "2026-10-22T10:13:38.816490+00:00",
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_server_01/preparation/run_local_model_d8.py",
+    "--runtime-root",
+    "/workspace/scratch/72d789d25fef/runtime_d8/launcher_controlled_probe_01",
+    "--evidence",
+    "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_server_01/preparation/controlled_probe_evidence",
+    "--max-runtime-seconds",
+    "0.8",
+    "--shutdown-grace-seconds",
+    "0.4"
+  ],
+  "elapsed_seconds": 1.2527503029996296,
+  "launcher_exit_code": 137,
+  "checks": {
+    "controller_did_not_timeout": true,
+    "inert_fixture_ready": true,
+    "automatic_lifetime_stop": true,
+    "exact_child_forced_exit": true,
+    "single_kill_event": true,
+    "monotonic_grace_not_early": true,
+    "bounded_elapsed": true,
+    "shutdown_record_retained": true
+  },
+  "fixture": {
+    "path": "/workspace/scratch/72d789d25fef/runtime_d8/launcher_controlled_probe_01/llama_cpp/llama-b11799/llama-server",
+    "sha256": "fc80e0ad17cdeb4ad63762148a2d1d0e4f2db3e7b5b87cdd35fe0a75ce674c2a"
+  },
+  "dummy_model_sha256": "de5982325bf67f337d7a257d8167755031932c7de2c12b4d1c011cbe810e69cc",
+  "launcher_sha256": "c9bc0eb8e64725c7b1ba92687cdfcf4ffd87c5648c0c3abb2e08d4854c3c5b4f",
+  "scope": "Controlled inert Python child only. No real llama executable, model weights, network, native client or inference."
+}

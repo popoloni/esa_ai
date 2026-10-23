@@ -1,0 +1,12 @@
+{
+  "attempt_output_root": "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Competitive_Revision_20261021/companion/practice/sdd/observed_external_agent_20261021/run/attempts/review/001",
+  "created_at_utc": "2026-10-21T16:03:33.875726+00:00",
+  "input_root": "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Competitive_Revision_20261021/companion/practice/sdd/observed_external_agent_20261021/inputs",
+  "instruction": "Dispatch an actual worker with this request; retain its prompt, output, exposed identity and context limits. Write submission.json atomically after all referenced artifacts exist. Do not relabel a fixture as an agent run.",
+  "request_path": "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Competitive_Revision_20261021/companion/practice/sdd/observed_external_agent_20261021/run/attempts/review/001/request.json",
+  "request_sha256": "95d407afd9c2885856f87b113c5ba03d84277edcf44006e2d008700d67c243cc",
+  "schema": "treasury-external-dispatch/v1",
+  "submission_path": "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Competitive_Revision_20261021/companion/practice/sdd/observed_external_agent_20261021/run/attempts/review/001/submission.json",
+  "submission_schema": "treasury-external-worker-submission/v1",
+  "task_id": "review"
+}

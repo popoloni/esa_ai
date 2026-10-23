@@ -1,0 +1,36 @@
+{
+  "schema": "esa-d8-runtime-readonly-preflight/v1",
+  "observed_at_utc": "2026-10-22T10:11:04.694311+00:00",
+  "runtime_identities": [
+    {
+      "path": "/workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/llama-server",
+      "bytes": 17864,
+      "sha256": "742ac3910ef43360be9fc73426ce612a1f9464f5fd63b8a240288d40f5129245"
+    },
+    {
+      "path": "/workspace/scratch/72d789d25fef/runtime_d7/downloads/Qwen3-4B-Q4_K_M.gguf",
+      "bytes": 2497280256,
+      "sha256": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5"
+    }
+  ],
+  "resource_files": {
+    "/sys/fs/cgroup/cpu.max": "800000 100000\n",
+    "/sys/fs/cgroup/cpuset.cpus.effective": "0-8\n",
+    "/sys/fs/cgroup/memory.max": "8589934592\n",
+    "/sys/fs/cgroup/memory.current": "8578301952\n",
+    "/sys/fs/cgroup/memory.stat": "anon 205873152\nfile 7356116992\nkernel 1014964224\nkernel_stack 868352\npagetables 4096000\nsec_pagetables 0\npercpu 6908\nsock 135168\nvmalloc 4096\nshmem 0\nfile_mapped 36864\nfile_dirty 1650688\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 2646605824\nshmem_thp 0\ninactive_anon 205795328\nactive_anon 77824\ninactive_file 2292912128\nactive_file 5063143424\nunevictable 0\nslab_reclaimable 1008797672\nslab_unreclaimable 1124376\nslab 1009922048\nworkingset_refault_anon 0\nworkingset_refault_file 15498402\nworkingset_activate_anon 0\nworkingset_activate_file 2847585\nworkingset_restore_anon 0\nworkingset_restore_file 466289\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgscan 19713418\npgsteal 19156982\npswpin 0\npswpout 0\npgscan_kswapd 112962\npgscan_direct 19600456\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 112960\npgsteal_direct 19044022\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 126495038\npgmajfault 9625\npgrefill 4643191\npgactivate 4820955\npgdeactivate 4625508\npglazyfree 78\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\n",
+    "/sys/fs/cgroup/memory.events": "low 0\nhigh 0\nmax 160243\noom 0\noom_kill 0\noom_group_kill 0\n",
+    "/sys/fs/cgroup/memory.swap.max": "max\n"
+  },
+  "devices_present": {
+    "/dev/nvidia0": false,
+    "/dev/dri/renderD128": false,
+    "/dev/kfd": false
+  },
+  "scope": "Read-only metadata, file identity and --help/--print-plan; no model/server/client inference started.",
+  "cpu_fields": {
+    "model name": "AMD EPYC 9V74 80-Core Processor",
+    "flags": "fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid extd_apicid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext vmmcall fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid avx512f avx512dq rdseed adx smap avx512ifma clflushopt clwb avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves avx512_bf16 clzero xsaveerptr arat npt nrip_save tsc_scale vmcb_clean flushbyasid pausefilter pfthreshold v_vmsave_vmload avx512vbmi umip avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid fsrm arch_capabilities"
+  },
+  "provider_availability_scope": "Earlier bounded presence/type-only check of default OpenCode auth path, observed SDD state auth paths and known API-key environment names found no configured provider; credentials were not printed or searched beyond those paths."
+}

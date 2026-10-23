@@ -1,0 +1,36 @@
+{
+  "at_utc": "2026-10-22T10:18:54.747912+00:00",
+  "records": [
+    {
+      "url": "https://raw.githubusercontent.com/anomalyco/opencode/v1.19.3/packages/opencode/package.json",
+      "sha256": "f26b884353a34f771ed960e4042363f7843d0fb0a822feca84adce37d18aab22",
+      "bytes": 5268,
+      "local": "opencode_package.json"
+    },
+    {
+      "url": "https://registry.npmjs.org/@ai-sdk/openai-compatible/-/openai-compatible-2.0.41.tgz",
+      "sha256": "1067423d0df534c545de4b2aaa86aef5e181cc0da2af050ee6d821eb280a5d7c",
+      "bytes": 111273,
+      "local": "openai-compatible-2.0.41.tgz",
+      "operation": "download and read only; not installed"
+    },
+    {
+      "tar_member": "package/package.json",
+      "local": "sdk_package.json",
+      "sha256": "d55bf0bda631ae36984a8237dff03f5cffec27428de5305f4f2d7556c2cb8767",
+      "bytes": 2033
+    },
+    {
+      "tar_member": "package/dist/index.mjs",
+      "local": "sdk_index.mjs",
+      "sha256": "67ab5407adb1db54db9cabee8068a5c9c239bff70e2c685201802d39534e3795",
+      "bytes": 59500
+    },
+    {
+      "tar_member": "package/LICENSE",
+      "local": "sdk_LICENSE.txt",
+      "sha256": "b4f9adb7c568904834d0dd6cc98d16c390d21ca32fc17ae7a267715269bd5529",
+      "bytes": 552
+    }
+  ]
+}

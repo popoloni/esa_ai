@@ -1,0 +1,10 @@
+{
+  "at_utc": "2026-10-21T22:05:41.850869+00:00",
+  "change": "Fresh native session; automatic compaction disabled prospectively; same model, permissions and deadlines.",
+  "reason": "Attempt04 repeated failed insertion and began automatic compaction after final-looking text.",
+  "intervention": "Explicit Decimal.is_finite API guidance plus complete-function replacement instruction; no source code patch supplied.",
+  "source_url": "https://docs.python.org/3.12/library/decimal.html#decimal.Decimal.is_finite",
+  "prior_author_exposure": "Author/editor knows reference solution and has inspected actual failed candidates.",
+  "config_validation": "PASS_ACTUAL_CONFIG_DIAGNOSTIC",
+  "effective_config_sha256": "4b09e2dc8d37bdff5845e33615c2ea43db593ea1371055db1c2c4625f9091622"
+}

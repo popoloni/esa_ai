@@ -1,0 +1,527 @@
+{
+  "schema": "esa-d8-r08-independent-acceptance-review/v1",
+  "recorded_at_utc": "2026-10-22T12:17:48.553007+00:00",
+  "status": "ORIGINAL_R08_BOUNDED_JOURNEY_CRITERIA_SUPPORTED_WITH_DISCLOSED_NATIVE_FAILURES",
+  "recommendation": "CLOSE_R08_FOR_THE_ORIGINAL_BOUNDED_OBSERVATION_SCOPE",
+  "reviewer": {
+    "kind": "AGENT",
+    "name": "/root/acceptance_audit",
+    "role": "Independent semantic and evidence reviewer; did not generate, repair or persist native candidate content."
+  },
+  "main_judgment": "The actual native final response supplies useful specification content with all five requirements and eight exact cases, presents the three unanswered owner questions, states their unresolved status and reaches a normal native stop before planning. It is linked to the original installed Spec Kit command, exact same-session continuation, retained first outputs and independent assessment. This supports the original bounded R08 journey. It does not establish successful persistence of the useful content, creation of all planned files, requirements approval or reliable autonomous completion.",
+  "original_action_unchanged": {
+    "id": "R08",
+    "title": "Complete one actual SDD generation journey",
+    "change": "Use the existing validation protocol to run the installed framework and coding client from the fixed input through actual generated artifacts, clarification and independent assessment. Preserve first outputs and real omissions. Use the second framework as a clearly scoped contrast.",
+    "acceptance": [
+      "Artifacts are linked to actual prompts/commands and retained first output.",
+      "Generation is distinguished from scaffold creation and intentionally seeded faults.",
+      "One observed route is sufficient for the tutorial; a second observed route is required before a measured paired comparison is claimed."
+    ]
+  },
+  "protocol_and_predeclared_plan": [
+    {
+      "path": "revision_d8/notes/R08_OBSERVATION_PROTOCOL.json",
+      "bytes": 4090,
+      "sha256": "b9c948d025553a80258961029345767c9465e03455062a44d907492bbf49298f"
+    },
+    {
+      "path": "revision_d8/notes/R08_CONTINUATION_SEMANTIC_REVIEW_PLAN.json",
+      "bytes": 8583,
+      "sha256": "f94d3b82ebbbe884daead32fed77571e666b4d6986090dff018048f57f559cb0"
+    }
+  ],
+  "evidence_bindings": [
+    {
+      "path": "revision_d8/evidence/native_sdd_01/attempt_04/RECEIPT.json",
+      "bytes": 15969,
+      "sha256": "990e17c96269855f1a2613dbcab6db60abc7ea0a2d9a0464888aa0bafb21bdc8"
+    },
+    {
+      "path": "revision_d8/evidence/native_sdd_01/attempt_04/TASK.json",
+      "bytes": 5408,
+      "sha256": "fecc09b8c3b299b49f69b43b2e693eb322a4bc7c1e4d6cd9d62eb8cba69c6521"
+    },
+    {
+      "path": "revision_d8/evidence/native_sdd_01/attempt_04/stdout.txt",
+      "bytes": 10220,
+      "sha256": "80485ace0c7c59c109777bc0980cf767fcfea009ab950fe02dd48c5307d78256"
+    },
+    {
+      "path": "revision_d8/evidence/native_sdd_01/attempt_04/stderr.txt",
+      "bytes": 7774,
+      "sha256": "b85fbd2f686c336c1eddcf3da85c784f808e1608e5ff5351330c9787a3e8b516"
+    },
+    {
+      "path": "revision_d8/evidence/native_sdd_01/continuation_preparation_02/MANIFEST.json",
+      "bytes": 1279,
+      "sha256": "84e67fda62d5d7ab92986b721418c7c18f92e4d68226adf11bd206ccec35c47e"
+    },
+    {
+      "path": "revision_d8/evidence/native_sdd_01/continuation_preparation_02/PROMPT.txt",
+      "bytes": 1185,
+      "sha256": "55fdd2d396e3bf3a5843568c45c851b1db045acd4fd61a4ce50c2cb74aa06354"
+    },
+    {
+      "path": "revision_d8/evidence/native_sdd_01/continuation_preparation_02/OPENCODE_CONFIG_04.json",
+      "bytes": 3298,
+      "sha256": "5daa4a42c9eeaae956d290304443b8f47bb4cc7ab5f2fed898e30541d9c3ac43"
+    },
+    {
+      "path": "revision_d8/evidence/native_sdd_01/terminal_collection_03/native-session.json",
+      "bytes": 92897,
+      "sha256": "01ad8ea9da57f23fe443eeb64b366478632e5c24f38e7a75209af130c396da2e"
+    },
+    {
+      "path": "revision_d8/evidence/native_sdd_01/terminal_collection_04/COLLECTION_RECEIPT.json",
+      "bytes": 12534,
+      "sha256": "d17605efdc00d0cd11ce2e68e15f553bdf97a412562bf210e4faa2f4cbd93a6b"
+    },
+    {
+      "path": "revision_d8/evidence/native_sdd_01/terminal_collection_04/native-session.json",
+      "bytes": 107197,
+      "sha256": "eb6cbf0d39ba7ccb907fc096fa88158d113b62f91a18040350194abb30f7c4e9"
+    },
+    {
+      "path": "revision_d8/evidence/native_sdd_01/terminal_collection_04/FIRST_ASSISTANT_TEXT.txt",
+      "bytes": 5530,
+      "sha256": "0b8ce1854906b37eb2c0249e97a7e0d5dc1ce3e2597b6289c9a54fb6eacbec77"
+    },
+    {
+      "path": "revision_d8/evidence/native_sdd_01/terminal_collection_04/FINAL_INVENTORY.json",
+      "bytes": 13742,
+      "sha256": "a3ce9c88c18941bdf440d9466c05509167eb06eee184b6baa901f9d269d7104a"
+    },
+    {
+      "path": "revision_d8/evidence/native_sdd_01/terminal_collection_04/FINAL_DIFF.patch",
+      "bytes": 7015,
+      "sha256": "cac50077e7bad7fe8cbb2b7d5c0d51697489af7387a451351c2c158b9602ac23"
+    },
+    {
+      "path": "revision_d8/evidence/native_sdd_01/terminal_collection_04/NATIVE_CONTENT_PROVENANCE.json",
+      "bytes": 4860,
+      "sha256": "86f5ff56169482db6fae5e76d8c5c5ae03237014a524bd79d12c70f706635480"
+    },
+    {
+      "path": "revision_d8/evidence/native_sdd_01/terminal_collection_04/final_project_tree/specs/001-explain-treasury/spec.md",
+      "bytes": 2230,
+      "sha256": "04b6177aa7cd2a248a86ef418f8faeffe3c07cbf64651951136c20559402bfd1"
+    },
+    {
+      "path": "revision_d8/evidence/native_sdd_01/first_native_write_04/MANIFEST.json",
+      "bytes": 921,
+      "sha256": "260cbb05c8e3f8a7f281e98df58ec0a70a0bf6197b371f5eae6d6755f9911fd9"
+    },
+    {
+      "path": "revision_d8/evidence/native_sdd_01/progress_checkpoint_03/NATIVE_FINAL_TEXT.md",
+      "bytes": 5530,
+      "sha256": "0b8ce1854906b37eb2c0249e97a7e0d5dc1ce3e2597b6289c9a54fb6eacbec77"
+    },
+    {
+      "path": "revision_d8/evidence/native_sdd_01/HOST_TERMINAL_PROCESS_OBSERVATION_04.json",
+      "bytes": 756,
+      "sha256": "ebd241e576c49378fe956bbd487a2dbea8797af7a315750fa608284070a4d839"
+    },
+    {
+      "path": "revision_d8/notes/R08_FIRST_WRITE_04_INDEPENDENT_REVIEW.json",
+      "bytes": 16681,
+      "sha256": "960249f557f24a420790dfabc583202ca526c614ee82990c4a65548004674095"
+    }
+  ],
+  "fixed_input_bindings": {
+    "revision_d8/evidence/native_sdd_01/preparation/starting_tree/inputs/specification.json": "a1b6fee6ea70785a2fe18f3bcdd7c51c8cdc11e5ecd5b05ddfe1df204f859454",
+    "revision_d8/evidence/native_sdd_01/preparation/starting_tree/inputs/case_oracle.json": "11f86f4a19d1587f4eabf5ad00da22f03111ffad7a834729ae130b908f4686b2",
+    "revision_d8/evidence/native_sdd_01/preparation/starting_tree/inputs/sources/SRC-POL-001.json": "1de2d20f2fe72c4a2ae698093078deb2a05b5d7fd85eec819438cabb7928aacb",
+    "revision_d8/evidence/native_sdd_01/preparation/starting_tree/inputs/sources/SRC-WIKI-OLD.json": "85294ab0c9627da940dbce25820f5caed54ceacde4b49a6f4ad5ea5417cdfc93",
+    "revision_d8/evidence/native_sdd_01/preparation/starting_tree/.specify/memory/constitution.md": "ce7549540fa45543cca797a150201d868e64495fdff39dc38246fb17bd4024b3",
+    "revision_d8/evidence/native_sdd_01/preparation/starting_tree/.specify/templates/spec-template.md": "3945437fc35cd30a5b2bf7beea680337c3516826d3efa5a6b92c4a7eca1ba28e"
+  },
+  "terminal_observation": {
+    "session_id": "ses_e9cc44d15ffewxo9hTP3f5v23l",
+    "started_at_utc": "2026-10-22T11:46:25.383278+00:00",
+    "ended_at_utc": "2026-10-22T12:05:40.713363+00:00",
+    "duration_seconds": 1155.330055745002,
+    "exit_code": 0,
+    "native_final_message_id": "msg_16373e722001zasmWd3vAeCRxI",
+    "native_text_part_id": "prt_16374f1c20014iTyD4GXEj7Wr2",
+    "native_text_event_at_utc": "2026-10-22T12:05:40.651000+00:00",
+    "native_finish": "stop",
+    "final_response_output_tokens_reported": 1393,
+    "configured_per_response_cap": 1536,
+    "outer_command_cap_seconds": 2400,
+    "provider_request_timeout_ms": 1500000,
+    "terminal_state_basis": "Completed capture receipt, exact normal finish event/session message and recorded approved-host-context absence before terminal export. The final response stopped below its output cap; the attempt ended before the outer cap. No controller timeout or interruption is used as clarification evidence.",
+    "host_process_observation_at_utc": "2026-10-22T12:12:53.917090+00:00",
+    "host_scope_limit": "Reviewed the retained host-context observation; default-context /proc absence is not used to establish host-process absence. No OS-containment claim.",
+    "human_review": "ABSENT",
+    "financial_cost": "UNKNOWN; native cost0 fields are not a complete financial account."
+  },
+  "independent_provenance_checks": {
+    "terminal_collection_manifest_entries_verified": 64,
+    "all_payload_hashes_and_sizes_match": true,
+    "command_receipt_task_stdout_stderr_hashes_match": true,
+    "current_task_equals_frozen_continuation_preparation": true,
+    "parent_messages_compared": 15,
+    "all_parent_message_objects_unchanged": true,
+    "current_export_messages": 18,
+    "new_user_prompt_matches_frozen_prompt_with_actual_cli_quote_serialization": true,
+    "initial_native_command_body": "Initial user message equals the retained installed speckit.specify command body after removal of YAML front matter, actual quoted argument substitution and leading/trailing whitespace trimming. No framework instruction body was abridged.",
+    "initial_full_attachment": "The 342 numbered lines in the initial synthetic attachment reconstruct the complete 25149-byte NATIVE_CONTEXT_BUNDLE.md exactly: SHA256 bbaf6d82364e6e6e2fa543f9c9c1cf407ffe315aa2a75d63be4caf09ae25d718. This automatic initial attachment is distinct from a model-selected read.",
+    "response_matches_native_text_part_stdout_and_retained_progress_extraction": true,
+    "response_bytes": 5530,
+    "response_sha256": "0b8ce1854906b37eb2c0249e97a7e0d5dc1ce3e2597b6289c9a54fb6eacbec77",
+    "terminal_full_project_snapshot_files_verified": 50,
+    "changed_files": [
+      "specs/001-explain-treasury/spec.md"
+    ],
+    "out_of_scope_changes": [],
+    "useful_response_was_written_to_native_project": false,
+    "only_actual_written_spec_remains_exact_rejected_first_output": true,
+    "checklist_absent": true,
+    "feature_metadata_absent": true,
+    "cumulative_tool_count_qualification": "The export contains 13 cumulative tool parts; attempt04 adds one completed write. The prior template copy and aborted empty write remain distinct. No second write/edit persisted the useful final response."
+  },
+  "native_artifact_distinctions": [
+    {
+      "artifact": "Prior upstream template copy",
+      "classification": "SCAFFOLD_NOT_GENERATED_FEATURE_CONTENT",
+      "identity": "4556-byte template SHA256 3945437fc35cd30a5b2bf7beea680337c3516826d3efa5a6b92c4a7eca1ba28e",
+      "disposition": "Retained as the actual attempt02 scaffold-only output."
+    },
+    {
+      "artifact": "Attempt03 aborted write selection",
+      "classification": "NO_RECOVERABLE_DRAFT",
+      "identity": "Call ckfEqbCxSTwBljYk8xqn6m6ijnBYMOZf; input{}; raw empty; Tool execution aborted",
+      "disposition": "Retained as native selection and provider-timeout failure, not generation."
+    },
+    {
+      "artifact": "Attempt04 first actual project spec.md",
+      "classification": "GENUINE_NATIVE_WRITE_REJECTED_AS_SUBSTANTIVE_SPECIFICATION",
+      "identity": "2230 bytes, SHA256 04b6177aa7cd2a248a86ef418f8faeffe3c07cbf64651951136c20559402bfd1",
+      "disposition": "Title/metadata and copied original task instructions; all five requirements/eight cases absent. The separate earlier first-output rejection remains valid and unchanged."
+    },
+    {
+      "artifact": "Attempt04 final native assistant response",
+      "classification": "USEFUL_NATIVE_GENERATED_RESPONSE_ARTIFACT_WITH_DISCLOSED_DEFECTS",
+      "identity": "5530 bytes, SHA256 0b8ce1854906b37eb2c0249e97a7e0d5dc1ce3e2597b6289c9a54fb6eacbec77",
+      "disposition": "Substantive requirements/cases and unresolved owner questions independently assessed below. Retained as exact extraction of native assistant text, not a successful native project-file update or accepted requirements."
+    }
+  ],
+  "exposure_and_attribution": "The authored reference specification, case oracle and all source decisions were supplied in the complete native context. The response is a disclosed synthetic reference projection, not blind discovery, a human-authored owner answer or evidence of observed user benefit. The collector retained the native text; it did not supply the generated draft to the native model.",
+  "requirement_assessment": [
+    {
+      "id": "REQ-EXPL-001",
+      "classification": "SUPPORTED",
+      "expected": "For a valid routing decision the explanation MUST present route, reason code and policy version without altering the routing decision.",
+      "evidence_lines": [
+        20,
+        22
+      ],
+      "native_excerpt": "1. **REQ-EXPL-001**: Explain the routing recommendation for a valid routing decision the explanation MUST present route, reason code and policy version without altering the routing decision.\n   - **Source**: SRC-POL-001, SRC-OPS-004\n   - **Owner**: Product Owner (synthetic scenario)",
+      "finding": "The response states the route/reason-code/policy-version display and explicitly preserves the routing decision; both required source IDs and the synthetic Product Owner role are present."
+    },
+    {
+      "id": "REQ-EXPL-002",
+      "classification": "SUPPORTED",
+      "expected": "The explanation MUST explicitly say that a routing recommendation is not payment approval and that payment authorization remains a separate human process.",
+      "evidence_lines": [
+        24,
+        27
+      ],
+      "native_excerpt": "2. **REQ-EXPL-002**: Keep payment authorization separate\n   - **Statement**: The explanation MUST explicitly say that a routing recommendation is not payment approval and that payment authorization remains a separate human process.\n   - **Source**: SRC-POL-001, SRC-RISK-002\n   - **Owner**: Treasury Policy Owner (synthetic scenario)",
+      "finding": "The response explicitly separates routing recommendation from payment approval and requires a separate human payment-authorization process; the policy/risk sources and synthetic policy-owner role are present."
+    },
+    {
+      "id": "REQ-EXPL-003",
+      "classification": "SUPPORTED",
+      "expected": "For invalid or non-positive amounts the explanation MUST report rejection and the INVALID_AMOUNT reason without creating an eligibility recommendation.",
+      "evidence_lines": [
+        29,
+        32
+      ],
+      "native_excerpt": "3. **REQ-EXPL-003**: Represent invalid requests safely\n   - **Statement**: For invalid or non-positive amounts the explanation MUST report rejection and the INVALID_AMOUNT reason without creating an eligibility recommendation.\n   - **Source**: SRC-POL-001\n   - **Owner**: Product Owner (synthetic scenario)",
+      "finding": "The response requires rejection with INVALID_AMOUNT for invalid/non-positive inputs, without an eligibility recommendation. The four invalid-input scenarios instantiate that boundary."
+    },
+    {
+      "id": "REQ-EXPL-004",
+      "classification": "SUPPORTED",
+      "expected": "The explanation MUST display the policy version from the routing decision and MUST NOT silently infer a newer policy version or threshold.",
+      "evidence_lines": [
+        34,
+        37
+      ],
+      "native_excerpt": "4. **REQ-EXPL-004**: Carry verified policy provenance\n   - **Statement**: The explanation MUST display the policy version from the routing decision and MUST NOT silently infer a newer policy version or threshold.\n   - **Source**: SRC-POL-001\n   - **Owner**: Treasury Policy Owner (synthetic scenario)",
+      "finding": "The response requires provenance from the actual routing decision and prohibits silently inferring a newer policy or threshold. Every scenario retains BR-001/v1."
+    },
+    {
+      "id": "REQ-EXPL-005",
+      "classification": "SUPPORTED",
+      "expected": "The alpha MUST treat time savings and user benefit as hypotheses pending observation and MUST NOT report a measured ROI before a field study.",
+      "evidence_lines": [
+        39,
+        42
+      ],
+      "native_excerpt": "5. **REQ-EXPL-005**: Do not present unvalidated benefit as fact\n   - **Statement**: The alpha MUST treat time savings and user benefit as hypotheses pending observation and MUST NOT report a measured ROI before a field study.\n   - **Source**: SRC-OPS-004, SYN-TRIAGE-CSV\n   - **Owner**: Product Owner (synthetic scenario)",
+      "finding": "The response treats time savings and user benefit as pending hypotheses and prohibits a measured ROI before a field study. HYPOTHESIS_NOT_VALIDATED is also retained separately."
+    }
+  ],
+  "scenario_assessment": [
+    {
+      "id": "SC-EXPL-001",
+      "classification": "SUPPORTED",
+      "evidence_line": 48,
+      "actual_fields": {
+        "id": "SC-EXPL-001",
+        "requirement_id": "REQ-EXPL-001",
+        "input_amount_eur": "4999.99",
+        "expected_route": "STANDARD_QUEUE",
+        "expected_reason": "BELOW_LIMIT",
+        "expected_policy_version": "BR-001/v1",
+        "payment_authorized": false
+      },
+      "literal_payment_value": "false",
+      "all_expected_fields_match": true
+    },
+    {
+      "id": "SC-EXPL-002",
+      "classification": "SUPPORTED",
+      "evidence_line": 49,
+      "actual_fields": {
+        "id": "SC-EXPL-002",
+        "requirement_id": "REQ-EXPL-001",
+        "input_amount_eur": "5000",
+        "expected_route": "HUMAN_REVIEW",
+        "expected_reason": "AT_OR_ABOVE_LIMIT",
+        "expected_policy_version": "BR-001/v1",
+        "payment_authorized": false
+      },
+      "literal_payment_value": "false",
+      "all_expected_fields_match": true
+    },
+    {
+      "id": "SC-EXPL-003",
+      "classification": "SUPPORTED",
+      "evidence_line": 50,
+      "actual_fields": {
+        "id": "SC-EXPL-003",
+        "requirement_id": "REQ-EXPL-001",
+        "input_amount_eur": "5000.01",
+        "expected_route": "HUMAN_REVIEW",
+        "expected_reason": "AT_OR_ABOVE_LIMIT",
+        "expected_policy_version": "BR-001/v1",
+        "payment_authorized": false
+      },
+      "literal_payment_value": "false",
+      "all_expected_fields_match": true
+    },
+    {
+      "id": "SC-EXPL-004",
+      "classification": "SUPPORTED",
+      "evidence_line": 51,
+      "actual_fields": {
+        "id": "SC-EXPL-004",
+        "requirement_id": "REQ-EXPL-003",
+        "input_amount_eur": "0",
+        "expected_route": "REJECTED",
+        "expected_reason": "INVALID_AMOUNT",
+        "expected_policy_version": "BR-001/v1",
+        "payment_authorized": false
+      },
+      "literal_payment_value": "false",
+      "all_expected_fields_match": true
+    },
+    {
+      "id": "SC-EXPL-005",
+      "classification": "SUPPORTED",
+      "evidence_line": 52,
+      "actual_fields": {
+        "id": "SC-EXPL-005",
+        "requirement_id": "REQ-EXPL-003",
+        "input_amount_eur": "-10",
+        "expected_route": "REJECTED",
+        "expected_reason": "INVALID_AMOUNT",
+        "expected_policy_version": "BR-001/v1",
+        "payment_authorized": false
+      },
+      "literal_payment_value": "false",
+      "all_expected_fields_match": true
+    },
+    {
+      "id": "SC-EXPL-006",
+      "classification": "SUPPORTED",
+      "evidence_line": 53,
+      "actual_fields": {
+        "id": "SC-EXPL-006",
+        "requirement_id": "REQ-EXPL-003",
+        "input_amount_eur": "nonsense",
+        "expected_route": "REJECTED",
+        "expected_reason": "INVALID_AMOUNT",
+        "expected_policy_version": "BR-001/v1",
+        "payment_authorized": false
+      },
+      "literal_payment_value": "false",
+      "all_expected_fields_match": true
+    },
+    {
+      "id": "SC-EXPL-007",
+      "classification": "SUPPORTED",
+      "evidence_line": 54,
+      "actual_fields": {
+        "id": "SC-EXPL-007",
+        "requirement_id": "REQ-EXPL-003",
+        "input_amount_eur": "NaN",
+        "expected_route": "REJECTED",
+        "expected_reason": "INVALID_AMOUNT",
+        "expected_policy_version": "BR-001/v1",
+        "payment_authorized": false
+      },
+      "literal_payment_value": "false",
+      "all_expected_fields_match": true
+    },
+    {
+      "id": "SC-EXPL-008",
+      "classification": "SUPPORTED",
+      "evidence_line": 55,
+      "actual_fields": {
+        "id": "SC-EXPL-008",
+        "requirement_id": "REQ-EXPL-004",
+        "input_amount_eur": "1",
+        "expected_route": "STANDARD_QUEUE",
+        "expected_reason": "BELOW_LIMIT",
+        "expected_policy_version": "BR-001/v1",
+        "payment_authorized": false
+      },
+      "literal_payment_value": "false",
+      "all_expected_fields_match": true
+    }
+  ],
+  "semantic_scope": "These are semantic comparisons of native specification content with the fixed authored contract/oracle. They are not executed implementation tests, field observations, user acceptance or approval of a production specification.",
+  "authority_and_boundary_assessment": [
+    {
+      "obligation": "Governing policy and source hierarchy",
+      "classification": "SUPPORTED",
+      "evidence": "Input line12 identifies SRC-POL-001/BR-001/v1 and denies ticket/wiki policy authority; substantive requirements cite their original source IDs; scenario lines48-55 preserve the exact threshold cases and policy version.",
+      "qualification": "The authority sentence remains inside a copied Input block, but its consequences are also reflected in the substantive requirements and cases. No hostile wiki instruction or sponsor automation proposal is adopted."
+    },
+    {
+      "obligation": "Routing versus payment authorization",
+      "classification": "SUPPORTED",
+      "evidence": "REQ-EXPL-002 lines24-27 explicitly retains a separate human authorization process; every scenario has payment_authorized=false; line66 repeats the human boundary."
+    },
+    {
+      "obligation": "Policy provenance and historical version boundary",
+      "classification": "SUPPORTED_FOR_FIXED_REQUIREMENT",
+      "evidence": "REQ-EXPL-004 lines34-37 requires the version from the actual decision and prohibits silently inferring a new policy/threshold; all cases retain BR-001/v1.",
+      "qualification": "No implementation or additional history-rewrite behavior is tested."
+    },
+    {
+      "obligation": "Unratified constitution",
+      "classification": "SUPPORTED",
+      "evidence": "Lines64 and68 explicitly say Unratified; the final status does not invent ratification or approval.",
+      "qualification": "This does not ratify governance or demonstrate a separate completed constitution workflow."
+    },
+    {
+      "obligation": "Unvalidated benefit",
+      "classification": "SUPPORTED",
+      "evidence": "REQ-EXPL-005 lines39-42 and Benefit line62 preserve pending hypotheses, no measured ROI before a field study, and HYPOTHESIS_NOT_VALIDATED."
+    },
+    {
+      "obligation": "Human/policy acceptance",
+      "classification": "SUPPORTED_AS_ABSENT",
+      "evidence": "Draft status and three unanswered owner questions remain; no human answer, policy approval or release authorization is present."
+    }
+  ],
+  "owner_questions": [
+    {
+      "question": "Which explanation vocabulary do real operators understand?",
+      "classification": "SUPPORTED",
+      "evidence_line": 58,
+      "answer_status": "UNANSWERED"
+    },
+    {
+      "question": "Does the interface accidentally induce payment approval?",
+      "classification": "SUPPORTED",
+      "evidence_line": 59,
+      "answer_status": "UNANSWERED"
+    },
+    {
+      "question": "How will actual user benefit be measured in a pilot?",
+      "classification": "SUPPORTED",
+      "evidence_line": 60,
+      "answer_status": "UNANSWERED"
+    }
+  ],
+  "clarification_disposition": {
+    "judgment": "GENUINE_DOCUMENTED_UNANSWERED_QUESTIONS_STOP_AT_THE_END_OF_THE_NATIVE_RESPONSE",
+    "direct_evidence": [
+      "The native final response itself presents all three actual owner questions at lines58-60.",
+      "Line70 states three unanswered questions, and line72 explicitly says they remain unanswered.",
+      "Draft, unratified constitution and unvalidated benefit statuses remain visible.",
+      "The native session records finish=stop and the capture exits0. No further native tool, planning or implementation action follows in this completed session export."
+    ],
+    "inference": "Taken together, the actual question presentation, explicit unresolved status and normal completed stop support the bounded clarification disposition required by the original protocol. This is not inferred from a timeout, input-only question list or future promise.",
+    "limits": [
+      "The response does not literally say I am waiting for your answers. Its explicit unanswered-question status and normal stop establish the bounded documented state; no additional formula of words is imposed as a criterion.",
+      "No separate speckit.clarify invocation or interactive answered clarification dialogue is claimed.",
+      "The three questions remain open. Human requirements acceptance and implementation remain unperformed."
+    ],
+    "another_native_invocation_required_by_original_R08": false
+  },
+  "retained_defects": [
+    {
+      "id": "REVIEW04-F01",
+      "finding": "Useful response content was not persisted to the native project specification.",
+      "evidence": "Final project spec.md is still the exact2230-byte rejected first write; no second write/edit event exists.",
+      "disposition": "Keep the persistence failure explicit. Do not replace its evidence or call an editorial extraction a successful native write."
+    },
+    {
+      "id": "REVIEW04-F02",
+      "finding": "The final response still includes the copied operator-input block and duplicated metadata.",
+      "evidence": "Lines9-16 repeat execution instructions; lines64/68 repeat unratified constitution. Historical no-output-at-start text is quoted source context, not a fresh state observation.",
+      "disposition": "Retain raw response intact; any reader excerpt may omit instruction boilerplate only with explicit editorial attribution and source mapping."
+    },
+    {
+      "id": "REVIEW04-F03",
+      "finding": "The final sentence incorrectly claims three concise artifacts.",
+      "evidence": "Line72 says The three artifacts are concise, while the final tree contains only the rejected spec; checklist and feature metadata are absent.",
+      "disposition": "Reject this unsupported completion claim. Do not quote it as successful generation/persistence of three files."
+    },
+    {
+      "id": "REVIEW04-F04",
+      "finding": "Planned checklist and feature metadata were not created.",
+      "evidence": "Neither path exists in the verified terminal50-file snapshot.",
+      "disposition": "Retain as unmet execution-plan outputs. The original R08 criteria do not require exactly these three files; they do not invalidate the observed useful response plus documented clarification stop."
+    }
+  ],
+  "original_criterion_disposition": [
+    {
+      "criterion": "Artifacts are linked to actual prompts/commands and retained first output.",
+      "status": "SATISFIED",
+      "evidence": "Full installed command body and disclosed fixed inputs are retained in the native session; exact prospective tasks/prompts/configurations, failed first outputs, completed first write, final native response, terminal receipt/export and first-file identities are bound. The final response is an actual retained generated artifact even though native file persistence failed.",
+      "limit": "This does not convert the native-written spec into the useful final response or imply human acceptance."
+    },
+    {
+      "criterion": "Generation is distinguished from scaffold creation and intentionally seeded faults.",
+      "status": "SATISFIED",
+      "evidence": "The scaffold copy, aborted selection, native prompt-echo write, useful generated response and editorial capture are distinctly attributed. Actual first-output omissions and the false three-artifact assertion are retained and independently rejected; no intentionally seeded fault is disguised as a model result."
+    },
+    {
+      "criterion": "One observed route is sufficient for the tutorial; a second observed route is required before a measured paired comparison is claimed.",
+      "status": "SATISFIED_FOR_SINGLE_ROUTE_NO_COMPARISON_PATH",
+      "evidence": "This is one observed Spec Kit/OpenCode route. The existing second-framework material remains a clearly scoped authored contrast; no measured paired comparison or superiority claim is made. No second observed framework is needed for this tutorial scope."
+    }
+  ],
+  "closure_reasoning": "The original action asks for an actual SDD generation journey with retained first outputs, real omissions, clarification and independent assessment. It does not require a flawless first draft, successful persistence to three particular files, a separate clarification command, implementation or positive human approval. The now-retained useful native response, exact five/eight semantic projection, real unanswered-question stop and this independent assessment meet that bounded scope while preserving the execution failures. Another native invocation solely to improve persistence would pursue a separate automation-quality goal, not resolve an unmet original criterion.",
+  "editorial_reader_artifact_guidance": {
+    "permissible": "A clearly attributed editorial excerpt of the useful native response may be supplied for readers, alongside the full raw response, failed actual project file and independent review.",
+    "suggested_scope": "Select the substantive Requirements, Scenarios, Unresolved Owner Questions and explicit boundary/status fields, retaining exact native wording and values. If the copied Input block or false three-artifacts sentence is omitted, record those omissions and their reason with exact source identity/line mapping.",
+    "required_attribution": "Label the file as an editorial extraction of native assistant text; it was not written into the project by the native client, is not accepted requirements, and carries no owner answers or approval.",
+    "not_performed_by_this_review": "No reader extraction, native repair, content rewrite or companion mutation was performed here."
+  },
+  "limits": [
+    "Recommendation concerns the unchanged original R08 bounded observation scope only; authoritative register adoption belongs to root.",
+    "R17 human technical/reader observations remain external. R21 and R22 scopes are unaffected.",
+    "No model run, source mutation, implementation test, proposal generation, new comparative claim, financial estimate or human acceptance was performed.",
+    "All earlier failed-attempt and first-output reviews remain valid as dated assessments of their exact evidence. Later useful native response content does not retroactively repair those artifacts."
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "schema": "esa-legacy-sdk-argument-control/v1",
+  "started_at_utc": "2026-10-22T06:23:10.084637+00:00",
+  "argv": [
+    "revision_d7/evidence/mcp_legacy_argument_control.py",
+    "--server-dir",
+    "companion/practice/mcp_cli",
+    "--output",
+    "revision_d7/evidence/mcp_legacy_argument_control_01"
+  ],
+  "cwd": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5",
+  "python_executable": "/workspace/scratch/72d789d25fef/runtime_d7/mcp_venv/bin/python",
+  "mcp_distribution_version": "2.3.0",
+  "client": "Official Python SDK Client(mode=legacy)",
+  "model_selected": false,
+  "coding_host_trial": false,
+  "human_review": "NOT_PERFORMED",
+  "source_sha256_before": {
+    "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion/practice/mcp_cli/policy_server.py": "ffe28e2fe445ab53bbb0048f02ca1642096abd6102743dcda56ca4fd12c3f139",
+    "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion/practice/mcp_cli/policy_lookup.py": "65aac68ee50d22987ec88394db48d23a33d7d7119b7b072808d6fbbc93b7f4cc",
+    "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion/practice/mcp_cli/wire_proxy.py": "fedefddeb30a834e62a2093d6e0737c6ea09bf52ed9d1e51ab6071f2850daab4"
+  },
+  "purpose": "Actual server-side type rejection control; does not replace or repair the native host first output.",
+  "scope": "One empty-array argument over legacy stdio. No OS/network isolation conclusion.",
+  "server_argv": [
+    "/workspace/scratch/72d789d25fef/runtime_d7/mcp_venv/bin/python",
+    "-B",
+    "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion/practice/mcp_cli/wire_proxy.py",
+    "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/mcp_legacy_argument_control_01/trace"
+  ],
+  "server_cwd": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion/practice/mcp_cli",
+  "status": "CONTROL_FAILED",
+  "error": "unhandled errors in a TaskGroup (1 sub-exception)",
+  "source_sha256_after": {
+    "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion/practice/mcp_cli/policy_server.py": "ffe28e2fe445ab53bbb0048f02ca1642096abd6102743dcda56ca4fd12c3f139",
+    "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion/practice/mcp_cli/policy_lookup.py": "65aac68ee50d22987ec88394db48d23a33d7d7119b7b072808d6fbbc93b7f4cc",
+    "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion/practice/mcp_cli/wire_proxy.py": "fedefddeb30a834e62a2093d6e0737c6ea09bf52ed9d1e51ab6071f2850daab4"
+  },
+  "sources_unchanged": true,
+  "finished_at_utc": "2026-10-22T06:23:10.158597+00:00",
+  "evidence_sha256": {
+    "failure.txt": "acc94f9186d521dc394a3d99e8a70837b6d8bd3219e2bbdbd12d87dbb7191931",
+    "server.stderr.txt": "df7bb732d68b69e51704fb37b7e54d9f8c8c0a6dead5883eb0ad97f4426fca81"
+  }
+}

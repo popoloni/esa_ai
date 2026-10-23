@@ -1,0 +1,8 @@
+{
+  "deployment_id": "DEPLOY-012",
+  "expected_active_policy": "BR-001/v2",
+  "initialize_missing_state": false,
+  "required_history_key": "rollout_anchor",
+  "schema": "cp12-deployment/v1",
+  "state_path": "state/control/history.sqlite"
+}

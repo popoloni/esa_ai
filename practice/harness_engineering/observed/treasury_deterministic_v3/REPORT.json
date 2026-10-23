@@ -1,0 +1,129 @@
+{
+  "composition": {
+    "reason": "Compose observed fresh domain-tool use with the public output contract; these proxy checks do not establish semantic correctness.",
+    "response_component_from": "schema_complete",
+    "routing_component_from": "tool_first",
+    "selection_uses_oracle_results": false,
+    "shape_scores": {
+      "base": 4,
+      "memorized_development": 16,
+      "schema_complete": 16,
+      "tool_first": 4
+    },
+    "tool_scores": {
+      "base": 0,
+      "memorized_development": 0,
+      "schema_complete": 0,
+      "tool_first": 4
+    }
+  },
+  "created_at_utc": "2026-10-20T16:24:11.422292+00:00",
+  "domain_tool_calls": 27,
+  "elapsed_seconds": 3.46493322099559,
+  "experiment_kind": "original deterministic behavior-guided adaptation; not an upstream Harness2 reproduction or LLM benchmark",
+  "human_effort_minutes": null,
+  "interpretation": "The executable harness changes the behavior of a fixed deterministic responder. Passing fixture cases does not establish an LLM gain, human acceptance, generalization, deployment readiness or production safety.",
+  "library_reuse": {
+    "full_contract_correct": 3,
+    "later_cases": 3,
+    "stale_source_control": "REJECTED_STALE_REUSE"
+  },
+  "model_api_cost": null,
+  "model_calls": 0,
+  "model_version": null,
+  "process_executions": 63,
+  "protection": {
+    "after": {
+      "reader_side/acceptance/test_routing.py": "6e5aa5706dd989bdbbeec9374a84d13c41cf6f36e23a5e5d2762a3b16e551c9b",
+      "reader_side/discovery/sources/SRC-POL-001.json": "1de2d20f2fe72c4a2ae698093078deb2a05b5d7fd85eec819438cabb7928aacb",
+      "reader_side/reference_solution/delegation_plan.json": "ff2a8e4e3ef8d2403cec1cc767a91fc97103455237be43661a980607cae2da17",
+      "repo/engineering/planning/delegation_plan.json": "fa77d76a1902cf60d68fea5fd8abddb7eeb6902e21dd03c2a08f44225cf9a293",
+      "repo/src/treasury/routing.py": "14d186a327a418dddb405144bfefb5810ed27e626b981424c9ad3b66742e8b32"
+    },
+    "all_selected_sources_runtime_and_oracle_unchanged": true,
+    "before": {
+      "reader_side/acceptance/test_routing.py": "6e5aa5706dd989bdbbeec9374a84d13c41cf6f36e23a5e5d2762a3b16e551c9b",
+      "reader_side/discovery/sources/SRC-POL-001.json": "1de2d20f2fe72c4a2ae698093078deb2a05b5d7fd85eec819438cabb7928aacb",
+      "reader_side/reference_solution/delegation_plan.json": "ff2a8e4e3ef8d2403cec1cc767a91fc97103455237be43661a980607cae2da17",
+      "repo/engineering/planning/delegation_plan.json": "fa77d76a1902cf60d68fea5fd8abddb7eeb6902e21dd03c2a08f44225cf9a293",
+      "repo/src/treasury/routing.py": "14d186a327a418dddb405144bfefb5810ed27e626b981424c9ad3b66742e8b32"
+    },
+    "cp07_decision": "T07-03 remains pending; T07-04 remains blocked",
+    "held_out_and_oracle_results_exposed_to_composer": false,
+    "os_sandbox_demonstrated": false
+  },
+  "rejected_proposals": [
+    "policy_rewrite",
+    "budget_rewrite"
+  ],
+  "runtime": {
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+    "python": "3.12.14"
+  },
+  "schema": "treasury-harness-experiment/v1",
+  "scores": {
+    "base": {
+      "development": {
+        "cases": 4,
+        "full_contract_correct": 0,
+        "route_correct": 2
+      },
+      "held_out": {
+        "cases": 8,
+        "full_contract_correct": 0,
+        "route_correct": 4
+      }
+    },
+    "composed": {
+      "development": {
+        "cases": 4,
+        "full_contract_correct": 4,
+        "route_correct": 4
+      },
+      "held_out": {
+        "cases": 8,
+        "full_contract_correct": 8,
+        "route_correct": 8
+      }
+    },
+    "memorized_development": {
+      "development": {
+        "cases": 4,
+        "full_contract_correct": 4,
+        "route_correct": 4
+      },
+      "held_out": {
+        "cases": 8,
+        "full_contract_correct": 4,
+        "route_correct": 4
+      }
+    },
+    "schema_complete": {
+      "development": {
+        "cases": 4,
+        "full_contract_correct": 2,
+        "route_correct": 2
+      },
+      "held_out": {
+        "cases": 8,
+        "full_contract_correct": 4,
+        "route_correct": 4
+      }
+    },
+    "tool_first": {
+      "development": {
+        "cases": 4,
+        "full_contract_correct": 0,
+        "route_correct": 4
+      },
+      "held_out": {
+        "cases": 8,
+        "full_contract_correct": 0,
+        "route_correct": 8
+      }
+    }
+  },
+  "statistical_replications": 0,
+  "status": "COMPLETE_DETERMINISTIC_EXERCISE",
+  "tokens": null
+}

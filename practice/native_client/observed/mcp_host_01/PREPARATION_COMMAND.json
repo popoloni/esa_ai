@@ -1,0 +1,17 @@
+{
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-B",
+    "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion/validation/observe_native.py",
+    "prepare",
+    "--source",
+    "/workspace/scratch/72d789d25fef/runtime_d7/native_mcp_work_01",
+    "--output",
+    "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/mcp_host_01",
+    "--actions",
+    "R07"
+  ],
+  "exit_code": 0,
+  "stdout": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/mcp_host_01/NATIVE_OBSERVATION.json\n",
+  "stderr": ""
+}

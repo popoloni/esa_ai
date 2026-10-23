@@ -1,0 +1,680 @@
+{
+  "candidates": {
+    "base": {
+      "development_memory": {},
+      "response_fields": [
+        "route"
+      ],
+      "routing_strategy": "cached_estimate",
+      "schema": "treasury-harness/v1"
+    },
+    "memorized_development": {
+      "development_memory": {
+        "-1.00": {
+          "payment_authorized": false,
+          "policy_version": "BR-001/v1",
+          "reason": "INVALID_AMOUNT",
+          "route": "REJECTED"
+        },
+        "100.00": {
+          "payment_authorized": false,
+          "policy_version": "BR-001/v1",
+          "reason": "BELOW_LIMIT",
+          "route": "STANDARD_QUEUE"
+        },
+        "5000.00": {
+          "payment_authorized": false,
+          "policy_version": "BR-001/v1",
+          "reason": "AT_OR_ABOVE_LIMIT",
+          "route": "HUMAN_REVIEW"
+        },
+        "NaN": {
+          "payment_authorized": false,
+          "policy_version": "BR-001/v1",
+          "reason": "INVALID_AMOUNT",
+          "route": "REJECTED"
+        }
+      },
+      "response_fields": [
+        "route",
+        "reason",
+        "policy_version",
+        "payment_authorized"
+      ],
+      "routing_strategy": "memorized_development",
+      "schema": "treasury-harness/v1"
+    },
+    "schema_complete": {
+      "development_memory": {},
+      "response_fields": [
+        "route",
+        "reason",
+        "policy_version",
+        "payment_authorized"
+      ],
+      "routing_strategy": "cached_estimate",
+      "schema": "treasury-harness/v1"
+    },
+    "tool_first": {
+      "development_memory": {},
+      "response_fields": [
+        "route"
+      ],
+      "routing_strategy": "router_tool",
+      "schema": "treasury-harness/v1"
+    }
+  },
+  "development_tasks": [
+    {
+      "amount_eur": "100.00",
+      "case_id": "DEV-01"
+    },
+    {
+      "amount_eur": "5000.00",
+      "case_id": "DEV-02"
+    },
+    {
+      "amount_eur": "NaN",
+      "case_id": "DEV-03"
+    },
+    {
+      "amount_eur": "-1.00",
+      "case_id": "DEV-04"
+    }
+  ],
+  "editor_kind": "authored deterministic heuristic",
+  "observations": {
+    "base": [
+      {
+        "case_id": "DEV-01",
+        "fresh_router_calls": 0,
+        "required_fields_present": [
+          "route"
+        ],
+        "response": {
+          "route": "STANDARD_QUEUE"
+        },
+        "trace": [
+          {
+            "amount_eur": "100.00",
+            "event": "context",
+            "model_calls": 0,
+            "strategy": "cached_estimate"
+          },
+          {
+            "event": "cached_estimate",
+            "input": "100.00",
+            "note": "Fixed float-based shortcut; no domain tool executed"
+          },
+          {
+            "event": "response_emitted",
+            "fields": [
+              "route"
+            ]
+          }
+        ]
+      },
+      {
+        "case_id": "DEV-02",
+        "fresh_router_calls": 0,
+        "required_fields_present": [
+          "route"
+        ],
+        "response": {
+          "route": "HUMAN_REVIEW"
+        },
+        "trace": [
+          {
+            "amount_eur": "5000.00",
+            "event": "context",
+            "model_calls": 0,
+            "strategy": "cached_estimate"
+          },
+          {
+            "event": "cached_estimate",
+            "input": "5000.00",
+            "note": "Fixed float-based shortcut; no domain tool executed"
+          },
+          {
+            "event": "response_emitted",
+            "fields": [
+              "route"
+            ]
+          }
+        ]
+      },
+      {
+        "case_id": "DEV-03",
+        "fresh_router_calls": 0,
+        "required_fields_present": [
+          "route"
+        ],
+        "response": {
+          "route": "HUMAN_REVIEW"
+        },
+        "trace": [
+          {
+            "amount_eur": "NaN",
+            "event": "context",
+            "model_calls": 0,
+            "strategy": "cached_estimate"
+          },
+          {
+            "event": "cached_estimate",
+            "input": "NaN",
+            "note": "Fixed float-based shortcut; no domain tool executed"
+          },
+          {
+            "event": "response_emitted",
+            "fields": [
+              "route"
+            ]
+          }
+        ]
+      },
+      {
+        "case_id": "DEV-04",
+        "fresh_router_calls": 0,
+        "required_fields_present": [
+          "route"
+        ],
+        "response": {
+          "route": "STANDARD_QUEUE"
+        },
+        "trace": [
+          {
+            "amount_eur": "-1.00",
+            "event": "context",
+            "model_calls": 0,
+            "strategy": "cached_estimate"
+          },
+          {
+            "event": "cached_estimate",
+            "input": "-1.00",
+            "note": "Fixed float-based shortcut; no domain tool executed"
+          },
+          {
+            "event": "response_emitted",
+            "fields": [
+              "route"
+            ]
+          }
+        ]
+      }
+    ],
+    "memorized_development": [
+      {
+        "case_id": "DEV-01",
+        "fresh_router_calls": 0,
+        "required_fields_present": [
+          "payment_authorized",
+          "policy_version",
+          "reason",
+          "route"
+        ],
+        "response": {
+          "payment_authorized": false,
+          "policy_version": "BR-001/v1",
+          "reason": "BELOW_LIMIT",
+          "route": "STANDARD_QUEUE"
+        },
+        "trace": [
+          {
+            "amount_eur": "100.00",
+            "event": "context",
+            "model_calls": 0,
+            "strategy": "memorized_development"
+          },
+          {
+            "event": "memory_hit",
+            "input": "100.00",
+            "note": "Development answer reused; no domain tool executed"
+          },
+          {
+            "event": "response_emitted",
+            "fields": [
+              "payment_authorized",
+              "policy_version",
+              "reason",
+              "route"
+            ]
+          }
+        ]
+      },
+      {
+        "case_id": "DEV-02",
+        "fresh_router_calls": 0,
+        "required_fields_present": [
+          "payment_authorized",
+          "policy_version",
+          "reason",
+          "route"
+        ],
+        "response": {
+          "payment_authorized": false,
+          "policy_version": "BR-001/v1",
+          "reason": "AT_OR_ABOVE_LIMIT",
+          "route": "HUMAN_REVIEW"
+        },
+        "trace": [
+          {
+            "amount_eur": "5000.00",
+            "event": "context",
+            "model_calls": 0,
+            "strategy": "memorized_development"
+          },
+          {
+            "event": "memory_hit",
+            "input": "5000.00",
+            "note": "Development answer reused; no domain tool executed"
+          },
+          {
+            "event": "response_emitted",
+            "fields": [
+              "payment_authorized",
+              "policy_version",
+              "reason",
+              "route"
+            ]
+          }
+        ]
+      },
+      {
+        "case_id": "DEV-03",
+        "fresh_router_calls": 0,
+        "required_fields_present": [
+          "payment_authorized",
+          "policy_version",
+          "reason",
+          "route"
+        ],
+        "response": {
+          "payment_authorized": false,
+          "policy_version": "BR-001/v1",
+          "reason": "INVALID_AMOUNT",
+          "route": "REJECTED"
+        },
+        "trace": [
+          {
+            "amount_eur": "NaN",
+            "event": "context",
+            "model_calls": 0,
+            "strategy": "memorized_development"
+          },
+          {
+            "event": "memory_hit",
+            "input": "NaN",
+            "note": "Development answer reused; no domain tool executed"
+          },
+          {
+            "event": "response_emitted",
+            "fields": [
+              "payment_authorized",
+              "policy_version",
+              "reason",
+              "route"
+            ]
+          }
+        ]
+      },
+      {
+        "case_id": "DEV-04",
+        "fresh_router_calls": 0,
+        "required_fields_present": [
+          "payment_authorized",
+          "policy_version",
+          "reason",
+          "route"
+        ],
+        "response": {
+          "payment_authorized": false,
+          "policy_version": "BR-001/v1",
+          "reason": "INVALID_AMOUNT",
+          "route": "REJECTED"
+        },
+        "trace": [
+          {
+            "amount_eur": "-1.00",
+            "event": "context",
+            "model_calls": 0,
+            "strategy": "memorized_development"
+          },
+          {
+            "event": "memory_hit",
+            "input": "-1.00",
+            "note": "Development answer reused; no domain tool executed"
+          },
+          {
+            "event": "response_emitted",
+            "fields": [
+              "payment_authorized",
+              "policy_version",
+              "reason",
+              "route"
+            ]
+          }
+        ]
+      }
+    ],
+    "schema_complete": [
+      {
+        "case_id": "DEV-01",
+        "fresh_router_calls": 0,
+        "required_fields_present": [
+          "payment_authorized",
+          "policy_version",
+          "reason",
+          "route"
+        ],
+        "response": {
+          "payment_authorized": false,
+          "policy_version": "BR-001/v1",
+          "reason": "BELOW_LIMIT",
+          "route": "STANDARD_QUEUE"
+        },
+        "trace": [
+          {
+            "amount_eur": "100.00",
+            "event": "context",
+            "model_calls": 0,
+            "strategy": "cached_estimate"
+          },
+          {
+            "event": "cached_estimate",
+            "input": "100.00",
+            "note": "Fixed float-based shortcut; no domain tool executed"
+          },
+          {
+            "event": "response_emitted",
+            "fields": [
+              "payment_authorized",
+              "policy_version",
+              "reason",
+              "route"
+            ]
+          }
+        ]
+      },
+      {
+        "case_id": "DEV-02",
+        "fresh_router_calls": 0,
+        "required_fields_present": [
+          "payment_authorized",
+          "policy_version",
+          "reason",
+          "route"
+        ],
+        "response": {
+          "payment_authorized": false,
+          "policy_version": "BR-001/v1",
+          "reason": "AT_OR_ABOVE_LIMIT",
+          "route": "HUMAN_REVIEW"
+        },
+        "trace": [
+          {
+            "amount_eur": "5000.00",
+            "event": "context",
+            "model_calls": 0,
+            "strategy": "cached_estimate"
+          },
+          {
+            "event": "cached_estimate",
+            "input": "5000.00",
+            "note": "Fixed float-based shortcut; no domain tool executed"
+          },
+          {
+            "event": "response_emitted",
+            "fields": [
+              "payment_authorized",
+              "policy_version",
+              "reason",
+              "route"
+            ]
+          }
+        ]
+      },
+      {
+        "case_id": "DEV-03",
+        "fresh_router_calls": 0,
+        "required_fields_present": [
+          "payment_authorized",
+          "policy_version",
+          "reason",
+          "route"
+        ],
+        "response": {
+          "payment_authorized": false,
+          "policy_version": "BR-001/v1",
+          "reason": "AT_OR_ABOVE_LIMIT",
+          "route": "HUMAN_REVIEW"
+        },
+        "trace": [
+          {
+            "amount_eur": "NaN",
+            "event": "context",
+            "model_calls": 0,
+            "strategy": "cached_estimate"
+          },
+          {
+            "event": "cached_estimate",
+            "input": "NaN",
+            "note": "Fixed float-based shortcut; no domain tool executed"
+          },
+          {
+            "event": "response_emitted",
+            "fields": [
+              "payment_authorized",
+              "policy_version",
+              "reason",
+              "route"
+            ]
+          }
+        ]
+      },
+      {
+        "case_id": "DEV-04",
+        "fresh_router_calls": 0,
+        "required_fields_present": [
+          "payment_authorized",
+          "policy_version",
+          "reason",
+          "route"
+        ],
+        "response": {
+          "payment_authorized": false,
+          "policy_version": "BR-001/v1",
+          "reason": "BELOW_LIMIT",
+          "route": "STANDARD_QUEUE"
+        },
+        "trace": [
+          {
+            "amount_eur": "-1.00",
+            "event": "context",
+            "model_calls": 0,
+            "strategy": "cached_estimate"
+          },
+          {
+            "event": "cached_estimate",
+            "input": "-1.00",
+            "note": "Fixed float-based shortcut; no domain tool executed"
+          },
+          {
+            "event": "response_emitted",
+            "fields": [
+              "payment_authorized",
+              "policy_version",
+              "reason",
+              "route"
+            ]
+          }
+        ]
+      }
+    ],
+    "tool_first": [
+      {
+        "case_id": "DEV-01",
+        "fresh_router_calls": 1,
+        "required_fields_present": [
+          "route"
+        ],
+        "response": {
+          "route": "STANDARD_QUEUE"
+        },
+        "trace": [
+          {
+            "amount_eur": "100.00",
+            "event": "context",
+            "model_calls": 0,
+            "strategy": "router_tool"
+          },
+          {
+            "event": "tool_executed",
+            "input": "100.00",
+            "observation": {
+              "payment_authorized": false,
+              "policy_version": "BR-001/v1",
+              "reason": "BELOW_LIMIT",
+              "route": "STANDARD_QUEUE"
+            },
+            "source_sha256": "14d186a327a418dddb405144bfefb5810ed27e626b981424c9ad3b66742e8b32",
+            "tool": "treasury.assess"
+          },
+          {
+            "event": "response_emitted",
+            "fields": [
+              "route"
+            ]
+          }
+        ]
+      },
+      {
+        "case_id": "DEV-02",
+        "fresh_router_calls": 1,
+        "required_fields_present": [
+          "route"
+        ],
+        "response": {
+          "route": "HUMAN_REVIEW"
+        },
+        "trace": [
+          {
+            "amount_eur": "5000.00",
+            "event": "context",
+            "model_calls": 0,
+            "strategy": "router_tool"
+          },
+          {
+            "event": "tool_executed",
+            "input": "5000.00",
+            "observation": {
+              "payment_authorized": false,
+              "policy_version": "BR-001/v1",
+              "reason": "AT_OR_ABOVE_LIMIT",
+              "route": "HUMAN_REVIEW"
+            },
+            "source_sha256": "14d186a327a418dddb405144bfefb5810ed27e626b981424c9ad3b66742e8b32",
+            "tool": "treasury.assess"
+          },
+          {
+            "event": "response_emitted",
+            "fields": [
+              "route"
+            ]
+          }
+        ]
+      },
+      {
+        "case_id": "DEV-03",
+        "fresh_router_calls": 1,
+        "required_fields_present": [
+          "route"
+        ],
+        "response": {
+          "route": "REJECTED"
+        },
+        "trace": [
+          {
+            "amount_eur": "NaN",
+            "event": "context",
+            "model_calls": 0,
+            "strategy": "router_tool"
+          },
+          {
+            "event": "tool_executed",
+            "input": "NaN",
+            "observation": {
+              "payment_authorized": false,
+              "policy_version": "BR-001/v1",
+              "reason": "INVALID_AMOUNT",
+              "route": "REJECTED"
+            },
+            "source_sha256": "14d186a327a418dddb405144bfefb5810ed27e626b981424c9ad3b66742e8b32",
+            "tool": "treasury.assess"
+          },
+          {
+            "event": "response_emitted",
+            "fields": [
+              "route"
+            ]
+          }
+        ]
+      },
+      {
+        "case_id": "DEV-04",
+        "fresh_router_calls": 1,
+        "required_fields_present": [
+          "route"
+        ],
+        "response": {
+          "route": "REJECTED"
+        },
+        "trace": [
+          {
+            "amount_eur": "-1.00",
+            "event": "context",
+            "model_calls": 0,
+            "strategy": "router_tool"
+          },
+          {
+            "event": "tool_executed",
+            "input": "-1.00",
+            "observation": {
+              "payment_authorized": false,
+              "policy_version": "BR-001/v1",
+              "reason": "INVALID_AMOUNT",
+              "route": "REJECTED"
+            },
+            "source_sha256": "14d186a327a418dddb405144bfefb5810ed27e626b981424c9ad3b66742e8b32",
+            "tool": "treasury.assess"
+          },
+          {
+            "event": "response_emitted",
+            "fields": [
+              "route"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "oracle_scores_available": false,
+  "public_contract": {
+    "additional_fields_allowed": false,
+    "field_types": {
+      "payment_authorized": "boolean, always false",
+      "policy_version": "string",
+      "reason": "string",
+      "route": "string"
+    },
+    "required_fields": [
+      "route",
+      "reason",
+      "policy_version",
+      "payment_authorized"
+    ],
+    "scope": "Read-only recommendation responses; no implementation, architecture acceptance, payment or release.",
+    "source_policy": "reader_side/discovery/sources/SRC-POL-001.json",
+    "source_tool": "repo/src/treasury/routing.py",
+    "task": "Return the routing recommendation for each supplied amount using BR-001/v1; no payment is authorized."
+  }
+}

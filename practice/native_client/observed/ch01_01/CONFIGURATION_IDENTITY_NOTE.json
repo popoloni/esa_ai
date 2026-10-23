@@ -1,0 +1,21 @@
+{
+  "schema": "esa-native-config-identity-reconciliation/v1",
+  "recorded_at_utc": "2026-10-22T06:26:51.918188+00:00",
+  "original_manifest_unchanged": true,
+  "original_manifest_sha256": "199b8a030da95b8b62ad0581c57039829a85bde29aaa2cd8607e7865e2ce0d87",
+  "original_config_sha256": "153e3dbb94a7a598613c0081fad6b1176a843da0eedfa1e7f3f1ed18c201e7af",
+  "observed_config_sha256": "322c4076c28be6281bf241ab630108273e88a2ae82aafff4ee4235d3570f11e5",
+  "exact_difference": {
+    "added_top_level_key": "$schema",
+    "value": "https://opencode.ai/config.json"
+  },
+  "behavioral_fields_changed": [],
+  "original_bytes_reconstruction": "Removed only the observed added top-level key and serialized with the original helper indent=2 and trailing newline. Result exactly matches the prior SHA256 commitment. Saved as OPENCODE_CONFIG_PRE_DIAGNOSTIC_RECONSTRUCTED.json; this is a hash-verified reconstruction, not a claimed retained contemporaneous copy.",
+  "file_mtime_utc": "2026-10-22T05:57:05.681037+00:00",
+  "native_effective_config_probe_window": {
+    "start": "2026-10-22T05:57:04.690101+00:00",
+    "end": "2026-10-22T05:57:06.009365+00:00"
+  },
+  "interpretation": "The configuration acquired a schema declaration during the native debug-config probe window. This is consistent with client schema enrichment; file-writer identity was not separately instrumented. No intentional permission, model, output, step, compaction or timeout change is represented by this drift. Actual effective configuration is independently retained.",
+  "inventory_boundary": "The command recorder inventoried the disposable work tree, not this external configuration directory, so its changed_files list does not report this metadata addition."
+}

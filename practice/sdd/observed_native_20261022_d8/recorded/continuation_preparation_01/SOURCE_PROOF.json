@@ -1,0 +1,78 @@
+{
+  "created_at_utc": "2026-10-22T11:11:03.106736+00:00",
+  "status": "PREPARED_NOT_INVOKED",
+  "model_calls": 0,
+  "sources": [
+    {
+      "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/preparation/pinned_client_sources/cli_run.ts",
+      "sha256": "e040e90d4c81cdd59b9568ee90a53c0209cd9ddf1b8b207d1a8685b2e26d57d0",
+      "excerpts": [
+        {
+          "first_line": 152,
+          "last_line": 156,
+          "text": "      .option(\"session\", {\n        alias: [\"s\"],\n        describe: \"session id to continue\",\n        type: \"string\",\n      })"
+        },
+        {
+          "first_line": 458,
+          "last_line": 490,
+          "text": "        if (args.session) {\n          const current = await sdk.session\n            .get({\n              sessionID: args.session,\n            })\n            .catch(() => undefined)\n\n          if (!current?.data) {\n            UI.error(\"Session not found\")\n            process.exit(1)\n          }\n\n          if (args.fork) {\n            const forked = await sdk.session.fork({\n              sessionID: args.session,\n            })\n            const id = forked.data?.id\n            if (!id) {\n              return\n            }\n\n            return {\n              id,\n              title: forked.data?.title ?? current.data.title,\n              directory: forked.data?.directory ?? current.data.directory,\n            }\n          }\n\n          return {\n            id: current.data.id,\n            title: current.data.title,\n            directory: current.data.directory,\n          }"
+        },
+        {
+          "first_line": 854,
+          "last_line": 860,
+          "text": "          const result = await client.session.prompt({\n            sessionID,\n            agent,\n            model,\n            variant: args.variant,\n            parts: [...files, { type: \"text\", text: message }],\n          })"
+        }
+      ]
+    },
+    {
+      "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/preparation/pinned_client_sources/write.ts",
+      "sha256": "861de91cc67849e138c32a697c8eb1abab8e4912bfd97811ea1866b8e9af4096",
+      "excerpts": [
+        {
+          "first_line": 20,
+          "last_line": 24,
+          "text": "export const Parameters = Schema.Struct({\n  content: Schema.String.annotate({ description: \"The content to write to the file\" }),\n  filePath: Schema.String.annotate({\n    description: \"The absolute path to the file to write (must be absolute, not relative)\",\n  }),"
+        },
+        {
+          "first_line": 38,
+          "last_line": 64,
+          "text": "      execute: (params: { content: string; filePath: string }, ctx: Tool.Context) =>\n        Effect.gen(function* () {\n          const instance = yield* InstanceState.context\n          const filepath = path.isAbsolute(params.filePath)\n            ? params.filePath\n            : path.join(instance.directory, params.filePath)\n          yield* assertExternalDirectoryEffect(ctx, filepath)\n\n          const exists = yield* fs.existsSafe(filepath)\n          const source = exists ? yield* Bom.readFile(fs, filepath) : { bom: false, text: \"\" }\n          const next = Bom.split(params.content)\n          const desiredBom = source.bom || next.bom\n          const contentOld = source.text\n          const contentNew = next.text\n\n          const diff = trimDiff(createTwoFilesPatch(filepath, filepath, contentOld, contentNew))\n          yield* ctx.ask({\n            permission: \"edit\",\n            patterns: [path.relative(instance.worktree, filepath)],\n            always: [\"*\"],\n            metadata: {\n              filepath,\n              diff,\n            },\n          })\n\n          yield* fs.writeWithDirs(filepath, Bom.join(contentNew, desiredBom))"
+        }
+      ]
+    },
+    {
+      "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/preparation/pinned_client_sources/session_prompt.ts",
+      "sha256": "f0c5bc64c0f0e966693d4a57f7ede1e9d6e188b396152f04b55303dc75b9b768",
+      "excerpts": [
+        {
+          "first_line": 1178,
+          "last_line": 1179,
+          "text": "          const maxSteps = agent.steps ?? Infinity\n          const isLastStep = step >= maxSteps"
+        },
+        {
+          "first_line": 1279,
+          "last_line": 1285,
+          "text": "              messages: [\n                ...modelMsgs,\n                ...(isLastStep ? [{ role: \"assistant\" as const, content: MAX_STEPS_PROMPT }] : []),\n              ],\n              tools,\n              model,\n              toolChoice: format.type === \"json_schema\" ? \"required\" : undefined,"
+        }
+      ]
+    },
+    {
+      "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/redundant_read_diagnosis/permission_index.ts",
+      "sha256": "5b9e4aa65290a39363722b9fae4c68080188d8ed76896afa0d96cd9dbfd2821d"
+    },
+    {
+      "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/input_budget/output_cap_sources/request.ts",
+      "sha256": "90077551a9a46e11a37f44279c584832918d722c0ba0407ff8cad8d3437dd0de"
+    },
+    {
+      "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/invocation_03/OPENCODE_CONFIG_03.json",
+      "sha256": "044c5deaa96cb5c5e88e7d55770d3d0c399669a926045f5b3fab470359d83941"
+    }
+  ],
+  "findings": {
+    "exact_session_resume": "cli_run.ts152-156 defines --session;458-490 fetches and returns exact existing session without fork;854-860 appends ordinary user prompt to that session. No --command or file attachment is passed again.",
+    "write_capability": "write.ts20-24 defines content/filePath. Lines46-64 internally read existing file, ask edit permission, then fs.writeWithDirs. No FileTime assertion or model-read prerequisite occurs in this complete pinned write.ts. Permission.disabled maps write to edit; current specific output allow entries keep write available. Actual writes remain to be observed.",
+    "steps_limit": "session_prompt.ts1178-1179 compares current step against agent.steps. Lines1279-1285 append MAX_STEPS_PROMPT but still pass tools. This inspected path supplies a final-step instruction, not a mechanical process bound. The capture timeout3600seconds is the prospective subprocess bound.",
+    "context": "The full original installed Spec Kit command and all13 supplied bodies remain in the same exported history, including authored inputs/specification.json. This is guided continuation, not an independent first attempt or blind generation."
+  }
+}

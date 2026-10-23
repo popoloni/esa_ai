@@ -1,0 +1,13 @@
+{
+  "id": "D7-NATIVE-SHUTDOWN-DEADLINE",
+  "recorded_at_utc": "2026-10-22T08:00:34.372244+00:00",
+  "status": "CONFIRMED_ACTUAL_LIFECYCLE_AND_SOURCE",
+  "finding": "The launcher forwards SIGTERM and then waits indefinitely; actual server03 remained running and required separately recorded exact-child SIGKILL.",
+  "actual_evidence": "companion/practice/native_client/setup/runtime_d7/llama_server_03/",
+  "actual_boundary": "Child exit-9 / launcher137 followed operator cleanup, not an OOM kill. Actual escalation147.826 seconds after the first stop request exceeded the planned120-second manual target. Native task had already ended at its independent1800-second outer cap.",
+  "source": "companion/practice/native_client/run_local_model.py",
+  "before_sha256": "4c8beffe536c994adb980b8f82c8580bc0895f5f20605208f1d0bf69fb4cd231",
+  "preserved_source": "revision_d7/evidence/native_shutdown_fix/OBSERVED_LAUNCHER_BEFORE_FIX.py",
+  "correction_plan": "Add a configurable monotonic shutdown grace and exact-owned-child escalation, preserving request/escalation/actual exit records; verify with inert subprocesses only.",
+  "model_rerun": "NOT_PLANNED"
+}

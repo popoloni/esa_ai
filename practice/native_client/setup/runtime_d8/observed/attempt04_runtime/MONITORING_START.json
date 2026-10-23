@@ -1,0 +1,20 @@
+{
+  "schema": "esa-d8-native-monitor-start/v1",
+  "recorded_at_utc": "2026-10-22T11:48:15.008942+00:00",
+  "attempt": "revision_d8/evidence/native_sdd_01/attempt_04",
+  "server_lifecycle": "revision_d8/evidence/native_server_01/lifecycle_04",
+  "authorization": "Root launched compact same-session continuation at2026-10-22T11:46:25.335820+00:00 and authorized read-only log/process/cgroup/metrics monitoring. First snapshot will be frozen forCP29.",
+  "controller_parent": {
+    "path": "../inference_observation_03/collect_snapshot_v2.py",
+    "sha256": "9bc825e7b1ead71b97d56747a29aa10954bf513b398e2f47faafe72bce99bf9f"
+  },
+  "controller_sha256": "64dfe64f8fa6fd1321a25579d68b42c6e02095b8db8ed45a8ca80b246d2263bb",
+  "controller_changes": [
+    "Current response reserve1536 and prospective post-first-request history reserve1664.",
+    "Use frozen terminal03 metrics as baseline and exclude prior attempt02/03 request IDs.",
+    "Capture actual n_gen and cancellation lines separately; no completion claim from decode calls.",
+    "Current receipt path isattempt04; no runtime/controller task call is made."
+  ],
+  "scope": "Exact-owned-server logs/process/cgroup and authorized read-only metricsGET only. No model/tokenizer/completion/embedding request, configuration mutation or process control.",
+  "limits": "Actual next prompt is measured separately from the prospective23072-token budget.650-token artifact content is guidance only. No actual request cap is inferred from argv or props."
+}

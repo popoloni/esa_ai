@@ -1,0 +1,9 @@
+{
+  "at_utc": "2026-10-22T17:42:04.231379+00:00",
+  "previous_invocations": 3,
+  "used_client_wall_seconds": 1133.854428063998,
+  "remaining_budget_seconds": 1566.145571936002,
+  "reason": "Resolve observed mismatch between a claimed cleanup and actual source, then check and make an accurate final handoff.",
+  "author_candidate_edits": false,
+  "scope": "Only api.py; remove unreachable leftover, preserve all working behavior. No additional native invocation after this one."
+}

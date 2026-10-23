@@ -1,0 +1,18 @@
+{
+  "schema": "reader-doctor/v1",
+  "status": "ACTION_REQUIRED",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "git": "git version 2.51.1",
+  "git_merge_tree_write_tree": true,
+  "protected_findings": [
+    "README.md",
+    "adapters/README.md"
+  ],
+  "chapter_cards": 14,
+  "release_starter_findings": [
+    "README.md",
+    "adapters/README.md"
+  ],
+  "meaning": "Prerequisite and source checks, not candidate readiness, interpreter certification or human acceptance. Chapter 13 real pilot has additional host, delay and reviewer requirements."
+}

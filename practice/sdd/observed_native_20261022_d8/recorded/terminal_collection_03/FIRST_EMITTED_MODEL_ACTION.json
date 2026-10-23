@@ -1,0 +1,11 @@
+{
+  "type": "error",
+  "timestamp": 1792669090275,
+  "sessionID": "ses_e9cc44d15ffewxo9hTP3f5v23l",
+  "error": {
+    "name": "UnknownError",
+    "data": {
+      "message": "The operation timed out."
+    }
+  }
+}

@@ -1,0 +1,292 @@
+{
+  "info": {
+    "id": "ses_e9dd033b7ffeN1cfcn1q6e3oTN",
+    "slug": "kind-garden",
+    "projectID": "global",
+    "directory": "/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01",
+    "path": "workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01",
+    "title": "ESA reader Chapter1 native attempt01",
+    "agent": "esa-bounded",
+    "model": {
+      "id": "esa-qwen3-4b",
+      "providerID": "esa-local",
+      "variant": "default"
+    },
+    "version": "1.19.3",
+    "summary": {
+      "additions": 0,
+      "deletions": 0,
+      "files": 0
+    },
+    "cost": 0,
+    "tokens": {
+      "input": 5378,
+      "output": 143,
+      "reasoning": 0,
+      "cache": {
+        "read": 3266,
+        "write": 0
+      }
+    },
+    "permission": [
+      {
+        "permission": "question",
+        "pattern": "*",
+        "action": "deny"
+      },
+      {
+        "permission": "plan_enter",
+        "pattern": "*",
+        "action": "deny"
+      },
+      {
+        "permission": "plan_exit",
+        "pattern": "*",
+        "action": "deny"
+      }
+    ],
+    "time": {
+      "created": 1792648662088,
+      "updated": 1792648980741
+    }
+  },
+  "messages": [
+    {
+      "info": {
+        "role": "user",
+        "time": {
+          "created": 1792648662147
+        },
+        "agent": "esa-bounded",
+        "model": {
+          "providerID": "esa-local",
+          "modelID": "esa-qwen3-4b"
+        },
+        "summary": {
+          "diffs": []
+        },
+        "id": "msg_1622fcc83001771nwfK0ARonL8",
+        "sessionID": "ses_e9dd033b7ffeN1cfcn1q6e3oTN"
+      },
+      "parts": [
+        {
+          "type": "text",
+          "text": "\"Perform the bounded Chapter 1 routing repair in this disposable companion copy.\n\nThe actual working directory is /workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01.\nRead these exact absolute paths; do not omit the study-copy directory:\n/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/reader_side/intent/INT-001.md\n/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/reader_side/acceptance/test_routing.py\n/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/repo/src/treasury/routing.py\n/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/reader_side/evidence/CH01_NATIVE_INITIAL_01.json\n/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/repo/AGENTS.md\n\nThe retained initial result is 3 passes, 2 failures and 2 errors. Follow INT-001. Repair only /workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/repo/src/treasury/routing.py. Preserve the public API, BR-001/v1 and the EUR5,000 boundary. Do not read worked answers or edit the intent, tests, checkers, baselines or other source.\n\nAfter your edit run this exact command once, from the existing working directory:\npython3 -B reader_side/tools/run_acceptance.py --output reader_side/evidence/CH01_NATIVE_AGENT_01.json\n\nIf a tool or check fails, report its actual error and stop. The checker's named JSON is the sole authorized generated report. Do not claim a pass you have not observed. Report the change and actual result. Only if all seven acceptance cases pass and the check reports no integrity findings may you state READY_FOR_HUMAN_REVIEW_NOT_ACCEPTED. Otherwise state the actual failure or TASK_NOT_COMPLETED and stop without a readiness claim. No payment, merge, deployment or human acceptance is authorized.\n\"",
+          "id": "prt_1622fcc8b001jDa2oNDkJ5D71x",
+          "sessionID": "ses_e9dd033b7ffeN1cfcn1q6e3oTN",
+          "messageID": "msg_1622fcc83001771nwfK0ARonL8"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_1622fcc83001771nwfK0ARonL8",
+        "role": "assistant",
+        "mode": "esa-bounded",
+        "agent": "esa-bounded",
+        "path": {
+          "cwd": "/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01",
+          "root": "/"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 3337,
+          "input": 3270,
+          "output": 67,
+          "reasoning": 0,
+          "cache": {
+            "write": 0,
+            "read": 0
+          }
+        },
+        "modelID": "esa-qwen3-4b",
+        "providerID": "esa-local",
+        "time": {
+          "created": 1792648662826,
+          "completed": 1792648796336
+        },
+        "finish": "tool-calls",
+        "id": "msg_1622fcf2a001FJvUHj5arhZ9s1",
+        "sessionID": "ses_e9dd033b7ffeN1cfcn1q6e3oTN"
+      },
+      "parts": [
+        {
+          "type": "step-start",
+          "id": "prt_16231a952001M3EWNi1QZ4sQ1b",
+          "sessionID": "ses_e9dd033b7ffeN1cfcn1q6e3oTN",
+          "messageID": "msg_1622fcf2a001FJvUHj5arhZ9s1"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "FrdW3IcCLKphasl6XU29JqOUcGQ5lFci",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/repo/src/treasury/routing.py",
+              "offset": 0,
+              "limit": 2000
+            },
+            "output": "<path>/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/repo/src/treasury/routing.py</path>\n<type>file</type>\n<content>\n1: \"\"\"A recommendation routing service. This module never authorizes fund movement.\"\"\"\n2: from dataclasses import dataclass\n3: from decimal import Decimal, InvalidOperation\n4: \n5: THRESHOLD_EUR = Decimal(\"5000.00\")\n6: POLICY_VERSION = \"BR-001/v1\"\n7: \n8: @dataclass(frozen=True)\n9: class RoutingDecision:\n10:     route: str\n11:     reason: str\n12:     policy_version: str\n13: \n14: def assess(amount_eur: str) -> RoutingDecision:\n15:     \"\"\"Choose a processing queue. Not a payment authorisation.\"\"\"\n16:     amount = Decimal(amount_eur)\n17:     if amount < THRESHOLD_EUR:\n18:         return RoutingDecision(\"STANDARD_QUEUE\", \"BELOW_LIMIT\", POLICY_VERSION)\n19:     return RoutingDecision(\"HUMAN_REVIEW\", \"AT_OR_ABOVE_LIMIT\", POLICY_VERSION)\n\n(End of file - total 19 lines)\n</content>\n\n<system-reminder>\nInstructions from: /workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/repo/AGENTS.md\n# Treasury teaching repository — integrated Chapters 1–14\n\nThis synthetic exercise routes requests to queues. It never approves payments\nor moves funds. The inherited routing API remains BR-001/v1 with the EUR 5,000 boundary. Chapter 11 adds a separately versioned policy-history teaching experiment.\nThe reader-controlled intent, source catalogue, specification, reference\nsolutions, test oracles, scope baselines and checks are outside this repo.\n\n## Select the exercise before editing\n\nThe combined laboratory supports several exercises. Its cumulative inventory\nis not permission to edit every candidate at once. Select the chapter's scope\nprofile and capture a reader-owned baseline before making its changes.\n\n| Chapter | Candidate paths relative to this repo |\n| --- | --- |\n| 1–2 | `src/treasury/routing.py` in the original routing/workspace exercise |\n| 3 | `engineering/discovery/assessment.json` |\n| 4 | `engineering/specifications/explanation_alpha/specification.json` |\n| 5 | `src/treasury/architecture/direct.py`, `src/treasury/architecture/ports.py`, `engineering/architecture/architecture_decision.json`, `engineering/architecture/ADR-005.md` |\n| 6 | `engineering/knowledge/context_packet.json`, `.agents/skills/context-audit/SKILL.md` |\n| 7 | `engineering/planning/delegation_plan.json`, `engineering/planning/delegation_handoff.json` |\n| 8 | `src/treasury/explanation_alpha.py`, `engineering/implementation/implementation_report.json` |\n| 9 | `engineering/verification/candidate.py`, `engineering/verification/review.json` |\n| 10 | `engineering/release/release_dossier.json` |\n| 11 | `src/treasury/policy_history.py`, `engineering/evolution/policy_delta.json` |\n| 12 | `engineering/operations/deployment.json`, `engineering/operations/incident_review.json` |\n| 13 | `engineering/learning/transfer_review.json`, `engineering/learning/team_knowledge.json` |\n| 14 | `engineering/measurement/outcome_review.json`, `engineering/measurement/tool_decision.json` |\n\nKeep source catalogues, claim dependencies, reader-side specifications, tests,\nreference solutions, manifests and baselines under reader/CI control. Do not\nrewrite an oracle or rebaseline after an unauthorized change to make it pass.\nCheck actual before/after edits with the selected chapter baseline. Task advice\nis not process isolation: enforce real restrictions outside candidate control.\n\n## Planning and teaching experiments\n\nPLAN-007/v1 keeps the architectural decision T07-03 pending and the proposed\nimplementation T07-04 blocked. Its protected reference does not claim any live\nagent execution or human acceptance. Do not mark these tasks complete because\nlater classroom checks pass.\n\nChapter 8 has a separate local experiment work order at\n`../reader_side/implementation/WORK_ORDER_CP08.md`. It concerns a different\npresentation wrapper and only the two CP08 paths. It does not authorize the\nblocked CP07 edit of `architecture/direct.py`, accept ADR-005, approve a payment,\nor permit merge or release. Chapter 9 supplies independent verification of\nknown teaching examples and the actual Chapter 8 output.\n\nChapter 10 reviews this presentation experiment using a disposable local Git\nrehearsal, exact artifact identities and explicitly synthetic owner records.\nOnly the release dossier is editable in CP10. Do not change reviewer identities,\ndecisions, mandatory discussion threads, checks, earlier source or artifact\nbytes to turn a rejection into a pass. A recorded local authorization is limited\nto this classroom experiment; CP07 remains blocked and real release authority\nremains false. Source changes require the relevant earlier exercise and fresh\nevidence and owner decisions for that exact candidate.\n\n## Checks and handoff\n\nFrom the companion root, use `python3 reader_side/tools/run_checks.py` for the\nshared regression suite. `python3 reader_side/tools/integration_gate.py`\nchecks the current cumulative candidate workflow; `--reference` checks the\nprotected worked example. Preserve unresolved questions and stop at\n`PASS_REVIEW_GATE_ONLY` / `READY_FOR_HUMAN_REVIEW_NOT_ACCEPTED`.\n\nFor Chapter 10, use `rehearse_release.py` and `release_gate.py` as described in\n`../README_CP10.md`. The shared runner's `--release-rehearsal DIR` option evaluates\nthe current release dossier; `--require-release` also requires the current\nCP01–CP09 candidates to pass. Without rehearsal evidence CP10 readiness is\nreported as `NOT_RUN`; a passing regression suite supplies no release decision.\n\nNo production credentials, network writes, deployment or additional package\ninstallation is needed for this standard-library offline laboratory. Chapter 10\nalso uses the local Git executable; no remote repository or deployment service\nis contacted.\n\n## Chapter 11 persistence boundary\n\nThe protected ../reader_side/evolution/WORK_ORDER_CP11.md authorizes only the two\nCP11 paths. Retain the original router and all v1 history; add versioned policy\nselection, persistent request identity and explicit historical recomputation.\nDo not infer missing legacy policy evidence or erase records on retry. Keep\nSQLite data and receipts outside source, under reader control. See\n../README_CP11.md for the narrower new payload contract, owner-bound synthetic\nlegacy fixtures and fresh-output gate commands. --require-evolution checks\ncurrent CP11 readiness separately from any CP10 presentation-release decision.\nNo earlier blocked task or real payment/release authority is granted.\n\n## Chapter 12 incident boundary\n\nThe protected ../reader_side/operations/WORK_ORDER_CP12.md authorizes only the\ntwo CP12 paths. Keep the router and CP11 history implementation unchanged.\nInvestigate the selected SQLite state using actual local process evidence;\npreserve the control and incident ledgers and do not silently initialize a\nreplacement during recovery. Gate probes use new copies. Incident-only rows\nremain quarantined pending owner reconciliation; local restoration is not\nincident closure or production rollout. See ../README_CP12.md for the current\nand protected-reference modes. --require-operations requires current CP01–09,\nCP11 and CP12 readiness and a current incident session; it does not imply any\nCP10 release acceptance or real operational authority.\n\n## Chapter 13 learning and governance boundary\n\nThe protected ../reader_side/learning/WORK_ORDER_CP13.md authorizes only the two\nCP13 JSON candidates. Reuse actual CP12 evidence and the unchanged PolicyStore\nfor the different active-policy transfer case. Keep rubrics, protocol, raw\nhuman explanations, independent reviewer records, owner clocks and keys outside\ncandidate control. Synthetic clock/rater fixtures test the harness only. They\ndo not establish human retention, transfer, rubric validity or competence.\nSeal delayed retention before releasing transfer material; keep both raw scores\nand any later adjudication distinct. Knowledge claims are owned, versioned and\ninvalidated with their dependencies. --require-learning requires the current\nprior candidate workflow and CP13 protocol review, never human competence,\nincident reconciliation, production recovery or delegated release authority.\n\n## Chapter 14 measurement and tool-decision boundary\n\nThe protected ../reader_side/measurement/WORK_ORDER_CP14.md authorizes only the\ntwo CP14 JSON candidates. Observe actual local CP13 commands on disposable\ncopies and retain every attempt, including rejection, repair, repeated green,\nstale evidence and refresh. Distinct accepted work items require applicable\nowner records; repeated passes are not new outcomes. Local elapsed time is not\nhuman effort, and missing hours/billing/real acceptance remain UNKNOWN.\nProtected synthetic costs and owner acceptance illustrate a proposed pilot,\nnot measured ROI or an empirical tool winner. --require-measurement requires\nthe current prior workflow and the same nominated CP12/CP13 evidence, while\nCP10 release stays separate. CP07, reconciliation, human-learning validation,\npilot approval, procurement and real release authority remain unresolved.\n\n</system-reminder>",
+            "metadata": {
+              "preview": "\"\"\"A recommendation routing service. This module never authorizes fund movement.\"\"\"\nfrom dataclasses import dataclass\nfrom decimal import Decimal, InvalidOperation\n\nTHRESHOLD_EUR = Decimal(\"5000.00\")\nPOLICY_VERSION = \"BR-001/v1\"\n\n@dataclass(frozen=True)\nclass RoutingDecision:\n    route: str\n    reason: str\n    policy_version: str\n\ndef assess(amount_eur: str) -> RoutingDecision:\n    \"\"\"Choose a processing queue. Not a payment authorisation.\"\"\"\n    amount = Decimal(amount_eur)\n    if amount < THRESHOLD_EUR:\n        return RoutingDecision(\"STANDARD_QUEUE\", \"BELOW_LIMIT\", POLICY_VERSION)\n    return RoutingDecision(\"HUMAN_REVIEW\", \"AT_OR_ABOVE_LIMIT\", POLICY_VERSION)",
+              "truncated": false,
+              "loaded": [
+                "/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/repo/AGENTS.md"
+              ],
+              "display": {
+                "type": "file",
+                "path": "/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/repo/src/treasury/routing.py",
+                "text": "\"\"\"A recommendation routing service. This module never authorizes fund movement.\"\"\"\nfrom dataclasses import dataclass\nfrom decimal import Decimal, InvalidOperation\n\nTHRESHOLD_EUR = Decimal(\"5000.00\")\nPOLICY_VERSION = \"BR-001/v1\"\n\n@dataclass(frozen=True)\nclass RoutingDecision:\n    route: str\n    reason: str\n    policy_version: str\n\ndef assess(amount_eur: str) -> RoutingDecision:\n    \"\"\"Choose a processing queue. Not a payment authorisation.\"\"\"\n    amount = Decimal(amount_eur)\n    if amount < THRESHOLD_EUR:\n        return RoutingDecision(\"STANDARD_QUEUE\", \"BELOW_LIMIT\", POLICY_VERSION)\n    return RoutingDecision(\"HUMAN_REVIEW\", \"AT_OR_ABOVE_LIMIT\", POLICY_VERSION)",
+                "lineStart": 1,
+                "lineEnd": 19,
+                "totalLines": 19,
+                "truncated": false
+              }
+            },
+            "title": "workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/repo/src/treasury/routing.py",
+            "time": {
+              "start": 1792648795970,
+              "end": 1792648795995
+            }
+          },
+          "id": "prt_16231ae3d001E7i1qrDXWKby4L",
+          "sessionID": "ses_e9dd033b7ffeN1cfcn1q6e3oTN",
+          "messageID": "msg_1622fcf2a001FJvUHj5arhZ9s1"
+        },
+        {
+          "reason": "tool-calls",
+          "type": "step-finish",
+          "tokens": {
+            "total": 3337,
+            "input": 3270,
+            "output": 67,
+            "reasoning": 0,
+            "cache": {
+              "write": 0,
+              "read": 0
+            }
+          },
+          "cost": 0,
+          "id": "prt_16231d8a8001hjzAyuWNKeJFWG",
+          "sessionID": "ses_e9dd033b7ffeN1cfcn1q6e3oTN",
+          "messageID": "msg_1622fcf2a001FJvUHj5arhZ9s1"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_1622fcc83001771nwfK0ARonL8",
+        "role": "assistant",
+        "mode": "esa-bounded",
+        "agent": "esa-bounded",
+        "path": {
+          "cwd": "/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01",
+          "root": "/"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 5450,
+          "input": 2108,
+          "output": 76,
+          "reasoning": 0,
+          "cache": {
+            "write": 0,
+            "read": 3266
+          }
+        },
+        "modelID": "esa-qwen3-4b",
+        "providerID": "esa-local",
+        "time": {
+          "created": 1792648796341,
+          "completed": 1792648980731
+        },
+        "finish": "tool-calls",
+        "id": "msg_16231d8b5001jF2A0NR8vxGO6l",
+        "sessionID": "ses_e9dd033b7ffeN1cfcn1q6e3oTN"
+      },
+      "parts": [
+        {
+          "type": "step-start",
+          "id": "prt_16234555e001AQuG9d1aHFQp7o",
+          "sessionID": "ses_e9dd033b7ffeN1cfcn1q6e3oTN",
+          "messageID": "msg_16231d8b5001jF2A0NR8vxGO6l"
+        },
+        {
+          "type": "tool",
+          "tool": "bash",
+          "callID": "0TJiYa7wNjwi7LI6u5JGLhplb2gVJHCr",
+          "state": {
+            "status": "completed",
+            "input": {
+              "command": "python3 -B reader_side/tools/run_acceptance.py --output reader_side/evidence/CH01_NATIVE_AGENT_01.json",
+              "workdir": "/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01"
+            },
+            "output": "{\n  \"schema\": \"chapter01-routing-result/v1\",\n  \"timestamp_utc\": \"2026-10-22T06:03:00.404997+00:00\",\n  \"python_version\": \"3.12.14\",\n  \"platform\": \"Linux-6.18.55-x86_64-with-glibc2.39\",\n  \"status\": \"FAIL\",\n  \"candidate\": \"repo/src/treasury/routing.py\",\n  \"candidate_sha256\": \"39c5afc8888b748c8e96147f1bc143839dedfe73963bf5675f3e8ebf4978457a\",\n  \"intent_sha256\": \"209ee2f218448d83178bd02fd5947cf68b021657a72b38e682e4a895fa102947\",\n  \"acceptance_sha256\": \"6e5aa5706dd989bdbbeec9374a84d13c41cf6f36e23a5e5d2762a3b16e551c9b\",\n  \"integrity_before\": [],\n  \"integrity_after\": [],\n  \"exit_code\": 1,\n  \"stdout\": \"\",\n  \"test_log\": \"test_above_boundary_requires_review (chapter01_owner_acceptance.RoutingAcceptance.test_above_boundary_requires_review) ... ok\\ntest_exact_boundary_requires_review (chapter01_owner_acceptance.RoutingAcceptance.test_exact_boundary_requires_review) ... ok\\ntest_negative_amount_rejected (chapter01_owner_acceptance.RoutingAcceptance.test_negative_amount_rejected) ... FAIL\\ntest_nonfinite_amount_rejected (chapter01_owner_acceptance.RoutingAcceptance.test_nonfinite_amount_rejected) ... ERROR\\ntest_nonnumeric_amount_rejected (chapter01_owner_acceptance.RoutingAcceptance.test_nonnumeric_amount_rejected) ... ERROR\\ntest_positive_below_limit (chapter01_owner_acceptance.RoutingAcceptance.test_positive_below_limit) ... ok\\ntest_zero_amount_rejected (chapter01_owner_acceptance.RoutingAcceptance.test_zero_amount_rejected) ... FAIL\\n\\n======================================================================\\nERROR: test_nonfinite_amount_rejected (chapter01_owner_acceptance.RoutingAcceptance.test_nonfinite_amount_rejected)\\n----------------------------------------------------------------------\\nTraceback (most recent call last):\\n  File \\\"/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/reader_side/acceptance/test_routing.py\\\", line 30, in test_nonfinite_amount_rejected\\n    self.check(\\\"NaN\\\", \\\"REJECTED\\\", \\\"INVALID_AMOUNT\\\")\\n  File \\\"/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/reader_side/acceptance/test_routing.py\\\", line 7, in check\\n    result = assess(raw)\\n             ^^^^^^^^^^^\\n  File \\\"/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/repo/src/treasury/routing.py\\\", line 17, in assess\\n    if amount < THRESHOLD_EUR:\\n       ^^^^^^^^^^^^^^^^^^^^^^\\ndecimal.InvalidOperation: [<class 'decimal.InvalidOperation'>]\\n\\n======================================================================\\nERROR: test_nonnumeric_amount_rejected (chapter01_owner_acceptance.RoutingAcceptance.test_nonnumeric_amount_rejected)\\n----------------------------------------------------------------------\\nTraceback (most recent call last):\\n  File \\\"/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/reader_side/acceptance/test_routing.py\\\", line 27, in test_nonnumeric_amount_rejected\\n    self.check(\\\"not-an-amount\\\", \\\"REJECTED\\\", \\\"INVALID_AMOUNT\\\")\\n  File \\\"/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/reader_side/acceptance/test_routing.py\\\", line 7, in check\\n    result = assess(raw)\\n             ^^^^^^^^^^^\\n  File \\\"/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/repo/src/treasury/routing.py\\\", line 16, in assess\\n    amount = Decimal(amount_eur)\\n             ^^^^^^^^^^^^^^^^^^^\\ndecimal.InvalidOperation: [<class 'decimal.ConversionSyntax'>]\\n\\n======================================================================\\nFAIL: test_negative_amount_rejected (chapter01_owner_acceptance.RoutingAcceptance.test_negative_amount_rejected)\\n----------------------------------------------------------------------\\nTraceback (most recent call last):\\n  File \\\"/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/reader_side/acceptance/test_routing.py\\\", line 21, in test_negative_amount_rejected\\n    self.check(\\\"-0.01\\\", \\\"REJECTED\\\", \\\"INVALID_AMOUNT\\\")\\n  File \\\"/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/reader_side/acceptance/test_routing.py\\\", line 8, in check\\n    self.assertEqual((result.route, result.reason, result.policy_version),\\nAssertionError: Tuples differ: ('STANDARD_QUEUE', 'BELOW_LIMIT', 'BR-001/v1') != ('REJECTED', 'INVALID_AMOUNT', 'BR-001/v1')\\n\\nFirst differing element 0:\\n'STANDARD_QUEUE'\\n'REJECTED'\\n\\n- ('STANDARD_QUEUE', 'BELOW_LIMIT', 'BR-001/v1')\\n+ ('REJECTED', 'INVALID_AMOUNT', 'BR-001/v1')\\n\\n======================================================================\\nFAIL: test_zero_amount_rejected (chapter01_owner_acceptance.RoutingAcceptance.test_zero_amount_rejected)\\n----------------------------------------------------------------------\\nTraceback (most recent call last):\\n  File \\\"/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/reader_side/acceptance/test_routing.py\\\", line 24, in test_zero_amount_rejected\\n    self.check(\\\"0.00\\\", \\\"REJECTED\\\", \\\"INVALID_AMOUNT\\\")\\n  File \\\"/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/reader_side/acceptance/test_routing.py\\\", line 8, in check\\n    self.assertEqual((result.route, result.reason, result.policy_version),\\nAssertionError: Tuples differ: ('STANDARD_QUEUE', 'BELOW_LIMIT', 'BR-001/v1') != ('REJECTED', 'INVALID_AMOUNT', 'BR-001/v1')\\n\\nFirst differing element 0:\\n'STANDARD_QUEUE'\\n'REJECTED'\\n\\n- ('STANDARD_QUEUE', 'BELOW_LIMIT', 'BR-001/v1')\\n+ ('REJECTED', 'INVALID_AMOUNT', 'BR-001/v1')\\n\\n----------------------------------------------------------------------\\nRan 7 tests in 0.001s\\n\\nFAILED (failures=2, errors=2)\\n\",\n  \"stderr\": \"\",\n  \"meaning\": \"Seven owner-side cases for known local teaching code; not a security sandbox, payment approval or release approval.\",\n  \"candidate_sha256_after\": \"39c5afc8888b748c8e96147f1bc143839dedfe73963bf5675f3e8ebf4978457a\",\n  \"tests_total\": 7,\n  \"passed\": 3,\n  \"failures\": 2,\n  \"errors\": 2,\n  \"skipped\": 0,\n  \"expected_failures\": 0,\n  \"unexpected_successes\": 0,\n  \"findings\": [\n    \"ACCEPTANCE_REJECTED\"\n  ]\n}\n",
+            "metadata": {
+              "output": "{\n  \"schema\": \"chapter01-routing-result/v1\",\n  \"timestamp_utc\": \"2026-10-22T06:03:00.404997+00:00\",\n  \"python_version\": \"3.12.14\",\n  \"platform\": \"Linux-6.18.55-x86_64-with-glibc2.39\",\n  \"status\": \"FAIL\",\n  \"candidate\": \"repo/src/treasury/routing.py\",\n  \"candidate_sha256\": \"39c5afc8888b748c8e96147f1bc143839dedfe73963bf5675f3e8ebf4978457a\",\n  \"intent_sha256\": \"209ee2f218448d83178bd02fd5947cf68b021657a72b38e682e4a895fa102947\",\n  \"acceptance_sha256\": \"6e5aa5706dd989bdbbeec9374a84d13c41cf6f36e23a5e5d2762a3b16e551c9b\",\n  \"integrity_before\": [],\n  \"integrity_after\": [],\n  \"exit_code\": 1,\n  \"stdout\": \"\",\n  \"test_log\": \"test_above_boundary_requires_review (chapter01_owner_acceptance.RoutingAcceptance.test_above_boundary_requires_review) ... ok\\ntest_exact_boundary_requires_review (chapter01_owner_acceptance.RoutingAcceptance.test_exact_boundary_requires_review) ... ok\\ntest_negative_amount_rejected (chapter01_owner_acceptance.RoutingAcceptance.test_negative_amount_rejected) ... FAIL\\ntest_nonfinite_amount_rejected (chapter01_owner_acceptance.RoutingAcceptance.test_nonfinite_amount_rejected) ... ERROR\\ntest_nonnumeric_amount_rejected (chapter01_owner_acceptance.RoutingAcceptance.test_nonnumeric_amount_rejected) ... ERROR\\ntest_positive_below_limit (chapter01_owner_acceptance.RoutingAcceptance.test_positive_below_limit) ... ok\\ntest_zero_amount_rejected (chapter01_owner_acceptance.RoutingAcceptance.test_zero_amount_rejected) ... FAIL\\n\\n======================================================================\\nERROR: test_nonfinite_amount_rejected (chapter01_owner_acceptance.RoutingAcceptance.test_nonfinite_amount_rejected)\\n----------------------------------------------------------------------\\nTraceback (most recent call last):\\n  File \\\"/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/reader_side/acceptance/test_routing.py\\\", line 30, in test_nonfinite_amount_rejected\\n    self.check(\\\"NaN\\\", \\\"REJECTED\\\", \\\"INVALID_AMOUNT\\\")\\n  File \\\"/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/reader_side/acceptance/test_routing.py\\\", line 7, in check\\n    result = assess(raw)\\n             ^^^^^^^^^^^\\n  File \\\"/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/repo/src/treasury/routing.py\\\", line 17, in assess\\n    if amount < THRESHOLD_EUR:\\n       ^^^^^^^^^^^^^^^^^^^^^^\\ndecimal.InvalidOperation: [<class 'decimal.InvalidOperation'>]\\n\\n======================================================================\\nERROR: test_nonnumeric_amount_rejected (chapter01_owner_acceptance.RoutingAcceptance.test_nonnumeric_amount_rejected)\\n----------------------------------------------------------------------\\nTraceback (most recent call last):\\n  File \\\"/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/reader_side/acceptance/test_routing.py\\\", line 27, in test_nonnumeric_amount_rejected\\n    self.check(\\\"not-an-amount\\\", \\\"REJECTED\\\", \\\"INVALID_AMOUNT\\\")\\n  File \\\"/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/reader_side/acceptance/test_routing.py\\\", line 7, in check\\n    result = assess(raw)\\n             ^^^^^^^^^^^\\n  File \\\"/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/repo/src/treasury/routing.py\\\", line 16, in assess\\n    amount = Decimal(amount_eur)\\n             ^^^^^^^^^^^^^^^^^^^\\ndecimal.InvalidOperation: [<class 'decimal.ConversionSyntax'>]\\n\\n======================================================================\\nFAIL: test_negative_amount_rejected (chapter01_owner_acceptance.RoutingAcceptance.test_negative_amount_rejected)\\n----------------------------------------------------------------------\\nTraceback (most recent call last):\\n  File \\\"/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/reader_side/acceptance/test_routing.py\\\", line 21, in test_negative_amount_rejected\\n    self.check(\\\"-0.01\\\", \\\"REJECTED\\\", \\\"INVALID_AMOUNT\\\")\\n  File \\\"/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/reader_side/acceptance/test_routing.py\\\", line 8, in check\\n    self.assertEqual((result.route, result.reason, result.policy_version),\\nAssertionError: Tuples differ: ('STANDARD_QUEUE', 'BELOW_LIMIT', 'BR-001/v1') != ('REJECTED', 'INVALID_AMOUNT', 'BR-001/v1')\\n\\nFirst differing element 0:\\n'STANDARD_QUEUE'\\n'REJECTED'\\n\\n- ('STANDARD_QUEUE', 'BELOW_LIMIT', 'BR-001/v1')\\n+ ('REJECTED', 'INVALID_AMOUNT', 'BR-001/v1')\\n\\n======================================================================\\nFAIL: test_zero_amount_rejected (chapter01_owner_acceptance.RoutingAcceptance.test_zero_amount_rejected)\\n----------------------------------------------------------------------\\nTraceback (most recent call last):\\n  File \\\"/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/reader_side/acceptance/test_routing.py\\\", line 24, in test_zero_amount_rejected\\n    self.check(\\\"0.00\\\", \\\"REJECTED\\\", \\\"INVALID_AMOUNT\\\")\\n  File \\\"/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/reader_side/acceptance/test_routing.py\\\", line 8, in check\\n    self.assertEqual((result.route, result.reason, result.policy_version),\\nAssertionError: Tuples differ: ('STANDARD_QUEUE', 'BELOW_LIMIT', 'BR-001/v1') != ('REJECTED', 'INVALID_AMOUNT', 'BR-001/v1')\\n\\nFirst differing element 0:\\n'STANDARD_QUEUE'\\n'REJECTED'\\n\\n- ('STANDARD_QUEUE', 'BELOW_LIMIT', 'BR-001/v1')\\n+ ('REJECTED', 'INVALID_AMOUNT', 'BR-001/v1')\\n\\n----------------------------------------------------------------------\\nRan 7 tests in 0.001s\\n\\nFAILED (failures=2, errors=2)\\n\",\n  \"stderr\": \"\",\n  \"meaning\": \"Seven owner-side cases for known local teaching code; not a security sandbox, payment approval or release approval.\",\n  \"candidate_sha256_after\": \"39c5afc8888b748c8e96147f1bc143839dedfe73963bf5675f3e8ebf4978457a\",\n  \"tests_total\": 7,\n  \"passed\": 3,\n  \"failures\": 2,\n  \"errors\": 2,\n  \"skipped\": 0,\n  \"expected_failures\": 0,\n  \"unexpected_successes\": 0,\n  \"findings\": [\n    \"ACCEPTANCE_REJECTED\"\n  ]\n}\n",
+              "exit": 1,
+              "truncated": false
+            },
+            "title": "python3 -B reader_side/tools/run_acceptance.py --output reader_side/evidence/CH01_NATIVE_AGENT_01.json",
+            "time": {
+              "start": 1792648980004,
+              "end": 1792648980592
+            }
+          },
+          "id": "prt_162345b01001uacoByqKSYk4Kp",
+          "sessionID": "ses_e9dd033b7ffeN1cfcn1q6e3oTN",
+          "messageID": "msg_16231d8b5001jF2A0NR8vxGO6l"
+        },
+        {
+          "reason": "tool-calls",
+          "type": "step-finish",
+          "tokens": {
+            "total": 5450,
+            "input": 2108,
+            "output": 76,
+            "reasoning": 0,
+            "cache": {
+              "write": 0,
+              "read": 3266
+            }
+          },
+          "cost": 0,
+          "id": "prt_16234a8f6001uuU8vSDtRyq0D9",
+          "sessionID": "ses_e9dd033b7ffeN1cfcn1q6e3oTN",
+          "messageID": "msg_16231d8b5001jF2A0NR8vxGO6l"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_1622fcc83001771nwfK0ARonL8",
+        "role": "assistant",
+        "mode": "esa-bounded",
+        "agent": "esa-bounded",
+        "path": {
+          "cwd": "/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01",
+          "root": "/"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "reasoning": 0,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        },
+        "modelID": "esa-qwen3-4b",
+        "providerID": "esa-local",
+        "time": {
+          "created": 1792648980735
+        },
+        "id": "msg_16234a8ff001mTKVY12XO5KONa",
+        "sessionID": "ses_e9dd033b7ffeN1cfcn1q6e3oTN"
+      },
+      "parts": []
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "started_at_utc": "2026-10-22T10:20:59.337696+00:00",
+  "argv": [
+    "/workspace/scratch/72d789d25fef/runtime_d7/opencode/node_modules/.bin/opencode",
+    "--pure",
+    "debug",
+    "config"
+  ],
+  "cwd": "/workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01",
+  "environment_reference": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/invocation/ENVIRONMENT_02.json",
+  "model_call": false,
+  "finished_at_utc": "2026-10-22T10:21:00.965082+00:00",
+  "exit_code": 0,
+  "stdout_sha256": "f65acbaba358165b59429e4b8cf7a20966302d499c751a16f82bbc9bed6abff8",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "checks": {
+    "exit_zero": true,
+    "actual_effective_context_24576": true,
+    "actual_effective_output_3072": true,
+    "permission_rules_unchanged": true,
+    "only_local_provider": true,
+    "no_auto_compaction": true,
+    "overall_and_header_limits_unchanged": true,
+    "config_file_bytes_stable": true,
+    "full_command_bytes_preserved": true,
+    "project_inventory_unchanged": true,
+    "no_output_artifacts_created": true,
+    "fresh_generation_session_required": true
+  },
+  "status": "PASS_EFFECTIVE_CONFIG_ONLY_NO_INFERENCE"
+}

@@ -1,0 +1,59 @@
+{
+  "schema": "esa-independent-native-shutdown-review/v1",
+  "recorded_at_utc": "2026-10-22T08:05:56.375632+00:00",
+  "status": "PASS",
+  "reviewer": "native_completion assistant, independent of the helper edit",
+  "launcher": {
+    "path": "companion/practice/native_client/run_local_model.py",
+    "bytes": 7446,
+    "sha256": "9dec1771869e921fc59194f0603825ab28d02ab8fed0765d9e2b4028dbf38987"
+  },
+  "scope": "Controlled inert subprocesses only; no real llama.cpp executable, model, network endpoint or native-client inference was used. The earlier real server03 timeout and forced cleanup remain unchanged.",
+  "successful_attempt": "retry_02/REPORT.json",
+  "successful_attempt_identity": {
+    "path": "revision_d7/evidence/native_shutdown_fix/controlled_probe/retry_02/REPORT.json",
+    "bytes": 17516,
+    "sha256": "ce7140a9cae8a90e09e01d04812f571e2055afcdc13a161f9fc515120949e4f7"
+  },
+  "checks_passed": 17,
+  "cooperative_case": {
+    "launcher_exit_code": 0,
+    "child_exit_code": 0,
+    "seconds_from_first_signal_to_reap": 0.06380548699962674,
+    "force_signal_sent": false,
+    "shutdown_event_detail": "Fast cooperative exit retains the SIGTERM event in FINISH.json; no separate SHUTDOWN.json was emitted before it exited."
+  },
+  "ignoring_case": {
+    "configured_grace_seconds": 1.2,
+    "signals_received_by_launcher": [
+      15,
+      2,
+      15
+    ],
+    "seconds_after_first_stop_request_at_kill": 1.3733025580004323,
+    "seconds_from_first_signal_to_reap": 1.4154068150000967,
+    "single_kill_of_exact_direct_child": true,
+    "child_exit_code": -9,
+    "launcher_exit_code": 137,
+    "repeated_signals_did_not_reset_deadline": true
+  },
+  "first_attempt": {
+    "status": "CONTROLLER_ENVIRONMENT_ERROR_BEFORE_TEST_SIGNALS",
+    "report": {
+      "path": "revision_d7/evidence/native_shutdown_fix/controlled_probe/REPORT.json",
+      "bytes": 5412,
+      "sha256": "8e5c779a1eaf5521dcd8bbb81112f8282402510e1c3ab12283b21edf5eb1455d"
+    },
+    "annotation": {
+      "path": "revision_d7/evidence/native_shutdown_fix/controlled_probe/ATTEMPT_01_ENVIRONMENT_LIMIT.json",
+      "bytes": 859,
+      "sha256": "cc13265652e4975f230feb780217e39c119610c5b849c7958eb54338600b5a44"
+    },
+    "finding": "Default sandbox Popen and /proc views differed. Original failed records remain; the later host-view scan found no matching leftover inert children. This was a controller setup error, not a demonstrated helper defect."
+  },
+  "limits": [
+    "The 1.2-second grace is a threshold checked by the process loop; the measured kill at 1.373 seconds includes scheduling delay, not a hard real-time guarantee.",
+    "The actual local model was not rerun with this corrected helper.",
+    "Historical observed launcher bytes and all original native outcomes remain pinned separately."
+  ]
+}

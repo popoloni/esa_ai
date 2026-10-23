@@ -1,0 +1,56 @@
+{
+  "schema": "esa-local-server-pre-start/v1",
+  "recorded_at_utc": "2026-10-22T06:58:09.649649+00:00",
+  "previous_server_finish": "llama_server_01/FINISH.json",
+  "previous_server_pids_absent": {
+    "5658": true,
+    "5661": true
+  },
+  "identities": {
+    "server": {
+      "path": "/workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/llama-server",
+      "bytes": 17864,
+      "sha256": "742ac3910ef43360be9fc73426ce612a1f9464f5fd63b8a240288d40f5129245",
+      "verified_by": "fresh full-byte SHA256 before server 02 start"
+    },
+    "model": {
+      "path": "/workspace/scratch/72d789d25fef/runtime_d7/downloads/Qwen3-4B-Q4_K_M.gguf",
+      "bytes": 2497280256,
+      "sha256": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+      "verified_by": "fresh full-byte SHA256 before server 02 start"
+    }
+  },
+  "server_version": {
+    "argv": [
+      "/workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/llama-server",
+      "--version"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "version: 0.7.0-dev (build 11799, commit 0756e83fc)\nbuilt with GNU 11.4.0 for Linux x86_64\n"
+  },
+  "planned_change": {
+    "context": {
+      "before": 16384,
+      "after": 24576
+    },
+    "cache_type_k": {
+      "before": "q8_0",
+      "after": "q4_0"
+    },
+    "cache_type_v": {
+      "before": "q8_0",
+      "after": "q4_0"
+    },
+    "other_server_options": "unchanged"
+  },
+  "resources": {
+    "cpu.max": "800000 100000\n",
+    "cpu.stat": "usage_usec 18671022413\nuser_usec 16628908422\nsystem_usec 2042113990\nnice_usec 0\nnr_periods 56824\nnr_throttled 15016\nthrottled_usec 792113909\nnr_bursts 0\nburst_usec 0\n",
+    "memory.max": "8589934592\n",
+    "memory.current": "6309732352\n",
+    "memory.events": "low 0\nhigh 0\nmax 100008\noom 0\noom_kill 0\noom_group_kill 0\n",
+    "memory.stat": "anon 137732096\nfile 5566824448\nkernel 603643904\nkernel_stack 802816\npagetables 4034560\nsec_pagetables 0\npercpu 7084\nsock 0\nvmalloc 4096\nshmem 0\nfile_mapped 36864\nfile_dirty 2461696\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 2222981120\nshmem_thp 0\ninactive_anon 137285632\nactive_anon 65536\ninactive_file 1998082048\nactive_file 3568738304\nunevictable 0\nslab_reclaimable 595609240\nslab_unreclaimable 3138768\nslab 598748008\nworkingset_refault_anon 0\nworkingset_refault_file 3176035\nworkingset_activate_anon 0\nworkingset_activate_file 1547281\nworkingset_restore_anon 0\nworkingset_restore_file 264232\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgscan 6409510\npgsteal 5942892\npswpin 0\npswpout 0\npgscan_kswapd 0\npgscan_direct 6409510\npgscan_khugepaged 0\npgscan_proactive 0\npgsteal_kswapd 0\npgsteal_direct 5942892\npgsteal_khugepaged 0\npgsteal_proactive 0\npgfault 33393074\npgmajfault 333\npgrefill 2172357\npgactivate 1993395\npgdeactivate 2157155\npglazyfree 59\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\n"
+  },
+  "scope": "No model inference. Identity, idle-state transition and pre-start resource observation only."
+}

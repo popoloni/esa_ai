@@ -1,0 +1,263 @@
+{
+  "schema": "esa-portable-native-runtime-summary/v1",
+  "edition": "2026.10.22-d8",
+  "assembled_at_utc": "2026-10-22T12:41:48.045626+00:00",
+  "status": "CLOSED_OBSERVED_LIFECYCLE_WITH_DISCLOSED_NATIVE_OUTCOME_LIMITS",
+  "scope": "Selected exact runtime setup/evidence and an attributed future recipe; no new inference or diagnostics performed for this portable assembly.",
+  "source_map": {
+    "path": "SOURCE_MAP.json",
+    "bytes": 63516,
+    "sha256": "c95f6602bb1d4cf0210daebe8c999a3c74ef735da23cd94177af802a3b923137"
+  },
+  "launcher": {
+    "path": "preparation/run_local_model_d8.py",
+    "bytes": 9359,
+    "sha256": "c9bc0eb8e64725c7b1ba92687cdfcf4ffd87c5648c0c3abb2e08d4854c3c5b4f"
+  },
+  "server_settings_argv": [
+    "/workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/llama-server",
+    "--model",
+    "/workspace/scratch/72d789d25fef/runtime_d7/downloads/Qwen3-4B-Q4_K_M.gguf",
+    "--alias",
+    "esa-qwen3-4b",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "18080",
+    "--ctx-size",
+    "24576",
+    "--parallel",
+    "1",
+    "--threads",
+    "8",
+    "--threads-batch",
+    "8",
+    "--n-gpu-layers",
+    "0",
+    "--batch-size",
+    "256",
+    "--ubatch-size",
+    "128",
+    "--jinja",
+    "--reasoning",
+    "off",
+    "--no-repack",
+    "--no-warmup",
+    "--no-context-shift",
+    "--verbosity",
+    "4",
+    "--n-predict",
+    "3072",
+    "--no-agent",
+    "--no-ui-mcp-proxy",
+    "--no-webui",
+    "--metrics",
+    "--timeout",
+    "1500",
+    "--cache-ram",
+    "0",
+    "--ctx-checkpoints",
+    "0",
+    "--cache-type-k",
+    "f16",
+    "--cache-type-v",
+    "f16",
+    "--flash-attn",
+    "on"
+  ],
+  "lifecycle": {
+    "started_at_utc": "2026-10-22T10:46:49.184821+00:00",
+    "finished_at_utc": "2026-10-22T12:14:56.098849+00:00",
+    "wall_seconds": 5286.913721165998,
+    "exit_code": 0,
+    "shutdown_result": "EXIT_AFTER_STOP_REQUEST",
+    "first_stop_requested_at_utc": "2026-10-22T12:14:55.751993+00:00",
+    "shutdown_events": [
+      {
+        "action": "SIGTERM_SENT",
+        "server_pid": 56440,
+        "at_utc": "2026-10-22T12:14:55.752089+00:00"
+      }
+    ],
+    "service_wall_cpu_scope": "Whole shared server interval, including multiple native attempts and idle/preparation time; not one task cost."
+  },
+  "actual_startup_review": {
+    "path": "observed/startup_04/REVIEW.json",
+    "bytes": 5084,
+    "sha256": "043d1d598a52ea89f34c93ca5ef3eae17f8fe38ad96dcbad514be260466d9ea8"
+  },
+  "startup_headroom_estimate_bytes": 1296768616,
+  "startup_gate_bytes": 805306368,
+  "memory_estimate_formula": "cgroup anon + all cgroup kernel + cgroup shmem + full size of every unique mapped regular file",
+  "memory_qualification": "Conservative startup estimate; unrelated file cache is reclaimable. Does not guarantee future peak or set a runtime abort threshold.",
+  "actual_client_configurations": [
+    {
+      "label": "candidate03",
+      "context_tokens": 24576,
+      "configured_response_output_tokens": 3072,
+      "provider_timeout_ms": 1500000,
+      "provider_header_timeout_ms": 1500000,
+      "outer_capture_timeout_seconds": 5400,
+      "steps": 12,
+      "steps_limit": "Last-step model instruction, not a mechanical request-count stop.",
+      "configured_temperature": 0.2,
+      "model_temperature_capability": true
+    },
+    {
+      "label": "compact_attempt04",
+      "context_tokens": 24576,
+      "configured_response_output_tokens": 1536,
+      "provider_timeout_ms": 1500000,
+      "provider_header_timeout_ms": 1500000,
+      "outer_capture_timeout_seconds": 2400,
+      "steps": 12,
+      "steps_limit": "Last-step model instruction, not a mechanical request-count stop.",
+      "configured_temperature": 0.2,
+      "model_temperature_capability": true
+    }
+  ],
+  "observed_sampler_temperatures": [
+    0.2
+  ],
+  "output_cap_disclosure": {
+    "argv_requested_n_predict": 3072,
+    "props_max_tokens": -1,
+    "props_n_predict": -1,
+    "independent_server_cap_claim": false,
+    "request_specific_cap_field_observed": false,
+    "attempt04_responses_below_configured_cap": true,
+    "inference": "Observed lengths below a configured limit do not establish enforcement."
+  },
+  "completed_attempt04_requests": [
+    {
+      "task_id": 3263,
+      "prompt_tokens": 18599,
+      "context_tokens": 24576,
+      "remaining_after_prompt": 5977,
+      "remaining_after_declared_1536_response_reserve": 4441,
+      "source_line": "59.39.930.218 I slot   operator(): id  0 | task 3263 | new prompt, n_ctx_slot = 24576, n_keep = 0, task.n_tokens = 18599",
+      "prefill": {
+        "seconds": 17.422150000000002,
+        "tokens": 255,
+        "source_line": "64.53.391.655 I slot print_timing: id  0 | task 3263 | prompt eval time =   17422.15 ms /   255 tokens (   68.32 ms per token,    14.64 tokens per second)"
+      },
+      "generation": {
+        "seconds": 296.037,
+        "tokens": 553,
+        "source_line": "64.53.391.671 I slot print_timing: id  0 | task 3263 |        eval time =  296037.00 ms /   553 tokens (  536.30 ms per token,     1.86 tokens per second)"
+      },
+      "total": {
+        "seconds": 313.45916,
+        "tokens": 808,
+        "source_line": "64.53.391.671 I slot print_timing: id  0 | task 3263 |       total time =  313459.16 ms /   808 tokens"
+      },
+      "release_line": "64.53.400.199 I slot      release: id  0 | task 3263 | stop processing: n_tokens = 19151, truncated = 0"
+    },
+    {
+      "task_id": 3818,
+      "prompt_tokens": 19169,
+      "context_tokens": 24576,
+      "remaining_after_prompt": 5407,
+      "remaining_after_declared_1536_response_reserve": 3871,
+      "source_line": "64.53.531.745 I slot   operator(): id  0 | task 3818 | new prompt, n_ctx_slot = 24576, n_keep = 0, task.n_tokens = 19169",
+      "prefill": {
+        "seconds": 68.13695,
+        "tokens": 574,
+        "source_line": "78.51.410.002 I slot print_timing: id  0 | task 3818 | prompt eval time =   68136.95 ms /   574 tokens (  118.71 ms per token,     8.42 tokens per second)"
+      },
+      "generation": {
+        "seconds": 769.73951,
+        "tokens": 1393,
+        "source_line": "78.51.410.015 I slot print_timing: id  0 | task 3818 |        eval time =  769739.51 ms /  1393 tokens (  552.97 ms per token,     1.81 tokens per second)"
+      },
+      "total": {
+        "seconds": 837.87646,
+        "tokens": 1967,
+        "source_line": "78.51.410.016 I slot print_timing: id  0 | task 3818 |       total time =  837876.46 ms /  1967 tokens"
+      },
+      "release_line": "78.51.411.951 I slot      release: id  0 | task 3818 | stop processing: n_tokens = 20561, truncated = 0"
+    }
+  ],
+  "attempt04_sparse_memory": {
+    "minimum_sampled_conservative_headroom_bytes": 665919080,
+    "maximum_sampled_rss_kib": 6181756,
+    "new_oom_events": 0,
+    "new_oom_kill_events": 0,
+    "post_terminal_headroom_bytes": 1181294184,
+    "limitations": "Sparse observations with a CP29 write hold, not continuous peak measurement. The full-mapped-file plus cgroup anon/kernel/shmem estimate is conservative and not a future-allocation guarantee. Startup768MiB was a startup gate, not an automatic runtime-abort threshold."
+  },
+  "native_usage_qualification": "The generic capture receipt leaves tokens and billable_cost null. Actual completed native step usage is present in stdout and retained here with its original fields. The reported local cost0 is not a measured monetary charge or a claim that wider setup/review effort cost nothing.",
+  "native_outcome": {
+    "final_response_sha256": "0b8ce1854906b37eb2c0249e97a7e0d5dc1ce3e2597b6289c9a54fb6eacbec77",
+    "rejected_saved_file_sha256": "04b6177aa7cd2a248a86ef418f8faeffe3c07cbf64651951136c20559402bfd1",
+    "independent_review": {
+      "path": "review/R08_ATTEMPT_04_INDEPENDENT_REVIEW.json",
+      "bytes": 31084,
+      "sha256": "54af132187e9aa8e9192b2297e11393ea051606adf7ffd75c23863d7ca8da854"
+    },
+    "disposition": "Original R08 bounded tutorial journey supports closure: actual native specification response, unanswered owner-question stop and independent AI assessment. Saved file remains rejected, no checklist or feature metadata exists, and the native three-artifact completion claim is false. No human acceptance or comparative/economic result is inferred."
+  },
+  "evidence": [
+    {
+      "path": "observed/lifecycle_04/START.json",
+      "bytes": 2756,
+      "sha256": "9e0c7e87b2f8b217bebac4fb785367fe1096322bc689b8d9b81ed4a05bc265cd"
+    },
+    {
+      "path": "observed/lifecycle_04/SHUTDOWN.json",
+      "bytes": 3090,
+      "sha256": "12c8b349b4705b1e309dba809306989ad1fe411f33b37e1b32691d580e6d01e0"
+    },
+    {
+      "path": "observed/lifecycle_04/FINISH.json",
+      "bytes": 3365,
+      "sha256": "e90c888a7d1903f05b27b1359e8119ab4b23c05f05e06bb1acc0f059fe1a3775"
+    },
+    {
+      "path": "observed/SERVER04_STOP_DECISION.json",
+      "bytes": 2292,
+      "sha256": "b1fa2b5f13020bfaae60dc889ef158c24be278c7a0461d2f1539c424551f1144"
+    },
+    {
+      "path": "observed/SERVER04_TERMINAL_HOST_OBSERVATION.json",
+      "bytes": 510,
+      "sha256": "edadc8b23e688b2a5bc93be5c92d7f4fdfbd146f4cde45406c980ddf30a21b62"
+    },
+    {
+      "path": "observed/attempt04_runtime/OBSERVATION_SUMMARY.json",
+      "bytes": 10652,
+      "sha256": "6dcd87df7b5ad6c98e35b599887d76ec0b6fa80a7c603d6c296d6151dba9a1d7"
+    },
+    {
+      "path": "observed/client_candidate03/OPENCODE_CONFIG_03.json",
+      "bytes": 3298,
+      "sha256": "044c5deaa96cb5c5e88e7d55770d3d0c399669a926045f5b3fab470359d83941"
+    },
+    {
+      "path": "observed/client_attempt04/OPENCODE_CONFIG_04.json",
+      "bytes": 3298,
+      "sha256": "5daa4a42c9eeaae956d290304443b8f47bb4cc7ab5f2fed898e30541d9c3ac43"
+    },
+    {
+      "path": "preparation/SOURCE_RETRIEVAL.json",
+      "bytes": 8412,
+      "sha256": "e61b63224c1bf726486fc915cd5cc2666a0428ec6164070cd1c2bf1c6e681fdc"
+    }
+  ],
+  "historical_corrections": [
+    "Original preparation proposed 22,528 context; observed later server used explicit 24,576 after full input/reserve checks. Launcher default and original preparation files remain unchanged.",
+    "Original preparation README called steps12 a cap; current source/observed interpretation is last-step guidance, not mechanical enforcement.",
+    "Attempt04 runtime summary was frozen before server stop and truthfully says the server was then running. Later immutable shutdown/host records separately establish final exit."
+  ],
+  "included_material": "Exact source and evidence files only, plus authored navigation/summary/manifests. No real model weights or installed dependency trees; the retained controlled probe uses explicit inert fixture data.",
+  "licenses": [
+    "preparation/upstream/llama.cpp-0756e83fc/LICENSE",
+    "preparation/upstream/opencode-v1.19.3/LICENSE"
+  ],
+  "limits": [
+    "The 8 GiB/8 CPU settings and sparse samples are observations of one environment; they do not guarantee memory fit or completion elsewhere.",
+    "Warm request timings and changed attention/cache/batch/input settings do not constitute an isolated speed comparison.",
+    "The launcher bounds its direct child and wall lifetime; it is not an operating-system sandbox or proof of client network isolation.",
+    "Historical copied absolute paths and native session IDs are evidence; regenerate a new isolated configuration instead of executing them verbatim."
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "authority": {
+    "CP07_T07_03": "PENDING_HUMAN",
+    "CP07_T07_04": "BLOCKED",
+    "human_competence_certified": false,
+    "incident_reconciliation": "PENDING_OWNER",
+    "real_release_authorized": false
+  },
+  "claim_dependencies": {
+    "knowledge_governance": [
+      "CP06_PACKET",
+      "CP06_SKILL",
+      "PROTOCOL"
+    ],
+    "learning_evaluation": [
+      "RUBRIC",
+      "PROTOCOL",
+      "TRANSFER_SESSION"
+    ],
+    "policy_activation": [
+      "TRANSFER_SESSION",
+      "POLICY_HISTORY",
+      "POLICY_CATALOG"
+    ],
+    "state_selection": [
+      "CP12_SESSION",
+      "CP12_CONFIG",
+      "POLICY_HISTORY"
+    ]
+  },
+  "knowledge_id": "KNOW-013",
+  "owner_role": "TEAM_KNOWLEDGE_STEWARD",
+  "procedures": [
+    "CHECK_RESOLVED_STATE_AND_EXISTING_HISTORY",
+    "CHECK_RECORDED_POLICY_SEPARATELY_FROM_ACTIVE_POLICY",
+    "COMPARE_FRESH_REQUEST_WITH_RETRY",
+    "LOCATE_ACTIVATION_AUDIT_BEFORE_REUSING_REPAIR",
+    "PRESERVE_HISTORY_AND_ESCALATE_RECONCILIATION"
+  ],
+  "purpose": "Distinguish state selection from active-policy changes before proposing a bounded recovery.",
+  "review_state": "PROPOSED_WITH_LOCAL_EVIDENCE",
+  "revision_triggers": [
+    "SOURCE_DIGEST_CHANGE",
+    "EVIDENCE_CHANGE",
+    "POLICY_SELECTION_CHANGE",
+    "RUBRIC_VERSION_CHANGE",
+    "HUMAN_REVIEW_FEEDBACK"
+  ],
+  "schema": "cp13-team-knowledge/v1",
+  "status": "PROPOSED_FOR_HUMAN_KNOWLEDGE_REVIEW",
+  "version": 1
+}

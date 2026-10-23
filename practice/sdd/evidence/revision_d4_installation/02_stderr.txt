@@ -1,0 +1,6 @@
+Using Python 3.12.14 environment at: /tmp/esa-d4-sdd-20261021
+error: Failed to fetch: https://pypi.org/simple/specify-cli/
+  cause: error sending request for url (https://pypi.org/simple/specify-cli/)
+  cause: client error (Connect)
+  cause: dns error
+  cause: failed to lookup address information: Temporary failure in name resolution

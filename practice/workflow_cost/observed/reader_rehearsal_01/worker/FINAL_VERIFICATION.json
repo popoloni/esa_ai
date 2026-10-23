@@ -1,0 +1,9 @@
+{
+  "chapter01_snapshot_matches": true,
+  "csv01_snapshot_matches": true,
+  "input_cache_absent": true,
+  "chapter07_unchanged": true,
+  "parseable_json_files": 17,
+  "expected_handoffs_exist": true,
+  "cache_cleanup_note": "After initial cleanup, final verification unexpectedly saw the same cache with its original mtime. No intervening worker command imported input source. Cause is unverified; the exact known cache hash was checked and the same generated cache removed again. No authored input was edited."
+}

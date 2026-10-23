@@ -1,0 +1,46 @@
+[
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "companion/practice/workflow_cost/workflow_cost.py",
+      "stop",
+      "revision_d7/evidence/guide_identity_workflow/ACCOUNT.json",
+      "--id",
+      "implementation-01",
+      "--outcome",
+      "PASSED",
+      "--evidence",
+      "revision_d7/evidence/guide_identity_workflow/CANDIDATE.json"
+    ],
+    "started_at_utc": "2026-10-22T06:08:53.279933+00:00",
+    "ended_at_utc": "2026-10-22T06:08:53.319785+00:00",
+    "exit_code": 0,
+    "stdout": "{\"status\": \"RECORDED\", \"command\": \"stop\", \"account\": \"revision_d7/evidence/guide_identity_workflow/ACCOUNT.json\"}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "companion/practice/workflow_cost/workflow_cost.py",
+      "start",
+      "revision_d7/evidence/guide_identity_workflow/ACCOUNT.json",
+      "--id",
+      "verification-01",
+      "--phase",
+      "verification",
+      "--actor",
+      "root-focused-checker",
+      "--actor-kind",
+      "AUTOMATION",
+      "--evidence",
+      "revision_d7/evidence/guide_identity_workflow/CANDIDATE.json"
+    ],
+    "started_at_utc": "2026-10-22T06:08:53.319798+00:00",
+    "ended_at_utc": "2026-10-22T06:08:53.358210+00:00",
+    "exit_code": 0,
+    "stdout": "{\"status\": \"RECORDED\", \"command\": \"start\", \"account\": \"revision_d7/evidence/guide_identity_workflow/ACCOUNT.json\"}\n",
+    "stderr": ""
+  }
+]

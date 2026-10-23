@@ -1,0 +1,77 @@
+{
+  "purpose": "Static author-owned synthetic expected outputs; independent from mutable repo implementation for this teaching case",
+  "cases": [
+    {
+      "id": "SC-EXPL-001",
+      "requirement_id": "REQ-EXPL-001",
+      "input_amount_eur": "4999.99",
+      "expected_route": "STANDARD_QUEUE",
+      "expected_reason": "BELOW_LIMIT",
+      "expected_policy_version": "BR-001/v1",
+      "payment_authorized": false
+    },
+    {
+      "id": "SC-EXPL-002",
+      "requirement_id": "REQ-EXPL-001",
+      "input_amount_eur": "5000",
+      "expected_route": "HUMAN_REVIEW",
+      "expected_reason": "AT_OR_ABOVE_LIMIT",
+      "expected_policy_version": "BR-001/v1",
+      "payment_authorized": false
+    },
+    {
+      "id": "SC-EXPL-003",
+      "requirement_id": "REQ-EXPL-001",
+      "input_amount_eur": "5000.01",
+      "expected_route": "HUMAN_REVIEW",
+      "expected_reason": "AT_OR_ABOVE_LIMIT",
+      "expected_policy_version": "BR-001/v1",
+      "payment_authorized": false
+    },
+    {
+      "id": "SC-EXPL-004",
+      "requirement_id": "REQ-EXPL-003",
+      "input_amount_eur": "0",
+      "expected_route": "REJECTED",
+      "expected_reason": "INVALID_AMOUNT",
+      "expected_policy_version": "BR-001/v1",
+      "payment_authorized": false
+    },
+    {
+      "id": "SC-EXPL-005",
+      "requirement_id": "REQ-EXPL-003",
+      "input_amount_eur": "-10",
+      "expected_route": "REJECTED",
+      "expected_reason": "INVALID_AMOUNT",
+      "expected_policy_version": "BR-001/v1",
+      "payment_authorized": false
+    },
+    {
+      "id": "SC-EXPL-006",
+      "requirement_id": "REQ-EXPL-003",
+      "input_amount_eur": "nonsense",
+      "expected_route": "REJECTED",
+      "expected_reason": "INVALID_AMOUNT",
+      "expected_policy_version": "BR-001/v1",
+      "payment_authorized": false
+    },
+    {
+      "id": "SC-EXPL-007",
+      "requirement_id": "REQ-EXPL-003",
+      "input_amount_eur": "NaN",
+      "expected_route": "REJECTED",
+      "expected_reason": "INVALID_AMOUNT",
+      "expected_policy_version": "BR-001/v1",
+      "payment_authorized": false
+    },
+    {
+      "id": "SC-EXPL-008",
+      "requirement_id": "REQ-EXPL-004",
+      "input_amount_eur": "1",
+      "expected_route": "STANDARD_QUEUE",
+      "expected_reason": "BELOW_LIMIT",
+      "expected_policy_version": "BR-001/v1",
+      "payment_authorized": false
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "at_utc": "2026-10-22T11:38:07.664621+00:00",
+  "inspection_context": "Approved host execution context; read-only /proc scan restricted to exact native project cwd and opencode run argv.",
+  "live_native_run_processes": [
+    {
+      "pid": 59052,
+      "executable": "/workspace/scratch/72d789d25fef/runtime_d7/opencode/node_modules/opencode-ai/bin/opencode.exe",
+      "command_head": [
+        "/workspace/scratch/72d789d25fef/runtime_d7/opencode/node_modules/.bin/opencode",
+        "--pure",
+        "--print-logs",
+        "--log-level"
+      ]
+    }
+  ],
+  "terminal_receipt_present": false,
+  "model_call": false,
+  "qualification": "The earlier PROGRESS.json process scan ran in default tool context; its empty list does not establish absence of a host process."
+}

@@ -1,0 +1,344 @@
+{
+  "schema": "esa-native-package-verification/v1",
+  "at_utc": "2026-10-22T17:56:20.868656+00:00",
+  "status": "PASS",
+  "scope": "Final copy boundary, observed-source provenance, meaningful local demo/check, documentation links and helper syntax. No new model invocation.",
+  "checks": [
+    "python_syntax:prepare_observation.py",
+    "python_syntax:run_observation.py",
+    "python_syntax:independent_review.py",
+    "relative_links:50",
+    "raw_evidence_byte_equal:166",
+    "final_project_byte_equal",
+    "teaching_provenance_hashes",
+    "packaged_final_selected_contract_7",
+    "packaged_visible_csv_byte_equal",
+    "packaged_visible_json_byte_equal",
+    "recorded_native_and_server_processes_ended",
+    "fragment_within_700_source_words"
+  ],
+  "findings": [],
+  "links": [
+    {
+      "document": "README.md",
+      "target": "../csv_export/README.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "../sdd/NATIVE_ROUTE_D8.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "observed/INDEX.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "observed/project/spec.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "observed/recorded/project_after_03/api.py",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "observed/recorded/visible_result/alice_open.csv",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "observed/recorded/visible_result/alice_open.json",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "observed/recorded/CONTENT_REVIEW.json",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "../native_client/README.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "observed/recorded/CONFIGURATION_FINDING_01.json",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "observed/INDEX.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "observed/project/spec.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "observed/project/plan.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "teaching/CSV_SPEC.md",
+      "exists": true
+    },
+    {
+      "document": "README.md",
+      "target": "teaching/PROVENANCE.json",
+      "exists": true
+    },
+    {
+      "document": "observed/INDEX.md",
+      "target": "project/spec.md",
+      "exists": true
+    },
+    {
+      "document": "observed/INDEX.md",
+      "target": "project/plan.md",
+      "exists": true
+    },
+    {
+      "document": "observed/INDEX.md",
+      "target": "project/api.py",
+      "exists": true
+    },
+    {
+      "document": "observed/INDEX.md",
+      "target": "project/CURRENT_CONTRACT.md",
+      "exists": true
+    },
+    {
+      "document": "observed/INDEX.md",
+      "target": "recorded/visible_result/alice_open.csv",
+      "exists": true
+    },
+    {
+      "document": "observed/INDEX.md",
+      "target": "recorded/visible_result/alice_open.json",
+      "exists": true
+    },
+    {
+      "document": "observed/INDEX.md",
+      "target": "../teaching/CSV_SPEC.md",
+      "exists": true
+    },
+    {
+      "document": "observed/INDEX.md",
+      "target": "../teaching/PROVENANCE.json",
+      "exists": true
+    },
+    {
+      "document": "observed/INDEX.md",
+      "target": "recorded/attempt_01/stdout.txt",
+      "exists": true
+    },
+    {
+      "document": "observed/INDEX.md",
+      "target": "recorded/project_after_01/api.py",
+      "exists": true
+    },
+    {
+      "document": "observed/INDEX.md",
+      "target": "recorded/review_after_01/REVIEW.json",
+      "exists": true
+    },
+    {
+      "document": "observed/INDEX.md",
+      "target": "recorded/continuation_02/TASK_PROMPT.txt",
+      "exists": true
+    },
+    {
+      "document": "observed/INDEX.md",
+      "target": "recorded/attempt_02/stdout.txt",
+      "exists": true
+    },
+    {
+      "document": "observed/INDEX.md",
+      "target": "recorded/attempt_02/AUTHOR_STOP_REQUEST.json",
+      "exists": true
+    },
+    {
+      "document": "observed/INDEX.md",
+      "target": "recorded/attempt_03/stdout.txt",
+      "exists": true
+    },
+    {
+      "document": "observed/INDEX.md",
+      "target": "recorded/project_after_03/api.py",
+      "exists": true
+    },
+    {
+      "document": "observed/INDEX.md",
+      "target": "recorded/HANDOFF_REVIEW_AFTER_03.json",
+      "exists": true
+    },
+    {
+      "document": "observed/INDEX.md",
+      "target": "recorded/attempt_04/stdout.txt",
+      "exists": true
+    },
+    {
+      "document": "observed/INDEX.md",
+      "target": "project/api.py",
+      "exists": true
+    },
+    {
+      "document": "observed/INDEX.md",
+      "target": "recorded/HANDOFF_REVIEW_AFTER_04.json",
+      "exists": true
+    },
+    {
+      "document": "observed/INDEX.md",
+      "target": "recorded/independent_final_review/REVIEW.json",
+      "exists": true
+    },
+    {
+      "document": "observed/INDEX.md",
+      "target": "recorded/CONTENT_REVIEW.json",
+      "exists": true
+    },
+    {
+      "document": "observed/INDEX.md",
+      "target": "recorded/preparation/PROTOCOL.json",
+      "exists": true
+    },
+    {
+      "document": "observed/INDEX.md",
+      "target": "recorded/preparation/TASK_PROMPT.txt",
+      "exists": true
+    },
+    {
+      "document": "observed/INDEX.md",
+      "target": "recorded/EVENT_INDEX.json",
+      "exists": true
+    },
+    {
+      "document": "observed/INDEX.md",
+      "target": "recorded/RUNTIME_PREFLIGHT.json",
+      "exists": true
+    },
+    {
+      "document": "observed/INDEX.md",
+      "target": "recorded/HOST_AND_SERVER_VERSION.json",
+      "exists": true
+    },
+    {
+      "document": "observed/INDEX.md",
+      "target": "recorded/CONFIGURATION_FINDING_01.json",
+      "exists": true
+    },
+    {
+      "document": "observed/INDEX.md",
+      "target": "recorded/INTERPRETATION_LIMITS.json",
+      "exists": true
+    },
+    {
+      "document": "observed/INDEX.md",
+      "target": "recorded/INITIAL_BUDGET_DISPOSITION.json",
+      "exists": true
+    },
+    {
+      "document": "observed/INDEX.md",
+      "target": "recorded/server_01/FINISH.json",
+      "exists": true
+    },
+    {
+      "document": "observed/INDEX.md",
+      "target": "recorded/OUTCOME.json",
+      "exists": true
+    },
+    {
+      "document": "observed/INDEX.md",
+      "target": "../README.md",
+      "exists": true
+    },
+    {
+      "document": "teaching/CSV_SPEC.md",
+      "target": "../observed/project/spec.md",
+      "exists": true
+    },
+    {
+      "document": "teaching/CSV_SPEC.md",
+      "target": "../observed/project/CURRENT_CONTRACT.md",
+      "exists": true
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/scratch/72d789d25fef/revision_20261022_d9/Engineering_Software_with_Agentic_AI_20261022_d9/companion/practice/csv_export/checks/check.py",
+        "--candidate",
+        "/workspace/scratch/72d789d25fef/revision_20261022_d9/Engineering_Software_with_Agentic_AI_20261022_d9/companion/practice/native_journey/observed/project"
+      ],
+      "exit_code": 0,
+      "result": "supplied_contract_check.json"
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/scratch/72d789d25fef/revision_20261022_d9/Engineering_Software_with_Agentic_AI_20261022_d9/companion/practice/native_journey/observed/project/demo.py",
+        "--format",
+        "csv",
+        "--actor",
+        "alice",
+        "--status",
+        "open"
+      ],
+      "exit_code": 0,
+      "result": "alice_open.csv"
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/workspace/scratch/72d789d25fef/revision_20261022_d9/Engineering_Software_with_Agentic_AI_20261022_d9/companion/practice/native_journey/observed/project/demo.py",
+        "--format",
+        "json",
+        "--actor",
+        "alice",
+        "--status",
+        "open"
+      ],
+      "exit_code": 0,
+      "result": "alice_open.json"
+    }
+  ],
+  "recorded_processes": [
+    {
+      "pid": 103068,
+      "proc_entry_present": false
+    },
+    {
+      "pid": 105281,
+      "proc_entry_present": false
+    },
+    {
+      "pid": 109029,
+      "proc_entry_present": false
+    },
+    {
+      "pid": 109903,
+      "proc_entry_present": false
+    },
+    {
+      "pid": 102778,
+      "proc_entry_present": false
+    },
+    {
+      "pid": 102781,
+      "proc_entry_present": false
+    }
+  ],
+  "fragment_source_words_whitespace": 512,
+  "raw_evidence_files_compared": 166
+}

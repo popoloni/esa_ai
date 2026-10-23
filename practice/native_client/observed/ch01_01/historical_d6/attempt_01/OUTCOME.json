@@ -1,0 +1,59 @@
+{
+  "status": "TASK_NOT_COMPLETED",
+  "client_process_exit_code": 0,
+  "session_id": "ses_e9f9f0258ffeR0WgnBMU5sP0pg",
+  "tool_calls": 5,
+  "tool_outcomes": [
+    {
+      "tool": "read",
+      "status": "error",
+      "input": {
+        "filePath": "/workspace/scratch/efa0a59e0545/runtime_d6/reader_side/intent/INT-001.md",
+        "offset": 0,
+        "limit": 2000
+      }
+    },
+    {
+      "tool": "read",
+      "status": "error",
+      "input": {
+        "filePath": "/workspace/scratch/efa0a59e0545/runtime_d6/reader_side/acceptance/test_routing.py",
+        "offset": 0,
+        "limit": 2000
+      }
+    },
+    {
+      "tool": "read",
+      "status": "error",
+      "input": {
+        "filePath": "/workspace/scratch/efa0a59e0545/runtime_d6/repo/src/treasury/routing.py",
+        "offset": 0,
+        "limit": 2000
+      }
+    },
+    {
+      "tool": "read",
+      "status": "error",
+      "input": {
+        "filePath": "/workspace/scratch/efa0a59e0545/runtime_d6/reader_side/evidence/CH01_INITIAL_D6_NATIVE_01.json",
+        "offset": 0,
+        "limit": 2000
+      }
+    },
+    {
+      "tool": "read",
+      "status": "error",
+      "input": {
+        "filePath": "/workspace/scratch/efa0a59e0545/runtime_d6/repo/AGENTS.md",
+        "offset": 0,
+        "limit": 2000
+      }
+    }
+  ],
+  "failure": "All five read calls used the parent runtime_d6 directory instead of native_work_01 and were denied by the unchanged external_directory rule. The model stopped without reading the intended files, changing the source, or running acceptance.",
+  "source_changes": [],
+  "application_exit_is_not_task_success": true,
+  "recovery_plan": "Continue the actual session with exact absolute permitted file paths. Preserve the same scope and permissions; do not supply a code patch or reference solution.",
+  "human_acceptance": "PENDING",
+  "token_receipt_level": "Native step_finish events; application cost0 is not observed financial cost."
+}

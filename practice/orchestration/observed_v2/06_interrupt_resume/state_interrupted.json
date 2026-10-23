@@ -1,0 +1,136 @@
+{
+  "created_at_utc": "2026-10-20T16:24:21.117919+00:00",
+  "deadline_epoch": 1792513521.1179242,
+  "events": [
+    {
+      "at_utc": "2026-10-20T16:24:21.117937+00:00",
+      "event": "RUN_CREATED",
+      "seq": 1,
+      "task_id": null
+    },
+    {
+      "at_utc": "2026-10-20T16:24:21.156773+00:00",
+      "attempt": 1,
+      "event": "TASK_DISPATCHING",
+      "seq": 2,
+      "task_id": "policy"
+    },
+    {
+      "active": 1,
+      "at_utc": "2026-10-20T16:24:21.159176+00:00",
+      "attempt": 1,
+      "event": "TASK_STARTED",
+      "pid": 23,
+      "seq": 3,
+      "task_id": "policy"
+    },
+    {
+      "at_utc": "2026-10-20T16:24:21.163100+00:00",
+      "attempt": 1,
+      "event": "TASK_DISPATCHING",
+      "seq": 4,
+      "task_id": "routing"
+    },
+    {
+      "active": 2,
+      "at_utc": "2026-10-20T16:24:21.165101+00:00",
+      "attempt": 1,
+      "event": "TASK_STARTED",
+      "pid": 24,
+      "seq": 5,
+      "task_id": "routing"
+    },
+    {
+      "at_utc": "2026-10-20T16:24:21.277941+00:00",
+      "event": "TASK_COMPLETED",
+      "result_sha256": "f3c8f0c8c41d33968e49963c0678882d03eb065688b752afe86f8b4def376bcf",
+      "seq": 6,
+      "task_id": "policy"
+    },
+    {
+      "at_utc": "2026-10-20T16:24:21.327090+00:00",
+      "event": "TASK_INTERRUPTED",
+      "seq": 7,
+      "task_id": "routing"
+    },
+    {
+      "at_utc": "2026-10-20T16:24:21.329155+00:00",
+      "event": "RUN_INTERRUPTED",
+      "seq": 8,
+      "task_id": null
+    }
+  ],
+  "identity": {
+    "adapter_executable_sha256": "fa67443527ed9647f760d807e2a38f26340757123e643c4639cf273ed15d5ea7",
+    "code": {
+      "orchestrator.py": "a37918cbbb63b63b3d2995f5ff64b5b2675d81ea3bad128a74c2de3f6894c806",
+      "worker_script": "419443930c7b63a45c849b2b914ce7ead602506047f1bb65228793342ff59fa3"
+    },
+    "inputs": {
+      "intent.md": "209ee2f218448d83178bd02fd5947cf68b021657a72b38e682e4a895fa102947",
+      "protected_plan.json": "ff2a8e4e3ef8d2403cec1cc767a91fc97103455237be43661a980607cae2da17",
+      "routing.py": "14d186a327a418dddb405144bfefb5810ed27e626b981424c9ad3b66742e8b32"
+    },
+    "plan_sha256": "9b2b7d040fbc1287a1a6a79959b728df6b1b71efd015741233f217c18de9e0e5",
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]"
+  },
+  "peak_parallel": 2,
+  "run_status": "INTERRUPTED",
+  "schema": "treasury-run/v1",
+  "tasks": {
+    "policy": {
+      "attempts": [
+        {
+          "argv": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Orchestration_Harness_20261020/companion/practice/orchestration/treasury_worker.py",
+            "--request",
+            "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Orchestration_Harness_20261020/companion/practice/orchestration/observed_v2/06_interrupt_resume/run/attempts/policy/001/request.json",
+            "--response",
+            "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Orchestration_Harness_20261020/companion/practice/orchestration/observed_v2/06_interrupt_resume/run/attempts/policy/001/result.json"
+          ],
+          "elapsed_seconds": 0.118376,
+          "finished_at_utc": "2026-10-20T16:24:21.277529+00:00",
+          "number": 1,
+          "outcome": "COMPLETED",
+          "pid": 23,
+          "request_path": "attempts/policy/001/request.json",
+          "returncode": 0,
+          "started_at_utc": "2026-10-20T16:24:21.156665+00:00"
+        }
+      ],
+      "result_path": "attempts/policy/001/result.json",
+      "result_sha256": "f3c8f0c8c41d33968e49963c0678882d03eb065688b752afe86f8b4def376bcf",
+      "status": "COMPLETED"
+    },
+    "routing": {
+      "attempts": [
+        {
+          "argv": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Orchestration_Harness_20261020/companion/practice/orchestration/treasury_worker.py",
+            "--request",
+            "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Orchestration_Harness_20261020/companion/practice/orchestration/observed_v2/06_interrupt_resume/run/attempts/routing/001/request.json",
+            "--response",
+            "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Orchestration_Harness_20261020/companion/practice/orchestration/observed_v2/06_interrupt_resume/run/attempts/routing/001/result.json"
+          ],
+          "elapsed_seconds": 0.161982,
+          "finished_at_utc": "2026-10-20T16:24:21.326861+00:00",
+          "number": 1,
+          "outcome": "INTERRUPTED",
+          "pid": 24,
+          "request_path": "attempts/routing/001/request.json",
+          "returncode": -15,
+          "started_at_utc": "2026-10-20T16:24:21.163000+00:00"
+        }
+      ],
+      "status": "UNCERTAIN"
+    },
+    "synthesis": {
+      "attempts": [],
+      "status": "PENDING"
+    }
+  },
+  "updated_at_utc": "2026-10-20T16:24:21.329164+00:00",
+  "worker_kind": "DETERMINISTIC_PYTHON"
+}

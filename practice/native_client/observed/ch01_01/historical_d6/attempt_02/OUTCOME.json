@@ -1,0 +1,23 @@
+{
+  "status": "TASK_NOT_COMPLETED",
+  "client_process_exit_code": 1,
+  "session_id": "ses_e9f9f0258ffeR0WgnBMU5sP0pg",
+  "observed_at_utc": "2026-10-21T21:46:10.288285+00:00",
+  "successful_reads": 5,
+  "source_changes": [],
+  "acceptance_command": "NOT_RUN",
+  "native_error": [
+    {
+      "name": "UnknownError",
+      "data": {
+        "message": "The operation timed out."
+      }
+    }
+  ],
+  "configured_request_timeout_ms": 180000,
+  "failure": "All five permitted reads succeeded. The next model request timed out during CPU prompt processing; the server retained cancellation for task 681 and no source edit occurred.",
+  "completed_native_steps": 1,
+  "failed_request_usage": "UNKNOWN_NO_COMPLETED_NATIVE_USAGE_RECEIPT; retain server progress separately, do not impute zero.",
+  "recovery_plan": "Increase provider request timeout from 180,000 to 600,000 ms in a separate configuration and the outer capture bound from 900 to 1,200 seconds. Continue the retained session without broader permissions or a supplied patch.",
+  "human_acceptance": "PENDING"
+}

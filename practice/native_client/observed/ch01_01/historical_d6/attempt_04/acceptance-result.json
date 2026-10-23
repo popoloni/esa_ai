@@ -1,0 +1,29 @@
+{
+  "schema": "chapter01-routing-result/v1",
+  "timestamp_utc": "2026-10-21T21:58:14.081955+00:00",
+  "python_version": "3.12.14",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "status": "FAIL",
+  "candidate": "repo/src/treasury/routing.py",
+  "candidate_sha256": "0d6a4e79a68350c6a7a80bbca1ab0ce93b532f3e803eb1541cef8a7cbbff138b",
+  "intent_sha256": "209ee2f218448d83178bd02fd5947cf68b021657a72b38e682e4a895fa102947",
+  "acceptance_sha256": "6e5aa5706dd989bdbbeec9374a84d13c41cf6f36e23a5e5d2762a3b16e551c9b",
+  "integrity_before": [],
+  "integrity_after": [],
+  "exit_code": 1,
+  "stdout": "",
+  "test_log": "test_above_boundary_requires_review (chapter01_owner_acceptance.RoutingAcceptance.test_above_boundary_requires_review) ... ok\ntest_exact_boundary_requires_review (chapter01_owner_acceptance.RoutingAcceptance.test_exact_boundary_requires_review) ... ok\ntest_negative_amount_rejected (chapter01_owner_acceptance.RoutingAcceptance.test_negative_amount_rejected) ... ok\ntest_nonfinite_amount_rejected (chapter01_owner_acceptance.RoutingAcceptance.test_nonfinite_amount_rejected) ... ERROR\ntest_nonnumeric_amount_rejected (chapter01_owner_acceptance.RoutingAcceptance.test_nonnumeric_amount_rejected) ... ok\ntest_positive_below_limit (chapter01_owner_acceptance.RoutingAcceptance.test_positive_below_limit) ... ok\ntest_zero_amount_rejected (chapter01_owner_acceptance.RoutingAcceptance.test_zero_amount_rejected) ... ok\n\n======================================================================\nERROR: test_nonfinite_amount_rejected (chapter01_owner_acceptance.RoutingAcceptance.test_nonfinite_amount_rejected)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/workspace/scratch/efa0a59e0545/runtime_d6/native_work_01/reader_side/acceptance/test_routing.py\", line 30, in test_nonfinite_amount_rejected\n    self.check(\"NaN\", \"REJECTED\", \"INVALID_AMOUNT\")\n  File \"/workspace/scratch/efa0a59e0545/runtime_d6/native_work_01/reader_side/acceptance/test_routing.py\", line 7, in check\n    result = assess(raw)\n             ^^^^^^^^^^^\n  File \"/workspace/scratch/efa0a59e0545/runtime_d6/native_work_01/repo/src/treasury/routing.py\", line 19, in assess\n    if amount <= 0:\n       ^^^^^^^^^^^\ndecimal.InvalidOperation: [<class 'decimal.InvalidOperation'>]\n\n----------------------------------------------------------------------\nRan 7 tests in 0.005s\n\nFAILED (errors=1)\n",
+  "stderr": "",
+  "meaning": "Seven owner-side cases for known local teaching code; not a security sandbox, payment approval or release approval.",
+  "candidate_sha256_after": "0d6a4e79a68350c6a7a80bbca1ab0ce93b532f3e803eb1541cef8a7cbbff138b",
+  "tests_total": 7,
+  "passed": 6,
+  "failures": 0,
+  "errors": 1,
+  "skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "findings": [
+    "ACCEPTANCE_REJECTED"
+  ]
+}

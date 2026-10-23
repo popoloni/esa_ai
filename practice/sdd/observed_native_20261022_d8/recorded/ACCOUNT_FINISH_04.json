@@ -1,0 +1,10 @@
+{
+  "started_at_utc": "2026-10-22T11:46:25.335820+00:00",
+  "ended_at_utc": "2026-10-22T12:05:40.737654+00:00",
+  "capture_wall_seconds": 1155.4014792040034,
+  "capture_process_exit": 0,
+  "measurement_scope": "Native command capture wall time only; excludes preparation, prior attempts, later independent review and integration.",
+  "human_effort_seconds": null,
+  "billable_cost": null,
+  "receipt": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/attempt_04/RECEIPT.json"
+}

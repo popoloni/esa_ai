@@ -1,0 +1,21 @@
+--- starting_tree/repo/src/treasury/routing.py
++++ candidate/repo/src/treasury/routing.py
+@@ -13,7 +13,14 @@
+ 
+ def assess(amount_eur: str) -> RoutingDecision:
+     """Choose a processing queue. Not a payment authorisation."""
+-    amount = Decimal(amount_eur)
+-    if amount < THRESHOLD_EUR:
+-        return RoutingDecision("STANDARD_QUEUE", "BELOW_LIMIT", POLICY_VERSION)
+-    return RoutingDecision("HUMAN_REVIEW", "AT_OR_ABOVE_LIMIT", POLICY_VERSION)
++    try:
++        amount = Decimal(amount_eur)
++        if not Decimal.is_finite(amount):
++            return RoutingDecision("REJECTED", "INVALID_AMOUNT", POLICY_VERSION)
++        if amount <= Decimal("0.00"):
++            return RoutingDecision("REJECTED", "INVALID_AMOUNT", POLICY_VERSION)
++        if amount < THRESHOLD_EUR:
++            return RoutingDecision("STANDARD_QUEUE", "BELOW_LIMIT", POLICY_VERSION)
++        return RoutingDecision("HUMAN_REVIEW", "AT_OR_ABOVE_LIMIT", POLICY_VERSION)
++    except InvalidOperation:
++        return RoutingDecision("REJECTED", "INVALID_AMOUNT", POLICY_VERSION)

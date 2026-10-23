@@ -1,0 +1,16 @@
+{
+  "status": "STARTING_TERMINAL_COLLECTION",
+  "started_at_utc": "2026-10-22T12:13:03.436871+00:00",
+  "attempt": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/attempt_04",
+  "project": "/workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01",
+  "baseline": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/terminal_collection_03/final_project_tree",
+  "collector_sha256": "5afe080a22c2c3dd6dec8f70156b1824f2cd5a27c83993d0f27896052fb1fe39",
+  "command_receipt_sha256": "990e17c96269855f1a2613dbcab6db60abc7ea0a2d9a0464888aa0bafb21bdc8",
+  "task_sha256": "fecc09b8c3b299b49f69b43b2e693eb322a4bc7c1e4d6cd9d62eb8cba69c6521",
+  "model_call": false,
+  "project_written": false,
+  "human_review": "ABSENT",
+  "acceptance": "Not determined by this collector.",
+  "terminal_authorization": "Root explicitly authorized collection after the actual terminal receipt.",
+  "origin_qualification": "The command receipt may retain its preparation-origin label. Its actual timestamps, exit code and native events establish execution; that historical label is not rewritten."
+}

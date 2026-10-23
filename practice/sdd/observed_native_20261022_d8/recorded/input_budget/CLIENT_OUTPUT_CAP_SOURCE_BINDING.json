@@ -1,0 +1,91 @@
+{
+  "status": "PINNED_SOURCE_AND_EFFECTIVE_CONFIG_BOUND_WIRE_NOT_YET_OBSERVED",
+  "at_utc": "2026-10-22T10:19:31.610069+00:00",
+  "effective_config": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/invocation/OPENCODE_CONFIG_01.json",
+  "effective_config_sha256": "477886742b5c9ecaa55ade5f6dcd73228a28c30d831bbf700e4f0873c253dc69",
+  "configured_output_limit": 3072,
+  "path": [
+    {
+      "source": "transform.ts",
+      "claim": "maxOutputTokens returns min(model.limit.output, global outputTokenMax), falling back to global only for a falsy minimum. The positive configured3,072 limit is the model bound."
+    },
+    {
+      "source": "request.ts",
+      "claim": "prepare() sets params.maxOutputTokens from ProviderTransform.maxOutputTokens(model,flags.outputTokenMax)."
+    },
+    {
+      "source": "native-runtime.ts",
+      "claim": "esa-local is not a supported native runtime provider name, so the AI SDK path applies."
+    },
+    {
+      "source": "llm.ts",
+      "claim": "AI SDK streamText receives maxOutputTokens:prepared.params.maxOutputTokens."
+    },
+    {
+      "source": "opencode_package.json",
+      "claim": "Pinned OpenCode1.19.3 declares @ai-sdk/openai-compatible exactly2.0.41."
+    },
+    {
+      "source": "sdk_index.mjs",
+      "claim": "That exact published SDK serializes standardized maxOutputTokens into chat request max_tokens."
+    }
+  ],
+  "expected_request_field": {
+    "max_tokens": 3072
+  },
+  "actual_provider_request_observed": false,
+  "server_default": "Native completion reports actual server props n_predict/max_tokens=-1 despite launcher argv. Do not claim an independent server-side3,072 cap; rely on configured client cap with this source chain, and retain actual request/output evidence when executed.",
+  "qualification": "This establishes the expected configured code path before inference, not an observed wire request. The task uses the same effective config and no custom source changes. Runtime/transport behavior must remain honestly attributed.",
+  "sources": {
+    "OPENCODE_LICENSE.txt": {
+      "sha256": "625f0f619133f89bbbb2abe37369613dfa1885eba1e50d02170deb62bb42cb6b",
+      "bytes": 1065
+    },
+    "SDK_SOURCE_DOWNLOADS.json": {
+      "sha256": "63017234177d717acf32082b4dd2c5260ca9dd0b7bca5f67a9a5585f25faa500",
+      "bytes": 1242
+    },
+    "SOURCE_DOWNLOADS.json": {
+      "sha256": "e00508f6f7d4c4143dae692b7f8a378ef679dac37afbb9b957db17da6f004fc9",
+      "bytes": 1272
+    },
+    "llm.ts": {
+      "sha256": "5f1dcfb734853e39760e4dd05470f0c7d8752fc5dcc64e118c065149602e402d",
+      "bytes": 15097
+    },
+    "native-runtime.ts": {
+      "sha256": "ad7ba806e0b9d429ccd93b02b3583754254e6fc540450cb97e16393c28d394c2",
+      "bytes": 8036
+    },
+    "openai-compatible-2.0.41.tgz": {
+      "sha256": "1067423d0df534c545de4b2aaa86aef5e181cc0da2af050ee6d821eb280a5d7c",
+      "bytes": 111273
+    },
+    "opencode_package.json": {
+      "sha256": "f26b884353a34f771ed960e4042363f7843d0fb0a822feca84adce37d18aab22",
+      "bytes": 5268
+    },
+    "request.ts": {
+      "sha256": "90077551a9a46e11a37f44279c584832918d722c0ba0407ff8cad8d3437dd0de",
+      "bytes": 7738
+    },
+    "sdk_LICENSE.txt": {
+      "sha256": "b4f9adb7c568904834d0dd6cc98d16c390d21ca32fc17ae7a267715269bd5529",
+      "bytes": 552
+    },
+    "sdk_index.mjs": {
+      "sha256": "67ab5407adb1db54db9cabee8068a5c9c239bff70e2c685201802d39534e3795",
+      "bytes": 59500
+    },
+    "sdk_package.json": {
+      "sha256": "d55bf0bda631ae36984a8237dff03f5cffec27428de5305f4f2d7556c2cb8767",
+      "bytes": 2033
+    },
+    "transform.ts": {
+      "sha256": "4fb803445f0e72a84fb3edf2b1721084437204d3e35582dab53e156f92f54007",
+      "bytes": 70406
+    }
+  },
+  "software_installed_or_upgraded": false,
+  "model_call": false
+}

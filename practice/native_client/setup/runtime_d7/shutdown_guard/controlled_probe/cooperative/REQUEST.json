@@ -1,0 +1,28 @@
+{
+  "case": "cooperative",
+  "started_at_utc": "2026-10-22T08:03:40.710748+00:00",
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion/practice/native_client/run_local_model.py",
+    "--runtime-root",
+    "/workspace/scratch/72d789d25fef/runtime_d7/shutdown_controlled_probe_01/cooperative",
+    "--evidence",
+    "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/native_shutdown_fix/controlled_probe/cooperative/lifecycle",
+    "--shutdown-grace-seconds",
+    "1.2"
+  ],
+  "cwd": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5",
+  "fixture": {
+    "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/native_shutdown_fix/controlled_probe/cooperative/INERT_FIXTURE.py",
+    "bytes": 491,
+    "sha256": "9d6481ca53b366b35846b172117a228dd9cd71499200421eea133053a47568a9"
+  },
+  "runtime_fixture": {
+    "path": "/workspace/scratch/72d789d25fef/runtime_d7/shutdown_controlled_probe_01/cooperative/llama_cpp/llama-b11799/llama-server",
+    "bytes": 491,
+    "sha256": "9d6481ca53b366b35846b172117a228dd9cd71499200421eea133053a47568a9"
+  },
+  "grace_seconds": 1.2,
+  "no_real_server_model_or_network": true,
+  "controller_signals": []
+}

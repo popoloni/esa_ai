@@ -1,0 +1,45 @@
+{
+  "at_utc": "2026-10-22T10:42:21.074594+00:00",
+  "version": "OpenCode1.19.3",
+  "files": [
+    {
+      "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/preparation/pinned_client_sources/session_prompt.ts",
+      "sha256": "f0c5bc64c0f0e966693d4a57f7ede1e9d6e188b396152f04b55303dc75b9b768",
+      "bytes": 64944
+    },
+    {
+      "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/preparation/pinned_client_sources/write.ts",
+      "sha256": "861de91cc67849e138c32a697c8eb1abab8e4912bfd97811ea1866b8e9af4096",
+      "bytes": 3957
+    },
+    {
+      "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/input_budget/output_cap_sources/request.ts",
+      "sha256": "90077551a9a46e11a37f44279c584832918d722c0ba0407ff8cad8d3437dd0de",
+      "bytes": 7738
+    },
+    {
+      "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d7/evidence/native_timeout_diagnosis/provider.ts",
+      "sha256": "8d31296a58bc7955a1adb8b6d60da53a34ab7540d85644bab212a8ee27b8b69d",
+      "bytes": 82344
+    },
+    {
+      "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/redundant_read_diagnosis/provider_schema.ts",
+      "sha256": "45fe8953a698ff8b2cd83150c7617d3a06a4869abf709cd948f408537ee9aae7",
+      "bytes": 5835
+    },
+    {
+      "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/redundant_read_diagnosis/permission_index.ts",
+      "sha256": "5b9e4aa65290a39363722b9fae4c68080188d8ed76896afa0d96cd9dbfd2821d",
+      "bytes": 7861
+    }
+  ],
+  "mechanisms": {
+    "native_attachment": "session_prompt.ts resolvePromptParts creates file part; createUserMessage calls registry.named().read with ask=>Effect.void and bypassCwdCheck before noReply and model loop.",
+    "read_filtering": "request.ts resolveTools removes globally disabled tools; permission_index.ts evaluates last matching tool/path rule. Candidate03 preserves read tool for three output paths and denies all source paths.",
+    "write": "write.ts reads previous bytes internally and asks edit permission; model read permission is not a prerequisite.",
+    "temperature_schema": "provider_schema.ts Model.temperature is optional Boolean.",
+    "temperature_effective": "provider.ts parsedModel.capabilities.temperature = model.temperature ?? existingModel?.capabilities.temperature ?? false.",
+    "temperature_serialization": "request.ts chat.params includes agent.temperature only when model.capabilities.temperature is true."
+  },
+  "bounds": "No installed client source modified; model calls excluded from this diagnosis and preflight. Source guards describe software wrapper behavior, not OS containment."
+}

@@ -1,0 +1,15 @@
+{
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Orchestration_Harness_20261020/companion/practice/orchestration/orchestrator.py",
+    "--plan",
+    "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Orchestration_Harness_20261020/companion/practice/orchestration/observed_v2/06_interrupt_resume/plan.json",
+    "--inputs",
+    "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Orchestration_Harness_20261020/companion/practice/orchestration/observed_v2/06_interrupt_resume/inputs",
+    "--output",
+    "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Orchestration_Harness_20261020/companion/practice/orchestration/observed_v2/06_interrupt_resume/run"
+  ],
+  "signal": "SIGINT",
+  "returncode": 130,
+  "note": "Actual cooperative signal interruption; not a power-loss or SIGKILL experiment."
+}

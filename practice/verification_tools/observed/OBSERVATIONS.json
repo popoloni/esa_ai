@@ -1,0 +1,77 @@
+{
+  "schema": "esa-verification-tool-observation/v1",
+  "status": "PASS_SELECTED_PROPERTIES_AND_NEGATIVE_CONTROLS",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "dependencies": {
+    "hypothesis": "6.170.5",
+    "bandit": "1.8.6"
+  },
+  "source": "repo/src/treasury/routing.py",
+  "source_sha256": "14d186a327a418dddb405144bfefb5810ed27e626b981424c9ad3b66742e8b32",
+  "property_observations": {
+    "positive_cent_strings": 253,
+    "nonpositive_cent_strings": 101
+  },
+  "explicit_invalid_inputs": [
+    "NaN",
+    "Infinity",
+    "-Infinity",
+    "",
+    "not-an-amount"
+  ],
+  "property_elapsed_seconds": 0.16864442825317383,
+  "boundary_control": {
+    "type": "AssertionError",
+    "counterexample": "5000.00",
+    "notes": [
+      "Failing explicit example: reject_boundary_mutation(\n    cents=500000,\n)"
+    ]
+  },
+  "static_scans": [
+    {
+      "name": "actual_router_and_adapter",
+      "argv": [
+        "/workspace/scratch/efa0a59e0545/tmp/esa_verification_env/bin/python",
+        "-m",
+        "bandit",
+        "-f",
+        "json",
+        "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Competitive_Revision_20261021/companion/repo/src/treasury/routing.py",
+        "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Competitive_Revision_20261021/companion/repo/src/treasury/architecture/direct.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.24547481536865234,
+      "findings": []
+    },
+    {
+      "name": "unsafe_parse_control",
+      "argv": [
+        "/workspace/scratch/efa0a59e0545/tmp/esa_verification_env/bin/python",
+        "-m",
+        "bandit",
+        "-f",
+        "json",
+        "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Competitive_Revision_20261021/companion/practice/verification_tools/observed/unsafe_parse_control.py"
+      ],
+      "exit_code": 1,
+      "elapsed_seconds": 0.11150240898132324,
+      "findings": [
+        {
+          "id": "B307",
+          "severity": "MEDIUM",
+          "confidence": "HIGH",
+          "line": 17
+        }
+      ]
+    }
+  ],
+  "elapsed_seconds": 0.5316543579101562,
+  "limits": [
+    "Generated inputs are finite decimal strings at cent precision within the stated range.",
+    "The equality control is explicitly seeded; its rejection is not an estimated detection rate.",
+    "Bandit examines selected Python syntax. A clean report is not proof of security.",
+    "B307 finds a risky eval call; it does not assess the business threshold.",
+    "No model, hosted CI, production deployment or human approval is exercised."
+  ]
+}

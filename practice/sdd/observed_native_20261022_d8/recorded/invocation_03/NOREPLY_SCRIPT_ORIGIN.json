@@ -1,0 +1,13 @@
+{
+  "origin": "revision_d8/evidence/native_sdd_01/preparation/verify_native_attachment_d8.py",
+  "origin_sha256": "1769066aca97f7958366256915f80d7bad28b91e9bc99839a34e4474be29db5f",
+  "candidate_script": "verify_native_attachment_03.py",
+  "candidate_script_sha256": "5e20479e3da2b21405cb075de6c22366c8414ce30af00ee0bba3aad47d743acb",
+  "changes": [
+    "Use separately named candidate03 config/env/task",
+    "Exact same noReply content verification and cleanup",
+    "Known local backend may remain present; do not call inference; independently check token counters",
+    "Verify actual config output-only read permissions and effective model temperature capability true"
+  ],
+  "syntax_compile": "PASS; no subprocess started"
+}

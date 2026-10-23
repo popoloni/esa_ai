@@ -1,0 +1,154 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CP08 implementation attempt report, version 2",
+  "type": "object",
+  "required": [
+    "change_id",
+    "intent_ref",
+    "spec_ref",
+    "architecture_ref",
+    "architecture_status",
+    "scope",
+    "changed_files",
+    "checks",
+    "status",
+    "human_approver",
+    "value_validated",
+    "schema",
+    "record_revision",
+    "fixture_origin",
+    "execution_mode",
+    "observed_run_ref",
+    "unresolved_questions"
+  ],
+  "properties": {
+    "change_id": {
+      "const": "IMPL-008/v1"
+    },
+    "intent_ref": {
+      "const": "INT-001"
+    },
+    "spec_ref": {
+      "const": "SPEC-004/v1"
+    },
+    "architecture_ref": {
+      "const": "ADR-005"
+    },
+    "architecture_status": {
+      "const": "PROPOSED_FOR_HUMAN_ARCHITECTURE_REVIEW"
+    },
+    "scope": {
+      "const": "explanation_only"
+    },
+    "changed_files": {
+      "const": [
+        "src/treasury/explanation_alpha.py"
+      ]
+    },
+    "checks": {
+      "const": "CP08_SELECTED_OFFLINE_CASES_PASS"
+    },
+    "status": {
+      "const": "READY_FOR_HUMAN_REVIEW_NOT_ACCEPTED"
+    },
+    "human_approver": {
+      "const": null
+    },
+    "value_validated": {
+      "const": false
+    },
+    "schema": {
+      "const": "implementation-report/v2"
+    },
+    "record_revision": {
+      "const": 2
+    },
+    "fixture_origin": {
+      "const": "SYNTHETIC_TEACHING_CASE"
+    },
+    "execution_mode": {
+      "enum": [
+        "OFFLINE_DETERMINISTIC",
+        "ACTUAL_AGENT_CLIENT"
+      ]
+    },
+    "observed_run_ref": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "required": [
+            "path",
+            "sha256"
+          ],
+          "properties": {
+            "path": {
+              "type": "string",
+              "minLength": 1
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "unresolved_questions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "not": {
+    "required": [
+      "live_agent_run"
+    ]
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "execution_mode": {
+            "const": "OFFLINE_DETERMINISTIC"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "observed_run_ref": {
+            "type": "null"
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "observed_run_ref": {
+            "type": "object",
+            "required": [
+              "path",
+              "sha256"
+            ],
+            "properties": {
+              "path": {
+                "type": "string",
+                "minLength": 1
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      }
+    }
+  ],
+  "description": "Additional root containment, exact candidate binding and retained observation/transcript checks are implemented by provenance_core.py."
+}

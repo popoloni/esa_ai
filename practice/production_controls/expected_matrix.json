@@ -1,0 +1,30 @@
+{
+  "schema": "consumer-probe-matrix/v1",
+  "expected_acceptance": {
+    "legacy_only": {
+      "legacy": true,
+      "current": false
+    },
+    "expanded": {
+      "legacy": true,
+      "current": true
+    },
+    "contracted": {
+      "legacy": false,
+      "current": true
+    },
+    "string_boolean": {
+      "legacy": false,
+      "current": false
+    },
+    "wrong_policy": {
+      "legacy": false,
+      "current": false
+    },
+    "payment_authority": {
+      "legacy": false,
+      "current": false
+    }
+  },
+  "meaning": "Positive/negative expectations for the author-created cases; not a population reliability estimate."
+}

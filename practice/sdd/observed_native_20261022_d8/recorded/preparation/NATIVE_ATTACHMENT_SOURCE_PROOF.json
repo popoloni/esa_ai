@@ -1,0 +1,77 @@
+{
+  "checked_at_utc": "2026-10-22T10:12:21.365240+00:00",
+  "pinned_opencode_version": "1.19.3",
+  "pinned_sources": {
+    "SOURCE_DOWNLOADS.json": {
+      "sha256": "2013cce16317b1b27ce06182b5a9753e60eda0989fc55fcb21ed39e994b7b118",
+      "bytes": 1321
+    },
+    "UPSTREAM_LICENSE.txt": {
+      "sha256": "625f0f619133f89bbbb2abe37369613dfa1885eba1e50d02170deb62bb42cb6b",
+      "bytes": 1065
+    },
+    "cli_run.ts": {
+      "sha256": "e040e90d4c81cdd59b9568ee90a53c0209cd9ddf1b8b207d1a8685b2e26d57d0",
+      "bytes": 31940
+    },
+    "markdown.ts": {
+      "sha256": "bcb87009e9ffc760e0e2f0878543f582b5ca7ecc67bebb2087de2467ae28cbfe",
+      "bytes": 1173
+    },
+    "read.ts": {
+      "sha256": "afec8294965cbd9b9e29d3453b682164f0ecdba26574ebc048e9ba21af209c68",
+      "bytes": 13126
+    },
+    "session_prompt.ts": {
+      "sha256": "f0c5bc64c0f0e966693d4a57f7ede1e9d6e188b396152f04b55303dc75b9b768",
+      "bytes": 64944
+    },
+    "write.ts": {
+      "sha256": "861de91cc67849e138c32a697c8eb1abab8e4912bfd97811ea1866b8e9af4096",
+      "bytes": 3957
+    }
+  },
+  "installed_framework": {
+    "distribution": "specify-cli",
+    "version": "1.2.2",
+    "metadata_sha256": "62af6073c22e6715ffda81537579915a23457d11d0647c87ee9e2b2942fd9efe",
+    "fresh_scaffold_receipt": "SCAFFOLD_FINISH.json"
+  },
+  "command_expansion": {
+    "source": "pinned_client_sources/session_prompt.ts",
+    "method": "command() expands $ARGUMENTS, then calls resolvePromptParts(template); file references deduplicated by path. Both references are the same absolute path. Full installed command is unchanged.",
+    "template_sha256": "97a63469f92466fffc00e5527bffd67fcb4118fef80f0e677639b71f3bbf5400",
+    "expanded_sha256": "c25f92738b757ed0979878d04fa62554ddf4717ded7d4b9dac10f2fa027162d8"
+  },
+  "path_rule": {
+    "worktree": "/",
+    "absolute_at_reference_required": true,
+    "why": "In the observed non-Git project, the command resolver resolves relative @paths against worktree /, not the project directory."
+  },
+  "cli_file_flag": {
+    "source": "pinned_client_sources/cli_run.ts",
+    "finding": "run --command passes no files to session.command; ordinary prompt branch does. This task uses @absolute-file in arguments, not --file."
+  },
+  "file_read": {
+    "source": "pinned_client_sources/read.ts",
+    "limits": {
+      "default_lines": 2000,
+      "per_line_utf16_units": 2000,
+      "bytes": 51200
+    },
+    "important_boundary": "The per-line substring operation does not set the whole-file truncated flag. Verify actual received content, not only that flag."
+  },
+  "noReply": {
+    "source": "pinned_client_sources/session_prompt.ts",
+    "guard": "if (input.noReply === true) return message",
+    "ordering": "createUserMessage resolves attachment first; this guard returns before loop(). The loop contains title generation and agent model acquisition.",
+    "actual_verification": "native_attachment_preflight_01/RESULT.json",
+    "separate_session_never_reuse": "ses_e9ce93103ffeCb4inKDgfNGJQr"
+  },
+  "permission": {
+    "effective_config_receipt": "CONFIGURATION_NOTES.json",
+    "all19_configuration_checks_pass": true,
+    "native_attachment_source_behavior": "User-selected file parts use native read with ask=>void and bypassCwdCheck:true. The chosen packet is separately within the explicit configured read allowlist. This preflight is neither model-selected tool use nor proof of OS containment.",
+    "write_behavior": "Pinned write.ts requests edit permission and writes with directories; it has no read-before-write assertion. No native generated-file write is yet observed."
+  }
+}

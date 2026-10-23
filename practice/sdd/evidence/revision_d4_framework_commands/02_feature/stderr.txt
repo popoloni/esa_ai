@@ -1,0 +1,2 @@
+# To persist: export SPECIFY_FEATURE=001-explain-treasury
+#              export SPECIFY_FEATURE_DIRECTORY=/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Competitive_Revision_20261021/companion/practice/sdd/evidence/revision_d4_fresh_scaffold/specs/001-explain-treasury

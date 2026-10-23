@@ -1,0 +1,16 @@
+{
+  "argv": [
+    "/workspace/scratch/efa0a59e0545/runtime_d6/opencode/node_modules/.bin/opencode",
+    "--pure",
+    "export",
+    "ses_e9f7cda38ffeYtaDZcM3ZhMXlG"
+  ],
+  "cwd": "/workspace/scratch/efa0a59e0545/runtime_d6/native_work_01",
+  "environment_reference": "revision_d6/evidence/native_ch01_01/ENVIRONMENT_04.json",
+  "started_at_utc": "2026-10-21T22:22:59.584615+00:00",
+  "scope": "Native session export only; no inference or task-success judgment.",
+  "exit_code": 0,
+  "finished_at_utc": "2026-10-21T22:23:01.104232+00:00",
+  "stdout_destination": "DIRECT_REGULAR_FILE",
+  "json_validation": "PASS"
+}

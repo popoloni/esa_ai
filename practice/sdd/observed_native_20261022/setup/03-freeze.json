@@ -1,0 +1,16 @@
+{
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/uv",
+    "--cache-dir",
+    "/workspace/scratch/72d789d25fef/runtime_d7/python-cache",
+    "pip",
+    "freeze",
+    "--python",
+    "/workspace/scratch/72d789d25fef/runtime_d7/sdd_venv/bin/python"
+  ],
+  "cwd": "/workspace/scratch/72d789d25fef/runtime_d7",
+  "started_at_utc": "2026-10-22T05:55:13.550998+00:00",
+  "finished_at_utc": "2026-10-22T05:55:13.566799+00:00",
+  "elapsed_seconds": 0.015809057999831566,
+  "exit_code": 0
+}

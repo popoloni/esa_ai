@@ -1,0 +1,7 @@
+{
+  "at_utc": "2026-10-22T17:47:13.324436+00:00",
+  "launcher_pid": 102778,
+  "server_pid": 102781,
+  "signal": "SIGTERM",
+  "reason": "Four-invocation initial budget complete; no further native calls authorized this revision. Freeze actual evidence."
+}

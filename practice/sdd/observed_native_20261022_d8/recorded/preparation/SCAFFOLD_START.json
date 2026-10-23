@@ -1,0 +1,34 @@
+{
+  "status": "STARTED_INSTALLED_FRAMEWORK_SCAFFOLD_ONLY",
+  "started_at_utc": "2026-10-22T10:04:25.292816+00:00",
+  "argv": [
+    "/workspace/scratch/72d789d25fef/runtime_d7/sdd_venv/bin/specify",
+    "init",
+    "native_sdd_01",
+    "--integration",
+    "opencode",
+    "--script",
+    "py",
+    "--non-interactive"
+  ],
+  "cwd": "/workspace/scratch/72d789d25fef/runtime_d8",
+  "env_keys": [
+    "CI",
+    "DO_NOT_TRACK",
+    "GIT_CONFIG_GLOBAL",
+    "GIT_CONFIG_NOSYSTEM",
+    "HTTPS_PROXY",
+    "HTTP_PROXY",
+    "LANG",
+    "NO_PROXY",
+    "PATH",
+    "PYTHONDONTWRITEBYTECODE",
+    "REQUESTS_CA_BUNDLE",
+    "SSL_CERT_FILE",
+    "TZ"
+  ],
+  "pinned_runtime_reused_read_only": "/workspace/scratch/72d789d25fef/runtime_d7",
+  "project": "/workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01",
+  "model_call": false,
+  "generated_feature_outputs": false
+}

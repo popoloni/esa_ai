@@ -1,0 +1,203 @@
+{
+  "created_at_utc": "2026-10-20T16:21:21.209491+00:00",
+  "deadline_epoch": 1792513341.209496,
+  "events": [
+    {
+      "at_utc": "2026-10-20T16:21:21.209507+00:00",
+      "event": "RUN_CREATED",
+      "seq": 1,
+      "task_id": null
+    },
+    {
+      "at_utc": "2026-10-20T16:21:21.248864+00:00",
+      "attempt": 1,
+      "event": "TASK_DISPATCHING",
+      "seq": 2,
+      "task_id": "policy"
+    },
+    {
+      "active": 1,
+      "at_utc": "2026-10-20T16:21:21.251252+00:00",
+      "attempt": 1,
+      "event": "TASK_STARTED",
+      "pid": 6,
+      "seq": 3,
+      "task_id": "policy"
+    },
+    {
+      "at_utc": "2026-10-20T16:21:21.255950+00:00",
+      "attempt": 1,
+      "event": "TASK_DISPATCHING",
+      "seq": 4,
+      "task_id": "routing"
+    },
+    {
+      "active": 2,
+      "at_utc": "2026-10-20T16:21:21.258078+00:00",
+      "attempt": 1,
+      "event": "TASK_STARTED",
+      "pid": 7,
+      "seq": 5,
+      "task_id": "routing"
+    },
+    {
+      "at_utc": "2026-10-20T16:21:21.408371+00:00",
+      "event": "TASK_COMPLETED",
+      "result_sha256": "f3c8f0c8c41d33968e49963c0678882d03eb065688b752afe86f8b4def376bcf",
+      "seq": 6,
+      "task_id": "policy"
+    },
+    {
+      "at_utc": "2026-10-20T16:21:21.498128+00:00",
+      "event": "TASK_COMPLETED",
+      "result_sha256": "1b66ece4d8b3e357b08336e2eaaa7d89faf1aba29db244e8134495148a27c05a",
+      "seq": 7,
+      "task_id": "routing"
+    },
+    {
+      "at_utc": "2026-10-20T16:21:21.523725+00:00",
+      "attempt": 1,
+      "event": "TASK_DISPATCHING",
+      "seq": 8,
+      "task_id": "synthesis"
+    },
+    {
+      "active": 1,
+      "at_utc": "2026-10-20T16:21:21.525484+00:00",
+      "attempt": 1,
+      "event": "TASK_STARTED",
+      "pid": 8,
+      "seq": 9,
+      "task_id": "synthesis"
+    },
+    {
+      "at_utc": "2026-10-20T16:21:21.596775+00:00",
+      "event": "TASK_COMPLETED",
+      "result_sha256": "5099f471baa4e53979d848c0ded51b95099db262d55ad0666ae19b1ce87da9e3",
+      "seq": 10,
+      "task_id": "synthesis"
+    },
+    {
+      "at_utc": "2026-10-20T16:21:21.622695+00:00",
+      "event": "RUN_STOPPED",
+      "reason": "COMPLETED",
+      "seq": 11,
+      "task_id": null
+    },
+    {
+      "at_utc": "2026-10-20T16:21:21.709747+00:00",
+      "event": "RESUME_REQUESTED",
+      "retry_interrupted": false,
+      "seq": 12,
+      "task_id": null
+    },
+    {
+      "at_utc": "2026-10-20T16:21:21.711924+00:00",
+      "event": "RESUMED",
+      "seq": 13,
+      "task_id": null
+    },
+    {
+      "at_utc": "2026-10-20T16:21:21.713537+00:00",
+      "event": "RESUME_NO_WORK",
+      "seq": 14,
+      "task_id": null
+    }
+  ],
+  "identity": {
+    "adapter_executable_sha256": "fa67443527ed9647f760d807e2a38f26340757123e643c4639cf273ed15d5ea7",
+    "code": {
+      "orchestrator.py": "1e920606bb6e7b096082aa17fc5a461aa7d3e7d50ab00e3431bb987dd8799c56",
+      "worker_script": "419443930c7b63a45c849b2b914ce7ead602506047f1bb65228793342ff59fa3"
+    },
+    "inputs": {
+      "intent.md": "209ee2f218448d83178bd02fd5947cf68b021657a72b38e682e4a895fa102947",
+      "protected_plan.json": "ff2a8e4e3ef8d2403cec1cc767a91fc97103455237be43661a980607cae2da17",
+      "routing.py": "14d186a327a418dddb405144bfefb5810ed27e626b981424c9ad3b66742e8b32"
+    },
+    "plan_sha256": "31fdcc3506979638f496b3e7cc402616e44c5cd3e9832980bd2cf9b136051b57",
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]"
+  },
+  "peak_parallel": 2,
+  "run_status": "COMPLETED",
+  "schema": "treasury-run/v1",
+  "tasks": {
+    "policy": {
+      "attempts": [
+        {
+          "argv": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Orchestration_Harness_20261020/companion/practice/orchestration/treasury_worker.py",
+            "--request",
+            "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Orchestration_Harness_20261020/companion/practice/orchestration/observed/01_success/run/attempts/policy/001/request.json",
+            "--response",
+            "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Orchestration_Harness_20261020/companion/practice/orchestration/observed/01_success/run/attempts/policy/001/result.json"
+          ],
+          "elapsed_seconds": 0.156765,
+          "finished_at_utc": "2026-10-20T16:21:21.407966+00:00",
+          "number": 1,
+          "outcome": "COMPLETED",
+          "pid": 6,
+          "request_path": "attempts/policy/001/request.json",
+          "returncode": 0,
+          "started_at_utc": "2026-10-20T16:21:21.248752+00:00"
+        }
+      ],
+      "result_path": "attempts/policy/001/result.json",
+      "result_sha256": "f3c8f0c8c41d33968e49963c0678882d03eb065688b752afe86f8b4def376bcf",
+      "status": "COMPLETED"
+    },
+    "routing": {
+      "attempts": [
+        {
+          "argv": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Orchestration_Harness_20261020/companion/practice/orchestration/treasury_worker.py",
+            "--request",
+            "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Orchestration_Harness_20261020/companion/practice/orchestration/observed/01_success/run/attempts/routing/001/request.json",
+            "--response",
+            "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Orchestration_Harness_20261020/companion/practice/orchestration/observed/01_success/run/attempts/routing/001/result.json"
+          ],
+          "elapsed_seconds": 0.239468,
+          "finished_at_utc": "2026-10-20T16:21:21.497521+00:00",
+          "number": 1,
+          "outcome": "COMPLETED",
+          "pid": 7,
+          "request_path": "attempts/routing/001/request.json",
+          "returncode": 0,
+          "started_at_utc": "2026-10-20T16:21:21.255798+00:00"
+        }
+      ],
+      "result_path": "attempts/routing/001/result.json",
+      "result_sha256": "1b66ece4d8b3e357b08336e2eaaa7d89faf1aba29db244e8134495148a27c05a",
+      "status": "COMPLETED"
+    },
+    "synthesis": {
+      "attempts": [
+        {
+          "argv": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+            "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Orchestration_Harness_20261020/companion/practice/orchestration/treasury_worker.py",
+            "--request",
+            "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Orchestration_Harness_20261020/companion/practice/orchestration/observed/01_success/run/attempts/synthesis/001/request.json",
+            "--response",
+            "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Orchestration_Harness_20261020/companion/practice/orchestration/observed/01_success/run/attempts/synthesis/001/result.json"
+          ],
+          "elapsed_seconds": 0.070947,
+          "finished_at_utc": "2026-10-20T16:21:21.596410+00:00",
+          "number": 1,
+          "outcome": "COMPLETED",
+          "pid": 8,
+          "request_path": "attempts/synthesis/001/request.json",
+          "returncode": 0,
+          "started_at_utc": "2026-10-20T16:21:21.523638+00:00"
+        }
+      ],
+      "result_path": "attempts/synthesis/001/result.json",
+      "result_sha256": "5099f471baa4e53979d848c0ded51b95099db262d55ad0666ae19b1ce87da9e3",
+      "status": "COMPLETED"
+    }
+  },
+  "updated_at_utc": "2026-10-20T16:21:21.713544+00:00",
+  "worker_kind": "DETERMINISTIC_PYTHON"
+}

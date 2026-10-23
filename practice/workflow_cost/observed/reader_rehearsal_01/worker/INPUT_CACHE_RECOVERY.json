@@ -1,0 +1,9 @@
+{
+  "path": "/workspace/scratch/efa0a59e0545/tmp/esa_d5_reader_01/input/companion/reader_side/tools/__pycache__/scope_guard.cpython-312.pyc",
+  "sha256": "633479c2e5c76fc59b99a82d00b51ff6bf24cd64455053be83475daf09d46be4",
+  "mtime_ns": 1792606211979427909,
+  "reason": "Task-start doctor command imported scope_guard and generated this cache at 18:10:11 UTC; no bytecode existed from a prior attempt according to birth time. Remove only this proven task-created bytecode to restore unchanged input.",
+  "restored_cache_absence": true,
+  "late_input_cache_observation": "After initial cleanup, final verification unexpectedly saw the same cache with its original mtime. No intervening worker command imported input source. Cause is unverified; the exact known cache hash was checked and the same generated cache removed again. No authored input was edited.",
+  "final_cache_absent": true
+}

@@ -1,0 +1,116 @@
+{
+  "schema": "esa-d8-native-startup-preflight-manifest/v1",
+  "file_count": 22,
+  "files": [
+    {
+      "path": "DECLARED_RESTART.json",
+      "bytes": 1970,
+      "sha256": "1cdf4e2046b39d3e383138e466df8977dc0244f3b8f5faa587739e59da82ead0"
+    },
+    {
+      "path": "PRE_STOP_IDENTITY.json",
+      "bytes": 2637,
+      "sha256": "e43526dc524d61bc4fcd09f2be637b74a0c3ff26241bdb574c02cb79f5e3b387"
+    },
+    {
+      "path": "REVIEW.json",
+      "bytes": 5084,
+      "sha256": "043d1d598a52ea89f34c93ca5ef3eae17f8fe38ad96dcbad514be260466d9ea8"
+    },
+    {
+      "path": "STOP_PREVIOUS.json",
+      "bytes": 3969,
+      "sha256": "942b0c5e9a8eb2934f41217c4ee5f19e674634394c24fb09ebda602e9372bbdc"
+    },
+    {
+      "path": "collect_startup.py",
+      "bytes": 8068,
+      "sha256": "c0cd768555aa89fcc0ce916327498588f8c470e4e4799fd565462665f79667f9"
+    },
+    {
+      "path": "sample_01/OBSERVATION.json",
+      "bytes": 6668,
+      "sha256": "e5e64b54c3807abaa1f97b3eed31a4d35c2441ad572bcaad25e345a62b8ee057"
+    },
+    {
+      "path": "sample_01/cgroup_cpu_max.txt",
+      "bytes": 14,
+      "sha256": "3dafc4b2d6a8bfd8c1910a28fd3bb15f053a47cebaff7b5cdd6cf42c39f8f880"
+    },
+    {
+      "path": "sample_01/cgroup_cpu_stat.txt",
+      "bytes": 168,
+      "sha256": "40953d96eca9b022f58472fd091d091047daa5e293b92de11abf9ff13ddaad72"
+    },
+    {
+      "path": "sample_01/cgroup_cpuset_cpus_effective.txt",
+      "bytes": 4,
+      "sha256": "20e22ff1b45f20360b417a1fb66d1289b11d87b24b228e69a545326c72f6353e"
+    },
+    {
+      "path": "sample_01/cgroup_memory_current.txt",
+      "bytes": 11,
+      "sha256": "8d944e8789a9a8f6367926d966a6fa8a3b71af5b7764dd473ba6c251e01582fa"
+    },
+    {
+      "path": "sample_01/cgroup_memory_events.txt",
+      "bytes": 58,
+      "sha256": "9c93fcaff74cf899edd96459ca07eba23af425a506ddb3c195dbd4e8571f2888"
+    },
+    {
+      "path": "sample_01/cgroup_memory_max.txt",
+      "bytes": 11,
+      "sha256": "8528d39f97fdd9c9689c4373fe4c7b18f2c3bef6b044a2c4be74b07bf9cd07d8"
+    },
+    {
+      "path": "sample_01/cgroup_memory_stat.txt",
+      "bytes": 1153,
+      "sha256": "720a705b20255ae7195bc39109f8520ab5e8d83bf9e0fdae39d4832d5eead7e3"
+    },
+    {
+      "path": "sample_01/cgroup_memory_swap_max.txt",
+      "bytes": 4,
+      "sha256": "dbe7218fd3953d71eac340668b850fe4b57278326a462a0cf0ad506efbf8b02e"
+    },
+    {
+      "path": "sample_01/health.json",
+      "bytes": 15,
+      "sha256": "a29ee2b15c494311c52521766e44af56a3ad2248e7a8ab465e5206463c13d288"
+    },
+    {
+      "path": "sample_01/process_cgroup.txt",
+      "bytes": 5,
+      "sha256": "e57fd7b21104f091de366ace1464596378a498b0a5e63f1b21147a8998c20107"
+    },
+    {
+      "path": "sample_01/process_maps.txt",
+      "bytes": 15683,
+      "sha256": "9808554d151b38b32eebfa8b73d1886a4bb8ef290dc3f998f1e94fac460dfb8a"
+    },
+    {
+      "path": "sample_01/process_smaps_rollup.txt",
+      "bytes": 698,
+      "sha256": "80df1441d58d8c2361227eb64547d48a924f1e33fceb36fc67fd5b2188cf966b"
+    },
+    {
+      "path": "sample_01/process_stat.txt",
+      "bytes": 335,
+      "sha256": "5397dbad7a7226e6c768a02ef568f6e36ff5fe8fbd11c54a16098555217001f0"
+    },
+    {
+      "path": "sample_01/process_status.txt",
+      "bytes": 1154,
+      "sha256": "768537c8c9f6d428356486218949fc76b08d75bfb1bbffae291e9e2b6ce54b3a"
+    },
+    {
+      "path": "sample_01/props.json",
+      "bytes": 6139,
+      "sha256": "e5ae721fdbc0dc10edb3bd7c16cee6b8f0bc554919a885cabee364e071802bde"
+    },
+    {
+      "path": "sample_01/startup_log_observed.txt",
+      "bytes": 14800,
+      "sha256": "9ff5acef165fb9b60ab52e09766148d849f709a4ad745217766b5917469f6ca2"
+    }
+  ]
+}

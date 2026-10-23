@@ -1,0 +1,49 @@
+{
+  "schema": "esa-native-completed-step-snapshot/v1",
+  "captured_at_utc": "2026-10-22T07:38:21.221204+00:00",
+  "scope": "Immutable completed first tool step copied while later primary request is still running. This is not a terminal task result or an artifact-generation claim.",
+  "session_id": "ses_e9d953008ffe5prRJYzw7HWDMP",
+  "tool_call_id": "gtZjJu17PxRlHruulByRJaRXPn6278Lg",
+  "timestamp_ms": 1792654531399,
+  "tool": "bash",
+  "input": {
+    "command": "cat inputs/NATIVE_CONTEXT_BUNDLE.md",
+    "workdir": "/workspace/scratch/72d789d25fef/runtime_d7/native_sdd_03"
+  },
+  "native_status": "completed",
+  "exit_code": 0,
+  "truncated": false,
+  "output_bytes": 25044,
+  "output_sha256": "51da598ef2a1d7116869cca05fe637b0120039cf8389f057ab0e6e81b301ae44",
+  "matches_complete_preflight_packet": true,
+  "completed_step": {
+    "id": "prt_162895c10001qGhp28HhaM6yLR",
+    "reason": "tool-calls",
+    "messageID": "msg_1627df797001DQV3D2toA7Iia8",
+    "sessionID": "ses_e9d953008ffe5prRJYzw7HWDMP",
+    "type": "step-finish",
+    "tokens": {
+      "total": 7019,
+      "input": 6964,
+      "output": 55,
+      "reasoning": 0,
+      "cache": {
+        "write": 0,
+        "read": 0
+      }
+    },
+    "cost": 0
+  },
+  "files": {
+    "stdout_prefix.jsonl": {
+      "bytes": 54254,
+      "sha256": "2d62dc2c4bd4a4843654893c384d55ff37d0c716497f3be541551c2876d92fce"
+    },
+    "stderr_prefix.txt": {
+      "bytes": 6937,
+      "sha256": "ee3d47479cea1570b40449d3217eb7a6023083b1590b9b0aac55416c8ba4eb54"
+    }
+  },
+  "later_output": "Still active in ../attempt_01; must be reviewed after the fixed outer bound.",
+  "human_review": "ABSENT"
+}

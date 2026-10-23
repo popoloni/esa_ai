@@ -1,0 +1,26 @@
+[
+  {
+    "file": "speckit_pypi.json",
+    "url": "https://pypi.org/pypi/specify-cli/1.2.2/json",
+    "status": "error",
+    "error": "<urlopen error [Errno 1] Operation not permitted>"
+  },
+  {
+    "file": "openspec_npm.json",
+    "url": "https://registry.npmjs.org/@fission-ai%2fopenspec/1.14.1",
+    "status": "error",
+    "error": "<urlopen error [Errno 1] Operation not permitted>"
+  },
+  {
+    "file": "speckit_release.json",
+    "url": "https://api.github.com/repos/github/spec-kit/releases/tags/v1.2.2",
+    "status": "error",
+    "error": "<urlopen error [Errno 1] Operation not permitted>"
+  },
+  {
+    "file": "openspec_release.json",
+    "url": "https://api.github.com/repos/Fission-AI/OpenSpec/releases/tags/v1.14.1",
+    "status": "error",
+    "error": "<urlopen error [Errno 1] Operation not permitted>"
+  }
+]

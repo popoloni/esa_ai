@@ -1,0 +1,48 @@
+{
+  "schema": "harness-implementation-validation/v1",
+  "observed_at_utc": "2026-10-20T16:19:24.685558+00:00",
+  "status": "PASS_LOCAL_DETERMINISTIC_SCOPE",
+  "test_count": 13,
+  "commands": [
+    {
+      "name": "experiment",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "practice/harness_engineering/run_experiment.py",
+        "--output",
+        "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Orchestration_Harness_20261020/companion/practice/harness_engineering/observed/treasury_deterministic"
+      ],
+      "cwd": "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Orchestration_Harness_20261020/companion",
+      "returncode": 0,
+      "stdout": "observed/experiment.stdout.txt",
+      "stderr": "observed/experiment.stderr.txt"
+    },
+    {
+      "name": "tests",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "practice/harness_engineering/tests",
+        "-v"
+      ],
+      "cwd": "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Orchestration_Harness_20261020/companion",
+      "returncode": 0,
+      "stdout": "observed/tests.stdout.txt",
+      "stderr": "observed/tests.stderr.txt"
+    }
+  ],
+  "report": "companion/practice/harness_engineering/observed/treasury_deterministic/REPORT.json",
+  "report_sha256": "27ee98fabca384f3917062b4e2ec5c8b2c45cb93c2e4ef36f8c616827527006d",
+  "model_calls": 0,
+  "process_executions": 63,
+  "source_files_unchanged": true,
+  "remaining_acceptance": [
+    "No live model-driven editor or responder observed in this adaptation.",
+    "No blind held-out or statistical generalization study.",
+    "No OS security sandbox demonstration.",
+    "Independent human reader trial remains separate."
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "schema": "esa-native-observation/v1",
+  "prepared_at_utc": "2026-10-22T05:56:22.728288+00:00",
+  "record_kind": "OBSERVED_WITH_EXPLICIT_LIMITS",
+  "execution_kind": "ACTUAL_NAMED_CLIENT",
+  "actions": [
+    "R07"
+  ],
+  "client": {
+    "name": "OpenCode",
+    "version": "1.19.3",
+    "model_identity": "esa-local/esa-qwen3-4b; Qwen3-4B-Q4_K_M GGUF SHA256 7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+    "model_identity_availability": "EXPOSED"
+  },
+  "prior_solution_exposure": "Preparation/review agent had seen the authored exercise and historical receipts; native Qwen received only the retained bounded task and actual tool responses. Not a blind benchmark.",
+  "contrast": {
+    "status": "UNOBSERVED",
+    "same_contract": null,
+    "meaningful_difference": null,
+    "paired_performance_claim": false
+  },
+  "starting_manifest": {
+    "path": "STARTING_MANIFEST.json",
+    "sha256": "c21cea853528b963d35a060548140af32ba7a938ff4446b10367a2f69f7b352a"
+  },
+  "artifacts": {
+    "client_identity": {
+      "path": "CLIENT_IDENTITIES.json",
+      "sha256": "804bff34c05bb6a4f41b7f468bd4cd4ca38ecf90215ec2a8769622b0bfc290d2"
+    },
+    "effective_configuration": {
+      "path": "diagnostics/effective_config/stdout.txt",
+      "sha256": "ba3925e1540e774c166ff27c720a0e140a00fc1ef8ab1cbc562b8ed09edf418d"
+    },
+    "mcp_server_identity": {
+      "path": "trace_01/server_to_client.jsonl",
+      "sha256": "a0065ab574ec571e9f7c016de7da8da398b3a5bf5bc4dea164a5fe2f550ce34e"
+    },
+    "mcp_opening_exchange": {
+      "path": "trace_01/client_to_server.jsonl",
+      "sha256": "f21a51298ae34c29ef8bd489f3ca4bd9d10dab07e15cf977771e307fd684bb5c"
+    },
+    "mcp_tool_discovery": {
+      "path": "trace_01/server_to_client.jsonl",
+      "sha256": "a0065ab574ec571e9f7c016de7da8da398b3a5bf5bc4dea164a5fe2f550ce34e"
+    },
+    "mcp_valid_call": {
+      "path": "trace_01/server_to_client.jsonl",
+      "sha256": "a0065ab574ec571e9f7c016de7da8da398b3a5bf5bc4dea164a5fe2f550ce34e"
+    },
+    "mcp_invalid_argument": {
+      "path": "MALFORMED_ARGUMENT_REVIEW.json",
+      "sha256": "af77c25a90a2daa28908750ba8ad914b1205882fbb0d70e7d4afbc24e67527bb"
+    },
+    "mcp_domain_refusal": {
+      "path": "trace_01/server_to_client.jsonl",
+      "sha256": "a0065ab574ec571e9f7c016de7da8da398b3a5bf5bc4dea164a5fe2f550ce34e"
+    },
+    "mcp_process_boundary": {
+      "path": "PROCESS_BOUNDARY_REVIEW.json",
+      "sha256": "41a3824e5c0dc18b0478fac4577e24dc36e2e531fc32eb3b4c6f4c586a71fa64"
+    },
+    "first_output": {
+      "path": "attempt_01/stdout.txt",
+      "sha256": "5dd699a902a1208c9badaae929dd27e61e09b31dc0e446a98a94762b644366f0"
+    },
+    "tool_actions": {
+      "path": "attempt_01/native-session.json",
+      "sha256": "157f836b88e680d08cb1e64294d14f63839823c9d5c6d8631699ca3af4e59368"
+    },
+    "independent_checks": {
+      "path": "OBSERVATION_SUMMARY.json",
+      "sha256": "769e6e1c69492f70eebcab0c04b091a7b14850d7f940f05f784bdb5f3f5a5eac"
+    }
+  },
+  "protocol_era": "2025-11-25",
+  "native_tool_selection": "OBSERVED",
+  "boundary_scope": "Actual canonical-server interpreter startup read of one declared nonsecret outside-study canary succeeded. Host tool permissions and OS capabilities are distinguished; remaining boundaries untested.",
+  "unknown_values": [
+    "Native invalid-list validation was not observed; final model claim was rejected.",
+    "No human review or paired coding-host comparison.",
+    "Network, environment and post-initialization process isolation untested."
+  ],
+  "human_acceptance": "NOT_PERFORMED",
+  "structural_check_scope": "EVIDENCE_CONSISTENCY_ONLY_NOT_AUTHENTICITY_OR_ACCEPTANCE",
+  "observed_at_utc": "2026-10-22T06:26:49.290268+00:00",
+  "preparation_record_preserved": "NATIVE_OBSERVATION.json and CONFIGURATION_MANIFEST.json retain the original unfilled preparation state; this distinct record binds the actual observation."
+}

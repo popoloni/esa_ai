@@ -1,0 +1,53 @@
+{
+  "schema": "esa-sdd-native-recovery-preflight/v1",
+  "at_utc": "2026-10-22T07:01:47.643351+00:00",
+  "status": "PASS_BOUNDED_RECOVERY_PRECONDITIONS",
+  "checks": {
+    "actual_context_24576": true,
+    "actual_single_slot": true,
+    "health_ok": true,
+    "fixed_9_inputs_pass": true,
+    "all_preparation_checks_pass": true,
+    "complete_body_unchanged": true,
+    "budget_fits_declared_context": true,
+    "new_config_bytes_stable": true,
+    "no_generated_artifacts_planted": true
+  },
+  "token_budget": {
+    "expanded_complete_native_command": 4452,
+    "complete_input_packet": 6698,
+    "system_tools_envelopes_reserve": 4096,
+    "aggregate_assistant_history_and_output_reserve": 8192,
+    "other_tool_results_reserve": 512
+  },
+  "total_planned_context_tokens": 23950,
+  "context_tokens": 24576,
+  "unallocated_margin_tokens": 626,
+  "budget_qualification": "Raw complete command and packet counts use actual pinned tokenizer. Other quantities are explicit planning reserves, not captured full native HTTP request sizes. Aggregate output reserve covers the intended draft/checklist/stop; it does not guarantee that all twelve maximum agent steps can run. Any actual overflow, truncation or timeout remains a failure to preserve.",
+  "runtime_resource_evidence": {
+    "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/native_reconstruction/llama_server_02/HEALTH_AND_RESOURCES.json",
+    "sha256": "21a60fc5b29df23782984e6a4423b4ae3fcf49893cc39ddae812a57cd8dd83ab",
+    "memory_current_bytes": 8512012288,
+    "memory_max_bytes": 8589934592,
+    "interpretation": "Total includes 4,930,871,296 file-cache bytes and 595,559,192 reclaimable slab bytes; anonymous memory 2,968,301,568 bytes. Healthy startup and no OOM justify one bounded attempt, not sustained headroom or a hardware minimum."
+  },
+  "separately_declared_changes": [
+    "Explicit title to avoid an additional title model request",
+    "Provider overall and header deadlines both 900000 ms",
+    "Full source values with JSON whitespace compacted and complete router/templates/constitution in one exact cat input",
+    "Short task arguments expanded twice by unchanged native command",
+    "Context 24576 and q4_0 K/V cache, rather than 16384 and q8_0",
+    "Explicit upstream $schema metadata before configuration hashing"
+  ],
+  "bounds": {
+    "outer_seconds": 1200,
+    "provider_timeout_ms": 900000,
+    "provider_header_timeout_ms": 900000,
+    "max_agent_steps": 12,
+    "per_response_output_limit": 2048
+  },
+  "human_owner_answers_available": false,
+  "human_review": "ABSENT",
+  "ai_review": "Preparation checks only; no generated artifact yet",
+  "initialization_failure": "init.json preserves missing-OpenCode-PATH detection; init_02.json records successful retry with real executable discoverable, without bypass."
+}

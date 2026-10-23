@@ -1,0 +1,34 @@
+{
+  "clock": "OWNER_HOST_WALL_AND_MONOTONIC_SAME_LINUX_BOOT",
+  "clock_injection": "PROTECTED_SYNTHETIC_CALIBRATION_ONLY",
+  "competence_threshold": null,
+  "delay_basis": "TEACHING_PROTOCOL_CHOICE_NOT_VALIDATED_OPTIMUM",
+  "delay_seconds": 86400,
+  "human_trial_status": "PENDING",
+  "max_wall_monotonic_drift_seconds": 120,
+  "phases": [
+    "LEARNING_OPEN",
+    "DELAY_RUNNING",
+    "RETENTION_OPEN",
+    "RETENTION_SEALED",
+    "TRANSFER_OPEN",
+    "AWAITING_REVIEWS",
+    "REVIEWS_RECORDED",
+    "ADJUDICATED"
+  ],
+  "prerequisite": "RETENTION_SEALED_BEFORE_TRANSFER_RELEASE",
+  "protocol_id": "PILOT-013/v1",
+  "resources": {
+    "baseline": "CP12_PACKET_ALLOWED",
+    "retention": "NO_PACKET_OR_ASSISTANT_REPORTED_BY_OPERATOR",
+    "transfer": "RELEASED_TRANSFER_EVIDENCE_ONLY_REPORTED_BY_OPERATOR"
+  },
+  "response_tasks": [
+    "baseline",
+    "retention",
+    "transfer"
+  ],
+  "reviewer_count": 2,
+  "rubric_validity": "PENDING_HUMAN_VALIDATION",
+  "schema": "cp13-learning-protocol/v1"
+}

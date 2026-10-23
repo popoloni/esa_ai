@@ -1,0 +1,33 @@
+{
+  "schema": "esa-native-observation/v1",
+  "prepared_at_utc": "2026-10-21T21:26:39.298264+00:00",
+  "record_kind": "UNFILLED_OBSERVATION",
+  "execution_kind": "NOT_RUN",
+  "actions": [
+    "R06"
+  ],
+  "client": {
+    "name": null,
+    "version": null,
+    "model_identity": null,
+    "model_identity_availability": "NOT_RECORDED"
+  },
+  "prior_solution_exposure": null,
+  "contrast": {
+    "status": "UNOBSERVED",
+    "same_contract": null,
+    "meaningful_difference": null,
+    "paired_performance_claim": false
+  },
+  "starting_manifest": {
+    "path": "STARTING_MANIFEST.json",
+    "sha256": "d557af736f0014111186f4e946e8899f15ba01c96b3ae1caf75f163eff75ce5c"
+  },
+  "artifacts": {},
+  "protocol_era": "NOT_OBSERVED",
+  "native_tool_selection": "NOT_RUN",
+  "boundary_scope": "NOT_TESTED",
+  "unknown_values": [],
+  "human_acceptance": "PENDING",
+  "structural_check_scope": "EVIDENCE_CONSISTENCY_ONLY_NOT_AUTHENTICITY_OR_ACCEPTANCE"
+}

@@ -1,0 +1,31 @@
+{
+  "schema": "sdd-external-agent-observation/v1",
+  "recorded_at_utc": "2026-10-21T16:14:32.775771+00:00",
+  "framework": "Spec Kit 1.2.2 fresh installed scaffold and helper commands",
+  "model_interface": "Actual ChatGPT collaboration agents through external_worker.py; not a native named coding-client invocation",
+  "run_status": "WAITING_HUMAN",
+  "controller_exit_code": 3,
+  "generator_status": "COMPLETED",
+  "reviewer_status": "COMPLETED",
+  "human_task_status": "WAITING_HUMAN",
+  "human_task_attempts": 0,
+  "model_workers": 2,
+  "scope": "One generation and independent agent review, not a repeated comparison",
+  "first_output_directory": "run/attempts/generate/001/artifacts",
+  "review_directory": "run/attempts/review/001",
+  "reviewed_revision": "reviewed_revision_02",
+  "review_findings": [
+    {
+      "id": "REV-001",
+      "severity": "LOW",
+      "status": "CORRECTED_IN_SEPARATE_REVISION"
+    }
+  ],
+  "requirements_checked": 5,
+  "case_rows_checked": 8,
+  "application_executed": false,
+  "human_acceptance": null,
+  "provider_tokens": null,
+  "provider_billing": null,
+  "unknown_exact_model_release": true
+}

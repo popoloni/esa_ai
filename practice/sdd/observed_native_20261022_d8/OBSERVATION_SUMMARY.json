@@ -1,0 +1,473 @@
+{
+  "schema": "esa-native-sdd-observation-summary/v2",
+  "finalized_at_utc": "2026-10-22T12:44:54.891769+00:00",
+  "action": "R08",
+  "status": "OBSERVED_NATIVE_RESPONSE_GENERATION_WITH_DOCUMENTED_UNANSWERED_QUESTION_STOP",
+  "original_scope_disposition": "Original bounded R08 journey criteria supported and adopted by root; native filesystem completion remains unsuccessful.",
+  "framework": "GitHub Spec Kit 1.2.2",
+  "client": "OpenCode 1.19.3",
+  "model": "Official Qwen3-4B Q4_K_M through llama.cpp b11799",
+  "model_sha256": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+  "actual_source_exposure": "All nine fixed JSONs, including authored inputs/specification.json with five requirements/eight cases, canonical router, complete spec/checklist templates and unratified constitution were supplied. Earlier generated Markdown answers, authored exercise answer specimens, owner responses and human approvals were excluded. This is a disclosed reference projection, not blind elicitation or a quality benchmark.",
+  "native_input_handling": "Pinned native @absolute-file attachment path supplied all 13 source bodies before inference. Lossless JSON whitespace wrapping prevents native per-line clipping. Output-only model read permissions subsequently deny duplicate source/bundle reads; these client rules are not OS containment.",
+  "attempts": [
+    {
+      "attempt": 1,
+      "portable_path": "recorded/attempt_01",
+      "status": "INTERRUPTED_AFTER_REDUNDANT_FULL_INPUT_READ",
+      "started_at_utc": "2026-10-22T10:24:32.112732+00:00",
+      "ended_at_utc": "2026-10-22T10:34:46.654208+00:00",
+      "duration_seconds": 614.5414498190003,
+      "exit_code": -2,
+      "session_id": "ses_e9cdbe2b5ffe5Bsfi3cviA8Zsb",
+      "receipt_sha256": "ec150345e35bd56167694b9e0e275d8e6927d505e927f6f490830a12a1fdbdc1",
+      "task_sha256": "ca901a675262709719aa9cc6ebc8febe488e15a51026fe6a92f1d71f67d7f9a6",
+      "export_path": "recorded/terminal_collection_01/native-session.json",
+      "export_sha256": "9b41d52544c78fbe6a9d295b30a11ebd27c57b82eff225802eed47fad61f0e5d",
+      "changed_files": []
+    },
+    {
+      "attempt": 2,
+      "portable_path": "recorded/attempt_02",
+      "status": "SCAFFOLD_COPY_ONLY_EXIT_ZERO",
+      "started_at_utc": "2026-10-22T10:50:17.787889+00:00",
+      "ended_at_utc": "2026-10-22T11:06:48.002206+00:00",
+      "duration_seconds": 990.2142903620006,
+      "exit_code": 0,
+      "session_id": "ses_e9cc44d15ffewxo9hTP3f5v23l",
+      "receipt_sha256": "c5ca377daab7610918ddf2163cd12bd9e3a8dcac6c5ba79412f2d91690cf02b9",
+      "task_sha256": "15569856560ce50cb9968a8996a574f3b87178887818388d1c9fa6f76ca5d2f9",
+      "export_path": "recorded/terminal_collection_02/native-session.json",
+      "export_sha256": "f261470cb68a23ca69b5b91acf8a62d4856ffe9eb9350057a764f37b17aabe8e",
+      "changed_files": [
+        "specs/001-explain-treasury/spec.md"
+      ]
+    },
+    {
+      "attempt": 3,
+      "portable_path": "recorded/attempt_03",
+      "status": "PROVIDER_TIMEOUT_WITH_ABORTED_EMPTY_WRITE_SELECTION",
+      "started_at_utc": "2026-10-22T11:13:07.010448+00:00",
+      "ended_at_utc": "2026-10-22T11:38:10.810304+00:00",
+      "duration_seconds": 1503.7998322519998,
+      "exit_code": 1,
+      "session_id": "ses_e9cc44d15ffewxo9hTP3f5v23l",
+      "receipt_sha256": "6e7c892d79755e2395318638e4ca554705b1c2289c497461bb7cfeb0f57d5e23",
+      "task_sha256": "e89d024aa11fbf065af66e59ba16e9129bdb6c5150c39c0025851327812febf9",
+      "export_path": "recorded/terminal_collection_03/native-session.json",
+      "export_sha256": "01ad8ea9da57f23fe443eeb64b366478632e5c24f38e7a75209af130c396da2e",
+      "changed_files": []
+    },
+    {
+      "attempt": 4,
+      "portable_path": "recorded/attempt_04",
+      "status": "SUBSTANTIVE_NATIVE_RESPONSE_GENERATED_BUT_NOT_SAVED_TO_SPEC_FILE",
+      "started_at_utc": "2026-10-22T11:46:25.383278+00:00",
+      "ended_at_utc": "2026-10-22T12:05:40.713363+00:00",
+      "duration_seconds": 1155.330055745002,
+      "exit_code": 0,
+      "session_id": "ses_e9cc44d15ffewxo9hTP3f5v23l",
+      "receipt_sha256": "990e17c96269855f1a2613dbcab6db60abc7ea0a2d9a0464888aa0bafb21bdc8",
+      "task_sha256": "fecc09b8c3b299b49f69b43b2e693eb322a4bc7c1e4d6cd9d62eb8cba69c6521",
+      "export_path": "recorded/terminal_collection_04/native-session.json",
+      "export_sha256": "eb6cbf0d39ba7ccb907fc096fa88158d113b62f91a18040350194abb30f7c4e9",
+      "changed_files": [
+        "specs/001-explain-treasury/spec.md"
+      ]
+    }
+  ],
+  "guidance_and_configuration_changes": [
+    "Attempt01 preserved the first duplicate full-source read and its near-full second context; root interrupted the exact client rather than allowing known context exhaustion.",
+    "Candidate03 supplied the same complete inputs and unchanged installed command, restricted subsequent reads to three output paths, removed the allowed shell input read, and declared temperature capability so intended 0.2 was actually sent. Attempt02 retained all permission refusals and its copied-template-only stop.",
+    "Attempt03 appended execution guidance to the exact same native session, without new source bodies or draft text. It ended after about1500 seconds with a provider error and an aborted write with no recoverable content. That timing is consistent with the configured provider window; the generic error does not independently identify which internal timer fired.",
+    "Attempt04 appended compact-spec guidance to the same session and changed only the configured output limit 3072\u21921536. It wrote a defective header/Input file, then returned useful specification content as assistant text. Both outputs remain distinct."
+  ],
+  "actual_terminal_boundary": {
+    "session_id": "ses_e9cc44d15ffewxo9hTP3f5v23l",
+    "exit_code": 0,
+    "reason": "Normal native stop after final assistant text, before planning or implementation.",
+    "native_response_artifact": {
+      "path": "raw/FINAL_NATIVE_RESPONSE.md",
+      "bytes": 5530,
+      "sha256": "0b8ce1854906b37eb2c0249e97a7e0d5dc1ce3e2597b6289c9a54fb6eacbec77",
+      "generated_by": "Actual named native client/model in the retained Spec Kit session",
+      "semantic_assessment": "All 5 requirements and 8 exact cases supported by independent review; 3 actual owner questions remain unanswered."
+    },
+    "native_persisted_spec_file": {
+      "path": "raw/ACTUAL_NATIVE_SPEC_FILE.md",
+      "bytes": 2230,
+      "sha256": "04b6177aa7cd2a248a86ef418f8faeffe3c07cbf64651951136c20559402bfd1",
+      "disposition": "REJECTED_HEADER_AND_INPUT_ONLY; useful final response was not saved to this file"
+    },
+    "checklist_generated": false,
+    "feature_metadata_generated": false,
+    "interactive_owner_dialogue": "NOT_OBSERVED",
+    "separate_speckit_clarify_command": "NOT_INVOKED",
+    "clarification_disposition": "The native final response presents all three actual unanswered owner questions, explicitly retains their unresolved status, and normally stops before planning. Independent review accepts this as the bounded documented unanswered-question stop required by the original tutorial scope.",
+    "owner_answers": "ABSENT",
+    "human_acceptance": "ABSENT",
+    "planning_and_implementation": "NOT_RUN"
+  },
+  "first_outputs_preserved": true,
+  "retained_defects": [
+    {
+      "issue": "D8-NATIVE-SPEC-PROMPT-ECHO",
+      "fact": "The first successful native write copies operational arguments into the template Input field and lacks the substantive specification.",
+      "source_qualification": "review_notes/R08_FIRST_WRITE_INPUT_FIELD_QUALIFICATION.json preserves the exact upstream argument-slot contributor; it is not established as the sole cause."
+    },
+    {
+      "issue": "D8-NATIVE-RESPONSE-PERSISTENCE-CLAIM",
+      "fact": "Useful generated specification exists only in the native response. No corrected spec file, checklist or metadata was created. The response falsely asserts three artifacts; that assertion is rejected, not retrospectively repaired."
+    }
+  ],
+  "editorial_reader_copy": {
+    "path": "editorial/reader_specification.md",
+    "sha256": "10617cc252747b8ec366856111f62a72bee67db76462e927a234b334500e4d3b",
+    "bytes": 3416,
+    "record": "editorial/EXTRACTION_RECORD.json",
+    "diff": "editorial/EXTRACTION.diff",
+    "attribution": "Editorial extraction and relocation from actual native response; not the native-persisted spec. Removes operational Input, relocates exact authority sentences, removes false three-artifacts sentence, retains native requirements/cases/questions unchanged.",
+    "new_requirements_or_owner_answers_supplied": false
+  },
+  "independent_assessment": {
+    "path": "../native_review_20261022_d8/INDEPENDENT_R08_REVIEW.json",
+    "sha256": "54af132187e9aa8e9192b2297e11393ea051606adf7ffd75c23863d7ca8da854",
+    "status": "ORIGINAL_R08_BOUNDED_JOURNEY_CRITERIA_SUPPORTED_WITH_DISCLOSED_NATIVE_FAILURES",
+    "recommendation": "CLOSE_R08_FOR_THE_ORIGINAL_BOUNDED_OBSERVATION_SCOPE",
+    "reviewer": "/root/acceptance_audit",
+    "human_review": "ABSENT"
+  },
+  "r08_criteria": {
+    "actual_installed_framework_and_named_client": "OBSERVED; exact full installed command and native attachment retained",
+    "generated_artifact_linked_to_prompts_and_first_output": "OBSERVED in final native assistant text; filesystem distinction explicit",
+    "generation_vs_scaffold_and_seeded_exercise": "DISTINGUISHED; native first defects are genuine and separately retained",
+    "clarification_or_documented_owner_stop": "DOCUMENTED_UNANSWERED_QUESTION_NORMAL_STOP; no owner answers fabricated",
+    "independent_semantic_assessment": "COMPLETE_AI_REVIEW; human requirements approval remains absent",
+    "second_framework": "OpenSpec remains an unobserved native contrast; no measured paired comparison or ranking claimed"
+  },
+  "native_client_wall_seconds_sum": 4263.885628178003,
+  "timing_scope": "Sum of four d8 client invocation spans only. Excludes setup, diagnostics, editorial work, independent review and server cleanup. It is not human labor, total cost, time saved or a controlled latency comparison.",
+  "completed_native_step_usage": [
+    {
+      "attempt": 1,
+      "session_id": "ses_e9cdbe2b5ffe5Bsfi3cviA8Zsb",
+      "message_id": "msg_163242091001mDz05qOnSRTOco",
+      "part_id": "prt_1632bce77001BrRErKMGlRLW47",
+      "timestamp_ms": 1792665177737,
+      "reason": "tool-calls",
+      "tokens": {
+        "total": 15685,
+        "input": 15622,
+        "output": 63,
+        "reasoning": 0,
+        "cache": {
+          "write": 0,
+          "read": 0
+        }
+      },
+      "client_reported_cost": 0
+    },
+    {
+      "attempt": 2,
+      "session_id": "ses_e9cc44d15ffewxo9hTP3f5v23l",
+      "message_id": "msg_1633bb654001eQzdOQklgkkKk7",
+      "part_id": "prt_1634392f9001aMLR7WL5tiLQkh",
+      "timestamp_ms": 1792666735370,
+      "reason": "tool-calls",
+      "tokens": {
+        "total": 15935,
+        "input": 15872,
+        "output": 63,
+        "reasoning": 0,
+        "cache": {
+          "write": 0,
+          "read": 0
+        }
+      },
+      "client_reported_cost": 0
+    },
+    {
+      "attempt": 2,
+      "session_id": "ses_e9cc44d15ffewxo9hTP3f5v23l",
+      "message_id": "msg_163439305001NN0CtbhDmGvxti",
+      "part_id": "prt_1634444a7001MkP3shEtu5XNm2",
+      "timestamp_ms": 1792666780865,
+      "reason": "tool-calls",
+      "tokens": {
+        "total": 16263,
+        "input": 331,
+        "output": 64,
+        "reasoning": 0,
+        "cache": {
+          "write": 0,
+          "read": 15868
+        }
+      },
+      "client_reported_cost": 0
+    },
+    {
+      "attempt": 2,
+      "session_id": "ses_e9cc44d15ffewxo9hTP3f5v23l",
+      "message_id": "msg_1634444ba001VBYSnd2GwzxChn",
+      "part_id": "prt_16344fbc7001adp2ma6qTuMej7",
+      "timestamp_ms": 1792666827737,
+      "reason": "tool-calls",
+      "tokens": {
+        "total": 16532,
+        "input": 302,
+        "output": 35,
+        "reasoning": 0,
+        "cache": {
+          "write": 0,
+          "read": 16195
+        }
+      },
+      "client_reported_cost": 0
+    },
+    {
+      "attempt": 2,
+      "session_id": "ses_e9cc44d15ffewxo9hTP3f5v23l",
+      "message_id": "msg_16344fbd3001t8ymoL1uuuqnd1",
+      "part_id": "prt_163456285001J5DIwW5tuRVAQ7",
+      "timestamp_ms": 1792666854036,
+      "reason": "tool-calls",
+      "tokens": {
+        "total": 16624,
+        "input": 96,
+        "output": 35,
+        "reasoning": 0,
+        "cache": {
+          "write": 0,
+          "read": 16493
+        }
+      },
+      "client_reported_cost": 0
+    },
+    {
+      "attempt": 2,
+      "session_id": "ses_e9cc44d15ffewxo9hTP3f5v23l",
+      "message_id": "msg_16345628e001ggINDW96PUNHNK",
+      "part_id": "prt_16345c2ec001s4yf5QhqQyRQ6V",
+      "timestamp_ms": 1792666878717,
+      "reason": "tool-calls",
+      "tokens": {
+        "total": 16726,
+        "input": 99,
+        "output": 42,
+        "reasoning": 0,
+        "cache": {
+          "write": 0,
+          "read": 16585
+        }
+      },
+      "client_reported_cost": 0
+    },
+    {
+      "attempt": 2,
+      "session_id": "ses_e9cc44d15ffewxo9hTP3f5v23l",
+      "message_id": "msg_16345c2f9001n1huvS1NOAvY4r",
+      "part_id": "prt_1634663cd001ofx7jCemM7ppy8",
+      "timestamp_ms": 1792666919912,
+      "reason": "tool-calls",
+      "tokens": {
+        "total": 16785,
+        "input": 61,
+        "output": 44,
+        "reasoning": 0,
+        "cache": {
+          "write": 0,
+          "read": 16680
+        }
+      },
+      "client_reported_cost": 0
+    },
+    {
+      "attempt": 2,
+      "session_id": "ses_e9cc44d15ffewxo9hTP3f5v23l",
+      "message_id": "msg_1634663de001PK1BXfW4qscZMo",
+      "part_id": "prt_163471ebf0011sSjVGVd2etqB9",
+      "timestamp_ms": 1792666967756,
+      "reason": "tool-calls",
+      "tokens": {
+        "total": 16849,
+        "input": 63,
+        "output": 49,
+        "reasoning": 0,
+        "cache": {
+          "write": 0,
+          "read": 16737
+        }
+      },
+      "client_reported_cost": 0
+    },
+    {
+      "attempt": 2,
+      "session_id": "ses_e9cc44d15ffewxo9hTP3f5v23l",
+      "message_id": "msg_163471ec8001pS37W7V0VTNY0o",
+      "part_id": "prt_16347b5c80018fhcA8yoYv5ptH",
+      "timestamp_ms": 1792667006480,
+      "reason": "tool-calls",
+      "tokens": {
+        "total": 16917,
+        "input": 68,
+        "output": 53,
+        "reasoning": 0,
+        "cache": {
+          "write": 0,
+          "read": 16796
+        }
+      },
+      "client_reported_cost": 0
+    },
+    {
+      "attempt": 2,
+      "session_id": "ses_e9cc44d15ffewxo9hTP3f5v23l",
+      "message_id": "msg_16347b5d7001ORVd5I2Y79VSu4",
+      "part_id": "prt_163489541001Vr2WzvbsaD7C9K",
+      "timestamp_ms": 1792667063637,
+      "reason": "tool-calls",
+      "tokens": {
+        "total": 17196,
+        "input": 291,
+        "output": 45,
+        "reasoning": 0,
+        "cache": {
+          "write": 0,
+          "read": 16860
+        }
+      },
+      "client_reported_cost": 0
+    },
+    {
+      "attempt": 2,
+      "session_id": "ses_e9cc44d15ffewxo9hTP3f5v23l",
+      "message_id": "msg_16348954e001sT7npGLFOnGXo7",
+      "part_id": "prt_163492cae0017CmjirEEXsdF99",
+      "timestamp_ms": 1792667102402,
+      "reason": "tool-calls",
+      "tokens": {
+        "total": 17456,
+        "input": 262,
+        "output": 47,
+        "reasoning": 0,
+        "cache": {
+          "write": 0,
+          "read": 17147
+        }
+      },
+      "client_reported_cost": 0
+    },
+    {
+      "attempt": 2,
+      "session_id": "ses_e9cc44d15ffewxo9hTP3f5v23l",
+      "message_id": "msg_163492cbd001Z7To6ymoBfJ8Jx",
+      "part_id": "prt_16349f7370017tmeVp16LKM9yi",
+      "timestamp_ms": 1792667154260,
+      "reason": "tool-calls",
+      "tokens": {
+        "total": 17737,
+        "input": 285,
+        "output": 47,
+        "reasoning": 0,
+        "cache": {
+          "write": 0,
+          "read": 17405
+        }
+      },
+      "client_reported_cost": 0
+    },
+    {
+      "attempt": 2,
+      "session_id": "ses_e9cc44d15ffewxo9hTP3f5v23l",
+      "message_id": "msg_16349f750001GiOtCn6vq01rRc",
+      "part_id": "prt_1634ac8d30014cPYeAYX7spWhn",
+      "timestamp_ms": 1792667207911,
+      "reason": "stop",
+      "tokens": {
+        "total": 18130,
+        "input": 443,
+        "output": 1,
+        "reasoning": 0,
+        "cache": {
+          "write": 0,
+          "read": 17686
+        }
+      },
+      "client_reported_cost": 0
+    },
+    {
+      "attempt": 4,
+      "session_id": "ses_e9cc44d15ffewxo9hTP3f5v23l",
+      "message_id": "msg_1636f1c66001O96YP7jMDzCqI1",
+      "part_id": "prt_16373e70e001tRhs3tcO1EPIn4",
+      "timestamp_ms": 1792669902634,
+      "reason": "tool-calls",
+      "tokens": {
+        "total": 19152,
+        "input": 255,
+        "output": 553,
+        "reasoning": 0,
+        "cache": {
+          "write": 0,
+          "read": 18344
+        }
+      },
+      "client_reported_cost": 0
+    },
+    {
+      "attempt": 4,
+      "session_id": "ses_e9cc44d15ffewxo9hTP3f5v23l",
+      "message_id": "msg_16373e722001zasmWd3vAeCRxI",
+      "part_id": "prt_16380b094001WwBDM8hNJw36Aa",
+      "timestamp_ms": 1792670740652,
+      "reason": "stop",
+      "tokens": {
+        "total": 20562,
+        "input": 574,
+        "output": 1393,
+        "reasoning": 0,
+        "cache": {
+          "write": 0,
+          "read": 18595
+        }
+      },
+      "client_reported_cost": 0
+    }
+  ],
+  "completed_native_step_totals": {
+    "input": 34624,
+    "output": 2534,
+    "reasoning": 0,
+    "total": 258549,
+    "cache_read": 221391,
+    "cache_write": 0
+  },
+  "usage_qualification": "Only unique completed native step events across these four captures are summed. The interrupted second request in attempt01 and the aborted request in attempt03 have incomplete native usage; backend cancellation counters remain separately attributed. Cache-read tokens and total are kept distinct. Client-reported local charge 0 does not establish zero workflow cost.",
+  "limits": [
+    "No human requirements acceptance, ratification, empirical benefit or release approval is supplied.",
+    "Native generation remains unreliable in this observed chain: permission failures, scaffold-only stop, timeout, first defective write and response/file mismatch are retained.",
+    "Full source exposure and additional same-session guidance are disclosed; this is not a blind model evaluation.",
+    "No OS containment or offline execution property is established; native logs retain background plugin registry activity.",
+    "D7 timeout-only observations remain unchanged as dated history in ../observed_native_20261022/."
+  ],
+  "helper_reproduction": {
+    "path": "reproduction/actual_reproduction_01/REPRODUCTION_REVIEW.json",
+    "status": "PASS_ACTUAL_ISOLATED_PORTABLE_HELPER_REPRODUCTION",
+    "sha256": "627a323036019c36e68e7c89457b433c58ac0f59da4c1f51049372bccd9ee98d",
+    "scope": "Actual pinned version/effective-config/effective-agent diagnostics; all 13 source bodies and full command/argv/config match candidate03 after explicit path normalization; no inference."
+  },
+  "further_native_invocations": "NONE_AFTER_ATTEMPT04; server04 stopped cleanly under a separate lifecycle receipt",
+  "runtime_setup": "../../native_client/setup/runtime_d8/README.md",
+  "reproduction": "../NATIVE_ROUTE_D8.md",
+  "manifest": "PORTABLE_MANIFEST.json",
+  "copy_origins": "COPY_ORIGIN_MANIFEST.json",
+  "runtime_setup_binding": {
+    "directory": "../../native_client/setup/runtime_d8",
+    "files": {
+      "README.md": "b60e65647201699300643fa1a01ebd592b51132108be2562144e2a3495225d12",
+      "PORTABLE_MANIFEST.json": "36195996233633d06b73b36542f04161d656cc9c0889edaa70b2967553f58b0e",
+      "RUNTIME_SUMMARY.json": "69e903ef828ac902b9345ffe9e4643605ff36647d18c83b5a0e44e1456626932"
+    },
+    "scope": "Closed startup/resource/monitor/lifecycle evidence. The final native write executed successfully but its file content was rejected; useful final response text was not saved into that file. Server04 cleanup was a separate clean exit0."
+  }
+}

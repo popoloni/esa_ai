@@ -1,0 +1,10 @@
+{
+  "frozen_at_utc": "2026-10-22T10:21:14.121278+00:00",
+  "scope": "Completed prospective configuration/input-budget preparation. No inference. Later runtime decisions and actual observations must be retained separately.",
+  "files": {
+    "CONTEXT_24576_ASSESSMENT.json": {
+      "sha256": "88892b9a151baadfa6f532d84e200d57f9cf621b3c82534fa35c3aca8e9d5c01",
+      "bytes": 2754
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "at_utc": "2026-10-22T17:42:04.230414+00:00",
+  "native_selected_check": "PASS_SELECTED_CONTRACT, seven cases",
+  "handoff_finding": "The third handoff says csv_formatter was also corrected after return, but the unreachable final raise remains in the actual file. The actual third invocation changed only the unsupported-format condition.",
+  "disposition": "Behavior passes; cleanup claim requires correction before final native handoff acceptance.",
+  "source": "attempt_03/stdout.txt and project_after_03/api.py",
+  "author_candidate_edits": false
+}

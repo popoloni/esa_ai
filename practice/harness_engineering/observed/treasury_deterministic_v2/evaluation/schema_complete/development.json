@@ -1,0 +1,50 @@
+{
+  "oracle_sha256": "1f9d790cb944c978adcf6206452c7ab80fe140fdfb5964f978ca1ae26bdd5d75",
+  "rows": [
+    {
+      "case_id": "DEV-01",
+      "full_contract_correct": true,
+      "response": {
+        "payment_authorized": false,
+        "policy_version": "BR-001/v1",
+        "reason": "BELOW_LIMIT",
+        "route": "STANDARD_QUEUE"
+      },
+      "route_correct": true
+    },
+    {
+      "case_id": "DEV-02",
+      "full_contract_correct": true,
+      "response": {
+        "payment_authorized": false,
+        "policy_version": "BR-001/v1",
+        "reason": "AT_OR_ABOVE_LIMIT",
+        "route": "HUMAN_REVIEW"
+      },
+      "route_correct": true
+    },
+    {
+      "case_id": "DEV-03",
+      "full_contract_correct": false,
+      "response": {
+        "payment_authorized": false,
+        "policy_version": "BR-001/v1",
+        "reason": "AT_OR_ABOVE_LIMIT",
+        "route": "HUMAN_REVIEW"
+      },
+      "route_correct": false
+    },
+    {
+      "case_id": "DEV-04",
+      "full_contract_correct": false,
+      "response": {
+        "payment_authorized": false,
+        "policy_version": "BR-001/v1",
+        "reason": "BELOW_LIMIT",
+        "route": "STANDARD_QUEUE"
+      },
+      "route_correct": false
+    }
+  ],
+  "visible_to_improver": false
+}

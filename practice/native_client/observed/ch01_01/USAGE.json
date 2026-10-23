@@ -1,0 +1,89 @@
+{
+  "schema": "esa-partial-native-usage/v1",
+  "recorded_at_utc": "2026-10-22T06:21:11.877874+00:00",
+  "basis": "completed native step_finish records only; session totals are corroboration, not added again",
+  "completed_steps": [
+    {
+      "attempt": "attempt_01",
+      "timestamp_ms": 1792648796349,
+      "session_id": "ses_e9dd033b7ffeN1cfcn1q6e3oTN",
+      "message_id": "msg_1622fcf2a001FJvUHj5arhZ9s1",
+      "tokens": {
+        "total": 3337,
+        "input": 3270,
+        "output": 67,
+        "reasoning": 0,
+        "cache": {
+          "write": 0,
+          "read": 0
+        }
+      },
+      "application_cost": 0
+    },
+    {
+      "attempt": "attempt_01",
+      "timestamp_ms": 1792648980740,
+      "session_id": "ses_e9dd033b7ffeN1cfcn1q6e3oTN",
+      "message_id": "msg_16231d8b5001jF2A0NR8vxGO6l",
+      "tokens": {
+        "total": 5450,
+        "input": 2108,
+        "output": 76,
+        "reasoning": 0,
+        "cache": {
+          "write": 0,
+          "read": 3266
+        }
+      },
+      "application_cost": 0
+    },
+    {
+      "attempt": "attempt_02",
+      "timestamp_ms": 1792649439426,
+      "session_id": "ses_e9dc53064ffes94dIoRs5Jj30n",
+      "message_id": "msg_1623ad26b001340RxyRLyk6YgV",
+      "tokens": {
+        "total": 3493,
+        "input": 653,
+        "output": 67,
+        "reasoning": 0,
+        "cache": {
+          "write": 0,
+          "read": 2773
+        }
+      },
+      "application_cost": 0
+    },
+    {
+      "attempt": "attempt_02",
+      "timestamp_ms": 1792649703146,
+      "session_id": "ses_e9dc53064ffes94dIoRs5Jj30n",
+      "message_id": "msg_1623ba8bc001UEBP6Cv4xopVE6",
+      "tokens": {
+        "total": 5863,
+        "input": 2108,
+        "output": 333,
+        "reasoning": 0,
+        "cache": {
+          "write": 0,
+          "read": 3422
+        }
+      },
+      "application_cost": 0
+    }
+  ],
+  "known_completed_step_totals": {
+    "uncached_input": 8139,
+    "output": 543,
+    "reasoning": 0,
+    "cache_read": 9461,
+    "cache_write": 0
+  },
+  "interrupted_requests": 2,
+  "interrupted_request_token_usage": null,
+  "complete_total_tokens": null,
+  "application_cost_field_total": 0,
+  "total_financial_cost": null,
+  "human_effort_seconds": null,
+  "limitation": "Both attempts had an interrupted further request. Missing usage is unknown, not zero. Application cost zero is not total financial cost."
+}

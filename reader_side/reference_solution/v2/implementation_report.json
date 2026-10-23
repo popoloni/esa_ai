@@ -1,0 +1,25 @@
+{
+  "change_id": "IMPL-008/v1",
+  "intent_ref": "INT-001",
+  "spec_ref": "SPEC-004/v1",
+  "architecture_ref": "ADR-005",
+  "architecture_status": "PROPOSED_FOR_HUMAN_ARCHITECTURE_REVIEW",
+  "scope": "explanation_only",
+  "changed_files": [
+    "src/treasury/explanation_alpha.py"
+  ],
+  "checks": "CP08_SELECTED_OFFLINE_CASES_PASS",
+  "status": "READY_FOR_HUMAN_REVIEW_NOT_ACCEPTED",
+  "human_approver": null,
+  "value_validated": false,
+  "unresolved_questions": [
+    "Architecture decision still requires human approval",
+    "No user-facing experiment or measured value",
+    "No production release authorized"
+  ],
+  "schema": "implementation-report/v2",
+  "record_revision": 2,
+  "fixture_origin": "SYNTHETIC_TEACHING_CASE",
+  "execution_mode": "OFFLINE_DETERMINISTIC",
+  "observed_run_ref": null
+}

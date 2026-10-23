@@ -1,0 +1,23 @@
+{
+  "schema": "cp10-release-scenario/v1",
+  "change_id": "CP10-PRESENTATION-001",
+  "scope": "LOCAL_SYNTHETIC_PRESENTATION_EXPERIMENT",
+  "author_id": "agent-author",
+  "roles": {
+    "agent-author": "candidate_author",
+    "reviewer-a": "independent_reviewer",
+    "release-owner": "release_owner"
+  },
+  "authorized_source_sha256": "4cae28f8db65a185fd5faed74f564af48207aa45f27f3febb79edba0d57e87a3",
+  "required_checks": [
+    "CI-MERGE-001",
+    "CI-ROUTING-001",
+    "CI-INTEGRATION-001",
+    "CI-ARTIFACT-001"
+  ],
+  "current_artifact_id": "CP10-CURRENT",
+  "previous_artifact_id": "CP10-PREVIOUS",
+  "policy_version": "BR-001/v1",
+  "threshold_eur": "5000.00",
+  "meaning": "Protected author-created scenario. Instantiating these decisions is a local synthetic exercise, never a record of actual human acceptance or deployment."
+}

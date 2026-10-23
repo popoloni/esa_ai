@@ -1,0 +1,34 @@
+{
+  "status": "PREPARED_CANDIDATE_02_EFFECTIVE_CONFIG_PASS_NO_INFERENCE",
+  "created_at_utc": "2026-10-22T10:21:00.970098+00:00",
+  "previous_candidate": "CLIENT_TASK_01.json",
+  "previous_disposition": "Rejected conservative context budget; keep all prepared records unchanged.",
+  "current_candidate": "CLIENT_TASK_02.json",
+  "changed_semantic_configuration": "Only provider.esa-local.models.esa-qwen3-4b.limit.context changed22528\u219224576.",
+  "changed_path_bindings": [
+    "OPENCODE_CONFIG environment path",
+    "task configuration_reference",
+    "task environment_reference"
+  ],
+  "unchanged": [
+    "Full task prompt",
+    "all13 supplied source bodies",
+    "all installed framework commands",
+    "project path",
+    "permissions",
+    "model",
+    "output3072",
+    "provider overall/header1500000ms",
+    "steps12",
+    "outer5400seconds",
+    "explicit title",
+    "no compaction"
+  ],
+  "input_budget_assessment": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/input_budget_02/CONTEXT_24576_ASSESSMENT.json",
+  "native_memory_gate_pending": true,
+  "model_call": false,
+  "future_task_sha256": "ca901a675262709719aa9cc6ebc8febe488e15a51026fe6a92f1d71f67d7f9a6",
+  "config_sha256": "c02fb16fda113dbf2c2c9ba8973b77f50ce759b5ee2f3fdc24e994a739647ba3",
+  "env_sha256": "4cfdae253bb83969fdd671d02d187864987ff6052ae86a9f00bd87b8e43ef910",
+  "launch_instruction": "Root may launch only after its measured runtime/memory gate and checkpoint. Start a new native session; never reuse the noReply preparation session."
+}

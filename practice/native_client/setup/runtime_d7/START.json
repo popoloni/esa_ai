@@ -1,0 +1,19 @@
+{
+  "schema": "esa-native-runtime-reconstruction/v1",
+  "started_at_utc": "2026-10-22T05:53:17.183007+00:00",
+  "status": "STARTED",
+  "prior_runtime_available": false,
+  "prior_attempt_06_outcome": "UNKNOWN_EXCLUDED_FROM_CP11",
+  "reconstruction_is_fresh_session": true,
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "python": "3.12.14",
+  "limits": {
+    "/sys/fs/cgroup/memory.max": "8589934592\n",
+    "/sys/fs/cgroup/memory.current": "4907905024\n",
+    "/sys/fs/cgroup/cpu.max": "800000 100000\n"
+  },
+  "solution_exposure": "Author had prior exposure. Current agent has read historical recovery prompt and API guidance, but has not read worked solutions. This is not a blind benchmark.",
+  "human_review": "NOT_OBSERVED",
+  "paid_api_use": "NONE_AUTHORIZED_OR_CONFIGURED",
+  "planned_bounds": "One fresh native attempt, at most one guided recovery; preserve failures."
+}

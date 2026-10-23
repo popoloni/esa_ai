@@ -1,0 +1,10 @@
+{
+  "id": "SRC-RISK-002",
+  "kind": "interview-note",
+  "authority": "STAKEHOLDER_TESTIMONY",
+  "date": "2026-09-11",
+  "owner_role": "Risk analyst (fictional)",
+  "title": "Policy boundary confirmation needed",
+  "text": "A routing recommendation must not be translated into payment authorization; any such change needs named policy approval and independent review.",
+  "source_reliability": "synthetic training record; not a substitute for real signoff"
+}

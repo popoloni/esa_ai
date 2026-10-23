@@ -1,0 +1,39 @@
+{
+  "recorded_at_utc": "2026-10-22T11:19:30.791051+00:00",
+  "finding_id": "D8-PORTABLE-SDD-LIMITS",
+  "follows_source_qualification": "D8-NATIVE-STEP-INTENT",
+  "status": "RESOLVED_PORTABLE_SOURCE_REVIEW_ONLY_ACTUAL_REPRODUCTION_PENDING",
+  "scope": "New portable helper metadata and dormant noncompact prompt wording; future recipe. Frozen observed configurations/tasks, preparation helper and historical adoption manifest unchanged.",
+  "cause": "The helper notes and future recipe described configured steps as a bound. An unreachable noncompact prompt branch retained a literal2048 output limit; its context literal was previously replaced with the actual argument, but the source wording was stale. This variant requires compact context and overwrites the fallback prompt, so no effect on the actual candidate03 prompt/config is claimed.",
+  "changes": [
+    "Qualify steps as final-step instruction and distinguish outer subprocess timeout.",
+    "Use actual context/output/outer arguments in dormant fallback wording.",
+    "Keep compact task prompt, actual configuration construction, argv and fixed-input packaging unchanged."
+  ],
+  "source_basis": {
+    "path": "revision_d8/evidence/native_sdd_01/step_limit_diagnosis/FINDING.json",
+    "sha256": "1c070bf7e9bb9834c94e966a4f2f9695938360e3f611204c5987561ddb50bce7"
+  },
+  "files": [
+    {
+      "path": "companion/practice/native_client/configure_sdd_d8.py",
+      "before_sha256": "2bb9ce79248c0ece53ce474f5120a044d8a2f6c5d2db1930cdd3333872ec7a41",
+      "after_sha256": "88ccfb39068f8529da98f78a51cfef005d7103f295879250754ab637d7344af3"
+    },
+    {
+      "path": "revision_d8/evidence/portable_helper_adoption/FUTURE_NATIVE_ROUTE_RECIPE.md",
+      "before_sha256": "4f7d7fcb838f2a984a5d9f790301f5e0d102715405d69776fcb16ab597b9c39c",
+      "after_sha256": "696fe21fbe3696897eb71785eb893595be0ea67a37b177a6d33734af3d28da50"
+    }
+  ],
+  "checks": {
+    "python_syntax": true,
+    "compact_prompt_body_unchanged": true,
+    "config_construction_unchanged": true,
+    "native_argv_and_task_construction_unchanged": true,
+    "fixed_input_packaging_functions_unchanged": true
+  },
+  "no_helper_execution": true,
+  "no_native_diagnostic_or_model_call": true,
+  "pending": "Run actual isolated portable helper diagnostics and normalized reproduction after the active model/server has stopped. No mock/simulated diagnostics used."
+}

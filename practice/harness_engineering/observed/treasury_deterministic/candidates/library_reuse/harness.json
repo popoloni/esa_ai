@@ -1,0 +1,11 @@
+{
+  "development_memory": {},
+  "response_fields": [
+    "route",
+    "reason",
+    "policy_version",
+    "payment_authorized"
+  ],
+  "routing_strategy": "router_tool",
+  "schema": "treasury-harness/v1"
+}

@@ -1,0 +1,40 @@
+{
+  "schema": "esa-config-metadata-identity-reconciliation/v1",
+  "recorded_at_utc": "2026-10-22T06:37:01.191326+00:00",
+  "original_preparation_manifest": "CONFIGURATION_MANIFEST.json",
+  "original_preparation_sha256": "1f7a9ef61fca60dc015904327ba87952c33b3036adcf0b2c066c2ecaff65388f",
+  "current_native_config_sha256": "aa88ec9b863a4aa317b7ac44ed748d1113c393fa1b1a82dec375d18b8bbff473",
+  "only_reconstruction_operation": "Remove exact upstream $schema member, serialize with original two-space indentation and newline.",
+  "observed_schema_value": "https://opencode.ai/config.json",
+  "hash_matching_reconstruction": "OPENCODE_CONFIG_ORIGINAL_RECONSTRUCTED.json",
+  "reconstruction_status": "RECONSTRUCTED_FROM_CURRENT_BYTES_AND_VERIFIED_AGAINST_RETAINED_PREPARATION_HASH; not a newly discovered original file.",
+  "reconstruction_matches_original_pin": true,
+  "original_manifest_preserved": true,
+  "current_native_config_preserved": true,
+  "source_cause": "Pinned OpenCode1.19.3 configuration reader writes $schema metadata when absent; source evidence retained in revision_d7/evidence/native_timeout_diagnosis/config.ts.",
+  "diagnostic_path_differences": [
+    {
+      "path": "mcp/treasury/command",
+      "native": [
+        "/workspace/scratch/72d789d25fef/runtime_d7/mcp_venv/bin/python",
+        "-B",
+        "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion/practice/mcp_cli/wire_proxy.py",
+        "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/mcp_host_01/trace_01"
+      ],
+      "diagnostic": [
+        "/workspace/scratch/72d789d25fef/runtime_d7/mcp_venv/bin/python",
+        "-B",
+        "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion/practice/mcp_cli/wire_proxy.py",
+        "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/mcp_host_01/diagnostics/effective_config/trace"
+      ]
+    },
+    {
+      "path": "mcp/treasury/environment/ESA_NATIVE_PROBE_OUTPUT",
+      "native": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/mcp_host_01/probe_results_01",
+      "diagnostic": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/mcp_host_01/diagnostics/effective_config/probe"
+    }
+  ],
+  "all_other_configuration_fields_equal": true,
+  "explanation": "Effective-config diagnostic intentionally uses separate trace and probe output directories so it cannot consume or overwrite native trace_01. Server, environment values other than probe destination, model, permissions, limits and tool settings match.",
+  "common_future_recipe_fix": "New helper-generated configs include the upstream schema before hashing; observed historical configs and commitments remain as run."
+}

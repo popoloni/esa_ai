@@ -1,0 +1,37 @@
+{
+  "schema": "cp10-mock-pr/v1",
+  "pull_request_id": "PR-010",
+  "change_id": "CP10-PRESENTATION-001",
+  "author_id": "agent-author",
+  "threads": [
+    {
+      "id": "THREAD-10-01",
+      "mandatory": true,
+      "requested_by": "reviewer-a",
+      "comment": "Show that the actual presentation artifact preserves routing, the EUR 5000 boundary, and the no-payment-approval notice. Green author smoke tests alone do not resolve this.",
+      "resolution_id": "RESOLUTION-10-01",
+      "required_checks": [
+        "CI-ROUTING-001",
+        "CI-INTEGRATION-001",
+        "CI-ARTIFACT-001"
+      ]
+    },
+    {
+      "id": "THREAD-10-02",
+      "mandatory": true,
+      "requested_by": "release-owner",
+      "comment": "Identify the exact previous artifact, select it and run its core smoke checks, then restore the exact current artifact. A rollback-ready claim is insufficient.",
+      "resolution_id": "RESOLUTION-10-02",
+      "required_checks": [
+        "CI-ARTIFACT-001"
+      ],
+      "requires_rollback": true
+    },
+    {
+      "id": "THREAD-10-03",
+      "mandatory": false,
+      "requested_by": "reviewer-a",
+      "comment": "User benefit remains HYPOTHESIS_NOT_VALIDATED; this exercise does not close the pending architecture decision or authorize a real release."
+    }
+  ]
+}

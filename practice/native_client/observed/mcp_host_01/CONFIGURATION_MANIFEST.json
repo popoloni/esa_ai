@@ -1,0 +1,30 @@
+{
+  "schema": "esa-native-mcp-preparation/v1",
+  "status": "PREPARED_NOT_RUN",
+  "prepared_at_utc": "2026-10-22T05:56:22.735976+00:00",
+  "required_client_version": "1.19.3",
+  "required_mcp_sdk_version": "2.3.0",
+  "source_sha256": {
+    "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion/practice/mcp_cli/policy_server.py": "ffe28e2fe445ab53bbb0048f02ca1642096abd6102743dcda56ca4fd12c3f139",
+    "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion/practice/mcp_cli/wire_proxy.py": "fedefddeb30a834e62a2093d6e0737c6ea09bf52ed9d1e51ab6071f2850daab4",
+    "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion/practice/native_client/probe/sitecustomize.py": "e530f010156b129433fe4a80b51c99e74962e3983cb6eda58fb95651e8911e1f"
+  },
+  "files_sha256": {
+    "CANARY_DECLARATION.json": "500ea4a9b51f2f993878d92aa6d4e374c4ee067b9d32d231dc106a842f62fad7",
+    "CLIENT_TASK.json": "2c291f61ac19b0d9f4651008c5e4d91a15468b16591166693593bd94cb38c862",
+    "DECLARED_NONSECRET_CANARY.txt": "5f066dee64e383926eb186696646a9889ecf6560c17fd495843760d20337e0c7",
+    "ENVIRONMENT.json": "16b151453ed4a7c80b89efc231b7c3200bd3bd622bc78c4b7a17ddec96414c37",
+    "NATIVE_OBSERVATION.json": "b58f0e78e724836698fc43b99ec8c0024104e81f8c7d0080fc51ca88fbb9dab9",
+    "OPENCODE_CONFIG.json": "1f7a9ef61fca60dc015904327ba87952c33b3036adcf0b2c066c2ecaff65388f",
+    "PREPARATION_COMMAND.json": "f96343ca2da83f59fd844d7da378fa06ae3c1019a3b255bd6a97436392e99007",
+    "STARTING_MANIFEST.json": "c21cea853528b963d35a060548140af32ba7a938ff4446b10367a2f69f7b352a",
+    "TASK_PROMPT.txt": "01739f8c8b343f2eee5ac6bef7bc5ac1727054b65412b1fdda9475e77083d37e"
+  },
+  "limits": [
+    "No native session, server or startup read has run.",
+    "The tool allowlist does not restrict OS permissions of the server process.",
+    "Do not reuse trace_01 for a second server process. Prepare a new observation for a rerun.",
+    "A missing startup record means unobserved, not a denied read.",
+    "Local inference does not establish that all host background network activity is disabled."
+  ]
+}

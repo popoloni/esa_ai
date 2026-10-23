@@ -1,0 +1,96 @@
+{
+  "schema": "esa-legacy-sdk-argument-control/v1",
+  "started_at_utc": "2026-10-22T06:25:02.582561+00:00",
+  "argv": [
+    "revision_d7/evidence/mcp_legacy_argument_control.py",
+    "--server-dir",
+    "companion/practice/mcp_cli",
+    "--output",
+    "revision_d7/evidence/mcp_legacy_argument_control_02"
+  ],
+  "cwd": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5",
+  "python_executable": "/workspace/scratch/72d789d25fef/runtime_d7/mcp_venv/bin/python",
+  "executed_script_sha256": "b3d114fba54f570ebee8627568abce6a11180081f47c24ffe4dad6fa4e16b2cc",
+  "mcp_distribution_version": "2.3.0",
+  "client": "Official Python SDK Client(mode=legacy)",
+  "model_selected": false,
+  "coding_host_trial": false,
+  "human_review": "NOT_PERFORMED",
+  "source_sha256_before": {
+    "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion/practice/mcp_cli/policy_server.py": "ffe28e2fe445ab53bbb0048f02ca1642096abd6102743dcda56ca4fd12c3f139",
+    "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion/practice/mcp_cli/policy_lookup.py": "65aac68ee50d22987ec88394db48d23a33d7d7119b7b072808d6fbbc93b7f4cc",
+    "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion/practice/mcp_cli/wire_proxy.py": "fedefddeb30a834e62a2093d6e0737c6ea09bf52ed9d1e51ab6071f2850daab4"
+  },
+  "purpose": "Actual server-side type rejection control; does not replace or repair the native host first output.",
+  "scope": "One empty-array argument over legacy stdio. No OS/network isolation conclusion.",
+  "server_argv": [
+    "/workspace/scratch/72d789d25fef/runtime_d7/mcp_venv/bin/python",
+    "-B",
+    "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion/practice/mcp_cli/wire_proxy.py",
+    "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/mcp_legacy_argument_control_02/trace"
+  ],
+  "server_cwd": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion/practice/mcp_cli",
+  "protocol_version": "2025-11-25",
+  "server_info": {
+    "name": "Treasury teaching catalog",
+    "version": "2026.10.20-cr1"
+  },
+  "tools": {
+    "ttlMs": 0,
+    "cacheScope": "private",
+    "tools": [
+      {
+        "name": "lookup_policy",
+        "description": "Read BR-001/v1 or BR-001/v2 from the fixed synthetic catalog; no paths or writes.",
+        "inputSchema": {
+          "properties": {
+            "policy_id": {
+              "title": "Policy Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "policy_id"
+          ],
+          "type": "object",
+          "title": "lookup_policyArguments"
+        },
+        "outputSchema": {
+          "type": "object",
+          "additionalProperties": true,
+          "title": "lookup_policyDictOutput"
+        }
+      }
+    ],
+    "resultType": "complete"
+  },
+  "request": {
+    "name": "lookup_policy",
+    "arguments": {
+      "policy_id": []
+    }
+  },
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Error executing tool lookup_policy: 1 validation error for lookup_policyArguments\npolicy_id\n  Input should be a valid string [type=string_type, input_value=[], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.14/v/string_type"
+      }
+    ],
+    "isError": true,
+    "resultType": "complete"
+  },
+  "status": "OBSERVED_SERVER_ARGUMENT_REJECTION",
+  "source_sha256_after": {
+    "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion/practice/mcp_cli/policy_server.py": "ffe28e2fe445ab53bbb0048f02ca1642096abd6102743dcda56ca4fd12c3f139",
+    "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion/practice/mcp_cli/policy_lookup.py": "65aac68ee50d22987ec88394db48d23a33d7d7119b7b072808d6fbbc93b7f4cc",
+    "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion/practice/mcp_cli/wire_proxy.py": "fedefddeb30a834e62a2093d6e0737c6ea09bf52ed9d1e51ab6071f2850daab4"
+  },
+  "sources_unchanged": true,
+  "finished_at_utc": "2026-10-22T06:25:04.046340+00:00",
+  "evidence_sha256": {
+    "server.stderr.txt": "e4f7cb1dfe7657879be575455a66dc84ad0112fd0c6f6f2132144ea368130e17",
+    "trace/client_to_server.jsonl": "71e7b2ccd8ac2c23858c0afab4dd55f22cfc791c94116b3a49166c92f6fa70fe",
+    "trace/server_to_client.jsonl": "67353cdf17b0601bc763e383accd718039ae7e418f0b2f067563710bca34df45"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "format_version": 1,
+  "description": "Fixed input bytes for both CR06 flows. Hash detection is not an OS permission boundary.",
+  "files": {
+    "specification.json": {
+      "companion_source": "reader_side/reference_solution/specification.json",
+      "sha256": "a1b6fee6ea70785a2fe18f3bcdd7c51c8cdc11e5ecd5b05ddfe1df204f859454"
+    },
+    "case_oracle.json": {
+      "companion_source": "reader_side/specs/case_oracle.json",
+      "sha256": "11f86f4a19d1587f4eabf5ad00da22f03111ffad7a834729ae130b908f4686b2"
+    },
+    "discovery_handoff.json": {
+      "companion_source": "reader_side/specs/discovery_handoff.json",
+      "sha256": "8b20a7f95c439f4157895edbc77bbf43fa3f1852106ff142579fc4b30a686656"
+    },
+    "assessment.json": {
+      "companion_source": "reader_side/reference_solution/assessment.json",
+      "sha256": "7f4f2dd4bc486e75e304eddf967f29587c8e49113afe5591aa207619a58b20ab"
+    },
+    "sources/SRC-OPS-004.json": {
+      "companion_source": "reader_side/discovery/sources/SRC-OPS-004.json",
+      "sha256": "5a45af05025f00f2971c240e97a6e40c4f2df47406b48832494e11e95d8985c5"
+    },
+    "sources/SRC-POL-001.json": {
+      "companion_source": "reader_side/discovery/sources/SRC-POL-001.json",
+      "sha256": "1de2d20f2fe72c4a2ae698093078deb2a05b5d7fd85eec819438cabb7928aacb"
+    },
+    "sources/SRC-RISK-002.json": {
+      "companion_source": "reader_side/discovery/sources/SRC-RISK-002.json",
+      "sha256": "9d21561fb3ae43782375451c42edab29e2104bd06b76c871eb7c8759d0300794"
+    },
+    "sources/SRC-TKT-017.json": {
+      "companion_source": "reader_side/discovery/sources/SRC-TKT-017.json",
+      "sha256": "108f533303f738227a4342bd61c61df203d0e1b59c505714e3e4f9fdc3af0007"
+    },
+    "sources/SRC-WIKI-OLD.json": {
+      "companion_source": "reader_side/discovery/sources/SRC-WIKI-OLD.json",
+      "sha256": "85294ab0c9627da940dbce25820f5caed54ceacde4b49a6f4ad5ea5417cdfc93"
+    }
+  }
+}

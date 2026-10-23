@@ -1,0 +1,88 @@
+{
+  "contract": {
+    "additional_fields_allowed": false,
+    "field_types": {
+      "payment_authorized": "boolean, always false",
+      "policy_version": "string",
+      "reason": "string",
+      "route": "string"
+    },
+    "required_fields": [
+      "route",
+      "reason",
+      "policy_version",
+      "payment_authorized"
+    ],
+    "scope": "Read-only recommendation responses; no implementation, architecture acceptance, payment or release.",
+    "source_policy": "reader_side/discovery/sources/SRC-POL-001.json",
+    "source_tool": "repo/src/treasury/routing.py",
+    "task": "Return the routing recommendation for each supplied amount using BR-001/v1; no payment is authorized."
+  },
+  "development": [
+    {
+      "amount_eur": "100.00",
+      "case_id": "DEV-01"
+    },
+    {
+      "amount_eur": "5000.00",
+      "case_id": "DEV-02"
+    },
+    {
+      "amount_eur": "NaN",
+      "case_id": "DEV-03"
+    },
+    {
+      "amount_eur": "-1.00",
+      "case_id": "DEV-04"
+    }
+  ],
+  "held_out": [
+    {
+      "amount_eur": "4999.99",
+      "case_id": "HOLD-01"
+    },
+    {
+      "amount_eur": "4999.9999999999999999999",
+      "case_id": "HOLD-02"
+    },
+    {
+      "amount_eur": "5000.01",
+      "case_id": "HOLD-03"
+    },
+    {
+      "amount_eur": "0.00",
+      "case_id": "HOLD-04"
+    },
+    {
+      "amount_eur": "Infinity",
+      "case_id": "HOLD-05"
+    },
+    {
+      "amount_eur": "not-an-amount",
+      "case_id": "HOLD-06"
+    },
+    {
+      "amount_eur": "12000.25",
+      "case_id": "HOLD-07"
+    },
+    {
+      "amount_eur": "-0.01",
+      "case_id": "HOLD-08"
+    }
+  ],
+  "later_tasks": [
+    {
+      "amount_eur": "0.001",
+      "case_id": "LATER-01"
+    },
+    {
+      "amount_eur": "5000.0001",
+      "case_id": "LATER-02"
+    },
+    {
+      "amount_eur": "-Infinity",
+      "case_id": "LATER-03"
+    }
+  ],
+  "schema": "harness-teaching-tasks/v1"
+}

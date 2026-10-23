@@ -1,0 +1,79 @@
+{
+  "adjudicated_ratings": {
+    "baseline": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "retention": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "transfer": [
+      2,
+      3,
+      3,
+      2
+    ]
+  },
+  "answers": {
+    "baseline": "Synthetic baseline: compare selected SQLite paths and CREATED versus REPLAYED; retain both ledgers.",
+    "retention": "Synthetic retained explanation: same deterministic ID may belong to a new record in another ledger; compare path, history and audit.",
+    "transfer": "Synthetic transfer explanation: correct path remains selected; activation audit selects v1. A new request changes while old v2 retry remains recorded. Restore v2 on a copy."
+  },
+  "clock_host_boot": "SYNTHETIC_FIXED_CONTEXT",
+  "clock_start_monotonic_ns": 1000000000,
+  "clock_start_wall_ns": 1800000000000000000,
+  "coordinator": "synthetic_coordinator",
+  "meaning": "Fictional raters and simulated time validate protocol plumbing only; no human delay, learning, reliability or rubric-validity evidence.",
+  "origin": "SYNTHETIC_CALIBRATION",
+  "participant": "synthetic_learner",
+  "ratings_a": {
+    "baseline": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "retention": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "transfer": [
+      3,
+      3,
+      3,
+      2
+    ]
+  },
+  "ratings_b": {
+    "baseline": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "retention": [
+      2,
+      1,
+      2,
+      2
+    ],
+    "transfer": [
+      2,
+      3,
+      3,
+      2
+    ]
+  },
+  "reviewers": [
+    "synthetic_reviewer_a",
+    "synthetic_reviewer_b"
+  ],
+  "schema": "cp13-synthetic-calibration/v1"
+}

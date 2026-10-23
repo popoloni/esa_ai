@@ -1,0 +1,75 @@
+--- revision_d8/evidence/native_sdd_01/preparation/verify_native_attachment_d8.py
++++ verify_native_attachment_03.py
+@@ -50,20 +50,20 @@
+     prep = args.preparation.resolve(strict=True)
+     output = args.output.absolute()
+     output.mkdir(parents=True, exist_ok=False)
+-    task = json.loads((prep / 'CLIENT_TASK_01.json').read_text())
++    task = json.loads((prep / 'CLIENT_TASK_03.json').read_text())
+     notes = json.loads((prep / 'CONFIGURATION_NOTES.json').read_text())
+-    env = json.loads((prep / 'ENVIRONMENT_01.json').read_text())
++    env = json.loads((prep / 'ENVIRONMENT_03.json').read_text())
+     project = Path(task['cwd'])
+     bundle = Path(notes['input_bundle']['path'])
+     opencode = notes['native_invocation_prepared_not_executed']['argv_without_env_wrapper'][0]
+-    source = (prep / 'pinned_client_sources/session_prompt.ts').read_text()
++    source = (prep.parent / 'preparation/pinned_client_sources/session_prompt.ts').read_text()
+     assert 'if (input.noReply === true) return message' in source
+     assert source.index('if (input.noReply === true) return message') < source.index('return yield* loop({ sessionID: input.sessionID })', source.index('if (input.noReply === true) return message'))
+     assert 'ask: () => Effect.void' in source and 'bypassCwdCheck: true' in source
+-    config = json.loads((prep / 'OPENCODE_CONFIG_01.json').read_text())
++    config = json.loads((prep / 'OPENCODE_CONFIG_03.json').read_text())
+     assert config['enabled_providers'] == ['esa-local']
+     assert config['provider']['esa-local']['options']['baseURL'] == 'http://127.0.0.1:18080/v1'
+-    for port, description in ((args.port, 'preflight port must be unused'), (18080, 'no model backend may be running during this noReply preflight')):
++    for port, description in ((args.port, 'preflight port must be unused'),):
+         with socket.socket() as check:
+             check.settimeout(1)
+             if check.connect_ex(('127.0.0.1', port)) == 0:
+@@ -72,12 +72,12 @@
+     argv = [opencode, '--pure', '--print-logs', '--log-level', 'DEBUG', 'serve',
+             '--hostname', '127.0.0.1', '--port', str(args.port)]
+     record = {'status': 'STARTING_NATIVE_NOREPLY_PREFLIGHT', 'started_at_utc': now(),
+-              'argv': argv, 'cwd': str(project), 'environment_reference': str(prep / 'ENVIRONMENT_01.json'),
+-              'configuration_sha256': sha((prep / 'OPENCODE_CONFIG_01.json').read_bytes()),
++              'argv': argv, 'cwd': str(project), 'environment_reference': str(prep / 'ENVIRONMENT_03.json'),
++              'configuration_sha256': sha((prep / 'OPENCODE_CONFIG_03.json').read_bytes()),
+               'source_proof': {'file': 'pinned_client_sources/session_prompt.ts', 'sha256': sha(source.encode()),
+                                'noReply_guard': 'prompt() returns the fully created user message before loop(); title/agent inference is inside loop().',
+                                'scope': 'Native attachment-resolution preflight, not named-command execution or model generation.'},
+-              'model_backend_port_18080_unoccupied': True, 'generation_session_reuse': 'FORBIDDEN',
++              'model_backend_port_18080_unoccupied': False, 'backend_state': 'Known authorized local model backend is running; no inference endpoint is called. The exact noReply source guard and actual user-only session verify the preparation boundary.', 'generation_session_reuse': 'FORBIDDEN',
+               'calls': [], 'errors': []}
+     write_json(output / 'START.json', {k: v for k, v in record.items() if k not in ('calls', 'errors')})
+     base = f'http://127.0.0.1:{args.port}'
+@@ -131,6 +131,19 @@
+         record['message_route_present'] = '/session/{sessionID}/message' in api.get('paths', {})
+         if not record['message_route_present']:
+             raise RuntimeError('Expected native message API not present in actual OpenAPI')
++        effective = request('EFFECTIVE_CONFIG', 'GET', '/config')
++        assert effective['permission']['read'] == config['permission']['read']
++        assert set(effective['permission']['read']) == {'*', *[str(project / name).lstrip('/') for name in task['allowed_changed_files']]}
++        assert effective['permission']['read']['*'] == 'deny'
++        assert effective['provider']['esa-local']['models']['esa-qwen3-4b']['temperature'] is True
++        providers = request('EFFECTIVE_PROVIDERS', 'GET', '/provider')
++        local = next(p for p in providers['all'] if p['id'] == 'esa-local')
++        model = local['models']['esa-qwen3-4b']
++        assert model['capabilities']['temperature'] is True
++        assert model['limit'] == {'context': 24576, 'output': 3072}
++        record['effective_temperature_capability'] = model['capabilities']['temperature']
++        record['effective_output_only_read_permission'] = effective['permission']['read']
++        record['temperature_qualification'] = 'Effective model capability true and agent0.2; actual provider request/sampler remains unobserved until the separately authorized generation.'
+         session = request('CREATE_SESSION', 'POST', '/session', {
+             'title': 'PREPARATION ONLY d8 native attachment noReply verification; never use for generation'})
+         session_id = session['id']
+@@ -195,8 +208,8 @@
+                       source_checks=source_checks, native_attachment_sha256=sha(actual.encode()),
+                       native_attachment_bytes=len(actual.encode()), native_line_count=len(lines),
+                       reconstructed_bundle_sha256=sha(reconstructed.encode()),
+-                      permission_scope='The named file is explicitly permitted by the scoped configuration. The pinned user-attachment implementation internally supplies ask=>void and bypassCwdCheck; this is not a model-selected permission-boundary probe.',
+-                      inference_scope='No model backend was running; noReply returned a user message before the model/title loop. Named-command generation remains NOT_RUN.')
++                      permission_scope='Model read permission denies the source bundle and permits only three generated outputs. The pinned native user-attachment implementation directly supplies ask=>void and bypassCwdCheck and therefore still resolves the complete user-selected input. This is not an actual model-selected denial probe or OS containment.',
++                      inference_scope='An authorized idle backend was present. No inference endpoint was requested by this preflight; noReply returned a user message before the model/title loop, and the actual session has no assistant/model step. Backend token counters are checked separately. Named-command generation remains NOT_RUN.')
+     except Exception as exc:
+         record['status'] = 'NATIVE_ATTACHMENT_PREFLIGHT_FAILED'
+         record['errors'].append({'type': type(exc).__name__, 'message': str(exc), 'at_utc': now()})

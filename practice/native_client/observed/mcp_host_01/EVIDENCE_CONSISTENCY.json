@@ -1,0 +1,21 @@
+{
+  "schema": "esa-native-evidence-check/v1",
+  "status": "PASS_DECLARED_NATIVE_EVIDENCE_CONSISTENCY",
+  "execution_kind": "ACTUAL_NAMED_CLIENT",
+  "issues": [],
+  "record_sha256": "d72431d627068c80d195e7b599f112133292b5f070ce083c6caf64343964ba22",
+  "required_categories": [
+    "client_identity",
+    "effective_configuration",
+    "mcp_domain_refusal",
+    "mcp_invalid_argument",
+    "mcp_opening_exchange",
+    "mcp_process_boundary",
+    "mcp_server_identity",
+    "mcp_tool_discovery",
+    "mcp_valid_call"
+  ],
+  "native_authenticity": "NOT_ESTABLISHED_BY_THIS_CHECK",
+  "human_acceptance": "NOT_GRANTED_BY_THIS_CHECK",
+  "action_closure": "REQUIRES_SEPARATE_REVIEW_AGAINST_ORIGINAL_CRITERIA"
+}

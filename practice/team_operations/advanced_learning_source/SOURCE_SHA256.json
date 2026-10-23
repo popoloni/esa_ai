@@ -1,0 +1,12 @@
+{
+  "schema": "advanced-learning-source-manifest/v1",
+  "edition": "2026.10.21-d4",
+  "files": {
+    "README.txt": "7175f9286503172c484aa4b2b1bbe288e34f9817ff7f2836f7132b7bbd7fea4b",
+    "advanced_learning.tex": "9be08fb421f5727890eb6f715c0dd391f26bc9a93051e30ffa07540a1de656fc",
+    "bib/references.bib": "5f7035489b7ed2082c799c8b2052c28658d633c662a28944afd80898f1be81b9",
+    "config.tex": "b6f2b50f27cfc54ee82b94a9e242f3ef05b13b187195529f85193aa2a6082c30",
+    "preamble.tex": "9231ad8607414ae15738c7c12dc6fb38b23b01d2d2797669d10d996d274973dd",
+    "supplements/advanced_learning_protocol.tex": "50caec67e8ea8e71170d37548c814fd0a86d32d38e8f46cadd13a51c788bc1d7"
+  }
+}

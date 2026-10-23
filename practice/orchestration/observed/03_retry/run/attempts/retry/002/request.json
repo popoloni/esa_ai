@@ -1,0 +1,19 @@
+{
+  "attempt": 2,
+  "authority": "Read supplied inputs; write only this attempt's outputs. No acceptance or release authority.",
+  "dependencies": {},
+  "input_root": "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Orchestration_Harness_20261020/companion/practice/orchestration/observed/03_retry/inputs",
+  "schema": "treasury-worker-request/v1",
+  "task": {
+    "depends_on": [],
+    "id": "retry",
+    "idempotent": true,
+    "kind": "worker",
+    "max_attempts": 2,
+    "parameters": {
+      "mode": "retry_once"
+    },
+    "response": "result.json",
+    "timeout_seconds": 3
+  }
+}

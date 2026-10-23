@@ -1,0 +1,41 @@
+{
+  "purpose": "Preserved original historical test-count paragraphs moved out of the main reading path in d4. They are dated observations with overlapping scopes, not additive current totals.",
+  "entries": [
+    {
+      "chapter": "03",
+      "text": "For comparison with the archived checkpoint, CP03 originally recorded 46 passes: seven routing cases, fourteen workspace/protocol checks and twenty-five discovery tests. The current integrated report contains later chapters too. These counts describe software checks on synthetic inputs; user research is a separate activity."
+    },
+    {
+      "chapter": "12",
+      "text": "\\begin{readerbox}{Observed local execution, 20 October 2026}\nAt the original CP12 checkpoint, the author-run shared suite passed \\textbf{428 tests} (7 acceptance, 421 regression), including the 24 new incident tests. These historical counts precede the later chapter additions. The CP12 validator passed \\textbf{53/53 assertions}, including 9 negative scenarios; the current-source rehearsal passed 31/31 checks and recovery passed 40/40. The inherited Chapters~1--9, 10 and 11 workflow validators passed 53/53, 49/49 and 37/37 assertions respectively. These are separate scopes, not an additive test total. Delivered sources and both original incident ledgers remained unchanged. Detailed evidence is retained under \\path{editorial/verification/chapter12/VALIDATION_AGGREGATE.json}. Local restoration passed; owner reconciliation, independent human review and a live operational transfer trial remain pending. No production recovery, incident closure or release is claimed.\n\\end{readerbox}"
+    },
+    {
+      "chapter": "14",
+      "text": "\\begin{readerbox}{Observed local execution, 20 October 2026}\nAt the original CP14 checkpoint, the author-run shared suite passed \\textbf{482 tests} (7 acceptance, 475 regression), including the 28 new measurement tests. The following counts describe that retained run, not a new run triggered by reading this edition. All six cumulative workflow validators passed. The current measurement rehearsal passed 33/33 checks and its gate 34/34; these are distinct scopes. Six command executions covered five attempts and one protected synthetic accepted handoff, with the scenario total reconciled to \\textbf{EUR~37.64}. Evidence is retained under \\path{editorial/verification/chapter14/VALIDATION_AGGREGATE.json}. Source files were unchanged by validation. Recorded durations describe local process intervals, not performance benchmarks. Actual human effort, billing and acceptance remain unmeasured; the field pilot, live comparison and independent human reviewer confirmation remain pending.\n\\end{readerbox}"
+    },
+    {
+      "chapter": "02",
+      "original_line": 308,
+      "text": "The historical CP02 reference recorded seven Chapter~1 acceptance passes and fourteen new Chapter~2 tests, for \\textbf{21 passing offline tests}; use the shared runner's current report for the integrated total. The new tests check instruction and skill structure, adapter projection into temporary repositories, the allowlisted code-edit path, protected-file hashes, negative paths and symlink behavior, and a minimal MCP stdio message exchange. The original output and interpreter version are captured in \\texttt{reader\\_side/evidence/CP02\\_OFFLINE\\_RESULTS.json}. Those results came from local Python execution. No paid coding assistant was used, and no claim of end-to-end MCP-host compatibility follows from this test run."
+    },
+    {
+      "chapter": "04",
+      "original_line": 341,
+      "text": "The historical CP04 suite reports \\textbf{93 passes}: seven Chapter~1 acceptance tests, fourteen Chapter~2 workspace/MCP checks, twenty-five Chapter~3 discovery tests and forty-seven Chapter~4 specification tests. Use the shared runner's current report for the integrated total. The intentionally unsafe Chapter~4 starter produces \\textbf{11 review issues}; the protected synthetic reference produces none. These are local executions of deterministic checks, not a score for any SDD product or LLM. The companion contains the logs, data fixtures, and case oracle."
+    },
+    {
+      "chapter": "06",
+      "original_line": 216,
+      "text": "The historical CP06 author checkpoint passed \\textbf{179 offline tests}: seven original routing acceptance tests and 172 additional selected checks covering Chapters~1--6. The unsafe starter produced \\textbf{24 findings}; the reference pair produced none. For current combined totals, use the integrated runner's report. No LLM was called in the checkpoint tests. They validate a teaching implementation and selected invariants; they cannot establish a safe autonomous tool runtime, an effective prompt-injection defense, or the truth of synthetic policy facts."
+    },
+    {
+      "chapter": "09",
+      "original_line": 414,
+      "text": "Use the current integrated run report for the combined Chapters~1--14 total. The CP09 integration gate described above remains the cumulative review of Chapters~1--9, including the direct Chapter~8 verification. Do not add historical checkpoint totals together: their inherited tests overlap. A reader should also be suspicious of any account that combines the historical 191 suite tests, eight contract examples and three mutant checks into a single percentage labelled \\enquote{AI-generated software reliability}. They answer different questions and are not independent samples of one underlying population. We do not have a real user evaluation, a randomized agent comparison, production telemetry, a full security penetration test, or a statistical estimate of residual defects."
+    },
+    {
+      "chapter": "13",
+      "text": "\\begin{readerbox}{Observed local execution, 20 October 2026}\nAt the original CP13 checkpoint, the author-run shared suite passed \\textbf{454 tests} (7 acceptance, 447 regression), including the 26 new learning tests. These historical counts precede the Chapter~14 additions. All five cumulative workflow validators passed. The CP13 validator passed \\textbf{54/54 assertions}, including 8 negative scenarios; the current transfer rehearsal passed 37/37 checks and the learning gate passed 24/24. These are separate scopes, not an additive test total. Synthetic calibration exercised phase ordering, raw scores and separate adjudication. The starter and protected unsafe control were rejected as intended. Detailed evidence, including the initial harness failure and corrected rerun, is retained under \\path{editorial/verification/chapter13/VALIDATION_AGGREGATE.json}. Delivered source remained unchanged by validation. The real delayed human trial, independent human scoring, rubric validation and human reviewer confirmation remain pending; no learning gain or new operational authority is claimed.\n\\end{readerbox}"
+    }
+  ]
+}

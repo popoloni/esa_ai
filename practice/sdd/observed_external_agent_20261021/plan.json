@@ -1,0 +1,50 @@
+{
+  "schema": "treasury-orchestrator/v1",
+  "worker_kind": "EXTERNALLY_DISPATCHED",
+  "max_parallel": 1,
+  "max_wall_seconds": 900,
+  "max_output_bytes": 1048576,
+  "tasks": [
+    {
+      "id": "generate",
+      "kind": "worker",
+      "depends_on": [],
+      "idempotent": false,
+      "max_attempts": 1,
+      "timeout_seconds": 480,
+      "response": "result.json",
+      "parameters": {
+        "instruction_file": "TASK.md",
+        "required_artifacts": [
+          "artifacts/spec.md",
+          "artifacts/plan.md",
+          "artifacts/tasks.md"
+        ]
+      }
+    },
+    {
+      "id": "review",
+      "kind": "worker",
+      "depends_on": [
+        "generate"
+      ],
+      "idempotent": false,
+      "max_attempts": 1,
+      "timeout_seconds": 300,
+      "response": "result.json",
+      "parameters": {
+        "instruction": "Independently review the generated specification, plan and tasks against\nthe supplied fixed requirements, case oracle, discovery evidence and policy\nsources. Read the generation result through the dependency response path and\nverify each referenced artifact hash before using it. Inspect exact equality,\ninvalid amounts, policy provenance, all five requirements and eight cases,\npayment authority, unknown benefit, dependencies and the pending human decision.\nDo not copy the author's review or inspect external reference answers. State\neach concrete defect, file location, evidence and proposed correction; a clean\nreview is permitted when justified. Write review.json and RAW_RESPONSE.md in\nthis attempt, preserve first outputs, and submit their hashes. A review is an\nagent assessment, not human acceptance. Do not modify the generation output.\n",
+        "required_artifacts": [
+          "review.json"
+        ]
+      }
+    },
+    {
+      "id": "requirements_approval",
+      "kind": "human",
+      "depends_on": [
+        "review"
+      ]
+    }
+  ]
+}

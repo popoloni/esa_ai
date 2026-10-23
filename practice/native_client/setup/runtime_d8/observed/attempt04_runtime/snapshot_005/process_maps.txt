@@ -1,0 +1,166 @@
+55add5243000-55add5244000 r--p 00000000 00:1b 1858116                    /workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/llama-server
+55add5244000-55add5245000 r-xp 00001000 00:1b 1858116                    /workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/llama-server
+55add5245000-55add5246000 r--p 00002000 00:1b 1858116                    /workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/llama-server
+55add5246000-55add5247000 r--p 00002000 00:1b 1858116                    /workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/llama-server
+55add5247000-55add5248000 rw-p 00003000 00:1b 1858116                    /workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/llama-server
+55adda27f000-55ade3527000 rw-p 00000000 00:00 0                          [heap]
+7f425c000000-7f425c386000 rw-p 00000000 00:00 0 
+7f425c386000-7f4260000000 ---p 00000000 00:00 0 
+7f4260000000-7f426033f000 rw-p 00000000 00:00 0 
+7f426033f000-7f4264000000 ---p 00000000 00:00 0 
+7f4264000000-7f42643a8000 rw-p 00000000 00:00 0 
+7f42643a8000-7f4268000000 ---p 00000000 00:00 0 
+7f4268000000-7f426838e000 rw-p 00000000 00:00 0 
+7f426838e000-7f426c000000 ---p 00000000 00:00 0 
+7f426c000000-7f426c35e000 rw-p 00000000 00:00 0 
+7f426c35e000-7f4270000000 ---p 00000000 00:00 0 
+7f4270000000-7f4270021000 rw-p 00000000 00:00 0 
+7f4270021000-7f4274000000 ---p 00000000 00:00 0 
+7f4274000000-7f4274349000 rw-p 00000000 00:00 0 
+7f4274349000-7f4278000000 ---p 00000000 00:00 0 
+7f4278000000-7f427834d000 rw-p 00000000 00:00 0 
+7f427834d000-7f427c000000 ---p 00000000 00:00 0 
+7f427c000000-7f427c346000 rw-p 00000000 00:00 0 
+7f427c346000-7f4280000000 ---p 00000000 00:00 0 
+7f4283028000-7f4283029000 ---p 00000000 00:00 0 
+7f4283029000-7f4283829000 rw-p 00000000 00:00 0 
+7f4283829000-7f428382a000 ---p 00000000 00:00 0 
+7f428382a000-7f428402a000 rw-p 00000000 00:00 0 
+7f428402a000-7f428402b000 ---p 00000000 00:00 0 
+7f428402b000-7f428482b000 rw-p 00000000 00:00 0 
+7f428482b000-7f428482c000 ---p 00000000 00:00 0 
+7f428482c000-7f428502c000 rw-p 00000000 00:00 0 
+7f428502c000-7f428502d000 ---p 00000000 00:00 0 
+7f428502d000-7f428582d000 rw-p 00000000 00:00 0 
+7f428582d000-7f428582e000 ---p 00000000 00:00 0 
+7f428582e000-7f428602e000 rw-p 00000000 00:00 0 
+7f428602e000-7f428602f000 ---p 00000000 00:00 0 
+7f428602f000-7f428682f000 rw-p 00000000 00:00 0 
+7f428682f000-7f4286830000 ---p 00000000 00:00 0 
+7f4286830000-7f4287030000 rw-p 00000000 00:00 0 
+7f4287030000-7f4364810000 rw-p 00000000 00:00 0 
+7f4364810000-7f43f8ffa000 r--s 005ae000 00:1b 1585450                    /workspace/scratch/72d789d25fef/runtime_d7/downloads/Qwen3-4B-Q4_K_M.gguf
+7f43f8ffa000-7f43f8ffb000 ---p 00000000 00:00 0 
+7f43f8ffb000-7f43f97fb000 rw-p 00000000 00:00 0 
+7f43f97fb000-7f43f97fc000 ---p 00000000 00:00 0 
+7f43f97fc000-7f43f9ffc000 rw-p 00000000 00:00 0 
+7f43f9ffc000-7f43f9ffd000 ---p 00000000 00:00 0 
+7f43f9ffd000-7f43fa7fd000 rw-p 00000000 00:00 0 
+7f43fa7fd000-7f43fa7fe000 ---p 00000000 00:00 0 
+7f43fa7fe000-7f43faffe000 rw-p 00000000 00:00 0 
+7f43faffe000-7f43fafff000 ---p 00000000 00:00 0 
+7f43fafff000-7f43fb7ff000 rw-p 00000000 00:00 0 
+7f43fb7ff000-7f43fb800000 ---p 00000000 00:00 0 
+7f43fb800000-7f43fc000000 rw-p 00000000 00:00 0 
+7f43fc000000-7f43fc021000 rw-p 00000000 00:00 0 
+7f43fc021000-7f4400000000 ---p 00000000 00:00 0 
+7f44007a7000-7f44007a8000 ---p 00000000 00:00 0 
+7f44007a8000-7f4400fa8000 rw-p 00000000 00:00 0 
+7f4400fa8000-7f4400fa9000 ---p 00000000 00:00 0 
+7f4400fa9000-7f44017a9000 rw-p 00000000 00:00 0 
+7f44017a9000-7f44017aa000 ---p 00000000 00:00 0 
+7f44017aa000-7f4401faa000 rw-p 00000000 00:00 0 
+7f4401faa000-7f4401fbf000 r--p 00000000 00:1b 1858122                    /workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/libggml-cpu-zen4.so
+7f4401fbf000-7f44020e3000 r-xp 00015000 00:1b 1858122                    /workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/libggml-cpu-zen4.so
+7f44020e3000-7f4402110000 r--p 00139000 00:1b 1858122                    /workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/libggml-cpu-zen4.so
+7f4402110000-7f4402111000 ---p 00166000 00:1b 1858122                    /workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/libggml-cpu-zen4.so
+7f4402111000-7f4402112000 r--p 00166000 00:1b 1858122                    /workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/libggml-cpu-zen4.so
+7f4402112000-7f4402114000 rw-p 00167000 00:1b 1858122                    /workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/libggml-cpu-zen4.so
+7f4402114000-7f4402198000 rw-p 00000000 00:00 0 
+7f4402198000-7f44021aa000 r--p 00000000 00:1b 1858146                    /workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/libggml-rpc.so
+7f44021aa000-7f44021ca000 r-xp 00012000 00:1b 1858146                    /workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/libggml-rpc.so
+7f44021ca000-7f44021d3000 r--p 00032000 00:1b 1858146                    /workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/libggml-rpc.so
+7f44021d3000-7f44021d4000 ---p 0003b000 00:1b 1858146                    /workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/libggml-rpc.so
+7f44021d4000-7f44021d5000 r--p 0003b000 00:1b 1858146                    /workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/libggml-rpc.so
+7f44021d5000-7f44021d6000 rw-p 0003c000 00:1b 1858146                    /workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/libggml-rpc.so
+7f44021d6000-7f44021d7000 ---p 00000000 00:00 0 
+7f44021d7000-7f44029d7000 rw-p 00000000 00:00 0 
+7f44029d7000-7f44029d8000 ---p 00000000 00:00 0 
+7f44029d8000-7f44031d8000 rw-p 00000000 00:00 0 
+7f44031d8000-7f44031e7000 rw-p 00000000 00:00 0 
+7f44031e7000-7f44031f2000 r--p 00000000 00:1b 9223372036855344059        /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0
+7f44031f2000-7f440322e000 r-xp 0000b000 00:1b 9223372036855344059        /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0
+7f440322e000-7f440323b000 r--p 00047000 00:1b 9223372036855344059        /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0
+7f440323b000-7f440323c000 r--p 00054000 00:1b 9223372036855344059        /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0
+7f440323c000-7f440323d000 rw-p 00055000 00:1b 9223372036855344059        /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0
+7f440323d000-7f440324d000 r--p 00000000 00:1b 9223372036855346611        /usr/lib/x86_64-linux-gnu/libm.so.6
+7f440324d000-7f44032cc000 r-xp 00010000 00:1b 9223372036855346611        /usr/lib/x86_64-linux-gnu/libm.so.6
+7f44032cc000-7f4403324000 r--p 0008f000 00:1b 9223372036855346611        /usr/lib/x86_64-linux-gnu/libm.so.6
+7f4403324000-7f4403325000 r--p 000e7000 00:1b 9223372036855346611        /usr/lib/x86_64-linux-gnu/libm.so.6
+7f4403325000-7f4403326000 rw-p 000e8000 00:1b 9223372036855346611        /usr/lib/x86_64-linux-gnu/libm.so.6
+7f4403326000-7f44033d9000 r--p 00000000 00:1b 9223372036855346093        /usr/lib/x86_64-linux-gnu/libcrypto.so.3
+7f44033d9000-7f440370c000 r-xp 000b3000 00:1b 9223372036855346093        /usr/lib/x86_64-linux-gnu/libcrypto.so.3
+7f440370c000-7f44037d7000 r--p 003e6000 00:1b 9223372036855346093        /usr/lib/x86_64-linux-gnu/libcrypto.so.3
+7f44037d7000-7f4403833000 r--p 004b0000 00:1b 9223372036855346093        /usr/lib/x86_64-linux-gnu/libcrypto.so.3
+7f4403833000-7f4403836000 rw-p 0050c000 00:1b 9223372036855346093        /usr/lib/x86_64-linux-gnu/libcrypto.so.3
+7f4403836000-7f440383b000 rw-p 00000000 00:00 0 
+7f440383b000-7f4403859000 r--p 00000000 00:1b 9223372036855344473        /usr/lib/x86_64-linux-gnu/libssl.so.3
+7f4403859000-7f44038bb000 r-xp 0001e000 00:1b 9223372036855344473        /usr/lib/x86_64-linux-gnu/libssl.so.3
+7f44038bb000-7f44038d7000 r--p 00080000 00:1b 9223372036855344473        /usr/lib/x86_64-linux-gnu/libssl.so.3
+7f44038d7000-7f44038e1000 r--p 0009c000 00:1b 9223372036855344473        /usr/lib/x86_64-linux-gnu/libssl.so.3
+7f44038e1000-7f44038e5000 rw-p 000a6000 00:1b 9223372036855344473        /usr/lib/x86_64-linux-gnu/libssl.so.3
+7f44038e5000-7f44038f6000 r--p 00000000 00:1b 1858109                    /workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/libggml-base.so.0.27.0
+7f44038f6000-7f4403986000 r-xp 00011000 00:1b 1858109                    /workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/libggml-base.so.0.27.0
+7f4403986000-7f44039aa000 r--p 000a1000 00:1b 1858109                    /workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/libggml-base.so.0.27.0
+7f44039aa000-7f44039ac000 r--p 000c4000 00:1b 1858109                    /workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/libggml-base.so.0.27.0
+7f44039ac000-7f44039ad000 rw-p 000c6000 00:1b 1858109                    /workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/libggml-base.so.0.27.0
+7f44039ad000-7f44039ae000 rw-p 00000000 00:00 0 
+7f44039ae000-7f44039b0000 r--p 00000000 00:1b 1858157                    /workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/libggml.so.0.27.0
+7f44039b0000-7f44039b6000 r-xp 00002000 00:1b 1858157                    /workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/libggml.so.0.27.0
+7f44039b6000-7f44039b7000 r--p 00008000 00:1b 1858157                    /workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/libggml.so.0.27.0
+7f44039b7000-7f44039b8000 ---p 00009000 00:1b 1858157                    /workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/libggml.so.0.27.0
+7f44039b8000-7f44039b9000 r--p 00009000 00:1b 1858157                    /workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/libggml.so.0.27.0
+7f44039b9000-7f44039ba000 rw-p 0000a000 00:1b 1858157                    /workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/libggml.so.0.27.0
+7f44039ba000-7f4403a71000 r--p 00000000 00:1b 1858139                    /workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/libllama.so.0.7.0
+7f4403a71000-7f4403d42000 r-xp 000b7000 00:1b 1858139                    /workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/libllama.so.0.7.0
+7f4403d42000-7f4403de0000 r--p 00388000 00:1b 1858139                    /workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/libllama.so.0.7.0
+7f4403de0000-7f4403de1000 ---p 00426000 00:1b 1858139                    /workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/libllama.so.0.7.0
+7f4403de1000-7f4403dec000 r--p 00426000 00:1b 1858139                    /workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/libllama.so.0.7.0
+7f4403dec000-7f4403df2000 rw-p 00431000 00:1b 1858139                    /workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/libllama.so.0.7.0
+7f4403df2000-7f4403df3000 rw-p 00000000 00:00 0 
+7f4403df3000-7f4403e1a000 r--p 00000000 00:1b 1858155                    /workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/libmtmd.so.0.7.0
+7f4403e1a000-7f4403f76000 r-xp 00027000 00:1b 1858155                    /workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/libmtmd.so.0.7.0
+7f4403f76000-7f4403faa000 r--p 00183000 00:1b 1858155                    /workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/libmtmd.so.0.7.0
+7f4403faa000-7f4403fad000 r--p 001b6000 00:1b 1858155                    /workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/libmtmd.so.0.7.0
+7f4403fad000-7f4403faf000 rw-p 001b9000 00:1b 1858155                    /workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/libmtmd.so.0.7.0
+7f4403faf000-7f4403fb2000 rw-p 00000000 00:00 0 
+7f4403fb2000-7f440406d000 r--p 00000000 00:1b 1858108                    /workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/libllama-common.so.0.7.0
+7f440406d000-7f44043f2000 r-xp 000bb000 00:1b 1858108                    /workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/libllama-common.so.0.7.0
+7f44043f2000-7f44044b1000 r--p 00440000 00:1b 1858108                    /workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/libllama-common.so.0.7.0
+7f44044b1000-7f44044b2000 ---p 004ff000 00:1b 1858108                    /workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/libllama-common.so.0.7.0
+7f44044b2000-7f44044b9000 r--p 004ff000 00:1b 1858108                    /workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/libllama-common.so.0.7.0
+7f44044b9000-7f44044bf000 rw-p 00506000 00:1b 1858108                    /workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/libllama-common.so.0.7.0
+7f44044bf000-7f44044df000 rw-p 00000000 00:00 0 
+7f44044df000-7f4404507000 r--p 00000000 00:1b 9223372036855345946        /usr/lib/x86_64-linux-gnu/libc.so.6
+7f4404507000-7f440468f000 r-xp 00028000 00:1b 9223372036855345946        /usr/lib/x86_64-linux-gnu/libc.so.6
+7f440468f000-7f44046de000 r--p 001b0000 00:1b 9223372036855345946        /usr/lib/x86_64-linux-gnu/libc.so.6
+7f44046de000-7f44046e2000 r--p 001fe000 00:1b 9223372036855345946        /usr/lib/x86_64-linux-gnu/libc.so.6
+7f44046e2000-7f44046e4000 rw-p 00202000 00:1b 9223372036855345946        /usr/lib/x86_64-linux-gnu/libc.so.6
+7f44046e4000-7f44046f1000 rw-p 00000000 00:00 0 
+7f44046f1000-7f44046f5000 r--p 00000000 00:1b 9223372036855346230        /usr/lib/x86_64-linux-gnu/libgcc_s.so.1
+7f44046f5000-7f4404719000 r-xp 00004000 00:1b 9223372036855346230        /usr/lib/x86_64-linux-gnu/libgcc_s.so.1
+7f4404719000-7f440471d000 r--p 00028000 00:1b 9223372036855346230        /usr/lib/x86_64-linux-gnu/libgcc_s.so.1
+7f440471d000-7f440471e000 r--p 0002b000 00:1b 9223372036855346230        /usr/lib/x86_64-linux-gnu/libgcc_s.so.1
+7f440471e000-7f440471f000 rw-p 0002c000 00:1b 9223372036855346230        /usr/lib/x86_64-linux-gnu/libgcc_s.so.1
+7f440471f000-7f44047bc000 r--p 00000000 00:1b 9223372036855344482        /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33
+7f44047bc000-7f4404904000 r-xp 0009d000 00:1b 9223372036855344482        /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33
+7f4404904000-7f440498b000 r--p 001e5000 00:1b 9223372036855344482        /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33
+7f440498b000-7f4404996000 r--p 0026b000 00:1b 9223372036855344482        /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33
+7f4404996000-7f4404999000 rw-p 00276000 00:1b 9223372036855344482        /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33
+7f4404999000-7f440499d000 rw-p 00000000 00:00 0 
+7f44049a6000-7f4404a35000 r--p 00000000 00:1b 1858154                    /workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/libllama-server-impl.so
+7f4404a35000-7f4404cc2000 r-xp 0008f000 00:1b 1858154                    /workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/libllama-server-impl.so
+7f4404cc2000-7f4405040000 r--p 0031c000 00:1b 1858154                    /workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/libllama-server-impl.so
+7f4405040000-7f4405041000 ---p 0069a000 00:1b 1858154                    /workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/libllama-server-impl.so
+7f4405041000-7f4405046000 r--p 0069a000 00:1b 1858154                    /workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/libllama-server-impl.so
+7f4405046000-7f440504b000 rw-p 0069f000 00:1b 1858154                    /workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/libllama-server-impl.so
+7f440504b000-7f4405050000 rw-p 00000000 00:00 0 
+7f4405050000-7f4405054000 r--p 00000000 00:00 0                          [vvar]
+7f4405054000-7f4405056000 r--p 00000000 00:00 0                          [vvar_vclock]
+7f4405056000-7f4405058000 r-xp 00000000 00:00 0                          [vdso]
+7f4405058000-7f4405059000 r--p 00000000 00:1b 9223372036855343694        /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7f4405059000-7f4405084000 r-xp 00001000 00:1b 9223372036855343694        /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7f4405084000-7f440508e000 r--p 0002c000 00:1b 9223372036855343694        /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7f440508e000-7f4405090000 r--p 00036000 00:1b 9223372036855343694        /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7f4405090000-7f4405092000 rw-p 00038000 00:1b 9223372036855343694        /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7fff2c772000-7fff2c793000 rw-p 00000000 00:00 0                          [stack]

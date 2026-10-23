@@ -1,0 +1,12 @@
+{
+  "at_utc": "2026-10-21T22:22:40.059117+00:00",
+  "signal": "SIGTERM",
+  "target": {
+    "pid": 170865,
+    "exe": "/workspace/scratch/efa0a59e0545/runtime_d6/opencode/node_modules/opencode-ai/bin/opencode.exe",
+    "cwd": "/workspace/scratch/efa0a59e0545/runtime_d6/native_work_01",
+    "actual_argv_tail_matches_task": true
+  },
+  "reason": "Supervising agent stopped incomplete generation after observed cgroup memory pressure and sustained slow generation, to apply an explicitly smaller runtime cache. No final edit or acceptance outcome inferred.",
+  "usage": "Unfinished request usage unknown unless a completed native usage record is later exposed."
+}

@@ -1,0 +1,14 @@
+{
+  "task_id": "policy",
+  "status": "COMPLETED",
+  "worker_kind": "DETERMINISTIC_PYTHON",
+  "attempt": 1,
+  "acceptance_authority": false,
+  "release_authority": false,
+  "source_sha256": "209ee2f218448d83178bd02fd5947cf68b021657a72b38e682e4a895fa102947",
+  "findings": {
+    "intent_mentions_5000": true,
+    "original_architecture_decision": "PENDING_HUMAN",
+    "original_implementation": "BLOCKED"
+  }
+}

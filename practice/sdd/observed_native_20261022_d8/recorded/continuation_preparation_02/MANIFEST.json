@@ -1,0 +1,38 @@
+{
+  "created_at_utc": "2026-10-22T11:44:24.126714+00:00",
+  "status": "FROZEN_PREPARATION_REQUIRES_ROOT_REVIEW_AND_LAUNCH",
+  "files": {
+    "ENVIRONMENT_04.json": {
+      "sha256": "1a7ec973d5cfde76a6b939024b3cd33af23c6fdd03a30fff0cfe548364a5ea7e",
+      "bytes": 1915
+    },
+    "FAILED_HISTORY_SIZE_PROBE.txt": {
+      "sha256": "a6281eb6ff63706c42ccabb9e0c927a24edf9af7077c9420b530a57c1ad38867",
+      "bytes": 517
+    },
+    "FAILED_HISTORY_TOKENIZE_RESPONSE.json": {
+      "sha256": "da2d43dc45d5584fc45e1306f6a41831d120b0252546775780d12e25268c0e67",
+      "bytes": 1049
+    },
+    "OPENCODE_CONFIG_04.json": {
+      "sha256": "5daa4a42c9eeaae956d290304443b8f47bb4cc7ab5f2fed898e30541d9c3ac43",
+      "bytes": 3298
+    },
+    "PREFLIGHT.json": {
+      "sha256": "929b1266cfc26afcdf1397afc9b2b9ed3b1c2cde39f36afb04a926569fa2993f",
+      "bytes": 3935
+    },
+    "PROMPT.txt": {
+      "sha256": "55fdd2d396e3bf3a5843568c45c851b1db045acd4fd61a4ce50c2cb74aa06354",
+      "bytes": 1185
+    },
+    "PROMPT_TOKENIZE_RESPONSE.json": {
+      "sha256": "760e83a66fb3d4b80f96791c99a01ac4623d44fc93c740666b6f603811ea62d7",
+      "bytes": 1129
+    },
+    "TASK.json": {
+      "sha256": "fecc09b8c3b299b49f69b43b2e693eb322a4bc7c1e4d6cd9d62eb8cba69c6521",
+      "bytes": 5408
+    }
+  }
+}

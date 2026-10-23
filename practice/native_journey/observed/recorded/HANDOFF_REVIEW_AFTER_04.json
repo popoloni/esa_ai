@@ -1,0 +1,16 @@
+{
+  "schema": "esa-native-handoff-review/v1",
+  "reviewed_at_utc": "2026-10-22T17:55:23.390511+00:00",
+  "status": "UNSUPPORTED_FRESH_CHECK_CLAIM",
+  "final_native_text_source": "attempt_04/stdout.txt",
+  "final_native_text_line": 5,
+  "actual_native_tools_in_invocation": [
+    "edit"
+  ],
+  "finding": "The client deleted the unreachable final raise in api.py, then claimed that the check command was run and returned PASS_SELECTED_CONTRACT. No bash/check event occurred in invocation 04. The real passing event belongs to invocation 03, before the final cleanup.",
+  "native_checked_api_sha256": "ae0492552f141f5e90c47a56670cf078a9f695303667468dfc61c85fb807c4b3",
+  "final_api_sha256": "ffbe0de916d89cb78824f02e046fda730c744c662f2936ba15aeb16ffafe8451",
+  "independent_final_status": "PASS_SELECTED_CONTRACT_AND_SCOPE",
+  "resolution": "Keep final candidate and independent result; do not describe final bytes as natively rechecked. Stop at the four-invocation limit.",
+  "remaining_native_requirement": "A new budgeted continuation must execute a real check on the final candidate and give an accurate handoff after reading that actual result."
+}

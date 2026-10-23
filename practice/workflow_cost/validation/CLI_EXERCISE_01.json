@@ -1,0 +1,231 @@
+{
+  "schema": "esa-workflow-cost-cli-validation/v1",
+  "observed_at_utc": "2026-10-21T18:12:45.473170+00:00",
+  "status": "PASS",
+  "scope": "Actual local automated recorder exercise, not a software delivery, model trial or human reading observation",
+  "command_count": 10,
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "$COMPANION/practice/workflow_cost/workflow_cost.py",
+        "init",
+        "$COMPANION/practice/workflow_cost/validation/cli_rehearsal/ACCOUNT.json",
+        "--run-id",
+        "COST-CLI-REHEARSAL-001",
+        "--purpose",
+        "Verify recorder command sequence and explicit unknowns",
+        "--interface",
+        "Python subprocess driver, not a model client",
+        "--boundary",
+        "Supplied task reading through recorded local test result",
+        "--exclusion",
+        "No model request, human reader session, attributable billing or module-construction effort is in this rehearsal"
+      ],
+      "cwd": "$COMPANION",
+      "started_at_utc": "2026-10-21T18:12:45.036028+00:00",
+      "finished_at_utc": "2026-10-21T18:12:45.078270+00:00",
+      "returncode": 0,
+      "stdout": "{\"status\": \"RECORDED\", \"command\": \"init\", \"account\": \"/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Competitive_Revision_d5_20261021/companion/practice/workflow_cost/validation/cli_rehearsal/ACCOUNT.json\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "$COMPANION/practice/workflow_cost/workflow_cost.py",
+        "start",
+        "$COMPANION/practice/workflow_cost/validation/cli_rehearsal/ACCOUNT.json",
+        "--id",
+        "preparation-1",
+        "--phase",
+        "preparation",
+        "--actor",
+        "recorder-driver",
+        "--actor-kind",
+        "AUTOMATION",
+        "--evidence",
+        "$COMPANION/practice/workflow_cost/validation/cli_rehearsal/TASK.txt"
+      ],
+      "cwd": "$COMPANION",
+      "started_at_utc": "2026-10-21T18:12:45.078346+00:00",
+      "finished_at_utc": "2026-10-21T18:12:45.118438+00:00",
+      "returncode": 0,
+      "stdout": "{\"status\": \"RECORDED\", \"command\": \"start\", \"account\": \"/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Competitive_Revision_d5_20261021/companion/practice/workflow_cost/validation/cli_rehearsal/ACCOUNT.json\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "-c",
+        "from pathlib import Path; print(Path(\"practice/workflow_cost/validation/cli_rehearsal/TASK.txt\").read_text())"
+      ],
+      "cwd": "$COMPANION",
+      "started_at_utc": "2026-10-21T18:12:45.118463+00:00",
+      "finished_at_utc": "2026-10-21T18:12:45.139510+00:00",
+      "returncode": 0,
+      "stdout": "Recorder rehearsal, not a participant or model-performance trial.\n\nRead the account boundary, run the workflow-cost accounting controls once,\nretain the actual test output, and record an automated decision about an exact\nsnapshot of the tested recorder. Record preparation and verification as they\nhappen. Do not create human acceptance, model usage, money or missing effort.\n\nScope: demonstrate that the recorder records a local command sequence and\nkeeps unobserved categories unknown. This does not measure implementation of\na product feature, total book preparation, or formative reader usability.\n\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "$COMPANION/practice/workflow_cost/workflow_cost.py",
+        "stop",
+        "$COMPANION/practice/workflow_cost/validation/cli_rehearsal/ACCOUNT.json",
+        "--id",
+        "preparation-1",
+        "--outcome",
+        "PASSED",
+        "--evidence",
+        "$COMPANION/practice/workflow_cost/validation/cli_rehearsal/TASK.txt"
+      ],
+      "cwd": "$COMPANION",
+      "started_at_utc": "2026-10-21T18:12:45.139583+00:00",
+      "finished_at_utc": "2026-10-21T18:12:45.179997+00:00",
+      "returncode": 0,
+      "stdout": "{\"status\": \"RECORDED\", \"command\": \"stop\", \"account\": \"/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Competitive_Revision_d5_20261021/companion/practice/workflow_cost/validation/cli_rehearsal/ACCOUNT.json\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "$COMPANION/practice/workflow_cost/workflow_cost.py",
+        "start",
+        "$COMPANION/practice/workflow_cost/validation/cli_rehearsal/ACCOUNT.json",
+        "--id",
+        "checks-1",
+        "--phase",
+        "verification",
+        "--actor",
+        "local-checker",
+        "--actor-kind",
+        "AUTOMATION",
+        "--evidence",
+        "$COMPANION/practice/workflow_cost/validation/cli_rehearsal/TASK.txt"
+      ],
+      "cwd": "$COMPANION",
+      "started_at_utc": "2026-10-21T18:12:45.180073+00:00",
+      "finished_at_utc": "2026-10-21T18:12:45.217214+00:00",
+      "returncode": 0,
+      "stdout": "{\"status\": \"RECORDED\", \"command\": \"start\", \"account\": \"/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Competitive_Revision_d5_20261021/companion/practice/workflow_cost/validation/cli_rehearsal/ACCOUNT.json\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "practice/workflow_cost",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "cwd": "$COMPANION",
+      "started_at_utc": "2026-10-21T18:12:45.217252+00:00",
+      "finished_at_utc": "2026-10-21T18:12:45.289449+00:00",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_acceptance_and_declared_absence_of_human_review_conflict (test_workflow_cost.AccountingControls.test_acceptance_and_declared_absence_of_human_review_conflict) ... ok\ntest_acceptance_without_measured_human_effort_remains_partial (test_workflow_cost.AccountingControls.test_acceptance_without_measured_human_effort_remains_partial) ... ok\ntest_agent_cannot_be_human_review (test_workflow_cost.AccountingControls.test_agent_cannot_be_human_review) ... ok\ntest_assumed_rate_not_inserted_into_observed_money (test_workflow_cost.AccountingControls.test_assumed_rate_not_inserted_into_observed_money) ... ok\ntest_automated_pass_does_not_supply_human_denominator (test_workflow_cost.AccountingControls.test_automated_pass_does_not_supply_human_denominator) ... ok\ntest_changed_source_is_not_silently_rebound (test_workflow_cost.AccountingControls.test_changed_source_is_not_silently_rebound) ... ok\ntest_cli_preserves_existing_account (test_workflow_cost.AccountingControls.test_cli_preserves_existing_account) ... ok\ntest_closed_account_open_span_refused (test_workflow_cost.AccountingControls.test_closed_account_open_span_refused) ... ok\ntest_distinct_people_effort_is_summed_but_elapsed_is_unioned (test_workflow_cost.AccountingControls.test_distinct_people_effort_is_summed_but_elapsed_is_unioned) ... ok\ntest_duplicate_charge_is_rejected (test_workflow_cost.AccountingControls.test_duplicate_charge_is_rejected) ... ok\ntest_failed_attempt_retained_in_time_and_report (test_workflow_cost.AccountingControls.test_failed_attempt_retained_in_time_and_report) ... ok\ntest_human_acceptance_needs_explicit_attribution (test_workflow_cost.AccountingControls.test_human_acceptance_needs_explicit_attribution) ... ok\ntest_incomplete_phase_prevents_whole_workflow_total (test_workflow_cost.AccountingControls.test_incomplete_phase_prevents_whole_workflow_total) ... ok\ntest_later_rejection_revokes_earlier_count (test_workflow_cost.AccountingControls.test_later_rejection_revokes_earlier_count) ... ok\ntest_multiple_currencies_not_added (test_workflow_cost.AccountingControls.test_multiple_currencies_not_added) ... ok\ntest_negative_duration_refused (test_workflow_cost.AccountingControls.test_negative_duration_refused) ... ok\ntest_negative_nan_and_infinite_money_refused (test_workflow_cost.AccountingControls.test_negative_nan_and_infinite_money_refused) ... ok\ntest_no_roi_even_when_cost_and_acceptance_complete (test_workflow_cost.AccountingControls.test_no_roi_even_when_cost_and_acceptance_complete) ... ok\ntest_overlap_is_not_added_to_elapsed (test_workflow_cost.AccountingControls.test_overlap_is_not_added_to_elapsed) ... ok\ntest_roi_claim_refused (test_workflow_cost.AccountingControls.test_roi_claim_refused) ... ok\ntest_same_human_concurrent_entries_union_before_person_effort (test_workflow_cost.AccountingControls.test_same_human_concurrent_entries_union_before_person_effort) ... ok\ntest_timezone_required (test_workflow_cost.AccountingControls.test_timezone_required) ... ok\ntest_two_passes_of_same_item_count_once (test_workflow_cost.AccountingControls.test_two_passes_of_same_item_count_once) ... ok\ntest_unknown_money_not_replaced_with_zero (test_workflow_cost.AccountingControls.test_unknown_money_not_replaced_with_zero) ... ok\ntest_zero_denominator_is_undefined (test_workflow_cost.AccountingControls.test_zero_denominator_is_undefined) ... ok\n\n----------------------------------------------------------------------\nRan 25 tests in 0.006s\n\nOK\n"
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "$COMPANION/practice/workflow_cost/workflow_cost.py",
+        "stop",
+        "$COMPANION/practice/workflow_cost/validation/cli_rehearsal/ACCOUNT.json",
+        "--id",
+        "checks-1",
+        "--outcome",
+        "PASSED",
+        "--evidence",
+        "$COMPANION/practice/workflow_cost/validation/cli_rehearsal/CHECKS.txt"
+      ],
+      "cwd": "$COMPANION",
+      "started_at_utc": "2026-10-21T18:12:45.289644+00:00",
+      "finished_at_utc": "2026-10-21T18:12:45.324076+00:00",
+      "returncode": 0,
+      "stdout": "{\"status\": \"RECORDED\", \"command\": \"stop\", \"account\": \"/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Competitive_Revision_d5_20261021/companion/practice/workflow_cost/validation/cli_rehearsal/ACCOUNT.json\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "$COMPANION/practice/workflow_cost/workflow_cost.py",
+        "accept",
+        "$COMPANION/practice/workflow_cost/validation/cli_rehearsal/ACCOUNT.json",
+        "--id",
+        "machine-decision-1",
+        "--kind",
+        "AUTOMATED",
+        "--item",
+        "recorder-candidate-1",
+        "--decision",
+        "ACCEPTED",
+        "--reviewer",
+        "local-unittest",
+        "--candidate",
+        "$COMPANION/practice/workflow_cost/validation/cli_rehearsal/CANDIDATE.py",
+        "--evidence",
+        "$COMPANION/practice/workflow_cost/validation/cli_rehearsal/CHECKS.txt"
+      ],
+      "cwd": "$COMPANION",
+      "started_at_utc": "2026-10-21T18:12:45.324312+00:00",
+      "finished_at_utc": "2026-10-21T18:12:45.394148+00:00",
+      "returncode": 0,
+      "stdout": "{\"status\": \"RECORDED\", \"command\": \"accept\", \"account\": \"/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Competitive_Revision_d5_20261021/companion/practice/workflow_cost/validation/cli_rehearsal/ACCOUNT.json\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "$COMPANION/practice/workflow_cost/workflow_cost.py",
+        "close",
+        "$COMPANION/practice/workflow_cost/validation/cli_rehearsal/ACCOUNT.json"
+      ],
+      "cwd": "$COMPANION",
+      "started_at_utc": "2026-10-21T18:12:45.394177+00:00",
+      "finished_at_utc": "2026-10-21T18:12:45.433053+00:00",
+      "returncode": 0,
+      "stdout": "{\"status\": \"RECORDED\", \"command\": \"close\", \"account\": \"/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Competitive_Revision_d5_20261021/companion/practice/workflow_cost/validation/cli_rehearsal/ACCOUNT.json\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "$COMPANION/practice/workflow_cost/workflow_cost.py",
+        "report",
+        "$COMPANION/practice/workflow_cost/validation/cli_rehearsal/ACCOUNT.json",
+        "--output",
+        "$COMPANION/practice/workflow_cost/validation/cli_rehearsal/REPORT.json"
+      ],
+      "cwd": "$COMPANION",
+      "started_at_utc": "2026-10-21T18:12:45.433149+00:00",
+      "finished_at_utc": "2026-10-21T18:12:45.472963+00:00",
+      "returncode": 0,
+      "stdout": "{\n  \"schema\": \"esa-workflow-cost-report/v1\",\n  \"run_id\": \"COST-CLI-REHEARSAL-001\",\n  \"evidence_mode\": \"OBSERVED\",\n  \"claim_scope\": \"DESCRIPTIVE_SINGLE_WORKFLOW_NO_CAUSAL_OR_ROI_CLAIM\",\n  \"identity\": {\n    \"interface\": \"Python subprocess driver, not a model client\",\n    \"client_version\": \"UNKNOWN_NOT_EXPOSED\",\n    \"model\": \"UNKNOWN_NOT_EXPOSED\",\n    \"model_version\": \"UNKNOWN_NOT_EXPOSED\"\n  },\n  \"status\": \"VALID_ACCOUNT_WITH_EXPLICIT_LIMITS\",\n  \"boundary\": {\n    \"description\": \"Supplied task reading through recorded local test result\",\n    \"start_utc\": \"2026-10-21T18:12:45.072886+00:00\",\n    \"finish_utc\": \"2026-10-21T18:12:45.427181+00:00\",\n    \"exclusions\": [\n      \"No model request, human reader session, attributable billing or module-construction effort is in this rehearsal\"\n    ]\n  },\n  \"workflow_elapsed_seconds\": 0.354295,\n  \"completed_span_count\": 2,\n  \"open_span_count\": 0,\n  \"failed_span_ids\": [],\n  \"abandoned_span_ids\": [],\n  \"sum_of_interval_seconds_not_elapsed\": 0.167436,\n  \"observed_interval_union_seconds\": 0.167436,\n  \"overlap_seconds_removed_from_elapsed_coverage\": 0.0,\n  \"per_actor_interval_union_seconds_not_active_effort\": {\n    \"recorder-driver\": 0.060858,\n    \"local-checker\": 0.106578\n  },\n  \"declared_active_human_seconds_by_person\": {},\n  \"declared_active_human_seconds_total\": null,\n  \"acceptance\": {\n    \"AUTOMATED\": {\n      \"accepted_distinct_items\": 1,\n      \"latest_items\": {\n        \"recorder-candidate-1\": {\n          \"decision\": \"ACCEPTED\",\n          \"candidate_sha256\": \"857e5f72c90cf537519f32c676750041ba2082d078278f41c460a62c302932fa\",\n          \"evidence\": {\n            \"path\": \"CHECKS.txt\",\n            \"sha256\": \"077cde5608d36fde740cab649e3462969d0d6b6cf01dae605e760111eb899ceb\"\n          }\n        }\n      }\n    },\n    \"AGENT\": {\n      \"accepted_distinct_items\": null,\n      \"latest_items\": {}\n    },\n    \"HUMAN\": {\n      \"accepted_distinct_items\": null,\n      \"latest_items\": {}\n    }\n  },\n  \"observed_money_subtotals_by_currency\": {},\n  \"observed_usage_records\": [],\n  \"money_coverage_complete_by_declaration\": false,\n  \"activity_coverage_complete_by_declaration\": false,\n  \"complete_workflow_money\": null,\n  \"currency\": null,\n  \"cost_per_human_accepted_item\": null,\n  \"assumptions_excluded_from_observed_totals\": [],\n  \"roi\": null,\n  \"roi_reason\": \"A descriptive account does not establish attributable business benefit or a counterfactual\",\n  \"warnings\": [\n    \"Unmeasured phase: implementation\",\n    \"Unmeasured phase: agent_review\",\n    \"Unmeasured phase: human_review\",\n    \"Unmeasured phase: rework\",\n    \"Unmeasured phase: recording\",\n    \"Incomplete monetary component: model\",\n    \"Incomplete monetary component: human\",\n    \"Incomplete monetary component: infrastructure\",\n    \"Human acceptance is unobserved; an automated or agent decision cannot supply its denominator\"\n  ],\n  \"verification_boundary\": \"Evidence file bytes and accounting consistency are checked. Human identity, true completeness, active model time and provider billing are not independently authenticated.\"\n}\n",
+      "stderr": ""
+    }
+  ],
+  "assertions": {
+    "automated_count_one": true,
+    "human_count_null": true,
+    "complete_money_null": true,
+    "cost_per_human_outcome_null": true,
+    "roi_null": true
+  },
+  "tested_source_sha256": "857e5f72c90cf537519f32c676750041ba2082d078278f41c460a62c302932fa",
+  "account": "cli_rehearsal/ACCOUNT.json",
+  "report": "cli_rehearsal/REPORT.json"
+}

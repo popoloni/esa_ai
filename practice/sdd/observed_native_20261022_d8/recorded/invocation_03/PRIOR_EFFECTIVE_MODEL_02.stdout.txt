@@ -1,0 +1,50 @@
+esa-local/esa-qwen3-4b
+{
+  "id": "esa-qwen3-4b",
+  "api": {
+    "id": "esa-qwen3-4b",
+    "npm": "@ai-sdk/openai-compatible",
+    "url": ""
+  },
+  "status": "active",
+  "name": "Qwen3-4B Q4_K_M local",
+  "providerID": "esa-local",
+  "capabilities": {
+    "temperature": false,
+    "reasoning": false,
+    "attachment": false,
+    "toolcall": true,
+    "input": {
+      "text": true,
+      "audio": false,
+      "image": false,
+      "video": false,
+      "pdf": false
+    },
+    "output": {
+      "text": true,
+      "audio": false,
+      "image": false,
+      "video": false,
+      "pdf": false
+    },
+    "interleaved": false
+  },
+  "cost": {
+    "input": 0,
+    "output": 0,
+    "cache": {
+      "read": 0,
+      "write": 0
+    }
+  },
+  "options": {},
+  "limit": {
+    "context": 24576,
+    "output": 3072
+  },
+  "headers": {},
+  "family": "",
+  "release_date": "",
+  "variants": {}
+}

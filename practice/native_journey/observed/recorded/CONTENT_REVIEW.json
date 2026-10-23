@@ -1,0 +1,83 @@
+{
+  "schema": "esa-native-semantic-content-review/v1",
+  "reviewed_at_utc": "2026-10-22T17:55:23.390511+00:00",
+  "reviewer": "ChatGPT authoring assistant, separate from recorded local OpenCode client; not a human study",
+  "criteria_source": "CONTENT_REVIEW_CRITERIA.json",
+  "status": "USEFUL_CONTENT_NATIVE_COMPLETION_PARTIAL",
+  "items": [
+    {
+      "id": "SPEC_MEMBERSHIP",
+      "status": "PASS",
+      "evidence": [
+        "project_after_04/spec.md",
+        "project_after_04/CURRENT_CONTRACT.md"
+      ],
+      "finding": "Native paragraph states the same actor-visible, status-filtered rows and order as JSON. Optional status semantics remain in the unchanged source contract."
+    },
+    {
+      "id": "SPEC_PRESENTATION",
+      "status": "PASS",
+      "evidence": [
+        "project_after_04/spec.md"
+      ],
+      "finding": "Native paragraph preserves JSON and source rows; names five ordered fields, header on no rows and exact round-trip of commas, quotes, embedded newlines and Unicode. MIME type remains explicit in the source contract."
+    },
+    {
+      "id": "SPEC_BOUNDARY",
+      "status": "PASS_WITH_EDITORIAL_NOTE",
+      "evidence": [
+        "project_after_04/spec.md",
+        "project_after_04/CURRENT_CONTRACT.md",
+        "continuation_02/TASK_PROMPT.txt"
+      ],
+      "finding": "Native text preserves unsupported-format refusal and attributes literal-value machine-importer choice to the fictional owner, naming CSV-CONSUMER-01 in its heading. It does not explicitly name CURRENT_CONTRACT.md after rewriting; prompt and unchanged contract supply that named source. The separate teaching revision clarifies the contract identifier, source link and formula-like examples; it is not native text."
+    },
+    {
+      "id": "SPEC_DEFERRAL",
+      "status": "PASS",
+      "evidence": [
+        "project_after_04/spec.md"
+      ],
+      "finding": "Spreadsheet viewing, authentication and deployment are explicitly deferred. No real owner approval or observed user benefit is supplied."
+    },
+    {
+      "id": "PLAN",
+      "status": "PASS_WITH_GUIDANCE_DISCLOSURE",
+      "evidence": [
+        "project_after_04/plan.md",
+        "continuation_02/TASK_PROMPT.txt"
+      ],
+      "finding": "Native plan retains selection authority, chooses direct formatter, names api.py and exact check command. Author supplied that design choice in corrective guidance; useful recorded planning, not independent architectural exploration. Earlier cleanup tasks are historical plan content."
+    },
+    {
+      "id": "NATIVE_COMPLETION",
+      "status": "PARTIAL",
+      "evidence": [
+        "attempt_03/stdout.txt",
+        "attempt_04/stdout.txt",
+        "HANDOFF_REVIEW_AFTER_04.json"
+      ],
+      "finding": "Useful files persist and a real native check passed after unsupported-format repair. Final cleanup changed bytes; last handoff reused previous PASS without new native check. Full check/accurate-handoff target remains incomplete."
+    },
+    {
+      "id": "INDEPENDENT",
+      "status": "PASS_SELECTED_SCOPE",
+      "evidence": [
+        "independent_final_review/REVIEW.json",
+        "independent_final_review/supplied_contract_check.json"
+      ],
+      "finding": "Independent verification passed 17 selected behavior/scope/nonempty-file checks plus unchanged seven-case supplied checker. Only api.py changed and spec.md/plan.md were added; fixed files retain starting hashes. Automated checks do not establish document quality, deployment readiness or human learning."
+    },
+    {
+      "id": "PROVENANCE",
+      "status": "PASS",
+      "evidence": [
+        "preparation/PROTOCOL.json",
+        "EVENT_INDEX.json",
+        "CONFIGURATION_FINDING_01.json",
+        "INITIAL_BUDGET_DISPOSITION.json"
+      ],
+      "finding": "Prompts, interventions, actual outputs, failed attempts, before/after hashes, effective configurations, versions, session exports, snapshots and stop retained. No manual candidate edit; native files and authored teaching revision remain separate."
+    }
+  ]
+}

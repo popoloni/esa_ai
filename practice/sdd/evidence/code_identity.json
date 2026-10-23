@@ -1,0 +1,8 @@
+{
+  "sha256": {
+    "check.py": "dba5443999b9721b8f8e4dedfcace65d558c6afa330f9419fa434f3843985341",
+    "exercise.py": "debbce58dd3f7cd6c0732465a9e870646ccc6470a083941df004f71e2a0f959d",
+    "test_check.py": "81e9bd812ca42c5b92294ac13c27730f234cec6d1660af7b960179a0a23fa9a9"
+  },
+  "scope": "Author-run checker and exercise source identities"
+}

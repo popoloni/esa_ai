@@ -1,0 +1,139 @@
+{
+  "schema": "esa-guide-identity-independent-review/v1",
+  "reviewed_at_utc": "2026-10-22T06:14:01.392996+00:00",
+  "reviewer": {
+    "actor_kind": "AGENT",
+    "agent_id": "/root/acceptance_audit",
+    "role": "Separate technical reviewer; did not implement the candidate",
+    "attribution": "AGENT-authored review, not a human signature or human approval"
+  },
+  "candidate": {
+    "path": "CANDIDATE.json",
+    "sha256": "47f6ede441590b209a4e70bd990b5892f6f1ed1e04e1ee28e18c29bf0c814bfa",
+    "candidate_files": {
+      "README.md": "7e1535bd8748870a14f43bb738a41672a5e1dcf74adea9b05f5198615a7e5a4e",
+      "adapters/README.md": "c18e57368f7823f37e29111aa146b806dda9b6b3ccdedd52ac3e8aac54a022ed",
+      "reader_side/protected_sha256.json": "abbfb6434079eec42f45f4f486541ef69b7c061f672d62ca98c85e2d25ce33df"
+    }
+  },
+  "decision": "ACCEPTED_FOR_SCOPED_TECHNICAL_TASK",
+  "blocking_findings": [],
+  "rework_required": false,
+  "findings": [
+    {
+      "id": "GUIDE-REVIEW-01",
+      "status": "PASS",
+      "finding": "The original release defect is real: the preserved guide bytes mismatch only their two old manifest entries, reproducing the supplied reader-start failure."
+    },
+    {
+      "id": "GUIDE-REVIEW-02",
+      "status": "PASS",
+      "finding": "The authorized change is bounded: README edition/name wording and exactly two guide digests. All 213 keys remain; all 211 other protected bytes and all 37 repository-file identities match the supplied baseline. The adapter guide is preserved byte-for-byte from before; its pin is reconciled."
+    },
+    {
+      "id": "GUIDE-REVIEW-03",
+      "status": "PASS",
+      "finding": "Independent execution from a disposable candidate copy passes reader doctor and prepares a new Chapter 1 study copy. The known faulty starter remains exactly 7 cases: 3 pass, 2 failures, 2 errors. Its source, acceptance oracle and integrity checks retain their original hashes."
+    },
+    {
+      "id": "GUIDE-REVIEW-04",
+      "status": "PASS",
+      "finding": "Independent single-byte additions to README.md and the specification oracle are detected separately; restoring each file restores clean integrity. This demonstrates baseline tamper detection, not containment from an actor able to replace the manifest/checker."
+    },
+    {
+      "id": "GUIDE-REVIEW-05",
+      "status": "PASS",
+      "finding": "Live canonical guide and manifest files still match the frozen candidate record after review. The candidate record remains immutable with its original awaiting-review label; this separate decision supplies the later review result."
+    }
+  ],
+  "independent_checks": {
+    "path": "INDEPENDENT_CHECKS.json",
+    "sha256": "fcd9387d0af8f3ab3bf810aca5236ad21bca3da9e6bfced4a3df16aeba1b127e",
+    "passed": 18,
+    "failed": 0
+  },
+  "r21_scope_assessment": {
+    "status_at_review": "ELIGIBLE_AFTER_ACCOUNT_RECONCILIATION_NOT_YET_CLOSED",
+    "reason": "This is a real, separately bounded release-maintenance task caused by an observed reader entry failure. Its supplied-defect-to-technical-decision scope is set in TASK.txt before the observed maintenance phases. Completing the existing prospective account can meet the original descriptive small whole-workflow observation requirement without asserting a complete monetary total, human acceptance, field value or ROI. The earlier native workflow remains a distinct incomplete observation.",
+    "original_criteria": [
+      {
+        "criterion": "Observed and assumed values use different fields and attributable records.",
+        "assessment": "The current account separates observed timestamped spans, assumptions and unknown coverage. This review checked all currently embedded evidence bindings; all matched. Retain unknown agent token usage, active effort and money as unknown/null; do not substitute zero or estimates."
+      },
+      {
+        "criterion": "All relevant work, including failed attempts and human review, is included.",
+        "assessment": "The task-specific boundary includes preparation, implementation, failed precheck, verification and this independent agent review. Account finalization must include review/recording, any actual rework, a final boundary and the observed diagnostic failures. Human review was not performed and is not required by this task; mark it explicitly NOT_PERFORMED with the task basis. Do not label the incomplete prior native observation complete or imply human work was measured."
+      },
+      {
+        "criterion": "The small observation is not presented as organizational ROI or a universal speedup.",
+        "assessment": "TASK.txt and account claim_scope restrict the observation to one descriptive workflow. Preserve that limitation in the resulting table/manuscript and refrain from throughput, speedup, staffing or complete cost-per-outcome claims."
+      }
+    ],
+    "required_account_completion": [
+      "Stop and attribute the current agent-review interval to this exact candidate and review evidence.",
+      "Record this separate AGENT technical acceptance for one logical maintenance item, distinguishing it from automated checks and human/release approval.",
+      "Record any actual rework (none required by this review) or an evidence-backed no-rework disposition; explicitly record human review NOT_PERFORMED.",
+      "Record account reconciliation/recording, then close the bounded workflow and validate its evidence and phase coverage.",
+      "Retain unavailable supervising-model tokens, money, active effort and infrastructure charges as unknown, and distinguish summed activity intervals from workflow elapsed time and waiting.",
+      "Carry the failed initial precheck and read-only diagnostic errors in the descriptive account; do not omit them merely because the eventual fix passes."
+    ],
+    "current_account_snapshot": {
+      "sha256": "13df76959f76ba35f8dcd605c1d7bff79803d963ae5d909327a92e54ea7896b7",
+      "boundary_finish_utc": null,
+      "open_span_ids": [
+        "agent-review-01"
+      ],
+      "embedded_evidence_bindings_checked": 10,
+      "all_bindings_match": true
+    },
+    "historical_native_account_disposition": "UNCHANGED_INCOMPLETE; do not infer a finish for the excluded interrupted run."
+  },
+  "limitations": [
+    "No human reader, human reviewer or owner acceptance took place in this technical review.",
+    "This accepts the frozen repair only; full-edition publication packaging and unrelated native-client tasks remain separate.",
+    "Integrity hashes and local negative controls are not a security sandbox or protection against a hostile host/manifest owner.",
+    "The account remains open at review time; this review does not certify the later reconciliation before it exists."
+  ],
+  "evidence": [
+    {
+      "path": "TASK.txt",
+      "sha256": "693293c3742a77bf68e86a80c0e68ef90f9f0caa639fca84401cc39df8e61118"
+    },
+    {
+      "path": "inputs/PRIOR_DEFECT_REPORT.json",
+      "sha256": "af6468fbb12ba846d0a8e0c859fac315a6738727a9b35a10e5042be9632b6b8e"
+    },
+    {
+      "path": "BASELINE.json",
+      "sha256": "236cbc3185a17c35db6c25b4f79058a62cd2e63f6e81ab0a4eab60f01eeb1297"
+    },
+    {
+      "path": "CANDIDATE.json",
+      "sha256": "47f6ede441590b209a4e70bd990b5892f6f1ed1e04e1ee28e18c29bf0c814bfa"
+    },
+    {
+      "path": "CANDIDATE.diff",
+      "sha256": "0dcbc9c26a0b3bd32284c5282e9c7ef32d852931d6afd0bec136c359828a7c5d"
+    },
+    {
+      "path": "VERIFICATION.json",
+      "sha256": "28bb50c5f8ef17cc8dd4bdaa4a947c6d11ce977ea6982137db6c719f843ee89b"
+    },
+    {
+      "path": "FAULTY_STARTER_ACCEPTANCE.json",
+      "sha256": "0e0d712d84ce2599a870906ad8122ecd73dcc81c95895692ddfcfc3990529295"
+    },
+    {
+      "path": "INDEPENDENT_CHECKS.json",
+      "sha256": "fcd9387d0af8f3ab3bf810aca5236ad21bca3da9e6bfced4a3df16aeba1b127e"
+    },
+    {
+      "path": "OPENING_COMMANDS.json",
+      "sha256": "1f87b1a6ba794898625839df350419c67a593d01c455377bded650cd3c2a1b04"
+    },
+    {
+      "path": "REVIEW_START_COMMANDS.json",
+      "sha256": "d30c942ac5f0b2e215e6d9073d8d0ef967c4663bee301d7b72f9f533dd365fe6"
+    }
+  ]
+}

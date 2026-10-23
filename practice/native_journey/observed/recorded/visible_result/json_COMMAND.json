@@ -1,0 +1,15 @@
+{
+  "argv": [
+    "python3",
+    "-B",
+    "/workspace/scratch/72d789d25fef/runtime_d9/native_csv_01/demo.py",
+    "--format",
+    "json",
+    "--actor",
+    "alice",
+    "--status",
+    "open"
+  ],
+  "exit_code": 0,
+  "at_utc": "2026-10-22T17:46:43.530894+00:00"
+}

@@ -1,0 +1,254 @@
+{
+  "source": "revision_d7/evidence/mcp_host_01",
+  "scope": "Actual evidence copied unchanged; mutable native client state and caches omitted. Absolute paths in raw receipts retain their original observation meaning.",
+  "files": {
+    "CANARY_DECLARATION.json": {
+      "sha256": "500ea4a9b51f2f993878d92aa6d4e374c4ee067b9d32d231dc106a842f62fad7",
+      "bytes": 882
+    },
+    "CLIENT_IDENTITIES.json": {
+      "sha256": "804bff34c05bb6a4f41b7f468bd4cd4ca38ecf90215ec2a8769622b0bfc290d2",
+      "bytes": 1973
+    },
+    "CLIENT_TASK.json": {
+      "sha256": "2c291f61ac19b0d9f4651008c5e4d91a15468b16591166693593bd94cb38c862",
+      "bytes": 3599
+    },
+    "CONFIGURATION_MANIFEST.json": {
+      "sha256": "68e75a0a36b3b197c4c98ceccb68c97afae2ce9450564a619cfe76b1f42d8ca5",
+      "bytes": 2181
+    },
+    "DECLARED_NONSECRET_CANARY.txt": {
+      "sha256": "5f066dee64e383926eb186696646a9889ecf6560c17fd495843760d20337e0c7",
+      "bytes": 50
+    },
+    "ENVIRONMENT.json": {
+      "sha256": "16b151453ed4a7c80b89efc231b7c3200bd3bd622bc78c4b7a17ddec96414c37",
+      "bytes": 2007
+    },
+    "EVIDENCE_CONSISTENCY.json": {
+      "sha256": "966b6bad0eff5a0286c75985224276a3b8023714f3d679769750491b05db57b0",
+      "bytes": 703
+    },
+    "EVIDENCE_CONSISTENCY.stderr.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "LAYER_ASSESSMENT.json": {
+      "sha256": "0ab8a9e949a1bc8715fc89075d34708535a58db27917088135cc7473102e700b",
+      "bytes": 2361
+    },
+    "MALFORMED_ARGUMENT_REVIEW.json": {
+      "sha256": "af77c25a90a2daa28908750ba8ad914b1205882fbb0d70e7d4afbc24e67527bb",
+      "bytes": 2715
+    },
+    "NATIVE_OBSERVATION.json": {
+      "sha256": "b58f0e78e724836698fc43b99ec8c0024104e81f8c7d0080fc51ca88fbb9dab9",
+      "bytes": 942
+    },
+    "OBSERVATION_SUMMARY.json": {
+      "sha256": "769e6e1c69492f70eebcab0c04b091a7b14850d7f940f05f784bdb5f3f5a5eac",
+      "bytes": 5877
+    },
+    "OBSERVED_NATIVE.json": {
+      "sha256": "d72431d627068c80d195e7b599f112133292b5f070ce083c6caf64343964ba22",
+      "bytes": 3907
+    },
+    "OPENCODE_CONFIG.json": {
+      "sha256": "aa88ec9b863a4aa317b7ac44ed748d1113c393fa1b1a82dec375d18b8bbff473",
+      "bytes": 2545
+    },
+    "PREPARATION_COMMAND.json": {
+      "sha256": "f96343ca2da83f59fd844d7da378fa06ae3c1019a3b255bd6a97436392e99007",
+      "bytes": 706
+    },
+    "PROCESS_BOUNDARY_REVIEW.json": {
+      "sha256": "41a3824e5c0dc18b0478fac4577e24dc36e2e531fc32eb3b4c6f4c586a71fa64",
+      "bytes": 3591
+    },
+    "README.md": {
+      "sha256": "498d247d6dd9af6edcd361a131c4b430e663194d3f1673a66d52ba96f26c98f4",
+      "bytes": 5176
+    },
+    "SETUP_PIN_VERIFICATION.json": {
+      "sha256": "7e7cf17966019f892f0d424f5c6e25e8bea787ced829eee030b45a2e8c22392a",
+      "bytes": 264
+    },
+    "STARTING_MANIFEST.json": {
+      "sha256": "c21cea853528b963d35a060548140af32ba7a938ff4446b10367a2f69f7b352a",
+      "bytes": 91
+    },
+    "TASK_PROMPT.txt": {
+      "sha256": "01739f8c8b343f2eee5ac6bef7bc5ac1727054b65412b1fdda9475e77083d37e",
+      "bytes": 814
+    },
+    "attempt_01/EXPORT_COMMAND.json": {
+      "sha256": "fa4cbd6aae718f0b2e4d5775cea5e16344cc9645ad073b828db71170a79a4334",
+      "bytes": 2685
+    },
+    "attempt_01/RECEIPT.json": {
+      "sha256": "0c463170e53d4d5d50f7d481ed4963c562891f5f2b1d9f801bcc647ad381b4bf",
+      "bytes": 4585
+    },
+    "attempt_01/TASK.json": {
+      "sha256": "2c291f61ac19b0d9f4651008c5e4d91a15468b16591166693593bd94cb38c862",
+      "bytes": 3599
+    },
+    "attempt_01/USAGE.json": {
+      "sha256": "b0e8bb3a1ee7a9d2f57987a26c87d25074ed14b74563fb3dffce27d42c99fabf",
+      "bytes": 1218
+    },
+    "attempt_01/export.stderr.txt": {
+      "sha256": "a924dbbfe1ed9c5029695121347e3f64d72b624d84d93e004ca512a82dabb473",
+      "bytes": 3354
+    },
+    "attempt_01/native-session.json": {
+      "sha256": "157f836b88e680d08cb1e64294d14f63839823c9d5c6d8631699ca3af4e59368",
+      "bytes": 9973
+    },
+    "attempt_01/stderr.txt": {
+      "sha256": "2de681a33afacbaec4a36b5554dedf34d2e5abdc721e1b84c1b369178ef2b51c",
+      "bytes": 7752
+    },
+    "attempt_01/stdout.txt": {
+      "sha256": "5dd699a902a1208c9badaae929dd27e61e09b31dc0e446a98a94762b644366f0",
+      "bytes": 4743
+    },
+    "diagnostics/effective_agent/CONFIG.json": {
+      "sha256": "7691786c34f6712b9e3d3f7000d52003e6a71533dd89f2e596f40d0939458b3b",
+      "bytes": 2587
+    },
+    "diagnostics/effective_agent/RECEIPT.json": {
+      "sha256": "29e054d3c792c92dfed8ba6fa5a962a3f505ef02523015891b29a295ee8ad98f",
+      "bytes": 1018
+    },
+    "diagnostics/effective_agent/stderr.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "diagnostics/effective_agent/stdout.txt": {
+      "sha256": "4e4a1afffcef0a251a997d8c1284f4173e4335f64e1c9a3f14af249720f97ce1",
+      "bytes": 2668
+    },
+    "diagnostics/effective_config/CONFIG.json": {
+      "sha256": "70c993510465485e12774c642357aef660b2b801966602fe17094a83070990dd",
+      "bytes": 2589
+    },
+    "diagnostics/effective_config/RECEIPT.json": {
+      "sha256": "d6b5128f7472819b03292fb2fe20186799b3488fc3e1d94e64101c3150f2147d",
+      "bytes": 1004
+    },
+    "diagnostics/effective_config/stderr.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "diagnostics/effective_config/stdout.txt": {
+      "sha256": "ba3925e1540e774c166ff27c720a0e140a00fc1ef8ab1cbc562b8ed09edf418d",
+      "bytes": 2706
+    },
+    "diagnostics/host_connection/CONFIG.json": {
+      "sha256": "25e130b6cc0fcc9d77825b3232fad49dc4158bc24ada36b43cd9ace1f0e1efdc",
+      "bytes": 2595
+    },
+    "diagnostics/host_connection/RECEIPT.json": {
+      "sha256": "b8a283b21eb4106aa68fe64fede5b23d758d5b6f550e921916f3d7f881693639",
+      "bytes": 560
+    },
+    "diagnostics/host_connection/probe/ESA_D7_MCP_HOST_PREFLIGHT-6170.json": {
+      "sha256": "44edfe91a367c4e8492001365ad22784f91098fcc027b215ca21932ab6fd69d3",
+      "bytes": 1750
+    },
+    "diagnostics/host_connection/stderr.txt": {
+      "sha256": "0e85f6c40afbab1d09aaa42933e4bfc3182964579f7eb1faf0f7de7984585c50",
+      "bytes": 5
+    },
+    "diagnostics/host_connection/stdout.txt": {
+      "sha256": "5e2ad3eb3138cda11cc999e6b2ecc289da51eada06b636529f4477bda0866f6d",
+      "bytes": 436
+    },
+    "diagnostics/host_connection/trace/client_to_server.jsonl": {
+      "sha256": "ec959dbe4c54ec961dcc508d00810b5b245036074fdb91f90a4ff06b87be6ef6",
+      "bytes": 271
+    },
+    "diagnostics/host_connection/trace/server_to_client.jsonl": {
+      "sha256": "89d3dcd3519babe87f1987f538079a47b16a0a4860d304097ebad144e3ca73c9",
+      "bytes": 796
+    },
+    "diagnostics/version/CONFIG.json": {
+      "sha256": "70018cfccfca7ffb7b9b03d073ec45c116ed753fe869880803f2ba09316aeec5",
+      "bytes": 2523
+    },
+    "diagnostics/version/RECEIPT.json": {
+      "sha256": "5e4a30fbb0b384ccd085f4d14a466790487a8dd3c10b3df185706c6593859915",
+      "bytes": 980
+    },
+    "diagnostics/version/stderr.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "diagnostics/version/stdout.txt": {
+      "sha256": "577a2e518704a9ee9ebfa4ce98063388fcc7bd840cb71a455f51fa59116e98c3",
+      "bytes": 7
+    },
+    "legacy_sdk_controls/attempt_01/CONTROL.json": {
+      "sha256": "49d7647989668dc6e482aebe878e98d9688740d0723830ccadb993f10b38cd8b",
+      "bytes": 3090
+    },
+    "legacy_sdk_controls/attempt_01/executed_control_script.py": {
+      "sha256": "ac4a2cc03065c1df306ba730212461b0c02151c4b2fbb61c6505d914e5efb1cc",
+      "bytes": 4005
+    },
+    "legacy_sdk_controls/attempt_01/failure.txt": {
+      "sha256": "acc94f9186d521dc394a3d99e8a70837b6d8bd3219e2bbdbd12d87dbb7191931",
+      "bytes": 4946
+    },
+    "legacy_sdk_controls/attempt_01/server.stderr.txt": {
+      "sha256": "df7bb732d68b69e51704fb37b7e54d9f8c8c0a6dead5883eb0ad97f4426fca81",
+      "bytes": 1049
+    },
+    "legacy_sdk_controls/attempt_02/CONTROL.json": {
+      "sha256": "e57cc4c7576709f2512f26074e1d4e73b3c907ca91cd23038b9b33380d9b2023",
+      "bytes": 4642
+    },
+    "legacy_sdk_controls/attempt_02/server.stderr.txt": {
+      "sha256": "e4f7cb1dfe7657879be575455a66dc84ad0112fd0c6f6f2132144ea368130e17",
+      "bytes": 55
+    },
+    "legacy_sdk_controls/attempt_02/trace/client_to_server.jsonl": {
+      "sha256": "71e7b2ccd8ac2c23858c0afab4dd55f22cfc791c94116b3a49166c92f6fa70fe",
+      "bytes": 365
+    },
+    "legacy_sdk_controls/attempt_02/trace/server_to_client.jsonl": {
+      "sha256": "67353cdf17b0601bc763e383accd718039ae7e418f0b2f067563710bca34df45",
+      "bytes": 1145
+    },
+    "legacy_sdk_controls/legacy_argument_control.py": {
+      "sha256": "b3d114fba54f570ebee8627568abce6a11180081f47c24ffe4dad6fa4e16b2cc",
+      "bytes": 4133
+    },
+    "probe_results_01/ESA_READER_MCP_01-8774.json": {
+      "sha256": "abfdcacc33d7c9fa31a15ee3b410295d7c15caf338f7c5f5819798d3dbd6a08b",
+      "bytes": 1742
+    },
+    "starting_tree/TASK_SCOPE.txt": {
+      "sha256": "d309d34681de630f12df423bbfe017e1bf1b51405e3115a128dda7bd512a67a6",
+      "bytes": 147
+    },
+    "trace_01/client_to_server.jsonl": {
+      "sha256": "f21a51298ae34c29ef8bd489f3ca4bd9d10dab07e15cf977771e307fd684bb5c",
+      "bytes": 1088
+    },
+    "trace_01/server_to_client.jsonl": {
+      "sha256": "a0065ab574ec571e9f7c016de7da8da398b3a5bf5bc4dea164a5fe2f550ce34e",
+      "bytes": 2685
+    },
+    "CONFIGURATION_IDENTITY_NOTE.json": {
+      "sha256": "fede1a8332dee8e8a65a1c9508bdf702cdfa4319066b6fe0af9faa127c1fcef7",
+      "bytes": 2928
+    },
+    "OPENCODE_CONFIG_ORIGINAL_RECONSTRUCTED.json": {
+      "sha256": "1f7a9ef61fca60dc015904327ba87952c33b3036adcf0b2c066c2ecaff65388f",
+      "bytes": 2497
+    }
+  }
+}

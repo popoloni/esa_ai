@@ -1,0 +1,168 @@
+{
+  "schema": "esa-d8-native-source-retrieval/v1",
+  "recorded_at_utc": "2026-10-22T10:05:08.919373+00:00",
+  "purpose": "Read pinned upstream CPU attention, memory allocation, backend selection and native attachment source; no inference or model launch",
+  "attribution": {
+    "llama.cpp": "ggml-org/llama.cpp commit 0756e83fc, pinned installed b11799. License copied exactly from installed archive.",
+    "opencode": "anomalyco/opencode v1.19.3. License and earlier pinned source copied from verified d7 diagnosis; new source retrieved from the same tag."
+  },
+  "records": [
+    {
+      "source_path": "/workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/LICENSE",
+      "destination": "upstream/llama.cpp-0756e83fc/LICENSE",
+      "bytes": 1078,
+      "sha256": "94f29bbed6a22c35b992c5c6ebf0e7c92f13b836b90f36f461c9cf2f0f1d010d",
+      "retrieval": "EXACT_LOCAL_COPY"
+    },
+    {
+      "source_path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion/practice/native_client/setup/runtime_d7/diagnosis/UPSTREAM_LICENSE.txt",
+      "destination": "upstream/opencode-v1.19.3/LICENSE",
+      "bytes": 1065,
+      "sha256": "625f0f619133f89bbbb2abe37369613dfa1885eba1e50d02170deb62bb42cb6b",
+      "retrieval": "EXACT_LOCAL_COPY"
+    },
+    {
+      "source_path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion/practice/native_client/setup/runtime_d7/diagnosis/cli_run.ts",
+      "destination": "upstream/opencode-v1.19.3/cli_run.ts",
+      "bytes": 31940,
+      "sha256": "e040e90d4c81cdd59b9568ee90a53c0209cd9ddf1b8b207d1a8685b2e26d57d0",
+      "retrieval": "EXACT_LOCAL_COPY"
+    },
+    {
+      "source_path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion/practice/native_client/setup/runtime_d7/diagnosis/session_prompt.ts",
+      "destination": "upstream/opencode-v1.19.3/session_prompt.ts",
+      "bytes": 64944,
+      "sha256": "f0c5bc64c0f0e966693d4a57f7ede1e9d6e188b396152f04b55303dc75b9b768",
+      "retrieval": "EXACT_LOCAL_COPY"
+    },
+    {
+      "source_path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion/practice/native_client/run_local_model.py",
+      "destination": "D7_CORRECTED_LAUNCHER_BASE.py",
+      "bytes": 7446,
+      "sha256": "9dec1771869e921fc59194f0603825ab28d02ab8fed0765d9e2b4028dbf38987",
+      "retrieval": "EXACT_LOCAL_COPY"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/0756e83fc/ggml/src/ggml-cpu/ops.cpp",
+      "destination": "upstream/llama.cpp-0756e83fc/ops.cpp",
+      "started_at_utc": "2026-10-22T10:05:08.639156+00:00",
+      "finished_at_utc": "2026-10-22T10:05:08.699201+00:00",
+      "http_status": 200,
+      "bytes": 428640,
+      "sha256": "b565fea101889b8b73011ad26c5cafc242e3d10b0eb65d3aba4b53808d0f2e71",
+      "retrieval": "PINNED_OFFICIAL_RAW_SOURCE"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/0756e83fc/ggml/src/ggml-backend-reg.cpp",
+      "destination": "upstream/llama.cpp-0756e83fc/ggml-backend-reg.cpp",
+      "started_at_utc": "2026-10-22T10:05:08.640076+00:00",
+      "finished_at_utc": "2026-10-22T10:05:08.686709+00:00",
+      "http_status": 200,
+      "bytes": 18091,
+      "sha256": "1436b46bd1e8355345d454baa4b40069be73e9cb09a3a188d32426ea1e1037fe",
+      "retrieval": "PINNED_OFFICIAL_RAW_SOURCE"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/0756e83fc/src/llama-context.cpp",
+      "destination": "upstream/llama.cpp-0756e83fc/llama-context.cpp",
+      "started_at_utc": "2026-10-22T10:05:08.640591+00:00",
+      "finished_at_utc": "2026-10-22T10:05:08.691627+00:00",
+      "http_status": 200,
+      "bytes": 169201,
+      "sha256": "2a25e556cb0d16725e01ce853fb1b76da91dcb41b803ce1a6bacec89bfb94aa5",
+      "retrieval": "PINNED_OFFICIAL_RAW_SOURCE"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/0756e83fc/common/arg.cpp",
+      "destination": "upstream/llama.cpp-0756e83fc/arg.cpp",
+      "started_at_utc": "2026-10-22T10:05:08.641195+00:00",
+      "finished_at_utc": "2026-10-22T10:05:08.692757+00:00",
+      "http_status": 200,
+      "bytes": 224650,
+      "sha256": "bf4c58c189a774f2308acfe88e4ec5cebb0c43f60cf05cef4c5b2b9affd5822d",
+      "retrieval": "PINNED_OFFICIAL_RAW_SOURCE"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/0756e83fc/common/common.cpp",
+      "destination": "upstream/llama.cpp-0756e83fc/common.cpp",
+      "started_at_utc": "2026-10-22T10:05:08.686774+00:00",
+      "finished_at_utc": "2026-10-22T10:05:08.918529+00:00",
+      "http_status": 200,
+      "bytes": 83906,
+      "sha256": "b5ad4e435394d2563803b7a7650f0475c5b5bcc52ff8d4db700e32de237d0bd2",
+      "retrieval": "PINNED_OFFICIAL_RAW_SOURCE"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/0756e83fc/common/common.h",
+      "destination": "upstream/llama.cpp-0756e83fc/common.h",
+      "started_at_utc": "2026-10-22T10:05:08.691787+00:00",
+      "finished_at_utc": "2026-10-22T10:05:08.825136+00:00",
+      "http_status": 200,
+      "bytes": 57516,
+      "sha256": "8a7f061798220ab82cefa378f7f2c4e0c854da3275a96258afd6255c54683fd9",
+      "retrieval": "PINNED_OFFICIAL_RAW_SOURCE"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/anomalyco/opencode/v1.19.3/packages/opencode/src/config/markdown.ts",
+      "destination": "upstream/opencode-v1.19.3/markdown.ts",
+      "started_at_utc": "2026-10-22T10:05:08.693037+00:00",
+      "finished_at_utc": "2026-10-22T10:05:08.729195+00:00",
+      "http_status": 200,
+      "bytes": 1173,
+      "sha256": "bcb87009e9ffc760e0e2f0878543f582b5ca7ecc67bebb2087de2467ae28cbfe",
+      "retrieval": "PINNED_OFFICIAL_RAW_SOURCE"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/anomalyco/opencode/v1.19.3/packages/opencode/src/tool/read.ts",
+      "destination": "upstream/opencode-v1.19.3/read.ts",
+      "started_at_utc": "2026-10-22T10:05:08.699759+00:00",
+      "finished_at_utc": "2026-10-22T10:05:08.729016+00:00",
+      "http_status": 200,
+      "bytes": 13126,
+      "sha256": "afec8294965cbd9b9e29d3453b682164f0ecdba26574ebc048e9ba21af209c68",
+      "retrieval": "PINNED_OFFICIAL_RAW_SOURCE"
+    },
+    {
+      "retrieved_utc": "2026-10-22T10:08:52.128904+00:00",
+      "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/0756e83fc/src/llama-model.cpp",
+      "path": "upstream/llama.cpp-0756e83fc/llama-model.cpp",
+      "source_path": "src/llama-model.cpp",
+      "bytes": 186821,
+      "sha256": "218736a90862fcd3811a7bc4b4cb37205151f8054245029684ccd04dec966a33",
+      "status": "SUCCESS",
+      "attribution": "ggml-org/llama.cpp, pinned commit 0756e83fc, MIT; LICENSE retained alongside."
+    },
+    {
+      "retrieved_utc": "2026-10-22T10:08:52.290093+00:00",
+      "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/0756e83fc/ggml/src/ggml-cpu/repack.cpp",
+      "path": "upstream/llama.cpp-0756e83fc/repack.cpp",
+      "source_path": "ggml/src/ggml-cpu/repack.cpp",
+      "bytes": 213604,
+      "sha256": "5fa9f24cc2631609f40fa47a64078f77dccbe9f327711af91af671cd29b8b87d",
+      "status": "SUCCESS",
+      "attribution": "ggml-org/llama.cpp, pinned commit 0756e83fc, MIT; LICENSE retained alongside."
+    },
+    {
+      "retrieved_utc": "2026-10-22T10:08:52.438259+00:00",
+      "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/0756e83fc/ggml/src/ggml-cpu/ggml-cpu.cpp",
+      "path": "upstream/llama.cpp-0756e83fc/ggml-cpu.cpp",
+      "source_path": "ggml/src/ggml-cpu/ggml-cpu.cpp",
+      "bytes": 25005,
+      "sha256": "ccf382d3fbf126b5ddb5850a0a970656fb24e00587da4003419439277c91cd01",
+      "status": "SUCCESS",
+      "attribution": "ggml-org/llama.cpp, pinned commit 0756e83fc, MIT; LICENSE retained alongside."
+    }
+  ],
+  "initial_read_only_failures": [
+    {
+      "mechanism": "browser open",
+      "error": "DisabledError",
+      "scope": "Raw pinned source URLs could not be fetched through browsing; subsequent official URL reads via authorized execution succeeded."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/0756e83fc/ggml/src/ggml-cpu/cpu-feats-x86.cpp",
+      "error": "HTTP 404",
+      "scope": "Incorrect source path; no file retained, no conclusion derived."
+    }
+  ]
+}

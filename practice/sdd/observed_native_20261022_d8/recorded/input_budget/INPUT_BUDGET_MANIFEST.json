@@ -1,0 +1,118 @@
+{
+  "frozen_at_utc": "2026-10-22T10:19:31.613623+00:00",
+  "files": {
+    "ACTUAL_ATTACHMENT_INTRO.request.json": {
+      "sha256": "c25685feeb93290a98a44e2bfccd035bd782fb9926afdf1b101b31eb24a833e8",
+      "bytes": 215
+    },
+    "ACTUAL_ATTACHMENT_INTRO.response.json": {
+      "sha256": "843ddec8ac49e17eec9fb7c73802f0c6987a00cea9391b50dd91445bed6bbdf4",
+      "bytes": 206
+    },
+    "ACTUAL_ATTACHMENT_READ.request.json": {
+      "sha256": "4825747e9447ab8a9f5a1f7ba71e9ed57084d0ac08cb4530503106be52d86454",
+      "bytes": 28477
+    },
+    "ACTUAL_ATTACHMENT_READ.response.json": {
+      "sha256": "9cf6104c5595c15d9da4d4267d0661665dcede4f8185b5fd8837a0dcd6d13bc0",
+      "bytes": 34802
+    },
+    "CLIENT_OUTPUT_CAP_SOURCE_BINDING.json": {
+      "sha256": "8c737d123d489a3dd4d6455dc25acbabc23f912381c16c5441b80eef5ab535d5",
+      "bytes": 3825
+    },
+    "COMPLETE_USER_CONTENT.request.json": {
+      "sha256": "11ce2b67e542e47dd712f5d88a5ee9e14924e47da6154772620fefbf5e171078",
+      "bytes": 50202
+    },
+    "COMPLETE_USER_CONTENT.response.json": {
+      "sha256": "3a59843413ff41ca2817960b5155373b01ff449342e3672a63db63593d5dc3d7",
+      "bytes": 56599
+    },
+    "FULL_NATIVE_COMMAND.request.json": {
+      "sha256": "b84c08de19275aaf7e7b18dab7166898802f7497f4cd1535adeb841f432506d8",
+      "bytes": 21624
+    },
+    "FULL_NATIVE_COMMAND.response.json": {
+      "sha256": "0bc5137372ab8460a0654ebd267dc04f8029995cdf2698819c1f9517a84b2d7f",
+      "bytes": 21610
+    },
+    "FULL_USER_CONTENT_COMPONENTS.txt": {
+      "sha256": "f0f476a67aacfa3454f9c5cd1d712f619b9347109d021a9c60cae207f448ab00",
+      "bytes": 48200
+    },
+    "MINIMUM_FORMATTED_INPUT.request.json": {
+      "sha256": "0f06e9e4b49acdea00501375a3cf088dbe6b6c2cf2d0883206bfaca420a0b8ba",
+      "bytes": 50277
+    },
+    "MINIMUM_FORMATTED_INPUT.response.json": {
+      "sha256": "c9a3ec90910fe8c28607e25a85c0986ebcbc974dc9515b2c6e9735a25ae08fc5",
+      "bytes": 56664
+    },
+    "MINIMUM_USER_CHAT_TEMPLATE.request.json": {
+      "sha256": "b59e9c9d8b52a8a64ee593032827d949f47c2d38de4ac28e5ed7948f8c86a1d2",
+      "bytes": 50271
+    },
+    "MINIMUM_USER_CHAT_TEMPLATE.response.json": {
+      "sha256": "0a675d7f1bebd0fdfd8f16ea9699080c3c2d8ddffbe963fa13417c2fd8e9294e",
+      "bytes": 50182
+    },
+    "MINIMUM_USER_CHAT_TEMPLATE.txt": {
+      "sha256": "4277f3b4d06d0d353a2f019f03ff3480872716c9e453090bffd9b2d027ebb3b7",
+      "bytes": 48269
+    },
+    "TOKEN_COUNTS_AND_BUDGET.json": {
+      "sha256": "020a44398e9578164c41b241ecebd10e4e90e0d36f9a29842611c7722df99cf4",
+      "bytes": 4647
+    },
+    "output_cap_sources/OPENCODE_LICENSE.txt": {
+      "sha256": "625f0f619133f89bbbb2abe37369613dfa1885eba1e50d02170deb62bb42cb6b",
+      "bytes": 1065
+    },
+    "output_cap_sources/SDK_SOURCE_DOWNLOADS.json": {
+      "sha256": "63017234177d717acf32082b4dd2c5260ca9dd0b7bca5f67a9a5585f25faa500",
+      "bytes": 1242
+    },
+    "output_cap_sources/SOURCE_DOWNLOADS.json": {
+      "sha256": "e00508f6f7d4c4143dae692b7f8a378ef679dac37afbb9b957db17da6f004fc9",
+      "bytes": 1272
+    },
+    "output_cap_sources/llm.ts": {
+      "sha256": "5f1dcfb734853e39760e4dd05470f0c7d8752fc5dcc64e118c065149602e402d",
+      "bytes": 15097
+    },
+    "output_cap_sources/native-runtime.ts": {
+      "sha256": "ad7ba806e0b9d429ccd93b02b3583754254e6fc540450cb97e16393c28d394c2",
+      "bytes": 8036
+    },
+    "output_cap_sources/openai-compatible-2.0.41.tgz": {
+      "sha256": "1067423d0df534c545de4b2aaa86aef5e181cc0da2af050ee6d821eb280a5d7c",
+      "bytes": 111273
+    },
+    "output_cap_sources/opencode_package.json": {
+      "sha256": "f26b884353a34f771ed960e4042363f7843d0fb0a822feca84adce37d18aab22",
+      "bytes": 5268
+    },
+    "output_cap_sources/request.ts": {
+      "sha256": "90077551a9a46e11a37f44279c584832918d722c0ba0407ff8cad8d3437dd0de",
+      "bytes": 7738
+    },
+    "output_cap_sources/sdk_LICENSE.txt": {
+      "sha256": "b4f9adb7c568904834d0dd6cc98d16c390d21ca32fc17ae7a267715269bd5529",
+      "bytes": 552
+    },
+    "output_cap_sources/sdk_index.mjs": {
+      "sha256": "67ab5407adb1db54db9cabee8068a5c9c239bff70e2c685201802d39534e3795",
+      "bytes": 59500
+    },
+    "output_cap_sources/sdk_package.json": {
+      "sha256": "d55bf0bda631ae36984a8237dff03f5cffec27428de5305f4f2d7556c2cb8767",
+      "bytes": 2033
+    },
+    "output_cap_sources/transform.ts": {
+      "sha256": "4fb803445f0e72a84fb3edf2b1721084437204d3e35582dab53e156f92f54007",
+      "bytes": 70406
+    }
+  },
+  "scope": "Complete no-inference token measurements and pinned-source output-cap diagnosis. This22528-context budget failed; any later context must have a separate preparation/assessment."
+}

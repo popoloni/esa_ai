@@ -1,0 +1,8 @@
+{
+  "adopted_at_utc": "2026-10-20T16:19:19.296114+00:00",
+  "composed_sha256": "fb5d1e03988ab9ab77c4a05ff5aa666bfc0da25f74f1ceb5e751aaf4807686ec",
+  "held_out_has_run": false,
+  "improver_input_sha256": "455e610f07bf69441b712513989272c821373a39c014f828708f218dcc13d446",
+  "note": "Protocol order is an audit record, not an external trusted timestamp",
+  "selection_used_oracle_scores": false
+}

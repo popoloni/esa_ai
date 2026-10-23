@@ -1,0 +1,13 @@
+{
+  "schema": "esa-native-help-preflight/v1",
+  "started_at_utc": "2026-10-22T10:09:26.655611+00:00",
+  "finished_at_utc": "2026-10-22T10:09:26.676504+00:00",
+  "argv": [
+    "/workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/llama-server",
+    "--help"
+  ],
+  "cwd": "/workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799",
+  "exit_code": 0,
+  "binary_sha256": "742ac3910ef43360be9fc73426ce612a1f9464f5fd63b8a240288d40f5129245",
+  "scope": "Help output only: no model argument, model load, model request, benchmark or server listener."
+}

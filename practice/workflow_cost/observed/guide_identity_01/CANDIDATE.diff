@@ -1,0 +1,38 @@
+--- before/README.md
++++ candidate/README.md
+@@ -1,7 +1,7 @@
+ # One companion for Chapters 1–14
+ 
+ This is the cumulative laboratory for *Engineering Software with Agentic AI*,
+-edition `2026.10.21-d6`. Run commands from the directory containing
++edition `2026.10.22-d7`. Run commands from the directory containing
+ `reader_start.py`, called `companion/` in the complete author package. Keep the
+ extracted release unchanged and create separate study copies.
+ 
+@@ -81,7 +81,7 @@
+ generator were given bounded fresh tasks without the author reference answers;
+ their inspection records describe what they actually read. Shared filesystem
+ access is not process isolation. Those historical observations are ChatGPT collaboration. The separately retained
+-d6 route uses installed OpenCode 1.19.3 with a pinned local Qwen3-4B model. Its
++native route uses installed OpenCode 1.19.3 with a pinned local Qwen3-4B model. Its
+ setup, failed attempts, interventions and resulting checks have their own dated
+ records under `practice/native_client/`. The old preflight remains an accurate
+ record of its earlier environment. Codex CLI, Claude Code and GitHub Copilot
+--- before/reader_side/protected_sha256.json
++++ candidate/reader_side/protected_sha256.json
+@@ -1,5 +1,5 @@
+ {
+-  "README.md": "2a2d66e4e66a143012b3fd63c6214dc5cc4ef6e96141300466e40a74fecc66e9",
++  "README.md": "7e1535bd8748870a14f43bb738a41672a5e1dcf74adea9b05f5198615a7e5a4e",
+   "README_CP03.md": "f925d1aca4c401d2c3a7dfb9f47572a53050118a9a84533391390ee089af407e",
+   "README_CP04.md": "40980eb2a1c9108a42de10195e6dfee3fd5a68872738acf519f0e74abf0e8d4d",
+   "README_CP05.md": "a064fba7f8be9d88d393dc36566b6e21f062bf7e80b5da0209cb5437100ab785",
+@@ -26,7 +26,7 @@
+   "adapters/OPENAI_AGENTS_MULTIAGENT_2026.md": "2653da35467dc2c1498e5d2725596dc430ac9cf75dc4e94036f619579203abb9",
+   "adapters/OPENSPEC_DELTA_2026.md": "1e1fb76fd86a26eeadbaed24dea6488a6e97cab59d0cbc20e9322bab22054535",
+   "adapters/OPENSPEC_EXPLORE_2026.md": "038794d3c231be1aeb9f26c6c767c85469b1de45380271f714beedbe3c5066e2",
+-  "adapters/README.md": "9704e94eeeb72f6c3812696f28748121f2bda1e1ced1dfd77c0add0637ddf788",
++  "adapters/README.md": "c18e57368f7823f37e29111aa146b806dda9b6b3ccdedd52ac3e8aac54a022ed",
+   "adapters/SPECKIT_ASSESS_2026.md": "3e9cd664394e7989ca31f53b5b1d313e3fa19702b6ead2277c31276afb054626",
+   "adapters/SPECKIT_SPECIFY_2026.md": "0a24e5836b874d025bc12fa21dc754a6601458a45a97c0970b33ee19eb9ea758",
+   "exports/ch04_reference/explanation_alpha.feature": "31c0a54ea345e7677c86548fb5437204a13cd84806802ffb5548e967d273901a",

@@ -1,0 +1,19 @@
+{
+  "argv": [
+    "/workspace/scratch/72d789d25fef/runtime_d7/opencode/node_modules/.bin/opencode",
+    "--pure",
+    "export",
+    "ses_e9cdbe2b5ffe5Bsfi3cviA8Zsb"
+  ],
+  "cwd": "/workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01",
+  "environment_reference": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/invocation/ENVIRONMENT_02.json",
+  "started_at_utc": "2026-10-22T10:35:48.960548+00:00",
+  "session_id": "ses_e9cdbe2b5ffe5Bsfi3cviA8Zsb",
+  "model_call": false,
+  "capture": "regular file, not a subprocess pipe",
+  "exit_code": 0,
+  "finished_at_utc": "2026-10-22T10:35:50.529596+00:00",
+  "export_bytes": 119363,
+  "export_sha256": "9b41d52544c78fbe6a9d295b30a11ebd27c57b82eff225802eed47fad61f0e5d",
+  "stderr_sha256": "a13e95fb4784fa7d8431870b669f708c2bbfbd4252dd027cbe95ef0f4e5343c0"
+}

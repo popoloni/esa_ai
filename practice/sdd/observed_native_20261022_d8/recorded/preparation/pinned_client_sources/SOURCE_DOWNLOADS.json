@@ -1,0 +1,29 @@
+[
+  {
+    "name": "read.ts",
+    "url": "https://raw.githubusercontent.com/anomalyco/opencode/v1.19.3/packages/opencode/src/tool/read.ts",
+    "started_at_utc": "2026-10-22T10:06:45.825586+00:00",
+    "finished_at_utc": "2026-10-22T10:06:45.950729+00:00",
+    "sha256": "afec8294965cbd9b9e29d3453b682164f0ecdba26574ebc048e9ba21af209c68",
+    "bytes": 13126,
+    "source": "Pinned official v1.19.3 source; no installed code modified"
+  },
+  {
+    "name": "write.ts",
+    "url": "https://raw.githubusercontent.com/anomalyco/opencode/v1.19.3/packages/opencode/src/tool/write.ts",
+    "started_at_utc": "2026-10-22T10:06:45.827055+00:00",
+    "finished_at_utc": "2026-10-22T10:06:45.947912+00:00",
+    "sha256": "861de91cc67849e138c32a697c8eb1abab8e4912bfd97811ea1866b8e9af4096",
+    "bytes": 3957,
+    "source": "Pinned official v1.19.3 source; no installed code modified"
+  },
+  {
+    "name": "markdown.ts",
+    "url": "https://raw.githubusercontent.com/anomalyco/opencode/v1.19.3/packages/opencode/src/config/markdown.ts",
+    "started_at_utc": "2026-10-22T10:06:45.827483+00:00",
+    "finished_at_utc": "2026-10-22T10:06:45.951664+00:00",
+    "sha256": "bcb87009e9ffc760e0e2f0878543f582b5ca7ecc67bebb2087de2467ae28cbfe",
+    "bytes": 1173,
+    "source": "Pinned official v1.19.3 source; no installed code modified"
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "finding_id": "D7-SDD-EMPTY-NATIVE-COMPLETION",
+  "status": "ACTUAL_TASK_INCOMPLETE_FINAL_GUIDED_CONTINUATION_RUNNING",
+  "recorded_at_utc": "2026-10-22T07:26:57.138217+00:00",
+  "actual_terminal_record": "revision_d7/evidence/sdd_native_recovery_01/attempt_01/OUTCOME_REVIEW.json",
+  "terminal_record_sha256": "12097daacda8c0fc75f4866b431df98326e2eba06810a1a991ffd994938d3606",
+  "finding": "A completed native response with exit0 and finish reason stop only named the feature and announced future work; no input read, tool call or artifact followed.",
+  "interpretation": "The process succeeded; the requested task did not complete. First text/native session remain unedited.",
+  "declared_intervention": "A separately recorded 120-token instruction appends to the SAME native session, asking it to perform the exact allowed cat and three allowed writes. Full upstream command history, fixed values, permissions and unanswered owner questions remain intact.",
+  "continuation_preparation": "revision_d7/evidence/sdd_native_continuation_01/FINAL_PREFLIGHT.json",
+  "prospective_outer_seconds": 1800,
+  "prospective_overall_header_ms": 1500000,
+  "new_server": "revision_d7/evidence/native_reconstruction/llama_server_03",
+  "prior_terminal_scope": "The earlier recovery review is a dated record before this final continuation was authorized. Its no-third-attempt statement applies at that review time.",
+  "finality": "No additional model attempt after this final bounded continuation. Terminal native evidence determines R08 disposition.",
+  "human_acceptance": "ABSENT"
+}

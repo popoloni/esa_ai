@@ -1,0 +1,59 @@
+{
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Orchestration_Harness_20261020/companion/practice/harness_engineering/worker.py",
+    "--config",
+    "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Orchestration_Harness_20261020/companion/practice/harness_engineering/observed/treasury_deterministic_v3/candidates/schema_complete/harness.json",
+    "--router",
+    "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Orchestration_Harness_20261020/companion/practice/harness_engineering/observed/treasury_deterministic_v3/source_snapshot/routing.py"
+  ],
+  "candidate": "schema_complete",
+  "execution": {
+    "case_id": "HOLD-01",
+    "config_sha256": "c08a757959b41e814680224fd300e5a825d4a18b453eee34578cc94a8a537cab",
+    "model_calls": 0,
+    "response": {
+      "payment_authorized": false,
+      "policy_version": "BR-001/v1",
+      "reason": "BELOW_LIMIT",
+      "route": "STANDARD_QUEUE"
+    },
+    "schema": "deterministic-harness-execution/v1",
+    "trace": [
+      {
+        "amount_eur": "4999.99",
+        "event": "context",
+        "model_calls": 0,
+        "strategy": "cached_estimate"
+      },
+      {
+        "event": "cached_estimate",
+        "input": "4999.99",
+        "note": "Fixed float-based shortcut; no domain tool executed"
+      },
+      {
+        "event": "response_emitted",
+        "fields": [
+          "payment_authorized",
+          "policy_version",
+          "reason",
+          "route"
+        ]
+      }
+    ]
+  },
+  "execution_number": 37,
+  "phase": "held_out",
+  "raw_process": {
+    "elapsed_seconds": 0.06021835199499037,
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "{\"case_id\": \"HOLD-01\", \"config_sha256\": \"c08a757959b41e814680224fd300e5a825d4a18b453eee34578cc94a8a537cab\", \"model_calls\": 0, \"response\": {\"payment_authorized\": false, \"policy_version\": \"BR-001/v1\", \"reason\": \"BELOW_LIMIT\", \"route\": \"STANDARD_QUEUE\"}, \"schema\": \"deterministic-harness-execution/v1\", \"trace\": [{\"amount_eur\": \"4999.99\", \"event\": \"context\", \"model_calls\": 0, \"strategy\": \"cached_estimate\"}, {\"event\": \"cached_estimate\", \"input\": \"4999.99\", \"note\": \"Fixed float-based shortcut; no domain tool executed\"}, {\"event\": \"response_emitted\", \"fields\": [\"payment_authorized\", \"policy_version\", \"reason\", \"route\"]}]}\n",
+    "timed_out": false
+  },
+  "request": {
+    "amount_eur": "4999.99",
+    "case_id": "HOLD-01"
+  },
+  "validation": "ACCEPTED_FOR_EVALUATION"
+}

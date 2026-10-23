@@ -1,0 +1,94 @@
+{
+  "schema": "esa-independent-route-review-plan/v1",
+  "recorded_at_utc": "2026-10-22T06:03:01.404466+00:00",
+  "planned_before_candidate_output": true,
+  "contract": "Preserve public API, BR-001/v1, reject malformed/nonfinite/nonpositive amounts, EUR5000 boundary.",
+  "cases": [
+    {
+      "input": "0",
+      "expected_route": "REJECTED",
+      "expected_reason": "INVALID_AMOUNT",
+      "expected_policy": "BR-001/v1"
+    },
+    {
+      "input": "-0",
+      "expected_route": "REJECTED",
+      "expected_reason": "INVALID_AMOUNT",
+      "expected_policy": "BR-001/v1"
+    },
+    {
+      "input": "-0.01",
+      "expected_route": "REJECTED",
+      "expected_reason": "INVALID_AMOUNT",
+      "expected_policy": "BR-001/v1"
+    },
+    {
+      "input": "NaN",
+      "expected_route": "REJECTED",
+      "expected_reason": "INVALID_AMOUNT",
+      "expected_policy": "BR-001/v1"
+    },
+    {
+      "input": "sNaN",
+      "expected_route": "REJECTED",
+      "expected_reason": "INVALID_AMOUNT",
+      "expected_policy": "BR-001/v1"
+    },
+    {
+      "input": "Infinity",
+      "expected_route": "REJECTED",
+      "expected_reason": "INVALID_AMOUNT",
+      "expected_policy": "BR-001/v1"
+    },
+    {
+      "input": "-Infinity",
+      "expected_route": "REJECTED",
+      "expected_reason": "INVALID_AMOUNT",
+      "expected_policy": "BR-001/v1"
+    },
+    {
+      "input": "not-an-amount",
+      "expected_route": "REJECTED",
+      "expected_reason": "INVALID_AMOUNT",
+      "expected_policy": "BR-001/v1"
+    },
+    {
+      "input": "",
+      "expected_route": "REJECTED",
+      "expected_reason": "INVALID_AMOUNT",
+      "expected_policy": "BR-001/v1"
+    },
+    {
+      "input": "0.0000000001",
+      "expected_route": "STANDARD_QUEUE",
+      "expected_reason": "BELOW_LIMIT",
+      "expected_policy": "BR-001/v1"
+    },
+    {
+      "input": "4999.999999",
+      "expected_route": "STANDARD_QUEUE",
+      "expected_reason": "BELOW_LIMIT",
+      "expected_policy": "BR-001/v1"
+    },
+    {
+      "input": "5000",
+      "expected_route": "HUMAN_REVIEW",
+      "expected_reason": "AT_OR_ABOVE_LIMIT",
+      "expected_policy": "BR-001/v1"
+    },
+    {
+      "input": "5000.000001",
+      "expected_route": "HUMAN_REVIEW",
+      "expected_reason": "AT_OR_ABOVE_LIMIT",
+      "expected_policy": "BR-001/v1"
+    },
+    {
+      "input": "1e9",
+      "expected_route": "HUMAN_REVIEW",
+      "expected_reason": "AT_OR_ABOVE_LIMIT",
+      "expected_policy": "BR-001/v1"
+    }
+  ],
+  "scope": "Additional agent review of one observed candidate, not human approval or proof of exhaustive behavior.",
+  "protected_inputs": "Original INT-001 and seven-case test suite retained without changes."
+}

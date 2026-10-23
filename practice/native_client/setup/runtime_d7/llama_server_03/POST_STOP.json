@@ -1,0 +1,11 @@
+{
+  "schema": "esa-native-server-post-stop/v1",
+  "recorded_at_utc": "2026-10-22T07:55:55.719634+00:00",
+  "launcher_pid": 17418,
+  "server_pid": 17421,
+  "launcher_exists": false,
+  "server_exists": false,
+  "memory_current": "5005602816\n",
+  "memory_events": "low 0\nhigh 0\nmax 104444\noom 0\noom_kill 0\noom_group_kill 0\n",
+  "disposition": "Stopped exact task-owned server; no restart or further model request."
+}

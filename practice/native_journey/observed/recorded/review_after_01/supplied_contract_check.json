@@ -1,0 +1,19 @@
+{
+  "status": "REFUSE_SELECTED_CONTRACT",
+  "passed": [
+    "authorized_membership_and_csv_roundtrip",
+    "preserve_existing_status_filter",
+    "empty_result_keeps_header",
+    "other_actor_gets_only_own_rows",
+    "existing_json_unchanged",
+    "source_rows_unchanged"
+  ],
+  "findings": [
+    {
+      "case": "unsupported_format_refused",
+      "error": "AssertionError",
+      "message": "unsupported format was accepted"
+    }
+  ],
+  "limits": "Local function and declared machine-CSV contract; no HTTP authentication, spreadsheet safety, scale or deployment validation."
+}

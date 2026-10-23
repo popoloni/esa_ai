@@ -1,0 +1,5 @@
+Requested result: add CSV to the existing orders API while preserving JSON and the actor/status-selected rows in their existing order.
+Selected source and constraint: copied CURRENT_CONTRACT.md (CSV-001/v1, CSV-CONSUMER-01); selected_orders and public_order run before presentation; preserve literal fields for the declared machine importer.
+Changed files: api.py only; direct csv.DictWriter serialization, fixed ordered header and StringIO; source snapshots, diff and before/after hashes retained.
+Checks actually run: JSON demo passed; first CSV demo raised NotImplementedError; independent check.py returned PASS_SELECTED_CONTRACT for all seven named checks; final CSV demo emitted correctly quoted fields; source-file hashes confirm api.py was the only change.
+Next unresolved decision: designated human review/acceptance; authentication, HTTP deployment, production scale and a spreadsheet-specific consumer policy remain outside this task and would require new requirements/checks.

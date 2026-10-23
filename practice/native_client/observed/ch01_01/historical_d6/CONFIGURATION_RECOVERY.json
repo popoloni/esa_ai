@@ -1,0 +1,17 @@
+{
+  "recorded_at_utc": "2026-10-21T21:31:20.623320+00:00",
+  "first_configuration": "OPENCODE_CONFIG_01.json",
+  "first_effective_agent": "effective-agent.stdout.txt",
+  "observed_failure": "Configuration parsed with permission.shell but native tools.bash was false. No model request or reader edit occurred.",
+  "correction": "Changed only the permission category shell to bash, retaining the exact checker command and all other denials.",
+  "corrected_configuration": "OPENCODE_CONFIG_02.json",
+  "corrected_effective_agent": "effective-agent-02.stdout.txt",
+  "observed_result": "Native bash, read, edit and write enabled; other displayed tools disabled. Edit/write share the sole allowed routing source path.",
+  "primary_pinned_sources": [
+    "https://raw.githubusercontent.com/anomalyco/opencode/v1.19.3/packages/core/src/v1/config/permission.ts",
+    "https://raw.githubusercontent.com/anomalyco/opencode/v1.19.3/packages/opencode/src/tool/shell/id.ts",
+    "https://raw.githubusercontent.com/anomalyco/opencode/v1.19.3/packages/opencode/src/permission/index.ts"
+  ],
+  "limits": "Successful parsing is not effective permission validation or operating-system containment. Internal tool-output directory exception remains visible in the effective-agent record.",
+  "setup_document_errata": "Frozen native_setup/opencode/SETUP_FINDINGS.md uses shell incorrectly for V1 and points four help rows to empty stdout files. The actual help is in corresponding stderr files; original raw evidence is preserved."
+}

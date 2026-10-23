@@ -1,0 +1,3 @@
+order_id,status,customer,amount_eur,note
+A1,open,"Acme, North",12.00,"She said ""ready""
+next line"

@@ -1,0 +1,14 @@
+{
+  "recorded_at_utc": "2026-10-21T21:47:52.962398+00:00",
+  "failed_export": "native-session.json",
+  "failed_bytes": 65536,
+  "failed_process_exit_code": 0,
+  "failure": "The pipe-captured export is truncated at65,536bytes and does not parse asJSON. Original bytes andcommand retained.",
+  "recovered_export": "native-session-recovery02.json",
+  "recovered_bytes": 72123,
+  "recovered_sha256": "535ec977b5eedde26860f6cab99c3aa4030ca4eab3260610a1036cec485b5d64",
+  "recovery": "Direct stdout to a regular file with identical native export argv/environment/cwd; retain a separate suffix.",
+  "json_validation": "PASS",
+  "session_identity_validation": "PASS",
+  "scope": "Export collection only; no model call, code edit or task acceptance."
+}

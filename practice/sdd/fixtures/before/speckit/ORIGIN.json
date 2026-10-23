@@ -1,0 +1,12 @@
+{
+  "origin": "author_exercise",
+  "flow": "speckit",
+  "phase": "before",
+  "model": null,
+  "human_review": "pending",
+  "named_agent_execution": false,
+  "source_contract": "SPEC-004/v1",
+  "shared_manifest_sha256": "354fa9f799f466d5cab6078dec65dd455b7c3d1360cbbaf2a1c51788e894230d",
+  "seeded_omission": "SC-EXPL-002",
+  "scope": "Authored content in documented workflow artifact structures; local CLI scaffolding/validation is recorded separately."
+}

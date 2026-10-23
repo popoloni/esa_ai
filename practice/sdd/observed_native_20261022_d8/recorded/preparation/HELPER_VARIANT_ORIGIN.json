@@ -1,0 +1,30 @@
+{
+  "created_at_utc": "2026-10-22T10:05:23.211665+00:00",
+  "source": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion/practice/native_client/configure_sdd.py",
+  "source_sha256": "3e03d3cbd84cf6848735cd1edbf551eb73c5ebc84fd1dbb507b43eb0d5e1abe0",
+  "new_variant": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d8/evidence/native_sdd_01/preparation/configure_sdd_d8.py",
+  "d7_unchanged": true,
+  "copied_source_files": [
+    {
+      "name": "session_prompt.ts",
+      "source": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion/practice/native_client/setup/runtime_d7/diagnosis/session_prompt.ts",
+      "sha256": "f0c5bc64c0f0e966693d4a57f7ede1e9d6e188b396152f04b55303dc75b9b768",
+      "bytes": 64944,
+      "mode": "byte_identical_copy_of_retained_pinned_1.19.3_source"
+    },
+    {
+      "name": "cli_run.ts",
+      "source": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion/practice/native_client/setup/runtime_d7/diagnosis/cli_run.ts",
+      "sha256": "e040e90d4c81cdd59b9568ee90a53c0209cd9ddf1b8b207d1a8685b2e26d57d0",
+      "bytes": 31940,
+      "mode": "byte_identical_copy_of_retained_pinned_1.19.3_source"
+    },
+    {
+      "name": "UPSTREAM_LICENSE.txt",
+      "source": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion/practice/native_client/setup/runtime_d7/diagnosis/UPSTREAM_LICENSE.txt",
+      "sha256": "625f0f619133f89bbbb2abe37369613dfa1885eba1e50d02170deb62bb42cb6b",
+      "bytes": 1065,
+      "mode": "byte_identical_copy_of_retained_pinned_1.19.3_source"
+    }
+  ]
+}

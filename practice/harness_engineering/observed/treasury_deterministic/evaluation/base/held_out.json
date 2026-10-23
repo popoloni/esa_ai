@@ -1,0 +1,70 @@
+{
+  "oracle_sha256": "1f9d790cb944c978adcf6206452c7ab80fe140fdfb5964f978ca1ae26bdd5d75",
+  "rows": [
+    {
+      "case_id": "HOLD-01",
+      "full_contract_correct": false,
+      "response": {
+        "route": "STANDARD_QUEUE"
+      },
+      "route_correct": true
+    },
+    {
+      "case_id": "HOLD-02",
+      "full_contract_correct": false,
+      "response": {
+        "route": "HUMAN_REVIEW"
+      },
+      "route_correct": false
+    },
+    {
+      "case_id": "HOLD-03",
+      "full_contract_correct": false,
+      "response": {
+        "route": "HUMAN_REVIEW"
+      },
+      "route_correct": true
+    },
+    {
+      "case_id": "HOLD-04",
+      "full_contract_correct": false,
+      "response": {
+        "route": "STANDARD_QUEUE"
+      },
+      "route_correct": false
+    },
+    {
+      "case_id": "HOLD-05",
+      "full_contract_correct": false,
+      "response": {
+        "route": "HUMAN_REVIEW"
+      },
+      "route_correct": false
+    },
+    {
+      "case_id": "HOLD-06",
+      "full_contract_correct": false,
+      "response": {
+        "route": "REJECTED"
+      },
+      "route_correct": true
+    },
+    {
+      "case_id": "HOLD-07",
+      "full_contract_correct": false,
+      "response": {
+        "route": "HUMAN_REVIEW"
+      },
+      "route_correct": true
+    },
+    {
+      "case_id": "HOLD-08",
+      "full_contract_correct": false,
+      "response": {
+        "route": "STANDARD_QUEUE"
+      },
+      "route_correct": false
+    }
+  ],
+  "visible_to_improver": false
+}

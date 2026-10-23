@@ -1,0 +1,50 @@
+{
+  "frozen_at_utc": "2026-10-22T10:21:14.120991+00:00",
+  "scope": "Completed prospective configuration/input-budget preparation. No inference. Later runtime decisions and actual observations must be retained separately.",
+  "files": {
+    "CANDIDATE_02_CHANGE_RECORD.json": {
+      "sha256": "9c9d1b719b5662416536a63fff759be7a92483d952dc7fbfa7b3748002971341",
+      "bytes": 1605
+    },
+    "CLIENT_TASK_01.json": {
+      "sha256": "c79009c00c09900c382b5465f0272bcaaddf3e7cc8306dbcfdac99b03890c02b",
+      "bytes": 5221
+    },
+    "CLIENT_TASK_02.json": {
+      "sha256": "ca901a675262709719aa9cc6ebc8febe488e15a51026fe6a92f1d71f67d7f9a6",
+      "bytes": 5221
+    },
+    "D8_ROOT_BINDING.json": {
+      "sha256": "7265b4a9b472a5b613e086a722a26376c8645d03ca889e2345ad1433e90051f0",
+      "bytes": 2563
+    },
+    "EFFECTIVE_CONFIG_02_CHECK.json": {
+      "sha256": "4ddd667453d5d54b8a61071d6583cf7d5a3c6dda74eb92df95d66295cf8f1c21",
+      "bytes": 1270
+    },
+    "ENVIRONMENT_01.json": {
+      "sha256": "a64c181cb08ba2a18f3030dca7b9c8b8bd5cba321ded3734c961e72a88294e63",
+      "bytes": 1898
+    },
+    "ENVIRONMENT_02.json": {
+      "sha256": "4cfdae253bb83969fdd671d02d187864987ff6052ae86a9f00bd87b8e43ef910",
+      "bytes": 1898
+    },
+    "OPENCODE_CONFIG_01.json": {
+      "sha256": "477886742b5c9ecaa55ade5f6dcd73228a28c30d831bbf700e4f0873c253dc69",
+      "bytes": 5245
+    },
+    "OPENCODE_CONFIG_02.json": {
+      "sha256": "c02fb16fda113dbf2c2c9ba8973b77f50ce759b5ee2f3fdc24e994a739647ba3",
+      "bytes": 5245
+    },
+    "effective_config_02.stderr.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "effective_config_02.stdout.json": {
+      "sha256": "f65acbaba358165b59429e4b8cf7a20966302d499c751a16f82bbc9bed6abff8",
+      "bytes": 142080
+    }
+  }
+}

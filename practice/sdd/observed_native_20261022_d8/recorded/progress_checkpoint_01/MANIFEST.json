@@ -1,0 +1,19 @@
+{
+  "created_at_utc": "2026-10-22T11:01:35.208458+00:00",
+  "status": "FROZEN_IMMUTABLE_PROGRESS_PREFIX",
+  "files": {
+    "PROGRESS.json": {
+      "sha256": "69d6accbe1f97906a22f59e2eb763bf74d15703e45aa420026bd37488c7db0b0",
+      "bytes": 6807
+    },
+    "stderr_prefix.txt": {
+      "sha256": "f4b2411309ff9bddfdea7fa5d5f8c4d443a543f5117f48d1a7d64a98c6e147e0",
+      "bytes": 11687
+    },
+    "stdout_prefix.txt": {
+      "sha256": "807b5d1198ad3e51ee7b2af192b8cd1a07330f7cf66faf9d9af72754565f108a",
+      "bytes": 8667
+    }
+  },
+  "scope": "Only frozen complete-line log prefixes and any explicitly listed observed output files, not a terminal native session."
+}

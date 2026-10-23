@@ -1,0 +1,11 @@
+{
+  "id": "CONTRACT-BR001-v1",
+  "provenance": "synthetic-author-approved-reader-fixture",
+  "authority_class": "reader-controlled-business-intent",
+  "route_only": true,
+  "moves_money": false,
+  "threshold_eur": "5000.00",
+  "policy_version": "BR-001/v1",
+  "invalid_amount": "REJECTED / INVALID_AMOUNT",
+  "recorded_utc": "2026-10-19"
+}

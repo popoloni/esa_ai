@@ -1,0 +1,10 @@
+{
+  "schema": "esa-evidence-subset-index/v1",
+  "recorded_at_utc": "2026-10-22T06:23:43.583862+00:00",
+  "files": {
+    "configuration/TASK_PROMPT.txt": "ad930602dd95b3ceb954b1f4770fe55014c7e557ddd4bf9249606efdd86acd22",
+    "configuration/TASK_PROMPT_RECOVERY_02.txt": "381f6545ca99ae49549e6897802636bb2b018092ccf38b4fe7341bc06118e70d",
+    "RECOVERY_INTERVENTION_02.json": "b1fadc9154ebd070ee1921032ed0d2c0597d2cdee55d29e6248c905f4ca1895a",
+    "configuration/BOUND_ADJUSTMENT.json": "8cc56358392298a318c39650b264593c51778a87a7aafa3be858c6cb7efc8859"
+  }
+}

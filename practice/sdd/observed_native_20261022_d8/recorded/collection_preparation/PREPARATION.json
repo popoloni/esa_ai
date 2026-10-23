@@ -1,0 +1,20 @@
+{
+  "status": "PREPARED_SYNTAX_CHECKED_NOT_EXECUTED",
+  "at_utc": "2026-10-22T10:30:57.660076+00:00",
+  "collector": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/collection_preparation/collect_terminal_d8.py",
+  "collector_sha256": "5afe080a22c2c3dd6dec8f70156b1824f2cd5a27c83993d0f27896052fb1fe39",
+  "pattern_source": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d7/evidence/sdd_native_continuation_01/collect_terminal.py",
+  "pattern_source_sha256": "af69ccf2b6e0beb171a75477c48b0b4701305b70ac76c26153a9f8e8ca4c10d4",
+  "export_pattern": "Pinned native export with the captured task environment, stdout and stderr to regular files, then info.id identity verification. No model endpoint invoked.",
+  "terminal_gates": [
+    "Root authorization flag",
+    "Completed actual RECEIPT with ended_at_utc and exit_code",
+    "Task/stdout/stderr hashes match terminal receipt",
+    "Starting and current project inventories match before/after receipt",
+    "Unique session ID from emitted events or retained native creation log"
+  ],
+  "snapshot": "Complete final project tree is copied before export and rehashed; post-export project equality is recorded.",
+  "first_content": "Completed write inputs and exact literal edits are reconstructed separately from scaffold cp and template-equivalent content. Failed writes and fuzzy/missing-baseline edits remain explicitly unconfirmed. Raw native session/events and final project bytes are retained.",
+  "independent_semantic_review": "Required; collector supplies no acceptance verdict or owner answer.",
+  "execution": "NOT_RUN; active attempt is untouched."
+}

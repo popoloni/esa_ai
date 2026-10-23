@@ -1,0 +1,49 @@
+{
+  "attempt_records": [],
+  "billing_records": [],
+  "currency": null,
+  "declared_scope": null,
+  "effort_records": [],
+  "missingness_records": [
+    {
+      "explanation": "Future human field pilot has not been performed.",
+      "field_or_record": "initial_implementation_hours",
+      "reason": "NOT_OBSERVED"
+    },
+    {
+      "explanation": "Future human field pilot has not been performed.",
+      "field_or_record": "review_hours",
+      "reason": "NOT_OBSERVED"
+    },
+    {
+      "explanation": "Future human field pilot has not been performed.",
+      "field_or_record": "implementation_rework_hours",
+      "reason": "NOT_OBSERVED"
+    },
+    {
+      "explanation": "Future human field pilot has not been performed.",
+      "field_or_record": "vendor_billing",
+      "reason": "NOT_OBSERVED"
+    },
+    {
+      "explanation": "Future human field pilot has not been performed.",
+      "field_or_record": "compute_cost",
+      "reason": "NOT_OBSERVED"
+    },
+    {
+      "explanation": "Future human field pilot has not been performed.",
+      "field_or_record": "real_owner_accepted_outcomes",
+      "reason": "NOT_OBSERVED"
+    }
+  ],
+  "owner_id": null,
+  "owner_outcome_records": [],
+  "provenance_warning": "DECLARED_IDENTITIES_AND_SELF_REPORTS_ARE_NOT_INDEPENDENTLY_AUTHENTICATED",
+  "schema": "cp14-field-telemetry/v1",
+  "status": "UNFILLED_FUTURE_TEMPLATE",
+  "study_id": null,
+  "study_notes": [
+    "Copy this template outside protected source before collecting actual field records.",
+    "This unfilled template is not imported into automated CP14 scenario or current-result calculations."
+  ]
+}

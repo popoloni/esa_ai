@@ -1,0 +1,60 @@
+[
+  {
+    "id": "speckit_help",
+    "tool": "Spec Kit",
+    "version": "1.2.2",
+    "origin": "cli_inspection",
+    "model": null,
+    "human_review": "pending",
+    "argv": [
+      "/workspace/scratch/efa0a59e0545/tmp/sdd_workflow_trial_20261020/python_env/bin/specify",
+      "--help"
+    ],
+    "cwd": "/workspace/scratch/efa0a59e0545/tmp/sdd_workflow_trial_20261020",
+    "started_utc": "2026-10-20T15:00:14.019094+00:00",
+    "finished_utc": "2026-10-20T15:00:15.214103+00:00",
+    "duration_seconds": 1.195009,
+    "exit_code": 0,
+    "stdout_file": "speckit_help.stdout.txt",
+    "stderr_file": "speckit_help.stderr.txt"
+  },
+  {
+    "id": "speckit_init_help",
+    "tool": "Spec Kit",
+    "version": "1.2.2",
+    "origin": "cli_inspection",
+    "model": null,
+    "human_review": "pending",
+    "argv": [
+      "/workspace/scratch/efa0a59e0545/tmp/sdd_workflow_trial_20261020/python_env/bin/specify",
+      "init",
+      "--help"
+    ],
+    "cwd": "/workspace/scratch/efa0a59e0545/tmp/sdd_workflow_trial_20261020",
+    "started_utc": "2026-10-20T15:00:15.214664+00:00",
+    "finished_utc": "2026-10-20T15:00:15.580999+00:00",
+    "duration_seconds": 0.366335,
+    "exit_code": 0,
+    "stdout_file": "speckit_init_help.stdout.txt",
+    "stderr_file": "speckit_init_help.stderr.txt"
+  },
+  {
+    "id": "speckit_version",
+    "tool": "Spec Kit",
+    "version": "1.2.2",
+    "origin": "cli_inspection",
+    "model": null,
+    "human_review": "pending",
+    "argv": [
+      "/workspace/scratch/efa0a59e0545/tmp/sdd_workflow_trial_20261020/python_env/bin/specify",
+      "version"
+    ],
+    "cwd": "/workspace/scratch/efa0a59e0545/tmp/sdd_workflow_trial_20261020",
+    "started_utc": "2026-10-20T15:00:15.581469+00:00",
+    "finished_utc": "2026-10-20T15:00:15.877754+00:00",
+    "duration_seconds": 0.296285,
+    "exit_code": 0,
+    "stdout_file": "speckit_version.stdout.txt",
+    "stderr_file": "speckit_version.stderr.txt"
+  }
+]

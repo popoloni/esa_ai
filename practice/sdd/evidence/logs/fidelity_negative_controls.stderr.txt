@@ -1,0 +1,19 @@
+test_agreeing_wrong_outputs_do_not_become_truth (test_check.ArtifactFidelityTests.test_agreeing_wrong_outputs_do_not_become_truth) ... ok
+test_altered_shared_manifest_is_detected (test_check.ArtifactFidelityTests.test_altered_shared_manifest_is_detected) ... ok
+test_duplicate_case_is_detected (test_check.ArtifactFidelityTests.test_duplicate_case_is_detected) ... ok
+test_equal_incomplete_specs_still_fail_independent_oracle (test_check.ArtifactFidelityTests.test_equal_incomplete_specs_still_fail_independent_oracle) ... ok
+test_obligation_negation_change_is_detected (test_check.ArtifactFidelityTests.test_obligation_negation_change_is_detected) ... ok
+test_origin_cannot_claim_a_model_trial (test_check.ArtifactFidelityTests.test_origin_cannot_claim_a_model_trial) ... ok
+test_payment_approval_cannot_hide_in_a_case (test_check.ArtifactFidelityTests.test_payment_approval_cannot_hide_in_a_case) ... ok
+test_plan_must_trace_every_obligation (test_check.ArtifactFidelityTests.test_plan_must_trace_every_obligation) ... ok
+test_policy_authority_cannot_be_replaced_by_sponsor_ticket (test_check.ArtifactFidelityTests.test_policy_authority_cannot_be_replaced_by_sponsor_ticket) ... ok
+test_repaired_specs_satisfy_fixed_obligations (test_check.ArtifactFidelityTests.test_repaired_specs_satisfy_fixed_obligations) ... ok
+test_requirement_source_loss_is_detected (test_check.ArtifactFidelityTests.test_requirement_source_loss_is_detected) ... ok
+test_symlinked_spec_is_rejected (test_check.ArtifactFidelityTests.test_symlinked_spec_is_rejected) ... ok
+test_unperformed_human_review_cannot_be_ticked_done (test_check.ArtifactFidelityTests.test_unperformed_human_review_cannot_be_ticked_done) ... ok
+test_wrong_equality_route_is_rejected (test_check.ArtifactFidelityTests.test_wrong_equality_route_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.080s
+
+OK

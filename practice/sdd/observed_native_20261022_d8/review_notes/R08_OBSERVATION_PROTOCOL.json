@@ -1,0 +1,50 @@
+{
+  "schema": "esa-r08-new-observation-protocol/v1",
+  "recorded_at_utc": "2026-10-22T09:59:08.152067+00:00",
+  "status": "PREPARED_NOT_EXECUTED",
+  "new_user_authorization": "Could you please finalise R08 and improve the pack accordingly? Keep the same approach with often checkpoints.",
+  "base_edition": "2026.10.22-d7",
+  "target_edition": "2026.10.22-d8",
+  "original_action": {
+    "id": "R08",
+    "title": "Complete one actual SDD generation journey",
+    "change": "Use the existing validation protocol to run the installed framework and coding client from the fixed input through actual generated artifacts, clarification and independent assessment. Preserve first outputs and real omissions. Use the second framework as a clearly scoped contrast.",
+    "acceptance": [
+      "Artifacts are linked to actual prompts/commands and retained first output.",
+      "Generation is distinguished from scaffold creation and intentionally seeded faults.",
+      "One observed route is sufficient for the tutorial; a second observed route is required before a measured paired comparison is claimed."
+    ]
+  },
+  "scope": "One observed primary Spec Kit journey through the named OpenCode client, using the installed specification and clarification commands as actually needed; useful native-generated specification content, an actually reached clarification disposition or stop, and separately attributed independent semantic assessment.",
+  "required_evidence": [
+    "Exact prompts, full retained upstream command bodies, fixed input hashes, actual client/framework/model/configuration identities and prospective bounds.",
+    "Native events and session export, first generated artifact versions or exact reconstructable write payloads, final tree/diff and explicit attribution of scaffold/helper creation.",
+    "A genuine reached clarification dialogue or stop before planning, preserving unanswered owner questions. Controller timeout alone does not meet this requirement.",
+    "Independent semantic assessment of generated content against all five fixed requirements and eight existing oracle cases, authority and the three unanswered owner questions."
+  ],
+  "exposure_policy": "Authored reference specification, case oracle and source decisions are disclosed input. No previous generated Markdown answers, artifact drafts or fabricated owner responses are supplied.",
+  "history_policy": "All d7 artifacts and evidence are immutable. This is a newly authorized observation, not an extension or rewriting of the d7 bounded attempt.",
+  "not_added_requirements": [
+    "Second observed framework without a measured paired-comparison claim",
+    "Implementation or deployment",
+    "All generated checklist items green",
+    "Positive human requirements acceptance",
+    "Complete financial billing or inferred zero cost"
+  ],
+  "failure_policy": "Preserve every real failed or incomplete attempt. A successful exit, promise to write, input read or template copy is not useful native artifact generation.",
+  "execution_bounds": "Exact finite limits and resource choices will be frozen in the attempt preflight after the current performance diagnosis, before any model invocation.",
+  "checkpoint_boundaries": [
+    "Prepared observation and verified baseline",
+    "Final configuration and prospective invocation bounds before model run",
+    "First native outputs or terminal failure",
+    "Reached clarification disposition and independent review",
+    "Integrated manuscript/registers before final release validation",
+    "Verified final artifacts and complete successor package"
+  ],
+  "scope_clarification_after_CP24": {
+    "at_utc": "2026-10-22T10:03:04.823093+00:00",
+    "reason": "Independent source review identified that one command could be misread as exactly one invocation. One primary route may legitimately use specify then clarify. No original criterion changed.",
+    "prior_protocol_sha256": "8c70724ee4cd7ce4e7ba5a3d76657096c01393d903502f5630a58d7235304f48",
+    "prior_version_preserved_in": "ESA_Revision_CP24_R08_New_Observation_Prepared_20261022.zip"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/npm",
+    "--prefix",
+    "/workspace/scratch/72d789d25fef/runtime_d7/opencode",
+    "--cache",
+    "/workspace/scratch/72d789d25fef/runtime_d7/opencode/npm-cache",
+    "--userconfig",
+    "/workspace/scratch/72d789d25fef/runtime_d7/opencode/npm-user.npmrc",
+    "--globalconfig",
+    "/workspace/scratch/72d789d25fef/runtime_d7/opencode/npm-global.npmrc",
+    "ci",
+    "--no-audit",
+    "--no-fund",
+    "--fetch-retries=0"
+  ],
+  "cwd": "/workspace/scratch/72d789d25fef/runtime_d7/opencode",
+  "started_at_utc": "2026-10-22T05:54:03.441934+00:00",
+  "environment_names": [
+    "PATH",
+    "HTTPS_PROXY",
+    "HTTP_PROXY",
+    "NO_PROXY",
+    "https_proxy",
+    "http_proxy",
+    "no_proxy",
+    "NODE_EXTRA_CA_CERTS",
+    "SSL_CERT_FILE",
+    "REQUESTS_CA_BUNDLE",
+    "LANG",
+    "TZ",
+    "NO_UPDATE_NOTIFIER"
+  ],
+  "network_use": "Public npm registry; no model API calls or credentials.",
+  "tls_validation": "ENABLED",
+  "exit_code": 0,
+  "finished_at_utc": "2026-10-22T05:54:10.032811+00:00",
+  "elapsed_seconds": 6.590786503000345
+}

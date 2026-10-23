@@ -1,0 +1,15 @@
+{
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-B",
+    "reader_side/tools/run_acceptance.py",
+    "--output",
+    "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/guide_identity_workflow/FAULTY_STARTER_ACCEPTANCE.json"
+  ],
+  "cwd": "/tmp/esa-d7-guide-check-w5_51msl/chapter1",
+  "started_at_utc": "2026-10-22T06:08:55.877747+00:00",
+  "ended_at_utc": "2026-10-22T06:08:55.980021+00:00",
+  "exit_code": 1,
+  "stdout_sha256": "0e0d712d84ce2599a870906ad8122ecd73dcc81c95895692ddfcfc3990529295",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

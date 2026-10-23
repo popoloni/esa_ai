@@ -1,0 +1,84 @@
+{
+  "checked_at_utc": "2026-10-21T16:03:33.752291+00:00",
+  "scope": "Generator-owned deterministic document and integrity checks only; not application tests or independent review.",
+  "request_digest_matches_dispatch": true,
+  "inputs_unchanged_since_snapshot": true,
+  "input_files_compared": 51,
+  "requirements_preserved": {
+    "REQ-EXPL-001": true,
+    "REQ-EXPL-002": true,
+    "REQ-EXPL-003": true,
+    "REQ-EXPL-004": true,
+    "REQ-EXPL-005": true
+  },
+  "scenarios_preserved": {
+    "SC-EXPL-001": {
+      "exact_row_present": true,
+      "oracle_agreement": true,
+      "given_when_then_preserved": true
+    },
+    "SC-EXPL-002": {
+      "exact_row_present": true,
+      "oracle_agreement": true,
+      "given_when_then_preserved": true
+    },
+    "SC-EXPL-003": {
+      "exact_row_present": true,
+      "oracle_agreement": true,
+      "given_when_then_preserved": true
+    },
+    "SC-EXPL-004": {
+      "exact_row_present": true,
+      "oracle_agreement": true,
+      "given_when_then_preserved": true
+    },
+    "SC-EXPL-005": {
+      "exact_row_present": true,
+      "oracle_agreement": true,
+      "given_when_then_preserved": true
+    },
+    "SC-EXPL-006": {
+      "exact_row_present": true,
+      "oracle_agreement": true,
+      "given_when_then_preserved": true
+    },
+    "SC-EXPL-007": {
+      "exact_row_present": true,
+      "oracle_agreement": true,
+      "given_when_then_preserved": true
+    },
+    "SC-EXPL-008": {
+      "exact_row_present": true,
+      "oracle_agreement": true,
+      "given_when_then_preserved": true
+    }
+  },
+  "spec_clarification_count": 3,
+  "task_count": 22,
+  "task_ids_sequential": true,
+  "task_checklist_format_and_paths": true,
+  "task_counts_by_story": {
+    "US1": 5,
+    "US2": 4,
+    "US3": 4
+  },
+  "unchecked_task_count": 22,
+  "extension_hooks_file_present": false,
+  "application_source_executed": false,
+  "application_source_modified": false,
+  "application_tests_run": false,
+  "native_speckit_commands_run": false,
+  "human_review_passed": false,
+  "engineering_acceptance": "PENDING_INDEPENDENT_REVIEW",
+  "human_requirements_approval": "PENDING",
+  "implementation": "BLOCKED",
+  "release": "BLOCKED",
+  "limitations": [
+    "Document checks do not establish semantic completeness.",
+    "Source behavior was statically inspected, not executed.",
+    "Policy and oracle are synthetic.",
+    "SYN-TRIAGE-CSV is referenced but absent.",
+    "Constitution is an unratified template.",
+    "No user research or external verification performed."
+  ]
+}

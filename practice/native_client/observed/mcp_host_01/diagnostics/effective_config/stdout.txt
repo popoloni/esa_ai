@@ -1,0 +1,76 @@
+{
+  "model": "esa-local/esa-qwen3-4b",
+  "small_model": "esa-local/esa-qwen3-4b",
+  "enabled_providers": [
+    "esa-local"
+  ],
+  "autoupdate": false,
+  "share": "disabled",
+  "compaction": {
+    "auto": false
+  },
+  "provider": {
+    "esa-local": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "ESA local llama.cpp",
+      "options": {
+        "baseURL": "http://127.0.0.1:18080/v1",
+        "timeout": 600000
+      },
+      "models": {
+        "esa-qwen3-4b": {
+          "name": "Qwen3-4B Q4_K_M local",
+          "tool_call": true,
+          "limit": {
+            "context": 16384,
+            "output": 2048
+          }
+        }
+      }
+    }
+  },
+  "default_agent": "esa-mcp",
+  "agent": {
+    "esa-mcp": {
+      "description": "Observe the declared synthetic policy lookup in the actual coding host",
+      "mode": "primary",
+      "model": "esa-local/esa-qwen3-4b",
+      "steps": 6,
+      "temperature": 0.2,
+      "prompt": "Use the available catalog tool. Report actual results and their rejection layer. Stop after the bounded observation.",
+      "options": {},
+      "permission": {}
+    }
+  },
+  "permission": {
+    "*": "deny",
+    "treasury_lookup_policy": "allow",
+    "external_directory": "deny"
+  },
+  "mcp": {
+    "treasury": {
+      "type": "local",
+      "command": [
+        "/workspace/scratch/72d789d25fef/runtime_d7/mcp_venv/bin/python",
+        "-B",
+        "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion/practice/mcp_cli/wire_proxy.py",
+        "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/mcp_host_01/diagnostics/effective_config/trace"
+      ],
+      "enabled": true,
+      "timeout": 20000,
+      "environment": {
+        "PYTHONPATH": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion/practice/native_client/probe",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "ESA_NATIVE_PROBE_SERVER": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion/practice/mcp_cli/policy_server.py",
+        "ESA_NATIVE_PROBE_RUN_ID": "ESA_READER_MCP_01",
+        "ESA_NATIVE_PROBE_CANARY": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/mcp_host_01/DECLARED_NONSECRET_CANARY.txt",
+        "ESA_NATIVE_PROBE_OUTPUT": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/mcp_host_01/diagnostics/effective_config/probe"
+      }
+    }
+  },
+  "$schema": "https://opencode.ai/config.json",
+  "mode": {},
+  "plugin": [],
+  "command": {},
+  "username": "unknown"
+}

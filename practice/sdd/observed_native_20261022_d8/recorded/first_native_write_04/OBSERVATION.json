@@ -1,0 +1,49 @@
+{
+  "started_at_utc": "2026-10-22T11:53:22.422533+00:00",
+  "observed_file_at_utc": "2026-10-22T11:53:22.427358+00:00",
+  "finished_at_utc": "2026-10-22T11:53:22.428376+00:00",
+  "status": "FIRST_COMPLETED_NATIVE_NON_TEMPLATE_WRITE_SEMANTIC_REVIEW_PENDING",
+  "attempt": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/attempt_04",
+  "session_id": "ses_e9cc44d15ffewxo9hTP3f5v23l",
+  "native_event_timestamp_ms": 1792669901878,
+  "native_event_at_utc": "2026-10-22T11:51:41.878000+00:00",
+  "call_id": "eAWLdruLFmtABLHFQsQnkLgC82UsZvHW",
+  "message_id": "msg_1636f1c66001O96YP7jMDzCqI1",
+  "tool": "write",
+  "native_status": "completed",
+  "target_file": "/workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/specs/001-explain-treasury/spec.md",
+  "literal_native_content": {
+    "path": "LITERAL_NATIVE_WRITE_CONTENT.md",
+    "bytes": 2230,
+    "sha256": "04b6177aa7cd2a248a86ef418f8faeffe3c07cbf64651951136c20559402bfd1",
+    "basis": "Exact completed native write tool input.content encoded as UTF-8; not controller-authored prose."
+  },
+  "observed_file": {
+    "path": "OBSERVED_SPEC.md",
+    "bytes": 2230,
+    "sha256": "04b6177aa7cd2a248a86ef418f8faeffe3c07cbf64651951136c20559402bfd1",
+    "stable_across_immediate_reads": true,
+    "equals_literal_tool_input": true,
+    "equals_previous_upstream_template": false,
+    "basis": "Read-only snapshot of actual native target after the completed write event. Formatter effects are not assumed; bytes compared separately."
+  },
+  "stdout_prefix": {
+    "bytes": 3943,
+    "sha256": "12cb48ddef957248e50a3254a7172617af9c986ad1bcf7196f3a56e1b0b94903",
+    "complete_lines": 4,
+    "source_still_has_prefix": true
+  },
+  "stderr_prefix": {
+    "bytes": 7121,
+    "sha256": "62002d2c0b034798e67d1b85c04193eead1739b8585178c9408cb491d92bcaa3",
+    "source_still_has_prefix": true
+  },
+  "continuation_task_sha256": "fecc09b8c3b299b49f69b43b2e693eb322a4bc7c1e4d6cd9d62eb8cba69c6521",
+  "parent_export_sha256": "01ad8ea9da57f23fe443eeb64b366478632e5c24f38e7a75209af130c396da2e",
+  "terminal_receipt_present_at_capture": false,
+  "model_call_by_observer": false,
+  "project_write_by_observer": false,
+  "active_database_export": false,
+  "human_review": "ABSENT",
+  "limits": "This proves a native specification write, not semantic acceptance, a completed checklist/metadata, owner clarification or original R08 closure. Any later native file revisions must be retained separately. CP29 hold was released before this canonical capture; no staging copy was created."
+}

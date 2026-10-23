@@ -1,0 +1,25 @@
+[
+  {
+    "argv": [
+      "/workspace/scratch/72d789d25fef/runtime_d7/opencode/node_modules/.bin/opencode",
+      "--pure",
+      "debug",
+      "config"
+    ],
+    "exit_code": 0,
+    "stdout": "effective_config.stdout.txt",
+    "stderr": "effective_config.stderr.txt"
+  },
+  {
+    "argv": [
+      "/workspace/scratch/72d789d25fef/runtime_d7/opencode/node_modules/.bin/opencode",
+      "--pure",
+      "debug",
+      "agent",
+      "esa-csv"
+    ],
+    "exit_code": 0,
+    "stdout": "effective_agent.stdout.txt",
+    "stderr": "effective_agent.stderr.txt"
+  }
+]

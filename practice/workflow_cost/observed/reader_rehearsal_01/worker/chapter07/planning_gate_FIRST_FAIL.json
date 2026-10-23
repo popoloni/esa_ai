@@ -1,0 +1,31 @@
+{
+  "status": "FAIL",
+  "findings": [
+    "ACCEPTANCE:makers_may_approve_own_work",
+    "AUTHORITY:architecture_status",
+    "AUTHORITY:payment_approval_allowed",
+    "AUTHORITY:release_authorized",
+    "AUTHORITY:routing_threshold_eur",
+    "BOOLEAN_TYPE:payment_approval_allowed",
+    "BOOLEAN_TYPE:release_authorized",
+    "BUDGET:max_concurrent_agents",
+    "DEPENDENCIES:T07-04",
+    "HANDOFF:architecture_status",
+    "HANDOFF:claim",
+    "HANDOFF:payment_approval_allowed",
+    "HANDOFF:policy_threshold_eur",
+    "HANDOFF:release_authorized",
+    "HANDOFF_STATE:agent_execution_evidence",
+    "HANDOFF_STATE:tasks_ready",
+    "MODE_NOT_JUSTIFIED",
+    "PARALLEL_SET_NOT_READ_ONLY",
+    "PROTECTED_PATH:T07-01",
+    "READ_ONLY_WRITES:T07-01",
+    "READ_ONLY_WRITES:T07-02",
+    "STATE:T07-04",
+    "STATE:T07-05",
+    "WRITER_SCOPE:T07-04"
+  ],
+  "findings_count": 24,
+  "meaning": "Owner-run CP07 synthetic planning gate: does not run coding agents or grant permissions"
+}

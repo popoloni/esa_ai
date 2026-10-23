@@ -1,0 +1,7 @@
+{
+  "reference_solution/specification.json": "a1b6fee6ea70785a2fe18f3bcdd7c51c8cdc11e5ecd5b05ddfe1df204f859454",
+  "specs/discovery_handoff.json": "8b20a7f95c439f4157895edbc77bbf43fa3f1852106ff142579fc4b30a686656",
+  "discovery/sources/SRC-POL-001.json": "1de2d20f2fe72c4a2ae698093078deb2a05b5d7fd85eec819438cabb7928aacb",
+  "discovery/sources/SRC-TKT-017.json": "108f533303f738227a4342bd61c61df203d0e1b59c505714e3e4f9fdc3af0007",
+  "specs/case_oracle.json": "11f86f4a19d1587f4eabf5ad00da22f03111ffad7a834729ae130b908f4686b2"
+}

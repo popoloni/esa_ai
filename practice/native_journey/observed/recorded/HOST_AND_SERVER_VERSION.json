@@ -1,0 +1,14 @@
+{
+  "at_utc": "2026-10-22T17:28:59.180649+00:00",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "server_version": {
+    "argv": [
+      "/workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/llama-server",
+      "--version"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "version: 0.7.0-dev (build 11799, commit 0756e83fc)\nbuilt with GNU 11.4.0 for Linux x86_64\n"
+  }
+}

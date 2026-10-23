@@ -1,0 +1,198 @@
+{
+  "schema": "esa-d8-native-attempt-independent-review/v1",
+  "recorded_at_utc": "2026-10-22T11:11:12.566043+00:00",
+  "reviewer": {
+    "kind": "AGENT",
+    "name": "acceptance_audit",
+    "independent_of_native_generation": true
+  },
+  "status": "PASS_EVIDENCE_CONSISTENCY_SCAFFOLD_ONLY_R08_REMAINS_PARTIAL",
+  "scope": "Independent examination of stable terminal02 collection, actual native session/events and retained source/file changes. No native files modified; no model or tests run.",
+  "evidence_sha256": {
+    "revision_d8/evidence/native_sdd_01/terminal_collection_02/COLLECTION_RECEIPT.json": "47c289aec7c2b064ecb806d4f68a7365f5863085a428e764eeb84660dcb88853",
+    "revision_d8/evidence/native_sdd_01/terminal_collection_02/native-session.json": "f261470cb68a23ca69b5b91acf8a62d4856ffe9eb9350057a764f37b17aabe8e",
+    "revision_d8/evidence/native_sdd_01/terminal_collection_02/NATIVE_CONTENT_PROVENANCE.json": "0e61fd2026486ee2449b41c2e7438537247cc84727f97c616b61c75b353ae90b",
+    "revision_d8/evidence/native_sdd_01/terminal_collection_02/FINAL_INVENTORY.json": "ebbbe348199e854ec6847d7e2bc3c0c9f6dbfbfc52df41c326fe174df0262da3",
+    "revision_d8/evidence/native_sdd_01/terminal_collection_02/FINAL_DIFF.patch": "16ab0faa303ce8b5ef7c8b4b82eaff22eb3de9a2666ebfc1bb95d8aa2c39f1b9",
+    "revision_d8/evidence/native_sdd_01/attempt_02/RECEIPT.json": "c5ca377daab7610918ddf2163cd12bd9e3a8dcac6c5ba79412f2d91690cf02b9",
+    "revision_d8/evidence/native_sdd_01/attempt_02/TASK.json": "15569856560ce50cb9968a8996a574f3b87178887818388d1c9fa6f76ca5d2f9",
+    "revision_d8/notes/R08_CONTINUATION_SEMANTIC_REVIEW_PLAN.json": "f94d3b82ebbbe884daead32fed77571e666b4d6986090dff018048f57f559cb0"
+  },
+  "observation": {
+    "session_id": "ses_e9cc44d15ffewxo9hTP3f5v23l",
+    "native_client": "OpenCode1.19.3",
+    "exit_code": 0,
+    "duration_seconds": 990.2142903620006,
+    "completed_assistant_messages": 12,
+    "tool_calls": 11,
+    "completed_tools": 6,
+    "refused_tools": 5,
+    "native_write_or_edit_tool_calls": 0,
+    "assistant_text_parts": 0,
+    "final_native_finish": "stop",
+    "final_response_reported_output_tokens": 1,
+    "first_49_files_unchanged": true,
+    "final_files": 50,
+    "only_added_file": "specs/001-explain-treasury/spec.md",
+    "added_file_bytes": 4556,
+    "added_file_sha256": "3945437fc35cd30a5b2bf7beea680337c3516826d3efa5a6b92c4a7eca1ba28e",
+    "added_file_classification": "Exact upstream spec-template.md copy; no native feature content.",
+    "useful_native_generated_artifacts": 0,
+    "actual_owner_clarification": "NOT_REACHED",
+    "human_review": "ABSENT"
+  },
+  "actual_action_sequence": [
+    {
+      "sequence": 1,
+      "tool": "read",
+      "call_id": "Z0uiLvPSk0Uc94MvPTR7F7T05we233AH",
+      "status": "error",
+      "input": {
+        "filePath": "/workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/inputs/NATIVE_CONTEXT_BUNDLE.md",
+        "offset": 1,
+        "limit": 2000
+      },
+      "exit_code": null
+    },
+    {
+      "sequence": 2,
+      "tool": "bash",
+      "call_id": "jpyZN5FJF3hcx7I31cUfZQ4mra9226FY",
+      "status": "error",
+      "input": {
+        "command": "ls -la /workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/inputs/NATIVE_CONTEXT_BUNDLE.md",
+        "timeout": 120000
+      },
+      "exit_code": null
+    },
+    {
+      "sequence": 3,
+      "tool": "bash",
+      "call_id": "g3anYBv59fWoM07VFdEKwyg8iykAf9Kv",
+      "status": "completed",
+      "input": {
+        "command": "specify preset resolve spec-template",
+        "timeout": 120000
+      },
+      "exit_code": 0
+    },
+    {
+      "sequence": 4,
+      "tool": "bash",
+      "call_id": "4ktkKBRJpCCg8q5aXB7QdWiWucQ5je5B",
+      "status": "completed",
+      "input": {
+        "command": "specify preset resolve checklist-template",
+        "timeout": 120000
+      },
+      "exit_code": 0
+    },
+    {
+      "sequence": 5,
+      "tool": "bash",
+      "call_id": "bLPDWIe1yrjCeT71U4iILiNbr7Bdxf7V",
+      "status": "completed",
+      "input": {
+        "command": "mkdir -p specs/001-explain-treasury",
+        "timeout": 120000
+      },
+      "exit_code": 0
+    },
+    {
+      "sequence": 6,
+      "tool": "bash",
+      "call_id": "DTDVRY032LLNWKLxheu0NiAZmUXzUkr1",
+      "status": "completed",
+      "input": {
+        "command": "mkdir -p specs/001-explain-treasury/checklists",
+        "timeout": 120000
+      },
+      "exit_code": 0
+    },
+    {
+      "sequence": 7,
+      "tool": "bash",
+      "call_id": "ejD5xbhOrjCDiCLnquJRvmCb2LjNVOCT",
+      "status": "completed",
+      "input": {
+        "command": "cp .specify/templates/spec-template.md specs/001-explain-treasury/spec.md",
+        "timeout": 120000
+      },
+      "exit_code": 0
+    },
+    {
+      "sequence": 8,
+      "tool": "bash",
+      "call_id": "4OheCZLeAJ7T7JvnWgbgyF6o0eQi0fNd",
+      "status": "error",
+      "input": {
+        "command": "cp .specify/templates/checklist-template.md specs/001-explain-treasury/checklists/requirements.md",
+        "timeout": 120000
+      },
+      "exit_code": null
+    },
+    {
+      "sequence": 9,
+      "tool": "bash",
+      "call_id": "llli3PZjZJ3GPEumnX5B1HgSdaEqZXPP",
+      "status": "completed",
+      "input": {
+        "command": "python3 .specify/scripts/python/check_prerequisites.py --json --paths-only",
+        "timeout": 120000
+      },
+      "exit_code": 0
+    },
+    {
+      "sequence": 10,
+      "tool": "bash",
+      "call_id": "w8aoREoiCwqVWK2WNtO2jjFmb3YhoYnb",
+      "status": "error",
+      "input": {
+        "command": "echo \"{'feature_directory': '$FEATURE_DIR'}\" > .specify/feature.json",
+        "timeout": 120000
+      },
+      "exit_code": null
+    },
+    {
+      "sequence": 11,
+      "tool": "bash",
+      "call_id": "W8f9hp2u0w1iNCkQH45uba4apLkQ1Dup",
+      "status": "error",
+      "input": {
+        "command": "echo \"{'feature_directory': '$FEATURE_DIR'}\" > .specify/feature.json",
+        "timeout": 120000
+      },
+      "exit_code": null
+    }
+  ],
+  "integrity": {
+    "collection_entries_verified": 61,
+    "all_collection_hashes_and_sizes_match": true,
+    "actual_task_and_command_stream_hashes_match": true,
+    "retained_tree_membership_and_hashes_match": true,
+    "native_template_cp_and_exact_final_template_bytes_agree": true,
+    "no_false_generation_claim_found": true
+  },
+  "original_criteria_assessment": [
+    {
+      "verbatim": "Artifacts are linked to actual prompts/commands and retained first output.",
+      "assessment": "The actual command and first native actions are retained, but the sole artifact is an unchanged template. No useful native-generated feature artifact is available for semantic acceptance."
+    },
+    {
+      "verbatim": "Generation is distinguished from scaffold creation and intentionally seeded faults.",
+      "assessment": "The collection correctly labels the native cp as framework scaffold creation. Placeholder instructions and example NEEDS CLARIFICATION text are template content, not generated requirements or a reached owner clarification."
+    },
+    {
+      "verbatim": "One observed route is sufficient for the tutorial; a second observed route is required before a measured paired comparison is claimed.",
+      "assessment": "No measured paired comparison is claimed. One observed primary journey remains sufficient; this attempt has not completed it."
+    }
+  ],
+  "current_judgment": "R08 remains PARTIAL. Exit0 and an empty final stop establish process completion only. The six successful setup/path/template operations do not establish specification generation, requirements acceptance or owner clarification.",
+  "continuation_review": "Use the separately retained prospective semantic review plan for any actual first native-written artifacts and genuine reached clarification disposition. Preserve this scaffold-only terminal state and bind the continuation to the exact prior session/history and disclosed appended guidance. No new draft or owner answer is supplied by this review.",
+  "scope_qualifiers": [
+    "The collector flags model_call:false and project_written:false describe collection/export; the native attempt itself executed model/tool requests and created the template copy.",
+    "The raw command receipt retains preparation-origin and human_review:PENDING labels. Actual events establish execution; they supply no human review.",
+    "Denied shell attempts to copy the checklist or echo feature metadata are retained attempts, not executed file writes.",
+    "Completed native token events may be attributed; zero reported client cost does not establish complete financial cost. No new economic, comparison or human claim is made."
+  ]
+}

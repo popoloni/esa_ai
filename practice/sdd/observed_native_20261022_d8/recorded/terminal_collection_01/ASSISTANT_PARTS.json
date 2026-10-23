@@ -1,0 +1,64 @@
+{
+  "source": "native-session.json",
+  "assistant_message_info": [
+    {
+      "parentID": "msg_163242041001HyNq8GTRtiTCBx",
+      "role": "assistant",
+      "mode": "esa-sdd",
+      "agent": "esa-sdd",
+      "path": {
+        "cwd": "/workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01",
+        "root": "/"
+      },
+      "cost": 0,
+      "tokens": {
+        "total": 15685,
+        "input": 15622,
+        "output": 63,
+        "reasoning": 0,
+        "cache": {
+          "write": 0,
+          "read": 0
+        }
+      },
+      "modelID": "esa-qwen3-4b",
+      "providerID": "esa-local",
+      "time": {
+        "created": 1792664674449,
+        "completed": 1792665177727
+      },
+      "finish": "tool-calls",
+      "id": "msg_163242091001mDz05qOnSRTOco",
+      "sessionID": "ses_e9cdbe2b5ffe5Bsfi3cviA8Zsb"
+    },
+    {
+      "parentID": "msg_163242041001HyNq8GTRtiTCBx",
+      "role": "assistant",
+      "mode": "esa-sdd",
+      "agent": "esa-sdd",
+      "path": {
+        "cwd": "/workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01",
+        "root": "/"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 0,
+        "output": 0,
+        "reasoning": 0,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      },
+      "modelID": "esa-qwen3-4b",
+      "providerID": "esa-local",
+      "time": {
+        "created": 1792665177731
+      },
+      "id": "msg_1632bce830013bONAphp7CCpow",
+      "sessionID": "ses_e9cdbe2b5ffe5Bsfi3cviA8Zsb"
+    }
+  ],
+  "text_parts": [],
+  "scope": "Raw native message usage/timing and text; incomplete messages are not completed usage or acceptance."
+}

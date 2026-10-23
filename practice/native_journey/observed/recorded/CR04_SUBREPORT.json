@@ -1,0 +1,64 @@
+{
+  "schema": "esa-action-subreport/v1",
+  "at_utc": "2026-10-22T17:55:23.390511+00:00",
+  "action_id": "CR04",
+  "status": "OPEN_PARTIAL_BUDGET_EXHAUSTED",
+  "criteria": [
+    {
+      "criterion": 1,
+      "status": "PASS",
+      "note": "Useful native files exist, separately retained from authored teaching derivative."
+    },
+    {
+      "criterion": 2,
+      "status": "PASS",
+      "note": "Effective configs, runtime identities, actual tools, interventions, failures and stop retained."
+    },
+    {
+      "criterion": 3,
+      "status": "PARTIAL",
+      "note": "Useful implementation and independent checks pass. Native check passed before final cleanup; native post-cleanup check and accurate handoff missing."
+    },
+    {
+      "criterion": 4,
+      "status": "PASS",
+      "note": "Existing fictional authored decision named; deferrals explicit; no real approval invented."
+    },
+    {
+      "criterion": 5,
+      "status": "PASS",
+      "note": "Four-invocation/2700-second budget honored; attempt limit used at 1274.40 seconds. Offline route retained and status stays OPEN."
+    }
+  ],
+  "evidence": [
+    "CONTENT_REVIEW.json",
+    "EVENT_INDEX.json",
+    "HANDOFF_REVIEW_AFTER_04.json",
+    "OUTCOME.json",
+    "independent_final_review/REVIEW.json",
+    "visible_result/alice_open.csv"
+  ],
+  "files": [
+    "companion/practice/native_journey/README.md",
+    "companion/practice/native_journey/prepare_observation.py",
+    "companion/practice/native_journey/run_observation.py",
+    "companion/practice/native_journey/independent_review.py",
+    "companion/practice/native_journey/observed/",
+    "companion/practice/native_journey/teaching/",
+    "manuscript/additions/ch04_native_complete.tex",
+    "revision_d9/evidence/native_journey/"
+  ],
+  "tests": {
+    "native_attempt_03": "PASS_SELECTED_CONTRACT: seven cases, prior to final cleanup",
+    "native_attempt_04": "NO_CHECK_EVENT: stale check claim retained",
+    "independent_final": "PASS_SELECTED_CONTRACT_AND_SCOPE: 17 selected checks plus unchanged seven-case checker",
+    "scope": "api.py changed; spec.md/plan.md added; fixed files unchanged",
+    "semantic_quality": "Separate content review; file existence alone not treated as semantic validation"
+  },
+  "remaining": "No native post-cleanup check occurred on final attempt 04 bytes. Handoff reused previous PASS. Remaining criterion: actual check on final bytes followed by accurate native handoff.",
+  "OP05": {
+    "status": "NOT_PERFORMED",
+    "reason": "Author supplied direct-formatter design choice; no native architectural assumption challenge."
+  },
+  "original_R06_R08_R17_changed": false
+}

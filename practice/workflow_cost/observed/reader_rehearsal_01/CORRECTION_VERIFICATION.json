@@ -1,0 +1,14 @@
+{
+  "status": "PASS_DOCUMENTED_CORRECTION_CHECKS",
+  "recorded_at_utc": "2026-10-21T18:24:48.752616+00:00",
+  "checks": {
+    "doctor_exit_zero": true,
+    "doctor_prerequisites_only": true,
+    "no_source_or_cache_change": true,
+    "csv_contract_exists": true,
+    "csv_copy_contract_command_present": true,
+    "reference_command_after_attempt_section": true
+  },
+  "changed_or_added_companion_files": [],
+  "scope": "Actual -B doctor run and focused source-path/order checks. No human or new first-attempt comprehension confirmation."
+}

@@ -1,0 +1,13 @@
+{
+  "at_utc": "2026-10-22T06:06:56.261288+00:00",
+  "reason": "The model ran acceptance before editing, observed the original 3/2/2 failure, and the prompt required stopping on failure. End the expensive subsequent summary request and preserve the failed attempt before a shorter guided recovery.",
+  "matching_owned_processes": [
+    {
+      "pid": 5923,
+      "comm": "opencode",
+      "exe": "/workspace/scratch/72d789d25fef/runtime_d7/opencode/node_modules/opencode-ai/bin/opencode.exe"
+    }
+  ],
+  "signal_sent": true,
+  "signal": "SIGINT"
+}

@@ -1,0 +1,17 @@
+{
+  "at_utc": "2026-10-22T17:26:24.440657+00:00",
+  "previous_invocations": 1,
+  "used_inference_wall_seconds": 324.3601130809984,
+  "remaining_budget_seconds": 2375.6398869190016,
+  "source": "Authoring assistant review of actual files and independent check",
+  "changes_to_native_project_by_author": false,
+  "corrections_requested": [
+    "substantive spec",
+    "concrete plan/check command",
+    "unsupported-format refusal",
+    "unnecessary csv module mutations",
+    "post-edit native check and factual handoff"
+  ],
+  "configuration_change": "Declare temperature capability; requested 0.2. See CONFIGURATION_FINDING_01.json.",
+  "previous_status": "INCOMPLETE_NATIVE_HANDOFF_AND_UNACCEPTED_DRAFT"
+}

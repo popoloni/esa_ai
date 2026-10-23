@@ -1,0 +1,320 @@
+{
+  "info": {
+    "id": "ses_e9dc53064ffes94dIoRs5Jj30n",
+    "slug": "witty-star",
+    "projectID": "global",
+    "directory": "/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01",
+    "path": "workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01",
+    "title": "ESA d7 explicitly guided Chapter1 recovery",
+    "agent": "esa-bounded",
+    "model": {
+      "id": "esa-qwen3-4b",
+      "providerID": "esa-local",
+      "variant": "default"
+    },
+    "version": "1.19.3",
+    "summary": {
+      "additions": 0,
+      "deletions": 0,
+      "files": 0
+    },
+    "cost": 0,
+    "tokens": {
+      "input": 2761,
+      "output": 400,
+      "reasoning": 0,
+      "cache": {
+        "read": 6195,
+        "write": 0
+      }
+    },
+    "permission": [
+      {
+        "permission": "question",
+        "pattern": "*",
+        "action": "deny"
+      },
+      {
+        "permission": "plan_enter",
+        "pattern": "*",
+        "action": "deny"
+      },
+      {
+        "permission": "plan_exit",
+        "pattern": "*",
+        "action": "deny"
+      }
+    ],
+    "time": {
+      "created": 1792649383835,
+      "updated": 1792649703146
+    }
+  },
+  "messages": [
+    {
+      "info": {
+        "role": "user",
+        "time": {
+          "created": 1792649383889
+        },
+        "agent": "esa-bounded",
+        "model": {
+          "providerID": "esa-local",
+          "modelID": "esa-qwen3-4b"
+        },
+        "summary": {
+          "diffs": []
+        },
+        "id": "msg_1623acfd10017nhnZtpEJyeCv1",
+        "sessionID": "ses_e9dc53064ffes94dIoRs5Jj30n"
+      },
+      "parts": [
+        {
+          "type": "text",
+          "text": "\"Guided recovery of a failed bounded task. The preceding native attempt read routing.py, ran acceptance BEFORE editing, and failed (3 passes, 2 failures, 2 errors). Do not repeat that sequence. This is assisted execution, not a blind benchmark.\n\nAuthoritative intent supplied verbatim from /workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/reader_side/intent/INT-001.md:\n# INT-001: reject non-positive and malformed routing amounts\n\n- **Business decision owner (synthetic):** Operations policy owner\n- **Recorded decision:** BR-001/v1 amendment for input validation only\n- **Intended behavior:** An amount must be a finite, parseable decimal strictly greater than zero to be routed. For zero, negative, nonnumeric or nonfinite values return `REJECTED / INVALID_AMOUNT`.\n- **Preserve:** Positive values strictly below EUR 5,000 use `STANDARD_QUEUE / BELOW_LIMIT`. Values at or above EUR 5,000 use `HUMAN_REVIEW / AT_OR_ABOVE_LIMIT`.\n- **Non-goals:** No change to the EUR 5,000 threshold; no payments, ledger, API, DB or historical replay in Chapter 1.\n- **Authority:** The agent may propose code; it cannot revise this decision.\n- **Acceptance:** External acceptance cases pass without changes to `acceptance/`. A human reviews the diff and records the verdict.\n- **Limitation:** This policy was invented for the educational case; it is not a real Treasury policy.\n\n\nDo exactly these operations in order:\n1. Read /workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/repo/src/treasury/routing.py once.\n2. Use the write tool to replace that file with the repaired version. Preserve imports, RoutingDecision dataclass, function signature, BR-001/v1, and EUR5000 boundary. Repair the assess body. API guidance: Decimal.is_finite() rejects NaN, sNaN, and infinities. Check finiteness BEFORE any ordering comparison. Reject invalid/nonpositive amounts with REJECTED/INVALID_AMOUNT. Below5000 uses STANDARD_QUEUE/BELOW_LIMIT; at/above5000 uses HUMAN_REVIEW/AT_OR_ABOVE_LIMIT. Every result retains POLICY_VERSION. Do not insert duplicate bodies.\n3. Only AFTER the write, run this exact command once:\npython3 -B reader_side/tools/run_acceptance.py --output reader_side/evidence/CH01_NATIVE_RECOVERY_02.json\n\nEdit no other source or protected file. Read no worked answer. Report only actual counts; if all seven pass say READY_FOR_HUMAN_REVIEW_NOT_ACCEPTED, otherwise FAILED_ACCEPTANCE. No human acceptance or payment is authorized. If a tool fails, stop. The working directory is /workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01.\n\"",
+          "id": "prt_1623acfd9001iRHQQnx0hy0PNu",
+          "sessionID": "ses_e9dc53064ffes94dIoRs5Jj30n",
+          "messageID": "msg_1623acfd10017nhnZtpEJyeCv1"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_1623acfd10017nhnZtpEJyeCv1",
+        "role": "assistant",
+        "mode": "esa-bounded",
+        "agent": "esa-bounded",
+        "path": {
+          "cwd": "/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01",
+          "root": "/"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 3493,
+          "input": 653,
+          "output": 67,
+          "reasoning": 0,
+          "cache": {
+            "write": 0,
+            "read": 2773
+          }
+        },
+        "modelID": "esa-qwen3-4b",
+        "providerID": "esa-local",
+        "time": {
+          "created": 1792649384556,
+          "completed": 1792649439415
+        },
+        "finish": "tool-calls",
+        "id": "msg_1623ad26b001340RxyRLyk6YgV",
+        "sessionID": "ses_e9dc53064ffes94dIoRs5Jj30n"
+      },
+      "parts": [
+        {
+          "type": "step-start",
+          "id": "prt_1623b7090001c8wBb5tjvdzTm3",
+          "sessionID": "ses_e9dc53064ffes94dIoRs5Jj30n",
+          "messageID": "msg_1623ad26b001340RxyRLyk6YgV"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "wNO2RoVA4MqDK4lNN0r5GEl8R1CGt3e8",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/repo/src/treasury/routing.py",
+              "offset": 0,
+              "limit": 2000
+            },
+            "output": "<path>/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/repo/src/treasury/routing.py</path>\n<type>file</type>\n<content>\n1: \"\"\"A recommendation routing service. This module never authorizes fund movement.\"\"\"\n2: from dataclasses import dataclass\n3: from decimal import Decimal, InvalidOperation\n4: \n5: THRESHOLD_EUR = Decimal(\"5000.00\")\n6: POLICY_VERSION = \"BR-001/v1\"\n7: \n8: @dataclass(frozen=True)\n9: class RoutingDecision:\n10:     route: str\n11:     reason: str\n12:     policy_version: str\n13: \n14: def assess(amount_eur: str) -> RoutingDecision:\n15:     \"\"\"Choose a processing queue. Not a payment authorisation.\"\"\"\n16:     amount = Decimal(amount_eur)\n17:     if amount < THRESHOLD_EUR:\n18:         return RoutingDecision(\"STANDARD_QUEUE\", \"BELOW_LIMIT\", POLICY_VERSION)\n19:     return RoutingDecision(\"HUMAN_REVIEW\", \"AT_OR_ABOVE_LIMIT\", POLICY_VERSION)\n\n(End of file - total 19 lines)\n</content>\n\n<system-reminder>\nInstructions from: /workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/repo/AGENTS.md\n# Treasury teaching repository — integrated Chapters 1–14\n\nThis synthetic exercise routes requests to queues. It never approves payments\nor moves funds. The inherited routing API remains BR-001/v1 with the EUR 5,000 boundary. Chapter 11 adds a separately versioned policy-history teaching experiment.\nThe reader-controlled intent, source catalogue, specification, reference\nsolutions, test oracles, scope baselines and checks are outside this repo.\n\n## Select the exercise before editing\n\nThe combined laboratory supports several exercises. Its cumulative inventory\nis not permission to edit every candidate at once. Select the chapter's scope\nprofile and capture a reader-owned baseline before making its changes.\n\n| Chapter | Candidate paths relative to this repo |\n| --- | --- |\n| 1–2 | `src/treasury/routing.py` in the original routing/workspace exercise |\n| 3 | `engineering/discovery/assessment.json` |\n| 4 | `engineering/specifications/explanation_alpha/specification.json` |\n| 5 | `src/treasury/architecture/direct.py`, `src/treasury/architecture/ports.py`, `engineering/architecture/architecture_decision.json`, `engineering/architecture/ADR-005.md` |\n| 6 | `engineering/knowledge/context_packet.json`, `.agents/skills/context-audit/SKILL.md` |\n| 7 | `engineering/planning/delegation_plan.json`, `engineering/planning/delegation_handoff.json` |\n| 8 | `src/treasury/explanation_alpha.py`, `engineering/implementation/implementation_report.json` |\n| 9 | `engineering/verification/candidate.py`, `engineering/verification/review.json` |\n| 10 | `engineering/release/release_dossier.json` |\n| 11 | `src/treasury/policy_history.py`, `engineering/evolution/policy_delta.json` |\n| 12 | `engineering/operations/deployment.json`, `engineering/operations/incident_review.json` |\n| 13 | `engineering/learning/transfer_review.json`, `engineering/learning/team_knowledge.json` |\n| 14 | `engineering/measurement/outcome_review.json`, `engineering/measurement/tool_decision.json` |\n\nKeep source catalogues, claim dependencies, reader-side specifications, tests,\nreference solutions, manifests and baselines under reader/CI control. Do not\nrewrite an oracle or rebaseline after an unauthorized change to make it pass.\nCheck actual before/after edits with the selected chapter baseline. Task advice\nis not process isolation: enforce real restrictions outside candidate control.\n\n## Planning and teaching experiments\n\nPLAN-007/v1 keeps the architectural decision T07-03 pending and the proposed\nimplementation T07-04 blocked. Its protected reference does not claim any live\nagent execution or human acceptance. Do not mark these tasks complete because\nlater classroom checks pass.\n\nChapter 8 has a separate local experiment work order at\n`../reader_side/implementation/WORK_ORDER_CP08.md`. It concerns a different\npresentation wrapper and only the two CP08 paths. It does not authorize the\nblocked CP07 edit of `architecture/direct.py`, accept ADR-005, approve a payment,\nor permit merge or release. Chapter 9 supplies independent verification of\nknown teaching examples and the actual Chapter 8 output.\n\nChapter 10 reviews this presentation experiment using a disposable local Git\nrehearsal, exact artifact identities and explicitly synthetic owner records.\nOnly the release dossier is editable in CP10. Do not change reviewer identities,\ndecisions, mandatory discussion threads, checks, earlier source or artifact\nbytes to turn a rejection into a pass. A recorded local authorization is limited\nto this classroom experiment; CP07 remains blocked and real release authority\nremains false. Source changes require the relevant earlier exercise and fresh\nevidence and owner decisions for that exact candidate.\n\n## Checks and handoff\n\nFrom the companion root, use `python3 reader_side/tools/run_checks.py` for the\nshared regression suite. `python3 reader_side/tools/integration_gate.py`\nchecks the current cumulative candidate workflow; `--reference` checks the\nprotected worked example. Preserve unresolved questions and stop at\n`PASS_REVIEW_GATE_ONLY` / `READY_FOR_HUMAN_REVIEW_NOT_ACCEPTED`.\n\nFor Chapter 10, use `rehearse_release.py` and `release_gate.py` as described in\n`../README_CP10.md`. The shared runner's `--release-rehearsal DIR` option evaluates\nthe current release dossier; `--require-release` also requires the current\nCP01–CP09 candidates to pass. Without rehearsal evidence CP10 readiness is\nreported as `NOT_RUN`; a passing regression suite supplies no release decision.\n\nNo production credentials, network writes, deployment or additional package\ninstallation is needed for this standard-library offline laboratory. Chapter 10\nalso uses the local Git executable; no remote repository or deployment service\nis contacted.\n\n## Chapter 11 persistence boundary\n\nThe protected ../reader_side/evolution/WORK_ORDER_CP11.md authorizes only the two\nCP11 paths. Retain the original router and all v1 history; add versioned policy\nselection, persistent request identity and explicit historical recomputation.\nDo not infer missing legacy policy evidence or erase records on retry. Keep\nSQLite data and receipts outside source, under reader control. See\n../README_CP11.md for the narrower new payload contract, owner-bound synthetic\nlegacy fixtures and fresh-output gate commands. --require-evolution checks\ncurrent CP11 readiness separately from any CP10 presentation-release decision.\nNo earlier blocked task or real payment/release authority is granted.\n\n## Chapter 12 incident boundary\n\nThe protected ../reader_side/operations/WORK_ORDER_CP12.md authorizes only the\ntwo CP12 paths. Keep the router and CP11 history implementation unchanged.\nInvestigate the selected SQLite state using actual local process evidence;\npreserve the control and incident ledgers and do not silently initialize a\nreplacement during recovery. Gate probes use new copies. Incident-only rows\nremain quarantined pending owner reconciliation; local restoration is not\nincident closure or production rollout. See ../README_CP12.md for the current\nand protected-reference modes. --require-operations requires current CP01–09,\nCP11 and CP12 readiness and a current incident session; it does not imply any\nCP10 release acceptance or real operational authority.\n\n## Chapter 13 learning and governance boundary\n\nThe protected ../reader_side/learning/WORK_ORDER_CP13.md authorizes only the two\nCP13 JSON candidates. Reuse actual CP12 evidence and the unchanged PolicyStore\nfor the different active-policy transfer case. Keep rubrics, protocol, raw\nhuman explanations, independent reviewer records, owner clocks and keys outside\ncandidate control. Synthetic clock/rater fixtures test the harness only. They\ndo not establish human retention, transfer, rubric validity or competence.\nSeal delayed retention before releasing transfer material; keep both raw scores\nand any later adjudication distinct. Knowledge claims are owned, versioned and\ninvalidated with their dependencies. --require-learning requires the current\nprior candidate workflow and CP13 protocol review, never human competence,\nincident reconciliation, production recovery or delegated release authority.\n\n## Chapter 14 measurement and tool-decision boundary\n\nThe protected ../reader_side/measurement/WORK_ORDER_CP14.md authorizes only the\ntwo CP14 JSON candidates. Observe actual local CP13 commands on disposable\ncopies and retain every attempt, including rejection, repair, repeated green,\nstale evidence and refresh. Distinct accepted work items require applicable\nowner records; repeated passes are not new outcomes. Local elapsed time is not\nhuman effort, and missing hours/billing/real acceptance remain UNKNOWN.\nProtected synthetic costs and owner acceptance illustrate a proposed pilot,\nnot measured ROI or an empirical tool winner. --require-measurement requires\nthe current prior workflow and the same nominated CP12/CP13 evidence, while\nCP10 release stays separate. CP07, reconciliation, human-learning validation,\npilot approval, procurement and real release authority remain unresolved.\n\n</system-reminder>",
+            "metadata": {
+              "preview": "\"\"\"A recommendation routing service. This module never authorizes fund movement.\"\"\"\nfrom dataclasses import dataclass\nfrom decimal import Decimal, InvalidOperation\n\nTHRESHOLD_EUR = Decimal(\"5000.00\")\nPOLICY_VERSION = \"BR-001/v1\"\n\n@dataclass(frozen=True)\nclass RoutingDecision:\n    route: str\n    reason: str\n    policy_version: str\n\ndef assess(amount_eur: str) -> RoutingDecision:\n    \"\"\"Choose a processing queue. Not a payment authorisation.\"\"\"\n    amount = Decimal(amount_eur)\n    if amount < THRESHOLD_EUR:\n        return RoutingDecision(\"STANDARD_QUEUE\", \"BELOW_LIMIT\", POLICY_VERSION)\n    return RoutingDecision(\"HUMAN_REVIEW\", \"AT_OR_ABOVE_LIMIT\", POLICY_VERSION)",
+              "truncated": false,
+              "loaded": [
+                "/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/repo/AGENTS.md"
+              ],
+              "display": {
+                "type": "file",
+                "path": "/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/repo/src/treasury/routing.py",
+                "text": "\"\"\"A recommendation routing service. This module never authorizes fund movement.\"\"\"\nfrom dataclasses import dataclass\nfrom decimal import Decimal, InvalidOperation\n\nTHRESHOLD_EUR = Decimal(\"5000.00\")\nPOLICY_VERSION = \"BR-001/v1\"\n\n@dataclass(frozen=True)\nclass RoutingDecision:\n    route: str\n    reason: str\n    policy_version: str\n\ndef assess(amount_eur: str) -> RoutingDecision:\n    \"\"\"Choose a processing queue. Not a payment authorisation.\"\"\"\n    amount = Decimal(amount_eur)\n    if amount < THRESHOLD_EUR:\n        return RoutingDecision(\"STANDARD_QUEUE\", \"BELOW_LIMIT\", POLICY_VERSION)\n    return RoutingDecision(\"HUMAN_REVIEW\", \"AT_OR_ABOVE_LIMIT\", POLICY_VERSION)",
+                "lineStart": 1,
+                "lineEnd": 19,
+                "totalLines": 19,
+                "truncated": false
+              }
+            },
+            "title": "workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/repo/src/treasury/routing.py",
+            "time": {
+              "start": 1792649439064,
+              "end": 1792649439091
+            }
+          },
+          "id": "prt_1623b76fb001nySiu47a3ut28g",
+          "sessionID": "ses_e9dc53064ffes94dIoRs5Jj30n",
+          "messageID": "msg_1623ad26b001340RxyRLyk6YgV"
+        },
+        {
+          "reason": "tool-calls",
+          "type": "step-finish",
+          "tokens": {
+            "total": 3493,
+            "input": 653,
+            "output": 67,
+            "reasoning": 0,
+            "cache": {
+              "write": 0,
+              "read": 2773
+            }
+          },
+          "cost": 0,
+          "id": "prt_1623ba8af001GTOgUBAKpoexmc",
+          "sessionID": "ses_e9dc53064ffes94dIoRs5Jj30n",
+          "messageID": "msg_1623ad26b001340RxyRLyk6YgV"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_1623acfd10017nhnZtpEJyeCv1",
+        "role": "assistant",
+        "mode": "esa-bounded",
+        "agent": "esa-bounded",
+        "path": {
+          "cwd": "/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01",
+          "root": "/"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 5863,
+          "input": 2108,
+          "output": 333,
+          "reasoning": 0,
+          "cache": {
+            "write": 0,
+            "read": 3422
+          }
+        },
+        "modelID": "esa-qwen3-4b",
+        "providerID": "esa-local",
+        "time": {
+          "created": 1792649439420,
+          "completed": 1792649703135
+        },
+        "finish": "tool-calls",
+        "id": "msg_1623ba8bc001UEBP6Cv4xopVE6",
+        "sessionID": "ses_e9dc53064ffes94dIoRs5Jj30n"
+      },
+      "parts": [
+        {
+          "type": "step-start",
+          "id": "prt_1623e3cd9001JMHqjmHr9Xg9V0",
+          "sessionID": "ses_e9dc53064ffes94dIoRs5Jj30n",
+          "messageID": "msg_1623ba8bc001UEBP6Cv4xopVE6"
+        },
+        {
+          "type": "tool",
+          "tool": "edit",
+          "callID": "dsexLLMbzHHq1AX4lpXK16fempQlAgVa",
+          "state": {
+            "status": "completed",
+            "input": {
+              "filePath": "/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/repo/src/treasury/routing.py",
+              "oldString": "def assess(amount_eur: str) -> RoutingDecision:\n    \"\"\"Choose a processing queue. Not a payment authorisation.\"\"\"\n    amount = Decimal(amount_eur)\n    if amount < THRESHOLD_EUR:\n        return RoutingDecision(\"STANDARD_QUEUE\", \"BELOW_LIMIT\", POLICY_VERSION)\n    return RoutingDecision(\"HUMAN_REVIEW\", \"AT_OR_ABOVE_LIMIT\", POLICY_VERSION)",
+              "newString": "def assess(amount_eur: str) -> RoutingDecision:\n    \"\"\"Choose a processing queue. Not a payment authorisation.\"\"\"\n    try:\n        amount = Decimal(amount_eur)\n        if not Decimal.is_finite(amount):\n            return RoutingDecision(\"REJECTED\", \"INVALID_AMOUNT\", POLICY_VERSION)\n        if amount <= Decimal(\"0.00\"):\n            return RoutingDecision(\"REJECTED\", \"INVALID_AMOUNT\", POLICY_VERSION)\n        if amount < THRESHOLD_EUR:\n            return RoutingDecision(\"STANDARD_QUEUE\", \"BELOW_LIMIT\", POLICY_VERSION)\n        return RoutingDecision(\"HUMAN_REVIEW\", \"AT_OR_ABOVE_LIMIT\", POLICY_VERSION)\n    except InvalidOperation:\n        return RoutingDecision(\"REJECTED\", \"INVALID_AMOUNT\", POLICY_VERSION)",
+              "replaceAll": false
+            },
+            "output": "Edit applied successfully.",
+            "metadata": {
+              "diagnostics": {},
+              "diff": "Index: /workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/repo/src/treasury/routing.py\n===================================================================\n--- /workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/repo/src/treasury/routing.py\n+++ /workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/repo/src/treasury/routing.py\n@@ -12,8 +12,15 @@\n     policy_version: str\n \n def assess(amount_eur: str) -> RoutingDecision:\n     \"\"\"Choose a processing queue. Not a payment authorisation.\"\"\"\n-    amount = Decimal(amount_eur)\n-    if amount < THRESHOLD_EUR:\n-        return RoutingDecision(\"STANDARD_QUEUE\", \"BELOW_LIMIT\", POLICY_VERSION)\n-    return RoutingDecision(\"HUMAN_REVIEW\", \"AT_OR_ABOVE_LIMIT\", POLICY_VERSION)\n+    try:\n+        amount = Decimal(amount_eur)\n+        if not Decimal.is_finite(amount):\n+            return RoutingDecision(\"REJECTED\", \"INVALID_AMOUNT\", POLICY_VERSION)\n+        if amount <= Decimal(\"0.00\"):\n+            return RoutingDecision(\"REJECTED\", \"INVALID_AMOUNT\", POLICY_VERSION)\n+        if amount < THRESHOLD_EUR:\n+            return RoutingDecision(\"STANDARD_QUEUE\", \"BELOW_LIMIT\", POLICY_VERSION)\n+        return RoutingDecision(\"HUMAN_REVIEW\", \"AT_OR_ABOVE_LIMIT\", POLICY_VERSION)\n+    except InvalidOperation:\n+        return RoutingDecision(\"REJECTED\", \"INVALID_AMOUNT\", POLICY_VERSION)\n",
+              "filediff": {
+                "file": "/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/repo/src/treasury/routing.py",
+                "patch": "Index: /workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/repo/src/treasury/routing.py\n===================================================================\n--- /workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/repo/src/treasury/routing.py\n+++ /workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/repo/src/treasury/routing.py\n@@ -12,8 +12,15 @@\n     policy_version: str\n \n def assess(amount_eur: str) -> RoutingDecision:\n     \"\"\"Choose a processing queue. Not a payment authorisation.\"\"\"\n-    amount = Decimal(amount_eur)\n-    if amount < THRESHOLD_EUR:\n-        return RoutingDecision(\"STANDARD_QUEUE\", \"BELOW_LIMIT\", POLICY_VERSION)\n-    return RoutingDecision(\"HUMAN_REVIEW\", \"AT_OR_ABOVE_LIMIT\", POLICY_VERSION)\n+    try:\n+        amount = Decimal(amount_eur)\n+        if not Decimal.is_finite(amount):\n+            return RoutingDecision(\"REJECTED\", \"INVALID_AMOUNT\", POLICY_VERSION)\n+        if amount <= Decimal(\"0.00\"):\n+            return RoutingDecision(\"REJECTED\", \"INVALID_AMOUNT\", POLICY_VERSION)\n+        if amount < THRESHOLD_EUR:\n+            return RoutingDecision(\"STANDARD_QUEUE\", \"BELOW_LIMIT\", POLICY_VERSION)\n+        return RoutingDecision(\"HUMAN_REVIEW\", \"AT_OR_ABOVE_LIMIT\", POLICY_VERSION)\n+    except InvalidOperation:\n+        return RoutingDecision(\"REJECTED\", \"INVALID_AMOUNT\", POLICY_VERSION)\n",
+                "additions": 11,
+                "deletions": 4
+              },
+              "truncated": false
+            },
+            "title": "workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/repo/src/treasury/routing.py",
+            "time": {
+              "start": 1792649702349,
+              "end": 1792649702430
+            }
+          },
+          "id": "prt_1623e4385001aipPi1iPTbChtf",
+          "sessionID": "ses_e9dc53064ffes94dIoRs5Jj30n",
+          "messageID": "msg_1623ba8bc001UEBP6Cv4xopVE6"
+        },
+        {
+          "reason": "tool-calls",
+          "type": "step-finish",
+          "tokens": {
+            "total": 5863,
+            "input": 2108,
+            "output": 333,
+            "reasoning": 0,
+            "cache": {
+              "write": 0,
+              "read": 3422
+            }
+          },
+          "cost": 0,
+          "id": "prt_1623faecc001f4hFopbixPVhyg",
+          "sessionID": "ses_e9dc53064ffes94dIoRs5Jj30n",
+          "messageID": "msg_1623ba8bc001UEBP6Cv4xopVE6"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_1623acfd10017nhnZtpEJyeCv1",
+        "role": "assistant",
+        "mode": "esa-bounded",
+        "agent": "esa-bounded",
+        "path": {
+          "cwd": "/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01",
+          "root": "/"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "reasoning": 0,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        },
+        "modelID": "esa-qwen3-4b",
+        "providerID": "esa-local",
+        "time": {
+          "created": 1792649703140
+        },
+        "id": "msg_1623faee4001ZbvGm0qCgUWF29",
+        "sessionID": "ses_e9dc53064ffes94dIoRs5Jj30n"
+      },
+      "parts": [
+        {
+          "type": "step-start",
+          "id": "prt_162403d5b0010jz0cKhiXJcKhB",
+          "sessionID": "ses_e9dc53064ffes94dIoRs5Jj30n",
+          "messageID": "msg_1623faee4001ZbvGm0qCgUWF29"
+        },
+        {
+          "type": "tool",
+          "tool": "bash",
+          "callID": "cisu07QHDAG9QHreODDkF55dvotjjcPE",
+          "state": {
+            "status": "pending",
+            "input": {},
+            "raw": ""
+          },
+          "id": "prt_162404501001E65VuVB1T1E6aR",
+          "sessionID": "ses_e9dc53064ffes94dIoRs5Jj30n",
+          "messageID": "msg_1623faee4001ZbvGm0qCgUWF29"
+        }
+      ]
+    }
+  ]
+}

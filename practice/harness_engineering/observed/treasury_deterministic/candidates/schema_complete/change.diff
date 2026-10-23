@@ -1,0 +1,14 @@
+--- base/harness.json
++++ schema_complete/harness.json
+@@ -1,7 +1,10 @@
+ {
+   "development_memory": {},
+   "response_fields": [
+-    "route"
++    "route",
++    "reason",
++    "policy_version",
++    "payment_authorized"
+   ],
+   "routing_strategy": "cached_estimate",
+   "schema": "treasury-harness/v1"

@@ -1,0 +1,186 @@
+{
+  "schema": "esa-d8-final-native-preflight/v1",
+  "at_utc": "2026-10-22T10:48:40.019508+00:00",
+  "status": "READY_FOR_FRESH_CANDIDATE03_AFTER_CP26_SAVE",
+  "model_inference_this_observation": "ATTEMPT01_TERMINAL_NO_ARTIFACT_CANDIDATE03_NOT_RUN",
+  "source_bindings": {
+    "server_review": {
+      "path": "revision_d8/evidence/native_server_01/startup_preflight_04/REVIEW.json",
+      "sha256": "043d1d598a52ea89f34c93ca5ef3eae17f8fe38ad96dcbad514be260466d9ea8"
+    },
+    "input_budget": {
+      "path": "revision_d8/evidence/native_sdd_01/invocation_03/input_budget/TOKEN_COUNTS_AND_BUDGET_03.json",
+      "sha256": "613bd8694759187284888b5ad7f0ac19c263e39d486d9104e738aec2398f1acd"
+    },
+    "client_task": {
+      "path": "revision_d8/evidence/native_sdd_01/invocation_03/CLIENT_TASK_03.json",
+      "sha256": "15569856560ce50cb9968a8996a574f3b87178887818388d1c9fa6f76ca5d2f9"
+    },
+    "effective_config": {
+      "path": "revision_d8/evidence/native_sdd_01/invocation_03/EFFECTIVE_CONFIGURATION_CHECK_03.json",
+      "sha256": "c951c008b2c6d5e11d51c2fce2df56ef84ee085ba05977286a5c0007d86508bc"
+    },
+    "attachment_preflight": {
+      "path": "revision_d8/evidence/native_sdd_01/invocation_03/native_attachment_preflight_03/RESULT.json",
+      "sha256": "b0be3726bfd9316f5a4da15682394be1917388473fb45dbe90d35008e4c4516d"
+    },
+    "client_cap_source": {
+      "path": "revision_d8/evidence/native_sdd_01/input_budget/CLIENT_OUTPUT_CAP_SOURCE_BINDING.json",
+      "sha256": "8c737d123d489a3dd4d6455dc25acbabc23f912381c16c5441b80eef5ab535d5"
+    },
+    "native_command": {
+      "path": "revision_d8/evidence/native_sdd_01/preparation/starting_tree/.opencode/commands/speckit.specify.md",
+      "sha256": "21634a45dfcf642fddb1645f4ad2980f98c89778442e47663df8a6c3a1eaf8bc"
+    },
+    "source_packet": {
+      "path": "revision_d8/evidence/native_sdd_01/preparation/starting_tree/inputs/NATIVE_CONTEXT_BUNDLE.md",
+      "sha256": "bbaf6d82364e6e6e2fa543f9c9c1cf407ffe315aa2a75d63be4caf09ae25d718"
+    },
+    "candidate03_manifest": {
+      "path": "revision_d8/evidence/native_sdd_01/invocation_03/CANDIDATE03_MANIFEST.json",
+      "sha256": "23803cb822079907cc82c867091a83b7ae36e227b716ae41372a08dc63219d8b"
+    }
+  },
+  "context": 24576,
+  "declared_budget": {
+    "base_tokens": 13025,
+    "reserves": {
+      "native_system_tools_message_overhead": 3072,
+      "cumulative_prior_output_tool_history": 4096,
+      "maximum_current_response_output": 3072
+    },
+    "total_with_reserves": 23265,
+    "remaining_tokens": 1311,
+    "context": 24576
+  },
+  "bounds": {
+    "client_output_per_response": 3072,
+    "agent_steps": 12,
+    "provider_overall_and_header_timeout_seconds": 1500,
+    "outer_invocation_seconds": 5400,
+    "server_max_lifetime_seconds": 7200,
+    "automatic_compaction": false
+  },
+  "memory_gate": {
+    "status": "PASS_STARTUP_ONLY",
+    "headroom_bytes": 1296768616,
+    "no_new_oom": true
+  },
+  "server_start_observation": {
+    "schema": "esa-local-server-lifecycle/v2",
+    "argv": [
+      "/workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/llama-server",
+      "--model",
+      "/workspace/scratch/72d789d25fef/runtime_d7/downloads/Qwen3-4B-Q4_K_M.gguf",
+      "--alias",
+      "esa-qwen3-4b",
+      "--host",
+      "127.0.0.1",
+      "--port",
+      "18080",
+      "--ctx-size",
+      "24576",
+      "--parallel",
+      "1",
+      "--threads",
+      "8",
+      "--threads-batch",
+      "8",
+      "--n-gpu-layers",
+      "0",
+      "--batch-size",
+      "256",
+      "--ubatch-size",
+      "128",
+      "--jinja",
+      "--reasoning",
+      "off",
+      "--no-repack",
+      "--no-warmup",
+      "--no-context-shift",
+      "--verbosity",
+      "4",
+      "--n-predict",
+      "3072",
+      "--no-agent",
+      "--no-ui-mcp-proxy",
+      "--no-webui",
+      "--metrics",
+      "--timeout",
+      "1500",
+      "--cache-ram",
+      "0",
+      "--ctx-checkpoints",
+      "0",
+      "--cache-type-k",
+      "f16",
+      "--cache-type-v",
+      "f16",
+      "--flash-attn",
+      "on"
+    ],
+    "cwd": "/workspace/scratch/72d789d25fef/runtime_d7",
+    "environment": {
+      "PATH": "/root/.codex/tmp/arg0/codex-arg0BiuUUo:/opt/codex/codex-path:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/override:/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/fallback",
+      "LANG": "C.UTF-8",
+      "LC_ALL": "C.UTF-8",
+      "TZ": "UTC"
+    },
+    "started_at_utc": "2026-10-22T10:46:49.184821+00:00",
+    "launcher_pid": 56439,
+    "launcher_identity": {
+      "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_server_01/preparation/run_local_model_d8.py",
+      "sha256": "c9bc0eb8e64725c7b1ba92687cdfcf4ffd87c5648c0c3abb2e08d4854c3c5b4f"
+    },
+    "python": {
+      "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "version": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]"
+    },
+    "startup_status": "No inference authorized by launcher; health, memory and token budget require separate review",
+    "maximum_runtime_seconds": 7200.0,
+    "shutdown_policy": {
+      "grace_seconds": 30.0,
+      "clock": "monotonic",
+      "poll_seconds": 0.2,
+      "repeated_signals_reset_deadline": false,
+      "escalation_target": "Only the exact still-running direct child created by this launcher",
+      "timing_limit": "Escalation is checked after the grace interval; scheduling and I/O can add delay."
+    },
+    "scope": "Loopback inference only; no built-in server agent tools or MCP hosts enabled.",
+    "server_pid": 56440
+  },
+  "server_output_cap_qualification": "Server properties report default n_predict/max_tokens=-1. Source-bound native client cap3072 is configured; actual request serialization remains to be observed. The server argv is not claimed as independently enforcing that cap.",
+  "fixed_input_policy": "All13 complete source bodies retained; authored reference contract disclosed. No prior generated Markdown or fabricated owner answers.",
+  "allowed_output_paths": [
+    ".specify/feature.json",
+    "specs/001-explain-treasury/spec.md",
+    "specs/001-explain-treasury/checklists/requirements.md"
+  ],
+  "first_output_policy": "Retain exact native write/edit tool inputs and any scaffold copy separately, final tree/diff, native events and parsed session export. Preserve omissions for independent review.",
+  "clarification_boundary": "Actual unanswered owner questions and an actual stop before planning; independent review decides sufficiency. A timeout, promised write or successful CLI exit alone is insufficient.",
+  "review_scope": "Original R08 three criteria and exact five requirements/eight existing oracle cases. Human requirements acceptance and second framework observation are not claimed.",
+  "checkpoint_active_exclusion": "revision_d8/evidence/native_server_01/lifecycle_04/",
+  "no_paired_performance_claim": true,
+  "parent_preflight": {
+    "path": "revision_d8/evidence/native_sdd_01/FINAL_PREFLIGHT.json",
+    "sha256": "ac1ceb5c1fb32930843c4197db2d2d3b3b9aa3c00ba4a494ae6d3adf2070b9a0"
+  },
+  "attempt01_disposition": {
+    "path": "revision_d8/evidence/native_sdd_01/ATTEMPT_01_DISPOSITION.json",
+    "sha256": "e30eb8a724ca4797969c2f1b2187a1a4ab9a67f99af4581d20a749a59ccbb184"
+  },
+  "attempt01_independent_review": {
+    "path": "revision_d8/notes/R08_ATTEMPT_01_INDEPENDENT_REVIEW.json",
+    "sha256": "210c7816a5711532d79ffe0890eff1510310c9b46d4b9e867430f0ac728de783"
+  },
+  "explicit_corrections": [
+    "Model reads limited to three generated outputs; source packet still fully attached natively.",
+    "Model temperature capability is true; agent intent remains 0.2. Actual sampler remains unobserved.",
+    "Fresh isolated client state and new session. No noReply or attempt01 session reuse."
+  ],
+  "preflight_binding_verification": {
+    "candidate03_manifest_files": 52,
+    "all_hashes_and_sizes_verified": true,
+    "native_effective_and_completeness_checks_passed": 21
+  }
+}

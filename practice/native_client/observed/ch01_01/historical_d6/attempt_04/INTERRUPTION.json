@@ -1,0 +1,21 @@
+{
+  "schema": "esa-native-command-interruption/v1",
+  "at_utc": "2026-10-21T22:07:05.339563+00:00",
+  "actor_kind": "AGENT",
+  "reason": "The bounded candidate/check already failed; automatic context compaction continued after the final-looking failure response. Stop this optional continuation and retain a fresh-session recovery separately.",
+  "matching_processes": [
+    {
+      "pid": 169269,
+      "cwd": "/workspace/scratch/efa0a59e0545/runtime_d6/native_work_01",
+      "executable": "/workspace/scratch/efa0a59e0545/runtime_d6/opencode/node_modules/opencode-ai/bin/opencode.exe",
+      "start_stat": "6398701"
+    }
+  ],
+  "signal": "SIGTERM",
+  "pre_signal_stdout_sha256": "a6098c30f5d94a471b43ce0f7c0026e6205dc3e763e1ba7d5593a151ff66e61a",
+  "pre_signal_stderr_sha256": "597f93d623c80d716f29fee4c66298ce22ac35a99390eaedc4884ee75a5e81f0",
+  "uncompleted_compaction_usage": "UNKNOWN_UNLESS_NATIVE_EXPORT_REPORTS_COMPLETED_USAGE",
+  "human_acceptance": "NOT_OBSERVED",
+  "status": "SIGTERM_SENT",
+  "sent_at_utc": "2026-10-21T22:07:05.342823+00:00"
+}

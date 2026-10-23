@@ -1,0 +1,37 @@
+{
+  "case": "ignoring_repeated_signals",
+  "started_at_utc": "2026-10-22T08:03:42.795676+00:00",
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion/practice/native_client/run_local_model.py",
+    "--runtime-root",
+    "/workspace/scratch/72d789d25fef/runtime_d7/shutdown_controlled_probe_01/ignoring_repeated_signals",
+    "--evidence",
+    "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/native_shutdown_fix/controlled_probe/ignoring_repeated_signals/lifecycle",
+    "--shutdown-grace-seconds",
+    "1.2"
+  ],
+  "cwd": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5",
+  "fixture": {
+    "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/native_shutdown_fix/controlled_probe/ignoring_repeated_signals/INERT_FIXTURE.py",
+    "bytes": 374,
+    "sha256": "d148272fa711a4832244573dba414f0ae2b36fc8de5078766599936423d902fd"
+  },
+  "runtime_fixture": {
+    "path": "/workspace/scratch/72d789d25fef/runtime_d7/shutdown_controlled_probe_01/ignoring_repeated_signals/llama_cpp/llama-b11799/llama-server",
+    "bytes": 374,
+    "sha256": "d148272fa711a4832244573dba414f0ae2b36fc8de5078766599936423d902fd"
+  },
+  "grace_seconds": 1.2,
+  "no_real_server_model_or_network": true,
+  "controller_signals": [],
+  "launcher_pid": 7,
+  "child_pid": 8,
+  "launcher_cmdline_before_signal": "/usr/local/bin/sites-preview daemon ",
+  "status": "ERROR",
+  "error": "FileNotFoundError",
+  "message": "[Errno 2] No such file or directory: '/proc/8/cmdline'",
+  "controller_cleanup_needed": true,
+  "finished_at_utc": "2026-10-22T08:03:44.858807+00:00",
+  "total_probe_wall_seconds": 2.063044345999515
+}

@@ -1,0 +1,148 @@
+{
+  "schema": "esa-workflow-cost/v1",
+  "run_id": "COST-CLI-REHEARSAL-002",
+  "purpose": "Verify recorder command sequence and explicit unknowns",
+  "evidence_mode": "OBSERVED",
+  "claim_scope": "DESCRIPTIVE_SINGLE_WORKFLOW_NO_CAUSAL_OR_ROI_CLAIM",
+  "identity": {
+    "interface": "Python subprocess driver, not a model client",
+    "client_version": "UNKNOWN_NOT_EXPOSED",
+    "model": "UNKNOWN_NOT_EXPOSED",
+    "model_version": "UNKNOWN_NOT_EXPOSED"
+  },
+  "boundary": {
+    "description": "Supplied task reading through recorded local test result",
+    "start_utc": "2026-10-21T18:14:49.044664+00:00",
+    "finish_utc": "2026-10-21T18:14:49.575537+00:00",
+    "exclusions": [
+      "No model request, human reader session, attributable billing or module-construction effort is in this rehearsal"
+    ]
+  },
+  "spans": [
+    {
+      "id": "preparation-1",
+      "phase": "preparation",
+      "actor": "recorder-driver",
+      "actor_kind": "AUTOMATION",
+      "measure": "WALL_INTERVAL",
+      "start_utc": "2026-10-21T18:14:49.092135+00:00",
+      "finish_utc": "2026-10-21T18:14:49.178894+00:00",
+      "outcome": "PASSED",
+      "evidence": [
+        {
+          "path": "TASK.txt",
+          "sha256": "39d741d3414b817a64462e12c384625eacc4b81b4484e2050ab645539d53e127"
+        },
+        {
+          "path": "TASK.txt",
+          "sha256": "39d741d3414b817a64462e12c384625eacc4b81b4484e2050ab645539d53e127"
+        }
+      ]
+    },
+    {
+      "id": "checks-1",
+      "phase": "verification",
+      "actor": "local-checker",
+      "actor_kind": "AUTOMATION",
+      "measure": "WALL_INTERVAL",
+      "start_utc": "2026-10-21T18:14:49.284301+00:00",
+      "finish_utc": "2026-10-21T18:14:49.469753+00:00",
+      "outcome": "PASSED",
+      "evidence": [
+        {
+          "path": "TASK.txt",
+          "sha256": "39d741d3414b817a64462e12c384625eacc4b81b4484e2050ab645539d53e127"
+        },
+        {
+          "path": "CHECKS.txt",
+          "sha256": "ded27ea1a3f8b0e176e27ab84368ea6ac5457ac0b9c36251251de81cfbb7bd58"
+        }
+      ]
+    }
+  ],
+  "usage": [],
+  "acceptance": [
+    {
+      "id": "machine-decision-1",
+      "item": "recorder-candidate-1",
+      "kind": "AUTOMATED",
+      "decision": "ACCEPTED",
+      "reviewer": "local-unittest",
+      "candidate": {
+        "path": "CANDIDATE.py",
+        "sha256": "4623bd6ff722aa7861376a778618668926555325730a5ceb7c010da3552bf8e2"
+      },
+      "evidence": {
+        "path": "CHECKS.txt",
+        "sha256": "ded27ea1a3f8b0e176e27ab84368ea6ac5457ac0b9c36251251de81cfbb7bd58"
+      },
+      "at_utc": "2026-10-21T18:14:49.522334+00:00",
+      "human_attestation": null
+    }
+  ],
+  "assumptions": [],
+  "coverage": {
+    "preparation": {
+      "state": "OBSERVED",
+      "reason": "Completed attributed interval; this does not prove the phase contains every relevant activity",
+      "evidence": [
+        {
+          "path": "TASK.txt",
+          "sha256": "39d741d3414b817a64462e12c384625eacc4b81b4484e2050ab645539d53e127"
+        }
+      ]
+    },
+    "implementation": {
+      "state": "UNKNOWN",
+      "reason": "Not yet recorded",
+      "evidence": []
+    },
+    "verification": {
+      "state": "OBSERVED",
+      "reason": "Completed attributed interval; this does not prove the phase contains every relevant activity",
+      "evidence": [
+        {
+          "path": "CHECKS.txt",
+          "sha256": "ded27ea1a3f8b0e176e27ab84368ea6ac5457ac0b9c36251251de81cfbb7bd58"
+        }
+      ]
+    },
+    "agent_review": {
+      "state": "UNKNOWN",
+      "reason": "Not yet recorded",
+      "evidence": []
+    },
+    "human_review": {
+      "state": "UNKNOWN",
+      "reason": "Not yet recorded",
+      "evidence": []
+    },
+    "rework": {
+      "state": "UNKNOWN",
+      "reason": "Not yet recorded",
+      "evidence": []
+    },
+    "recording": {
+      "state": "UNKNOWN",
+      "reason": "Not yet recorded",
+      "evidence": []
+    }
+  },
+  "money_coverage": {
+    "model": {
+      "state": "UNKNOWN",
+      "reason": "No complete attributable record",
+      "evidence": []
+    },
+    "human": {
+      "state": "UNKNOWN",
+      "reason": "No complete attributable record",
+      "evidence": []
+    },
+    "infrastructure": {
+      "state": "UNKNOWN",
+      "reason": "No complete attributable record",
+      "evidence": []
+    }
+  }
+}

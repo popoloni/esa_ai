@@ -1,0 +1,10 @@
+{
+  "id": "SRC-OPS-004",
+  "kind": "interview-note",
+  "authority": "STAKEHOLDER_TESTIMONY",
+  "date": "2026-09-10",
+  "owner_role": "Operations specialist (fictional)",
+  "title": "Ops handoff friction",
+  "text": "We frequently re-open requests because the queue label tells us too little about the recommendation. We still need a person to authorize any payment.",
+  "source_reliability": "synthetic testimony; follow-up observation required"
+}

@@ -1,0 +1,29 @@
+{
+  "created_at_utc": "2026-10-22T11:53:22.430268+00:00",
+  "files": {
+    "FIRST_WRITE_EVENT.json": {
+      "sha256": "a96a33b583045246f6f48aabb6953a80f27328430196898a17f960bcaeb37b55",
+      "bytes": 3063
+    },
+    "LITERAL_NATIVE_WRITE_CONTENT.md": {
+      "sha256": "04b6177aa7cd2a248a86ef418f8faeffe3c07cbf64651951136c20559402bfd1",
+      "bytes": 2230
+    },
+    "OBSERVATION.json": {
+      "sha256": "fa1157d8d5da02ec1c4d8a3a9a98d9c9e1ea89ff6aa6620e6705ce3b5097673f",
+      "bytes": 2593
+    },
+    "OBSERVED_SPEC.md": {
+      "sha256": "04b6177aa7cd2a248a86ef418f8faeffe3c07cbf64651951136c20559402bfd1",
+      "bytes": 2230
+    },
+    "stderr_prefix.txt": {
+      "sha256": "62002d2c0b034798e67d1b85c04193eead1739b8585178c9408cb491d92bcaa3",
+      "bytes": 7121
+    },
+    "stdout_prefix.txt": {
+      "sha256": "12cb48ddef957248e50a3254a7172617af9c986ad1bcf7196f3a56e1b0b94903",
+      "bytes": 3943
+    }
+  }
+}

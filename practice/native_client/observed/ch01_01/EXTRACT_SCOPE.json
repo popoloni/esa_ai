@@ -1,0 +1,9 @@
+{
+  "schema": "esa-portable-observation-extract/v1",
+  "source_full_packet": "revision_d7/evidence/native_ch01_01",
+  "full_packet_starting_files": 1584,
+  "full_packet_record_sha256": "a1bf7745ecf75dbc91aa998aa51c41d454a0b979a850265229c4e347995c2e6a",
+  "extract_is_complete_starting_tree": false,
+  "copied_full_packet_check_scope": "Full author packet only; the portable extract is separately hashed and is not asserted to pass the complete-snapshot checker.",
+  "runtime_tree_included": false
+}

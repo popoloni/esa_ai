@@ -1,0 +1,257 @@
+{
+  "schema": "esa-portable-shutdown-guard/v1",
+  "frozen_at_utc": "2026-10-22T08:10:05.217086+00:00",
+  "source_directory": "revision_d7/evidence/native_shutdown_fix",
+  "files": {
+    "FINDING.json": {
+      "bytes": 1153,
+      "sha256": "5c020bd5b3fd706c0025f9e85f8dcc07e42e344ede192bf09f3c0da9a35ee550",
+      "origin": "revision_d7/evidence/native_shutdown_fix/FINDING.json"
+    },
+    "OBSERVED_LAUNCHER_BEFORE_FIX.py": {
+      "bytes": 4355,
+      "sha256": "4c8beffe536c994adb980b8f82c8580bc0895f5f20605208f1d0bf69fb4cd231",
+      "origin": "revision_d7/evidence/native_shutdown_fix/OBSERVED_LAUNCHER_BEFORE_FIX.py"
+    },
+    "controlled_probe/ATTEMPT_01_ENVIRONMENT_LIMIT.json": {
+      "bytes": 859,
+      "sha256": "cc13265652e4975f230feb780217e39c119610c5b849c7958eb54338600b5a44",
+      "origin": "revision_d7/evidence/native_shutdown_fix/controlled_probe/ATTEMPT_01_ENVIRONMENT_LIMIT.json"
+    },
+    "controlled_probe/PROBE.py": {
+      "bytes": 9756,
+      "sha256": "20a5e4eb2a830bd4dbe38d8c6a4fcba198808d3392673563015a4a218e7ceb9f",
+      "origin": "revision_d7/evidence/native_shutdown_fix/controlled_probe/PROBE.py"
+    },
+    "controlled_probe/PROBE_MANIFEST.json": {
+      "bytes": 6442,
+      "sha256": "4a1b30c0f6706c1fa2f470cec0a213cd720d983f25f68dfb5a93b2efa304a321",
+      "origin": "revision_d7/evidence/native_shutdown_fix/controlled_probe/PROBE_MANIFEST.json"
+    },
+    "controlled_probe/README.md": {
+      "bytes": 1651,
+      "sha256": "503e784de23c87e6137c8fea7beeb4e1240791b3c24bcac965e718d4c77f2b29",
+      "origin": "revision_d7/evidence/native_shutdown_fix/controlled_probe/README.md"
+    },
+    "controlled_probe/REPORT.json": {
+      "bytes": 5412,
+      "sha256": "8e5c779a1eaf5521dcd8bbb81112f8282402510e1c3ab12283b21edf5eb1455d",
+      "origin": "revision_d7/evidence/native_shutdown_fix/controlled_probe/REPORT.json"
+    },
+    "controlled_probe/REVIEW.json": {
+      "bytes": 2807,
+      "sha256": "f4cfaccc1ffd7d17b8130df4464690a2d42c91a7401703e9ceb8f2175c35a3ba",
+      "origin": "revision_d7/evidence/native_shutdown_fix/controlled_probe/REVIEW.json"
+    },
+    "controlled_probe/cooperative/INERT_FIXTURE.py": {
+      "bytes": 491,
+      "sha256": "9d6481ca53b366b35846b172117a228dd9cd71499200421eea133053a47568a9",
+      "origin": "revision_d7/evidence/native_shutdown_fix/controlled_probe/cooperative/INERT_FIXTURE.py"
+    },
+    "controlled_probe/cooperative/REQUEST.json": {
+      "bytes": 1435,
+      "sha256": "c065d2227833cbc46a75c56fda5368fbb956d94e4a5347adcca61c1611a34ba9",
+      "origin": "revision_d7/evidence/native_shutdown_fix/controlled_probe/cooperative/REQUEST.json"
+    },
+    "controlled_probe/cooperative/RESULT.json": {
+      "bytes": 1875,
+      "sha256": "33842cc06c8afdc93056f1575d925b3945e13167038788c8810efe18a1557389",
+      "origin": "revision_d7/evidence/native_shutdown_fix/controlled_probe/cooperative/RESULT.json"
+    },
+    "controlled_probe/cooperative/launcher_stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "origin": "revision_d7/evidence/native_shutdown_fix/controlled_probe/cooperative/launcher_stderr.txt"
+    },
+    "controlled_probe/cooperative/launcher_stdout.txt": {
+      "bytes": 199,
+      "sha256": "d300e0b41a8671f314066a016abf191ed59135c569a300306105b282c1564c0e",
+      "origin": "revision_d7/evidence/native_shutdown_fix/controlled_probe/cooperative/launcher_stdout.txt"
+    },
+    "controlled_probe/cooperative/lifecycle/START.json": {
+      "bytes": 2579,
+      "sha256": "a298bcfc953f3c0cf2070f96925ce2019a7fc6ca3c65147243fe18a42d2b8e55",
+      "origin": "revision_d7/evidence/native_shutdown_fix/controlled_probe/cooperative/lifecycle/START.json"
+    },
+    "controlled_probe/cooperative/lifecycle/stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "origin": "revision_d7/evidence/native_shutdown_fix/controlled_probe/cooperative/lifecycle/stderr.txt"
+    },
+    "controlled_probe/cooperative/lifecycle/stdout.txt": {
+      "bytes": 832,
+      "sha256": "7025907989d142b073b49027f5adc320c77f761f0fa0880a5a3d3e5707ef7283",
+      "origin": "revision_d7/evidence/native_shutdown_fix/controlled_probe/cooperative/lifecycle/stdout.txt"
+    },
+    "controlled_probe/ignoring_repeated_signals/INERT_FIXTURE.py": {
+      "bytes": 374,
+      "sha256": "d148272fa711a4832244573dba414f0ae2b36fc8de5078766599936423d902fd",
+      "origin": "revision_d7/evidence/native_shutdown_fix/controlled_probe/ignoring_repeated_signals/INERT_FIXTURE.py"
+    },
+    "controlled_probe/ignoring_repeated_signals/REQUEST.json": {
+      "bytes": 1505,
+      "sha256": "f7763495dc7a277458fffe4595e6084b481b74a37ff5ec22482e923440c7ac75",
+      "origin": "revision_d7/evidence/native_shutdown_fix/controlled_probe/ignoring_repeated_signals/REQUEST.json"
+    },
+    "controlled_probe/ignoring_repeated_signals/RESULT.json": {
+      "bytes": 1887,
+      "sha256": "85a344897bc7b5f1e6080bf2dbee0f8e70d7324a7ba291541e7266bce2cdff17",
+      "origin": "revision_d7/evidence/native_shutdown_fix/controlled_probe/ignoring_repeated_signals/RESULT.json"
+    },
+    "controlled_probe/ignoring_repeated_signals/launcher_stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "origin": "revision_d7/evidence/native_shutdown_fix/controlled_probe/ignoring_repeated_signals/launcher_stderr.txt"
+    },
+    "controlled_probe/ignoring_repeated_signals/launcher_stdout.txt": {
+      "bytes": 213,
+      "sha256": "845dab329e7883b8f9df8454190ebee00f2e74e480a5c4f29e69fc3cd0928017",
+      "origin": "revision_d7/evidence/native_shutdown_fix/controlled_probe/ignoring_repeated_signals/launcher_stdout.txt"
+    },
+    "controlled_probe/ignoring_repeated_signals/lifecycle/START.json": {
+      "bytes": 2621,
+      "sha256": "f693e1a67502fd76cb559d1af512df8aab93be12e58648b47b7a523615fa0241",
+      "origin": "revision_d7/evidence/native_shutdown_fix/controlled_probe/ignoring_repeated_signals/lifecycle/START.json"
+    },
+    "controlled_probe/ignoring_repeated_signals/lifecycle/stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "origin": "revision_d7/evidence/native_shutdown_fix/controlled_probe/ignoring_repeated_signals/lifecycle/stderr.txt"
+    },
+    "controlled_probe/ignoring_repeated_signals/lifecycle/stdout.txt": {
+      "bytes": 857,
+      "sha256": "e49376af163fbde4af47b5308ffff43569c413dc6ef869b7dca31900550efa3f",
+      "origin": "revision_d7/evidence/native_shutdown_fix/controlled_probe/ignoring_repeated_signals/lifecycle/stdout.txt"
+    },
+    "controlled_probe/retry_02/PROBE.py": {
+      "bytes": 9756,
+      "sha256": "a40a4bdb36d4a441a16a56c0b19009301190f7ae2199de6073d46555fe5d74ff",
+      "origin": "revision_d7/evidence/native_shutdown_fix/controlled_probe/retry_02/PROBE.py"
+    },
+    "controlled_probe/retry_02/PROBE_MANIFEST.json": {
+      "bytes": 7739,
+      "sha256": "5d6247d2fef9615150753147b6c81ec2cee27399220cddd3d2bc7df10ef88035",
+      "origin": "revision_d7/evidence/native_shutdown_fix/controlled_probe/retry_02/PROBE_MANIFEST.json"
+    },
+    "controlled_probe/retry_02/REPORT.json": {
+      "bytes": 17516,
+      "sha256": "ce7140a9cae8a90e09e01d04812f571e2055afcdc13a161f9fc515120949e4f7",
+      "origin": "revision_d7/evidence/native_shutdown_fix/controlled_probe/retry_02/REPORT.json"
+    },
+    "controlled_probe/retry_02/cooperative/INERT_FIXTURE.py": {
+      "bytes": 491,
+      "sha256": "9d6481ca53b366b35846b172117a228dd9cd71499200421eea133053a47568a9",
+      "origin": "revision_d7/evidence/native_shutdown_fix/controlled_probe/retry_02/cooperative/INERT_FIXTURE.py"
+    },
+    "controlled_probe/retry_02/cooperative/REQUEST.json": {
+      "bytes": 1453,
+      "sha256": "e49923e20f57a4acfb9d0f62f2b1d906dbb069c89b692a42837c789e54645301",
+      "origin": "revision_d7/evidence/native_shutdown_fix/controlled_probe/retry_02/cooperative/REQUEST.json"
+    },
+    "controlled_probe/retry_02/cooperative/RESULT.json": {
+      "bytes": 6838,
+      "sha256": "e8c9132cc8d135d63889a7a0f7acc4ef5946242caf34dce48d7ded34eeba495e",
+      "origin": "revision_d7/evidence/native_shutdown_fix/controlled_probe/retry_02/cooperative/RESULT.json"
+    },
+    "controlled_probe/retry_02/cooperative/launcher_stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "origin": "revision_d7/evidence/native_shutdown_fix/controlled_probe/retry_02/cooperative/launcher_stderr.txt"
+    },
+    "controlled_probe/retry_02/cooperative/launcher_stdout.txt": {
+      "bytes": 284,
+      "sha256": "9373c943d711664e9e686f3d934c786b08d6833344d2aaa9c0b8364338b2a553",
+      "origin": "revision_d7/evidence/native_shutdown_fix/controlled_probe/retry_02/cooperative/launcher_stdout.txt"
+    },
+    "controlled_probe/retry_02/cooperative/lifecycle/FINISH.json": {
+      "bytes": 3191,
+      "sha256": "dbeee4cf47b3b6cf0d59642db2a800018efcf651c3a051fa0bf9a69e936bd090",
+      "origin": "revision_d7/evidence/native_shutdown_fix/controlled_probe/retry_02/cooperative/lifecycle/FINISH.json"
+    },
+    "controlled_probe/retry_02/cooperative/lifecycle/START.json": {
+      "bytes": 2587,
+      "sha256": "0a170301ad47ce02e1c5dea30440144554f9570429f193c9a176b90d4c22ffdc",
+      "origin": "revision_d7/evidence/native_shutdown_fix/controlled_probe/retry_02/cooperative/lifecycle/START.json"
+    },
+    "controlled_probe/retry_02/cooperative/lifecycle/stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "origin": "revision_d7/evidence/native_shutdown_fix/controlled_probe/retry_02/cooperative/lifecycle/stderr.txt"
+    },
+    "controlled_probe/retry_02/cooperative/lifecycle/stdout.txt": {
+      "bytes": 886,
+      "sha256": "2bcc667a9f2c4f1884959c8c77ee43d5dde8ba9df5f50146de86c272a27ab882",
+      "origin": "revision_d7/evidence/native_shutdown_fix/controlled_probe/retry_02/cooperative/lifecycle/stdout.txt"
+    },
+    "controlled_probe/retry_02/ignoring_repeated_signals/INERT_FIXTURE.py": {
+      "bytes": 374,
+      "sha256": "d148272fa711a4832244573dba414f0ae2b36fc8de5078766599936423d902fd",
+      "origin": "revision_d7/evidence/native_shutdown_fix/controlled_probe/retry_02/ignoring_repeated_signals/INERT_FIXTURE.py"
+    },
+    "controlled_probe/retry_02/ignoring_repeated_signals/REQUEST.json": {
+      "bytes": 1523,
+      "sha256": "17be18fc2e1ef9c471c72e80c5d105aa526c56bb0ef7197bb5d78cb3152b1399",
+      "origin": "revision_d7/evidence/native_shutdown_fix/controlled_probe/retry_02/ignoring_repeated_signals/REQUEST.json"
+    },
+    "controlled_probe/retry_02/ignoring_repeated_signals/RESULT.json": {
+      "bytes": 7995,
+      "sha256": "46272e02fae907aeb26f3a04a82a91a8232c684ad8a377069a2e685fdf0ae596",
+      "origin": "revision_d7/evidence/native_shutdown_fix/controlled_probe/retry_02/ignoring_repeated_signals/RESULT.json"
+    },
+    "controlled_probe/retry_02/ignoring_repeated_signals/launcher_stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "origin": "revision_d7/evidence/native_shutdown_fix/controlled_probe/retry_02/ignoring_repeated_signals/launcher_stderr.txt"
+    },
+    "controlled_probe/retry_02/ignoring_repeated_signals/launcher_stdout.txt": {
+      "bytes": 299,
+      "sha256": "c6263e6023e1f0e2d54a2c96962a08fdc7079b473027e3d02a4488475fcdbf6d",
+      "origin": "revision_d7/evidence/native_shutdown_fix/controlled_probe/retry_02/ignoring_repeated_signals/launcher_stdout.txt"
+    },
+    "controlled_probe/retry_02/ignoring_repeated_signals/lifecycle/FINISH.json": {
+      "bytes": 3843,
+      "sha256": "7c1df4f06ec14f647d541222eeb5dd12b4ea7c53911c69c36789ef840246dfc4",
+      "origin": "revision_d7/evidence/native_shutdown_fix/controlled_probe/retry_02/ignoring_repeated_signals/lifecycle/FINISH.json"
+    },
+    "controlled_probe/retry_02/ignoring_repeated_signals/lifecycle/SHUTDOWN.json": {
+      "bytes": 3561,
+      "sha256": "cb16e422e6253ad15c1001392f5db178bf8418044a0480a4fee6fe2d661edfe4",
+      "origin": "revision_d7/evidence/native_shutdown_fix/controlled_probe/retry_02/ignoring_repeated_signals/lifecycle/SHUTDOWN.json"
+    },
+    "controlled_probe/retry_02/ignoring_repeated_signals/lifecycle/START.json": {
+      "bytes": 2629,
+      "sha256": "1f8d755076f284810b4efcffd4289f67c6a47b23c7db298c53ab1024a9748c7d",
+      "origin": "revision_d7/evidence/native_shutdown_fix/controlled_probe/retry_02/ignoring_repeated_signals/lifecycle/START.json"
+    },
+    "controlled_probe/retry_02/ignoring_repeated_signals/lifecycle/stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "origin": "revision_d7/evidence/native_shutdown_fix/controlled_probe/retry_02/ignoring_repeated_signals/lifecycle/stderr.txt"
+    },
+    "controlled_probe/retry_02/ignoring_repeated_signals/lifecycle/stdout.txt": {
+      "bytes": 861,
+      "sha256": "005e79ab373a9db082d7d93179edbda9b5cc24df03b1a8b281cae4b4455567af",
+      "origin": "revision_d7/evidence/native_shutdown_fix/controlled_probe/retry_02/ignoring_repeated_signals/lifecycle/stdout.txt"
+    },
+    "CORRECTED_LAUNCHER_SNAPSHOT.py": {
+      "bytes": 7446,
+      "sha256": "9dec1771869e921fc59194f0603825ab28d02ab8fed0765d9e2b4028dbf38987",
+      "origin": "companion/practice/native_client/run_local_model.py"
+    },
+    "IDENTITIES.json": {
+      "bytes": 997,
+      "sha256": "c0e7f4561534e154e6179a35a9ae52a78b63bde91c022b4843cd9e398b956427",
+      "origin": "Separate explanatory annotation; copied evidence unchanged"
+    },
+    "README.md": {
+      "bytes": 3305,
+      "sha256": "c9f7d57ee8394c35186f512a01d2f1d3d511fd43fc805489c56c6b96feed798f",
+      "origin": "Separate explanatory annotation; copied evidence unchanged"
+    }
+  },
+  "file_count": 49,
+  "total_bytes": 130877,
+  "self_excluded": true,
+  "model_or_real_server_run_in_this_probe": false,
+  "scope": "Exact source snapshots plus actual failed controller preparation and successful independent inert-process verification; original native outcomes unchanged."
+}

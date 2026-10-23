@@ -1,0 +1,183 @@
+{
+  "schema": "treasury-orchestrator-observation/v1",
+  "observed_at_utc": "2026-10-20T16:21:24.593847+00:00",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "worker_kind": "DETERMINISTIC_PYTHON",
+  "model_calls": 0,
+  "named_agent_client_runs": 0,
+  "scenarios": {
+    "01_success": {
+      "run_status": "COMPLETED",
+      "peak_parallel": 2,
+      "tasks": {
+        "policy": {
+          "status": "COMPLETED",
+          "attempts": 1,
+          "outcomes": [
+            "COMPLETED"
+          ]
+        },
+        "routing": {
+          "status": "COMPLETED",
+          "attempts": 1,
+          "outcomes": [
+            "COMPLETED"
+          ]
+        },
+        "synthesis": {
+          "status": "COMPLETED",
+          "attempts": 1,
+          "outcomes": [
+            "COMPLETED"
+          ]
+        }
+      },
+      "state": "01_success/run/state.json",
+      "completed_resume_added_attempts": 0
+    },
+    "02_human_blocked": {
+      "run_status": "WAITING_HUMAN",
+      "peak_parallel": 2,
+      "tasks": {
+        "owner_decision": {
+          "status": "WAITING_HUMAN",
+          "attempts": 0,
+          "outcomes": []
+        },
+        "policy": {
+          "status": "COMPLETED",
+          "attempts": 1,
+          "outcomes": [
+            "COMPLETED"
+          ]
+        },
+        "proposed_implementation": {
+          "status": "BLOCKED_HUMAN",
+          "attempts": 0,
+          "outcomes": []
+        },
+        "routing": {
+          "status": "COMPLETED",
+          "attempts": 1,
+          "outcomes": [
+            "COMPLETED"
+          ]
+        },
+        "synthesis": {
+          "status": "COMPLETED",
+          "attempts": 1,
+          "outcomes": [
+            "COMPLETED"
+          ]
+        }
+      },
+      "state": "02_human_blocked/run/state.json"
+    },
+    "03_retry": {
+      "run_status": "COMPLETED",
+      "peak_parallel": 1,
+      "tasks": {
+        "retry": {
+          "status": "COMPLETED",
+          "attempts": 2,
+          "outcomes": [
+            "NONZERO_EXIT",
+            "COMPLETED"
+          ]
+        }
+      },
+      "state": "03_retry/run/state.json"
+    },
+    "04_failed_dependency": {
+      "run_status": "FAILED",
+      "peak_parallel": 1,
+      "tasks": {
+        "dependent": {
+          "status": "BLOCKED_DEPENDENCY",
+          "attempts": 0,
+          "outcomes": []
+        },
+        "failure": {
+          "status": "FAILED",
+          "attempts": 1,
+          "outcomes": [
+            "NONZERO_EXIT"
+          ]
+        }
+      },
+      "state": "04_failed_dependency/run/state.json"
+    },
+    "05_timeout": {
+      "run_status": "FAILED",
+      "peak_parallel": 1,
+      "tasks": {
+        "slow": {
+          "status": "FAILED",
+          "attempts": 2,
+          "outcomes": [
+            "TIMEOUT",
+            "TIMEOUT"
+          ]
+        }
+      },
+      "state": "05_timeout/run/state.json"
+    },
+    "06_interrupt_resume": {
+      "run_status": "COMPLETED",
+      "peak_parallel": 2,
+      "tasks": {
+        "policy": {
+          "status": "COMPLETED",
+          "attempts": 1,
+          "outcomes": [
+            "COMPLETED"
+          ]
+        },
+        "routing": {
+          "status": "COMPLETED",
+          "attempts": 2,
+          "outcomes": [
+            "INTERRUPTED",
+            "COMPLETED"
+          ]
+        },
+        "synthesis": {
+          "status": "COMPLETED",
+          "attempts": 1,
+          "outcomes": [
+            "COMPLETED"
+          ]
+        }
+      },
+      "state": "06_interrupt_resume/run/state.json"
+    },
+    "07_stale_input": {
+      "outcome": "REFUSED_CHANGED_INPUT",
+      "returncode": 2
+    },
+    "08_escaping_output": {
+      "outcome": "REFUSED_BEFORE_DISPATCH",
+      "returncode": 2
+    }
+  },
+  "scenario_count": 8,
+  "status": "PASS_LOCAL_DETERMINISTIC_SCOPE",
+  "source_files": {
+    "repo/src/treasury/routing.py": "14d186a327a418dddb405144bfefb5810ed27e626b981424c9ad3b66742e8b32",
+    "reader_side/intent/INT-001.md": "209ee2f218448d83178bd02fd5947cf68b021657a72b38e682e4a895fa102947",
+    "reader_side/reference_solution/delegation_plan.json": "ff2a8e4e3ef8d2403cec1cc767a91fc97103455237be43661a980607cae2da17"
+  },
+  "preserved_core_files": 201,
+  "core_unchanged": true,
+  "original_cp07": {
+    "T07-03": "PENDING_HUMAN",
+    "T07-04": "BLOCKED"
+  },
+  "limitations": [
+    "Workers are deterministic Python, not LLM agents.",
+    "No OS sandbox, hosted client, production release, power-loss recovery or exactly-once guarantee was tested.",
+    "The task is source inspection and report synthesis, with no repository patch or human acceptance.",
+    "Wall time, attempts and process overlap are observations, not proof of a productivity benefit."
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "task_id": "retry",
+  "status": "COMPLETED",
+  "worker_kind": "DETERMINISTIC_PYTHON",
+  "attempt": 2,
+  "acceptance_authority": false,
+  "release_authority": false,
+  "message": "Second attempt completed after the retained injected failure."
+}

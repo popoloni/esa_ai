@@ -1,0 +1,45 @@
+[
+  {
+    "name": "run_help",
+    "argv": [
+      "/workspace/scratch/72d789d25fef/runtime_d7/opencode/node_modules/.bin/opencode",
+      "--pure",
+      "run",
+      "--help"
+    ],
+    "cwd": "/workspace/scratch/72d789d25fef/runtime_d7/native_sdd_03",
+    "started_at_utc": "2026-10-22T07:20:53.745830+00:00",
+    "inference_requested": false,
+    "finished_at_utc": "2026-10-22T07:20:54.362226+00:00",
+    "exit_code": 0
+  },
+  {
+    "name": "effective_config",
+    "argv": [
+      "/workspace/scratch/72d789d25fef/runtime_d7/opencode/node_modules/.bin/opencode",
+      "--pure",
+      "debug",
+      "config"
+    ],
+    "cwd": "/workspace/scratch/72d789d25fef/runtime_d7/native_sdd_03",
+    "started_at_utc": "2026-10-22T07:20:54.362256+00:00",
+    "inference_requested": false,
+    "finished_at_utc": "2026-10-22T07:20:55.630819+00:00",
+    "exit_code": 0
+  },
+  {
+    "name": "effective_agent",
+    "argv": [
+      "/workspace/scratch/72d789d25fef/runtime_d7/opencode/node_modules/.bin/opencode",
+      "--pure",
+      "debug",
+      "agent",
+      "esa-sdd"
+    ],
+    "cwd": "/workspace/scratch/72d789d25fef/runtime_d7/native_sdd_03",
+    "started_at_utc": "2026-10-22T07:20:55.630885+00:00",
+    "inference_requested": false,
+    "finished_at_utc": "2026-10-22T07:20:57.106550+00:00",
+    "exit_code": 0
+  }
+]

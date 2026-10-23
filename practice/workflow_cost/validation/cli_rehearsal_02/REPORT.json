@@ -1,0 +1,80 @@
+{
+  "schema": "esa-workflow-cost-report/v1",
+  "run_id": "COST-CLI-REHEARSAL-002",
+  "evidence_mode": "OBSERVED",
+  "claim_scope": "DESCRIPTIVE_SINGLE_WORKFLOW_NO_CAUSAL_OR_ROI_CLAIM",
+  "identity": {
+    "interface": "Python subprocess driver, not a model client",
+    "client_version": "UNKNOWN_NOT_EXPOSED",
+    "model": "UNKNOWN_NOT_EXPOSED",
+    "model_version": "UNKNOWN_NOT_EXPOSED"
+  },
+  "status": "VALID_ACCOUNT_WITH_EXPLICIT_LIMITS",
+  "boundary": {
+    "description": "Supplied task reading through recorded local test result",
+    "start_utc": "2026-10-21T18:14:49.044664+00:00",
+    "finish_utc": "2026-10-21T18:14:49.575537+00:00",
+    "exclusions": [
+      "No model request, human reader session, attributable billing or module-construction effort is in this rehearsal"
+    ]
+  },
+  "workflow_elapsed_seconds": 0.530873,
+  "completed_span_count": 2,
+  "open_span_count": 0,
+  "failed_span_ids": [],
+  "abandoned_span_ids": [],
+  "sum_of_interval_seconds_not_elapsed": 0.272211,
+  "observed_interval_union_seconds": 0.272211,
+  "overlap_seconds_removed_from_elapsed_coverage": 0.0,
+  "per_actor_interval_union_seconds_not_active_effort": {
+    "recorder-driver": 0.086759,
+    "local-checker": 0.185452
+  },
+  "declared_active_human_seconds_by_person": {},
+  "declared_active_human_seconds_total": null,
+  "acceptance": {
+    "AUTOMATED": {
+      "accepted_distinct_items": 1,
+      "latest_items": {
+        "recorder-candidate-1": {
+          "decision": "ACCEPTED",
+          "candidate_sha256": "4623bd6ff722aa7861376a778618668926555325730a5ceb7c010da3552bf8e2",
+          "evidence": {
+            "path": "CHECKS.txt",
+            "sha256": "ded27ea1a3f8b0e176e27ab84368ea6ac5457ac0b9c36251251de81cfbb7bd58"
+          }
+        }
+      }
+    },
+    "AGENT": {
+      "accepted_distinct_items": null,
+      "latest_items": {}
+    },
+    "HUMAN": {
+      "accepted_distinct_items": null,
+      "latest_items": {}
+    }
+  },
+  "observed_money_subtotals_by_currency": {},
+  "observed_usage_records": [],
+  "money_coverage_complete_by_declaration": false,
+  "activity_coverage_complete_by_declaration": false,
+  "complete_workflow_money": null,
+  "currency": null,
+  "cost_per_human_accepted_item": null,
+  "assumptions_excluded_from_observed_totals": [],
+  "roi": null,
+  "roi_reason": "A descriptive account does not establish attributable business benefit or a counterfactual",
+  "warnings": [
+    "Unmeasured phase: implementation",
+    "Unmeasured phase: agent_review",
+    "Unmeasured phase: human_review",
+    "Unmeasured phase: rework",
+    "Unmeasured phase: recording",
+    "Incomplete monetary component: model",
+    "Incomplete monetary component: human",
+    "Incomplete monetary component: infrastructure",
+    "Human acceptance is unobserved; an automated or agent decision cannot supply its denominator"
+  ],
+  "verification_boundary": "Evidence file bytes and accounting consistency are checked. Human identity, true completeness, active model time and provider billing are not independently authenticated."
+}

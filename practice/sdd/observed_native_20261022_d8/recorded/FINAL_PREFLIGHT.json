@@ -1,0 +1,160 @@
+{
+  "schema": "esa-d8-final-native-preflight/v1",
+  "at_utc": "2026-10-22T10:23:03.780745+00:00",
+  "status": "READY_FOR_NEW_NATIVE_GENERATION_AFTER_CP25_SAVE",
+  "model_inference_this_observation": "NOT_RUN",
+  "source_bindings": {
+    "server_review": {
+      "path": "revision_d8/evidence/native_server_01/startup_preflight_03/REVIEW.json",
+      "sha256": "f4f7ae200ef746010aec7679b436741b282d73cc0d730caf04f2f1cb6b3cd58a"
+    },
+    "input_budget": {
+      "path": "revision_d8/evidence/native_sdd_01/input_budget_02/CONTEXT_24576_ASSESSMENT.json",
+      "sha256": "88892b9a151baadfa6f532d84e200d57f9cf621b3c82534fa35c3aca8e9d5c01"
+    },
+    "client_task": {
+      "path": "revision_d8/evidence/native_sdd_01/invocation/CLIENT_TASK_02.json",
+      "sha256": "ca901a675262709719aa9cc6ebc8febe488e15a51026fe6a92f1d71f67d7f9a6"
+    },
+    "effective_config": {
+      "path": "revision_d8/evidence/native_sdd_01/invocation/EFFECTIVE_CONFIG_02_CHECK.json",
+      "sha256": "4ddd667453d5d54b8a61071d6583cf7d5a3c6dda74eb92df95d66295cf8f1c21"
+    },
+    "attachment_preflight": {
+      "path": "revision_d8/evidence/native_sdd_01/preparation/native_attachment_preflight_01/RESULT.json",
+      "sha256": "2f593f2ed357a2d70f43ef57ae5d7e725ea133346418a09f86934d49340f9199"
+    },
+    "client_cap_source": {
+      "path": "revision_d8/evidence/native_sdd_01/input_budget/CLIENT_OUTPUT_CAP_SOURCE_BINDING.json",
+      "sha256": "8c737d123d489a3dd4d6455dc25acbabc23f912381c16c5441b80eef5ab535d5"
+    },
+    "native_command": {
+      "path": "revision_d8/evidence/native_sdd_01/preparation/starting_tree/.opencode/commands/speckit.specify.md",
+      "sha256": "21634a45dfcf642fddb1645f4ad2980f98c89778442e47663df8a6c3a1eaf8bc"
+    },
+    "source_packet": {
+      "path": "revision_d8/evidence/native_sdd_01/preparation/starting_tree/inputs/NATIVE_CONTEXT_BUNDLE.md",
+      "sha256": "bbaf6d82364e6e6e2fa543f9c9c1cf407ffe315aa2a75d63be4caf09ae25d718"
+    }
+  },
+  "context": 24576,
+  "declared_budget": {
+    "context": 24576,
+    "base_tokens": 12837,
+    "reserves": {
+      "unobserved_native_system_tools_message_overhead": 3072,
+      "cumulative_prior_output_tool_history": 4096,
+      "maximum_current_response_output": 3072
+    },
+    "total_with_reserves": 23077,
+    "remaining_tokens": 1499
+  },
+  "bounds": {
+    "client_output_per_response": 3072,
+    "agent_steps": 12,
+    "provider_overall_and_header_timeout_seconds": 1500,
+    "outer_invocation_seconds": 5400,
+    "server_max_lifetime_seconds": 7200,
+    "automatic_compaction": false
+  },
+  "memory_gate": {
+    "status": "PASS_STARTUP_ONLY",
+    "headroom_bytes": 1366093416,
+    "no_new_oom": true
+  },
+  "server_start_observation": {
+    "schema": "esa-local-server-lifecycle/v2",
+    "argv": [
+      "/workspace/scratch/72d789d25fef/runtime_d7/llama_cpp/llama-b11799/llama-server",
+      "--model",
+      "/workspace/scratch/72d789d25fef/runtime_d7/downloads/Qwen3-4B-Q4_K_M.gguf",
+      "--alias",
+      "esa-qwen3-4b",
+      "--host",
+      "127.0.0.1",
+      "--port",
+      "18080",
+      "--ctx-size",
+      "24576",
+      "--parallel",
+      "1",
+      "--threads",
+      "8",
+      "--threads-batch",
+      "8",
+      "--n-gpu-layers",
+      "0",
+      "--batch-size",
+      "256",
+      "--ubatch-size",
+      "128",
+      "--jinja",
+      "--reasoning",
+      "off",
+      "--no-repack",
+      "--no-warmup",
+      "--no-context-shift",
+      "--verbosity",
+      "4",
+      "--n-predict",
+      "3072",
+      "--no-agent",
+      "--no-ui-mcp-proxy",
+      "--no-webui",
+      "--metrics",
+      "--timeout",
+      "1500",
+      "--cache-ram",
+      "0",
+      "--ctx-checkpoints",
+      "0",
+      "--cache-type-k",
+      "f16",
+      "--cache-type-v",
+      "f16",
+      "--flash-attn",
+      "on"
+    ],
+    "cwd": "/workspace/scratch/72d789d25fef/runtime_d7",
+    "environment": {
+      "PATH": "/root/.codex/tmp/arg0/codex-arg0BiuUUo:/opt/codex/codex-path:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/override:/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/fallback",
+      "LANG": "C.UTF-8",
+      "LC_ALL": "C.UTF-8",
+      "TZ": "UTC"
+    },
+    "started_at_utc": "2026-10-22T10:20:52.962120+00:00",
+    "launcher_pid": 53651,
+    "launcher_identity": {
+      "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_server_01/preparation/run_local_model_d8.py",
+      "sha256": "c9bc0eb8e64725c7b1ba92687cdfcf4ffd87c5648c0c3abb2e08d4854c3c5b4f"
+    },
+    "python": {
+      "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "version": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]"
+    },
+    "startup_status": "No inference authorized by launcher; health, memory and token budget require separate review",
+    "maximum_runtime_seconds": 7200.0,
+    "shutdown_policy": {
+      "grace_seconds": 30.0,
+      "clock": "monotonic",
+      "poll_seconds": 0.2,
+      "repeated_signals_reset_deadline": false,
+      "escalation_target": "Only the exact still-running direct child created by this launcher",
+      "timing_limit": "Escalation is checked after the grace interval; scheduling and I/O can add delay."
+    },
+    "scope": "Loopback inference only; no built-in server agent tools or MCP hosts enabled.",
+    "server_pid": 53652
+  },
+  "server_output_cap_qualification": "Server properties report default n_predict/max_tokens=-1. Source-bound native client cap3072 is configured; actual request serialization remains to be observed. The server argv is not claimed as independently enforcing that cap.",
+  "fixed_input_policy": "All13 complete source bodies retained; authored reference contract disclosed. No prior generated Markdown or fabricated owner answers.",
+  "allowed_output_paths": [
+    ".specify/feature.json",
+    "specs/001-explain-treasury/spec.md",
+    "specs/001-explain-treasury/checklists/requirements.md"
+  ],
+  "first_output_policy": "Retain exact native write/edit tool inputs and any scaffold copy separately, final tree/diff, native events and parsed session export. Preserve omissions for independent review.",
+  "clarification_boundary": "Actual unanswered owner questions and an actual stop before planning; independent review decides sufficiency. A timeout, promised write or successful CLI exit alone is insufficient.",
+  "review_scope": "Original R08 three criteria and exact five requirements/eight existing oracle cases. Human requirements acceptance and second framework observation are not claimed.",
+  "checkpoint_active_exclusion": "revision_d8/evidence/native_server_01/lifecycle_03/",
+  "no_paired_performance_claim": true
+}

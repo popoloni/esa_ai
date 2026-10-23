@@ -1,0 +1,45 @@
+{
+  "schema": "esa-d8-native-attempt-disposition/v1",
+  "at_utc": "2026-10-22T10:39:15.218400+00:00",
+  "status": "INTERRUPTED_REDUNDANT_SOURCE_READ_NO_GENERATED_ARTIFACT",
+  "actual_session_id": "ses_e9cdbe2b5ffe5Bsfi3cviA8Zsb",
+  "useful_generated_artifacts": 0,
+  "changed_files": [],
+  "completed_native_actions": [
+    {
+      "tool": "read",
+      "target": "inputs/NATIVE_CONTEXT_BUNDLE.md",
+      "disposition": "Redundant complete read of input already present in native attachment"
+    }
+  ],
+  "first_request": {
+    "prompt_tokens": 15622,
+    "output_tokens": 63,
+    "prefill_seconds": 477.40029,
+    "output_seconds": 25.38822,
+    "actual_temperature": 0.8,
+    "configured_agent_temperature": 0.2
+  },
+  "second_request": {
+    "prompt_tokens": 23836,
+    "server_context": 24576,
+    "remaining_context": 740,
+    "declared_current_output_reserve": 3072,
+    "additional_prefill_observed_tokens": 1792,
+    "completed_output": "NONE",
+    "disposition": "Root SIGINT after context-reserve failure; server log records request cancellation."
+  },
+  "capture_exit_code": -2,
+  "capture_duration_seconds": 614.5414498190003,
+  "original_scope_result": "R08 remains PARTIAL. The observation has no native-generated specification/checklist and no reached owner clarification stop.",
+  "history": "First actions, interrupted request, exact session export and unchanged49-file tree remain intact. Any corrected candidate uses a new native session.",
+  "financial_cost": null,
+  "human_effort_seconds": null,
+  "usage_qualification": "Only the completed first response reports usage. Native reported zero cost is not a measured financial total; incomplete request and preparation are not silently added or estimated.",
+  "evidence": {
+    "revision_d8/evidence/native_sdd_01/attempt_01/RECEIPT.json": "ec150345e35bd56167694b9e0e275d8e6927d505e927f6f490830a12a1fdbdc1",
+    "revision_d8/evidence/native_sdd_01/INTERVENTION_01.json": "5605508dbf3be777d8285fe863ddd61c2194c0c3bf6dae27fbf2c11c4aec0d97",
+    "revision_d8/evidence/native_sdd_01/terminal_collection_01/COLLECTION_RECEIPT.json": "48c088c50cac3495bffc6df2eeecee5fa6326bc4a1e4bf3f8b4b9db8b477eac8",
+    "revision_d8/evidence/native_server_01/inference_observation/OBSERVATION_SUMMARY.json": "93e338aefa35b3e5ce80b094689ff3a3ce1eeb7dcb8f227cf3bc7b7ecfdd8285"
+  }
+}

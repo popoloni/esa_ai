@@ -1,0 +1,14 @@
+{
+  "argv": [
+    "/workspace/scratch/72d789d25fef/runtime_d7/opencode/node_modules/.bin/opencode",
+    "--pure",
+    "mcp",
+    "list"
+  ],
+  "cwd": "/workspace/scratch/72d789d25fef/runtime_d7/native_mcp_work_01",
+  "configuration": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/mcp_host_01/diagnostics/host_connection/CONFIG.json",
+  "started_at_utc": "2026-10-22T05:59:20.965110+00:00",
+  "finished_at_utc": "2026-10-22T05:59:24.573269+00:00",
+  "exit_code": 0,
+  "inference_requested": false
+}

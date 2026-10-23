@@ -1,0 +1,22 @@
+{
+  "schema": "esa-native-evidence-check/v1",
+  "status": "PASS_DECLARED_NATIVE_EVIDENCE_CONSISTENCY",
+  "execution_kind": "ACTUAL_NAMED_CLIENT",
+  "issues": [],
+  "record_sha256": "a1bf7745ecf75dbc91aa998aa51c41d454a0b979a850265229c4e347995c2e6a",
+  "required_categories": [
+    "client_identity",
+    "effective_configuration",
+    "failure_and_recovery",
+    "final_diff",
+    "first_output",
+    "independent_checks",
+    "initial_checks",
+    "reproduction_instructions",
+    "task_prompt",
+    "tool_actions"
+  ],
+  "native_authenticity": "NOT_ESTABLISHED_BY_THIS_CHECK",
+  "human_acceptance": "NOT_GRANTED_BY_THIS_CHECK",
+  "action_closure": "REQUIRES_SEPARATE_REVIEW_AGAINST_ORIGINAL_CRITERIA"
+}

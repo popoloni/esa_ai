@@ -1,0 +1,22 @@
+{
+  "reviewed_at_utc": "2026-10-22T07:22:53.055430+00:00",
+  "previous_checks_record": "CONTINUATION_PREPARATION.json",
+  "retained_failures": [
+    "Initial administrative assertion looked only at stdout, while actual OpenCode --help returned its valid usage on stderr with exit0.",
+    "Initial budget collector expected server02 health-record layout; server03 stores health checks in health_attempts, producing KeyError before a preflight file write. No model was run."
+  ],
+  "actual_cli_help": "run_help.stderr.txt explicitly lists -s, --session, session id to continue; --fork is a separate unused option.",
+  "corrected_checks": {
+    "same_native_session_id": true,
+    "original_full_command_retained": true,
+    "only_timeout_fields_changed_in_configuration": true,
+    "all_diagnostics_exit_zero": true,
+    "run_help_has_explicit_session": true,
+    "actual_context_24576": true,
+    "explicit_overall_header_1500000": true,
+    "tools_unchanged": true,
+    "no_project_file_change": true,
+    "no_artifact_or_answer_supplied": true
+  },
+  "status": "PASS_PREPARATION_CHECKS_CORRECTLY_ATTRIBUTED"
+}

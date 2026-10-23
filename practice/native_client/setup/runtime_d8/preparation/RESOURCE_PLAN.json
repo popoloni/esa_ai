@@ -1,0 +1,188 @@
+{
+  "schema": "esa-d8-native-server-resource-plan/v1",
+  "status": "READY_FOR_ROOT_STARTUP_ONLY_PREFLIGHT_NOT_GENERATION",
+  "prepared_at_utc": "2026-10-22T10:12:31.387525+00:00",
+  "launcher": {
+    "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_server_01/preparation/run_local_model_d8.py",
+    "sha256": "c9bc0eb8e64725c7b1ba92687cdfcf4ffd87c5648c0c3abb2e08d4854c3c5b4f",
+    "base_sha256": "9dec1771869e921fc59194f0603825ab28d02ab8fed0765d9e2b4028dbf38987",
+    "command_record": "LAUNCH_COMMAND.json",
+    "expanded_plan": "PLANNED_LAUNCH.stdout.json"
+  },
+  "fixed_startup_candidate": {
+    "context": 22528,
+    "cache_k": "f16",
+    "cache_v": "f16",
+    "threads": 8,
+    "threads_batch": 8,
+    "parallel_slots": 1,
+    "batch": 256,
+    "microbatch": 128,
+    "weight_repacking": false,
+    "warmup": false,
+    "reasoning": false,
+    "context_shift": false,
+    "server_request_timeout_seconds": 1500,
+    "server_default_output_tokens": 3072,
+    "server_maximum_lifetime_seconds": 7200,
+    "shutdown_grace_seconds": 30,
+    "no_native_call_or_inference_has_been_started_by_this_preparation": true
+  },
+  "client_prospective_bounds": {
+    "context": 22528,
+    "maximum_output_tokens_per_response": 3072,
+    "overall_timeout_milliseconds": 1500000,
+    "header_timeout_milliseconds": 1500000,
+    "outer_session_seconds": 5400,
+    "maximum_steps": 12,
+    "automatic_compaction": false,
+    "explicit_task_title": true,
+    "required_input_route": "Unchanged installed native specify command plus absolute @ attachment with independently verified complete line-safe fixed packet. --file with --command is not used."
+  },
+  "memory": {
+    "cgroup_limit_bytes": 8589934592,
+    "old_observed_q4_24576_peak_rss_kib": 5243968,
+    "old_raw_q4_cache_bytes": 1019215872,
+    "candidate_raw_f16_cache_bytes": 3321888768,
+    "formula": "36 layers * 8 KV heads * 128 dimensions * context * 2 (K+V) * 2 bytes (f16)",
+    "table": [
+      {
+        "context": 16384,
+        "f16_k_plus_v_bytes": 2415919104,
+        "f16_k_plus_v_gib": 2.25,
+        "old_rss_plus_cache_delta_bytes": 6766526464,
+        "estimate_limit": "Uses observed old q4_0 24K peak RSS and changes only raw cache; it does not credit unknown no-repack savings or predict peak memory."
+      },
+      {
+        "context": 20480,
+        "f16_k_plus_v_bytes": 3019898880,
+        "f16_k_plus_v_gib": 2.8125,
+        "old_rss_plus_cache_delta_bytes": 7370506240,
+        "estimate_limit": "Uses observed old q4_0 24K peak RSS and changes only raw cache; it does not credit unknown no-repack savings or predict peak memory."
+      },
+      {
+        "context": 22528,
+        "f16_k_plus_v_bytes": 3321888768,
+        "f16_k_plus_v_gib": 3.09375,
+        "old_rss_plus_cache_delta_bytes": 7672496128,
+        "estimate_limit": "Uses observed old q4_0 24K peak RSS and changes only raw cache; it does not credit unknown no-repack savings or predict peak memory."
+      },
+      {
+        "context": 24576,
+        "f16_k_plus_v_bytes": 3623878656,
+        "f16_k_plus_v_gib": 3.375,
+        "old_rss_plus_cache_delta_bytes": 7974486016,
+        "estimate_limit": "Uses observed old q4_0 24K peak RSS and changes only raw cache; it does not credit unknown no-repack savings or predict peak memory."
+      }
+    ],
+    "no_repack_effect": "Source-confirmed removal of optional repacked CPU buffers with ordinary CPU buffer fallback. Actual memory reduction and speed effect are not yet measured.",
+    "do_not_treat_cache_as_free": "Use actual cgroup anon/kernel and model-mapped RSS together with reclaimable file-cache fields; memory.current alone can approach the ceiling because cached files remain charged. Do not drop host caches."
+  },
+  "startup_gates_before_generation": [
+    {
+      "id": "IDENTITY",
+      "requirement": "Exact START child identity/argv and expected pinned binary/model hashes; selected mapped CPU backend retained."
+    },
+    {
+      "id": "HEALTH_CONFIG",
+      "requirement": "Loopback /health success and /props/context confirm22528, one slot and f16 K/V; startup log records reasoning off/no repack/no warmup. No completion/embedding benchmark call."
+    },
+    {
+      "id": "MEMORY",
+      "requirement": "Retain actual server status/RSS, cgroup memory.stat/current/max/events and CPU quota after load. Require no new OOM/OOM-kill and a conservatively estimated minimum768MiB headroom for client and growth; parent may decline startup if insufficient. Account for model file pages separately from unrelated reclaimable cache, and record exact estimate inputs."
+    },
+    {
+      "id": "FULL_CONTEXT_BUDGET",
+      "requirement": "Tokenize exact native-expanded command + actual complete attachment and tool/system envelope. Explicitly reserve3072 output plus cumulative prior assistant/tool history; full sum<=22528. No truncation, dropping requirements or fabricated artifact text."
+    },
+    {
+      "id": "BOUNDED_JOURNEY",
+      "requirement": "Root records native start/outer deadline, timely actual prefill/usage/resource observations and stop conditions. No extending fixed active deadline; no claim of native artifacts before actual writes/checks."
+    }
+  ],
+  "source_supported_diagnoses": [
+    {
+      "finding": "Quantized K/V bypass optimized tiled CPU attention in this exact pinned implementation; f16 K/V are eligible.",
+      "source": "upstream/llama.cpp-0756e83fc/ops.cpp",
+      "lines": [
+        9579,
+        9580,
+        9636,
+        9660
+      ],
+      "status": "Source mechanism verified; speed improvement remains hypothesis until actual native workload."
+    },
+    {
+      "finding": "--no-repack sets no_extra_bufts; optional CPU repack buffer types are skipped and normal CPU fallback remains.",
+      "sources": [
+        {
+          "path": "upstream/llama.cpp-0756e83fc/arg.cpp",
+          "lines": [
+            2425,
+            2432
+          ]
+        },
+        {
+          "path": "upstream/llama.cpp-0756e83fc/common.cpp",
+          "lines": [
+            1690,
+            1690
+          ]
+        },
+        {
+          "path": "upstream/llama.cpp-0756e83fc/llama-model.cpp",
+          "lines": [
+            1168,
+            1195
+          ]
+        },
+        {
+          "path": "upstream/llama.cpp-0756e83fc/repack.cpp",
+          "lines": [
+            5150,
+            5178
+          ]
+        }
+      ],
+      "status": "Supported execution path; changed weight-layout kernels may affect throughput, not yet measured."
+    },
+    {
+      "finding": "Prior first prompt6964 tokens spent728.010s in prefill,55 generated tokens18.109s; following request reused6960 tokens but remained in prefill after processing4096 extra tokens in1045.01s.",
+      "evidence": [
+        {
+          "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/native_reconstruction/llama_server_03/stderr.txt",
+          "bytes": 3140,
+          "sha256": "64e6a32360adf2a466f0ca64aecdb157c0e0b3918628dba68d95a28812fb25db"
+        },
+        {
+          "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/native_reconstruction/llama_server_03/START.json",
+          "bytes": 2114,
+          "sha256": "1b2fccc2397129dc04d236d71b73df97b23e342dac85548699a119bf77531fd5"
+        },
+        {
+          "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/native_reconstruction/llama_server_03/FINISH.json",
+          "bytes": 2458,
+          "sha256": "eafb9af4650ad51e3c448299cce4b92c653829792e108a4bd5f7a08c00d411e8"
+        }
+      ],
+      "status": "Observed d7 timing. It was input processing, not proven runaway reasoning; old enable_thinking was already false."
+    },
+    {
+      "finding": "Native command CLI omits --file parts, while absolute @ reference expands before inference and native Read enforces line/byte limits.",
+      "sources": [
+        "upstream/opencode-v1.19.3/cli_run.ts",
+        "upstream/opencode-v1.19.3/session_prompt.ts",
+        "upstream/opencode-v1.19.3/read.ts",
+        "upstream/opencode-v1.19.3/markdown.ts"
+      ],
+      "status": "Pinned source verified; sibling noReply preflight separately verifies actual complete ingestion."
+    }
+  ],
+  "claims_not_made": [
+    "No observed f16 speedup yet.",
+    "No proof that old selected CPU backend was generic.",
+    "No whole-runtime memory forecast from raw KV alone.",
+    "No unconfigured authenticated provider availability outside bounded checked paths.",
+    "No R08 closure or generated-artifact claim at preparation."
+  ]
+}

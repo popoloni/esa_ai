@@ -1,0 +1,28 @@
+
+SOURCE: manuscript/chapters/chapter05.tex
+REASON: R13, move historical cumulative arithmetic out of the reader path.
+OLD TEXT:
+The historical CP05 result is \textbf{141 cumulative offline passes}: 93 inherited from Chapters~1--4 and 48 additional Chapter~5 tests. Use the shared runner's current report for the integrated total. For each of the eight selected cases, \texttt{direct.explain} and \texttt{ports.explain} return the same six-field response. The new tests also exercise a fake injected routing result in Design B, reject a fake unexpected route, and check that even invalid input never claims payment approval. These are actual local Python executions recorded in the checkpoint. They are not proof of full behavioral equivalence for all strings, concurrency behavior, latency, service availability or deployment security.
+REPLACEMENT:
+Run \texttt{python3 reader\_side/tools/run\_checks.py} for the current shared result, then use the architecture gate below to assess the selected decision and ADR. Both prototypes should preserve the protected eight-case behavior; the port comparison also tests provider substitution and refusal of an unexpected route. These checks establish selected local observations. They do not establish full equivalence for every input, latency, availability or deployment security.
+
+SOURCE: manuscript/chapters/chapter07.tex
+REASON: R13, move historical cumulative arithmetic out of the reader path.
+OLD TEXT:
+The historical CP07 checkpoint recorded \emph{229 passing Python tests}: seven acceptance cases and 222 other tests. Its unsafe plan returned 24 findings; the reference plan returned none. The complete edition's shared runner supplies the current total. These counts describe offline checks, not real-agent execution, human approval or a field reliability estimate; detailed checkpoint accounting remains with the archived evidence.
+REPLACEMENT:
+Use \texttt{python3 reader\_side/tools/run\_checks.py} for the current shared result and \texttt{planning\_gate.py} for the plan you selected. Expect the unsafe starter to fail and an accurately pending plan to pass its planning checks. That pass means the dependencies and boundaries are represented correctly; it does not execute an agent or supply the missing owner decisions.
+
+SOURCE: manuscript/chapters/chapter10.tex
+REASON: R13, move historical cumulative arithmetic out of the reader path.
+OLD TEXT:
+The author run passed 53/53 inherited-workflow assertions and 49/49 CP10 assertions, including rejection of 16 negative scenarios. At that checkpoint, the shared suite passed all 375 tests (7 acceptance, 368 regression); the complete edition's current total is reported by its integrated runner. Repaired current candidates in validation copies and the protected example each reached \path{PASS_LOCAL_RELEASE_REHEARSAL_ONLY}; a reference session was correctly blocked from certifying current-source release. Previous-artifact and restored-current smoke checks each passed 8/8 cases. Records are under \path{editorial/verification/chapter10/}, in \path{inherited_workflow/} and \path{validation_01/}. These are local author observations with simulated owner decisions. Independent human review remains pending; no hosted trial or production deployment was performed.
+REPLACEMENT:
+Run \texttt{python3 reader\_side/tools/run\_checks.py} for the current shared checks. Assess a new nominated rehearsal with \texttt{release\_gate.py --rehearsal} and inspect its current source, Git and artifact identities. A repaired local exercise should reach \path{PASS_LOCAL_RELEASE_REHEARSAL_ONLY}; a reference session cannot certify the current working candidates. Read the retained current/previous/current smoke results for the actual rollback behavior. These are local observations with fictional owner decisions, not independent human acceptance or production deployment. Historical checkpoint totals remain with the archived verification records.
+
+SOURCE: manuscript/chapters/chapter11.tex
+REASON: R13, move historical cumulative arithmetic out of the reader path.
+OLD TEXT:
+At the original CP11 checkpoint, the author run passed 404 shared tests (7 acceptance, 397 regression). These historical counts describe that checkpoint; later chapters extend the shared suite. Separate repaired-current and protected-reference gate runs each passed 72/72 policy-history checks. The CP11 validation harness passed 37/37 assertions, including selected source and evidence mutations. Faulty controls and ambiguous history were rejected; CP11 source changes correctly invalidated the earlier CP10 receipt. Detailed records and counting scopes are under \path{editorial/verification/chapter11/}, in \path{VALIDATION_AGGREGATE.json}. These are local teaching observations. Independent human review and a live tool trial remain pending; no production migration or release is claimed.
+REPLACEMENT:
+Run \texttt{evolution\_gate.py --output} with a new evidence directory and inspect \path{EVOLUTION_RESULT.json}. The repaired current candidate should reach \path{PASS_POLICY_EVOLUTION_REVIEW_ONLY}; ambiguous history and conflicting retries must fail without rewriting prior decisions. The gate retains the actual database and step observations. A changed CP11 source requires fresh evidence and does not renew an earlier CP10 release receipt. These local checks establish selected policy-history behavior, not production migration or real operator benefit. Historical checkpoint totals remain with the archived verification records.

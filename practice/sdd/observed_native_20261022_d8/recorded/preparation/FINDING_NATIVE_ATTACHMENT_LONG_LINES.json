@@ -1,0 +1,48 @@
+{
+  "id": "D8-SDD-NATIVE-ATTACHMENT-LINES",
+  "title": "Native input attachments can silently clip individual long JSON lines",
+  "detected_at_utc": "2026-10-22T10:12:21.365240+00:00",
+  "status": "RESOLVED_SOURCE_AND_NATIVE_PREFLIGHT_VERIFIED",
+  "related_original_action": "R08",
+  "problem": "The proposed native @file route uses ReadTool, whose 2,000-character line cap can omit source values despite a small file and whole-file truncated=false. The retained d7 compact JSON packet has long lines and is unsafe to reuse unchanged as this type of attachment.",
+  "root_cause": "Pinned OpenCode1.19.3 read.ts applies substring(0,2000) to an overlong line without setting its flags.more or flags.cut fields.",
+  "old_packet": {
+    "sha256": "51da598ef2a1d7116869cca05fe637b0120039cf8389f057ab0e6e81b301ae44",
+    "bytes": 25044,
+    "long_lines": [
+      {
+        "line": 8,
+        "utf16_units": 6631
+      },
+      {
+        "line": 26,
+        "utf16_units": 2382
+      }
+    ]
+  },
+  "historical_qualification": "D7 actually used bash cat for the complete packet read, not this @file input path; that retained native read was complete. This newly found attachment hazard is not relabeled as the cause of d7 timeouts.",
+  "resolution_summary": "New d8 bundle inserts JSON whitespace only at punctuation outside strings; every JSON source value and all four non-JSON bodies remain complete. Before inference, the actual installed native client noReply route read the packet and all numbered lines were independently reconstructed exactly.",
+  "verification_scope": {
+    "packet": {
+      "lines": 342,
+      "max_line_utf16_units": 984,
+      "bytes": 25149,
+      "line_limit": 2000,
+      "per_line_limit": 2000,
+      "byte_limit": 51200
+    },
+    "packet_sha256": "bbaf6d82364e6e6e2fa543f9c9c1cf407ffe315aa2a75d63be4caf09ae25d718",
+    "actual_native_attachment_bytes": 26924,
+    "all_13_source_checks_pass": true,
+    "all342_line_content_comparisons_pass": true,
+    "one_user_message_no_model": true
+  },
+  "resolution_evidence": [
+    "NATIVE_ATTACHMENT_SOURCE_PROOF.json",
+    "pinned_client_sources/read.ts",
+    "CONFIGURATION_NOTES.json",
+    "native_attachment_preflight_01/RESULT.json",
+    "native_attachment_preflight_01/ACTUAL_NATIVE_ATTACHMENT_TEXT.txt"
+  ],
+  "current_boundary": "Native named-command generation remains NOT_RUN in d8. Root must still verify actual server memory, first-request token budget including wrappers/system/tool schemas, and full subsequent output/history reserve before invocation. This is not artifact-generation acceptance."
+}

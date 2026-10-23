@@ -1,0 +1,17 @@
+{
+  "schema": "esa-native-request-attribution-review/v1",
+  "reviewed_at_utc": "2026-10-22T07:10:33.724819+00:00",
+  "source": "stderr.txt",
+  "source_sha256": "fe17a1afd7d1f55e30b463a8d5d64f51cc4515671e8e7b46fae19aab550f02f9",
+  "actual_title_stream_log": [
+    "timestamp=2026-10-22T06:20:48.385Z level=INFO run=661b6426 message=stream providerID=esa-local modelID=esa-qwen3-4b session.id=ses_e9dbb1007ffeHRexxQi4HCqple small=true agent=title mode=primary"
+  ],
+  "actual_primary_stream_logs": [
+    "timestamp=2026-10-22T06:20:49.774Z level=INFO run=661b6426 message=stream providerID=esa-local modelID=esa-qwen3-4b session.id=ses_e9dbb1007ffeHRexxQi4HCqple small=false agent=esa-sdd mode=primary",
+    "timestamp=2026-10-22T06:25:52.150Z level=INFO run=661b6426 message=stream providerID=esa-local modelID=esa-qwen3-4b session.id=ses_e9dbb1007ffeHRexxQi4HCqple small=false agent=esa-sdd mode=primary"
+  ],
+  "finding": "The native client directly logs one title stream followed by the primary request and its automatic retry, for the same provider/model/session.",
+  "interpretation": "Automatic title inference is observed, not merely inferred from the changed title. No completed title usage receipt is present in this native export. These client events do not by themselves bind individual backend numeric task IDs.",
+  "reviewer": "ChatGPT assistant; no human owner response or review",
+  "collection_note": "First administrative summary construction raised NameError before any file write because datetime was imported as dt; corrected to dt. No native observation or model run was repeated."
+}

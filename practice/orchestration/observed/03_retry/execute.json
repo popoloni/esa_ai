@@ -1,0 +1,16 @@
+{
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Orchestration_Harness_20261020/companion/practice/orchestration/orchestrator.py",
+    "--plan",
+    "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Orchestration_Harness_20261020/companion/practice/orchestration/observed/03_retry/plan.json",
+    "--inputs",
+    "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Orchestration_Harness_20261020/companion/practice/orchestration/observed/03_retry/inputs",
+    "--output",
+    "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Orchestration_Harness_20261020/companion/practice/orchestration/observed/03_retry/run"
+  ],
+  "started_at_utc": "2026-10-20T16:21:22.173376+00:00",
+  "returncode": 0,
+  "stdout": "execute.stdout.txt",
+  "stderr": "execute.stderr.txt"
+}

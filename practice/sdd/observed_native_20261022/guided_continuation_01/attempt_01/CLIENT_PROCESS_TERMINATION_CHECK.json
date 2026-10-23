@@ -1,0 +1,10 @@
+{
+  "checked_at_utc": "2026-10-22T07:54:10.724231+00:00",
+  "pid": 17826,
+  "expected_start_ticks": "856770",
+  "model_call": false,
+  "signal_sent": false,
+  "pid_exists": false,
+  "original_process_still_exists": false,
+  "scope": "Read-only check of the exact previously observed native client identity after the command recorder enforced its declared outer timeout. Backend server shutdown is separately owned and recorded."
+}

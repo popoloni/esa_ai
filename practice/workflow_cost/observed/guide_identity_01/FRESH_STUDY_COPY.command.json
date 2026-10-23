@@ -1,0 +1,17 @@
+{
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-B",
+    "reader_start.py",
+    "new",
+    "1",
+    "--destination",
+    "/tmp/esa-d7-guide-check-w5_51msl/chapter1"
+  ],
+  "cwd": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion",
+  "started_at_utc": "2026-10-22T06:08:55.264574+00:00",
+  "ended_at_utc": "2026-10-22T06:08:55.860667+00:00",
+  "exit_code": 0,
+  "stdout_sha256": "fce10df4aa94768c0db017f8bd31f1adb3d2fbfff9f02245100f90352fa10c0f",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

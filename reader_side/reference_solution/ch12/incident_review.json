@@ -1,0 +1,68 @@
+{
+  "claims": {
+    "CP07_authorized": false,
+    "incident_closed": false,
+    "payment_authorized": false,
+    "real_human_acceptance": false,
+    "real_release_authorized": false
+  },
+  "hypotheses": [
+    {
+      "conclusion": "REJECTED",
+      "evidence": [
+        "S04_control_current",
+        "S06_fault_current",
+        "S09_explicit_v2"
+      ],
+      "hypothesis": "THRESHOLD_CODE_REGRESSION",
+      "id": "H12-01"
+    },
+    {
+      "conclusion": "REJECTED",
+      "evidence": [
+        "S05_control_history",
+        "S07_fault_history",
+        "S08_incident_retry"
+      ],
+      "hypothesis": "RETRY_IMPLEMENTATION_BUG",
+      "id": "H12-02"
+    },
+    {
+      "conclusion": "SUPPORTED",
+      "evidence": [
+        "S04_control_current",
+        "S06_fault_current",
+        "S07_fault_history"
+      ],
+      "hypothesis": "WRONG_STATE_SELECTION",
+      "id": "H12-03"
+    }
+  ],
+  "incident_id": "INC-012",
+  "permanent_fix": {
+    "evidence": [
+      "G01_missing_state",
+      "G02_wrong_active_policy",
+      "G03_missing_anchor"
+    ],
+    "status": "LOCAL_GUARD_VALIDATED_NO_PRODUCTION_ROLLOUT"
+  },
+  "reconciliation": {
+    "action": "KEEP_BOTH_LEDGERS_NO_AUTOMATIC_MERGE",
+    "incident_ledger": "state/incident/history.sqlite",
+    "status": "QUARANTINED_PENDING_OWNER_RECONCILIATION"
+  },
+  "restoration": {
+    "evidence": [
+      "R01_inspect",
+      "R02_historical_retry",
+      "R03_current_retry",
+      "R04_historical_recompute",
+      "R05_conflict",
+      "R06_restart"
+    ],
+    "status": "VALIDATED_LOCAL_SELECTION"
+  },
+  "root_cause": "WRONG_STATE_PATH",
+  "schema": "cp12-incident-review/v1"
+}

@@ -1,0 +1,820 @@
+{
+  "schema": "esa-r08-independent-acceptance-audit/v1",
+  "recorded_at_utc": "2026-10-22T08:05:46.709989+00:00",
+  "reviewer": {
+    "actor_kind": "AGENT",
+    "agent_id": "/root/acceptance_audit",
+    "role": "Separate criterion and evidence auditor; did not conduct the native generation attempts. Audit is not blind and does not supply human requirements acceptance."
+  },
+  "action_id": "R08",
+  "recommendation": "PARTIAL",
+  "audit_result": "PASS_EVIDENCE_INTEGRITY_AND_BOUNDED_CLAIM_REVIEW; ORIGINAL_ACTION_STILL_PARTIAL",
+  "original_change": "Use the existing validation protocol to run the installed framework and coding client from the fixed input through actual generated artifacts, clarification and independent assessment. Preserve first outputs and real omissions. Use the second framework as a clearly scoped contrast.",
+  "original_criteria": [
+    {
+      "criterion": "Artifacts are linked to actual prompts/commands and retained first output.",
+      "assessment": "SATISFIED_FOR_RETAINED_EXTERNAL_GENERATION; NATIVE_GENERATION_SCOPE_INCOMPLETE",
+      "reason": "The historical externally dispatched generation has original prompt/command, first artifacts, independent review and separate correction identities. The new native invocations retain exact commands, native first error/prose/tool output and session linkage, but produced no specification, checklist or feature metadata. Valid evidence of a failed or incomplete invocation does not supply absent generated artifacts.",
+      "evidence": [
+        "companion/practice/sdd/observed_external_agent_20261021/OBSERVATION_SUMMARY.json",
+        "companion/practice/sdd/observed_external_agent_20261021/reviewed_revision_02/REVISION.json",
+        "companion/practice/sdd/observed_native_20261022/OBSERVATION_SUMMARY.json",
+        "revision_d7/evidence/sdd_native_continuation_01/attempt_01/native-session.json"
+      ]
+    },
+    {
+      "criterion": "Generation is distinguished from scaffold creation and intentionally seeded faults.",
+      "assessment": "SATISFIED",
+      "reason": "Current manuscript and guides distinguish historical scaffold/helper operations, authored omission specimens, actual external agent-generated documents, and actual named native command invocation with a full input read but no generated artifact. The supplied authored JSON reference contract and all scenario expectations are explicitly disclosed; existing input is not labeled new output.",
+      "evidence": [
+        "manuscript/chapters/chapter04.tex",
+        "companion/practice/sdd/NATIVE_ROUTE.md",
+        "companion/practice/sdd/observed_native_20261022/README.md",
+        "revision_d7/notes/SDD_NATIVE_TERMINAL_FOLLOWUP.json"
+      ]
+    },
+    {
+      "criterion": "One observed route is sufficient for the tutorial; a second observed route is required before a measured paired comparison is claimed.",
+      "assessment": "SATISFIED_NO_MEASURED_PAIRED_COMPARISON_CLAIM",
+      "reason": "One observed primary route remains sufficient for the intended tutorial. OpenSpec is a scoped structural/CLI contrast. No measured paired superiority is claimed. Different contexts, cache formats, deadlines, input packaging and disclosed guidance are not treated as a controlled performance comparison. A second framework or coding client is not imposed as an additional closure condition.",
+      "evidence": [
+        "manuscript/chapters/chapter04.tex",
+        "companion/practice/sdd/NATIVE_ROUTE.md",
+        "companion/practice/sdd/observed_native_20261022/OBSERVATION_SUMMARY.json"
+      ]
+    }
+  ],
+  "scope_judgment": {
+    "why_partial": "The original change asks for an actual installed-framework/coding-client generation journey through generated artifacts, clarification and independent assessment. The final native continuation reached one complete input read, then the controller deadline. It created no output artifact to assess and reached no clarification dialogue, owner disposition or model-selected stop. The historical external route remains useful but is separately attributed and does not establish this native phase progression.",
+    "remaining_requirement": "Obtain useful actual native-generated artifact(s) for the chosen route, retain their exact prompt/session linkage, first output and real omissions, independently assess their meaning against the fixed contract, and document an authentic reached clarification disposition or stop. A partially completed checklist or unanswered owner question must remain visible; closure is not conditional on inventing an owner answer or positive human approval.",
+    "not_added_requirements": [
+      "A second observed framework or coding client without a measured paired-comparison claim",
+      "Implementation, deployment or a new performance study",
+      "Every generated checklist item green or all three requested files perfect before independent assessment",
+      "Positive human requirements acceptance or fabricated owner responses",
+      "Complete billing records or inferred zero cost"
+    ],
+    "deadline_is_not_clarification": "The task instructed a later stop before planning, but the run did not reach that decision. The 1800-second controller timeout cannot be recast as an owner/policy clarification stop.",
+    "human_review": "NOT_PERFORMED; generic raw PENDING label is not review evidence.",
+    "further_execution": "No additional model inference was run by this audit. The final declared bounded attempt is retained as terminal; no further model attempt is recommended merely to relabel the result."
+  },
+  "observed_terminal_chain": [
+    {
+      "portable_path": "first_native_attempt/attempt_01",
+      "author_path": "revision_d7/evidence/sdd_native_02/compact_input_preparation/attempt_01",
+      "status": "FAILED_BEFORE_NATIVE_ARTIFACT_GENERATION",
+      "started_at_utc": "2026-10-22T06:20:45.765639+00:00",
+      "ended_at_utc": "2026-10-22T06:35:52.533423+00:00",
+      "duration_seconds": 906.7677544349999,
+      "exit_code": 1,
+      "receipt_sha256": "73befc140ec9f19b2357b7e9ac1e01c0d7034f9930e4c845780c202cdc3d16f8",
+      "native_export_sha256": "ca9358c248f575b10b3abb2436a7c88956a22d596d2c276c24de5a85ea6ef4d8",
+      "controller_review_sha256": "1e60bec77d48fb7546d2e4265648b5350755e49cb6e9cb037124cb8794127baa",
+      "changed_files": []
+    },
+    {
+      "portable_path": "recovery_01/attempt_01",
+      "author_path": "revision_d7/evidence/sdd_native_recovery_01/attempt_01",
+      "status": "TASK_INCOMPLETE_MODEL_STOP_NO_TOOL_CALL",
+      "started_at_utc": "2026-10-22T07:02:07.945508+00:00",
+      "ended_at_utc": "2026-10-22T07:13:50.275410+00:00",
+      "duration_seconds": 702.3298572530002,
+      "exit_code": 0,
+      "receipt_sha256": "20842e2b179bf8e36c8248736e4a84a9793b4a70dd6f0151cac7b9df94d502f6",
+      "native_export_sha256": "48196fe3a154e18bfcb3ae2066c88806be282ca2ad2df07c1be77d1c6579d95e",
+      "controller_review_sha256": "12097daacda8c0fc75f4866b431df98326e2eba06810a1a991ffd994938d3606",
+      "changed_files": []
+    },
+    {
+      "portable_path": "guided_continuation_01/attempt_01",
+      "author_path": "revision_d7/evidence/sdd_native_continuation_01/attempt_01",
+      "status": "TASK_INCOMPLETE_OUTER_TIMEOUT_AFTER_FULL_INPUT_READ",
+      "started_at_utc": "2026-10-22T07:23:02.277235+00:00",
+      "ended_at_utc": "2026-10-22T07:53:02.359954+00:00",
+      "duration_seconds": 1800.0826279609992,
+      "exit_code": 124,
+      "receipt_sha256": "8723152b286d56939cb414d5563366d6d09c7f53c127f2e40dc4f5b1e8270190",
+      "native_export_sha256": "6ce3cab5fc7c468ff1ddcdfda7aa5666c62441def9f85ef91dd9dfa31771fe60",
+      "controller_review_sha256": "349017f93b352f604fede6fb40bec9d232dc921b3f6639fedaac0bd0c3855858",
+      "changed_files": []
+    }
+  ],
+  "actual_reached_boundary": {
+    "session_id": "ses_e9d953008ffe5prRJYzw7HWDMP",
+    "completed_tool": "bash: cat inputs/NATIVE_CONTEXT_BUNDLE.md",
+    "read_output_bytes": 25044,
+    "read_output_sha256": "51da598ef2a1d7116869cca05fe637b0120039cf8389f057ab0e6e81b301ae44",
+    "full_packet_matches": true,
+    "exit_code": 124,
+    "reason": "Prospectively fixed 1800-second controller outer limit after the input read, with a second primary request incomplete.",
+    "specification_generated": false,
+    "checklist_generated": false,
+    "feature_metadata_generated": false,
+    "project_files": 49,
+    "all_project_files_unchanged": true,
+    "native_clarification_dialogue": "NOT_REACHED",
+    "owner_questions": "All three remain unanswered in supplied input; no actual native owner dialogue occurred.",
+    "planning_or_implementation": "NOT_RUN"
+  },
+  "usage_and_cost": {
+    "reported_unique_completed_steps": 2,
+    "reported_completed_step_totals": {
+      "input": 13737,
+      "output": 116,
+      "total": 13853,
+      "reasoning": 0
+    },
+    "qualifications": "Only unique completed native step IDs are summed. The new full-session export includes the earlier short-name response; it is not counted twice. The failed first invocation/title/retry and final unfinished request have missing complete attributable usage. Zero fields on incomplete native entries do not establish zero work. Local client-reported charge 0 is not total workflow cost.",
+    "wall_time_scope": "Sum of the three recorded client invocation spans only; not setup/review/cleanup time or human labor. Different configurations and disclosed guidance prevent a controlled performance comparison.",
+    "human_effort": "UNMEASURED",
+    "whole_workflow_cost": "UNKNOWN"
+  },
+  "preserved_history": {
+    "historical_external_route": "Fresh installed Spec Kit scaffold and helper commands, then separately dispatched ChatGPT generation and independent agent review; WAITING_HUMAN, zero human attempts, 22 unchecked tasks, original artifacts unchanged.",
+    "native_first_failure": "Independent provider header timeout and automatic retry failure retained; no tool or generated artifact.",
+    "native_recovery": "Normal exit with short-name/future-intent prose and zero tools; first response and empty diff retained. Its dated no-third-attempt wording describes that historical preparation boundary; the later disclosed continuation is recorded separately.",
+    "continuation": "Same session retains both prior native message parts unchanged. New appended request explicitly requests the allowed read and writes; guidance is not hidden.",
+    "preparation_labels": "Raw origin values ending not_yet_executed and human_review=PENDING remain unchanged. Terminal timestamp/event/export and explicit controller qualification resolve their meaning without revising history."
+  },
+  "resolved_source_findings": [
+    {
+      "id": "D7-SDD-INTRO-SCOPE",
+      "assessment": "RESOLVED_VERIFIED_IN_SOURCE",
+      "reason": "The overview now identifies actual native invocation/read and keeps artifact generation and human acceptance distinct."
+    },
+    {
+      "id": "D7-SDD-PORTABLE",
+      "assessment": "EXPOSURE_WORDING_CORRECTED_AND_PORTABLE_EVIDENCE_VERIFIED",
+      "reason": "Supplied authored inputs/specification.json is explicitly named; earlier generated outputs/Markdown answers/owner responses are excluded. Historical broader wording is preserved and corrected in a dated follow-up. This does not close R08."
+    }
+  ],
+  "check_count": 36,
+  "checks_passed": 36,
+  "checks": [
+    {
+      "name": "original_r08_change_and_all_three_criteria_unchanged",
+      "passed": true,
+      "detail": {
+        "criteria": [
+          "Artifacts are linked to actual prompts/commands and retained first output.",
+          "Generation is distinguished from scaffold creation and intentionally seeded faults.",
+          "One observed route is sufficient for the tutorial; a second observed route is required before a measured paired comparison is claimed."
+        ],
+        "change": "Use the existing validation protocol to run the installed framework and coding client from the fixed input through actual generated artifacts, clarification and independent assessment. Preserve first outputs and real omissions. Use the second framework as a clearly scoped contrast."
+      }
+    },
+    {
+      "name": "first_raw_receipt_evidence_hashes",
+      "passed": true,
+      "detail": {
+        "count": 6,
+        "mismatches": [],
+        "receipt_sha256": "73befc140ec9f19b2357b7e9ac1e01c0d7034f9930e4c845780c202cdc3d16f8"
+      }
+    },
+    {
+      "name": "recovery_raw_receipt_evidence_hashes",
+      "passed": true,
+      "detail": {
+        "count": 3,
+        "mismatches": [],
+        "receipt_sha256": "20842e2b179bf8e36c8248736e4a84a9793b4a70dd6f0151cac7b9df94d502f6"
+      }
+    },
+    {
+      "name": "continuation_raw_receipt_evidence_hashes",
+      "passed": true,
+      "detail": {
+        "count": 3,
+        "mismatches": [],
+        "receipt_sha256": "8723152b286d56939cb414d5563366d6d09c7f53c127f2e40dc4f5b1e8270190"
+      }
+    },
+    {
+      "name": "prospective_task_identity_bound_and_terminal_duration",
+      "passed": true,
+      "detail": {
+        "start": "2026-10-22T07:23:02.277235+00:00",
+        "end": "2026-10-22T07:53:02.359954+00:00",
+        "seconds": 1800.0826279609992,
+        "task_sha256": "6a727bfa9f7ba14615fb38cf8a9fb493bfc4e2d79370e6981303d06422686b33"
+      }
+    },
+    {
+      "name": "final_bound_and_budget_declared_before_launch",
+      "passed": true,
+      "detail": {
+        "prepared": "2026-10-22T07:20:57.114645+00:00",
+        "preflight_end": "2026-10-22T07:22:53.065642+00:00"
+      }
+    },
+    {
+      "name": "retained_prior_export_is_exact_and_same_session",
+      "passed": true,
+      "detail": {
+        "session_id": "ses_e9d953008ffe5prRJYzw7HWDMP",
+        "prior_export_sha256": "48196fe3a154e18bfcb3ae2066c88806be282ca2ad2df07c1be77d1c6579d95e"
+      }
+    },
+    {
+      "name": "both_prior_native_message_parts_preserved",
+      "passed": true,
+      "detail": [
+        {
+          "id": "msg_1626ad6660013tv1oxugwl347o",
+          "parts_equal": true,
+          "roles_equal": true
+        },
+        {
+          "id": "msg_1626ad6870013rq3jBK4tytPm1",
+          "parts_equal": true,
+          "roles_equal": true
+        }
+      ]
+    },
+    {
+      "name": "appended_prompt_is_pinned_cli_argv_serialization",
+      "passed": true,
+      "detail": {
+        "raw_file_bytes": 573,
+        "argv_bytes": 573,
+        "exported_user_bytes": 575,
+        "literal_argv_equals_export": false
+      }
+    },
+    {
+      "name": "full_original_expanded_native_input_retained",
+      "passed": true,
+      "detail": {
+        "utf8_bytes": 20272,
+        "sha256": "76c19dc72722ad104367bb3320e6ffe321b1c48d9cfc71118a77394d45eaeebb"
+      }
+    },
+    {
+      "name": "both_full_discovered_native_command_bodies_preserved",
+      "passed": true,
+      "detail": [
+        {
+          "command": "speckit.specify",
+          "complete_body_equal": true,
+          "template_sha256": "97a63469f92466fffc00e5527bffd67fcb4118fef80f0e677639b71f3bbf5400",
+          "template_bytes": 18012,
+          "arguments_placeholders": 2
+        },
+        {
+          "command": "speckit.clarify",
+          "complete_body_equal": true,
+          "template_sha256": "5f7efb64f5a5db42c1974271794aca4cd084b8d311ddd0361cdf6a1fc7d10f9c",
+          "template_bytes": 19018,
+          "arguments_placeholders": 2
+        }
+      ]
+    },
+    {
+      "name": "one_actual_completed_model_selected_native_read",
+      "passed": true,
+      "detail": {
+        "tool": "bash",
+        "call_id": "gtZjJu17PxRlHruulByRJaRXPn6278Lg",
+        "time": {
+          "start": 1792654530801,
+          "end": 1792654531318
+        },
+        "stdout_timestamp_ms": 1792654531399
+      }
+    },
+    {
+      "name": "actual_read_delivered_complete_untruncated_packet_bytes",
+      "passed": true,
+      "detail": {
+        "bytes": 25044,
+        "sha256": "51da598ef2a1d7116869cca05fe637b0120039cf8389f057ab0e6e81b301ae44",
+        "metadata_output_same": true
+      }
+    },
+    {
+      "name": "read_packet_contains_all_13_complete_declared_sources",
+      "passed": true,
+      "detail": [
+        {
+          "path": "inputs/specification.json",
+          "source_hash_match": true,
+          "complete_values_or_bytes_equal": true,
+          "kind": "JSON_VALUE_EQUALITY"
+        },
+        {
+          "path": "inputs/case_oracle.json",
+          "source_hash_match": true,
+          "complete_values_or_bytes_equal": true,
+          "kind": "JSON_VALUE_EQUALITY"
+        },
+        {
+          "path": "inputs/discovery_handoff.json",
+          "source_hash_match": true,
+          "complete_values_or_bytes_equal": true,
+          "kind": "JSON_VALUE_EQUALITY"
+        },
+        {
+          "path": "inputs/assessment.json",
+          "source_hash_match": true,
+          "complete_values_or_bytes_equal": true,
+          "kind": "JSON_VALUE_EQUALITY"
+        },
+        {
+          "path": "inputs/sources/SRC-OPS-004.json",
+          "source_hash_match": true,
+          "complete_values_or_bytes_equal": true,
+          "kind": "JSON_VALUE_EQUALITY"
+        },
+        {
+          "path": "inputs/sources/SRC-POL-001.json",
+          "source_hash_match": true,
+          "complete_values_or_bytes_equal": true,
+          "kind": "JSON_VALUE_EQUALITY"
+        },
+        {
+          "path": "inputs/sources/SRC-RISK-002.json",
+          "source_hash_match": true,
+          "complete_values_or_bytes_equal": true,
+          "kind": "JSON_VALUE_EQUALITY"
+        },
+        {
+          "path": "inputs/sources/SRC-TKT-017.json",
+          "source_hash_match": true,
+          "complete_values_or_bytes_equal": true,
+          "kind": "JSON_VALUE_EQUALITY"
+        },
+        {
+          "path": "inputs/sources/SRC-WIKI-OLD.json",
+          "source_hash_match": true,
+          "complete_values_or_bytes_equal": true,
+          "kind": "JSON_VALUE_EQUALITY"
+        },
+        {
+          "path": "source/treasury/routing.py",
+          "source_hash_match": true,
+          "complete_values_or_bytes_equal": true,
+          "kind": "EXACT_BYTES"
+        },
+        {
+          "path": ".specify/templates/spec-template.md",
+          "source_hash_match": true,
+          "complete_values_or_bytes_equal": true,
+          "kind": "EXACT_BYTES"
+        },
+        {
+          "path": ".specify/templates/checklist-template.md",
+          "source_hash_match": true,
+          "complete_values_or_bytes_equal": true,
+          "kind": "EXACT_BYTES"
+        },
+        {
+          "path": ".specify/memory/constitution.md",
+          "source_hash_match": true,
+          "complete_values_or_bytes_equal": true,
+          "kind": "EXACT_BYTES"
+        }
+      ]
+    },
+    {
+      "name": "all_nine_fixed_source_jsons_match_companion",
+      "passed": true,
+      "detail": [
+        {
+          "path": "inputs/specification.json",
+          "same": true
+        },
+        {
+          "path": "inputs/case_oracle.json",
+          "same": true
+        },
+        {
+          "path": "inputs/discovery_handoff.json",
+          "same": true
+        },
+        {
+          "path": "inputs/assessment.json",
+          "same": true
+        },
+        {
+          "path": "inputs/sources/SRC-OPS-004.json",
+          "same": true
+        },
+        {
+          "path": "inputs/sources/SRC-POL-001.json",
+          "same": true
+        },
+        {
+          "path": "inputs/sources/SRC-RISK-002.json",
+          "same": true
+        },
+        {
+          "path": "inputs/sources/SRC-TKT-017.json",
+          "same": true
+        },
+        {
+          "path": "inputs/sources/SRC-WIKI-OLD.json",
+          "same": true
+        }
+      ]
+    },
+    {
+      "name": "supplied_authored_contract_and_unanswered_owner_questions_disclosed",
+      "passed": true,
+      "detail": {
+        "requirements": 5,
+        "scenarios": 8,
+        "unresolved_questions": [
+          "Which explanation vocabulary do real operators understand?",
+          "Does the interface accidentally induce payment approval?",
+          "How will actual user benefit be measured in a pilot?"
+        ],
+        "exposure": "The fixed inputs explicitly include the authored inputs/specification.json reference contract, all eight scenario expectations, source authority, router and other reference-derived context. This is a disclosed synthetic projection, not blind elicitation. Earlier generated outputs, before/after Markdown answers and owner responses were excluded."
+      }
+    },
+    {
+      "name": "all_49_starting_snapshot_and_current_project_bytes_unchanged",
+      "passed": true,
+      "detail": {
+        "file_count": 49,
+        "mismatch_paths": [],
+        "scope": "Declared project tree; no operating-system containment inference."
+      }
+    },
+    {
+      "name": "no_requested_artifacts_or_any_changed_files",
+      "passed": true,
+      "detail": {
+        "requested": [
+          ".specify/feature.json",
+          "specs/001-explain-treasury/spec.md",
+          "specs/001-explain-treasury/checklists/requirements.md"
+        ],
+        "diff_bytes": 0
+      }
+    },
+    {
+      "name": "no_new_model_text_or_reached_clarification_disposition",
+      "passed": true,
+      "detail": {
+        "completed_finish": "tool-calls",
+        "unfinished_message": "msg_162895c1d001MegqmceG9Gw652",
+        "unfinished_tokens": {
+          "input": 0,
+          "output": 0,
+          "reasoning": 0,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        },
+        "qualification": "Zero fields in an unfinished entry are not a completed usage receipt."
+      }
+    },
+    {
+      "name": "continuation_usage_attributed_once_to_completed_step_only",
+      "passed": true,
+      "detail": {
+        "reported": {
+          "session_id": "ses_e9d953008ffe5prRJYzw7HWDMP",
+          "message_id": "msg_1627df797001DQV3D2toA7Iia8",
+          "part_id": "prt_162895c10001qGhp28HhaM6yLR",
+          "timestamp_ms": 1792654531619,
+          "tokens": {
+            "total": 7019,
+            "input": 6964,
+            "output": 55,
+            "reasoning": 0,
+            "cache": {
+              "write": 0,
+              "read": 0
+            }
+          },
+          "client_reported_cost": 0,
+          "reason": "tool-calls"
+        },
+        "prior_step_tokens": {
+          "total": 6834,
+          "input": 6773,
+          "output": 61,
+          "reasoning": 0,
+          "cache": {
+            "write": 0,
+            "read": 0
+          }
+        },
+        "whole_session_input": null
+      }
+    },
+    {
+      "name": "first_native_failure_retained_without_generation_claim",
+      "passed": true,
+      "detail": {
+        "seconds": 906.7677544349999,
+        "exit": 1,
+        "export_sha256": "ca9358c248f575b10b3abb2436a7c88956a22d596d2c276c24de5a85ea6ef4d8",
+        "status": "FAILED_BEFORE_NATIVE_ARTIFACT_GENERATION"
+      }
+    },
+    {
+      "name": "recovery_exit_zero_prose_is_not_artifact_generation",
+      "passed": true,
+      "detail": {
+        "seconds": 702.3298572530002,
+        "text_bytes": 303,
+        "text_sha256": "ef799781922269dd7bc4476aa32343984e4068ca9711d3cf7e75b94e4be3bfd1",
+        "status": "TASK_INCOMPLETE_MODEL_STOP_NO_TOOL_CALL"
+      }
+    },
+    {
+      "name": "continuation_config_changes_only_two_declared_deadlines",
+      "passed": true,
+      "detail": {
+        "old_timeout": 900000,
+        "new_timeout": 1500000,
+        "config_sha256": "1c36254cc7239aaa379bc846ac7b1e21aae481ebf652365018245b9cc12c25d7"
+      }
+    },
+    {
+      "name": "final_budget_arithmetic_and_reserves_are_explicit",
+      "passed": true,
+      "detail": {
+        "budget": {
+          "retained_complete_original_command": 4452,
+          "appended_guidance": 120,
+          "complete_input_packet_when_read": 6698,
+          "system_tools_envelopes_reserve": 4096,
+          "aggregate_assistant_history_and_output_reserve_including_prior_61_output_tokens": 8192,
+          "other_tool_results_reserve": 512
+        },
+        "margin": 506,
+        "qualification": "The complete original framework command remains in the same native session. The 8,192-token reserve includes its prior 61-token response. These are planning reserves, not a claimed exact future full HTTP request. No output is truncated or replaced to pass this budget."
+      }
+    },
+    {
+      "name": "collector_and_controller_pin_actual_export_and_receipt",
+      "passed": true,
+      "detail": {
+        "export_sha256": "6ce3cab5fc7c468ff1ddcdfda7aa5666c62441def9f85ef91dd9dfa31771fe60",
+        "receipt_sha256": "8723152b286d56939cb414d5563366d6d09c7f53c127f2e40dc4f5b1e8270190",
+        "controller_review_sha256": "349017f93b352f604fede6fb40bec9d232dc921b3f6639fedaac0bd0c3855858"
+      }
+    },
+    {
+      "name": "raw_preparation_and_pending_human_labels_interpreted_without_rewrite",
+      "passed": true,
+      "detail": {
+        "origin": "The immutable RECEIPT.origin value prepared_final_guided_same_native_session_continuation_not_yet_executed was copied from the prospective task declaration. It is not the terminal execution verdict. Actual timestamps, exit124/TIMEOUT, the completed native tool event and session export establish that the continuation ran.",
+        "human_review": "The generic raw receipt retains human_review=PENDING. This does not record a review; the terminal assessment explicitly records human review ABSENT."
+      }
+    },
+    {
+      "name": "exact_native_client_observed_absent_after_timeout",
+      "passed": true,
+      "detail": {
+        "checked_at_utc": "2026-10-22T07:54:10.724231+00:00",
+        "pid": 17826,
+        "expected_start_ticks": "856770",
+        "model_call": false,
+        "signal_sent": false,
+        "pid_exists": false,
+        "original_process_still_exists": false,
+        "scope": "Read-only check of the exact previously observed native client identity after the command recorder enforced its declared outer timeout. Backend server shutdown is separately owned and recorded."
+      }
+    },
+    {
+      "name": "installed_python_dependency_pins_match_recorded_lock",
+      "passed": true,
+      "detail": {
+        "count": 41,
+        "qualification": "Version pin check, not a wheel-content hash proof."
+      }
+    },
+    {
+      "name": "portable_packet_complete_inventory_and_hashes",
+      "passed": true,
+      "detail": {
+        "files": 389,
+        "bytes": 3598925,
+        "manifest_sha256": "c107b2146d9f6acf0bf73e3340122fb5ff9c655d1e0255ed3e5e58012c00e7dc",
+        "self_excluded": true,
+        "mismatches": []
+      }
+    },
+    {
+      "name": "all_copied_portable_evidence_matches_author_or_installed_distribution_sources",
+      "passed": true,
+      "detail": {
+        "copied_evidence_files": 386,
+        "author_tree_sources": 384,
+        "installed_specify_cli_1_2_2_distribution_sources": 2,
+        "distribution_source_root": "/workspace/scratch/72d789d25fef/runtime_d7/sdd_venv/lib/python3.12/site-packages/specify_cli-1.2.2.dist-info",
+        "missing_source": [],
+        "different_bytes": []
+      }
+    },
+    {
+      "name": "terminal_summary_binds_all_three_raw_episode_records",
+      "passed": true,
+      "detail": {
+        "bindings": [
+          {
+            "path": "first_native_attempt/attempt_01/RECEIPT.json",
+            "same": true
+          },
+          {
+            "path": "first_native_attempt/attempt_01/native-session.json",
+            "same": true
+          },
+          {
+            "path": "first_native_attempt/attempt_01/OUTCOME_REVIEW.json",
+            "same": true
+          },
+          {
+            "path": "recovery_01/attempt_01/RECEIPT.json",
+            "same": true
+          },
+          {
+            "path": "recovery_01/attempt_01/native-session.json",
+            "same": true
+          },
+          {
+            "path": "recovery_01/attempt_01/OUTCOME_REVIEW.json",
+            "same": true
+          },
+          {
+            "path": "guided_continuation_01/attempt_01/RECEIPT.json",
+            "same": true
+          },
+          {
+            "path": "guided_continuation_01/attempt_01/native-session.json",
+            "same": true
+          },
+          {
+            "path": "guided_continuation_01/attempt_01/OUTCOME_REVIEW.json",
+            "same": true
+          }
+        ],
+        "summary_sha256": "ba0dce916977f5357a75d012151589efb74741e39b6d84c324824f876a3eedc3"
+      }
+    },
+    {
+      "name": "historical_external_generation_first_outputs_and_separate_revision_preserved",
+      "passed": true,
+      "detail": {
+        "seven_identities": [
+          {
+            "path": "run/attempts/generate/001/artifacts/spec.md",
+            "same": true
+          },
+          {
+            "path": "run/attempts/generate/001/artifacts/plan.md",
+            "same": true
+          },
+          {
+            "path": "run/attempts/generate/001/artifacts/tasks.md",
+            "same": true
+          },
+          {
+            "path": "reviewed_revision_02/spec.md",
+            "same": true
+          },
+          {
+            "path": "reviewed_revision_02/plan.md",
+            "same": true
+          },
+          {
+            "path": "reviewed_revision_02/tasks.md",
+            "same": true
+          },
+          {
+            "path": "run/attempts/review/001/review.json",
+            "same": true
+          }
+        ],
+        "scope": "Actual ChatGPT collaboration agents through external_worker.py; not a native named coding-client invocation",
+        "unchecked_tasks": 22,
+        "human_attempts": 0,
+        "first_outputs_modified": false
+      }
+    },
+    {
+      "name": "dated_preparation_records_preserved_current_exposure_correction_bound",
+      "passed": true,
+      "detail": {
+        "bindings": [
+          {
+            "path": "revision_d7/notes/NATIVE_TIMEOUT_TITLE_RECIPE.json",
+            "same": true
+          },
+          {
+            "path": "revision_d7/notes/NATIVE_SCHEMA_METADATA_RECIPE.json",
+            "same": true
+          },
+          {
+            "path": "revision_d7/notes/SDD_CONTEXT_PREPARATION.json",
+            "same": true
+          },
+          {
+            "path": "revision_d7/notes/SDD_EMPTY_NATIVE_RESPONSE_REVIEW.json",
+            "same": true
+          },
+          {
+            "path": "revision_d7/notes/NATIVE_BACKGROUND_DEPENDENCY_REVIEW.json",
+            "same": true
+          },
+          {
+            "path": "revision_d7/notes/SDD_PORTABLE_HELPER.json",
+            "same": true
+          },
+          {
+            "path": "companion/practice/native_client/configure_sdd.py",
+            "same": true
+          },
+          {
+            "path": "companion/practice/sdd/NATIVE_ROUTE.md",
+            "same": true
+          },
+          {
+            "path": "revision_d7/evidence/sdd_native_terminal_review/OBSERVATION_SUMMARY.json",
+            "same": true
+          }
+        ],
+        "qualification": "Current helper is a disclosed future recipe, not a retrospective replacement of the executed helper."
+      }
+    },
+    {
+      "name": "chapter4_intro_and_native_subsection_match_actual_reached_state",
+      "passed": true,
+      "detail": {
+        "method": "Independent contextual reading of the overview and complete native observation subsection against raw events, artifact absence and prior external route; hash bindings identify reviewed text.",
+        "chapter_sha256": "ec97ef36c99b21c095a4ac9bdab999cb80650bf4b37a8133be65bad0b6f29b7c",
+        "intro_sha256": "da3cb23e3d87c2f04d3f41bde9ca3172479cf22d1ba9d1093c7a33bb5ed6a5a4",
+        "native_subsection_sha256": "c8eda1aa87257970c6a7a09caa0181dc4bb46863becfbdea6bb690eef0c1c93a",
+        "additional_scope_correction": "The local-test paragraph now preserves the actual external generated-set review and limits the remaining gap to native-generated artifacts and their independent semantic review.",
+        "finding_id": "D7-SDD-INTRO-SCOPE",
+        "recommendation": "RESOLVED_VERIFIED_FOR_SOURCE_WORDING; final PDF verification is separate."
+      }
+    },
+    {
+      "name": "reader_guides_distinguish_fixed_authored_input_generation_and_human_acceptance",
+      "passed": true,
+      "detail": {
+        "method": "Contextual review of NATIVE_ROUTE, portable README, current helper exposure description and terminal summary.",
+        "guide_sha256": "a4ee897757b85dda183d9b02108082f6b20e038e4d1e17fb001ea1dd3581e154",
+        "helper_sha256": "3e03d3cbd84cf6848735cd1edbf551eb73c5ebc84fd1dbb507b43eb0d5e1abe0",
+        "portable_readme_sha256": "8308582244f3a1aa6550083de8b1ade85859e293d7cf52bfc12b0a6c42499b6b",
+        "scope": "Authored JSON reference supplied; earlier generated/Markdown exercise answers and owner responses excluded. Guided synthetic projection, not blind requirements discovery."
+      }
+    },
+    {
+      "name": "final_summary_preserves_failure_usage_and_acceptance_limits",
+      "passed": true,
+      "detail": {
+        "unique_completed_steps": 2,
+        "reported_tokens": {
+          "input": 13737,
+          "output": 116,
+          "total": 13853,
+          "reasoning": 0
+        },
+        "qualification": "Prior failed/header/title/retry requests and final incomplete request have no complete attributable usage. Client zero charge is not total workflow cost; task wall spans are not human effort."
+      }
+    }
+  ],
+  "evidence_identities": {
+    "revision_d7/evidence/sdd_native_continuation_01/attempt_01/native-session.json": "6ce3cab5fc7c468ff1ddcdfda7aa5666c62441def9f85ef91dd9dfa31771fe60",
+    "revision_d7/evidence/sdd_native_continuation_01/attempt_01/RECEIPT.json": "8723152b286d56939cb414d5563366d6d09c7f53c127f2e40dc4f5b1e8270190",
+    "revision_d7/evidence/sdd_native_continuation_01/attempt_01/OUTCOME_REVIEW.json": "349017f93b352f604fede6fb40bec9d232dc921b3f6639fedaac0bd0c3855858",
+    "revision_d7/evidence/sdd_native_continuation_01/attempt_01/FINAL_INVENTORY.json": "e723079f3cad4094d5f529ad32d77a2134712522596a81e3c573eb217cbe9e83",
+    "revision_d7/evidence/sdd_native_continuation_01/attempt_01/CONTINUATION_HISTORY_CHECK.json": "e2626b077703a3e059ea79b30428470de1f6eda0d885cf755a19300f5b3327a6",
+    "revision_d7/evidence/sdd_native_continuation_01/CONTINUATION_PREPARATION.json": "9d7409bca2e57420dbd50b4ddd736af5ea61714f2e01e3ecba685c99a7fa1607",
+    "revision_d7/evidence/sdd_native_continuation_01/FINAL_PREFLIGHT.json": "ed85ce303b560f582011feac80e79e4596bce835bd5607b3a786be95b17c323b",
+    "revision_d7/evidence/sdd_native_recovery_01/RECOVERY_PREFLIGHT.json": "660ac53e1fccff2fe155f50e1c776892c30db208fb1a0656214fcb6a7ffb6f6b",
+    "revision_d7/evidence/sdd_native_recovery_01/attempt_01/OUTCOME_REVIEW.json": "12097daacda8c0fc75f4866b431df98326e2eba06810a1a991ffd994938d3606",
+    "revision_d7/evidence/sdd_native_02/compact_input_preparation/attempt_01/OUTCOME_REVIEW.json": "1e60bec77d48fb7546d2e4265648b5350755e49cb6e9cb037124cb8794127baa",
+    "revision_d7/evidence/sdd_setup/PIN_VERIFICATION.json": "7e32e1149111e7679b51519b48058dc28b02010784cb21d482d808773fb2e063",
+    "companion/practice/sdd/observed_native_20261022/PORTABLE_MANIFEST.json": "c107b2146d9f6acf0bf73e3340122fb5ff9c655d1e0255ed3e5e58012c00e7dc",
+    "companion/practice/sdd/observed_native_20261022/OBSERVATION_SUMMARY.json": "ba0dce916977f5357a75d012151589efb74741e39b6d84c324824f876a3eedc3",
+    "companion/practice/sdd/observed_native_20261022/README.md": "8308582244f3a1aa6550083de8b1ade85859e293d7cf52bfc12b0a6c42499b6b",
+    "manuscript/chapters/chapter04.tex": "ec97ef36c99b21c095a4ac9bdab999cb80650bf4b37a8133be65bad0b6f29b7c",
+    "companion/practice/sdd/NATIVE_ROUTE.md": "a4ee897757b85dda183d9b02108082f6b20e038e4d1e17fb001ea1dd3581e154",
+    "companion/practice/native_client/configure_sdd.py": "3e03d3cbd84cf6848735cd1edbf551eb73c5ebc84fd1dbb507b43eb0d5e1abe0",
+    "revision_d7/notes/SDD_NATIVE_TERMINAL_FOLLOWUP.json": "1f24f89fd4cfded3ca1ad5d3d814c12630d29ff1073f16f27e89cde4196c70e8",
+    "companion/practice/sdd/observed_external_agent_20261021/OBSERVATION_SUMMARY.json": "7da047e4c015a54db8ca7658d0816b6e183bebbf5810e9e418fb5777019e6daa",
+    "companion/practice/sdd/observed_external_agent_20261021/reviewed_revision_02/REVISION.json": "f47f4d7b5783e8ea5ca560eeddce45dd9ceaf9417538dc5b4fdfc7961fcedd9e"
+  },
+  "review_limits": [
+    "This is a separate AI audit of preserved records and actual local bytes, not a human reader/requirements test.",
+    "Exact-byte and contextual checks do not prove unseen model reasoning or operating-system containment.",
+    "The context budget includes measured command/input counts and declared reserves, not a captured full HTTP request for every step.",
+    "No native semantic correctness judgment is possible for artifacts that were never produced.",
+    "Source manuscript wording is reviewed here; a rebuilt PDF and its visual/layout QA are a separate release gate."
+  ],
+  "suggested_current_register_text": {
+    "resolution_status": "PARTIAL",
+    "resolution_summary": "Preserved the earlier external generation and independent review plus three actual native invocations: provider failure, completed short-name prose with no tools, and disclosed same-session continuation that read the full fixed packet then reached its prospective 1800-second limit. No native specification/checklist/feature metadata or reached clarification disposition was produced; all 49 project files were unchanged. Portable evidence, provenance qualifications and current manuscript wording are independently verified.",
+    "remaining_external_requirement": "Useful actual native-generated artifacts linked to retained first output, independent semantic assessment, and an authentic reached clarification disposition or documented stop remain outstanding. A second framework, implementation phase or positive human approval is not imposed for the bounded tutorial scope."
+  },
+  "writes": "This audit and an identical adjacent companion review copy only; no raw evidence, original criteria, authoritative register or manuscript changed by the auditor."
+}

@@ -1,0 +1,40 @@
+timestamp=2026-10-22T06:18:58.760Z level=INFO run=d7eb1841 message="creating instance" directory=/workspace/scratch/72d789d25fef/runtime_d7/native_mcp_work_01
+timestamp=2026-10-22T06:18:58.762Z level=INFO run=d7eb1841 message=fromDirectory directory=/workspace/scratch/72d789d25fef/runtime_d7/native_mcp_work_01
+timestamp=2026-10-22T06:18:58.819Z level=INFO run=d7eb1841 message=bootstrapping directory=/workspace/scratch/72d789d25fef/runtime_d7/native_mcp_work_01
+timestamp=2026-10-22T06:18:58.832Z level=INFO run=d7eb1841 message=loading path=/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/mcp_host_01/client_state/config/opencode/config.json
+timestamp=2026-10-22T06:18:58.833Z level=INFO run=d7eb1841 message=loading path=/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/mcp_host_01/client_state/config/opencode/opencode.json
+timestamp=2026-10-22T06:18:58.833Z level=INFO run=d7eb1841 message=loading path=/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/mcp_host_01/client_state/config/opencode/opencode.jsonc
+timestamp=2026-10-22T06:18:58.834Z level=INFO run=d7eb1841 message=loading path=/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/mcp_host_01/OPENCODE_CONFIG.json
+timestamp=2026-10-22T06:18:58.850Z level=DEBUG run=d7eb1841 message="loaded custom config" path=/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/mcp_host_01/OPENCODE_CONFIG.json
+timestamp=2026-10-22T06:18:58.854Z level=DEBUG run=d7eb1841 message="loading config from OPENCODE_CONFIG_DIR" path=/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/mcp_host_01/client_state/empty-config
+timestamp=2026-10-22T06:18:58.868Z level=DEBUG run=d7eb1841 message="loading config from /workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/mcp_host_01/client_state/empty-config/opencode.json"
+timestamp=2026-10-22T06:18:58.868Z level=INFO run=d7eb1841 message=loading path=/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/mcp_host_01/client_state/empty-config/opencode.json
+timestamp=2026-10-22T06:18:58.868Z level=DEBUG run=d7eb1841 message="loading config from /workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/mcp_host_01/client_state/empty-config/opencode.jsonc"
+timestamp=2026-10-22T06:18:58.868Z level=INFO run=d7eb1841 message=loading path=/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/mcp_host_01/client_state/empty-config/opencode.jsonc
+timestamp=2026-10-22T06:18:59.094Z level=INFO run=d7eb1841 message="all LSPs are disabled"
+timestamp=2026-10-22T06:18:59.094Z level=INFO run=d7eb1841 message="all formatters are disabled"
+timestamp=2026-10-22T06:18:59.094Z level=INFO run=d7eb1841 message=init
+timestamp=2026-10-22T06:18:59.302Z level=INFO run=d7eb1841 message=created id=ses_e9dbcb699ffeOqi2P8Ut38WIpn slug=stellar-wizard version=1.19.3 projectID=global directory=/workspace/scratch/72d789d25fef/runtime_d7/native_mcp_work_01 path=workspace/scratch/72d789d25fef/runtime_d7/native_mcp_work_01 workspaceID=undefined parentID=undefined title="ESA reader MCP host observation" agent=undefined model=undefined metadata=undefined permission="[{\"permission\":\"question\",\"pattern\":\"*\",\"action\":\"deny\"},{\"permission\":\"plan_enter\",\"pattern\":\"*\",\"action\":\"deny\"},{\"permission\":\"plan_exit\",\"pattern\":\"*\",\"action\":\"deny\"}]" cost=0 tokens.input=0 tokens.output=0 tokens.reasoning=0 tokens.cache.read=0 tokens.cache.write=0 time.created=1792649939302 time.updated=1792649939302
+timestamp=2026-10-22T06:18:59.353Z level=INFO run=d7eb1841 message="event connected"
+timestamp=2026-10-22T06:18:59.390Z level=INFO run=d7eb1841 message=loop session.id=ses_e9dbcb699ffeOqi2P8Ut38WIpn step=0
+timestamp=2026-10-22T06:19:00.060Z level=INFO run=d7eb1841 message="shell tool using shell" shell=/usr/bin/bash
+timestamp=2026-10-22T06:19:01.216Z level=INFO run=d7eb1841 message="watcher backend" directory=/workspace/scratch/72d789d25fef/runtime_d7/native_mcp_work_01 platform=linux backend=inotify
+timestamp=2026-10-22T06:19:01.227Z level=INFO run=d7eb1841 message="project copy refresh started" projectID=global
+timestamp=2026-10-22T06:19:01.229Z level=INFO run=d7eb1841 message="project copy refresh done" projectID=global updated=[] removed=[]
+timestamp=2026-10-22T06:19:01.274Z level=INFO run=d7eb1841 message="booting location services" directory=/workspace/scratch/72d789d25fef/runtime_d7/native_mcp_work_01 workspaceID=undefined
+timestamp=2026-10-22T06:19:01.721Z level=INFO run=d7eb1841 message=process session.id=ses_e9dbcb699ffeOqi2P8Ut38WIpn messageID=msg_162434c51001se692vm7vMhuwy
+timestamp=2026-10-22T06:19:01.724Z level=INFO run=d7eb1841 message=stream providerID=esa-local modelID=esa-qwen3-4b session.id=ses_e9dbcb699ffeOqi2P8Ut38WIpn small=false agent=esa-mcp mode=primary
+timestamp=2026-10-22T06:19:01.732Z level=INFO run=d7eb1841 message="llm runtime selected" llm.runtime=ai-sdk llm.provider=esa-local llm.model=esa-qwen3-4b
+timestamp=2026-10-22T06:19:15.912Z level=INFO run=d7eb1841 message=evaluated permission=treasury_lookup_policy pattern=* action.permission=treasury_lookup_policy action.action=allow action.pattern=*
+timestamp=2026-10-22T06:19:18.106Z level=INFO run=d7eb1841 message=evaluated permission=treasury_lookup_policy pattern=* action.permission=treasury_lookup_policy action.action=allow action.pattern=*
+timestamp=2026-10-22T06:19:20.240Z level=INFO run=d7eb1841 message=evaluated permission=treasury_lookup_policy pattern=* action.permission=treasury_lookup_policy action.action=allow action.pattern=*
+timestamp=2026-10-22T06:19:20.429Z level=INFO run=d7eb1841 message=loop session.id=ses_e9dbcb699ffeOqi2P8Ut38WIpn step=1
+timestamp=2026-10-22T06:19:20.445Z level=INFO run=d7eb1841 message=process session.id=ses_e9dbcb699ffeOqi2P8Ut38WIpn messageID=msg_162439bef001hxjBNyAjI8QZ7P
+timestamp=2026-10-22T06:19:20.446Z level=INFO run=d7eb1841 message=stream providerID=esa-local modelID=esa-qwen3-4b session.id=ses_e9dbcb699ffeOqi2P8Ut38WIpn small=false agent=esa-mcp mode=primary
+timestamp=2026-10-22T06:19:20.448Z level=INFO run=d7eb1841 message="llm runtime selected" llm.runtime=ai-sdk llm.provider=esa-local llm.model=esa-qwen3-4b
+timestamp=2026-10-22T06:20:08.211Z level=INFO run=d7eb1841 message=loop session.id=ses_e9dbcb699ffeOqi2P8Ut38WIpn step=2
+timestamp=2026-10-22T06:20:08.215Z level=INFO run=d7eb1841 message="exiting loop" session.id=ses_e9dbcb699ffeOqi2P8Ut38WIpn
+timestamp=2026-10-22T06:20:08.222Z level=INFO run=d7eb1841 message="disposing instance" directory=/workspace/scratch/72d789d25fef/runtime_d7/native_mcp_work_01
+timestamp=2026-10-22T06:20:08.248Z level=INFO run=d7eb1841 message=loading path=/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/mcp_host_01/OPENCODE_CONFIG.json
+timestamp=2026-10-22T06:20:08.269Z level=DEBUG run=d7eb1841 message="loaded custom config" path=/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/mcp_host_01/OPENCODE_CONFIG.json
+timestamp=2026-10-22T06:20:08.278Z level=DEBUG run=d7eb1841 message="loading config from OPENCODE_CONFIG_DIR" path=/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/mcp_host_01/client_state/empty-config

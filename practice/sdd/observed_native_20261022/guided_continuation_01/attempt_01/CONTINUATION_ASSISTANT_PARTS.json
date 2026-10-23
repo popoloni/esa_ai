@@ -1,0 +1,64 @@
+{
+  "source": "native-session.json",
+  "assistant_messages": [
+    {
+      "parentID": "msg_1627df45f001y8jTGGUMepL9wm",
+      "role": "assistant",
+      "mode": "esa-sdd",
+      "agent": "esa-sdd",
+      "path": {
+        "cwd": "/workspace/scratch/72d789d25fef/runtime_d7/native_sdd_03",
+        "root": "/"
+      },
+      "cost": 0,
+      "tokens": {
+        "total": 7019,
+        "input": 6964,
+        "output": 55,
+        "reasoning": 0,
+        "cache": {
+          "write": 0,
+          "read": 0
+        }
+      },
+      "modelID": "esa-qwen3-4b",
+      "providerID": "esa-local",
+      "time": {
+        "created": 1792653784983,
+        "completed": 1792654531608
+      },
+      "finish": "tool-calls",
+      "id": "msg_1627df797001DQV3D2toA7Iia8",
+      "sessionID": "ses_e9d953008ffe5prRJYzw7HWDMP"
+    },
+    {
+      "parentID": "msg_1627df45f001y8jTGGUMepL9wm",
+      "role": "assistant",
+      "mode": "esa-sdd",
+      "agent": "esa-sdd",
+      "path": {
+        "cwd": "/workspace/scratch/72d789d25fef/runtime_d7/native_sdd_03",
+        "root": "/"
+      },
+      "cost": 0,
+      "tokens": {
+        "input": 0,
+        "output": 0,
+        "reasoning": 0,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      },
+      "modelID": "esa-qwen3-4b",
+      "providerID": "esa-local",
+      "time": {
+        "created": 1792654531613
+      },
+      "id": "msg_162895c1d001MegqmceG9Gw652",
+      "sessionID": "ses_e9d953008ffe5prRJYzw7HWDMP"
+    }
+  ],
+  "text_parts": [],
+  "scope": "This continuation only. Incomplete messages do not supply completed usage or a terminal model verdict."
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "order_id": "A1",
+    "owner": "alice",
+    "status": "open",
+    "customer": "Acme, North",
+    "amount_eur": "12.00",
+    "note": "She said \"ready\"\nnext line"
+  },
+  {
+    "order_id": "B1",
+    "owner": "bob",
+    "status": "open",
+    "customer": "Private tenant",
+    "amount_eur": "50.00",
+    "note": "not for alice"
+  },
+  {
+    "order_id": "A2",
+    "owner": "alice",
+    "status": "closed",
+    "customer": "Caffè",
+    "amount_eur": "0.00",
+    "note": "=SUM(A1:A2)"
+  }
+]

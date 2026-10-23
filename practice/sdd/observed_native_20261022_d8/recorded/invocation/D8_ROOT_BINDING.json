@@ -1,0 +1,46 @@
+{
+  "status": "PASS_BYTE_IDENTICAL_PREPARATION_COPY_AND_EXPLICIT_FUTURE_PATH_BINDING",
+  "at_utc": "2026-10-22T10:13:22.609634+00:00",
+  "original_observation_preparation_root": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d8/evidence/native_sdd_01/preparation",
+  "canonical_d8_preparation_root": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/preparation",
+  "copied_files": 140,
+  "preparation_manifest_sha256": "5930af19243a8fb8c970e116d3a24411cb0b2ffadb884e5778432c3146d76f2a",
+  "all139_manifest_entries_match": true,
+  "observed_receipts_unchanged": true,
+  "no_preflight_repeated": true,
+  "no_model_call": true,
+  "prospective_invocation_root": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/invocation",
+  "config_bytes_identical": true,
+  "config_sha256": "477886742b5c9ecaa55ade5f6dcd73228a28c30d831bbf700e4f0873c253dc69",
+  "changed_environment_fields": {
+    "OPENCODE_CONFIG": {
+      "before": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d8/evidence/native_sdd_01/preparation/OPENCODE_CONFIG_01.json",
+      "after": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/invocation/OPENCODE_CONFIG_01.json"
+    }
+  },
+  "changed_task_fields": [
+    "argv OPENCODE_CONFIG environment entry",
+    "environment_reference",
+    "configuration_reference",
+    "prompt_reference"
+  ],
+  "unchanged_task_semantics": [
+    "full prompt",
+    "native runtime project",
+    "full installed command",
+    "model and client executable",
+    "permission rules",
+    "title",
+    "context/output/time/step bounds",
+    "allowed output paths",
+    "all fixed source content"
+  ],
+  "preparation_session_never_reuse": "ses_e9ce93103ffeCb4inKDgfNGJQr",
+  "future_session": "The prospective task has no --session or --continue flag and must create a new explicitly titled generation session.",
+  "gate": "Runtime memory/health and token-budget validation remain pending. This binding is not execution or artifact generation.",
+  "new_file_hashes": {
+    "ENVIRONMENT_01.json": "a64c181cb08ba2a18f3030dca7b9c8b8bd5cba321ded3734c961e72a88294e63",
+    "OPENCODE_CONFIG_01.json": "477886742b5c9ecaa55ade5f6dcd73228a28c30d831bbf700e4f0873c253dc69",
+    "CLIENT_TASK_01.json": "c79009c00c09900c382b5465f0272bcaaddf3e7cc8306dbcfdac99b03890c02b"
+  }
+}

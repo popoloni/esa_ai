@@ -1,0 +1,192 @@
+{
+  "schema": "esa-d8-native-terminal-independent-review/v1",
+  "recorded_at_utc": "2026-10-22T11:44:35.696969+00:00",
+  "status": "PASS_EVIDENCE_CONSISTENCY_NO_GENERATED_CONTENT_R08_REMAINS_PARTIAL",
+  "reviewer": {
+    "kind": "AGENT",
+    "name": "/root/acceptance_audit",
+    "independence": "Did not generate or modify native candidate content; reviewed retained source/evidence only."
+  },
+  "scope": "Independent review of terminal d8 attempt03, its same-session parent, exact fixed-file state, aborted native write selection, timeout boundary and terminal-observation qualification. No later continuation is assessed.",
+  "evidence": [
+    {
+      "path": "revision_d8/evidence/native_sdd_01/attempt_03/RECEIPT.json",
+      "bytes": 16563,
+      "sha256": "6e7c892d79755e2395318638e4ca554705b1c2289c497461bb7cfeb0f57d5e23"
+    },
+    {
+      "path": "revision_d8/evidence/native_sdd_01/attempt_03/TASK.json",
+      "bytes": 5923,
+      "sha256": "e89d024aa11fbf065af66e59ba16e9129bdb6c5150c39c0025851327812febf9"
+    },
+    {
+      "path": "revision_d8/evidence/native_sdd_01/attempt_03/stdout.txt",
+      "bytes": 416,
+      "sha256": "bfa42f67c98b7d7e906e9215e63d45684747de6ad538e8df42fcb8027f53b3d9"
+    },
+    {
+      "path": "revision_d8/evidence/native_sdd_01/attempt_03/stderr.txt",
+      "bytes": 6122,
+      "sha256": "0d558219078a7d6787b72f611accca9ec144a201aa3487aa70afcde58f305cd0"
+    },
+    {
+      "path": "revision_d8/evidence/native_sdd_01/terminal_collection_03/COLLECTION_RECEIPT.json",
+      "bytes": 11966,
+      "sha256": "f33370690d4a5de68fcd57124940c69ccaf44d6e569d44d550ee3fd38d8aa77b"
+    },
+    {
+      "path": "revision_d8/evidence/native_sdd_01/terminal_collection_03/native-session.json",
+      "bytes": 92897,
+      "sha256": "01ad8ea9da57f23fe443eeb64b366478632e5c24f38e7a75209af130c396da2e"
+    },
+    {
+      "path": "revision_d8/evidence/native_sdd_01/terminal_collection_03/NATIVE_CONTENT_PROVENANCE.json",
+      "bytes": 1526,
+      "sha256": "2f192fe14f8cb95046cb95688a358734835c4466beaf5e1a49b3bb9b085da4a0"
+    },
+    {
+      "path": "revision_d8/evidence/native_sdd_01/terminal_collection_03/FINAL_INVENTORY.json",
+      "bytes": 13698,
+      "sha256": "fd47549ebef1aa2e8823e437d5e7aac9dd7c7c64b10b55f12382c83334ab31d1"
+    },
+    {
+      "path": "revision_d8/evidence/native_sdd_01/HOST_TERMINAL_PROCESS_OBSERVATION_03.json",
+      "bytes": 861,
+      "sha256": "94b97a85fe8f3fd85f69a8048e5afc0fc1318860c5130a03b2d75db5941b69e0"
+    },
+    {
+      "path": "revision_d8/evidence/native_sdd_01/terminal_collection_02/native-session.json",
+      "bytes": 88676,
+      "sha256": "f261470cb68a23ca69b5b91acf8a62d4856ffe9eb9350057a764f37b17aabe8e"
+    },
+    {
+      "path": "revision_d8/evidence/native_sdd_01/invocation_03/OPENCODE_CONFIG_03.json",
+      "bytes": 3298,
+      "sha256": "044c5deaa96cb5c5e88e7d55770d3d0c399669a926045f5b3fab470359d83941"
+    },
+    {
+      "path": "revision_d8/evidence/native_sdd_01/continuation_preparation_01/PROMPT.txt",
+      "bytes": 1743,
+      "sha256": "6f14a0005a6970cbd1413f1cb03c4dfc623d58ff9461a82197f304a5d2efc6d8"
+    }
+  ],
+  "actual_terminal_outcome": {
+    "session_id": "ses_e9cc44d15ffewxo9hTP3f5v23l",
+    "started_at_utc": "2026-10-22T11:13:07.010448+00:00",
+    "ended_at_utc": "2026-10-22T11:38:10.810304+00:00",
+    "duration_seconds": 1503.7998322519998,
+    "exit_code": 1,
+    "native_error": {
+      "name": "UnknownError",
+      "message": "The operation timed out."
+    },
+    "stdout_events": [
+      "step_start",
+      "error"
+    ],
+    "new_completed_tool_operations": 0,
+    "new_assistant_text_parts": 0,
+    "changed_project_files": 0,
+    "new_tool_part": {
+      "call_id": "ckfEqbCxSTwBljYk8xqn6m6ijnBYMOZf",
+      "message_id": "msg_163509c68001Ev7l3g5LnG3aWX",
+      "tool": "write",
+      "status": "error",
+      "error": "Tool execution aborted",
+      "interrupted": true,
+      "input": {},
+      "raw": ""
+    },
+    "interpretation": "The exported session preserves an actual write selection that was aborted before a completed input/content payload or successful operation was retained. No draft bytes can be recovered from this part. It is not native feature generation or a completed write.",
+    "clarification_disposition": "NOT_REACHED; no native owner questions or wait-for-answer output. Timeout is not a policy or owner-clarification stop.",
+    "human_review": "ABSENT"
+  },
+  "timeout_boundary": {
+    "configured_provider_timeout_ms": 1500000,
+    "configured_header_timeout_ms": 1500000,
+    "declared_outer_command_timeout_seconds": 3600,
+    "native_stream_log_at_utc": "2026-10-22T11:13:10.149Z",
+    "native_error_log_at_utc": "2026-10-22T11:38:10.262Z",
+    "stream_to_error_seconds": 1500.113,
+    "outer_cap_reached": false,
+    "judgment": "Observed native request/stream error timing is consistent with the configured 1500-second provider-side client boundary. The command exited 1 after about 1503.8 seconds, before its 3600-second outer cap; it was not the outer recorder timeout/124 outcome.",
+    "limit": "Both provider timeout options have the same value. These retained records do not independently distinguish which internal timer produced the native generic error, nor prove the underlying server completion state."
+  },
+  "independent_record_checks": {
+    "collection_manifest_entries_verified": 61,
+    "all_collection_payload_hashes_and_sizes_match": true,
+    "command_receipt_referenced_task_stdout_stderr_hashes_match": true,
+    "attempt_task_bytes_equal_frozen_preparation": true,
+    "prior_native_messages_compared": 13,
+    "all_prior_messages_structurally_equal_to_parent_export": true,
+    "new_messages": 2,
+    "new_prompt_matches_frozen_prompt_with_actual_cli_quote_serialization": true,
+    "retained_project_files": 50,
+    "parent_terminal02_and_terminal03_file_membership_and_sha256_equal": true,
+    "before_after_command_inventories_equal": true,
+    "full_copied_snapshot_matches_inventory_and_command_receipt": true,
+    "final_diff_is_empty": true,
+    "spec_bytes_equal_supplied_upstream_template": true,
+    "checklist_absent": true,
+    "feature_metadata_absent": true
+  },
+  "provenance_qualifications": [
+    "The collection reports 12 cumulative native tool parts: the 11 already retained from attempt02 and one new aborted write part. These are not 12 new continuation operations.",
+    "The unchanged spec.md remains the 4556-byte upstream template, SHA256 3945437fc35cd30a5b2bf7beea680337c3516826d3efa5a6b92c4a7eca1ba28e. The prior native cp is scaffolding, not generated domain content.",
+    "FIRST_EMITTED_MODEL_ACTION.json retains the CLI timeout error event in this attempt. Its filename does not establish a substantive model-authored response or completed tool action.",
+    "Raw origin containing not_yet_executed and human_review=PENDING are inherited preparation labels. Actual timestamps/events establish execution; no human review is present.",
+    "Collector model_call=false/project_written=false describe the evidence collection operation, not the preceding native inference. Native assistant zero usage/cost fields on the failed response are not proof of zero actual resource use or financial cost.",
+    "Supplied authored specification and case oracle remain exposed fixed inputs; no blind-discovery claim is available."
+  ],
+  "terminal_process_scope": {
+    "recorded_host_observation_at_utc": "2026-10-22T11:41:14.025003+00:00",
+    "basis": "Actual completed capture receipt plus a recorded approved-host-context scan finding no exact-project OpenCode run process before collection.",
+    "qualification": "A default-context /proc scan cannot prove absence of a process running in the approved host context. The earlier terminal02 commentary is qualified accordingly; its terminal collection still follows the actual completed capture receipt.",
+    "review_limit": "The reviewer inspected the frozen host observation and receipt; did not rerun process scans or claim OS isolation. This is a dated qualification, not a rewrite of earlier native evidence."
+  },
+  "semantic_assessment": {
+    "status": "NO_USEFUL_GENERATED_CANDIDATE_TO_ASSESS",
+    "requirements": [
+      "REQ-EXPL-001",
+      "REQ-EXPL-002",
+      "REQ-EXPL-003",
+      "REQ-EXPL-004",
+      "REQ-EXPL-005"
+    ],
+    "scenarios": [
+      "SC-EXPL-001",
+      "SC-EXPL-002",
+      "SC-EXPL-003",
+      "SC-EXPL-004",
+      "SC-EXPL-005",
+      "SC-EXPL-006",
+      "SC-EXPL-007",
+      "SC-EXPL-008"
+    ],
+    "classification": "UNDETERMINED_FOR_NATIVE_GENERATED_CONTENT; no completed native domain artifact exists. This is absence of a generated candidate, not thirteen newly assessed semantic defects in a draft.",
+    "authority_payment_value_constitution": "Fixed supplied records remain unchanged; no native artifact demonstrates their correct projection or claims new policy/payment authority, ratification, human approval or measured benefit.",
+    "owner_questions": "All three supplied owner questions remain unanswered; no native clarification output has presented them in this attempt."
+  },
+  "original_R08_criteria": [
+    {
+      "criterion": "Artifacts are linked to actual prompts/commands and retained first output.",
+      "assessment": "PARTIAL",
+      "finding": "Exact invocation, prompt, parent history, terminal events and first aborted selection are retained. No useful generated artifact or actual clarification disposition exists."
+    },
+    {
+      "criterion": "Generation is distinguished from scaffold creation and intentionally seeded faults.",
+      "assessment": "SATISFIED_FOR_DISCLOSED_CLASSIFICATION",
+      "finding": "The only existing spec is an exact prior template copy; the aborted empty write is not counted as generation. No seeded semantic fault is represented as a native-generated omission."
+    },
+    {
+      "criterion": "One observed route is sufficient for the tutorial; a second observed route is required before a measured paired comparison is claimed.",
+      "assessment": "SCOPE_PRESERVED",
+      "finding": "No second framework or paired study is required, and no measured comparison is claimed. The intended single route has not yet produced the required useful artifacts and actual workflow disposition."
+    }
+  ],
+  "recommendation": "KEEP_R08_PARTIAL. Preserve this provider-timeout attempt and aborted selection independently of any later bounded continuation.",
+  "limits": [
+    "Read-only evidence review with one new reviewer note; no model execution, native file mutation, test suite, proposal tooling or master-register update.",
+    "No implementation, positive human acceptance, all-green artifact or second framework condition was added."
+  ]
+}

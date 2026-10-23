@@ -1,0 +1,28 @@
+{
+  "at_utc": "2026-10-22T10:34:46.578634+00:00",
+  "reason": "Actual model-selected redundant full packet read enlarged the next request to23836 prompttokens, leaving740 in24576 context and invalidating declared response/history reserve before useful artifact generation.",
+  "action": "SIGINT to exact observed native OpenCode client only; retain attempt and native export. No timeout or clarification outcome inferred.",
+  "matched_process": {
+    "pid": 54083,
+    "argv": [
+      "/workspace/scratch/72d789d25fef/runtime_d7/opencode/node_modules/.bin/opencode",
+      "--pure",
+      "--print-logs",
+      "--log-level",
+      "DEBUG",
+      "run",
+      "--title",
+      "ESA d8 native Spec Kit generation and owner-clarification boundary",
+      "--command",
+      "speckit.specify",
+      "--format",
+      "json",
+      "--agent",
+      "esa-sdd",
+      "--model",
+      "esa-local/esa-qwen3-4b",
+      "Project: /workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01\nSPECIFY_FEATURE_DIRECTORY=specs/001-explain-treasury\nThe native client attaches this complete source packet before your first response:\n@/workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/inputs/NATIVE_CONTEXT_BUNDLE.md\nIt contains all nine fixed JSONs including the authored reference contract, router, complete templates and unratified constitution. JSON whitespace alone changed. Use the attached full contents without rereading duplicates. Preserve every requirement/scenario ID, value, provenance and authority. SRC-POL-001/BR-001/v1 governs; ticket/wiki cannot change it. Routing never authorizes payment.\nExecute the full native command now using actual tools: create the feature draft and truthful checklist, not just an announcement of future work. Write only .specify/feature.json, specs/001-explain-treasury/spec.md and specs/001-explain-treasury/checklists/requirements.md. Use permitted bash commands individually, without chaining. No extensions.yml exists; test exit1 means absent. Preset resolution returns a text path.\nKeep all three source owner questions unanswered and benefit HYPOTHESIS_NOT_VALIDATED. Invent no owner answers, numeric benefit targets, ratification or approval. Present the actual unresolved questions and wait at that boundary; stop before planning/implementation. Leave failed readiness checks visibly incomplete. Report any blocking failure truthfully. This is a disclosed synthetic reference projection, not blind discovery or observed user benefit.\n"
+    ],
+    "status": "Name:\topencode\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t54083\nNgid:\t0\nPid:\t54083\nPPid:\t54081\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t54083\nNSpid:\t54083\nNSpgid:\t54077\nNSsid:\t54077\nKthread:\t0\nVmPeak:\t135454012 kB\nVmSize:\t75356796 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t  600568 kB\nVmRSS:\t  503656 kB\nRssAnon:\t  423388 kB\nRssFile:\t   80268 kB\nRssShmem:\t       0 kB\nVmData:\t71909832 kB\nVmStk:\t     236 kB\nVmExe:\t   56216 kB\nVmLib:\t    7960 kB\nVmPTE:\t    1792 kB\nVmSwap:\t       0 kB\nHugetlbPages:\t       0 kB\nCoreDumping:\t0\nTHP_enabled:\t0\nuntag_mask:\t0xffffffffffffffff\nThreads:\t21\nSigQ:\t0/39792\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000000000000\nSigIgn:\t0000000001001005\nSigCgt:\t00000001200004c8\nCapInh:\t0000000000000000\nCapPrm:\t00000000800405fb\nCapEff:\t00000000800405fb\nCapBnd:\t00000000800405fb\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSeccomp_filters:\t0\nSpeculation_Store_Bypass:\tvulnerable\nSpeculationIndirectBranch:\talways enabled\nCpus_allowed:\t1ff\nCpus_allowed_list:\t0-8\nMems_allowed:\t00000000,00000001\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t5774\nnonvoluntary_ctxt_switches:\t7140\n"
+  }
+}

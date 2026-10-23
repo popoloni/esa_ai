@@ -1,0 +1,26 @@
+{
+  "schema": "esa-mcp-process-startup-probe/v1",
+  "run_id": "ESA_READER_MCP_01",
+  "observed_at_utc": "2026-10-22T06:19:00.126557+00:00",
+  "pid": 8774,
+  "ppid": 8773,
+  "argv": [
+    "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion/practice/mcp_cli/policy_server.py"
+  ],
+  "executable": "/workspace/scratch/72d789d25fef/runtime_d7/mcp_venv/bin/python",
+  "cwd": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion/practice/mcp_cli",
+  "canonical_server": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion/practice/mcp_cli/policy_server.py",
+  "canonical_server_sha256": "ffe28e2fe445ab53bbb0048f02ca1642096abd6102743dcda56ca4fd12c3f139",
+  "probe_source_sha256": "e530f010156b129433fe4a80b51c99e74962e3983cb6eda58fb95651e8911e1f",
+  "declared_canary": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/mcp_host_01/DECLARED_NONSECRET_CANARY.txt",
+  "declared_expectation": "No OS filesystem restriction was configured for this local subprocess; this one non-secret read may succeed.",
+  "claim_scope": "Actual canonical-server interpreter at startup, before MCP initialization; one declared file read only.",
+  "model_arbitrary_file_access": "NOT_ESTABLISHED",
+  "post_initialization_isolation": "NOT_TESTED",
+  "environment_isolation": "NOT_TESTED",
+  "network_isolation": "NOT_TESTED",
+  "external_write_boundary_enforcement": "NOT_TESTED; this instrumentation writes its declared evidence file.",
+  "result": "READ_SUCCEEDED",
+  "canary_bytes": 50,
+  "canary_sha256": "5f066dee64e383926eb186696646a9889ecf6560c17fd495843760d20337e0c7"
+}

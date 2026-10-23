@@ -1,0 +1,10 @@
+{
+  "collected_at_utc": "2026-10-22T07:53:36.219496+00:00",
+  "collector_sha256": "af69ccf2b6e0beb171a75477c48b0b4701305b70ac76c26153a9f8e8ca4c10d4",
+  "model_call": false,
+  "project_written": false,
+  "native_export_sha256": "6ce3cab5fc7c468ff1ddcdfda7aa5666c62441def9f85ef91dd9dfa31771fe60",
+  "command_receipt_sha256": "8723152b286d56939cb414d5563366d6d09c7f53c127f2e40dc4f5b1e8270190",
+  "human_review": "ABSENT",
+  "acceptance": "Not determined by this collector."
+}

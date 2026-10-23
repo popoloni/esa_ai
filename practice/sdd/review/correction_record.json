@@ -1,0 +1,12 @@
+{
+  "id": "SDD-REPAIR-001",
+  "origin": "author_seeded_teaching_case",
+  "discovered_by": "local artifact fidelity checker; see actual run receipts",
+  "problem": "Both authored before specimens omit SC-EXPL-002, the exact EUR 5000 boundary, even though their candidate task lists request it.",
+  "source_of_expected_behavior": "Unchanged shared case_oracle.json; SC-EXPL-002 requires HUMAN_REVIEW / AT_OR_ABOVE_LIMIT / BR-001/v1 / payment_authorized=false.",
+  "correction": "Add the missing scenario to each behavioral spec without changing the shared intent, requirements, case oracle, candidate plans or tasks.",
+  "human_acceptance": "NOT_PERFORMED",
+  "tool_fault_claim": false,
+  "model_fault_claim": false,
+  "comparison_limit": "This controlled omission demonstrates checker scope. It is not an observed error frequency, framework ranking, or independent semantic judgment."
+}

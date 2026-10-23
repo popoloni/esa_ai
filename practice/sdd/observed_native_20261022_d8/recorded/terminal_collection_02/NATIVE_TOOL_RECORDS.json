@@ -1,0 +1,328 @@
+{
+  "source": "native-session.json",
+  "records": [
+    {
+      "message_id": "msg_1633bb654001eQzdOQklgkkKk7",
+      "message_index": 1,
+      "part_index": 1,
+      "part": {
+        "type": "tool",
+        "tool": "read",
+        "callID": "Z0uiLvPSk0Uc94MvPTR7F7T05we233AH",
+        "state": {
+          "status": "error",
+          "input": {
+            "filePath": "/workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/inputs/NATIVE_CONTEXT_BUNDLE.md",
+            "offset": 1,
+            "limit": 2000
+          },
+          "error": "The user has specified a rule which prevents you from using this specific tool call. Here are some of the relevant rules [{\"permission\":\"*\",\"action\":\"allow\",\"pattern\":\"*\"},{\"permission\":\"read\",\"pattern\":\"*\",\"action\":\"allow\"},{\"permission\":\"read\",\"pattern\":\"*.env\",\"action\":\"ask\"},{\"permission\":\"read\",\"pattern\":\"*.env.*\",\"action\":\"ask\"},{\"permission\":\"read\",\"pattern\":\"*.env.example\",\"action\":\"allow\"},{\"permission\":\"*\",\"action\":\"deny\",\"pattern\":\"*\"},{\"permission\":\"read\",\"pattern\":\"*\",\"action\":\"deny\"},{\"permission\":\"read\",\"pattern\":\"workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/.specify/feature.json\",\"action\":\"allow\"},{\"permission\":\"read\",\"pattern\":\"workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/specs/001-explain-treasury/spec.md\",\"action\":\"allow\"},{\"permission\":\"read\",\"pattern\":\"workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/specs/001-explain-treasury/checklists/requirements.md\",\"action\":\"allow\"}]",
+          "time": {
+            "start": 1792666734698,
+            "end": 1792666734707
+          }
+        },
+        "id": "prt_163433bc8001bEhrJ4kVnevaTo",
+        "sessionID": "ses_e9cc44d15ffewxo9hTP3f5v23l",
+        "messageID": "msg_1633bb654001eQzdOQklgkkKk7"
+      },
+      "ordering_time": 1792666734698
+    },
+    {
+      "message_id": "msg_163439305001NN0CtbhDmGvxti",
+      "message_index": 2,
+      "part_index": 1,
+      "part": {
+        "type": "tool",
+        "tool": "bash",
+        "callID": "jpyZN5FJF3hcx7I31cUfZQ4mra9226FY",
+        "state": {
+          "status": "error",
+          "input": {
+            "command": "ls -la /workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/inputs/NATIVE_CONTEXT_BUNDLE.md",
+            "timeout": 120000
+          },
+          "error": "The user has specified a rule which prevents you from using this specific tool call. Here are some of the relevant rules [{\"permission\":\"*\",\"action\":\"allow\",\"pattern\":\"*\"},{\"permission\":\"*\",\"action\":\"deny\",\"pattern\":\"*\"},{\"permission\":\"bash\",\"pattern\":\"*\",\"action\":\"deny\"},{\"permission\":\"bash\",\"pattern\":\"test -f .specify/extensions.yml\",\"action\":\"allow\"},{\"permission\":\"bash\",\"pattern\":\"specify preset resolve spec-template\",\"action\":\"allow\"},{\"permission\":\"bash\",\"pattern\":\"specify preset resolve checklist-template\",\"action\":\"allow\"},{\"permission\":\"bash\",\"pattern\":\"mkdir -p specs/001-explain-treasury\",\"action\":\"allow\"},{\"permission\":\"bash\",\"pattern\":\"mkdir -p specs/001-explain-treasury/checklists\",\"action\":\"allow\"},{\"permission\":\"bash\",\"pattern\":\"cp .specify/templates/spec-template.md specs/001-explain-treasury/spec.md\",\"action\":\"allow\"},{\"permission\":\"bash\",\"pattern\":\"python3 .specify/scripts/python/check_prerequisites.py --json --paths-only\",\"action\":\"allow\"}]",
+          "time": {
+            "start": 1792666779816,
+            "end": 1792666780053
+          }
+        },
+        "id": "prt_16343f0b2001CAPzsWnI4ikicP",
+        "sessionID": "ses_e9cc44d15ffewxo9hTP3f5v23l",
+        "messageID": "msg_163439305001NN0CtbhDmGvxti"
+      },
+      "ordering_time": 1792666779816
+    },
+    {
+      "message_id": "msg_1634444ba001VBYSnd2GwzxChn",
+      "message_index": 3,
+      "part_index": 1,
+      "part": {
+        "type": "tool",
+        "tool": "bash",
+        "callID": "g3anYBv59fWoM07VFdEKwyg8iykAf9Kv",
+        "state": {
+          "status": "completed",
+          "input": {
+            "command": "specify preset resolve spec-template",
+            "timeout": 120000
+          },
+          "output": "  spec-template: \n/workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/.specify/templates/spec\n-template.md\n    (top layer from: core)\n",
+          "metadata": {
+            "output": "  spec-template: \n/workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/.specify/templates/spec\n-template.md\n    (top layer from: core)\n",
+            "exit": 0,
+            "truncated": false
+          },
+          "title": "specify preset resolve spec-template",
+          "time": {
+            "start": 1792666826115,
+            "end": 1792666827716
+          }
+        },
+        "id": "prt_16344cc00001tpTlFckxzdNrAc",
+        "sessionID": "ses_e9cc44d15ffewxo9hTP3f5v23l",
+        "messageID": "msg_1634444ba001VBYSnd2GwzxChn"
+      },
+      "ordering_time": 1792666826115
+    },
+    {
+      "message_id": "msg_16344fbd3001t8ymoL1uuuqnd1",
+      "message_index": 4,
+      "part_index": 1,
+      "part": {
+        "type": "tool",
+        "tool": "bash",
+        "callID": "4ktkKBRJpCCg8q5aXB7QdWiWucQ5je5B",
+        "state": {
+          "status": "completed",
+          "input": {
+            "command": "specify preset resolve checklist-template",
+            "timeout": 120000
+          },
+          "output": "  checklist-template: \n/workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/.specify/templates/chec\nklist-template.md\n    (top layer from: core)\n",
+          "metadata": {
+            "output": "  checklist-template: \n/workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/.specify/templates/chec\nklist-template.md\n    (top layer from: core)\n",
+            "exit": 0,
+            "truncated": false
+          },
+          "title": "specify preset resolve checklist-template",
+          "time": {
+            "start": 1792666852425,
+            "end": 1792666854018
+          }
+        },
+        "id": "prt_1634531fc0012eoHJ1SJg6QhvF",
+        "sessionID": "ses_e9cc44d15ffewxo9hTP3f5v23l",
+        "messageID": "msg_16344fbd3001t8ymoL1uuuqnd1"
+      },
+      "ordering_time": 1792666852425
+    },
+    {
+      "message_id": "msg_16345628e001ggINDW96PUNHNK",
+      "message_index": 5,
+      "part_index": 1,
+      "part": {
+        "type": "tool",
+        "tool": "bash",
+        "callID": "bLPDWIe1yrjCeT71U4iILiNbr7Bdxf7V",
+        "state": {
+          "status": "completed",
+          "input": {
+            "command": "mkdir -p specs/001-explain-treasury",
+            "timeout": 120000
+          },
+          "output": "(no output)",
+          "metadata": {
+            "output": "(no output)",
+            "exit": 0,
+            "truncated": false
+          },
+          "title": "mkdir -p specs/001-explain-treasury",
+          "time": {
+            "start": 1792666878018,
+            "end": 1792666878037
+          }
+        },
+        "id": "prt_163458b2a0017KB96h7AfesUcN",
+        "sessionID": "ses_e9cc44d15ffewxo9hTP3f5v23l",
+        "messageID": "msg_16345628e001ggINDW96PUNHNK"
+      },
+      "ordering_time": 1792666878018
+    },
+    {
+      "message_id": "msg_16345c2f9001n1huvS1NOAvY4r",
+      "message_index": 6,
+      "part_index": 1,
+      "part": {
+        "type": "tool",
+        "tool": "bash",
+        "callID": "DTDVRY032LLNWKLxheu0NiAZmUXzUkr1",
+        "state": {
+          "status": "completed",
+          "input": {
+            "command": "mkdir -p specs/001-explain-treasury/checklists",
+            "timeout": 120000
+          },
+          "output": "(no output)",
+          "metadata": {
+            "output": "(no output)",
+            "exit": 0,
+            "truncated": false
+          },
+          "title": "mkdir -p specs/001-explain-treasury/checklists",
+          "time": {
+            "start": 1792666919104,
+            "end": 1792666919157
+          }
+        },
+        "id": "prt_1634627a70015lVZmWQ1t2ztfM",
+        "sessionID": "ses_e9cc44d15ffewxo9hTP3f5v23l",
+        "messageID": "msg_16345c2f9001n1huvS1NOAvY4r"
+      },
+      "ordering_time": 1792666919104
+    },
+    {
+      "message_id": "msg_1634663de001PK1BXfW4qscZMo",
+      "message_index": 7,
+      "part_index": 1,
+      "part": {
+        "type": "tool",
+        "tool": "bash",
+        "callID": "ejD5xbhOrjCDiCLnquJRvmCb2LjNVOCT",
+        "state": {
+          "status": "completed",
+          "input": {
+            "command": "cp .specify/templates/spec-template.md specs/001-explain-treasury/spec.md",
+            "timeout": 120000
+          },
+          "output": "(no output)",
+          "metadata": {
+            "output": "(no output)",
+            "exit": 0,
+            "truncated": false
+          },
+          "title": "cp .specify/templates/spec-template.md specs/001-explain-treasury/spec.md",
+          "time": {
+            "start": 1792666966857,
+            "end": 1792666966885
+          }
+        },
+        "id": "prt_16346d5de0018Iqoot2oFHLQnI",
+        "sessionID": "ses_e9cc44d15ffewxo9hTP3f5v23l",
+        "messageID": "msg_1634663de001PK1BXfW4qscZMo"
+      },
+      "ordering_time": 1792666966857
+    },
+    {
+      "message_id": "msg_163471ec8001pS37W7V0VTNY0o",
+      "message_index": 8,
+      "part_index": 1,
+      "part": {
+        "type": "tool",
+        "tool": "bash",
+        "callID": "4OheCZLeAJ7T7JvnWgbgyF6o0eQi0fNd",
+        "state": {
+          "status": "error",
+          "input": {
+            "command": "cp .specify/templates/checklist-template.md specs/001-explain-treasury/checklists/requirements.md",
+            "timeout": 120000
+          },
+          "error": "The user has specified a rule which prevents you from using this specific tool call. Here are some of the relevant rules [{\"permission\":\"*\",\"action\":\"allow\",\"pattern\":\"*\"},{\"permission\":\"*\",\"action\":\"deny\",\"pattern\":\"*\"},{\"permission\":\"bash\",\"pattern\":\"*\",\"action\":\"deny\"},{\"permission\":\"bash\",\"pattern\":\"test -f .specify/extensions.yml\",\"action\":\"allow\"},{\"permission\":\"bash\",\"pattern\":\"specify preset resolve spec-template\",\"action\":\"allow\"},{\"permission\":\"bash\",\"pattern\":\"specify preset resolve checklist-template\",\"action\":\"allow\"},{\"permission\":\"bash\",\"pattern\":\"mkdir -p specs/001-explain-treasury\",\"action\":\"allow\"},{\"permission\":\"bash\",\"pattern\":\"mkdir -p specs/001-explain-treasury/checklists\",\"action\":\"allow\"},{\"permission\":\"bash\",\"pattern\":\"cp .specify/templates/spec-template.md specs/001-explain-treasury/spec.md\",\"action\":\"allow\"},{\"permission\":\"bash\",\"pattern\":\"python3 .specify/scripts/python/check_prerequisites.py --json --paths-only\",\"action\":\"allow\"}]",
+          "time": {
+            "start": 1792667005435,
+            "end": 1792667005484
+          }
+        },
+        "id": "prt_163475b530016U0fcsjzAg3FLc",
+        "sessionID": "ses_e9cc44d15ffewxo9hTP3f5v23l",
+        "messageID": "msg_163471ec8001pS37W7V0VTNY0o"
+      },
+      "ordering_time": 1792667005435
+    },
+    {
+      "message_id": "msg_16347b5d7001ORVd5I2Y79VSu4",
+      "message_index": 9,
+      "part_index": 1,
+      "part": {
+        "type": "tool",
+        "tool": "bash",
+        "callID": "llli3PZjZJ3GPEumnX5B1HgSdaEqZXPP",
+        "state": {
+          "status": "completed",
+          "input": {
+            "command": "python3 .specify/scripts/python/check_prerequisites.py --json --paths-only",
+            "timeout": 120000
+          },
+          "output": "{\"REPO_ROOT\":\"/workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01\",\"BRANCH\":\"001-explain-treasury\",\"FEATURE_DIR\":\"/workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/specs/001-explain-treasury\",\"FEATURE_SPEC\":\"/workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/specs/001-explain-treasury/spec.md\",\"IMPL_PLAN\":\"/workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/specs/001-explain-treasury/plan.md\",\"TASKS\":\"/workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/specs/001-explain-treasury/tasks.md\"}\n",
+          "metadata": {
+            "output": "{\"REPO_ROOT\":\"/workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01\",\"BRANCH\":\"001-explain-treasury\",\"FEATURE_DIR\":\"/workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/specs/001-explain-treasury\",\"FEATURE_SPEC\":\"/workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/specs/001-explain-treasury/spec.md\",\"IMPL_PLAN\":\"/workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/specs/001-explain-treasury/plan.md\",\"TASKS\":\"/workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/specs/001-explain-treasury/tasks.md\"}\n",
+            "exit": 0,
+            "truncated": false
+          },
+          "title": "python3 .specify/scripts/python/check_prerequisites.py --json --paths-only",
+          "time": {
+            "start": 1792667062455,
+            "end": 1792667062688
+          }
+        },
+        "id": "prt_16348465c001IGLlk2anDeBR61",
+        "sessionID": "ses_e9cc44d15ffewxo9hTP3f5v23l",
+        "messageID": "msg_16347b5d7001ORVd5I2Y79VSu4"
+      },
+      "ordering_time": 1792667062455
+    },
+    {
+      "message_id": "msg_16348954e001sT7npGLFOnGXo7",
+      "message_index": 10,
+      "part_index": 1,
+      "part": {
+        "type": "tool",
+        "tool": "bash",
+        "callID": "w8aoREoiCwqVWK2WNtO2jjFmb3YhoYnb",
+        "state": {
+          "status": "error",
+          "input": {
+            "command": "echo \"{'feature_directory': '$FEATURE_DIR'}\" > .specify/feature.json",
+            "timeout": 120000
+          },
+          "error": "The user has specified a rule which prevents you from using this specific tool call. Here are some of the relevant rules [{\"permission\":\"*\",\"action\":\"allow\",\"pattern\":\"*\"},{\"permission\":\"*\",\"action\":\"deny\",\"pattern\":\"*\"},{\"permission\":\"bash\",\"pattern\":\"*\",\"action\":\"deny\"},{\"permission\":\"bash\",\"pattern\":\"test -f .specify/extensions.yml\",\"action\":\"allow\"},{\"permission\":\"bash\",\"pattern\":\"specify preset resolve spec-template\",\"action\":\"allow\"},{\"permission\":\"bash\",\"pattern\":\"specify preset resolve checklist-template\",\"action\":\"allow\"},{\"permission\":\"bash\",\"pattern\":\"mkdir -p specs/001-explain-treasury\",\"action\":\"allow\"},{\"permission\":\"bash\",\"pattern\":\"mkdir -p specs/001-explain-treasury/checklists\",\"action\":\"allow\"},{\"permission\":\"bash\",\"pattern\":\"cp .specify/templates/spec-template.md specs/001-explain-treasury/spec.md\",\"action\":\"allow\"},{\"permission\":\"bash\",\"pattern\":\"python3 .specify/scripts/python/check_prerequisites.py --json --paths-only\",\"action\":\"allow\"}]",
+          "time": {
+            "start": 1792667101101,
+            "end": 1792667101153
+          }
+        },
+        "id": "prt_16348e6ae001SLAIO8ndkzn4bV",
+        "sessionID": "ses_e9cc44d15ffewxo9hTP3f5v23l",
+        "messageID": "msg_16348954e001sT7npGLFOnGXo7"
+      },
+      "ordering_time": 1792667101101
+    },
+    {
+      "message_id": "msg_163492cbd001Z7To6ymoBfJ8Jx",
+      "message_index": 11,
+      "part_index": 1,
+      "part": {
+        "type": "tool",
+        "tool": "bash",
+        "callID": "W8f9hp2u0w1iNCkQH45uba4apLkQ1Dup",
+        "state": {
+          "status": "error",
+          "input": {
+            "command": "echo \"{'feature_directory': '$FEATURE_DIR'}\" > .specify/feature.json",
+            "timeout": 120000
+          },
+          "error": "The user has specified a rule which prevents you from using this specific tool call. Here are some of the relevant rules [{\"permission\":\"*\",\"action\":\"allow\",\"pattern\":\"*\"},{\"permission\":\"*\",\"action\":\"deny\",\"pattern\":\"*\"},{\"permission\":\"bash\",\"pattern\":\"*\",\"action\":\"deny\"},{\"permission\":\"bash\",\"pattern\":\"test -f .specify/extensions.yml\",\"action\":\"allow\"},{\"permission\":\"bash\",\"pattern\":\"specify preset resolve spec-template\",\"action\":\"allow\"},{\"permission\":\"bash\",\"pattern\":\"specify preset resolve checklist-template\",\"action\":\"allow\"},{\"permission\":\"bash\",\"pattern\":\"mkdir -p specs/001-explain-treasury\",\"action\":\"allow\"},{\"permission\":\"bash\",\"pattern\":\"mkdir -p specs/001-explain-treasury/checklists\",\"action\":\"allow\"},{\"permission\":\"bash\",\"pattern\":\"cp .specify/templates/spec-template.md specs/001-explain-treasury/spec.md\",\"action\":\"allow\"},{\"permission\":\"bash\",\"pattern\":\"python3 .specify/scripts/python/check_prerequisites.py --json --paths-only\",\"action\":\"allow\"}]",
+          "time": {
+            "start": 1792667153357,
+            "end": 1792667153362
+          }
+        },
+        "id": "prt_16349b41a001useGkH8druSFFo",
+        "sessionID": "ses_e9cc44d15ffewxo9hTP3f5v23l",
+        "messageID": "msg_163492cbd001Z7To6ymoBfJ8Jx"
+      },
+      "ordering_time": 1792667153357
+    }
+  ]
+}

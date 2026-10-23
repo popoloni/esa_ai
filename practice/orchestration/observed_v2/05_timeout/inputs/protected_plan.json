@@ -1,0 +1,175 @@
+{
+  "plan_id": "PLAN-007/v1",
+  "chapter": "CH07",
+  "from_checkpoint": "CP06",
+  "intent_id": "INT-001",
+  "spec_id": "SPEC-004/v1",
+  "source_receipts": [
+    {
+      "source_id": "INT-001",
+      "path": "reader_side/intent/INT-001.md",
+      "sha256": "209ee2f218448d83178bd02fd5947cf68b021657a72b38e682e4a895fa102947"
+    },
+    {
+      "source_id": "SPEC-004/v1",
+      "path": "reader_side/reference_solution/specification.json",
+      "sha256": "a1b6fee6ea70785a2fe18f3bcdd7c51c8cdc11e5ecd5b05ddfe1df204f859454"
+    },
+    {
+      "source_id": "ADR-005",
+      "path": "reader_side/reference_solution/architecture_decision.json",
+      "sha256": "f7455cbfdc3eab169bd2cb7a6e29a2d9db19681f6bd9f0df48993828a799c0df"
+    },
+    {
+      "source_id": "CTX-006",
+      "path": "reader_side/reference_solution/context_packet.json",
+      "sha256": "14d82d2a80ed291d30d3bcc007f15fd9689b974273a889364acfd47672db7506"
+    }
+  ],
+  "authority": {
+    "routing_threshold_eur": 5000,
+    "payment_approval_allowed": false,
+    "architecture_decision": "ADR-005",
+    "architecture_status": "PROPOSED_FOR_HUMAN_ARCHITECTURE_REVIEW",
+    "release_authorized": false
+  },
+  "selection": {
+    "execution_mode": "BOUNDED_SINGLE_WRITER",
+    "reason": "Only two independent read-only investigations; implementation waits for the architecture owner; extra writers bring no proved advantage."
+  },
+  "budgets": {
+    "max_concurrent_agents": 2,
+    "max_model_invocations": 6,
+    "max_retries_per_task": 1,
+    "max_elapsed_minutes": 45
+  },
+  "tasks": [
+    {
+      "id": "T07-01",
+      "title": "Check specified behavior and policy boundary",
+      "kind": "READ_ONLY_AGENT",
+      "assigned_to": "spec-investigator",
+      "depends_on": [],
+      "read_refs": [
+        "INT-001",
+        "SPEC-004/v1",
+        "ADR-005",
+        "CTX-006"
+      ],
+      "write_paths": [],
+      "state": "READY",
+      "expected_output": "Source-qualified specification-to-case inventory",
+      "max_attempts": 1
+    },
+    {
+      "id": "T07-02",
+      "title": "Review proposed design alternatives",
+      "kind": "READ_ONLY_AGENT",
+      "assigned_to": "architecture-investigator",
+      "depends_on": [],
+      "read_refs": [
+        "INT-001",
+        "SPEC-004/v1",
+        "ADR-005",
+        "CTX-006"
+      ],
+      "write_paths": [],
+      "state": "READY",
+      "expected_output": "Risks and unresolved architecture questions",
+      "max_attempts": 1
+    },
+    {
+      "id": "T07-03",
+      "title": "Accept or revise ADR-005",
+      "kind": "HUMAN_DECISION",
+      "assigned_to": "human-technical-owner",
+      "depends_on": [
+        "T07-01",
+        "T07-02"
+      ],
+      "read_refs": [
+        "INT-001",
+        "SPEC-004/v1",
+        "ADR-005",
+        "CTX-006"
+      ],
+      "write_paths": [],
+      "state": "PENDING_HUMAN",
+      "expected_output": "Explicit signed decision or documented rejection",
+      "max_attempts": 1
+    },
+    {
+      "id": "T07-04",
+      "title": "Implement only authorized explanation adapter change",
+      "kind": "CODING_AGENT",
+      "assigned_to": "bounded-coding-agent",
+      "depends_on": [
+        "T07-03"
+      ],
+      "read_refs": [
+        "INT-001",
+        "SPEC-004/v1",
+        "ADR-005",
+        "CTX-006"
+      ],
+      "write_paths": [
+        "src/treasury/architecture/direct.py"
+      ],
+      "state": "BLOCKED",
+      "expected_output": "Inspectable diff and candidate revision",
+      "max_attempts": 1
+    },
+    {
+      "id": "T07-05",
+      "title": "Independently review selected behavior",
+      "kind": "READ_ONLY_REVIEWER",
+      "assigned_to": "independent-reviewer",
+      "depends_on": [
+        "T07-04"
+      ],
+      "read_refs": [
+        "INT-001",
+        "SPEC-004/v1",
+        "ADR-005",
+        "CTX-006"
+      ],
+      "write_paths": [],
+      "state": "BLOCKED",
+      "expected_output": "Owner-run independent test log and review verdict",
+      "max_attempts": 1
+    },
+    {
+      "id": "T07-06",
+      "title": "Accept or reject release",
+      "kind": "HUMAN_DECISION",
+      "assigned_to": "human-release-owner",
+      "depends_on": [
+        "T07-05"
+      ],
+      "read_refs": [
+        "INT-001",
+        "SPEC-004/v1",
+        "ADR-005",
+        "CTX-006"
+      ],
+      "write_paths": [],
+      "state": "PENDING_HUMAN",
+      "expected_output": "Explicit release decision with evidence and rollback owner",
+      "max_attempts": 1
+    }
+  ],
+  "parallel_read_only_task_ids": [
+    "T07-01",
+    "T07-02"
+  ],
+  "worktree_policy": {
+    "mandatory": false,
+    "recommendation": "Separate worktrees only for truly independent writable branches; this chapter authorizes no parallel writers.",
+    "shared_state_review_required": true
+  },
+  "acceptance": {
+    "maker_may_edit_reader_oracle": false,
+    "makers_may_approve_own_work": false,
+    "human_decision_required_before_write": true
+  }
+}

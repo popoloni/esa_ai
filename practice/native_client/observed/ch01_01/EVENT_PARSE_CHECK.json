@@ -1,0 +1,18 @@
+{
+  "recorded_at_utc": "2026-10-22T06:21:11.877590+00:00",
+  "attempts": [
+    {
+      "attempt": "attempt_01",
+      "valid_events": 7,
+      "invalid_lines": [],
+      "raw_sha256": "aaec2caf6ad807d5887089276153408c6d44761234c8c7d077b411f7dd4e08d0"
+    },
+    {
+      "attempt": "attempt_02",
+      "valid_events": 7,
+      "invalid_lines": [],
+      "raw_sha256": "ca3804715a867bc6952b5eb2618d818c7b6ef127da63c7cfc7a5c9abe088bbb9"
+    }
+  ],
+  "scope": "Parsing and hashes do not authenticate events."
+}

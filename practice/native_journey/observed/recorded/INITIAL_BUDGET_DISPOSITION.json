@@ -1,0 +1,19 @@
+{
+  "schema": "esa-native-budget-disposition/v1",
+  "at_utc": "2026-10-22T17:46:43.532625+00:00",
+  "status": "OPEN_PARTIAL_AT_DECLARED_ATTEMPT_LIMIT",
+  "maximum_invocations": 4,
+  "actual_invocations": 4,
+  "maximum_client_wall_seconds": 2700,
+  "actual_client_wall_seconds": 1274.4019249870034,
+  "actual_time_limit_exceeded": false,
+  "remaining_gap": "Native final cleanup did not run a fresh check afterward. Its handoff reused a prior PASS; no fresh native check is claimed for the final bytes.",
+  "completed": [
+    "Useful native-written spec.md and plan.md",
+    "CSV code authored through actual native edits",
+    "Native PASS_SELECTED_CONTRACT before last dead-code cleanup",
+    "Final dead-code cleanup in actual native tools",
+    "Separate independent final verification"
+  ],
+  "future_work": "Any separately authorized bounded continuation must preserve this original protocol, all failures, and this OPEN disposition. No fifth invocation has been made under this initial budget."
+}

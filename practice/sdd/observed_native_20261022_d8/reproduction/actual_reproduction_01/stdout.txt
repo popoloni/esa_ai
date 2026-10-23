@@ -1,0 +1,28 @@
+{
+  "status": "PREPARED_DIAGNOSTICS_PASS_NO_INFERENCE",
+  "checks": {
+    "version_is_1_19_3": true,
+    "native_specify_discovered": true,
+    "native_clarify_discovered": true,
+    "full_upstream_commands_preserved": true,
+    "no_injected_command_override": true,
+    "only_local_provider_enabled": true,
+    "explicit_provider_timeout": true,
+    "explicit_header_timeout": true,
+    "explicit_schema_metadata": true,
+    "declared_model_limits": true,
+    "local_small_model": true,
+    "declared_temperature_capability": true,
+    "read_rules_only_generated_outputs": true,
+    "bash_enabled": true,
+    "bounded_read_enabled_for_artifact_review": true,
+    "edit_enabled": true,
+    "write_enabled": true,
+    "steps_12": true,
+    "all_prepared_files_unchanged": true,
+    "configuration_bytes_stable": true,
+    "no_feature_artifacts_created": true
+  },
+  "diagnostic_project_added_files": [],
+  "notes": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/portable_helper_adoption/actual_reproduction_01/preparation/CONFIGURATION_NOTES.json"
+}

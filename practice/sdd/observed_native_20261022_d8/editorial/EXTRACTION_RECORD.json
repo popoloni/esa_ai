@@ -1,0 +1,68 @@
+{
+  "created_at_utc": "2026-10-22T12:24:54.019960+00:00",
+  "status": "EDITORIAL_EXTRACTION_AND_RELOCATION_FROM_ACTUAL_NATIVE_RESPONSE",
+  "author": "/root/mcp_sdd (AI editorial preparation)",
+  "raw_source": {
+    "path": "../raw/FINAL_NATIVE_RESPONSE.md",
+    "bytes": 5530,
+    "sha256": "0b8ce1854906b37eb2c0249e97a7e0d5dc1ce3e2597b6289c9a54fb6eacbec77"
+  },
+  "reader_copy": {
+    "path": "reader_specification.md",
+    "bytes": 3416,
+    "sha256": "10617cc252747b8ec366856111f62a72bee67db76462e927a234b334500e4d3b"
+  },
+  "diff": {
+    "path": "EXTRACTION.diff",
+    "sha256": "b1ff8a45a4218eccbfc25cabc9102f67020585362ed72cc4b6e470a4f1d6b1df"
+  },
+  "operations": [
+    {
+      "kind": "remove_operational_input_block",
+      "original_character_span": [
+        129,
+        2231
+      ],
+      "scope": "Remove the copied operator/project/path/read-guard instructions in the Input field, retaining its substantive authority sentences separately below."
+    },
+    {
+      "kind": "relocate_exact_native_authority_sentences",
+      "native_text": "SRC-POL-001/BR-001/v1 governs; ticket/wiki cannot change it. Routing never authorizes payment.",
+      "editorial_label": "Source authority",
+      "new_semantic_content_supplied": false
+    },
+    {
+      "kind": "delete_false_completion_assertion",
+      "exact_removed_text": " The three artifacts are concise, aiming for at most 1,800 tokens of combined content without omitting fixed requirements or cases."
+    },
+    {
+      "kind": "terminal_newline",
+      "detail": "Add one final newline for the standalone Markdown reader file."
+    }
+  ],
+  "checks": {
+    "raw_native_response_bytes_unchanged": true,
+    "native_project_file_retained_separately": true,
+    "all_five_requirement_ids_retained": true,
+    "all_eight_scenario_rows_verbatim": true,
+    "all_three_actual_questions_verbatim": true,
+    "exact_authority_sentences_relocated": true,
+    "requirements_and_remaining_native_body_unchanged": true,
+    "false_three_artifacts_assertion_removed": true,
+    "operational_input_block_removed": true
+  },
+  "attribution_limits": [
+    "This is an editorially arranged reader copy of actual native response text, not the native-persisted spec.md.",
+    "The actual native file contains only the rejected header/Input first write and remains unchanged in the raw packet.",
+    "No new requirement, scenario value, owner answer, ratification or approval was supplied.",
+    "All three owner questions remain unanswered; benefit remains HYPOTHESIS_NOT_VALIDATED; the constitution remains unratified.",
+    "No interactive owner dialogue or separate speckit.clarify command is claimed.",
+    "No implementation readiness, successful creation of all three intended files, human acceptance or paired framework comparison is claimed."
+  ],
+  "tracked_issues": [
+    "D8-NATIVE-SPEC-PROMPT-ECHO",
+    "D8-NATIVE-RESPONSE-PERSISTENCE-CLAIM"
+  ],
+  "native_model_call": false,
+  "native_project_write": false
+}

@@ -1,0 +1,271 @@
+--- CP03/companion/practice/csv_export/README.md
++++ d5/companion/practice/csv_export/README.md
+@@ -5,7 +5,8 @@
+ feature adds a CSV presentation after that boundary and preserves JSON.
+ 
+ The starter spans selection, API presentation, a command-line demonstration and
+-synthetic data. `CURRENT_CONTRACT.md` is the task authority. The archived note
++synthetic data. `starter/CURRENT_CONTRACT.md` is the task authority; after copying,
++read `CURRENT_CONTRACT.md` inside your new attempt folder. The archived note
+ describes an obsolete all-row prototype and is deliberately not current scope.
+ This lets you practise finding a dependency and resolving stale context before
+ changing a file. Authentication and deployment remain outside the local example.
+@@ -17,11 +18,12 @@
+ 
+ ```bash
+ cp -R practice/csv_export/starter ../csv_attempt_01
++cat ../csv_attempt_01/CURRENT_CONTRACT.md
+ python3 ../csv_attempt_01/demo.py --format json --actor alice --status open
+ python3 ../csv_attempt_01/demo.py --format csv --actor alice --status open
+ ```
+ 
+-The second command succeeds; the CSV command raises `NotImplementedError`.
++The JSON demonstration succeeds; the CSV command raises `NotImplementedError`.
+ Read the current contract, locate `selected_orders` and inspect its call site.
+ Only `api.py` and an optional new `presenter.py` are editable. Implement the
+ feature yourself or give that scope to your available coding agent. Retain its
+--- CP03/manuscript/chapters/chapter07.tex
++++ d5/manuscript/chapters/chapter07.tex
+@@ -224,17 +224,13 @@
+ 
+ The inputs are the intent, the reference behavior specification, the proposed design record and the context packet from Chapter~6. The gate compares their recorded SHA-256 values. A \emph{digest} is a fingerprint computed from a file's bytes: matching the saved fingerprint establishes that this is the saved version. It does not establish who approved the content. We need the source's meaning and status as well as its identity.
+ 
+-Run the commands below in order. The first checks the supplied teaching infrastructure. The second checks your current planning files and initially reports failures. The third explicitly selects the protected worked example, allowing you to see the shape of a valid pending plan without overwriting your files.
++Run the two commands below before editing. The first checks the supplied teaching infrastructure. The second checks your current planning files and initially reports failures. Keep that first result and explain one finding in your own words before attempting a repair. The worked-example comparison comes after your attempt and handoff.
+ 
+ \Needspace{10\baselineskip}
+ \begin{lstlisting}[caption={Run the owner-controlled CP07 checks from the companion directory.}]
+ python3 reader_side/tools/run_checks.py
+ python3 reader_side/tools/planning_gate.py
+ # The starter plan is intentionally unsafe: expected FAIL.
+-python3 reader_side/tools/planning_gate.py \
+-  --plan reader_side/reference_solution/v2/delegation_plan.json \
+-  --handoff reader_side/reference_solution/v2/delegation_handoff.json
+-# The reference plan is a permissible *pending* state: expected PASS.
+ \end{lstlisting}
+ 
+ Use \texttt{python3 reader\_side/tools/run\_checks.py} for the current shared result and \texttt{planning\_gate.py} for the plan you selected. Expect the unsafe starter to fail and an accurately pending plan to pass its planning checks. That pass means the dependencies and boundaries are represented correctly; it does not execute an agent or supply the missing owner decisions.
+@@ -273,6 +269,17 @@
+ The field-by-field guide is \path{reader_side/schemas/REVIEW_SCHEMAS_V2.md}. Compare your edits with the worked pair only after explaining why each pending decision must survive the handoff.
+ \end{practicebox}
+ 
++\subsection*{Compare the worked example after your attempt}
++
++Retain your edited pair, the gate output and a handoff explaining any unresolved decisions before opening the worked example. Then run the following command. It selects the protected reference pair without overwriting your candidates. In a reader observation session, record that this comparison is new solution exposure.
++
++\begin{lstlisting}[caption={Inspect a permissible pending plan after retaining your attempt.}]
++python3 reader_side/tools/planning_gate.py \
++  --plan reader_side/reference_solution/v2/delegation_plan.json \
++  --handoff reader_side/reference_solution/v2/delegation_handoff.json
++# The reference plan is a permissible *pending* state: expected PASS.
++\end{lstlisting}
++
+ The reference ends with T07-03 \texttt{PENDING\_HUMAN}, T07-04 and T07-05 \texttt{BLOCKED}, and a separate release decision still required for T07-06. The planning check can pass in this state because it checks whether the plan represents the situation accurately. It does not require every task to be complete.
+ 
+ \section{Continue after the owners decide}\label{sec:ch7-accepted-continuation}
+--- CP03/companion/README.md
++++ d5/companion/README.md
+@@ -1,7 +1,7 @@
+ # One companion for Chapters 1–14
+ 
+ This is the cumulative laboratory for *Engineering Software with Agentic AI*,
+-edition `2026.10.21-d4`. Run commands from the directory containing
++edition `2026.10.21-d5`. Run commands from the directory containing
+ `reader_start.py`, called `companion/` in the complete author package. Keep the
+ extracted release unchanged and create separate study copies.
+ 
+@@ -38,10 +38,14 @@
+ ## Choose your chapter and starting state
+ 
+ ```bash
+-python3 reader_start.py doctor
+-python3 reader_start.py show 1
+-python3 reader_start.py new 1 --destination ../my_treasury_lab
+-```
++python3 -B reader_start.py doctor
++python3 -B reader_start.py show 1
++python3 -B reader_start.py new 1 --destination ../my_treasury_lab
++```
++
++Use `-B` when inspecting the extracted release so Python does not create import
++bytecode caches there. The commands above leave authored input files unchanged;
++your separate study copy is where exercise edits and generated evidence belong.
+ 
+ `show N` displays the input state, prerequisite, candidate/reference commands,
+ editable paths, expected starter result and pending decisions for every chapter.
+@@ -67,6 +71,8 @@
+ | `practice/mcp_cli/` | Pinned official SDK and standard-library CLI on one read-only policy task |
+ | `practice/sdd/` | Fixed-format fidelity comparison, fresh Spec Kit scaffold and actual externally dispatched generation/review |
+ | `practice/production_controls/` | Representative compatibility checks and production-control decisions |
++| `practice/workflow_cost/` | Prospective activity, usage and decision records with overlap and unknown-value checks |
++| `validation/NATIVE_HOST_COLLECTION.md` | Stepwise native-client evidence collection; actual named-host integration remains unobserved |
+ | `practice/team_operations/` | Team agreement, review capacity, onboarding, experiment and measurement sheets |
+ 
+ Read the origin and limitations of each receipt. The historical CP01 ChatGPT
+--- CP03/README.md
++++ d5/README.md
+@@ -1,12 +1,14 @@
+ # Engineering Software with Agentic AI
+ 
+-Edition `2026.10.21-d4` is the current author draft and companion. It incorporates
++Edition `2026.10.21-d5` is the current author draft and companion. It incorporates
+ the competitive-review actions, with their resolutions, evidence and remaining
+-external observations recorded in `revision_d4/registers/ACTION_STATUS.json`.
++external observations recorded in `revision_d5/registers/ACTION_STATUS.json`.
++The continuation starts from verified CP03. Earlier d4 observations keep their
++original identities under `revision_d4/`; the new register retains their history.
+ 
+ ## Read the book
+ 
+-Open `Engineering_Software_with_Agentic_AI_Draft_20261021_d4.pdf`. The book follows
++Open `Engineering_Software_with_Agentic_AI_Draft_20261021_d5.pdf`. The book follows
+ one Treasury case through four Parts and fourteen chapters:
+ 
+ | Part | Chapters | Reader's question |
+@@ -30,7 +32,7 @@
+ ```
+ 
+ The build requires XeLaTeX, latexmk and Biber. The author layout is 6 by 9 inches.
+-`proposal/` contains the current d4 proposal and publisher material. Historical
++`proposal/` contains the current d5 proposal and publisher material. Historical
+ proposal documents and release metadata are under `history/d3/`.
+ 
+ ## Start with a small, complete workflow
+@@ -38,9 +40,9 @@
+ Change into `companion/`, then run:
+ 
+ ```bash
+-python3 reader_start.py doctor
+-python3 reader_start.py show 1
+-python3 reader_start.py new 1 --destination ../my_treasury_lab
++python3 -B reader_start.py doctor
++python3 -B reader_start.py show 1
++python3 -B reader_start.py new 1 --destination ../my_treasury_lab
+ ```
+ 
+ Use `navigation/FIRST_WEEK.md` for the short route: understand the request, make
+@@ -69,6 +71,8 @@
+ | Follow an approved fictional lifecycle | `practice/lifecycle/README.md` |
+ | Run property checks and a static scan | `practice/verification_tools/README.md` |
+ | Inspect a small actual AI review | `practice/ai_review/observed/critic_01/` |
++| Record a whole workflow prospectively | `practice/workflow_cost/README.md` |
++| Prepare a native-client observation | `validation/NATIVE_HOST_COLLECTION.md` |
+ | Improve team practice | `practice/team_operations/README.md` |
+ 
+ `companion/navigation/CHAPTER_ROUTES.md` explains the starting state, output and
+@@ -96,7 +100,7 @@
+ directory:
+ 
+ ```bash
+-python3 scripts/validate_release.py --output ../esa_d4_release_check
++python3 scripts/validate_release.py --output ../esa_d5_release_check
+ ```
+ 
+ `--quick` omits the longer chapter scenario validators. The standalone companion
+@@ -105,7 +109,7 @@
+ when an input changes and a receipt becomes stale. Keep the earlier receipt and
+ create a new reviewed result.
+ 
+-`revision_d4/` contains the action register, checkpoints, exact change records and
++`revision_d5/` contains the action register, checkpoints, exact change records and
+ validation evidence for this edition. The final release report identifies which
+ checks were rerun on the packaged sources. Earlier reports keep their original
+ identities and scopes. A passing local check does not supply human acceptance,
+--- CP03/README_COMPANION.txt
++++ d5/README_COMPANION.txt
+@@ -1,5 +1,5 @@
+ ENGINEERING SOFTWARE WITH AGENTIC AI
+-Companion laboratory | Edition 2026.10.21-d4
++Companion laboratory | Edition 2026.10.21-d5
+ 
+ START HERE
+ Extract the release into a new directory. Change into the directory containing
+@@ -7,9 +7,9 @@
+ run from that directory. Keep the delivered release unchanged and create a
+ separate study copy:
+ 
+-  python3 reader_start.py doctor
+-  python3 reader_start.py show 1
+-  python3 reader_start.py new 1 --destination ../my_treasury_lab
++  python3 -B reader_start.py doctor
++  python3 -B reader_start.py show 1
++  python3 -B reader_start.py new 1 --destination ../my_treasury_lab
+ 
+ Read README.md and navigation/FIRST_WEEK.md. Continue Chapters 1-14 in the same
+ study copy. Do not run both reader_start.py new and prepare_chapter01.py for the
+--- CP03/companion/README_COMPANION.txt
++++ d5/companion/README_COMPANION.txt
+@@ -1,5 +1,5 @@
+ ENGINEERING SOFTWARE WITH AGENTIC AI
+-Companion laboratory | Edition 2026.10.21-d4
++Companion laboratory | Edition 2026.10.21-d5
+ 
+ START HERE
+ Extract the release into a new directory. Change into the directory containing
+@@ -7,9 +7,9 @@
+ run from that directory. Keep the delivered release unchanged and create a
+ separate study copy:
+ 
+-  python3 reader_start.py doctor
+-  python3 reader_start.py show 1
+-  python3 reader_start.py new 1 --destination ../my_treasury_lab
++  python3 -B reader_start.py doctor
++  python3 -B reader_start.py show 1
++  python3 -B reader_start.py new 1 --destination ../my_treasury_lab
+ 
+ Read README.md and navigation/FIRST_WEEK.md. Continue Chapters 1-14 in the same
+ study copy. Do not run both reader_start.py new and prepare_chapter01.py for the
+--- CP03/companion/navigation/FIRST_WEEK.md
++++ d5/companion/navigation/FIRST_WEEK.md
+@@ -5,8 +5,8 @@
+ review the result and remaining uncertainty. Begin with Chapter 1's study copy;
+ do not assemble all fourteen chapters' machinery before repairing one function.
+ 
+-1. **First session: one repair.** `python3 reader_start.py doctor`, then
+-   `python3 reader_start.py new 1 --destination ../esa_first_week_01` from the
++1. **First session: one repair.** `python3 -B reader_start.py doctor`, then
++   `python3 -B reader_start.py new 1 --destination ../esa_first_week_01` from the
+    unmodified release. Continue in that copy. Use `show 1` for the reproducer,
+    permitted edit and check command. Explain equality at EUR 5,000 before editing.
+ 2. **Next session: make the work repeatable.** Read Chapter 2's task/context/tool
+--- CP03/companion/navigation/RECOVERY.md
++++ d5/companion/navigation/RECOVERY.md
+@@ -1,6 +1,6 @@
+ # Choose a starting state and recover safely
+ 
+-Run `python3 reader_start.py doctor` and `python3 reader_start.py show N` from
++Run `python3 -B reader_start.py doctor` and `python3 -B reader_start.py show N` from
+ the companion. The card describes the supplied state; it does not inspect and
+ accept every current candidate. Dedicated gates establish the narrower facts
+ named in their receipts.
+@@ -10,7 +10,7 @@
+ From the unchanged delivered companion, run:
+ 
+ ```bash
+-python3 reader_start.py new 1 --destination ../my_treasury_lab
++python3 -B reader_start.py new 1 --destination ../my_treasury_lab
+ ```
+ 
+ This copies the complete lab and installs only Chapter 1's known faulty router.
+@@ -78,7 +78,7 @@
+ Those reading and worksheet activities do not require a CP13 session.
+ 
+ For the cumulative executable Chapter 14 lab, retain matching synthetic CP12
+-incident and CP13 transfer sessions. `python3 reader_start.py show 14` lists the
++incident and CP13 transfer sessions. `python3 -B reader_start.py show 14` lists the
+ candidate prerequisites and a complete worked-example command chain. The
+ worked-example route stays separate from acceptance of your current candidates.
+ The ordinary synthetic chain requires no 24-hour wait. The separate delayed
+--- CP03/companion/navigation/CHAPTER_ROUTES.md
++++ d5/companion/navigation/CHAPTER_ROUTES.md
+@@ -31,8 +31,8 @@
+ | Goal | Route | Required evidence |
+ | --- | --- | --- |
+ | Improve ordinary team practice and discuss outcomes | Chapter 13 operating agreement, pairing and experiment discussion, then Chapter 14 concepts, dashboard and cost worksheets | No CP13 session required for this reading and worksheet route |
+-| Continue the cumulative executable lab | Use `python3 reader_start.py show 13`, then `show 14`, in the existing study copy | Matching synthetic CP12 incident and CP13 transfer sessions; retain their exact parent identities |
+-| Inspect the complete worked example | Use the reference command chain printed by `python3 reader_start.py show 14` in a separate copy | New reference receipts; these do not accept or repair the cumulative candidate |
++| Continue the cumulative executable lab | Use `python3 -B reader_start.py show 13`, then `show 14`, in the existing study copy | Matching synthetic CP12 incident and CP13 transfer sessions; retain their exact parent identities |
++| Inspect the complete worked example | Use the reference command chain printed by `python3 -B reader_start.py show 14` in a separate copy | New reference receipts; these do not accept or repair the cumulative candidate |
+ | Study delayed human learning | Read `practice/team_operations/Advanced_Learning_Protocol.pdf` and `reader_side/learning/PROTOCOL.md` before recruiting or exposing material | Separate real participants, timing conditions and independent reviewers |
+ 
+ The ordinary synthetic CP12/CP13/CP14 chain has no 24-hour wait. That delay belongs

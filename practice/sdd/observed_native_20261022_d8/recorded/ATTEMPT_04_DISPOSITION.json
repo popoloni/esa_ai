@@ -1,0 +1,76 @@
+{
+  "schema": "esa-d8-native-attempt-disposition/v1",
+  "recorded_at_utc": "2026-10-22T12:19:31.513575+00:00",
+  "attempt": "attempt_04",
+  "status": "USEFUL_NATIVE_RESPONSE_AND_DOCUMENTED_CLARIFICATION_STOP_INDEPENDENTLY_REVIEWED",
+  "original_R08_disposition": "CLOSED_VERIFIED",
+  "session_id": "ses_e9cc44d15ffewxo9hTP3f5v23l",
+  "native_response": {
+    "path": "revision_d8/evidence/native_sdd_01/terminal_collection_04/FIRST_ASSISTANT_TEXT.txt",
+    "sha256": "0b8ce1854906b37eb2c0249e97a7e0d5dc1ce3e2597b6289c9a54fb6eacbec77",
+    "bytes": 5530,
+    "native_project_file": false
+  },
+  "actual_native_spec": {
+    "path": "revision_d8/evidence/native_sdd_01/terminal_collection_04/final_project_tree/specs/001-explain-treasury/spec.md",
+    "sha256": "04b6177aa7cd2a248a86ef418f8faeffe3c07cbf64651951136c20559402bfd1",
+    "bytes": 2230,
+    "disposition": "REJECTED_FIRST_WRITE_RETAINED"
+  },
+  "independent_review": {
+    "path": "revision_d8/notes/R08_ATTEMPT_04_INDEPENDENT_REVIEW.json",
+    "sha256": "54af132187e9aa8e9192b2297e11393ea051606adf7ffd75c23863d7ca8da854"
+  },
+  "root_verification": {
+    "collection_entries_hash_size_verified": 64,
+    "all_15_parent_message_objects_unchanged": true,
+    "response_matches_native_stdout_extraction": true,
+    "actual_file_matches_rejected_first_write": true
+  },
+  "clarification_disposition": {
+    "judgment": "GENUINE_DOCUMENTED_UNANSWERED_QUESTIONS_STOP_AT_THE_END_OF_THE_NATIVE_RESPONSE",
+    "direct_evidence": [
+      "The native final response itself presents all three actual owner questions at lines58-60.",
+      "Line70 states three unanswered questions, and line72 explicitly says they remain unanswered.",
+      "Draft, unratified constitution and unvalidated benefit statuses remain visible.",
+      "The native session records finish=stop and the capture exits0. No further native tool, planning or implementation action follows in this completed session export."
+    ],
+    "inference": "Taken together, the actual question presentation, explicit unresolved status and normal completed stop support the bounded clarification disposition required by the original protocol. This is not inferred from a timeout, input-only question list or future promise.",
+    "limits": [
+      "The response does not literally say I am waiting for your answers. Its explicit unanswered-question status and normal stop establish the bounded documented state; no additional formula of words is imposed as a criterion.",
+      "No separate speckit.clarify invocation or interactive answered clarification dialogue is claimed.",
+      "The three questions remain open. Human requirements acceptance and implementation remain unperformed."
+    ],
+    "another_native_invocation_required_by_original_R08": false
+  },
+  "preserved_defects": [
+    {
+      "id": "REVIEW04-F01",
+      "finding": "Useful response content was not persisted to the native project specification.",
+      "evidence": "Final project spec.md is still the exact2230-byte rejected first write; no second write/edit event exists.",
+      "disposition": "Keep the persistence failure explicit. Do not replace its evidence or call an editorial extraction a successful native write."
+    },
+    {
+      "id": "REVIEW04-F02",
+      "finding": "The final response still includes the copied operator-input block and duplicated metadata.",
+      "evidence": "Lines9-16 repeat execution instructions; lines64/68 repeat unratified constitution. Historical no-output-at-start text is quoted source context, not a fresh state observation.",
+      "disposition": "Retain raw response intact; any reader excerpt may omit instruction boilerplate only with explicit editorial attribution and source mapping."
+    },
+    {
+      "id": "REVIEW04-F03",
+      "finding": "The final sentence incorrectly claims three concise artifacts.",
+      "evidence": "Line72 says The three artifacts are concise, while the final tree contains only the rejected spec; checklist and feature metadata are absent.",
+      "disposition": "Reject this unsupported completion claim. Do not quote it as successful generation/persistence of three files."
+    },
+    {
+      "id": "REVIEW04-F04",
+      "finding": "Planned checklist and feature metadata were not created.",
+      "evidence": "Neither path exists in the verified terminal50-file snapshot.",
+      "disposition": "Retain as unmet execution-plan outputs. The original R08 criteria do not require exactly these three files; they do not invalidate the observed useful response plus documented clarification stop."
+    }
+  ],
+  "fifth_native_invocation": "NOT_REQUIRED_BY_ORIGINAL_CRITERIA_NOT_RUN",
+  "server_lifecycle": "revision_d8/evidence/native_server_01/lifecycle_04/FINISH.json",
+  "server_stopped": true,
+  "integration": "Current book source updated; portable editorial reader artifact and final release verification pending."
+}

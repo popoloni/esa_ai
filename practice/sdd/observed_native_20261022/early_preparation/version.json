@@ -1,0 +1,26 @@
+{
+  "argv": [
+    "/workspace/scratch/72d789d25fef/runtime_d7/sdd_venv/bin/specify",
+    "version"
+  ],
+  "cwd": "/workspace/scratch/72d789d25fef/runtime_d7",
+  "env_keys": [
+    "PATH",
+    "LANG",
+    "TZ",
+    "CI",
+    "DO_NOT_TRACK",
+    "GIT_CONFIG_NOSYSTEM",
+    "GIT_CONFIG_GLOBAL",
+    "PYTHONDONTWRITEBYTECODE",
+    "HTTP_PROXY",
+    "HTTPS_PROXY",
+    "NO_PROXY",
+    "SSL_CERT_FILE",
+    "REQUESTS_CA_BUNDLE"
+  ],
+  "started_at_utc": "2026-10-22T05:57:24.452979+00:00",
+  "finished_at_utc": "2026-10-22T05:57:25.369798+00:00",
+  "exit_code": 0,
+  "inference_requested": false
+}

@@ -1,0 +1,64 @@
+{
+  "decision_id": "ADR-005",
+  "version": "ADR-005/v1",
+  "status": "PROPOSED_FOR_HUMAN_ARCHITECTURE_REVIEW",
+  "specification_id": "SPEC-004/v1",
+  "specification_sha256": "a1b6fee6ea70785a2fe18f3bcdd7c51c8cdc11e5ecd5b05ddfe1df204f859454",
+  "discovery_id": "DISC-003/v1",
+  "policy_version": "BR-001/v1",
+  "decision_owner": "Technical Lead (synthetic scenario)",
+  "selected_design": "direct",
+  "alternatives": [
+    "direct",
+    "ports"
+  ],
+  "evidence": {
+    "shared_cases": 8,
+    "direct_case_results": "PASS_8_OF_8",
+    "ports_case_results": "PASS_8_OF_8",
+    "performance": "NOT_MEASURED",
+    "human_comprehension": "NOT_MEASURED",
+    "security_audit": "NOT_PERFORMED",
+    "implementation_release": "NOT_APPROVED"
+  },
+  "decision_drivers": [
+    "reuse_existing_routing_decision",
+    "separate_payment_authority",
+    "limit_alpha_surface",
+    "traceable_policy_version",
+    "reviewable_change"
+  ],
+  "strengths": {
+    "direct": [
+      "small_change_surface",
+      "straightforward_review"
+    ],
+    "ports": [
+      "isolated_fake_adapter",
+      "replaceable_routing_adapter"
+    ]
+  },
+  "risks": {
+    "direct": [
+      "direct_routing_import",
+      "future_presentation_change_may_cross_module"
+    ],
+    "ports": [
+      "more_types_and_indirection",
+      "premature_abstraction"
+    ]
+  },
+  "revisit_when": [
+    "second_distinct_routing_provider",
+    "need_multiple_consumers",
+    "measured_review_friction",
+    "substantive_policy_contract_change"
+  ],
+  "reversibility": "Replace presentation adapter while preserving SPEC-004 and independent scenario oracle; re-run the inherited and architecture tests.",
+  "unresolved_questions": [
+    "Will operators understand the wording?",
+    "Will future sources require a second routing port?",
+    "What architectural fitness threshold is justified by operational data?"
+  ],
+  "handoff": "Architecture candidate ready for human review; no build or production authorization."
+}

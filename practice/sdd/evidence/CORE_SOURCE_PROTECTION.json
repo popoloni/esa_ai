@@ -1,0 +1,24 @@
+{
+  "verified_at_utc": "2026-10-20T15:13:05.208186+00:00",
+  "comparison": "Current cumulative repo/ and reader_side/ files against revision/sources/BASELINE_FILES.json",
+  "files_checked": 201,
+  "changed_paths": [
+    "companion/reader_side/protected_sha256.json"
+  ],
+  "missing_paths": [],
+  "status": "PASS_WITH_DOCUMENTED_ROOT_MAINTENANCE",
+  "scope": "201 baseline-listed core files compared:200 unchanged; one protected manifest has only the separately documented root README maintenance entry changed. All shared CP04 source bytes and core behavior/candidates/oracles/scopes remain unchanged by this SDD work. Hash comparison does not enforce OS permissions.",
+  "unchanged_file_count": 200,
+  "authorized_exceptions": [
+    {
+      "path": "companion/reader_side/protected_sha256.json",
+      "changed_entries": [
+        "README.md"
+      ],
+      "owner": "root",
+      "authorization_record": "revision/reports/AUTHOR_MAINTENANCE.json",
+      "authorization_record_sha256": "f40d26bd41fa5bdc533cd34af95066a01d48b977fe61d93746d90f5bf52a55c7",
+      "scope": "Navigation README digest refreshed by root; no core candidate, policy, oracle or scope edited by SDD work."
+    }
+  ]
+}

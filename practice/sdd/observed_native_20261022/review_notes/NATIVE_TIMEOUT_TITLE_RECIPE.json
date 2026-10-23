@@ -1,0 +1,41 @@
+{
+  "finding_id": "D7-NATIVE-TIMEOUT-TITLE",
+  "status": "SOURCE_DIAGNOSED_AND_FUTURE_CONFIGURATION_VERIFIED",
+  "updated_at_utc": "2026-10-22T07:05:22.084302+00:00",
+  "issue": "Provider overall timeout did not govern the independent header deadline; unnamed first session also triggered a competing title model request.",
+  "actual_failed_observation": "revision_d7/evidence/sdd_native_02/compact_input_preparation/attempt_01/OUTCOME_REVIEW.json",
+  "primary_source": "companion/practice/native_client/setup/runtime_d7/diagnosis/README.md",
+  "source_behavior": {
+    "header_timeout_default_ms": 300000,
+    "chunk_timeout_default_ms": 300000,
+    "overall_timeout": "Separate optional AbortSignal; not a replacement for header timeout",
+    "title": "First real user/default-title session forks an automatic title model request; explicit session title prevents that condition."
+  },
+  "future_fixes": [
+    "All three native helpers set an explicit headerTimeout beside timeout.",
+    "SDD task supplies an explicit session title.",
+    "Observed original configurations remain unchanged."
+  ],
+  "helper_identities": {
+    "companion/practice/native_client/configure_chapter1.py": {
+      "sha256": "93b5d5abbb7a763755bda71e799661d6d7978c3ab41ef5eb381825e5a0d3e09d",
+      "ast_parse": "PASS",
+      "explicit_schema_literal": true,
+      "explicit_header_timeout": true
+    },
+    "companion/practice/native_client/configure_mcp.py": {
+      "sha256": "354e061af071a231f2e290ca76952c5e58e1d5199c4f1df7e8876968a8bfc6bc",
+      "ast_parse": "PASS",
+      "explicit_schema_literal": true,
+      "explicit_header_timeout": true
+    },
+    "companion/practice/native_client/configure_sdd.py": {
+      "sha256": "339360a6fc1a4ba53ee70343eaae645fc3e5bb8aeb90fecd2c290efec73679aa",
+      "ast_parse": "PASS",
+      "explicit_schema_literal": true,
+      "explicit_header_timeout": true
+    }
+  },
+  "actual_effective_verification": "revision_d7/evidence/sdd_native_recovery_01/CONFIGURATION_NOTES.json",
+  "scope_limit": "Recovery is in progress; diagnostic/configuration correctness is not successful native generation."
+}

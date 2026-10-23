@@ -1,0 +1,39 @@
+timestamp=2026-10-22T17:42:40.345Z level=INFO run=0b7fb399 message="creating instance" directory=/workspace/scratch/72d789d25fef/runtime_d9/native_csv_01
+timestamp=2026-10-22T17:42:40.347Z level=INFO run=0b7fb399 message=fromDirectory directory=/workspace/scratch/72d789d25fef/runtime_d9/native_csv_01
+timestamp=2026-10-22T17:42:40.410Z level=INFO run=0b7fb399 message=bootstrapping directory=/workspace/scratch/72d789d25fef/runtime_d9/native_csv_01
+timestamp=2026-10-22T17:42:40.425Z level=INFO run=0b7fb399 message=loading path=/workspace/scratch/72d789d25fef/runtime_d9/csv_client_01/config/opencode/config.json
+timestamp=2026-10-22T17:42:40.427Z level=INFO run=0b7fb399 message=loading path=/workspace/scratch/72d789d25fef/runtime_d9/csv_client_01/config/opencode/opencode.json
+timestamp=2026-10-22T17:42:40.427Z level=INFO run=0b7fb399 message=loading path=/workspace/scratch/72d789d25fef/runtime_d9/csv_client_01/config/opencode/opencode.jsonc
+timestamp=2026-10-22T17:42:40.428Z level=INFO run=0b7fb399 message=loading path=/workspace/scratch/72d789d25fef/revision_20261022_d9/Engineering_Software_with_Agentic_AI_20261022_d9/revision_d9/evidence/native_journey/continuation_04/OPENCODE_CONFIG.json
+timestamp=2026-10-22T17:42:40.439Z level=DEBUG run=0b7fb399 message="loaded custom config" path=/workspace/scratch/72d789d25fef/revision_20261022_d9/Engineering_Software_with_Agentic_AI_20261022_d9/revision_d9/evidence/native_journey/continuation_04/OPENCODE_CONFIG.json
+timestamp=2026-10-22T17:42:40.450Z level=DEBUG run=0b7fb399 message="loading config from OPENCODE_CONFIG_DIR" path=/workspace/scratch/72d789d25fef/runtime_d9/csv_client_01/empty-config
+timestamp=2026-10-22T17:42:40.473Z level=DEBUG run=0b7fb399 message="loading config from /workspace/scratch/72d789d25fef/runtime_d9/csv_client_01/empty-config/opencode.json"
+timestamp=2026-10-22T17:42:40.473Z level=INFO run=0b7fb399 message=loading path=/workspace/scratch/72d789d25fef/runtime_d9/csv_client_01/empty-config/opencode.json
+timestamp=2026-10-22T17:42:40.474Z level=DEBUG run=0b7fb399 message="loading config from /workspace/scratch/72d789d25fef/runtime_d9/csv_client_01/empty-config/opencode.jsonc"
+timestamp=2026-10-22T17:42:40.474Z level=INFO run=0b7fb399 message=loading path=/workspace/scratch/72d789d25fef/runtime_d9/csv_client_01/empty-config/opencode.jsonc
+timestamp=2026-10-22T17:42:40.759Z level=INFO run=0b7fb399 message="all LSPs are disabled"
+timestamp=2026-10-22T17:42:40.760Z level=INFO run=0b7fb399 message="all formatters are disabled"
+timestamp=2026-10-22T17:42:40.760Z level=INFO run=0b7fb399 message=init
+timestamp=2026-10-22T17:42:40.995Z level=INFO run=0b7fb399 message="event connected"
+timestamp=2026-10-22T17:42:41.038Z level=INFO run=0b7fb399 message=loop session.id=ses_e9b4f1083ffe4Bq2EWzFzmd2yh step=0
+timestamp=2026-10-22T17:42:41.769Z level=INFO run=0b7fb399 message="shell tool using shell" shell=/usr/bin/bash
+timestamp=2026-10-22T17:42:41.915Z level=INFO run=0b7fb399 message="watcher backend" directory=/workspace/scratch/72d789d25fef/runtime_d9/native_csv_01 platform=linux backend=inotify
+timestamp=2026-10-22T17:42:41.928Z level=INFO run=0b7fb399 message="project copy refresh started" projectID=global
+timestamp=2026-10-22T17:42:41.930Z level=INFO run=0b7fb399 message="project copy refresh done" projectID=global updated=[] removed=[]
+timestamp=2026-10-22T17:42:41.984Z level=INFO run=0b7fb399 message="booting location services" directory=/workspace/scratch/72d789d25fef/runtime_d9/native_csv_01 workspaceID=undefined
+timestamp=2026-10-22T17:42:42.420Z level=INFO run=0b7fb399 message=process session.id=ses_e9b4f1083ffe4Bq2EWzFzmd2yh messageID=msg_164b53d5d001yW1YPNamtHfOaI
+timestamp=2026-10-22T17:42:42.423Z level=INFO run=0b7fb399 message=stream providerID=esa-local modelID=esa-qwen3-4b session.id=ses_e9b4f1083ffe4Bq2EWzFzmd2yh small=false agent=esa-csv mode=primary
+timestamp=2026-10-22T17:42:42.433Z level=INFO run=0b7fb399 message="llm runtime selected" llm.runtime=ai-sdk llm.provider=esa-local llm.model=esa-qwen3-4b
+timestamp=2026-10-22T17:43:51.950Z level=WARN run=0b7fb399 message="background dependency install failed" dir=/workspace/scratch/72d789d25fef/runtime_d9/csv_client_01/config/opencode error="Cause([Fail(NpmInstallFailedError (cause: FetchError: request to https://registry.npmjs.org/@opencode-ai%2fplugin failed, reason: ECONNREFUSED))])"
+timestamp=2026-10-22T17:44:20.491Z level=WARN run=0b7fb399 message="background dependency install failed" dir=/workspace/scratch/72d789d25fef/runtime_d9/csv_client_01/empty-config error="Cause([Fail(NpmInstallFailedError (cause: FetchError: request to https://registry.npmjs.org/@opencode-ai%2fplugin failed, reason: Was there a typo in the url or port?))])"
+timestamp=2026-10-22T17:44:39.058Z level=INFO run=0b7fb399 message=evaluated permission=edit pattern=workspace/scratch/72d789d25fef/runtime_d9/native_csv_01/api.py action.permission=edit action.pattern=workspace/scratch/72d789d25fef/runtime_d9/native_csv_01/api.py action.action=allow
+timestamp=2026-10-22T17:44:39.071Z level=INFO run=0b7fb399 message=formatting file=/workspace/scratch/72d789d25fef/runtime_d9/native_csv_01/api.py
+timestamp=2026-10-22T17:44:39.162Z level=INFO run=0b7fb399 message="touching file" file=/workspace/scratch/72d789d25fef/runtime_d9/native_csv_01/api.py
+timestamp=2026-10-22T17:44:39.397Z level=INFO run=0b7fb399 message=loop session.id=ses_e9b4f1083ffe4Bq2EWzFzmd2yh step=1
+timestamp=2026-10-22T17:44:39.413Z level=INFO run=0b7fb399 message=process session.id=ses_e9b4f1083ffe4Bq2EWzFzmd2yh messageID=msg_164b708e7001LHiwDdVeQRBYHS
+timestamp=2026-10-22T17:44:39.414Z level=INFO run=0b7fb399 message=stream providerID=esa-local modelID=esa-qwen3-4b session.id=ses_e9b4f1083ffe4Bq2EWzFzmd2yh small=false agent=esa-csv mode=primary
+timestamp=2026-10-22T17:44:39.415Z level=INFO run=0b7fb399 message="llm runtime selected" llm.runtime=ai-sdk llm.provider=esa-local llm.model=esa-qwen3-4b
+timestamp=2026-10-22T17:44:59.763Z level=INFO run=0b7fb399 message=loop session.id=ses_e9b4f1083ffe4Bq2EWzFzmd2yh step=2
+timestamp=2026-10-22T17:44:59.766Z level=INFO run=0b7fb399 message="exiting loop" session.id=ses_e9b4f1083ffe4Bq2EWzFzmd2yh
+timestamp=2026-10-22T17:44:59.774Z level=INFO run=0b7fb399 message="disposing instance" directory=/workspace/scratch/72d789d25fef/runtime_d9/native_csv_01
+timestamp=2026-10-22T17:44:59.796Z level=INFO run=0b7fb399 message=loading path=/workspace/scratch/72d789d25fef/revision_20261022_d9/Engineering_Software_with_Agentic_AI_20261022_d9/revision_d9/evidence/native_journey/continuation_04/OPENCODE_CONFIG.json

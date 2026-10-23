@@ -1,0 +1,86 @@
+{
+  "schema": "prospective-cost-estimate/v1",
+  "status": "FILLED_SYNTHETIC_ESTIMATE",
+  "work_item_or_cohort": "ONE_ILLUSTRATIVE_HANDOFF",
+  "currency": "EUR",
+  "scope": "Prospective per-handoff work plus an illustrative allocated setup allowance; not the original CP14 observed-event ledger.",
+  "reporting_cutoff_or_horizon": "one planned handoff, no field interval observed",
+  "estimated_accepted_outcomes": 1,
+  "hours_and_rates": [
+    {
+      "activity": "initial_work",
+      "person_hours": "0.20",
+      "hourly_rate": "40.00",
+      "hours_evidence_class": "ESTIMATED",
+      "rate_source": "Author-selected teaching assumption, not salary research"
+    },
+    {
+      "activity": "review",
+      "person_hours": "0.35",
+      "hourly_rate": "50.00",
+      "hours_evidence_class": "ESTIMATED",
+      "rate_source": "Author-selected teaching assumption, not salary research"
+    },
+    {
+      "activity": "rework",
+      "person_hours": "0.30",
+      "hourly_rate": "40.00",
+      "hours_evidence_class": "ESTIMATED",
+      "rate_source": "Author-selected teaching assumption, not salary research"
+    },
+    {
+      "activity": "allocated_setup",
+      "person_hours": "0.50",
+      "hourly_rate": "40.00",
+      "hours_evidence_class": "ESTIMATED",
+      "rate_source": "Author-selected teaching assumption, not salary research"
+    }
+  ],
+  "charges": [
+    {
+      "category": "vendor",
+      "amount": "0.09",
+      "evidence_class": "ESTIMATED",
+      "source_or_allocation_rule": "Separate synthetic allowance, not vendor pricing or an invoice"
+    },
+    {
+      "category": "compute_or_ci",
+      "amount": "0.05",
+      "evidence_class": "ESTIMATED",
+      "source_or_allocation_rule": "Separate synthetic allowance, not vendor pricing or an invoice"
+    }
+  ],
+  "included_failures_and_abandonment": "Initial/review/rework allowances cover the assumed full attempt path, not only a final green run.",
+  "overlap_check": "Each person interval belongs to one activity; illustrative service charges are nonoverlapping.",
+  "excluded_costs_and_reason": [],
+  "decision_ceiling_per_outcome": "60.00",
+  "complete_estimate": "57.64",
+  "actual_human_hours": null,
+  "actual_billing": null,
+  "actual_accepted_outcomes": null,
+  "actual_field_cpa": null,
+  "meaning": "All hours, rates, charges, acceptance count and ceiling are assumptions. The original protected CP14 scenario remains EUR37.64; this separate worksheet adds EUR20 illustrative setup allocation. Actual field evidence remains null.",
+  "sensitivity": [
+    {
+      "case": "base",
+      "assumption": "one planned acceptance",
+      "estimated_cost": "57.64",
+      "estimated_cpa": "57.64",
+      "meaning": "Within chosen EUR60 scenario ceiling; real recommendation still collect evidence."
+    },
+    {
+      "case": "more_rework",
+      "assumption": "add 0.50 person-hours at EUR40/h",
+      "estimated_cost": "77.64",
+      "estimated_cpa": "77.64",
+      "meaning": "Above the chosen scenario ceiling."
+    },
+    {
+      "case": "no_acceptance",
+      "assumption": "same incurred scenario cost, zero accepted outcomes",
+      "estimated_cost": "57.64",
+      "estimated_cpa": null,
+      "status": "UNDEFINED_ZERO_DENOMINATOR"
+    }
+  ]
+}

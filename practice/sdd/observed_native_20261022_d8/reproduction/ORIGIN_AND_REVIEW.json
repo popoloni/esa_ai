@@ -1,0 +1,52 @@
+{
+  "schema": "esa-portable-native-helper-adoption/v1",
+  "at_utc": "2026-10-22T10:51:45.289961+00:00",
+  "status": "SOURCE_ADOPTED_REVIEWED_NO_INFERENCE",
+  "files": {
+    "configure_sdd_d8.py": {
+      "source": "revision_d8/evidence/native_sdd_01/preparation/configure_sdd_d8.py",
+      "source_sha256": "ed11b67002730e84aa4a945d504929c3d49f78d34407a17cfb1bb80a0eb932da",
+      "portable": "companion/practice/native_client/configure_sdd_d8.py",
+      "portable_sha256": "2bb9ce79248c0ece53ce474f5120a044d8a2f6c5d2db1930cdd3333872ec7a41",
+      "byte_identical": false
+    },
+    "run_local_model_d8.py": {
+      "source": "revision_d8/evidence/native_server_01/preparation/run_local_model_d8.py",
+      "source_sha256": "c9bc0eb8e64725c7b1ba92687cdfcf4ffd87c5648c0c3abb2e08d4854c3c5b4f",
+      "portable": "companion/practice/native_client/run_local_model_d8.py",
+      "portable_sha256": "c9bc0eb8e64725c7b1ba92687cdfcf4ffd87c5648c0c3abb2e08d4854c3c5b4f",
+      "byte_identical": true
+    }
+  },
+  "original_helper_hashes_preserved": {
+    "configure_sdd.py": "3e03d3cbd84cf6848735cd1edbf551eb73c5ebc84fd1dbb507b43eb0d5e1abe0",
+    "run_local_model.py": "9dec1771869e921fc59194f0603825ab28d02ab8fed0765d9e2b4028dbf38987"
+  },
+  "configure_changes": [
+    "Replace obsolete cat help with complete line-safe native attachment description.",
+    "Adopt candidate03 read permission for generated outputs only; initial attachment remains complete.",
+    "Adopt exact candidate03 source-read guard in agent/task and explicit title.",
+    "Declare supported custom-model temperature capability=true while agent temperature remains0.2.",
+    "Add effective-config checks for both declarations."
+  ],
+  "verified_candidate03_preflight": {
+    "path": "revision_d8/evidence/native_sdd_01/invocation_03/PREFLIGHT_SUMMARY_03.json",
+    "sha256": "166883f78c71bee2ee4469222cfff0fcc01dd6d49b0876c74bebc95c9e4706d2"
+  },
+  "checks": {
+    "original_helpers_unchanged": true,
+    "new_names_only": true,
+    "launcher_byte_identical_to_verified_source": true,
+    "both_python_syntax_valid": true,
+    "no_absolute_workspace_root_in_new_helpers": true,
+    "same_guard_as_verified_candidate03": true,
+    "no_model_or_server_called": true,
+    "active_project_config_state_untouched": true,
+    "line_safe_json_unchanged": true,
+    "inventory_unchanged": true,
+    "save_json_unchanged": true
+  },
+  "verification_scope": "Source review, exact origin/diff, AST identity of packaging functions and syntax compilation only. These portable copies were not executed against the active project or native state. Actual candidate03 evidence belongs to its separately frozen original config/task.",
+  "runtime_bounds": "Future recipe must explicitly pass server context24576,f16 K/V,batch256,micro128,threads8; client context24576,output3072,provider/header1500000ms,outer5400s. Launcher22528 default is unchanged and is not the recipe context.",
+  "outcome": "No generation success, human acceptance, future model compliance or independent server output cap is asserted."
+}

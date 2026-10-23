@@ -1,0 +1,18 @@
+--- attempt03/repo/src/treasury/routing.py
++++ attempt04/repo/src/treasury/routing.py
+@@ -21,6 +21,15 @@
+     if amount < THRESHOLD_EUR:
+         return RoutingDecision("STANDARD_QUEUE", "BELOW_LIMIT", POLICY_VERSION)
+     return RoutingDecision("HUMAN_REVIEW", "AT_OR_ABOVE_LIMIT", POLICY_VERSION)
++    try:
++        amount = Decimal(amount_eur)
++    except (InvalidOperation, ValueError):
++        return RoutingDecision("REJECTED", "INVALID_AMOUNT", POLICY_VERSION)
++    if amount <= 0:
++        return RoutingDecision("REJECTED", "INVALID_AMOUNT", POLICY_VERSION)
++    if amount < THRESHOLD_EUR:
++        return RoutingDecision("STANDARD_QUEUE", "BELOW_LIMIT", POLICY_VERSION)
++    return RoutingDecision("HUMAN_REVIEW", "AT_OR_ABOVE_LIMIT", POLICY_VERSION)
+     """Choose a processing queue. Not a payment authorisation."""
+     amount = Decimal(amount_eur)
+     if amount < THRESHOLD_EUR:

@@ -1,0 +1,16 @@
+{
+  "reviewed_at_utc": "2026-10-22T07:16:20.084143+00:00",
+  "checks": {
+    "actual_native_export_valid": true,
+    "session_id_matches_receipt_events": true,
+    "full_original_command_preserved": true,
+    "first_model_text_retained_exactly": true,
+    "no_tool_event_in_export": true,
+    "no_artifact_and_no_file_change": true,
+    "no_owner_answer_fabricated_in_packet": true,
+    "no_false_generation_success": true
+  },
+  "status": "PASS_RECORD_INTEGRITY_TASK_INCOMPLETE",
+  "human_review": "ABSENT",
+  "scope": "Checks confirm the retained observation and absence of task completion; they do not mark requirements or scenarios as passed."
+}

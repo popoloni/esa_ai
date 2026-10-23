@@ -1,0 +1,14 @@
+{
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-B",
+    "reader_start.py",
+    "doctor"
+  ],
+  "cwd": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion",
+  "started_at_utc": "2026-10-22T06:08:55.199407+00:00",
+  "ended_at_utc": "2026-10-22T06:08:55.259774+00:00",
+  "exit_code": 0,
+  "stdout_sha256": "1bdaaa807b68543424665146242c7896affb117d4636c40c31690e845af69e00",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

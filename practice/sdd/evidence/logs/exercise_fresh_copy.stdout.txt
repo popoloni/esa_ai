@@ -1,0 +1,3 @@
+Created two authored, deliberately incomplete artifact sets in /workspace/scratch/efa0a59e0545/tmp/sdd_workflow_trial_20261020/learner_attempt
+Run check.py --artifacts <that directory>. Expected: one missing equality case per flow.
+Edit only the two behavioral spec files. Shared inputs, core lab, and retained specimens stay unchanged.

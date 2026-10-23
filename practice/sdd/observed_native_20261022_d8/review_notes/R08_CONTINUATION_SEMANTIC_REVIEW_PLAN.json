@@ -1,0 +1,163 @@
+{
+  "schema": "esa-d8-native-continuation-semantic-review-plan/v1",
+  "recorded_at_utc": "2026-10-22T11:08:29.676886+00:00",
+  "status": "PREDECLARED_ASSESSMENT_PLAN_NO_NATIVE_ARTIFACT_ACCEPTANCE",
+  "reviewer": {
+    "kind": "AGENT",
+    "name": "acceptance_audit",
+    "role": "Independent semantic assessment; did not generate native candidate content"
+  },
+  "scope": "Assess only actual reached native artifacts and clarification disposition against the original R08 scope. This is a review plan, not a replacement model prompt, generated draft, owner response, test suite or added acceptance gate.",
+  "original_R08_criteria": [
+    "Artifacts are linked to actual prompts/commands and retained first output.",
+    "Generation is distinguished from scaffold creation and intentionally seeded faults.",
+    "One observed route is sufficient for the tutorial; a second observed route is required before a measured paired comparison is claimed."
+  ],
+  "fixed_input_bindings": {
+    "revision_d8/evidence/native_sdd_01/preparation/starting_tree/inputs/specification.json": "a1b6fee6ea70785a2fe18f3bcdd7c51c8cdc11e5ecd5b05ddfe1df204f859454",
+    "revision_d8/evidence/native_sdd_01/preparation/starting_tree/inputs/case_oracle.json": "11f86f4a19d1587f4eabf5ad00da22f03111ffad7a834729ae130b908f4686b2",
+    "revision_d8/evidence/native_sdd_01/preparation/starting_tree/inputs/sources/SRC-POL-001.json": "1de2d20f2fe72c4a2ae698093078deb2a05b5d7fd85eec819438cabb7928aacb",
+    "revision_d8/evidence/native_sdd_01/preparation/starting_tree/inputs/sources/SRC-WIKI-OLD.json": "85294ab0c9627da940dbce25820f5caed54ceacde4b49a6f4ad5ea5417cdfc93",
+    "revision_d8/evidence/native_sdd_01/preparation/starting_tree/.specify/memory/constitution.md": "ce7549540fa45543cca797a150201d868e64495fdff39dc38246fb17bd4024b3",
+    "revision_d8/evidence/native_sdd_01/preparation/starting_tree/.specify/templates/spec-template.md": "3945437fc35cd30a5b2bf7beea680337c3516826d3efa5a6b92c4a7eca1ba28e"
+  },
+  "provenance_review": [
+    "Bind the actual native session, invocation, continuation prompt and parent history to exact first completed tool actions and retained artifact bytes.",
+    "Separate native-authored write/edit content from copied unchanged templates, input attachments, controller reconstructions and authored reference data.",
+    "Keep all first outputs, errors, omissions and subsequent revisions distinct. Report any inability to reconstruct intermediate byte identities.",
+    "State that the supplied authored specification and case oracle were exposed; assess this as a disclosed projection rather than blind discovery."
+  ],
+  "requirement_assessment": [
+    {
+      "id": "REQ-EXPL-001",
+      "statement": "For a valid routing decision the explanation MUST present route, reason code and policy version without altering the routing decision.",
+      "source_ids": [
+        "SRC-POL-001",
+        "SRC-OPS-004"
+      ]
+    },
+    {
+      "id": "REQ-EXPL-002",
+      "statement": "The explanation MUST explicitly say that a routing recommendation is not payment approval and that payment authorization remains a separate human process.",
+      "source_ids": [
+        "SRC-POL-001",
+        "SRC-RISK-002"
+      ]
+    },
+    {
+      "id": "REQ-EXPL-003",
+      "statement": "For invalid or non-positive amounts the explanation MUST report rejection and the INVALID_AMOUNT reason without creating an eligibility recommendation.",
+      "source_ids": [
+        "SRC-POL-001"
+      ]
+    },
+    {
+      "id": "REQ-EXPL-004",
+      "statement": "The explanation MUST display the policy version from the routing decision and MUST NOT silently infer a newer policy version or threshold.",
+      "source_ids": [
+        "SRC-POL-001"
+      ]
+    },
+    {
+      "id": "REQ-EXPL-005",
+      "statement": "The alpha MUST treat time savings and user benefit as hypotheses pending observation and MUST NOT report a measured ROI before a field study.",
+      "source_ids": [
+        "SRC-OPS-004",
+        "SYN-TRIAGE-CSV"
+      ]
+    }
+  ],
+  "case_assessment": [
+    {
+      "id": "SC-EXPL-001",
+      "requirement_id": "REQ-EXPL-001",
+      "input_amount_eur": "4999.99",
+      "expected_route": "STANDARD_QUEUE",
+      "expected_reason": "BELOW_LIMIT",
+      "expected_policy_version": "BR-001/v1",
+      "payment_authorized": false
+    },
+    {
+      "id": "SC-EXPL-002",
+      "requirement_id": "REQ-EXPL-001",
+      "input_amount_eur": "5000",
+      "expected_route": "HUMAN_REVIEW",
+      "expected_reason": "AT_OR_ABOVE_LIMIT",
+      "expected_policy_version": "BR-001/v1",
+      "payment_authorized": false
+    },
+    {
+      "id": "SC-EXPL-003",
+      "requirement_id": "REQ-EXPL-001",
+      "input_amount_eur": "5000.01",
+      "expected_route": "HUMAN_REVIEW",
+      "expected_reason": "AT_OR_ABOVE_LIMIT",
+      "expected_policy_version": "BR-001/v1",
+      "payment_authorized": false
+    },
+    {
+      "id": "SC-EXPL-004",
+      "requirement_id": "REQ-EXPL-003",
+      "input_amount_eur": "0",
+      "expected_route": "REJECTED",
+      "expected_reason": "INVALID_AMOUNT",
+      "expected_policy_version": "BR-001/v1",
+      "payment_authorized": false
+    },
+    {
+      "id": "SC-EXPL-005",
+      "requirement_id": "REQ-EXPL-003",
+      "input_amount_eur": "-10",
+      "expected_route": "REJECTED",
+      "expected_reason": "INVALID_AMOUNT",
+      "expected_policy_version": "BR-001/v1",
+      "payment_authorized": false
+    },
+    {
+      "id": "SC-EXPL-006",
+      "requirement_id": "REQ-EXPL-003",
+      "input_amount_eur": "nonsense",
+      "expected_route": "REJECTED",
+      "expected_reason": "INVALID_AMOUNT",
+      "expected_policy_version": "BR-001/v1",
+      "payment_authorized": false
+    },
+    {
+      "id": "SC-EXPL-007",
+      "requirement_id": "REQ-EXPL-003",
+      "input_amount_eur": "NaN",
+      "expected_route": "REJECTED",
+      "expected_reason": "INVALID_AMOUNT",
+      "expected_policy_version": "BR-001/v1",
+      "payment_authorized": false
+    },
+    {
+      "id": "SC-EXPL-008",
+      "requirement_id": "REQ-EXPL-004",
+      "input_amount_eur": "1",
+      "expected_route": "STANDARD_QUEUE",
+      "expected_reason": "BELOW_LIMIT",
+      "expected_policy_version": "BR-001/v1",
+      "payment_authorized": false
+    }
+  ],
+  "authority_and_readiness_assessment": [
+    "Check that SRC-POL-001 and BR-001/v1 govern the EUR5000 boundary. Sponsor tickets and the hostile stale wiki do not authorize payment, a new threshold or a policy revision.",
+    "Check that the constitution remains an unratified supplied template unless an attributable decision actually exists; no invented ratification, governance approval or human signoff.",
+    "Compare checklist claims with the actual specification and evidence. Preserve unmet/unchecked readiness items and disclose unsupported green claims.",
+    "Keep user benefit and time/ROI claims as HYPOTHESIS_NOT_VALIDATED; no supplied source establishes a pilot outcome."
+  ],
+  "owner_questions": [
+    "Which explanation vocabulary do real operators understand?",
+    "Does the interface accidentally induce payment approval?",
+    "How will actual user benefit be measured in a pilot?"
+  ],
+  "clarification_review": "Identify the exact native output/tool event that actually presents the unresolved owner questions and reaches a wait/clarification disposition, or identify genuine progression if observed. Mere input questions, future intent, empty completion, timeout or controller interruption are not a reached clarification stop. Do not invent owner answers; a real documented stop may complete the bounded journey without implementation or positive human approval.",
+  "result_classification": "For each inspected obligation report SUPPORTED, OMITTED, CONTRADICTED or UNDETERMINED with exact artifact/session evidence. Distinguish native-artifact quality from original R08 journey completion. A uniformly green checklist or perfect first artifact is not imposed as an extra condition; genuine omissions and rejected outputs must remain visible.",
+  "decision_limits": [
+    "One observed primary route is sufficient; no second framework is required without a measured paired comparison.",
+    "No implementation phase, production release, human acceptance, complete billing or empirical benefit is required for this bounded tutorial observation.",
+    "No semantic judgment or R08 closure will be recorded before useful native output and actual reached workflow evidence are available.",
+    "This independent reviewer will not modify native candidate files or execute a model call."
+  ]
+}

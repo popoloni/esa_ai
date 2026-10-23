@@ -1,0 +1,17 @@
+{
+  "schema": "esa-evidence-subset-index/v1",
+  "recorded_at_utc": "2026-10-22T06:23:43.583514+00:00",
+  "files": {
+    "configuration/OPENCODE_CONFIG.json": "322c4076c28be6281bf241ab630108273e88a2ae82aafff4ee4235d3570f11e5",
+    "configuration/OPENCODE_CONFIG_RECOVERY_02.json": "1effbb9b89dd36149294238db012f3c407971df3d0dd881c7141dfa07d99ee72",
+    "configuration/ENVIRONMENT.json": "a9c38f363d07311782de2dc8e5c7ee24e4cf6981397b56197b302893e34b585c",
+    "configuration/WORKTREE_PROBE.json": "cc7950332b81167a59ea5ca7da3abae69840e92815d2e54683eddfabd9c7a821",
+    "effective_config/stdout.txt": "f0c1d68bc3fe8874b3dd72f5aa1296d38aab3f1ae1c16c330f50527587893aa4",
+    "effective_agent/stdout.txt": "4e2c67fb2d22f33cb1c8ab4aa69746b6747f8c22445646838e71e5156e38aeea",
+    "recovery_config_task/stdout.txt": "cce59e454bf98596a77b8ee5f218f186661a56cebf38b589fb34dedb0e1bef76",
+    "recovery_agent_task/stdout.txt": "8d5d76b29ed975f716296792644ac32e12dc2de4d2796f0711262abaf62f8871",
+    "configuration/CONFIGURATION_MANIFEST.json": "199b8a030da95b8b62ad0581c57039829a85bde29aaa2cd8607e7865e2ce0d87",
+    "configuration/OPENCODE_CONFIG_PRE_DIAGNOSTIC_RECONSTRUCTED.json": "153e3dbb94a7a598613c0081fad6b1176a843da0eedfa1e7f3f1ed18c201e7af",
+    "CONFIGURATION_IDENTITY_NOTE.json": "8b7df406ddbcd9e41558247e46dee18eca854f177f8e70defbdf4587ddd4b29a"
+  }
+}

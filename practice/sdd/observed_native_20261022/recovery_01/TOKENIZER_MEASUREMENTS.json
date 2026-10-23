@@ -1,0 +1,36 @@
+{
+  "started_at_utc": "2026-10-22T07:00:31.282623+00:00",
+  "no_inference": true,
+  "method": "Actual pinned model tokenizer endpoint; native expansion rule reproduced byte-for-byte from preceding actual session. Context reserves are planning allocations, not measured native request sizes.",
+  "prior_native_expansion_exactly_reproduced": true,
+  "upstream_body_unchanged": true,
+  "argument_placeholder_occurrences": 2,
+  "measurements": {
+    "complete_framework_body": {
+      "bytes": 18012,
+      "sha256": "97a63469f92466fffc00e5527bffd67fcb4118fef80f0e677639b71f3bbf5400",
+      "model_token_count": 3962
+    },
+    "short_task_arguments": {
+      "bytes": 1138,
+      "sha256": "098183e21fb4bf60d3dbc361f22c82216a71f9e8fcd8fb081d789551760829df",
+      "model_token_count": 248
+    },
+    "expected_expanded_native_command": {
+      "bytes": 20272,
+      "sha256": "76c19dc72722ad104367bb3320e6ffe321b1c48d9cfc71118a77394d45eaeebb",
+      "model_token_count": 4452
+    },
+    "complete_compact_packet": {
+      "bytes": 25044,
+      "sha256": "51da598ef2a1d7116869cca05fe637b0120039cf8389f057ab0e6e81b301ae44",
+      "model_token_count": 6698
+    }
+  },
+  "server": {
+    "n_ctx": 24576,
+    "total_slots": 1,
+    "build_info": "b11799-0756e83fc"
+  },
+  "finished_at_utc": "2026-10-22T07:00:31.343175+00:00"
+}

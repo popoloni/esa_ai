@@ -1,0 +1,14 @@
+{
+  "recorded_at_utc": "2026-10-22T12:21:18.027174+00:00",
+  "finding_id": "D8-PORTABLE-SDD-LIMITS",
+  "status": "NARROW_DORMANT_INTERPOLATION_SOURCE_CORRECTION; ACTUAL_COMPACT_REPRODUCTION_FOLLOWS",
+  "helper": "companion/practice/native_client/configure_sdd_d8.py",
+  "before_sha256": "88ccfb39068f8529da98f78a51cfef005d7103f295879250754ab637d7344af3",
+  "after_sha256": "e556e9b8ede8e4c8817f33784bb451b17b80b3b04f3a8576c75a4107c8ce36b6",
+  "change": "Add the missing f-string prefix to the existing noncompact prompt segment so its context/output/outer-limit values use actual arguments if that segment is evaluated.",
+  "scope": "The public d8 variant requires compact mode and replaces this noncompact prompt before preparation. Frozen actual configurations, prompts and tasks are unchanged. This is a follow-up within the existing helper-limits issue, not a new native-run defect.",
+  "source_check": "Python AST parses. Exact patch is one f prefix. The existing compact prompt, input packaging, permission guard and generated configuration code are unchanged.",
+  "actual_diagnostics": "To be retained separately under ../actual_reproduction_01; no simulated or mocked client was created.",
+  "historical_records_rewritten": false,
+  "model_call": false
+}

@@ -1,0 +1,31 @@
+{
+  "created_at_utc": "2026-10-22T11:12:18.912793+00:00",
+  "status": "PREPARED_NOT_LAUNCHED",
+  "parent_session_id": "ses_e9cc44d15ffewxo9hTP3f5v23l",
+  "parent_native_export_sha256": "f261470cb68a23ca69b5b91acf8a62d4856ffe9eb9350057a764f37b17aabe8e",
+  "task_sha256": "e89d024aa11fbf065af66e59ba16e9129bdb6c5150c39c0025851327812febf9",
+  "prompt_sha256": "6f14a0005a6970cbd1413f1cb03c4dfc623d58ff9461a82197f304a5d2efc6d8",
+  "config_sha256": "044c5deaa96cb5c5e88e7d55770d3d0c399669a926045f5b3fab470359d83941",
+  "context_budget": {
+    "context_tokens": 24576,
+    "last_native_prompt_plus_final_output": 18130,
+    "new_prompt_actual_tokenizer_tokens": 372,
+    "new_message_envelope_reserve": 256,
+    "cumulative_new_history_reserve": 2560,
+    "per_response_output_cap": 3072,
+    "total_reserved": 24390,
+    "spare": 186,
+    "pass": true,
+    "basis": "Last actual native usage is input443+cache17686+output1=18130. It includes the prior final-step prompt; counting it again is conservative. Only the short new prompt was separately tokenized. Same config/system/tools and complete history retained.",
+    "limits": "This is a prospective budget, not actual next serialized request size. Artifact1800-token target and agent.steps12 are instructions, not mechanical aggregate bounds. Repeated tool errors or verbose generated output may exceed the2560 history reserve; inspect actual next request and stop if unsafe. No source values removed."
+  },
+  "outer_timeout_seconds": 3600,
+  "configured_steps": 12,
+  "steps_qualification_reference": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/step_limit_diagnosis/FINDING.json",
+  "same_config_state_project": true,
+  "project_matches_frozen_terminal02_after": true,
+  "files_count": 50,
+  "no_full_attachment_or_command_repetition": true,
+  "no_model_call_in_preparation": true,
+  "native_tool_guidance_only": "The prompt supplies no draft artifact text or owner answers. Explicit write guidance; no pre-read requirement in pinned write implementation. No bash or source reread requested."
+}

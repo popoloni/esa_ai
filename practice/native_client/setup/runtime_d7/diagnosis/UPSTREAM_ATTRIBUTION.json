@@ -1,0 +1,20 @@
+{
+  "schema": "esa-upstream-attribution/v1",
+  "recorded_at_utc": "2026-10-22T06:40:08.633227+00:00",
+  "project": "OpenCode",
+  "release": "v1.19.3",
+  "repository": "https://github.com/anomalyco/opencode",
+  "source_files": "SOURCE_DOWNLOADS.json and TITLE_SOURCE_DOWNLOADS.json retain exact public URLs, retrieval status and SHA256",
+  "license_file": "UPSTREAM_LICENSE.txt",
+  "license_sha256": "625f0f619133f89bbbb2abe37369613dfa1885eba1e50d02170deb62bb42cb6b",
+  "license_source": "/workspace/scratch/72d789d25fef/runtime_d7/opencode/node_modules/opencode-ai/LICENSE",
+  "license_basis": "Installed npm opencode-ai package1.19.3; installation and package-lock retained in sibling runtime_d7 setup. Package metadata version verified before copy.",
+  "package_metadata": {
+    "name": "opencode-ai",
+    "version": "1.19.3",
+    "license": "MIT",
+    "repository": null
+  },
+  "modifications": "Downloaded TypeScript files retained byte-for-byte; explanation and observations are separate author files.",
+  "purpose": "Read-only diagnosis of timeout, automatic title-generation and configuration metadata behavior in the observed pinned client."
+}

@@ -1,0 +1,21 @@
+test_composed_candidate_meets_independent_contract (test_harness_engineering.ExperimentIntegration.test_composed_candidate_meets_independent_contract) ... ok
+test_context_and_runtime_identity_preserved (test_harness_engineering.ExperimentIntegration.test_context_and_runtime_identity_preserved) ... ok
+test_failed_proposals_and_stale_lessons_remain_visible (test_harness_engineering.ExperimentIntegration.test_failed_proposals_and_stale_lessons_remain_visible) ... ok
+test_improver_receives_no_held_out_inputs_or_correctness_scores (test_harness_engineering.ExperimentIntegration.test_improver_receives_no_held_out_inputs_or_correctness_scores) ... ok
+test_overfitting_control_fails_transfer (test_harness_engineering.ExperimentIntegration.test_overfitting_control_fails_transfer) ... ok
+test_shape_and_semantic_correctness_remain_distinct (test_harness_engineering.ExperimentIntegration.test_shape_and_semantic_correctness_remain_distinct) ... ok
+test_changed_source_is_not_silently_rebaselined (test_harness_engineering.FailureContracts.test_changed_source_is_not_silently_rebaselined) ... ok
+test_composer_stops_when_evidence_does_not_support_components (test_harness_engineering.FailureContracts.test_composer_stops_when_evidence_does_not_support_components) ... ok
+test_fixed_router_preserves_decimal_boundary_and_invalid_inputs (test_harness_engineering.FailureContracts.test_fixed_router_preserves_decimal_boundary_and_invalid_inputs) ... ok
+test_library_reuse_requires_current_source_and_contract (test_harness_engineering.FailureContracts.test_library_reuse_requires_current_source_and_contract) ... ok
+test_output_inside_protected_trees_is_refused_before_creation (test_harness_engineering.FailureContracts.test_output_inside_protected_trees_is_refused_before_creation) ... ok
+test_output_reuse_and_symlink_escape_are_refused (test_harness_engineering.FailureContracts.test_output_reuse_and_symlink_escape_are_refused) ... ok
+test_process_failure_and_timeout_are_observable (test_harness_engineering.FailureContracts.test_process_failure_and_timeout_are_observable) ... ok
+test_raw_receipt_survives_malformed_and_mismatched_worker_results (test_harness_engineering.FailureContracts.test_raw_receipt_survives_malformed_and_mismatched_worker_results) ... ok
+test_unknown_fields_and_payment_authority_are_refused (test_harness_engineering.FailureContracts.test_unknown_fields_and_payment_authority_are_refused) ... ok
+test_unsafe_or_duplicate_case_ids_are_refused_before_artifact_writes (test_harness_engineering.FailureContracts.test_unsafe_or_duplicate_case_ids_are_refused_before_artifact_writes) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 3.581s
+
+OK

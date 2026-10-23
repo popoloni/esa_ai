@@ -1,0 +1,296 @@
+{
+  "schema": "esa-d8-native-first-output-independent-review/v1",
+  "recorded_at_utc": "2026-10-22T11:57:04.275300+00:00",
+  "status": "GENUINE_COMPLETED_WRITE_FIRST_OUTPUT_REJECTED_AS_SUBSTANTIVE_SPECIFICATION",
+  "reviewer": {
+    "kind": "AGENT",
+    "name": "/root/acceptance_audit",
+    "independence": "Did not generate, edit or repair native artifact content."
+  },
+  "observation_boundary": "Review of the frozen first completed native write04 and its retained stream prefix only. Attempt04 was still active at capture; no active database export, current project reread, terminal outcome or reached clarification is asserted.",
+  "evidence": [
+    {
+      "path": "revision_d8/evidence/native_sdd_01/first_native_write_04/MANIFEST.json",
+      "bytes": 921,
+      "sha256": "260cbb05c8e3f8a7f281e98df58ec0a70a0bf6197b371f5eae6d6755f9911fd9"
+    },
+    {
+      "path": "revision_d8/evidence/native_sdd_01/first_native_write_04/OBSERVATION.json",
+      "bytes": 2593,
+      "sha256": "fa1157d8d5da02ec1c4d8a3a9a98d9c9e1ea89ff6aa6620e6705ce3b5097673f"
+    },
+    {
+      "path": "revision_d8/evidence/native_sdd_01/first_native_write_04/FIRST_WRITE_EVENT.json",
+      "bytes": 3063,
+      "sha256": "a96a33b583045246f6f48aabb6953a80f27328430196898a17f960bcaeb37b55"
+    },
+    {
+      "path": "revision_d8/evidence/native_sdd_01/first_native_write_04/LITERAL_NATIVE_WRITE_CONTENT.md",
+      "bytes": 2230,
+      "sha256": "04b6177aa7cd2a248a86ef418f8faeffe3c07cbf64651951136c20559402bfd1"
+    },
+    {
+      "path": "revision_d8/evidence/native_sdd_01/first_native_write_04/OBSERVED_SPEC.md",
+      "bytes": 2230,
+      "sha256": "04b6177aa7cd2a248a86ef418f8faeffe3c07cbf64651951136c20559402bfd1"
+    },
+    {
+      "path": "revision_d8/evidence/native_sdd_01/first_native_write_04/stdout_prefix.txt",
+      "bytes": 3943,
+      "sha256": "12cb48ddef957248e50a3254a7172617af9c986ad1bcf7196f3a56e1b0b94903"
+    },
+    {
+      "path": "revision_d8/evidence/native_sdd_01/first_native_write_04/stderr_prefix.txt",
+      "bytes": 7121,
+      "sha256": "62002d2c0b034798e67d1b85c04193eead1739b8585178c9408cb491d92bcaa3"
+    },
+    {
+      "path": "revision_d8/evidence/native_sdd_01/continuation_preparation_02/TASK.json",
+      "bytes": 5408,
+      "sha256": "fecc09b8c3b299b49f69b43b2e693eb322a4bc7c1e4d6cd9d62eb8cba69c6521"
+    },
+    {
+      "path": "revision_d8/evidence/native_sdd_01/continuation_preparation_02/PROMPT.txt",
+      "bytes": 1185,
+      "sha256": "55fdd2d396e3bf3a5843568c45c851b1db045acd4fd61a4ce50c2cb74aa06354"
+    },
+    {
+      "path": "revision_d8/evidence/native_sdd_01/invocation_03/TASK_PROMPT_03.txt",
+      "bytes": 2070,
+      "sha256": "b782fa17ec9a79d288e40ca31018d53de6a24312a89cb1bb41a4a3a0df9de16d"
+    },
+    {
+      "path": "revision_d8/notes/R08_CONTINUATION_SEMANTIC_REVIEW_PLAN.json",
+      "bytes": 8583,
+      "sha256": "f94d3b82ebbbe884daead32fed77571e666b4d6986090dff018048f57f559cb0"
+    }
+  ],
+  "provenance_assessment": {
+    "session_id": "ses_e9cc44d15ffewxo9hTP3f5v23l",
+    "call_id": "eAWLdruLFmtABLHFQsQnkLgC82UsZvHW",
+    "message_id": "msg_1636f1c66001O96YP7jMDzCqI1",
+    "event_at_utc": "2026-10-22T11:51:41.878000+00:00",
+    "tool_completed_at_utc": "2026-10-22T11:51:41.862000+00:00",
+    "observed_file_at_utc": "2026-10-22T11:53:22.427358+00:00",
+    "completed_native_write": true,
+    "native_success_message": "Wrote file successfully.",
+    "literal_and_observed_bytes": 2230,
+    "literal_and_observed_sha256": "04b6177aa7cd2a248a86ef418f8faeffe3c07cbf64651951136c20559402bfd1",
+    "literal_tool_content_equals_retained_actual_file": true,
+    "manifest_entries_checked": 6,
+    "all_entry_hashes_and_sizes_match": true,
+    "write_event_exactly_present_in_retained_stdout_prefix": true,
+    "attempt_task_matches_frozen_preparation": true,
+    "difference_from_template": "This is a genuine completed native write with different bytes from the prior upstream template. It is not merely the previous cp operation.",
+    "copy_origin": "The 2070-byte Input field reproduces invocation_03/TASK_PROMPT_03.txt except that the newline before the attached @path becomes a space. The other 160 bytes are the title/branch/date/Draft wrapper plus Input label/quotes. No five-requirement/eight-case feature content was generated.",
+    "formatter_limit": "Tool input and later observed snapshot were compared separately and are equal. No unseen intermediate filesystem identity is asserted."
+  },
+  "semantic_summary": {
+    "feature_metadata": "Title Explain Routing, branch001-explain-treasury, date2026-10-22 and Draft status are present. These identify the artifact without specifying its behavior.",
+    "requirement_ids_present": 0,
+    "requirement_ids_expected": 5,
+    "scenario_ids_present": 0,
+    "scenario_ids_expected": 8,
+    "native_substantive_requirements": "ABSENT",
+    "native_concrete_acceptance_cases": "ABSENT",
+    "defect": "The model wrote its original task instructions into the Input section instead of projecting the supplied contract into feature requirements and scenarios.",
+    "intentionally_seeded_fault": false,
+    "usefulness_decision": "Preserve as actual first-output failure and a teachable distinction between tool success and specification quality. Reject this exact candidate for use as the completed feature specification."
+  },
+  "requirement_assessment": [
+    {
+      "id": "REQ-EXPL-001",
+      "classification": "OMITTED",
+      "expected": "For a valid routing decision the explanation MUST present route, reason code and policy version without altering the routing decision.",
+      "finding": "No requirement states the valid-decision route/reason/version display or preservation of the routing decision. No actual route/reason values appear.",
+      "partial_preserved_echo": "None; the input merely instructs preservation of requirements/scenarios.",
+      "traceability_id_present": false
+    },
+    {
+      "id": "REQ-EXPL-002",
+      "classification": "OMITTED",
+      "expected": "The explanation MUST explicitly say that a routing recommendation is not payment approval and that payment authorization remains a separate human process.",
+      "finding": "No substantive requirement specifies the separate human payment-authorization process.",
+      "partial_preserved_echo": "Line 12 quotes the input sentence Routing never authorizes payment. This preserves one boundary phrase, but is not a completed feature requirement.",
+      "traceability_id_present": false
+    },
+    {
+      "id": "REQ-EXPL-003",
+      "classification": "OMITTED",
+      "expected": "For invalid or non-positive amounts the explanation MUST report rejection and the INVALID_AMOUNT reason without creating an eligibility recommendation.",
+      "finding": "No invalid/non-positive amount handling, REJECTED or INVALID_AMOUNT outcome, or prohibition on creating eligibility is specified.",
+      "partial_preserved_echo": "None.",
+      "traceability_id_present": false
+    },
+    {
+      "id": "REQ-EXPL-004",
+      "classification": "OMITTED",
+      "expected": "The explanation MUST display the policy version from the routing decision and MUST NOT silently infer a newer policy version or threshold.",
+      "finding": "No requirement displays provenance from the actual routing decision or prohibits silently inferring a new threshold/version. The fixed EUR5000 boundary is absent.",
+      "partial_preserved_echo": "Line 12 quotes SRC-POL-001/BR-001/v1 governs; ticket/wiki cannot change it. The authority/version citation survives only in copied task instructions.",
+      "traceability_id_present": false
+    },
+    {
+      "id": "REQ-EXPL-005",
+      "classification": "OMITTED",
+      "expected": "The alpha MUST treat time savings and user benefit as hypotheses pending observation and MUST NOT report a measured ROI before a field study.",
+      "finding": "No substantive alpha requirement distinguishes pending observation from measured time saving/ROI or specifies a field-study boundary.",
+      "partial_preserved_echo": "Line 14 quotes HYPOTHESIS_NOT_VALIDATED and instructions against invented numeric benefit/approval. No false empirical result is asserted, but the requirement is not projected.",
+      "traceability_id_present": false
+    }
+  ],
+  "case_assessment": [
+    {
+      "id": "SC-EXPL-001",
+      "classification": "OMITTED",
+      "expected_input_amount_eur": "4999.99",
+      "expected_route": "STANDARD_QUEUE",
+      "expected_reason": "BELOW_LIMIT",
+      "expected_policy_version": "BR-001/v1",
+      "expected_payment_authorized": false,
+      "finding": "No scenario row or equivalent concrete acceptance example; ID, exact input and expected result are absent."
+    },
+    {
+      "id": "SC-EXPL-002",
+      "classification": "OMITTED",
+      "expected_input_amount_eur": "5000",
+      "expected_route": "HUMAN_REVIEW",
+      "expected_reason": "AT_OR_ABOVE_LIMIT",
+      "expected_policy_version": "BR-001/v1",
+      "expected_payment_authorized": false,
+      "finding": "No scenario row or equivalent concrete acceptance example; ID, exact input and expected result are absent."
+    },
+    {
+      "id": "SC-EXPL-003",
+      "classification": "OMITTED",
+      "expected_input_amount_eur": "5000.01",
+      "expected_route": "HUMAN_REVIEW",
+      "expected_reason": "AT_OR_ABOVE_LIMIT",
+      "expected_policy_version": "BR-001/v1",
+      "expected_payment_authorized": false,
+      "finding": "No scenario row or equivalent concrete acceptance example; ID, exact input and expected result are absent."
+    },
+    {
+      "id": "SC-EXPL-004",
+      "classification": "OMITTED",
+      "expected_input_amount_eur": "0",
+      "expected_route": "REJECTED",
+      "expected_reason": "INVALID_AMOUNT",
+      "expected_policy_version": "BR-001/v1",
+      "expected_payment_authorized": false,
+      "finding": "No scenario row or equivalent concrete acceptance example; ID, exact input and expected result are absent."
+    },
+    {
+      "id": "SC-EXPL-005",
+      "classification": "OMITTED",
+      "expected_input_amount_eur": "-10",
+      "expected_route": "REJECTED",
+      "expected_reason": "INVALID_AMOUNT",
+      "expected_policy_version": "BR-001/v1",
+      "expected_payment_authorized": false,
+      "finding": "No scenario row or equivalent concrete acceptance example; ID, exact input and expected result are absent."
+    },
+    {
+      "id": "SC-EXPL-006",
+      "classification": "OMITTED",
+      "expected_input_amount_eur": "nonsense",
+      "expected_route": "REJECTED",
+      "expected_reason": "INVALID_AMOUNT",
+      "expected_policy_version": "BR-001/v1",
+      "expected_payment_authorized": false,
+      "finding": "No scenario row or equivalent concrete acceptance example; ID, exact input and expected result are absent."
+    },
+    {
+      "id": "SC-EXPL-007",
+      "classification": "OMITTED",
+      "expected_input_amount_eur": "NaN",
+      "expected_route": "REJECTED",
+      "expected_reason": "INVALID_AMOUNT",
+      "expected_policy_version": "BR-001/v1",
+      "expected_payment_authorized": false,
+      "finding": "No scenario row or equivalent concrete acceptance example; ID, exact input and expected result are absent."
+    },
+    {
+      "id": "SC-EXPL-008",
+      "classification": "OMITTED",
+      "expected_input_amount_eur": "1",
+      "expected_route": "STANDARD_QUEUE",
+      "expected_reason": "BELOW_LIMIT",
+      "expected_policy_version": "BR-001/v1",
+      "expected_payment_authorized": false,
+      "finding": "No scenario row or equivalent concrete acceptance example; ID, exact input and expected result are absent."
+    }
+  ],
+  "authority_payment_value_and_constitution": [
+    {
+      "obligation": "Source authority",
+      "classification": "OMITTED",
+      "partial_echo": "The quoted input names SRC-POL-001/BR-001/v1 and rejects ticket/wiki authority.",
+      "gap": "No feature requirement or case embodies the authoritative threshold, actual policy-version display or historical preservation."
+    },
+    {
+      "obligation": "Separate payment authorization",
+      "classification": "OMITTED",
+      "partial_echo": "The quoted input says routing never authorizes payment.",
+      "gap": "No explicit separate human process or per-case payment_authorized=false is specified."
+    },
+    {
+      "obligation": "Unvalidated benefit",
+      "classification": "OMITTED",
+      "partial_echo": "The quoted input preserves HYPOTHESIS_NOT_VALIDATED and forbids invented benefit targets.",
+      "gap": "No substantive acceptance requirement or pilot evidence plan; no observed benefit is claimed."
+    },
+    {
+      "obligation": "Unratified constitution",
+      "classification": "UNDETERMINED",
+      "partial_echo": "The quoted input calls the constitution unratified and forbids invented ratification.",
+      "gap": "No governance assessment or ratification decision exists in this artifact; no approval should be inferred."
+    }
+  ],
+  "owner_question_assessment": [
+    {
+      "question": "Which explanation vocabulary do real operators understand?",
+      "classification": "OMITTED",
+      "finding": "Exact question and an equivalent substantive question are absent. Generic instruction to keep all three questions unanswered is copied; it is not presentation of the questions or an actual wait-for-owner disposition."
+    },
+    {
+      "question": "Does the interface accidentally induce payment approval?",
+      "classification": "OMITTED",
+      "finding": "Exact question and an equivalent substantive question are absent. Generic instruction to keep all three questions unanswered is copied; it is not presentation of the questions or an actual wait-for-owner disposition."
+    },
+    {
+      "question": "How will actual user benefit be measured in a pilot?",
+      "classification": "OMITTED",
+      "finding": "Exact question and an equivalent substantive question are absent. Generic instruction to keep all three questions unanswered is copied; it is not presentation of the questions or an actual wait-for-owner disposition."
+    }
+  ],
+  "workflow_boundary": {
+    "checklist_and_feature_metadata": "Explicitly pending in the spec-only continuation task; this first-write snapshot neither establishes nor requires their completion.",
+    "clarification": "NOT_ESTABLISHED_BY_THIS_PREFIX; the stream continues into another step. No terminal stop, owner answer or authentic clarification state is inferred.",
+    "historical_instruction_echo": "The copied Input also repeats earlier bash/three-output instructions and the historical statement No output files exist at the start. These are quoted earlier task context, not fresh observations of current file state or completion.",
+    "human_review": "ABSENT"
+  },
+  "original_R08_criteria": [
+    {
+      "criterion": "Artifacts are linked to actual prompts/commands and retained first output.",
+      "assessment": "PROVENANCE_SATISFIED_FOR_THIS_FIRST_WRITE; OVERALL_JOURNEY_INCOMPLETE",
+      "finding": "Exact prompt/task, completed native event, literal payload and separately observed file are retained. This candidate lacks substantive requirements/cases; no reached clarification or subsequent progression is established."
+    },
+    {
+      "criterion": "Generation is distinguished from scaffold creation and intentionally seeded faults.",
+      "assessment": "DISTINCTION_RECORDED",
+      "finding": "Completed native write is separated from the earlier template copy and from useful specification generation. Missing content is a real native first-output defect, not an intentionally seeded fault."
+    },
+    {
+      "criterion": "One observed route is sufficient for the tutorial; a second observed route is required before a measured paired comparison is claimed.",
+      "assessment": "SCOPE_PRESERVED",
+      "finding": "One observed route remains sufficient. No second framework, implementation, all-green artifact or positive human acceptance is added as a prerequisite; no measured paired comparison is claimed."
+    }
+  ],
+  "R08_recommendation": "KEEP_PARTIAL_ON_CURRENT_EVIDENCE. Native writing is now observed, but this first candidate is not a useful completed specification and the active run has no assessed terminal clarification state.",
+  "review_limits": [
+    "Reviewed only the immutable first-write packet and already frozen inputs/preparation; did not export the active session or inspect mutable native files.",
+    "No native artifact repair, further model call, document tooling, test suite or authoritative-register change.",
+    "Any later native repair and its actual disposition must be retained and reviewed separately; this first failure must remain unchanged."
+  ]
+}

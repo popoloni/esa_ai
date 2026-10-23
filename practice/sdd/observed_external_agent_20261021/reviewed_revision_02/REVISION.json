@@ -1,0 +1,23 @@
+{
+  "schema": "sdd-reviewed-revision/v1",
+  "created_at_utc": "2026-10-21T16:14:32.774632+00:00",
+  "editor": "Primary ChatGPT authoring agent, after independent review",
+  "origin": "ACTUAL_AGENT_OUTPUT_WITH_SEPARATE_EDITORIAL_CORRECTION",
+  "issue": "REV-001",
+  "change": "Add T021 to T019 inline dependency list; prose and overall dependency section already required the alpha decision.",
+  "original_files": {
+    "spec.md": "3c3edb571b50791d15ade127baa266d4d82d6508d2b7e3b075f2b6db54908045",
+    "plan.md": "d19527a0d40e6068f9f23019de8e1a6228eb0ea2bbc209a776b211f579a32275",
+    "tasks.md": "62ccfb17dbdc87855f67b5a48a5eeb5d6e51731dbd2a622cacc3e9048018e0c8"
+  },
+  "revised_files": {
+    "spec.md": "3c3edb571b50791d15ade127baa266d4d82d6508d2b7e3b075f2b6db54908045",
+    "plan.md": "d19527a0d40e6068f9f23019de8e1a6228eb0ea2bbc209a776b211f579a32275",
+    "tasks.md": "0e3fba1f076d027a17e43898874ade632e64e951bf5eea5397e5e870cee7f29a"
+  },
+  "independent_review_sha256": "ef9b97ee65fde6e62dce094230e9031e828c747ee5e9d1df5f1f7954e47a88d4",
+  "human_acceptance": "PENDING",
+  "implementation_executed": false,
+  "first_outputs_modified": false,
+  "unchecked_tasks": 22
+}

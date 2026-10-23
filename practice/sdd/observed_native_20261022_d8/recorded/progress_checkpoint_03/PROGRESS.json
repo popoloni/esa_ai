@@ -1,0 +1,51 @@
+{
+  "observed_at_utc": "2026-10-22T12:06:52.697877+00:00",
+  "finished_at_utc": "2026-10-22T12:06:52.699538+00:00",
+  "status": "CAPTURE_TERMINAL_RECEIPT_PRESENT; GENERATED_ASSISTANT_TEXT_WITHOUT_CORRESPONDING_SECOND_FILE_WRITE",
+  "attempt": "attempt_04",
+  "session_id": "ses_e9cc44d15ffewxo9hTP3f5v23l",
+  "stdout": {
+    "source": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/attempt_04/stdout.txt",
+    "bytes": 10220,
+    "complete_event_lines": 6,
+    "sha256": "80485ace0c7c59c109777bc0980cf767fcfea009ab950fe02dd48c5307d78256",
+    "verified_still_prefix_after_copy": true
+  },
+  "stderr": {
+    "source": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/attempt_04/stderr.txt",
+    "bytes": 7774,
+    "sha256": "b85fbd2f686c336c1eddcf3da85c784f808e1608e5ff5351330c9787a3e8b516",
+    "verified_still_prefix_after_copy": true
+  },
+  "capture_receipt": {
+    "source": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/attempt_04/RECEIPT.json",
+    "sha256": "990e17c96269855f1a2613dbcab6db60abc7ea0a2d9a0464888aa0bafb21bdc8",
+    "raw_receipt_retained": true
+  },
+  "native_event_summary": {
+    "completed_tool_calls": 1,
+    "completed_second_write_or_edit": false,
+    "first_write_call_id": "eAWLdruLFmtABLHFQsQnkLgC82UsZvHW",
+    "final_text_timestamp_ms": 1792670740651,
+    "final_step_reason": "stop"
+  },
+  "native_final_text": {
+    "file": "NATIVE_FINAL_TEXT.md",
+    "bytes": 5530,
+    "sha256": "0b8ce1854906b37eb2c0249e97a7e0d5dc1ce3e2597b6289c9a54fb6eacbec77",
+    "attribution": "Exact extraction of completed native assistant text part, not a native filesystem write or an author-supplied draft. The extraction does not modify the native project."
+  },
+  "actual_spec_file_observation": {
+    "path": "/workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/specs/001-explain-treasury/spec.md",
+    "sha256": "04b6177aa7cd2a248a86ef418f8faeffe3c07cbf64651951136c20559402bfd1",
+    "bytes": 2230,
+    "two_reads_equal": true,
+    "equals_preserved_first_write": true,
+    "observation_scope": "Read-only file observation after capture receipt appeared; a host-context process-liveness check and full terminal export have not yet been performed for this checkpoint."
+  },
+  "initial_content_interpretation": "The final assistant text contains five requirement identifiers, eight scenario rows and three actual owner questions. It also repeats the operator-input block and claims three concise artifacts, although only one header/input-only spec file was written in this attempt. Semantic acceptance is pending independent review; no clarification answer or human approval is inferred.",
+  "active_database_export": false,
+  "model_call_by_observer": false,
+  "native_project_mutation_by_observer": false,
+  "next_required_collection": "Confirm exact native process absent in approved host context, then use the authorized regular-file terminal collector in a new terminal_collection_04 directory."
+}

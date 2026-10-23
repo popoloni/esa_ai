@@ -1,0 +1,8 @@
+{
+  "deployment_id": "DEPLOY-012",
+  "expected_active_policy": null,
+  "initialize_missing_state": true,
+  "required_history_key": null,
+  "schema": "cp12-deployment/v1",
+  "state_path": "state/incident/history.sqlite"
+}

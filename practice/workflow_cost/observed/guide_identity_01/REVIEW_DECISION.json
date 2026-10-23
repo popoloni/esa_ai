@@ -1,0 +1,21 @@
+{
+  "schema": "esa-guide-identity-technical-decision/v1",
+  "decided_at_utc": "2026-10-22T06:14:01.393460+00:00",
+  "work_item_id": "d7-reader-guide-identity-repair",
+  "decision": "ACCEPTED",
+  "reviewer_kind": "AGENT",
+  "reviewer": "/root/acceptance_audit",
+  "candidate_record": {
+    "path": "CANDIDATE.json",
+    "sha256": "47f6ede441590b209a4e70bd990b5892f6f1ed1e04e1ee28e18c29bf0c814bfa"
+  },
+  "review": {
+    "path": "REVIEW.json",
+    "sha256": "29fc5a8a0e75ec02a2c7bbc73288b3865a7b17b85b170601030e5755248da5e9"
+  },
+  "scope": "Exact protected-guide identity repair defined in TASK.txt; one completed technical maintenance item.",
+  "rework_required": false,
+  "human_acceptance": "NOT_PERFORMED",
+  "release_authorization": "NOT_GRANTED_BY_THIS_REVIEW",
+  "r21_account_status": "ELIGIBLE_AFTER_ACCOUNT_RECONCILIATION_NOT_YET_CLOSED"
+}

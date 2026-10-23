@@ -1,0 +1,1 @@
+{"server_pid": 6, "evidence": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/native_shutdown_fix/controlled_probe/cooperative/lifecycle"}

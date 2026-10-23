@@ -1,0 +1,15 @@
+{
+  "run_id": "ESA_READER_MCP_01",
+  "created_at_utc": "2026-10-22T05:56:22.735225+00:00",
+  "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/mcp_host_01/DECLARED_NONSECRET_CANARY.txt",
+  "bytes": 50,
+  "sha256": "5f066dee64e383926eb186696646a9889ecf6560c17fd495843760d20337e0c7",
+  "non_secret": true,
+  "outside_study": true,
+  "outside_server_directory": true,
+  "probe_source": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion/practice/native_client/probe/sitecustomize.py",
+  "probe_sha256": "e530f010156b129433fe4a80b51c99e74962e3983cb6eda58fb95651e8911e1f",
+  "authorized_operation": "One bounded read of this declared file by the canonical server at startup.",
+  "result": "NOT_RUN",
+  "network_environment_and_post_initialization_boundaries": "NOT_TESTED"
+}

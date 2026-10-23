@@ -1,0 +1,48 @@
+{
+  "identity": "Experienced coding model, system-identified GPT-6 Astra Pro, fresh collaboration worker /root/reader_rehearsal_d5",
+  "study_type": "AI-only formative dry run; not a human observation, novice study, independent human acceptance or learning outcome",
+  "prior_exposure": "No parent conversation or previous solution/evidence supplied beyond this task and system/developer tools. Initial task file read is visible in the parent transcript; automated journal capture began with companion README.",
+  "interface": "ChatGPT collaboration; functions.exec orchestrates tools.exec_command and apply_patch; bash; local Python 3.12.14; Linux; Git 2.51.1",
+  "reads": [
+    "TASK.txt",
+    "input/reader_resources/R17_PARTICIPANT_TASKS.txt",
+    "companion/README.md",
+    "navigation/FIRST_WEEK.md",
+    "reader_start.py doctor/show output",
+    "ordinary chapter01.tex (full, includes explanatory proposed repair and summarized episode descriptions)",
+    "ordinary chapter07.tex selected sections and rg matches",
+    "Chapter 1 candidate, intent, acceptance cases and review template",
+    "navigation/CHAPTER_ROUTES.md",
+    "CSV README Try the change, then rubric only after candidate/diff/check evidence retained",
+    "CSV copied CURRENT_CONTRACT.md, api.py, selection.py, demo.py",
+    "generated own reports, candidate hashes and file listings"
+  ],
+  "not_read": [
+    "Appendix A",
+    "Appendix B",
+    "protected reference source implementations",
+    "completed observed-agent episode files",
+    "facilitator answers",
+    "parent source or past review evidence",
+    "CSV archived obsolete note",
+    "CSV checker source"
+  ],
+  "protected_check_execution": "The gates may internally read protected expected data; the Chapter 1 acceptance source was explicitly read as ordinary lab instructions require. This is source-disciplined use of a shared filesystem, not process or adversarial isolation.",
+  "outside_services": "No accounts, external site, external message recipient, live model/client service or additional subagent used. One internal progress message was sent to the assigning parent.",
+  "input_mutation": "doctor generated one scope_guard .pyc in the input. Its creation timestamp and SHA were retained; only that task-created cache was removed, restoring cache absence. No authored input file was edited. A whole-input pre-run hash manifest was not captured, so no stronger byte-for-byte pristine claim is made.",
+  "output_isolation": "All authored reports and retained evidence are under worker; attempted source copies and native gate outputs are under attempts. No complete companion is duplicated in retained evidence.",
+  "late_input_cache_observation": "After initial cleanup, final verification unexpectedly saw the same cache with its original mtime. No intervening worker command imported input source. Cause is unverified; the exact known cache hash was checked and the same generated cache removed again. No authored input was edited.",
+  "final_cache_absent": true,
+  "final_input_manifest_verification": {
+    "timestamp_utc": "2026-10-21T18:18:33.625896+00:00",
+    "manifest_path": "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Competitive_Revision_d5_20261021/revision_d5/evidence/reader_rehearsal/INPUT_MANIFEST.json",
+    "manifest_sha256": "7634c1938a9a9e636e293dc693571b4b487b0836b50a081cbda7197ecedc532f",
+    "checked_source_files": 1512,
+    "missing": [],
+    "changed": [],
+    "added_files": [],
+    "authored_input_unchanged": true,
+    "authority": "Parent follow-up explicitly requested input-manifest verification after first attempts. Only manifest metadata and file hashes were inspected; protected source content was not opened."
+  },
+  "manifest_followup_note": "A parent-provided pre-run manifest became available during finalization. Earlier absence-of-manifest statements describe the initial capture limit; this final verification checks every listed input source."
+}

@@ -1,0 +1,190 @@
+{
+  "name": "esa-bounded",
+  "mode": "primary",
+  "permission": [
+    {
+      "permission": "*",
+      "action": "allow",
+      "pattern": "*"
+    },
+    {
+      "permission": "doom_loop",
+      "action": "ask",
+      "pattern": "*"
+    },
+    {
+      "permission": "external_directory",
+      "pattern": "*",
+      "action": "ask"
+    },
+    {
+      "permission": "external_directory",
+      "pattern": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/native_ch01_01/configuration/client_state/data/opencode/tool-output/*",
+      "action": "allow"
+    },
+    {
+      "permission": "external_directory",
+      "pattern": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/native_ch01_01/configuration/client_state/tmp/opencode/*",
+      "action": "allow"
+    },
+    {
+      "permission": "question",
+      "action": "deny",
+      "pattern": "*"
+    },
+    {
+      "permission": "plan_enter",
+      "action": "deny",
+      "pattern": "*"
+    },
+    {
+      "permission": "plan_exit",
+      "action": "deny",
+      "pattern": "*"
+    },
+    {
+      "permission": "read",
+      "pattern": "*",
+      "action": "allow"
+    },
+    {
+      "permission": "read",
+      "pattern": "*.env",
+      "action": "ask"
+    },
+    {
+      "permission": "read",
+      "pattern": "*.env.*",
+      "action": "ask"
+    },
+    {
+      "permission": "read",
+      "pattern": "*.env.example",
+      "action": "allow"
+    },
+    {
+      "permission": "*",
+      "action": "deny",
+      "pattern": "*"
+    },
+    {
+      "permission": "read",
+      "pattern": "*",
+      "action": "deny"
+    },
+    {
+      "permission": "read",
+      "pattern": "workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/repo/AGENTS.md",
+      "action": "allow"
+    },
+    {
+      "permission": "read",
+      "pattern": "workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/repo/src/treasury/routing.py",
+      "action": "allow"
+    },
+    {
+      "permission": "read",
+      "pattern": "workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/reader_side/intent/INT-001.md",
+      "action": "allow"
+    },
+    {
+      "permission": "read",
+      "pattern": "workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/reader_side/acceptance/test_routing.py",
+      "action": "allow"
+    },
+    {
+      "permission": "read",
+      "pattern": "workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/reader_side/evidence/CH01_NATIVE_INITIAL_01.json",
+      "action": "allow"
+    },
+    {
+      "permission": "read",
+      "pattern": "workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/reader_side/evidence/CH01_NATIVE_AGENT_01.json",
+      "action": "allow"
+    },
+    {
+      "permission": "edit",
+      "pattern": "*",
+      "action": "deny"
+    },
+    {
+      "permission": "edit",
+      "pattern": "workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/repo/src/treasury/routing.py",
+      "action": "allow"
+    },
+    {
+      "permission": "bash",
+      "pattern": "*",
+      "action": "deny"
+    },
+    {
+      "permission": "bash",
+      "pattern": "python3 -B reader_side/tools/run_acceptance.py --output reader_side/evidence/CH01_NATIVE_RECOVERY_02.json",
+      "action": "allow"
+    },
+    {
+      "permission": "external_directory",
+      "action": "deny",
+      "pattern": "*"
+    },
+    {
+      "permission": "glob",
+      "action": "deny",
+      "pattern": "*"
+    },
+    {
+      "permission": "grep",
+      "action": "deny",
+      "pattern": "*"
+    },
+    {
+      "permission": "task",
+      "action": "deny",
+      "pattern": "*"
+    },
+    {
+      "permission": "skill",
+      "action": "deny",
+      "pattern": "*"
+    },
+    {
+      "permission": "webfetch",
+      "action": "deny",
+      "pattern": "*"
+    },
+    {
+      "permission": "websearch",
+      "action": "deny",
+      "pattern": "*"
+    },
+    {
+      "permission": "external_directory",
+      "pattern": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/native_ch01_01/configuration/client_state/data/opencode/tool-output/*",
+      "action": "allow"
+    }
+  ],
+  "options": {},
+  "native": false,
+  "model": {
+    "providerID": "esa-local",
+    "modelID": "esa-qwen3-4b"
+  },
+  "prompt": "Inspect the supplied task and permitted files. Make only the authorized change. Report actual tool results, preserve failures and stop for human review.",
+  "description": "Bounded ESA local-model routing exercise",
+  "temperature": 0.2,
+  "steps": 4,
+  "tools": {
+    "invalid": false,
+    "question": false,
+    "bash": true,
+    "read": true,
+    "glob": false,
+    "grep": false,
+    "edit": true,
+    "write": true,
+    "task": false,
+    "webfetch": false,
+    "todowrite": false,
+    "skill": false
+  }
+}

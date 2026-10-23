@@ -1,0 +1,71 @@
+{
+  "created_at_utc": "2026-10-22T11:44:24.125732+00:00",
+  "status": "PREPARED_NOT_LAUNCHED",
+  "parent_native_export": {
+    "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/terminal_collection_03/native-session.json",
+    "sha256": "01ad8ea9da57f23fe443eeb64b366478632e5c24f38e7a75209af130c396da2e",
+    "session_id": "ses_e9cc44d15ffewxo9hTP3f5v23l",
+    "message_count": 15
+  },
+  "actual_previous_result": {
+    "exit_code": 1,
+    "duration_seconds": 1503.7998322519998,
+    "native_error": "The operation timed out.",
+    "new_tool_part": "write / Tool execution aborted / interrupted true / input {} / raw empty",
+    "recovered_draft_content": false
+  },
+  "config_change": {
+    "old_path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/invocation_03/OPENCODE_CONFIG_03.json",
+    "old_sha256": "044c5deaa96cb5c5e88e7d55770d3d0c399669a926045f5b3fab470359d83941",
+    "new_path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/continuation_preparation_02/OPENCODE_CONFIG_04.json",
+    "new_sha256": "5daa4a42c9eeaae956d290304443b8f47bb4cc7ab5f2fed898e30541d9c3ac43",
+    "only_configuration_value_change": "provider.esa-local.models.esa-qwen3-4b.limit.output:3072->1536",
+    "all_other_config_values_equal": true,
+    "same_state_and_environment_except_config_reference": true,
+    "provider_overall_ms": 1500000,
+    "provider_header_ms": 1500000
+  },
+  "task_change": {
+    "outer_timeout_seconds": 2400,
+    "single_write_target": "/workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/specs/001-explain-treasury/spec.md",
+    "content_target_tokens": 650,
+    "content_target_is_guidance_not_mechanical_cap": true,
+    "no_command_or_source_reattachment": true,
+    "no_clarify_command_added": true,
+    "no_draft_or_owner_answers": true
+  },
+  "project_matches_terminal03_after": true,
+  "project_files": 50,
+  "tokenization": {
+    "endpoint": "http://127.0.0.1:18080/tokenize",
+    "model_inference": false,
+    "prompt_tokens": 242,
+    "failed_native_parts_json_probe_tokens": 266,
+    "probe_limit": "JSON probe is a conservative size observation of retained failed parts, not exact serialized chat history. No2642 backend decode tokens are invented as retained content: native export contains empty input/raw."
+  },
+  "context_budget": {
+    "context_tokens": 24576,
+    "last_actual_request_prompt_tokens": 18350,
+    "new_prompt_tokens": 242,
+    "new_message_envelope_reserve": 256,
+    "failed_history_reserve": 1024,
+    "new_completed_write_history_and_result_reserve": 1664,
+    "per_response_cap": 1536,
+    "reserved_total": 23072,
+    "spare": 1504,
+    "pass": true,
+    "basis": "Retain previous actual18350-token prompt plus the exported abort/error and new user request. Reserve one complete1536-token write plus128-token result before a subsequent capped response. The650-token content target is not used as a mechanical bound.",
+    "limits": "Actual next serialization remains to be observed. Repeated or unexpected tool actions can exceed this one-write budget; stop/report rather than drop history or source inputs."
+  },
+  "source_bindings": [
+    {
+      "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/input_budget/output_cap_sources/request.ts",
+      "sha256": "90077551a9a46e11a37f44279c584832918d722c0ba0407ff8cad8d3437dd0de"
+    },
+    {
+      "path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/continuation_preparation_01/SOURCE_PROOF.json",
+      "sha256": "028dddb31c4f9525c06e4b2d28d5cea3fe5b1deab86311e92b2dc6fc38d98697"
+    }
+  ],
+  "no_native_diagnostic_or_model_invocation": true
+}

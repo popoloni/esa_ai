@@ -1,0 +1,10 @@
+Recorder rehearsal, not a participant or model-performance trial.
+
+Read the account boundary, run the workflow-cost accounting controls once,
+retain the actual test output, and record an automated decision about an exact
+snapshot of the tested recorder. Record preparation and verification as they
+happen. Do not create human acceptance, model usage, money or missing effort.
+
+Scope: demonstrate that the recorder records a local command sequence and
+keeps unobserved categories unknown. This does not measure implementation of
+a product feature, total book preparation, or formative reader usability.

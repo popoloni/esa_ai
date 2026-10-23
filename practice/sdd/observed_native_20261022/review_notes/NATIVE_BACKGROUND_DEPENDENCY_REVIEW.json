@@ -1,0 +1,20 @@
+{
+  "finding_id": "D7-NATIVE-BACKGROUND-DEPENDENCY",
+  "status": "DIAGNOSED_DOCUMENTED_NONBLOCKING_PINNED_CLIENT_BEHAVIOR",
+  "recorded_at_utc": "2026-10-22T07:26:57.137604+00:00",
+  "observation": "Actual native logs retain background requests for @opencode-ai/plugin in project and isolated configuration directories, despite OPENCODE_DISABLE_DEFAULT_PLUGINS=true. These requests failed against the direct registry.",
+  "observed_sources": [
+    "revision_d7/evidence/sdd_native_02/compact_input_preparation/attempt_01/stderr.txt",
+    "revision_d7/evidence/sdd_native_recovery_01/attempt_01/stderr.txt"
+  ],
+  "pinned_source": {
+    "path": "companion/practice/native_client/setup/runtime_d7/diagnosis/config.ts",
+    "sha256": "87a9071af1ddb04d65947dba49be3fb4c94ecf63e120f17ce46ee81ff25dd45a",
+    "version": "OpenCode 1.19.3",
+    "region": "Config-directory loop, including npmSvc.install and forkDetach around lines 452-470"
+  },
+  "source_interpretation": "The visible configuration-directory loop always requests installation of the versioned @opencode-ai/plugin dependency before loading commands/agents. OPENCODE_DISABLE_DEFAULT_PLUGINS does not guard this installation branch.",
+  "impact": "The failed background requests did not prevent the recovery from returning its completed primary response. No complete offline or network containment claim is made.",
+  "disposition": "Bounded disclosure retained. No active client/configuration/state change, bypass, disabled TLS verification or fabricated successful dependency setup. Native client dependency installation and provider routing are separate surfaces.",
+  "limits": "No claim that every possible upstream configuration flag was exhaustively tested; this explains the actual pinned branch and observed warnings."
+}

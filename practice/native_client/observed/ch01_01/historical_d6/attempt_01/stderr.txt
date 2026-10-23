@@ -1,0 +1,42 @@
+timestamp=2026-10-21T21:32:11.027Z level=INFO run=db372be6 message="creating instance" directory=/workspace/scratch/efa0a59e0545/runtime_d6/native_work_01
+timestamp=2026-10-21T21:32:11.030Z level=INFO run=db372be6 message=fromDirectory directory=/workspace/scratch/efa0a59e0545/runtime_d6/native_work_01
+timestamp=2026-10-21T21:32:11.073Z level=INFO run=db372be6 message=bootstrapping directory=/workspace/scratch/efa0a59e0545/runtime_d6/native_work_01
+timestamp=2026-10-21T21:32:11.079Z level=INFO run=db372be6 message=loading path=/workspace/scratch/efa0a59e0545/runtime_d6/opencode/xdg-config/opencode/config.json
+timestamp=2026-10-21T21:32:11.079Z level=INFO run=db372be6 message=loading path=/workspace/scratch/efa0a59e0545/runtime_d6/opencode/xdg-config/opencode/opencode.json
+timestamp=2026-10-21T21:32:11.081Z level=INFO run=db372be6 message=loading path=/workspace/scratch/efa0a59e0545/runtime_d6/opencode/xdg-config/opencode/opencode.jsonc
+timestamp=2026-10-21T21:32:11.088Z level=INFO run=db372be6 message=loading path=/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Competitive_Revision_d6_20261021/revision_d6/evidence/native_ch01_01/OPENCODE_CONFIG_02.json
+timestamp=2026-10-21T21:32:11.098Z level=DEBUG run=db372be6 message="loaded custom config" path=/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Competitive_Revision_d6_20261021/revision_d6/evidence/native_ch01_01/OPENCODE_CONFIG_02.json
+timestamp=2026-10-21T21:32:11.107Z level=DEBUG run=db372be6 message="loading config from OPENCODE_CONFIG_DIR" path=/workspace/scratch/efa0a59e0545/runtime_d6/opencode/empty-config
+timestamp=2026-10-21T21:32:11.122Z level=DEBUG run=db372be6 message="loading config from /workspace/scratch/efa0a59e0545/runtime_d6/opencode/empty-config/opencode.json"
+timestamp=2026-10-21T21:32:11.122Z level=INFO run=db372be6 message=loading path=/workspace/scratch/efa0a59e0545/runtime_d6/opencode/empty-config/opencode.json
+timestamp=2026-10-21T21:32:11.130Z level=DEBUG run=db372be6 message="loading config from /workspace/scratch/efa0a59e0545/runtime_d6/opencode/empty-config/opencode.jsonc"
+timestamp=2026-10-21T21:32:11.130Z level=INFO run=db372be6 message=loading path=/workspace/scratch/efa0a59e0545/runtime_d6/opencode/empty-config/opencode.jsonc
+timestamp=2026-10-21T21:32:11.369Z level=INFO run=db372be6 message="all LSPs are disabled"
+timestamp=2026-10-21T21:32:11.370Z level=INFO run=db372be6 message="all formatters are disabled"
+timestamp=2026-10-21T21:32:11.370Z level=INFO run=db372be6 message=init
+timestamp=2026-10-21T21:32:11.560Z level=INFO run=db372be6 message=created id=ses_e9f9f0258ffeR0WgnBMU5sP0pg slug=shiny-river version=1.19.3 projectID=global directory=/workspace/scratch/efa0a59e0545/runtime_d6/native_work_01 path=workspace/scratch/efa0a59e0545/runtime_d6/native_work_01 workspaceID=undefined parentID=undefined title="ESA Chapter1 native attempt01" agent=undefined model=undefined metadata=undefined permission="[{\"permission\":\"question\",\"pattern\":\"*\",\"action\":\"deny\"},{\"permission\":\"plan_enter\",\"pattern\":\"*\",\"action\":\"deny\"},{\"permission\":\"plan_exit\",\"pattern\":\"*\",\"action\":\"deny\"}]" cost=0 tokens.input=0 tokens.output=0 tokens.reasoning=0 tokens.cache.read=0 tokens.cache.write=0 time.created=1792618331560 time.updated=1792618331560
+timestamp=2026-10-21T21:32:11.604Z level=INFO run=db372be6 message="event connected"
+timestamp=2026-10-21T21:32:11.651Z level=INFO run=db372be6 message=loop session.id=ses_e9f9f0258ffeR0WgnBMU5sP0pg step=0
+timestamp=2026-10-21T21:32:12.383Z level=INFO run=db372be6 message="shell tool using shell" shell=/usr/bin/bash
+timestamp=2026-10-21T21:32:12.537Z level=INFO run=db372be6 message="watcher backend" directory=/workspace/scratch/efa0a59e0545/runtime_d6/native_work_01 platform=linux backend=inotify
+timestamp=2026-10-21T21:32:12.560Z level=INFO run=db372be6 message="project copy refresh started" projectID=global
+timestamp=2026-10-21T21:32:12.562Z level=INFO run=db372be6 message="project copy refresh done" projectID=global updated=[] removed=[]
+timestamp=2026-10-21T21:32:12.577Z level=INFO run=db372be6 message="booting location services" directory=/workspace/scratch/efa0a59e0545/runtime_d6/native_work_01 workspaceID=undefined
+timestamp=2026-10-21T21:32:13.005Z level=INFO run=db372be6 message=process session.id=ses_e9f9f0258ffeR0WgnBMU5sP0pg messageID=msg_1606100d3001Q4T5Z1MFj9XQdw
+timestamp=2026-10-21T21:32:13.009Z level=INFO run=db372be6 message=stream providerID=esa-local modelID=esa-qwen3-4b session.id=ses_e9f9f0258ffeR0WgnBMU5sP0pg small=false agent=esa-bounded mode=primary
+timestamp=2026-10-21T21:32:13.033Z level=INFO run=db372be6 message="llm runtime selected" llm.runtime=ai-sdk llm.provider=esa-local llm.model=esa-qwen3-4b
+timestamp=2026-10-21T21:33:10.499Z level=INFO run=db372be6 message=evaluated permission=external_directory pattern=/workspace/scratch/efa0a59e0545/runtime_d6/reader_side/intent/* action.permission=external_directory action.action=deny action.pattern=*
+timestamp=2026-10-21T21:33:17.625Z level=INFO run=db372be6 message=evaluated permission=external_directory pattern=/workspace/scratch/efa0a59e0545/runtime_d6/reader_side/acceptance/* action.permission=external_directory action.action=deny action.pattern=*
+timestamp=2026-10-21T21:33:22.507Z level=WARN run=db372be6 message="background dependency install failed" dir=/workspace/scratch/efa0a59e0545/runtime_d6/opencode/xdg-config/opencode error="Cause([Fail(NpmInstallFailedError (cause: FetchError: request to https://registry.npmjs.org/@opencode-ai%2fplugin failed, reason: ECONNREFUSED))])"
+timestamp=2026-10-21T21:33:22.507Z level=WARN run=db372be6 message="background dependency install failed" dir=/workspace/scratch/efa0a59e0545/runtime_d6/opencode/empty-config error="Cause([Fail(NpmInstallFailedError (cause: FetchError: request to https://registry.npmjs.org/@opencode-ai%2fplugin failed, reason: ECONNREFUSED))])"
+timestamp=2026-10-21T21:33:25.631Z level=INFO run=db372be6 message=evaluated permission=external_directory pattern=/workspace/scratch/efa0a59e0545/runtime_d6/repo/src/treasury/* action.permission=external_directory action.action=deny action.pattern=*
+timestamp=2026-10-21T21:33:34.964Z level=INFO run=db372be6 message=evaluated permission=external_directory pattern=/workspace/scratch/efa0a59e0545/runtime_d6/reader_side/evidence/* action.permission=external_directory action.action=deny action.pattern=*
+timestamp=2026-10-21T21:33:43.458Z level=INFO run=db372be6 message=evaluated permission=external_directory pattern=/workspace/scratch/efa0a59e0545/runtime_d6/repo/* action.permission=external_directory action.action=deny action.pattern=*
+timestamp=2026-10-21T21:33:43.714Z level=INFO run=db372be6 message=loop session.id=ses_e9f9f0258ffeR0WgnBMU5sP0pg step=1
+timestamp=2026-10-21T21:33:43.728Z level=INFO run=db372be6 message=process session.id=ses_e9f9f0258ffeR0WgnBMU5sP0pg messageID=msg_1606265a3001dpW9Mle1v1CEbV
+timestamp=2026-10-21T21:33:43.729Z level=INFO run=db372be6 message=stream providerID=esa-local modelID=esa-qwen3-4b session.id=ses_e9f9f0258ffeR0WgnBMU5sP0pg small=false agent=esa-bounded mode=primary
+timestamp=2026-10-21T21:33:43.730Z level=INFO run=db372be6 message="llm runtime selected" llm.runtime=ai-sdk llm.provider=esa-local llm.model=esa-qwen3-4b
+timestamp=2026-10-21T21:34:16.314Z level=INFO run=db372be6 message=loop session.id=ses_e9f9f0258ffeR0WgnBMU5sP0pg step=2
+timestamp=2026-10-21T21:34:16.315Z level=INFO run=db372be6 message="exiting loop" session.id=ses_e9f9f0258ffeR0WgnBMU5sP0pg
+timestamp=2026-10-21T21:34:16.321Z level=INFO run=db372be6 message="disposing instance" directory=/workspace/scratch/efa0a59e0545/runtime_d6/native_work_01
+timestamp=2026-10-21T21:34:16.339Z level=INFO run=db372be6 message=loading path=/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Competitive_Revision_d6_20261021/revision_d6/evidence/native_ch01_01/OPENCODE_CONFIG_02.json

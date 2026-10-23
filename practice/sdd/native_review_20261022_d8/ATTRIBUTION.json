@@ -1,0 +1,8 @@
+{
+  "copied_at_utc": "2026-10-22T12:24:54.019001+00:00",
+  "source_path": "revision_d8/notes/R08_ATTEMPT_04_INDEPENDENT_REVIEW.json",
+  "source_sha256": "54af132187e9aa8e9192b2297e11393ea051606adf7ffd75c23863d7ca8da854",
+  "copy": "INDEPENDENT_R08_REVIEW.json",
+  "copy_sha256": "54af132187e9aa8e9192b2297e11393ea051606adf7ffd75c23863d7ca8da854",
+  "attribution": "Byte-identical independent AI review by /root/acceptance_audit. It assesses the actual native terminal04 artifact and original R08 scope. This copy is not human acceptance or an independent review of subsequent editorial layout."
+}

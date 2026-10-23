@@ -1,0 +1,18 @@
+[
+  {
+    "url": "https://raw.githubusercontent.com/anomalyco/opencode/v1.19.3/packages/core/src/v1/config/provider.ts",
+    "started_at_utc": "2026-10-22T10:37:58.316281+00:00",
+    "file": "provider_schema.ts",
+    "sha256": "45fe8953a698ff8b2cd83150c7617d3a06a4869abf709cd948f408537ee9aae7",
+    "bytes": 5835,
+    "status": "retrieved",
+    "finished_at_utc": "2026-10-22T10:37:58.495613+00:00"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/anomalyco/opencode/v1.19.3/packages/core/src/v1/provider/model.ts",
+    "started_at_utc": "2026-10-22T10:37:58.495630+00:00",
+    "status": "failed",
+    "error": "HTTP Error 404: Not Found",
+    "finished_at_utc": "2026-10-22T10:37:58.736805+00:00"
+  }
+]

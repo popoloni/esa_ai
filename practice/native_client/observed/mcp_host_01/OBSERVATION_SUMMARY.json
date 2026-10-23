@@ -1,0 +1,133 @@
+{
+  "schema": "esa-mcp-native-observation-review/v1",
+  "reviewed_at_utc": "2026-10-22T06:26:49.290268+00:00",
+  "status": "OBSERVED_NATIVE_HOST_USE_WITH_REJECTED_MODEL_EXPLANATION",
+  "session_id": "ses_e9dbcb699ffeOqi2P8Ut38WIpn",
+  "started_at_utc": "2026-10-22T06:18:57.808446+00:00",
+  "finished_at_utc": "2026-10-22T06:20:08.363701+00:00",
+  "duration_seconds": 70.55521494599998,
+  "client_exit_code": 0,
+  "identities": {
+    "path": "CLIENT_IDENTITIES.json",
+    "sha256": "804bff34c05bb6a4f41b7f468bd4cd4ca38ecf90215ec2a8769622b0bfc290d2"
+  },
+  "native_model_selected_calls": [
+    {
+      "input": {
+        "policy_id": "BR-001/v2"
+      },
+      "output": {
+        "ok": true,
+        "policy": {
+          "version": "BR-001/v2",
+          "threshold_eur": "3000.00",
+          "algorithm": "TREASURY_THRESHOLD_V1"
+        },
+        "boundary": "Strictly below the threshold routes STANDARD_QUEUE; equality and above route HUMAN_REVIEW.",
+        "authority": "Synthetic local policy-evolution experiment only; no real payment or release authorization.",
+        "source": {
+          "path": "reader_side/evolution/policy_catalog.json",
+          "sha256": "564561e18107fb6ada46df736e73b9b96784b58724c85900385acfc8891f466f"
+        }
+      },
+      "call_id": "3hI9XRmblzeJLj7vlePXHEFIXt1EboPU"
+    },
+    {
+      "input": {
+        "policy_id": "BR-999/v1"
+      },
+      "output": {
+        "ok": false,
+        "error": {
+          "code": "UNKNOWN_POLICY",
+          "message": "Choose BR-001/v1 or BR-001/v2. No file path is accepted."
+        }
+      },
+      "call_id": "6x4x3EBXwzz7DPhJtGZR1guTr1pTfOJG"
+    },
+    {
+      "input": {
+        "policy_id": "["
+      },
+      "output": {
+        "ok": false,
+        "error": {
+          "code": "UNKNOWN_POLICY",
+          "message": "Choose BR-001/v1 or BR-001/v2. No file path is accepted."
+        }
+      },
+      "call_id": "2U0vYp3abO0Hytu6qyNyDvLRptI3Lnq1"
+    }
+  ],
+  "native_steps_completed": 2,
+  "reported_tokens": {
+    "input": 931,
+    "output": 352,
+    "cache_read": 538,
+    "cache_write": 0,
+    "reasoning": 0,
+    "total": 1821
+  },
+  "client_reported_cost": 0,
+  "cost_scope": "Local native-client reported charge only; not total workflow cost, energy cost or human effort.",
+  "first_output_defect": {
+    "path": "MALFORMED_ARGUMENT_REVIEW.json",
+    "sha256": "af77c25a90a2daa28908750ba8ad914b1205882fbb0d70e7d4afbc24e67527bb"
+  },
+  "failure_layers": {
+    "path": "LAYER_ASSESSMENT.json",
+    "sha256": "0ab8a9e949a1bc8715fc89075d34708535a58db27917088135cc7473102e700b"
+  },
+  "process_boundary": {
+    "path": "PROCESS_BOUNDARY_REVIEW.json",
+    "sha256": "41a3824e5c0dc18b0478fac4577e24dc36e2e531fc32eb3b4c6f4c586a71fa64"
+  },
+  "configured_source_hashes_before": {
+    "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion/practice/mcp_cli/policy_server.py": "ffe28e2fe445ab53bbb0048f02ca1642096abd6102743dcda56ca4fd12c3f139",
+    "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion/practice/mcp_cli/wire_proxy.py": "fedefddeb30a834e62a2093d6e0737c6ea09bf52ed9d1e51ab6071f2850daab4",
+    "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion/practice/native_client/probe/sitecustomize.py": "e530f010156b129433fe4a80b51c99e74962e3983cb6eda58fb95651e8911e1f"
+  },
+  "configured_source_hashes_after": {
+    "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion/practice/mcp_cli/policy_server.py": "ffe28e2fe445ab53bbb0048f02ca1642096abd6102743dcda56ca4fd12c3f139",
+    "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion/practice/mcp_cli/wire_proxy.py": "fedefddeb30a834e62a2093d6e0737c6ea09bf52ed9d1e51ab6071f2850daab4",
+    "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion/practice/native_client/probe/sitecustomize.py": "e530f010156b129433fe4a80b51c99e74962e3983cb6eda58fb95651e8911e1f"
+  },
+  "configured_sources_unchanged": true,
+  "catalog_sha256_in_actual_result": "564561e18107fb6ada46df736e73b9b96784b58724c85900385acfc8891f466f",
+  "catalog_sha256_after": "564561e18107fb6ada46df736e73b9b96784b58724c85900385acfc8891f466f",
+  "study_changed_files": [],
+  "comparison": "No second coding-host trial or paired performance claim. Historical modern SDK/CLI exercise remains separate.",
+  "operator_or_requirements_owner_review": "NOT_PERFORMED",
+  "action_criterion_assessment": [
+    {
+      "criterion": "Host/server versions, loaded tool and real request/result are retained.",
+      "assessment": "SATISFIED",
+      "evidence": [
+        "CLIENT_IDENTITIES.json",
+        "trace_01/client_to_server.jsonl",
+        "trace_01/server_to_client.jsonl",
+        "attempt_01/native-session.json"
+      ]
+    },
+    {
+      "criterion": "Startup, discovery, argument and domain failures can be distinguished.",
+      "assessment": "SATISFIED_WITH_EXPLICIT_CROSS_CLIENT_ATTRIBUTION",
+      "evidence": [
+        "LAYER_ASSESSMENT.json",
+        "MALFORMED_ARGUMENT_REVIEW.json",
+        "legacy_sdk_controls/attempt_01/CONTROL.json",
+        "legacy_sdk_controls/attempt_02/CONTROL.json"
+      ],
+      "limit": "Native invalid-list rejection is unobserved; true argument rejection belongs to the separately retained same-protocol SDK control."
+    },
+    {
+      "criterion": "Observed limits are stated precisely; controller/read-only schema is not OS containment.",
+      "assessment": "SATISFIED",
+      "evidence": [
+        "PROCESS_BOUNDARY_REVIEW.json"
+      ],
+      "limit": "One nonsecret startup read only; no post-initialization, environment or network isolation assessment."
+    }
+  ],
+  "closure": "Requires root and independent acceptance audit against unchanged original R07 criteria."
+}

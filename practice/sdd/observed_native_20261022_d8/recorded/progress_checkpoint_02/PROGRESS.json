@@ -1,0 +1,48 @@
+{
+  "started_at_utc": "2026-10-22T11:37:25.699225+00:00",
+  "completed_at_utc": "2026-10-22T11:37:25.701312+00:00",
+  "status": "NONTERMINAL_PREFIX_OBSERVATION_NO_COMPLETED_WRITE",
+  "attempt": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/attempt_03",
+  "session_id": "ses_e9cc44d15ffewxo9hTP3f5v23l",
+  "prefixes": {
+    "stdout.txt": {
+      "source": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/attempt_03/stdout.txt",
+      "captured_at_utc": "2026-10-22T11:37:25.699644+00:00",
+      "captured_source_bytes": 250,
+      "complete_prefix_bytes": 250,
+      "discarded_incomplete_line_bytes": 0,
+      "sha256": "574844c86979f8d92ed7e0a7eb9d306f704abd55853fe1f72733d437ccecf0b8",
+      "remained_source_prefix_after_copy": true
+    },
+    "stderr.txt": {
+      "source": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/attempt_03/stderr.txt",
+      "captured_at_utc": "2026-10-22T11:37:25.700052+00:00",
+      "captured_source_bytes": 5766,
+      "complete_prefix_bytes": 5766,
+      "discarded_incomplete_line_bytes": 0,
+      "sha256": "bf28f5aea122483e2fd7f57a521bd50f525e8e03da49a71d2f4feeaa0a00c91c",
+      "remained_source_prefix_after_copy": true
+    }
+  },
+  "native_events": 1,
+  "completed_native_write_edit_events": 0,
+  "tool_events": 0,
+  "event_types": [
+    "step_start"
+  ],
+  "terminal_receipt_present_at_observation": false,
+  "live_native_run_processes": [],
+  "observed_specification": {
+    "path": "/workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/specs/001-explain-treasury/spec.md",
+    "bytes": 4556,
+    "sha256": "3945437fc35cd30a5b2bf7beea680337c3516826d3efa5a6b92c4a7eca1ba28e",
+    "equals_previously_copied_upstream_template": true,
+    "scope": "Read-only current file observation; no useful feature content is established by this unchanged template."
+  },
+  "interpretation": "The continuation has emitted a first step_start only. The unfinished model response has not produced a completed tool write, text answer, owner clarification or generation outcome in this prefix. Ongoing backend decoding is recorded separately by the server monitor; it is not inferred as completion here.",
+  "active_database_export": false,
+  "model_call": false,
+  "project_written_by_observer": false,
+  "human_review": "ABSENT",
+  "limits": "This is an immutable complete-line prefix, not a terminal result. Later events and file versions remain outside this snapshot. No partial native payload was available in the captured stdout."
+}

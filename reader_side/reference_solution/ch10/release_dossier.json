@@ -1,0 +1,27 @@
+{
+  "schema": "cp10-release-dossier/v1",
+  "change_id": "CP10-PRESENTATION-001",
+  "author_id": "agent-author",
+  "candidate_source_sha256": "4cae28f8db65a185fd5faed74f564af48207aa45f27f3febb79edba0d57e87a3",
+  "ci_evidence_ids": [
+    "CI-MERGE-001",
+    "CI-ROUTING-001",
+    "CI-INTEGRATION-001",
+    "CI-ARTIFACT-001"
+  ],
+  "discussion_resolution_ids": [
+    "RESOLUTION-10-01",
+    "RESOLUTION-10-02"
+  ],
+  "review_decision_id": "REVIEW-10-ACCEPT",
+  "release_decision_id": "RELEASE-10-LOCAL",
+  "artifact_id": "CP10-CURRENT",
+  "rollback_artifact_id": "CP10-PREVIOUS",
+  "claims": {
+    "real_human_acceptance": false,
+    "production_deployed": false,
+    "payment_authorized": false,
+    "cp07_t07_04_executed": false
+  },
+  "review_summary": "The named protected synthetic reviewer closes the two mandatory threads only for the recorded source, merge candidate, checks and artifact. This authorizes a local artifact-selection rehearsal only."
+}

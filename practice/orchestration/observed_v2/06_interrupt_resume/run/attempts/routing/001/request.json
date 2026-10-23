@@ -1,0 +1,20 @@
+{
+  "attempt": 1,
+  "authority": "Read supplied inputs; write only this attempt's outputs. No acceptance or release authority.",
+  "dependencies": {},
+  "input_root": "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Orchestration_Harness_20261020/companion/practice/orchestration/observed_v2/06_interrupt_resume/inputs",
+  "schema": "treasury-worker-request/v1",
+  "task": {
+    "depends_on": [],
+    "id": "routing",
+    "idempotent": true,
+    "kind": "worker",
+    "max_attempts": 2,
+    "parameters": {
+      "delay_first_attempt": 10,
+      "mode": "routing"
+    },
+    "response": "result.json",
+    "timeout_seconds": 20
+  }
+}

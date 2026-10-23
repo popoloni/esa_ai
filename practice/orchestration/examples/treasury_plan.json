@@ -1,0 +1,58 @@
+{
+  "schema": "treasury-orchestrator/v1",
+  "worker_kind": "DETERMINISTIC_PYTHON",
+  "max_parallel": 2,
+  "max_wall_seconds": 60,
+  "max_output_bytes": 1048576,
+  "adapter_argv": [
+    "{python}",
+    "{worker}",
+    "--request",
+    "{request}",
+    "--response",
+    "{response}"
+  ],
+  "tasks": [
+    {
+      "id": "policy",
+      "kind": "worker",
+      "depends_on": [],
+      "idempotent": true,
+      "max_attempts": 1,
+      "timeout_seconds": 3,
+      "response": "result.json",
+      "parameters": {
+        "mode": "policy",
+        "delay_first_attempt": 0.1
+      }
+    },
+    {
+      "id": "routing",
+      "kind": "worker",
+      "depends_on": [],
+      "idempotent": true,
+      "max_attempts": 1,
+      "timeout_seconds": 3,
+      "response": "result.json",
+      "parameters": {
+        "mode": "routing",
+        "delay_first_attempt": 0.15
+      }
+    },
+    {
+      "id": "synthesis",
+      "kind": "worker",
+      "depends_on": [
+        "policy",
+        "routing"
+      ],
+      "idempotent": true,
+      "max_attempts": 1,
+      "timeout_seconds": 3,
+      "response": "result.json",
+      "parameters": {
+        "mode": "synthesis"
+      }
+    }
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "recorded_at_utc": "2026-10-22T12:23:39.319644+00:00",
+  "status": "PASS_ACTUAL_ISOLATED_PORTABLE_HELPER_REPRODUCTION",
+  "checks": {
+    "actual_helper_exit_zero": true,
+    "all_actual_helper_checks_pass": true,
+    "config_equal_after_declared_path_normalization": true,
+    "environment_equal_after_declared_path_normalization": true,
+    "full_native_argv_equal_after_declared_path_normalization": true,
+    "task_prompt_equal_after_declared_path_normalization": true,
+    "same_context_output_provider_outer_limits": true,
+    "both_complete_upstream_commands_equal": true,
+    "all_13_source_files_byte_exact": true,
+    "all_9_json_values_preserved": true,
+    "recreated_bundle_equals_copied_preimage": true,
+    "all_49_starting_files_exact_after_actual_diagnostics": true,
+    "no_feature_artifacts_created": true,
+    "original_candidate_03_manifest_unchanged": true
+  },
+  "actual_diagnostics_count": 4,
+  "actual_helper_checks": {
+    "version_is_1_19_3": true,
+    "native_specify_discovered": true,
+    "native_clarify_discovered": true,
+    "full_upstream_commands_preserved": true,
+    "no_injected_command_override": true,
+    "only_local_provider_enabled": true,
+    "explicit_provider_timeout": true,
+    "explicit_header_timeout": true,
+    "explicit_schema_metadata": true,
+    "declared_model_limits": true,
+    "local_small_model": true,
+    "declared_temperature_capability": true,
+    "read_rules_only_generated_outputs": true,
+    "bash_enabled": true,
+    "bounded_read_enabled_for_artifact_review": true,
+    "edit_enabled": true,
+    "write_enabled": true,
+    "steps_12": true,
+    "all_prepared_files_unchanged": true,
+    "configuration_bytes_stable": true,
+    "no_feature_artifacts_created": true
+  },
+  "diagnostic_exit_codes": {
+    "git-worktree": 128,
+    "opencode-version": 0,
+    "opencode-effective-config": 0,
+    "opencode-effective-agent": 0
+  },
+  "expected_git_exit_qualification": "git rev-parse returned128 because the disposable project is not in a Git worktree, as required by this observed permission recipe. Its raw diagnostic entry is retained.",
+  "normalization_pairs": [
+    {
+      "exact_path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/invocation_03/OPENCODE_CONFIG_03.json",
+      "replacement": "<CONFIG_PATH>"
+    },
+    {
+      "exact_path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/portable_helper_adoption/actual_reproduction_01/preparation/OPENCODE_CONFIG_01.json",
+      "replacement": "<CONFIG_PATH>"
+    },
+    {
+      "exact_path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/invocation_03/ENVIRONMENT_03.json",
+      "replacement": "<ENVIRONMENT_PATH>"
+    },
+    {
+      "exact_path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/portable_helper_adoption/actual_reproduction_01/preparation/ENVIRONMENT_01.json",
+      "replacement": "<ENVIRONMENT_PATH>"
+    },
+    {
+      "exact_path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/invocation_03/TASK_PROMPT_03.txt",
+      "replacement": "<PROMPT_PATH>"
+    },
+    {
+      "exact_path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/portable_helper_adoption/actual_reproduction_01/preparation/TASK_PROMPT_01.txt",
+      "replacement": "<PROMPT_PATH>"
+    },
+    {
+      "exact_path": "/workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01",
+      "replacement": "<PROJECT>"
+    },
+    {
+      "exact_path": "/workspace/scratch/72d789d25fef/runtime_d8/portable_reproduction_01/project",
+      "replacement": "<PROJECT>"
+    },
+    {
+      "exact_path": "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01",
+      "replacement": "<PROJECT_NO_LEADING_SLASH>"
+    },
+    {
+      "exact_path": "workspace/scratch/72d789d25fef/runtime_d8/portable_reproduction_01/project",
+      "replacement": "<PROJECT_NO_LEADING_SLASH>"
+    },
+    {
+      "exact_path": "/workspace/scratch/72d789d25fef/runtime_d8/sdd_client_state_03",
+      "replacement": "<STATE>"
+    },
+    {
+      "exact_path": "/workspace/scratch/72d789d25fef/runtime_d8/portable_reproduction_01/state",
+      "replacement": "<STATE>"
+    },
+    {
+      "exact_path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/invocation_03",
+      "replacement": "<EVIDENCE>"
+    },
+    {
+      "exact_path": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/portable_helper_adoption/actual_reproduction_01/preparation",
+      "replacement": "<EVIDENCE>"
+    }
+  ],
+  "comparison_scope": "Configuration, environment, complete prepared native argv and task prompt are equal to candidate03 after only the explicit project/state/evidence/config/prompt path substitutions above. Metadata origin labels, timestamps and evidence filenames are not asserted identical.",
+  "full_command_checks": {
+    "speckit.specify": true,
+    "speckit.clarify": true
+  },
+  "source_checks": {
+    "inputs/specification.json": true,
+    "inputs/case_oracle.json": true,
+    "inputs/discovery_handoff.json": true,
+    "inputs/assessment.json": true,
+    "inputs/sources/SRC-OPS-004.json": true,
+    "inputs/sources/SRC-POL-001.json": true,
+    "inputs/sources/SRC-RISK-002.json": true,
+    "inputs/sources/SRC-TKT-017.json": true,
+    "inputs/sources/SRC-WIKI-OLD.json": true,
+    "source/treasury/routing.py": true,
+    ".specify/templates/spec-template.md": true,
+    ".specify/templates/checklist-template.md": true,
+    ".specify/memory/constitution.md": true
+  },
+  "bundle_identity": {
+    "bytes": 25149,
+    "sha256": "bbaf6d82364e6e6e2fa543f9c9c1cf407ffe315aa2a75d63be4caf09ae25d718",
+    "native_read_bounds": {
+      "lines": 342,
+      "max_line_utf16_units": 984,
+      "bytes": 25149,
+      "line_limit": 2000,
+      "per_line_limit": 2000,
+      "byte_limit": 51200
+    }
+  },
+  "step_limit_qualification": "agent.steps=12 is a last-step instruction in pinned OpenCode, not a mechanical tool-call bound. The5400-second outer capture bound is prepared but was not executed in this configuration-only check.",
+  "no_model_call": true,
+  "no_native_generation_command_executed": true,
+  "no_simulated_diagnostics": true,
+  "active_or_historical_project_state_mutated": false,
+  "helper_sha256": "e556e9b8ede8e4c8817f33784bb451b17b80b3b04f3a8576c75a4107c8ce36b6",
+  "launcher_sha256": "c9bc0eb8e64725c7b1ba92687cdfcf4ffd87c5648c0c3abb2e08d4854c3c5b4f",
+  "bindings": {
+    "revision_d8/evidence/portable_helper_adoption/actual_reproduction_01/PREPARATION.json": {
+      "sha256": "cafc054f6a4e8469bbbb6f715c2d9087a5add4d3f1a2b64898e875f8e7ce2be8",
+      "bytes": 10562
+    },
+    "revision_d8/evidence/portable_helper_adoption/actual_reproduction_01/EXECUTION_RECEIPT.json": {
+      "sha256": "453d555e7b80d2c912acb98c1d02b8a2510978d59ab1621fdc13536384ccc79d",
+      "bytes": 2157
+    },
+    "revision_d8/evidence/portable_helper_adoption/actual_reproduction_01/preparation/CONFIGURATION_NOTES.json": {
+      "sha256": "d543e66580c01fb27bcb3e19e24f9b1fa932dc4466bab0ef9f1e4501c6f674e3",
+      "bytes": 186688
+    },
+    "revision_d8/evidence/native_sdd_01/invocation_03/CANDIDATE03_MANIFEST.json": {
+      "sha256": "23803cb822079907cc82c867091a83b7ae36e227b716ae41372a08dc63219d8b",
+      "bytes": 8655
+    }
+  }
+}

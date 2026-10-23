@@ -1,0 +1,28 @@
+[
+  {
+    "label": "installed_versions",
+    "argv": [
+      "/tmp/esa-d4-sdd-20261021/bin/python",
+      "-c",
+      "import importlib.metadata as m,json; print(json.dumps({\"specify-cli\":m.version(\"specify-cli\"),\"mcp\":m.version(\"mcp\")}))"
+    ],
+    "exit_code": 0
+  },
+  {
+    "label": "specify_version",
+    "argv": [
+      "/tmp/esa-d4-sdd-20261021/bin/specify",
+      "--version"
+    ],
+    "exit_code": 0
+  },
+  {
+    "label": "specify_init_help",
+    "argv": [
+      "/tmp/esa-d4-sdd-20261021/bin/specify",
+      "init",
+      "--help"
+    ],
+    "exit_code": 0
+  }
+]

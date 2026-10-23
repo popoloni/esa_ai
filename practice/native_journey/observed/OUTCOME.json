@@ -1,0 +1,11 @@
+{
+  "schema": "esa-native-portable-observation-index/v1",
+  "status": "OPEN_PARTIAL_BUDGET_EXHAUSTED",
+  "detailed_outcome": "recorded/OUTCOME.json",
+  "actual_final_project": "project/",
+  "actual_native_checked_project": "recorded/project_after_03/",
+  "authored_teaching_variant": "../teaching/CSV_SPEC.md",
+  "native_checked_api_sha256": "ae0492552f141f5e90c47a56670cf078a9f695303667468dfc61c85fb807c4b3",
+  "final_api_sha256": "ffbe0de916d89cb78824f02e046fda730c744c662f2936ba15aeb16ffafe8451",
+  "source_copy_policy": "recorded/ preserves source evidence bytes and historical absolute paths; reproduction helpers create fresh paths."
+}

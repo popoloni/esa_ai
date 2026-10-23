@@ -1,0 +1,11 @@
+{
+  "observed_at_utc": "2026-10-22T11:41:14.025003+00:00",
+  "inspection_context": "approved host context",
+  "live_native_run_processes": [],
+  "actual_capture_receipt_sha256": "6e7c892d79755e2395318638e4ca554705b1c2289c497461bb7cfeb0f57d5e23",
+  "actual_exit_code": 1,
+  "authoritative_terminal_evidence": "Actual capture receipt is written after its subprocess exits; this host-context scan independently found no exact-project opencode run process.",
+  "default_context_qualification": "An earlier default-context process scan used for terminal02 commentary returned no match, but could not prove host-process absence. Terminal02 collection was nevertheless performed after its actual completed capture receipt. The progress_checkpoint_02 host comparison preserves the context distinction.",
+  "model_call": false,
+  "historical_records_rewritten": false
+}

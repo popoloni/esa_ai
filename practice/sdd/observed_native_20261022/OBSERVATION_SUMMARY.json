@@ -1,0 +1,145 @@
+{
+  "schema": "esa-native-sdd-observation-summary/v1",
+  "finalized_at_utc": "2026-10-22T08:01:23.039082+00:00",
+  "status": "OBSERVED_NATIVE_INPUT_READ_GENERATION_INCOMPLETE",
+  "action": "R08",
+  "controller_recommendation": "PARTIAL",
+  "framework": "GitHub Spec Kit 1.2.2",
+  "client": "OpenCode 1.19.3",
+  "model": "Official Qwen3-4B Q4_K_M GGUF a9a60d009fa7ff9606305047c2bf77ac25dbec49 through llama.cpp b11799",
+  "model_sha256": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+  "prior_solution_exposure": "The fixed packet includes the authored inputs/specification.json reference contract, all five requirements/eight expected scenarios, source authority, canonical router, active templates and unratified constitution. Earlier generated outputs, before/after Markdown exercise answers and owner responses are excluded. This is a disclosed synthetic projection, not blind requirements elicitation.",
+  "attempts": [
+    {
+      "portable_path": "first_native_attempt/attempt_01",
+      "author_path": "revision_d7/evidence/sdd_native_02/compact_input_preparation/attempt_01",
+      "status": "FAILED_BEFORE_NATIVE_ARTIFACT_GENERATION",
+      "started_at_utc": "2026-10-22T06:20:45.765639+00:00",
+      "ended_at_utc": "2026-10-22T06:35:52.533423+00:00",
+      "duration_seconds": 906.7677544349999,
+      "exit_code": 1,
+      "receipt_sha256": "73befc140ec9f19b2357b7e9ac1e01c0d7034f9930e4c845780c202cdc3d16f8",
+      "native_export_sha256": "ca9358c248f575b10b3abb2436a7c88956a22d596d2c276c24de5a85ea6ef4d8",
+      "controller_review_sha256": "1e60bec77d48fb7546d2e4265648b5350755e49cb6e9cb037124cb8794127baa",
+      "changed_files": []
+    },
+    {
+      "portable_path": "recovery_01/attempt_01",
+      "author_path": "revision_d7/evidence/sdd_native_recovery_01/attempt_01",
+      "status": "TASK_INCOMPLETE_MODEL_STOP_NO_TOOL_CALL",
+      "started_at_utc": "2026-10-22T07:02:07.945508+00:00",
+      "ended_at_utc": "2026-10-22T07:13:50.275410+00:00",
+      "duration_seconds": 702.3298572530002,
+      "exit_code": 0,
+      "receipt_sha256": "20842e2b179bf8e36c8248736e4a84a9793b4a70dd6f0151cac7b9df94d502f6",
+      "native_export_sha256": "48196fe3a154e18bfcb3ae2066c88806be282ca2ad2df07c1be77d1c6579d95e",
+      "controller_review_sha256": "12097daacda8c0fc75f4866b431df98326e2eba06810a1a991ffd994938d3606",
+      "changed_files": []
+    },
+    {
+      "portable_path": "guided_continuation_01/attempt_01",
+      "author_path": "revision_d7/evidence/sdd_native_continuation_01/attempt_01",
+      "status": "TASK_INCOMPLETE_OUTER_TIMEOUT_AFTER_FULL_INPUT_READ",
+      "started_at_utc": "2026-10-22T07:23:02.277235+00:00",
+      "ended_at_utc": "2026-10-22T07:53:02.359954+00:00",
+      "duration_seconds": 1800.0826279609992,
+      "exit_code": 124,
+      "receipt_sha256": "8723152b286d56939cb414d5563366d6d09c7f53c127f2e40dc4f5b1e8270190",
+      "native_export_sha256": "6ce3cab5fc7c468ff1ddcdfda7aa5666c62441def9f85ef91dd9dfa31771fe60",
+      "controller_review_sha256": "349017f93b352f604fede6fb40bec9d232dc921b3f6639fedaac0bd0c3855858",
+      "changed_files": []
+    }
+  ],
+  "actual_terminal_boundary": {
+    "session_id": "ses_e9d953008ffe5prRJYzw7HWDMP",
+    "completed_tool": "bash: cat inputs/NATIVE_CONTEXT_BUNDLE.md",
+    "read_output_bytes": 25044,
+    "read_output_sha256": "51da598ef2a1d7116869cca05fe637b0120039cf8389f057ab0e6e81b301ae44",
+    "full_packet_matches": true,
+    "exit_code": 124,
+    "reason": "Prospectively fixed 1800-second controller outer limit after the input read, with a second primary request incomplete.",
+    "specification_generated": false,
+    "checklist_generated": false,
+    "feature_metadata_generated": false,
+    "project_files": 49,
+    "all_project_files_unchanged": true,
+    "native_clarification_dialogue": "NOT_REACHED",
+    "owner_questions": "All three remain unanswered in supplied input; no actual native owner dialogue occurred.",
+    "planning_or_implementation": "NOT_RUN"
+  },
+  "same_session_guidance": "The second invocation stopped with a short-name response and exit0. One final appended request explicitly asked that same session to perform the permitted read and write task. Both original message parts remain exactly unchanged; the native appended text matches pinned CLI quoting. The 120 measured added tokens are the raw prompt argument, with serialization within the declared envelope reserve.",
+  "first_outputs_preserved": true,
+  "native_attempt_wall_seconds_sum": 3409.1802396489993,
+  "timing_scope": "Sum of the three recorded client invocation spans only; not setup/review/cleanup time or human labor. Different configurations and disclosed guidance prevent a controlled performance comparison.",
+  "attributable_completed_native_steps": [
+    {
+      "attempt": "recovery_01/attempt_01",
+      "session_id": "ses_e9d953008ffe5prRJYzw7HWDMP",
+      "message_id": "msg_1626ad6870013rq3jBK4tytPm1",
+      "part_id": "prt_1627580660014k01ErZeqrxLBM",
+      "timestamp_ms": 1792653230200,
+      "tokens": {
+        "total": 6834,
+        "input": 6773,
+        "output": 61,
+        "reasoning": 0,
+        "cache": {
+          "write": 0,
+          "read": 0
+        }
+      },
+      "client_reported_cost": 0,
+      "reason": "stop"
+    },
+    {
+      "attempt": "guided_continuation_01/attempt_01",
+      "session_id": "ses_e9d953008ffe5prRJYzw7HWDMP",
+      "message_id": "msg_1627df797001DQV3D2toA7Iia8",
+      "part_id": "prt_162895c10001qGhp28HhaM6yLR",
+      "timestamp_ms": 1792654531619,
+      "tokens": {
+        "total": 7019,
+        "input": 6964,
+        "output": 55,
+        "reasoning": 0,
+        "cache": {
+          "write": 0,
+          "read": 0
+        }
+      },
+      "client_reported_cost": 0,
+      "reason": "tool-calls"
+    }
+  ],
+  "reported_completed_step_totals": {
+    "input": 13737,
+    "output": 116,
+    "total": 13853,
+    "reasoning": 0
+  },
+  "usage_qualification": "Only unique completed native step IDs are summed. The new full-session export includes the earlier short-name response; it is not counted twice. The failed first invocation/title/retry and final unfinished request have missing complete attributable usage. Zero fields on incomplete native entries do not establish zero work. Local client-reported charge 0 is not total workflow cost.",
+  "human_review": "ABSENT",
+  "owner_answers": "ABSENT",
+  "independent_assessment": "Adjacent ../native_review_20261022/INDEPENDENT_R08_REVIEW.json is a separate AI acceptance audit, not human requirements acceptance.",
+  "r08_assessment": {
+    "native_framework_command_invocation": "OBSERVED",
+    "full_fixed_input_consumption": "OBSERVED",
+    "native_specification_and_checklist_generation": "NOT_REACHED",
+    "genuine_generated_omissions_for_semantic_review": "NO_NATIVE_ARTIFACT_TO_REVIEW",
+    "native_clarification_or_owner_stop": "NOT_REACHED; the controller deadline is not an owner decision",
+    "contrast": "OpenSpec native comparison remains unobserved; no paired ranking claimed"
+  },
+  "remaining_requirement": "Complete an actual native generation journey, preserve the first specification/checklist and real defects, and document the clarification disposition or reached stop. The current record does not replace that requirement with a scaffold, authored answer or input read.",
+  "backend_shutdown": {
+    "portable_directory": "../../native_client/setup/runtime_d7/llama_server_03/",
+    "native_client_stop": "Outer TIMEOUT124 at 07:53:02.359954 UTC",
+    "server_finish": "07:55:47.352429 UTC; child exit -9, launcher 137",
+    "intervention": "SIGTERM to the verified launcher did not finish after 147.826 seconds; the exact verified child received SIGKILL. Terminal resource snapshot retained one processing request and no OOM. This separate cleanup result is not recast as a native model error or clean server exit."
+  },
+  "receipt_metadata_qualification": "Raw origin labels ending not_yet_executed and generic human_review=PENDING are retained preparation/recorder fields. Actual receipt timestamps, native events and exports establish execution; human review remains absent.",
+  "historical_wording_qualification": "Earlier broad exclusions of an authored specification/solution are qualified by the actual supplied authored JSON contract. Historical records remain unchanged. Current guide/helper wording and the linked terminal follow-up distinguish fixed reference inputs from excluded earlier generated outputs/Markdown answers/owner responses.",
+  "background_dependency_activity": "Native stderr retains unsuccessful nonblocking public-registry requests for @opencode-ai/plugin. The configured local model does not establish an offline host or OS containment.",
+  "further_model_attempts": "NONE_AFTER_FINAL_DECLARED_CONTINUATION",
+  "reproduction": "../NATIVE_ROUTE.md",
+  "manifest": "PORTABLE_MANIFEST.json"
+}

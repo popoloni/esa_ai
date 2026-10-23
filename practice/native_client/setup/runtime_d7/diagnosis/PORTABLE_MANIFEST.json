@@ -1,0 +1,61 @@
+{
+  "schema": "esa-portable-pinned-client-diagnosis/v1",
+  "recorded_at_utc": "2026-10-22T06:48:03.638711+00:00",
+  "client": "OpenCode 1.19.3",
+  "author_source_directory": "revision_d7/evidence/native_timeout_diagnosis",
+  "scope": "Read-only source and resource diagnosis, copied byte-for-byte. Historical native observations and setup manifests are unchanged.",
+  "files": {
+    "DIAGNOSIS.json": {
+      "bytes": 4403,
+      "sha256": "60e7303fdc99a9b9008c0f92b19eefe3f9fc8eee7f3814ee235bdb4347b02d9d"
+    },
+    "POST_SDD_RESOURCE_SNAPSHOT.json": {
+      "bytes": 3924,
+      "sha256": "6a7bb372ddb86b849a58cb3ab113064afcd517df1e5d9c4b92ea3b961959c249"
+    },
+    "POST_SDD_SERVER_PROPERTIES.json": {
+      "bytes": 5420,
+      "sha256": "c0edd3d3d3e62c75c7b1953f347f49ba683623ef143f7cee30048c1bf54d97cf"
+    },
+    "README.md": {
+      "bytes": 4599,
+      "sha256": "5530c167341e83fc2430dbad00d8b1e5f753ac34580237dc70ad23091802bb6b"
+    },
+    "SOURCE_DOWNLOADS.json": {
+      "bytes": 613,
+      "sha256": "b0c36a5132e297f20becbd623f5bbd8bb5e0be76789e214aa347a3bbb68fa61d"
+    },
+    "TITLE_SOURCE_DOWNLOADS.json": {
+      "bytes": 783,
+      "sha256": "19862896dfc6520b4150fbf3112f44b26303f288bc5f0c9874341644333af72a"
+    },
+    "UPSTREAM_ATTRIBUTION.json": {
+      "bytes": 1152,
+      "sha256": "6a9f8a6f46c49035b5ed2f97bdda788053083d4ac3f9d4b7682ba1e677f69975"
+    },
+    "UPSTREAM_LICENSE.txt": {
+      "bytes": 1065,
+      "sha256": "625f0f619133f89bbbb2abe37369613dfa1885eba1e50d02170deb62bb42cb6b"
+    },
+    "cli_run.ts": {
+      "bytes": 31940,
+      "sha256": "e040e90d4c81cdd59b9568ee90a53c0209cd9ddf1b8b207d1a8685b2e26d57d0"
+    },
+    "config.ts": {
+      "bytes": 27747,
+      "sha256": "87a9071af1ddb04d65947dba49be3fb4c94ecf63e120f17ce46ee81ff25dd45a"
+    },
+    "provider.ts": {
+      "bytes": 82344,
+      "sha256": "8d31296a58bc7955a1adb8b6d60da53a34ab7540d85644bab212a8ee27b8b69d"
+    },
+    "session_prompt.ts": {
+      "bytes": 64944,
+      "sha256": "f0c5bc64c0f0e966693d4a57f7ede1e9d6e188b396152f04b55303dc75b9b768"
+    }
+  },
+  "manifest_excluded_from_own_inventory": true,
+  "runtime_or_model_included": false,
+  "license": "UPSTREAM_LICENSE.txt",
+  "attribution": "UPSTREAM_ATTRIBUTION.json"
+}

@@ -1,0 +1,18 @@
+timestamp=2026-10-22T06:07:58.044Z level=INFO run=7659f5fa message="creating instance" directory=/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01
+timestamp=2026-10-22T06:07:58.046Z level=INFO run=7659f5fa message=fromDirectory directory=/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01
+timestamp=2026-10-22T06:07:58.096Z level=INFO run=7659f5fa message=bootstrapping directory=/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01
+timestamp=2026-10-22T06:07:58.106Z level=INFO run=7659f5fa message=loading path=/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/native_ch01_01/configuration/client_state/config/opencode/config.json
+timestamp=2026-10-22T06:07:58.107Z level=INFO run=7659f5fa message=loading path=/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/native_ch01_01/configuration/client_state/config/opencode/opencode.json
+timestamp=2026-10-22T06:07:58.108Z level=INFO run=7659f5fa message=loading path=/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/native_ch01_01/configuration/client_state/config/opencode/opencode.jsonc
+timestamp=2026-10-22T06:07:58.108Z level=INFO run=7659f5fa message=loading path=/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/native_ch01_01/configuration/OPENCODE_CONFIG.json
+timestamp=2026-10-22T06:07:58.118Z level=DEBUG run=7659f5fa message="loaded custom config" path=/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/native_ch01_01/configuration/OPENCODE_CONFIG.json
+timestamp=2026-10-22T06:07:58.128Z level=DEBUG run=7659f5fa message="loading config from OPENCODE_CONFIG_DIR" path=/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/native_ch01_01/configuration/client_state/empty-config
+timestamp=2026-10-22T06:07:58.151Z level=DEBUG run=7659f5fa message="loading config from /workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/native_ch01_01/configuration/client_state/empty-config/opencode.json"
+timestamp=2026-10-22T06:07:58.151Z level=INFO run=7659f5fa message=loading path=/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/native_ch01_01/configuration/client_state/empty-config/opencode.json
+timestamp=2026-10-22T06:07:58.151Z level=DEBUG run=7659f5fa message="loading config from /workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/native_ch01_01/configuration/client_state/empty-config/opencode.jsonc"
+timestamp=2026-10-22T06:07:58.151Z level=INFO run=7659f5fa message=loading path=/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/native_ch01_01/configuration/client_state/empty-config/opencode.jsonc
+timestamp=2026-10-22T06:07:58.364Z level=INFO run=7659f5fa message="all LSPs are disabled"
+timestamp=2026-10-22T06:07:58.365Z level=INFO run=7659f5fa message="all formatters are disabled"
+timestamp=2026-10-22T06:07:58.365Z level=INFO run=7659f5fa message=init
+Exporting session: ses_e9dd033b7ffeN1cfcn1q6e3oTN
+timestamp=2026-10-22T06:07:58.372Z level=INFO run=7659f5fa message="disposing instance" directory=/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01

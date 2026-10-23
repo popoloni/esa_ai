@@ -1,0 +1,40 @@
+{
+  "schema": "esa-native-content-review-criteria/v1",
+  "recorded_at_utc": "2026-10-22T17:29:43.028710+00:00",
+  "source": "CR04 acceptance criteria plus unchanged CSV-001/v1 and CSV-CONSUMER-01",
+  "review_type": "Semantic content review separate from automated file-existence checks",
+  "items": [
+    {
+      "id": "SPEC_MEMBERSHIP",
+      "expected": "Spec states same actor-visible and optional status-filtered rows in the same order as JSON."
+    },
+    {
+      "id": "SPEC_PRESENTATION",
+      "expected": "Spec preserves JSON, lists five ordered fields and header even when empty, and supports round-trip commas/quotes/newlines/Unicode."
+    },
+    {
+      "id": "SPEC_BOUNDARY",
+      "expected": "Spec preserves source inputs, refuses unsupported formats, and attributes literal formula-like values to authored fictional CSV-CONSUMER-01 in the existing contract."
+    },
+    {
+      "id": "SPEC_DEFERRAL",
+      "expected": "Spreadsheet viewing, authentication and deployment remain outside scope; no real owner approval or user benefit is invented."
+    },
+    {
+      "id": "PLAN",
+      "expected": "Short plan identifies selection authority, a proportionate implementation choice, task scope and actual applicable check command."
+    },
+    {
+      "id": "NATIVE_COMPLETION",
+      "expected": "Native events show actual final candidate check, interpretation and stopping handoff. The useful files actually exist."
+    },
+    {
+      "id": "INDEPENDENT",
+      "expected": "Independent supplied behavior check and additional selected cases pass; fixed files retain starting hashes."
+    },
+    {
+      "id": "PROVENANCE",
+      "expected": "Earlier failures, prompts, interventions, configuration/versions, actual file writes and final state are retained without author-created files being attributed to the client."
+    }
+  ]
+}

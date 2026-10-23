@@ -1,0 +1,367 @@
+{
+  "source": "native-session.json",
+  "assistant_message_info": [
+    {
+      "parentID": "msg_1633bb5ee001PWYI3KrlPIErbn",
+      "role": "assistant",
+      "mode": "esa-sdd",
+      "agent": "esa-sdd",
+      "path": {
+        "cwd": "/workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01",
+        "root": "/"
+      },
+      "cost": 0,
+      "tokens": {
+        "total": 15935,
+        "input": 15872,
+        "output": 63,
+        "reasoning": 0,
+        "cache": {
+          "write": 0,
+          "read": 0
+        }
+      },
+      "modelID": "esa-qwen3-4b",
+      "providerID": "esa-local",
+      "time": {
+        "created": 1792666220116,
+        "completed": 1792666735361
+      },
+      "finish": "tool-calls",
+      "id": "msg_1633bb654001eQzdOQklgkkKk7",
+      "sessionID": "ses_e9cc44d15ffewxo9hTP3f5v23l"
+    },
+    {
+      "parentID": "msg_1633bb5ee001PWYI3KrlPIErbn",
+      "role": "assistant",
+      "mode": "esa-sdd",
+      "agent": "esa-sdd",
+      "path": {
+        "cwd": "/workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01",
+        "root": "/"
+      },
+      "cost": 0,
+      "tokens": {
+        "total": 16263,
+        "input": 331,
+        "output": 64,
+        "reasoning": 0,
+        "cache": {
+          "write": 0,
+          "read": 15868
+        }
+      },
+      "modelID": "esa-qwen3-4b",
+      "providerID": "esa-local",
+      "time": {
+        "created": 1792666735365,
+        "completed": 1792666780850
+      },
+      "finish": "tool-calls",
+      "id": "msg_163439305001NN0CtbhDmGvxti",
+      "sessionID": "ses_e9cc44d15ffewxo9hTP3f5v23l"
+    },
+    {
+      "parentID": "msg_1633bb5ee001PWYI3KrlPIErbn",
+      "role": "assistant",
+      "mode": "esa-sdd",
+      "agent": "esa-sdd",
+      "path": {
+        "cwd": "/workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01",
+        "root": "/"
+      },
+      "cost": 0,
+      "tokens": {
+        "total": 16532,
+        "input": 302,
+        "output": 35,
+        "reasoning": 0,
+        "cache": {
+          "write": 0,
+          "read": 16195
+        }
+      },
+      "modelID": "esa-qwen3-4b",
+      "providerID": "esa-local",
+      "time": {
+        "created": 1792666780858,
+        "completed": 1792666827726
+      },
+      "finish": "tool-calls",
+      "id": "msg_1634444ba001VBYSnd2GwzxChn",
+      "sessionID": "ses_e9cc44d15ffewxo9hTP3f5v23l"
+    },
+    {
+      "parentID": "msg_1633bb5ee001PWYI3KrlPIErbn",
+      "role": "assistant",
+      "mode": "esa-sdd",
+      "agent": "esa-sdd",
+      "path": {
+        "cwd": "/workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01",
+        "root": "/"
+      },
+      "cost": 0,
+      "tokens": {
+        "total": 16624,
+        "input": 96,
+        "output": 35,
+        "reasoning": 0,
+        "cache": {
+          "write": 0,
+          "read": 16493
+        }
+      },
+      "modelID": "esa-qwen3-4b",
+      "providerID": "esa-local",
+      "time": {
+        "created": 1792666827731,
+        "completed": 1792666854025
+      },
+      "finish": "tool-calls",
+      "id": "msg_16344fbd3001t8ymoL1uuuqnd1",
+      "sessionID": "ses_e9cc44d15ffewxo9hTP3f5v23l"
+    },
+    {
+      "parentID": "msg_1633bb5ee001PWYI3KrlPIErbn",
+      "role": "assistant",
+      "mode": "esa-sdd",
+      "agent": "esa-sdd",
+      "path": {
+        "cwd": "/workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01",
+        "root": "/"
+      },
+      "cost": 0,
+      "tokens": {
+        "total": 16726,
+        "input": 99,
+        "output": 42,
+        "reasoning": 0,
+        "cache": {
+          "write": 0,
+          "read": 16585
+        }
+      },
+      "modelID": "esa-qwen3-4b",
+      "providerID": "esa-local",
+      "time": {
+        "created": 1792666854030,
+        "completed": 1792666878710
+      },
+      "finish": "tool-calls",
+      "id": "msg_16345628e001ggINDW96PUNHNK",
+      "sessionID": "ses_e9cc44d15ffewxo9hTP3f5v23l"
+    },
+    {
+      "parentID": "msg_1633bb5ee001PWYI3KrlPIErbn",
+      "role": "assistant",
+      "mode": "esa-sdd",
+      "agent": "esa-sdd",
+      "path": {
+        "cwd": "/workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01",
+        "root": "/"
+      },
+      "cost": 0,
+      "tokens": {
+        "total": 16785,
+        "input": 61,
+        "output": 44,
+        "reasoning": 0,
+        "cache": {
+          "write": 0,
+          "read": 16680
+        }
+      },
+      "modelID": "esa-qwen3-4b",
+      "providerID": "esa-local",
+      "time": {
+        "created": 1792666878713,
+        "completed": 1792666919899
+      },
+      "finish": "tool-calls",
+      "id": "msg_16345c2f9001n1huvS1NOAvY4r",
+      "sessionID": "ses_e9cc44d15ffewxo9hTP3f5v23l"
+    },
+    {
+      "parentID": "msg_1633bb5ee001PWYI3KrlPIErbn",
+      "role": "assistant",
+      "mode": "esa-sdd",
+      "agent": "esa-sdd",
+      "path": {
+        "cwd": "/workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01",
+        "root": "/"
+      },
+      "cost": 0,
+      "tokens": {
+        "total": 16849,
+        "input": 63,
+        "output": 49,
+        "reasoning": 0,
+        "cache": {
+          "write": 0,
+          "read": 16737
+        }
+      },
+      "modelID": "esa-qwen3-4b",
+      "providerID": "esa-local",
+      "time": {
+        "created": 1792666919903,
+        "completed": 1792666967749
+      },
+      "finish": "tool-calls",
+      "id": "msg_1634663de001PK1BXfW4qscZMo",
+      "sessionID": "ses_e9cc44d15ffewxo9hTP3f5v23l"
+    },
+    {
+      "parentID": "msg_1633bb5ee001PWYI3KrlPIErbn",
+      "role": "assistant",
+      "mode": "esa-sdd",
+      "agent": "esa-sdd",
+      "path": {
+        "cwd": "/workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01",
+        "root": "/"
+      },
+      "cost": 0,
+      "tokens": {
+        "total": 16917,
+        "input": 68,
+        "output": 53,
+        "reasoning": 0,
+        "cache": {
+          "write": 0,
+          "read": 16796
+        }
+      },
+      "modelID": "esa-qwen3-4b",
+      "providerID": "esa-local",
+      "time": {
+        "created": 1792666967752,
+        "completed": 1792667006419
+      },
+      "finish": "tool-calls",
+      "id": "msg_163471ec8001pS37W7V0VTNY0o",
+      "sessionID": "ses_e9cc44d15ffewxo9hTP3f5v23l"
+    },
+    {
+      "parentID": "msg_1633bb5ee001PWYI3KrlPIErbn",
+      "role": "assistant",
+      "mode": "esa-sdd",
+      "agent": "esa-sdd",
+      "path": {
+        "cwd": "/workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01",
+        "root": "/"
+      },
+      "cost": 0,
+      "tokens": {
+        "total": 17196,
+        "input": 291,
+        "output": 45,
+        "reasoning": 0,
+        "cache": {
+          "write": 0,
+          "read": 16860
+        }
+      },
+      "modelID": "esa-qwen3-4b",
+      "providerID": "esa-local",
+      "time": {
+        "created": 1792667006423,
+        "completed": 1792667063624
+      },
+      "finish": "tool-calls",
+      "id": "msg_16347b5d7001ORVd5I2Y79VSu4",
+      "sessionID": "ses_e9cc44d15ffewxo9hTP3f5v23l"
+    },
+    {
+      "parentID": "msg_1633bb5ee001PWYI3KrlPIErbn",
+      "role": "assistant",
+      "mode": "esa-sdd",
+      "agent": "esa-sdd",
+      "path": {
+        "cwd": "/workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01",
+        "root": "/"
+      },
+      "cost": 0,
+      "tokens": {
+        "total": 17456,
+        "input": 262,
+        "output": 47,
+        "reasoning": 0,
+        "cache": {
+          "write": 0,
+          "read": 17147
+        }
+      },
+      "modelID": "esa-qwen3-4b",
+      "providerID": "esa-local",
+      "time": {
+        "created": 1792667063630,
+        "completed": 1792667102392
+      },
+      "finish": "tool-calls",
+      "id": "msg_16348954e001sT7npGLFOnGXo7",
+      "sessionID": "ses_e9cc44d15ffewxo9hTP3f5v23l"
+    },
+    {
+      "parentID": "msg_1633bb5ee001PWYI3KrlPIErbn",
+      "role": "assistant",
+      "mode": "esa-sdd",
+      "agent": "esa-sdd",
+      "path": {
+        "cwd": "/workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01",
+        "root": "/"
+      },
+      "cost": 0,
+      "tokens": {
+        "total": 17737,
+        "input": 285,
+        "output": 47,
+        "reasoning": 0,
+        "cache": {
+          "write": 0,
+          "read": 17405
+        }
+      },
+      "modelID": "esa-qwen3-4b",
+      "providerID": "esa-local",
+      "time": {
+        "created": 1792667102397,
+        "completed": 1792667154249
+      },
+      "finish": "tool-calls",
+      "id": "msg_163492cbd001Z7To6ymoBfJ8Jx",
+      "sessionID": "ses_e9cc44d15ffewxo9hTP3f5v23l"
+    },
+    {
+      "parentID": "msg_1633bb5ee001PWYI3KrlPIErbn",
+      "role": "assistant",
+      "mode": "esa-sdd",
+      "agent": "esa-sdd",
+      "path": {
+        "cwd": "/workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01",
+        "root": "/"
+      },
+      "cost": 0,
+      "tokens": {
+        "total": 18130,
+        "input": 443,
+        "output": 1,
+        "reasoning": 0,
+        "cache": {
+          "write": 0,
+          "read": 17686
+        }
+      },
+      "modelID": "esa-qwen3-4b",
+      "providerID": "esa-local",
+      "time": {
+        "created": 1792667154256,
+        "completed": 1792667207896
+      },
+      "finish": "stop",
+      "id": "msg_16349f750001GiOtCn6vq01rRc",
+      "sessionID": "ses_e9cc44d15ffewxo9hTP3f5v23l"
+    }
+  ],
+  "text_parts": [],
+  "scope": "Raw native message usage/timing and text; incomplete messages are not completed usage or acceptance."
+}

@@ -1,0 +1,31 @@
+{
+  "schema": "esa-observation-account-span/v1",
+  "started_at_utc": "2026-10-22T11:13:06.971453+00:00",
+  "initiator": "Assistant observation controller, not a human requirements owner",
+  "task": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/continuation_preparation_01/TASK.json",
+  "task_sha256": "e89d024aa11fbf065af66e59ba16e9129bdb6c5150c39c0025851327812febf9",
+  "completed_checkpoint": "CP27",
+  "measurement_scope": "Native command capture wall time only; excludes preparation, prior attempts, later independent review and integration.",
+  "human_effort_seconds": null,
+  "billable_cost": null,
+  "financial_cost_status": "NOT_RECORDED_NOT_INFERRED_ZERO",
+  "timeout_seconds": 3600,
+  "server_remaining_lifetime_seconds_at_release": 5622.213368,
+  "capture_argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-B",
+    "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/companion/validation/observe_native.py",
+    "capture",
+    "--spec",
+    "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/continuation_preparation_01/TASK.json",
+    "--output",
+    "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/attempt_03"
+  ],
+  "parent_session_id": "ses_e9cc44d15ffewxo9hTP3f5v23l",
+  "parent_native_export_sha256": "f261470cb68a23ca69b5b91acf8a62d4856ffe9eb9350057a764f37b17aabe8e",
+  "preparation_manifest_sha256": "3e45e57420e17254229429e5a71e1fb7c556de6785e743420386f16f7ac2d2c3",
+  "prelaunch_health": {
+    "status": "ok"
+  },
+  "preparation_manifest_files_verified": 10
+}

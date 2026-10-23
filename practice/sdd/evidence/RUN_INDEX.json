@@ -1,0 +1,267 @@
+{
+  "schema_version": 1,
+  "status": "LOCAL_CLI_AND_AUTHORED_ARTIFACT_CHECKS_OBSERVED",
+  "recorded_date": "2026-10-20",
+  "primary": "Spec Kit1.2.2 CLI / authored feature artifacts",
+  "contrast": "OpenSpec1.14.1 CLI / authored delta artifacts",
+  "named_agent_generation": "NOT_RUN",
+  "independent_human_requirements_review": "PENDING",
+  "records": [
+    {
+      "file": "evidence/receipts/actual_repair_record.json",
+      "sha256": "c93cf92dbec9ce32b89945982ee3b25f0a50d8ed0a3c1b9651fa1486897467fc",
+      "id": "SDD-ACTUAL-REPAIR-001",
+      "origin": "author_exercise"
+    },
+    {
+      "file": "evidence/receipts/exercise_after_repair.json",
+      "sha256": "1e38788e51141f6d911052c0e2635b0e828e623f9fa463ea79d878537213d453",
+      "id": "exercise_after_repair",
+      "tool": "Book artifact fidelity checker",
+      "version": "CR06-1",
+      "origin": "author_exercise",
+      "exit_code": 0,
+      "duration_seconds": 0.086825
+    },
+    {
+      "file": "evidence/receipts/exercise_before_repair.json",
+      "sha256": "b72d535e968e7a1f157f7ee8a45bd992146a92948712fadc75f12a43787f5c7e",
+      "id": "exercise_before_repair",
+      "tool": "Book artifact fidelity checker",
+      "version": "CR06-1",
+      "origin": "author_exercise",
+      "exit_code": 1,
+      "duration_seconds": 0.042554
+    },
+    {
+      "file": "evidence/receipts/exercise_fresh_copy.json",
+      "sha256": "55019c1d60e88ceb24c79139b0f339b0bf943cf61da53fdc1ccd06b2710f65d3",
+      "id": "exercise_fresh_copy",
+      "tool": "Book SDD exercise",
+      "version": "CR06-1",
+      "origin": "author_exercise",
+      "exit_code": 0,
+      "duration_seconds": 0.03549
+    },
+    {
+      "file": "evidence/receipts/fidelity_after.json",
+      "sha256": "eb695fdab5c64c6bbfee9547c01e18d2f282601993ddea5aefc5cd92435393ef",
+      "id": "fidelity_after",
+      "tool": "Book artifact fidelity checker",
+      "version": "CR06-1",
+      "origin": "author_exercise",
+      "exit_code": 0,
+      "duration_seconds": 0.042146
+    },
+    {
+      "file": "evidence/receipts/fidelity_before.json",
+      "sha256": "9d9ebceaa94f9f65d8ce9204a55b4d185cd91555b9165434a3eef82fcde9b7eb",
+      "id": "fidelity_before",
+      "tool": "Book artifact fidelity checker",
+      "version": "CR06-1",
+      "origin": "author_exercise",
+      "exit_code": 1,
+      "duration_seconds": 0.038617
+    },
+    {
+      "file": "evidence/receipts/fidelity_negative_controls.json",
+      "sha256": "3d1bcc71fae38398157b06c55a6a346d243be2e02b421419619e071809ebef9c",
+      "id": "fidelity_negative_controls",
+      "tool": "Python unittest",
+      "version": "3.12.14",
+      "origin": "author_exercise",
+      "exit_code": 0,
+      "duration_seconds": 0.143775
+    },
+    {
+      "file": "evidence/receipts/installation_network_runs.json",
+      "sha256": "49566295e7fe38b356a8b4de10443769bdb1c385fe960c6c494c3979de0442df"
+    },
+    {
+      "file": "evidence/receipts/installation_openspec_final.json",
+      "sha256": "a1f599932dde77f8d6282a986457596c29881e7648e5a7b068f3aa4f2733082f"
+    },
+    {
+      "file": "evidence/receipts/installation_runs.json",
+      "sha256": "30d5456737a5fda1f1e0dc2489f0b5719a5c58b16e01876c34a23b91f527fb3b"
+    },
+    {
+      "file": "evidence/receipts/node_version.json",
+      "sha256": "f7afb84399ac7de3a558f9df35425f0de8f774228a1336ca727fb374e0d80dcb",
+      "id": "node_version",
+      "tool": "Node.js",
+      "version": "observed",
+      "origin": "cli_inspection",
+      "exit_code": 0,
+      "duration_seconds": 0.006599
+    },
+    {
+      "file": "evidence/receipts/openspec_init.json",
+      "sha256": "26639f8d76d40c443ca23f78af23debfc2c641f3be3db795cd33e40febad1e63",
+      "id": "openspec_init",
+      "tool": "OpenSpec",
+      "version": "1.14.1",
+      "origin": "cli_scaffold",
+      "exit_code": 0,
+      "duration_seconds": 0.339273
+    },
+    {
+      "file": "evidence/receipts/openspec_init_help.json",
+      "sha256": "8277f50b9ab50daebc54a9a9dea2ba89deca1f0bbc881ec209cf2ca7dc25147c",
+      "id": "openspec_init_help",
+      "tool": "OpenSpec",
+      "version": "1.14.1",
+      "origin": "cli_inspection",
+      "exit_code": 0,
+      "duration_seconds": 0.08468
+    },
+    {
+      "file": "evidence/receipts/openspec_new_change.json",
+      "sha256": "27245e775bfb3e22492051f006d33621dd13481d9325fab1f91a8d25a13c4c82",
+      "id": "openspec_new_change",
+      "tool": "OpenSpec",
+      "version": "1.14.1",
+      "origin": "cli_scaffold",
+      "exit_code": 0,
+      "duration_seconds": 0.275036
+    },
+    {
+      "file": "evidence/receipts/openspec_status_after.json",
+      "sha256": "93ced9b9d4e7e27bcb310d00cccaefc47130213d68c91014dcce028007179d81",
+      "id": "openspec_status_after",
+      "tool": "OpenSpec",
+      "version": "1.14.1",
+      "origin": "cli_inspection_of_author_exercise",
+      "exit_code": 0,
+      "duration_seconds": 0.287742
+    },
+    {
+      "file": "evidence/receipts/openspec_status_before.json",
+      "sha256": "398320e383daa07ec23807cb59c4097e3072f24bbb21788968dca96da881c43f",
+      "id": "openspec_status_before",
+      "tool": "OpenSpec",
+      "version": "1.14.1",
+      "origin": "cli_inspection_of_author_exercise",
+      "exit_code": 0,
+      "duration_seconds": 0.301153
+    },
+    {
+      "file": "evidence/receipts/openspec_status_scaffold.json",
+      "sha256": "9421fce3e633e602bfd2312d119ca36d84c59e4c3a862f1b8a4d13892769b6a9",
+      "id": "openspec_status_scaffold",
+      "tool": "OpenSpec",
+      "version": "1.14.1",
+      "origin": "cli_scaffold",
+      "exit_code": 0,
+      "duration_seconds": 0.293138
+    },
+    {
+      "file": "evidence/receipts/openspec_validate_after.json",
+      "sha256": "f588a3fb278d567804bf216e4d3000677fb3371b67537733ddd2768fb3f004e3",
+      "id": "openspec_validate_after",
+      "tool": "OpenSpec",
+      "version": "1.14.1",
+      "origin": "cli_validation_of_author_exercise",
+      "exit_code": 0,
+      "duration_seconds": 0.307627
+    },
+    {
+      "file": "evidence/receipts/openspec_validate_before.json",
+      "sha256": "32683dc46e4886dac175ea71c602448951cd74037d8d5081e083eead7b64685c",
+      "id": "openspec_validate_before",
+      "tool": "OpenSpec",
+      "version": "1.14.1",
+      "origin": "cli_validation_of_author_exercise",
+      "exit_code": 0,
+      "duration_seconds": 0.335001
+    },
+    {
+      "file": "evidence/receipts/openspec_version.json",
+      "sha256": "4f3a3d6c5f59d8a076790bfb857aadab67e9eab9202716c6217ae89fdb671690",
+      "id": "openspec_version",
+      "tool": "OpenSpec",
+      "version": "1.14.1",
+      "origin": "cli_inspection",
+      "exit_code": 0,
+      "duration_seconds": 0.06237
+    },
+    {
+      "file": "evidence/receipts/python_package_versions.json",
+      "sha256": "dcfc2e96abf50f7cb8ad83ee9817799549b1d0e4086b041a42ec72f5d7ff5981",
+      "id": "python_package_versions",
+      "tool": "Python importlib.metadata",
+      "version": "3.12.14",
+      "origin": "cli_inspection",
+      "exit_code": 0,
+      "duration_seconds": 0.118549
+    },
+    {
+      "file": "evidence/receipts/retrieval.json",
+      "sha256": "3fffe647ecc11646701e43bb10c7a854081d1b30644cb92b2ff58bae55d52757"
+    },
+    {
+      "file": "evidence/receipts/retrieval_network.json",
+      "sha256": "5ac051ba3d60b6e87b1601a7ada93b63740fbd15362412f1604b2eea12304099"
+    },
+    {
+      "file": "evidence/receipts/retrieval_packages.json",
+      "sha256": "2469796a769c2703bdb88f704d504172a9536f8c936d8717dd90abf999c446c1"
+    },
+    {
+      "file": "evidence/receipts/speckit_feature_template.json",
+      "sha256": "6bd770f2c3c6223c1c83f3926b9f13ec95f02f56b73fe7a4418b02a2f0269418",
+      "id": "speckit_feature_template",
+      "tool": "Spec Kit",
+      "version": "1.2.2",
+      "origin": "cli_scaffold",
+      "exit_code": 0,
+      "duration_seconds": 0.049976
+    },
+    {
+      "file": "evidence/receipts/speckit_init.json",
+      "sha256": "274e821d2117ca3614672dbb67e225dc257d825854f47809c68bbe3fc3b8d0de",
+      "id": "speckit_init",
+      "tool": "Spec Kit",
+      "version": "1.2.2",
+      "origin": "cli_scaffold",
+      "exit_code": 0,
+      "duration_seconds": 0.464617
+    },
+    {
+      "file": "evidence/receipts/speckit_inspection_runs.json",
+      "sha256": "8c5af7002b7661b6351d01b4dcf7de2c8debbd52ee7da2ea9e4ee07e4bf6c9c3"
+    },
+    {
+      "file": "evidence/receipts/speckit_plan_template.json",
+      "sha256": "82b2eb132c13cafb25ae0416221b248d5fcd4e4c75fe5f6282ffa7e988572af1",
+      "id": "speckit_plan_template",
+      "tool": "Spec Kit",
+      "version": "1.2.2",
+      "origin": "cli_scaffold",
+      "exit_code": 0,
+      "duration_seconds": 0.040721
+    },
+    {
+      "file": "evidence/receipts/speckit_tasks_template.json",
+      "sha256": "5050eb7d5bef57350ce79392c3c15a1cd4a4055d5de43a9ab1c57c3ca4d646c6",
+      "id": "speckit_tasks_template",
+      "tool": "Spec Kit",
+      "version": "1.2.2",
+      "origin": "cli_scaffold",
+      "exit_code": 0,
+      "duration_seconds": 0.046482
+    }
+  ],
+  "results": {
+    "openspec_strict_before": "PASS",
+    "openspec_strict_after": "PASS",
+    "fidelity_before": "FAIL: one missing SC-EXPL-002 per flow",
+    "fidelity_after": "PASS: selected fixed obligations",
+    "negative_control_tests": {
+      "passed": 14,
+      "total": 14
+    },
+    "fresh_copy_repair_changed_files": 2
+  },
+  "interpretation": "Actual CLI/template/validator runs and author exercise. Never infer live model generation or human acceptance from this status."
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "file": "specify_cli-1.2.2.whl",
+    "url": "https://files.pythonhosted.org/packages/de/f3/18a1400c7601c3b0a053d09eaea51b74a0b25bb38b7e187a15247f5253aa/specify_cli-1.2.2-py3-none-any.whl",
+    "sha256": "7edc5067f63184adb84ed595a20f4cd45a47506027d94707bfc5f4a724d4be12",
+    "bytes": 1155707,
+    "status": "downloaded",
+    "retrieved_utc": "2026-10-20T14:53:52.144488+00:00"
+  },
+  {
+    "file": "openspec-1.14.1.tgz",
+    "url": "https://registry.npmjs.org/@fission-ai/openspec/-/openspec-1.14.1.tgz",
+    "sha256": "4a88e334938316db6916fd4f3aaf2213e6fc23b4fe327efd2afe7754c2d3b0bf",
+    "bytes": 562588,
+    "status": "downloaded",
+    "retrieved_utc": "2026-10-20T14:53:52.291643+00:00"
+  },
+  {
+    "file": "speckit_existing.md",
+    "url": "https://raw.githubusercontent.com/github/spec-kit/v1.2.2/docs/guides/existing-projects.md",
+    "sha256": "464fdb4167c768960cb5e34ce66e7305af91f660c2b7db58852f2530adad6808",
+    "bytes": 4710,
+    "status": "downloaded",
+    "retrieved_utc": "2026-10-20T14:53:52.159544+00:00"
+  },
+  {
+    "file": "openspec_cli.md",
+    "url": "https://raw.githubusercontent.com/Fission-AI/OpenSpec/v1.14.1/docs/cli.md",
+    "sha256": "44b0302315f5aff23f3bcfb9d9390d81627e3842ca2f5c0ab0f9022d9b0a0c1e",
+    "bytes": 47438,
+    "status": "downloaded",
+    "retrieved_utc": "2026-10-20T14:53:52.288746+00:00"
+  }
+]

@@ -1,0 +1,49 @@
+{
+  "schema": "esa-mcp-layer-assessment/v1",
+  "reviewed_at_utc": "2026-10-22T06:26:49.290268+00:00",
+  "rows": [
+    {
+      "layer": "Relay/process startup",
+      "evidence": "legacy_sdk_controls/attempt_01/server.stderr.txt",
+      "observed": "Control relay failed opening its missing trace directory before the canonical server was launched.",
+      "resolution": "New control attempt created the required directory; first failure and its exact executed script retained.",
+      "model_or_host_observation": false
+    },
+    {
+      "layer": "Named host opening and discovery",
+      "evidence": "trace_01/client_to_server.jsonl; trace_01/server_to_client.jsonl",
+      "observed": "OpenCode 1.19.3 initialized protocol 2025-11-25, then listed the typed lookup_policy tool.",
+      "model_or_host_observation": true
+    },
+    {
+      "layer": "Valid catalog lookup",
+      "evidence": "attempt_01/native-session.json; trace_01/server_to_client.jsonl",
+      "observed": "Model-selected BR-001/v2 returned threshold 3000.00 and synthetic authority.",
+      "model_or_host_observation": true
+    },
+    {
+      "layer": "Domain refusal",
+      "evidence": "trace_01/server_to_client.jsonl",
+      "observed": "BR-999/v1 and the later string [ produced UNKNOWN_POLICY, structured ok=false, envelope isError=false.",
+      "model_or_host_observation": true
+    },
+    {
+      "layer": "Invalid argument requested in native prompt",
+      "evidence": "MALFORMED_ARGUMENT_REVIEW.json",
+      "observed": "Native argument was a string, not an array; final schema-rejection claim is contradicted by the retained bytes.",
+      "model_or_host_observation": true
+    },
+    {
+      "layer": "Server SDK argument validation control",
+      "evidence": "legacy_sdk_controls/attempt_02/CONTROL.json",
+      "observed": "Actual empty array reached the same unchanged server over 2025-11-25; server returned isError=true and string-type validation error. This separate SDK control is not model-selected or a coding-host result.",
+      "model_or_host_observation": false
+    },
+    {
+      "layer": "Serving interpreter OS read",
+      "evidence": "PROCESS_BOUNDARY_REVIEW.json",
+      "observed": "Declared nonsecret file outside study read successfully before MCP initialization; no broader isolation conclusion.",
+      "model_or_host_observation": true
+    }
+  ]
+}

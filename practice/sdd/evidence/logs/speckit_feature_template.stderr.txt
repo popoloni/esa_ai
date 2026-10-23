@@ -1,0 +1,2 @@
+# To persist: export SPECIFY_FEATURE=001-explain-treasury
+#              export SPECIFY_FEATURE_DIRECTORY=/workspace/scratch/efa0a59e0545/tmp/sdd_workflow_trial_20261020/workspaces/speckit/specs/001-explain-treasury

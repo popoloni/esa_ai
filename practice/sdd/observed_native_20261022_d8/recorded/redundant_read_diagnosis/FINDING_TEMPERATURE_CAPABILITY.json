@@ -1,0 +1,16 @@
+{
+  "id": "D8-NATIVE-TEMPERATURE-CAPABILITY",
+  "detected_at_utc": "2026-10-22T10:42:21.074594+00:00",
+  "status": "PROSPECTIVE_CAPABILITY_CORRECTED_EFFECTIVE_CONFIGURATION_VERIFIED",
+  "finding": "The original agent configured temperature0.2 but the custom model omitted its temperature capability. Actual effective model capability was false, so the pinned request path omitted agent temperature; first native server sampler recorded0.8.",
+  "prior_actual_evidence": {
+    "model_diagnostic": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/invocation_03/PRIOR_EFFECTIVE_MODEL_02.stdout.txt",
+    "sha256": "319e5af9e17712d6e848e647c231a1909f4c40c0bffb7c6fa49656aaeb424e71",
+    "sampler_disclosure": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_server_01/inference_observation/SAMPLER_SETTING_DISCLOSURE.json"
+  },
+  "correction": "Candidate03 explicitly adds model.temperature=true while retaining agent.temperature=0.2. Native /provider reports capability true; source schema and request path support the setting.",
+  "source_proof": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/redundant_read_diagnosis/PINNED_SOURCE_PROOF.json",
+  "verification": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/invocation_03/native_attachment_preflight_03/EFFECTIVE_PROVIDERS.response.json",
+  "current_boundary": "Candidate03 actual request/sampler temperature is unobserved until generation. Prior configured intent0.2 and observed sampler0.8 remain unchanged; no claimed isolated performance effect.",
+  "verification_scope": "Pinned official source plus actual effective model diagnostics, no inference."
+}

@@ -1,0 +1,31 @@
+{
+  "schema": "esa-native-attempt-outcome/v1",
+  "recorded_at_utc": "2026-10-21T21:55:04.051271+00:00",
+  "attempt": 3,
+  "client_process_exit_code": 0,
+  "task_status": "FAILED_ACCEPTANCE",
+  "independent_human_acceptance": "NOT_OBSERVED",
+  "acceptance": {
+    "status": "FAIL",
+    "tests_total": 7,
+    "passed": 6,
+    "failures": 0,
+    "errors": 1,
+    "candidate_sha256": "821d1ec276636955a56edfb44eedb83707a4ab67534b0361e03404417de7a672"
+  },
+  "source_review": [
+    "Candidate omits a finite-value guard; comparing Decimal NaN raises InvalidOperation.",
+    "Candidate retains an unreachable copy of its old body after unconditional return.",
+    "Native final readiness text is rejected because the recorded check failed."
+  ],
+  "scope": "Only the authorized candidate and generated acceptance report changed; collector reports no out-of-scope changes.",
+  "next_action": "Bounded continuation using actual failed report and current candidate; no replacement patch or reference solution supplied.",
+  "files": {
+    "routing.py": "821d1ec276636955a56edfb44eedb83707a4ab67534b0361e03404417de7a672",
+    "acceptance-result.json": "e7327c906355f8609d43f2ba5e3864babf106229689fbbbd0f929afb5e49c112",
+    "candidate.diff": "2e8c4718d2e489e4469b9375435994a983c2c6736dd63e0cf7b5ec6481305b24",
+    "RECEIPT.json": "9440d5a4cc0ac1b0e1adbd335465056d132c9c8e6ed2cf209e8891c61aeefe44",
+    "stdout.txt": "eaa0fe1363f9ae900607e0c37a6efdbab2f56008e41c077abad6fbf9e7bd7780",
+    "stderr.txt": "1c425d6c4854127bc47ff48bce38e323214e39a9323635b7acaa61b053bd18e5"
+  }
+}

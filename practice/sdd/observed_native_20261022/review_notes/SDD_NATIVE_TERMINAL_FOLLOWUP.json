@@ -1,0 +1,80 @@
+{
+  "schema": "esa-revision-followup/v1",
+  "recorded_at_utc": "2026-10-22T08:01:23.039082+00:00",
+  "action": "R08",
+  "finding_ids": [
+    "D7-SDD-PORTABLE",
+    "D7-SDD-EMPTY-NATIVE-COMPLETION",
+    "D7-SDD-CONTEXT-BUDGET",
+    "D7-NATIVE-TIMEOUT-TITLE",
+    "D7-NATIVE-SCHEMA-METADATA",
+    "D7-NATIVE-BACKGROUND-DEPENDENCY"
+  ],
+  "status": "FEASIBLE_RECIPE_AND_EXPOSURE_CORRECTIONS_RETAINED_NATIVE_GENERATION_PARTIAL",
+  "prior_immutable_records": {
+    "NATIVE_TIMEOUT_TITLE_RECIPE.json": {
+      "path": "revision_d7/notes/NATIVE_TIMEOUT_TITLE_RECIPE.json",
+      "sha256": "7ccb6f932b15cb686baa4870e418b6cb209112fe63b82ae0f37634987af89f85"
+    },
+    "NATIVE_SCHEMA_METADATA_RECIPE.json": {
+      "path": "revision_d7/notes/NATIVE_SCHEMA_METADATA_RECIPE.json",
+      "sha256": "836461d44bbe26877de156ab64f9dba9a57ec993835f0228d787d4e915829432"
+    },
+    "SDD_CONTEXT_PREPARATION.json": {
+      "path": "revision_d7/notes/SDD_CONTEXT_PREPARATION.json",
+      "sha256": "1c917e18955a428df83e17c6f319ecb39838686c8b46c07c1499a08a7382f4fb"
+    },
+    "SDD_EMPTY_NATIVE_RESPONSE_REVIEW.json": {
+      "path": "revision_d7/notes/SDD_EMPTY_NATIVE_RESPONSE_REVIEW.json",
+      "sha256": "cc3bcd0d8935ea357cfe8611246e08238d7edd028485d0945e74f73cc7fc1b3b"
+    },
+    "NATIVE_BACKGROUND_DEPENDENCY_REVIEW.json": {
+      "path": "revision_d7/notes/NATIVE_BACKGROUND_DEPENDENCY_REVIEW.json",
+      "sha256": "371032499c8f9308d75eed7d68f240fca9fc67336bb7af71e448217d89ccc399"
+    },
+    "SDD_PORTABLE_HELPER.json": {
+      "path": "revision_d7/notes/SDD_PORTABLE_HELPER.json",
+      "sha256": "32b470916553b48ddd3be8f1dd026d26ac0e69a05cf7dc0c7665723e30882ac4"
+    }
+  },
+  "terminal_summary": {
+    "path": "revision_d7/evidence/sdd_native_terminal_review/OBSERVATION_SUMMARY.json",
+    "sha256": "ba0dce916977f5357a75d012151589efb74741e39b6d84c324824f876a3eedc3"
+  },
+  "actual_final_outcome": {
+    "portable_path": "guided_continuation_01/attempt_01",
+    "author_path": "revision_d7/evidence/sdd_native_continuation_01/attempt_01",
+    "status": "TASK_INCOMPLETE_OUTER_TIMEOUT_AFTER_FULL_INPUT_READ",
+    "started_at_utc": "2026-10-22T07:23:02.277235+00:00",
+    "ended_at_utc": "2026-10-22T07:53:02.359954+00:00",
+    "duration_seconds": 1800.0826279609992,
+    "exit_code": 124,
+    "receipt_sha256": "8723152b286d56939cb414d5563366d6d09c7f53c127f2e40dc4f5b1e8270190",
+    "native_export_sha256": "6ce3cab5fc7c468ff1ddcdfda7aa5666c62441def9f85ef91dd9dfa31771fe60",
+    "controller_review_sha256": "349017f93b352f604fede6fb40bec9d232dc921b3f6639fedaac0bd0c3855858",
+    "changed_files": []
+  },
+  "source_fixes": {
+    "timeout_title": "Explicit overall/header deadlines and explicit session title are reflected in separately declared later preparations. Both corrected invocations completed a primary step; final failure is the controller outer bound, not the original 300-second header error.",
+    "schema_metadata": "Future recipes supply the exact upstream schema field before hashing. Observed original manifests/reconstructions are unchanged; final continuation config still matches its preparation hash.",
+    "context": "Full original command and all source values retained. Complete actual packet read is byte-verified. No complete post-read model response or performance improvement is inferred.",
+    "portable_exposure_wording": "Current NATIVE_ROUTE.md and future configure_sdd.py explicitly name the authored reference JSON contract. Prior no-authored-specification/solution wording was too broad: actual fixed reference inputs were supplied, while earlier generated outputs/Markdown exercise answers/owner responses were excluded. This is a documentation/metadata correction, with no input-byte change or rerun claimed.",
+    "empty_native_response": "Prior short-name/future-intent response remains untouched. Disclosed same-session guidance led to a genuine full-packet read but no generation before the fixed limit.",
+    "background_dependency": "Pinned-source diagnosis and actual failed fetches remain bounded disclosures. No offline/OS-containment claim is made."
+  },
+  "current_future_helper": {
+    "path": "companion/practice/native_client/configure_sdd.py",
+    "sha256": "3e03d3cbd84cf6848735cd1edbf551eb73c5ebc84fd1dbb507b43eb0d5e1abe0",
+    "change_since_prior_dated_recipe": "Only exposure-exclusion description clarifies the already supplied authored JSON reference contract; this current version was syntax-checked, not retrospectively substituted for any observed helper/configuration."
+  },
+  "current_reader_guide": {
+    "path": "companion/practice/sdd/NATIVE_ROUTE.md",
+    "sha256": "a4ee897757b85dda183d9b02108082f6b20e038e4d1e17fb001ea1dd3581e154"
+  },
+  "human_review": "ABSENT",
+  "owner_answers": "ABSENT",
+  "review_limit": "AI controller record-consistency review is separate from independent acceptance audit and cannot supply absent native artifacts or owner decisions.",
+  "additional_native_attempt": "NOT_AUTHORIZED_OR_RUN_AFTER_FINAL_BOUND",
+  "original_action_status_recommendation": "PARTIAL",
+  "no_historical_evidence_edited": true
+}

@@ -1,0 +1,47 @@
+{
+  "actual_pilot_decision": "CHANGE",
+  "attempts": [
+    {
+      "command_count": 1,
+      "expected_status": "FAIL",
+      "id": "A01",
+      "purpose": "FAULTY_REVIEW_REJECTED"
+    },
+    {
+      "command_count": 1,
+      "expected_status": "PASS_LEARNING_PROTOCOL_REVIEW_ONLY",
+      "id": "A02",
+      "purpose": "REPAIRED_REVIEW_GREEN"
+    },
+    {
+      "command_count": 1,
+      "expected_status": "PASS_LEARNING_PROTOCOL_REVIEW_ONLY",
+      "id": "A03",
+      "purpose": "REPEATED_GREEN_SAME_ITEM"
+    },
+    {
+      "command_count": 2,
+      "expected_status": "FAIL",
+      "id": "A04",
+      "purpose": "FRESH_TRANSFER_STALES_OLD_RECEIPT"
+    },
+    {
+      "command_count": 1,
+      "expected_status": "PASS_LEARNING_PROTOCOL_REVIEW_ONLY",
+      "id": "A05",
+      "purpose": "REFRESHED_CURRENT_REVIEW_GREEN"
+    }
+  ],
+  "cost_boundary": "ALL_FIVE_ATTEMPTS_INCLUDING_REJECTION_REVIEW_REPAIR_AND_STALE_REFRESH",
+  "decision_horizon": "PROPOSED_SMALL_OWNER_APPROVED_PILOT_BEFORE_ANY_EXPANSION",
+  "denominator": "DISTINCT_LOGICAL_ITEMS_WITH_APPLICABLE_FINAL_SYNTHETIC_OWNER_ACCEPTANCE",
+  "economic_field_result": "NOT_MEASURED",
+  "human_hours_observed": false,
+  "local_elapsed_unit": "MONOTONIC_PROCESS_NANOSECONDS",
+  "logical_item_id": "HANDOFF-013",
+  "observation_boundary": "FIVE_DECLARED_ATTEMPTS_IN_ONE_DISPOSABLE_CP13_WORKFLOW",
+  "protocol_id": "MEAS-014/v1",
+  "real_human_acceptance_observed": false,
+  "schema": "cp14-measurement-protocol/v1",
+  "vendor_billing_observed": false
+}

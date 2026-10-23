@@ -1,0 +1,90 @@
+[
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "reader_start.py",
+      "new",
+      "1",
+      "--destination",
+      "/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01"
+    ],
+    "cwd": "/workspace/scratch/72d789d25fef/runtime_d7/source_companion_cp07",
+    "started_at_utc": "2026-10-22T05:55:45.619181+00:00",
+    "finished_at_utc": "2026-10-22T05:55:46.262783+00:00",
+    "exit_code": 0,
+    "stdout": "{\n  \"schema\": \"chapter01-preparation/v1\",\n  \"status\": \"PASS\",\n  \"source_companion\": \"/workspace/scratch/72d789d25fef/runtime_d7/source_companion_cp07\",\n  \"destination\": \"/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01\",\n  \"installed_candidate\": \"repo/src/treasury/routing.py\",\n  \"candidate_sha256\": \"39c5afc8888b748c8e96147f1bc143839dedfe73963bf5675f3e8ebf4978457a\",\n  \"copied_source_files\": 1583,\n  \"changed_source_paths\": [\n    \"repo/src/treasury/routing.py\"\n  ],\n  \"reader_side_unchanged\": true,\n  \"source_companion_unchanged\": true,\n  \"findings\": [],\n  \"meaning\": \"A new full cumulative lab with only the CP01 editable router set to its known faulty starter; no payment or release authority.\"\n}\nPrepared /workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01\nFrom that directory run: python3 reader_start.py show 1\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "validation/observe_native.py",
+      "prepare",
+      "--source",
+      "/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01",
+      "--output",
+      "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/native_ch01_01",
+      "--actions",
+      "R06"
+    ],
+    "cwd": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion",
+    "started_at_utc": "2026-10-22T05:55:46.263066+00:00",
+    "finished_at_utc": "2026-10-22T05:55:46.898721+00:00",
+    "exit_code": 0,
+    "stdout": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/native_ch01_01/NATIVE_OBSERVATION.json\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "reader_side/tools/scope_guard.py",
+      "--chapter",
+      "CP01",
+      "--capture",
+      "reader_side/evidence/CP01_NATIVE_BASELINE_01.json"
+    ],
+    "cwd": "/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01",
+    "started_at_utc": "2026-10-22T05:55:46.899022+00:00",
+    "finished_at_utc": "2026-10-22T05:55:46.949943+00:00",
+    "exit_code": 0,
+    "stdout": "Captured before-edit baseline for CP01: reader_side/evidence/CP01_NATIVE_BASELINE_01.json\nPASS: requested path policy, protected hashes and supplied edit baseline\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "reader_side/tools/run_acceptance.py",
+      "--output",
+      "reader_side/evidence/CH01_NATIVE_INITIAL_01.json"
+    ],
+    "cwd": "/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01",
+    "started_at_utc": "2026-10-22T05:55:46.950200+00:00",
+    "finished_at_utc": "2026-10-22T05:55:47.078716+00:00",
+    "exit_code": 1,
+    "stdout": "{\n  \"schema\": \"chapter01-routing-result/v1\",\n  \"timestamp_utc\": \"2026-10-22T05:55:47.001418+00:00\",\n  \"python_version\": \"3.12.14\",\n  \"platform\": \"Linux-6.18.55-x86_64-with-glibc2.39\",\n  \"status\": \"FAIL\",\n  \"candidate\": \"repo/src/treasury/routing.py\",\n  \"candidate_sha256\": \"39c5afc8888b748c8e96147f1bc143839dedfe73963bf5675f3e8ebf4978457a\",\n  \"intent_sha256\": \"209ee2f218448d83178bd02fd5947cf68b021657a72b38e682e4a895fa102947\",\n  \"acceptance_sha256\": \"6e5aa5706dd989bdbbeec9374a84d13c41cf6f36e23a5e5d2762a3b16e551c9b\",\n  \"integrity_before\": [],\n  \"integrity_after\": [],\n  \"exit_code\": 1,\n  \"stdout\": \"\",\n  \"test_log\": \"test_above_boundary_requires_review (chapter01_owner_acceptance.RoutingAcceptance.test_above_boundary_requires_review) ... ok\\ntest_exact_boundary_requires_review (chapter01_owner_acceptance.RoutingAcceptance.test_exact_boundary_requires_review) ... ok\\ntest_negative_amount_rejected (chapter01_owner_acceptance.RoutingAcceptance.test_negative_amount_rejected) ... FAIL\\ntest_nonfinite_amount_rejected (chapter01_owner_acceptance.RoutingAcceptance.test_nonfinite_amount_rejected) ... ERROR\\ntest_nonnumeric_amount_rejected (chapter01_owner_acceptance.RoutingAcceptance.test_nonnumeric_amount_rejected) ... ERROR\\ntest_positive_below_limit (chapter01_owner_acceptance.RoutingAcceptance.test_positive_below_limit) ... ok\\ntest_zero_amount_rejected (chapter01_owner_acceptance.RoutingAcceptance.test_zero_amount_rejected) ... FAIL\\n\\n======================================================================\\nERROR: test_nonfinite_amount_rejected (chapter01_owner_acceptance.RoutingAcceptance.test_nonfinite_amount_rejected)\\n----------------------------------------------------------------------\\nTraceback (most recent call last):\\n  File \\\"/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/reader_side/acceptance/test_routing.py\\\", line 30, in test_nonfinite_amount_rejected\\n    self.check(\\\"NaN\\\", \\\"REJECTED\\\", \\\"INVALID_AMOUNT\\\")\\n  File \\\"/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/reader_side/acceptance/test_routing.py\\\", line 7, in check\\n    result = assess(raw)\\n             ^^^^^^^^^^^\\n  File \\\"/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/repo/src/treasury/routing.py\\\", line 17, in assess\\n    if amount < THRESHOLD_EUR:\\n       ^^^^^^^^^^^^^^^^^^^^^^\\ndecimal.InvalidOperation: [<class 'decimal.InvalidOperation'>]\\n\\n======================================================================\\nERROR: test_nonnumeric_amount_rejected (chapter01_owner_acceptance.RoutingAcceptance.test_nonnumeric_amount_rejected)\\n----------------------------------------------------------------------\\nTraceback (most recent call last):\\n  File \\\"/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/reader_side/acceptance/test_routing.py\\\", line 27, in test_nonnumeric_amount_rejected\\n    self.check(\\\"not-an-amount\\\", \\\"REJECTED\\\", \\\"INVALID_AMOUNT\\\")\\n  File \\\"/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/reader_side/acceptance/test_routing.py\\\", line 7, in check\\n    result = assess(raw)\\n             ^^^^^^^^^^^\\n  File \\\"/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/repo/src/treasury/routing.py\\\", line 16, in assess\\n    amount = Decimal(amount_eur)\\n             ^^^^^^^^^^^^^^^^^^^\\ndecimal.InvalidOperation: [<class 'decimal.ConversionSyntax'>]\\n\\n======================================================================\\nFAIL: test_negative_amount_rejected (chapter01_owner_acceptance.RoutingAcceptance.test_negative_amount_rejected)\\n----------------------------------------------------------------------\\nTraceback (most recent call last):\\n  File \\\"/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/reader_side/acceptance/test_routing.py\\\", line 21, in test_negative_amount_rejected\\n    self.check(\\\"-0.01\\\", \\\"REJECTED\\\", \\\"INVALID_AMOUNT\\\")\\n  File \\\"/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/reader_side/acceptance/test_routing.py\\\", line 8, in check\\n    self.assertEqual((result.route, result.reason, result.policy_version),\\nAssertionError: Tuples differ: ('STANDARD_QUEUE', 'BELOW_LIMIT', 'BR-001/v1') != ('REJECTED', 'INVALID_AMOUNT', 'BR-001/v1')\\n\\nFirst differing element 0:\\n'STANDARD_QUEUE'\\n'REJECTED'\\n\\n- ('STANDARD_QUEUE', 'BELOW_LIMIT', 'BR-001/v1')\\n+ ('REJECTED', 'INVALID_AMOUNT', 'BR-001/v1')\\n\\n======================================================================\\nFAIL: test_zero_amount_rejected (chapter01_owner_acceptance.RoutingAcceptance.test_zero_amount_rejected)\\n----------------------------------------------------------------------\\nTraceback (most recent call last):\\n  File \\\"/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/reader_side/acceptance/test_routing.py\\\", line 24, in test_zero_amount_rejected\\n    self.check(\\\"0.00\\\", \\\"REJECTED\\\", \\\"INVALID_AMOUNT\\\")\\n  File \\\"/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/reader_side/acceptance/test_routing.py\\\", line 8, in check\\n    self.assertEqual((result.route, result.reason, result.policy_version),\\nAssertionError: Tuples differ: ('STANDARD_QUEUE', 'BELOW_LIMIT', 'BR-001/v1') != ('REJECTED', 'INVALID_AMOUNT', 'BR-001/v1')\\n\\nFirst differing element 0:\\n'STANDARD_QUEUE'\\n'REJECTED'\\n\\n- ('STANDARD_QUEUE', 'BELOW_LIMIT', 'BR-001/v1')\\n+ ('REJECTED', 'INVALID_AMOUNT', 'BR-001/v1')\\n\\n----------------------------------------------------------------------\\nRan 7 tests in 0.001s\\n\\nFAILED (failures=2, errors=2)\\n\",\n  \"stderr\": \"\",\n  \"meaning\": \"Seven owner-side cases for known local teaching code; not a security sandbox, payment approval or release approval.\",\n  \"candidate_sha256_after\": \"39c5afc8888b748c8e96147f1bc143839dedfe73963bf5675f3e8ebf4978457a\",\n  \"tests_total\": 7,\n  \"passed\": 3,\n  \"failures\": 2,\n  \"errors\": 2,\n  \"skipped\": 0,\n  \"expected_failures\": 0,\n  \"unexpected_successes\": 0,\n  \"findings\": [\n    \"ACCEPTANCE_REJECTED\"\n  ]\n}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "practice/native_client/configure_chapter1.py",
+      "--work",
+      "/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01",
+      "--runtime-root",
+      "/workspace/scratch/72d789d25fef/runtime_d7",
+      "--output",
+      "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/native_ch01_01/configuration"
+    ],
+    "cwd": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion",
+    "started_at_utc": "2026-10-22T05:55:47.079071+00:00",
+    "finished_at_utc": "2026-10-22T05:55:47.122021+00:00",
+    "exit_code": 0,
+    "stdout": "{\n  \"status\": \"PREPARED_NOT_RUN\",\n  \"output\": \"/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/native_ch01_01/configuration\",\n  \"next\": \"Capture VERSION_TASK, CONFIG_TASK and AGENT_TASK; inspect identity/effective rules before CLIENT_TASK.\"\n}\n",
+    "stderr": ""
+  }
+]

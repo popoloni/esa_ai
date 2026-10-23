@@ -1,0 +1,132 @@
+{
+  "id": "exercise_before_repair",
+  "tool": "Book artifact fidelity checker",
+  "version": "CR06-1",
+  "origin": "author_exercise",
+  "model": null,
+  "named_agent_execution": false,
+  "human_review": "pending",
+  "argv": [
+    "/workspace/scratch/efa0a59e0545/tmp/sdd_workflow_trial_20261020/python_env/bin/python",
+    "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_CR_Implementation_20261020/companion/practice/sdd/check.py",
+    "--artifacts",
+    "/workspace/scratch/efa0a59e0545/tmp/sdd_workflow_trial_20261020/learner_attempt",
+    "--json"
+  ],
+  "cwd": "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_CR_Implementation_20261020/companion/practice/sdd",
+  "started_utc": "2026-10-20T15:03:07.567387+00:00",
+  "finished_utc": "2026-10-20T15:03:07.609941+00:00",
+  "duration_seconds": 0.042554,
+  "exit_code": 1,
+  "logs": {
+    "stdout": {
+      "file": "exercise_before_repair.stdout.txt",
+      "sha256": "d495b80f455faa2980d5bb2a72e84cedbf32076c8097240f0a3bc680cb26c334",
+      "bytes": 8498
+    },
+    "stderr": {
+      "file": "exercise_before_repair.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  },
+  "input_inventory": {
+    "openspec/ORIGIN.json": {
+      "sha256": "d985d3aa85666cc9d964a2885a7a54475ee5dae1c6b91b1971208b3a8170755f",
+      "bytes": 457
+    },
+    "openspec/openspec/changes/explain-treasury/.openspec.yaml": {
+      "sha256": "ff4326f8b42dcf8851877f4f3989c7fecb8f97d8154686d7d74b7281b70e6b9b",
+      "bytes": 40
+    },
+    "openspec/openspec/changes/explain-treasury/design.md": {
+      "sha256": "ac74bbb92a833998e2f5530f690b9671e1b069d3eb2660b71a0b843eb2b20982",
+      "bytes": 1965
+    },
+    "openspec/openspec/changes/explain-treasury/proposal.md": {
+      "sha256": "d498b2544b6cebf6aa4ac4a5eef9d527dc0f6e71fff070140756932a1e06999b",
+      "bytes": 880
+    },
+    "openspec/openspec/changes/explain-treasury/specs/explanation/spec.md": {
+      "sha256": "eee81b994e2ffec9fbd51cb67f88d8dab7145108766b660b65fdf712dd6f5d20",
+      "bytes": 5188
+    },
+    "openspec/openspec/changes/explain-treasury/tasks.md": {
+      "sha256": "76b39234a96c7db02fd585e8867e141612233b9eb8de26911bb05a19a7a04f53",
+      "bytes": 1499
+    },
+    "openspec/openspec/config.yaml": {
+      "sha256": "9d079214443edb45ad9e85c7608475b38081a33baed390350242fc2e986c0a23",
+      "bytes": 206
+    },
+    "speckit/ORIGIN.json": {
+      "sha256": "a98e34a731ee6a8905cd47ef4efbde7dadf2f5afd89c5970fb058f7a4b92ba2a",
+      "bytes": 456
+    },
+    "speckit/plan.md": {
+      "sha256": "ac74bbb92a833998e2f5530f690b9671e1b069d3eb2660b71a0b843eb2b20982",
+      "bytes": 1965
+    },
+    "speckit/spec.md": {
+      "sha256": "9ab2d96d5a0731125b91145c0c0878c81a659371b99201450109f4cacd5e3a24",
+      "bytes": 5193
+    },
+    "speckit/tasks.md": {
+      "sha256": "76b39234a96c7db02fd585e8867e141612233b9eb8de26911bb05a19a7a04f53",
+      "bytes": 1499
+    }
+  },
+  "output_inventory": {
+    "openspec/ORIGIN.json": {
+      "sha256": "d985d3aa85666cc9d964a2885a7a54475ee5dae1c6b91b1971208b3a8170755f",
+      "bytes": 457
+    },
+    "openspec/openspec/changes/explain-treasury/.openspec.yaml": {
+      "sha256": "ff4326f8b42dcf8851877f4f3989c7fecb8f97d8154686d7d74b7281b70e6b9b",
+      "bytes": 40
+    },
+    "openspec/openspec/changes/explain-treasury/design.md": {
+      "sha256": "ac74bbb92a833998e2f5530f690b9671e1b069d3eb2660b71a0b843eb2b20982",
+      "bytes": 1965
+    },
+    "openspec/openspec/changes/explain-treasury/proposal.md": {
+      "sha256": "d498b2544b6cebf6aa4ac4a5eef9d527dc0f6e71fff070140756932a1e06999b",
+      "bytes": 880
+    },
+    "openspec/openspec/changes/explain-treasury/specs/explanation/spec.md": {
+      "sha256": "eee81b994e2ffec9fbd51cb67f88d8dab7145108766b660b65fdf712dd6f5d20",
+      "bytes": 5188
+    },
+    "openspec/openspec/changes/explain-treasury/tasks.md": {
+      "sha256": "76b39234a96c7db02fd585e8867e141612233b9eb8de26911bb05a19a7a04f53",
+      "bytes": 1499
+    },
+    "openspec/openspec/config.yaml": {
+      "sha256": "9d079214443edb45ad9e85c7608475b38081a33baed390350242fc2e986c0a23",
+      "bytes": 206
+    },
+    "speckit/ORIGIN.json": {
+      "sha256": "a98e34a731ee6a8905cd47ef4efbde7dadf2f5afd89c5970fb058f7a4b92ba2a",
+      "bytes": 456
+    },
+    "speckit/plan.md": {
+      "sha256": "ac74bbb92a833998e2f5530f690b9671e1b069d3eb2660b71a0b843eb2b20982",
+      "bytes": 1965
+    },
+    "speckit/spec.md": {
+      "sha256": "9ab2d96d5a0731125b91145c0c0878c81a659371b99201450109f4cacd5e3a24",
+      "bytes": 5193
+    },
+    "speckit/tasks.md": {
+      "sha256": "76b39234a96c7db02fd585e8867e141612233b9eb8de26911bb05a19a7a04f53",
+      "bytes": 1499
+    }
+  },
+  "environment_controls": {
+    "CI": "1",
+    "DO_NOT_TRACK": "1",
+    "OPENSPEC_TELEMETRY": "0",
+    "credentials": "not inherited",
+    "network": "normal sandbox network restriction; no credentials or external write commands"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "schema": "esa-d8-native-attempt-disposition/v1",
+  "recorded_at_utc": "2026-10-22T11:47:46.060051+00:00",
+  "status": "NATIVE_WRITE_SELECTED_ABORTED_NO_FEATURE_CONTENT",
+  "attempt": "03",
+  "session_id": "ses_e9cc44d15ffewxo9hTP3f5v23l",
+  "native_exit_code": 1,
+  "native_duration_seconds": 1503.7998322519998,
+  "native_error": "The operation timed out.",
+  "new_native_tool_part": {
+    "tool": "write",
+    "call_id": "ckfEqbCxSTwBljYk8xqn6m6ijnBYMOZf",
+    "state": "error",
+    "error": "Tool execution aborted",
+    "interrupted": true,
+    "input": {},
+    "raw": ""
+  },
+  "completed_writes": 0,
+  "changed_files": [],
+  "remaining_specification": "Exact 4556-byte upstream template copied in attempt02; not feature generation.",
+  "clarification": "NOT_REACHED",
+  "usage": "No completed native usage receipt. Cancelled backend generation counters are retained separately and are not substituted for native usage or draft content.",
+  "timeout_interpretation": "The native stream-to-error interval of 1,500.113 seconds is consistent with the two configured 1,500-second client timers. The evidence does not distinguish which timer fired. The 3,600-second outer capture cap was not reached.",
+  "independent_review": {
+    "path": "revision_d8/notes/R08_ATTEMPT_03_INDEPENDENT_REVIEW.json",
+    "sha256": "36cf056fe73ac160544250e0fe2bde261e331ab6e16691beceafc69f24fa4329"
+  },
+  "evidence": [
+    "revision_d8/evidence/native_sdd_01/attempt_03/RECEIPT.json",
+    "revision_d8/evidence/native_sdd_01/terminal_collection_03/COLLECTION_RECEIPT.json",
+    "revision_d8/evidence/native_sdd_01/terminal_collection_03/native-session.json",
+    "revision_d8/evidence/native_server_01/inference_observation_03/OBSERVATION_SUMMARY.json"
+  ],
+  "followup": "A separately declared compact specification-only continuation has started in the same session. It changes only the configured response output limit from 3,072 to 1,536, appends a short format/scope instruction without draft text or owner answers, and uses a 2,400-second outer cap. Completion remains unclaimed.",
+  "next_start_record": "revision_d8/evidence/native_sdd_01/ACCOUNT_START_04.json",
+  "R08": "PARTIAL"
+}

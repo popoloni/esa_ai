@@ -1,0 +1,17 @@
+{
+  "started_at_utc": "2026-10-22T07:01:46.166913+00:00",
+  "argv": [
+    "/workspace/scratch/72d789d25fef/runtime_d7/opencode/node_modules/.bin/opencode",
+    "--pure",
+    "debug",
+    "config"
+  ],
+  "cwd": "/workspace/scratch/72d789d25fef/runtime_d7/native_sdd_03",
+  "config_sha256_before": "9131e6a1455cf8bb7684a745279ff50740e3766dc31423342cf4f904c89c0742",
+  "no_inference": true,
+  "finished_at_utc": "2026-10-22T07:01:47.639984+00:00",
+  "exit_code": 0,
+  "config_sha256_after": "9131e6a1455cf8bb7684a745279ff50740e3766dc31423342cf4f904c89c0742",
+  "bytes_unchanged": true,
+  "explicit_schema_retained": true
+}

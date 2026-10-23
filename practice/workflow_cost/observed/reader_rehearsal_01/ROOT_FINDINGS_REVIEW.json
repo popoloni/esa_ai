@@ -1,0 +1,60 @@
+{
+  "status": "PASS_RETAINED_EVIDENCE_REVIEW",
+  "recorded_at_utc": "2026-10-21T18:22:57.843111+00:00",
+  "reviewer": "root agent, also correction implementer; no independent human",
+  "verified_worker_files": 36,
+  "worker_manifest_checks": {
+    "COMMAND_JOURNAL.json": true,
+    "EXPLANATIONS.txt": true,
+    "EXPOSURE_AND_LIMITS.json": true,
+    "FINAL_VERIFICATION.json": true,
+    "INPUT_CACHE_RECOVERY.json": true,
+    "INPUT_MANIFEST_VERIFICATION.json": true,
+    "INSTRUCTION_FINDINGS.json": true,
+    "RESULT.json": true,
+    "chapter01/CH01_BASELINE_R17.json": true,
+    "chapter01/CH01_ROUTING_R17.json": true,
+    "chapter01/CP01_EDIT_BASELINE_R17.json": true,
+    "chapter01/REVIEW.txt": true,
+    "chapter01/routing.after.py": true,
+    "chapter01/routing.before.py": true,
+    "chapter01/routing.diff": true,
+    "chapter01/routing_hashes.json": true,
+    "chapter01/scope_check.txt": true,
+    "chapter07/HANDOFF.txt": true,
+    "chapter07/candidate.diff": true,
+    "chapter07/planning_gate_FIRST_FAIL.json": true,
+    "chapter07/unchanged_candidate_hashes.json": true,
+    "csv/FIRST_FAILURE.txt": true,
+    "csv/HANDOFF.txt": true,
+    "csv/PRE_EDIT_CONSTRAINTS.txt": true,
+    "csv/api.after.py": true,
+    "csv/api.before.py": true,
+    "csv/api.diff": true,
+    "csv/api_hashes.json": true,
+    "csv/baseline_hashes.json": true,
+    "csv/checks.json": true,
+    "csv/contract_lookup_failure.txt": true,
+    "csv/final_hashes.json": true,
+    "csv/scope_result.json": true,
+    "setup/doctor.json": true,
+    "setup/initial_wrong_directory_doctor.txt": true,
+    "setup/initial_wrong_directory_show.txt": true
+  },
+  "accepted_findings": [
+    "CSV_CONTRACT_LOCATION",
+    "CP07_REFERENCE_ORDER",
+    "INPUT_BYTECODE"
+  ],
+  "not_doc_defects": [
+    "two wrong-cwd commands were operator errors"
+  ],
+  "task_scope": "Setup, routing repair, Chapter 7 entry and handoff only, CSV transfer. Not full CP07 repair or human validation.",
+  "account_recording_correction": {
+    "command": "stop --outcome COMPLETED_SCOPE",
+    "exit_code": 2,
+    "reason": "Invalid enum rejected before mutation; repeated with documented PASSED meaning requested rehearsal scope, not product acceptance."
+  },
+  "clock_limit": "Span stops are observed recorder invocations. Worker completion predates stop; finish includes parent integration/notification delay. No active effort inference.",
+  "next": "Correct two instructions and use -B entry commands; retain old evidence unchanged."
+}

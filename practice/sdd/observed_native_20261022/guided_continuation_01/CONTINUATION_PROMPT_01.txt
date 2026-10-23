@@ -1,0 +1,2 @@
+Continue the SAME Spec Kit task. Your last response stopped after naming the feature; it did not read inputs or create files. Now execute exactly: cat inputs/NATIVE_CONTEXT_BUNDLE.md
+After reading it, actually write .specify/feature.json, specs/001-explain-treasury/spec.md and its checklists/requirements.md using permitted tools. Preserve the full original command, all fixed values/IDs and source authority. Invent no owner answers or benefit targets. Retain all three unanswered owner questions, then STOP before planning. If blocked, report the exact failure and stop.

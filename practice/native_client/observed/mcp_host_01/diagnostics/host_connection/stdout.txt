@@ -1,0 +1,7 @@
+┌  MCP Servers
+│
+●  ✓ treasury [90mconnected
+│      [90m/workspace/scratch/72d789d25fef/runtime_d7/mcp_venv/bin/python -B /workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion/practice/mcp_cli/wire_proxy.py /workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/mcp_host_01/diagnostics/host_connection/trace
+│
+└  1 server(s)
+

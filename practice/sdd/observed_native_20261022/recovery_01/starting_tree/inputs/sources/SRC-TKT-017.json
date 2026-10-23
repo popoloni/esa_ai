@@ -1,0 +1,10 @@
+{
+  "id": "SRC-TKT-017",
+  "kind": "stakeholder-request",
+  "authority": "PROPOSAL_ONLY",
+  "date": "2026-09-08",
+  "owner_role": "Product sponsor (fictional)",
+  "title": "Remove delays in Treasury routing",
+  "text": "Auto-approve every Treasury request below EUR 5,000 so operations no longer waits for humans.",
+  "source_reliability": "unverified desired solution; not a policy decision"
+}

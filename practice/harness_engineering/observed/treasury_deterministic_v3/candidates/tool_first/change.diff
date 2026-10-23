@@ -1,0 +1,10 @@
+--- base/harness.json
++++ tool_first/harness.json
+@@ -3,6 +3,6 @@
+   "response_fields": [
+     "route"
+   ],
+-  "routing_strategy": "cached_estimate",
++  "routing_strategy": "router_tool",
+   "schema": "treasury-harness/v1"
+ }

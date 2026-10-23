@@ -1,0 +1,78 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "esa-local/esa-qwen3-4b",
+  "small_model": "esa-local/esa-qwen3-4b",
+  "enabled_providers": [
+    "esa-local"
+  ],
+  "autoupdate": false,
+  "share": "disabled",
+  "compaction": {
+    "auto": false
+  },
+  "provider": {
+    "esa-local": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "ESA local llama.cpp",
+      "options": {
+        "baseURL": "http://127.0.0.1:18080/v1",
+        "timeout": 600000
+      },
+      "models": {
+        "esa-qwen3-4b": {
+          "name": "Qwen3-4B Q4_K_M local",
+          "tool_call": true,
+          "limit": {
+            "context": 16384,
+            "output": 1024
+          }
+        }
+      }
+    }
+  },
+  "default_agent": "esa-bounded",
+  "agent": {
+    "esa-bounded": {
+      "description": "Bounded ESA local-model routing exercise",
+      "mode": "primary",
+      "model": "esa-local/esa-qwen3-4b",
+      "steps": 4,
+      "temperature": 0.2,
+      "prompt": "Inspect the supplied task and permitted files. Make only the authorized change. Report actual tool results, preserve failures and stop for human review.",
+      "options": {},
+      "permission": {}
+    }
+  },
+  "permission": {
+    "*": "deny",
+    "read": {
+      "*": "deny",
+      "workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/repo/AGENTS.md": "allow",
+      "workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/repo/src/treasury/routing.py": "allow",
+      "workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/reader_side/intent/INT-001.md": "allow",
+      "workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/reader_side/acceptance/test_routing.py": "allow",
+      "workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/reader_side/evidence/CH01_NATIVE_INITIAL_01.json": "allow",
+      "workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/reader_side/evidence/CH01_NATIVE_AGENT_01.json": "allow"
+    },
+    "edit": {
+      "*": "deny",
+      "workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01/repo/src/treasury/routing.py": "allow"
+    },
+    "bash": {
+      "*": "deny",
+      "python3 -B reader_side/tools/run_acceptance.py --output reader_side/evidence/CH01_NATIVE_RECOVERY_02.json": "allow"
+    },
+    "external_directory": "deny",
+    "glob": "deny",
+    "grep": "deny",
+    "task": "deny",
+    "skill": "deny",
+    "webfetch": "deny",
+    "websearch": "deny"
+  },
+  "mcp": {},
+  "mode": {},
+  "plugin": [],
+  "command": {},
+  "username": "unknown"
+}

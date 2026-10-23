@@ -1,0 +1,20 @@
+{
+  "schema": "esa-public-dependency-download/v1",
+  "artifact": {
+    "name": "llama-b11799-bin-ubuntu-x64.tar.gz",
+    "url": "https://github.com/ggml-org/llama.cpp/releases/download/b11799/llama-b11799-bin-ubuntu-x64.tar.gz",
+    "sha256": "4920c65448350c28f8ce7b35eec91566807e0f111c25a0df2d5fc12a1ed1716a",
+    "expected_bytes": 22300522,
+    "maximum_bytes": 30000000,
+    "publisher": "ggml-org/llama.cpp",
+    "revision": "0756e83fc1529e207af783782905bc98a8ef0770"
+  },
+  "started_at_utc": "2026-10-22T05:54:01.508664+00:00",
+  "status": "PASS_HASH_VERIFIED",
+  "bytes_received": 22300522,
+  "http_status": 200,
+  "declared_content_length": "22300522",
+  "observed_sha256": "4920c65448350c28f8ce7b35eec91566807e0f111c25a0df2d5fc12a1ed1716a",
+  "finished_at_utc": "2026-10-22T05:54:02.407479+00:00",
+  "elapsed_seconds": 0.898848082999848
+}

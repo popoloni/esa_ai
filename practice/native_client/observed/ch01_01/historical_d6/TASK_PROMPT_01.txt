@@ -1,0 +1,10 @@
+Perform the bounded Chapter 1 routing repair in this disposable companion copy.
+
+Start by reading these exact files: reader_side/intent/INT-001.md, reader_side/acceptance/test_routing.py, repo/src/treasury/routing.py, and reader_side/evidence/CH01_INITIAL_D6_NATIVE_01.json. Read repo/AGENTS.md for the selected CP01 scope if needed. The owner-side initial run is retained: 3 cases pass, 2 fail and 2 error.
+
+Make the smallest justified repair ONLY to repo/src/treasury/routing.py. Preserve the public API, BR-001/v1 policy identity and EUR 5,000 boundary. Finite positive decimal amounts below 5,000 go to STANDARD_QUEUE/BELOW_LIMIT; amounts at or above 5,000 go to HUMAN_REVIEW/AT_OR_ABOVE_LIMIT; zero, negative, nonnumeric and nonfinite inputs return REJECTED/INVALID_AMOUNT. Do not edit the intent, cases, checkers, baselines, reference solutions or other source files. Do not inspect reference solutions or earlier worked answers.
+
+After your edit, the only authorized shell command is exactly:
+python3 -B reader_side/tools/run_acceptance.py --output reader_side/evidence/CH01_AGENT_D6_NATIVE_01.json
+
+Run it once. If it fails, describe the actual failure and stop; a separate attempt will retain any recovery. Its generated JSON is the sole authorized output file besides the routing source. Do not claim tests passed without observing their result. End with what you changed, the actual check result, any limits, and READY_FOR_HUMAN_REVIEW_NOT_ACCEPTED. This educational route cannot approve a payment, merge, deployment or a human acceptance decision.

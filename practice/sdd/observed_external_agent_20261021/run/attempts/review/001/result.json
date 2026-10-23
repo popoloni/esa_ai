@@ -1,0 +1,76 @@
+{
+  "acceptance_authority": false,
+  "artifacts": [
+    {
+      "bytes": 19197,
+      "path": "review.json",
+      "sha256": "ef9b97ee65fde6e62dce094230e9031e828c747ee5e9d1df5f1f7954e47a88d4"
+    },
+    {
+      "bytes": 5310,
+      "path": "PROMPT.md",
+      "sha256": "033ac860c3a1e6fea7434718fb4833b7770e2855d081180bf09895723c2771dc"
+    },
+    {
+      "bytes": 1480,
+      "path": "PROVENANCE.json",
+      "sha256": "dcce5fc26f8361742d679898beb6c37b6603b126f178cc15da1a5aaeb70b2201"
+    },
+    {
+      "bytes": 3226,
+      "path": "TOOL_ACTIONS.json",
+      "sha256": "1bc7e5b014ed60a4754ee5f58a368cdf1b331b51ab24e63681476b03fc6ce79f"
+    },
+    {
+      "bytes": 2255,
+      "path": "INPUT_SNAPSHOT.json",
+      "sha256": "752304249009408fbdaf89bd65192c7cb8ce90cf3edc35ca7dcde547e2432e31"
+    },
+    {
+      "bytes": 10525,
+      "path": "CHECKS.json",
+      "sha256": "8c41e552766f5ea76ae85e2ed4f1534fa427d7dd1b8a551535ea07ea95063a42"
+    },
+    {
+      "bytes": 1209,
+      "path": "FIRST_OUTPUT_MANIFEST.json",
+      "sha256": "2d2955225896567c9222c002931f42d25a50296ed4f8515e04f0c4823ff134aa"
+    }
+  ],
+  "engineering_acceptance": "PENDING_INDEPENDENT_REVIEW",
+  "observed_by_bridge": "Request-bound files received and hashes checked; dispatch identity is separately evidenced by the coordinator.",
+  "provenance": {
+    "acceptance_authority": false,
+    "application_code_executed": false,
+    "client": "Actual ChatGPT collaboration.spawn_agent dispatch; independent review through functions.exec and tools.exec_command",
+    "commercial_model_cli_invocation": false,
+    "context_boundary": "Instruction boundary in a shared filesystem, not technical isolation.",
+    "cost": null,
+    "created_at_utc": "2026-10-21T16:07:23.845323+00:00",
+    "human_requirements_approval": "PENDING",
+    "implementation_authority": false,
+    "independent_context": "Fresh task delegation. No authoring participation, parent book, editorial notes, reference solutions, or prior independent findings read. Only authorized supplied inputs and request-bound generated spec/plan/tasks were used. The dependency response author summary was necessarily visible; author self-review checklist, CHECKS and RAW_RESPONSE were not inspected.",
+    "model": "GPT-6 Astra Pro (developer-exposed label, not independently authenticated)",
+    "model_api_id": null,
+    "model_version": null,
+    "native_framework_slash_invocation": false,
+    "origin": "external_model_agent",
+    "payment_authority": false,
+    "release_authority": false,
+    "scope": "Read review dispatch/request, their generation dependency response, hash-verified spec/plan/tasks, fixed supplied requirements/oracle/discovery/policy/source/constitution; inspect external_worker.py for submission schema only. Write review attempt only.",
+    "spawned_agents": false,
+    "usage": null
+  },
+  "raw_output": {
+    "bytes": 6108,
+    "path": "RAW_RESPONSE.md",
+    "sha256": "a0bbc4b47b3679e8ff5f1a5321bb32258de2d55623e1ad8035bfbdf0012e4c8e"
+  },
+  "release_authority": false,
+  "request_sha256": "95d407afd9c2885856f87b113c5ba03d84277edcf44006e2d008700d67c243cc",
+  "status": "COMPLETED",
+  "submission_sha256": "6f5a06881f298826224107694ac8625b32442ed8944c4ba39e329f1ad966d8e9",
+  "summary": "Independent request-bound review found the five fixed requirements and eight exact scenarios preserved, with correct inclusive EUR 5000 threshold, invalid rejection, policy provenance, separate human payment authorization, unknown benefit and pending human decision. One non-blocking task-list consistency issue remains: repeat T021 in T019's inline dependency list. This is an agent assessment, not human acceptance.",
+  "task_id": "review",
+  "worker_kind": "EXTERNALLY_DISPATCHED"
+}

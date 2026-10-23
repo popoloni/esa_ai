@@ -1,0 +1,56 @@
+{
+  "schema": "esa-native-csv-independent-review/v1",
+  "observed_at_utc": "2026-10-22T17:46:42.824038+00:00",
+  "candidate_sha256": {
+    "ARCHIVED_EXPORT_NOTE.md": "2ab362eebb9d3e2a308b219e5470665429333c75484749370ad11eac17dad643",
+    "spec.md": "c82786261fba2e6bf149db1baa074fc16cbb7f6540568c62daa7aac58c41bcf6",
+    "api.py": "ffbe0de916d89cb78824f02e046fda730c744c662f2936ba15aeb16ffafe8451",
+    "demo.py": "87e93b81db5a6e76fcd2b8b37c09cbd12832da37d211038cefbb4e20d2fbe6ae",
+    "CURRENT_CONTRACT.md": "2cd3b8d8924d57bc37cf3b36fc30bc8f31924de99136f6379342d117fb8238ba",
+    "plan.md": "14015f33fe0d66a7d359dbf1bf05d5e3102fd487f69b8352e133ea32b2bf74f7",
+    "orders.json": "cdd8264e6dba6d7d4d42cfd9f733fe1a704d8fc1f5f0919fe094d9f9ee96acb0",
+    "selection.py": "2b1a1365b715a0c4ec34d37e5537fb4eb7fea7912a96b03c8e347465499a540f"
+  },
+  "starting_manifest_sha256": "35fa99d2d1482c40922f30ed88e06e0e65871111d146191b325e864f817977ea",
+  "review_driver_sha256": "04f171cc9bdef165268cf953c3a878e9105107f85162131f73030aca662311d1",
+  "changed_files": [
+    "api.py",
+    "plan.md",
+    "spec.md"
+  ],
+  "out_of_scope_changes": [],
+  "passed": [
+    "membership_roundtrip_json_immutability:a:None",
+    "membership_roundtrip_json_immutability:a:open",
+    "membership_roundtrip_json_immutability:a:closed",
+    "membership_roundtrip_json_immutability:b:None",
+    "membership_roundtrip_json_immutability:b:open",
+    "membership_roundtrip_json_immutability:b:closed",
+    "membership_roundtrip_json_immutability:nobody:None",
+    "membership_roundtrip_json_immutability:nobody:open",
+    "membership_roundtrip_json_immutability:nobody:closed",
+    "empty_input_header",
+    "unsupported_format:'xml'",
+    "unsupported_format:'yaml'",
+    "unsupported_format:'CSV'",
+    "unsupported_format:''",
+    "unchanged_owned_files_and_allowed_new_records",
+    "nonempty_file_exists:spec.md",
+    "nonempty_file_exists:plan.md"
+  ],
+  "findings": [],
+  "limits": "Selected local examples, file scope and nonempty document existence. Specification and plan quality require separate content review. No HTTP authentication, spreadsheet interpretation, scale, deployment, real owner approval or human-learning validation.",
+  "supplied_contract_check": {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-B",
+      "/workspace/scratch/72d789d25fef/revision_20261022_d9/Engineering_Software_with_Agentic_AI_20261022_d9/companion/practice/csv_export/checks/check.py",
+      "--candidate",
+      "/workspace/scratch/72d789d25fef/runtime_d9/native_csv_01"
+    ],
+    "exit_code": 0,
+    "checker_sha256": "7781e80dddf13e6727959252b198e913f35d8a22e10476af1f983b2c188c9336",
+    "result_sha256": "4fd52433a14551cb41c62b041d890f9122d4062b97a94016dcefcce4aac04cfd"
+  },
+  "status": "PASS_SELECTED_CONTRACT_AND_SCOPE"
+}

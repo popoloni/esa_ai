@@ -1,0 +1,46 @@
+{
+  "created_at_utc": "2026-10-22T11:12:18.913062+00:00",
+  "status": "FROZEN_PREPARATION_REQUIRES_ROOT_LAUNCH",
+  "files": {
+    "PREFLIGHT.json": {
+      "sha256": "d3956a7e177991b07af3c6d54b6d51152c9065b7553e55d3c216c5315ecd964c",
+      "bytes": 2123
+    },
+    "PROMPT.txt": {
+      "sha256": "6f14a0005a6970cbd1413f1cb03c4dfc623d58ff9461a82197f304a5d2efc6d8",
+      "bytes": 1743
+    },
+    "PROMPT_DRAFT01.txt": {
+      "sha256": "a261a64f263c00a2b9dd8bdacf64776e9121a752dc4db2d5c4339e5fdb53a08f",
+      "bytes": 1743
+    },
+    "SOURCE_PROOF.json": {
+      "sha256": "028dddb31c4f9525c06e4b2d28d5cea3fe5b1deab86311e92b2dc6fc38d98697",
+      "bytes": 6921
+    },
+    "TASK.json": {
+      "sha256": "e89d024aa11fbf065af66e59ba16e9129bdb6c5150c39c0025851327812febf9",
+      "bytes": 5923
+    },
+    "TASK_DRAFT01.json": {
+      "sha256": "1fe8a27cc6f549d90e36c8b1ef359d4ee0b6dfd4e9208009c949d732009f1d81",
+      "bytes": 5923
+    },
+    "TOKENIZE_RECEIPT.json": {
+      "sha256": "01f4a71f3c83d98bb85d9dca73b21ed6e932aaed849f550ec1038b1c3f7a1f84",
+      "bytes": 439
+    },
+    "TOKENIZE_RECEIPT_02.json": {
+      "sha256": "5bc64dad9ed30a0d8c0caa65c753dbf74f201d8215a74b8797df1332bde0a15a",
+      "bytes": 506
+    },
+    "TOKENIZE_RESPONSE.json": {
+      "sha256": "a38328c756dcdccb69926bfe165c46d68c5024981ff68d4d486e564d3cd0c483",
+      "bytes": 1713
+    },
+    "TOKENIZE_RESPONSE_02.json": {
+      "sha256": "3771a08f587d7d569291cfdb711e10ef66be940ae1c70b5c17f1d9b7bcb9f877",
+      "bytes": 1713
+    }
+  }
+}

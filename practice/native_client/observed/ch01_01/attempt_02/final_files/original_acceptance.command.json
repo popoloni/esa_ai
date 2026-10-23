@@ -1,0 +1,15 @@
+{
+  "argv": [
+    "python3",
+    "-B",
+    "reader_side/tools/run_acceptance.py",
+    "--output",
+    "reader_side/evidence/CH01_NATIVE_REVIEW_01.json"
+  ],
+  "cwd": "/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01",
+  "exit_code": 0,
+  "started_at_utc": "2026-10-22T06:18:49.094639+00:00",
+  "ended_at_utc": "2026-10-22T06:18:49.263791+00:00",
+  "duration_seconds": 0.1691566800000146,
+  "operator": "independent assistant review, outside OpenCode native session"
+}

@@ -1,0 +1,81 @@
+{
+  "schema": "isolated-cli-installation-attempt/v1",
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/uv",
+        "--no-config",
+        "venv",
+        "--python",
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/tmp/esa-d4-sdd-20261021"
+      ],
+      "started_at_utc": "2026-10-21T15:50:10.852697+00:00",
+      "elapsed_seconds": 0.054,
+      "exit_code": 0,
+      "stdout": "01_stdout.txt",
+      "stderr": "01_stderr.txt"
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/uv",
+        "--no-config",
+        "pip",
+        "install",
+        "--python",
+        "/tmp/esa-d4-sdd-20261021/bin/python",
+        "--index-url",
+        "https://pypi.org/simple",
+        "--only-binary",
+        ":all:",
+        "specify-cli==1.2.2"
+      ],
+      "started_at_utc": "2026-10-21T15:50:10.907075+00:00",
+      "elapsed_seconds": 0.052,
+      "exit_code": 2,
+      "stdout": "02_stdout.txt",
+      "stderr": "02_stderr.txt"
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/uv",
+        "--no-config",
+        "pip",
+        "install",
+        "--python",
+        "/tmp/esa-d4-sdd-20261021/bin/python",
+        "--index-url",
+        "https://pypi.org/simple",
+        "--only-binary",
+        ":all:",
+        "specify-cli==1.2.2"
+      ],
+      "started_at_utc": "2026-10-21T15:51:24.714289+00:00",
+      "elapsed_seconds": 0.012,
+      "exit_code": 2,
+      "stdout": "03_stdout.txt",
+      "stderr": "03_stderr.txt",
+      "network_context": "sandbox escalation for authorized pinned public package installation"
+    }
+  ],
+  "environment_keys": [
+    "LANG",
+    "PATH",
+    "UV_CACHE_DIR",
+    "UV_HTTP_RETRIES",
+    "UV_HTTP_TIMEOUT",
+    "UV_NO_CONFIG"
+  ],
+  "credential_environment_inherited": false,
+  "global_installation": false,
+  "model_called": false,
+  "status": "INSTALLED_AFTER_COORDINATOR_NETWORK_RETRY",
+  "official_source": "https://pypi.org/project/specify-cli/1.2.2/",
+  "first_failure_interpretation": "Restricted sandbox could not resolve public PyPI; not evidence of upstream unavailability.",
+  "recovery_evidence": "revision_d4/evidence/spec_kit_install_recovery.json",
+  "locally_verified_distribution_versions": {
+    "specify-cli": "1.2.2",
+    "mcp": "2.3.0"
+  },
+  "local_version_evidence": "companion/practice/sdd/evidence/revision_d4_installation/POST_INSTALL_COMMANDS.json"
+}

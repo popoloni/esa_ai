@@ -1,0 +1,18 @@
+{
+  "reason": "Compose observed fresh domain-tool use with the public output contract; these proxy checks do not establish semantic correctness.",
+  "response_component_from": "schema_complete",
+  "routing_component_from": "tool_first",
+  "selection_uses_oracle_results": false,
+  "shape_scores": {
+    "base": 4,
+    "memorized_development": 16,
+    "schema_complete": 16,
+    "tool_first": 4
+  },
+  "tool_scores": {
+    "base": 0,
+    "memorized_development": 0,
+    "schema_complete": 0,
+    "tool_first": 4
+  }
+}

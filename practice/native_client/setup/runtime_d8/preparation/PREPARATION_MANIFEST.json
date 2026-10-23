@@ -1,0 +1,198 @@
+{
+  "schema": "esa-d8-native-server-preparation-manifest/v1",
+  "recorded_at_utc": "2026-10-22T10:14:28.026162+00:00",
+  "file_count": 38,
+  "files": [
+    {
+      "path": "BINARY_HELP.json",
+      "bytes": 567,
+      "sha256": "86c47729406561621502ff2db81c9f7a8b3599007a67e807c1b65660db864394"
+    },
+    {
+      "path": "BINARY_HELP.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "BINARY_HELP.stdout.txt",
+      "bytes": 60469,
+      "sha256": "bcb795d4736d9bf3209492e0a10058adc6015ac5f8eeadb9abe9182bb9722f6b"
+    },
+    {
+      "path": "CONTROLLED_PROBE.json",
+      "bytes": 1719,
+      "sha256": "c74577595458f150b9cf6930dbb96d6ed0145c871eca83626f532276a4cd53b9"
+    },
+    {
+      "path": "CONTROLLED_PROBE.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "CONTROLLED_PROBE.stdout.txt",
+      "bytes": 268,
+      "sha256": "02953167120bc36fa4306c8d8fabaac7b4d083a1e339840b9890d620a1c552f9"
+    },
+    {
+      "path": "D7_CORRECTED_LAUNCHER_BASE.py",
+      "bytes": 7446,
+      "sha256": "9dec1771869e921fc59194f0603825ab28d02ab8fed0765d9e2b4028dbf38987"
+    },
+    {
+      "path": "INERT_FIXTURE.py",
+      "bytes": 178,
+      "sha256": "fc80e0ad17cdeb4ad63762148a2d1d0e4f2db3e7b5b87cdd35fe0a75ce674c2a"
+    },
+    {
+      "path": "LAUNCHER_DIFF.patch",
+      "bytes": 7009,
+      "sha256": "3b6377ea8f87971b8219effba6bc1d16014296ae53cca89e811e807877d88e48"
+    },
+    {
+      "path": "LAUNCH_COMMAND.json",
+      "bytes": 1173,
+      "sha256": "78a773483d9b3c967a186dd31b2da905cc81f26c5668ddd3fa50188441ba8ac2"
+    },
+    {
+      "path": "PLANNED_LAUNCH.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "PLANNED_LAUNCH.stdout.json",
+      "bytes": 2730,
+      "sha256": "e2913ffa1e496d0e5aae5c9d964a1691057fd2cfc3d89b884faee5445ff97252"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5307,
+      "sha256": "9f6736d8e7b1718428a8ba4f179ada24574a5d62c0f6ddb7d1f8218eb4fcd766"
+    },
+    {
+      "path": "RESOURCE_PLAN.json",
+      "bytes": 8733,
+      "sha256": "09f1742bf6469e903837f5f75abd76163e1830bafe0c4f7e979f53135661084e"
+    },
+    {
+      "path": "RUNTIME_PREFLIGHT_BEFORE_START.json",
+      "bytes": 3650,
+      "sha256": "2ee4781859f4f5d0f62dc7d725fdfcf9c1d57319c3c46596ff49b56611f2e63d"
+    },
+    {
+      "path": "SOURCE_RETRIEVAL.json",
+      "bytes": 8412,
+      "sha256": "e61b63224c1bf726486fc915cd5cc2666a0428ec6164070cd1c2bf1c6e681fdc"
+    },
+    {
+      "path": "controlled_probe.py",
+      "bytes": 3832,
+      "sha256": "ce5207364d9a3fa350e55164ebe7fd54292e088ea473056a3342f06995b7773c"
+    },
+    {
+      "path": "controlled_probe_evidence/FINISH.json",
+      "bytes": 3660,
+      "sha256": "2101b0c0f7529b15f0c5d01a23c9dae4671c06951dcc88caa7cdf7fd4e59af6d"
+    },
+    {
+      "path": "controlled_probe_evidence/SHUTDOWN.json",
+      "bytes": 3396,
+      "sha256": "99655fa11ec4a6be07a199339a024470acc77bfcb82d6449b7b510521d6cae0d"
+    },
+    {
+      "path": "controlled_probe_evidence/START.json",
+      "bytes": 2830,
+      "sha256": "f108f30b4c76e439dff71de2636ac44fa7925a20056e83fdbcc3e05b8aeec91f"
+    },
+    {
+      "path": "controlled_probe_evidence/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "controlled_probe_evidence/stdout.txt",
+      "bytes": 40,
+      "sha256": "2c128add583c72ab4c73915c45f6b4693046b1adbee05c6da094a8d124113f38"
+    },
+    {
+      "path": "run_local_model_d8.py",
+      "bytes": 9359,
+      "sha256": "c9bc0eb8e64725c7b1ba92687cdfcf4ffd87c5648c0c3abb2e08d4854c3c5b4f"
+    },
+    {
+      "path": "upstream/llama.cpp-0756e83fc/LICENSE",
+      "bytes": 1078,
+      "sha256": "94f29bbed6a22c35b992c5c6ebf0e7c92f13b836b90f36f461c9cf2f0f1d010d"
+    },
+    {
+      "path": "upstream/llama.cpp-0756e83fc/arg.cpp",
+      "bytes": 224650,
+      "sha256": "bf4c58c189a774f2308acfe88e4ec5cebb0c43f60cf05cef4c5b2b9affd5822d"
+    },
+    {
+      "path": "upstream/llama.cpp-0756e83fc/common.cpp",
+      "bytes": 83906,
+      "sha256": "b5ad4e435394d2563803b7a7650f0475c5b5bcc52ff8d4db700e32de237d0bd2"
+    },
+    {
+      "path": "upstream/llama.cpp-0756e83fc/common.h",
+      "bytes": 57516,
+      "sha256": "8a7f061798220ab82cefa378f7f2c4e0c854da3275a96258afd6255c54683fd9"
+    },
+    {
+      "path": "upstream/llama.cpp-0756e83fc/ggml-backend-reg.cpp",
+      "bytes": 18091,
+      "sha256": "1436b46bd1e8355345d454baa4b40069be73e9cb09a3a188d32426ea1e1037fe"
+    },
+    {
+      "path": "upstream/llama.cpp-0756e83fc/ggml-cpu.cpp",
+      "bytes": 25005,
+      "sha256": "ccf382d3fbf126b5ddb5850a0a970656fb24e00587da4003419439277c91cd01"
+    },
+    {
+      "path": "upstream/llama.cpp-0756e83fc/llama-context.cpp",
+      "bytes": 169201,
+      "sha256": "2a25e556cb0d16725e01ce853fb1b76da91dcb41b803ce1a6bacec89bfb94aa5"
+    },
+    {
+      "path": "upstream/llama.cpp-0756e83fc/llama-model.cpp",
+      "bytes": 186821,
+      "sha256": "218736a90862fcd3811a7bc4b4cb37205151f8054245029684ccd04dec966a33"
+    },
+    {
+      "path": "upstream/llama.cpp-0756e83fc/ops.cpp",
+      "bytes": 428640,
+      "sha256": "b565fea101889b8b73011ad26c5cafc242e3d10b0eb65d3aba4b53808d0f2e71"
+    },
+    {
+      "path": "upstream/llama.cpp-0756e83fc/repack.cpp",
+      "bytes": 213604,
+      "sha256": "5fa9f24cc2631609f40fa47a64078f77dccbe9f327711af91af671cd29b8b87d"
+    },
+    {
+      "path": "upstream/opencode-v1.19.3/LICENSE",
+      "bytes": 1065,
+      "sha256": "625f0f619133f89bbbb2abe37369613dfa1885eba1e50d02170deb62bb42cb6b"
+    },
+    {
+      "path": "upstream/opencode-v1.19.3/cli_run.ts",
+      "bytes": 31940,
+      "sha256": "e040e90d4c81cdd59b9568ee90a53c0209cd9ddf1b8b207d1a8685b2e26d57d0"
+    },
+    {
+      "path": "upstream/opencode-v1.19.3/markdown.ts",
+      "bytes": 1173,
+      "sha256": "bcb87009e9ffc760e0e2f0878543f582b5ca7ecc67bebb2087de2467ae28cbfe"
+    },
+    {
+      "path": "upstream/opencode-v1.19.3/read.ts",
+      "bytes": 13126,
+      "sha256": "afec8294965cbd9b9e29d3453b682164f0ecdba26574ebc048e9ba21af209c68"
+    },
+    {
+      "path": "upstream/opencode-v1.19.3/session_prompt.ts",
+      "bytes": 64944,
+      "sha256": "f0c5bc64c0f0e966693d4a57f7ede1e9d6e188b396152f04b55303dc75b9b768"
+    }
+  ],
+  "scope": "Only the frozen preparation packet; actual server lifecycles and later preflight observations are separate."
+}

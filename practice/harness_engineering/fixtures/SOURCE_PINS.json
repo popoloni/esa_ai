@@ -1,0 +1,11 @@
+{
+  "companion_files": {
+    "reader_side/acceptance/test_routing.py": "6e5aa5706dd989bdbbeec9374a84d13c41cf6f36e23a5e5d2762a3b16e551c9b",
+    "reader_side/discovery/sources/SRC-POL-001.json": "1de2d20f2fe72c4a2ae698093078deb2a05b5d7fd85eec819438cabb7928aacb",
+    "reader_side/reference_solution/delegation_plan.json": "ff2a8e4e3ef8d2403cec1cc767a91fc97103455237be43661a980607cae2da17",
+    "repo/engineering/planning/delegation_plan.json": "fa77d76a1902cf60d68fea5fd8abddb7eeb6902e21dd03c2a08f44225cf9a293",
+    "repo/src/treasury/routing.py": "14d186a327a418dddb405144bfefb5810ed27e626b981424c9ad3b66742e8b32"
+  },
+  "note": "Do not rebaseline changed policy or candidate code to force this teaching comparison to pass. Review a changed source and author a new experiment instead.",
+  "schema": "harness-source-pins/v1"
+}

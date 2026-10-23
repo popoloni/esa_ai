@@ -1,0 +1,37 @@
+{
+  "status": "PASS_DECLARED_CONTEXT_ARITHMETIC_RUNTIME_GATE_STILL_REQUIRED",
+  "at_utc": "2026-10-22T10:21:00.969949+00:00",
+  "source_token_measurement": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/input_budget/TOKEN_COUNTS_AND_BUDGET.json",
+  "source_token_measurement_sha256": "020a44398e9578164c41b241ecebd10e4e90e0d36f9a29842611c7722df99cf4",
+  "prior_candidate": {
+    "context": 22528,
+    "total_with_reserves": 23077,
+    "remaining_tokens": -549,
+    "disposition": "REJECTED_BEFORE_INFERENCE; retained without rewrite"
+  },
+  "new_candidate": {
+    "context": 24576,
+    "base_tokens": 12837,
+    "reserves": {
+      "unobserved_native_system_tools_message_overhead": 3072,
+      "cumulative_prior_output_tool_history": 4096,
+      "maximum_current_response_output": 3072
+    },
+    "total_with_reserves": 23077,
+    "remaining_tokens": 1499
+  },
+  "configuration": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/invocation/OPENCODE_CONFIG_02.json",
+  "configuration_sha256": "c02fb16fda113dbf2c2c9ba8973b77f50ce759b5ee2f3fdc24e994a739647ba3",
+  "actual_effective_configuration_check": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/invocation/EFFECTIVE_CONFIG_02_CHECK.json",
+  "complete_sources_unchanged": true,
+  "full_command_unchanged": true,
+  "actual_native_preload_unchanged": true,
+  "measurement_reuse_scope": "The same full input bytes and pinned model tokenizer/chat template are used; increasing context alone does not repackage or shorten inputs. Native completion/root must verify model and template identity and actual new runtime settings. No second model request or output is inferred from reuse.",
+  "output_cap": {
+    "configured": 3072,
+    "serialization_source_binding": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/input_budget/CLIENT_OUTPUT_CAP_SOURCE_BINDING.json",
+    "meaning": "The same positive client cap and exact SDK serialization path apply. Actual provider wire request remains not yet observed; the server default is not claimed as an independent cap."
+  },
+  "runtime_health_memory_gate": "REQUIRED_FROM_NATIVE_COMPLETION_BEFORE_INVOCATION",
+  "scope": "The minimal first-message wrapper was measured, and3072 system/tool overhead tokens plus4096 cumulative prior-history tokens are explicit conservative reserves. This is not a complete captured provider request. Later unexpected growth, clipping, compaction or refusal must remain an observed failure rather than silently shortening inputs."
+}

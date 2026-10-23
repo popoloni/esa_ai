@@ -1,0 +1,511 @@
+{
+  "schema": "treasury-independent-agent-review/v1",
+  "task_id": "review",
+  "status": "COMPLETED",
+  "created_at_utc": "2026-10-21T16:07:23.845323+00:00",
+  "verdict": "NO_BLOCKING_SEMANTIC_DEFECTS_FOUND; ONE_LOW_SEVERITY_TASK_CONSISTENCY_FINDING",
+  "summary": "Independent request-bound review found the five fixed requirements and eight exact scenarios preserved, with correct inclusive EUR 5000 threshold, invalid rejection, policy provenance, separate human payment authorization, unknown benefit and pending human decision. One non-blocking task-list consistency issue remains: repeat T021 in T019's inline dependency list. This is an agent assessment, not human acceptance.",
+  "findings": [
+    {
+      "id": "REV-001",
+      "severity": "LOW",
+      "blocking": false,
+      "category": "Task dependency presentation consistency",
+      "file": "artifacts/tasks.md",
+      "location": {
+        "line": 65,
+        "related_lines": [
+          72,
+          79
+        ]
+      },
+      "title": "T019 inline dependency list omits the T021 alpha decision that the dependency section explicitly requires",
+      "evidence": "At line 65 the Depends on list names T011, T015, T017 and T018; line 79 additionally requires T021, whose actual alpha decision is defined at line 72. The task prose itself also requires a separately approved safe alpha. The complete document therefore preserves the authorization gate, but its local dependency list is incomplete.",
+      "impact": "A person or future task extractor reading only the inline task dependency list could miss the alpha-decision predecessor. This is a consistency issue in the proposed task list, not evidence that the candidate grants unauthorized study execution.",
+      "proposed_correction": "Append T021 to T019's inline Depends on list so it reads T011, T015, T017, T018, and T021. Retain the separate explicit human study authorization condition and preserve the first candidate in a new revision.",
+      "source_evidence": [
+        "inputs/specification.json: handoff and authorized_delegation",
+        "inputs/assessment.json: experiment guardrails and stop_rule"
+      ],
+      "correction_applied": false
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-EXPL-001",
+      "checks": {
+        "id_present": true,
+        "name_preserved": true,
+        "statement_verbatim": true,
+        "owner_preserved": true,
+        "source_ids_preserved": true
+      },
+      "pass": true,
+      "evidence_locations": {
+        "spec": [
+          120,
+          124
+        ],
+        "plan": [
+          104
+        ],
+        "tasks": [
+          "T007",
+          "T008",
+          "T010",
+          "T011"
+        ]
+      }
+    },
+    {
+      "id": "REQ-EXPL-002",
+      "checks": {
+        "id_present": true,
+        "name_preserved": true,
+        "statement_verbatim": true,
+        "owner_preserved": true,
+        "source_ids_preserved": true
+      },
+      "pass": true,
+      "evidence_locations": {
+        "spec": [
+          126,
+          130,
+          158
+        ],
+        "plan": [
+          105
+        ],
+        "tasks": [
+          "T005",
+          "T008",
+          "T012",
+          "T015",
+          "T021"
+        ]
+      }
+    },
+    {
+      "id": "REQ-EXPL-003",
+      "checks": {
+        "id_present": true,
+        "name_preserved": true,
+        "statement_verbatim": true,
+        "owner_preserved": true,
+        "source_ids_preserved": true
+      },
+      "pass": true,
+      "evidence_locations": {
+        "spec": [
+          132,
+          136
+        ],
+        "plan": [
+          106
+        ],
+        "tasks": [
+          "T012",
+          "T013",
+          "T014",
+          "T015"
+        ]
+      }
+    },
+    {
+      "id": "REQ-EXPL-004",
+      "checks": {
+        "id_present": true,
+        "name_preserved": true,
+        "statement_verbatim": true,
+        "owner_preserved": true,
+        "source_ids_preserved": true
+      },
+      "pass": true,
+      "evidence_locations": {
+        "spec": [
+          138,
+          142
+        ],
+        "plan": [
+          107
+        ],
+        "tasks": [
+          "T005",
+          "T007",
+          "T008"
+        ]
+      }
+    },
+    {
+      "id": "REQ-EXPL-005",
+      "checks": {
+        "id_present": true,
+        "name_preserved": true,
+        "statement_verbatim": true,
+        "owner_preserved": true,
+        "source_ids_preserved": true
+      },
+      "pass": true,
+      "evidence_locations": {
+        "spec": [
+          144,
+          148
+        ],
+        "plan": [
+          108
+        ],
+        "tasks": [
+          "T016",
+          "T017",
+          "T018",
+          "T019"
+        ]
+      }
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "SC-EXPL-001",
+      "expected": {
+        "id": "SC-EXPL-001",
+        "requirement_id": "REQ-EXPL-001",
+        "input_amount_eur": "4999.99",
+        "expected_route": "STANDARD_QUEUE",
+        "expected_reason": "BELOW_LIMIT",
+        "expected_policy_version": "BR-001/v1",
+        "payment_authorized": false
+      },
+      "actual_spec_row": {
+        "id": "SC-EXPL-001",
+        "requirement_id": "REQ-EXPL-001",
+        "input_amount_eur": "4999.99",
+        "expected_route": "STANDARD_QUEUE",
+        "expected_reason": "BELOW_LIMIT",
+        "expected_policy_version": "BR-001/v1",
+        "payment_authorized": false
+      },
+      "matrix_equal_to_oracle": true,
+      "fixed_spec_consistent_with_oracle": true,
+      "given_when_then_preserved": true,
+      "independent_decimal_reasoning_matches_oracle": true,
+      "pass": true
+    },
+    {
+      "id": "SC-EXPL-002",
+      "expected": {
+        "id": "SC-EXPL-002",
+        "requirement_id": "REQ-EXPL-001",
+        "input_amount_eur": "5000",
+        "expected_route": "HUMAN_REVIEW",
+        "expected_reason": "AT_OR_ABOVE_LIMIT",
+        "expected_policy_version": "BR-001/v1",
+        "payment_authorized": false
+      },
+      "actual_spec_row": {
+        "id": "SC-EXPL-002",
+        "requirement_id": "REQ-EXPL-001",
+        "input_amount_eur": "5000",
+        "expected_route": "HUMAN_REVIEW",
+        "expected_reason": "AT_OR_ABOVE_LIMIT",
+        "expected_policy_version": "BR-001/v1",
+        "payment_authorized": false
+      },
+      "matrix_equal_to_oracle": true,
+      "fixed_spec_consistent_with_oracle": true,
+      "given_when_then_preserved": true,
+      "independent_decimal_reasoning_matches_oracle": true,
+      "pass": true
+    },
+    {
+      "id": "SC-EXPL-003",
+      "expected": {
+        "id": "SC-EXPL-003",
+        "requirement_id": "REQ-EXPL-001",
+        "input_amount_eur": "5000.01",
+        "expected_route": "HUMAN_REVIEW",
+        "expected_reason": "AT_OR_ABOVE_LIMIT",
+        "expected_policy_version": "BR-001/v1",
+        "payment_authorized": false
+      },
+      "actual_spec_row": {
+        "id": "SC-EXPL-003",
+        "requirement_id": "REQ-EXPL-001",
+        "input_amount_eur": "5000.01",
+        "expected_route": "HUMAN_REVIEW",
+        "expected_reason": "AT_OR_ABOVE_LIMIT",
+        "expected_policy_version": "BR-001/v1",
+        "payment_authorized": false
+      },
+      "matrix_equal_to_oracle": true,
+      "fixed_spec_consistent_with_oracle": true,
+      "given_when_then_preserved": true,
+      "independent_decimal_reasoning_matches_oracle": true,
+      "pass": true
+    },
+    {
+      "id": "SC-EXPL-004",
+      "expected": {
+        "id": "SC-EXPL-004",
+        "requirement_id": "REQ-EXPL-003",
+        "input_amount_eur": "0",
+        "expected_route": "REJECTED",
+        "expected_reason": "INVALID_AMOUNT",
+        "expected_policy_version": "BR-001/v1",
+        "payment_authorized": false
+      },
+      "actual_spec_row": {
+        "id": "SC-EXPL-004",
+        "requirement_id": "REQ-EXPL-003",
+        "input_amount_eur": "0",
+        "expected_route": "REJECTED",
+        "expected_reason": "INVALID_AMOUNT",
+        "expected_policy_version": "BR-001/v1",
+        "payment_authorized": false
+      },
+      "matrix_equal_to_oracle": true,
+      "fixed_spec_consistent_with_oracle": true,
+      "given_when_then_preserved": true,
+      "independent_decimal_reasoning_matches_oracle": true,
+      "pass": true
+    },
+    {
+      "id": "SC-EXPL-005",
+      "expected": {
+        "id": "SC-EXPL-005",
+        "requirement_id": "REQ-EXPL-003",
+        "input_amount_eur": "-10",
+        "expected_route": "REJECTED",
+        "expected_reason": "INVALID_AMOUNT",
+        "expected_policy_version": "BR-001/v1",
+        "payment_authorized": false
+      },
+      "actual_spec_row": {
+        "id": "SC-EXPL-005",
+        "requirement_id": "REQ-EXPL-003",
+        "input_amount_eur": "-10",
+        "expected_route": "REJECTED",
+        "expected_reason": "INVALID_AMOUNT",
+        "expected_policy_version": "BR-001/v1",
+        "payment_authorized": false
+      },
+      "matrix_equal_to_oracle": true,
+      "fixed_spec_consistent_with_oracle": true,
+      "given_when_then_preserved": true,
+      "independent_decimal_reasoning_matches_oracle": true,
+      "pass": true
+    },
+    {
+      "id": "SC-EXPL-006",
+      "expected": {
+        "id": "SC-EXPL-006",
+        "requirement_id": "REQ-EXPL-003",
+        "input_amount_eur": "nonsense",
+        "expected_route": "REJECTED",
+        "expected_reason": "INVALID_AMOUNT",
+        "expected_policy_version": "BR-001/v1",
+        "payment_authorized": false
+      },
+      "actual_spec_row": {
+        "id": "SC-EXPL-006",
+        "requirement_id": "REQ-EXPL-003",
+        "input_amount_eur": "nonsense",
+        "expected_route": "REJECTED",
+        "expected_reason": "INVALID_AMOUNT",
+        "expected_policy_version": "BR-001/v1",
+        "payment_authorized": false
+      },
+      "matrix_equal_to_oracle": true,
+      "fixed_spec_consistent_with_oracle": true,
+      "given_when_then_preserved": true,
+      "independent_decimal_reasoning_matches_oracle": true,
+      "pass": true
+    },
+    {
+      "id": "SC-EXPL-007",
+      "expected": {
+        "id": "SC-EXPL-007",
+        "requirement_id": "REQ-EXPL-003",
+        "input_amount_eur": "NaN",
+        "expected_route": "REJECTED",
+        "expected_reason": "INVALID_AMOUNT",
+        "expected_policy_version": "BR-001/v1",
+        "payment_authorized": false
+      },
+      "actual_spec_row": {
+        "id": "SC-EXPL-007",
+        "requirement_id": "REQ-EXPL-003",
+        "input_amount_eur": "NaN",
+        "expected_route": "REJECTED",
+        "expected_reason": "INVALID_AMOUNT",
+        "expected_policy_version": "BR-001/v1",
+        "payment_authorized": false
+      },
+      "matrix_equal_to_oracle": true,
+      "fixed_spec_consistent_with_oracle": true,
+      "given_when_then_preserved": true,
+      "independent_decimal_reasoning_matches_oracle": true,
+      "pass": true
+    },
+    {
+      "id": "SC-EXPL-008",
+      "expected": {
+        "id": "SC-EXPL-008",
+        "requirement_id": "REQ-EXPL-004",
+        "input_amount_eur": "1",
+        "expected_route": "STANDARD_QUEUE",
+        "expected_reason": "BELOW_LIMIT",
+        "expected_policy_version": "BR-001/v1",
+        "payment_authorized": false
+      },
+      "actual_spec_row": {
+        "id": "SC-EXPL-008",
+        "requirement_id": "REQ-EXPL-004",
+        "input_amount_eur": "1",
+        "expected_route": "STANDARD_QUEUE",
+        "expected_reason": "BELOW_LIMIT",
+        "expected_policy_version": "BR-001/v1",
+        "payment_authorized": false
+      },
+      "matrix_equal_to_oracle": true,
+      "fixed_spec_consistent_with_oracle": true,
+      "given_when_then_preserved": true,
+      "independent_decimal_reasoning_matches_oracle": true,
+      "pass": true
+    }
+  ],
+  "semantic_checks": [
+    {
+      "topic": "Exact equality and boundary",
+      "result": "PASS",
+      "evidence": [
+        "artifacts/spec.md:49-51,110",
+        "artifacts/tasks.md:35",
+        "inputs/case_oracle.json:SC-EXPL-001..003"
+      ],
+      "assessment": "4999.99 is STANDARD_QUEUE/BELOW_LIMIT; exact 5000 and 5000.01 are HUMAN_REVIEW/AT_OR_ABOVE_LIMIT. The comparison is strictly below versus at or above; no rounding change is proposed."
+    },
+    {
+      "topic": "Invalid amounts",
+      "result": "PASS",
+      "evidence": [
+        "artifacts/spec.md:52-55,111,132-136",
+        "artifacts/plan.md:82,90-92",
+        "artifacts/tasks.md:47-52"
+      ],
+      "assessment": "0, -10, nonsense and NaN all retain REJECTED/INVALID_AMOUNT/BR-001/v1 and false payment authorization. Rejection has no eligibility recommendation. Non-finite values are explicitly rejected."
+    },
+    {
+      "topic": "Policy provenance and historical decisions",
+      "result": "PASS_WITH_DESIGN_DECISIONS_PENDING",
+      "evidence": [
+        "artifacts/spec.md:112-114,138-142",
+        "artifacts/plan.md:82-86",
+        "artifacts/tasks.md:24,36"
+      ],
+      "assessment": "Recorded decision version is displayed without deriving a newer version or recomputing history. Missing or conflicting provenance behavior remains an explicitly blocked owner/design question; no invented policy authority is supplied."
+    },
+    {
+      "topic": "Payment boundary and source authority",
+      "result": "PASS",
+      "evidence": [
+        "artifacts/spec.md:126-130,150-160,190-202",
+        "artifacts/plan.md:11,39-40,82",
+        "inputs/sources/SRC-POL-001.json",
+        "inputs/sources/SRC-RISK-002.json",
+        "inputs/sources/SRC-TKT-017.json",
+        "inputs/sources/SRC-WIKI-OLD.json"
+      ],
+      "assessment": "All displays require explicit separate human payment authorization. STANDARD_QUEUE is never approval. The stakeholder auto-approval request remains a rejected proposal and the hostile archived note is treated as untrusted data. No payment, funds, threshold, history or release capability is added."
+    },
+    {
+      "topic": "Benefit, discovery and evidence limits",
+      "result": "PASS",
+      "evidence": [
+        "artifacts/spec.md:33-41,144-148,174-188,204,208-212",
+        "artifacts/plan.md:94-98",
+        "artifacts/tasks.md:62-67",
+        "inputs/assessment.json",
+        "inputs/discovery_handoff.json"
+      ],
+      "assessment": "Synthetic 12-case/10-measured/2-missing baseline and median 15.5 hours are not reported as savings. Hypothesis status, same-task comparison, denominator/missingness, consent and mistaken-approval/insufficient-evidence stop rule are preserved. Raw CSV absence and unobserved real-user understanding are disclosed."
+    },
+    {
+      "topic": "Dependencies, human decision and authority",
+      "result": "PASS_WITH_LOW_SEVERITY_CONSISTENCY_FINDING",
+      "evidence": [
+        "artifacts/spec.md:206-214",
+        "artifacts/plan.md:31-45,72-98",
+        "artifacts/tasks.md:15-27,65-79"
+      ],
+      "assessment": "Requirements remain pending; placeholder constitution is not ratified; design and implementation require explicit human authorization. All 22 tasks are unchecked. Both P1 stories and eight cases precede safe alpha. T019 requires T021 in the dependency narrative, creating the inline-list consistency issue REV-001. Independent model review grants no business or release approval."
+    }
+  ],
+  "generated_artifact_hashes": [
+    {
+      "path": "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Competitive_Revision_20261021/companion/practice/sdd/observed_external_agent_20261021/run/attempts/generate/001/artifacts/spec.md",
+      "sha256": "3c3edb571b50791d15ade127baa266d4d82d6508d2b7e3b075f2b6db54908045",
+      "expected_sha256": "3c3edb571b50791d15ade127baa266d4d82d6508d2b7e3b075f2b6db54908045",
+      "verified_before_use": true,
+      "bytes": 16540
+    },
+    {
+      "path": "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Competitive_Revision_20261021/companion/practice/sdd/observed_external_agent_20261021/run/attempts/generate/001/artifacts/plan.md",
+      "sha256": "d19527a0d40e6068f9f23019de8e1a6228eb0ea2bbc209a776b211f579a32275",
+      "expected_sha256": "d19527a0d40e6068f9f23019de8e1a6228eb0ea2bbc209a776b211f579a32275",
+      "verified_before_use": true,
+      "bytes": 11308
+    },
+    {
+      "path": "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Competitive_Revision_20261021/companion/practice/sdd/observed_external_agent_20261021/run/attempts/generate/001/artifacts/tasks.md",
+      "sha256": "62ccfb17dbdc87855f67b5a48a5eeb5d6e51731dbd2a622cacc3e9048018e0c8",
+      "expected_sha256": "62ccfb17dbdc87855f67b5a48a5eeb5d6e51731dbd2a622cacc3e9048018e0c8",
+      "verified_before_use": true,
+      "bytes": 11928
+    }
+  ],
+  "source_files": "INPUT_SNAPSHOT.json",
+  "verification_evidence": "CHECKS.json",
+  "content_check_result": {
+    "requirements": 5,
+    "scenarios": 8,
+    "all_equal": true,
+    "pending_tasks": 22,
+    "application_code_executed": false
+  },
+  "limitations": [
+    "Document and case reasoning only; no working explanation implementation or UI was exercised.",
+    "No real-user observation, ROI measurement, actual business signoff or release decision exists in the supplied evidence.",
+    "Source identity and versions are synthetic teaching-case inputs, not real corporate policy.",
+    "Instruction-based context separation does not constitute an operating-system access barrier.",
+    "A clean blocking-defect assessment does not establish correctness beyond the reviewed artifacts and checks."
+  ],
+  "human_requirements_approval": "PENDING",
+  "engineering_acceptance": "AGENT_ASSESSMENT_ONLY",
+  "acceptance_authority": false,
+  "implementation_authority": false,
+  "payment_authority": false,
+  "release_authority": false,
+  "generation_outputs_modified": false,
+  "provenance": {
+    "origin": "external_model_agent",
+    "client": "Actual ChatGPT collaboration.spawn_agent dispatch; independent review through functions.exec and tools.exec_command",
+    "model": "GPT-6 Astra Pro (developer-exposed label, not independently authenticated)",
+    "model_api_id": null,
+    "model_version": null,
+    "usage": null,
+    "cost": null,
+    "created_at_utc": "2026-10-21T16:07:23.845323+00:00",
+    "native_framework_slash_invocation": false,
+    "commercial_model_cli_invocation": false,
+    "independent_context": "Fresh task delegation. No authoring participation, parent book, editorial notes, reference solutions, or prior independent findings read. Only authorized supplied inputs and request-bound generated spec/plan/tasks were used. The dependency response author summary was necessarily visible; author self-review checklist, CHECKS and RAW_RESPONSE were not inspected.",
+    "context_boundary": "Instruction boundary in a shared filesystem, not technical isolation.",
+    "scope": "Read review dispatch/request, their generation dependency response, hash-verified spec/plan/tasks, fixed supplied requirements/oracle/discovery/policy/source/constitution; inspect external_worker.py for submission schema only. Write review attempt only.",
+    "acceptance_authority": false,
+    "human_requirements_approval": "PENDING",
+    "implementation_authority": false,
+    "payment_authority": false,
+    "release_authority": false,
+    "application_code_executed": false,
+    "spawned_agents": false
+  }
+}

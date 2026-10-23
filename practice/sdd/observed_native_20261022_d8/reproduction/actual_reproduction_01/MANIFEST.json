@@ -1,0 +1,53 @@
+{
+  "created_at_utc": "2026-10-22T12:23:39.321411+00:00",
+  "files": {
+    "EXECUTION_RECEIPT.json": {
+      "bytes": 2157,
+      "sha256": "453d555e7b80d2c912acb98c1d02b8a2510978d59ab1621fdc13536384ccc79d"
+    },
+    "FINAL_PROJECT_INVENTORY.json": {
+      "bytes": 7251,
+      "sha256": "a1d616de5e875f9d447d9ad5bdc53388442fbd6bade59aa1bdaddf5679d6273c"
+    },
+    "PREPARATION.json": {
+      "bytes": 10562,
+      "sha256": "cafc054f6a4e8469bbbb6f715c2d9087a5add4d3f1a2b64898e875f8e7ce2be8"
+    },
+    "REPRODUCTION_REVIEW.json": {
+      "bytes": 7644,
+      "sha256": "627a323036019c36e68e7c89457b433c58ac0f59da4c1f51049372bccd9ee98d"
+    },
+    "RETAINED_COPIED_BUNDLE.md": {
+      "bytes": 25149,
+      "sha256": "bbaf6d82364e6e6e2fa543f9c9c1cf407ffe315aa2a75d63be4caf09ae25d718"
+    },
+    "preparation/CLIENT_TASK_01.json": {
+      "bytes": 6019,
+      "sha256": "b7008c4c9cd90ce52ba0a651585575969d0dd43936bc3810133ae60239733490"
+    },
+    "preparation/CONFIGURATION_NOTES.json": {
+      "bytes": 186688,
+      "sha256": "d543e66580c01fb27bcb3e19e24f9b1fa932dc4466bab0ef9f1e4501c6f674e3"
+    },
+    "preparation/ENVIRONMENT_01.json": {
+      "bytes": 1999,
+      "sha256": "ee90032749f6f228bf6346ef9926a98178c28f2b0e312283a32781f959049707"
+    },
+    "preparation/OPENCODE_CONFIG_01.json": {
+      "bytes": 3412,
+      "sha256": "bc18fa96620572c0dd773ef1b51630372d9573f2950063f565125a0faff13c1a"
+    },
+    "preparation/TASK_PROMPT_01.txt": {
+      "bytes": 2108,
+      "sha256": "255d2f0610359e78d79d70d19efd5b0e5bf0267a05f632e403161cce13d8b17c"
+    },
+    "stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stdout.txt": {
+      "bytes": 1110,
+      "sha256": "e2a468bdba9d342075a230e4df725712f5437495339dbbfc1bf4b1bf653aecc8"
+    }
+  }
+}

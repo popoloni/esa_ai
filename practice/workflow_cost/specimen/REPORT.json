@@ -1,0 +1,145 @@
+{
+  "schema": "esa-workflow-cost-report/v1",
+  "run_id": "SYNTHETIC-ACCOUNT-001",
+  "evidence_mode": "SYNTHETIC_TEACHING_CASE",
+  "claim_scope": "DESCRIPTIVE_SINGLE_WORKFLOW_NO_CAUSAL_OR_ROI_CLAIM",
+  "identity": {
+    "interface": "Invented teaching interface",
+    "client_version": "UNKNOWN_NOT_EXPOSED",
+    "model": "UNKNOWN_NOT_EXPOSED",
+    "model_version": "UNKNOWN_NOT_EXPOSED"
+  },
+  "status": "VALID_ACCOUNT_WITH_EXPLICIT_LIMITS",
+  "boundary": {
+    "description": "Invented preparation through recorded decision",
+    "start_utc": "2026-10-21T09:00:00+00:00",
+    "finish_utc": "2026-10-21T09:04:10+00:00",
+    "exclusions": [
+      "No actual people, model calls, invoices or business outcomes"
+    ]
+  },
+  "workflow_elapsed_seconds": 250.0,
+  "completed_span_count": 8,
+  "open_span_count": 0,
+  "failed_span_ids": [
+    "first-check"
+  ],
+  "abandoned_span_ids": [],
+  "sum_of_interval_seconds_not_elapsed": 260.0,
+  "observed_interval_union_seconds": 250.0,
+  "overlap_seconds_removed_from_elapsed_coverage": 10.0,
+  "per_actor_interval_union_seconds_not_active_effort": {
+    "author": 140.0,
+    "checker": 40.0,
+    "second-agent": 20.0,
+    "Alex": 60.0
+  },
+  "declared_active_human_seconds_by_person": {
+    "Alex": 60.0
+  },
+  "declared_active_human_seconds_total": 60.0,
+  "acceptance": {
+    "AUTOMATED": {
+      "accepted_distinct_items": 1,
+      "latest_items": {
+        "change-1": {
+          "decision": "ACCEPTED",
+          "candidate_sha256": "d5e97f1ac884b59f91a6c3324cece9f9c29ace725f7eca6f6ebbe44cdd499260",
+          "evidence": {
+            "path": "INVENTED_EVIDENCE.txt",
+            "sha256": "52317750afbc4a75433e08416b40e252f20b9a5b51d20052c8833722b7715144"
+          }
+        }
+      }
+    },
+    "AGENT": {
+      "accepted_distinct_items": 1,
+      "latest_items": {
+        "change-1": {
+          "decision": "ACCEPTED",
+          "candidate_sha256": "d5e97f1ac884b59f91a6c3324cece9f9c29ace725f7eca6f6ebbe44cdd499260",
+          "evidence": {
+            "path": "INVENTED_EVIDENCE.txt",
+            "sha256": "52317750afbc4a75433e08416b40e252f20b9a5b51d20052c8833722b7715144"
+          }
+        }
+      }
+    },
+    "HUMAN": {
+      "accepted_distinct_items": 1,
+      "latest_items": {
+        "change-1": {
+          "decision": "ACCEPTED",
+          "candidate_sha256": "d5e97f1ac884b59f91a6c3324cece9f9c29ace725f7eca6f6ebbe44cdd499260",
+          "evidence": {
+            "path": "INVENTED_EVIDENCE.txt",
+            "sha256": "52317750afbc4a75433e08416b40e252f20b9a5b51d20052c8833722b7715144"
+          }
+        }
+      }
+    }
+  },
+  "observed_money_subtotals_by_currency": {
+    "USD": "2.00"
+  },
+  "observed_usage_records": [
+    {
+      "id": "charge-1",
+      "kind": "MONEY",
+      "component": "model",
+      "value": "0.40",
+      "unit": "USD",
+      "charge_key": "INVENTED-INVOICE/1",
+      "at_utc": "2026-10-21T09:04:09+00:00",
+      "evidence": {
+        "path": "INVENTED_EVIDENCE.txt",
+        "sha256": "52317750afbc4a75433e08416b40e252f20b9a5b51d20052c8833722b7715144"
+      }
+    },
+    {
+      "id": "charge-2",
+      "kind": "MONEY",
+      "component": "human",
+      "value": "1.50",
+      "unit": "USD",
+      "charge_key": "INVENTED-INVOICE/2",
+      "at_utc": "2026-10-21T09:04:09+00:00",
+      "evidence": {
+        "path": "INVENTED_EVIDENCE.txt",
+        "sha256": "52317750afbc4a75433e08416b40e252f20b9a5b51d20052c8833722b7715144"
+      }
+    },
+    {
+      "id": "charge-3",
+      "kind": "MONEY",
+      "component": "infrastructure",
+      "value": "0.10",
+      "unit": "USD",
+      "charge_key": "INVENTED-INVOICE/3",
+      "at_utc": "2026-10-21T09:04:09+00:00",
+      "evidence": {
+        "path": "INVENTED_EVIDENCE.txt",
+        "sha256": "52317750afbc4a75433e08416b40e252f20b9a5b51d20052c8833722b7715144"
+      }
+    }
+  ],
+  "money_coverage_complete_by_declaration": true,
+  "activity_coverage_complete_by_declaration": true,
+  "complete_workflow_money": "2.00",
+  "currency": "USD",
+  "cost_per_human_accepted_item": "2.00",
+  "assumptions_excluded_from_observed_totals": [
+    {
+      "name": "Illustrative alternative hourly rate",
+      "value": "90",
+      "unit": "USD/hour",
+      "basis": "Sensitivity scenario only; never used in the observed-charge arithmetic"
+    }
+  ],
+  "roi": null,
+  "roi_reason": "A descriptive account does not establish attributable business benefit or a counterfactual",
+  "warnings": [
+    "All specimen values are invented teaching inputs, not field observations"
+  ],
+  "verification_boundary": "Evidence file bytes and accounting consistency are checked. Human identity, true completeness, active model time and provider billing are not independently authenticated."
+}

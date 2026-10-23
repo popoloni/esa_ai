@@ -1,0 +1,48 @@
+[
+  {
+    "name": "git_worktree",
+    "argv": [
+      "git",
+      "rev-parse",
+      "--show-toplevel"
+    ],
+    "exit_code": 128,
+    "stdout": "git_worktree.stdout.txt",
+    "stderr": "git_worktree.stderr.txt"
+  },
+  {
+    "name": "opencode_version",
+    "argv": [
+      "/workspace/scratch/72d789d25fef/runtime_d7/opencode/node_modules/.bin/opencode",
+      "--version"
+    ],
+    "exit_code": 0,
+    "stdout": "opencode_version.stdout.txt",
+    "stderr": "opencode_version.stderr.txt"
+  },
+  {
+    "name": "effective_config",
+    "argv": [
+      "/workspace/scratch/72d789d25fef/runtime_d7/opencode/node_modules/.bin/opencode",
+      "--pure",
+      "debug",
+      "config"
+    ],
+    "exit_code": 0,
+    "stdout": "effective_config.stdout.txt",
+    "stderr": "effective_config.stderr.txt"
+  },
+  {
+    "name": "effective_agent",
+    "argv": [
+      "/workspace/scratch/72d789d25fef/runtime_d7/opencode/node_modules/.bin/opencode",
+      "--pure",
+      "debug",
+      "agent",
+      "esa-csv"
+    ],
+    "exit_code": 0,
+    "stdout": "effective_agent.stdout.txt",
+    "stderr": "effective_agent.stderr.txt"
+  }
+]

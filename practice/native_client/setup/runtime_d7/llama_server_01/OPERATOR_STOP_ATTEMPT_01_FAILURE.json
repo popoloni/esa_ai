@@ -1,0 +1,8 @@
+{
+  "at_utc": "2026-10-22T06:56:28.153413+00:00",
+  "request": "OPERATOR_STOP_REQUEST.json",
+  "result": "SIGNAL_CALL_FAILED",
+  "exception": "ProcessLookupError: [Errno 3] No such process",
+  "execution_context": "default sandbox",
+  "claim_limit": "No stop is inferred from the failed signal call. Launcher and server identities are rechecked before an authorized escalated retry."
+}

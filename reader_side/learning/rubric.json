@@ -1,0 +1,44 @@
+{
+  "dimensions": {
+    "causal_discrimination": {
+      "0": "No distinguishable causal account.",
+      "1": "Names a plausible cause without separating competing explanations.",
+      "2": "Explains the main causal contrast but leaves one important alternative unresolved.",
+      "3": "Uses the case observations to separate the competing causes and explains a falsifier."
+    },
+    "evidence_linkage": {
+      "0": "No supporting observation.",
+      "1": "Mentions a log or outcome without a traceable comparison.",
+      "2": "Links claims to relevant events with a limited identity or timing gap.",
+      "3": "Links each causal claim to specific process, source, state and event comparisons."
+    },
+    "history_and_identity": {
+      "0": "Treats response equality as proof of replay or proposes erasing history.",
+      "1": "Recognizes persistence but confuses active and recorded policy.",
+      "2": "Distinguishes retry and new decisions with a limited provenance omission.",
+      "3": "Explains ledger provenance, CREATED versus REPLAYED, recorded versus active policy, and preservation."
+    },
+    "limits_and_next_action": {
+      "0": "Claims unearned authority or full competence.",
+      "1": "States a generic limitation without a bounded next step.",
+      "2": "Proposes a bounded check and retains most pending decisions.",
+      "3": "Names remaining uncertainty, explicit review ownership and a recovery/check that preserves authority boundaries."
+    }
+  },
+  "rubric_id": "RUBRIC-013/v1",
+  "scale": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "schema": "cp13-human-rubric/v1",
+  "status": "PROVISIONAL_NOT_VALIDATED",
+  "tasks": [
+    "baseline",
+    "retention",
+    "transfer"
+  ],
+  "totals": "DESCRIPTIVE_ONLY_NO_COMPETENCE_PASS_THRESHOLD",
+  "validation": "PENDING_INDEPENDENT_HUMAN_PILOT"
+}

@@ -1,0 +1,17 @@
+{
+  "finding_id": "D7-SDD-CONTEXT-BUDGET",
+  "status": "MEASURED_PREFLIGHT_PASSED_BOUNDED_RECOVERY_RUNNING",
+  "updated_at_utc": "2026-10-22T07:05:22.084610+00:00",
+  "issue": "Full native command expands task arguments twice; repeated individual reads plus full uncompressed sources/templates can exhaust the original 16384-token context.",
+  "fixed_elements": "Complete upstream specify/clarify bodies, all nine original JSON values, source provenance, router, templates and unratified constitution retained.",
+  "changes": [
+    "JSON whitespace-only compaction with deep equality and original hash checks",
+    "Single exact cat of the complete 25044-byte input packet; native read tool disabled in this mode",
+    "Short explicit task arguments; original full command retained",
+    "Declared 24576 context with q4_0 K/V in a new measured server lifecycle",
+    "Actual tokenizer plus explicit system/tool/history/output allocations before inference"
+  ],
+  "actual_preflight": "revision_d7/evidence/sdd_native_recovery_01/RECOVERY_PREFLIGHT.json",
+  "full_input_tokenizer": "revision_d7/evidence/sdd_native_recovery_01/TOKENIZER_MEASUREMENTS.json",
+  "limits": "23950 planned tokens of24576; reserves are allocations, not measured future request sizes. Does not guarantee all12 maximum steps fit. No framework/model/hardware quality or performance ranking."
+}

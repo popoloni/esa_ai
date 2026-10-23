@@ -1,0 +1,182 @@
+{
+  "schema": "esa-independent-route-review/v1",
+  "recorded_at_utc": "2026-10-22T06:19:08.249685+00:00",
+  "reviewer_kind": "ASSISTANT_REVIEW_OUTSIDE_NATIVE_CLIENT",
+  "plan_path": "../INDEPENDENT_REVIEW_PLAN.json",
+  "plan_sha256": "3d07e2b1f75b835022d7734eb52dd006050b8802808d7cc7a47cf7d6f6017e9b",
+  "candidate_sha256": "dac968f4738761cc85a6b71f0d7265a2d8d1860f122cd22576a9645bc9139fe7",
+  "cases": [
+    {
+      "input": "0",
+      "expected_route": "REJECTED",
+      "expected_reason": "INVALID_AMOUNT",
+      "expected_policy": "BR-001/v1",
+      "actual": {
+        "route": "REJECTED",
+        "reason": "INVALID_AMOUNT",
+        "policy": "BR-001/v1"
+      },
+      "passed": true
+    },
+    {
+      "input": "-0",
+      "expected_route": "REJECTED",
+      "expected_reason": "INVALID_AMOUNT",
+      "expected_policy": "BR-001/v1",
+      "actual": {
+        "route": "REJECTED",
+        "reason": "INVALID_AMOUNT",
+        "policy": "BR-001/v1"
+      },
+      "passed": true
+    },
+    {
+      "input": "-0.01",
+      "expected_route": "REJECTED",
+      "expected_reason": "INVALID_AMOUNT",
+      "expected_policy": "BR-001/v1",
+      "actual": {
+        "route": "REJECTED",
+        "reason": "INVALID_AMOUNT",
+        "policy": "BR-001/v1"
+      },
+      "passed": true
+    },
+    {
+      "input": "NaN",
+      "expected_route": "REJECTED",
+      "expected_reason": "INVALID_AMOUNT",
+      "expected_policy": "BR-001/v1",
+      "actual": {
+        "route": "REJECTED",
+        "reason": "INVALID_AMOUNT",
+        "policy": "BR-001/v1"
+      },
+      "passed": true
+    },
+    {
+      "input": "sNaN",
+      "expected_route": "REJECTED",
+      "expected_reason": "INVALID_AMOUNT",
+      "expected_policy": "BR-001/v1",
+      "actual": {
+        "route": "REJECTED",
+        "reason": "INVALID_AMOUNT",
+        "policy": "BR-001/v1"
+      },
+      "passed": true
+    },
+    {
+      "input": "Infinity",
+      "expected_route": "REJECTED",
+      "expected_reason": "INVALID_AMOUNT",
+      "expected_policy": "BR-001/v1",
+      "actual": {
+        "route": "REJECTED",
+        "reason": "INVALID_AMOUNT",
+        "policy": "BR-001/v1"
+      },
+      "passed": true
+    },
+    {
+      "input": "-Infinity",
+      "expected_route": "REJECTED",
+      "expected_reason": "INVALID_AMOUNT",
+      "expected_policy": "BR-001/v1",
+      "actual": {
+        "route": "REJECTED",
+        "reason": "INVALID_AMOUNT",
+        "policy": "BR-001/v1"
+      },
+      "passed": true
+    },
+    {
+      "input": "not-an-amount",
+      "expected_route": "REJECTED",
+      "expected_reason": "INVALID_AMOUNT",
+      "expected_policy": "BR-001/v1",
+      "actual": {
+        "route": "REJECTED",
+        "reason": "INVALID_AMOUNT",
+        "policy": "BR-001/v1"
+      },
+      "passed": true
+    },
+    {
+      "input": "",
+      "expected_route": "REJECTED",
+      "expected_reason": "INVALID_AMOUNT",
+      "expected_policy": "BR-001/v1",
+      "actual": {
+        "route": "REJECTED",
+        "reason": "INVALID_AMOUNT",
+        "policy": "BR-001/v1"
+      },
+      "passed": true
+    },
+    {
+      "input": "0.0000000001",
+      "expected_route": "STANDARD_QUEUE",
+      "expected_reason": "BELOW_LIMIT",
+      "expected_policy": "BR-001/v1",
+      "actual": {
+        "route": "STANDARD_QUEUE",
+        "reason": "BELOW_LIMIT",
+        "policy": "BR-001/v1"
+      },
+      "passed": true
+    },
+    {
+      "input": "4999.999999",
+      "expected_route": "STANDARD_QUEUE",
+      "expected_reason": "BELOW_LIMIT",
+      "expected_policy": "BR-001/v1",
+      "actual": {
+        "route": "STANDARD_QUEUE",
+        "reason": "BELOW_LIMIT",
+        "policy": "BR-001/v1"
+      },
+      "passed": true
+    },
+    {
+      "input": "5000",
+      "expected_route": "HUMAN_REVIEW",
+      "expected_reason": "AT_OR_ABOVE_LIMIT",
+      "expected_policy": "BR-001/v1",
+      "actual": {
+        "route": "HUMAN_REVIEW",
+        "reason": "AT_OR_ABOVE_LIMIT",
+        "policy": "BR-001/v1"
+      },
+      "passed": true
+    },
+    {
+      "input": "5000.000001",
+      "expected_route": "HUMAN_REVIEW",
+      "expected_reason": "AT_OR_ABOVE_LIMIT",
+      "expected_policy": "BR-001/v1",
+      "actual": {
+        "route": "HUMAN_REVIEW",
+        "reason": "AT_OR_ABOVE_LIMIT",
+        "policy": "BR-001/v1"
+      },
+      "passed": true
+    },
+    {
+      "input": "1e9",
+      "expected_route": "HUMAN_REVIEW",
+      "expected_reason": "AT_OR_ABOVE_LIMIT",
+      "expected_policy": "BR-001/v1",
+      "actual": {
+        "route": "HUMAN_REVIEW",
+        "reason": "AT_OR_ABOVE_LIMIT",
+        "policy": "BR-001/v1"
+      },
+      "passed": true
+    }
+  ],
+  "total": 14,
+  "passed": 14,
+  "failures": 0,
+  "scope": "These cases cover the stated string-input contract; not exhaustive verification or human acceptance."
+}

@@ -1,0 +1,9 @@
+{"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{"roots":{}},"clientInfo":{"name":"opencode","version":"1.19.3"}},"jsonrpc":"2.0","id":0}
+{"method":"notifications/initialized","jsonrpc":"2.0"}
+{"method":"tools/list","jsonrpc":"2.0","id":1}
+{"method":"tools/call","params":{"name":"lookup_policy","arguments":{"policy_id":"BR-001/v2"},"_meta":{"progressToken":2}},"jsonrpc":"2.0","id":2}
+{"method":"tools/call","params":{"name":"lookup_policy","arguments":{"policy_id":"BR-999/v1"},"_meta":{"progressToken":3}},"jsonrpc":"2.0","id":3}
+{"method":"tools/call","params":{"name":"lookup_policy","arguments":{"policy_id":"["},"_meta":{"progressToken":4}},"jsonrpc":"2.0","id":4}
+{"jsonrpc":"2.0","method":"notifications/cancelled","params":{"requestId":2,"reason":"AbortError: The operation was aborted."}}
+{"jsonrpc":"2.0","method":"notifications/cancelled","params":{"requestId":3,"reason":"AbortError: The operation was aborted."}}
+{"jsonrpc":"2.0","method":"notifications/cancelled","params":{"requestId":4,"reason":"AbortError: The operation was aborted."}}

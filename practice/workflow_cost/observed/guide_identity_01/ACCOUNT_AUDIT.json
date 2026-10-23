@@ -1,0 +1,706 @@
+{
+  "schema": "esa-workflow-account-independent-audit/v1",
+  "audited_at_utc": "2026-10-22T06:18:05.388971+00:00",
+  "auditor": {
+    "kind": "AGENT",
+    "agent_id": "/root/acceptance_audit",
+    "attribution": "Separate technical/accounting evidence review; no human approval claim"
+  },
+  "run_id": "D7-GUIDE-IDENTITY-001",
+  "account": {
+    "path": "ACCOUNT.json",
+    "sha256": "c4c4b7c119a9ad723ec0bfe88442837d0f154d476d09a02c0873368aeeb17b4c"
+  },
+  "report": {
+    "path": "REPORT.json",
+    "sha256": "5f6ace508ea9d6f240f28d6aaa8eb92824e2958ddf7057ce167bcccf9f2979fc"
+  },
+  "candidate_record": {
+    "path": "CANDIDATE.json",
+    "sha256": "47f6ede441590b209a4e70bd990b5892f6f1ed1e04e1ee28e18c29bf0c814bfa"
+  },
+  "decision": "PASS_WITH_EXPLICIT_LIMITS",
+  "closure_recommendation": "CLOSED_VERIFIED_FOR_ORIGINAL_R21_DESCRIPTIVE_ILLUSTRATION",
+  "blocking_gaps": [],
+  "checks": [
+    {
+      "name": "all_final_and_review_evidence_bindings",
+      "passed": true,
+      "detail": {
+        "bindings": 37,
+        "account_bindings": 22,
+        "unique_files": 14,
+        "mismatches": []
+      }
+    },
+    {
+      "name": "five_completed_bounded_wall_intervals",
+      "passed": true,
+      "detail": [
+        {
+          "id": "preparation-01",
+          "seconds": "36.733263",
+          "measure": "WALL_INTERVAL"
+        },
+        {
+          "id": "implementation-01",
+          "seconds": "79.711193",
+          "measure": "WALL_INTERVAL"
+        },
+        {
+          "id": "verification-01",
+          "seconds": "15.721797",
+          "measure": "WALL_INTERVAL"
+        },
+        {
+          "id": "agent-review-01",
+          "seconds": "353.946005",
+          "measure": "WALL_INTERVAL"
+        },
+        {
+          "id": "recording-01",
+          "seconds": "47.681586",
+          "measure": "WALL_INTERVAL"
+        }
+      ]
+    },
+    {
+      "name": "independent_report_arithmetic",
+      "passed": true,
+      "detail": {
+        "elapsed_seconds": "534.138788",
+        "summed_intervals_seconds": "533.793844",
+        "union_seconds": "533.793844",
+        "transition_time_outside_phase_spans_seconds": "0.344944",
+        "per_actor_wall_seconds": {
+          "independent-acceptance-audit-agent": "353.946005",
+          "root-focused-checker": "15.721797",
+          "root-maintenance-agent": "164.126042"
+        }
+      }
+    },
+    {
+      "name": "all_accounting_command_receipts_successful",
+      "passed": true,
+      "detail": {
+        "count": 19
+      }
+    },
+    {
+      "name": "all_boundary_span_and_acceptance_timestamps_match_command_receipts",
+      "passed": true,
+      "detail": [
+        {
+          "file": "OPENING_COMMANDS.json",
+          "command": "init",
+          "event_utc": "2026-10-22T06:06:56.721563+00:00",
+          "within_receipt": true
+        },
+        {
+          "file": "OPENING_COMMANDS.json",
+          "command": "start",
+          "event_utc": "2026-10-22T06:06:56.833527+00:00",
+          "within_receipt": true
+        },
+        {
+          "file": "IMPLEMENTATION_START_COMMANDS.json",
+          "command": "stop",
+          "event_utc": "2026-10-22T06:07:33.566790+00:00",
+          "within_receipt": true
+        },
+        {
+          "file": "IMPLEMENTATION_START_COMMANDS.json",
+          "command": "start",
+          "event_utc": "2026-10-22T06:07:33.603019+00:00",
+          "within_receipt": true
+        },
+        {
+          "file": "VERIFICATION_START_COMMANDS.json",
+          "command": "stop",
+          "event_utc": "2026-10-22T06:08:53.314212+00:00",
+          "within_receipt": true
+        },
+        {
+          "file": "VERIFICATION_START_COMMANDS.json",
+          "command": "start",
+          "event_utc": "2026-10-22T06:08:53.352813+00:00",
+          "within_receipt": true
+        },
+        {
+          "file": "REVIEW_START_COMMANDS.json",
+          "command": "stop",
+          "event_utc": "2026-10-22T06:09:09.074610+00:00",
+          "within_receipt": true
+        },
+        {
+          "file": "REVIEW_START_COMMANDS.json",
+          "command": "start",
+          "event_utc": "2026-10-22T06:09:09.119427+00:00",
+          "within_receipt": true
+        },
+        {
+          "file": "RECORDING_START_COMMANDS.json",
+          "command": "stop",
+          "event_utc": "2026-10-22T06:15:03.065432+00:00",
+          "within_receipt": true
+        },
+        {
+          "file": "RECORDING_START_COMMANDS.json",
+          "command": "start",
+          "event_utc": "2026-10-22T06:15:03.138792+00:00",
+          "within_receipt": true
+        },
+        {
+          "file": "CLOSING_COMMANDS.json",
+          "command": "accept",
+          "event_utc": "2026-10-22T06:15:50.545555+00:00",
+          "within_receipt": true
+        },
+        {
+          "file": "CLOSING_COMMANDS.json",
+          "command": "stop",
+          "event_utc": "2026-10-22T06:15:50.820378+00:00",
+          "within_receipt": true
+        },
+        {
+          "file": "CLOSING_COMMANDS.json",
+          "command": "close",
+          "event_utc": "2026-10-22T06:15:50.860351+00:00",
+          "within_receipt": true
+        }
+      ]
+    },
+    {
+      "name": "verification_command_within_phase:DOCTOR",
+      "passed": true,
+      "detail": {
+        "started": "2026-10-22T06:08:55.199407+00:00",
+        "ended": "2026-10-22T06:08:55.259774+00:00",
+        "exit_code": 0
+      }
+    },
+    {
+      "name": "verification_command_within_phase:FRESH_STUDY_COPY",
+      "passed": true,
+      "detail": {
+        "started": "2026-10-22T06:08:55.264574+00:00",
+        "ended": "2026-10-22T06:08:55.860667+00:00",
+        "exit_code": 0
+      }
+    },
+    {
+      "name": "verification_command_within_phase:FAULTY_STARTER",
+      "passed": true,
+      "detail": {
+        "started": "2026-10-22T06:08:55.877747+00:00",
+        "ended": "2026-10-22T06:08:55.980021+00:00",
+        "exit_code": 1
+      }
+    },
+    {
+      "name": "raw_command_output_hashes",
+      "passed": true,
+      "detail": [
+        {
+          "path": "DOCTOR.stdout.txt",
+          "matches": true
+        },
+        {
+          "path": "DOCTOR.stderr.txt",
+          "matches": true
+        },
+        {
+          "path": "FRESH_STUDY_COPY.stdout.txt",
+          "matches": true
+        },
+        {
+          "path": "FRESH_STUDY_COPY.stderr.txt",
+          "matches": true
+        },
+        {
+          "path": "FAULTY_STARTER.stdout.txt",
+          "matches": true
+        },
+        {
+          "path": "FAULTY_STARTER.stderr.txt",
+          "matches": true
+        }
+      ]
+    },
+    {
+      "name": "review_and_recording_evidence_within_intervals",
+      "passed": true,
+      "detail": {
+        "decision_utc": "2026-10-22T06:14:01.393460+00:00",
+        "review_stop_utc": "2026-10-22T06:15:03.065432+00:00",
+        "review_stop_delay_seconds": "61.671972",
+        "decision_recorded_utc": "2026-10-22T06:15:50.545555+00:00",
+        "meaning": "Delayed coordinator stop is included as wall time; acceptance at_utc is ledger recording time, the original decision retains its separate timestamp."
+      }
+    },
+    {
+      "name": "phase_coverage_matches_observed_task",
+      "passed": true,
+      "detail": {
+        "preparation": {
+          "state": "OBSERVED",
+          "reason": "Completed attributed interval; this does not prove the phase contains every relevant activity",
+          "evidence": [
+            {
+              "path": "PREPARATION.json",
+              "sha256": "1c12ce0815bae73d37fb0ae2ddb5e60bdd35f8cedd14569b04a6dd1ee229ad26"
+            }
+          ]
+        },
+        "implementation": {
+          "state": "OBSERVED",
+          "reason": "Completed attributed interval; this does not prove the phase contains every relevant activity",
+          "evidence": [
+            {
+              "path": "CANDIDATE.json",
+              "sha256": "47f6ede441590b209a4e70bd990b5892f6f1ed1e04e1ee28e18c29bf0c814bfa"
+            }
+          ]
+        },
+        "verification": {
+          "state": "OBSERVED",
+          "reason": "Completed attributed interval; this does not prove the phase contains every relevant activity",
+          "evidence": [
+            {
+              "path": "VERIFICATION.json",
+              "sha256": "28bb50c5f8ef17cc8dd4bdaa4a947c6d11ce977ea6982137db6c719f843ee89b"
+            }
+          ]
+        },
+        "agent_review": {
+          "state": "OBSERVED",
+          "reason": "Completed attributed interval; this does not prove the phase contains every relevant activity",
+          "evidence": [
+            {
+              "path": "REVIEW.json",
+              "sha256": "29fc5a8a0e75ec02a2c7bbc73288b3865a7b17b85b170601030e5755248da5e9"
+            }
+          ]
+        },
+        "human_review": {
+          "state": "NOT_PERFORMED",
+          "reason": "No human review occurred or was required for the declared technical maintenance task; no human acceptance is claimed.",
+          "evidence": [
+            {
+              "path": "RECORDING.json",
+              "sha256": "f8b0b0589b42143c9e9b89f426ada9fee770ed94f1aedd7ea765b922a73f0496"
+            }
+          ]
+        },
+        "rework": {
+          "state": "NOT_PERFORMED",
+          "reason": "The nominated repair passed focused and independent review without candidate rework; earlier failed diagnostics are preserved.",
+          "evidence": [
+            {
+              "path": "REVIEW.json",
+              "sha256": "29fc5a8a0e75ec02a2c7bbc73288b3865a7b17b85b170601030e5755248da5e9"
+            }
+          ]
+        },
+        "recording": {
+          "state": "OBSERVED",
+          "reason": "Completed attributed interval; this does not prove the phase contains every relevant activity",
+          "evidence": [
+            {
+              "path": "RECORDING.json",
+              "sha256": "f8b0b0589b42143c9e9b89f426ada9fee770ed94f1aedd7ea765b922a73f0496"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "exact_candidate_agent_acceptance_and_denominators",
+      "passed": true,
+      "detail": {
+        "item": "d7-reader-guide-identity-repair",
+        "candidate_record_sha256": "47f6ede441590b209a4e70bd990b5892f6f1ed1e04e1ee28e18c29bf0c814bfa",
+        "decision_sha256": "9c973613e229163602ceb795862b9e0d59b993f529104da1214d67ee7c9e1f25",
+        "human_attestation": null
+      }
+    },
+    {
+      "name": "unknown_values_and_assumptions_kept_separate",
+      "passed": true,
+      "detail": {
+        "money": {
+          "model": {
+            "state": "UNKNOWN",
+            "reason": "No complete attributable financial record exists for this component; unknown is not zero.",
+            "evidence": [
+              {
+                "path": "RECORDING.json",
+                "sha256": "f8b0b0589b42143c9e9b89f426ada9fee770ed94f1aedd7ea765b922a73f0496"
+              }
+            ]
+          },
+          "human": {
+            "state": "UNKNOWN",
+            "reason": "No complete attributable financial record exists for this component; unknown is not zero.",
+            "evidence": [
+              {
+                "path": "RECORDING.json",
+                "sha256": "f8b0b0589b42143c9e9b89f426ada9fee770ed94f1aedd7ea765b922a73f0496"
+              }
+            ]
+          },
+          "infrastructure": {
+            "state": "UNKNOWN",
+            "reason": "No complete attributable financial record exists for this component; unknown is not zero.",
+            "evidence": [
+              {
+                "path": "RECORDING.json",
+                "sha256": "f8b0b0589b42143c9e9b89f426ada9fee770ed94f1aedd7ea765b922a73f0496"
+              }
+            ]
+          }
+        },
+        "token_usage": "UNAVAILABLE_NOT_ZERO",
+        "active_effort": "UNMEASURED",
+        "assumptions": []
+      }
+    },
+    {
+      "name": "failed_diagnostics_preserved_without_mislabeling_final_phase",
+      "passed": true,
+      "detail": {
+        "initial_doctor_exit": 1,
+        "preparation_search_exit": 2,
+        "review_search_exit": 2,
+        "faulty_starter": {
+          "tests": 7,
+          "passed": 3,
+          "failures": 2,
+          "errors": 2
+        },
+        "interpretation": "Passed spans report completed preparation/verification phases; their expected or diagnostic command failures remain in the bound evidence. No successful native repair or human outcome is inferred."
+      }
+    },
+    {
+      "name": "read_only_report_regeneration_matches_exact_saved_report",
+      "passed": true,
+      "detail": {
+        "argv": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+          "-B",
+          "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/companion/practice/workflow_cost/workflow_cost.py",
+          "report",
+          "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d7/evidence/guide_identity_workflow/ACCOUNT.json"
+        ],
+        "at_utc": "2026-10-22T06:18:05.337436+00:00",
+        "exit_code": 0,
+        "stderr": "",
+        "stdout_sha256": "5f6ace508ea9d6f240f28d6aaa8eb92824e2958ddf7057ce167bcccf9f2979fc",
+        "saved_report_sha256": "5f6ace508ea9d6f240f28d6aaa8eb92824e2958ddf7057ce167bcccf9f2979fc"
+      }
+    },
+    {
+      "name": "candidate_and_account_report_unmutated_by_audit",
+      "passed": true,
+      "detail": {
+        "account_sha256": "c4c4b7c119a9ad723ec0bfe88442837d0f154d476d09a02c0873368aeeb17b4c",
+        "report_sha256": "5f6ace508ea9d6f240f28d6aaa8eb92824e2958ddf7057ce167bcccf9f2979fc"
+      }
+    }
+  ],
+  "passed": 16,
+  "failed": 0,
+  "evidence_bindings": [
+    {
+      "owner": "ACCOUNT.json",
+      "path": "TASK.txt",
+      "sha256": "693293c3742a77bf68e86a80c0e68ef90f9f0caa639fca84401cc39df8e61118",
+      "matches": true
+    },
+    {
+      "owner": "ACCOUNT.json",
+      "path": "PREPARATION.json",
+      "sha256": "1c12ce0815bae73d37fb0ae2ddb5e60bdd35f8cedd14569b04a6dd1ee229ad26",
+      "matches": true
+    },
+    {
+      "owner": "ACCOUNT.json",
+      "path": "PREPARATION.json",
+      "sha256": "1c12ce0815bae73d37fb0ae2ddb5e60bdd35f8cedd14569b04a6dd1ee229ad26",
+      "matches": true
+    },
+    {
+      "owner": "ACCOUNT.json",
+      "path": "CANDIDATE.json",
+      "sha256": "47f6ede441590b209a4e70bd990b5892f6f1ed1e04e1ee28e18c29bf0c814bfa",
+      "matches": true
+    },
+    {
+      "owner": "ACCOUNT.json",
+      "path": "CANDIDATE.json",
+      "sha256": "47f6ede441590b209a4e70bd990b5892f6f1ed1e04e1ee28e18c29bf0c814bfa",
+      "matches": true
+    },
+    {
+      "owner": "ACCOUNT.json",
+      "path": "VERIFICATION.json",
+      "sha256": "28bb50c5f8ef17cc8dd4bdaa4a947c6d11ce977ea6982137db6c719f843ee89b",
+      "matches": true
+    },
+    {
+      "owner": "ACCOUNT.json",
+      "path": "CANDIDATE.json",
+      "sha256": "47f6ede441590b209a4e70bd990b5892f6f1ed1e04e1ee28e18c29bf0c814bfa",
+      "matches": true
+    },
+    {
+      "owner": "ACCOUNT.json",
+      "path": "REVIEW.json",
+      "sha256": "29fc5a8a0e75ec02a2c7bbc73288b3865a7b17b85b170601030e5755248da5e9",
+      "matches": true
+    },
+    {
+      "owner": "ACCOUNT.json",
+      "path": "REVIEW_DECISION.json",
+      "sha256": "9c973613e229163602ceb795862b9e0d59b993f529104da1214d67ee7c9e1f25",
+      "matches": true
+    },
+    {
+      "owner": "ACCOUNT.json",
+      "path": "RECORDING.json",
+      "sha256": "f8b0b0589b42143c9e9b89f426ada9fee770ed94f1aedd7ea765b922a73f0496",
+      "matches": true
+    },
+    {
+      "owner": "ACCOUNT.json",
+      "path": "CANDIDATE.json",
+      "sha256": "47f6ede441590b209a4e70bd990b5892f6f1ed1e04e1ee28e18c29bf0c814bfa",
+      "matches": true
+    },
+    {
+      "owner": "ACCOUNT.json",
+      "path": "REVIEW_DECISION.json",
+      "sha256": "9c973613e229163602ceb795862b9e0d59b993f529104da1214d67ee7c9e1f25",
+      "matches": true
+    },
+    {
+      "owner": "ACCOUNT.json",
+      "path": "PREPARATION.json",
+      "sha256": "1c12ce0815bae73d37fb0ae2ddb5e60bdd35f8cedd14569b04a6dd1ee229ad26",
+      "matches": true
+    },
+    {
+      "owner": "ACCOUNT.json",
+      "path": "CANDIDATE.json",
+      "sha256": "47f6ede441590b209a4e70bd990b5892f6f1ed1e04e1ee28e18c29bf0c814bfa",
+      "matches": true
+    },
+    {
+      "owner": "ACCOUNT.json",
+      "path": "VERIFICATION.json",
+      "sha256": "28bb50c5f8ef17cc8dd4bdaa4a947c6d11ce977ea6982137db6c719f843ee89b",
+      "matches": true
+    },
+    {
+      "owner": "ACCOUNT.json",
+      "path": "REVIEW.json",
+      "sha256": "29fc5a8a0e75ec02a2c7bbc73288b3865a7b17b85b170601030e5755248da5e9",
+      "matches": true
+    },
+    {
+      "owner": "ACCOUNT.json",
+      "path": "RECORDING.json",
+      "sha256": "f8b0b0589b42143c9e9b89f426ada9fee770ed94f1aedd7ea765b922a73f0496",
+      "matches": true
+    },
+    {
+      "owner": "ACCOUNT.json",
+      "path": "REVIEW.json",
+      "sha256": "29fc5a8a0e75ec02a2c7bbc73288b3865a7b17b85b170601030e5755248da5e9",
+      "matches": true
+    },
+    {
+      "owner": "ACCOUNT.json",
+      "path": "RECORDING.json",
+      "sha256": "f8b0b0589b42143c9e9b89f426ada9fee770ed94f1aedd7ea765b922a73f0496",
+      "matches": true
+    },
+    {
+      "owner": "ACCOUNT.json",
+      "path": "RECORDING.json",
+      "sha256": "f8b0b0589b42143c9e9b89f426ada9fee770ed94f1aedd7ea765b922a73f0496",
+      "matches": true
+    },
+    {
+      "owner": "ACCOUNT.json",
+      "path": "RECORDING.json",
+      "sha256": "f8b0b0589b42143c9e9b89f426ada9fee770ed94f1aedd7ea765b922a73f0496",
+      "matches": true
+    },
+    {
+      "owner": "ACCOUNT.json",
+      "path": "RECORDING.json",
+      "sha256": "f8b0b0589b42143c9e9b89f426ada9fee770ed94f1aedd7ea765b922a73f0496",
+      "matches": true
+    },
+    {
+      "owner": "REPORT.json",
+      "path": "REVIEW_DECISION.json",
+      "sha256": "9c973613e229163602ceb795862b9e0d59b993f529104da1214d67ee7c9e1f25",
+      "matches": true
+    },
+    {
+      "owner": "REVIEW.json",
+      "path": "CANDIDATE.json",
+      "sha256": "47f6ede441590b209a4e70bd990b5892f6f1ed1e04e1ee28e18c29bf0c814bfa",
+      "matches": true
+    },
+    {
+      "owner": "REVIEW.json",
+      "path": "INDEPENDENT_CHECKS.json",
+      "sha256": "fcd9387d0af8f3ab3bf810aca5236ad21bca3da9e6bfced4a3df16aeba1b127e",
+      "matches": true
+    },
+    {
+      "owner": "REVIEW.json",
+      "path": "TASK.txt",
+      "sha256": "693293c3742a77bf68e86a80c0e68ef90f9f0caa639fca84401cc39df8e61118",
+      "matches": true
+    },
+    {
+      "owner": "REVIEW.json",
+      "path": "inputs/PRIOR_DEFECT_REPORT.json",
+      "sha256": "af6468fbb12ba846d0a8e0c859fac315a6738727a9b35a10e5042be9632b6b8e",
+      "matches": true
+    },
+    {
+      "owner": "REVIEW.json",
+      "path": "BASELINE.json",
+      "sha256": "236cbc3185a17c35db6c25b4f79058a62cd2e63f6e81ab0a4eab60f01eeb1297",
+      "matches": true
+    },
+    {
+      "owner": "REVIEW.json",
+      "path": "CANDIDATE.json",
+      "sha256": "47f6ede441590b209a4e70bd990b5892f6f1ed1e04e1ee28e18c29bf0c814bfa",
+      "matches": true
+    },
+    {
+      "owner": "REVIEW.json",
+      "path": "CANDIDATE.diff",
+      "sha256": "0dcbc9c26a0b3bd32284c5282e9c7ef32d852931d6afd0bec136c359828a7c5d",
+      "matches": true
+    },
+    {
+      "owner": "REVIEW.json",
+      "path": "VERIFICATION.json",
+      "sha256": "28bb50c5f8ef17cc8dd4bdaa4a947c6d11ce977ea6982137db6c719f843ee89b",
+      "matches": true
+    },
+    {
+      "owner": "REVIEW.json",
+      "path": "FAULTY_STARTER_ACCEPTANCE.json",
+      "sha256": "0e0d712d84ce2599a870906ad8122ecd73dcc81c95895692ddfcfc3990529295",
+      "matches": true
+    },
+    {
+      "owner": "REVIEW.json",
+      "path": "INDEPENDENT_CHECKS.json",
+      "sha256": "fcd9387d0af8f3ab3bf810aca5236ad21bca3da9e6bfced4a3df16aeba1b127e",
+      "matches": true
+    },
+    {
+      "owner": "REVIEW.json",
+      "path": "OPENING_COMMANDS.json",
+      "sha256": "1f87b1a6ba794898625839df350419c67a593d01c455377bded650cd3c2a1b04",
+      "matches": true
+    },
+    {
+      "owner": "REVIEW.json",
+      "path": "REVIEW_START_COMMANDS.json",
+      "sha256": "d30c942ac5f0b2e215e6d9073d8d0ef967c4663bee301d7b72f9f533dd365fe6",
+      "matches": true
+    },
+    {
+      "owner": "REVIEW_DECISION.json",
+      "path": "CANDIDATE.json",
+      "sha256": "47f6ede441590b209a4e70bd990b5892f6f1ed1e04e1ee28e18c29bf0c814bfa",
+      "matches": true
+    },
+    {
+      "owner": "REVIEW_DECISION.json",
+      "path": "REVIEW.json",
+      "sha256": "29fc5a8a0e75ec02a2c7bbc73288b3865a7b17b85b170601030e5755248da5e9",
+      "matches": true
+    }
+  ],
+  "original_criteria_assessment": [
+    {
+      "criterion": "Observed and assumed values use different fields and attributable records.",
+      "assessment": "SATISFIED",
+      "register_text": "A prospectively recorded real guide-identity maintenance workflow retains five attributed WALL_INTERVAL spans, immutable source/candidate identities, raw verification outputs and a separate AGENT review. Assumptions are separate and empty. Supervising-model token usage, active effort and model/human/infrastructure money are unavailable and explicitly unknown; complete money and cost per human-accepted outcome remain null."
+    },
+    {
+      "criterion": "All relevant work, including failed attempts and human review, is included.",
+      "assessment": "SATISFIED_FOR_DECLARED_BOUNDED_TASK",
+      "register_text": "The declared supplied-defect-to-technical-decision-and-recording boundary includes preparation, implementation, verification, separate AGENT review and recording. It retains the failed initial doctor, both failed read-only searches and the expected faulty-starter result. No candidate rework was required; human review was not performed or required by the technical task, and both dispositions are explicit. One distinct exact candidate is accepted by AGENT, with no human-acceptance claim. Earlier diagnosis/recovery, the incomplete d6 native account and later full-edition packaging are separately identified work."
+    },
+    {
+      "criterion": "The small observation is not presented as organizational ROI or a universal speedup.",
+      "assessment": "SATISFIED",
+      "register_text": "The account is a single descriptive workflow observation. Its 534.138788 seconds are elapsed wall time containing waiting and coordinator delays; the five intervals sum to 533.793844 seconds, with no overlapping spans. It establishes no active effort, causal speedup, organizational productivity, financial return, human outcome or complete cost per outcome."
+    }
+  ],
+  "important_limits_and_timestamp_interpretation": [
+    "A 0.344944-second total lies inside the workflow boundary but between phase spans; boundary elapsed retains it. It is coordination/clock-transition coverage, not hidden active work measured as zero.",
+    "The AGENT decision was made at 2026-10-22T06:14:01.393460+00:00 and recorded into the ledger at 2026-10-22T06:15:50.545555+00:00. Those two timestamps serve different purposes and were not backdated.",
+    "Final report serialization and this independent account audit are derivative checks after the declared repair/recording boundary. RECORDING.json explicitly separates the account audit and later publication work; neither is included in a claimed complete monetary total.",
+    "The older REVIEW.json includes a hash of the pre-close account snapshot. That historical snapshot reference is not misrepresented as the final ACCOUNT.json identity.",
+    "Command receipts are local UTC observations and attributed local files. This review checks consistency and identity; it does not authenticate a human identity, provider bill or active-model duration."
+  ],
+  "remaining_unmeasured_values": [
+    "Supervising-model input/output/cache token use",
+    "Active model/agent effort",
+    "Model money",
+    "Infrastructure money",
+    "Human money",
+    "Human acceptance and reader benefit",
+    "Counterfactual or organizational ROI"
+  ],
+  "historical_native_account": "UNCHANGED_INCOMPLETE; this separate completed maintenance observation does not fill its missing spans or outcomes.",
+  "register_recommendation": {
+    "resolution_status": "CLOSED_VERIFIED",
+    "status": "Closed, verified",
+    "resolution_summary": "Completed a genuine prospective protected-guide maintenance workflow from supplied defect through separate AGENT technical acceptance and recording. All five bounded phases, failed diagnostics, source-preserving fix, 12 focused checks and 18 independent checks are retained. Independent audit validates every final evidence binding and timestamp, exact candidate acceptance and report arithmetic. Elapsed 534.138788 seconds includes waits; active effort, token usage and all financial components remain unknown. Human review was explicitly not performed, no rework was required, and no human/ROI/complete-cost claim is made. Historical d6 observation remains incomplete unchanged.",
+    "remaining_external_requirement": "None for this bounded descriptive illustration. Human acceptance, field economics, organizational ROI and complete money remain unobserved and require separate evidence if claimed.",
+    "criterion_level_text": [
+      {
+        "criterion": "Observed and assumed values use different fields and attributable records.",
+        "assessment": "SATISFIED",
+        "register_text": "A prospectively recorded real guide-identity maintenance workflow retains five attributed WALL_INTERVAL spans, immutable source/candidate identities, raw verification outputs and a separate AGENT review. Assumptions are separate and empty. Supervising-model token usage, active effort and model/human/infrastructure money are unavailable and explicitly unknown; complete money and cost per human-accepted outcome remain null."
+      },
+      {
+        "criterion": "All relevant work, including failed attempts and human review, is included.",
+        "assessment": "SATISFIED_FOR_DECLARED_BOUNDED_TASK",
+        "register_text": "The declared supplied-defect-to-technical-decision-and-recording boundary includes preparation, implementation, verification, separate AGENT review and recording. It retains the failed initial doctor, both failed read-only searches and the expected faulty-starter result. No candidate rework was required; human review was not performed or required by the technical task, and both dispositions are explicit. One distinct exact candidate is accepted by AGENT, with no human-acceptance claim. Earlier diagnosis/recovery, the incomplete d6 native account and later full-edition packaging are separately identified work."
+      },
+      {
+        "criterion": "The small observation is not presented as organizational ROI or a universal speedup.",
+        "assessment": "SATISFIED",
+        "register_text": "The account is a single descriptive workflow observation. Its 534.138788 seconds are elapsed wall time containing waiting and coordinator delays; the five intervals sum to 533.793844 seconds, with no overlapping spans. It establishes no active effort, causal speedup, organizational productivity, financial return, human outcome or complete cost per outcome."
+      }
+    ],
+    "evidence_paths": [
+      "revision_d7/evidence/guide_identity_workflow/TASK.txt",
+      "revision_d7/evidence/guide_identity_workflow/ACCOUNT.json",
+      "revision_d7/evidence/guide_identity_workflow/REPORT.json",
+      "revision_d7/evidence/guide_identity_workflow/REVIEW.json",
+      "revision_d7/evidence/guide_identity_workflow/REVIEW_DECISION.json",
+      "revision_d7/evidence/guide_identity_workflow/INDEPENDENT_CHECKS.json",
+      "revision_d7/evidence/guide_identity_workflow/RECORDING.json",
+      "revision_d7/evidence/guide_identity_workflow/CLOSING_COMMANDS.json",
+      "revision_d7/evidence/guide_identity_workflow/ACCOUNT_AUDIT.json"
+    ],
+    "integration_note": "Present this scoped observation and its explicit unknowns in Chapter14/reader-facing cost material; preserve all original criteria and prior history. Do not present the register status as measured organizational value."
+  }
+}

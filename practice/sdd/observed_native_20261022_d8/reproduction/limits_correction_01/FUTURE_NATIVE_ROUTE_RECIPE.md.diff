@@ -1,0 +1,17 @@
+--- preimage/FUTURE_NATIVE_ROUTE_RECIPE.md
++++ current/FUTURE_NATIVE_ROUTE_RECIPE.md
+@@ -135,9 +135,11 @@
+   --output "$ESA_SDD_PACKET/attempt_01"
+ ```
+ 
+-The bounds are 12 agent steps, 24,576 context tokens, 3,072 output tokens per
+-response, explicit 1,500-second overall and header deadlines, and a fixed
+-5,400-second outer capture limit. Record setup work, failed attempts and all
++The model is configured for 24,576 context tokens and 3,072 output tokens per
++response, with explicit 1,500-second overall and header deadlines. The fixed
++5,400-second outer capture timeout is the subprocess bound. In the pinned
++OpenCode loop, `agent.steps: 12` adds a last-step instruction while tools remain
++available; it is not a mechanical limit on tool calls. Record setup work, failed attempts and all
+ interventions. Export the observed native session to a regular file, preserve
+ first write/edit inputs and final file bytes, and distinguish a template copy
+ from generated feature content. An exit code alone does not prove completion.

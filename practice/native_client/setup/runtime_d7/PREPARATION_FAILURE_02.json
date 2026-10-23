@@ -1,0 +1,19 @@
+[
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "reader_start.py",
+      "new",
+      "1",
+      "--destination",
+      "/workspace/scratch/72d789d25fef/runtime_d7/native_work_ch01_01"
+    ],
+    "cwd": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261021_d5/revision_d6/evidence/native_ch01_01/starting_tree",
+    "started_at_utc": "2026-10-22T05:55:19.989208+00:00",
+    "finished_at_utc": "2026-10-22T05:55:20.037672+00:00",
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "Reader entry failed: new study copies require the unchanged release starter; continue current work with 'show', or extract a fresh release: NOT_RELEASE_STARTER:repo/src/treasury/routing.py\n"
+  }
+]

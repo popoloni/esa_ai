@@ -1,0 +1,1271 @@
+{
+  "schema": "esa-portable-runtime-source-map/v1",
+  "recorded_at_utc": "2026-10-22T12:38:09.726968+00:00",
+  "scope": "Exact selected d8 author-side runtime and client-configuration evidence. Original paths and contemporaneous claims inside copied records remain unchanged; this map identifies their portable locations.",
+  "files": [
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/preparation/BINARY_HELP.json",
+      "portable_path": "preparation/BINARY_HELP.json",
+      "bytes": 567,
+      "sha256": "86c47729406561621502ff2db81c9f7a8b3599007a67e807c1b65660db864394",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/preparation/BINARY_HELP.stderr.txt",
+      "portable_path": "preparation/BINARY_HELP.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/preparation/BINARY_HELP.stdout.txt",
+      "portable_path": "preparation/BINARY_HELP.stdout.txt",
+      "bytes": 60469,
+      "sha256": "bcb795d4736d9bf3209492e0a10058adc6015ac5f8eeadb9abe9182bb9722f6b",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/preparation/CONTROLLED_PROBE.json",
+      "portable_path": "preparation/CONTROLLED_PROBE.json",
+      "bytes": 1719,
+      "sha256": "c74577595458f150b9cf6930dbb96d6ed0145c871eca83626f532276a4cd53b9",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/preparation/CONTROLLED_PROBE.stderr.txt",
+      "portable_path": "preparation/CONTROLLED_PROBE.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/preparation/CONTROLLED_PROBE.stdout.txt",
+      "portable_path": "preparation/CONTROLLED_PROBE.stdout.txt",
+      "bytes": 268,
+      "sha256": "02953167120bc36fa4306c8d8fabaac7b4d083a1e339840b9890d620a1c552f9",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/preparation/D7_CORRECTED_LAUNCHER_BASE.py",
+      "portable_path": "preparation/D7_CORRECTED_LAUNCHER_BASE.py",
+      "bytes": 7446,
+      "sha256": "9dec1771869e921fc59194f0603825ab28d02ab8fed0765d9e2b4028dbf38987",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/preparation/INERT_FIXTURE.py",
+      "portable_path": "preparation/INERT_FIXTURE.py",
+      "bytes": 178,
+      "sha256": "fc80e0ad17cdeb4ad63762148a2d1d0e4f2db3e7b5b87cdd35fe0a75ce674c2a",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/preparation/LAUNCHER_DIFF.patch",
+      "portable_path": "preparation/LAUNCHER_DIFF.patch",
+      "bytes": 7009,
+      "sha256": "3b6377ea8f87971b8219effba6bc1d16014296ae53cca89e811e807877d88e48",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/preparation/LAUNCH_COMMAND.json",
+      "portable_path": "preparation/LAUNCH_COMMAND.json",
+      "bytes": 1173,
+      "sha256": "78a773483d9b3c967a186dd31b2da905cc81f26c5668ddd3fa50188441ba8ac2",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/preparation/PLANNED_LAUNCH.stderr.txt",
+      "portable_path": "preparation/PLANNED_LAUNCH.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/preparation/PLANNED_LAUNCH.stdout.json",
+      "portable_path": "preparation/PLANNED_LAUNCH.stdout.json",
+      "bytes": 2730,
+      "sha256": "e2913ffa1e496d0e5aae5c9d964a1691057fd2cfc3d89b884faee5445ff97252",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/preparation/PREPARATION_MANIFEST.json",
+      "portable_path": "preparation/PREPARATION_MANIFEST.json",
+      "bytes": 6571,
+      "sha256": "153d65184e2dc2a4e8213f01f05b14ec8c1cc52d891bd56c8ea80820adcd6d74",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/preparation/README.md",
+      "portable_path": "preparation/README.md",
+      "bytes": 5307,
+      "sha256": "9f6736d8e7b1718428a8ba4f179ada24574a5d62c0f6ddb7d1f8218eb4fcd766",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/preparation/RESOURCE_PLAN.json",
+      "portable_path": "preparation/RESOURCE_PLAN.json",
+      "bytes": 8733,
+      "sha256": "09f1742bf6469e903837f5f75abd76163e1830bafe0c4f7e979f53135661084e",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/preparation/RUNTIME_PREFLIGHT_BEFORE_START.json",
+      "portable_path": "preparation/RUNTIME_PREFLIGHT_BEFORE_START.json",
+      "bytes": 3650,
+      "sha256": "2ee4781859f4f5d0f62dc7d725fdfcf9c1d57319c3c46596ff49b56611f2e63d",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/preparation/SOURCE_RETRIEVAL.json",
+      "portable_path": "preparation/SOURCE_RETRIEVAL.json",
+      "bytes": 8412,
+      "sha256": "e61b63224c1bf726486fc915cd5cc2666a0428ec6164070cd1c2bf1c6e681fdc",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/preparation/controlled_probe.py",
+      "portable_path": "preparation/controlled_probe.py",
+      "bytes": 3832,
+      "sha256": "ce5207364d9a3fa350e55164ebe7fd54292e088ea473056a3342f06995b7773c",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/preparation/controlled_probe_evidence/FINISH.json",
+      "portable_path": "preparation/controlled_probe_evidence/FINISH.json",
+      "bytes": 3660,
+      "sha256": "2101b0c0f7529b15f0c5d01a23c9dae4671c06951dcc88caa7cdf7fd4e59af6d",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/preparation/controlled_probe_evidence/SHUTDOWN.json",
+      "portable_path": "preparation/controlled_probe_evidence/SHUTDOWN.json",
+      "bytes": 3396,
+      "sha256": "99655fa11ec4a6be07a199339a024470acc77bfcb82d6449b7b510521d6cae0d",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/preparation/controlled_probe_evidence/START.json",
+      "portable_path": "preparation/controlled_probe_evidence/START.json",
+      "bytes": 2830,
+      "sha256": "f108f30b4c76e439dff71de2636ac44fa7925a20056e83fdbcc3e05b8aeec91f",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/preparation/controlled_probe_evidence/stderr.txt",
+      "portable_path": "preparation/controlled_probe_evidence/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/preparation/controlled_probe_evidence/stdout.txt",
+      "portable_path": "preparation/controlled_probe_evidence/stdout.txt",
+      "bytes": 40,
+      "sha256": "2c128add583c72ab4c73915c45f6b4693046b1adbee05c6da094a8d124113f38",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/preparation/run_local_model_d8.py",
+      "portable_path": "preparation/run_local_model_d8.py",
+      "bytes": 9359,
+      "sha256": "c9bc0eb8e64725c7b1ba92687cdfcf4ffd87c5648c0c3abb2e08d4854c3c5b4f",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/preparation/upstream/llama.cpp-0756e83fc/LICENSE",
+      "portable_path": "preparation/upstream/llama.cpp-0756e83fc/LICENSE",
+      "bytes": 1078,
+      "sha256": "94f29bbed6a22c35b992c5c6ebf0e7c92f13b836b90f36f461c9cf2f0f1d010d",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/preparation/upstream/llama.cpp-0756e83fc/arg.cpp",
+      "portable_path": "preparation/upstream/llama.cpp-0756e83fc/arg.cpp",
+      "bytes": 224650,
+      "sha256": "bf4c58c189a774f2308acfe88e4ec5cebb0c43f60cf05cef4c5b2b9affd5822d",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/preparation/upstream/llama.cpp-0756e83fc/common.cpp",
+      "portable_path": "preparation/upstream/llama.cpp-0756e83fc/common.cpp",
+      "bytes": 83906,
+      "sha256": "b5ad4e435394d2563803b7a7650f0475c5b5bcc52ff8d4db700e32de237d0bd2",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/preparation/upstream/llama.cpp-0756e83fc/common.h",
+      "portable_path": "preparation/upstream/llama.cpp-0756e83fc/common.h",
+      "bytes": 57516,
+      "sha256": "8a7f061798220ab82cefa378f7f2c4e0c854da3275a96258afd6255c54683fd9",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/preparation/upstream/llama.cpp-0756e83fc/ggml-backend-reg.cpp",
+      "portable_path": "preparation/upstream/llama.cpp-0756e83fc/ggml-backend-reg.cpp",
+      "bytes": 18091,
+      "sha256": "1436b46bd1e8355345d454baa4b40069be73e9cb09a3a188d32426ea1e1037fe",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/preparation/upstream/llama.cpp-0756e83fc/ggml-cpu.cpp",
+      "portable_path": "preparation/upstream/llama.cpp-0756e83fc/ggml-cpu.cpp",
+      "bytes": 25005,
+      "sha256": "ccf382d3fbf126b5ddb5850a0a970656fb24e00587da4003419439277c91cd01",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/preparation/upstream/llama.cpp-0756e83fc/llama-context.cpp",
+      "portable_path": "preparation/upstream/llama.cpp-0756e83fc/llama-context.cpp",
+      "bytes": 169201,
+      "sha256": "2a25e556cb0d16725e01ce853fb1b76da91dcb41b803ce1a6bacec89bfb94aa5",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/preparation/upstream/llama.cpp-0756e83fc/llama-model.cpp",
+      "portable_path": "preparation/upstream/llama.cpp-0756e83fc/llama-model.cpp",
+      "bytes": 186821,
+      "sha256": "218736a90862fcd3811a7bc4b4cb37205151f8054245029684ccd04dec966a33",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/preparation/upstream/llama.cpp-0756e83fc/ops.cpp",
+      "portable_path": "preparation/upstream/llama.cpp-0756e83fc/ops.cpp",
+      "bytes": 428640,
+      "sha256": "b565fea101889b8b73011ad26c5cafc242e3d10b0eb65d3aba4b53808d0f2e71",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/preparation/upstream/llama.cpp-0756e83fc/repack.cpp",
+      "portable_path": "preparation/upstream/llama.cpp-0756e83fc/repack.cpp",
+      "bytes": 213604,
+      "sha256": "5fa9f24cc2631609f40fa47a64078f77dccbe9f327711af91af671cd29b8b87d",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/preparation/upstream/opencode-v1.19.3/LICENSE",
+      "portable_path": "preparation/upstream/opencode-v1.19.3/LICENSE",
+      "bytes": 1065,
+      "sha256": "625f0f619133f89bbbb2abe37369613dfa1885eba1e50d02170deb62bb42cb6b",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/preparation/upstream/opencode-v1.19.3/cli_run.ts",
+      "portable_path": "preparation/upstream/opencode-v1.19.3/cli_run.ts",
+      "bytes": 31940,
+      "sha256": "e040e90d4c81cdd59b9568ee90a53c0209cd9ddf1b8b207d1a8685b2e26d57d0",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/preparation/upstream/opencode-v1.19.3/markdown.ts",
+      "portable_path": "preparation/upstream/opencode-v1.19.3/markdown.ts",
+      "bytes": 1173,
+      "sha256": "bcb87009e9ffc760e0e2f0878543f582b5ca7ecc67bebb2087de2467ae28cbfe",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/preparation/upstream/opencode-v1.19.3/read.ts",
+      "portable_path": "preparation/upstream/opencode-v1.19.3/read.ts",
+      "bytes": 13126,
+      "sha256": "afec8294965cbd9b9e29d3453b682164f0ecdba26574ebc048e9ba21af209c68",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/preparation/upstream/opencode-v1.19.3/session_prompt.ts",
+      "portable_path": "preparation/upstream/opencode-v1.19.3/session_prompt.ts",
+      "bytes": 64944,
+      "sha256": "f0c5bc64c0f0e966693d4a57f7ede1e9d6e188b396152f04b55303dc75b9b768",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/startup_preflight_04/DECLARED_RESTART.json",
+      "portable_path": "observed/startup_04/DECLARED_RESTART.json",
+      "bytes": 1970,
+      "sha256": "1cdf4e2046b39d3e383138e466df8977dc0244f3b8f5faa587739e59da82ead0",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/startup_preflight_04/MANIFEST.json",
+      "portable_path": "observed/startup_04/MANIFEST.json",
+      "bytes": 3649,
+      "sha256": "fcb4c2005289e22f8006a7a0d5ff6626cc7a11d2af1b4f86ed2001b6a8c36555",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/startup_preflight_04/PRE_STOP_IDENTITY.json",
+      "portable_path": "observed/startup_04/PRE_STOP_IDENTITY.json",
+      "bytes": 2637,
+      "sha256": "e43526dc524d61bc4fcd09f2be637b74a0c3ff26241bdb574c02cb79f5e3b387",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/startup_preflight_04/REVIEW.json",
+      "portable_path": "observed/startup_04/REVIEW.json",
+      "bytes": 5084,
+      "sha256": "043d1d598a52ea89f34c93ca5ef3eae17f8fe38ad96dcbad514be260466d9ea8",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/startup_preflight_04/STOP_PREVIOUS.json",
+      "portable_path": "observed/startup_04/STOP_PREVIOUS.json",
+      "bytes": 3969,
+      "sha256": "942b0c5e9a8eb2934f41217c4ee5f19e674634394c24fb09ebda602e9372bbdc",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/startup_preflight_04/collect_startup.py",
+      "portable_path": "observed/startup_04/collect_startup.py",
+      "bytes": 8068,
+      "sha256": "c0cd768555aa89fcc0ce916327498588f8c470e4e4799fd565462665f79667f9",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/startup_preflight_04/sample_01/OBSERVATION.json",
+      "portable_path": "observed/startup_04/sample_01/OBSERVATION.json",
+      "bytes": 6668,
+      "sha256": "e5e64b54c3807abaa1f97b3eed31a4d35c2441ad572bcaad25e345a62b8ee057",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/startup_preflight_04/sample_01/cgroup_cpu_max.txt",
+      "portable_path": "observed/startup_04/sample_01/cgroup_cpu_max.txt",
+      "bytes": 14,
+      "sha256": "3dafc4b2d6a8bfd8c1910a28fd3bb15f053a47cebaff7b5cdd6cf42c39f8f880",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/startup_preflight_04/sample_01/cgroup_cpu_stat.txt",
+      "portable_path": "observed/startup_04/sample_01/cgroup_cpu_stat.txt",
+      "bytes": 168,
+      "sha256": "40953d96eca9b022f58472fd091d091047daa5e293b92de11abf9ff13ddaad72",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/startup_preflight_04/sample_01/cgroup_cpuset_cpus_effective.txt",
+      "portable_path": "observed/startup_04/sample_01/cgroup_cpuset_cpus_effective.txt",
+      "bytes": 4,
+      "sha256": "20e22ff1b45f20360b417a1fb66d1289b11d87b24b228e69a545326c72f6353e",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/startup_preflight_04/sample_01/cgroup_memory_current.txt",
+      "portable_path": "observed/startup_04/sample_01/cgroup_memory_current.txt",
+      "bytes": 11,
+      "sha256": "8d944e8789a9a8f6367926d966a6fa8a3b71af5b7764dd473ba6c251e01582fa",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/startup_preflight_04/sample_01/cgroup_memory_events.txt",
+      "portable_path": "observed/startup_04/sample_01/cgroup_memory_events.txt",
+      "bytes": 58,
+      "sha256": "9c93fcaff74cf899edd96459ca07eba23af425a506ddb3c195dbd4e8571f2888",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/startup_preflight_04/sample_01/cgroup_memory_max.txt",
+      "portable_path": "observed/startup_04/sample_01/cgroup_memory_max.txt",
+      "bytes": 11,
+      "sha256": "8528d39f97fdd9c9689c4373fe4c7b18f2c3bef6b044a2c4be74b07bf9cd07d8",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/startup_preflight_04/sample_01/cgroup_memory_stat.txt",
+      "portable_path": "observed/startup_04/sample_01/cgroup_memory_stat.txt",
+      "bytes": 1153,
+      "sha256": "720a705b20255ae7195bc39109f8520ab5e8d83bf9e0fdae39d4832d5eead7e3",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/startup_preflight_04/sample_01/cgroup_memory_swap_max.txt",
+      "portable_path": "observed/startup_04/sample_01/cgroup_memory_swap_max.txt",
+      "bytes": 4,
+      "sha256": "dbe7218fd3953d71eac340668b850fe4b57278326a462a0cf0ad506efbf8b02e",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/startup_preflight_04/sample_01/health.json",
+      "portable_path": "observed/startup_04/sample_01/health.json",
+      "bytes": 15,
+      "sha256": "a29ee2b15c494311c52521766e44af56a3ad2248e7a8ab465e5206463c13d288",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/startup_preflight_04/sample_01/process_cgroup.txt",
+      "portable_path": "observed/startup_04/sample_01/process_cgroup.txt",
+      "bytes": 5,
+      "sha256": "e57fd7b21104f091de366ace1464596378a498b0a5e63f1b21147a8998c20107",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/startup_preflight_04/sample_01/process_maps.txt",
+      "portable_path": "observed/startup_04/sample_01/process_maps.txt",
+      "bytes": 15683,
+      "sha256": "9808554d151b38b32eebfa8b73d1886a4bb8ef290dc3f998f1e94fac460dfb8a",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/startup_preflight_04/sample_01/process_smaps_rollup.txt",
+      "portable_path": "observed/startup_04/sample_01/process_smaps_rollup.txt",
+      "bytes": 698,
+      "sha256": "80df1441d58d8c2361227eb64547d48a924f1e33fceb36fc67fd5b2188cf966b",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/startup_preflight_04/sample_01/process_stat.txt",
+      "portable_path": "observed/startup_04/sample_01/process_stat.txt",
+      "bytes": 335,
+      "sha256": "5397dbad7a7226e6c768a02ef568f6e36ff5fe8fbd11c54a16098555217001f0",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/startup_preflight_04/sample_01/process_status.txt",
+      "portable_path": "observed/startup_04/sample_01/process_status.txt",
+      "bytes": 1154,
+      "sha256": "768537c8c9f6d428356486218949fc76b08d75bfb1bbffae291e9e2b6ce54b3a",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/startup_preflight_04/sample_01/props.json",
+      "portable_path": "observed/startup_04/sample_01/props.json",
+      "bytes": 6139,
+      "sha256": "e5ae721fdbc0dc10edb3bd7c16cee6b8f0bc554919a885cabee364e071802bde",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/startup_preflight_04/sample_01/startup_log_observed.txt",
+      "portable_path": "observed/startup_04/sample_01/startup_log_observed.txt",
+      "bytes": 14800,
+      "sha256": "9ff5acef165fb9b60ab52e09766148d849f709a4ad745217766b5917469f6ca2",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/lifecycle_04/FINISH.json",
+      "portable_path": "observed/lifecycle_04/FINISH.json",
+      "bytes": 3365,
+      "sha256": "e90c888a7d1903f05b27b1359e8119ab4b23c05f05e06bb1acc0f059fe1a3775",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/lifecycle_04/SHUTDOWN.json",
+      "portable_path": "observed/lifecycle_04/SHUTDOWN.json",
+      "bytes": 3090,
+      "sha256": "12c8b349b4705b1e309dba809306989ad1fe411f33b37e1b32691d580e6d01e0",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/lifecycle_04/START.json",
+      "portable_path": "observed/lifecycle_04/START.json",
+      "bytes": 2756,
+      "sha256": "9e0c7e87b2f8b217bebac4fb785367fe1096322bc689b8d9b81ed4a05bc265cd",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/lifecycle_04/stderr.txt",
+      "portable_path": "observed/lifecycle_04/stderr.txt",
+      "bytes": 143537,
+      "sha256": "1c6245723cd87570a750829a3b4c9c7fb24c70bf58c441ae033824567c1c4902",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/lifecycle_04/stdout.txt",
+      "portable_path": "observed/lifecycle_04/stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/MANIFEST.json",
+      "portable_path": "observed/attempt04_runtime/MANIFEST.json",
+      "bytes": 16461,
+      "sha256": "d843ea2b549ff0c1a69799906f1f62210c6c155ac1961d7f40d62910bb913b67",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/MONITORING_START.json",
+      "portable_path": "observed/attempt04_runtime/MONITORING_START.json",
+      "bytes": 1501,
+      "sha256": "c84f815bcd4948fe092156d47ab83e3c3a169080b13b90989907aac24aa14d0a",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/OBSERVATION_SUMMARY.json",
+      "portable_path": "observed/attempt04_runtime/OBSERVATION_SUMMARY.json",
+      "bytes": 10652,
+      "sha256": "6dcd87df7b5ad6c98e35b599887d76ec0b6fa80a7c603d6c296d6151dba9a1d7",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/collect_snapshot.py",
+      "portable_path": "observed/attempt04_runtime/collect_snapshot.py",
+      "bytes": 11615,
+      "sha256": "64dfe64f8fa6fd1321a25579d68b42c6e02095b8db8ed45a8ca80b246d2263bb",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/native_terminal_binding/FINAL_ASSISTANT_TEXT.txt",
+      "portable_path": "observed/attempt04_runtime/native_terminal_binding/FINAL_ASSISTANT_TEXT.txt",
+      "bytes": 5530,
+      "sha256": "0b8ce1854906b37eb2c0249e97a7e0d5dc1ce3e2597b6289c9a54fb6eacbec77",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/native_terminal_binding/FIRST_WRITE_TOOL_CONTENT.md",
+      "portable_path": "observed/attempt04_runtime/native_terminal_binding/FIRST_WRITE_TOOL_CONTENT.md",
+      "bytes": 2230,
+      "sha256": "04b6177aa7cd2a248a86ef418f8faeffe3c07cbf64651951136c20559402bfd1",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/native_terminal_binding/RECEIPT.json",
+      "portable_path": "observed/attempt04_runtime/native_terminal_binding/RECEIPT.json",
+      "bytes": 15969,
+      "sha256": "990e17c96269855f1a2613dbcab6db60abc7ea0a2d9a0464888aa0bafb21bdc8",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/native_terminal_binding/stdout.txt",
+      "portable_path": "observed/attempt04_runtime/native_terminal_binding/stdout.txt",
+      "bytes": 10220,
+      "sha256": "80485ace0c7c59c109777bc0980cf767fcfea009ab950fe02dd48c5307d78256",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_001/MANIFEST.json",
+      "portable_path": "observed/attempt04_runtime/snapshot_001/MANIFEST.json",
+      "bytes": 1924,
+      "sha256": "8a9e6f307f2eb912b271e433f3686acccd9a18f6df1729e9897277a8cc3e821d",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_001/OBSERVATION.json",
+      "portable_path": "observed/attempt04_runtime/snapshot_001/OBSERVATION.json",
+      "bytes": 10657,
+      "sha256": "fa68a3cc8b4d96b424c3738c26de4efe1f1aee13c764ce368d7d1908dd287428",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_001/cgroup_cpu_max.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_001/cgroup_cpu_max.txt",
+      "bytes": 14,
+      "sha256": "3dafc4b2d6a8bfd8c1910a28fd3bb15f053a47cebaff7b5cdd6cf42c39f8f880",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_001/cgroup_cpu_stat.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_001/cgroup_cpu_stat.txt",
+      "bytes": 168,
+      "sha256": "b0bc2ff7e947487970f783affaff9c457630f370c095f8ead289ac7472a1330a",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_001/cgroup_memory_current.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_001/cgroup_memory_current.txt",
+      "bytes": 11,
+      "sha256": "b574d8b622da44e666ae8187d42ba13e0d3f1cb3aa02dc9b79fcc26da6f7dd34",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_001/cgroup_memory_events.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_001/cgroup_memory_events.txt",
+      "bytes": 58,
+      "sha256": "702e545d9a72d8d116517b5f156077a93ff4791f629d2c2445c2929ccdc80d82",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_001/cgroup_memory_max.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_001/cgroup_memory_max.txt",
+      "bytes": 11,
+      "sha256": "8528d39f97fdd9c9689c4373fe4c7b18f2c3bef6b044a2c4be74b07bf9cd07d8",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_001/cgroup_memory_stat.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_001/cgroup_memory_stat.txt",
+      "bytes": 1160,
+      "sha256": "38aa168caf06a674a7e4d40ffdfca81bea7cb753293d16e5ddf9f80ac7f79410",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_001/process_maps.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_001/process_maps.txt",
+      "bytes": 16565,
+      "sha256": "e5f7492cb18626591e60b030f35c24843063d029e3af19a776855e447461179a",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_001/process_stat.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_001/process_stat.txt",
+      "bytes": 344,
+      "sha256": "2c511ffcec65bbb4e9a1b46f2ef23b328b49ee751a3b7071310f9777129fbc23",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_001/process_status.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_001/process_status.txt",
+      "bytes": 1160,
+      "sha256": "663694638978866b887c6456ff8fd1117782cb29461466bd840d2d66389959c6",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_001/server_log_observed.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_001/server_log_observed.txt",
+      "bytes": 110178,
+      "sha256": "8791986aee492f8d43aaa0154d9a39da9f4503630b9679ff7434a405774e07a1",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_001/server_metrics.prom",
+      "portable_path": "observed/attempt04_runtime/snapshot_001/server_metrics.prom",
+      "bytes": 2587,
+      "sha256": "00fa9b0dfaf965aa96c0b7275ec206b10193b2078d5074ead90b11b1c82d874d",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_002/MANIFEST.json",
+      "portable_path": "observed/attempt04_runtime/snapshot_002/MANIFEST.json",
+      "bytes": 1924,
+      "sha256": "f2bc59523ee4b099c5962257f11551ac73f5c6efe3eeea965216ed49c69263fe",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_002/OBSERVATION.json",
+      "portable_path": "observed/attempt04_runtime/snapshot_002/OBSERVATION.json",
+      "bytes": 18883,
+      "sha256": "733470346a0840aaf0ceaeeb9edebace7dd33bbf94bb1b062728f34f22328c3d",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_002/cgroup_cpu_max.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_002/cgroup_cpu_max.txt",
+      "bytes": 14,
+      "sha256": "3dafc4b2d6a8bfd8c1910a28fd3bb15f053a47cebaff7b5cdd6cf42c39f8f880",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_002/cgroup_cpu_stat.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_002/cgroup_cpu_stat.txt",
+      "bytes": 168,
+      "sha256": "7ef9aa3bb0f33637f1f017dc9fe8773ac40e1924940d10ba71df005521cfbd5b",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_002/cgroup_memory_current.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_002/cgroup_memory_current.txt",
+      "bytes": 11,
+      "sha256": "8fcd6ce03b7a2eee6e4c5555033c89b6206b6c76a1561dd29fc14cba1748e28f",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_002/cgroup_memory_events.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_002/cgroup_memory_events.txt",
+      "bytes": 58,
+      "sha256": "0173d8035493b23530c77f928aa4b03c3d0f67012ed654eb2d99c304d5b5c190",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_002/cgroup_memory_max.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_002/cgroup_memory_max.txt",
+      "bytes": 11,
+      "sha256": "8528d39f97fdd9c9689c4373fe4c7b18f2c3bef6b044a2c4be74b07bf9cd07d8",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_002/cgroup_memory_stat.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_002/cgroup_memory_stat.txt",
+      "bytes": 1158,
+      "sha256": "06f0a5bd5e64a1b727741a5c01249b203788616a74ed497fa15d2a1b417c27af",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_002/process_maps.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_002/process_maps.txt",
+      "bytes": 16565,
+      "sha256": "e3f6b02c55110c298290b20ab7715603eeaec2ea3aeccc1a3c76309a9fe841dd",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_002/process_stat.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_002/process_stat.txt",
+      "bytes": 345,
+      "sha256": "33a66a17b2f68166241c776fcac9fa4cb0e37c5722749f8be50d43eebf6efd7e",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_002/process_status.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_002/process_status.txt",
+      "bytes": 1160,
+      "sha256": "e648765367f0d44bfc350eebc3c745ffdeec741535e4757a80fe138c4f6b78f5",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_002/server_log_observed.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_002/server_log_observed.txt",
+      "bytes": 119229,
+      "sha256": "1e49cf62d05db08976cc08692895c41708b555f5617fe560d674352dc0c51833",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_002/server_metrics.prom",
+      "portable_path": "observed/attempt04_runtime/snapshot_002/server_metrics.prom",
+      "bytes": 2596,
+      "sha256": "0cbdf94248c65c3d46106e3f7213994c7d5f830f1ad580b30d05c7e4a555e2e5",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_003/MANIFEST.json",
+      "portable_path": "observed/attempt04_runtime/snapshot_003/MANIFEST.json",
+      "bytes": 1924,
+      "sha256": "3e577f5e48dac4cf987a68c3918c4d6a94ee6d6c821a49efb9cc057bdd76f8c5",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_003/OBSERVATION.json",
+      "portable_path": "observed/attempt04_runtime/snapshot_003/OBSERVATION.json",
+      "bytes": 22419,
+      "sha256": "f6d98c3f771deff9fdc5dfcc18eaa6a99e38f8fb8de00d42d9a8d13fed0f9b06",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_003/cgroup_cpu_max.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_003/cgroup_cpu_max.txt",
+      "bytes": 14,
+      "sha256": "3dafc4b2d6a8bfd8c1910a28fd3bb15f053a47cebaff7b5cdd6cf42c39f8f880",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_003/cgroup_cpu_stat.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_003/cgroup_cpu_stat.txt",
+      "bytes": 168,
+      "sha256": "bcedf5e519b522a5d5a8cc78b753241a624ab1161fb355a3c9b8dc5d36c45db9",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_003/cgroup_memory_current.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_003/cgroup_memory_current.txt",
+      "bytes": 11,
+      "sha256": "82879f72d93e507be0d48d65000d32315a5c9789f79b493a011bbc1deea740f3",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_003/cgroup_memory_events.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_003/cgroup_memory_events.txt",
+      "bytes": 58,
+      "sha256": "77c70c3a975e3a85a610b321ec19805fd06a602c3c83c9be6a7b2ea0d0d7941b",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_003/cgroup_memory_max.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_003/cgroup_memory_max.txt",
+      "bytes": 11,
+      "sha256": "8528d39f97fdd9c9689c4373fe4c7b18f2c3bef6b044a2c4be74b07bf9cd07d8",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_003/cgroup_memory_stat.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_003/cgroup_memory_stat.txt",
+      "bytes": 1158,
+      "sha256": "c00a4a9ffc93a72535a310bd1bb83a6e3e01f6c46d6ca5a2eec805168069f586",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_003/process_maps.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_003/process_maps.txt",
+      "bytes": 16565,
+      "sha256": "e3f6b02c55110c298290b20ab7715603eeaec2ea3aeccc1a3c76309a9fe841dd",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_003/process_stat.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_003/process_stat.txt",
+      "bytes": 345,
+      "sha256": "da3edbcb3534879bbfcf1348171808a123670cd10d0898b0059f1e69687bc30d",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_003/process_status.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_003/process_status.txt",
+      "bytes": 1160,
+      "sha256": "67d159cbe905f991cbe44d8d219c5237aee6e6350f550177d86cbb1bef874ed0",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_003/server_log_observed.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_003/server_log_observed.txt",
+      "bytes": 122653,
+      "sha256": "158f8ab566b206589d963dec72441f6108ac70b61a1e642babb0e7e3e4fe22ef",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_003/server_metrics.prom",
+      "portable_path": "observed/attempt04_runtime/snapshot_003/server_metrics.prom",
+      "bytes": 2584,
+      "sha256": "acadbcf0b7b45655fccdb2ab7e2075b4aa342b81e6261a2edc7ff6c60b5367ec",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_004/MANIFEST.json",
+      "portable_path": "observed/attempt04_runtime/snapshot_004/MANIFEST.json",
+      "bytes": 1924,
+      "sha256": "31ee98d40e8e753ac3443118929cff1b3515f4187ac55ef6af9057ad28e7957e",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_004/OBSERVATION.json",
+      "portable_path": "observed/attempt04_runtime/snapshot_004/OBSERVATION.json",
+      "bytes": 27908,
+      "sha256": "4912a27b0d4f4cb0264f72ddf5145a4ba87b2fb06ebccaf5345c688fef6d0dff",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_004/cgroup_cpu_max.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_004/cgroup_cpu_max.txt",
+      "bytes": 14,
+      "sha256": "3dafc4b2d6a8bfd8c1910a28fd3bb15f053a47cebaff7b5cdd6cf42c39f8f880",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_004/cgroup_cpu_stat.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_004/cgroup_cpu_stat.txt",
+      "bytes": 168,
+      "sha256": "25527401c8a80bf932d373211d574e48be8cd1f8d79d8beaf87114091ac48989",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_004/cgroup_memory_current.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_004/cgroup_memory_current.txt",
+      "bytes": 11,
+      "sha256": "4ef2f756c613a167df24c4f4524972e15fd407311846c8daab06da1edfe7b0d0",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_004/cgroup_memory_events.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_004/cgroup_memory_events.txt",
+      "bytes": 58,
+      "sha256": "1d6b805327e0c86bbced8583de387106325174316c93c7e25347f9b866d063bf",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_004/cgroup_memory_max.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_004/cgroup_memory_max.txt",
+      "bytes": 11,
+      "sha256": "8528d39f97fdd9c9689c4373fe4c7b18f2c3bef6b044a2c4be74b07bf9cd07d8",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_004/cgroup_memory_stat.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_004/cgroup_memory_stat.txt",
+      "bytes": 1158,
+      "sha256": "cd16f30a8701824d26c4ffdd8f4b3a9ae4c926d7069b9d2f1d5087b78829360f",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_004/process_maps.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_004/process_maps.txt",
+      "bytes": 16565,
+      "sha256": "e3f6b02c55110c298290b20ab7715603eeaec2ea3aeccc1a3c76309a9fe841dd",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_004/process_stat.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_004/process_stat.txt",
+      "bytes": 345,
+      "sha256": "d71175beb96fac7ccc7f199a19a6e6133dd25c5ad0e288311c66f7e132af0a33",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_004/process_status.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_004/process_status.txt",
+      "bytes": 1160,
+      "sha256": "411e16768d94fca08101393d17021de451b70d13836237f7b53e69c565202777",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_004/server_log_observed.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_004/server_log_observed.txt",
+      "bytes": 127896,
+      "sha256": "25bb00e6bf7e21dda3eaa4904e7985e288a86960008127c5521f1ce0fffb2fd2",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_004/server_metrics.prom",
+      "portable_path": "observed/attempt04_runtime/snapshot_004/server_metrics.prom",
+      "bytes": 2584,
+      "sha256": "3d7f4fa83e0097675d096258553b34c9e8112fa5bfedf4b2fc10fde83e3aa475",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_005/MANIFEST.json",
+      "portable_path": "observed/attempt04_runtime/snapshot_005/MANIFEST.json",
+      "bytes": 1924,
+      "sha256": "247520f9164031d2a955ac67bd05fec9d1747ee375ab067075d18922872d8188",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_005/OBSERVATION.json",
+      "portable_path": "observed/attempt04_runtime/snapshot_005/OBSERVATION.json",
+      "bytes": 34178,
+      "sha256": "b552a4934fa8deea51c00205b495299000bd9645879c0fb0eb52273151259689",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_005/cgroup_cpu_max.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_005/cgroup_cpu_max.txt",
+      "bytes": 14,
+      "sha256": "3dafc4b2d6a8bfd8c1910a28fd3bb15f053a47cebaff7b5cdd6cf42c39f8f880",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_005/cgroup_cpu_stat.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_005/cgroup_cpu_stat.txt",
+      "bytes": 168,
+      "sha256": "1104fd723823247dfe0d8906998f7f81c86cb2294d96043b09646057caa6f03c",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_005/cgroup_memory_current.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_005/cgroup_memory_current.txt",
+      "bytes": 11,
+      "sha256": "f86c90f69f2b30859726dc5eac1c189b26ac0b9bfb327ed3e2a23cc7b676ba8c",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_005/cgroup_memory_events.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_005/cgroup_memory_events.txt",
+      "bytes": 58,
+      "sha256": "199de4f1e2e6b712e7f7afb1b3ee6c89cac76ec0efa4100aff499a442000db1b",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_005/cgroup_memory_max.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_005/cgroup_memory_max.txt",
+      "bytes": 11,
+      "sha256": "8528d39f97fdd9c9689c4373fe4c7b18f2c3bef6b044a2c4be74b07bf9cd07d8",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_005/cgroup_memory_stat.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_005/cgroup_memory_stat.txt",
+      "bytes": 1158,
+      "sha256": "f23fd03a73c19bedaa7c31de756bc5273d3a7f7c4c234924d7ab5070e9a99055",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_005/process_maps.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_005/process_maps.txt",
+      "bytes": 16565,
+      "sha256": "e3f6b02c55110c298290b20ab7715603eeaec2ea3aeccc1a3c76309a9fe841dd",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_005/process_stat.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_005/process_stat.txt",
+      "bytes": 345,
+      "sha256": "8e9e46ceda5aeb24bffd102ab732fb14e18fb8ae759ea572ba666df3353bed44",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_005/process_status.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_005/process_status.txt",
+      "bytes": 1160,
+      "sha256": "474547e9e21bfa8e14288fc274a75b5f537d5d0dba4f1cd0fc47654a72cc34fb",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_005/server_log_observed.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_005/server_log_observed.txt",
+      "bytes": 133781,
+      "sha256": "bd906ea7ca0afdabf38629a8872d4d2afda7f22a89bb72f0d74a16d00b2b8193",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_005/server_metrics.prom",
+      "portable_path": "observed/attempt04_runtime/snapshot_005/server_metrics.prom",
+      "bytes": 2584,
+      "sha256": "ee9fc08bdb737c009286b91e20ba19ffb5bd4280202cf91c0abfc94d52b73195",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_006/MANIFEST.json",
+      "portable_path": "observed/attempt04_runtime/snapshot_006/MANIFEST.json",
+      "bytes": 1924,
+      "sha256": "e6fb6648c6b9c170e35b83f92cbf6b088aaeede66081287c7039f12441dd3eaf",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_006/OBSERVATION.json",
+      "portable_path": "observed/attempt04_runtime/snapshot_006/OBSERVATION.json",
+      "bytes": 39536,
+      "sha256": "e0f974b47474b73bb0680f81e3b9b484b1bf3a2797bb12f96747bf718f3f6ab2",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_006/cgroup_cpu_max.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_006/cgroup_cpu_max.txt",
+      "bytes": 14,
+      "sha256": "3dafc4b2d6a8bfd8c1910a28fd3bb15f053a47cebaff7b5cdd6cf42c39f8f880",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_006/cgroup_cpu_stat.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_006/cgroup_cpu_stat.txt",
+      "bytes": 168,
+      "sha256": "bd228352552b4fa0e7c333b02ef5e32492fc9e720ad1b5e211d72f3431d47780",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_006/cgroup_memory_current.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_006/cgroup_memory_current.txt",
+      "bytes": 11,
+      "sha256": "7d47200f3a89075fb2d4e1b772c8e8cdf82c286c32b1b70eb261769d364486eb",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_006/cgroup_memory_events.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_006/cgroup_memory_events.txt",
+      "bytes": 58,
+      "sha256": "199de4f1e2e6b712e7f7afb1b3ee6c89cac76ec0efa4100aff499a442000db1b",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_006/cgroup_memory_max.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_006/cgroup_memory_max.txt",
+      "bytes": 11,
+      "sha256": "8528d39f97fdd9c9689c4373fe4c7b18f2c3bef6b044a2c4be74b07bf9cd07d8",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_006/cgroup_memory_stat.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_006/cgroup_memory_stat.txt",
+      "bytes": 1158,
+      "sha256": "7f55cec51fc2bad10c9fcc49023e8c3da149e46b6b761250e12e73b75366a114",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_006/process_maps.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_006/process_maps.txt",
+      "bytes": 16565,
+      "sha256": "e3f6b02c55110c298290b20ab7715603eeaec2ea3aeccc1a3c76309a9fe841dd",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_006/process_stat.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_006/process_stat.txt",
+      "bytes": 345,
+      "sha256": "6adf5ec6c4c157ab31b7612ce2afb1e36a640730e0d8091b526fb43d4790e143",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_006/process_status.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_006/process_status.txt",
+      "bytes": 1160,
+      "sha256": "3b4a830cce99cf9543e5b90775bf59f8ebe69737d2484c4880f15e116f1acc0a",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_006/server_log_observed.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_006/server_log_observed.txt",
+      "bytes": 138810,
+      "sha256": "d8a6a2e162c2a1ab01244ab58744a841a70d403c7b1d307df6eaf1c0cc09098c",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_006/server_metrics.prom",
+      "portable_path": "observed/attempt04_runtime/snapshot_006/server_metrics.prom",
+      "bytes": 2584,
+      "sha256": "d4f92905d5d812c842c8f318896d00ad41c7cbed296474c6fac5ca65297dc47d",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_007/MANIFEST.json",
+      "portable_path": "observed/attempt04_runtime/snapshot_007/MANIFEST.json",
+      "bytes": 1924,
+      "sha256": "cf3d96f7533e28fafdee2cca488c346ce754044ab3e8e8b5e357b9bf2ee6f510",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_007/OBSERVATION.json",
+      "portable_path": "observed/attempt04_runtime/snapshot_007/OBSERVATION.json",
+      "bytes": 43546,
+      "sha256": "3b863ced7ecfcaa753823bb3749aa6043db0bc23fa4ab4e696a72bc961f2cff9",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_007/cgroup_cpu_max.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_007/cgroup_cpu_max.txt",
+      "bytes": 14,
+      "sha256": "3dafc4b2d6a8bfd8c1910a28fd3bb15f053a47cebaff7b5cdd6cf42c39f8f880",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_007/cgroup_cpu_stat.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_007/cgroup_cpu_stat.txt",
+      "bytes": 168,
+      "sha256": "6bb7a6a5ed437986e5b4ef7b028834583174c1496abe263c8e9b16a4b6306216",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_007/cgroup_memory_current.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_007/cgroup_memory_current.txt",
+      "bytes": 11,
+      "sha256": "81884697a58df0b1e208aec22cc3f4f8e91c0e0be55f900f0c4bc45bffab5386",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_007/cgroup_memory_events.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_007/cgroup_memory_events.txt",
+      "bytes": 58,
+      "sha256": "199de4f1e2e6b712e7f7afb1b3ee6c89cac76ec0efa4100aff499a442000db1b",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_007/cgroup_memory_max.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_007/cgroup_memory_max.txt",
+      "bytes": 11,
+      "sha256": "8528d39f97fdd9c9689c4373fe4c7b18f2c3bef6b044a2c4be74b07bf9cd07d8",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_007/cgroup_memory_stat.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_007/cgroup_memory_stat.txt",
+      "bytes": 1157,
+      "sha256": "e199229de39c659573679542484210605eec4f01a2ed570467b8d31effed68e0",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_007/process_maps.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_007/process_maps.txt",
+      "bytes": 16565,
+      "sha256": "e3f6b02c55110c298290b20ab7715603eeaec2ea3aeccc1a3c76309a9fe841dd",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_007/process_stat.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_007/process_stat.txt",
+      "bytes": 345,
+      "sha256": "6dd9de26b72a0a796066a1c4f30fc00118196424d09e6700dddaf7a7c7561908",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_007/process_status.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_007/process_status.txt",
+      "bytes": 1161,
+      "sha256": "28d9446be3cbbc965ce7bf1b2fd06b6f0d13cc122bc733ef353e5e137f1ce060",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_007/server_log_observed.txt",
+      "portable_path": "observed/attempt04_runtime/snapshot_007/server_log_observed.txt",
+      "bytes": 143129,
+      "sha256": "caed50470326be4339705c2eb5bec29d56af08acac7393883e4139c45b6b41b0",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_04/snapshot_007/server_metrics.prom",
+      "portable_path": "observed/attempt04_runtime/snapshot_007/server_metrics.prom",
+      "bytes": 2589,
+      "sha256": "b5920b77417c12ccbc345cfee897612e31f4dbb081da5388b613a30a41f95f3d",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/SERVER04_STOP_DECISION.json",
+      "portable_path": "observed/SERVER04_STOP_DECISION.json",
+      "bytes": 2292,
+      "sha256": "b1fa2b5f13020bfaae60dc889ef158c24be278c7a0461d2f1539c424551f1144",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/SERVER04_TERMINAL_HOST_OBSERVATION.json",
+      "portable_path": "observed/SERVER04_TERMINAL_HOST_OBSERVATION.json",
+      "bytes": 510,
+      "sha256": "edadc8b23e688b2a5bc93be5c92d7f4fdfbd146f4cde45406c980ddf30a21b62",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_sdd_01/invocation_03/OPENCODE_CONFIG_03.json",
+      "portable_path": "observed/client_candidate03/OPENCODE_CONFIG_03.json",
+      "bytes": 3298,
+      "sha256": "044c5deaa96cb5c5e88e7d55770d3d0c399669a926045f5b3fab470359d83941",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_sdd_01/invocation_03/CLIENT_TASK_03.json",
+      "portable_path": "observed/client_candidate03/CLIENT_TASK_03.json",
+      "bytes": 5751,
+      "sha256": "15569856560ce50cb9968a8996a574f3b87178887818388d1c9fa6f76ca5d2f9",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_sdd_01/invocation_03/CONFIGURATION_NOTES.json",
+      "portable_path": "observed/client_candidate03/CONFIGURATION_NOTES.json",
+      "bytes": 12585,
+      "sha256": "2ff9990caaaf8289b017bb00f022d360940090adb97283ccc90f0d13f03ac926",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_sdd_01/invocation_03/EFFECTIVE_CONFIGURATION_CHECK_03.json",
+      "portable_path": "observed/client_candidate03/EFFECTIVE_CONFIGURATION_CHECK_03.json",
+      "bytes": 2264,
+      "sha256": "c951c008b2c6d5e11d51c2fce2df56ef84ee085ba05977286a5c0007d86508bc",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_sdd_01/continuation_preparation_02/OPENCODE_CONFIG_04.json",
+      "portable_path": "observed/client_attempt04/OPENCODE_CONFIG_04.json",
+      "bytes": 3298,
+      "sha256": "5daa4a42c9eeaae956d290304443b8f47bb4cc7ab5f2fed898e30541d9c3ac43",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_sdd_01/continuation_preparation_02/TASK.json",
+      "portable_path": "observed/client_attempt04/TASK.json",
+      "bytes": 5408,
+      "sha256": "fecc09b8c3b299b49f69b43b2e693eb322a4bc7c1e4d6cd9d62eb8cba69c6521",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_sdd_01/continuation_preparation_02/PREFLIGHT.json",
+      "portable_path": "observed/client_attempt04/PREFLIGHT.json",
+      "bytes": 3935,
+      "sha256": "929b1266cfc26afcdf1397afc9b2b9ed3b1c2cde39f36afb04a926569fa2993f",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_sdd_01/continuation_preparation_02/PROMPT.txt",
+      "portable_path": "observed/client_attempt04/PROMPT.txt",
+      "bytes": 1185,
+      "sha256": "55fdd2d396e3bf3a5843568c45c851b1db045acd4fd61a4ce50c2cb74aa06354",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation/OBSERVATION_SUMMARY.json",
+      "portable_path": "earlier_d8_summaries/MONITOR01.json",
+      "bytes": 5788,
+      "sha256": "93e338aefa35b3e5ce80b094689ff3a3ce1eeb7dcb8f227cf3bc7b7ecfdd8285",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_02/OBSERVATION_SUMMARY.json",
+      "portable_path": "earlier_d8_summaries/MONITOR02.json",
+      "bytes": 17379,
+      "sha256": "5651da30494028f695c58cc1b6b30ea53ddcec9fbd11fba346ce2126158d987b",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/evidence/native_server_01/inference_observation_03/OBSERVATION_SUMMARY.json",
+      "portable_path": "earlier_d8_summaries/MONITOR03.json",
+      "bytes": 6948,
+      "sha256": "39b1327ba9af253a0787d3d9646fff072906178106508181d6614151bf067fb2",
+      "operation": "EXACT_COPY"
+    },
+    {
+      "source_author_path": "revision_d8/notes/R08_ATTEMPT_04_INDEPENDENT_REVIEW.json",
+      "portable_path": "review/R08_ATTEMPT_04_INDEPENDENT_REVIEW.json",
+      "bytes": 31084,
+      "sha256": "54af132187e9aa8e9192b2297e11393ea051606adf7ffd75c23863d7ca8da854",
+      "operation": "EXACT_COPY"
+    }
+  ],
+  "file_count": 180,
+  "total_copied_bytes": 3319867,
+  "no_real_model_weights_or_installed_dependencies": true,
+  "fixture_note": "The retained preparation controlled-probe subtree contains an explicitly inert executable fixture and a small plain-text dummy file at a model-shaped path. These are test fixtures, not model weights; they performed no inference."
+}

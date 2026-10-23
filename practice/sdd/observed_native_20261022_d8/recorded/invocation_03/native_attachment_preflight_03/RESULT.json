@@ -1,0 +1,246 @@
+{
+  "status": "PASS_NATIVE_FULL_ATTACHMENT_NOREPLY_NO_INFERENCE",
+  "started_at_utc": "2026-10-22T10:40:19.762235+00:00",
+  "argv": [
+    "/workspace/scratch/72d789d25fef/runtime_d7/opencode/node_modules/.bin/opencode",
+    "--pure",
+    "--print-logs",
+    "--log-level",
+    "DEBUG",
+    "serve",
+    "--hostname",
+    "127.0.0.1",
+    "--port",
+    "18081"
+  ],
+  "cwd": "/workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01",
+  "environment_reference": "/workspace/scratch/72d789d25fef/work/Engineering_Software_with_Agentic_AI_20261022_d8/revision_d8/evidence/native_sdd_01/invocation_03/ENVIRONMENT_03.json",
+  "configuration_sha256": "044c5deaa96cb5c5e88e7d55770d3d0c399669a926045f5b3fab470359d83941",
+  "source_proof": {
+    "file": "pinned_client_sources/session_prompt.ts",
+    "sha256": "f0c5bc64c0f0e966693d4a57f7ede1e9d6e188b396152f04b55303dc75b9b768",
+    "noReply_guard": "prompt() returns the fully created user message before loop(); title/agent inference is inside loop().",
+    "scope": "Native attachment-resolution preflight, not named-command execution or model generation."
+  },
+  "model_backend_port_18080_unoccupied": false,
+  "backend_state": "Known authorized local model backend is running; no inference endpoint is called. The exact noReply source guard and actual user-only session verify the preparation boundary.",
+  "generation_session_reuse": "FORBIDDEN",
+  "calls": [
+    {
+      "name": "OPENAPI",
+      "method": "GET",
+      "route": "/doc",
+      "started_at_utc": "2026-10-22T10:40:22.282707+00:00",
+      "model_call": false,
+      "status_code": 200,
+      "finished_at_utc": "2026-10-22T10:40:23.509640+00:00",
+      "response_sha256": "eebb56042880e07c354e0ad0a31f70aab45f536adf5b40b6b1fd5abf4663417b",
+      "response_bytes": 479667
+    },
+    {
+      "name": "EFFECTIVE_CONFIG",
+      "method": "GET",
+      "route": "/config",
+      "started_at_utc": "2026-10-22T10:40:23.515713+00:00",
+      "model_call": false,
+      "status_code": 200,
+      "finished_at_utc": "2026-10-22T10:40:23.606741+00:00",
+      "response_sha256": "dbbb2c811b0fc2f0fed731cbdda5f576aebcc1f7b176f553735cd4c633f7aed4",
+      "response_bytes": 139291
+    },
+    {
+      "name": "EFFECTIVE_PROVIDERS",
+      "method": "GET",
+      "route": "/provider",
+      "started_at_utc": "2026-10-22T10:40:23.608135+00:00",
+      "model_call": false,
+      "status_code": 200,
+      "finished_at_utc": "2026-10-22T10:40:24.299506+00:00",
+      "response_sha256": "09fc033bb2835ef061b4b62d744d5831982fe092a015c27e3902ae5a5f2f0112",
+      "response_bytes": 865
+    },
+    {
+      "name": "CREATE_SESSION",
+      "method": "POST",
+      "route": "/session",
+      "started_at_utc": "2026-10-22T10:40:24.299777+00:00",
+      "model_call": false,
+      "request_sha256": "3d8545fd8135dce25295c7d80ad1bdf35bf04186b7c53b3fa148d10f2cc2595a",
+      "status_code": 200,
+      "finished_at_utc": "2026-10-22T10:40:24.326887+00:00",
+      "response_sha256": "efb4933cd7a3c7e9a45e9a19dcda3cc7b82ac428a1b8e30372cf090603460544",
+      "response_bytes": 473
+    },
+    {
+      "name": "NOREPLY_ATTACHMENT",
+      "method": "POST",
+      "route": "/session/ses_e9ccd6102ffe0oFU1hOYxlLZbh/message",
+      "started_at_utc": "2026-10-22T10:40:24.327256+00:00",
+      "model_call": false,
+      "request_sha256": "d9d8276ac0bb0ba8bcb3cc43063ffb415b9245ab31d980ba747ec1e8dd7b6d0e",
+      "status_code": 200,
+      "finished_at_utc": "2026-10-22T10:40:24.424605+00:00",
+      "response_sha256": "33c829fb0f9675df086f0e0bb27f4e53a2b542784a6a89e629f38a1f3c6e1f77",
+      "response_bytes": 29700
+    },
+    {
+      "name": "SESSION_MESSAGES",
+      "method": "GET",
+      "route": "/session/ses_e9ccd6102ffe0oFU1hOYxlLZbh/message",
+      "started_at_utc": "2026-10-22T10:40:24.425051+00:00",
+      "model_call": false,
+      "status_code": 200,
+      "finished_at_utc": "2026-10-22T10:40:24.432671+00:00",
+      "response_sha256": "a749235d79176c4f24fbe98087a5b4324cafee98933c3e25766cb41a9d649c34",
+      "response_bytes": 29702
+    },
+    {
+      "name": "SESSION_INFO",
+      "method": "GET",
+      "route": "/session/ses_e9ccd6102ffe0oFU1hOYxlLZbh",
+      "started_at_utc": "2026-10-22T10:40:24.433073+00:00",
+      "model_call": false,
+      "status_code": 200,
+      "finished_at_utc": "2026-10-22T10:40:24.447501+00:00",
+      "response_sha256": "ee5587acf7e0f526b38f88bc2e33c3f32d53957d48d506d394532a83b44e21c2",
+      "response_bytes": 566
+    }
+  ],
+  "errors": [],
+  "server_pid": 55900,
+  "server_pgid": 55900,
+  "message_route_present": true,
+  "effective_temperature_capability": true,
+  "effective_output_only_read_permission": {
+    "*": "deny",
+    "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/.specify/feature.json": "allow",
+    "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/specs/001-explain-treasury/spec.md": "allow",
+    "workspace/scratch/72d789d25fef/runtime_d8/native_sdd_01/specs/001-explain-treasury/checklists/requirements.md": "allow"
+  },
+  "temperature_qualification": "Effective model capability true and agent0.2; actual provider request/sampler remains unobserved until the separately authorized generation.",
+  "session_id": "ses_e9ccd6102ffe0oFU1hOYxlLZbh",
+  "session_title": "PREPARATION ONLY d8 native attachment noReply verification; never use for generation",
+  "checks": {
+    "one_explicitly_titled_preparation_session": true,
+    "one_user_message_no_assistant_or_model_step": true,
+    "all_13_source_bodies_verified": true,
+    "all_nine_json_values_preserved": true,
+    "no_native_read_line_clipping_or_file_cap": true,
+    "no_extra_instruction_file_appended": true,
+    "native_read_output_reconstructs_exact_bundle": true,
+    "project_inventory_unchanged": true
+  },
+  "source_checks": {
+    "inputs/specification.json": {
+      "pass": true,
+      "basis": "Parsed JSON values equal every original source value",
+      "original_sha256": "a1b6fee6ea70785a2fe18f3bcdd7c51c8cdc11e5ecd5b05ddfe1df204f859454",
+      "original_bytes": 7889
+    },
+    "inputs/case_oracle.json": {
+      "pass": true,
+      "basis": "Parsed JSON values equal every original source value",
+      "original_sha256": "11f86f4a19d1587f4eabf5ad00da22f03111ffad7a834729ae130b908f4686b2",
+      "original_bytes": 2358
+    },
+    "inputs/discovery_handoff.json": {
+      "pass": true,
+      "basis": "Parsed JSON values equal every original source value",
+      "original_sha256": "8b20a7f95c439f4157895edbc77bbf43fa3f1852106ff142579fc4b30a686656",
+      "original_bytes": 387
+    },
+    "inputs/assessment.json": {
+      "pass": true,
+      "basis": "Parsed JSON values equal every original source value",
+      "original_sha256": "7f4f2dd4bc486e75e304eddf967f29587c8e49113afe5591aa207619a58b20ab",
+      "original_bytes": 2745
+    },
+    "inputs/sources/SRC-OPS-004.json": {
+      "pass": true,
+      "basis": "Parsed JSON values equal every original source value",
+      "original_sha256": "5a45af05025f00f2971c240e97a6e40c4f2df47406b48832494e11e95d8985c5",
+      "original_bytes": 448
+    },
+    "inputs/sources/SRC-POL-001.json": {
+      "pass": true,
+      "basis": "Parsed JSON values equal every original source value",
+      "original_sha256": "1de2d20f2fe72c4a2ae698093078deb2a05b5d7fd85eec819438cabb7928aacb",
+      "original_bytes": 543
+    },
+    "inputs/sources/SRC-RISK-002.json": {
+      "pass": true,
+      "basis": "Parsed JSON values equal every original source value",
+      "original_sha256": "9d21561fb3ae43782375451c42edab29e2104bd06b76c871eb7c8759d0300794",
+      "original_bytes": 458
+    },
+    "inputs/sources/SRC-TKT-017.json": {
+      "pass": true,
+      "basis": "Parsed JSON values equal every original source value",
+      "original_sha256": "108f533303f738227a4342bd61c61df203d0e1b59c505714e3e4f9fdc3af0007",
+      "original_bytes": 395
+    },
+    "inputs/sources/SRC-WIKI-OLD.json": {
+      "pass": true,
+      "basis": "Parsed JSON values equal every original source value",
+      "original_sha256": "85294ab0c9627da940dbce25820f5caed54ceacde4b49a6f4ad5ea5417cdfc93",
+      "original_bytes": 434
+    },
+    "source/treasury/routing.py": {
+      "pass": true,
+      "basis": "Exact complete original source bytes",
+      "original_sha256": "14d186a327a418dddb405144bfefb5810ed27e626b981424c9ad3b66742e8b32",
+      "original_bytes": 938
+    },
+    ".specify/templates/spec-template.md": {
+      "pass": true,
+      "basis": "Exact complete original source bytes",
+      "original_sha256": "3945437fc35cd30a5b2bf7beea680337c3516826d3efa5a6b92c4a7eca1ba28e",
+      "original_bytes": 4556
+    },
+    ".specify/templates/checklist-template.md": {
+      "pass": true,
+      "basis": "Exact complete original source bytes",
+      "original_sha256": "3f4124a13ffbc0c2d8e979d9a08248f29ce53cc6c324a8303a6ae0d231b78836",
+      "original_bytes": 2033
+    },
+    ".specify/memory/constitution.md": {
+      "pass": true,
+      "basis": "Exact complete original source bytes",
+      "original_sha256": "ce7549540fa45543cca797a150201d868e64495fdff39dc38246fb17bd4024b3",
+      "original_bytes": 2346
+    }
+  },
+  "native_attachment_sha256": "7c5fd58661c8d05a44f6284cf0c9eb254b7add1be56d954707f274ec4e86671f",
+  "native_attachment_bytes": 26924,
+  "native_line_count": 342,
+  "reconstructed_bundle_sha256": "bbaf6d82364e6e6e2fa543f9c9c1cf407ffe315aa2a75d63be4caf09ae25d718",
+  "permission_scope": "Model read permission denies the source bundle and permits only three generated outputs. The pinned native user-attachment implementation directly supplies ask=>void and bypassCwdCheck and therefore still resolves the complete user-selected input. This is not an actual model-selected denial probe or OS containment.",
+  "inference_scope": "An authorized idle backend was present. No inference endpoint was requested by this preflight; noReply returned a user message before the model/title loop, and the actual session has no assistant/model step. Backend token counters are checked separately. Named-command generation remains NOT_RUN.",
+  "cleanup": {
+    "pid": 55900,
+    "pgid": 55900,
+    "started_at_utc": "2026-10-22T10:40:24.454258+00:00",
+    "sigterm_sent": true,
+    "returncode": -15,
+    "finished_at_utc": "2026-10-22T10:40:24.485891+00:00",
+    "owned_process_stopped": true
+  },
+  "finished_at_utc": "2026-10-22T10:40:24.485922+00:00",
+  "files": {
+    "ACTUAL_NATIVE_ATTACHMENT_TEXT.txt": "7c5fd58661c8d05a44f6284cf0c9eb254b7add1be56d954707f274ec4e86671f",
+    "API_SESSION_EXPORT.json": "275db8f3c66d4d27c694e0b6a38dc5a030b49a3c9f4dd738ea9c006704043602",
+    "CREATE_SESSION.request.json": "3d8545fd8135dce25295c7d80ad1bdf35bf04186b7c53b3fa148d10f2cc2595a",
+    "CREATE_SESSION.response.json": "efb4933cd7a3c7e9a45e9a19dcda3cc7b82ac428a1b8e30372cf090603460544",
+    "EFFECTIVE_CONFIG.response.json": "dbbb2c811b0fc2f0fed731cbdda5f576aebcc1f7b176f553735cd4c633f7aed4",
+    "EFFECTIVE_PROVIDERS.response.json": "09fc033bb2835ef061b4b62d744d5831982fe092a015c27e3902ae5a5f2f0112",
+    "HEALTH.json": "6c78bd72a9ecc81af211805b5c036c3248898bffc17f1d70d5185a35b6a21e0d",
+    "NOREPLY_ATTACHMENT.request.json": "d9d8276ac0bb0ba8bcb3cc43063ffb415b9245ab31d980ba747ec1e8dd7b6d0e",
+    "NOREPLY_ATTACHMENT.response.json": "33c829fb0f9675df086f0e0bb27f4e53a2b542784a6a89e629f38a1f3c6e1f77",
+    "OPENAPI.response.json": "eebb56042880e07c354e0ad0a31f70aab45f536adf5b40b6b1fd5abf4663417b",
+    "SESSION_INFO.response.json": "ee5587acf7e0f526b38f88bc2e33c3f32d53957d48d506d394532a83b44e21c2",
+    "SESSION_MESSAGES.response.json": "a749235d79176c4f24fbe98087a5b4324cafee98933c3e25766cb41a9d649c34",
+    "START.json": "4941727b31c0eb9256def5331932c3d9b5a552f08a82b3d505982efad50fe5a2",
+    "server.stderr.txt": "0c8b8191b6b5a0f974768e46b8cdd0f6ccbc1698133743fbf7dc07789917cb3b",
+    "server.stdout.txt": "7acab9afc3a72a3ce4fadcf0ba7ab14b4300c3705225c7fad89441b01a88f488"
+  }
+}

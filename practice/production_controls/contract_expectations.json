@@ -1,0 +1,8 @@
+{
+  "schema": "treasury-response-probe-expectations/v1",
+  "input_amount_eur": "5000.00",
+  "expected_route": "HUMAN_REVIEW",
+  "expected_policy": "BR-001/v1",
+  "payment_authorized": false,
+  "meaning": "Author-controlled selected example; queue recommendation only, no authenticated business authority."
+}

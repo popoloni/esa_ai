@@ -1,0 +1,10 @@
+{
+  "id": "SRC-POL-001",
+  "kind": "policy-record",
+  "authority": "APPROVED_POLICY_IN_SIMULATION",
+  "date": "2026-07-01",
+  "owner_role": "Treasury Policy Owner (fictional)",
+  "title": "BR-001/v1: routing, not payment approval",
+  "text": "Below EUR 5,000 the service chooses STANDARD_QUEUE; at or above the threshold, HUMAN_REVIEW. Neither output authorizes payment or removes a human approval obligation. Historical requests retain their version.",
+  "source_reliability": "governs the synthetic system; not an actual corporate policy"
+}

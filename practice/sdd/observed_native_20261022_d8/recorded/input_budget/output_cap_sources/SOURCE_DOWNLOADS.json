@@ -1,0 +1,30 @@
+[
+  {
+    "name": "llm.ts",
+    "url": "https://raw.githubusercontent.com/anomalyco/opencode/v1.19.3/packages/opencode/src/session/llm.ts",
+    "sha256": "5f1dcfb734853e39760e4dd05470f0c7d8752fc5dcc64e118c065149602e402d",
+    "bytes": 15097,
+    "downloaded_at_utc": "2026-10-22T10:17:54.638951+00:00"
+  },
+  {
+    "name": "request.ts",
+    "url": "https://raw.githubusercontent.com/anomalyco/opencode/v1.19.3/packages/opencode/src/session/llm/request.ts",
+    "sha256": "90077551a9a46e11a37f44279c584832918d722c0ba0407ff8cad8d3437dd0de",
+    "bytes": 7738,
+    "downloaded_at_utc": "2026-10-22T10:17:54.731448+00:00"
+  },
+  {
+    "name": "transform.ts",
+    "url": "https://raw.githubusercontent.com/anomalyco/opencode/v1.19.3/packages/opencode/src/provider/transform.ts",
+    "sha256": "4fb803445f0e72a84fb3edf2b1721084437204d3e35582dab53e156f92f54007",
+    "bytes": 70406,
+    "downloaded_at_utc": "2026-10-22T10:17:54.854081+00:00"
+  },
+  {
+    "name": "native-runtime.ts",
+    "url": "https://raw.githubusercontent.com/anomalyco/opencode/v1.19.3/packages/opencode/src/session/llm/native-runtime.ts",
+    "sha256": "ad7ba806e0b9d429ccd93b02b3583754254e6fc540450cb97e16393c28d394c2",
+    "bytes": 8036,
+    "downloaded_at_utc": "2026-10-22T10:17:54.726059+00:00"
+  }
+]

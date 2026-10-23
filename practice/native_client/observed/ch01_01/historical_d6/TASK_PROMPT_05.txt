@@ -1,0 +1,15 @@
+You are starting a NEW native session to recover one bounded routing repair. An earlier session inserted repeated bodies without fixing Decimal NaN, and its seven-case run recorded six passes and one error. That failed code remains the current candidate. This is a disclosed guided recovery, not a blind test.
+
+First READ these exact files with the read tool:
+/workspace/scratch/efa0a59e0545/runtime_d6/native_work_01/repo/src/treasury/routing.py
+/workspace/scratch/efa0a59e0545/runtime_d6/native_work_01/reader_side/intent/INT-001.md
+/workspace/scratch/efa0a59e0545/runtime_d6/native_work_01/reader_side/acceptance/test_routing.py
+
+Then repair only the existing assess function. Read the WHOLE current function before editing. Replace its complete body in one edit, removing all unreachable duplicate bodies. Do not just insert another body after its def line. Preserve the dataclass, public function signature, BR-001/v1 policy and EUR5,000 threshold.
+
+Specific API-level guidance from Python3.12 documentation: Decimal.is_finite() is false for both NaN and infinities. Reject non-finite values before any ordering comparison. Keep the malformed-value handling and reject zero and negative amounts. The original requirement remains: finite positive values below5000 go to STANDARD_QUEUE/BELOW_LIMIT; finite values at or above5000 go to HUMAN_REVIEW/AT_OR_ABOVE_LIMIT; invalid amounts are REJECTED/INVALID_AMOUNT. Every result preserves the policy version.
+
+The sole editable source is the routing.py path above. Do not read reference solutions or edit intent, tests, checkers or other source. After the repair, run EXACTLY ONCE from the study working directory:
+python3 -B reader_side/tools/run_acceptance.py --output reader_side/evidence/CH01_AGENT_D6_NATIVE_01.json
+
+Report actual pass/failure/error counts. If any case fails or errors, say FAILED_ACCEPTANCE and stop. Only all seven passing cases permit READY_FOR_HUMAN_REVIEW_NOT_ACCEPTED. No human acceptance, payment, merge or deployment is authorized.

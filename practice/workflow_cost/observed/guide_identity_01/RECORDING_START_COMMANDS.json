@@ -1,0 +1,46 @@
+[
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "companion/practice/workflow_cost/workflow_cost.py",
+      "stop",
+      "revision_d7/evidence/guide_identity_workflow/ACCOUNT.json",
+      "--id",
+      "agent-review-01",
+      "--outcome",
+      "PASSED",
+      "--evidence",
+      "revision_d7/evidence/guide_identity_workflow/REVIEW.json"
+    ],
+    "started_at_utc": "2026-10-22T06:15:02.960913+00:00",
+    "ended_at_utc": "2026-10-22T06:15:03.081531+00:00",
+    "exit_code": 0,
+    "stdout": "{\"status\": \"RECORDED\", \"command\": \"stop\", \"account\": \"revision_d7/evidence/guide_identity_workflow/ACCOUNT.json\"}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "companion/practice/workflow_cost/workflow_cost.py",
+      "start",
+      "revision_d7/evidence/guide_identity_workflow/ACCOUNT.json",
+      "--id",
+      "recording-01",
+      "--phase",
+      "recording",
+      "--actor",
+      "root-maintenance-agent",
+      "--actor-kind",
+      "AGENT",
+      "--evidence",
+      "revision_d7/evidence/guide_identity_workflow/REVIEW_DECISION.json"
+    ],
+    "started_at_utc": "2026-10-22T06:15:03.081556+00:00",
+    "ended_at_utc": "2026-10-22T06:15:03.144793+00:00",
+    "exit_code": 0,
+    "stdout": "{\"status\": \"RECORDED\", \"command\": \"start\", \"account\": \"revision_d7/evidence/guide_identity_workflow/ACCOUNT.json\"}\n",
+    "stderr": ""
+  }
+]

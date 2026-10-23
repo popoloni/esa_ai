@@ -1,0 +1,27 @@
+{
+  "session_id": "ses_e9d953008ffe5prRJYzw7HWDMP",
+  "same_declared_session": true,
+  "prior_export_sha256": "48196fe3a154e18bfcb3ae2066c88806be282ca2ad2df07c1be77d1c6579d95e",
+  "prior_messages": [
+    {
+      "message_id": "msg_1626ad6660013tv1oxugwl347o",
+      "role": "user",
+      "retained": true,
+      "parts_exactly_unchanged": true
+    },
+    {
+      "message_id": "msg_1626ad6870013rq3jBK4tytPm1",
+      "role": "assistant",
+      "retained": true,
+      "parts_exactly_unchanged": true
+    }
+  ],
+  "appended_user_message_count": 1,
+  "appended_prompt_matches_literal_argv_text": false,
+  "appended_prompt_matches_pinned_cli_serialization": true,
+  "native_prompt_texts": [
+    "\"Continue the SAME Spec Kit task. Your last response stopped after naming the feature; it did not read inputs or create files. Now execute exactly: cat inputs/NATIVE_CONTEXT_BUNDLE.md\nAfter reading it, actually write .specify/feature.json, specs/001-explain-treasury/spec.md and its checklists/requirements.md using permitted tools. Preserve the full original command, all fixed values/IDs and source authority. Invent no owner answers or benefit targets. Retain all three unanswered owner questions, then STOP before planning. If blocked, report the exact failure and stop.\""
+  ],
+  "serialization_qualification": "Pinned cli_run.ts lines 289\u2013291 wrap an argument containing spaces in quotes and escape internal quotes. The declared 120-token count concerns the raw appended argument; system/tools/envelopes reserves include serialization overhead. The exact exported user part is retained here.",
+  "scope": "Retained native message/part history; not proof that every context token affected the model's reasoning."
+}

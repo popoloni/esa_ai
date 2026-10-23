@@ -1,0 +1,68 @@
+{
+  "schema": "cp10-owner-decisions/v1",
+  "resolutions": [
+    {
+      "id": "RESOLUTION-10-01",
+      "thread_id": "THREAD-10-01",
+      "actor_id": "reviewer-a",
+      "resolution": "RESOLVED_AFTER_REQUIRED_CHECKS",
+      "synthetic": true
+    },
+    {
+      "id": "RESOLUTION-10-02",
+      "thread_id": "THREAD-10-02",
+      "actor_id": "release-owner",
+      "resolution": "RESOLVED_AFTER_ROLLBACK_REHEARSAL",
+      "synthetic": true
+    }
+  ],
+  "review_decisions": [
+    {
+      "id": "REVIEW-10-ACCEPT",
+      "actor_id": "reviewer-a",
+      "decision": "ACCEPT",
+      "change_id": "CP10-PRESENTATION-001",
+      "scope": "LOCAL_SYNTHETIC_PRESENTATION_EXPERIMENT",
+      "source_sha256": "4cae28f8db65a185fd5faed74f564af48207aa45f27f3febb79edba0d57e87a3",
+      "synthetic": true
+    },
+    {
+      "id": "REVIEW-10-REJECT",
+      "actor_id": "reviewer-a",
+      "decision": "REJECT",
+      "change_id": "CP10-PRESENTATION-001",
+      "scope": "LOCAL_SYNTHETIC_PRESENTATION_EXPERIMENT",
+      "source_sha256": "4cae28f8db65a185fd5faed74f564af48207aa45f27f3febb79edba0d57e87a3",
+      "synthetic": true
+    },
+    {
+      "id": "REVIEW-10-SELF",
+      "actor_id": "agent-author",
+      "decision": "ACCEPT",
+      "change_id": "CP10-PRESENTATION-001",
+      "scope": "LOCAL_SYNTHETIC_PRESENTATION_EXPERIMENT",
+      "source_sha256": "4cae28f8db65a185fd5faed74f564af48207aa45f27f3febb79edba0d57e87a3",
+      "synthetic": true
+    }
+  ],
+  "release_decisions": [
+    {
+      "id": "RELEASE-10-LOCAL",
+      "actor_id": "release-owner",
+      "decision": "AUTHORIZE_LOCAL_PRESENTATION_EXPERIMENT",
+      "change_id": "CP10-PRESENTATION-001",
+      "scope": "LOCAL_SYNTHETIC_PRESENTATION_EXPERIMENT",
+      "source_sha256": "4cae28f8db65a185fd5faed74f564af48207aa45f27f3febb79edba0d57e87a3",
+      "synthetic": true
+    },
+    {
+      "id": "RELEASE-10-DENY",
+      "actor_id": "release-owner",
+      "decision": "DO_NOT_RELEASE",
+      "change_id": "CP10-PRESENTATION-001",
+      "scope": "LOCAL_SYNTHETIC_PRESENTATION_EXPERIMENT",
+      "source_sha256": "4cae28f8db65a185fd5faed74f564af48207aa45f27f3febb79edba0d57e87a3",
+      "synthetic": true
+    }
+  ]
+}

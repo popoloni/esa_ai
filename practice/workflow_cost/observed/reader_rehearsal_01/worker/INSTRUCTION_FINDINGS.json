@@ -1,0 +1,51 @@
+{
+  "observed_stumbling_points": [
+    {
+      "id": "CSV_CONTRACT_LOCATION",
+      "locator": "companion/practice/csv_export/README.md:7-8,15-25",
+      "expected": "Read the named task authority from the documented companion-root workflow.",
+      "actual": "cat practice/csv_export/CURRENT_CONTRACT.md returned: No such file or directory. The contract is in the copied starter.",
+      "impact": "One failed lookup; no wrong code change.",
+      "recovery": "List only the copied starter and read attempts/csv01/CURRENT_CONTRACT.md.",
+      "suggested_repair": "Name starter/CURRENT_CONTRACT.md and include `cat ../csv_attempt_01/CURRENT_CONTRACT.md` in the initial command block.",
+      "classification": "Minor path ambiguity actually encountered"
+    },
+    {
+      "id": "CP07_REFERENCE_ORDER",
+      "locator": "input/manuscript/chapters/chapter07.tex:227-237,273; R17_PARTICIPANT_TASKS first-attempt rule",
+      "expected": "Retain the first plan attempt and handoff before inspecting a worked solution.",
+      "actual": "The chapter says to run commands in order and places a protected reference-pair gate as the third initial command; later it says compare edits only after explaining pending decisions.",
+      "impact": "Required consciously deferring the reference command under the rehearsal instruction. No reference source was opened and no plan edit was attempted.",
+      "recovery": "Run only the candidate planning gate for entry evidence; retain the task-three handoff and explicitly mark CP06/candidate work incomplete.",
+      "suggested_repair": "Move the reference command to a clearly optional after-first-attempt block, or state that the initial reference check is demonstration-only and must be deferred in unexposed-reader sessions.",
+      "classification": "Observed sequencing tension; no demonstrated human confusion"
+    },
+    {
+      "id": "INPUT_BYTECODE",
+      "locator": "companion/README.md: keep extracted release unchanged; `python3 reader_start.py doctor`",
+      "expected": "Prerequisite inspection would leave the extracted input unchanged.",
+      "actual": "The doctor run generated reader_side/tools/__pycache__/scope_guard.cpython-312.pyc; birth/modify time 2026-10-21 18:10:11 UTC matched this rehearsal.",
+      "impact": "One generated cache appeared in the supposedly unchanged input; authored sources were unaffected.",
+      "recovery": "Retain path, hash and timestamps; remove only the proven task-created cache and empty directory.",
+      "suggested_repair": "Use `python3 -B reader_start.py doctor` for immutable-source inspection or explicitly set PYTHONDONTWRITEBYTECODE for entry commands; clarify whether unchanged means authored source only.",
+      "classification": "Reproducibility/hygiene issue actually observed"
+    }
+  ],
+  "operator_errors_not_instruction_defects": [
+    {
+      "commands": [
+        "python3 reader_start.py doctor",
+        "python3 reader_start.py show 1"
+      ],
+      "actual": "Both initially executed from /workspace/scratch/efa0a59e0545 and failed with Errno 2 because reader_start.py was absent there.",
+      "cause": "Worker omitted the workdir parameter even though README correctly names companion/ as the working directory.",
+      "recovery": "Supply workdir=input/companion and rerun; both succeeded."
+    }
+  ],
+  "expected_teaching_failures": [
+    "Chapter 1 baseline: 3 passes, 2 failures, 2 errors",
+    "Chapter 7 initial planning gate: FAIL, 24 findings",
+    "CSV initial demo: NotImplementedError"
+  ],
+  "interpretation": "These findings are one experienced model's observations. No reader prevalence, severity distribution, comprehension improvement or completion-time claim follows."
+}

@@ -1,0 +1,31 @@
+{
+  "attempt": 1,
+  "authority": "Read supplied inputs; write only this attempt's outputs. No acceptance or release authority.",
+  "dependencies": {
+    "policy": {
+      "response_path": "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Orchestration_Harness_20261020/companion/practice/orchestration/observed_v2/02_human_blocked/run/attempts/policy/001/result.json",
+      "sha256": "f3c8f0c8c41d33968e49963c0678882d03eb065688b752afe86f8b4def376bcf"
+    },
+    "routing": {
+      "response_path": "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Orchestration_Harness_20261020/companion/practice/orchestration/observed_v2/02_human_blocked/run/attempts/routing/001/result.json",
+      "sha256": "1b66ece4d8b3e357b08336e2eaaa7d89faf1aba29db244e8134495148a27c05a"
+    }
+  },
+  "input_root": "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Orchestration_Harness_20261020/companion/practice/orchestration/observed_v2/02_human_blocked/inputs",
+  "schema": "treasury-worker-request/v1",
+  "task": {
+    "depends_on": [
+      "policy",
+      "routing"
+    ],
+    "id": "synthesis",
+    "idempotent": true,
+    "kind": "worker",
+    "max_attempts": 1,
+    "parameters": {
+      "mode": "synthesis"
+    },
+    "response": "result.json",
+    "timeout_seconds": 3
+  }
+}

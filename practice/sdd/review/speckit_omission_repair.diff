@@ -1,0 +1,15 @@
+--- before/speckit/spec.md
++++ after/speckit/spec.md
+@@ -36,6 +36,12 @@
+ - **GIVEN** BR-001/v1 routing-only service; payment authorization is a separate human process.
+ - **WHEN** amount_eur = `4999.99`
+ - **THEN** route = `STANDARD_QUEUE`; reason = `BELOW_LIMIT`; policy = `BR-001/v1`; payment_authorized = `false`; notice = `ROUTING_ONLY_NOT_PAYMENT_APPROVAL`.
++- Requirement: REQ-EXPL-001
++
++#### Scenario: SC-EXPL-002
++- **GIVEN** BR-001/v1 routing-only service; payment authorization is a separate human process.
++- **WHEN** amount_eur = `5000`
++- **THEN** route = `HUMAN_REVIEW`; reason = `AT_OR_ABOVE_LIMIT`; policy = `BR-001/v1`; payment_authorized = `false`; notice = `ROUTING_ONLY_NOT_PAYMENT_APPROVAL`.
+ - Requirement: REQ-EXPL-001
+ 
+ #### Scenario: SC-EXPL-003

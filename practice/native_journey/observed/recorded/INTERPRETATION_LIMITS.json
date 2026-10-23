@@ -1,0 +1,13 @@
+{
+  "schema": "esa-native-evidence-interpretation/v1",
+  "recorded_at_utc": "2026-10-22T17:44:14.814732+00:00",
+  "limits": [
+    "The elapsed budget counts client invocation wall time, including local startup, tool calls and waiting; it is not measured human effort or isolated inference time.",
+    "Native event cost fields report zero under this local provider configuration. They are not billing, electricity or total-cost observations.",
+    "Configured application permissions and source inventories do not establish an OS sandbox or prove absence of other network activity. Background plugin npm requests failed in retained client logs.",
+    "Task prompts and supplied file contents, effective configuration, tool events and session exports disclose the recorded context. The client additionally constructs its system/tool messages; no claim of preserving every outbound HTTP request byte is made.",
+    "Author review and corrective guidance are part of this observation. The final design choice in plan.md was explicitly supplied in the author correction; this is not an independently observed architectural exploration for OP05.",
+    "The native client was not supplied the checker source or reference implementation. Its actual checker output was visible feedback.",
+    "No real intended reader participated. R17 and CR10 remain external; this observation supplies no comparative learning, productivity or human-benefit result."
+  ]
+}
