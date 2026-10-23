@@ -1,0 +1,347 @@
+RETAINED D8 READING COPY
+Extracted from the d8 PDF; page labels and numerical references belong to that edition.
+The exact LaTeX source and original packets are linked in README.md.
+
+2.6 Follow one bounded task in an installed client
+The files, tools and rules become easier to understand when we watch them work to-
+gether. We will return to the familiar Chapter 1 defect in a fresh copy: reject malformed,
+nonfinite and nonpositive amounts while preserving the public API, BR-001/v1 and the
+EUR 5,000 boundary. Using a known small problem lets us concentrate on the client
+rather than learning another domain at the same time. Preserve your cumulative work-
+ing copy; this optional observation has its own disposable copy and return point.
+The primary route uses the installed OpenCode 1.19.3 client with Qwen3-4B
+Q4_K_M served locally by llama.cpp b11799.
+OpenCode sends requests to the
+model, offers tools and applies its application permission rules. The model proposes
+actions; the client executes an allowed action and returns its result to the model. The
+33
+
+
+[D8 physical page 54 / printed 34]
+Build a portable AI engineering workspace
+reader’s recorder preserves the surrounding command and file changes.
+It does not
+supply the agent’s reasoning or substitute for the native client. OpenCode documents
+command-line execution, session export and configurable model providers; the compan-
+ion pins and observes the particular release used here [4, 5].
+Begin with practice/native_client/README.md. It gives the fixed download hashes,
+installation, server startup and preparation commands for the observed Linux x86-64
+environment. It also lets you inspect the retained observation without installing the
+approximately 2.5 GB model. The model requests in that observation used a loopback
+endpoint. Installation required public registries, and the client made failed background
+package requests during the task, so the whole host is not described as offline.
+Step 1: establish what the client is being asked to repair
+Open the intent before starting the client.
+For this task, a zero amount is invalid
+even though it is below EUR 5,000. A malformed decimal should produce the specified
+rejection rather than an exception. These facts come from the approved teaching intent,
+not from whatever change the model finds easiest to generate. The initial acceptance
+run gives the model a concrete failing observation and gives the reviewer a baseline.
+The companion setup records the unchanged companion location in ESA_COMPANION
+and defines three separate working locations: ESA_RUNTIME holds the installed client
+and model, ESA_WORK is a new Chapter 1 study copy, and ESA_PACKET retains evidence
+outside that copy. After setup, run the following from the unchanged companion root:
+python3 -B reader_start.py new 1 \
+--destination "$ESA_WORK"
+python3 -B validation/observe_native.py prepare \
+--source "$ESA_WORK" --output "$ESA_PACKET" \
+--actions R06
+cd "$ESA_WORK"
+python3 -B reader_side/tools/scope_guard.py --chapter CP01 \
+--capture reader_side/evidence/CP01_NATIVE_BASELINE_01.json
+python3 -B reader_side/tools/run_acceptance.py \
+--output reader_side/evidence/CH01_NATIVE_INITIAL_01.json
+Expect three passes, two failures and two errors from the prepared starter. The negative
+and zero cases return the wrong route; the malformed and nonfinite cases raise excep-
+tions. The command’s nonzero exit is expected here. An unrelated import failure or a
+changed protected file is a different problem and should be resolved before delegation.
+The preparation step retains the starting file bytes, while the scope baseline identifies
+the router as the sole source that may change.
+34
+
+
+[D8 physical page 55 / printed 35]
+Build a portable AI engineering workspace
+Concept: A baseline explains what a later result means
+A baseline records the state before an intervention. Here it answers two practical
+questions: which defect did the client receive, and which files were permitted to
+change? A later passing test report without that starting state cannot show whether
+the client repaired the intended problem, began with a worked answer or changed
+the expectations. A file hash identifies bytes; it does not decide whether those
+bytes express the right requirement.
+Step 2: inspect effective permissions before making a model request
+The companion’s practice/native_client/configure_chapter1.py prepares a
+configuration and a task prompt for the actual location of your copy. It checks the
+starter and baseline, detects the Git worktree used for permission paths, and refuses to
+overwrite an earlier preparation. It does not invoke the model. The prompt supplies
+exact absolute paths to the intent, tests, router, initial result and repository guidance.
+It asks for the bounded repair, one named acceptance command and a stop for human
+review.
+cd "$ESA_COMPANION"
+python3 -B practice/native_client/configure_chapter1.py \
+--work "$ESA_WORK" --runtime-root "$ESA_RUNTIME" \
+--output "$ESA_PACKET/configuration"
+Read the generated configuration before using it. Only those named study files may
+be read through the native read tool. Only the router may be edited. The command
+allowance names the exact acceptance invocation and its new output file; other com-
+mands are denied. The recorder’s task declaration separately names the source and
+report that may change. That declaration supports a later comparison; it is not an OS
+permission setting.
+The retained setup exposed a useful versioning failure.
+The current documentation
+used shell, while installed OpenCode 1.19.3 used bash for this tool and permission
+category. The earlier configuration parsed, but the effective agent reported the com-
+mand tool disabled. Correcting the category to bash enabled the intended tool under
+the same narrow command rule. The reader recipe therefore captures the installed ver-
+sion, effective configuration and effective agent before it offers a task to the model. A
+successful parse is only the first check.
+The recovered settings also disable automatic context compaction for this small task.
+Compaction condenses accumulated conversation so that a session can continue within
+its usable context; it can itself make model requests.
+An earlier continued session
+began this activity after its final-looking message. The targeted configuration change
+35
+
+
+[D8 physical page 56 / printed 36]
+Build a portable AI engineering workspace
+makes the chosen task boundary clearer, while the process receipt still establishes when
+execution actually stops.
+Read the rule as well as the tool name
+The observed effective agent enabled read, edit, write and bash.
+Those
+booleans say that the tools are offered; the ordered permission rules determine
+their allowed targets. An internal OpenCode tool-output directory exception also
+remained in the effective rules. Inspect both parts. Application allowlists and a
+process’s operating-system rights answer different questions; this configuration
+does not demonstrate general filesystem or network isolation.
+Step 3: use the observed failure to choose the next action
+After inspecting the preparation, invoke the actual client through the generated com-
+mand specification. The model, context, output and step limits are declared in that
+specification and its configuration. They bound the exercise; they do not guarantee
+that the model will repair the function.
+python3 -B validation/observe_native.py capture \
+--spec "$ESA_PACKET/configuration/CLIENT_TASK.json" \
+--output "$ESA_PACKET/attempt_01"
+Read the native tool events before deciding what to do next. A failed file read, an
+unfinished model request and a rejected candidate need different corrections. Changing
+the code cannot fix a path that the client was never permitted to read. Granting more
+file access cannot make an invalid decimal comparison correct. The retained episode
+makes these distinctions concrete.
+36
+
+
+[D8 physical page 57 / printed 37]
+Build a portable AI engineering workspace
+Table 2.3: Use an observed failure to choose a bounded recovery
+Observed result
+What it establishes
+Decision for the next step
+Five reads refused
+Requested
+paths
+omitted
+the
+study directory; no edit occurred
+Supply the exact allowed paths
+and
+preserve
+the
+permission
+scope
+Request
+deadline
+after
+reads
+File access succeeded; the next
+model request stopped during
+prompt processing
+Retain server evidence and de-
+clare an appropriate bounded
+CPU request budget
+Six passes, one error
+The candidate still failed the
+nonfinite case, despite readiness
+wording
+Use the actual report to request
+correction;
+do not accept the
+summary
+Repeated faulty insertion
+Continued editing left the same
+error and duplicated old code
+Preserve the candidates; use a
+fresh session and disclose more
+specific guidance
+Compaction
+after
+final
+prose
+The host continued model work
+after the apparent conclusion
+Observe process completion and
+retain the additional activity
+The table preserves the earlier d6 failures, whose native records remain in the compan-
+ion’s practice/native_client/observed/ch01_01/historical_d6/ extract. The
+code failure deserves a closer look. Parsing NaN as a Decimal can succeed, yet a later
+ordering comparison can raise an exception [136]. “It parsed” is therefore weaker than
+the intent’s requirement that the amount be finite and positive. The failed acceptance
+case directs attention to that distinction. Inspecting the diff supplies another kind of
+information: an unreachable copy of the old body is confusing even when a selected test
+does not execute it. These observations justify a focused correction without changing
+the approved threshold or rewriting the tests.
+Worked example: Three different results after a client stops
+Process completion is established by the exit status and any timeout. Task com-
+pletion requires the actual reads, edits, checks and candidate. Acceptance requires
+the independent review and decision. The historical d6 first attempt completed the
+process with exit zero while leaving the task unfinished. Later, a final-looking fail-
+ure message was followed by automatic context compaction in the host. Neither a
+reassuring exit code nor a concluding sentence supplies the other observations.
+Keep each prompt, configuration and failed result under its own attempt name. When an
+intervention supplies API-level guidance or starts a fresh session, record that assistance:
+the result then reflects those more specific instructions.
+A failed request without a
+completed usage receipt has unknown token use, and an application field containing
+cost: 0 does not measure total financial cost. Chapter 14 will make this accounting
+distinction explicit.
+37
+
+
+[D8 physical page 58 / printed 38]
+Build a portable AI engineering workspace
+Step 4: retain the native record and review the candidate
+The command recorder preserves stdout, stderr, literal arguments and before/after file
+inventories. The native session export supplies the client’s own message and tool context.
+Use the companion’s direct-file export recipe, then parse the JSON and verify the session
+identifier. A command returning zero does not establish that its complete output was
+retained. The guide preserves the collection failure that motivated this check.
+After the agent stops, the reader reruns the seven acceptance cases into a new report,
+checks the original edit baseline and compares the candidate with the preserved starter.
+A green result means that those cases passed against the identified candidate. The diff
+still needs review against the intent: did the validation preserve the threshold, return
+type and policy version? The companion guide gives the commands and retains the
+initial sources, native events, unsuccessful attempts and independent results together
+under practice/native_client/observed/ch01_01/.
+The fresh d7 observation on 22 October 2026 reached a useful checked candidate. Its
+first attempt read the router, ran acceptance before editing and retained the original
+three passes, two failures and two errors. An operator stopped its next model request
+after 555.556 seconds; no source changed. A separate guided recovery supplied the ap-
+proved intent and explicit Decimal.is_finite() advice before comparisons. Although
+its prompt requested write, the native client used the allowed edit tool to replace the
+function body. The 360-second outer bound ended the client after 360.108 seconds,
+before its planned checker or final summary completed. Independent assistant review
+then passed the original seven cases, fourteen additional cases planned before the candi-
+date appeared, and the scope guard. The two case sets overlap. Their reports and the
+candidate hash remain separate from the native process outcome; human acceptance is
+still pending.
+The native read records expose another context surface: reading the 671-byte router re-
+turned 9,077 characters because OpenCode appended the repository’s integrated Chap-
+ters 1–14 AGENTS.md. Its tool metadata names the loaded file. This is direct evidence
+of context inclusion, not proof that the guidance caused the earlier error or timeout.
+The packet retains the request timings, a bounded server-log prefix and resource sam-
+ples from the shared 8 GiB host. Four completed native steps have usage receipts; two
+interrupted requests do not, so complete token use remains unknown. These observa-
+tions support diagnosis and an honest stopping decision, not a hardware minimum or
+performance ranking.
+This observation is not blind. The author had already seen worked solutions; the na-
+tive task supplied allowed source and tests, but did not authorize reading the supplied
+answers or inject a repair patch. The recovery’s API guidance is additional disclosed
+assistance. Record the same prior-exposure fact in your own exercise. Assistant review
+38
+
+
+[D8 physical page 59 / printed 39]
+Build a portable AI engineering workspace
+and local checks do not become human acceptance merely because they agree. Keep
+the human decision pending until it actually occurs. The earlier active d6 attempt 06
+was excluded from its saved checkpoint; the fresh d7 result does not establish that
+missing outcome.
+Step 5: connect the policy lookup with a smaller tool set
+The next task needs information rather than a code change. The client should retrieve
+BR-001/v2, request the unknown identifier BR-999/v1, and attempt one deliberately
+wrong argument type. We use the existing SDK server and catalogue from the earlier
+MCP example. Reading v2 makes its contents visible; it does not authorize replacing
+the Chapter 1 rule with that later policy.
+The companion’s practice/native_client/configure_mcp.py prepares a separate
+study and evidence directory, the actual host configuration and the exact prompt. It
+uses the pinned Python environment and the existing wire recorder. Only the policy
+lookup is offered to the model; no file-editing or shell tool is needed for this task. The
+preparation creates files but does not invoke a model or start the server. Inspect it
+before running the generated client task. A fresh preparation is needed for each launch
+because the wire recorder preserves its first trace rather than overwriting it.
+Follow three different boundaries in the resulting record. First, the host must start the
+process and discover its tool. Second, a native model action must select the tool and
+supply arguments. Third, the server must return the actual catalogue result or refusal.
+A well-formed unknown identifier is a domain outcome: the tool understood the request
+but found no such policy. A list where the schema requires a string is an argument error.
+If the host rejects that call before sending an MCP request, the evidence must name
+that layer rather than attributing the rejection to the server.
+The retained 22 October native run makes these distinctions concrete. OpenCode 1.19.3
+started the canonical server with MCP SDK 2.3.0, negotiated protocol 2025-11-25, dis-
+covered lookup_policy and selected it in the model’s native tool events. BR-001/v2
+returned the catalogue record; BR-999/v1 returned UNKNOWN_POLICY. The attempted
+wrong-type call is a useful failed claim: although the prompt requested an empty array,
+the native event and wire both contain the string "[". The server therefore returned
+another domain refusal. The model’s first final response claimed that schema valida-
+tion rejected an array. We preserve that response and reject its explanation against the
+actual request and result. The available evidence does not isolate whether the intended
+array changed in the model, provider adapter or client parsing.
+A separately labelled SDK control, using the same negotiated protocol and unchanged
+server, really sent [] and received the server’s string-type validation error. It is evidence
+39
+
+
+[D8 physical page 60 / printed 40]
+Build a portable AI engineering workspace
+about server argument handling, not an additional model-selected OpenCode call. Its
+first wrapper failed before starting the server because its trace directory was absent; that
+failure and the corrected wrapper’s result remain separate. The packet thus contains
+actual native discovery and policy use, domain refusals, a preserved false interpreta-
+tion and an independently attributed argument control. It does not claim that every
+diagnostic case occurred through the model.
+Concept: A read-only tool can run in a process with wider rights
+The lookup accepts fixed policy identifiers and exposes no file-reading or writing
+operation. Its Python process nevertheless runs with the rights granted by its launch
+environment. The optional observation declares one harmless canary file outside
+both the study and server directories, then instruments the serving interpreter to
+try reading that file at startup. This is a canary: deliberately placed test data with
+no secret value, used to observe a specific boundary.
+A successful read establishes access to that path by that process at that time.
+It does not show that the model can request arbitrary files through the policy
+tool. A missing probe record leaves the read unobserved. The probe changes the
+runtime through an explicit startup hook while leaving the canonical server source
+unchanged; it does not test network access, secret inheritance, external writes or
+isolation established later.
+The startup probe also produced a positive result in this run: the canonical serving
+interpreter read the declared 50-byte harmless canary outside the study directory before
+initialization. The retained probe identifies that process, path and content hash. It
+establishes that particular startup read. It supplies no evidence of post-initialization
+containment, network restrictions or a model-accessible arbitrary-file operation.
+Inspect the native events beside the raw MCP messages, and inspect the process probe
+separately. A tool label, a successful lookup and an operating-system restriction are
+three different observations. The same care applies to protocol versions: record the
+actual opening exchange rather than deriving it from an installed package’s version
+number. The earlier SDK-only trace remains evidence about that earlier connection.
+The complete native collection guide retains each connection’s configuration and its
+own resulting messages under practice/native_client/observed/mcp_host_01/.
+A meaningful contrast without inventing a comparison result
+VS Code with GitHub Copilot remains the unobserved contrasting route. Its documented
+IDE workflow streams edits and normally asks the user to approve commands, while
+editor or administrator settings may permit automatic execution [59]. Our observed
+route runs a literal command noninteractively with one predeclared command allowance.
+40
+
+
+[D8 physical page 61 / printed 41]
+Build a portable AI engineering workspace
+The difference changes where the engineer inspects execution and collects evidence. It
+supplies no speed, quality or cost ranking. To make a paired comparison, observe both
+clients on separate fresh copies with the same intent, scope and review criteria.
+A consistent packet still needs a reviewer
+The bind and check commands in validation/observe_native.py con-
+nect required evidence files to hashes and detect missing or changed records.
+They do not authenticate the claimed producer, certify process containment or
+grant acceptance. Use the native events to assess what the client did, indepen-
+dent checks to assess the candidate, and a named decision to record what was
+accepted.
+

@@ -1,0 +1,419 @@
+{
+  "schema": "chapter-entry-cards/v1",
+  "release": "2026.10.22-d9",
+  "chapters": [
+    {
+      "chapter": 1,
+      "profile": "CP01",
+      "title": "Bounded routing repair",
+      "release_snapshot": "2026.10.22-d9",
+      "input_state": "Create one separate Chapter 1 copy using the preparation command in the book, or reader_start.py new 1 as an alternative. Do not run both for the same destination.",
+      "prerequisite": "Python and the prepared faulty CP01 study copy; read the seven-case intent before repair.",
+      "editable_paths": [
+        "repo/src/treasury/routing.py"
+      ],
+      "before_edit": [
+        "python3 reader_side/tools/scope_guard.py --chapter CP01 --capture reader_side/evidence/CP01_EDIT_BASELINE_NEW.json"
+      ],
+      "candidate_checks": [
+        "python3 reader_side/tools/run_acceptance.py",
+        "python3 reader_side/tools/scope_guard.py --chapter CP01 --baseline reader_side/evidence/CP01_EDIT_BASELINE_NEW.json"
+      ],
+      "reference_checks": [
+        "python3 reader_side/tools/run_acceptance.py --candidate reader_side/reference_solution/routing.py --output reader_side/evidence/CH01_REFERENCE_NEW.json"
+      ],
+      "starter_outcome": "The delivered router passes. A prepared Chapter 1 copy contains the deliberate fault: seven cases initially give 3 passes, 2 failures and 2 errors.",
+      "acceptance_boundary": "Seven selected owner-side routing cases, plus a separate human review.",
+      "pending_decisions": "No machine gate grants payment, merge or deployment authority. CP07 requirements and architecture acceptance stay pending; incident reconciliation, human learning and actual field costs remain separate.",
+      "continuation": "Preserve your source, the original test report and the new candidate report. Continue in the same working copy after review. Rerun dependent checks when their inputs change.",
+      "recovery": "See navigation/RECOVERY.md. Preserve stale evidence and create a new session. For a full reset extract a fresh release and use new with an unused destination; never overwrite earlier work."
+    },
+    {
+      "chapter": 2,
+      "profile": "CP02",
+      "title": "Portable workspace and tool boundaries",
+      "release_snapshot": "2026.10.22-d9",
+      "input_state": "Continue the reviewed Chapter 1 copy, preserving your own router before adopting the exact inherited reference as the book explains; alternatively use a separate full companion copy.",
+      "prerequisite": "Preserve and review CP01 repair, then adopt the exact inherited router as README instructs. This chapter does not require a model account.",
+      "editable_paths": [
+        "repo/src/treasury/routing.py"
+      ],
+      "before_edit": [
+        "python3 reader_side/tools/scope_guard.py --chapter CP02 --capture reader_side/evidence/CP02_EDIT_BASELINE_NEW.json"
+      ],
+      "candidate_checks": [
+        "python3 reader_side/tools/run_acceptance.py",
+        "python3 reader_side/tools/scope_guard.py --chapter CP02 --baseline reader_side/evidence/CP02_EDIT_BASELINE_NEW.json"
+      ],
+      "reference_checks": [
+        "python3 reader_side/tools/run_acceptance.py --candidate reader_side/reference_solution/routing.py --output reader_side/evidence/CH01_REFERENCE_NEW.json"
+      ],
+      "starter_outcome": "Inherited reference router passes seven cases. Optional client and MCP integration require their separately documented environments.",
+      "acceptance_boundary": "Portable policy/adapter and tool boundary inspection; no external-host claim from offline tests.",
+      "pending_decisions": "No machine gate grants payment, merge or deployment authority. CP07 requirements and architecture acceptance stay pending; incident reconciliation, human learning and actual field costs remain separate.",
+      "continuation": "Retain the reviewed routing result and explain the current intent, context, procedure and evidence locations. Inspect one disposable adapter, then carry these sources into Chapter 3. Native-client and MCP observations are optional; see navigation/CHAPTER_ROUTES.md.",
+      "recovery": "See navigation/RECOVERY.md. Preserve stale evidence and create a new session. For a full reset extract a fresh release and use new with an unused destination; never overwrite earlier work."
+    },
+    {
+      "chapter": 3,
+      "profile": "CP03",
+      "title": "Discovery and a conditional experiment",
+      "release_snapshot": "2026.10.22-d9",
+      "input_state": "Cumulative mode uses your existing reviewed copy. New study mode uses the release starter, without accepting earlier candidates.",
+      "prerequisite": "Inherited reference router; discovery evidence is synthetic and the alpha remains conditional.",
+      "editable_paths": [
+        "repo/engineering/discovery/assessment.json"
+      ],
+      "before_edit": [
+        "python3 reader_side/tools/scope_guard.py --chapter CP03 --capture reader_side/evidence/CP03_EDIT_BASELINE_NEW.json"
+      ],
+      "candidate_checks": [
+        "python3 reader_side/tools/discovery_gate.py",
+        "python3 reader_side/tools/scope_guard.py --chapter CP03 --baseline reader_side/evidence/CP03_EDIT_BASELINE_NEW.json"
+      ],
+      "reference_checks": [
+        "python3 reader_side/tools/discovery_gate.py --candidate reader_side/reference_solution/assessment.json"
+      ],
+      "starter_outcome": "Fresh release has intentionally incomplete candidates. The dedicated candidate gate is expected to reject them; the shared regression suite is expected to pass.",
+      "acceptance_boundary": "Deterministic conditional-alpha assessment only; real user validation is pending.",
+      "pending_decisions": "No machine gate grants payment, merge or deployment authority. CP07 requirements and architecture acceptance stay pending; incident reconciliation, human learning and actual field costs remain separate.",
+      "continuation": "Retain current source, before-edit baseline and observed receipts; continue in this same copy after the chapter review. Rerun dependent gates when their inputs change.",
+      "recovery": "See navigation/RECOVERY.md. Preserve stale evidence and create a new session. For a full reset extract a fresh release and use new with an unused destination; never overwrite earlier work."
+    },
+    {
+      "chapter": 4,
+      "profile": "CP04",
+      "title": "Behavioral specification",
+      "release_snapshot": "2026.10.22-d9",
+      "input_state": "Begin with the compact contract and examples in Chapter 4, then the canonical CP04 JSON exercise. Use the protected discovery handoff if entering independently; your earlier learner assessment is not silently accepted.",
+      "prerequisite": "Reviewed CP03 reasoning; use the protected DISC/SPEC obligations, without rewriting routing policy.",
+      "editable_paths": [
+        "repo/engineering/specifications/explanation_alpha/specification.json"
+      ],
+      "before_edit": [
+        "python3 reader_side/tools/scope_guard.py --chapter CP04 --capture reader_side/evidence/CP04_EDIT_BASELINE_NEW.json"
+      ],
+      "candidate_checks": [
+        "python3 reader_side/tools/spec_gate.py --candidate repo/engineering/specifications/explanation_alpha/specification.json",
+        "python3 reader_side/tools/scope_guard.py --chapter CP04 --baseline reader_side/evidence/CP04_EDIT_BASELINE_NEW.json"
+      ],
+      "reference_checks": [
+        "python3 reader_side/tools/spec_gate.py --candidate reader_side/reference_solution/specification.json"
+      ],
+      "starter_outcome": "Fresh release has intentionally incomplete candidates. The dedicated candidate gate is expected to reject them; the shared regression suite is expected to pass.",
+      "acceptance_boundary": "Selected structural and case checks; human requirements approval remains pending.",
+      "pending_decisions": "No machine gate grants payment, merge or deployment authority. CP07 requirements and architecture acceptance stay pending; incident reconciliation, human learning and actual field costs remain separate.",
+      "continuation": "Retain your checked specification, original scope baseline and unresolved owner questions; use these to review design alternatives in Chapter 5. Framework contrasts and old observation histories are optional after this core result. See navigation/LIFECYCLE_MAP.md.",
+      "recovery": "See navigation/RECOVERY.md. Preserve stale evidence and create a new session. For a full reset extract a fresh release and use new with an unused destination; never overwrite earlier work."
+    },
+    {
+      "chapter": 5,
+      "profile": "CP05",
+      "title": "Architecture alternatives and proposed decision",
+      "release_snapshot": "2026.10.22-d9",
+      "input_state": "Cumulative mode uses your existing reviewed copy. New study mode uses the release starter, without accepting earlier candidates.",
+      "prerequisite": "CP04 eight-case behavioral contract and explicit authority limits.",
+      "editable_paths": [
+        "repo/engineering/architecture/ADR-005.md",
+        "repo/engineering/architecture/architecture_decision.json",
+        "repo/src/treasury/architecture/direct.py",
+        "repo/src/treasury/architecture/ports.py"
+      ],
+      "before_edit": [
+        "python3 reader_side/tools/scope_guard.py --chapter CP05 --capture reader_side/evidence/CP05_EDIT_BASELINE_NEW.json"
+      ],
+      "candidate_checks": [
+        "python3 reader_side/tools/architecture_gate.py",
+        "python3 reader_side/tools/scope_guard.py --chapter CP05 --baseline reader_side/evidence/CP05_EDIT_BASELINE_NEW.json"
+      ],
+      "reference_checks": [
+        "python3 reader_side/tools/integration_gate.py --reference"
+      ],
+      "starter_outcome": "Fresh release has intentionally incomplete candidates. The dedicated candidate gate is expected to reject them; the shared regression suite is expected to pass.",
+      "acceptance_boundary": "Two prototypes checked on eight cases; proposed ADR awaits human review.",
+      "pending_decisions": "No machine gate grants payment, merge or deployment authority. CP07 requirements and architecture acceptance stay pending; incident reconciliation, human learning and actual field costs remain separate.",
+      "continuation": "Preserve the two-design exploration. The supplied cumulative route is DIRECT; ports requires a separately consistent context/plan continuation and cannot silently pass the direct route.",
+      "recovery": "See navigation/RECOVERY.md. Preserve stale evidence and create a new session. For a full reset extract a fresh release and use new with an unused destination; never overwrite earlier work."
+    },
+    {
+      "chapter": 6,
+      "profile": "CP06",
+      "title": "Context and skill maintenance",
+      "release_snapshot": "2026.10.22-d9",
+      "input_state": "Cumulative mode uses your existing reviewed copy. New study mode uses the release starter, without accepting earlier candidates.",
+      "prerequisite": "Proposed CP05 ADR, including its pending human decision; retain source identity and currency.",
+      "editable_paths": [
+        "repo/.agents/skills/context-audit/SKILL.md",
+        "repo/engineering/knowledge/context_packet.json"
+      ],
+      "before_edit": [
+        "python3 reader_side/tools/scope_guard.py --chapter CP06 --capture reader_side/evidence/CP06_EDIT_BASELINE_NEW.json"
+      ],
+      "candidate_checks": [
+        "python3 reader_side/tools/knowledge_gate.py",
+        "python3 reader_side/tools/scope_guard.py --chapter CP06 --baseline reader_side/evidence/CP06_EDIT_BASELINE_NEW.json"
+      ],
+      "reference_checks": [
+        "python3 reader_side/tools/knowledge_gate.py --candidate reader_side/reference_solution/v2/context_packet.json --skill reader_side/reference_solution/context-audit.SKILL.md"
+      ],
+      "starter_outcome": "Fresh release has intentionally incomplete candidates. The dedicated candidate gate is expected to reject them; the shared regression suite is expected to pass.",
+      "acceptance_boundary": "Current v2 packet records SPEC-004, ADR-005 and OPERATOR_COPY as pending. Selected source/skill checks do not establish host skill activation or human approval.",
+      "pending_decisions": "No machine gate grants payment, merge or deployment authority. CP07 requirements and architecture acceptance stay pending; incident reconciliation, human learning and actual field costs remain separate.",
+      "continuation": "Retain current source, before-edit baseline and observed receipts; continue in this same copy after the chapter review. Rerun dependent gates when their inputs change.",
+      "recovery": "See navigation/RECOVERY.md. Preserve stale evidence and create a new session. For a full reset extract a fresh release and use new with an unused destination; never overwrite earlier work."
+    },
+    {
+      "chapter": 7,
+      "profile": "CP07",
+      "title": "Delegation and stop conditions",
+      "release_snapshot": "2026.10.22-d9",
+      "input_state": "Begin with the ordinary plan: two read-only investigations can proceed, while requirements and architecture decisions remain pending. Repair the plan and handoff before optional controller or harness practice.",
+      "prerequisite": "Current context/skill evidence from CP06; read the permission, budget and stopping rules before dispatch. Architecture acceptance is still pending. Choose core plan, controller or optional harness practice with navigation/CHAPTER_ROUTES.md.",
+      "editable_paths": [
+        "repo/engineering/planning/delegation_handoff.json",
+        "repo/engineering/planning/delegation_plan.json"
+      ],
+      "before_edit": [
+        "python3 reader_side/tools/scope_guard.py --chapter CP07 --capture reader_side/evidence/CP07_EDIT_BASELINE_NEW.json"
+      ],
+      "candidate_checks": [
+        "python3 reader_side/tools/planning_gate.py",
+        "python3 reader_side/tools/scope_guard.py --chapter CP07 --baseline reader_side/evidence/CP07_EDIT_BASELINE_NEW.json"
+      ],
+      "reference_checks": [
+        "python3 reader_side/tools/planning_gate.py --plan reader_side/reference_solution/v2/delegation_plan.json --handoff reader_side/reference_solution/v2/delegation_handoff.json"
+      ],
+      "starter_outcome": "Fresh release has intentionally incomplete candidates. The dedicated candidate gate is expected to reject them; the shared regression suite is expected to pass.",
+      "acceptance_boundary": "Synthetic plan validation; no coding agent execution and no resolution of blocked T07-04.",
+      "pending_decisions": "No machine gate grants payment, merge or deployment authority. CP07 requirements and architecture acceptance stay pending; incident reconciliation, human learning and actual field costs remain separate.",
+      "continuation": "Keep the core plan in the cumulative study copy. Optional practices use separate outputs and do not grant architecture approval. The Treasury harness requires a separate untouched edition copy; then return to this cumulative copy. See navigation/CHAPTER_ROUTES.md. A separately versioned fictional approval-to-delivery route is available in practice/lifecycle/README.md; it preserves PLAN-007/v1 as the earlier blocked snapshot.",
+      "recovery": "See navigation/RECOVERY.md. Preserve stale evidence and create a new session. For a full reset extract a fresh release and use new with an unused destination; never overwrite earlier work.",
+      "optional_practice": [
+        {
+          "title": "Run the bounded orchestrator",
+          "command": "python3 practice/orchestration/run_demo.py --output ../oh_runs/orchestration_01",
+          "boundary": "Read the allowed operations, retry budget and recovery rules before dispatch; use a new output directory. Real process scheduling with deterministic workers; separate from CP07 plan approval."
+        },
+        {
+          "title": "Compare Treasury harness configurations",
+          "command": "python3 practice/harness_engineering/run_experiment.py --output ../oh_runs/harness_01",
+          "boundary": "FIRST extract the same edition into a new directory and run from its untouched companion/. Router and learner delegation-plan repairs invalidate the five source pins. Preserve cumulative work; do not use new 1 or change pins. Deterministic teaching adaptation; no model calls."
+        },
+        {
+          "title": "Run pinned upstream Harness2",
+          "command": "python3 practice/harness2_upstream/run_demo.py --output ../oh_runs/upstream_01",
+          "boundary": "FIRST select Python 3.12 or 3.13 and an unchanged upstream practice tree. A different core interpreter does not establish compatibility. Scripted upstream demo; no model calls."
+        }
+      ]
+    },
+    {
+      "chapter": 8,
+      "profile": "CP08",
+      "title": "Presentation implementation",
+      "release_snapshot": "2026.10.22-d9",
+      "input_state": "Cumulative mode uses your existing reviewed copy. New study mode uses the release starter, without accepting earlier candidates.",
+      "prerequisite": "The core CP08 work order remains separate from blocked PLAN-007/v1. For a connected fictional accepted continuation use practice/lifecycle/README.md. New attempt reports use implementation-report/v2.",
+      "editable_paths": [
+        "repo/engineering/implementation/implementation_report.json",
+        "repo/src/treasury/explanation_alpha.py"
+      ],
+      "before_edit": [
+        "python3 reader_side/tools/scope_guard.py --chapter CP08 --capture reader_side/evidence/CP08_EDIT_BASELINE_NEW.json"
+      ],
+      "candidate_checks": [
+        "python3 reader_side/tools/implementation_gate.py --scope-baseline reader_side/evidence/CP08_EDIT_BASELINE_NEW.json",
+        "python3 reader_side/tools/scope_guard.py --chapter CP08 --baseline reader_side/evidence/CP08_EDIT_BASELINE_NEW.json"
+      ],
+      "reference_checks": [
+        "python3 reader_side/tools/implementation_gate.py --candidate reader_side/reference_solution/explanation_alpha.py --report reader_side/reference_solution/v2/implementation_report.json"
+      ],
+      "starter_outcome": "Fresh release has intentionally incomplete candidates. The dedicated candidate gate is expected to reject them; the shared regression suite is expected to pass.",
+      "acceptance_boundary": "Selected presentation behavior and report checks; no CP07 architecture approval.",
+      "pending_decisions": "No machine gate grants payment, merge or deployment authority. CP07 requirements and architecture acceptance stay pending; incident reconciliation, human learning and actual field costs remain separate.",
+      "continuation": "Retain the actual presentation candidate, short implementation report, check result and scope comparison for independent Chapter 9 review. Preserve old results and the original baseline; see navigation/RECOVERY.md.",
+      "recovery": "See navigation/RECOVERY.md. Preserve stale evidence and create a new session. For a full reset extract a fresh release and use new with an unused destination; never overwrite earlier work."
+    },
+    {
+      "chapter": 9,
+      "profile": "CP09",
+      "title": "Independent verification",
+      "release_snapshot": "2026.10.22-d9",
+      "input_state": "Cumulative mode uses your existing reviewed copy. New study mode uses the release starter, without accepting earlier candidates.",
+      "prerequisite": "Keep CP08 reviewed implementation; CP09 permits only its independent candidate and review.",
+      "editable_paths": [
+        "repo/engineering/verification/candidate.py",
+        "repo/engineering/verification/review.json"
+      ],
+      "before_edit": [
+        "python3 reader_side/tools/scope_guard.py --chapter CP09 --capture reader_side/evidence/CP09_EDIT_BASELINE_NEW.json"
+      ],
+      "candidate_checks": [
+        "python3 reader_side/tools/verification_gate.py --scope-baseline reader_side/evidence/CP09_EDIT_BASELINE_NEW.json",
+        "python3 reader_side/tools/scope_guard.py --chapter CP09 --baseline reader_side/evidence/CP09_EDIT_BASELINE_NEW.json"
+      ],
+      "reference_checks": [
+        "python3 reader_side/tools/verification_gate.py --candidate reader_side/reference_solution/ch09/safe_candidate.py --review reader_side/reference_solution/ch09/reference_review.json"
+      ],
+      "starter_outcome": "Fresh release has intentionally incomplete candidates. The dedicated candidate gate is expected to reject them; the shared regression suite is expected to pass.",
+      "acceptance_boundary": "Independent case expectations and review checks; candidate readiness is separate from human acceptance.",
+      "pending_decisions": "No machine gate grants payment, merge or deployment authority. CP07 requirements and architecture acceptance stay pending; incident reconciliation, human learning and actual field costs remain separate.",
+      "continuation": "Retain current source, before-edit baseline and observed receipts; continue in this same copy after the chapter review. Rerun dependent gates when their inputs change.",
+      "recovery": "See navigation/RECOVERY.md. Preserve stale evidence and create a new session. For a full reset extract a fresh release and use new with an unused destination; never overwrite earlier work."
+    },
+    {
+      "chapter": 10,
+      "profile": "CP10",
+      "title": "Review, integration and local release",
+      "release_snapshot": "2026.10.22-d9",
+      "input_state": "Cumulative mode uses your existing reviewed copy. New study mode uses the release starter, without accepting earlier candidates.",
+      "prerequisite": "Passing actual CP01–CP09 candidates for current rehearsal; Git with merge-tree --write-tree. Reference mode is a separate study.",
+      "editable_paths": [
+        "repo/engineering/release/release_dossier.json"
+      ],
+      "before_edit": [
+        "python3 reader_side/tools/scope_guard.py --chapter CP10 --capture reader_side/evidence/CP10_EDIT_BASELINE.json",
+        "python3 reader_side/tools/rehearse_release.py --output reader_side/evidence/CP10_CURRENT"
+      ],
+      "candidate_checks": [
+        "python3 reader_side/tools/complete_technical_learning.py --rehearsal reader_side/evidence/CP10_CURRENT --scope-baseline reader_side/evidence/CP10_EDIT_BASELINE.json --output reader_side/evidence/CP10_TECHNICAL_COMPLETION.json",
+        "python3 reader_side/tools/scope_guard.py --chapter CP10 --baseline reader_side/evidence/CP10_EDIT_BASELINE.json"
+      ],
+      "reference_checks": [
+        "python3 reader_side/tools/rehearse_release.py --output reader_side/evidence/CP10_REFERENCE_NEW --reference",
+        "python3 reader_side/tools/release_gate.py --rehearsal reader_side/evidence/CP10_REFERENCE_NEW --candidate reader_side/reference_solution/ch10/release_dossier.json"
+      ],
+      "starter_outcome": "Fresh release has intentionally incomplete candidates. The dedicated candidate gate is expected to reject them; the shared regression suite is expected to pass. Readiness is NOT_RUN until the relevant new session is nominated.",
+      "acceptance_boundary": "TECHNICAL_LEARNING_COMPLETE recognizes the selected current-source technical exercise, including a correct alternative implementation. The separate original release gate grants its fictional local disposition only to source covered by its unchanged decision. Neither establishes human learning, production deployment or real human approval.",
+      "pending_decisions": "No machine gate grants payment, merge or deployment authority. CP07 requirements and architecture acceptance stay pending; incident reconciliation, human learning and actual field costs remain separate.",
+      "continuation": "Retain current source, before-edit baseline and observed receipts; continue in this same copy after the chapter review. Rerun dependent gates when their inputs change.",
+      "recovery": "See navigation/RECOVERY.md. Preserve stale evidence and create a new session. For a full reset extract a fresh release and use new with an unused destination; never overwrite earlier work.",
+      "optional_practice": [
+        {
+          "title": "Assess original fictional release authority separately",
+          "command": "python3 reader_side/tools/release_gate.py --rehearsal reader_side/evidence/CP10_CURRENT --scope-baseline reader_side/evidence/CP10_EDIT_BASELINE.json",
+          "boundary": "A correct alternative can complete the technical task while this gate refuses SOURCE_NOT_COVERED_BY_SYNTHETIC_OWNER_DECISION. Preserve null decision references when unissued; never self-issue or copy approval from different bytes."
+        }
+      ]
+    },
+    {
+      "chapter": 11,
+      "profile": "CP11",
+      "title": "Versioned policy and persistent history",
+      "release_snapshot": "2026.10.22-d9",
+      "input_state": "Cumulative mode uses your existing reviewed copy. New study mode uses the release starter, without accepting earlier candidates.",
+      "prerequisite": "Inherited CP01–CP09 state and unchanged v1 router. CP11 is a separate v2 evolution work order; CP10 does not authorize its release.",
+      "editable_paths": [
+        "repo/engineering/evolution/policy_delta.json",
+        "repo/src/treasury/policy_history.py"
+      ],
+      "before_edit": [
+        "python3 reader_side/tools/scope_guard.py --chapter CP11 --capture reader_side/evidence/CP11_EDIT_BASELINE_NEW.json"
+      ],
+      "candidate_checks": [
+        "python3 reader_side/tools/evolution_gate.py --output reader_side/evidence/CP11_REVIEW_NEW --scope-baseline reader_side/evidence/CP11_EDIT_BASELINE_NEW.json",
+        "python3 reader_side/tools/scope_guard.py --chapter CP11 --baseline reader_side/evidence/CP11_EDIT_BASELINE_NEW.json"
+      ],
+      "reference_checks": [
+        "python3 reader_side/tools/evolution_gate.py --output reader_side/evidence/CP11_REFERENCE_NEW --reference"
+      ],
+      "starter_outcome": "Fresh release has intentionally incomplete candidates. The dedicated candidate gate is expected to reject them; the shared regression suite is expected to pass.",
+      "acceptance_boundary": "PASS_POLICY_EVOLUTION_REVIEW_ONLY; v1 history retained, v2 separate, no release authority.",
+      "pending_decisions": "No machine gate grants payment, merge or deployment authority. CP07 requirements and architecture acceptance stay pending; incident reconciliation, human learning and actual field costs remain separate.",
+      "continuation": "Retain current source, before-edit baseline and observed receipts; continue in this same copy after the chapter review. Rerun dependent gates when their inputs change.",
+      "recovery": "See navigation/RECOVERY.md. Preserve stale evidence and create a new session. For a full reset extract a fresh release and use new with an unused destination; never overwrite earlier work."
+    },
+    {
+      "chapter": 12,
+      "profile": "CP12",
+      "title": "Incident diagnosis and recovery",
+      "release_snapshot": "2026.10.22-d9",
+      "input_state": "Cumulative mode uses your existing reviewed copy. New study mode uses the release starter, without accepting earlier candidates.",
+      "prerequisite": "Reviewed CP11 PolicyStore and policy delta; retain original and incident ledgers separately.",
+      "editable_paths": [
+        "repo/engineering/operations/deployment.json",
+        "repo/engineering/operations/incident_review.json"
+      ],
+      "before_edit": [
+        "python3 reader_side/tools/scope_guard.py --chapter CP12 --capture reader_side/evidence/CP12_EDIT_BASELINE_NEW.json",
+        "python3 reader_side/tools/rehearse_incident.py --output reader_side/evidence/CP12_CURRENT_NEW"
+      ],
+      "candidate_checks": [
+        "python3 reader_side/tools/incident_gate.py --rehearsal reader_side/evidence/CP12_CURRENT_NEW --output reader_side/evidence/CP12_REVIEW_NEW --scope-baseline reader_side/evidence/CP12_EDIT_BASELINE_NEW.json",
+        "python3 reader_side/tools/scope_guard.py --chapter CP12 --baseline reader_side/evidence/CP12_EDIT_BASELINE_NEW.json"
+      ],
+      "reference_checks": [
+        "python3 reader_side/tools/rehearse_incident.py --output reader_side/evidence/CP12_REFERENCE_NEW --reference",
+        "python3 reader_side/tools/incident_gate.py --rehearsal reader_side/evidence/CP12_REFERENCE_NEW --output reader_side/evidence/CP12_REFERENCE_REVIEW_NEW --reference"
+      ],
+      "starter_outcome": "Fresh release has intentionally incomplete candidates. The dedicated candidate gate is expected to reject them; the shared regression suite is expected to pass. Readiness is NOT_RUN until the relevant new session is nominated.",
+      "acceptance_boundary": "PASS_INCIDENT_RECOVERY_REVIEW_ONLY; service restoration does not reconcile incident-only rows.",
+      "pending_decisions": "No machine gate grants payment, merge or deployment authority. CP07 requirements and architecture acceptance stay pending; incident reconciliation, human learning and actual field costs remain separate.",
+      "continuation": "Retain current source, before-edit baseline and observed receipts; continue in this same copy after the chapter review. Rerun dependent gates when their inputs change.",
+      "recovery": "See navigation/RECOVERY.md. Preserve stale evidence and create a new session. For a full reset extract a fresh release and use new with an unused destination; never overwrite earlier work."
+    },
+    {
+      "chapter": 13,
+      "profile": "CP13",
+      "title": "Team operation and learning",
+      "release_snapshot": "2026.10.22-d9",
+      "input_state": "Cumulative mode uses your existing reviewed copy. New study mode uses the release starter, without accepting earlier candidates.",
+      "prerequisite": "The ordinary team-practice reading route needs no synthetic session. The cumulative executable route needs an actual CP12 session for candidate mode. The separate human pilot requires reader_side/learning/PROTOCOL.md and unexposed transfer answers.",
+      "editable_paths": [
+        "repo/engineering/learning/team_knowledge.json",
+        "repo/engineering/learning/transfer_review.json"
+      ],
+      "before_edit": [
+        "python3 reader_side/tools/scope_guard.py --chapter CP13 --capture reader_side/evidence/CP13_EDIT_BASELINE_NEW.json",
+        "python3 reader_side/tools/rehearse_transfer.py --learning-session reader_side/evidence/CP12_CURRENT_NEW --output reader_side/evidence/CP13_CURRENT_NEW"
+      ],
+      "candidate_checks": [
+        "python3 reader_side/tools/learning_gate.py --transfer-session reader_side/evidence/CP13_CURRENT_NEW --output reader_side/evidence/CP13_REVIEW_NEW --scope-baseline reader_side/evidence/CP13_EDIT_BASELINE_NEW.json",
+        "python3 reader_side/tools/scope_guard.py --chapter CP13 --baseline reader_side/evidence/CP13_EDIT_BASELINE_NEW.json"
+      ],
+      "reference_checks": [
+        "python3 reader_side/tools/rehearse_incident.py --output reader_side/evidence/CP12_REFERENCE_NEW --reference",
+        "python3 reader_side/tools/incident_gate.py --rehearsal reader_side/evidence/CP12_REFERENCE_NEW --output reader_side/evidence/CP12_REFERENCE_REVIEW_NEW --reference",
+        "python3 reader_side/tools/rehearse_transfer.py --learning-session reader_side/evidence/CP12_REFERENCE_NEW --output reader_side/evidence/CP13_REFERENCE_NEW --reference",
+        "python3 reader_side/tools/learning_gate.py --transfer-session reader_side/evidence/CP13_REFERENCE_NEW --output reader_side/evidence/CP13_REFERENCE_REVIEW_NEW --reference"
+      ],
+      "starter_outcome": "Fresh release has intentionally incomplete candidates. The dedicated candidate gate is expected to reject them; the shared regression suite is expected to pass. Readiness is NOT_RUN until the relevant new session is nominated.",
+      "acceptance_boundary": "Machine protocol/knowledge review only. Retention, competence and rubric validity require the delayed human protocol.",
+      "pending_decisions": "No machine gate grants payment, merge or deployment authority. CP07 requirements and architecture acceptance stay pending; incident reconciliation, human learning and actual field costs remain separate.",
+      "continuation": "Proceed directly to Chapter 14 concepts, dashboard and cost worksheets after ordinary team practice. Its cumulative executable lab needs matching synthetic CP12/CP13 sessions; show 14 supplies the reference chain. The ordinary synthetic lab has no 24-hour wait. See navigation/CHAPTER_ROUTES.md.",
+      "recovery": "See navigation/RECOVERY.md. Preserve stale evidence and create a new session. For a full reset extract a fresh release and use new with an unused destination; never overwrite earlier work."
+    },
+    {
+      "chapter": 14,
+      "profile": "CP14",
+      "title": "Outcomes, costs and tool decisions",
+      "release_snapshot": "2026.10.22-d9",
+      "input_state": "Cumulative mode uses your existing reviewed copy. New study mode uses the release starter, without accepting earlier candidates.",
+      "prerequisite": "Concepts, dashboard and cost worksheets need no CP13 session. The cumulative executable lab needs current, matching synthetic CP12 incident and CP13 transfer sessions; retain each child identity and all attempts. This ordinary lab has no 24-hour wait; the delayed human pilot is separate.",
+      "editable_paths": [
+        "repo/engineering/measurement/outcome_review.json",
+        "repo/engineering/measurement/tool_decision.json"
+      ],
+      "before_edit": [
+        "python3 reader_side/tools/scope_guard.py --chapter CP14 --capture reader_side/evidence/CP14_EDIT_BASELINE_NEW.json",
+        "python3 reader_side/tools/rehearse_measurement.py --incident-rehearsal reader_side/evidence/CP12_CURRENT_NEW --transfer-session reader_side/evidence/CP13_CURRENT_NEW --output reader_side/evidence/CP14_CURRENT_NEW"
+      ],
+      "candidate_checks": [
+        "python3 reader_side/tools/measurement_gate.py --measurement-session reader_side/evidence/CP14_CURRENT_NEW --output reader_side/evidence/CP14_REVIEW_NEW --scope-baseline reader_side/evidence/CP14_EDIT_BASELINE_NEW.json",
+        "python3 reader_side/tools/scope_guard.py --chapter CP14 --baseline reader_side/evidence/CP14_EDIT_BASELINE_NEW.json"
+      ],
+      "reference_checks": [
+        "python3 reader_side/tools/rehearse_incident.py --output reader_side/evidence/CP12_REFERENCE_NEW --reference",
+        "python3 reader_side/tools/incident_gate.py --rehearsal reader_side/evidence/CP12_REFERENCE_NEW --output reader_side/evidence/CP12_REFERENCE_REVIEW_NEW --reference",
+        "python3 reader_side/tools/rehearse_transfer.py --learning-session reader_side/evidence/CP12_REFERENCE_NEW --output reader_side/evidence/CP13_REFERENCE_NEW --reference",
+        "python3 reader_side/tools/learning_gate.py --transfer-session reader_side/evidence/CP13_REFERENCE_NEW --output reader_side/evidence/CP13_REFERENCE_REVIEW_NEW --reference",
+        "python3 reader_side/tools/rehearse_measurement.py --incident-rehearsal reader_side/evidence/CP12_REFERENCE_NEW --transfer-session reader_side/evidence/CP13_REFERENCE_NEW --output reader_side/evidence/CP14_REFERENCE_NEW --reference",
+        "python3 reader_side/tools/measurement_gate.py --measurement-session reader_side/evidence/CP14_REFERENCE_NEW --output reader_side/evidence/CP14_REFERENCE_REVIEW_NEW --reference"
+      ],
+      "starter_outcome": "Fresh release has intentionally incomplete candidates. The dedicated candidate gate is expected to reject them; the shared regression suite is expected to pass. Readiness is NOT_RUN until the relevant new session is nominated.",
+      "acceptance_boundary": "Machine interpretation checks and synthetic scenario arithmetic. Human effort, bills, actual acceptance and causal benefit remain unknown.",
+      "pending_decisions": "No machine gate grants payment, merge or deployment authority. CP07 requirements and architecture acceptance stay pending; incident reconciliation, human learning and actual field costs remain separate.",
+      "continuation": "Retain current source, before-edit baseline and observed receipts; continue in this same copy after the chapter review. Rerun dependent gates when their inputs change.",
+      "recovery": "See navigation/RECOVERY.md. Preserve stale evidence and create a new session. For a full reset extract a fresh release and use new with an unused destination; never overwrite earlier work."
+    }
+  ]
+}
