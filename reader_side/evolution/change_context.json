@@ -1,0 +1,25 @@
+{
+  "schema": "cp11-change-context/v1",
+  "synthetic": true,
+  "retained_policy": {
+    "id": "CP11-RETAINED-V1",
+    "version": "BR-001/v1",
+    "source": "reader_side/discovery/sources/SRC-POL-001.json",
+    "threshold_eur": "5000.00",
+    "interpretation": "Retain the existing less-than routing boundary and historical behavior."
+  },
+  "initial_request": {
+    "id": "REQ-11-INITIAL",
+    "text": "For new decisions, lower the queue-routing threshold to EUR 3000.",
+    "gap": "The initial request does not settle duplicate delivery, historical recomputation or migration of incomplete records.",
+    "status": "INSUFFICIENT_FOR_HISTORY_SEMANTICS"
+  },
+  "late_intent": {
+    "id": "INT-11-RETRY-CLARIFICATION",
+    "actor": "synthetic_policy_owner",
+    "text": "A retry of the same recorded business request returns its first decision. Historical recomputation uses its recorded policy. A deliberate new evaluation needs a new key linked to the old record. Missing legacy policy evidence must stop migration. Ambient policy rollout is not changed retry intent; an explicitly requested different policy conflicts, and an unknown explicit version fails.",
+    "effect": "Clarifies request identity and historical behavior; does not overwrite the retained v1 record.",
+    "status": "BOUND_LOCAL_TEACHING_CONTRACT"
+  },
+  "authority": "Author-created teaching records, not real stakeholder testimony, human acceptance or deployment authorization."
+}

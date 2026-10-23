@@ -1,0 +1,11 @@
+{
+  "schema": "cp11-policy-catalog/v1",
+  "change_id": "CP11-POLICY-001",
+  "initial_active_policy": "BR-001/v1",
+  "policies": {
+    "BR-001/v1": {"version": "BR-001/v1", "threshold_eur": "5000.00", "algorithm": "TREASURY_THRESHOLD_V1"},
+    "BR-001/v2": {"version": "BR-001/v2", "threshold_eur": "3000.00", "algorithm": "TREASURY_THRESHOLD_V1"}
+  },
+  "boundary": "Strictly below the threshold routes STANDARD_QUEUE; equality and above route HUMAN_REVIEW.",
+  "authority": "Synthetic local policy-evolution experiment only; no real payment or release authorization."
+}

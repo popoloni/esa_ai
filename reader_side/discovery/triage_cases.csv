@@ -1,0 +1,13 @@
+case_id,created_utc,routed_utc,service,notes
+C-001,2026-09-14T10:00:00+00:00,2026-09-14T13:00:00+00:00,treasury-routing,synthetic illustration; not sampled from real users
+C-002,2026-09-14T11:00:00+00:00,2026-09-14T16:00:00+00:00,treasury-routing,synthetic illustration; not sampled from real users
+C-003,2026-09-14T12:00:00+00:00,2026-09-15T10:00:00+00:00,treasury-routing,synthetic illustration; not sampled from real users
+C-004,2026-09-14T13:00:00+00:00,2026-09-16T00:00:00+00:00,treasury-routing,synthetic illustration; not sampled from real users
+C-005,2026-09-14T14:00:00+00:00,2026-09-14T23:00:00+00:00,treasury-routing,synthetic illustration; not sampled from real users
+C-006,2026-09-14T15:00:00+00:00,2026-09-16T21:00:00+00:00,treasury-routing,synthetic illustration; not sampled from real users
+C-007,2026-09-14T16:00:00+00:00,2026-09-16T16:00:00+00:00,treasury-routing,synthetic illustration; not sampled from real users
+C-008,2026-09-14T17:00:00+00:00,2026-09-14T18:00:00+00:00,treasury-routing,synthetic illustration; not sampled from real users
+C-009,2026-09-14T18:00:00+00:00,2026-09-15T00:00:00+00:00,treasury-routing,synthetic illustration; not sampled from real users
+C-010,2026-09-14T19:00:00+00:00,2026-09-16T11:00:00+00:00,treasury-routing,synthetic illustration; not sampled from real users
+C-011,2026-09-14T20:00:00+00:00,,treasury-routing,synthetic illustration; not sampled from real users
+C-012,2026-09-14T21:00:00+00:00,,treasury-routing,synthetic illustration; not sampled from real users

@@ -1,0 +1,18 @@
+{
+  "schema": "cp11-owner-oracle/v1",
+  "cases": [
+    {"id": "V1-BELOW", "amount": "4999.99", "policy": "BR-001/v1", "route": "STANDARD_QUEUE", "reason": "BELOW_LIMIT"},
+    {"id": "V1-EXACT", "amount": "5000.00", "policy": "BR-001/v1", "route": "HUMAN_REVIEW", "reason": "AT_OR_ABOVE_LIMIT"},
+    {"id": "V1-ABOVE", "amount": "5000.01", "policy": "BR-001/v1", "route": "HUMAN_REVIEW", "reason": "AT_OR_ABOVE_LIMIT"},
+    {"id": "V2-BELOW", "amount": "2999.99", "policy": "BR-001/v2", "route": "STANDARD_QUEUE", "reason": "BELOW_LIMIT"},
+    {"id": "V2-EXACT", "amount": "3000.00", "policy": "BR-001/v2", "route": "HUMAN_REVIEW", "reason": "AT_OR_ABOVE_LIMIT"},
+    {"id": "V2-ABOVE", "amount": "3000.01", "policy": "BR-001/v2", "route": "HUMAN_REVIEW", "reason": "AT_OR_ABOVE_LIMIT"},
+    {"id": "V1-GAP", "amount": "4000.00", "policy": "BR-001/v1", "route": "STANDARD_QUEUE", "reason": "BELOW_LIMIT"},
+    {"id": "V2-GAP", "amount": "4000.00", "policy": "BR-001/v2", "route": "HUMAN_REVIEW", "reason": "AT_OR_ABOVE_LIMIT"},
+    {"id": "V2-ZERO", "amount": "0", "policy": "BR-001/v2", "route": "REJECTED", "reason": "INVALID_AMOUNT"},
+    {"id": "V2-NEGATIVE", "amount": "-0.01", "policy": "BR-001/v2", "route": "REJECTED", "reason": "INVALID_AMOUNT"}
+  ],
+  "invalid_amounts": ["1.001", "1e3", "NaN", "Infinity", "", " 1.00"],
+  "history_amount": "4000.00",
+  "beneficiary_id": "vendor_17"
+}

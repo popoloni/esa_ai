@@ -1,0 +1,38 @@
+{
+  "timestamp_utc": "2026-10-19T14:39:05.881859+00:00",
+  "status": "PASS",
+  "integrity_modified": [],
+  "scope_check": true,
+  "python": "3.13.5",
+  "checks": [
+    {
+      "cmd": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "/mnt/data/Engineering_Software_with_Agentic_AI/CP02_Chapter02_20261019/companion/reader_side/acceptance",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_above_boundary_requires_review (test_routing.RoutingAcceptance.test_above_boundary_requires_review) ... ok\ntest_exact_boundary_requires_review (test_routing.RoutingAcceptance.test_exact_boundary_requires_review) ... ok\ntest_negative_amount_rejected (test_routing.RoutingAcceptance.test_negative_amount_rejected) ... ok\ntest_nonfinite_amount_rejected (test_routing.RoutingAcceptance.test_nonfinite_amount_rejected) ... ok\ntest_nonnumeric_amount_rejected (test_routing.RoutingAcceptance.test_nonnumeric_amount_rejected) ... ok\ntest_positive_below_limit (test_routing.RoutingAcceptance.test_positive_below_limit) ... ok\ntest_zero_amount_rejected (test_routing.RoutingAcceptance.test_zero_amount_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.000s\n\nOK\n"
+    },
+    {
+      "cmd": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "/mnt/data/Engineering_Software_with_Agentic_AI/CP02_Chapter02_20261019/companion/reader_side/tests",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_initialize_list_and_read_only_tools (test_mcp_protocol.McpProtocolSubset.test_initialize_list_and_read_only_tools) ... ok\ntest_no_state_mutation_from_reads (test_mcp_protocol.McpProtocolSubset.test_no_state_mutation_from_reads) ... ok\ntest_unknown_tool_and_path_injection_rejected (test_mcp_protocol.McpProtocolSubset.test_unknown_tool_and_path_injection_rejected) ... ok\ntest_absolute_rejected (test_workspace.WorkspaceChecks.test_absolute_rejected) ... ok\ntest_adapter_projection_in_temporary_copy (test_workspace.WorkspaceChecks.test_adapter_projection_in_temporary_copy) ... ok\ntest_allowed_edit_path (test_workspace.WorkspaceChecks.test_allowed_edit_path) ... ok\ntest_modified_protected_note_rejected_in_isolated_copy (test_workspace.WorkspaceChecks.test_modified_protected_note_rejected_in_isolated_copy) ... ok\ntest_parent_traversal_rejected (test_workspace.WorkspaceChecks.test_parent_traversal_rejected) ... ok\ntest_protected_dir_rejected (test_workspace.WorkspaceChecks.test_protected_dir_rejected) ... ok\ntest_protected_snapshot_untouched (test_workspace.WorkspaceChecks.test_protected_snapshot_untouched) ... ok\ntest_skill_required_fields (test_workspace.WorkspaceChecks.test_skill_required_fields) ... ok\ntest_sneaky_unknown_file_rejected (test_workspace.WorkspaceChecks.test_sneaky_unknown_file_rejected) ... ok\ntest_symlink_target_rejected_in_isolated_copy (test_workspace.WorkspaceChecks.test_symlink_target_rejected_in_isolated_copy) ... ok\ntest_unknown_new_file_rejected_in_isolated_copy (test_workspace.WorkspaceChecks.test_unknown_new_file_rejected_in_isolated_copy) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 2.402s\n\nOK\n"
+    }
+  ],
+  "meaning": "Offline code and protocol-subset tests, not a sandbox, live agent, or full MCP-host compatibility test"
+}

@@ -1,0 +1,10 @@
+{
+  "DATA_DICTIONARY.md": "31664106c36c29b7716d7fc895985ca0c10c13214953ca0420887d4d87d66b01",
+  "routing.sha256": "b181f88edbd8724d10982df2d85ead29cfea64290a0404aa036b17cf3576bdaf",
+  "sources/SRC-OPS-004.json": "5a45af05025f00f2971c240e97a6e40c4f2df47406b48832494e11e95d8985c5",
+  "sources/SRC-POL-001.json": "1de2d20f2fe72c4a2ae698093078deb2a05b5d7fd85eec819438cabb7928aacb",
+  "sources/SRC-RISK-002.json": "9d21561fb3ae43782375451c42edab29e2104bd06b76c871eb7c8759d0300794",
+  "sources/SRC-TKT-017.json": "108f533303f738227a4342bd61c61df203d0e1b59c505714e3e4f9fdc3af0007",
+  "sources/SRC-WIKI-OLD.json": "85294ab0c9627da940dbce25820f5caed54ceacde4b49a6f4ad5ea5417cdfc93",
+  "triage_cases.csv": "c3348236bbb794a63ad57f2b46ef8b439f7fde7d5cf5063b31dd023f39d3ae29"
+}

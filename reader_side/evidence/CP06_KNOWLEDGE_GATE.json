@@ -1,0 +1,43 @@
+{
+  "timestamp_utc": "2026-10-19T17:41:56.138791+00:00",
+  "gate": "CP06_CONTEXT_AND_SKILL",
+  "candidate": "repo/engineering/knowledge/context_packet.json",
+  "status": "FAIL",
+  "issues": [
+    "CLAIM_DEPENDENCIES_MISMATCH",
+    "FIELD_MISMATCH:architecture_choice",
+    "FIELD_MISMATCH:architecture_status",
+    "FIELD_MISMATCH:context_confidence",
+    "FIELD_MISMATCH:evidence_status",
+    "FIELD_MISMATCH:payment_authorized",
+    "FIELD_MISMATCH:policy_status",
+    "FIELD_MISMATCH:threshold_eur",
+    "HUMAN_REVIEW_MISSING",
+    "REFRESH_TRIGGERS_WRONG",
+    "SKILL_DESCRIPTION_WEAK",
+    "SKILL_PROCEDURE_MISSING:human review",
+    "SKILL_PROCEDURE_MISSING:knowledge_gate.py",
+    "SKILL_PROCEDURE_MISSING:limitations",
+    "SKILL_PROCEDURE_MISSING:source IDs",
+    "SKILL_PROCEDURE_MISSING:source catalogue",
+    "SKILL_REFERENCE_MISSING",
+    "SKILL_UNSAFE_INSTRUCTION:automatic approval",
+    "SKILL_UNSAFE_INSTRUCTION:certify payments",
+    "SKILL_UNSAFE_INSTRUCTION:ignore independent checks",
+    "SKILL_UNSAFE_INSTRUCTION:promote the old wiki",
+    "SOURCE_CLASSIFICATION_WRONG:K-ARCHIVED-NOTE",
+    "SOURCE_CLASSIFICATION_WRONG:K-POL-001",
+    "SOURCE_CLASSIFICATION_WRONG:K-WIKI-OLD"
+  ],
+  "hypothetical_invalidation": {
+    "K-ADR-005": [
+      "architecture_choice"
+    ],
+    "K-POL-001": [
+      "payment_authority",
+      "routing_threshold"
+    ],
+    "K-WIKI-OLD": []
+  },
+  "meaning": "Selected synthetic source, typed-context and skill-file checks only. Not a live agent test, factual validation, sandbox, security certification or human approval."
+}

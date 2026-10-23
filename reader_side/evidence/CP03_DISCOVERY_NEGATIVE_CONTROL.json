@@ -1,0 +1,20 @@
+{
+  "negative_exit_code": 1,
+  "negative_issue_count": 10,
+  "negative_issues": [
+    "not a bounded alpha decision",
+    "non-authoritative policy source",
+    "unrevised or incorrect engineering choice",
+    "missing explicit non-scope: auto_approve",
+    "missing explicit non-scope: move_funds",
+    "missing explicit non-scope: change_threshold",
+    "incorrect baseline over_24h_denominator",
+    "incorrect baseline median_hours",
+    "synthetic example misrepresented as user research",
+    "unsupported value claim"
+  ],
+  "negative_output": "Synthetic baseline: {\"excluded_missing\": 2, \"measured_cases\": 10, \"median_hours\": 15.5, \"over_24h_cases\": 4, \"over_24h_denominator\": 10, \"total_cases\": 12}\nFAIL: 10 issues\n- not a bounded alpha decision\n- non-authoritative policy source\n- unrevised or incorrect engineering choice\n- missing explicit non-scope: auto_approve\n- missing explicit non-scope: move_funds\n- missing explicit non-scope: change_threshold\n- incorrect baseline over_24h_denominator\n- incorrect baseline median_hours\n- synthetic example misrepresented as user research\n- unsupported value claim\n",
+  "reference_exit_code": 0,
+  "reference_output": "Synthetic baseline: {\"excluded_missing\": 2, \"measured_cases\": 10, \"median_hours\": 15.5, \"over_24h_cases\": 4, \"over_24h_denominator\": 10, \"total_cases\": 12}\nPASS: conditional alpha assessment passes deterministic offline checks\nCAVEAT: no real user validation, no live agent run, no permission to deploy\n",
+  "limitations": "Synthetic offline JSON/schema/logic gate only; NOT field research, semantic correctness proof, OS sandbox, real coding agent or approved policy change"
+}
