@@ -2,9 +2,8 @@
 
 [Home](../../README.md) · [Practice catalogue](../README.md) · [Chapter routes](../../navigation/CHAPTER_ROUTES.md)
 
-For the later passing guided run, including virtual environments and complete
-commands, see the [reproduction guide](../native_client/REPRODUCE_GUIDED_CSV.md).
-That new observation does not change the historical outcome recorded below.
+For virtual environments and complete local-model commands, use the
+[reproduction guide](../native_client/REPRODUCE_GUIDED_CSV.md).
 
 This optional route uses the existing [CSV exercise](../csv_export/README.md)
 and one installed OpenCode client. The useful result is a CSV response for the
@@ -17,21 +16,9 @@ the result, and stop with a handoff. This is an authored specification-first
 workflow. It is **not a new execution of Spec Kit** and does not change the
 historical [native Spec Kit observation](../sdd/NATIVE_ROUTE_D8.md).
 
-**Recorded outcome: `OPEN_PARTIAL_BUDGET_EXHAUSTED`.** The installed client
-persisted a useful specification and plan and implemented a working CSV
-response. Its third invocation ran the seven selected contract checks
-successfully. Its fourth invocation removed an unreachable statement, then
-claimed the check had run without a new check event. The final bytes pass
-separate independent verification, but the complete native check and accurate
-handoff target remains open. Four of four allowed invocations were used;
-1,274.40 of the 2,700 allowed client wall seconds were used. The attempt limit
-ended the episode, and the server was stopped. No fifth invocation is claimed.
-
-The [observation index](observed/INDEX.md) connects that outcome to the actual
-files, raw events, failed attempts and author interventions. In particular,
-[the final project](observed/project/spec.md) and the
-[project actually checked by the native client](observed/recorded/project_after_03/api.py)
-are retained separately.
+Recorded outcomes and their separate budgets are summarized in the
+[CSV audit](../../navigation/AUDIT.md). The [observation index](observed/INDEX.md)
+contains the frozen candidate and raw evidence; it is not a fresh execution.
 
 ## Task and decision boundary
 
@@ -168,11 +155,8 @@ Do not replace the shipped intentional starter with a generated answer.
 
 ## Evidence and teaching text
 
-For later developments, read the [three-episode map](../../navigation/NATIVE_CSV_EPISODES.md).
-The d11 completion report records a separately budgeted verification-only
-continuation of this original journey. Its payload remains in the author package,
-not this checkout. That episode is also distinct from the fresh guided Mac repair.
-The original four-call outcome and all historical receipts below remain unchanged.
+For chronology, continuation status and publication limits, see the
+[CSV audit](../../navigation/AUDIT.md).
 
 The [observation index](observed/INDEX.md) identifies the actual project,
 native events, session exports, recorded interventions and independent checks.

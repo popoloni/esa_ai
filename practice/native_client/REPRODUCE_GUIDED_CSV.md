@@ -8,16 +8,13 @@ the pinned native inference server and coding client, fresh task preparation,
 guided implementation, independent checks, and shutdown. It does not promise
 identical model output or execution times.
 
-This is the later fresh guided Mac episode, not the original four-call journey
-or its separate verification-only continuation. See the [episode map](../../navigation/NATIVE_CSV_EPISODES.md)
-and [portable-evidence publication status](../../validation/repository_revision_20261023/README.md#up05-conditions-for-an-optional-portable-subset).
-
-The successful observation reused Qwen3-4B Q4_K_M, llama.cpp **b11799**,
-OpenCode **1.19.3**, Python **3.12.4**, and Metal on an Apple M2 Max with 64 GiB
-RAM. Implementation took 24.856 seconds; a documents-only continuation took
-27.330 seconds. Final results were **7/7 contract checks, 17/17 independent
-checks and both demos passing**. The plan retained a stale intermediate finding:
-a technical pass is not proof of perfect prose, human acceptance or production readiness.
+Use Qwen3-4B Q4_K_M, llama.cpp **b11799**, OpenCode **1.19.3**,
+Python **3.12** and native Metal on Apple Silicon for this recipe. The target is
+**7/7 contract checks, 17/17 independent checks and both demos passing**;
+the check sets overlap. Review the final documents separately: a technical pass
+does not establish prose quality, human acceptance or production readiness.
+Recorded runs, timings and publication limits are in the [repository audit](../../AUDIT.md)
+and [CSV episode audit](../../navigation/AUDIT.md).
 
 ## 1. Choose the route and understand the boundaries
 
@@ -30,10 +27,9 @@ a technical pass is not proof of perfect prose, human acceptance or production r
 - **Intel Mac, Windows or other hardware:** not certified by this observation.
   Do not use the Darwin ARM64 binary on an incompatible host.
 
-The earlier emulated Linux x86-64 run on Apple Silicon hit 900 seconds. Native
-Metal removed that practical bottleneck. A matched 3,404-token cold prompt took
-91.998 seconds to process on native CPU and 4.795 seconds on Metal. This single
-sample is not a universal benchmark or a minimum-resource guarantee.
+Use the native ARM64 server with Metal on Apple Silicon; do not use the Linux
+x86-64 archive through emulation for this route. Performance depends on hardware
+and workload; retain your own timing and resource receipts.
 
 There are three separate environments:
 

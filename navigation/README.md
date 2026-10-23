@@ -17,10 +17,8 @@
 | Inspect historical client observations | [Observation reference](observation_reference/README.md) |
 | Understand release and documentation maintenance | [Maintenance notes](MAINTENANCE.md) |
 | See why each folder is kept, consolidated or removed | [Folder audit](FOLDER_AUDIT.md) |
-| See fresh-clone test results, fixes and remaining limits | [Execution audit](../validation/EXAMPLE_TEST_REPORT.md) |
-| Track the d11 repository follow-ups and missing publication inputs | [Maintenance status](../validation/repository_revision_20261023/README.md) |
-| Distinguish the three native CSV episodes | [CSV episode map](NATIVE_CSV_EPISODES.md) |
-| Choose the learning-guide edition before seeing transfer answers | [Learning-guide entry](../practice/team_operations/LEARNING_GUIDE.md) |
+| Inspect test history, maintenance decisions and publication status | [Repository audit](../AUDIT.md) |
+| Read the learning-guide exposure warning before seeing transfer answers | [Learning-guide entry](../practice/team_operations/LEARNING_GUIDE.md) |
 | Set up virtual environments and reproduce the passing local LLM CSV repair | [Detailed reproduction guide](../practice/native_client/REPRODUCE_GUIDED_CSV.md) |
 
 The [chapter cards](chapter_cards.json) and [starter-state inventory](starter_state.json) are machine-readable inputs used by [the entry command](../reader_start.py). Use `python3 -B reader_start.py show N` from the repository root for a chapter's commands.

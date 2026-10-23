@@ -4,6 +4,13 @@
 
 ## Documentation refactor
 
+Reader entry pages now focus on installation and exercises. Release identities,
+test chronology and publication follow-ups are indexed in the [repository audit](../AUDIT.md).
+The CSV episode map is now [the navigation audit](AUDIT.md); learning-guide
+edition details live in the [team-operations audit](../practice/team_operations/AUDIT.md).
+Links follow these moves. Raw evidence is unchanged; only the root README's
+active protected hash is refreshed for this documentation edit.
+
 The [23 October d11 reconciliation](../validation/repository_revision_20261023/README.md)
 updates the landing/runtime summary and separates the historical 15-test native
 stage from the later 17-test result. It adds an attributed three-episode CSV map.

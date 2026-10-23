@@ -1,14 +1,12 @@
 # Engineering Software with Agentic AI
 
-Companion laboratory for *Engineering Software with Agentic AI*, edition `2026.10.22-d9`. Work through one cumulative Treasury project across fourteen chapters, or try an independent CSV exercise first.
+Companion laboratory for *Engineering Software with Agentic AI*. Work through one cumulative Treasury project across fourteen chapters, or try an independent CSV exercise first.
 
 [Install and start](navigation/GETTING_STARTED.md) · [CSV preview](navigation/EXPERIENCED_PREVIEW.md) · [Lab guide](navigation/LAB_GUIDE.md) · [Optional practice](practice/README.md) · [Worked solutions](navigation/SOLUTIONS.md)
 
 ## Start here
 
 New to the lab? Follow the [installation and step-by-step walkthrough](navigation/GETTING_STARTED.md): required software, Linux/macOS/Windows setup, first repair, expected results and chapter progression. This is a command-line lab, not a web application. No model account or core pip installation is needed.
-
-The four previously missing hidden skill files have been restored from the original release with their expected hashes unchanged. Always run the source checks below before creating a study copy. See [maintenance notes](navigation/MAINTENANCE.md#pre-existing-integrity-findings).
 
 Run these commands from this repository's root. Keep this checkout as your starter and make exercise changes in a separate study copy:
 
@@ -31,30 +29,7 @@ cd ../my_treasury_lab
 
 Then follow the [Chapter 1 repair and continuation](navigation/LAB_GUIDE.md#begin-the-chapter-1-exercise). For cumulative work, continue in that same copy; `show N` displays each chapter's prerequisites, editable files and check commands. A fresh `new N` copy does not complete earlier exercises for you.
 
-The core uses synthetic data, Python's standard library and local processes; no model account is required. The declared language floor is Python 3.10, and Git must support `merge-tree --write-tree`. The original d9 release baseline is Linux / Python 3.12.14 / Git 2.51.1. Later observations are dated below; neither a language floor nor one observed machine certifies other environments. See the [runtime evidence](RUNTIME_MATRIX.json); optional integrations document their own dependencies.
-
-## Current repository observations — 23 October 2026
-
-The [execution audit](validation/EXAMPLE_TEST_REPORT.md#current-summary--23-october-2026)
-reports 518 core tests on macOS 26.5.1 ARM64 / Python 3.12.4 / Git 2.56.0,
-with one explicit Linux real-clock skip, plus 11 extended tests. A **separate**
-Linux ARM64 Docker run / Python 3.12.15 / Git 2.47.3 passed all 518 core tests
-with zero skips and all 11 extended tests. This Linux core run is not the
-emulated Linux x86-64 model-runtime experiment.
-
-Native regression testing progressed from a historical 15-test stage to a later
-17-test result after launcher/RSS fixes; do not add those counts. The later
-guided Apple Silicon CSV repair passed its 7-case contract and 17-check review
-(overlapping checks), not an autonomous or human-accepted trial. See the
-[three separate CSV episodes](navigation/NATIVE_CSV_EPISODES.md).
-
-The public companion is [popoloni/esa_ai](https://github.com/popoloni/esa_ai).
-The d11 book reviewed commit `e58e0f3eeec5b4531d65d90fac7cb9948edad731`;
-this does not change the underlying d9 lab/starter edition. The
-[d11 maintenance status](validation/repository_revision_20261023/README.md)
-records which publication follow-ups are complete and which still require
-the matching source/evidence package. Windows, Intel Mac, other Python versions,
-independent reader acceptance and real learning outcomes remain unestablished.
+The core uses synthetic data, Python's standard library and local processes. Use Python 3.10 or newer and Git with `merge-tree --write-tree`; run the doctor to check prerequisites. Optional integrations have their own dependencies. See the [audit and supported-environment evidence](AUDIT.md) for validation scope and limitations.
 
 ## Find your chapter
 
@@ -83,20 +58,20 @@ The [lab guide](navigation/LAB_GUIDE.md) covers shared checks, edit baselines an
 - **Explore a specific technique:** [practice catalogue](practice/README.md), grouped by purpose and chapter.
 - **Resume or recover:** [route chooser](navigation/CHAPTER_ROUTES.md), [lifecycle map](navigation/LIFECYCLE_MAP.md) and [stale-receipt recovery](navigation/RECOVERY.md).
 - **Compare your work:** [solutions and Appendix B workbooks](navigation/SOLUTIONS.md). Try the exercise before opening its reference.
-- **Inspect recorded observations:** [observation archive guide](navigation/observation_reference/README.md), [runtime matrix](RUNTIME_MATRIX.json) and [external validation protocol](validation/README.md).
+- **Inspect recorded observations:** [audit and history](AUDIT.md) and [external validation protocol](validation/README.md).
 
 ## Repository map
 
 | Location | What belongs here |
 | --- | --- |
-| [guides/](guides/README.md) | Chapter-specific instructions and the historical reconstruction note |
+| [guides/](guides/README.md) | Chapter-specific instructions |
 | [navigation/](navigation/README.md) | Reading routes, shared lab instructions, recovery and solution navigation |
 | [repo/](repo/) | Treasury source and chapter candidates; use the chapter's permitted edit scope |
 | [reader_side/](reader_side/README.md) | Independent checks, contracts, templates and protected references |
-| [practice/](practice/README.md) | Optional exercises and their dated observations |
-| [adapters/](adapters/README.md) | Optional, dated tool-integration notes; not core installation requirements |
+| [practice/](practice/README.md) | Optional exercises and integration guides |
+| [adapters/](adapters/README.md) | Optional tool integrations; not core installation requirements |
 | [exports/](exports/README.md) | Generated exercise outputs and links to canonical reference projections |
 | [reader_resources/](reader_resources/README.md) | Optional Appendix B decision workbooks in text and JSON |
 | [validation/](validation/README.md) | Advanced/maintainer observation protocols and collectors used by the optional native-client route |
 
-[Folder audit](navigation/FOLDER_AUDIT.md) records keep/consolidate/remove decisions for every functional folder. [Maintenance notes](navigation/MAINTENANCE.md) explain the refactor and historical evidence. The repository includes the [Apache 2.0 license](LICENSE).
+Validation history, release identities and maintenance decisions are collected in the [repository audit](AUDIT.md). The repository includes the [Apache 2.0 license](LICENSE).

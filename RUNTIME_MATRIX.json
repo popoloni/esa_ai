@@ -47,7 +47,7 @@
       "evidence": "validation/EXAMPLE_TEST_REPORT.md#successful-fresh-guided-csv-retry",
       "raw_evidence_publication": "OUTSIDE_GIT_OPTIONAL_SUBSET_DEFERRED"
     },
-    "csv_episode_navigation": "navigation/NATIVE_CSV_EPISODES.md",
+    "csv_episode_navigation": "navigation/AUDIT.md",
     "boundary": "The Linux ARM64 core rerun is not the emulated Linux x86-64 model runtime. No blanket Windows, Intel Mac, other-interpreter, independent-reader or real-learning certification. These reported full-suite observations were not rerun merely to update this matrix."
   },
   "evidence_path_policy": {

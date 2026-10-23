@@ -13,10 +13,10 @@ Its original bytes are retained here, SHA-256
 
 | Follow-up | Repository disposition | Evidence / remaining requirement |
 | --- | --- | --- |
-| UP01 — landing/runtime summary | COMPLETE locally | Landing page now separates dated Mac and Linux ARM64 core observations; runtime matrix adds a report-backed current summary and public locator while retaining the d9 release records. No wider platform certification. |
+| UP01 — landing/runtime summary | COMPLETE | The landing page links the [repository audit](../../AUDIT.md), which separates dated Mac and Linux ARM64 observations; the runtime matrix retains the report-backed summary and d9 release records. No wider platform certification. |
 | UP02 — 15 versus 17 native tests | COMPLETE locally | Execution audit labels the initial 15-test stage as historical and links the later 17-test result. These are successive native regression suites; neither is the CSV reviewer count. |
 | UP03 — current learning PDF and canonical sources | BLOCKED on accepted package/identity | Supplied PDF is 30 pages and labels itself d11, but has a different hash from the report's accepted artifact. Canonical d11 LaTeX/TikZ sources were not supplied/found. Existing historical PDF/source pair remains unchanged. |
-| UP04 — verification-only continuation | Navigation COMPLETE; payload publication BLOCKED | [Episode map](../../navigation/NATIVE_CSV_EPISODES.md) links the supplied report and names its preserved-package locators. The 86-file payload is not available locally, so no repository link or independent acceptance is fabricated. |
+| UP04 — verification-only continuation | Navigation COMPLETE; payload publication BLOCKED | [CSV audit](../../navigation/AUDIT.md) links the supplied report and names its preserved-package locators. The 86-file payload is not available locally, so no repository link or independent acceptance is fabricated. |
 | UP05 — optional portable Mac subset | DEFERRED, not required for UP01/UP02 | Complete raw packets remain outside Git. A report or summary-only copy would not satisfy the requested evidence subset. No new raw-publication claim is made. |
 
 ## UP03: artifact mismatch and safe next step

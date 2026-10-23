@@ -19,7 +19,7 @@ are not 24 unique requirements and are unrelated to the 17 native regression tes
 
 The d11 completion report describes a further, **earlier verification-only
 continuation of the original four-call journey**, distinct from this Mac repair.
-See the [episode map](../navigation/NATIVE_CSV_EPISODES.md) for attribution,
+See the [CSV audit](../navigation/AUDIT.md) for attribution,
 budgets and raw-packet availability. [Repository maintenance status](repository_revision_20261023/README.md)
 tracks the d11 publication follow-ups; historical receipts remain unchanged.
 
