@@ -1,5 +1,20 @@
 # Harness adapter notes — researched October 19, 2026
 
+[Home](../README.md) · [Core setup](../navigation/GETTING_STARTED.md) · [Optional practice](../practice/README.md)
+
+## Optional integration reference
+
+These are documentation notes, not installable adapters or prerequisites for the core lab. Consult only the notes for a tool you have chosen to explore. Their research date and unobserved-client limitations still apply.
+
+| Topic | Notes |
+| --- | --- |
+| Specification workflows | [Spec Kit specify](SPECKIT_SPECIFY_2026.md) · [Spec Kit assess](SPECKIT_ASSESS_2026.md) · [OpenSpec explore](OPENSPEC_EXPLORE_2026.md) · [OpenSpec delta](OPENSPEC_DELTA_2026.md) · [Kiro requirements](KIRO_REQUIREMENTS_2026.md) · [BMAD boundary](BMAD_BOUNDARY_2026.md) |
+| Design and planning | [Architecture review](ARCHITECTURE_REVIEW_PROMPT_2026.md) · [Kiro design](KIRO_DESIGN_FIRST_2026.md) · [Copilot plan](COPILOT_PLAN_2026.md) |
+| Delegation and coordination | [Copilot delegation](COPILOT_DELEGATION_2026.md) · [Claude subagents](CLAUDE_SUBAGENTS_2026.md) · [OpenAI multi-agent notes](OPENAI_AGENTS_MULTIAGENT_2026.md) · [Git worktrees](GIT_WORKTREES_2026.md) |
+| External interfaces | [MCP](MCP_2026.md) · [Issues and Atlassian](ISSUES_AND_ATLASSIAN_2026.md) |
+
+## Instruction-file projections
+
 The shared project instruction is `repo/AGENTS.md`. Different harnesses discover additional files differently. The projection script creates small dated integration files; it does not imply that all of them were exercised in a live authenticated client.
 
 For the edition's actual installed-client tutorial, start with

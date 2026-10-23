@@ -1,2 +1,10 @@
 # macOS Finder metadata
 .DS_Store
+
+# Regenerable Python bytecode, not exercise evidence.
+__pycache__/
+*.py[cod]
+
+# Generated exercise exports; keep the directory guide tracked.
+/exports/*
+!/exports/README.md

@@ -4,6 +4,8 @@
 
 ## Documentation refactor
 
+The four committed Chapter 4 exports were byte-identical to the protected [reference projections](../reader_side/reference_solution/projections/). Only the duplicate copies and their active manifest entries were removed. The canonical copies remain protected; [exports/](../exports/README.md) is now reserved for ignored generated outputs. Historical receipts remain unchanged. Optional adapters, Appendix B templates and advanced validation collectors are retained with clearer entry guides.
+
 The root `README_*.md` guides now live in [guides/](../guides/README.md). Live navigation and protected-manifest paths follow the move. Historical observation snapshots retain their original paths and hashes; the coverage index records a separate current locator for the relocated Chapter 10 guide. Commands in chapter guides still run from the study-copy root, not from the guides folder.
 
 The repository landing page is now a chapter index and quick start. Shared operating instructions moved to the [lab guide](LAB_GUIDE.md); chapter-specific procedures remain in the existing chapter guides. The [practice catalogue](../practice/README.md) and [solution index](SOLUTIONS.md) replace repeated inventories. Legacy text entry filenames remain as short pointers so printed references still resolve.
@@ -20,9 +22,9 @@ Before this refactor, the active manifest already disagreed with the root README
 - `repo/.agents/skills/acceptance-review/references/review-rubric.md`
 - `repo/.agents/skills/context-audit/references/CASE_SOURCE_MAP.md`
 
-All three protected paths above are missing. A separate check of the starter inventory also finds `repo/.agents/skills/context-audit/SKILL.md` missing, for a total of four required missing files. `doctor` reports `ACTION_REQUIRED`; `new` refuses preparation because the protected and starter checks fail.
+Those three protected files and the starter file `repo/.agents/skills/context-audit/SKILL.md` were restored during the folder audit. Their source was the original local `Engineering_Software_with_Agentic_AI_Reader_Pack_20261022_d9.zip`, under its `companion/` tree. Every restored file matched its pre-existing protected or starter SHA-256 hash exactly. No skill hash or starter criterion was weakened. The prerequisite check now reports `PASS_PREREQUISITES_ONLY` with empty protected and starter findings.
 
-The README digest is updated for the revised documentation. The missing-file entries are not rebaselined or repaired by this navigation change. Restore the original matching files from the complete source release, then rerun `doctor` and require empty protected and starter findings before preparing a study copy. The documentation checks do not certify runnable-lab readiness.
+The [folder audit](FOLDER_AUDIT.md) records retention decisions. The planning-only README has been merged into the [reader-side index](../reader_side/README.md#planning-references), and its active protected-manifest entry follows that document. Historical manifests retain their original paths and hashes.
 
 ## Standalone repository versus author package
 

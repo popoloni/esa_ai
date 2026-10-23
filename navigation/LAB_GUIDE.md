@@ -2,7 +2,7 @@
 
 [Home](../README.md) · [Navigation](README.md) · [Chapter routes](CHAPTER_ROUTES.md) · [Recovery](RECOVERY.md)
 
-For software installation, source readiness and the complete first-exercise sequence, start with [Getting started](GETTING_STARTED.md). The current checkout has missing starter files; the expected exercise results below assume those packaging issues have been resolved.
+For software installation, source readiness and the complete first-exercise sequence, start with [Getting started](GETTING_STARTED.md). Run the prerequisite and starter checks before following the exercise steps below.
 
 Run commands from the repository root (the directory containing [reader_start.py](../reader_start.py)), not from this navigation directory. Create a separate study copy with the [home-page quick start](../README.md#start-here), then continue Chapters 1–14 in that copy.
 

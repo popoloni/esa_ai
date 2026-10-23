@@ -8,7 +8,7 @@ Companion laboratory for *Engineering Software with Agentic AI*, edition `2026.1
 
 New to the lab? Follow the [installation and step-by-step walkthrough](navigation/GETTING_STARTED.md): required software, Linux/macOS/Windows setup, first repair, expected results and chapter progression. This is a command-line lab, not a web application. No model account or core pip installation is needed.
 
-**Current packaging blocker:** four required hidden skill files are missing. `doctor` reports an integrity failure and `new` refuses to prepare the study copy until the original files are restored. See [the exact findings](navigation/MAINTENANCE.md#pre-existing-integrity-findings). This is not an intentional exercise failure.
+The four previously missing hidden skill files have been restored from the original release with their expected hashes unchanged. Always run the source checks below before creating a study copy. See [maintenance notes](navigation/MAINTENANCE.md#pre-existing-integrity-findings).
 
 Run these commands from this repository's root. Keep this checkout as your starter and make exercise changes in a separate study copy:
 
@@ -69,10 +69,11 @@ The [lab guide](navigation/LAB_GUIDE.md) covers shared checks, edit baselines an
 | [guides/](guides/README.md) | Chapter-specific instructions and the historical reconstruction note |
 | [navigation/](navigation/README.md) | Reading routes, shared lab instructions, recovery and solution navigation |
 | [repo/](repo/) | Treasury source and chapter candidates; use the chapter's permitted edit scope |
-| [reader_side/](reader_side/) | Independent checks, contracts, templates and protected references |
+| [reader_side/](reader_side/README.md) | Independent checks, contracts, templates and protected references |
 | [practice/](practice/README.md) | Optional exercises and their dated observations |
-| [adapters/](adapters/README.md) | Tool-specific guidance and integration boundaries |
-| [reader_resources/](reader_resources/) | Appendix B decision workbooks |
-| [validation/](validation/README.md) | Protocols and evidence for external observations |
+| [adapters/](adapters/README.md) | Optional, dated tool-integration notes; not core installation requirements |
+| [exports/](exports/README.md) | Generated exercise outputs and links to canonical reference projections |
+| [reader_resources/](reader_resources/README.md) | Optional Appendix B decision workbooks in text and JSON |
+| [validation/](validation/README.md) | Advanced/maintainer observation protocols and collectors used by the optional native-client route |
 
-[Maintenance notes](navigation/MAINTENANCE.md) explain this documentation refactor and historical evidence. The repository includes the [Apache 2.0 license](LICENSE).
+[Folder audit](navigation/FOLDER_AUDIT.md) records keep/consolidate/remove decisions for every functional folder. [Maintenance notes](navigation/MAINTENANCE.md) explain the refactor and historical evidence. The repository includes the [Apache 2.0 license](LICENSE).

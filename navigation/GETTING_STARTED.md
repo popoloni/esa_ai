@@ -6,7 +6,7 @@
 
 This is a command-line teaching project, not a website to launch. You edit Python, JSON and Markdown files, run checks in a terminal, and inspect JSON result files. The cumulative Treasury lab spans Chapters 1–14. The book supplies the lesson; this repository supplies exercise inputs, checks and worked references. Basic terminal use, Python and JSON editing are assumed.
 
-**Current checkout blocker:** four required hidden skill files are missing from this repository's starter. The protected-integrity and starter inventories identify them in [maintenance notes](MAINTENANCE.md#pre-existing-integrity-findings). `doctor` reports `ACTION_REQUIRED`, and `new` refuses to create a study copy. This is a packaging problem, not an intentional exercise failure or a missing pip package. The original matching files must be restored by the maintainer or supplied in a complete release before the cumulative walkthrough below can run. Do not delete manifest entries or change their hashes to bypass it. You can still read guides and display chapter cards.
+The earlier missing-file packaging problem has been repaired: four hidden skill files were restored from the original d9 reader pack with matching hashes. See [maintenance notes](MAINTENANCE.md#pre-existing-integrity-findings). If your copy still reports missing protected files, obtain the complete updated source; do not delete manifest entries or change hashes to bypass checks.
 
 ## 2. Install only the core tools first
 
@@ -71,7 +71,7 @@ Run from the directory containing [reader_start.py](../reader_start.py), not fro
 python3 -B reader_start.py doctor
 ```
 
-Before creating a copy, require **both** `status: PASS_PREREQUISITES_ONLY` and an empty `release_starter_findings` list. `protected_findings` must also be empty. A pass checks prerequisites, not all exercise behavior. With the current missing files, stop at the blocker described above; installing extra software will not repair it.
+Before creating a copy, require **both** `status: PASS_PREREQUISITES_ONLY` and an empty `release_starter_findings` list. `protected_findings` must also be empty. A pass checks prerequisites, not all exercise behavior. Missing protected files are a source-packaging issue, not an intentional learner failure or a missing pip package.
 
 ## 4. Create one study copy
 
@@ -158,3 +158,9 @@ The core is useful without these extensions. There is no requirement to install 
 | Destination or baseline already exists | Continue the original session, or choose a new name for a separate session; do not overwrite prior work. |
 | Candidate gate fails | Compare with the card's expected starter outcome, inspect the result and fix only permitted candidate files. |
 | Receipt is stale | Preserve it, rerun the affected checks using current inputs, and follow the recovery guide. |
+
+### macOS checks and temporary paths
+
+The folder audit exercised setup on macOS with Python 3.14.6 and Git 2.56.0; this does not replace the recorded Linux baseline. If checks reject a symlinked temporary-directory ancestor (`OWNED_PATH_SYMLINK`), use a canonical temporary location for the command, for example `TMPDIR=/private/tmp python3 -B reader_side/tools/run_checks.py`. Use a canonical, non-symlink path for study-copy destinations too.
+
+The full regression suite includes a real-host-clock test for the optional human learning pilot. On macOS it raises `REAL_CLOCK_REQUIRES_SUPPORTED_LINUX_HOST_BOOT`; run that host-specific check on the required Linux environment. Do not weaken it or count an unsupported-host failure as a successful human-study validation. Keep source files unchanged while tests run: the Chapter 1 preparation test verifies that the original source tree is untouched.

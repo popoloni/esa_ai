@@ -3,8 +3,7 @@ ENGINEERING SOFTWARE WITH AGENTIC AI — SOLUTION NAVIGATION
 NEW TO THE LAB?
 Open navigation/GETTING_STARTED.md for required software, installation,
 source checks, your first repair and the chapter-by-chapter workflow.
-The current checkout is missing four required hidden skill files; see that
-guide before trying to create a study copy. Solutions do not fix this blocker.
+Run the source checks in that guide before creating a study copy.
 
 The linked chapter-to-Appendix-A map and Appendix B workbooks are now in:
   navigation/SOLUTIONS.md

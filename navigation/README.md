@@ -16,5 +16,6 @@
 | Compare with a worked solution | [Solution navigation](SOLUTIONS.md) |
 | Inspect historical client observations | [Observation reference](observation_reference/README.md) |
 | Understand release and documentation maintenance | [Maintenance notes](MAINTENANCE.md) |
+| See why each folder is kept, consolidated or removed | [Folder audit](FOLDER_AUDIT.md) |
 
 The [chapter cards](chapter_cards.json) and [starter-state inventory](starter_state.json) are machine-readable inputs used by [the entry command](../reader_start.py). Use `python3 -B reader_start.py show N` from the repository root for a chapter's commands.

@@ -31,17 +31,19 @@ The CI-style runner reports **93 passed** (7 Chapter 1 acceptance, 14 Chapter 2,
 
 ## Optional reviewed projection
 
+Browse the [canonical reference projections](../exports/README.md) without generating anything. To create separate output, run the following from your study-copy root and use a fresh output directory for each attempt:
+
 ```bash
 python reader_side/tools/spec_gate.py \
   --candidate reader_side/reference_solution/specification.json \
-  --export-reviewed exports/ch04_reference
+  --export-reviewed exports/ch04_review_01
 ```
 
 This author-built exporter writes only under `companion/exports/<name>/`. It creates four illustrative projections: portable Markdown, OpenSpec-shaped delta Markdown, EARS-shaped Kiro requirements, and Gherkin-shaped scenarios. **These files were not validated by Spec Kit, OpenSpec, Kiro or a Gherkin runner.** They are examples of format/identity transfer, not verified framework interoperability or human approval.
 
 ## Current-tool adapters and the book
 
-Read [adapters/SPECKIT_SPECIFY_2026.md](../adapters/SPECKIT_SPECIFY_2026.md), `OPENSPEC_DELTA_2026.md`, `KIRO_REQUIREMENTS_2026.md`, and `BMAD_BOUNDARY_2026.md`. Each names official current documentation and its unverified integration boundary. Pin actual versions and preserve session logs before claiming any live trial.
+Read [Spec Kit](../adapters/SPECKIT_SPECIFY_2026.md), [OpenSpec](../adapters/OPENSPEC_DELTA_2026.md), [Kiro](../adapters/KIRO_REQUIREMENTS_2026.md), and [BMAD boundaries](../adapters/BMAD_BOUNDARY_2026.md). These are optional, dated integration notes, not software prerequisites for the core exercise. Pin actual versions and preserve session logs before claiming any live trial.
 
 ## Security and evidence boundary
 

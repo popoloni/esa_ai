@@ -1,5 +1,18 @@
 # Reproduce observations and collect the remaining evidence
 
+[Home](../README.md) · [Core lab checks](../navigation/LAB_GUIDE.md#start-with-the-shared-regression-suite) · [Optional practice](../practice/README.md)
+
+## Advanced and maintainer material
+
+This folder is for collecting and evaluating external observations, not the ordinary Chapters 1–14 regression suite. Core learners can skip it. Readers following the optional native-client tutorial must keep it: that tutorial calls the collector scripts here.
+
+- [Native-host collection guide](NATIVE_HOST_COLLECTION.md): preparation and evidence capture.
+- [Observation collector](observe_native.py), [command recorder](record_observed_command.py) and [collection rehearsal](rehearse_native_collection.py): executable supporting tools, used through the documented tutorial commands.
+- [Record templates](records/): blank forms for separate trials, not completed results.
+- [MCP diagnosis](MCP_DIAGNOSIS.md) and [environment feasibility](ENVIRONMENT_FEASIBILITY.json): supporting investigation material.
+
+## Observation protocol
+
 This kit turns the remaining review actions into executable observation plans.
 The protocols and blank records are supplied. The retained local native-client
 journey is documented in [the reader guide](../practice/native_client/README.md);
