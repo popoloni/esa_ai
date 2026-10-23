@@ -1,5 +1,7 @@
 # Choose a starting state and recover safely
 
+[Home](../README.md) · [Navigation](README.md) · [Lab guide](LAB_GUIDE.md)
+
 Run `python3 -B reader_start.py doctor` and `python3 -B reader_start.py show N` from
 the companion. The card describes the supplied state; it does not inspect and
 accept every current candidate. Dedicated gates establish the narrower facts
@@ -16,7 +18,7 @@ python3 -B reader_start.py new 1 --destination ../my_treasury_lab
 This copies the complete lab and installs only Chapter 1's known faulty router.
 Enter the new directory, read its Chapter 1 card and make the repair. After its
 review, preserve your router and receipt and adopt the inherited reference
-router exactly as the main README explains. Continue Chapters 2–14 in that
+router exactly as the [lab guide explains](LAB_GUIDE.md#begin-the-chapter-1-exercise). Continue Chapters 2–14 in that
 same copy, capturing a separate before-edit baseline for each chapter.
 
 ## Enter in the middle
@@ -60,7 +62,7 @@ permissions, retry budget and stopping rules before dispatch.
 The Treasury harness experiment has a different starting requirement: extract
 the same edition into a new directory and run the command from that untouched
 edition's `companion/`. Its five source pins include both the router and
-`repo/engineering/planning/delegation_plan.json`. A valid earlier router or plan
+[repo/engineering/planning/delegation_plan.json](../repo/engineering/planning/delegation_plan.json). A valid earlier router or plan
 repair can therefore cause a source-pin refusal in the cumulative copy. Preserve
 that copy and its evidence; do not replace the repaired file, edit a pin, or
 recapture the baseline to make the experiment run.
@@ -68,7 +70,7 @@ recapture the baseline to make the experiment run.
 For the pinned upstream Harness2 demo, select Python 3.12 or 3.13 before running
 its command. The core lab's Python floor is not that demo's supported range.
 Use a new output directory for each practice run. Neither optional exercise
-settles the original CP07 human decision. See `CHAPTER_ROUTES.md` for the entry
+settles the original CP07 human decision. See [CHAPTER_ROUTES.md](CHAPTER_ROUTES.md) for the entry
 and return points.
 
 ## Continue from team practice to Chapter 14

@@ -1,5 +1,9 @@
 # A proportionate first week
 
+[Home](../README.md) · [Navigation](README.md) · [Lab guide](LAB_GUIDE.md)
+
+First install the required tools and complete the source checks in [Getting started](GETTING_STARTED.md). That guide also gives the exact first-exercise commands. The sessions below are a learning outline, not a replacement for prerequisites or the chapter-by-chapter route.
+
 The minimum workflow for a small bug has four steps: state the intended behavior,
 make one bounded edit, check it against an expectation outside that edit, and
 review the result and remaining uncertainty. Choose the cumulative Treasury route below, or the [independent CSV preview](EXPERIENCED_PREVIEW.md) if you want to apply the method first to a small orders API. The preview requires no completed Treasury work. Both routes distinguish a proposed candidate, observed evidence and the applicable acceptance decision.
@@ -44,7 +48,7 @@ the CSV capstone is the one added executable transfer.
 
 ### Optional: use the observed installed client
 
-After understanding the Chapter 1 contract, follow `../practice/native_client/README.md`
+After understanding the Chapter 1 contract, follow [../practice/native_client/README.md](../practice/native_client/README.md)
 for the installed OpenCode and local-model route. The guide records the actual
 failures and recovery decisions. Use a fresh study copy and compare the returned
 patch with the owner-side cases; a client finishing successfully is not proof

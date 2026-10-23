@@ -1,5 +1,7 @@
 # Run the pinned Harness² demonstration
 
+[Home](../../README.md) · [Practice catalogue](../README.md) · [Chapter routes](../../navigation/CHAPTER_ROUTES.md)
+
 This folder contains the **unmodified upstream deterministic demo** from
 `google-research/harness2`, commit
 `1cfe254e8d25b15f37048c3730134686abe60335`, package version `0.1.0`.

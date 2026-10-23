@@ -1,5 +1,7 @@
 # Transfer capstone: add CSV to an existing orders API
 
+[Home](../../README.md) · [Practice catalogue](../README.md) · [Chapter routes](../../navigation/CHAPTER_ROUTES.md)
+
 This develops the Chapter 5 export-design prompt into one small executable
 change. An existing selector determines the actor's visible, filtered rows. The
 feature adds a CSV presentation after that boundary and preserves JSON.

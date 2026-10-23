@@ -1,5 +1,7 @@
 # Two tools, two Treasury questions
 
+[Home](../../README.md) · [Practice catalogue](../README.md) · [Chapter routes](../../navigation/CHAPTER_ROUTES.md)
+
 This optional Chapter 9 exercise runs Hypothesis against the actual current
 `repo/src/treasury/routing.py`, then runs Bandit against that source and its
 direct adapter. It also creates two explicitly seeded controls in a new output

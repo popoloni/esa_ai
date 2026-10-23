@@ -1,5 +1,7 @@
 # Work visibly with a coding agent
 
+[Home](../../README.md) · [Practice catalogue](../README.md) · [Chapter routes](../../navigation/CHAPTER_ROUTES.md)
+
 These original practice cards accompany Chapters 1, 2, 6, 7 and 8. They use the
 existing Treasury lab and do not change its policies, candidate scopes or oracles.
 Run commands from the lab working-copy root unless a card says otherwise.

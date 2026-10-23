@@ -1,5 +1,9 @@
 # Chapter 13: Grow skills, knowledge and team governance
 
+[Home](../README.md#find-your-chapter) · [Lab guide](../navigation/LAB_GUIDE.md) · [Previous: Chapter 12](README_CP12.md) · [Next: Chapter 14](README_CP14.md)
+
+> Checkpoint counts below are historical. Use the [shared lab guide](../navigation/LAB_GUIDE.md#start-with-the-shared-regression-suite) for current checks and candidate-readiness reporting.
+
 CP13 continues the same Treasury laboratory. Its process evidence is real local
 Python/SQLite execution using the unchanged CP11 PolicyStore and CP12 service.
 Its people, answers, scores and elapsed intervals in automated calibration are
@@ -29,13 +33,13 @@ review. They do not authorize production operations or reconciliation.
 
 WO-013 permits only:
 
-- `repo/engineering/learning/transfer_review.json`
-- `repo/engineering/learning/team_knowledge.json`
+- [repo/engineering/learning/transfer_review.json](../repo/engineering/learning/transfer_review.json)
+- [repo/engineering/learning/team_knowledge.json](../repo/engineering/learning/team_knowledge.json)
 
 The supplied records intentionally repeat the earlier wrong-path diagnosis,
 omit claim dependencies and overclaim authority. Protected unsafe controls
 remain faulty after learner repairs. The reference records are under
-`reader_side/reference_solution/ch13/`. All prompts, rubric, protocol,
+[reader_side/reference_solution/ch13/](../reader_side/reference_solution/ch13). All prompts, rubric, protocol,
 calibration data, checks and earlier source remain owner-controlled.
 
 The review names the competing hypotheses and actual T/U observations. The
@@ -104,7 +108,7 @@ against that reference transfer session. It must fail after current repairs.
 
 ## Proposed delayed human pilot
 
-Read `reader_side/learning/PROTOCOL.md` for the full command sequence. Start a
+Read [reader_side/learning/PROTOCOL.md](../reader_side/learning/PROTOCOL.md) for the full command sequence. Start a
 new owner-run trial with participant, two reviewer and coordinator IDs. The
 initial public packet contains CP12 learning evidence, the protocol/rubric and
 an exact `baseline_prompt.md`. Commit the immediate answer, then wait at least

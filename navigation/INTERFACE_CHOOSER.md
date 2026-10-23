@@ -1,5 +1,7 @@
 # Choose an interface for one actual job
 
+[Home](../README.md) · [Navigation](README.md) · [Lab guide](LAB_GUIDE.md)
+
 Start from the operation and its target. A terminal command, an MCP tool and a
 remote API can all retrieve a policy record; their operational boundaries differ.
 The choices below are engineering guidance, not a performance ranking.

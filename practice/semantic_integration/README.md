@@ -1,5 +1,7 @@
 # Two green changes, one failing integration
 
+[Home](../../README.md) · [Practice catalogue](../README.md) · [Chapter routes](../../navigation/CHAPTER_ROUTES.md)
+
 This optional Chapter 10 exercise shows a semantic interaction that Git can
 merge without a text conflict. It is separate from the protected Treasury
 release history. The code, two contributions and repair are authored teaching
@@ -69,4 +71,3 @@ The supplied repair is one scoped design choice, not a general rule that all
 formatting belongs at an outer layer. These four cases do not establish every
 input, dependency or concurrency interaction. A real integration needs its
 applicable contract, reviewed inputs and decision authority.
-

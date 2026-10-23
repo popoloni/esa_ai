@@ -1,6 +1,8 @@
-> Integration update (20 October 2026): this chapter now runs inside the shared Chapters 1–10 companion. Test totals below describe its original checkpoint; `run_checks.py` runs the current combined suite. See `README.md` for current commands, chapter scopes and candidate-readiness reporting.
-
 # Chapter 7 — Plan Work, Delegate Tasks and Coordinate Responsibility
+
+[Home](../README.md#find-your-chapter) · [Lab guide](../navigation/LAB_GUIDE.md) · [Previous: Chapter 6](README_CP06.md) · [Next: Chapter 8](README_CP08.md)
+
+> Checkpoint counts below are historical. Use the [shared lab guide](../navigation/LAB_GUIDE.md#start-with-the-shared-regression-suite) for current checks and candidate-readiness reporting.
 
 **Parent**: CP06 source release, with seven acceptance tests plus 172 general tests = **179 passing offline tests** on extraction.
 The parent QA report is correct: the runner prints these two suites separately. CP07 has 179 + 50 = **229 tests**.
@@ -17,11 +19,11 @@ python reader_side/tools/planning_gate.py \
 
 The editable starter records are:
 
-- `repo/engineering/planning/delegation_plan.json`
-- `repo/engineering/planning/delegation_handoff.json`
+- [repo/engineering/planning/delegation_plan.json](../repo/engineering/planning/delegation_plan.json)
+- [repo/engineering/planning/delegation_handoff.json](../repo/engineering/planning/delegation_handoff.json)
 
 Only edit those two files in the reader exercise. The *reference* pair is in
-`reader_side/reference_solution/` and is protected by the source-manifest model.
+[reader_side/reference_solution/](../reader_side/reference_solution) and is protected by the source-manifest model.
 It correctly keeps ADR-005 pending human technical review and implementation/release blocked.
 
 ## What the checks demonstrate

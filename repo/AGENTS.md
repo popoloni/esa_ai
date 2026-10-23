@@ -65,7 +65,7 @@ protected worked example. Preserve unresolved questions and stop at
 `PASS_REVIEW_GATE_ONLY` / `READY_FOR_HUMAN_REVIEW_NOT_ACCEPTED`.
 
 For Chapter 10, use `rehearse_release.py` and `release_gate.py` as described in
-`../README_CP10.md`. The shared runner's `--release-rehearsal DIR` option evaluates
+`../guides/README_CP10.md`. The shared runner's `--release-rehearsal DIR` option evaluates
 the current release dossier; `--require-release` also requires the current
 CP01–CP09 candidates to pass. Without rehearsal evidence CP10 readiness is
 reported as `NOT_RUN`; a passing regression suite supplies no release decision.
@@ -82,7 +82,7 @@ CP11 paths. Retain the original router and all v1 history; add versioned policy
 selection, persistent request identity and explicit historical recomputation.
 Do not infer missing legacy policy evidence or erase records on retry. Keep
 SQLite data and receipts outside source, under reader control. See
-../README_CP11.md for the narrower new payload contract, owner-bound synthetic
+../guides/README_CP11.md for the narrower new payload contract, owner-bound synthetic
 legacy fixtures and fresh-output gate commands. --require-evolution checks
 current CP11 readiness separately from any CP10 presentation-release decision.
 No earlier blocked task or real payment/release authority is granted.
@@ -95,7 +95,7 @@ Investigate the selected SQLite state using actual local process evidence;
 preserve the control and incident ledgers and do not silently initialize a
 replacement during recovery. Gate probes use new copies. Incident-only rows
 remain quarantined pending owner reconciliation; local restoration is not
-incident closure or production rollout. See ../README_CP12.md for the current
+incident closure or production rollout. See ../guides/README_CP12.md for the current
 and protected-reference modes. --require-operations requires current CP01–09,
 CP11 and CP12 readiness and a current incident session; it does not imply any
 CP10 release acceptance or real operational authority.

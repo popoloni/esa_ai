@@ -1,5 +1,7 @@
 # An observed AI critic on five teaching cases
 
+[Home](../../README.md) · [Practice catalogue](../README.md) · [Chapter routes](../../navigation/CHAPTER_ROUTES.md)
+
 This exercise retains one actual ChatGPT collaboration-agent review of five independent Python snippets. Three snippets contain a declared contract defect; two are clean controls within the supplied contract. The exercise makes a useful review concrete: identify the obligation, locate the defect, and show an input whose actual result differs from the required result.
 
 ## Try the review before reading the answers

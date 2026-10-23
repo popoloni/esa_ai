@@ -1,5 +1,7 @@
 # Follow one requirement through the software lifecycle
 
+[Home](../README.md) · [Navigation](README.md) · [Lab guide](LAB_GUIDE.md)
+
 Use this as a source map, not a mandatory document checklist. Start with the
 phase your change needs. Commands run from the companion root; `python3 -B
 reader_start.py show N` supplies the current chapter's candidate, reference,
@@ -14,7 +16,7 @@ candidate. All named business owners and decisions below are fictional fixtures.
 | Task and handoff, Ch7 | Relevant sources, proposed design, separate pending reviews | Repair [delegation_plan.json](../repo/engineering/planning/delegation_plan.json) and [delegation_handoff.json](../repo/engineering/planning/delegation_handoff.json); use [planning_gate.py](../reader_side/tools/planning_gate.py). | Coordinator checks dependencies; product/technical/release owners retain their decisions. A correct plan can have blocked work. |
 | Implementation, Ch8 | [Local work order](../reader_side/implementation/WORK_ORDER_CP08.md) | Repair [explanation_alpha.py](../repo/src/treasury/explanation_alpha.py) and [its report](../repo/engineering/implementation/implementation_report.json); use [implementation_gate.py](../reader_side/tools/implementation_gate.py) and the original scope baseline. | Maker produces a reviewable candidate; stop on scope drift, missing behavior or unresolved meaning. |
 | Independent review, Ch9 | Actual patch and selected test observations | [Verification exercise](../reader_side/verification/readme.md), [verification_gate.py](../reader_side/tools/verification_gate.py) and [observed verification tools](../practice/verification_tools/README.md) distinguish a result from its explanation. | Reviewer evaluates the named candidate; unresolved findings stay visible. |
-| Release, Ch10 | Reviewed source, artifact and applicable fictional decision | [Release guide](../README_CP10.md), [rehearse_release.py](../reader_side/tools/rehearse_release.py) and [release_gate.py](../reader_side/tools/release_gate.py) bind a local rehearsal to an actual candidate. | Release owner decides for that source. Technical learning completion for another correct patch is separate from the fixed decision. |
+| Release, Ch10 | Reviewed source, artifact and applicable fictional decision | [Release guide](../guides/README_CP10.md), [rehearse_release.py](../reader_side/tools/rehearse_release.py) and [release_gate.py](../reader_side/tools/release_gate.py) bind a local rehearsal to an actual candidate. | Release owner decides for that source. Technical learning completion for another correct patch is separate from the fixed decision. |
 | Later change, Ch11 | [Versioned work order](../reader_side/evolution/WORK_ORDER_CP11.md) and retained decisions | [Policy catalogue](../reader_side/evolution/policy_catalog.json), [policy delta](../repo/engineering/evolution/policy_delta.json), [policy_history.py](../repo/src/treasury/policy_history.py) and [evolution_gate.py](../reader_side/tools/evolution_gate.py) connect new behavior to persistent history. | Policy and operations owners settle the change; stop on ambiguous historical provenance or failed migration/retry checks. |
 
 ## Trace REQ-EXPL-004 without changing its meaning

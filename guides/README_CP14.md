@@ -1,5 +1,9 @@
 # Chapter 14: Measure outcomes and choose a tool stack
 
+[Home](../README.md#find-your-chapter) · [Lab guide](../navigation/LAB_GUIDE.md) · [Previous: Chapter 13](README_CP13.md) · [Solutions](../navigation/SOLUTIONS.md)
+
+> Checkpoint counts below are historical. Use the [shared lab guide](../navigation/LAB_GUIDE.md#start-with-the-shared-regression-suite) for current checks and candidate-readiness reporting.
+
 This final exercise measures a declared local CP13 workflow and reviews a
 proposed tool pilot. Actual command durations, protected synthetic acceptance,
 scenario costs and unavailable field measurements have distinct fields and
@@ -40,8 +44,8 @@ old green receipt.
 
 WO-014 permits only:
 
-- `repo/engineering/measurement/outcome_review.json`
-- `repo/engineering/measurement/tool_decision.json`
+- [repo/engineering/measurement/outcome_review.json](../repo/engineering/measurement/outcome_review.json)
+- [repo/engineering/measurement/tool_decision.json](../repo/engineering/measurement/tool_decision.json)
 
 The supplied records intentionally count repeated passes as accepted items,
 turn missing actual costs into zero and overclaim a tool/release decision.
@@ -129,7 +133,7 @@ not authorize a real pilot, procurement or release.
 
 ## Tool capabilities and future field collection
 
-`reader_side/measurement/tool_capabilities.json` records dated primary-doc
+[reader_side/measurement/tool_capabilities.json](../reader_side/measurement/tool_capabilities.json) records dated primary-doc
 capabilities and constraints for VS Code Copilot, GitHub Copilot cloud agent and
 Claude Code, alongside the separate local control. Vendor rows explicitly say
 DOCUMENTED_NOT_EXECUTED, with comparative performance, costs and human effort
@@ -137,7 +141,7 @@ unknown. Recheck the sources and local permissions before a real pilot.
 
 For future Pilot E collection, copy `FIELD_TELEMETRY_TEMPLATE.json` outside
 protected source and use `FIELD_TELEMETRY_SCHEMA.json` and
-`FIELD_TELEMETRY_PROTOCOL.md`, all under `reader_side/measurement/`. Retain raw
+`FIELD_TELEMETRY_PROTOCOL.md`, all under [reader_side/measurement/](../reader_side/measurement). Retain raw
 self-reported effort intervals, resource deviations, billing evidence and
 applicable owner acceptance/withdrawal records. Reconcile overlapping effort,
 allocations and currencies before analysis. The delivered template is empty;

@@ -5812,6 +5812,8 @@
       "id": "D9-TECHNICAL-COMPLETION",
       "kind": "technical exercise endpoint",
       "source": "companion/README_CP10.md",
+      "current_source": "companion/guides/README_CP10.md",
+      "current_source_sha256": "4d09a0d7facc69a2949da90e47430fdcd641c509af56ef050b1b801973bdd3e7",
       "source_sha256": "3239330f1bd683d87d62a97a2de4ef2faa2d59e2a192572e5b6543f17d6a14ba",
       "status": "SEPARATE_TECHNICAL_AND_RELEASE_RESULTS",
       "counts_as_additional_original_prompt_group": false

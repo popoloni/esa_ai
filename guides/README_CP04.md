@@ -1,6 +1,8 @@
-> Integration update (20 October 2026): this chapter now runs inside the shared Chapters 1–10 companion. Test totals below describe its original checkpoint; `run_checks.py` runs the current combined suite. See `README.md` for current commands, chapter scopes and candidate-readiness reporting.
-
 # CP04 — Specify Behavior with Contemporary SDD Tools
+
+[Home](../README.md#find-your-chapter) · [Lab guide](../navigation/LAB_GUIDE.md) · [Previous: Chapter 3](README_CP03.md) · [Next: Chapter 5](README_CP05.md)
+
+> Checkpoint counts below are historical. Use the [shared lab guide](../navigation/LAB_GUIDE.md#start-with-the-shared-regression-suite) for current checks and candidate-readiness reporting.
 
 **All people, policies, case data, requests and thresholds are fictional educational material.** The synthetic system makes routing recommendations; it never authorizes or moves funds. Tool descriptions are based on official documentation checked on **19 October 2026**; no live vendor agent was executed.
 
@@ -21,11 +23,11 @@ The CI-style runner reports **93 passed** (7 Chapter 1 acceptance, 14 Chapter 2,
 
 ## Lab objective and edit path
 
-- The correct Chapter 3 handoff is held in `reader_side/specs/discovery_handoff.json`, because the older Chapter 3 starter intentionally remains unsafe in the cumulative source snapshot.
-- The only Chapter 4 learner-editable artifact is **`repo/engineering/specifications/explanation_alpha/specification.json`**.
-- The reader-owned reference and oracle are under `reader_side/reference_solution/specification.json` and `reader_side/specs/case_oracle.json`.
+- The correct Chapter 3 handoff is held in [reader_side/specs/discovery_handoff.json](../reader_side/specs/discovery_handoff.json), because the older Chapter 3 starter intentionally remains unsafe in the cumulative source snapshot.
+- The only Chapter 4 learner-editable artifact is **[repo/engineering/specifications/explanation_alpha/specification.json](../repo/engineering/specifications/explanation_alpha/specification.json)**.
+- The reader-owned reference and oracle are under [reader_side/reference_solution/specification.json](../reader_side/reference_solution/specification.json) and [reader_side/specs/case_oracle.json](../reader_side/specs/case_oracle.json).
 - The synthetic record says \"explain the existing route\"; it does **not** permit automatic payment approval, a threshold revision, historical changes, or production deployment.
-- The five source records in `reader_side/discovery/sources/` retain their original synthetic authority labels; the stale wiki is never authoritative.
+- The five source records in [reader_side/discovery/sources/](../reader_side/discovery/sources) retain their original synthetic authority labels; the stale wiki is never authoritative.
 
 ## Optional reviewed projection
 
@@ -39,7 +41,7 @@ This author-built exporter writes only under `companion/exports/<name>/`. It cre
 
 ## Current-tool adapters and the book
 
-Read `adapters/SPECKIT_SPECIFY_2026.md`, `OPENSPEC_DELTA_2026.md`, `KIRO_REQUIREMENTS_2026.md`, and `BMAD_BOUNDARY_2026.md`. Each names official current documentation and its unverified integration boundary. Pin actual versions and preserve session logs before claiming any live trial.
+Read [adapters/SPECKIT_SPECIFY_2026.md](../adapters/SPECKIT_SPECIFY_2026.md), `OPENSPEC_DELTA_2026.md`, `KIRO_REQUIREMENTS_2026.md`, and `BMAD_BOUNDARY_2026.md`. Each names official current documentation and its unverified integration boundary. Pin actual versions and preserve session logs before claiming any live trial.
 
 ## Security and evidence boundary
 

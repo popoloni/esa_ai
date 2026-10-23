@@ -1,5 +1,7 @@
 # Start with a small feature in a different repository
 
+[Home](../README.md) · [Navigation](README.md) · [Lab guide](LAB_GUIDE.md)
+
 This preview uses the existing orders CSV exercise. You can run it before the
 Treasury chapters: it needs no completed Treasury candidate, Git history, model
 account or optional SDK. The commands below use a POSIX shell and Python 3.10 or

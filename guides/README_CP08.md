@@ -1,5 +1,9 @@
 # CP08 — Implement and Debug Small Increments
 
+[Home](../README.md#find-your-chapter) · [Lab guide](../navigation/LAB_GUIDE.md) · [Previous: Chapter 7](README_CP07.md) · [Next: Chapter 9](README_CP09.md)
+
+> Checkpoint counts below are historical. Use the [shared lab guide](../navigation/LAB_GUIDE.md#start-with-the-shared-regression-suite) for current checks and candidate-readiness reporting.
+
 The Chapter 8 implementation exercise now runs in the shared Chapters 1–10
 companion. It uses the canonical specification, router and Chapter 5 design, while
 retaining Chapter 6 knowledge and Chapter 7 planning artifacts. Start in a fresh
@@ -7,7 +11,7 @@ working copy of `companion/`.
 
 The Chapter 7 plan and handoff are present. They still describe a planning-only
 state with a blocked implementation task and pending human decisions. The local
-teaching work order in `reader_side/implementation/WORK_ORDER_CP08.md` permits
+teaching work order in [reader_side/implementation/WORK_ORDER_CP08.md](../reader_side/implementation/WORK_ORDER_CP08.md) permits
 this two-file classroom exercise; it does not claim that task T07-04 ran or that
 its architecture/release decisions were accepted.
 
@@ -37,8 +41,8 @@ python reader_side/tools/implementation_gate.py --scope-baseline reader_side/evi
 
 The fresh faulty starter is expected to fail. Repair only these repository files:
 
-- `repo/src/treasury/explanation_alpha.py`
-- `repo/engineering/implementation/implementation_report.json`
+- [repo/src/treasury/explanation_alpha.py](../repo/src/treasury/explanation_alpha.py)
+- [repo/engineering/implementation/implementation_report.json](../repo/engineering/implementation/implementation_report.json)
 
 The CP08 gate imports the local Treasury package itself; no manual `PYTHONPATH`
 setting is required. Repeat the gate with the original before-edit baseline, then
@@ -54,7 +58,7 @@ are not an operating-system permission boundary.
 
 ## Reference and stable negative controls
 
-The corrected teaching reference is in `reader_side/reference_solution/`. To
+The corrected teaching reference is in [reader_side/reference_solution/](../reader_side/reference_solution). To
 inspect it without overwriting your candidate:
 
 ```bash
@@ -66,8 +70,8 @@ above to evaluate your own repair. The actual edit-scope check still applies to
 the repository diff relative to the supplied baseline.
 
 Protected faulty examples remain in
-`reader_side/implementation/unsafe_explanation_fixture.py` and
-`reader_side/implementation/unsafe_report_fixture.json`. They provide stable
+[reader_side/implementation/unsafe_explanation_fixture.py](../reader_side/implementation/unsafe_explanation_fixture.py) and
+[reader_side/implementation/unsafe_report_fixture.json](../reader_side/implementation/unsafe_report_fixture.json). They provide stable
 negative controls after a reader repairs the mutable learner files.
 
 No live coding-agent run, measured user benefit, human architecture acceptance,

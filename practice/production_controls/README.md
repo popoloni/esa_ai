@@ -1,5 +1,7 @@
 # Production-control practice
 
+[Home](../../README.md) · [Practice catalogue](../README.md) · [Chapter routes](../../navigation/CHAPTER_ROUTES.md)
+
 This directory adds a small, optional transfer exercise to Chapters 9–12. It does not change the protected CP01–CP14 candidates or any acceptance decision. It requires Python 3.10+ and the standard library; it uses no account, network, package installation, HTTP service, database migration or deployment.
 
 ## First useful result

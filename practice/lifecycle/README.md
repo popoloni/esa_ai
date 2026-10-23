@@ -1,5 +1,7 @@
 # One approved teaching change, from a decision to recovery
 
+[Home](../../README.md) · [Practice catalogue](../README.md) · [Chapter routes](../../navigation/CHAPTER_ROUTES.md)
+
 This continuation answers the question left open by the deliberately blocked
 `PLAN-007/v1`: **what happens after the relevant owners accept a bounded change?**
 It follows the same Treasury explanation through the actual CP08 repair, the

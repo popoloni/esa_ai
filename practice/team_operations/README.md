@@ -1,5 +1,7 @@
 # Team operations practice
 
+[Home](../../README.md) · [Practice catalogue](../README.md) · [Chapter routes](../../navigation/CHAPTER_ROUTES.md)
+
 These original worksheets support Chapters 13–14. They are outside the protected CP01–CP14 candidates and do not add authority to their gates. Copy the blank documents to your own approved working area, complete them with real owners, and retain decisions separately from proposals.
 
 Start with `TEAM_AGREEMENT_TREASURY.md`, then fill `TEAM_AGREEMENT_TEMPLATE.md` for one real use case. Work through `PAIRING_AND_REVIEW.md` and `EXPERIMENT_LIFECYCLE.md` to handle a full review queue and a changed experiment after the initial agreement. Use `SHORT_TRANSFER_PRACTICE.md` for formative feedback. The advanced delayed pilot remains documented in Chapter 13 and in the protected `reader_side/learning/` material; none of these ordinary practice sheets replaces that protocol.

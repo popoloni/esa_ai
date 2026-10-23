@@ -1,5 +1,7 @@
 # One bounded change in an installed coding client
 
+[Home](../../README.md) · [Practice catalogue](../README.md) · [Chapter routes](../../navigation/CHAPTER_ROUTES.md)
+
 The Treasury router has a small but consequential defect: it sends zero and
 negative amounts to the ordinary queue and raises an exception for some invalid
 inputs. The approved Chapter 1 change is to reject those inputs while preserving

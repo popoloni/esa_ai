@@ -1,5 +1,7 @@
 # Run a small orchestrator
 
+[Home](../../README.md) · [Practice catalogue](../README.md) · [Chapter routes](../../navigation/CHAPTER_ROUTES.md)
+
 This Chapter 7 extension executes a dependency graph using real local worker
 processes. Two workers inspect snapshots of the cumulative Treasury lab, and a
 third consumes their results. A separate branch stops at a human decision.

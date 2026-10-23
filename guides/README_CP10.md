@@ -1,5 +1,9 @@
 # Chapter 10 — Review, integrate and release with explicit decisions
 
+[Home](../README.md#find-your-chapter) · [Lab guide](../navigation/LAB_GUIDE.md) · [Previous: Chapter 9](README_CP09.md) · [Next: Chapter 11](README_CP11.md)
+
+> Checkpoint counts below are historical. Use the [shared lab guide](../navigation/LAB_GUIDE.md#start-with-the-shared-regression-suite) for current checks and candidate-readiness reporting.
+
 Run these commands from the same `companion/` working copy used for Chapters
 1–9. Python's standard library and a local Git installation supporting
 `git merge-tree --write-tree` are required. No remote, account or network is
@@ -9,7 +13,7 @@ used. The exercise retains BR-001/v1 and the EUR 5,000 routing boundary.
 
 Your job is to connect your checked Chapter 8 presentation source to its actual
 merge, artifact and recovery evidence. Complete the Chapters 1–9 candidates
-first. Under CP10, edit only `repo/engineering/release/release_dossier.json`.
+first. Under CP10, edit only [repo/engineering/release/release_dossier.json](../repo/engineering/release/release_dossier.json).
 The commands below capture that boundary and create a fresh rehearsal. A
 complete technical submission reaches `TECHNICAL_LEARNING_COMPLETE` through
 the command in the technical-completion section. The existing release gate
@@ -24,7 +28,7 @@ records the exercise checks; it is not a measured learner competence result.
 
 This chapter has one editable candidate:
 
-`repo/engineering/release/release_dossier.json`
+[repo/engineering/release/release_dossier.json](../repo/engineering/release/release_dossier.json)
 
 The dossier connects exact CI evidence, mock PR discussion resolutions, an
 independent review decision, a separate release decision and a rollback
@@ -75,9 +79,9 @@ the current artifact as its rollback target and overclaims human acceptance
 and execution of the blocked Chapter 7 task. These are expected failures even
 when the named CI checks are green.
 
-Read `reader_side/release/mock_pr.json` and `owner_decisions.json`. Repair only
+Read [reader_side/release/mock_pr.json](../reader_side/release/mock_pr.json) and `owner_decisions.json`. Repair only
 the dossier, preserving the original before-edit baseline. The protected
-worked-example dossier is `reader_side/reference_solution/ch10/release_dossier.json`.
+worked-example dossier is [reader_side/reference_solution/ch10/release_dossier.json](../reader_side/reference_solution/ch10/release_dossier.json).
 Its fields show the expected references; they do not give the learner authority
 to invent a reviewer, close a thread or approve a release.
 
@@ -140,7 +144,7 @@ which case would reveal a wrong boundary, what the previous artifact restores,
 and why this evidence gives no release authority. These explanations are a
 reader/reviewer rubric, not facts inferred automatically from the command.
 Two different authored implementations and negative controls are exercised in
-`reader_side/extended_tests/test_technical_completion.py`.
+[reader_side/extended_tests/test_technical_completion.py](../reader_side/extended_tests/test_technical_completion.py).
 
 ## Inspect the protected worked example without repairing your files
 
@@ -211,7 +215,7 @@ negative paths.
 
 ## Try a semantic integration failure
 
-The optional independent exercise in `practice/semantic_integration/README.md`
+The optional independent exercise in [practice/semantic_integration/README.md](../practice/semantic_integration/README.md)
 uses two changes to different files. Both checked heads pass the same output
 contract; their actual conflict-free merge fails because both layers add the
 same required notice. A one-file repair restores the contract. The command

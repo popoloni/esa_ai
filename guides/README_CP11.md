@@ -1,5 +1,9 @@
 # Chapter 11 — Change an existing system without erasing its history
 
+[Home](../README.md#find-your-chapter) · [Lab guide](../navigation/LAB_GUIDE.md) · [Previous: Chapter 10](README_CP10.md) · [Next: Chapter 12](README_CP12.md)
+
+> Checkpoint counts below are historical. Use the [shared lab guide](../navigation/LAB_GUIDE.md#start-with-the-shared-regression-suite) for current checks and candidate-readiness reporting.
+
 This chapter extends the same Treasury laboratory with a persistent SQLite
 teaching exercise. It retains BR-001/v1 at EUR 5,000 and adds BR-001/v2 at EUR
 3,000. Strictly below the selected threshold routes to STANDARD_QUEUE; equality

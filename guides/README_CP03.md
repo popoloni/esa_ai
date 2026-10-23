@@ -1,6 +1,8 @@
-> Integration update (20 October 2026): this chapter now runs inside the shared Chapters 1–10 companion. Test totals below describe its original checkpoint; `run_checks.py` runs the current combined suite. See `README.md` for current commands, chapter scopes and candidate-readiness reporting.
-
 # CP03 — Discover the Problem and Validate Value
+
+[Home](../README.md#find-your-chapter) · [Lab guide](../navigation/LAB_GUIDE.md) · [Previous: workspace](../navigation/FIRST_WEEK.md) · [Next: Chapter 4](README_CP04.md)
+
+> Checkpoint counts below are historical. Use the [shared lab guide](../navigation/LAB_GUIDE.md#start-with-the-shared-regression-suite) for current checks and candidate-readiness reporting.
 
 **Purpose:** challenge a sponsor's proposed implementation before any code is changed. All business people, records and measurements in this chapter are synthetic educational fixtures. They are not Euronext data, real interviews or a validated business pilot.
 
@@ -14,7 +16,7 @@ python reader_side/tools/discovery_gate.py --candidate repo/engineering/discover
 python reader_side/tools/discovery_gate.py --candidate reader_side/reference_solution/assessment.json
 ```
 
-The first command runs the cumulative CP01, CP02 and CP03 offline tests. The intentionally wrong starter assessment fails the second command. The third checks the reference scenario and passes. Edit only `repo/engineering/discovery/assessment.json` for this exercise and compare its changes with the source packet and reference. If you want to use an actual coding agent, consult `adapters/` and check installed versions; no such execution is claimed here.
+The first command runs the cumulative CP01, CP02 and CP03 offline tests. The intentionally wrong starter assessment fails the second command. The third checks the reference scenario and passes. Edit only [repo/engineering/discovery/assessment.json](../repo/engineering/discovery/assessment.json) for this exercise and compare its changes with the source packet and reference. If you want to use an actual coding agent, consult `adapters/` and check installed versions; no such execution is claimed here.
 
 ## Expected synthetic observation
 

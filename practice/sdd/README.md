@@ -1,5 +1,7 @@
 # Same Treasury task, two SDD workflows
 
+[Home](../../README.md) · [Practice catalogue](../README.md) · [Chapter routes](../../navigation/CHAPTER_ROUTES.md)
+
 For the current installed-client route, use [Run and review a native Spec Kit
 journey](NATIVE_ROUTE_D8.md). The [d8 native packet](observed_native_20261022_d8/README.md)
 retains the useful generated response, the rejected file actually written, all

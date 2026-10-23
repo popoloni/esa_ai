@@ -1,5 +1,7 @@
 # Improve the harness around a fixed responder
 
+[Home](../../README.md) · [Practice catalogue](../README.md) · [Chapter routes](../../navigation/CHAPTER_ROUTES.md)
+
 This is an **original deterministic teaching adaptation** of the
 Propose/Probe/Compose idea discussed in Harness². It runs actual Python
 subprocesses and changes their behavior through harness configuration. It uses

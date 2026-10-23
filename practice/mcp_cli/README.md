@@ -1,5 +1,7 @@
 # One read-only task through MCP and a CLI
 
+[Home](../../README.md) · [Practice catalogue](../README.md) · [Chapter routes](../../navigation/CHAPTER_ROUTES.md)
+
 **Task:** retrieve the synthetic `BR-001/v1` policy, including its threshold,
 boundary, authority and source identity. Both paths call `policy_lookup.lookup`.
 The same exercise also queries v2 and a path-like unknown identifier.

@@ -1,5 +1,7 @@
 # What did this change cost from preparation to a decision?
 
+[Home](../../README.md) · [Practice catalogue](../README.md) · [Chapter routes](../../navigation/CHAPTER_ROUTES.md)
+
 A successful patch is only one event in a workflow. You may spend time preparing the task, investigating an unsuccessful attempt, checking the result, explaining it to a reviewer and repairing it again. This practice records those events as they happen. Its purpose is to make a small cost account inspectable, including what remains unknown.
 
 Start with one bounded change and one question: **what work and money can I attribute to this outcome?** Define the beginning, the decision at the end, and any work outside that boundary. Record preparation before starting the implementation. Preserve failed attempts. A later check of the same logical change is another review event, not another delivered item.

@@ -1,5 +1,9 @@
 # Chapter 12 — Investigate incidents and recover operations
 
+[Home](../README.md#find-your-chapter) · [Lab guide](../navigation/LAB_GUIDE.md) · [Previous: Chapter 11](README_CP11.md) · [Next: Chapter 13](README_CP13.md)
+
+> Checkpoint counts below are historical. Use the [shared lab guide](../navigation/LAB_GUIDE.md#start-with-the-shared-regression-suite) for current checks and candidate-readiness reporting.
+
 INC-012 is a new synthetic deployment rehearsal over the same CP11 SQLite
 `PolicyStore`. The original router, history implementation and policy catalogue
 are retained. The faulty deployment selects a different, absent state file and
@@ -8,12 +12,12 @@ already contains v1 history and has v2 active.
 
 The editable CP12 paths are:
 
-- `repo/engineering/operations/deployment.json`
-- `repo/engineering/operations/incident_review.json`
+- [repo/engineering/operations/deployment.json](../repo/engineering/operations/deployment.json)
+- [repo/engineering/operations/incident_review.json](../repo/engineering/operations/incident_review.json)
 
-The protected work order is `reader_side/operations/WORK_ORDER_CP12.md`.
-`reader_side/reference_solution/ch12/` contains the worked configuration and
-causal review. Stable unsafe fixtures live in `reader_side/operations/`; they
+The protected work order is [reader_side/operations/WORK_ORDER_CP12.md](../reader_side/operations/WORK_ORDER_CP12.md).
+[reader_side/reference_solution/ch12/](../reader_side/reference_solution/ch12) contains the worked configuration and
+causal review. Stable unsafe fixtures live in [reader_side/operations/](../reader_side/operations); they
 remain faulty after a learner repairs the working candidates.
 
 ## Observe the protected worked example

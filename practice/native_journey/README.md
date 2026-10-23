@@ -1,5 +1,7 @@
 # Follow a native CSV change through its actual checks
 
+[Home](../../README.md) · [Practice catalogue](../README.md) · [Chapter routes](../../navigation/CHAPTER_ROUTES.md)
+
 This optional route uses the existing [CSV exercise](../csv_export/README.md)
 and one installed OpenCode client. The useful result is a CSV response for the
 same actor-visible, status-filtered orders as the existing JSON response. It
