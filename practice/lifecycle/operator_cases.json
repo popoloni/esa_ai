@@ -1,0 +1,115 @@
+{
+  "cases": [
+    {
+      "amount": "4000.00",
+      "expected": {
+        "next_action": "Continue with the standard queue's review procedure.",
+        "payment_notice": "Payment approval is separate from this queue recommendation.",
+        "policy": "BR-001/v1 (routing threshold EUR 5,000.00)",
+        "reason": "EUR 4,000.00 is below the EUR 5,000.00 routing threshold.",
+        "recommendation": "Send to the standard queue.",
+        "schema": "treasury-operator-explanation/v2"
+      },
+      "id": "operator_4000"
+    },
+    {
+      "amount": "4999.99",
+      "expected": {
+        "next_action": "Continue with the standard queue's review procedure.",
+        "payment_notice": "Payment approval is separate from this queue recommendation.",
+        "policy": "BR-001/v1 (routing threshold EUR 5,000.00)",
+        "reason": "EUR 4,999.99 is below the EUR 5,000.00 routing threshold.",
+        "recommendation": "Send to the standard queue.",
+        "schema": "treasury-operator-explanation/v2"
+      },
+      "id": "below_4999"
+    },
+    {
+      "amount": "5000",
+      "expected": {
+        "next_action": "Ask the designated reviewer to assess the request before further processing.",
+        "payment_notice": "Payment approval is separate from this queue recommendation.",
+        "policy": "BR-001/v1 (routing threshold EUR 5,000.00)",
+        "reason": "EUR 5,000.00 equals the EUR 5,000.00 routing threshold.",
+        "recommendation": "Send for human review.",
+        "schema": "treasury-operator-explanation/v2"
+      },
+      "id": "equal_5000"
+    },
+    {
+      "amount": "5000.01",
+      "expected": {
+        "next_action": "Ask the designated reviewer to assess the request before further processing.",
+        "payment_notice": "Payment approval is separate from this queue recommendation.",
+        "policy": "BR-001/v1 (routing threshold EUR 5,000.00)",
+        "reason": "EUR 5,000.01 is above the EUR 5,000.00 routing threshold.",
+        "recommendation": "Send for human review.",
+        "schema": "treasury-operator-explanation/v2"
+      },
+      "id": "above_5000"
+    },
+    {
+      "amount": "4999.999",
+      "expected": {
+        "next_action": "Continue with the standard queue's review procedure.",
+        "payment_notice": "Payment approval is separate from this queue recommendation.",
+        "policy": "BR-001/v1 (routing threshold EUR 5,000.00)",
+        "reason": "EUR 4,999.999 is below the EUR 5,000.00 routing threshold.",
+        "recommendation": "Send to the standard queue.",
+        "schema": "treasury-operator-explanation/v2"
+      },
+      "id": "preserve_precision"
+    },
+    {
+      "amount": "0",
+      "expected": {
+        "next_action": "Enter a valid amount and request a new routing recommendation.",
+        "payment_notice": "Payment approval is separate from this queue recommendation.",
+        "policy": "BR-001/v1 (routing threshold EUR 5,000.00)",
+        "reason": "The amount must be a finite positive number.",
+        "recommendation": "Stop and correct the amount.",
+        "schema": "treasury-operator-explanation/v2"
+      },
+      "id": "zero"
+    },
+    {
+      "amount": "-10",
+      "expected": {
+        "next_action": "Enter a valid amount and request a new routing recommendation.",
+        "payment_notice": "Payment approval is separate from this queue recommendation.",
+        "policy": "BR-001/v1 (routing threshold EUR 5,000.00)",
+        "reason": "The amount must be a finite positive number.",
+        "recommendation": "Stop and correct the amount.",
+        "schema": "treasury-operator-explanation/v2"
+      },
+      "id": "negative"
+    },
+    {
+      "amount": "nonsense",
+      "expected": {
+        "next_action": "Enter a valid amount and request a new routing recommendation.",
+        "payment_notice": "Payment approval is separate from this queue recommendation.",
+        "policy": "BR-001/v1 (routing threshold EUR 5,000.00)",
+        "reason": "The amount must be a finite positive number.",
+        "recommendation": "Stop and correct the amount.",
+        "schema": "treasury-operator-explanation/v2"
+      },
+      "id": "not_number"
+    },
+    {
+      "amount": "NaN",
+      "expected": {
+        "next_action": "Enter a valid amount and request a new routing recommendation.",
+        "payment_notice": "Payment approval is separate from this queue recommendation.",
+        "policy": "BR-001/v1 (routing threshold EUR 5,000.00)",
+        "reason": "The amount must be a finite positive number.",
+        "recommendation": "Stop and correct the amount.",
+        "schema": "treasury-operator-explanation/v2"
+      },
+      "id": "not_finite"
+    }
+  ],
+  "discovery_need": "An operator must understand the queue recommendation, reason, governing policy and next action without mistaking a routing result for payment approval.",
+  "origin": "AUTHOR_OWNED_EXPECTATIONS_OUTSIDE_CANDIDATE",
+  "schema": "operator-cases/v1"
+}

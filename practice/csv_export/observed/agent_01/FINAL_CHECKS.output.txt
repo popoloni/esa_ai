@@ -1,0 +1,11 @@
+test_actor_status_and_order_matrix (__main__.ContractChecks.test_actor_status_and_order_matrix) ... ok
+test_existing_json_baseline (__main__.ContractChecks.test_existing_json_baseline) ... ok
+test_header_without_rows (__main__.ContractChecks.test_header_without_rows) ... ok
+test_literal_roundtrip_and_source_nonmutation (__main__.ContractChecks.test_literal_roundtrip_and_source_nonmutation) ... ok
+test_protected_inputs_unchanged (__main__.ContractChecks.test_protected_inputs_unchanged) ... ok
+test_unsupported_formats (__main__.ContractChecks.test_unsupported_formats) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.001s
+
+OK

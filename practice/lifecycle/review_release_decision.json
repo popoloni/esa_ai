@@ -1,0 +1,19 @@
+{
+  "candidate_identity": "462681f753f0e682c72630f12adf444626a4e8cde7ae0ec70d3a242e1448b32e",
+  "conditions": [
+    "Exact candidate and contract identities match.",
+    "Independent operator cases pass against source and the actual packaged bytes.",
+    "The existing CP10 integration, review, artifact and rollback rehearsal passes."
+  ],
+  "decision_id": "OWNER-010-TEACHING-LOCAL",
+  "maker_role": "fictional-implementation-author",
+  "meaning": "A fixed fictional conditional decision. The run must demonstrate every condition; it cannot generate a new approval for different bytes.",
+  "origin": "FICTIONAL_AUTHOR_SUPPLIED_OWNER_DECISION",
+  "payment_authorized": false,
+  "production_release": false,
+  "real_human_approval": false,
+  "release_role": "fictional-local-release-owner",
+  "reviewer_role": "fictional-independent-reviewer",
+  "schema": "fictional-review-release-decision/v1",
+  "scope": "LOCAL_OPERATOR_PRESENTATION_REHEARSAL_ONLY"
+}

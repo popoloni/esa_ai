@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Competitive_Revision_20261021/companion/practice/csv_export/observed/agent_01/work/demo.py", line 21, in <module>
+    main()
+  File "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Competitive_Revision_20261021/companion/practice/csv_export/observed/agent_01/work/demo.py", line 14, in main
+    result = orders_response(rows, args.actor, args.format, args.status)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Competitive_Revision_20261021/companion/practice/csv_export/observed/agent_01/work/api.py", line 10, in orders_response
+    raise NotImplementedError("CSV presentation requested but not implemented")
+NotImplementedError: CSV presentation requested but not implemented

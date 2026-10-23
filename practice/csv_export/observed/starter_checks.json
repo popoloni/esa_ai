@@ -1,0 +1,31 @@
+{
+  "status": "REFUSE_SELECTED_CONTRACT",
+  "passed": [
+    "existing_json_unchanged",
+    "unsupported_format_refused",
+    "source_rows_unchanged"
+  ],
+  "findings": [
+    {
+      "case": "authorized_membership_and_csv_roundtrip",
+      "error": "NotImplementedError",
+      "message": "CSV presentation requested but not implemented"
+    },
+    {
+      "case": "preserve_existing_status_filter",
+      "error": "NotImplementedError",
+      "message": "CSV presentation requested but not implemented"
+    },
+    {
+      "case": "empty_result_keeps_header",
+      "error": "NotImplementedError",
+      "message": "CSV presentation requested but not implemented"
+    },
+    {
+      "case": "other_actor_gets_only_own_rows",
+      "error": "NotImplementedError",
+      "message": "CSV presentation requested but not implemented"
+    }
+  ],
+  "limits": "Local function and declared machine-CSV contract; no HTTP authentication, spreadsheet safety, scale or deployment validation."
+}

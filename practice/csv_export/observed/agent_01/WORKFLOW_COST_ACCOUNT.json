@@ -1,0 +1,430 @@
+{
+  "schema": "esa-observed-workflow-cost-account/v1",
+  "prepared_at_utc": "2026-10-21T16:15:50.736059+00:00",
+  "status": "PARTIAL_ACCOUNT_MISSING_COST_AND_HUMAN_ACCEPTANCE",
+  "purpose": "Account for the observable parts of one CSV authoring attempt and expose all missing whole-workflow cost categories. Separate SDD records illustrate controller elapsed time, not model or human effort.",
+  "observations": {
+    "csv_attempt": {
+      "task": "CSV-001/v1 bounded actual implementation",
+      "interface": "ChatGPT collaboration agent; functions.exec orchestrating exec_command and apply_patch",
+      "start_utc": "2026-10-21T15:58:13.923473+00:00",
+      "finish_utc": "2026-10-21T16:02:45.268459+00:00",
+      "observed_elapsed_seconds": 271.344986,
+      "measurement_start": "Supplied attempt creation; the exact worker-dispatch and first worker timestamp were not measured.",
+      "measurement_end": "The retained worker finished timestamp near the end of implementation/evidence preparation; this is not a measured billing boundary.",
+      "excluded_or_not_separately_measured": [
+        "Task/fixture/check preparation before attempt creation",
+        "Active model time",
+        "Post-submission independent check duration",
+        "Human review and acceptance",
+        "Future rework and maintenance",
+        "Usage and billing"
+      ],
+      "declared_budget_seconds": 360,
+      "budget_is_observed_cost": false,
+      "recorded_task_bearing_actions": 14,
+      "exec_command_calls": 10,
+      "apply_patch_calls": 4,
+      "recorded_implementation_patches": 1,
+      "initial_failure": {
+        "journal_sequence": 4,
+        "exit_code": 1,
+        "reason": "NotImplementedError: CSV presentation requested but not implemented",
+        "classification": "Expected failure of the supplied unimplemented feature before editing; not a failed model-generated candidate."
+      },
+      "worker_authored_checks": {
+        "count": 6,
+        "status": "PASS",
+        "independent_of_author": false
+      },
+      "later_independent_selected_checks": {
+        "status": "PASS_SELECTED_CONTRACT",
+        "passed_count": 7,
+        "findings": [],
+        "source": "practice/csv_export/observed/agent_01/INDEPENDENT_CHECKS.json",
+        "duration_seconds": null,
+        "human_acceptance_status": "NOT_OBSERVED"
+      },
+      "per_action_observations": [
+        {
+          "sequence": 1,
+          "tool": "exec_command",
+          "tool_reported_wall_seconds": 2.4227e-05,
+          "exit_code": 0,
+          "start_utc": null,
+          "finish_utc": null,
+          "journal_clock_interval_seconds": null,
+          "command": "pwd && rg --files -g '!.*' ."
+        },
+        {
+          "sequence": 2,
+          "tool": "exec_command",
+          "tool_reported_wall_seconds": 2.639e-05,
+          "exit_code": 0,
+          "start_utc": null,
+          "finish_utc": null,
+          "journal_clock_interval_seconds": null,
+          "command": "cat TASK.txt START.json work/CURRENT_CONTRACT.md work/ARCHIVED_EXPORT_NOTE.md work/api.py work/selection.py work/demo.py work/orders.json"
+        },
+        {
+          "sequence": 3,
+          "tool": "exec_command",
+          "tool_reported_wall_seconds": 2.3796e-05,
+          "exit_code": 0,
+          "start_utc": null,
+          "finish_utc": null,
+          "journal_clock_interval_seconds": null,
+          "command": "python3 -B work/demo.py --format json"
+        },
+        {
+          "sequence": 4,
+          "tool": "exec_command",
+          "tool_reported_wall_seconds": 2.3596e-05,
+          "exit_code": 1,
+          "start_utc": null,
+          "finish_utc": null,
+          "journal_clock_interval_seconds": null,
+          "command": "python3 -B work/demo.py --format csv"
+        },
+        {
+          "sequence": 5,
+          "tool": "apply_patch",
+          "tool_reported_wall_seconds": null,
+          "exit_code": null,
+          "start_utc": null,
+          "finish_utc": null,
+          "journal_clock_interval_seconds": null,
+          "mutation_description": "Evidence, self-check or handoff artifact creation"
+        },
+        {
+          "sequence": 6,
+          "tool": "exec_command",
+          "tool_reported_wall_seconds": 2.4177e-05,
+          "exit_code": 0,
+          "start_utc": null,
+          "finish_utc": null,
+          "journal_clock_interval_seconds": null,
+          "command": "python3 -B - <<'PY'\nimport json\nfrom pathlib import Path\nnames = ['TASK.txt', 'START.json', 'work/CURRENT_CONTRACT.md', 'work/ARCHIVED_EXPORT_NOTE.md', 'work/api.py', 'work/selection.py', 'work/demo.py', 'work/orders.json']\ncontent = {name: Path(name).read_text() for name in names}\nPath('INITIAL_API.py.txt').write_text(content['work/api.py'])\nprint(json.dumps(content))\nPY"
+        },
+        {
+          "sequence": 7,
+          "tool": "apply_patch",
+          "tool_reported_wall_seconds": null,
+          "exit_code": null,
+          "start_utc": null,
+          "finish_utc": null,
+          "journal_clock_interval_seconds": null,
+          "mutation_description": "Implementation patch to work/api.py"
+        },
+        {
+          "sequence": 8,
+          "tool": "apply_patch",
+          "tool_reported_wall_seconds": null,
+          "exit_code": null,
+          "start_utc": null,
+          "finish_utc": null,
+          "journal_clock_interval_seconds": null,
+          "mutation_description": "Evidence, self-check or handoff artifact creation"
+        },
+        {
+          "sequence": 9,
+          "tool": "exec_command",
+          "tool_reported_wall_seconds": 0.016299528,
+          "exit_code": 0,
+          "start_utc": "2026-10-21T16:00:17.209Z",
+          "finish_utc": "2026-10-21T16:00:17.810Z",
+          "journal_clock_interval_seconds": 0.601,
+          "command": "python3 -B FOCUSED_CHECKS.py"
+        },
+        {
+          "sequence": 10,
+          "tool": "exec_command",
+          "tool_reported_wall_seconds": 2.608e-05,
+          "exit_code": 0,
+          "start_utc": "2026-10-21T16:00:17.209Z",
+          "finish_utc": "2026-10-21T16:00:17.791Z",
+          "journal_clock_interval_seconds": 0.582,
+          "command": "python3 -B work/demo.py --format json"
+        },
+        {
+          "sequence": 11,
+          "tool": "exec_command",
+          "tool_reported_wall_seconds": 3.4912e-05,
+          "exit_code": 0,
+          "start_utc": "2026-10-21T16:00:17.209Z",
+          "finish_utc": "2026-10-21T16:00:17.762Z",
+          "journal_clock_interval_seconds": 0.553,
+          "command": "python3 -B work/demo.py --format csv"
+        },
+        {
+          "sequence": 12,
+          "tool": "exec_command",
+          "tool_reported_wall_seconds": 3.5594e-05,
+          "exit_code": 0,
+          "start_utc": null,
+          "finish_utc": null,
+          "journal_clock_interval_seconds": null,
+          "command": "python3 -B - <<'PY'\nfrom pathlib import Path\nimport difflib\nimport hashlib\nimport json\nfrom datetime import datetime, timezone\nbefore = Path('INITIAL_API.py.txt').read_text()\nafter = Path('work/api.py').read_text()\ndiff = ''.join(difflib.unified_diff(before.splitlines(keepends=True), after.splitlines(keepends=True), fromfile='initial/work/api.py', tofile='final/work/api.py'))\nPath('FINAL.diff').write_text(diff)\nPath('FINAL_API.py.txt').write_text(after)\nprint(json.dumps({'captured_utc': datetime.now(timezone.utc).isoformat(), 'diff': diff, 'final_api_sha256': hashlib.sha256(Path('work/api.py').read_bytes()).hexdigest(), 'final_source': after}))\nPY"
+        },
+        {
+          "sequence": 13,
+          "tool": "apply_patch",
+          "tool_reported_wall_seconds": null,
+          "exit_code": null,
+          "start_utc": null,
+          "finish_utc": null,
+          "journal_clock_interval_seconds": null,
+          "mutation_description": "Evidence, self-check or handoff artifact creation"
+        },
+        {
+          "sequence": 14,
+          "tool": "exec_command",
+          "tool_reported_wall_seconds": 2.4437e-05,
+          "exit_code": 0,
+          "start_utc": null,
+          "finish_utc": null,
+          "journal_clock_interval_seconds": null,
+          "command": "python3 -B - <<'PY'\nfrom datetime import datetime, timezone\nimport json\nfrom pathlib import Path\nrequired = ['INITIAL_UNDERSTANDING.md', 'INITIAL_JSON.output.txt', 'INITIAL_CSV.output.txt', 'COMMAND_JOURNAL.json', 'FOCUSED_CHECKS.py', 'FINAL_CHECKS.output.txt', 'FINAL_OUTPUTS.json', 'INITIAL_API.py.txt', 'FINAL_API.py.txt', 'FINAL.diff', 'SESSION.json', 'HANDOFF.md', 'RAW_RESPONSE.md']\nfor name in required:\n    assert Path(name).is_file() and Path(name).stat().st_size > 0, name\nassert Path('work/api.py').read_bytes() == Path('FINAL_API.py.txt').read_bytes()\noutputs = json.loads(Path('FINAL_OUTPUTS.json').read_text())\nassert outputs['json']['output'] == Path('INITIAL_JSON.output.txt').read_text()\nassert outputs['csv']['exit_code'] == 0\njournal = json.loads(Path('COMMAND_JOURNAL.json').read_text())\nassert len(journal['entries']) == 13\nsession = json.loads(Path('SESSION.json').read_text())\nfinished = datetime.now(timezone.utc)\nstarted = datetime.fromisoformat(session['timing']['attempt_start_utc_from_supplied_START'])\nsession['timing']['finished_utc'] = finished.isoformat()\nsession['timing']['elapsed_seconds_from_supplied_attempt_start'] = (finished - started).total_seconds()\nPath('SESSION.json').write_text(json.dumps(session, indent=2) + '\\n')\nprint(json.dumps({'artifact_verification': 'PASS', 'artifact_count': len(required), 'final_json_matches_initial_output': True, 'finished_utc': session['timing']['finished_utc'], 'elapsed_seconds_from_supplied_attempt_start': session['timing']['elapsed_seconds_from_supplied_attempt_start']}))\nPY"
+        }
+      ],
+      "parallel_action_sequences": [
+        9,
+        10,
+        11
+      ],
+      "aggregation_rule": "Do not sum overlapping clock intervals or interpret tool-reported wall time as active model effort. Missing duration is never replaced by zero.",
+      "protected_input_checks": [
+        {
+          "path": "practice/csv_export/observed/agent_01/work/ARCHIVED_EXPORT_NOTE.md",
+          "expected_sha256": "2ab362eebb9d3e2a308b219e5470665429333c75484749370ad11eac17dad643",
+          "actual_sha256": "2ab362eebb9d3e2a308b219e5470665429333c75484749370ad11eac17dad643",
+          "matches": true
+        },
+        {
+          "path": "practice/csv_export/observed/agent_01/work/CURRENT_CONTRACT.md",
+          "expected_sha256": "2cd3b8d8924d57bc37cf3b36fc30bc8f31924de99136f6379342d117fb8238ba",
+          "actual_sha256": "2cd3b8d8924d57bc37cf3b36fc30bc8f31924de99136f6379342d117fb8238ba",
+          "matches": true
+        },
+        {
+          "path": "practice/csv_export/observed/agent_01/work/orders.json",
+          "expected_sha256": "cdd8264e6dba6d7d4d42cfd9f733fe1a704d8fc1f5f0919fe094d9f9ee96acb0",
+          "actual_sha256": "cdd8264e6dba6d7d4d42cfd9f733fe1a704d8fc1f5f0919fe094d9f9ee96acb0",
+          "matches": true
+        },
+        {
+          "path": "practice/csv_export/observed/agent_01/work/selection.py",
+          "expected_sha256": "2b1a1365b715a0c4ec34d37e5537fb4eb7fea7912a96b03c8e347465499a540f",
+          "actual_sha256": "2b1a1365b715a0c4ec34d37e5537fb4eb7fea7912a96b03c8e347465499a540f",
+          "matches": true
+        },
+        {
+          "path": "practice/csv_export/observed/agent_01/work/demo.py",
+          "expected_sha256": "87e93b81db5a6e76fcd2b8b37c09cbd12832da37d211038cefbb4e20d2fbe6ae",
+          "actual_sha256": "87e93b81db5a6e76fcd2b8b37c09cbd12832da37d211038cefbb4e20d2fbe6ae",
+          "matches": true
+        }
+      ],
+      "task_identity_correction": "practice/csv_export/observed/agent_01/TASK_IDENTITY_CORRECTION.json",
+      "original_task_hash_matches_exact_bytes": false,
+      "first_observed_task_read_matches_current_bytes": true,
+      "final_candidate_matches_session_hash": true
+    },
+    "separate_sdd_controller_observation": {
+      "source": "practice/sdd/observed_external_agent_20261021/run/state.json",
+      "created_at_utc": "2026-10-21T15:56:20.813601+00:00",
+      "stopped_at_utc": "2026-10-21T16:07:23.942715+00:00",
+      "derived_controller_clock_interval_seconds": 663.129114,
+      "stages": [
+        {
+          "stage": "generate",
+          "attempt": 1,
+          "start_utc": "2026-10-21T15:56:20.855337+00:00",
+          "finish_utc": "2026-10-21T16:03:33.808620+00:00",
+          "controller_reported_elapsed_seconds": 432.951277,
+          "outcome": "COMPLETED",
+          "returncode": 0,
+          "meaning": "Wall interval of the external-worker adapter, including dispatch/waiting, actual-agent work and submission; not active model or human effort.",
+          "active_model_seconds": null,
+          "human_review_seconds": null
+        },
+        {
+          "stage": "review",
+          "attempt": 1,
+          "start_utc": "2026-10-21T16:03:33.843440+00:00",
+          "finish_utc": "2026-10-21T16:07:23.913697+00:00",
+          "controller_reported_elapsed_seconds": 230.068571,
+          "outcome": "COMPLETED",
+          "returncode": 0,
+          "meaning": "Wall interval of the external-worker adapter, including dispatch/waiting, actual-agent work and submission; not active model or human effort.",
+          "active_model_seconds": null,
+          "human_review_seconds": null
+        }
+      ],
+      "sum_of_reported_sequential_stage_intervals_seconds": 663.019848,
+      "run_status": "WAITING_HUMAN",
+      "requirements_approval_status": "WAITING_HUMAN",
+      "accepted_human_decision_count": null,
+      "recorded_generation_helper_failure": "A helper spawn was refused by the agent thread limit; no helper ran. Separate effort and cost were not measured.",
+      "controller_mechanism": "external_worker.py waits for an external submission under the controller deadline; intervals include dispatch and waiting.",
+      "combination_rule": "This separate task overlaps the CSV attempt in clock time. Do not add the intervals as one workflow cost or treat them as matched productivity trials."
+    }
+  },
+  "unavailable_cost_components": {
+    "preparation_before_attempt": {
+      "value": null,
+      "unit": "seconds",
+      "reason": "Task/source/check preparation before START.json was not measured."
+    },
+    "active_model_work": {
+      "value": null,
+      "unit": "seconds",
+      "reason": "Dispatch and tool elapsed intervals do not expose active model execution time."
+    },
+    "implementation_analysis_and_editing": {
+      "value": null,
+      "unit": "seconds",
+      "reason": "Included in the attempt interval but not measured separately as active work."
+    },
+    "evidence_preparation_and_recording": {
+      "value": null,
+      "unit": "seconds",
+      "reason": "Some recording is included in the interval but not separately timed; journal serialization excludes itself."
+    },
+    "post_submission_independent_checks": {
+      "value": null,
+      "unit": "seconds",
+      "reason": "The selected result is retained, but INDEPENDENT_CHECKS.json contains no measured duration."
+    },
+    "human_review": {
+      "value": null,
+      "unit": "seconds",
+      "reason": "No measured human review interval or human acceptance is retained."
+    },
+    "rework_and_failed_attempt_effort": {
+      "value": null,
+      "unit": "seconds",
+      "reason": "The initial failure and one implementation patch are retained; effort attributable to them was not separately timed."
+    },
+    "maintenance_or_later_repair": {
+      "value": null,
+      "unit": "seconds",
+      "reason": "No attributable subsequent maintenance observation exists."
+    },
+    "input_tokens": {
+      "value": null,
+      "unit": "tokens",
+      "reason": "Provider usage is unavailable; tool output token estimates are not model billing usage."
+    },
+    "output_tokens": {
+      "value": null,
+      "unit": "tokens",
+      "reason": "Provider usage telemetry is unavailable."
+    },
+    "cached_tokens": {
+      "value": null,
+      "unit": "tokens",
+      "reason": "Provider cache telemetry is unavailable."
+    },
+    "model_monetary_cost": {
+      "value": null,
+      "unit": "currency",
+      "reason": "No attributable provider bill is available."
+    },
+    "human_monetary_cost": {
+      "value": null,
+      "unit": "currency",
+      "reason": "Neither measured effort nor an applicable rate is available."
+    },
+    "tool_and_infrastructure_monetary_cost": {
+      "value": null,
+      "unit": "currency",
+      "reason": "No attributable tooling or infrastructure allocation is available."
+    },
+    "total_workflow_cost": {
+      "value": null,
+      "unit": "currency",
+      "reason": "Relevant components are unavailable; no total can be calculated."
+    },
+    "cost_per_human_accepted_outcome": {
+      "value": null,
+      "unit": "currency/outcome",
+      "reason": "Complete cost and an observed human-accepted-outcome denominator are unavailable."
+    },
+    "roi": {
+      "value": null,
+      "unit": "ratio",
+      "reason": "No measured business benefit, complete cost or counterfactual baseline exists."
+    }
+  },
+  "assumed_cost_values": {},
+  "accepted_outcome_denominator": {
+    "definition": "Outcomes explicitly accepted by their accountable human reviewer.",
+    "observed_count": null,
+    "status": "NOT_MEASURED",
+    "candidate_with_selected_automated_checks_passed_count": 1,
+    "machine_pass_is_human_acceptance": false,
+    "reason": "CSV stops at selected automated checks and handoff; SDD explicitly stops at WAITING_HUMAN."
+  },
+  "prohibited_inferences": [
+    "Unknown money or effort is zero",
+    "Elapsed wall duration equals active model work or human labor",
+    "Selected automated success means human acceptance",
+    "One task establishes organizational ROI or universal speedup",
+    "Different tasks and overlapping intervals provide a fair productivity ranking"
+  ],
+  "source_records": [
+    {
+      "path": "practice/csv_export/observed/agent_01/SESSION.json",
+      "sha256": "85b633966e7d7695c9867ff697a4a188ca4e43a7ccaf773915a98423d449fd28"
+    },
+    {
+      "path": "practice/csv_export/observed/agent_01/COMMAND_JOURNAL.json",
+      "sha256": "6f29f1e3890d90389a8b66207c0178d7461092c6f6703b01d568129d850664ce"
+    },
+    {
+      "path": "practice/csv_export/observed/agent_01/START.json",
+      "sha256": "e0e3fe8b8cb0eebe1dc9c0d5aae0facf352ef56e0ed96d52bf774d49220853ee"
+    },
+    {
+      "path": "practice/csv_export/observed/agent_01/TASK.txt",
+      "sha256": "6181e7e721f8792a66711409d6cc20b1f649184165e340edf9cfe9f6d2026e3a"
+    },
+    {
+      "path": "practice/csv_export/observed/agent_01/TASK_IDENTITY_CORRECTION.json",
+      "sha256": "ad5ec6110f8c0a00af85f4d6ca6a86a1be29fb1dd065524b43313cb357ff1d88"
+    },
+    {
+      "path": "practice/csv_export/observed/agent_01/INDEPENDENT_CHECKS.json",
+      "sha256": "4fd52433a14551cb41c62b041d890f9122d4062b97a94016dcefcce4aac04cfd"
+    },
+    {
+      "path": "practice/csv_export/observed/agent_01/FINAL.diff",
+      "sha256": "db90ab7d66d2e9c39c765b66eb0311c6a45169730135c3cfba7e4c5ada6aebf0"
+    },
+    {
+      "path": "practice/csv_export/observed/agent_01/HANDOFF.md",
+      "sha256": "71c894437fe6c5a7bb364a74ac3d779429c1354cca39729a2b6680a753b38af8"
+    },
+    {
+      "path": "practice/sdd/observed_external_agent_20261021/run/state.json",
+      "sha256": "39759f9dafdfca20a0dd5b1807c0be502f5e5d20564a8ee5cc3f624de96c908f"
+    },
+    {
+      "path": "practice/sdd/observed_external_agent_20261021/plan.json",
+      "sha256": "3bdb20e293e181bb9c611193c3297294a7f1800e6a0d70de1c29805f98518d60"
+    },
+    {
+      "path": "practice/sdd/observed_external_agent_20261021/run/attempts/generate/001/PROVENANCE.json",
+      "sha256": "e08879283fe3efb57caa0e5592c2520dead9cd73184b854b05197ca18f4ba115"
+    },
+    {
+      "path": "practice/sdd/observed_external_agent_20261021/run/attempts/review/001/PROVENANCE.json",
+      "sha256": "dcce5fc26f8361742d679898beb6c37b6603b126f178cc15da1a5aaeb70b2201"
+    },
+    {
+      "path": "practice/orchestration/external_worker.py",
+      "sha256": "bbabca687af3efe1238a72d40c3265964361f4ef5dc2c9d19f33914adf943139"
+    }
+  ]
+}

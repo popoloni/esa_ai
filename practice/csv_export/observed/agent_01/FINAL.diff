@@ -1,0 +1,24 @@
+--- initial/work/api.py
++++ final/work/api.py
+@@ -1,4 +1,7 @@
+ """Existing JSON presentation; add CSV after the same selection boundary."""
++import csv
++import io
++
+ from selection import selected_orders, public_order
+ 
+ def orders_response(rows, actor, format="json", status=None):
+@@ -7,5 +10,12 @@
+     if format == "json":
+         return {"content_type": "application/json", "body": public}
+     if format == "csv":
+-        raise NotImplementedError("CSV presentation requested but not implemented")
++        output = io.StringIO(newline="")
++        writer = csv.DictWriter(
++            output,
++            fieldnames=("order_id", "status", "customer", "amount_eur", "note"),
++        )
++        writer.writeheader()
++        writer.writerows(public)
++        return {"content_type": "text/csv; charset=utf-8", "body": output.getvalue()}
+     raise ValueError("unsupported format")

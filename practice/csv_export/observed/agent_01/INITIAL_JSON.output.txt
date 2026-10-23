@@ -1,0 +1,16 @@
+[
+  {
+    "order_id": "A1",
+    "status": "open",
+    "customer": "Acme, North",
+    "amount_eur": "12.00",
+    "note": "She said \"ready\"\nnext line"
+  },
+  {
+    "order_id": "A2",
+    "status": "closed",
+    "customer": "Caff\u00e8",
+    "amount_eur": "0.00",
+    "note": "=SUM(A1:A2)"
+  }
+]

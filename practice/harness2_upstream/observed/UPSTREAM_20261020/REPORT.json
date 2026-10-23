@@ -1,0 +1,110 @@
+{
+  "schema": "esa-harness2-upstream-demo/v1",
+  "started_at_utc": "2026-10-20T16:16:59.391889+00:00",
+  "upstream_commit": "1cfe254e8d25b15f37048c3730134686abe60335",
+  "upstream_version": "0.1.0",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-I",
+    "-B",
+    "-c",
+    "import sys; sys.path.insert(0, sys.argv.pop(1)); from harness2.cli.demo import main; raise SystemExit(main())",
+    "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Orchestration_Harness_20261020/companion/practice/harness2_upstream/vendor",
+    "--output",
+    "/workspace/scratch/efa0a59e0545/output/Engineering_Software_with_Agentic_AI_Orchestration_Harness_20261020/companion/practice/harness2_upstream/observed/UPSTREAM_20261020/run",
+    "--k",
+    "2",
+    "--mode",
+    "both"
+  ],
+  "mode": "both",
+  "k": 2,
+  "model_calls": 0,
+  "editor_kind": "UPSTREAM_SCRIPTED_DETERMINISTIC",
+  "source_files_verified": 43,
+  "meaning": "Execution of pinned upstream adaptation machinery with scripted edits, source-arithmetic selection and real Python subprocesses. Not a model-backed benchmark or an independent replication of paper effect sizes.",
+  "exit_code": 0,
+  "upstream_report": {
+    "domain": "accounting",
+    "n_tasks": 2,
+    "seed": null,
+    "done": 2,
+    "failed": 0,
+    "tasks": [
+      {
+        "task": "ledger-1",
+        "status": "ok",
+        "library_entries_before": {
+          "agg": 0,
+          "seq": 0
+        }
+      },
+      {
+        "task": "ledger-2",
+        "status": "ok",
+        "library_entries_before": {
+          "agg": 1,
+          "seq": 1
+        }
+      }
+    ],
+    "execution_count": 28,
+    "editor_calls": 32
+  },
+  "independent_output_checks": [
+    {
+      "task": "ledger-1",
+      "mode": "agg",
+      "expected": "Total: 85.15",
+      "baseline": "Total: 105.25",
+      "selected": "Total: 85.15",
+      "baseline_correct": false,
+      "selected_correct": true,
+      "selection_ok": true,
+      "selection": "runs/demo-oc-agg2/ledger-1/selection/agg2/selection.json",
+      "selected_answer": "executions/demo-oc-agg2/ledger-1/agg1/answer.txt"
+    },
+    {
+      "task": "ledger-2",
+      "mode": "agg",
+      "expected": "Total: 20.25",
+      "baseline": "Total: 35.50",
+      "selected": "Total: 20.25",
+      "baseline_correct": false,
+      "selected_correct": true,
+      "selection_ok": true,
+      "selection": "runs/demo-oc-agg2/ledger-2/selection/agg2/selection.json",
+      "selected_answer": "executions/demo-oc-agg2/ledger-2/agg2/answer.txt"
+    },
+    {
+      "task": "ledger-1",
+      "mode": "seq",
+      "expected": "Total: 85.15",
+      "baseline": "Total: 105.25",
+      "selected": "Total: 85.15",
+      "baseline_correct": false,
+      "selected_correct": true,
+      "selection_ok": true,
+      "selection": "runs/demo-oc-seq2/ledger-1/selection/seq2/selection.json",
+      "selected_answer": "executions/demo-oc-seq2/ledger-1/c1/answer.txt"
+    },
+    {
+      "task": "ledger-2",
+      "mode": "seq",
+      "expected": "Total: 20.25",
+      "baseline": "Total: 35.50",
+      "selected": "Total: 20.25",
+      "baseline_correct": false,
+      "selected_correct": true,
+      "selection_ok": true,
+      "selection": "runs/demo-oc-seq2/ledger-2/selection/seq2/selection.json",
+      "selected_answer": "executions/demo-oc-seq2/ledger-2/c2/answer.txt"
+    }
+  ],
+  "source_unchanged": true,
+  "status": "PASS",
+  "elapsed_seconds": 1.9260871110018343,
+  "finished_at_utc": "2026-10-20T16:17:01.319773+00:00"
+}

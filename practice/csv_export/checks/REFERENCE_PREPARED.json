@@ -1,0 +1,8 @@
+{
+  "prepared_before_agent_dispatch": true,
+  "basis": "CSV-001/v1 owner contract and explicit authorized row membership",
+  "author": "root editorial agent",
+  "independent_of_candidate_generation": true,
+  "not_independent_human_review": true,
+  "checks_sha256": "7781e80dddf13e6727959252b198e913f35d8a22e10476af1f983b2c188c9336"
+}

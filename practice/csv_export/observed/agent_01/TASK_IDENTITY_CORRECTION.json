@@ -1,0 +1,24 @@
+{
+  "schema": "esa-task-identity-correction/v1",
+  "recorded_at_utc": "2026-10-21T16:15:50.735268+00:00",
+  "status": "EXACT_BYTE_HASH_CORRECTED_BY_SEPARATE_RECORD",
+  "original_record": "practice/csv_export/observed/agent_01/START.json",
+  "original_record_sha256": "e0e3fe8b8cb0eebe1dc9c0d5aae0facf352ef56e0ed96d52bf774d49220853ee",
+  "original_task_sha256": "c3f0065e529cb71ae68c0585184dfa3d4e63d47efdbfeddc8c07c08483f49579",
+  "actual_task_path": "practice/csv_export/observed/agent_01/TASK.txt",
+  "exact_stored_bytes_sha256": "6181e7e721f8792a66711409d6cc20b1f649184165e340edf9cfe9f6d2026e3a",
+  "newline_stripped_sha256": "c3f0065e529cb71ae68c0585184dfa3d4e63d47efdbfeddc8c07c08483f49579",
+  "original_matches_exact_stored_bytes": false,
+  "original_matches_one_terminal_newline_removed": true,
+  "first_observed_read": {
+    "source": "practice/csv_export/observed/agent_01/COMMAND_JOURNAL.json",
+    "source_sha256": "6f29f1e3890d90389a8b66207c0178d7461092c6f6703b01d568129d850664ce",
+    "entry_sequence": 2,
+    "extraction": "The leading task text in the recorded combined cat output, ending immediately before START.json begins; retain its terminal newline.",
+    "extracted_task_sha256": "6181e7e721f8792a66711409d6cc20b1f649184165e340edf9cfe9f6d2026e3a",
+    "equals_current_task_bytes": true
+  },
+  "explanation": "The original START digest equals the task text with its single terminal newline removed, rather than the exact stored TASK.txt bytes. The retained first task read equals the current file byte for byte. No substantive task-content discrepancy was found.",
+  "originals_modified": false,
+  "scope": "This correction documents a capture-format mismatch; it does not rewrite START, alter instructions, retime the session or grant acceptance."
+}

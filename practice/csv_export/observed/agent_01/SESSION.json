@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "task": "CSV-001/v1 bounded actual implementation",
+  "worker": "/root/csv_actual_implementation",
+  "interface": "ChatGPT collaboration agent; functions.exec orchestrating exec_command and apply_patch",
+  "model": {
+    "exposed_label": "GPT-6 Astra Pro",
+    "label_source": "developer identity instruction",
+    "underlying_provider_model_id": null,
+    "model_version": null
+  },
+  "not_a_commercial_coding_client_cli": true,
+  "runtime": {
+    "python_command": "python3 -B",
+    "python_exact_version_not_measured": true
+  },
+  "timing": {
+    "attempt_start_utc_from_supplied_START": "2026-10-21T15:58:13.923473+00:00",
+    "first_worker_timestamp_not_captured": true,
+    "implementation_capture_utc": "2026-10-21T16:00:32.592049+00:00",
+    "artifact_preparation_utc": "2026-10-21T16:01:57.337Z",
+    "elapsed_seconds_from_supplied_attempt_start": 271.344986,
+    "budget_seconds": 360,
+    "elapsed_measurement_note": "Elapsed since supplied attempt creation, not a measured model active-time or billing duration.",
+    "finished_utc": "2026-10-21T16:02:45.268459+00:00"
+  },
+  "source_visibility": {
+    "received": "Parent's bounded task and provided system/developer/environment context; supplied attempt files.",
+    "inspected_paths": [
+      "TASK.txt",
+      "START.json",
+      "work/CURRENT_CONTRACT.md",
+      "work/ARCHIVED_EXPORT_NOTE.md",
+      "work/api.py",
+      "work/selection.py",
+      "work/demo.py",
+      "work/orders.json"
+    ],
+    "inventory_only": [
+      "work/__pycache__/api.cpython-312.pyc",
+      "work/__pycache__/selection.cpython-312.pyc"
+    ],
+    "author_reference_solution_read": false,
+    "external_acceptance_check_read": false,
+    "other_attempt_or_parent_artifact_read": false,
+    "isolation_note": "Only the supplied attempt was inspected; shared filesystem access itself is not isolation."
+  },
+  "interventions": {
+    "helper_agents_spawned": 0,
+    "external_messages_sent": 0,
+    "user_interventions": [],
+    "parent_interventions": [],
+    "internal_status_message_sent_to_parent": true,
+    "human_approval_claimed": false,
+    "deployed": false
+  },
+  "changes": {
+    "work_files_modified": [
+      "work/api.py"
+    ],
+    "work_files_added": [],
+    "protected_inputs_hash_check": "PASS"
+  },
+  "evidence": {
+    "initial_json_exit": 0,
+    "initial_csv_exit": 1,
+    "initial_csv_failure": "NotImplementedError: CSV presentation requested but not implemented",
+    "final_json_exit": 0,
+    "final_csv_exit": 0,
+    "focused_test_count": 6,
+    "focused_tests_exit": 0,
+    "focused_tests_result": "PASS",
+    "test_provenance": "Worker-authored focused contract checks; no independent external acceptance evidence.",
+    "final_api_sha256": "35d395b729810410040d2b00e8a706855d714f17e53a16a961fb44076c43b20a"
+  },
+  "unknowns": [
+    "Underlying provider model ID and exact deployed version",
+    "Billing, model token usage, cache metrics and monetary cost",
+    "Per-command start/end timestamps for early tool calls",
+    "Exact worker dispatch timestamp"
+  ],
+  "billing_or_cost_claim": null,
+  "final_user_response": "RAW_RESPONSE.md"
+}

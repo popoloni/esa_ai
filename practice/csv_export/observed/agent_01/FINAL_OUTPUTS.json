@@ -1,0 +1,16 @@
+{
+  "json": {
+    "chunk_id": "8d8d34",
+    "wall_time_seconds": 0.00002608,
+    "exit_code": 0,
+    "original_token_count": 74,
+    "output": "[\n  {\n    \"order_id\": \"A1\",\n    \"status\": \"open\",\n    \"customer\": \"Acme, North\",\n    \"amount_eur\": \"12.00\",\n    \"note\": \"She said \\\"ready\\\"\\nnext line\"\n  },\n  {\n    \"order_id\": \"A2\",\n    \"status\": \"closed\",\n    \"customer\": \"Caff\\u00e8\",\n    \"amount_eur\": \"0.00\",\n    \"note\": \"=SUM(A1:A2)\"\n  }\n]\n"
+  },
+  "csv": {
+    "chunk_id": "32f011",
+    "wall_time_seconds": 0.000034912,
+    "exit_code": 0,
+    "original_token_count": 35,
+    "output": "order_id,status,customer,amount_eur,note\r\nA1,open,\"Acme, North\",12.00,\"She said \"\"ready\"\"\nnext line\"\r\nA2,closed,Caffè,0.00,=SUM(A1:A2)\r\n"
+  }
+}
