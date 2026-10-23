@@ -1,0 +1,98 @@
+ENGINEERING SOFTWARE WITH AGENTIC AI | 2026.10.22-d9
+
+Use this edition's Appendix A, Working Through the Treasury Exercises.
+The fourteen sections follow the same project in chapter order.
+
+Chapter 01 -> A.1   Repair validation and preserve the original policy.
+Chapter 02 -> A.2   Prepare portable instructions, capabilities and review.
+Chapter 03 -> A.3   Investigate value and compare bounded alternatives.
+Chapter 04 -> A.4   Specify behavior and preserve meaning across formats.
+Chapter 05 -> A.5   Compare architecture alternatives and document a proposal.
+Chapter 06 -> A.6   Maintain context, authority, history and reusable procedure.
+Chapter 07 -> A.7   Plan dependencies and examine controller/harness variations.
+Chapter 08 -> A.8   Implement the authorized presentation change.
+Chapter 09 -> A.9   Challenge the implementation independently.
+Chapter 10 -> A.10  Review exact source and rehearse local integration/recovery.
+Chapter 11 -> A.11  Introduce a new policy while preserving prior decisions.
+Chapter 12 -> A.12  Diagnose the state selected by an incident.
+Chapter 13 -> A.13  Develop team practice and distinguish learning assessment.
+Chapter 14 -> A.14  Reconcile attempts, accepted outcomes and scenario costs.
+
+Every chapter card in the PDF links to its corresponding solution section.
+The detailed EXERCISE_COVERAGE.json records the shorter questions and variations
+covered within those sections. Treat it as navigation, not as permission to edit
+protected criteria or a machine assertion that your work is accepted.
+
+Try an exercise first. Preserve your starting candidate and result, compare the
+reasoning as well as the output, and retain a new result after permitted edits.
+Reference commands examine the reference rather than repairing your candidate.
+
+For the optional human study retained in the advanced learning guide, leave A.13 and the companion's
+transfer references unread until assessment is complete. Reading the answer
+constitutes prior exposure and changes the activity into guided study.
+
+The standalone companion ZIP does not duplicate the book PDF. Current v2 records
+and checker repairs belong to d4; retained legacy references and receipts keep
+their original identities. Follow reader_side/schemas/REVIEW_SCHEMAS_V2.md for
+current paths. The schema migration does not grant a human decision.
+
+Appendix B, From AI Claims to Engineering Decisions, helps choose the next
+investigation in your own workflow. Start with a question, use Atlas practice
+guides and original sources, and design a check that could expose a mistake.
+The package-root reader_resources/ directory contains blank and illustrative
+Appendix_B_Decision_Workbook.txt and .json files. Actual observations remain
+unfilled until collected. The workbook includes a reusable research-agent brief.
+
+INHERITED PRACTICE EXTENSIONS — ORIGINAL OBSERVATIONS RETAINED
+First week -> navigation/FIRST_WEEK.md and the introduction.
+CSV feature -> practice/csv_export/; Chapters 5-6 and Appendix A.5.
+Fictional lifecycle -> practice/lifecycle/; Chapters 8-12 and Appendix A.
+Actual SDD generation/review -> practice/sdd/observed_external_agent_20261021/.
+Current schema migration -> reader_side/schemas/REVIEW_SCHEMAS_V2.md.
+Actual properties/static scan -> practice/verification_tools/ and Chapter 9.
+Actual critic review -> practice/ai_review/ and Chapter 9.
+Advanced learning protocol -> practice/team_operations/Advanced_Learning_Protocol.pdf.
+
+These extensions have distinct evidence scopes. Actual collaboration is not an
+installed coding-client trial; synthetic owner decisions are not real approval.
+
+CURRENT D9 READER ROUTES
+Independent CSV preview -> navigation/EXPERIENCED_PREVIEW.md; introduction and Chapter2.
+Operational model/context bridge -> Chapter2, before the first working-copy task.
+Lifecycle map -> navigation/LIFECYCLE_MAP.md; Chapter4.
+Specification-first native CSV journey -> practice/native_journey/; Chapter4.
+  Actual native specification, plan and CSV implementation are retained. The
+  final independent checks pass, but the client did not recheck its last cleanup.
+  CR04 remains OPEN_PARTIAL_BUDGET_EXHAUSTED after the four allowed invocations.
+Technical completion -> README_CP10.md; Chapter10 and Appendix A.10.
+  Follow CP10_CURRENT and its matching edit baseline and completion receipt.
+  A correct alternative can complete the technical task; the unchanged release
+  checker still refuses source not covered by an authentic applicable decision.
+Semantic integration counterexample -> practice/semantic_integration/; Chapter10.
+  Passing separate heads can combine into a contract failure even when Git merges
+  them without a textual conflict. The repair and actual local checks are retained.
+Team adoption decision -> practice/team_operations/ADOPTION_DECISION_CASE.md;
+  Chapter13. The team and decision are authored fiction, not practitioner testimony.
+CLI/MCP/remote chooser -> navigation/INTERFACE_CHOOSER.md; Chapter2.
+  Remote contrasts are documentation-based and unexecuted.
+
+HISTORICAL NATIVE OBSERVATIONS
+Original native coding journey -> practice/native_client/README.md;
+  navigation/observation_reference/CH02_NATIVE_D8_READABLE.txt retains the longer
+  chronology relocated from the main chapter.
+Installed Spec Kit d8 route -> practice/sdd/NATIVE_ROUTE_D8.md;
+  useful specification response, unanswered-question stop and independent review;
+  failed file persistence remains explicit. NATIVE_ROUTE.md retains the dated d7
+  route and links the subsequent observation. The longer moved Chapter4 history
+  remains under navigation/observation_reference/ with its exact source extraction.
+Prospective maintenance account -> practice/workflow_cost/observed/guide_identity_01/;
+  Chapter14. One independent AGENT technical decision; complete money is unknown.
+Each observation keeps its source edition, inputs, actual outcome and limits.
+
+EXERCISE COUNTS AND EVIDENCE
+The original coverage map remains 166 groups with the same IDs, order, source
+locators and solution anchors. EXERCISE_COVERAGE.json verifies their current
+source identities and separately indexes seven d9 additions. Optional practice
+and dated observations do not silently enlarge that inherited denominator.
+The author-held formative reader kit is prepared for d9, but CR10/original R17
+remains external until independent intended readers supply actual observations.

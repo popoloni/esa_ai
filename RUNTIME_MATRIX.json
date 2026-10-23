@@ -1,0 +1,551 @@
+{
+  "schema": "book-runtime-matrix/v2",
+  "edition": "2026.10.22-d9",
+  "updated_at_utc": "2026-10-22T18:23:59.106437+00:00",
+  "evidence_path_policy": {
+    "companion": "Relative to the directory containing reader_start.py",
+    "author_archive": "Relative to the complete author package; these records are not all duplicated in the standalone companion"
+  },
+  "current_source_baseline": {
+    "os": "Linux",
+    "python": "3.12.14",
+    "git": "2.51.1",
+    "core_language_floor_declared": "3.10",
+    "status": "VALIDATED_DECLARED_LOCAL_BASELINE",
+    "note": "The actual d9 full offline gate passed on Linux/Python3.12.14/Git2.51.1. The declared Python3.10 floor is not a tested cross-platform or cross-interpreter support result. Native observations retain their separate scopes."
+  },
+  "current_release_validation": {
+    "status": "PASS",
+    "mode": "FULL",
+    "evidence": {
+      "scope": "author_archive",
+      "path": "revision_d9/evidence/release_attempt_01/validation/RELEASE_VALIDATION.json"
+    },
+    "receipt_sha256": "eda312caf5ef5d7fb68decceb3ebd911ddbc6ec531dbb5c15d4cb2b76187860f",
+    "check_counts": {
+      "passed": 29,
+      "failed": 0,
+      "skipped": 0
+    },
+    "capture": {
+      "scope": "author_archive",
+      "path": "revision_d9/evidence/release_attempt_01/CAPTURE.json",
+      "sha256": "36429cb83c50a1acfbe26f787ee3933efd4f6a6e690c74c8a7071aa37b074d43"
+    },
+    "note": "Actual full offline execution from retained frozen inputs. The original516 core tests and separate11 technical-completion tests passed. Native model observations are separate; this gate makes no model calls. Only runtime/coverage/navigation metadata was subsequently adopted; executable code, candidates, protected checks and fixtures remain the exact tested bytes.",
+    "metadata_adoption_record": {
+      "scope": "author_archive",
+      "path": "revision_d9/evidence/FINAL_VALIDATION_SCOPE.json"
+    },
+    "package_check_record": {
+      "scope": "author_archive",
+      "path": "revision_d9/evidence/delivery_qa/CLEAN_DELIVERY_QA.json",
+      "scope_note": "Separate verification of final delivered archives and their documented entry commands."
+    }
+  },
+  "observed": [
+    {
+      "surface": "d4 shared lab after core fixes",
+      "status": "PASS",
+      "observation_edition": "2026.10.21-d4",
+      "tests": 516,
+      "evidence": {
+        "scope": "author_archive",
+        "path": "revision_d4/evidence/core_gates/VALIDATION_SUMMARY.json"
+      },
+      "boundary": "Focused current-source observation before final documentation and package freeze; intentional learner candidates remain incomplete."
+    },
+    {
+      "surface": "Approved fictional lifecycle",
+      "status": "PASS_APPROVED_TEACHING_LIFECYCLE",
+      "observation_edition": "2026.10.21-d4",
+      "evidence": {
+        "scope": "author_archive",
+        "path": "revision_d4/evidence/lifecycle_run_03/LIFECYCLE_RESULT.json"
+      },
+      "boundary": "Synthetic bound owner decisions, operator archive, policy history and same-ledger incident recovery; no real human, production or payment approval."
+    },
+    {
+      "surface": "CSV implementation by a fresh ChatGPT collaboration worker",
+      "status": "PASS_SELECTED_CONTRACT",
+      "observation_edition": "2026.10.21-d4",
+      "evidence": {
+        "scope": "companion",
+        "path": "practice/csv_export/observed/agent_01/INDEPENDENT_CHECKS.json"
+      },
+      "provenance": {
+        "scope": "companion",
+        "path": "practice/csv_export/observed/agent_01/SESSION.json"
+      },
+      "boundary": "Actual task implementation with a worker inspection record and separate seven-case checks. Shared filesystem is not isolation. Not a named coding-client run."
+    },
+    {
+      "surface": "Fresh Spec Kit CLI scaffold and helpers",
+      "status": "OBSERVED_CLI_EXIT_ZERO",
+      "version": "1.2.2",
+      "observation_edition": "2026.10.21-d4",
+      "evidence": {
+        "scope": "companion",
+        "path": "practice/sdd/evidence/revision_d4_framework_commands"
+      },
+      "boundary": "CLI scaffold and helper commands; these commands alone do not invoke a model."
+    },
+    {
+      "surface": "Bounded external SDD generator and independent reviewer",
+      "status": "WAITING_HUMAN",
+      "observation_edition": "2026.10.21-d4",
+      "evidence": {
+        "scope": "companion",
+        "path": "practice/sdd/observed_external_agent_20261021/run/state.json"
+      },
+      "boundary": "Actual ChatGPT collaboration through the external-worker bridge. Native coding-client integration and human approval unobserved; review found one low-severity dependency-list inconsistency."
+    },
+    {
+      "surface": "Hypothesis and Bandit on selected Treasury source",
+      "status": "PASS_SELECTED_PROPERTIES_AND_NEGATIVE_CONTROLS",
+      "observation_edition": "2026.10.21-d4",
+      "versions": {
+        "hypothesis": "6.170.5",
+        "bandit": "1.8.6"
+      },
+      "evidence": {
+        "scope": "companion",
+        "path": "practice/verification_tools/observed/OBSERVATIONS.json"
+      },
+      "boundary": "Finite cent-string properties and selected syntax checks with seeded controls; no security completeness or general defect-detection claim."
+    },
+    {
+      "surface": "Small actual ChatGPT critic review",
+      "status": "SCORED_SMALL_TEACHING_SET",
+      "observation_edition": "2026.10.21-d4",
+      "evidence": {
+        "scope": "companion",
+        "path": "practice/ai_review/observed/critic_01/REVIEW.json"
+      },
+      "boundary": "Actual findings over a deliberately small case set; independent case scoring is recorded separately. No model ranking or human review result.",
+      "case_counts": {
+        "seeded_issues_detected": 3,
+        "missed_seeded_issues": 0,
+        "false_alarms": 0,
+        "clean_controls_unflagged": 2
+      },
+      "scoring_evidence": {
+        "scope": "companion",
+        "path": "practice/ai_review/observed/critic_01/RESULTS.json"
+      }
+    },
+    {
+      "surface": "MCP SDK versus CLI",
+      "status": "PASS_LOCAL_SDK_CLI_COMPARISON",
+      "observation_edition": "2026.10.20-cr1",
+      "sdk": "mcp==2.3.0",
+      "protocol": "2026-07-28",
+      "evidence": {
+        "scope": "companion",
+        "path": "practice/mcp_cli/observed/attempt_02_local_stdio_pass/COMPARISON.json"
+      },
+      "current_era_check": {
+        "scope": "companion",
+        "path": "practice/mcp_cli/observed/TRACE_ERA_INSPECTION_20261021.json"
+      },
+      "boundary": "Retained local SDK observation and current trace-era inspection; not named-host interoperability. Restricted-process failure retained separately."
+    },
+    {
+      "surface": "Historical CP01 ChatGPT repair",
+      "status": "OBSERVED_WITH_PRIOR_SOLUTION_EXPOSURE",
+      "observation_edition": "2026.10.20-cr1",
+      "evidence": {
+        "scope": "companion",
+        "path": "practice/agent_workflow/runs/CP01_CHATGPT_20261020/RUN_RECEIPT.json"
+      },
+      "boundary": "Prior author reference exposure disclosed; not a fresh-context effectiveness estimate."
+    },
+    {
+      "surface": "Default controller scenarios",
+      "status": "PASS_LOCAL_DETERMINISTIC_SCOPE",
+      "observation_edition": "2026.10.20-oh1",
+      "model_calls": 0,
+      "evidence": {
+        "scope": "companion",
+        "path": "practice/orchestration/observed_v2/OBSERVATIONS.json"
+      },
+      "boundary": "Retained scripted local workers; d4 bridge tests and actual SDD run are separate observations."
+    },
+    {
+      "surface": "Treasury harness refinement",
+      "status": "COMPLETE_DETERMINISTIC_EXERCISE",
+      "observation_edition": "2026.10.20-oh1",
+      "model_calls": 0,
+      "evidence": {
+        "scope": "companion",
+        "path": "practice/harness_engineering/observed/treasury_deterministic_v3/REPORT.json"
+      },
+      "boundary": "Scripted author-known fixtures, not a model-performance estimate."
+    },
+    {
+      "surface": "Pinned upstream Harness2 demonstration",
+      "status": "PASS",
+      "observation_edition": "2026.10.20-oh1",
+      "python_range": ">=3.12,<3.14",
+      "upstream_commit": "1cfe254e8d25b15f37048c3730134686abe60335",
+      "model_calls": 0,
+      "evidence": {
+        "scope": "companion",
+        "path": "practice/harness2_upstream/observed/UPSTREAM_20261020_V2/REPORT.json"
+      },
+      "boundary": "Unmodified pinned upstream mechanics with scripted editor and selection behavior."
+    },
+    {
+      "surface": "Native observation collector local rehearsal",
+      "status": "PASS_LOCAL_REHEARSAL_ONLY",
+      "observation_edition": "2026.10.21-d5",
+      "model_calls": 0,
+      "evidence": {
+        "scope": "author_archive",
+        "path": "revision_d5/evidence/native_collection/local_rehearsal_01/REHEARSAL.json"
+      },
+      "boundary": "Seven local commands and a sibling Python canary; not a named coding host, model-selected MCP call or host containment observation."
+    },
+    {
+      "surface": "Fresh AI-only reader-route rehearsal",
+      "status": "COMPLETED_REQUESTED_AI_REHEARSAL_SCOPE",
+      "observation_edition": "2026.10.21-d5",
+      "human_participants": 0,
+      "evidence": {
+        "scope": "companion",
+        "path": "practice/workflow_cost/observed/reader_rehearsal_01/worker/RESULT.json"
+      },
+      "boundary": "Setup, routing repair, Chapter 7 entry/handoff only and CSV transfer. Prior explanatory text exposure and errors retained. No human/novice outcome or completed Chapter 7 core exercise."
+    },
+    {
+      "surface": "Prospective partial workflow account",
+      "status": "VALID_ACCOUNT_WITH_EXPLICIT_LIMITS",
+      "observation_edition": "2026.10.21-d5",
+      "evidence": {
+        "scope": "companion",
+        "path": "practice/workflow_cost/observed/reader_rehearsal_01/REPORT.json"
+      },
+      "boundary": "Preparation through AI rehearsal, root review and bounded instruction corrections. One AGENT self-acceptance; human acceptance, money and ROI null. Wall intervals include waiting, overlap and delayed stop capture."
+    },
+    {
+      "surface": "Installed OpenCode Chapter 1 journey",
+      "status": "GUIDED_NATIVE_EDIT_INDEPENDENTLY_CHECKED_READY_FOR_HUMAN_REVIEW",
+      "observation_edition": "2026.10.22-d7",
+      "source_edition": "2026.10.21-d5 CP07 clean source",
+      "client": "OpenCode 1.19.3",
+      "model": "Qwen3-4B Q4_K_M via llama.cpp b11799",
+      "evidence": {
+        "scope": "companion",
+        "path": "practice/native_client/observed/ch01_01/OUTCOME.json"
+      },
+      "audit": {
+        "scope": "author_archive",
+        "path": "revision_d7/notes/R06_ACCEPTANCE_AUDIT.json"
+      },
+      "boundary": "Actual native read/check failure, guided read/edit recovery and outer timeout before native verification. Separate independent original7 and predeclared14-case checks pass, with overlap. Prior exposure and interrupted usage are explicit. No human acceptance or paired performance claim."
+    },
+    {
+      "surface": "OpenCode host loading and using the Treasury MCP tool",
+      "status": "OBSERVED_NATIVE_HOST_USE_WITH_REJECTED_MODEL_EXPLANATION",
+      "observation_edition": "2026.10.22-d7",
+      "client": "OpenCode 1.19.3",
+      "sdk": "mcp==2.3.0",
+      "protocol": "2025-11-25",
+      "evidence": {
+        "scope": "companion",
+        "path": "practice/native_client/observed/mcp_host_01/OBSERVATION_SUMMARY.json"
+      },
+      "boundary": "Real host discovery and three model-selected calls: successful lookup plus two UNKNOWN_POLICY refusals. False native claim of array rejection is retained and rejected; actual invalid-array rejection is separately attributed to the same-protocol SDK control. One declared startup canary read succeeded; no OS/network/environment containment is established."
+    },
+    {
+      "surface": "Prospectively recorded protected-guide maintenance workflow",
+      "status": "VALID_ACCOUNT_WITH_EXPLICIT_LIMITS",
+      "observation_edition": "2026.10.22-d7",
+      "human_participants": 0,
+      "evidence": {
+        "scope": "companion",
+        "path": "practice/workflow_cost/observed/guide_identity_01/REPORT.json"
+      },
+      "audit": {
+        "scope": "companion",
+        "path": "practice/workflow_cost/observed/guide_identity_01/ACCOUNT_AUDIT.json"
+      },
+      "boundary": "Real supplied defect through separate AGENT technical acceptance and recording. Five wall intervals,534.138788 seconds elapsed, one AGENT-accepted item. Human review not performed; all money and supervising-model usage unknown. No active effort or ROI inference. Older interrupted d6 account remains incomplete."
+    },
+    {
+      "surface": "Installed Spec Kit command through OpenCode",
+      "status": "OBSERVED_NATIVE_INVOCATION_AND_FULL_INPUT_READ_TASK_INCOMPLETE",
+      "observation_edition": "2026.10.22-d7",
+      "client": "OpenCode 1.19.3",
+      "framework": "Spec Kit 1.2.2",
+      "evidence": {
+        "scope": "companion",
+        "path": "practice/sdd/observed_native_20261022/OBSERVATION_SUMMARY.json"
+      },
+      "audit": {
+        "scope": "companion",
+        "path": "practice/sdd/native_review_20261022/INDEPENDENT_R08_REVIEW.json"
+      },
+      "boundary": "First provider failure, normal prose-only completion and final guided continuation retained separately. One full25044-byte packet read, then1800-second outer timeout;49 files unchanged. No generated native artifact, reached clarification or human acceptance. Authored JSON contract exposure and missing whole-workflow usage/cost remain explicit."
+    },
+    {
+      "surface": "Installed Spec Kit/OpenCode generated specification response and clarification stop",
+      "status": "OBSERVED_NATIVE_GENERATION_CLARIFICATION_STOP_INDEPENDENTLY_ASSESSED",
+      "observation_edition": "2026.10.22-d8",
+      "client": "OpenCode 1.19.3",
+      "framework": "Spec Kit 1.2.2",
+      "model": "Qwen3-4B Q4_K_M via llama.cpp b11799",
+      "evidence": {
+        "scope": "companion",
+        "path": "practice/sdd/observed_native_20261022_d8/OBSERVATION_SUMMARY.json"
+      },
+      "audit": {
+        "scope": "companion",
+        "path": "practice/sdd/native_review_20261022_d8/INDEPENDENT_R08_REVIEW.json"
+      },
+      "boundary": "Actual guided native final response preserves all five requirements and eight cases, presents three unanswered owner questions and ends normally before planning. Independent original-scope assessment supports R08 closure. Rejected first-file content, absent checklist/metadata and false three-artifacts claim remain explicit; useful text was not persisted by the client. Authored contract/oracle exposure, editorial reader extraction and unknown total cost are disclosed. No interactive answered dialogue, separate clarify invocation, human acceptance or measured framework comparison.",
+      "native_response_sha256": "0b8ce1854906b37eb2c0249e97a7e0d5dc1ce3e2597b6289c9a54fb6eacbec77",
+      "rejected_native_file_sha256": "04b6177aa7cd2a248a86ef418f8faeffe3c07cbf64651951136c20559402bfd1",
+      "evidence_sha256": "c3d613d47b172553c1f945ab511126e4f35ab43227d53777a7f967096a71b1aa",
+      "audit_sha256": "54af132187e9aa8e9192b2297e11393ea051606adf7ffd75c23863d7ca8da854"
+    },
+    {
+      "surface": "D9 native specification-first CSV journey",
+      "status": "OPEN_PARTIAL_BUDGET_EXHAUSTED",
+      "evidence": {
+        "scope": "companion",
+        "path": "practice/native_journey/observed/recorded/OUTCOME.json"
+      },
+      "runtime": "OpenCode1.19.3; Qwen3-4B Q4_K_M; llama.cppb11799; Linux CPU",
+      "native_check": "Seven selected checks passed on attempt03 source before final cleanup. No fresh native check after attempt04 cleanup.",
+      "independent_final_check": "17 selected behavior/scope/file checks and unchanged7-case checker passed final source. Not native completion or human acceptance.",
+      "final_api_sha256": "ffbe0de916d89cb78824f02e046fda730c744c662f2936ba15aeb16ffafe8451",
+      "budget": {
+        "allowed_invocations": 4,
+        "actual_invocations": 4,
+        "maximum_seconds": 2700,
+        "observed_client_seconds": 1274.4019249870034
+      }
+    }
+  ],
+  "targets_not_yet_validated": [
+    {
+      "surface": "Other named coding clients",
+      "status": "NOT_OBSERVED_IN_THIS_EDITION",
+      "clients": [
+        "Codex CLI",
+        "Claude Code",
+        "GitHub Copilot CLI",
+        "Gemini CLI"
+      ],
+      "note": "OpenCode is separately observed above. Prior capability preflights retain historical scope; no current run of these alternatives is claimed."
+    },
+    {
+      "surface": "VS Code with GitHub Copilot",
+      "status": "NOT_OBSERVED_IN_THIS_EDITION",
+      "note": "The retained d5 preflight found a code PATH launcher whose version and extension commands exited127 because no editor was installed. That historical check is retained; no d7 installed-editor check or native VS Code/Copilot journey is claimed. OpenCode is the separately observed primary route.",
+      "evidence": {
+        "scope": "author_archive",
+        "path": "revision_d5/evidence/native_collection/CAPABILITIES.json"
+      }
+    },
+    {
+      "surface": "Hosted GitHub Actions",
+      "status": "NOT_RUN",
+      "run_url": null
+    },
+    {
+      "surface": "Windows, macOS and other interpreter combinations",
+      "status": "NOT_VALIDATED"
+    },
+    {
+      "surface": "Model-backed automatic harness optimization",
+      "status": "NOT_RUN"
+    },
+    {
+      "surface": "Independent human navigation/comprehension study",
+      "status": "NOT_RUN"
+    },
+    {
+      "surface": "Delayed human learning study",
+      "status": "PENDING_SEPARATE_PROTOCOL"
+    },
+    {
+      "surface": "Full workflow billing, human effort and accepted-outcome economics",
+      "status": "NOT_MEASURED"
+    },
+    {
+      "surface": "Empirical comparison with another book or curriculum",
+      "status": "NOT_RUN"
+    },
+    {
+      "surface": "Successful native persistence of the useful SDD response and all planned framework files",
+      "status": "OBSERVED_PERSISTENCE_AND_COMPLETION_REPORTING_FAILURE_RETAINED",
+      "note": "The useful final native response was not saved to spec.md. The rejected header/input file remains, checklist and feature metadata are absent, and the claim of three artifacts is rejected. The reader copy is separately attributed editorial extraction. This is not a new condition for the original bounded R08 observation.",
+      "evidence": {
+        "scope": "companion",
+        "path": "practice/sdd/observed_native_20261022_d8/OBSERVATION_SUMMARY.json"
+      }
+    },
+    {
+      "surface": "Measured paired native Spec Kit/OpenSpec generation comparison",
+      "status": "NOT_OBSERVED_NO_COMPARATIVE_CLAIM",
+      "note": "One actual primary route satisfies the tutorial scope. Existing OpenSpec material is a separately attributed authored structural contrast; comparable live paired runs would be needed before a measured comparison."
+    }
+  ],
+  "public_repository": null,
+  "tag_status": "PROPOSED_NOT_PUSHED",
+  "proposal_status": "PREPARED_FOR_REVIEW_NOT_SUBMITTED",
+  "historical_metadata": {
+    "scope": "author_archive",
+    "path": "history/d3/RUNTIME_MATRIX.json"
+  },
+  "prior_release_validation": {
+    "status": "PASS",
+    "mode": "FULL",
+    "evidence": {
+      "scope": "author_archive",
+      "path": "revision_d4/evidence/final_release/RELEASE_VALIDATION.json"
+    },
+    "receipt_sha256": "928fae30f7538c1be1c9aedc0c2b285b666bb0ff0578ac4decb420b3dcc51e6d",
+    "check_counts": {
+      "passed": 25,
+      "failed": 0,
+      "skipped": 0
+    },
+    "note": "Full runtime gate passed on the code and lab inputs. Runtime/coverage metadata was then finalized without changing executable or fixture bytes; final ZIP entry and stale-receipt checks have their own extraction receipt.",
+    "metadata_adoption_record": {
+      "scope": "author_archive",
+      "path": "revision_d4/evidence/FINAL_VALIDATION_SCOPE.json"
+    },
+    "package_check_record": {
+      "scope": "author_archive",
+      "path": "revision_d4/evidence/CLEAN_COMPANION_EXTRACTION.json"
+    }
+  },
+  "historical_release_validations": [
+    {
+      "edition": "2026.10.21-d5",
+      "validation": {
+        "status": "PASS",
+        "mode": "FULL",
+        "evidence": {
+          "scope": "author_archive",
+          "path": "revision_d5/evidence/release_attempt_04/RELEASE_VALIDATION.json"
+        },
+        "receipt_sha256": "1c8af96560cad3b0a30bcc4224ac238760391b01c5bdd7cd64d21029a3b6e28d",
+        "check_counts": {
+          "passed": 27,
+          "failed": 0,
+          "skipped": 0
+        },
+        "note": "Full gate on final executable and protected inputs. The gate used a separate frozen source copy; only final runtime metadata was then adopted; exact changes and source preservation are recorded separately. Final ZIP entry and stale-receipt checks have their own extraction receipt.",
+        "metadata_adoption_record": {
+          "scope": "author_archive",
+          "path": "revision_d5/evidence/FINAL_VALIDATION_SCOPE.json"
+        },
+        "package_check_record": {
+          "scope": "author_archive",
+          "path": "revision_d5/evidence/CLEAN_COMPANION_EXTRACTION.json"
+        }
+      }
+    },
+    {
+      "edition": "2026.10.22-d7",
+      "validation": {
+        "status": "PASS",
+        "mode": "FULL",
+        "evidence": {
+          "scope": "author_archive",
+          "path": "revision_d7/evidence/release_attempt_01/RELEASE_VALIDATION.json"
+        },
+        "receipt_sha256": "b479aa27c88b70a37a807e4fde12b064cd7f407730f790dd551eb6ec8d7a84e4",
+        "check_counts": {
+          "passed": 27,
+          "failed": 0,
+          "skipped": 0
+        },
+        "note": "Full deterministic gate on a separate hash-verified source copy. Native model observations are separately attributed; this gate makes no model calls. Only the exact runtime matrix is adopted afterward. Final archive navigation and stale-receipt checks have their own receipt.",
+        "metadata_adoption_record": {
+          "scope": "author_archive",
+          "path": "revision_d7/evidence/FINAL_VALIDATION_SCOPE.json"
+        },
+        "package_check_record": {
+          "scope": "author_archive",
+          "path": "revision_d7/evidence/CLEAN_COMPANION_EXTRACTION.json"
+        }
+      }
+    },
+    {
+      "edition": "2026.10.22-d8",
+      "observation": {
+        "status": "PASS",
+        "mode": "FULL",
+        "evidence": {
+          "scope": "author_archive",
+          "path": "revision_d8/evidence/release_attempt_01/RELEASE_VALIDATION.json"
+        },
+        "receipt_sha256": "ed211d9764606ef9ad554657f547ea5cf2bdb6c576d3ea021210bc9bfc39427f",
+        "check_counts": {
+          "passed": 27,
+          "failed": 0,
+          "skipped": 0
+        },
+        "note": "Full deterministic gate on a separate hash-verified source copy. Native model observations are separately attributed; this gate makes no model calls. Only the exact runtime matrix is adopted afterward. Final archive navigation and stale-receipt checks have their own receipt.",
+        "metadata_adoption_record": {
+          "scope": "author_archive",
+          "path": "revision_d8/evidence/FINAL_VALIDATION_SCOPE.json"
+        },
+        "package_check_record": {
+          "scope": "author_archive",
+          "path": "revision_d8/evidence/CLEAN_COMPANION_EXTRACTION.json"
+        }
+      }
+    }
+  ],
+  "historical_source_baselines": [
+    {
+      "edition": "2026.10.22-d7",
+      "baseline": {
+        "os": "Linux",
+        "python": "3.12.14",
+        "git": "2.51.1",
+        "core_language_floor_declared": "3.10",
+        "status": "VALIDATED_DECLARED_LOCAL_BASELINE",
+        "note": "An interpreter floor is not a cross-platform support result. Optional tools have separately pinned runtimes."
+      }
+    },
+    {
+      "edition": "2026.10.22-d8",
+      "baseline": {
+        "os": "Linux",
+        "python": "3.12.14",
+        "git": "2.51.1",
+        "core_language_floor_declared": "3.10",
+        "status": "VALIDATED_DECLARED_LOCAL_BASELINE",
+        "note": "The actual d8 FULL gate ran on the frozen local source and declared environment. Historical baselines remain separately attributed. An interpreter floor is not a cross-platform support result."
+      }
+    }
+  ],
+  "historical_target_states": [
+    {
+      "edition": "2026.10.22-d7",
+      "target": {
+        "surface": "Native installed-framework generation and phase progression",
+        "status": "PARTIAL_NO_NATIVE_GENERATED_ARTIFACT_OR_CLARIFICATION",
+        "note": "Three native invocations are retained. The final disclosed same-session continuation read the complete fixed input packet then reached its prospective 1800-second limit. All 49 project files stayed unchanged; no specification/checklist/feature metadata or reached clarification disposition was produced. The authored inputs/specification.json reference contract was supplied. Independent evidence/scope review passed36 checks; this does not close generation.",
+        "evidence": {
+          "scope": "companion",
+          "path": "practice/sdd/observed_native_20261022/OBSERVATION_SUMMARY.json"
+        },
+        "completed_step_record_sha256": "9db34e4d5fa94743cb062cf07afa4ee8a14a93c5d249fbb6aa749812e54a460d",
+        "audit": {
+          "scope": "companion",
+          "path": "practice/sdd/native_review_20261022/INDEPENDENT_R08_REVIEW.json"
+        }
+      },
+      "superseded_current_gap_by": "2026.10.22-d8 actual generated response and documented unresolved-question stop",
+      "note": "Original failed observation remains unchanged. The successor does not claim successful native file persistence or answered owner clarification."
+    }
+  ]
+}
