@@ -8,6 +8,10 @@ the pinned native inference server and coding client, fresh task preparation,
 guided implementation, independent checks, and shutdown. It does not promise
 identical model output or execution times.
 
+This is the later fresh guided Mac episode, not the original four-call journey
+or its separate verification-only continuation. See the [episode map](../../navigation/NATIVE_CSV_EPISODES.md)
+and [portable-evidence publication status](../../validation/repository_revision_20261023/README.md#up05-conditions-for-an-optional-portable-subset).
+
 The successful observation reused Qwen3-4B Q4_K_M, llama.cpp **b11799**,
 OpenCode **1.19.3**, Python **3.12.4**, and Metal on an Apple M2 Max with 64 GiB
 RAM. Implementation took 24.856 seconds; a documents-only continuation took

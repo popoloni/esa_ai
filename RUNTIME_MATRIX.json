@@ -2,6 +2,54 @@
   "schema": "book-runtime-matrix/v2",
   "edition": "2026.10.22-d9",
   "updated_at_utc": "2026-10-22T18:23:59.106437+00:00",
+  "repository_summary_updated_on": "2026-10-23",
+  "repository_summary_note": "The original edition, timestamp, source baseline and release-validation records below identify the historical d9 release. This later report-backed repository summary does not replace those receipts or certify d11 source/build delivery.",
+  "current_repository_validation": {
+    "status": "DATED_AUTHOR_REPORTED_OBSERVATIONS",
+    "reviewed_public_commit": "e58e0f3eeec5b4531d65d90fac7cb9948edad731",
+    "report": "validation/EXAMPLE_TEST_REPORT.md",
+    "maintenance_status": "validation/repository_revision_20261023/README.md",
+    "observed_core_environments": [
+      {
+        "os": "macOS 26.5.1 ARM64",
+        "python": "3.12.4",
+        "git": "2.56.0",
+        "core_tests_run": 518,
+        "core_skips": 1,
+        "core_status": "PASS_WITH_EXPLICIT_LINUX_REAL_CLOCK_SKIP",
+        "extended_tests_passed": 11
+      },
+      {
+        "os": "Linux ARM64 in Docker 27.3.1",
+        "python": "3.12.15",
+        "git": "2.47.3",
+        "core_tests_run": 518,
+        "core_skips": 0,
+        "core_status": "PASS_REAL_OWNER_CLOCK_EXECUTED",
+        "extended_tests_passed": 11
+      }
+    ],
+    "native_regression_chronology": {
+      "initial_historical_stage_tests": 15,
+      "later_stage_tests": 17,
+      "later_result": "PASS_ON_MACOS_AND_LINUX_AS_REPORTED",
+      "later_fixes": "Explicit binary/GPU selection and Darwin RSS raw-unit/normalization coverage",
+      "evidence": "validation/EXAMPLE_TEST_REPORT.md#apple-silicon-timeout-follow-up",
+      "counting_boundary": "Successive suite stages, not 32 unique tests; unrelated to the 17-check CSV reviewer."
+    },
+    "later_guided_mac_csv": {
+      "status": "GUIDED_TECHNICAL_PASS_NOT_HUMAN_ACCEPTANCE",
+      "runtime": "Darwin ARM64 llama.cpp b11799, Qwen3-4B Q4_K_M, OpenCode 1.19.3, Metal 99",
+      "successful_route_invocations": 2,
+      "selected_contract_passed": 7,
+      "independent_review_passed": 17,
+      "counting_boundary": "The 17-check review includes the seven-case contract; earlier failed routes remain separate.",
+      "evidence": "validation/EXAMPLE_TEST_REPORT.md#successful-fresh-guided-csv-retry",
+      "raw_evidence_publication": "OUTSIDE_GIT_OPTIONAL_SUBSET_DEFERRED"
+    },
+    "csv_episode_navigation": "navigation/NATIVE_CSV_EPISODES.md",
+    "boundary": "The Linux ARM64 core rerun is not the emulated Linux x86-64 model runtime. No blanket Windows, Intel Mac, other-interpreter, independent-reader or real-learning certification. These reported full-suite observations were not rerun merely to update this matrix."
+  },
   "evidence_path_policy": {
     "companion": "Relative to the directory containing reader_start.py",
     "author_archive": "Relative to the complete author package; these records are not all duplicated in the standalone companion"
@@ -355,8 +403,9 @@
       "run_url": null
     },
     {
-      "surface": "Windows, macOS and other interpreter combinations",
-      "status": "NOT_VALIDATED"
+      "surface": "Windows, Intel Mac and other interpreter/platform combinations beyond the dated repository summary",
+      "status": "NOT_VALIDATED",
+      "note": "The specific macOS ARM64/Python 3.12.4 observation is recorded in current_repository_validation; the Linux real-clock rule is unchanged."
     },
     {
       "surface": "Model-backed automatic harness optimization",
@@ -393,7 +442,7 @@
       "note": "One actual primary route satisfies the tutorial scope. Existing OpenSpec material is a separately attributed authored structural contrast; comparable live paired runs would be needed before a measured comparison."
     }
   ],
-  "public_repository": null,
+  "public_repository": "https://github.com/popoloni/esa_ai",
   "tag_status": "PROPOSED_NOT_PUSHED",
   "proposal_status": "PREPARED_FOR_REVIEW_NOT_SUBMITTED",
   "historical_metadata": {

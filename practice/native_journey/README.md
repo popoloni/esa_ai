@@ -168,6 +168,12 @@ Do not replace the shipped intentional starter with a generated answer.
 
 ## Evidence and teaching text
 
+For later developments, read the [three-episode map](../../navigation/NATIVE_CSV_EPISODES.md).
+The d11 completion report records a separately budgeted verification-only
+continuation of this original journey. Its payload remains in the author package,
+not this checkout. That episode is also distinct from the fresh guided Mac repair.
+The original four-call outcome and all historical receipts below remain unchanged.
+
 The [observation index](observed/INDEX.md) identifies the actual project,
 native events, session exports, recorded interventions and independent checks.
 The actual native [specification](observed/project/spec.md) and

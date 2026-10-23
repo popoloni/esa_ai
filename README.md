@@ -31,7 +31,30 @@ cd ../my_treasury_lab
 
 Then follow the [Chapter 1 repair and continuation](navigation/LAB_GUIDE.md#begin-the-chapter-1-exercise). For cumulative work, continue in that same copy; `show N` displays each chapter's prerequisites, editable files and check commands. A fresh `new N` copy does not complete earlier exercises for you.
 
-The core uses synthetic data, Python's standard library and local processes; no model account is required. The declared language floor is Python 3.10, and Git must support `merge-tree --write-tree`. The recorded baseline is Linux / Python 3.12.14 / Git 2.51.1, not a certification of other environments. See the [runtime evidence](RUNTIME_MATRIX.json); optional integrations document their own dependencies.
+The core uses synthetic data, Python's standard library and local processes; no model account is required. The declared language floor is Python 3.10, and Git must support `merge-tree --write-tree`. The original d9 release baseline is Linux / Python 3.12.14 / Git 2.51.1. Later observations are dated below; neither a language floor nor one observed machine certifies other environments. See the [runtime evidence](RUNTIME_MATRIX.json); optional integrations document their own dependencies.
+
+## Current repository observations — 23 October 2026
+
+The [execution audit](validation/EXAMPLE_TEST_REPORT.md#current-summary--23-october-2026)
+reports 518 core tests on macOS 26.5.1 ARM64 / Python 3.12.4 / Git 2.56.0,
+with one explicit Linux real-clock skip, plus 11 extended tests. A **separate**
+Linux ARM64 Docker run / Python 3.12.15 / Git 2.47.3 passed all 518 core tests
+with zero skips and all 11 extended tests. This Linux core run is not the
+emulated Linux x86-64 model-runtime experiment.
+
+Native regression testing progressed from a historical 15-test stage to a later
+17-test result after launcher/RSS fixes; do not add those counts. The later
+guided Apple Silicon CSV repair passed its 7-case contract and 17-check review
+(overlapping checks), not an autonomous or human-accepted trial. See the
+[three separate CSV episodes](navigation/NATIVE_CSV_EPISODES.md).
+
+The public companion is [popoloni/esa_ai](https://github.com/popoloni/esa_ai).
+The d11 book reviewed commit `e58e0f3eeec5b4531d65d90fac7cb9948edad731`;
+this does not change the underlying d9 lab/starter edition. The
+[d11 maintenance status](validation/repository_revision_20261023/README.md)
+records which publication follow-ups are complete and which still require
+the matching source/evidence package. Windows, Intel Mac, other Python versions,
+independent reader acceptance and real learning outcomes remain unestablished.
 
 ## Find your chapter
 

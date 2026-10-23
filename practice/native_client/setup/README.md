@@ -1,5 +1,12 @@
 # Retained setup records
 
+These d7/d8 records are historical. For the later 23 October Mac/Linux execution
+audit and 17-test native regression result (following the initial 15-test stage),
+see the [current audit summary](../../../validation/EXAMPLE_TEST_REPORT.md#current-summary--23-october-2026)
+and [runtime matrix](../../../RUNTIME_MATRIX.json). The native Darwin/Metal recipe
+is in the [reproduction guide](../REPRODUCE_GUIDED_CSV.md). Historical runtime
+packets and their manifests are not rewritten by this navigation update.
+
 [runtime_d7/](runtime_d7/) records the fresh 22 October 2026 reconstruction of
 the pinned OpenCode 1.19.3, llama.cpp b11799 and Qwen3-4B Q4_K_M stack. Its index
 binds public download receipts, installed identities, package lock and setup

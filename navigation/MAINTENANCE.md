@@ -4,6 +4,15 @@
 
 ## Documentation refactor
 
+The [23 October d11 reconciliation](../validation/repository_revision_20261023/README.md)
+updates the landing/runtime summary and separates the historical 15-test native
+stage from the later 17-test result. It adds an attributed three-episode CSV map.
+The current learning-guide publication is blocked by a supplied-PDF hash mismatch
+and missing canonical sources; the verification-only raw payload is also missing.
+No historical learning source, native receipt or starter was relabeled. The root
+README's active protected hash is refreshed only for this reviewed documentation
+change; this is not permission to alter learner checkers or source pins.
+
 The four committed Chapter 4 exports were byte-identical to the protected [reference projections](../reader_side/reference_solution/projections/). Only the duplicate copies and their active manifest entries were removed. The canonical copies remain protected; [exports/](../exports/README.md) is now reserved for ignored generated outputs. Historical receipts remain unchanged. Optional adapters, Appendix B templates and advanced validation collectors are retained with clearer entry guides.
 
 The root `README_*.md` guides now live in [guides/](../guides/README.md). Live navigation and protected-manifest paths follow the move. Historical observation snapshots retain their original paths and hashes; the coverage index records a separate current locator for the relocated Chapter 10 guide. Commands in chapter guides still run from the study-copy root, not from the guides folder.
