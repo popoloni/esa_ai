@@ -1,0 +1,29 @@
+name: Greenfield Studio (ESA d16)
+
+on:
+  push:
+    paths:
+      - 'greenfield_studio/**'
+      - 'navigation/GREENFIELD_STUDIO_d16.md'
+      - 'validation/check_greenfield_studio_d16.py'
+      - '.github/workflows/greenfield_studio.yml'
+      - 'README.md'
+  pull_request:
+    paths:
+      - 'greenfield_studio/**'
+      - 'navigation/GREENFIELD_STUDIO_d16.md'
+      - 'validation/check_greenfield_studio_d16.py'
+      - '.github/workflows/greenfield_studio.yml'
+      - 'README.md'
+  workflow_dispatch:
+
+jobs:
+  reference-and-alignment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify ESA d16 studio reference and workbook crosswalk
+        run: python3 validation/check_greenfield_studio_d16.py

@@ -1,0 +1,35 @@
+{
+  "edition": "d16 (2026-10-24)",
+  "book_chapters": 14,
+  "treasury_laboratories": 14,
+  "greenfield_studio": "independent unnumbered studio after Treasury laboratory 14",
+  "expected_reference_tests": 10,
+  "expected_starter_tests_fail": true,
+  "license_note": "The original repository is Apache-2.0. Review copyright/license before publishing any full book/workbook PDF; this overlay contains teaching code and documentation only.",
+  "original_d16_studio_sha256": {
+    "README.md": "f1dd72c25ab1e4d77b1a5688c4577e8d012a308abaf4546c69e838864505120d",
+    "docs/contract.md": "9c6c95077f305744728b9929f51ea36d8a534ab67cd2e7ebe8112ad35eb7ebba",
+    "docs/decisions/0001-storage.md": "9ca31a97a4cdee9e4bf37e2931481387cc7eb4483bc45cce8ef54a432170745f",
+    "reference/booking.py": "fc07bf6bda8c58408c4093fe76202a4a4dad0dc8273771c5c547a85d31bb96a9",
+    "starter/booking.py": "9ba67c0c733e21d55abe7153c74ce9b2fd02a1fc69c7c0869d64957227d30a5d",
+    "tests/test_booking.py": "3fede5b6fff032747fe1017836b915d375b7bef01417e6bbf246506e413b4e89",
+    "tools/check_reference.py": "f67b29c5912964646b760e6f752936031553deaaebc9e4a20abbb1e5f462952b",
+    "tools/scaffold.py": "cb16a68cf05f7d97bfc27256fb303c87f61ed522c6542be8d57972648b5528b6"
+  },
+  "patch_studio_sha256": {
+    "README.md": "4f710c8f11b930df71a96ab0990c4d67898219a516f1aaeff74197b917c9f1d0",
+    "tools/scaffold.py": "cb16a68cf05f7d97bfc27256fb303c87f61ed522c6542be8d57972648b5528b6",
+    "tools/check_reference.py": "f67b29c5912964646b760e6f752936031553deaaebc9e4a20abbb1e5f462952b",
+    "tests/test_booking.py": "3fede5b6fff032747fe1017836b915d375b7bef01417e6bbf246506e413b4e89",
+    "starter/booking.py": "9ba67c0c733e21d55abe7153c74ce9b2fd02a1fc69c7c0869d64957227d30a5d",
+    "reference/booking.py": "fc07bf6bda8c58408c4093fe76202a4a4dad0dc8273771c5c547a85d31bb96a9",
+    "docs/contract.md": "9c6c95077f305744728b9929f51ea36d8a534ab67cd2e7ebe8112ad35eb7ebba",
+    "docs/decisions/0001-storage.md": "9ca31a97a4cdee9e4bf37e2931481387cc7eb4483bc45cce8ef54a432170745f"
+  },
+  "deliberate_changes_to_studio": [
+    {
+      "path": "README.md",
+      "reason": "Remove obsolete notice that code has not yet been published in the GitHub companion"
+    }
+  ]
+}

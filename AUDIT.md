@@ -42,3 +42,13 @@ independent reader acceptance and real learning outcomes remain unestablished.
 - [Folder audit](navigation/FOLDER_AUDIT.md) and [maintenance history](navigation/MAINTENANCE.md): consolidation and integrity decisions.
 
 Historical receipts and manifests retain their original identities. Active documentation hashes are maintained separately; learners must not refresh them to bypass integrity checks.
+
+=== ESA-D16-GREENFIELD-AUDIT-BEGIN ===
+
+ESA d16, 2026-10-24 — independent Greenfield Studio (unnumbered).
+Source: ESA d16 release greenfield_studio, after Laboratory 14 in the workbook.
+Existing 14 Treasury laboratories and their reader_start.py workflow preserved.
+Reference: ten local SQLite contract/concurrency tests, no production claims.
+Run: python3 validation/check_greenfield_studio_d16.py
+Check: navigation/GREENFIELD_STUDIO_d16.md
+=== ESA-D16-GREENFIELD-AUDIT-END ===
