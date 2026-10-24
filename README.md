@@ -31,6 +31,39 @@ Then follow the [Chapter 1 repair and continuation](navigation/LAB_GUIDE.md#begi
 
 The core uses synthetic data, Python's standard library and local processes. Use Python 3.10 or newer and Git with `merge-tree --write-tree`; run the doctor to check prerequisites. Optional integrations have their own dependencies. See the [audit and supported-environment evidence](AUDIT.md) for validation scope and limitations.
 
+<!-- ESA-D16-GREENFIELD-START -->
+## New in d16 — Greenfield Studio
+
+**Starting a new system?** Follow the independent
+[Greenfield Studio](greenfield_studio/README.md) instead of the cumulative
+Treasury repair route. The unnumbered studio follows the fourteen Treasury
+laboratories in the **ESA Laboratory Workbook d16**. It teaches the first
+approved capability, independent scenarios, architecture decisions, atomic
+implementation, concurrency and idempotency checks, and the first release
+decision.
+
+From this repository root (Python 3.10+, standard library only):
+
+```shell
+python3 greenfield_studio/tools/scaffold.py ../my_first_reservations
+cd ../my_first_reservations
+python3 -m unittest discover -s tests -v
+```
+
+These **starter tests initially fail by design**: implement the approved
+contract rather than editing the tests. To check the separately packaged
+teaching reference, from the repository root run:
+
+```shell
+python3 greenfield_studio/tools/check_reference.py
+```
+
+The reference must pass ten local tests. The studio implements neither live
+authentication nor a publicly deployable reservation API. See the
+[workbook/repository d16 alignment guide](navigation/GREENFIELD_STUDIO_d16.md)
+for the book's 14-chapter crosswalk and its release limits.
+<!-- ESA-D16-GREENFIELD-END -->
+
 ## Find your chapter
 
 | Part | Chapter | Guide |
