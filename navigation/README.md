@@ -4,8 +4,10 @@
 
 | I want to… | Open |
 | --- | --- |
+| Compare the Brownfield and Greenfield routes | [Starting routes](STARTING_ROUTES.md) |
 | Install software and follow the first exercise | [Getting started](GETTING_STARTED.md) |
 | Start the cumulative Treasury lab | [First week](FIRST_WEEK.md) |
+| Build a first system from an approved contract | [Greenfield Studio](../greenfield_studio/README.md) |
 | Try an independent task first | [CSV preview](EXPERIENCED_PREVIEW.md) |
 | Find a chapter | [Chapter index](../README.md#find-your-chapter) |
 | Run shared checks or capture edit scope | [Lab guide](LAB_GUIDE.md) |

@@ -17,8 +17,8 @@
     "tools/scaffold.py": "cb16a68cf05f7d97bfc27256fb303c87f61ed522c6542be8d57972648b5528b6"
   },
   "patch_studio_sha256": {
-    "README.md": "4f710c8f11b930df71a96ab0990c4d67898219a516f1aaeff74197b917c9f1d0",
-    "tools/scaffold.py": "cb16a68cf05f7d97bfc27256fb303c87f61ed522c6542be8d57972648b5528b6",
+    "README.md": "cb6198062f201f3a93baa75287f06e1822d7f35e505c7b73e32a061110353cbf",
+    "tools/scaffold.py": "60f0a7fd815a8d5fe27f118d4fc152f42029c7d501637f3b7b4fd9f4d681c35b",
     "tools/check_reference.py": "f67b29c5912964646b760e6f752936031553deaaebc9e4a20abbb1e5f462952b",
     "tests/test_booking.py": "3fede5b6fff032747fe1017836b915d375b7bef01417e6bbf246506e413b4e89",
     "starter/booking.py": "9ba67c0c733e21d55abe7153c74ce9b2fd02a1fc69c7c0869d64957227d30a5d",
@@ -29,7 +29,11 @@
   "deliberate_changes_to_studio": [
     {
       "path": "README.md",
-      "reason": "Remove obsolete notice that code has not yet been published in the GitHub companion"
+      "reason": "Remove obsolete publication notice and align the reader workflow and evidence language with the Brownfield route"
+    },
+    {
+      "path": "tools/scaffold.py",
+      "reason": "Give generated Greenfield copies the same durable reader-entry identity and staged handoff used by the Brownfield route"
     }
   ]
 }

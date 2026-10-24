@@ -6,9 +6,40 @@ This is the entry point for validation history, release identities and publicati
 
 ## Edition and maintenance history
 
-The bundled laboratory/starter edition is `2026.10.22-d9`. Its original release baseline was Linux / Python 3.12.14 / Git 2.51.1. These identify an observed release, not universal platform support.
+The repository accompanies *Engineering Software with Agentic AI* d16
+(24 October 2026). Its cumulative Treasury laboratory/starter remains the
+`2026.10.22-d9` edition; d16 adds an independent, unnumbered Greenfield Studio
+after Laboratory 14 rather than revising or adding to the Treasury sequence.
+The original Treasury release baseline was Linux / Python 3.12.14 / Git 2.51.1.
+These identify an observed release, not universal platform support.
 
 Four missing hidden skill files were restored byte-for-byte from the original release. See [maintenance history](navigation/MAINTENANCE.md#pre-existing-integrity-findings). Always run the prerequisite doctor before creating a study copy.
+
+## d16 Greenfield Studio — 24 October 2026
+
+The d16 Greenfield Studio is a separate first-system exercise aligned with all
+14 book chapters. It preserves the existing Treasury laboratories and their
+`reader_start.py` workflow. The packaged reference passes ten local SQLite
+contract and concurrency tests; that evidence does not establish production
+readiness, operational authorization or real-world learning outcomes.
+
+Run `python3 validation/check_greenfield_studio_d16.py` to verify the packaged
+studio, its deliberately incomplete starter and the workbook mapping. See the
+[d16 alignment guide](navigation/GREENFIELD_STUDIO_d16.md) for placement,
+scope, responsibilities and claim limits.
+
+Reader navigation was subsequently normalized across the Brownfield and
+Greenfield routes without merging their implementations or evidence. The
+[shared route chooser](navigation/STARTING_ROUTES.md) defines their common
+workflow and makes their distinct entry commands, initial states, edit scopes
+and reference boundaries explicit.
+
+A fresh Apple Silicon rerun subsequently exercised both routes with the reused
+Qwen3-4B Metal runtime. Brownfield passed 7/7 after guided model corrections;
+Greenfield passed 10/10 after Metal attempts plus a bounded facilitator
+correction. The [dual-route Metal report](validation/D16_DUAL_ROUTE_METAL_REPORT.md)
+records the environment, complete deterministic regression results, failed
+attempts and claim boundary.
 
 ## Observations — 23 October 2026
 
@@ -27,7 +58,8 @@ guided Apple Silicon CSV repair passed its 7-case contract and 17-check review
 
 The public companion is [popoloni/esa_ai](https://github.com/popoloni/esa_ai).
 The d11 book reviewed commit `e58e0f3eeec5b4531d65d90fac7cb9948edad731`;
-this does not change the underlying d9 lab/starter edition. The
+that review did not change the underlying d9 lab/starter edition. The later d16
+addition is the independent Greenfield Studio described above. The
 [d11 maintenance status](validation/repository_revision_20261023/README.md)
 records which publication follow-ups are complete and which still require
 the matching source/evidence package. Windows, Intel Mac, other Python versions,
@@ -39,16 +71,8 @@ independent reader acceptance and real learning outcomes remain unestablished.
 - [Detailed execution audit](validation/EXAMPLE_TEST_REPORT.md): tests, fixes, unsuccessful attempts and remaining limits.
 - [Publication follow-ups](validation/repository_revision_20261023/README.md): missing learning-guide package, verification-only payload and optional Mac evidence.
 - [Learning-guide publication audit](practice/team_operations/AUDIT.md): edition identities and source availability.
+- [d16 Greenfield Studio alignment](navigation/GREENFIELD_STUDIO_d16.md): workbook placement, 14-chapter crosswalk, executable check and claim limits.
+- [d16 dual-route Metal rerun](validation/D16_DUAL_ROUTE_METAL_REPORT.md): reused environment, complete regression results and separately attributed route outcomes.
 - [Folder audit](navigation/FOLDER_AUDIT.md) and [maintenance history](navigation/MAINTENANCE.md): consolidation and integrity decisions.
 
 Historical receipts and manifests retain their original identities. Active documentation hashes are maintained separately; learners must not refresh them to bypass integrity checks.
-
-=== ESA-D16-GREENFIELD-AUDIT-BEGIN ===
-
-ESA d16, 2026-10-24 — independent Greenfield Studio (unnumbered).
-Source: ESA d16 release greenfield_studio, after Laboratory 14 in the workbook.
-Existing 14 Treasury laboratories and their reader_start.py workflow preserved.
-Reference: ten local SQLite contract/concurrency tests, no production claims.
-Run: python3 validation/check_greenfield_studio_d16.py
-Check: navigation/GREENFIELD_STUDIO_d16.md
-=== ESA-D16-GREENFIELD-AUDIT-END ===

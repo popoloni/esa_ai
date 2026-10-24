@@ -1,6 +1,12 @@
-# Install, start and work through the lab
+# Install, start and work through the Brownfield lab
 
-[Home](../README.md) · [Lab guide](LAB_GUIDE.md) · [Chapter index](../README.md#find-your-chapter) · [Recovery](RECOVERY.md)
+[Home](../README.md) · [Choose a route](STARTING_ROUTES.md) · [Lab guide](LAB_GUIDE.md) · [Chapter index](../README.md#find-your-chapter) · [Recovery](RECOVERY.md)
+
+This guide covers the cumulative **Brownfield Treasury** route. If you want to
+build a first system from an approved contract, use the
+[Greenfield Studio](../greenfield_studio/README.md). The two routes share
+prerequisites and evidence language but intentionally retain different entry
+commands and exercise scopes.
 
 ## 1. Know what you are building
 

@@ -6,7 +6,11 @@
 **Placement:** **Greenfield Studio** appears after the fourteen numbered Treasury laboratories.
 It is an **independent, unnumbered studio**, not Laboratory 15 and not a prerequisite for any Treasury lab.
 
-## Choose one of three valid starting routes
+## Choose a starting route
+
+The [shared route chooser](STARTING_ROUTES.md) gives the Brownfield and
+Greenfield exercises the same reader workflow and evidence vocabulary. This
+edition crosswalk records where the Greenfield route sits in d16.
 
 | Reader goal | Repository route | Workbook route |
 |---|---|---|

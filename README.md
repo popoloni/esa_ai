@@ -1,12 +1,23 @@
 # Engineering Software with Agentic AI
 
-Companion laboratory for *Engineering Software with Agentic AI*. Work through one cumulative Treasury project across fourteen chapters, or try an independent CSV exercise first.
+Companion laboratory for *Engineering Software with Agentic AI* d16. Choose the
+cumulative Brownfield Treasury laboratory or the independent Greenfield
+Reservation Studio; both use the same authority-to-evidence learning loop.
 
-[Install and start](navigation/GETTING_STARTED.md) · [CSV preview](navigation/EXPERIENCED_PREVIEW.md) · [Lab guide](navigation/LAB_GUIDE.md) · [Optional practice](practice/README.md) · [Worked solutions](navigation/SOLUTIONS.md)
+[Choose a route](navigation/STARTING_ROUTES.md) · [Install and start](navigation/GETTING_STARTED.md) · [Lab guide](navigation/LAB_GUIDE.md) · [Optional practice](practice/README.md) · [Worked solutions](navigation/SOLUTIONS.md)
 
-## Start here
+## Start here: choose the system state
 
-New to the lab? Follow the [installation and step-by-step walkthrough](navigation/GETTING_STARTED.md): required software, Linux/macOS/Windows setup, first repair, expected results and chapter progression. This is a command-line lab, not a web application. No model account or core pip installation is needed.
+Use the [side-by-side route chooser](navigation/STARTING_ROUTES.md) if you are
+unsure. Both routes are command-line exercises, require Python 3.10 or newer,
+create a separate learner copy and begin with an intentional non-passing state.
+No model account or core pip installation is needed.
+
+### Brownfield — change an existing Treasury system
+
+Choose this route to inherit behavior, constraints and evidence, then make safe
+cumulative changes across Laboratories 1–14. First follow the
+[installation and step-by-step walkthrough](navigation/GETTING_STARTED.md).
 
 Run these commands from this repository's root. Keep this checkout as your starter and make exercise changes in a separate study copy:
 
@@ -32,12 +43,11 @@ Then follow the [Chapter 1 repair and continuation](navigation/LAB_GUIDE.md#begi
 The core uses synthetic data, Python's standard library and local processes. Use Python 3.10 or newer and Git with `merge-tree --write-tree`; run the doctor to check prerequisites. Optional integrations have their own dependencies. See the [audit and supported-environment evidence](AUDIT.md) for validation scope and limitations.
 
 <!-- ESA-D16-GREENFIELD-START -->
-## New in d16 — Greenfield Studio
+### Greenfield — build a first Reservation slice
 
-**Starting a new system?** Follow the independent
-[Greenfield Studio](greenfield_studio/README.md) instead of the cumulative
-Treasury repair route. The unnumbered studio follows the fourteen Treasury
-laboratories in the **ESA Laboratory Workbook d16**. It teaches the first
+Choose this route to follow the independent
+[Greenfield Studio](greenfield_studio/README.md). The unnumbered studio follows
+the fourteen Treasury laboratories in the **ESA Laboratory Workbook d16**. It teaches the first
 approved capability, independent scenarios, architecture decisions, atomic
 implementation, concurrency and idempotency checks, and the first release
 decision.
@@ -58,7 +68,8 @@ teaching reference, from the repository root run:
 python3 greenfield_studio/tools/check_reference.py
 ```
 
-The reference must pass ten local tests. The studio implements neither live
+The reference must pass ten local tests. As with the Brownfield worked examples,
+this reference neither repairs nor accepts your candidate. The studio implements neither live
 authentication nor a publicly deployable reservation API. See the
 [workbook/repository d16 alignment guide](navigation/GREENFIELD_STUDIO_d16.md)
 for the book's 14-chapter crosswalk and its release limits.
