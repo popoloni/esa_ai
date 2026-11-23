@@ -1,6 +1,6 @@
 # Engineering Software with Agentic AI — practical companion 5.6
 
-Open [index.html](index.html) or [START_HERE.html](START_HERE.html). Keep
+Open [index.html](https://popoloni.github.io/esa_ai/). Keep
 `companion/` and `evidence/` together. Run all practice commands from this folder.
 
 ```bash
