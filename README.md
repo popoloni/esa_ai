@@ -1,121 +1,26 @@
-# Engineering Software with Agentic AI
+# Engineering Software with Agentic AI — practical companion 5.6
 
-Companion laboratory for *Engineering Software with Agentic AI* d16. Choose the
-cumulative Brownfield Treasury laboratory or the independent Greenfield
-Reservation Studio; both use the same authority-to-evidence learning loop.
-
-[Choose a route](navigation/STARTING_ROUTES.md) · [Install and start](navigation/GETTING_STARTED.md) · [Lab guide](navigation/LAB_GUIDE.md) · [Optional practice](practice/README.md) · [Worked solutions](navigation/SOLUTIONS.md)
-
-## Start here: choose the system state
-
-Use the [side-by-side route chooser](navigation/STARTING_ROUTES.md) if you are
-unsure. Both routes are command-line exercises, require Python 3.10 or newer,
-create a separate learner copy and begin with an intentional non-passing state.
-No model account or core pip installation is needed.
-
-### Brownfield — change an existing Treasury system
-
-Choose this route to inherit behavior, constraints and evidence, then make safe
-cumulative changes across Laboratories 1–14. First follow the
-[installation and step-by-step walkthrough](navigation/GETTING_STARTED.md).
-
-Run these commands from this repository's root. Keep this checkout as your starter and make exercise changes in a separate study copy:
+Open [index.html](index.html) or [START_HERE.html](START_HERE.html). Keep
+`companion/` and `evidence/` together. Run all practice commands from this folder.
 
 ```bash
-python3 -B reader_start.py doctor
+python3 verify_package.py
+python3 companion/start.py doctor
 ```
 
-Continue only when the status is `PASS_PREREQUISITES_ONLY` and `release_starter_findings` is empty:
+To resume a 5.3, 5.4 or 5.5 candidate, keep its full directory and receipts when moving it to this working copy.
 
-```bash
-python3 -B reader_start.py show 1
-python3 -B reader_start.py new 1 --destination ../my_treasury_lab
-```
+Python 3.10+ with standard-library SQLite supports local practice. G3 integration
+also needs Git. The [agent guide](companion/agent_sessions/README.md) describes
+live setup and recorded tours. The [Codex quickstart](companion/agent_sessions/CODEX_QUICKSTART.md)
+shows how to run the same missions with Codex while Claude Code remains the
+book's printed default.
 
-After `new` reports `Prepared ...`:
+Retained native evidence covers 8 of 8 missions and 12 of 12 capture stages. Claude Code: two runs 12 of 12 stages latest 8 of 8 missions verified after g4 lineage fix; Codex CLI: local syntax and adapter controls verified no completed mission.
+Claude Code exercised eight missions and twelve stages twice under an AI operator. In the 16 November run the original protected checks and continuations passed; a later G4 competing-current-schema regression exposed two missing refusal cases in its retained candidate, and a separately labelled audit correction is revalidated. The 22 November run, from a fresh public companion, found that a G3 lineage could store reservations in a layout no G4 contract named; advance G4 now records the owner mapping G4-OD-01 for such a lineage, G4 was re-advanced on the same lineage and passed, and the ledger reports 8 of 8 missions. The 17 November Codex launch stopped during startup. Edition 5.3 verified local Codex CLI 0.172.0-alpha.2 syntax and adapter controls. No native Codex turn was completed. No native Codex mission or human operator acceptance is established.
+See [NATIVE_STATUS.json](NATIVE_STATUS.json) for the per-client evidence and scope.
+Retained AP tours use ChatGPT Work recordings and need no model call.
 
-```bash
-cd ../my_treasury_lab
-```
-
-Then follow the [Chapter 1 repair and continuation](navigation/LAB_GUIDE.md#begin-the-chapter-1-exercise). For cumulative work, continue in that same copy; `show N` displays each chapter's prerequisites, editable files and check commands. A fresh `new N` copy does not complete earlier exercises for you.
-
-The core uses synthetic data, Python's standard library and local processes. Use Python 3.10 or newer and Git with `merge-tree --write-tree`; run the doctor to check prerequisites. Optional integrations have their own dependencies. See the [audit and supported-environment evidence](AUDIT.md) for validation scope and limitations.
-
-<!-- ESA-D16-GREENFIELD-START -->
-### Greenfield — build a first Reservation slice
-
-Choose this route to follow the independent
-[Greenfield Studio](greenfield_studio/README.md). The unnumbered studio follows
-the fourteen Treasury laboratories in the **ESA Laboratory Workbook d16**. It teaches the first
-approved capability, independent scenarios, architecture decisions, atomic
-implementation, concurrency and idempotency checks, and the first release
-decision.
-
-From this repository root (Python 3.10+, standard library only):
-
-```shell
-python3 greenfield_studio/tools/scaffold.py ../my_first_reservations
-cd ../my_first_reservations
-python3 -m unittest discover -s tests -v
-```
-
-These **starter tests initially fail by design**: implement the approved
-contract rather than editing the tests. To check the separately packaged
-teaching reference, from the repository root run:
-
-```shell
-python3 greenfield_studio/tools/check_reference.py
-```
-
-The reference must pass ten local tests. As with the Brownfield worked examples,
-this reference neither repairs nor accepts your candidate. The studio implements neither live
-authentication nor a publicly deployable reservation API. See the
-[workbook/repository d16 alignment guide](navigation/GREENFIELD_STUDIO_d16.md)
-for the book's 14-chapter crosswalk and its release limits.
-<!-- ESA-D16-GREENFIELD-END -->
-
-## Find your chapter
-
-| Part | Chapter | Guide |
-| --- | --- | --- |
-| I — Foundations | 1. Repair routing | [Repair, verify and preserve your result](navigation/LAB_GUIDE.md#begin-the-chapter-1-exercise) |
-| | 2. Prepare the workspace | [First-week route](navigation/FIRST_WEEK.md) · [Interface chooser](navigation/INTERFACE_CHOOSER.md); use `show 2` for the entry card |
-| | 3. Discover the problem | [Discovery and value](guides/README_CP03.md) |
-| | 4. Specify behavior | [Specifications](guides/README_CP04.md) · [Lifecycle map](navigation/LIFECYCLE_MAP.md) |
-| II — Design and coordination | 5. Compare designs | [Architecture](guides/README_CP05.md) |
-| | 6. Maintain context | [Knowledge and context](guides/README_CP06.md) |
-| | 7. Plan and delegate | [Planning](guides/README_CP07.md) · [Optional execution routes](navigation/CHAPTER_ROUTES.md#chapter-7) |
-| III — Implementation and delivery | 8. Implement a bounded change | [Implementation](guides/README_CP08.md) |
-| | 9. Check independently | [Verification](guides/README_CP09.md) |
-| | 10. Review and rehearse release | [Technical completion, release and rollback](guides/README_CP10.md) |
-| IV — Evolution and outcomes | 11. Evolve policy and state | [Policy history](guides/README_CP11.md) |
-| | 12. Investigate an incident | [Recovery](guides/README_CP12.md) |
-| | 13. Develop team practice | [Learning and transfer](guides/README_CP13.md) |
-| | 14. Measure outcomes | [Measurement and tool decisions](guides/README_CP14.md) |
-
-The [lab guide](navigation/LAB_GUIDE.md) covers shared checks, edit baselines and cross-chapter receipts. Teaching candidates are intentionally incomplete: a passing regression suite does **not** mean the candidate workflow is accepted. Technical checks and fictional owner decisions are separate.
-
-## Choose another route
-
-- **Try a small task first:** [independent CSV preview](navigation/EXPERIENCED_PREVIEW.md), with no Treasury prerequisite.
-- **Explore a specific technique:** [practice catalogue](practice/README.md), grouped by purpose and chapter.
-- **Resume or recover:** [route chooser](navigation/CHAPTER_ROUTES.md), [lifecycle map](navigation/LIFECYCLE_MAP.md) and [stale-receipt recovery](navigation/RECOVERY.md).
-- **Compare your work:** [solutions and Appendix B workbooks](navigation/SOLUTIONS.md). Try the exercise before opening its reference.
-- **Inspect recorded observations:** [audit and history](AUDIT.md) and [external validation protocol](validation/README.md).
-
-## Repository map
-
-| Location | What belongs here |
-| --- | --- |
-| [guides/](guides/README.md) | Chapter-specific instructions |
-| [navigation/](navigation/README.md) | Reading routes, shared lab instructions, recovery and solution navigation |
-| [repo/](repo/) | Treasury source and chapter candidates; use the chapter's permitted edit scope |
-| [reader_side/](reader_side/README.md) | Independent checks, contracts, templates and protected references |
-| [practice/](practice/README.md) | Optional exercises and integration guides |
-| [adapters/](adapters/README.md) | Optional tool integrations; not core installation requirements |
-| [exports/](exports/README.md) | Generated exercise outputs and links to canonical reference projections |
-| [reader_resources/](reader_resources/README.md) | Optional Appendix B decision workbooks in text and JSON |
-| [validation/](validation/README.md) | Advanced/maintainer observation protocols and collectors used by the optional native-client route |
-
-Validation history, release identities and maintenance decisions are collected in the [repository audit](AUDIT.md). The repository includes the [Apache 2.0 license](LICENSE).
+The eight [walkthroughs](missions/index.html) and [four-volume reading guide](companion/series/READING_THE_SERIES.md)
+are available as readable HTML. Public solutions belong after a retained attempt.
+See [NOTICE.md](NOTICE.md) for the software and reading-material license scopes.

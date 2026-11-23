@@ -1,0 +1,13 @@
+test_canonical_retry_preserves_all_evidence_across_activation (__main__.ContractEdges.test_canonical_retry_preserves_all_evidence_across_activation) ... ok
+test_explicit_conflicts_and_empty_policy_do_not_mutate (__main__.ContractEdges.test_explicit_conflicts_and_empty_policy_do_not_mutate) ... ok
+test_ledger_and_router_boundaries_remain_distinct (__main__.ContractEdges.test_ledger_and_router_boundaries_remain_distinct) ... ok
+test_migration_preserves_exact_json_and_audits_source (__main__.ContractEdges.test_migration_preserves_exact_json_and_audits_source) ... ok
+test_missing_and_mismatched_provenance_leave_bytes_unchanged (__main__.ContractEdges.test_missing_and_mismatched_provenance_leave_bytes_unchanged) ... ok
+test_reevaluation_identity_and_recompute_stay_separate (__main__.ContractEdges.test_reevaluation_identity_and_recompute_stay_separate) ... ok
+test_schema_creation_failure_rolls_back_ddl (__main__.ContractEdges.test_schema_creation_failure_rolls_back_ddl) ... ok
+test_unmapped_history_or_outcome_mismatch_roll_back_all_rows (__main__.ContractEdges.test_unmapped_history_or_outcome_mismatch_roll_back_all_rows) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.016s
+
+OK

@@ -1,0 +1,33 @@
+{
+  "origin": "ILLUSTRATIVE_COST_INPUTS_NOT_MEASURED_PRODUCTIVITY",
+  "attempts": [
+    {
+      "id": "diagnosis-1",
+      "status": "rejected",
+      "cost_eur": "3.40",
+      "minutes": "12"
+    },
+    {
+      "id": "diagnosis-2",
+      "status": "rejected",
+      "cost_eur": "0.60",
+      "minutes": "7"
+    },
+    {
+      "id": "accepted-diagnosis",
+      "status": "accepted",
+      "cost_eur": "1.50",
+      "minutes": "18"
+    }
+  ],
+  "accepted_outcomes": 1,
+  "summary": {
+    "attempts": 3,
+    "accepted": 1,
+    "total_cost_eur": "5.50",
+    "total_minutes": "37",
+    "cost_per_accepted_eur": "5.50",
+    "minutes_per_accepted": "37",
+    "status": "OK"
+  }
+}

@@ -1,0 +1,33 @@
+I implemented cancellation and status in `booking.py`, but the supplied development check doesn't pass. All 7 tests in `tests/test_g3.py` fail in `setUp`, so none of them reached the new code.
+
+The failure comes from the fixture, not from the new code. The tests start from `legacy_booking.init_db`, which writes `user_version=2` and a seven-column `reservations` table with `request_hash`. That shape is not a G2 `reservations_v2` database. It is not one of the column layouts approved in G2-OD-01 and G2-OD-02 either. `init_db` still refuses it with "unsupported schema version 2". I stopped there rather than invent a mapping.
+
+**Acceptance example**
+- member-1 reserves A 09:00–10:00, which gives id 1 at version 1.
+- `cancel(1, expected_version=1)` returns 200/cancelled at version 2.
+- Repeating with version 2 returns 200/already-cancelled at version 2.
+- Repeating with the old version 1 returns 409/stale-version.
+- member-2 can then reserve the same slot and gets 201.
+- Replaying member-1's original request returns id 1 with `replayed=True`, and the row stays cancelled.
+
+**What changed in `booking.py`**
+- The schema is now version 3. `reservations_v2` gains `state` (`active` or `cancelled`) and `version` (default 1).
+- `init_db` migrates a G2 (version 2) database to version 3 in one transaction. IDs and the six public fields are unchanged.
+- `reserve` only treats active rows as blocking an interval. The replay lookup ignores state, so a replay returns the original identity and never revives the row.
+- `reservation_status` is a read-only lookup that returns `{state, version}` or `None`.
+- `cancel` does its check and update in one `BEGIN IMMEDIATE` transaction.
+- `get_reservation` is unchanged.
+
+**What I ran**
+1. `python3 -m unittest tests.test_g3` before my edits: 7 errors in `setUp`.
+2. The same command after my edits: 7 errors in `setUp`, now "unsupported schema version 2".
+3. My own scratch script, kept in the scratchpad and not part of the deliverable. It builds a real G2 database with `prior/booking.py` and runs `init_db` twice. Every contract case matched: 404, 403, 409, cancel, already-cancelled, the stale old version, history preserved, slot released, and replay not reviving.
+
+**Questions for the owner**
+1. Should the `legacy_booking` seven-column version-2 shape be an approved migration source? It would be mapped by column name, with `request_hash` dropped and the fingerprint recomputed. The supplied tests need this.
+2. In `cancel` I check the owner before the version, so a non-owner learns nothing about the current version. The contract doesn't rank the outcomes. Please confirm that order.
+3. The task mentions "three proposals", but I found none in `docs/` or the workspace, so I could not rule on them.
+
+I did not test concurrent cancels, so atomicity rests on SQLite's `BEGIN IMMEDIATE`. No human approval was observed.
+
+I used about 12 tool commands. I edited only `booking.py` and `DOSSIER.md`; the docs, tests, `prior/`, `legacy_booking.py` and `READER_ENTRY.json` are untouched. `DOSSIER.md` holds the observations and limits.

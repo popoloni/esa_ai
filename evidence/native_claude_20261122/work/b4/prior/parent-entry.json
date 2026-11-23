@@ -1,0 +1,38 @@
+{
+  "schema": "esa-full-mission/v1",
+  "release": "Engineering-Software-with-Agentic-AI-Review-5.2-20261117",
+  "mission": "B3",
+  "mode": "LEARNER",
+  "contract": "HISTORY-API/v1 + MIGRATION/v1",
+  "module": "ledger.py",
+  "lineage": {
+    "mission": "B2",
+    "source_sha256": "d078ca5b06de61638ce653eac0b7419c3f6246181a1b50a96d8f84d480672f0c",
+    "source_path": "/home/claude/work/live22/agentic-ai-5.2/work/b2/intake.py",
+    "handoff_status": "SCOPED_HANDOFF_READY",
+    "stored_snapshot": "prior/intake.py",
+    "copied_parent_demonstration": "prior/parent-check-artifacts"
+  },
+  "human_acceptance": "PENDING",
+  "dependency_sha256": {
+    "routing.py": "e8fdab89acfa5d28041c74a5d2dcf9801fb0e85324dcc160013a56cf63f89cfd"
+  },
+  "prior_sha256": {
+    "prior/intake.py": "d078ca5b06de61638ce653eac0b7419c3f6246181a1b50a96d8f84d480672f0c",
+    "prior/parent-handoff.json": "dddb54b8aadf7cc5f7c1b28e9eb68a514b7b27d032c67e6cdc08e28959adf954",
+    "prior/parent-entry.json": "d6a518a900326a687dc101fefd462701f13d7d0f9ef2f1854cfc3dda4824009f",
+    "prior/parent-check-artifacts/DEMONSTRATION.json": "b875b177c608eacec6a5ed802f13c82fd0b055c90ca267053799aada98bdb082",
+    "prior/parent-check-artifacts/classification.json": "30deefb1e6adb6a37e4dbc20df5b00c652b9585e4e652cf335595868daa35e7b"
+  },
+  "recorded_at_utc": "2026-11-22T17:37:28.560005+00:00",
+  "command": [
+    "/usr/local/bin/python3",
+    "companion/start.py",
+    "advance",
+    "B3",
+    "--from-candidate",
+    "work/b2",
+    "--dest",
+    "work/b3"
+  ]
+}

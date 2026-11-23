@@ -1,0 +1,66 @@
+{
+  "id": "chapter_09",
+  "schema_version": 1,
+  "evidence_profile": "persistent_effect",
+  "expect": {
+    "outcome": "Prepare an identified local demonstration archive and its recovery selection for review.",
+    "authority": {
+      "owner": "Local-demonstration release owner.",
+      "source": "Presentation owner acceptance for the stated local demonstration; selected target and release contract.",
+      "version": "Local demonstration teaching release/v1",
+      "status": "TEACHING_CONTRACT"
+    },
+    "acceptance": [
+      "Combined candidate and fresh extraction preserve view meaning; recovery preserves shared route/policy obligations."
+    ]
+  },
+  "delegate": {
+    "editable_paths": [
+      "release/REVIEW.md",
+      "release/recovery-selection.json"
+    ],
+    "protected_paths": [
+      "approved_context/",
+      "source_evidence/",
+      "retained_history/",
+      "previous_release/"
+    ],
+    "budget": {
+      "max_attempts": 2,
+      "implementation_minutes": 45,
+      "check_timeout_seconds": 30,
+      "max_external_calls": 0
+    },
+    "stop_conditions": [
+      "Required authority or source evidence is missing.",
+      "Declared budget is spent or a proposed edit crosses protected scope."
+    ]
+  },
+  "observe": {
+    "checks": [
+      {
+        "id": "chapter_09.review",
+        "stage": "contract",
+        "method": "review",
+        "argv": [],
+        "expected": "Combined contract; extracted public entry; current/previous/current selection rehearsal."
+      }
+    ],
+    "receipt_fields": [
+      "candidate_identity",
+      "authority_version",
+      "actual_checks",
+      "reached_stage",
+      "remaining_question"
+    ]
+  },
+  "decide": {
+    "owner": "Local-demonstration release owner.",
+    "object": "The exact archive, effective configuration and stated use.",
+    "allowed_decisions": [
+      "ACCEPT",
+      "REJECT",
+      "ASK"
+    ]
+  }
+}

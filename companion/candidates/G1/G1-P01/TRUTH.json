@@ -1,0 +1,22 @@
+{
+  "schema": "esa-review-ground-truth/v4",
+  "mission": "G1",
+  "candidate_id": "G1-P01",
+  "created_on": "2026-11-02",
+  "origin": "CONSTRUCTED_TEACHING_VARIANT",
+  "rationale_origin": "CONSTRUCTED",
+  "actual_model_trace": false,
+  "expected_decision": "ACCEPT",
+  "expected_slice_pass": true,
+  "expected_core_pass": true,
+  "expected_extended_pass": true,
+  "supplemental_probe": "g1_cross_process",
+  "expected_supplemental_pass": true,
+  "targeted_assertions": [],
+  "explanation": "The alternate schema satisfies the scoped public contract and survives a process boundary.",
+  "required_human_decision": null,
+  "contract": "G1/I01 + G1-OD-01",
+  "scope": "Constructed public practice, not a human assessment result.",
+  "revised_on": "2026-11-03",
+  "release_scope": "ESA-Complete-Review-3-20261103"
+}

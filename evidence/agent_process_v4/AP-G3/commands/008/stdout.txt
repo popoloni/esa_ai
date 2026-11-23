@@ -1,0 +1,12 @@
+PASS retained_g2 empty id 1 migration, history, rejection atomicity, replay, release and reinit
+PASS retained_g2 columnar id 41 migration, history, rejection atomicity, replay, release and reinit
+PASS retained_g2 public id 41 migration, history, rejection atomicity, replay, release and reinit
+PASS retained_g2 json id 41 migration, history, rejection atomicity, replay, release and reinit
+PASS legacy_booking empty id 1 migration, history, rejection atomicity, replay, release and reinit
+PASS legacy_booking columnar id 41 migration, history, rejection atomicity, replay, release and reinit
+PASS legacy_booking json id 41 migration, history, rejection atomicity, replay, release and reinit
+PASS booking empty id 1 migration, history, rejection atomicity, replay, release and reinit
+PASS booking columnar id 41 migration, history, rejection atomicity, replay, release and reinit
+PASS booking public id 41 migration, history, rejection atomicity, replay, release and reinit
+PASS booking json id 41 migration, history, rejection atomicity, replay, release and reinit
+PASS all 11 migration/lifecycle cases

@@ -1,0 +1,16 @@
+{
+  "argv": [
+    "python3",
+    "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/companion/start.py",
+    "check",
+    "G4",
+    "--candidate",
+    "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G4/workspace",
+    "--output",
+    "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G4/acceptance_g4.json"
+  ],
+  "at_utc": "2026-11-16T16:14:30.014150+00:00",
+  "returncode": 0,
+  "stdout": "{\n  \"status\": \"SELECTED_CHECKS_PASSED\",\n  \"mission\": \"G4\",\n  \"tests_run\": 11,\n  \"receipt\": \"/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G4/acceptance_g4.json\"\n}\n",
+  "stderr": ""
+}

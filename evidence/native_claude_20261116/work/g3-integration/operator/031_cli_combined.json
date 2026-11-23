@@ -1,0 +1,23 @@
+{
+  "recorded_at_utc": "2026-11-16T22:20:26.840901+00:00",
+  "operation": "cli_combined",
+  "authority": {
+    "principal": "ESA AI integration reviewer / recording operator",
+    "kind": "AI reviewer and local recording operator",
+    "authorized_by": "Author instruction to implement ESA agent-process remediation",
+    "scope": "Scoped teaching integration, independent checks and provenance recording",
+    "human_operator": false,
+    "human_acceptance": "PENDING",
+    "production_authorization": false
+  },
+  "state": {
+    "role_commits": {
+      "report": "ee55af1ec283907873ce8dd0628e37f79a296f42",
+      "cli": "737009b68eed637833be0257d6ad5f53c86b2b84"
+    },
+    "cherry_picked": [
+      "report",
+      "cli"
+    ]
+  }
+}

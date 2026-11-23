@@ -1,0 +1,25 @@
+I fixed two defects in `ledger.py`, and all 10 supplied tests now pass. I also filled in `DOSSIER.md`. I did not run protected acceptance, and human acceptance is still pending.
+
+**Acceptance example:** `decide("original", {amount_eur "4000.00", beneficiary_id "supplier_41"})` under BR-001/v1 gives `STANDARD_QUEUE`. After `activate("BR-001/v2")`, the same ID and payload returns `REPLAYED` with a record equal to the original (still v1, `STANDARD_QUEUE`) and adds no row. `reevaluate` under v2 with a new ID gives `HUMAN_REVIEW` and records the parent.
+
+The documents don't conflict and no rule or mapping is missing, so I had no question for the owner.
+
+**Before the fix:** 1 test failed and 2 errored.
+
+**Corrections:**
+1. **Replay:** a retry recomputed the stored decision under the currently active policy, so after `activate(v2)` it showed `HUMAN_REVIEW` instead of the stored v1 decision. I removed that recomputation. The stored record is now returned as is.
+2. **Migration:** `migrate_legacy` started with an unconditional `raise NotImplementedError`, so none of its body ever ran. I removed that line and added no new logic. The existing body already checks provenance and rolls back as a transaction.
+
+**After the fix:** `python3 -B -m unittest discover -s tests` ran 10 tests, all OK. My first run used `python3 -I`, which failed on import. That was a problem with my command, not with the code.
+
+**Extra probe:** I ran one throwaway script, kept outside the repo.
+- A trailing newline, a plus sign and a Unicode digit are rejected.
+- Leading zeros and `-0` are accepted, with the original text stored.
+- An explicit v2 request under an old v1 ID raises `IDEMPOTENCY_CONFLICT`.
+- A replayed retry adds no audit row.
+
+**Remaining uncertainty:**
+- **Triggers:** the migration adds immutability triggers to `legacy_decisions`. The rows are unchanged, but the schema gains triggers. The contract says the legacy table is retained "unchanged", which could be read to exclude that. I kept the existing behavior and flagged it for the owner in `DOSSIER.md`.
+- **Test depth:** migration was tested with one legacy row only. Multi-row, rollback and concurrent cases were not tested.
+
+Only `ledger.py` and `DOSSIER.md` changed. I used about 8 of the 40 tool commands.

@@ -1,0 +1,70 @@
+{
+  "schema": "esa-agent-session/v1",
+  "created_at_utc": "2026-11-16T23:09:51.145461+00:00",
+  "mission": "B1",
+  "stage": "implement",
+  "candidate": "/workspace/scratch/c02668b5f4f9/ESA_v5_2_Codex_Compatibility_20261117/book/evidence/native_codex_20261117/work/b1",
+  "entry": {
+    "schema": "esa-prototype-entry/v2",
+    "mission": "B1",
+    "release": "ESA-Series-Handbook-Review-5-20261116",
+    "route": "BROWNFIELD_TREASURY_REPAIR",
+    "mode": "INCOMPLETE_STARTER",
+    "solution_variant": null,
+    "human_acceptance": "PENDING",
+    "scope": "BR-001/v1 finite positive amounts and unchanged EUR 5,000 boundary; B1 str API.",
+    "api_contract": "B1-API/v1",
+    "recorded_at_utc": "2026-11-16T23:09:43.476356+00:00",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "companion/start.py",
+      "new",
+      "B1",
+      "--dest",
+      "evidence/native_codex_20261117/work/b1"
+    ]
+  },
+  "integration_role": null,
+  "integration_manifest_sha256": null,
+  "task_contract": "B1-API/v1",
+  "api": "B1-API/v1",
+  "editable_paths": [
+    "src/treasury/routing.py",
+    "DOSSIER.md"
+  ],
+  "before": {
+    "AGENTS.md": "538789285a9887bd0fffc983b7192e817680b5adfa5546791e703dc4a0b7f45c",
+    "DOSSIER.md": "dc49623c69b514a577576a2cd82e946db2c80cd9700913d10e69dd8559246bd2",
+    "READER_ENTRY.json": "48ed7cfa11bfaae02ecc16c5443fd1791954afdf35242ff61820851d11c89c5d",
+    "docs/B1-API.md": "e631804217257dfd5eabf3f9a3feeca025156822acc561bab7b5ab8b722914c2",
+    "docs/BR-001.md": "b88e648e2133cc0668a68b94d8e2b905a2fe09bd76780e36e20bbe68793b991a",
+    "docs/legacy_note.json": "ed8b81d04572c5e1925faa5b7473f220e3184f27287646ed61005a146dc6a95a",
+    "docs/policy.json": "3737b95b728bea32cfc2c82c489fe12267fd3096404a44639f27eec9de88deed",
+    "src/treasury/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/treasury/routing.py": "39c5afc8888b748c8e96147f1bc143839dedfe73963bf5675f3e8ebf4978457a",
+    "tests/test_routing.py": "6e5aa5706dd989bdbbeec9374a84d13c41cf6f36e23a5e5d2762a3b16e551c9b",
+    "tests/test_routing_extended.py": "f797d7f08cf34e97f8d1b2f3b9dae18e5cf1aa1cafbb66334ad855c0c9fc1051"
+  },
+  "protected_sha256": {
+    "AGENTS.md": "538789285a9887bd0fffc983b7192e817680b5adfa5546791e703dc4a0b7f45c",
+    "READER_ENTRY.json": "48ed7cfa11bfaae02ecc16c5443fd1791954afdf35242ff61820851d11c89c5d",
+    "docs/B1-API.md": "e631804217257dfd5eabf3f9a3feeca025156822acc561bab7b5ab8b722914c2",
+    "docs/BR-001.md": "b88e648e2133cc0668a68b94d8e2b905a2fe09bd76780e36e20bbe68793b991a",
+    "docs/legacy_note.json": "ed8b81d04572c5e1925faa5b7473f220e3184f27287646ed61005a146dc6a95a",
+    "docs/policy.json": "3737b95b728bea32cfc2c82c489fe12267fd3096404a44639f27eec9de88deed",
+    "src/treasury/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/test_routing.py": "6e5aa5706dd989bdbbeec9374a84d13c41cf6f36e23a5e5d2762a3b16e551c9b",
+    "tests/test_routing_extended.py": "f797d7f08cf34e97f8d1b2f3b9dae18e5cf1aa1cafbb66334ad855c0c9fc1051"
+  },
+  "max_runs": 3,
+  "wall_seconds_per_run": 300,
+  "session_seconds_from_first_launch": 1500,
+  "session_clock_scope": "Wall time from first native launch across follow-ups; manual work before launch and later review remain operator recorded.",
+  "requested_tool_commands_per_run": 40,
+  "tool_limit_enforced_by_adapter": false,
+  "token_or_spend_limit": "Not enforced or measured by this adapter; configure the client/account before use.",
+  "runtime": "Real installed coding client selected at launch (Codex CLI or Claude Code); no model responses are simulated.",
+  "security_scope": "Host/client permissions plus post-run file integrity checks; adapter is not an OS sandbox.",
+  "human_acceptance": "PENDING",
+  "model_run": false
+}

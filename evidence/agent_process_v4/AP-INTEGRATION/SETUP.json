@@ -1,0 +1,69 @@
+{
+  "at_utc": "2026-11-16T15:55:47.206609+00:00",
+  "operations": [
+    {
+      "argv": [
+        "git",
+        "init",
+        "-b",
+        "integration"
+      ],
+      "returncode": 0,
+      "stdout": "Initialized empty Git repository in /workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-INTEGRATION/workspace/.git/\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "add",
+        "."
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "user.name=ESA recording operator",
+        "-c",
+        "user.email=esa-recording@example.invalid",
+        "commit",
+        "-m",
+        "Freeze accepted G3 and shared integration contract"
+      ],
+      "returncode": 0,
+      "stdout": "[integration (root-commit) 2a2c466] Freeze accepted G3 and shared integration contract\n 18 files changed, 1459 insertions(+)\n create mode 100644 AGENTS.md\n create mode 100644 DOSSIER.md\n create mode 100644 READER_ENTRY.json\n create mode 100644 booking.py\n create mode 100644 docs/INTEGRATION-G3.md\n create mode 100644 docs/contract.md\n create mode 100644 legacy_booking.py\n create mode 100644 prior/booking.py\n create mode 100644 prior/parent-check-artifacts/DEMONSTRATION.json\n create mode 100644 prior/parent-check-artifacts/continuation.json\n create mode 100644 prior/parent-check-artifacts/reservations.sqlite\n create mode 100644 prior/parent-entry.json\n create mode 100644 prior/parent-handoff.json\n create mode 100644 reservation_cli.py\n create mode 100644 reservation_report.py\n create mode 100644 tests/test_g3.py\n create mode 100644 tests/test_integration_a.py\n create mode 100644 tests/test_integration_b.py\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "worktree",
+        "add",
+        "-b",
+        "contribution-A",
+        "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-INTEGRATION-A/workspace"
+      ],
+      "returncode": 0,
+      "stdout": "HEAD is now at 2a2c466 Freeze accepted G3 and shared integration contract\n",
+      "stderr": "Preparing worktree (new branch 'contribution-A')\n"
+    },
+    {
+      "argv": [
+        "git",
+        "worktree",
+        "add",
+        "-b",
+        "contribution-B",
+        "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-INTEGRATION-B/workspace"
+      ],
+      "returncode": 0,
+      "stdout": "HEAD is now at 2a2c466 Freeze accepted G3 and shared integration contract\n",
+      "stderr": "Preparing worktree (new branch 'contribution-B')\n"
+    }
+  ],
+  "parent": "AP-G3",
+  "claim": "Two real worktrees from one shared accepted source and contract; no integration result yet."
+}

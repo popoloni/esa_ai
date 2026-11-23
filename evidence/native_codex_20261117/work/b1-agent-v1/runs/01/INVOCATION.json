@@ -1,0 +1,38 @@
+{
+  "at_utc": "2026-11-16T23:09:55.889920+00:00",
+  "client": "codex",
+  "argv": [
+    "/opt/codex/bin/codex",
+    "exec",
+    "--json",
+    "--sandbox",
+    "workspace-write",
+    "--skip-git-repo-check",
+    "--color",
+    "never",
+    "-C",
+    "/workspace/scratch/c02668b5f4f9/ESA_v5_2_Codex_Compatibility_20261117/book/evidence/native_codex_20261117/work/b1",
+    "-o",
+    "/workspace/scratch/c02668b5f4f9/ESA_v5_2_Codex_Compatibility_20261117/book/evidence/native_codex_20261117/work/b1-agent-v1/runs/01/agent_final.txt",
+    "-"
+  ],
+  "client_version": "codex-cli 0.167.0-alpha.4",
+  "launch_profile": {
+    "sandbox_requested": "workspace-write",
+    "approval_policy": "Installed client/configuration; no override by the adapter.",
+    "configuration": "Inherited; no alternate home, credentials or ignore-config flag.",
+    "additional_write_directories_requested": [],
+    "effective_host_permissions_verified": false
+  },
+  "spend_limit_usd": null,
+  "spend_limit_scope": "Not enforced by this adapter; configure the client/account.",
+  "client_version_probe_error": null,
+  "task_sha256": "37d41dce69ae08c386077083963fc1abd8bb993c879bb1000a3544f27a8f22dc",
+  "session_spec_sha256": "840e1ce1cdc4b3be7d99268e49e810586c235e36cc3f16ca3c2c71791b5442b3",
+  "effective_run_timeout_seconds": 300,
+  "conversation": "Fresh native session; current files and explicit task carry the handoff.",
+  "requested_model": null,
+  "model_selection": "Client/account default",
+  "model_identity_rule": "Requested identity is not an observed backend identity; native metadata, when available, is recorded separately.",
+  "operator_identity": "Not inferred; record it with decide."
+}

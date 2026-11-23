@@ -1,0 +1,12 @@
+PASS fail-closed unchanged database: unknown-version
+PASS fail-closed unchanged database: extra-current-column
+PASS fail-closed unchanged database: missing-current-index
+PASS fail-closed unchanged database: wrong-current-index
+PASS fail-closed unchanged database: unknown-table
+PASS fail-closed unchanged database: unknown-trigger
+PASS fail-closed unchanged database: fixture-fingerprint-mismatch
+PASS fail-closed unchanged database: fixture-invalid-data
+PASS fail-closed unchanged database: fixture-unknown-archive
+PASS fail-closed unchanged database: g3-extra-index
+PASS eight unchanged validation rejections, half-open intervals, 24-hour bound and read-only lookups
+PASS schema refusal and prior-behavior regression checks

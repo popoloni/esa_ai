@@ -1,0 +1,257 @@
+{
+  "schema": "esa-prototype-check/v2",
+  "selection": "all",
+  "candidate_path": "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g1",
+  "candidate_sha256_before": "48d2daa0e45965088f42ddf307ece4e0f5e8a2330415ee575819a8421d6119cc",
+  "protected_before": [
+    {
+      "path": "docs/contract.md",
+      "expected_sha256": "9c6c95077f305744728b9929f51ea36d8a534ab67cd2e7ebe8112ad35eb7ebba",
+      "candidate_sha256": "9c6c95077f305744728b9929f51ea36d8a534ab67cd2e7ebe8112ad35eb7ebba",
+      "symlink": false
+    },
+    {
+      "path": "docs/G1-I01.md",
+      "expected_sha256": "07a417cd7e7eeaca0bc5827e67eb965d0c7ebb75f387146f80a37e172fb89a50",
+      "candidate_sha256": "07a417cd7e7eeaca0bc5827e67eb965d0c7ebb75f387146f80a37e172fb89a50",
+      "symlink": false
+    },
+    {
+      "path": "docs/G1-OD-01.md",
+      "expected_sha256": "baf835ffff57a64023ce8f5233b9e3e3588a2f6017f46f68b168919eae4b38db",
+      "candidate_sha256": "baf835ffff57a64023ce8f5233b9e3e3588a2f6017f46f68b168919eae4b38db",
+      "symlink": false
+    },
+    {
+      "path": "docs/decisions/0001-storage.md",
+      "expected_sha256": "c1b8a31f24fb5fe34e929049e8ed3cc3d1910b6d4194a40d4d303e70582f6762",
+      "candidate_sha256": "c1b8a31f24fb5fe34e929049e8ed3cc3d1910b6d4194a40d4d303e70582f6762",
+      "symlink": false
+    },
+    {
+      "path": "tests/test_g1_slice.py",
+      "expected_sha256": "6242a53920d075fb038a8efbaeead6390f8f0a0d5b69dba3da6c31783abda98b",
+      "candidate_sha256": "6242a53920d075fb038a8efbaeead6390f8f0a0d5b69dba3da6c31783abda98b",
+      "symlink": false
+    },
+    {
+      "path": "tests/test_g1_full_api.py",
+      "expected_sha256": "8c46c06e0b8677dc74c9fb840f4f1f4b5f2c190095317b24f58d1cde92c8c538",
+      "candidate_sha256": "8c46c06e0b8677dc74c9fb840f4f1f4b5f2c190095317b24f58d1cde92c8c538",
+      "symlink": false
+    },
+    {
+      "path": "tests/test_g1_readonly.py",
+      "expected_sha256": "cd2f92b5adac1b2cc1ef5e1c23ff9309bd26133c933ec429368c7463308f5e4f",
+      "candidate_sha256": "cd2f92b5adac1b2cc1ef5e1c23ff9309bd26133c933ec429368c7463308f5e4f",
+      "symlink": false
+    },
+    {
+      "path": "historical_tests/test_booking.py",
+      "expected_sha256": "3fede5b6fff032747fe1017836b915d375b7bef01417e6bbf246506e413b4e89",
+      "candidate_sha256": "3fede5b6fff032747fe1017836b915d375b7bef01417e6bbf246506e413b4e89",
+      "symlink": false
+    }
+  ],
+  "human_acceptance": "PENDING",
+  "groups": {
+    "g1_slice": {
+      "command": [
+        "/usr/local/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_g1_slice.py",
+        "-v"
+      ],
+      "elapsed_process_seconds": 0.07948397400002705,
+      "timeout_seconds": 15,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_first_reservation_confirms_and_public_read_matches (test_g1_slice.ReservationSlice.test_first_reservation_confirms_and_public_read_matches) ... ok\ntest_init_db_preserves_existing_reservation (test_g1_slice.ReservationSlice.test_init_db_preserves_existing_reservation) ... ok\ntest_missing_reservation_returns_none (test_g1_slice.ReservationSlice.test_missing_reservation_returns_none) ... ok\ntest_quoted_identifiers_round_trip (test_g1_slice.ReservationSlice.test_quoted_identifiers_round_trip) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.020s\n\nOK\n",
+      "timed_out": false,
+      "tests_run": 4,
+      "expected_tests": 4,
+      "methods_passed": 4,
+      "methods_failed": [],
+      "methods_errored": [],
+      "status": "PASSED"
+    },
+    "g1_final_api": {
+      "command": [
+        "/usr/local/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_g1_full_api.py",
+        "-v"
+      ],
+      "elapsed_process_seconds": 0.10998534800000925,
+      "timeout_seconds": 15,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "test_adjacent_reservation_succeeds (test_g1_full_api.ReservationFullAPI.test_adjacent_reservation_succeeds) ... ok\ntest_changed_request_with_same_key_fails (test_g1_full_api.ReservationFullAPI.test_changed_request_with_same_key_fails) ... FAIL\ntest_different_assets_do_not_conflict (test_g1_full_api.ReservationFullAPI.test_different_assets_do_not_conflict) ... ok\ntest_duration_limit_and_timestamp_format (test_g1_full_api.ReservationFullAPI.test_duration_limit_and_timestamp_format) ... FAIL\ntest_first_reservation_confirms (test_g1_full_api.ReservationFullAPI.test_first_reservation_confirms) ... ok\ntest_invalid_zero_or_reverse_interval_has_no_effect (test_g1_full_api.ReservationFullAPI.test_invalid_zero_or_reverse_interval_has_no_effect) ... FAIL\ntest_other_member_same_key_is_independent_but_conflicts_on_slot (test_g1_full_api.ReservationFullAPI.test_other_member_same_key_is_independent_but_conflicts_on_slot) ... FAIL\ntest_overlap_fails_without_insert (test_g1_full_api.ReservationFullAPI.test_overlap_fails_without_insert) ... FAIL\ntest_same_request_key_replays_original (test_g1_full_api.ReservationFullAPI.test_same_request_key_replays_original) ... FAIL\ntest_two_writers_do_not_both_confirm_same_slot (test_g1_full_api.ReservationFullAPI.test_two_writers_do_not_both_confirm_same_slot) ... FAIL\n\n======================================================================\nFAIL: test_changed_request_with_same_key_fails (test_g1_full_api.ReservationFullAPI.test_changed_request_with_same_key_fails)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g1/tests/test_g1_full_api.py\", line 66, in test_changed_request_with_same_key_fails\n    self.assertEqual((change.status, change.code), (409, \"idempotency-key-reused\"))\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Tuples differ: (201, 'confirmed') != (409, 'idempotency-key-reused')\n\nFirst differing element 0:\n201\n409\n\n- (201, 'confirmed')\n+ (409, 'idempotency-key-reused')\n\n======================================================================\nFAIL: test_duration_limit_and_timestamp_format (test_g1_full_api.ReservationFullAPI.test_duration_limit_and_timestamp_format)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g1/tests/test_g1_full_api.py\", line 77, in test_duration_limit_and_timestamp_format\n    self.assertEqual(result.status, 422)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^\nAssertionError: 201 != 422\n\n======================================================================\nFAIL: test_invalid_zero_or_reverse_interval_has_no_effect (test_g1_full_api.ReservationFullAPI.test_invalid_zero_or_reverse_interval_has_no_effect)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g1/tests/test_g1_full_api.py\", line 72, in test_invalid_zero_or_reverse_interval_has_no_effect\n    self.assertEqual(result.status, 422)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^\nAssertionError: 201 != 422\n\n======================================================================\nFAIL: test_other_member_same_key_is_independent_but_conflicts_on_slot (test_g1_full_api.ReservationFullAPI.test_other_member_same_key_is_independent_but_conflicts_on_slot)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g1/tests/test_g1_full_api.py\", line 83, in test_other_member_same_key_is_independent_but_conflicts_on_slot\n    self.assertEqual((result.status, result.code), (409, \"interval-conflict\"))\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Tuples differ: (201, 'confirmed') != (409, 'interval-conflict')\n\nFirst differing element 0:\n201\n409\n\n- (201, 'confirmed')\n+ (409, 'interval-conflict')\n\n======================================================================\nFAIL: test_overlap_fails_without_insert (test_g1_full_api.ReservationFullAPI.test_overlap_fails_without_insert)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g1/tests/test_g1_full_api.py\", line 39, in test_overlap_fails_without_insert\n    self.assertEqual((result.status, result.code), (409, \"interval-conflict\"))\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Tuples differ: (201, 'confirmed') != (409, 'interval-conflict')\n\nFirst differing element 0:\n201\n409\n\n- (201, 'confirmed')\n+ (409, 'interval-conflict')\n\n======================================================================\nFAIL: test_same_request_key_replays_original (test_g1_full_api.ReservationFullAPI.test_same_request_key_replays_original)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g1/tests/test_g1_full_api.py\", line 59, in test_same_request_key_replays_original\n    self.assertEqual(repeated.status, 200)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 201 != 200\n\n======================================================================\nFAIL: test_two_writers_do_not_both_confirm_same_slot (test_g1_full_api.ReservationFullAPI.test_two_writers_do_not_both_confirm_same_slot)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g1/tests/test_g1_full_api.py\", line 91, in test_two_writers_do_not_both_confirm_same_slot\n    self.assertEqual(sorted(result.status for result in results), [201, 409])\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Lists differ: [201, 201] != [201, 409]\n\nFirst differing element 1:\n201\n409\n\n- [201, 201]\n?       ^ ^\n\n+ [201, 409]\n?       ^ ^\n\n\n----------------------------------------------------------------------\nRan 10 tests in 0.042s\n\nFAILED (failures=7)\n",
+      "timed_out": false,
+      "tests_run": 10,
+      "expected_tests": 10,
+      "methods_passed": 3,
+      "methods_failed": [
+        "test_changed_request_with_same_key_fails",
+        "test_duration_limit_and_timestamp_format",
+        "test_invalid_zero_or_reverse_interval_has_no_effect",
+        "test_other_member_same_key_is_independent_but_conflicts_on_slot",
+        "test_overlap_fails_without_insert",
+        "test_same_request_key_replays_original",
+        "test_two_writers_do_not_both_confirm_same_slot"
+      ],
+      "methods_errored": [],
+      "status": "FAILED"
+    }
+  },
+  "tests_run": 14,
+  "expected_tests": 14,
+  "methods_passed": 7,
+  "stdout": "",
+  "stderr": "test_first_reservation_confirms_and_public_read_matches (test_g1_slice.ReservationSlice.test_first_reservation_confirms_and_public_read_matches) ... ok\ntest_init_db_preserves_existing_reservation (test_g1_slice.ReservationSlice.test_init_db_preserves_existing_reservation) ... ok\ntest_missing_reservation_returns_none (test_g1_slice.ReservationSlice.test_missing_reservation_returns_none) ... ok\ntest_quoted_identifiers_round_trip (test_g1_slice.ReservationSlice.test_quoted_identifiers_round_trip) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.020s\n\nOK\ntest_adjacent_reservation_succeeds (test_g1_full_api.ReservationFullAPI.test_adjacent_reservation_succeeds) ... ok\ntest_changed_request_with_same_key_fails (test_g1_full_api.ReservationFullAPI.test_changed_request_with_same_key_fails) ... FAIL\ntest_different_assets_do_not_conflict (test_g1_full_api.ReservationFullAPI.test_different_assets_do_not_conflict) ... ok\ntest_duration_limit_and_timestamp_format (test_g1_full_api.ReservationFullAPI.test_duration_limit_and_timestamp_format) ... FAIL\ntest_first_reservation_confirms (test_g1_full_api.ReservationFullAPI.test_first_reservation_confirms) ... ok\ntest_invalid_zero_or_reverse_interval_has_no_effect (test_g1_full_api.ReservationFullAPI.test_invalid_zero_or_reverse_interval_has_no_effect) ... FAIL\ntest_other_member_same_key_is_independent_but_conflicts_on_slot (test_g1_full_api.ReservationFullAPI.test_other_member_same_key_is_independent_but_conflicts_on_slot) ... FAIL\ntest_overlap_fails_without_insert (test_g1_full_api.ReservationFullAPI.test_overlap_fails_without_insert) ... FAIL\ntest_same_request_key_replays_original (test_g1_full_api.ReservationFullAPI.test_same_request_key_replays_original) ... FAIL\ntest_two_writers_do_not_both_confirm_same_slot (test_g1_full_api.ReservationFullAPI.test_two_writers_do_not_both_confirm_same_slot) ... FAIL\n\n======================================================================\nFAIL: test_changed_request_with_same_key_fails (test_g1_full_api.ReservationFullAPI.test_changed_request_with_same_key_fails)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g1/tests/test_g1_full_api.py\", line 66, in test_changed_request_with_same_key_fails\n    self.assertEqual((change.status, change.code), (409, \"idempotency-key-reused\"))\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Tuples differ: (201, 'confirmed') != (409, 'idempotency-key-reused')\n\nFirst differing element 0:\n201\n409\n\n- (201, 'confirmed')\n+ (409, 'idempotency-key-reused')\n\n======================================================================\nFAIL: test_duration_limit_and_timestamp_format (test_g1_full_api.ReservationFullAPI.test_duration_limit_and_timestamp_format)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g1/tests/test_g1_full_api.py\", line 77, in test_duration_limit_and_timestamp_format\n    self.assertEqual(result.status, 422)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^\nAssertionError: 201 != 422\n\n======================================================================\nFAIL: test_invalid_zero_or_reverse_interval_has_no_effect (test_g1_full_api.ReservationFullAPI.test_invalid_zero_or_reverse_interval_has_no_effect)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g1/tests/test_g1_full_api.py\", line 72, in test_invalid_zero_or_reverse_interval_has_no_effect\n    self.assertEqual(result.status, 422)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^\nAssertionError: 201 != 422\n\n======================================================================\nFAIL: test_other_member_same_key_is_independent_but_conflicts_on_slot (test_g1_full_api.ReservationFullAPI.test_other_member_same_key_is_independent_but_conflicts_on_slot)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g1/tests/test_g1_full_api.py\", line 83, in test_other_member_same_key_is_independent_but_conflicts_on_slot\n    self.assertEqual((result.status, result.code), (409, \"interval-conflict\"))\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Tuples differ: (201, 'confirmed') != (409, 'interval-conflict')\n\nFirst differing element 0:\n201\n409\n\n- (201, 'confirmed')\n+ (409, 'interval-conflict')\n\n======================================================================\nFAIL: test_overlap_fails_without_insert (test_g1_full_api.ReservationFullAPI.test_overlap_fails_without_insert)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g1/tests/test_g1_full_api.py\", line 39, in test_overlap_fails_without_insert\n    self.assertEqual((result.status, result.code), (409, \"interval-conflict\"))\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Tuples differ: (201, 'confirmed') != (409, 'interval-conflict')\n\nFirst differing element 0:\n201\n409\n\n- (201, 'confirmed')\n+ (409, 'interval-conflict')\n\n======================================================================\nFAIL: test_same_request_key_replays_original (test_g1_full_api.ReservationFullAPI.test_same_request_key_replays_original)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g1/tests/test_g1_full_api.py\", line 59, in test_same_request_key_replays_original\n    self.assertEqual(repeated.status, 200)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 201 != 200\n\n======================================================================\nFAIL: test_two_writers_do_not_both_confirm_same_slot (test_g1_full_api.ReservationFullAPI.test_two_writers_do_not_both_confirm_same_slot)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g1/tests/test_g1_full_api.py\", line 91, in test_two_writers_do_not_both_confirm_same_slot\n    self.assertEqual(sorted(result.status for result in results), [201, 409])\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Lists differ: [201, 201] != [201, 409]\n\nFirst differing element 1:\n201\n409\n\n- [201, 201]\n?       ^ ^\n\n+ [201, 409]\n?       ^ ^\n\n\n----------------------------------------------------------------------\nRan 10 tests in 0.042s\n\nFAILED (failures=7)\n",
+  "timed_out": false,
+  "returncode": 1,
+  "protected_after": [
+    {
+      "path": "docs/contract.md",
+      "expected_sha256": "9c6c95077f305744728b9929f51ea36d8a534ab67cd2e7ebe8112ad35eb7ebba",
+      "candidate_sha256": "9c6c95077f305744728b9929f51ea36d8a534ab67cd2e7ebe8112ad35eb7ebba",
+      "symlink": false
+    },
+    {
+      "path": "docs/G1-I01.md",
+      "expected_sha256": "07a417cd7e7eeaca0bc5827e67eb965d0c7ebb75f387146f80a37e172fb89a50",
+      "candidate_sha256": "07a417cd7e7eeaca0bc5827e67eb965d0c7ebb75f387146f80a37e172fb89a50",
+      "symlink": false
+    },
+    {
+      "path": "docs/G1-OD-01.md",
+      "expected_sha256": "baf835ffff57a64023ce8f5233b9e3e3588a2f6017f46f68b168919eae4b38db",
+      "candidate_sha256": "baf835ffff57a64023ce8f5233b9e3e3588a2f6017f46f68b168919eae4b38db",
+      "symlink": false
+    },
+    {
+      "path": "docs/decisions/0001-storage.md",
+      "expected_sha256": "c1b8a31f24fb5fe34e929049e8ed3cc3d1910b6d4194a40d4d303e70582f6762",
+      "candidate_sha256": "c1b8a31f24fb5fe34e929049e8ed3cc3d1910b6d4194a40d4d303e70582f6762",
+      "symlink": false
+    },
+    {
+      "path": "tests/test_g1_slice.py",
+      "expected_sha256": "6242a53920d075fb038a8efbaeead6390f8f0a0d5b69dba3da6c31783abda98b",
+      "candidate_sha256": "6242a53920d075fb038a8efbaeead6390f8f0a0d5b69dba3da6c31783abda98b",
+      "symlink": false
+    },
+    {
+      "path": "tests/test_g1_full_api.py",
+      "expected_sha256": "8c46c06e0b8677dc74c9fb840f4f1f4b5f2c190095317b24f58d1cde92c8c538",
+      "candidate_sha256": "8c46c06e0b8677dc74c9fb840f4f1f4b5f2c190095317b24f58d1cde92c8c538",
+      "symlink": false
+    },
+    {
+      "path": "tests/test_g1_readonly.py",
+      "expected_sha256": "cd2f92b5adac1b2cc1ef5e1c23ff9309bd26133c933ec429368c7463308f5e4f",
+      "candidate_sha256": "cd2f92b5adac1b2cc1ef5e1c23ff9309bd26133c933ec429368c7463308f5e4f",
+      "symlink": false
+    },
+    {
+      "path": "historical_tests/test_booking.py",
+      "expected_sha256": "3fede5b6fff032747fe1017836b915d375b7bef01417e6bbf246506e413b4e89",
+      "candidate_sha256": "3fede5b6fff032747fe1017836b915d375b7bef01417e6bbf246506e413b4e89",
+      "symlink": false
+    }
+  ],
+  "candidate_sha256_after": "48d2daa0e45965088f42ddf307ece4e0f5e8a2330415ee575819a8421d6119cc",
+  "inputs_unchanged": true,
+  "status": "CHECKS_FAILED",
+  "mission": "G1",
+  "prototype_release": "ESA-Series-Handbook-Review-5-20261116",
+  "evidence_origin": "IDENTIFIED_LEARNER_CANDIDATE",
+  "scope": [
+    "G1/I01 four public-API methods",
+    "RES-001/v1 ten adapted public-API diagnostics; no internal row-count assertion"
+  ],
+  "api_contract": "G1/I01",
+  "meaning": "Checks on these bytes and selected cases; human acceptance remains pending. Integrity and timeout checks do not sandbox arbitrary code.",
+  "recorded_at_utc": "2026-11-16T22:13:03.924198+00:00",
+  "command": [
+    "/usr/local/bin/python3",
+    "companion/start.py",
+    "check",
+    "G1",
+    "--candidate",
+    "work/g1",
+    "--select",
+    "all",
+    "--output",
+    "work/evidence/g1-all.json"
+  ],
+  "verification_progress": {
+    "schema": "esa-verification-progress/v1",
+    "derivation": "CURRENT_RECEIPT_FIELDS_ONLY_NO_ADDITIONAL_EXECUTION",
+    "source_fields_sha256": "7b014cc4441c7f15f5b713406db0bf1461a2ead6ca7ca32d491532aeee303aee",
+    "work_order": "mission_G1",
+    "evidence_profile": "new_capability",
+    "profile_basis": "The named mission work order.",
+    "phase": "mission",
+    "stages": {
+      "startup": {
+        "status": "PASS",
+        "evidence": [
+          "schema",
+          "mission",
+          "candidate_path"
+        ],
+        "reason": "The intended runner accepted the entry identity and emitted this check receipt. This does not establish candidate import."
+      },
+      "integrity": {
+        "status": "PASS",
+        "evidence": [
+          "inputs_unchanged",
+          "candidate_sha256_before",
+          "candidate_sha256_after"
+        ],
+        "reason": "The recorded before/after comparison found inputs unchanged."
+      },
+      "contract": {
+        "status": "FAIL",
+        "evidence": [
+          "groups.g1_slice",
+          "groups.g1_final_api"
+        ],
+        "reason": "Status uses each selected group and any contract-specific supplemental probe; an import placeholder is not behavioral evidence. A candidate stack frame or known protected assertion supports reached behavior; a method count alone does not. Groups within this stage may retain multiple failures.",
+        "behavior_reached": true
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "evidence": [],
+        "reason": "No continuation or consumer/process observation is present."
+      },
+      "artifact": {
+        "status": "NOT_RUN",
+        "evidence": [],
+        "reason": "This receipt has no separate archive/extraction gate. Local demonstration hashes alone do not establish release fitness."
+      },
+      "authorization": {
+        "status": "NOT_RUN",
+        "evidence": [
+          "human_acceptance"
+        ],
+        "reason": "No owner acceptance or release authorization is recorded. Passing checks do not supply that decision."
+      }
+    },
+    "first_failed_stage": "contract",
+    "last_observed_stage": "contract",
+    "limits": "A stage label interprets the retained fields; it is not an independent attestation. NOT_APPLICABLE needs an explicit scope exclusion; absence alone remains NOT_RUN."
+  }
+}

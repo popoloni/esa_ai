@@ -1,0 +1,19 @@
+{
+  "schema": "esa-review-ground-truth/v4",
+  "mission": "G4",
+  "candidate_id": "G4-P03",
+  "created_on": "2026-11-02",
+  "origin": "CONSTRUCTED_TEACHING_VARIANT",
+  "actual_model_trace": false,
+  "expected_decision": "REJECT",
+  "expected_check_pass": false,
+  "targeted_assertions": [
+    "test_failed_attempts_remain_in_the_cost_numerator"
+  ],
+  "explanation": "OPS-G4/v1 already includes failed generations, review and recovery in the numerator. Excluding FAILED rows is a contract violation, not an unanswered policy question.",
+  "required_human_decision": null,
+  "contract": "OPS-G4/v3",
+  "scope": "Constructed public practice, not a human assessment result.",
+  "revised_on": "2026-11-17",
+  "release_scope": "ESA-Complete-Review-3-20261103"
+}

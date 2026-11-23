@@ -1,0 +1,8 @@
+{
+  "at_utc": "2026-11-16T22:15:49.885882+00:00",
+  "operator": "Claude (claude-opus-5-5), AI operator in the author's review session",
+  "operator_kind": "AI",
+  "decision": "accept",
+  "note": "Observation: native run 01 completed (claude-sonnet-5-5, 0.287 USD reported, 99 s). Changed booking.py and DOSSIER.md.\nThe client denied four operations, including a Write to the package root (probe_g2.py) outside the candidate;\nthe worker then wrote its probe to the client session scratchpad. Validation, replay, 409 reuse/conflict, adjacency,\natomic check-and-insert and migration of the three authorized G1 representations are implemented.\nDecisive observation: the worker recognised that its own predecessor's table g1_reservation (native G1 candidate)\nis not an authorized source and refuses it. Operator probe work/evidence/operator/g2-own-predecessor-probe.json:\nValueError \"owner mapping required\", database bytes unchanged.\nIndependent: check G2 17/17; continue G2 SCOPED_HANDOFF_READY.\nDecision on the candidate: ACCEPT for RES-001/v1 + G2-OD-01 + G2-OD-02 scope; refusing the unknown schema is the\ncontracted behaviour.\nOpen owner question (ASK; object: a migration mapping, not this candidate): may records written by the native\nG1 representation g1_reservation(id, trusted_member_id, asset_id, starts_at, ends_at, idempotency_key) be mapped\ncolumn-for-column like G2-OD-02? Not authored here; no mapping was invented.\nLimit: AI operator; the authorized sources are fictional teaching decisions.\n",
+  "meaning": "Recorded operator statement; this tool does not certify its authority or correctness."
+}

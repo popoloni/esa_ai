@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "python3",
+    "-B",
+    "companion/memory/ledger.py",
+    "--workspace",
+    ".",
+    "--ledger",
+    "evidence/memory_lab_20261116/recorded_01/events.jsonl",
+    "init",
+    "--policy",
+    "evidence/memory_lab_20261116/recorded_01/authority.json"
+  ],
+  "exit": 0,
+  "expected_exit": 0,
+  "label": "initialize",
+  "origin": "AUTOMATED_LOCAL_CONTROL_NO_MODEL_OR_HUMAN",
+  "stderr": "",
+  "stdout": "{\"event_sha256\":\"7e20c71e90e9ea93bfa66229a4c72d723fc46513136f5de035a2bacd5f377174\",\"status\":\"INITIALIZED\"}\n"
+}

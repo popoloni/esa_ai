@@ -1,0 +1,84 @@
+{
+  "schema": "esa-agent-session/v1",
+  "created_at_utc": "2026-11-22T17:36:46.822449+00:00",
+  "mission": "B2",
+  "stage": "implement",
+  "candidate": "/home/claude/work/live22/agentic-ai-5.2/work/b2",
+  "entry": {
+    "schema": "esa-full-mission/v1",
+    "release": "Engineering-Software-with-Agentic-AI-Review-5.2-20261117",
+    "mission": "B2",
+    "mode": "LEARNER",
+    "contract": "INTAKE/v1",
+    "module": "intake.py",
+    "lineage": {
+      "mission": "B1",
+      "source_sha256": "e8fdab89acfa5d28041c74a5d2dcf9801fb0e85324dcc160013a56cf63f89cfd",
+      "source_path": "/home/claude/work/live22/agentic-ai-5.2/work/b1-v2/src/treasury/routing.py",
+      "handoff_status": "CONTEXT_HANDOFF_READY",
+      "stored_snapshot": "prior/routing.py",
+      "copied_parent_demonstration": null
+    },
+    "human_acceptance": "PENDING",
+    "dependency_sha256": {
+      "routing.py": "e8fdab89acfa5d28041c74a5d2dcf9801fb0e85324dcc160013a56cf63f89cfd"
+    },
+    "prior_sha256": {
+      "prior/routing.py": "e8fdab89acfa5d28041c74a5d2dcf9801fb0e85324dcc160013a56cf63f89cfd",
+      "prior/parent-handoff.json": "a3aff787c8cd7c5898bbb5aa2516535595ca7719b672be5ab13cafb30d9d6c47",
+      "prior/parent-entry.json": "cad094a05da050f874f8bd4f1a451ad60c96b58c5d33e690fd126285b9d06740"
+    },
+    "recorded_at_utc": "2026-11-22T17:36:46.634201+00:00",
+    "command": [
+      "/usr/local/bin/python3",
+      "companion/start.py",
+      "advance",
+      "B2",
+      "--from-candidate",
+      "work/b1-v2",
+      "--dest",
+      "work/b2"
+    ]
+  },
+  "integration_role": null,
+  "integration_manifest_sha256": null,
+  "task_contract": "INTAKE/v1",
+  "api": null,
+  "editable_paths": [
+    "intake.py",
+    "DOSSIER.md"
+  ],
+  "before": {
+    "AGENTS.md": "60c816b03a88dd0593dafcc7cb82ed7c9ec33e96ec4f226057f2625295e6f0fc",
+    "DOSSIER.md": "3b4bdba31b00dbd80d604851dc08c976038c1f99d158fc4b14268267f2541cc2",
+    "READER_ENTRY.json": "d6a518a900326a687dc101fefd462701f13d7d0f9ef2f1854cfc3dda4824009f",
+    "docs/contract.md": "7322b946c06acf1e5ca4fc2031419d077cec88fb201aaa6ba6d9e2603bb9992d",
+    "intake.py": "696f7d077b7bd7ba75df7980eebe33ddeae02aae7555aee20ad4df78f5fbe293",
+    "prior/parent-entry.json": "cad094a05da050f874f8bd4f1a451ad60c96b58c5d33e690fd126285b9d06740",
+    "prior/parent-handoff.json": "a3aff787c8cd7c5898bbb5aa2516535595ca7719b672be5ab13cafb30d9d6c47",
+    "prior/routing.py": "e8fdab89acfa5d28041c74a5d2dcf9801fb0e85324dcc160013a56cf63f89cfd",
+    "routing.py": "e8fdab89acfa5d28041c74a5d2dcf9801fb0e85324dcc160013a56cf63f89cfd",
+    "tests/test_b2.py": "13c76494bb51344136c06e4b49cb071872f8737375f81ceac1a491f9bd3ccc06"
+  },
+  "protected_sha256": {
+    "AGENTS.md": "60c816b03a88dd0593dafcc7cb82ed7c9ec33e96ec4f226057f2625295e6f0fc",
+    "READER_ENTRY.json": "d6a518a900326a687dc101fefd462701f13d7d0f9ef2f1854cfc3dda4824009f",
+    "docs/contract.md": "7322b946c06acf1e5ca4fc2031419d077cec88fb201aaa6ba6d9e2603bb9992d",
+    "prior/parent-entry.json": "cad094a05da050f874f8bd4f1a451ad60c96b58c5d33e690fd126285b9d06740",
+    "prior/parent-handoff.json": "a3aff787c8cd7c5898bbb5aa2516535595ca7719b672be5ab13cafb30d9d6c47",
+    "prior/routing.py": "e8fdab89acfa5d28041c74a5d2dcf9801fb0e85324dcc160013a56cf63f89cfd",
+    "routing.py": "e8fdab89acfa5d28041c74a5d2dcf9801fb0e85324dcc160013a56cf63f89cfd",
+    "tests/test_b2.py": "13c76494bb51344136c06e4b49cb071872f8737375f81ceac1a491f9bd3ccc06"
+  },
+  "max_runs": 3,
+  "wall_seconds_per_run": 900,
+  "session_seconds_from_first_launch": 1800,
+  "session_clock_scope": "Wall time from first native launch across follow-ups; manual work before launch and later review remain operator recorded.",
+  "requested_tool_commands_per_run": 40,
+  "tool_limit_enforced_by_adapter": false,
+  "token_or_spend_limit": "Not enforced or measured by this adapter; configure the client/account before use.",
+  "runtime": "Real installed coding client selected at launch (Codex CLI or Claude Code); no model responses are simulated.",
+  "security_scope": "Host/client permissions plus post-run file integrity checks; adapter is not an OS sandbox.",
+  "human_acceptance": "PENDING",
+  "model_run": false
+}

@@ -1,0 +1,23 @@
+{
+  "actual_result": {
+    "policy_version": "BR-001/v1",
+    "reason": "BELOW_LIMIT",
+    "route": "STANDARD_QUEUE"
+  },
+  "contract": {
+    "locator": "Leading plus sign is permitted",
+    "path": "companion/contracts/B1_API_V2.md",
+    "sha256": "75035676814847b356cd844300c32d5384a68327822225dbb45e92692470db06"
+  },
+  "contradicted_record": "B1-V2-PLUS-WRONG",
+  "implementation": {
+    "locator": "assess",
+    "path": "companion/solutions/B1/routing_v2.py",
+    "sha256": "ba10df386844e218864d0016088f8ed742554eac1fab7d1b0aa4af56bf9cc55d"
+  },
+  "input": "+4999.99",
+  "limit": "The earlier wrong claim was deliberately planted by this control, not produced by an agent or approved by a human.",
+  "observed_at_utc": "2026-11-16T20:40:08.641492Z",
+  "origin": "EXECUTED_REFERENCE_CONTROL_NO_MODEL_OR_HUMAN",
+  "schema": "b1-memory-counterevidence/v1"
+}

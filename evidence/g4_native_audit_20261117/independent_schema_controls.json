@@ -1,0 +1,343 @@
+{
+  "origin": "NEW_DETERMINISTIC_CONTRACT_CONTROLS_20261117",
+  "model_calls": 0,
+  "fixture_source": "Independent SQL authored from OPS-G4/v3, not g4_fixture.py",
+  "historical_evidence_edited": false,
+  "results": [
+    {
+      "case": "reference",
+      "candidate": "native",
+      "source": "evidence/native_claude_20261116/work/g4/operations.py",
+      "sha256": "2903fba69859c4ff7560873c7911b89051a22d89485ec4558f5c96220f769c41",
+      "expected": {
+        "active_overlap_pairs": [
+          [
+            1,
+            2
+          ]
+        ],
+        "counts": {
+          "active": 3,
+          "cancelled": 1
+        }
+      },
+      "before_sha256": "49c1af94cba7caf98f45ae16fde98a36f8fdaf2354e0575abbe189f569faa2e3",
+      "result": {
+        "diagnosis": "ACTIVE_OVERLAP",
+        "counts": {
+          "active": 3,
+          "cancelled": 1
+        },
+        "active_overlap_pairs": [
+          [
+            1,
+            2
+          ]
+        ],
+        "schema_version": 3,
+        "representation": "reservations",
+        "path": "/workspace/scratch/c02668b5f4f9/ESA_v5_2_Codex_Compatibility_20261117/book/validation/codex_compatibility_20261117/claude_audit/g4_schema_controls/reference.sqlite",
+        "digest": "49c1af94cba7caf98f45ae16fde98a36f8fdaf2354e0575abbe189f569faa2e3",
+        "digest_before": "49c1af94cba7caf98f45ae16fde98a36f8fdaf2354e0575abbe189f569faa2e3",
+        "digest_after": "49c1af94cba7caf98f45ae16fde98a36f8fdaf2354e0575abbe189f569faa2e3",
+        "unchanged": true
+      },
+      "matches_contract_control": true,
+      "after_sha256": "49c1af94cba7caf98f45ae16fde98a36f8fdaf2354e0575abbe189f569faa2e3",
+      "unchanged": true
+    },
+    {
+      "case": "reference",
+      "candidate": "reference",
+      "source": "companion/solutions/G4/operations.py",
+      "sha256": "f0162261026327358188be23ed4daa6f01134b3ee1817a087694551bbcbfa580",
+      "expected": {
+        "active_overlap_pairs": [
+          [
+            1,
+            2
+          ]
+        ],
+        "counts": {
+          "active": 3,
+          "cancelled": 1
+        }
+      },
+      "before_sha256": "49c1af94cba7caf98f45ae16fde98a36f8fdaf2354e0575abbe189f569faa2e3",
+      "result": {
+        "database": "/workspace/scratch/c02668b5f4f9/ESA_v5_2_Codex_Compatibility_20261117/book/validation/codex_compatibility_20261117/claude_audit/g4_schema_controls/reference.sqlite",
+        "schema_version": 3,
+        "counts": {
+          "active": 3,
+          "cancelled": 1
+        },
+        "active_overlap_pairs": [
+          [
+            1,
+            2
+          ]
+        ],
+        "database_sha256": "49c1af94cba7caf98f45ae16fde98a36f8fdaf2354e0575abbe189f569faa2e3",
+        "unchanged": true,
+        "diagnosis": "ACTIVE_OVERLAP"
+      },
+      "matches_contract_control": true,
+      "after_sha256": "49c1af94cba7caf98f45ae16fde98a36f8fdaf2354e0575abbe189f569faa2e3",
+      "unchanged": true
+    },
+    {
+      "case": "recorded",
+      "candidate": "native",
+      "source": "evidence/native_claude_20261116/work/g4/operations.py",
+      "sha256": "2903fba69859c4ff7560873c7911b89051a22d89485ec4558f5c96220f769c41",
+      "expected": {
+        "active_overlap_pairs": [
+          [
+            1,
+            2
+          ]
+        ],
+        "counts": {
+          "active": 3,
+          "cancelled": 1
+        }
+      },
+      "before_sha256": "5a3b93fe2de45a965521e89eefbfe958830115c8ade845f4a56ececd87bdad0c",
+      "result": {
+        "diagnosis": "ACTIVE_OVERLAP",
+        "counts": {
+          "active": 3,
+          "cancelled": 1
+        },
+        "active_overlap_pairs": [
+          [
+            1,
+            2
+          ]
+        ],
+        "schema_version": 3,
+        "representation": "reservations_v2",
+        "path": "/workspace/scratch/c02668b5f4f9/ESA_v5_2_Codex_Compatibility_20261117/book/validation/codex_compatibility_20261117/claude_audit/g4_schema_controls/recorded.sqlite",
+        "digest": "5a3b93fe2de45a965521e89eefbfe958830115c8ade845f4a56ececd87bdad0c",
+        "digest_before": "5a3b93fe2de45a965521e89eefbfe958830115c8ade845f4a56ececd87bdad0c",
+        "digest_after": "5a3b93fe2de45a965521e89eefbfe958830115c8ade845f4a56ececd87bdad0c",
+        "unchanged": true
+      },
+      "matches_contract_control": true,
+      "after_sha256": "5a3b93fe2de45a965521e89eefbfe958830115c8ade845f4a56ececd87bdad0c",
+      "unchanged": true
+    },
+    {
+      "case": "recorded",
+      "candidate": "reference",
+      "source": "companion/solutions/G4/operations.py",
+      "sha256": "f0162261026327358188be23ed4daa6f01134b3ee1817a087694551bbcbfa580",
+      "expected": {
+        "active_overlap_pairs": [
+          [
+            1,
+            2
+          ]
+        ],
+        "counts": {
+          "active": 3,
+          "cancelled": 1
+        }
+      },
+      "before_sha256": "5a3b93fe2de45a965521e89eefbfe958830115c8ade845f4a56ececd87bdad0c",
+      "result": {
+        "database": "/workspace/scratch/c02668b5f4f9/ESA_v5_2_Codex_Compatibility_20261117/book/validation/codex_compatibility_20261117/claude_audit/g4_schema_controls/recorded.sqlite",
+        "schema_version": 3,
+        "counts": {
+          "active": 3,
+          "cancelled": 1
+        },
+        "active_overlap_pairs": [
+          [
+            1,
+            2
+          ]
+        ],
+        "database_sha256": "5a3b93fe2de45a965521e89eefbfe958830115c8ade845f4a56ececd87bdad0c",
+        "unchanged": true,
+        "diagnosis": "ACTIVE_OVERLAP"
+      },
+      "matches_contract_control": true,
+      "after_sha256": "5a3b93fe2de45a965521e89eefbfe958830115c8ade845f4a56ececd87bdad0c",
+      "unchanged": true
+    },
+    {
+      "case": "native",
+      "candidate": "native",
+      "source": "evidence/native_claude_20261116/work/g4/operations.py",
+      "sha256": "2903fba69859c4ff7560873c7911b89051a22d89485ec4558f5c96220f769c41",
+      "expected": {
+        "active_overlap_pairs": [
+          [
+            1,
+            2
+          ]
+        ],
+        "counts": {
+          "active": 3,
+          "cancelled": 1
+        }
+      },
+      "before_sha256": "1d6dcc8e017c0afc8b3f9c3d1f587527cea455e61d4a7169fa5c2047c06d1b28",
+      "result": {
+        "diagnosis": "ACTIVE_OVERLAP",
+        "counts": {
+          "active": 3,
+          "cancelled": 1
+        },
+        "active_overlap_pairs": [
+          [
+            1,
+            2
+          ]
+        ],
+        "schema_version": 3,
+        "representation": "reservations_v2",
+        "path": "/workspace/scratch/c02668b5f4f9/ESA_v5_2_Codex_Compatibility_20261117/book/validation/codex_compatibility_20261117/claude_audit/g4_schema_controls/native.sqlite",
+        "digest": "1d6dcc8e017c0afc8b3f9c3d1f587527cea455e61d4a7169fa5c2047c06d1b28",
+        "digest_before": "1d6dcc8e017c0afc8b3f9c3d1f587527cea455e61d4a7169fa5c2047c06d1b28",
+        "digest_after": "1d6dcc8e017c0afc8b3f9c3d1f587527cea455e61d4a7169fa5c2047c06d1b28",
+        "unchanged": true
+      },
+      "matches_contract_control": true,
+      "after_sha256": "1d6dcc8e017c0afc8b3f9c3d1f587527cea455e61d4a7169fa5c2047c06d1b28",
+      "unchanged": true
+    },
+    {
+      "case": "native",
+      "candidate": "reference",
+      "source": "companion/solutions/G4/operations.py",
+      "sha256": "f0162261026327358188be23ed4daa6f01134b3ee1817a087694551bbcbfa580",
+      "expected": {
+        "active_overlap_pairs": [
+          [
+            1,
+            2
+          ]
+        ],
+        "counts": {
+          "active": 3,
+          "cancelled": 1
+        }
+      },
+      "before_sha256": "1d6dcc8e017c0afc8b3f9c3d1f587527cea455e61d4a7169fa5c2047c06d1b28",
+      "result": {
+        "database": "/workspace/scratch/c02668b5f4f9/ESA_v5_2_Codex_Compatibility_20261117/book/validation/codex_compatibility_20261117/claude_audit/g4_schema_controls/native.sqlite",
+        "schema_version": 3,
+        "counts": {
+          "active": 3,
+          "cancelled": 1
+        },
+        "active_overlap_pairs": [
+          [
+            1,
+            2
+          ]
+        ],
+        "database_sha256": "1d6dcc8e017c0afc8b3f9c3d1f587527cea455e61d4a7169fa5c2047c06d1b28",
+        "unchanged": true,
+        "diagnosis": "ACTIVE_OVERLAP"
+      },
+      "matches_contract_control": true,
+      "after_sha256": "1d6dcc8e017c0afc8b3f9c3d1f587527cea455e61d4a7169fa5c2047c06d1b28",
+      "unchanged": true
+    },
+    {
+      "case": "competing_reference_and_native",
+      "candidate": "native",
+      "source": "evidence/native_claude_20261116/work/g4/operations.py",
+      "sha256": "2903fba69859c4ff7560873c7911b89051a22d89485ec4558f5c96220f769c41",
+      "expected": "ValueError",
+      "before_sha256": "3e228dd39051b19645678ecc7250821db5d7759e6a1091897b2f2c26d9550016",
+      "result": {
+        "diagnosis": "ACTIVE_OVERLAP",
+        "counts": {
+          "active": 3,
+          "cancelled": 1
+        },
+        "active_overlap_pairs": [
+          [
+            1,
+            2
+          ]
+        ],
+        "schema_version": 3,
+        "representation": "reservations_v2",
+        "path": "/workspace/scratch/c02668b5f4f9/ESA_v5_2_Codex_Compatibility_20261117/book/validation/codex_compatibility_20261117/claude_audit/g4_schema_controls/competing_reference_and_native.sqlite",
+        "digest": "3e228dd39051b19645678ecc7250821db5d7759e6a1091897b2f2c26d9550016",
+        "digest_before": "3e228dd39051b19645678ecc7250821db5d7759e6a1091897b2f2c26d9550016",
+        "digest_after": "3e228dd39051b19645678ecc7250821db5d7759e6a1091897b2f2c26d9550016",
+        "unchanged": true
+      },
+      "matches_contract_control": false,
+      "after_sha256": "3e228dd39051b19645678ecc7250821db5d7759e6a1091897b2f2c26d9550016",
+      "unchanged": true
+    },
+    {
+      "case": "competing_reference_and_native",
+      "candidate": "reference",
+      "source": "companion/solutions/G4/operations.py",
+      "sha256": "f0162261026327358188be23ed4daa6f01134b3ee1817a087694551bbcbfa580",
+      "expected": "ValueError",
+      "before_sha256": "3e228dd39051b19645678ecc7250821db5d7759e6a1091897b2f2c26d9550016",
+      "exception": {
+        "type": "ValueError",
+        "message": "Unsupported or competing current representations"
+      },
+      "matches_contract_control": true,
+      "after_sha256": "3e228dd39051b19645678ecc7250821db5d7759e6a1091897b2f2c26d9550016",
+      "unchanged": true
+    },
+    {
+      "case": "competing_reference_and_recorded",
+      "candidate": "native",
+      "source": "evidence/native_claude_20261116/work/g4/operations.py",
+      "sha256": "2903fba69859c4ff7560873c7911b89051a22d89485ec4558f5c96220f769c41",
+      "expected": "ValueError",
+      "before_sha256": "4ff802db77a45423a449ec70da1e3c91547131b4d301912d8a4690704507b3ad",
+      "result": {
+        "diagnosis": "ACTIVE_OVERLAP",
+        "counts": {
+          "active": 3,
+          "cancelled": 1
+        },
+        "active_overlap_pairs": [
+          [
+            1,
+            2
+          ]
+        ],
+        "schema_version": 3,
+        "representation": "reservations_v2",
+        "path": "/workspace/scratch/c02668b5f4f9/ESA_v5_2_Codex_Compatibility_20261117/book/validation/codex_compatibility_20261117/claude_audit/g4_schema_controls/competing_reference_and_recorded.sqlite",
+        "digest": "4ff802db77a45423a449ec70da1e3c91547131b4d301912d8a4690704507b3ad",
+        "digest_before": "4ff802db77a45423a449ec70da1e3c91547131b4d301912d8a4690704507b3ad",
+        "digest_after": "4ff802db77a45423a449ec70da1e3c91547131b4d301912d8a4690704507b3ad",
+        "unchanged": true
+      },
+      "matches_contract_control": false,
+      "after_sha256": "4ff802db77a45423a449ec70da1e3c91547131b4d301912d8a4690704507b3ad",
+      "unchanged": true
+    },
+    {
+      "case": "competing_reference_and_recorded",
+      "candidate": "reference",
+      "source": "companion/solutions/G4/operations.py",
+      "sha256": "f0162261026327358188be23ed4daa6f01134b3ee1817a087694551bbcbfa580",
+      "expected": "ValueError",
+      "before_sha256": "4ff802db77a45423a449ec70da1e3c91547131b4d301912d8a4690704507b3ad",
+      "exception": {
+        "type": "ValueError",
+        "message": "Unsupported or competing current representations"
+      },
+      "matches_contract_control": true,
+      "after_sha256": "4ff802db77a45423a449ec70da1e3c91547131b4d301912d8a4690704507b3ad",
+      "unchanged": true
+    }
+  ]
+}

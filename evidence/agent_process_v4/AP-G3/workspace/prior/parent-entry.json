@@ -1,0 +1,42 @@
+{
+  "schema": "esa-full-mission/v1",
+  "release": "ESA-Complete-Review-3-20261103",
+  "mission": "G2",
+  "mode": "LEARNER",
+  "contract": "RES-001/v1 + G2-OD-01 + G2-OD-02",
+  "module": "booking.py",
+  "lineage": {
+    "mission": "G1",
+    "source_sha256": "cedfaf4d936232b94eb7220d0d0594e2e919b75eff6f5dcd8a8690582ff569ce",
+    "source_path": "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G1/workspace/booking.py",
+    "handoff_status": "SCOPED_HANDOFF_READY",
+    "stored_snapshot": "prior/booking.py",
+    "copied_parent_demonstration": null
+  },
+  "human_acceptance": "PENDING",
+  "dependency_sha256": {
+    "legacy_g1.py": "bb3ec4063f41eb10ad6a0850b9fa3d40da7badb4bcff19a38fdab3c80ea4efba",
+    "legacy_g1_json.py": "d5b98f73120fb70ccfe6c8366e19f64ac8b311d54684e872f2ca3c7d6813b191",
+    "legacy_g1_recorded.py": "cedfaf4d936232b94eb7220d0d0594e2e919b75eff6f5dcd8a8690582ff569ce"
+  },
+  "prior_sha256": {
+    "prior/parent-entry.json": "839701804c16447342bd660c76cab06a1cfbfd85994880f43b09d94129a3a35d",
+    "prior/booking.py": "cedfaf4d936232b94eb7220d0d0594e2e919b75eff6f5dcd8a8690582ff569ce",
+    "prior/parent-handoff.json": "80f61f70cedfba697b16e86969d0f8e5a26421178a2f6a2236ff9c7741ad2057"
+  },
+  "recorded_at_utc": "2026-11-16T15:41:55.561528+00:00",
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/companion/start.py",
+    "advance",
+    "G2",
+    "--from-candidate",
+    "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G1/workspace",
+    "--dest",
+    "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G2/workspace"
+  ],
+  "scope_update": {
+    "decision": "G2-OD-02",
+    "origin": "operator-authored teaching decision; original entry in baseline retained"
+  }
+}

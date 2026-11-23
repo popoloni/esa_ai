@@ -1,0 +1,68 @@
+{
+  "id": "chapter_07",
+  "schema_version": 1,
+  "evidence_profile": "new_capability",
+  "expect": {
+    "outcome": "Repair the presentation projection without changing routing policy or API.",
+    "authority": {
+      "owner": "Implementation reviewer; presentation owner for new wording authority.",
+      "source": "Presentation owner contract in Section 7.1; BR-001/v1 and B1-API/v1 remain fixed.",
+      "version": "Presentation contract7.1/v1",
+      "status": "TEACHING_CONTRACT"
+    },
+    "acceptance": [
+      "Display recommendation, preserve reason and original policy version, include routing-only notice, refuse unknown routes."
+    ]
+  },
+  "delegate": {
+    "editable_paths": [
+      "view.py",
+      "reports/reproducer.md"
+    ],
+    "protected_paths": [
+      "approved_context/",
+      "source_evidence/",
+      "contracts/",
+      "tests/",
+      "routing.py"
+    ],
+    "budget": {
+      "max_attempts": 2,
+      "implementation_minutes": 30,
+      "check_timeout_seconds": 30,
+      "max_external_calls": 0
+    },
+    "stop_conditions": [
+      "Required authority or source evidence is missing.",
+      "Declared budget is spent or a proposed edit crosses protected scope.",
+      "Two distinct hypotheses have been tested without localizing the defect."
+    ]
+  },
+  "observe": {
+    "checks": [
+      {
+        "id": "chapter_07.review",
+        "stage": "contract",
+        "method": "review",
+        "argv": [],
+        "expected": "Reproducer through router/adapter/view; lower-boundary, equality, invalid and unknown-route view checks."
+      }
+    ],
+    "receipt_fields": [
+      "candidate_identity",
+      "authority_version",
+      "actual_checks",
+      "reached_stage",
+      "remaining_question"
+    ]
+  },
+  "decide": {
+    "owner": "Implementation reviewer; presentation owner for new wording authority.",
+    "object": "The bounded view candidate. The separate G2 state-transition example uses Persistent effect.",
+    "allowed_decisions": [
+      "ACCEPT",
+      "REJECT",
+      "ASK"
+    ]
+  }
+}

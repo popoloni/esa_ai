@@ -1,0 +1,133 @@
+{
+  "created": {
+    "status": "CREATED",
+    "record": {
+      "request_key": "case-original",
+      "payload_json": "{\"amount_eur\":\"4000.0\",\"beneficiary_id\":\"supplier_41\"}",
+      "payload_sha256": "7bb27aa2cf9f4b0d53d49466e3b8fe0d213f71c4f50858816507082a382baf6d",
+      "request_fingerprint": "3bc46c42dab7921e48fe356e376ba8b451e2bc81047f22cc25f29a4415fa6d7f",
+      "policy_version": "BR-001/v1",
+      "policy_json": "{\"algorithm\":\"TREASURY_THRESHOLD_V1\",\"threshold_eur\":\"5000.00\",\"version\":\"BR-001/v1\"}",
+      "policy_sha256": "0d4f075955c94faa6610293fa487ee753315bce08f25c0b2f9626edbe0f04344",
+      "decision_json": "{\"benefit_status\":\"HYPOTHESIS_NOT_VALIDATED\",\"notice\":\"ROUTING_ONLY_NOT_PAYMENT_APPROVAL\",\"payment_authorized\":false,\"policy_version\":\"BR-001/v1\",\"reason_code\":\"BELOW_LIMIT\",\"route\":\"STANDARD_QUEUE\"}",
+      "decision_sha256": "04c28fab746c6703f3ad7727f15312e9059f453a5fe04d9981962271586f0964",
+      "decision_id": "a48781f4c2d801f37e281c854d9813bac096a51909647f710f4124bc050cd3cb",
+      "parent_key": null,
+      "payload": {
+        "amount_eur": "4000.0",
+        "beneficiary_id": "supplier_41"
+      },
+      "policy": {
+        "algorithm": "TREASURY_THRESHOLD_V1",
+        "threshold_eur": "5000.00",
+        "version": "BR-001/v1"
+      },
+      "decision": {
+        "benefit_status": "HYPOTHESIS_NOT_VALIDATED",
+        "notice": "ROUTING_ONLY_NOT_PAYMENT_APPROVAL",
+        "payment_authorized": false,
+        "policy_version": "BR-001/v1",
+        "reason_code": "BELOW_LIMIT",
+        "route": "STANDARD_QUEUE"
+      }
+    }
+  },
+  "activation": {
+    "active_policy": "BR-001/v2",
+    "payment_authorized": false
+  },
+  "retry": {
+    "status": "REPLAYED",
+    "record": {
+      "request_key": "case-original",
+      "payload_json": "{\"amount_eur\":\"4000.0\",\"beneficiary_id\":\"supplier_41\"}",
+      "payload_sha256": "7bb27aa2cf9f4b0d53d49466e3b8fe0d213f71c4f50858816507082a382baf6d",
+      "request_fingerprint": "3bc46c42dab7921e48fe356e376ba8b451e2bc81047f22cc25f29a4415fa6d7f",
+      "policy_version": "BR-001/v1",
+      "policy_json": "{\"algorithm\":\"TREASURY_THRESHOLD_V1\",\"threshold_eur\":\"5000.00\",\"version\":\"BR-001/v1\"}",
+      "policy_sha256": "0d4f075955c94faa6610293fa487ee753315bce08f25c0b2f9626edbe0f04344",
+      "decision_json": "{\"benefit_status\":\"HYPOTHESIS_NOT_VALIDATED\",\"notice\":\"ROUTING_ONLY_NOT_PAYMENT_APPROVAL\",\"payment_authorized\":false,\"policy_version\":\"BR-001/v1\",\"reason_code\":\"BELOW_LIMIT\",\"route\":\"STANDARD_QUEUE\"}",
+      "decision_sha256": "04c28fab746c6703f3ad7727f15312e9059f453a5fe04d9981962271586f0964",
+      "decision_id": "a48781f4c2d801f37e281c854d9813bac096a51909647f710f4124bc050cd3cb",
+      "parent_key": null,
+      "payload": {
+        "amount_eur": "4000.0",
+        "beneficiary_id": "supplier_41"
+      },
+      "policy": {
+        "algorithm": "TREASURY_THRESHOLD_V1",
+        "threshold_eur": "5000.00",
+        "version": "BR-001/v1"
+      },
+      "decision": {
+        "benefit_status": "HYPOTHESIS_NOT_VALIDATED",
+        "notice": "ROUTING_ONLY_NOT_PAYMENT_APPROVAL",
+        "payment_authorized": false,
+        "policy_version": "BR-001/v1",
+        "reason_code": "BELOW_LIMIT",
+        "route": "STANDARD_QUEUE"
+      }
+    }
+  },
+  "counts_before_retry": {
+    "decisions": 1,
+    "audit_events": 2
+  },
+  "counts_after_retry": {
+    "decisions": 1,
+    "audit_events": 2
+  },
+  "payload_conflict": "IDEMPOTENCY_CONFLICT",
+  "recompute": {
+    "status": "MATCH",
+    "decision_id": "a48781f4c2d801f37e281c854d9813bac096a51909647f710f4124bc050cd3cb",
+    "recorded_policy": "BR-001/v1",
+    "recomputed": {
+      "route": "STANDARD_QUEUE",
+      "reason_code": "BELOW_LIMIT",
+      "policy_version": "BR-001/v1",
+      "payment_authorized": false,
+      "notice": "ROUTING_ONLY_NOT_PAYMENT_APPROVAL",
+      "benefit_status": "HYPOTHESIS_NOT_VALIDATED"
+    }
+  },
+  "reevaluation": {
+    "status": "CREATED",
+    "record": {
+      "request_key": "case-new-evaluation",
+      "payload_json": "{\"amount_eur\":\"4000.0\",\"beneficiary_id\":\"supplier_41\"}",
+      "payload_sha256": "7bb27aa2cf9f4b0d53d49466e3b8fe0d213f71c4f50858816507082a382baf6d",
+      "request_fingerprint": "3bc46c42dab7921e48fe356e376ba8b451e2bc81047f22cc25f29a4415fa6d7f",
+      "policy_version": "BR-001/v2",
+      "policy_json": "{\"algorithm\":\"TREASURY_THRESHOLD_V1\",\"threshold_eur\":\"3000.00\",\"version\":\"BR-001/v2\"}",
+      "policy_sha256": "9a220ee6c691b3273f1ec16f74a3fcaee156487368b40283e80eb52bcd3f6d6b",
+      "decision_json": "{\"benefit_status\":\"HYPOTHESIS_NOT_VALIDATED\",\"notice\":\"ROUTING_ONLY_NOT_PAYMENT_APPROVAL\",\"payment_authorized\":false,\"policy_version\":\"BR-001/v2\",\"reason_code\":\"AT_OR_ABOVE_LIMIT\",\"route\":\"HUMAN_REVIEW\"}",
+      "decision_sha256": "9db1757a318c3a08e35e424be8c4f0a6edf25bbabec5cf0f747cffc9ec931a81",
+      "decision_id": "427932247a0830baccef53b6047d35d5fee5bcfd0d1aa4408795cec8589124c6",
+      "parent_key": "case-original",
+      "payload": {
+        "amount_eur": "4000.0",
+        "beneficiary_id": "supplier_41"
+      },
+      "policy": {
+        "algorithm": "TREASURY_THRESHOLD_V1",
+        "threshold_eur": "3000.00",
+        "version": "BR-001/v2"
+      },
+      "decision": {
+        "benefit_status": "HYPOTHESIS_NOT_VALIDATED",
+        "notice": "ROUTING_ONLY_NOT_PAYMENT_APPROVAL",
+        "payment_authorized": false,
+        "policy_version": "BR-001/v2",
+        "reason_code": "AT_OR_ABOVE_LIMIT",
+        "route": "HUMAN_REVIEW"
+      }
+    }
+  },
+  "restart": {
+    "active_policy": "BR-001/v2",
+    "old_decision_id": "a48781f4c2d801f37e281c854d9813bac096a51909647f710f4124bc050cd3cb"
+  },
+  "schema_version": 2,
+  "api_contract": "HISTORY-API/v1"
+}

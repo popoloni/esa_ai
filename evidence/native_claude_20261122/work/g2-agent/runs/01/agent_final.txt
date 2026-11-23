@@ -1,0 +1,31 @@
+G2 is implemented. The 17 supplied development tests pass (`python -m unittest discover -s tests`). I did not run protected acceptance. Human acceptance is not observed; `READER_ENTRY.json` still says PENDING.
+
+**Outcome:** `booking.py` keeps the public API (`init_db`, `reserve`, `get_reservation`, `Outcome`) and now:
+- returns distinct 422 codes for identifier, timestamp and interval errors;
+- returns 201 for a new reservation, and 200 with `replayed=True` and the original id for the same identity and payload;
+- returns 409 `idempotency-key-reused` for a changed payload and 409 `interval-conflict` for an overlap;
+- runs the replay/conflict check and the insert in one `BEGIN IMMEDIATE` transaction.
+
+**Migration:** `init_db` migrates three sources:
+- the original G1 `reservations` table;
+- the `bookings_v2` JSON table;
+- the retained public-column `reservations` table from G2-OD-02.
+
+It runs in one transaction and writes the new table `reservations_v2` plus `user_version=2`. The legacy tables are left untouched. Unknown, dual or invalid data is refused.
+
+**Acceptance example:** a record created through `legacy_g1_recorded` is migrated and read back with the same id and values. Replaying the same request returns 200 with the same id. A second `init_db` changes nothing. The same data with `starts_at="bad"` raises ValueError and leaves the file bytes unchanged.
+
+**Correction:** my first implementation failed 2 of 17 tests. Rows with an invalid field that shared an identity raised IntegrityError, but the tests expect ValueError. Migration now checks row validity first, then duplicate identity (IntegrityError), then overlap (ValueError).
+
+**Changed files:** only `booking.py` and `DOSSIER.md`. I checked that the `legacy_g1*.py` and `prior/booking.py` hashes match the ones recorded in `READER_ENTRY.json` / its `prior_sha256`; docs and tests were not edited.
+
+**Commands:** the test run before and after the change, one manual probe, and a hash check. About 9 tool commands, within the allowance.
+
+**Open question for the owner:** a database written by the prior candidate `prior/booking.py` has an `id` plus `idempotency_key` schema that no decision authorizes. It is refused with ValueError rather than guessed. If it should be migrated, the owner needs to supply a mapping.
+
+**Other limits:**
+- `reserve` and `get_reservation` do not auto-migrate; an unmigrated file raises `sqlite3.OperationalError`.
+- Concurrency is covered by one two-thread test on local SQLite only.
+- The `reservations_v2` table name is my choice; the tests don't prescribe one.
+
+These are also recorded in `DOSSIER.md`.

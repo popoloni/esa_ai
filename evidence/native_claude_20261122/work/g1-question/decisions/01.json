@@ -1,0 +1,25 @@
+{
+  "at_utc": "2026-11-22T17:28:07.250527+00:00",
+  "operator": "Claude Code live test",
+  "operator_kind": "AI",
+  "decision": "stop",
+  "note": "The worker stopped without implementing and asked the exact question I had written down (absent identifier: None or raise; missing storage on read). Stop; release the supplied owner response.\n",
+  "decision_binding": {
+    "candidate_hashes": {
+      "AGENTS.md": "78be262e9924077d0d92ab0abaffdf172d0e1b1bc0d83a5b28d0d75e47fd6cd6",
+      "AGENT_PLAN.md": "a81daca8c1013dc17b8af3607435508dc1228f33b943b824563a67f228ac4ab5",
+      "AGENT_QUESTIONS.md": "bb5b9b329d32c42f9ff86b26629a3c815b90d9d9265f7d648f4dc43e0da04a7a",
+      "DOSSIER.md": "4233ddcbb65da0092cf7dc4a7564b7cd5dec0e0fde7f38cc878f51158bbf669a",
+      "QUESTIONS.md": "961aea8d74161fc2575b8965680385b1f6fc917d6a1d3a3fbf97b6d211ce88fb",
+      "READER_ENTRY.json": "c475f0a73110c4a630507e647bcc143b2c2cb0ef8296cf70e5a08e14b4ae1da2",
+      "booking.py": "19ea131d1fec1ea4c575cf30fe1c25c358bb880027193945f08baeb0e6308e69",
+      "docs/G1-I01.md": "07a417cd7e7eeaca0bc5827e67eb965d0c7ebb75f387146f80a37e172fb89a50",
+      "docs/decisions/0001-storage.md": "c1b8a31f24fb5fe34e929049e8ed3cc3d1910b6d4194a40d4d303e70582f6762"
+    },
+    "inventory_sha256": "59bf793592e98b9f703f33db1f81dacba87ea322306b019f00f5c1fcc8318c1c",
+    "latest_run": "runs/01",
+    "latest_result_sha256": "a837269420ae44005370b2762d6f971c79fdc0c9ccdb1e886bc54b066027f52a",
+    "session_spec_sha256": "9b8490001510bc568b316f293244535e2a8e118a3eb2ff100e35bb99bb0ac4a6"
+  },
+  "meaning": "Recorded operator statement; this tool does not certify its authority or correctness."
+}

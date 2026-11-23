@@ -1,0 +1,63 @@
+{
+  "id": "chapter_03",
+  "schema_version": 1,
+  "evidence_profile": "new_capability",
+  "expect": {
+    "outcome": "Produce a behavioral contract for S-02 overlap admission.",
+    "authority": {
+      "owner": "Workshop coordinator for meaning; specification reviewer for faithful derivation.",
+      "source": "Workshop coordinator: S-02, 16 May 2025.",
+      "version": "S-02; 2025-05-16",
+      "status": "TEACHING_CONTRACT"
+    },
+    "acceptance": [
+      "Adjacent half-open intervals allowed; same-resource overlap refused; different resources independent; prior state preserved after refusal."
+    ]
+  },
+  "delegate": {
+    "editable_paths": [
+      "specification/acceptance.md"
+    ],
+    "protected_paths": [
+      "approved_context/",
+      "source_evidence/"
+    ],
+    "budget": {
+      "max_attempts": 2,
+      "implementation_minutes": 30,
+      "check_timeout_seconds": 30,
+      "max_external_calls": 0
+    },
+    "stop_conditions": [
+      "Required authority or source evidence is missing.",
+      "Declared budget is spent or a proposed edit crosses protected scope."
+    ]
+  },
+  "observe": {
+    "checks": [
+      {
+        "id": "chapter_03.review",
+        "stage": "contract",
+        "method": "review",
+        "argv": [],
+        "expected": "Derive adjacency, containment, resource-separation and refusal-state examples independently of code."
+      }
+    ],
+    "receipt_fields": [
+      "candidate_identity",
+      "authority_version",
+      "actual_checks",
+      "reached_stage",
+      "remaining_question"
+    ]
+  },
+  "decide": {
+    "owner": "Workshop coordinator for meaning; specification reviewer for faithful derivation.",
+    "object": "The acceptance contract and examples.",
+    "allowed_decisions": [
+      "ACCEPT",
+      "REJECT",
+      "ASK"
+    ]
+  }
+}

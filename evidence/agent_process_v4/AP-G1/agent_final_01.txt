@@ -1,0 +1,9 @@
+First stage complete. Changed only QUESTIONS.md and DOSSIER.md in the AP-G1 workspace.
+
+The dossier specifies the requested acceptance example for member-1, asset A, 2025-05-16T09:00:00Z–2025-05-16T10:00:00Z, and key-1: 201/confirmed, a positive identifier, replayed=False, and retrieval of exactly the six public fields from a separate process after the writer exits.
+
+Question for the owner: When get_reservation(path, reservation_id) is called against initialized storage and the identifier does not exist, should it return None, raise an exception, or do something else? If an exception is intended, which type?
+
+Recorder AP-G1/004 reported exit 0, confirmed both documentation files changed, and verified their readback. An earlier exclusive-create attempt encountered the existing template and changed nothing. No implementation, storage initialization, or tests were performed. Stopped pending the supplied owner response.
+
+Retention note: faithful plain-text transcription; Markdown styling was normalized. Commands and outputs are retained verbatim in commands/.

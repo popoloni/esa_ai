@@ -1,0 +1,29 @@
+{
+  "recorded_at_utc": "2026-11-22T17:32:06.496544+00:00",
+  "operation": "create_report_worktree",
+  "authority": {
+    "principal": "ESA AI integration reviewer / recording operator",
+    "kind": "AI reviewer and local recording operator",
+    "authorized_by": "Author instruction to implement ESA agent-process remediation",
+    "scope": "Scoped teaching integration, independent checks and provenance recording",
+    "human_operator": false,
+    "human_acceptance": "PENDING",
+    "production_authorization": false
+  },
+  "returncode": 0,
+  "stdout": "HEAD is now at 6a2e032 Freeze retained G3 and shared integration contract\n",
+  "stderr": "Preparing worktree (new branch 'contribution-report')\n",
+  "timed_out": false,
+  "argv": [
+    "git",
+    "worktree",
+    "add",
+    "-b",
+    "contribution-report",
+    "/home/claude/work/live22/agentic-ai-5.2/work/g3-integration/worktrees/report",
+    "6a2e0320561c20a31f3ae64cb61414ffc5affb99"
+  ],
+  "cwd": "/home/claude/work/live22/agentic-ai-5.2/work/g3-integration/workspace",
+  "timeout_seconds": 45,
+  "elapsed_process_seconds": 0.01056477999998151
+}

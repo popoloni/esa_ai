@@ -1,0 +1,31 @@
+{
+  "schema": "esa-review-ground-truth/v1",
+  "mission": "B1",
+  "candidate_id": "b1-boundary-inclusive",
+  "created_on": "2026-11-02",
+  "origin": "CONSTRUCTED_TEACHING_VARIANT",
+  "rationale_origin": "CONSTRUCTED",
+  "actual_model_trace": false,
+  "code_path": "variant.py",
+  "rationale_path": "RATIONALE.md",
+  "expected_decision": "REJECT",
+  "expected_historical_pass": false,
+  "expected_extended_pass": true,
+  "targeted_assertions": [
+    "test_exact_boundary_requires_review"
+  ],
+  "explanation": "The inclusive comparison sends EUR 5,000.00 to STANDARD_QUEUE/BELOW_LIMIT. BR-001 requires HUMAN_REVIEW/AT_OR_ABOVE_LIMIT at the boundary, irrespective of any plausible rationale for treating 5,000 as the last ordinary amount.",
+  "expected_observations": {
+    "historical": "6 passed, 1 failed, 0 errors",
+    "extended_target": "All six added cases pass; the original boundary assertion still rejects the candidate",
+    "current_extended_scope": "Five public checks; separate one-method conversion fault probe."
+  },
+  "required_human_decision": null,
+  "limitations": [
+    "This variant is a deterministic teaching fixture, not evidence about a model or an agent.",
+    "Expected outcomes must be checked against executed receipts; metadata is not a test run."
+  ],
+  "supplemental_probe": "b1_conversion_fault",
+  "expected_supplemental_pass": true,
+  "scope_note": "Current extended acceptance is five public-API methods. The conversion fault is a separate candidate-specific probe of the known Decimal binding; AUTHOR_CHECK.json retains the earlier combined six-method author experiment."
+}

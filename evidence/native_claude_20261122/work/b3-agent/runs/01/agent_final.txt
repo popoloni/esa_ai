@@ -1,0 +1,18 @@
+I fixed two defects in `ledger.py` and updated `DOSSIER.md`. The supplied suite now passes (10 tests OK). It had 1 failure and 2 errors before the edits.
+
+**Acceptance example:** `decide("original", 4000.00)` under BR-001/v1 gives `STANDARD_QUEUE`. After `activate("BR-001/v2")`, the same retry returns `REPLAYED` with a record identical to the original. The row counts in `decisions` and `audit_events` don't change. A fresh ID with the same payload now gives `HUMAN_REVIEW`.
+
+**Corrections:**
+1. **Retry after a policy change.** `PolicyStore._decide` re-ran the outcome under the active policy when it found an existing key. That overwrote the stored decision, so a retry after activating v2 returned the wrong result. I removed that step, so the stored record comes back unchanged. This fixed the failing test.
+2. **Legacy migration.** `migrate_legacy` started with `raise NotImplementedError`, which made the rest of the function unreachable. I removed that line. The existing body already validates provenance, policy and outcome, runs in one transaction, and leaves `legacy_decisions` untouched. This fixed both migration test errors.
+
+I also ran a throwaway probe against a temporary database. It rejected `+1.00`, a trailing newline, a fullwidth digit, 13 integer digits and 3 fractional digits. It accepted `007.5`. Under `-I`, `-0` was accepted and routed to `REJECTED`. An explicit v2 under an old v1 ID raised `IDEMPOTENCY_CONFLICT`.
+
+**Limits:**
+- I tested only the one supplied legacy fixture shape. The migration failure paths (ambiguous policy, outcome mismatch, wrong schema) are checked by reading the code only.
+- I did not test concurrency or a crash mid-migration.
+- The task mentions "three proposals", but none were in the workspace, so I made no ACCEPT/REJECT/ASK ruling on them. The dossier says so; please supply them if you expect a ruling.
+- I found no conflict between the docs and no missing rule for this increment, so I didn't need to stop and ask.
+- Human acceptance is not given. I made no network calls and installed nothing.
+
+Changed files: `ledger.py` and `DOSSIER.md`. I used 5 tool commands in this run, out of the 40 allowed.

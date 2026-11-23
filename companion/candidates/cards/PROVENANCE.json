@@ -1,0 +1,856 @@
+{
+  "schema": "esa-proposal-cards/v1",
+  "answer_key_read": false,
+  "cards": [
+    {
+      "candidate_id": "G1-P01",
+      "source": "candidates/G1/G1-P01/variant.py",
+      "source_sha256": "d5b98f73120fb70ccfe6c8366e19f64ac8b311d54684e872f2ca3c7d6813b191",
+      "rationale_sha256": "d226715d77b7cee5b3d968a90cdd459c6e4bf3135e308428f0c5c5c74d555b69",
+      "output": "candidates/cards/G1-P01.py",
+      "output_sha256": "4bc0241352440912ef1efd1308ae993563a507264cfb40a8db603ea74b54a492",
+      "selections": [
+        {
+          "scope": "reserve",
+          "prefix": "try:",
+          "first_line": 37,
+          "last_line": 43,
+          "node_sha256": "11368fd902817e07a85c054100ed794123be09f9d2e2c8afc1b101dc2add6781"
+        },
+        {
+          "scope": "reserve",
+          "prefix": "return Outcome",
+          "first_line": 44,
+          "last_line": 44,
+          "node_sha256": "6e6f8939e92055c4365eb56422dc9d703f41c68ec082e78bec3bbfd19bf19dc2"
+        }
+      ],
+      "ast_equivalent": true,
+      "lines": 9,
+      "max_line_length": 55,
+      "literal_checks": {
+        "string_tokens_unchanged": true,
+        "introduced_implicit_concatenations": 0,
+        "introduced_escaped_newlines": 0,
+        "source_implicit_concatenations": 0
+      },
+      "line_budget": 15,
+      "line_budget_reason": "Standard concise card ceiling.",
+      "transformation": "Selected complete original source statements; deterministic whitespace reflow outside literal tokens; caption identifies omitted context."
+    },
+    {
+      "candidate_id": "G1-P02",
+      "source": "candidates/G1/G1-P02/variant.py",
+      "source_sha256": "ced77c616fbc6a100453ca7b13012e5684672c27dc58ff869d6ab039475d943d",
+      "rationale_sha256": "ba290e3a8e67ae61f6a4a513d6ff996faaaf0b5a55cf430bd8634027fe14133b",
+      "output": "candidates/cards/G1-P02.py",
+      "output_sha256": "8577bed2ea71213852706ba42a9867dc0515063999b8c4383b53a5992967f098",
+      "selections": [
+        {
+          "scope": "",
+          "prefix": "_records =",
+          "first_line": 15,
+          "last_line": 15,
+          "node_sha256": "5d8f3d6910f8bd010111594d973d971421ae6a61898f8c852709c6215f1a0cf9"
+        },
+        {
+          "scope": "",
+          "prefix": "def reserve",
+          "first_line": 19,
+          "last_line": 22,
+          "node_sha256": "84c8f3325b66cc703ef3ebe5a927fa5118f2712c1ceb26ba650a0d4c40bd1618"
+        }
+      ],
+      "ast_equivalent": true,
+      "lines": 6,
+      "max_line_length": 60,
+      "literal_checks": {
+        "string_tokens_unchanged": true,
+        "introduced_implicit_concatenations": 0,
+        "introduced_escaped_newlines": 0,
+        "source_implicit_concatenations": 0
+      },
+      "line_budget": 15,
+      "line_budget_reason": "Standard concise card ceiling.",
+      "transformation": "Selected complete original source statements; deterministic whitespace reflow outside literal tokens; caption identifies omitted context."
+    },
+    {
+      "candidate_id": "G1-P03",
+      "source": "candidates/G1/G1-P03/variant.py",
+      "source_sha256": "ff6db5e9e93e9790babb52c6ba11c8e0913813759816a1472feb06ff27d859cc",
+      "rationale_sha256": "0e58960f159576277d75740cd10fca3992dc7a0241a372891730ff483ff55cdf",
+      "output": "candidates/cards/G1-P03.py",
+      "output_sha256": "4dafbff3cefa2e37847edc0ee297964aa6095c8cc8379ba66eee26f6d89883f0",
+      "selections": [
+        {
+          "scope": "get_reservation",
+          "prefix": "if row is None:",
+          "first_line": 58,
+          "last_line": 59,
+          "node_sha256": "b2fea5ed63d4ad192424cea4deace3c756794ccff8e7de962d9089ffebd1e35b"
+        },
+        {
+          "scope": "",
+          "prefix": "def _readonly_uri",
+          "first_line": 45,
+          "last_line": 46,
+          "node_sha256": "85c7e19bb84ffbbb631725673353a979425e06ab6e7af8d0d650791d170d1514"
+        }
+      ],
+      "ast_equivalent": true,
+      "lines": 4,
+      "max_line_length": 53,
+      "literal_checks": {
+        "string_tokens_unchanged": true,
+        "introduced_implicit_concatenations": 0,
+        "introduced_escaped_newlines": 0,
+        "source_implicit_concatenations": 0
+      },
+      "line_budget": 15,
+      "line_budget_reason": "Standard concise card ceiling.",
+      "transformation": "Selected complete original source statements; deterministic whitespace reflow outside literal tokens; caption identifies omitted context."
+    },
+    {
+      "candidate_id": "G2-P01",
+      "source": "candidates/G2/G2-P01/variant.py",
+      "source_sha256": "1b484003a86f569ef4fe9d3797f790da85c3382acd34b4b030f524bc1c4de28e",
+      "rationale_sha256": "8917d81afa686b0bf077eb673256035b932017ffedf0c33b9abc1ffbc3b61709",
+      "output": "candidates/cards/G2-P01.py",
+      "output_sha256": "43693d6cf44dbf2162bdcc4a0bd24cea7dce6fb77a82fef666eaa4f10b5a16f2",
+      "selections": [
+        {
+          "scope": "reserve",
+          "prefix": "prior = con.execute",
+          "first_line": 136,
+          "last_line": 139,
+          "node_sha256": "5cb5468da7e7a4e28f0552ed0157bce13b76f726ec55bbab93c2de346ed31738"
+        },
+        {
+          "scope": "reserve",
+          "prefix": "if prior is not None:",
+          "first_line": 140,
+          "last_line": 146,
+          "node_sha256": "8ee42b30cb65e2addec33d4f98b3092e2d80193b8efc0a58525fa78f9de3c4fe"
+        }
+      ],
+      "ast_equivalent": true,
+      "lines": 11,
+      "max_line_length": 61,
+      "literal_checks": {
+        "string_tokens_unchanged": true,
+        "introduced_implicit_concatenations": 0,
+        "introduced_escaped_newlines": 0,
+        "source_implicit_concatenations": 0
+      },
+      "line_budget": 15,
+      "line_budget_reason": "Standard concise card ceiling.",
+      "transformation": "Selected complete original source statements; deterministic whitespace reflow outside literal tokens; caption identifies omitted context."
+    },
+    {
+      "candidate_id": "G2-P02",
+      "source": "candidates/G2/G2-P02/variant.py",
+      "source_sha256": "9b7ca3c2f253334b9a806d9cc9961805a7981e48372766841c12cfa377796160",
+      "rationale_sha256": "f4664e65a0076a592a37deb59537cfa48f7c66025d6fae4d9d28cd58b47b6aae",
+      "output": "candidates/cards/G2-P02.py",
+      "output_sha256": "3ebb545da410c5512a8446bd946016d04f50cee347c50050cc1b5a92e79a232e",
+      "selections": [
+        {
+          "scope": "",
+          "prefix": "def plan_recurring",
+          "first_line": 185,
+          "last_line": 189,
+          "node_sha256": "b5392832bfc8ffc5d3c87062c6f877d6c1ad2dbd08476756b7d5b38e50f6f6f8"
+        }
+      ],
+      "ast_equivalent": true,
+      "lines": 5,
+      "max_line_length": 58,
+      "literal_checks": {
+        "string_tokens_unchanged": true,
+        "introduced_implicit_concatenations": 0,
+        "introduced_escaped_newlines": 0,
+        "source_implicit_concatenations": 0
+      },
+      "line_budget": 15,
+      "line_budget_reason": "Standard concise card ceiling.",
+      "transformation": "Selected complete original source statements; deterministic whitespace reflow outside literal tokens; caption identifies omitted context."
+    },
+    {
+      "candidate_id": "G2-P03",
+      "source": "candidates/G2/G2-P03/variant.py",
+      "source_sha256": "81df006d0653a44260b03425294e8542effe0263c8592a7743e50e14bddcdef6",
+      "rationale_sha256": "1c310340049f2603e3c315160e1233594193d083fdd837d45950b48536e094d3",
+      "output": "candidates/cards/G2-P03.py",
+      "output_sha256": "5a1edb8988e4fc4312b4f0b3c699373b79dd3d02039057a6979a796ccb47361a",
+      "selections": [
+        {
+          "scope": "init_db",
+          "prefix": "request_hash =",
+          "first_line": 73,
+          "last_line": 73,
+          "node_sha256": "12b19a1eed5f68b229e9f88297039e91f1c436b04b2cf0666e9ee0eb7de5b28a"
+        },
+        {
+          "scope": "init_db",
+          "prefix": "con.execute(\"INSERT INTO reservations VALUES",
+          "first_line": 74,
+          "last_line": 75,
+          "node_sha256": "282a06a40f2ec58800448f1fbd9bf03a5c6aff4fb102a8e3007e1672cfae4c4e"
+        },
+        {
+          "scope": "init_db",
+          "prefix": "if con.in_transaction:",
+          "first_line": 90,
+          "last_line": 90,
+          "node_sha256": "95e1c6a58017f13d02c42b87548dc54af87b4cfb498c970b96194b4da48fe208"
+        },
+        {
+          "scope": "init_db",
+          "prefix": "raise",
+          "first_line": 91,
+          "last_line": 91,
+          "node_sha256": "ba28128c14dfbd0a9062c0dbab42ad6c52ecf0767df6b67576deb1dbbfdd038d"
+        }
+      ],
+      "ast_equivalent": true,
+      "lines": 7,
+      "max_line_length": 67,
+      "literal_checks": {
+        "string_tokens_unchanged": true,
+        "introduced_implicit_concatenations": 0,
+        "introduced_escaped_newlines": 0,
+        "source_implicit_concatenations": 0
+      },
+      "line_budget": 15,
+      "line_budget_reason": "Standard concise card ceiling.",
+      "transformation": "Selected complete original source statements; deterministic whitespace reflow outside literal tokens; caption identifies omitted context."
+    },
+    {
+      "candidate_id": "G3-P01",
+      "source": "candidates/G3/G3-P01/variant.py",
+      "source_sha256": "dd69da9693b933a2ece681ca07ac3a67d3cf8f4b900d23329047aa4d87d63b62",
+      "rationale_sha256": "8714d584aee968001d55a5fed651528d1d0dfee7d73c5503c65ce5278af40fb3",
+      "output": "candidates/cards/G3-P01.py",
+      "output_sha256": "15cb72ce9146d75cf701bd7ad8c133f3b47c075c4725382773155bdf1632ad0f",
+      "selections": [
+        {
+          "scope": "",
+          "prefix": "def quote_refund",
+          "first_line": 253,
+          "last_line": 259,
+          "node_sha256": "3621863ccebafed1faff7c2bcf730cac79229bbaea936ab24f73a750e7679ae9"
+        }
+      ],
+      "ast_equivalent": true,
+      "lines": 8,
+      "max_line_length": 63,
+      "literal_checks": {
+        "string_tokens_unchanged": true,
+        "introduced_implicit_concatenations": 0,
+        "introduced_escaped_newlines": 0,
+        "source_implicit_concatenations": 0
+      },
+      "line_budget": 15,
+      "line_budget_reason": "Standard concise card ceiling.",
+      "transformation": "Selected complete original source statements; deterministic whitespace reflow outside literal tokens; caption identifies omitted context."
+    },
+    {
+      "candidate_id": "G3-P02",
+      "source": "candidates/G3/G3-P02/variant.py",
+      "source_sha256": "ad89e1350b80d674b30f8fd97927107adb77e2df625805d7a0a49cb8837b5b17",
+      "rationale_sha256": "4c98da72de060e1444024bfd3ea57323cfa911f57c5c84f181b48b1e9096e052",
+      "output": "candidates/cards/G3-P02.py",
+      "output_sha256": "e82724a7cd460c359325bb450019831a83db91ed2508527f9bb3b6e5ac6a9179",
+      "selections": [
+        {
+          "scope": "cancel",
+          "prefix": "if row is None:",
+          "first_line": 227,
+          "last_line": 242,
+          "node_sha256": "e1e8e2de9b66dd20a1c1bbb337bb21110bd36b07bf1f5f32e4937e99988370d1"
+        }
+      ],
+      "ast_equivalent": true,
+      "lines": 16,
+      "max_line_length": 58,
+      "literal_checks": {
+        "string_tokens_unchanged": true,
+        "introduced_implicit_concatenations": 0,
+        "introduced_escaped_newlines": 0,
+        "source_implicit_concatenations": 0
+      },
+      "line_budget": 16,
+      "line_budget_reason": "Full owner/version/state branches use conventional multiline layout.",
+      "transformation": "Selected complete original source statements; deterministic whitespace reflow outside literal tokens; caption identifies omitted context."
+    },
+    {
+      "candidate_id": "G3-P03",
+      "source": "candidates/G3/G3-P03/variant.py",
+      "source_sha256": "c500883043fdaef464683494e68ffb42b61d6d0b32b67a71163b3f6b1995dc9b",
+      "rationale_sha256": "f560f16880eb2361fc5c21a77bd304c74989489dd238d9296a4cd39c7958f8a5",
+      "output": "candidates/cards/G3-P03.py",
+      "output_sha256": "f2bfc60fc0ed23232a53ec850c5a4596335fe00f58aec7970db69d1e943feae1",
+      "selections": [
+        {
+          "scope": "cancel",
+          "prefix": "con.execute(\"\"\"",
+          "first_line": 235,
+          "last_line": 238,
+          "node_sha256": "5f125fee3732e020be695f25556b394236fa9e08ddc2b8ac232f6121740726c3"
+        },
+        {
+          "scope": "cancel",
+          "prefix": "if row[0] != trusted_member_id:",
+          "first_line": 239,
+          "last_line": 243,
+          "node_sha256": "4dab2b1bff916018d5c503c7d8ff82ccd0c06b81f63412912d5e14f0a4da0ec1"
+        }
+      ],
+      "ast_equivalent": true,
+      "lines": 9,
+      "max_line_length": 58,
+      "literal_checks": {
+        "string_tokens_unchanged": true,
+        "introduced_implicit_concatenations": 0,
+        "introduced_escaped_newlines": 0,
+        "source_implicit_concatenations": 0
+      },
+      "line_budget": 15,
+      "line_budget_reason": "Standard concise card ceiling.",
+      "transformation": "Selected complete original source statements; deterministic whitespace reflow outside literal tokens; caption identifies omitted context."
+    },
+    {
+      "candidate_id": "G4-P01",
+      "source": "candidates/G4/G4-P01/variant.py",
+      "source_sha256": "e21ec1f9b82f326685f7b3ca955182c3513aadd730b3586d1fe8999d161da831",
+      "rationale_sha256": "8a0ed03363c641baed5f9278709a3dbfa637c13210718c2e139fd33ffaf75dcd",
+      "output": "candidates/cards/G4-P01.py",
+      "output_sha256": "c840c8bda3e082a2be7e3a490e3960644d6322ae028fad14d7438f98751effd0",
+      "selections": [
+        {
+          "scope": "cost_summary",
+          "prefix": "return {",
+          "first_line": 65,
+          "last_line": 75,
+          "node_sha256": "02b075eb5666006dc766e0a01856eea23442297e7b0869c28b833488bd300d5b"
+        }
+      ],
+      "ast_equivalent": true,
+      "lines": 11,
+      "max_line_length": 65,
+      "literal_checks": {
+        "string_tokens_unchanged": true,
+        "introduced_implicit_concatenations": 0,
+        "introduced_escaped_newlines": 0,
+        "source_implicit_concatenations": 0
+      },
+      "line_budget": 15,
+      "line_budget_reason": "Standard concise card ceiling.",
+      "transformation": "Selected complete original source statements; deterministic whitespace reflow outside literal tokens; caption identifies omitted context."
+    },
+    {
+      "candidate_id": "G4-P02",
+      "source": "candidates/G4/G4-P02/variant.py",
+      "source_sha256": "4713f92c7c0c2fd8ec27245a7f81caa2cfb3cace9033583882edad2098bc29be",
+      "rationale_sha256": "63f3e687f2b4b237277b2a8c65f8fccdc081ca81449553adc8d227884d2f942f",
+      "output": "candidates/cards/G4-P02.py",
+      "output_sha256": "b243e13d170160ac8f6b267acc20e2222cce65b0f90e61dc36a4ed8b1656544d",
+      "selections": [
+        {
+          "scope": "cost_summary",
+          "prefix": "return {",
+          "first_line": 65,
+          "last_line": 75,
+          "node_sha256": "9213f4c219b14c0fedad676416fd97b13ca7b1b43bf46a097a14a1b9ef1a68d1"
+        }
+      ],
+      "ast_equivalent": true,
+      "lines": 11,
+      "max_line_length": 65,
+      "literal_checks": {
+        "string_tokens_unchanged": true,
+        "introduced_implicit_concatenations": 0,
+        "introduced_escaped_newlines": 0,
+        "source_implicit_concatenations": 0
+      },
+      "line_budget": 15,
+      "line_budget_reason": "Standard concise card ceiling.",
+      "transformation": "Selected complete original source statements; deterministic whitespace reflow outside literal tokens; caption identifies omitted context."
+    },
+    {
+      "candidate_id": "G4-P03",
+      "source": "candidates/G4/G4-P03/variant.py",
+      "source_sha256": "eaaed7a813d79c2c9882c9705a6cc95c10b5c8cb0c15f7e18e02954efec1db42",
+      "rationale_sha256": "2e70db4b202c6b41aec44d81da6324a6be1886b2a15efb2a79a248a764c80251",
+      "output": "candidates/cards/G4-P03.py",
+      "output_sha256": "ea269551d54a28e264caa98dd38ced707628b32050dd33451b1e84917f4c4343",
+      "selections": [
+        {
+          "scope": "",
+          "prefix": "def _billable_attempts",
+          "first_line": 45,
+          "last_line": 46,
+          "node_sha256": "5717f5eefbc376a4741df8a4fe4fb2806c2700e2669bfb75cb4ebc38fea2504c"
+        },
+        {
+          "scope": "cost_summary",
+          "prefix": "attempts =",
+          "first_line": 50,
+          "last_line": 50,
+          "node_sha256": "6cbe8d883d4e908af00331c6a7bfd9b28959d7a174a4d6d54378a20b381c9a11"
+        }
+      ],
+      "ast_equivalent": true,
+      "lines": 3,
+      "max_line_length": 63,
+      "literal_checks": {
+        "string_tokens_unchanged": true,
+        "introduced_implicit_concatenations": 0,
+        "introduced_escaped_newlines": 0,
+        "source_implicit_concatenations": 0
+      },
+      "line_budget": 15,
+      "line_budget_reason": "Standard concise card ceiling.",
+      "transformation": "Selected complete original source statements; deterministic whitespace reflow outside literal tokens; caption identifies omitted context."
+    },
+    {
+      "candidate_id": "B1-P01",
+      "source": "candidates/B1/B1-P01/variant.py",
+      "source_sha256": "82497615cef45eb804117e8ac0abef280aec44ee6e3d4ce84e9b52ab9cb3a49b",
+      "rationale_sha256": "dd52edaaa5b8f297d1ad15c83ab7c9307fe455c17ba61d531589a80c59203b6b",
+      "output": "candidates/cards/B1-P01.py",
+      "output_sha256": "aa67cdf12233ac26b3b7f486c27c4b308504de4d90b5fad3ef456b147cc6e7a1",
+      "selections": [
+        {
+          "scope": "assess",
+          "prefix": "try:",
+          "first_line": 17,
+          "last_line": 20,
+          "node_sha256": "27bbfbea8b5ffcf9e40580f44f7e19701744fc05d8eb573235649a36ddaded06"
+        },
+        {
+          "scope": "assess",
+          "prefix": "if amount is None",
+          "first_line": 21,
+          "last_line": 26,
+          "node_sha256": "0fadf18fe0932d93b96cff1cf98201ce1c4725cb0b4f77e9108ef247daa553bc"
+        },
+        {
+          "scope": "assess",
+          "prefix": "return RoutingDecision(route",
+          "first_line": 27,
+          "last_line": 27,
+          "node_sha256": "00d4d929c481d9e880fc95b171bc9a07dbed07c77819addfd009a1c421ba3a56"
+        }
+      ],
+      "ast_equivalent": true,
+      "lines": 12,
+      "max_line_length": 67,
+      "literal_checks": {
+        "string_tokens_unchanged": true,
+        "introduced_implicit_concatenations": 0,
+        "introduced_escaped_newlines": 0,
+        "source_implicit_concatenations": 0
+      },
+      "line_budget": 15,
+      "line_budget_reason": "Standard concise card ceiling.",
+      "transformation": "Selected complete original source statements; deterministic whitespace reflow outside literal tokens; caption identifies omitted context."
+    },
+    {
+      "candidate_id": "B1-P02",
+      "source": "candidates/B1/B1-P02/variant.py",
+      "source_sha256": "b470ad1e354bd324a8d2fbd829092339357ae3f76a0a39620c71c065b0294d34",
+      "rationale_sha256": "0ea05fc4a0cacb366327a760f426bfc6cf767175624d077ac956645b9139eac7",
+      "output": "candidates/cards/B1-P02.py",
+      "output_sha256": "8c205393302686d19e293d4977baecdb2b3f271e89330501726c991ece582dac",
+      "selections": [
+        {
+          "scope": "assess",
+          "prefix": "try:",
+          "first_line": 14,
+          "last_line": 17,
+          "node_sha256": "79a68f6398b346b86693037b5b09a3181d8ec95ea8407f961a382780c3e10871"
+        },
+        {
+          "scope": "assess",
+          "prefix": "if not math.isfinite",
+          "first_line": 18,
+          "last_line": 19,
+          "node_sha256": "dde72f5fde3e2953d0a3d19ebaafb35724001a52603e7ca68d32fbcc6ee5e5ef"
+        },
+        {
+          "scope": "assess",
+          "prefix": "if amount <",
+          "first_line": 20,
+          "last_line": 21,
+          "node_sha256": "8f315d6b534da1bdb7b6bb6243a111bdee918c3c25db33ec1fa8885852cd085e"
+        },
+        {
+          "scope": "assess",
+          "prefix": "return RoutingDecision(\"HUMAN",
+          "first_line": 22,
+          "last_line": 22,
+          "node_sha256": "1abb4b456928ff9cd0c06d33e2e67527c44211a05e9c54f42f3f43488a4c2aa2"
+        }
+      ],
+      "ast_equivalent": true,
+      "lines": 13,
+      "max_line_length": 59,
+      "literal_checks": {
+        "string_tokens_unchanged": true,
+        "introduced_implicit_concatenations": 0,
+        "introduced_escaped_newlines": 0,
+        "source_implicit_concatenations": 0
+      },
+      "line_budget": 15,
+      "line_budget_reason": "Standard concise card ceiling.",
+      "transformation": "Selected complete original source statements; deterministic whitespace reflow outside literal tokens; caption identifies omitted context."
+    },
+    {
+      "candidate_id": "B1-P03",
+      "source": "candidates/B1/B1-P03/variant.py",
+      "source_sha256": "1e80b6957d3ca0b39243670ad16aba37d35ea1cfdccf95ced3d05b9805f5e289",
+      "rationale_sha256": "ac61ed1c911c140a3423237eba91eff2962e6c598aa331d0239b12190748980c",
+      "output": "candidates/cards/B1-P03.py",
+      "output_sha256": "f99dedc23b746a5684f2f8e16bddbc0f758487e45f58c1d3ea3e5a8bce11a5e4",
+      "selections": [
+        {
+          "scope": "",
+          "prefix": "PROPOSED_INPUT_POLICY =",
+          "first_line": 30,
+          "last_line": 37,
+          "node_sha256": "5dad12b62a8ac7b9b6cd625ebf5d5568cba67bdc3a0e3b66fcb373b9fde900bc"
+        }
+      ],
+      "ast_equivalent": true,
+      "lines": 8,
+      "max_line_length": 51,
+      "literal_checks": {
+        "string_tokens_unchanged": true,
+        "introduced_implicit_concatenations": 0,
+        "introduced_escaped_newlines": 0,
+        "source_implicit_concatenations": 0
+      },
+      "line_budget": 15,
+      "line_budget_reason": "Standard concise card ceiling.",
+      "transformation": "Selected complete original source statements; deterministic whitespace reflow outside literal tokens; caption identifies omitted context."
+    },
+    {
+      "candidate_id": "B2-P01",
+      "source": "candidates/B2/B2-P01/variant.py",
+      "source_sha256": "458afe4d80d1c1a70e14f26c49db647b13c82f1243445068a78601a0ca9ff076",
+      "rationale_sha256": "892fb8b094f242c10d74a8a4ce86c44ab47a490f4743b0cbf8ac54156d15f424",
+      "output": "candidates/cards/B2-P01.py",
+      "output_sha256": "424878ba3473f01862979725c3adbba2433ff9739481e49f843071f310ed8f65",
+      "selections": [
+        {
+          "scope": "evaluate_batch",
+          "prefix": "if len(attempts)",
+          "first_line": 58,
+          "last_line": 59,
+          "node_sha256": "4908f1783df8a82b3c0482eb42f73ba88701334bb40c7266161179fbd1e85cfe"
+        },
+        {
+          "scope": "evaluate_batch",
+          "prefix": "event =",
+          "first_line": 60,
+          "last_line": 60,
+          "node_sha256": "f047f1769014655c47ba1f155550d02ec250d21a18ab38b12a3330678fc58128"
+        },
+        {
+          "scope": "evaluate_batch",
+          "prefix": "attempts.append",
+          "first_line": 61,
+          "last_line": 61,
+          "node_sha256": "505204ded6c84d7c45dd502db988384215d8e22af4f0ac2ae834158eb06df833"
+        }
+      ],
+      "ast_equivalent": true,
+      "lines": 4,
+      "max_line_length": 47,
+      "literal_checks": {
+        "string_tokens_unchanged": true,
+        "introduced_implicit_concatenations": 0,
+        "introduced_escaped_newlines": 0,
+        "source_implicit_concatenations": 0
+      },
+      "line_budget": 15,
+      "line_budget_reason": "Standard concise card ceiling.",
+      "transformation": "Selected complete original source statements; deterministic whitespace reflow outside literal tokens; caption identifies omitted context."
+    },
+    {
+      "candidate_id": "B2-P02",
+      "source": "candidates/B2/B2-P02/variant.py",
+      "source_sha256": "4a22412fd32fe49ad3f6f345117b6f468c8ece09790bf9929ce18cc72cc73cee",
+      "rationale_sha256": "12f848ee60d52591b836e06d192cfa35f6e93801cd77272340fee926718142b1",
+      "output": "candidates/cards/B2-P02.py",
+      "output_sha256": "349990db5065cb28f2bce8028466be88c5313fe9815629386c43271f4761e8f0",
+      "selections": [
+        {
+          "scope": "evaluate_batch",
+          "prefix": "if (",
+          "first_line": 71,
+          "last_line": 84,
+          "node_sha256": "4371ea5f9096858543bf16bd0060be2e5e6bcea9b501e6c1ff48fbe18b1b7a67"
+        },
+        {
+          "scope": "evaluate_batch",
+          "prefix": "event[\"outcome\"] = response",
+          "first_line": 85,
+          "last_line": 85,
+          "node_sha256": "1e4ea4a521ad358e257edbe1e01517a962f50221e497aa8592b82594935f1264"
+        }
+      ],
+      "ast_equivalent": true,
+      "lines": 15,
+      "max_line_length": 52,
+      "literal_checks": {
+        "string_tokens_unchanged": true,
+        "introduced_implicit_concatenations": 0,
+        "introduced_escaped_newlines": 0,
+        "source_implicit_concatenations": 0
+      },
+      "line_budget": 15,
+      "line_budget_reason": "Standard concise card ceiling.",
+      "transformation": "Selected complete original source statements; deterministic whitespace reflow outside literal tokens; caption identifies omitted context."
+    },
+    {
+      "candidate_id": "B2-P03",
+      "source": "candidates/B2/B2-P03/variant.py",
+      "source_sha256": "873edd1e9d688b6c7cab5291d59683a8938a1d517ba34cc62e8d053265662679",
+      "rationale_sha256": "f4239fdae87c4bb8940e30216022ed168340a97a906cf3c8ae70935015e1b0ae",
+      "output": "candidates/cards/B2-P03.py",
+      "output_sha256": "ffcc0bddc0bcae3bf270e1eb30a89b4a6e1ecf0968533484c23f1ad6c6b095c3",
+      "selections": [
+        {
+          "scope": "",
+          "prefix": "def _unique_requests",
+          "first_line": 25,
+          "last_line": 30,
+          "node_sha256": "1ef40f04bc228bcfe33f3f65a091ccd83df5628f284a42d7fdd2e23d65a821e7"
+        },
+        {
+          "scope": "evaluate_batch",
+          "prefix": "requests = _unique",
+          "first_line": 49,
+          "last_line": 49,
+          "node_sha256": "38f99c8368aa5209a5935589d0b4c478291e85caa088225bd1667467f354b7ef"
+        }
+      ],
+      "ast_equivalent": true,
+      "lines": 7,
+      "max_line_length": 62,
+      "literal_checks": {
+        "string_tokens_unchanged": true,
+        "introduced_implicit_concatenations": 0,
+        "introduced_escaped_newlines": 0,
+        "source_implicit_concatenations": 0
+      },
+      "line_budget": 15,
+      "line_budget_reason": "Standard concise card ceiling.",
+      "transformation": "Selected complete original source statements; deterministic whitespace reflow outside literal tokens; caption identifies omitted context."
+    },
+    {
+      "candidate_id": "B3-P01",
+      "source": "candidates/B3/B3-P01/variant.py",
+      "source_sha256": "bc17f98582a512a2760795f012220ea29e5e7b79f355aed30cdaea493aa7eb16",
+      "rationale_sha256": "df348ee861b5bb6445edaf5cb428bbf869e3e8e87f08e1ab80ca0749d76d01d1",
+      "output": "candidates/cards/B3-P01.py",
+      "output_sha256": "3394e392f911f173463be0c6308e293f748333bb125be2f4bde91937d806d86b",
+      "selections": [
+        {
+          "scope": "migrate_legacy",
+          "prefix": "if any(not isinstance(row.get",
+          "first_line": 350,
+          "last_line": 351,
+          "node_sha256": "aead4d9898450385c87627112f2bf6890805a800eab4fa52941c2795f145c4a5"
+        },
+        {
+          "scope": "migrate_legacy",
+          "prefix": "if not isinstance(policy",
+          "first_line": 354,
+          "last_line": 355,
+          "node_sha256": "13f25f529b50fe8060ce979418ff9cabefbc756222ff94c714e786888cd73c56"
+        }
+      ],
+      "ast_equivalent": true,
+      "lines": 6,
+      "max_line_length": 65,
+      "literal_checks": {
+        "string_tokens_unchanged": true,
+        "introduced_implicit_concatenations": 0,
+        "introduced_escaped_newlines": 0,
+        "source_implicit_concatenations": 0
+      },
+      "line_budget": 15,
+      "line_budget_reason": "Standard concise card ceiling.",
+      "transformation": "Selected complete original source statements; deterministic whitespace reflow outside literal tokens; caption identifies omitted context."
+    },
+    {
+      "candidate_id": "B3-P02",
+      "source": "candidates/B3/B3-P02/variant.py",
+      "source_sha256": "fb02e41c116ba0a9f358f1a679b7e0b451a53c0ef93d6506bb3f6bf0e3605d44",
+      "rationale_sha256": "f0fb68cf99894fabebc568c5ec2c7a7f324bb4ea1ccdf690c0bd10fe0cef4854",
+      "output": "candidates/cards/B3-P02.py",
+      "output_sha256": "74be7c827379526faac137cb3b1de72c0ddb5f380c70572efa888dc45a19eca8",
+      "selections": [
+        {
+          "scope": "PolicyStore._decide",
+          "prefix": "current =",
+          "first_line": 295,
+          "last_line": 295,
+          "node_sha256": "c980fd032c202e79b6428839ede31aba4b50c518424252e06a22657c17684346"
+        },
+        {
+          "scope": "PolicyStore._decide",
+          "prefix": "record = {",
+          "first_line": 296,
+          "last_line": 296,
+          "node_sha256": "e815fc6ace521043d7820deef0cdb69e39e2e05c6fade1920b65728979efc57a"
+        },
+        {
+          "scope": "PolicyStore._decide",
+          "prefix": "return {\"status\": \"REPLAYED\"",
+          "first_line": 297,
+          "last_line": 297,
+          "node_sha256": "a1673ce4e421e263c249e26e1cca666d6835b92a8afe82abed5ea62ccdc102d2"
+        }
+      ],
+      "ast_equivalent": true,
+      "lines": 3,
+      "max_line_length": 58,
+      "literal_checks": {
+        "string_tokens_unchanged": true,
+        "introduced_implicit_concatenations": 0,
+        "introduced_escaped_newlines": 0,
+        "source_implicit_concatenations": 0
+      },
+      "line_budget": 15,
+      "line_budget_reason": "Standard concise card ceiling.",
+      "transformation": "Selected complete original source statements; deterministic whitespace reflow outside literal tokens; caption identifies omitted context."
+    },
+    {
+      "candidate_id": "B3-P03",
+      "source": "candidates/B3/B3-P03/variant.py",
+      "source_sha256": "bc17f98582a512a2760795f012220ea29e5e7b79f355aed30cdaea493aa7eb16",
+      "rationale_sha256": "801bbfd31f98a39f0dbe0b838de9fa951142eca0164dc2d88cf8c14c7617ff75",
+      "output": "candidates/cards/B3-P03.py",
+      "output_sha256": "8c991ef209097ec4096f75d5dd5c0f954097be6b5179d87be34fe1242c7915d4",
+      "selections": [
+        {
+          "scope": "PolicyStore._decide",
+          "prefix": "if existing is not None:",
+          "first_line": 286,
+          "last_line": 295,
+          "node_sha256": "5f917f1eef7f676f1d88d5f1cbc28dea0bc6f91e33b2f001c2bf4bdb274e2249"
+        }
+      ],
+      "ast_equivalent": true,
+      "lines": 10,
+      "max_line_length": 52,
+      "literal_checks": {
+        "string_tokens_unchanged": true,
+        "introduced_implicit_concatenations": 0,
+        "introduced_escaped_newlines": 0,
+        "source_implicit_concatenations": 0
+      },
+      "line_budget": 15,
+      "line_budget_reason": "Standard concise card ceiling.",
+      "transformation": "Selected complete original source statements; deterministic whitespace reflow outside literal tokens; caption identifies omitted context."
+    },
+    {
+      "candidate_id": "B4-P01",
+      "source": "candidates/B4/B4-P01/variant.py",
+      "source_sha256": "4f46810b419349c57e2a3c02fe958759164406095ae1906d62c6e0c56a64f685",
+      "rationale_sha256": "fd20ea2f3f0ad8c8bf8e8063f02a42281dd4c72a105a749303bc4915c9b83712",
+      "output": "candidates/cards/B4-P01.py",
+      "output_sha256": "74e46a24f4709c841e7031374dd5e63aa887b2771bf080f1d1859a1f5507a7ba",
+      "selections": [
+        {
+          "scope": "diagnose",
+          "prefix": "selected, expected =",
+          "first_line": 41,
+          "last_line": 42,
+          "node_sha256": "7c613f5fe9958f78624982b80e1af96327a08d0d730ac895fc4c56f2deaa9288"
+        }
+      ],
+      "ast_equivalent": true,
+      "lines": 2,
+      "max_line_length": 65,
+      "literal_checks": {
+        "string_tokens_unchanged": true,
+        "introduced_implicit_concatenations": 0,
+        "introduced_escaped_newlines": 0,
+        "source_implicit_concatenations": 0
+      },
+      "line_budget": 15,
+      "line_budget_reason": "Standard concise card ceiling.",
+      "transformation": "Selected complete original source statements; deterministic whitespace reflow outside literal tokens; caption identifies omitted context."
+    },
+    {
+      "candidate_id": "B4-P02",
+      "source": "candidates/B4/B4-P02/variant.py",
+      "source_sha256": "f61e60f4c49e1a50cdd8fd6c02432feb6cafee195fa2861694a1602320215fcc",
+      "rationale_sha256": "ce4ad5cd5809bb1f61624c1fc8e83b035a659c22ddf19fdf589639759984f8f3",
+      "output": "candidates/cards/B4-P02.py",
+      "output_sha256": "d95aad85a31d3a94a5ac43cbdd4c950d1d2430928a5cddca014bb2970af29349",
+      "selections": [
+        {
+          "scope": "recovery_plan",
+          "prefix": "return {",
+          "first_line": 61,
+          "last_line": 72,
+          "node_sha256": "d87810775c455e0955ce8243ee0cdc2330b8a2bb5e3b6175e5c20c28260b67c2"
+        }
+      ],
+      "ast_equivalent": true,
+      "lines": 12,
+      "max_line_length": 62,
+      "literal_checks": {
+        "string_tokens_unchanged": true,
+        "introduced_implicit_concatenations": 0,
+        "introduced_escaped_newlines": 0,
+        "source_implicit_concatenations": 0
+      },
+      "line_budget": 15,
+      "line_budget_reason": "Standard concise card ceiling.",
+      "transformation": "Selected complete original source statements; deterministic whitespace reflow outside literal tokens; caption identifies omitted context."
+    },
+    {
+      "candidate_id": "B4-P03",
+      "source": "candidates/B4/B4-P03/variant.py",
+      "source_sha256": "f61e60f4c49e1a50cdd8fd6c02432feb6cafee195fa2861694a1602320215fcc",
+      "rationale_sha256": "80c852f725d7cd310d41310c007268fb993ce3f59008770ad373a73e59a33ba1",
+      "output": "candidates/cards/B4-P03.py",
+      "output_sha256": "ffa61a35c07a6ece34f779044c257c0abf8dcb4b7a9fb6b85b58f535ecd0556a",
+      "selections": [
+        {
+          "scope": "diagnose",
+          "prefix": "selected, expected =",
+          "first_line": 41,
+          "last_line": 42,
+          "node_sha256": "b452962b00cf81ed0ab974f7e4b87e18de978a74545659c6c2b44ac46f00c63b"
+        },
+        {
+          "scope": "diagnose",
+          "prefix": "return {",
+          "first_line": 52,
+          "last_line": 57,
+          "node_sha256": "aef02c03fee6e34ba0d2e811df81ab7849d12ad654bf2ef06bc790f49f245bb6"
+        }
+      ],
+      "ast_equivalent": true,
+      "lines": 8,
+      "max_line_length": 66,
+      "literal_checks": {
+        "string_tokens_unchanged": true,
+        "introduced_implicit_concatenations": 0,
+        "introduced_escaped_newlines": 0,
+        "source_implicit_concatenations": 0
+      },
+      "line_budget": 15,
+      "line_budget_reason": "Standard concise card ceiling.",
+      "transformation": "Selected complete original source statements; deterministic whitespace reflow outside literal tokens; caption identifies omitted context."
+    }
+  ]
+}

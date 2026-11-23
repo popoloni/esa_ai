@@ -1,0 +1,72 @@
+test_deterministic_id_does_not_establish_same_ledger (test_b4.WrongLedger.test_deterministic_id_does_not_establish_same_ledger) ... ERROR
+test_expected_binding_is_clean_positive_control (test_b4.WrongLedger.test_expected_binding_is_clean_positive_control) ... ERROR
+test_missing_path_is_not_initialized (test_b4.WrongLedger.test_missing_path_is_not_initialized) ... ERROR
+test_recovery_cost_includes_failed_attempt (test_b4.WrongLedger.test_recovery_cost_includes_failed_attempt) ... ok
+test_recovery_plan_does_not_merge_or_authorize (test_b4.WrongLedger.test_recovery_plan_does_not_merge_or_authorize) ... ERROR
+test_same_code_wrong_state_is_identified (test_b4.WrongLedger.test_same_code_wrong_state_is_identified) ... ERROR
+
+======================================================================
+ERROR: test_deterministic_id_does_not_establish_same_ledger (test_b4.WrongLedger.test_deterministic_id_does_not_establish_same_ledger)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B4/workspace/tests/test_b4.py", line 25, in test_deterministic_id_does_not_establish_same_ledger
+    good=incident.inspect_ledger(self.good);wrong=incident.inspect_ledger(self.wrong)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B4/workspace/incident.py", line 3, in inspect_ledger
+    raise NotImplementedError("Inspect existing state without initializing it")
+NotImplementedError: Inspect existing state without initializing it
+
+======================================================================
+ERROR: test_expected_binding_is_clean_positive_control (test_b4.WrongLedger.test_expected_binding_is_clean_positive_control)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B4/workspace/tests/test_b4.py", line 41, in test_expected_binding_is_clean_positive_control
+    r=incident.diagnose(self.good,self.good,expected_policy="BR-001/v2",anchor_key="anchor")
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B4/workspace/incident.py", line 5, in diagnose
+    raise NotImplementedError("Distinguish source code from selected ledger state")
+NotImplementedError: Distinguish source code from selected ledger state
+
+======================================================================
+ERROR: test_missing_path_is_not_initialized (test_b4.WrongLedger.test_missing_path_is_not_initialized)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B4/workspace/tests/test_b4.py", line 33, in test_missing_path_is_not_initialized
+    with self.assertRaises(FileNotFoundError):incident.inspect_ledger(path)
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B4/workspace/incident.py", line 3, in inspect_ledger
+    raise NotImplementedError("Inspect existing state without initializing it")
+NotImplementedError: Inspect existing state without initializing it
+
+======================================================================
+ERROR: test_recovery_plan_does_not_merge_or_authorize (test_b4.WrongLedger.test_recovery_plan_does_not_merge_or_authorize)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B4/workspace/tests/test_b4.py", line 36, in test_recovery_plan_does_not_merge_or_authorize
+    r=incident.recovery_plan(self.diagnosis())
+                             ^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B4/workspace/tests/test_b4.py", line 18, in diagnosis
+    def diagnosis(self):return incident.diagnose(self.wrong,self.good,expected_policy="BR-001/v2",anchor_key="anchor")
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B4/workspace/incident.py", line 5, in diagnose
+    raise NotImplementedError("Distinguish source code from selected ledger state")
+NotImplementedError: Distinguish source code from selected ledger state
+
+======================================================================
+ERROR: test_same_code_wrong_state_is_identified (test_b4.WrongLedger.test_same_code_wrong_state_is_identified)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B4/workspace/tests/test_b4.py", line 20, in test_same_code_wrong_state_is_identified
+    before=(self.good.read_bytes(),self.wrong.read_bytes());r=self.diagnosis()
+                                                              ^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B4/workspace/tests/test_b4.py", line 18, in diagnosis
+    def diagnosis(self):return incident.diagnose(self.wrong,self.good,expected_policy="BR-001/v2",anchor_key="anchor")
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B4/workspace/incident.py", line 5, in diagnose
+    raise NotImplementedError("Distinguish source code from selected ledger state")
+NotImplementedError: Distinguish source code from selected ledger state
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.013s
+
+FAILED (errors=5)

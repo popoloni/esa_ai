@@ -1,0 +1,204 @@
+{
+  "schema": "esa-full-mission-check/v1",
+  "mission": "G2",
+  "release": "ESA-Complete-Review-3-20261103",
+  "contract": "RES-001/v1 + G2-OD-01 + G2-OD-02",
+  "candidate_sha256_before": "f283f8f0e2c4814b5429ca99589e358afbc8f41cd9254c95aa55daa13ae24ec5",
+  "protected_input_sha256": {
+    "docs/contract.md": "76ffefaa7a20e1a3047b0885be0332cfddf86362e6514fa7cfad151106f68dcd",
+    "tests/test_g2.py": "6fac846759f6cac2014cc40a481c7a52a1296f0d24531f3c9c421f580929d790",
+    "docs/G2-OD-02.md": "6760602fa7acb3523365062dcb61885e3ac603233e1e3cd6dbd92b3a19876462",
+    "legacy_g1.py": "bb3ec4063f41eb10ad6a0850b9fa3d40da7badb4bcff19a38fdab3c80ea4efba",
+    "legacy_g1_json.py": "d5b98f73120fb70ccfe6c8366e19f64ac8b311d54684e872f2ca3c7d6813b191",
+    "legacy_g1_recorded.py": "cedfaf4d936232b94eb7220d0d0594e2e919b75eff6f5dcd8a8690582ff569ce",
+    "prior/parent-entry.json": "839701804c16447342bd660c76cab06a1cfbfd85994880f43b09d94129a3a35d",
+    "prior/booking.py": "cedfaf4d936232b94eb7220d0d0594e2e919b75eff6f5dcd8a8690582ff569ce",
+    "prior/parent-handoff.json": "80f61f70cedfba697b16e86969d0f8e5a26421178a2f6a2236ff9c7741ad2057"
+  },
+  "candidate_path": "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G2/workspace",
+  "human_acceptance": "PENDING",
+  "model_run": false,
+  "scope": "Executable local teaching controls; no human reader performance or production authority.",
+  "groups": {
+    "contract": {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_g2.py",
+        "-v"
+      ],
+      "elapsed_process_seconds": 0.16833521400258178,
+      "timeout_seconds": 30,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_invalid_retained_public_column_record_refuses_without_byte_change (test_g2.RecordedG1Migration.test_invalid_retained_public_column_record_refuses_without_byte_change) ... ok\ntest_retained_public_column_schema_preserves_read_replay_and_reinit (test_g2.RecordedG1Migration.test_retained_public_column_schema_preserves_read_replay_and_reinit) ... ok\ntest_adjacent_reservation_succeeds (test_g2.ReservationFullAPI.test_adjacent_reservation_succeeds) ... ok\ntest_changed_request_with_same_key_fails (test_g2.ReservationFullAPI.test_changed_request_with_same_key_fails) ... ok\ntest_different_assets_do_not_conflict (test_g2.ReservationFullAPI.test_different_assets_do_not_conflict) ... ok\ntest_duration_limit_and_timestamp_format (test_g2.ReservationFullAPI.test_duration_limit_and_timestamp_format) ... ok\ntest_first_reservation_confirms (test_g2.ReservationFullAPI.test_first_reservation_confirms) ... ok\ntest_invalid_zero_or_reverse_interval_has_no_effect (test_g2.ReservationFullAPI.test_invalid_zero_or_reverse_interval_has_no_effect) ... ok\ntest_other_member_same_key_is_independent_but_conflicts_on_slot (test_g2.ReservationFullAPI.test_other_member_same_key_is_independent_but_conflicts_on_slot) ... ok\ntest_overlap_fails_without_insert (test_g2.ReservationFullAPI.test_overlap_fails_without_insert) ... ok\ntest_same_request_key_replays_original (test_g2.ReservationFullAPI.test_same_request_key_replays_original) ... ok\ntest_two_writers_do_not_both_confirm_same_slot (test_g2.ReservationFullAPI.test_two_writers_do_not_both_confirm_same_slot) ... ok\ntest_both_supplied_g1_schemas_preserve_record_and_identity (test_g2.ReservationMigration.test_both_supplied_g1_schemas_preserve_record_and_identity) ... ok\ntest_duplicate_legacy_identity_rolls_back_migration (test_g2.ReservationMigration.test_duplicate_legacy_identity_rolls_back_migration) ... ok\ntest_invalid_or_overlapping_legacy_rows_require_owner_mapping (test_g2.ReservationMigration.test_invalid_or_overlapping_legacy_rows_require_owner_mapping) ... ok\ntest_read_of_missing_storage_does_not_create_file (test_g2.ReservationMigration.test_read_of_missing_storage_does_not_create_file) ... ok\ntest_unknown_or_dual_legacy_schema_is_not_guessed (test_g2.ReservationMigration.test_unknown_or_dual_legacy_schema_is_not_guessed) ... ok\n\n----------------------------------------------------------------------\nRan 17 tests in 0.038s\n\nOK\n",
+      "timed_out": false,
+      "tests_run": 17,
+      "expected_tests": 17,
+      "methods_passed": 17,
+      "methods_failed": [],
+      "methods_errored": [],
+      "status": "PASSED"
+    }
+  },
+  "tests_run": 17,
+  "candidate_sha256_after": "f283f8f0e2c4814b5429ca99589e358afbc8f41cd9254c95aa55daa13ae24ec5",
+  "inputs_unchanged": true,
+  "status": "SCOPED_HANDOFF_READY",
+  "demonstration_process": {
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/companion/curriculum_demo.py",
+      "G2",
+      "--candidate",
+      "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G2/workspace",
+      "--output",
+      "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G2/handoff_g2_public_history"
+    ],
+    "elapsed_process_seconds": 0.09390634599913028,
+    "timeout_seconds": 30,
+    "returncode": 0,
+    "stdout": "{\n  \"schema\": \"esa-curriculum-demonstration/v1\",\n  \"mission\": \"G2\",\n  \"recorded_at_utc\": \"2026-11-16T15:50:08.727170+00:00\",\n  \"command\": [\n    \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3\",\n    \"/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/companion/curriculum_demo.py\",\n    \"G2\",\n    \"--candidate\",\n    \"/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G2/workspace\",\n    \"--output\",\n    \"/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G2/handoff_g2_public_history\"\n  ],\n  \"origin\": \"EXECUTED_OFFLINE_TEACHING_FIXTURE\",\n  \"observed_human_pilot\": false,\n  \"observed_model_run\": false,\n  \"result\": {\n    \"initial_public_record\": {\n      \"reservation_id\": 1,\n      \"trusted_member_id\": \"member-14\",\n      \"asset_id\": \"lathe-2\",\n      \"starts_at\": \"2025-05-16T13:00:00Z\",\n      \"ends_at\": \"2025-05-16T14:00:00Z\",\n      \"idempotency_key\": \"original\"\n    },\n    \"after_migration\": {\n      \"reservation_id\": 1,\n      \"trusted_member_id\": \"member-14\",\n      \"asset_id\": \"lathe-2\",\n      \"starts_at\": \"2025-05-16T13:00:00Z\",\n      \"ends_at\": \"2025-05-16T14:00:00Z\",\n      \"idempotency_key\": \"original\"\n    },\n    \"same_identity_replay\": {\n      \"status\": 200,\n      \"code\": \"confirmed\",\n      \"reservation_id\": 1,\n      \"replayed\": true\n    },\n    \"changed_payload\": {\n      \"status\": 409,\n      \"code\": \"idempotency-key-reused\",\n      \"reservation_id\": null,\n      \"replayed\": false\n    },\n    \"adjacent_new_request\": {\n      \"status\": 201,\n      \"code\": \"confirmed\",\n      \"reservation_id\": 2,\n      \"replayed\": false\n    },\n    \"legacy_rows_preserved\": 1,\n    \"historical_tables\": [\n      \"reservations\"\n    ],\n    \"history_check\": \"Exact original column signature and rows; no reference-specific archive table name.\"\n  }\n}\n",
+    "stderr": "",
+    "timed_out": false
+  },
+  "demonstration": {
+    "schema": "esa-curriculum-demonstration/v1",
+    "mission": "G2",
+    "recorded_at_utc": "2026-11-16T15:50:08.727170+00:00",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/companion/curriculum_demo.py",
+      "G2",
+      "--candidate",
+      "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G2/workspace",
+      "--output",
+      "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G2/handoff_g2_public_history"
+    ],
+    "origin": "EXECUTED_OFFLINE_TEACHING_FIXTURE",
+    "observed_human_pilot": false,
+    "observed_model_run": false,
+    "result": {
+      "initial_public_record": {
+        "reservation_id": 1,
+        "trusted_member_id": "member-14",
+        "asset_id": "lathe-2",
+        "starts_at": "2025-05-16T13:00:00Z",
+        "ends_at": "2025-05-16T14:00:00Z",
+        "idempotency_key": "original"
+      },
+      "after_migration": {
+        "reservation_id": 1,
+        "trusted_member_id": "member-14",
+        "asset_id": "lathe-2",
+        "starts_at": "2025-05-16T13:00:00Z",
+        "ends_at": "2025-05-16T14:00:00Z",
+        "idempotency_key": "original"
+      },
+      "same_identity_replay": {
+        "status": 200,
+        "code": "confirmed",
+        "reservation_id": 1,
+        "replayed": true
+      },
+      "changed_payload": {
+        "status": 409,
+        "code": "idempotency-key-reused",
+        "reservation_id": null,
+        "replayed": false
+      },
+      "adjacent_new_request": {
+        "status": 201,
+        "code": "confirmed",
+        "reservation_id": 2,
+        "replayed": false
+      },
+      "legacy_rows_preserved": 1,
+      "historical_tables": [
+        "reservations"
+      ],
+      "history_check": "Exact original column signature and rows; no reference-specific archive table name."
+    }
+  },
+  "demonstration_files_sha256": {
+    "DEMONSTRATION.json": "203ea144c2f8a53f359a26d15e11440716b1ae9a8264c48d9c0c8af2afd91b83",
+    "continuation.json": "56ef61ac51beb004496f365a9c9d096a88f51a9d540a19f44d5234cfaac2008a",
+    "reservations.sqlite": "e6c9d79ff4e9ea96fed9885711b6e8315e7c0c3886c0f616da94890c5bc01576"
+  },
+  "candidate_retained": true,
+  "recorded_at_utc": "2026-11-16T15:50:08.740263+00:00",
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/companion/start.py",
+    "continue",
+    "G2",
+    "--candidate",
+    "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G2/workspace",
+    "--output",
+    "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G2/handoff_g2_public_history.json"
+  ],
+  "verification_progress": {
+    "schema": "esa-verification-progress/v1",
+    "derivation": "CURRENT_RECEIPT_FIELDS_ONLY_NO_ADDITIONAL_EXECUTION",
+    "source_fields_sha256": "ea1d6d1f866d49c715743ba8e130af7a4c1b8cd78d5aa0b052385fc7d0e2f759",
+    "work_order": "mission_G2",
+    "evidence_profile": "persistent_effect",
+    "profile_basis": "The named mission work order.",
+    "phase": "mission",
+    "stages": {
+      "startup": {
+        "status": "PASS",
+        "evidence": [
+          "schema",
+          "mission",
+          "candidate_path"
+        ],
+        "reason": "The intended runner accepted the entry identity and emitted this check receipt. This does not establish candidate import."
+      },
+      "integrity": {
+        "status": "PASS",
+        "evidence": [
+          "inputs_unchanged",
+          "candidate_sha256_before",
+          "candidate_sha256_after"
+        ],
+        "reason": "The recorded before/after comparison found inputs unchanged."
+      },
+      "contract": {
+        "status": "PASS",
+        "evidence": [
+          "groups.contract"
+        ],
+        "reason": "Status uses each selected group and any contract-specific supplemental probe; an import placeholder is not behavioral evidence. A candidate stack frame or known protected assertion supports reached behavior; a method count alone does not. Groups within this stage may retain multiple failures.",
+        "behavior_reached": true
+      },
+      "integration": {
+        "status": "PASS",
+        "evidence": [
+          "demonstration_process"
+        ],
+        "reason": "An actual continuation or process-boundary probe is retained; the result applies to this local consumer and candidate only."
+      },
+      "artifact": {
+        "status": "NOT_RUN",
+        "evidence": [],
+        "reason": "This receipt has no separate archive/extraction gate. Local demonstration hashes alone do not establish release fitness."
+      },
+      "authorization": {
+        "status": "NOT_RUN",
+        "evidence": [
+          "human_acceptance"
+        ],
+        "reason": "No owner acceptance or release authorization is recorded. Passing checks do not supply that decision."
+      }
+    },
+    "first_failed_stage": null,
+    "last_observed_stage": "integration",
+    "limits": "A stage label interprets the retained fields; it is not an independent attestation. NOT_APPLICABLE needs an explicit scope exclusion; absence alone remains NOT_RUN."
+  }
+}

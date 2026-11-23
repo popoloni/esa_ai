@@ -1,0 +1,5 @@
+{
+  "decision": "REVOKE",
+  "reason": "Actual +4999.99 probe returns STANDARD_QUEUE under the current v2 authority; the deliberately planted universal rejection claim is false.",
+  "record_sha256": "7d62aa6c8a1bf9bd42972f1071afb5819acb86efa4d3944ea9f504ee714b569e"
+}

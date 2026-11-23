@@ -1,0 +1,197 @@
+{
+  "schema": "esa-full-mission-check/v1",
+  "mission": "G4",
+  "release": "ESA-Complete-Review-3-20261103",
+  "contract": "OPS-G4/v2",
+  "candidate_sha256_before": "16c029e563eec3080e023f87d15ebff95b6a2174659ae743a0b4c8541b976a43",
+  "protected_input_sha256": {
+    "docs/contract.md": "3917cc7ead53e670c4904ef7d9a9ade8572f026bdac0d34b2094b162d7cc1885",
+    "tests/test_g4.py": "b9e3af154e42a1af76ea323b8ad34025898c0ff4aa0d58207d7c837de697169a",
+    "booking.py": "adff2a866ec3c3709b428731949fe756bd62f63bb902dbaaf1a4da72ececf748",
+    "g4_fixture.py": "acfff09ae7b805745dcd8a83c769c86c0088704eac134eaf23ee8dd58e73566c",
+    "reference_g3.py": "ad89e1350b80d674b30f8fd97927107adb77e2df625805d7a0a49cb8837b5b17",
+    "reservation_report.py": "6e99b547429ce65d174bd57be2c26f56297ac610888e56be03b9f69e65c77a65",
+    "reservation_cli.py": "05d6f0cd68cab19a05703d8ca5c9521f6f139c14259483a79e72393b3460c9e4",
+    "prior/parent-entry.json": "268a436d0485726e2efd653176ca94fdc6802c02414ba55416d8bb5cc32f9a7f",
+    "prior/booking.py": "adff2a866ec3c3709b428731949fe756bd62f63bb902dbaaf1a4da72ececf748",
+    "prior/integration-acceptance.json": "b777724d0928ec972833b9d74977050902bdf9a89bcee8f2649caa1c885edb86",
+    "prior/parent-handoff.json": "6b75d7948489ed582281074e9191218b864e951b9f773108980485edbf8683db",
+    "prior/parent-check-artifacts/continuation.json": "296004eb2bfb595e339317891b3b8958694306bf8db5dd75be76dc94bf27e237",
+    "prior/parent-check-artifacts/DEMONSTRATION.json": "c7aadadf30d2cc0803d7a9b8a79f844e177a4c2253bd8abb4f8f142357042a9f",
+    "prior/parent-check-artifacts/reservations.sqlite": "6feadff4913e0a88d9b1e5a616bac71d0ded46aeb92dd1d6df8b8f30f819723c",
+    "prior/integration/reservation_report.py": "6e99b547429ce65d174bd57be2c26f56297ac610888e56be03b9f69e65c77a65",
+    "prior/integration/booking.py": "adff2a866ec3c3709b428731949fe756bd62f63bb902dbaaf1a4da72ececf748",
+    "prior/integration/reservation_cli.py": "05d6f0cd68cab19a05703d8ca5c9521f6f139c14259483a79e72393b3460c9e4"
+  },
+  "candidate_path": "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G4/workspace",
+  "human_acceptance": "PENDING",
+  "model_run": false,
+  "scope": "Executable local teaching controls; no human reader performance or production authority.",
+  "integration": {
+    "source_sha256": {
+      "booking.py": "adff2a866ec3c3709b428731949fe756bd62f63bb902dbaaf1a4da72ececf748",
+      "reservation_report.py": "6e99b547429ce65d174bd57be2c26f56297ac610888e56be03b9f69e65c77a65",
+      "reservation_cli.py": "05d6f0cd68cab19a05703d8ca5c9521f6f139c14259483a79e72393b3460c9e4"
+    },
+    "receipt_sha256": "b777724d0928ec972833b9d74977050902bdf9a89bcee8f2649caa1c885edb86",
+    "bundle_sha256": "22f03d372f5016a3d04e08ccd8a049cf87bdfd56c6f7779a746638a9d816321a"
+  },
+  "groups": {
+    "contract": {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_g4.py",
+        "-v"
+      ],
+      "elapsed_process_seconds": 0.19824466899808613,
+      "timeout_seconds": 30,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_active_overlap_is_detected_not_repaired (test_g4.OperationalEvidence.test_active_overlap_is_detected_not_repaired) ... ok\ntest_all_attempts_count_toward_accepted_outcome_cost (test_g4.OperationalEvidence.test_all_attempts_count_toward_accepted_outcome_cost) ... ok\ntest_cancelled_row_does_not_create_false_alarm (test_g4.OperationalEvidence.test_cancelled_row_does_not_create_false_alarm) ... ok\ntest_clean_storage_is_observed_without_mutation (test_g4.OperationalEvidence.test_clean_storage_is_observed_without_mutation) ... ok\ntest_failed_attempts_remain_in_the_cost_numerator (test_g4.OperationalEvidence.test_failed_attempts_remain_in_the_cost_numerator) ... ok\ntest_invalid_cost_or_time_is_refused (test_g4.OperationalEvidence.test_invalid_cost_or_time_is_refused) ... ok\ntest_missing_path_is_not_created (test_g4.OperationalEvidence.test_missing_path_is_not_created) ... ok\ntest_nonnumeric_cost_and_time_raise_value_error (test_g4.OperationalEvidence.test_nonnumeric_cost_and_time_raise_value_error) ... ok\ntest_reference_schema_remains_explicitly_supported (test_g4.OperationalEvidence.test_reference_schema_remains_explicitly_supported) ... ok\ntest_version_number_alone_does_not_authorize_unknown_schema (test_g4.OperationalEvidence.test_version_number_alone_does_not_authorize_unknown_schema) ... ok\ntest_zero_accepted_is_not_zero_unit_cost (test_g4.OperationalEvidence.test_zero_accepted_is_not_zero_unit_cost) ... ok\n\n----------------------------------------------------------------------\nRan 11 tests in 0.029s\n\nOK\n",
+      "timed_out": false,
+      "tests_run": 11,
+      "expected_tests": 11,
+      "methods_passed": 11,
+      "methods_failed": [],
+      "methods_errored": [],
+      "status": "PASSED"
+    }
+  },
+  "tests_run": 11,
+  "candidate_sha256_after": "16c029e563eec3080e023f87d15ebff95b6a2174659ae743a0b4c8541b976a43",
+  "inputs_unchanged": true,
+  "status": "SCOPED_HANDOFF_READY",
+  "demonstration_process": {
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/companion/curriculum_demo.py",
+      "G4",
+      "--candidate",
+      "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G4/workspace",
+      "--output",
+      "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G4/handoff_g4"
+    ],
+    "elapsed_process_seconds": 0.1358354590011004,
+    "timeout_seconds": 30,
+    "returncode": 0,
+    "stdout": "{\n  \"schema\": \"esa-curriculum-demonstration/v1\",\n  \"mission\": \"G4\",\n  \"recorded_at_utc\": \"2026-11-16T16:14:30.391464+00:00\",\n  \"command\": [\n    \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3\",\n    \"/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/companion/curriculum_demo.py\",\n    \"G4\",\n    \"--candidate\",\n    \"/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G4/workspace\",\n    \"--output\",\n    \"/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G4/handoff_g4\"\n  ],\n  \"origin\": \"EXECUTED_OFFLINE_TEACHING_FIXTURE\",\n  \"observed_human_pilot\": false,\n  \"observed_model_run\": false,\n  \"result\": {\n    \"diagnosis\": \"ACTIVE_OVERLAP\",\n    \"evidence_unchanged\": true,\n    \"repair_authorized\": false,\n    \"cost_scenario\": {\n      \"attempts\": 3,\n      \"accepted\": 1,\n      \"total_cost_eur\": \"5.50\",\n      \"total_minutes\": \"37\",\n      \"cost_per_accepted_eur\": \"5.50\",\n      \"minutes_per_accepted\": \"37\",\n      \"status\": \"OK\"\n    },\n    \"human_acceptance\": \"PENDING\"\n  }\n}\n",
+    "stderr": "",
+    "timed_out": false
+  },
+  "demonstration": {
+    "schema": "esa-curriculum-demonstration/v1",
+    "mission": "G4",
+    "recorded_at_utc": "2026-11-16T16:14:30.391464+00:00",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/companion/curriculum_demo.py",
+      "G4",
+      "--candidate",
+      "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G4/workspace",
+      "--output",
+      "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G4/handoff_g4"
+    ],
+    "origin": "EXECUTED_OFFLINE_TEACHING_FIXTURE",
+    "observed_human_pilot": false,
+    "observed_model_run": false,
+    "result": {
+      "diagnosis": "ACTIVE_OVERLAP",
+      "evidence_unchanged": true,
+      "repair_authorized": false,
+      "cost_scenario": {
+        "attempts": 3,
+        "accepted": 1,
+        "total_cost_eur": "5.50",
+        "total_minutes": "37",
+        "cost_per_accepted_eur": "5.50",
+        "minutes_per_accepted": "37",
+        "status": "OK"
+      },
+      "human_acceptance": "PENDING"
+    }
+  },
+  "demonstration_files_sha256": {
+    "DEMONSTRATION.json": "483c02929c5c49780ad8c1d70d280b518ac60e33ffe39b778f03913f1b3f4abe",
+    "cost_report.json": "4ec512d2a5e459026f2637a831aca86e9849815963a4b1671729857da28ba190",
+    "diagnosis.json": "075069a0dd8d990de22c8183e649809437af4efcf5e250e0f7cb3f509238160f",
+    "incident_fixture.sqlite": "2479bd2e442ddfb882703b42e28314c2ea636b37ddfc92c6e0c6603a0fcd1c27"
+  },
+  "candidate_retained": true,
+  "integration_inputs_retained": true,
+  "recorded_at_utc": "2026-11-16T16:14:30.403490+00:00",
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/companion/start.py",
+    "continue",
+    "G4",
+    "--candidate",
+    "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G4/workspace",
+    "--output",
+    "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G4/handoff_g4.json"
+  ],
+  "verification_progress": {
+    "schema": "esa-verification-progress/v1",
+    "derivation": "CURRENT_RECEIPT_FIELDS_ONLY_NO_ADDITIONAL_EXECUTION",
+    "source_fields_sha256": "2fb637e0b16c37a74be5cc5e2fbfeebc5df3174b7d6d640b511de667085089b7",
+    "work_order": "mission_G4",
+    "evidence_profile": "persistent_effect",
+    "profile_basis": "The named mission work order.",
+    "phase": "mission",
+    "stages": {
+      "startup": {
+        "status": "PASS",
+        "evidence": [
+          "schema",
+          "mission",
+          "candidate_path"
+        ],
+        "reason": "The intended runner accepted the entry identity and emitted this check receipt. This does not establish candidate import."
+      },
+      "integrity": {
+        "status": "PASS",
+        "evidence": [
+          "inputs_unchanged",
+          "candidate_sha256_before",
+          "candidate_sha256_after"
+        ],
+        "reason": "The recorded before/after comparison found inputs unchanged."
+      },
+      "contract": {
+        "status": "PASS",
+        "evidence": [
+          "groups.contract"
+        ],
+        "reason": "Status uses each selected group and any contract-specific supplemental probe; an import placeholder is not behavioral evidence. A candidate stack frame or known protected assertion supports reached behavior; a method count alone does not. Groups within this stage may retain multiple failures.",
+        "behavior_reached": true
+      },
+      "integration": {
+        "status": "PASS",
+        "evidence": [
+          "demonstration_process"
+        ],
+        "reason": "An actual continuation or process-boundary probe is retained; the result applies to this local consumer and candidate only."
+      },
+      "artifact": {
+        "status": "NOT_RUN",
+        "evidence": [],
+        "reason": "This receipt has no separate archive/extraction gate. Local demonstration hashes alone do not establish release fitness."
+      },
+      "authorization": {
+        "status": "NOT_RUN",
+        "evidence": [
+          "human_acceptance"
+        ],
+        "reason": "No owner acceptance or release authorization is recorded. Passing checks do not supply that decision."
+      }
+    },
+    "first_failed_stage": null,
+    "last_observed_stage": "integration",
+    "limits": "A stage label interprets the retained fields; it is not an independent attestation. NOT_APPLICABLE needs an explicit scope exclusion; absence alone remains NOT_RUN."
+  }
+}

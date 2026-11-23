@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Eight practical missions, local checks and recorded agent tours for Engineering Software with Agentic AI."><title>B4 proposal cards · Engineering Software with Agentic AI</title><link rel="stylesheet" href="../../../assets/companion.css"></head><body><a class="skip" href="#main">Skip to content</a><header class="sitehead"><div><a class="brand" href="../../../index.html">Engineering Software with Agentic AI<span>Practical companion · version 5.6</span></a><nav aria-label="Main navigation"><a href="../../../index.html">Start</a><a href="../../../missions/index.html">Missions</a><a href="../../agent_sessions/README.html">Agent guide</a><a href="../../../traces/index.html">Recorded tours</a><a href="../../series/READING_THE_SERIES.html">Four volumes</a></nav></div></header><main id="main"><article data-source-sha256="91772a7c139a42bb63905cb80150b6194c32a5e6e58a71ef60da7c03d0d9e9a8"><p class="docmeta meta"><a href="B4.md">Markdown source</a> · Companion 5.6 · 2026-11-22</p><h1>B4 proposal cards</h1>
+<h2 id="b4-p01">B4-P01</h2>
+<p>Configuration provides a stable reference for interpreting an incident. This diagnostic builds its observations around that intended ledger and retains the path, policy and anchor comparisons in the report. It avoids mixing evidence from uncertain locations while producing the existing status shape. The review should establish that the reported observations identify the state the running service actually selected.</p>
+<p><em>Artifact: diagnose: the two state observations used by all subsequent comparisons.</em></p>
+<pre class="python"><code>selected, expected = (
+    inspect_ledger(expected_path), inspect_ledger(expected_path))</code></pre>
+<h2 id="b4-p02">B4-P02</h2>
+<p>Restoring the expected binding leaves requests in the extra ledger that the intended store has never seen. Reconciliation would copy those missing identifiers into the intended ledger after diagnosis and restoration. That would retain work performed during the incident and present operators with one history. The attached recovery plan preserves the existing diagnostic while this additional behavior is proposed.</p>
+<p><em>Artifact: recovery_plan: the currently supplied plan; the proposed merge is a separate requested change.</em></p>
+<pre class="python"><code>return {
+    &quot;restore_configuration_to&quot;: diagnosis[&quot;expected&quot;][&quot;path&quot;],
+    &quot;preserve_ledgers&quot;: [
+        diagnosis[&quot;selected&quot;][&quot;path&quot;],
+        diagnosis[&quot;expected&quot;][&quot;path&quot;]],
+    &quot;verification&quot;: [
+        &quot;historical replay&quot;,
+        &quot;current-policy decision on disposable copy&quot;,
+        &quot;restart and state binding&quot;],
+    &quot;automatic_merge&quot;: False,
+    &quot;reconciliation&quot;: &quot;PENDING_OWNER_DECISION&quot;,
+    &quot;production_authorized&quot;: False}</code></pre>
+<h2 id="b4-p03">B4-P03</h2>
+<p>Both selected paths are inspected read-only, and each observation carries its own state identity. The resulting plan preserves the ledgers while identifying the expected binding and the checks needed after an authorized restoration. Records created during the incident remain a separate reconciliation decision. Matching decision identifiers alone do not settle whether the same historical state was selected.</p>
+<p><em>Artifact: diagnose: state selection and returned status, around the path, policy and anchor comparisons.</em></p>
+<pre class="python"><code>selected, expected = (
+    inspect_ledger(selected_path), inspect_ledger(expected_path))
+return {
+    &quot;status&quot;: (
+        &quot;WRONG_LEDGER&quot; if issues else &quot;EXPECTED_LEDGER_SELECTED&quot;),
+    &quot;issues&quot;: issues, &quot;selected&quot;: selected, &quot;expected&quot;: expected,
+    &quot;restoration&quot;: &quot;NOT_PERFORMED&quot;,
+    &quot;reconciliation&quot;: &quot;PENDING_OWNER_DECISION&quot;}</code></pre>
+</article></main><footer class="foot"><p>Enrico Papalini · Edition 5.6 · 2026-11-22</p><p><a href="../../../NOTICE.html">Rights and notices</a> · <a href="../../../NATIVE_STATUS.json">Native-client status</a> · <a href="../../../MANIFEST.json">Package manifest</a> · <a href="https://github.com/popoloni/esa_ai">Companion repository</a></p></footer></body></html>

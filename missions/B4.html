@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Eight practical missions, local checks and recorded agent tours for Engineering Software with Agentic AI."><title>B4. Find the selected state before repairing the code · Engineering Software with Agentic AI</title><link rel="stylesheet" href="../assets/companion.css"></head><body><a class="skip" href="#main">Skip to content</a><header class="sitehead"><div><a class="brand" href="../index.html">Engineering Software with Agentic AI<span>Practical companion · version 5.6</span></a><nav aria-label="Main navigation"><a href="../index.html">Start</a><a href="index.html">Missions</a><a href="../companion/agent_sessions/README.html">Agent guide</a><a href="../traces/index.html">Recorded tours</a><a href="../companion/series/READING_THE_SERIES.html">Four volumes</a></nav></div></header><main id="main"><article data-source-sha256="e47fa1215e6716369f72b5eaa69bd75cb71319f00b1edc86b1d119ae8b3a720a"><p class="docmeta meta"><a href="B4.md">Markdown source</a> · Companion 5.6 · 2026-11-22</p><h1 id="mission-b4">B4. Find the selected state before repairing the code</h1><p class="mission-meta">Run commands from the package root. <a href="../companion/agent_sessions/README.html">Live-client setup and current status</a> · <a href="../traces/index.html">Offline recorded tours</a></p>
+<p><strong>Session planning target:</strong> setup 10 min · implementation 30 min · review and handoff 20 min (60 min total).</p>
+<p>A Treasury process is running the expected source version, yet a new EUR 4,000 request enters the standard queue when the current rule requires human review. One investigation proposes changing the threshold in code. Another finds that the process selected a different ledger, initialized under v1. The same source can produce different behavior because its state is different.</p>
+<p>Your outcome is a read-only diagnosis, a bounded restoration and an explicit reconciliation question. Use <strong>Expect · Delegate · Observe · Decide (EDOD)</strong> with the supplied local incident fixtures.</p>
+<h2 id="expect-identify-code-state-and-the-expected-anchor">1. Expect: identify code, state and the expected anchor</h2>
+<p>Continue B3:</p>
+<pre class="bash"><code>python3 companion/start.py advance B4 \
+  --from-candidate work/b3 \
+  --dest work/b4</code></pre>
+<p>The command verifies the retained ledger implementation and carries its actual <code>ledger.py</code> and <code>routing.py</code> as protected dependencies. It creates <code>incident.py</code> for the new diagnostic. The accounting helper from G4 is supplied as a dependency; you can complete the Treasury route without having completed the Reservation route. For independent entry, choose this alternative:</p>
+<pre class="bash"><code>python3 companion/start.py new B4 \
+  --dest work/b4</code></pre>
+<p>Read <code>docs/contract.md</code> and observe the initial result:</p>
+<pre class="bash"><code>python3 companion/start.py check B4 \
+  --candidate work/b4 \
+  --output work/evidence/b4-initial.json</code></pre>
+<p>OPS-B4/v2 identifies the expected state by its resolved path, history application ID, schema version 2, active policy and an owner-supplied historical anchor. The wrong ledger is a separate fixture opened by the same ledger implementation. The expected ledger has active <code>BR-001/v2</code>; the fresh wrong ledger defaults to v1 and lacks the anchor. Those are observable differences in state, independent of a source-code regression.</p>
+<p>Write two competing hypotheses in <code>DOSSIER.md</code>: changed routing logic, and wrong state binding with unchanged logic. List the smallest read-only observations that would distinguish them. Include the resolved selected path, source digest, active policy, historical anchor and schema/application identity. A process name or a familiar filename is not sufficient evidence of which state was opened.</p>
+<h2 id="delegate-observation-must-not-initialize-the-evidence">2. Delegate: observation must not initialize the evidence</h2>
+<p>The diagnostic functions are:</p>
+<pre class="python"><code>inspect_ledger(path)
+diagnose(selected_path, expected_path,
+         expected_policy=&quot;BR-001/v2&quot;, anchor_key=&quot;anchor&quot;)
+recovery_plan(diagnosis)</code></pre>
+<p><code>inspect_ledger</code> reads an existing file in read-only mode and verifies its application and schema identity. It reports the selected path, digest, active policy, decisions and audit count. A missing path is an error. Opening it with a normal create-capable SQLite connection could manufacture the very state that an investigation is supposed to observe.</p>
+<p><code>diagnose</code> compares the actual selected state with the expected binding and identifies path, policy and anchor mismatches. It leaves both ledgers unchanged. The fixture also contains an identical deterministic decision ID in both ledgers. The ID is derived from matching record content; it does not prove that these files have one historical lineage. Inspect the anchor and state binding rather than claiming that a shared digest or decision ID makes the stores interchangeable.</p>
+<p><strong>EDOD/1 work order mission_B4 — Persistent effect.</strong></p>
+<p><strong>Expect</strong> — <strong>outcome:</strong> Diagnose the selected ledger and propose a bounded restoration. <strong>authority:</strong> Service operations lead, OPS-B4/v2 (teaching contract). <strong>acceptance:</strong> Compare actual and expected path, policy and anchor read-only; preserve both ledgers; leave reconciliation and production approval pending. The structured proposal includes restore_configuration_to with the resolved expected path; it does not perform or authorize restoration.</p>
+<p><strong>Delegate</strong> — <strong>editable_paths:</strong> <code>incident.py</code>, <code>DOSSIER.md</code>. <strong>protected_paths:</strong> <code>docs/</code>, <code>tests/</code>, <code>READER_ENTRY.json</code>, <code>prior/</code>, <code>ledger.py</code>, <code>routing.py</code>, <code>operations.py</code>. <strong>budget:</strong> 3 attempts / 30 implementation minutes; 30 s per check process; 0 external integration calls. <strong>stop_conditions:</strong> Missing ledger, changing evidence or requested record reconciliation. Protected inputs change or the declared attempt/time budget is spent.</p>
+<p><strong>Observe</strong> — <strong>checks:</strong> <code>b4.check</code>, <code>b4.continue</code> (commands below). <strong>receipt_fields:</strong> <code>candidate_sha256_before</code>, <code>groups</code>, <code>inputs_unchanged</code>, <code>verification_progress</code>, <code>human_acceptance</code>.</p>
+<p><strong>Decide</strong> — <strong>owner:</strong> Learner reviewer; Service operations lead for a changed rule. <strong>object:</strong> B4 candidate, identified bytes and its scoped handoff. <strong>allowed_decisions:</strong> ACCEPT, REJECT, ASK.</p>
+<p>The structured proposal must include <code>restore_configuration_to</code>, the resolved expected path, with <code>automatic_merge=False</code> and <code>production_authorized=False</code>. Prepare and inspect the task before launch:</p>
+<pre class="bash"><code>python3 companion/agent_session.py prepare B4 \
+  --candidate work/b4 --output work/b4-agent
+python3 companion/agent_session.py run \
+  --session work/b4-agent --client claude \
+  --max-budget-usd 5</code></pre>
+<p>Require the agent’s predictions before edits. Preserve the selected-state observations and stop it at an unsupported mapping or reconciliation decision. Its job produces diagnosis and a proposal; the operator owns continuation.</p>
+<p>A recovery plan is not an executed recovery. The plan must name the expected binding, evidence to preserve and checks to run: historical replay, a current-policy probe on a disposable copy, and restart/state verification. It must leave record reconciliation pending. Which wrong-ledger records are valid work, conflicting retries or unrelated events is a different question from which file the service should use next.</p>
+<h2 id="observe-distinguish-wrong-state-from-a-false-clean-report">3. Observe: distinguish wrong state from a false clean report</h2>
+<p>AP-B4’s first implementation passed six methods, but continuation requested an unspecified key and stopped. The operator retained that result, made the consumer field explicit in v2 and requested a bounded update. The worker reproduced the new missing-field case before adding the key and preserving its alias. This was clarified scope, not a retroactive implementation error. Your task starts with that explicit contract:</p>
+<pre class="bash"><code>python3 companion/start.py check B4 \
+  --candidate work/b4 \
+  --output work/evidence/b4-first.json</code></pre>
+<p>Seven methods cover wrong-ledger diagnosis, shared-ID limitations, missing-file refusal, proposal authority, a clean positive control, failed-attempt accounting and the explicit consumer field. They compare original database bytes before and after diagnosis. The actual operator independently passed all seven after the agent’s bounded update.</p>
+<p>The positive control matters. A diagnostic that always returns <code>WRONG_LEDGER</code> would detect the fault fixture but also reject the correctly bound store. A useful observation must discriminate the two. Similarly, an implementation that silently substitutes the expected path for the selected path can produce a reassuring report while never inspecting the actual fault.</p>
+<p>Record a decision, its governing rule and the observation that could change it for each card.</p>
+<h3 id="b4-p01">B4-P01</h3>
+<p>Configuration provides a stable reference for interpreting an incident. This diagnostic builds its observations around that intended ledger and retains the path, policy and anchor comparisons in the report. It avoids mixing evidence from uncertain locations while producing the existing status shape. The review should establish that the reported observations identify the state the running service actually selected.</p>
+<p><em>Artifact: diagnose: the two state observations used by all subsequent comparisons.</em></p>
+<pre class="python"><code>selected, expected = (
+    inspect_ledger(expected_path), inspect_ledger(expected_path))</code></pre>
+<h3 id="b4-p02">B4-P02</h3>
+<p>Restoring the expected binding leaves requests in the extra ledger that the intended store has never seen. Reconciliation would copy those missing identifiers into the intended ledger after diagnosis and restoration. That would retain work performed during the incident and present operators with one history. The attached recovery plan preserves the existing diagnostic while this additional behavior is proposed.</p>
+<p><em>Artifact: recovery_plan: the currently supplied plan; the proposed merge is a separate requested change.</em></p>
+<pre class="python"><code>return {
+    &quot;restore_configuration_to&quot;: diagnosis[&quot;expected&quot;][&quot;path&quot;],
+    &quot;preserve_ledgers&quot;: [
+        diagnosis[&quot;selected&quot;][&quot;path&quot;],
+        diagnosis[&quot;expected&quot;][&quot;path&quot;]],
+    &quot;verification&quot;: [
+        &quot;historical replay&quot;,
+        &quot;current-policy decision on disposable copy&quot;,
+        &quot;restart and state binding&quot;],
+    &quot;automatic_merge&quot;: False,
+    &quot;reconciliation&quot;: &quot;PENDING_OWNER_DECISION&quot;,
+    &quot;production_authorized&quot;: False}</code></pre>
+<h3 id="b4-p03">B4-P03</h3>
+<p>Both selected paths are inspected read-only, and each observation carries its own state identity. The resulting plan preserves the ledgers while identifying the expected binding and the checks needed after an authorized restoration. Records created during the incident remain a separate reconciliation decision. Matching decision identifiers alone do not settle whether the same historical state was selected.</p>
+<p><em>Artifact: diagnose: state selection and returned status, around the path, policy and anchor comparisons.</em></p>
+<pre class="python"><code>selected, expected = (
+    inspect_ledger(selected_path), inspect_ledger(expected_path))
+return {
+    &quot;status&quot;: (
+        &quot;WRONG_LEDGER&quot; if issues else &quot;EXPECTED_LEDGER_SELECTED&quot;),
+    &quot;issues&quot;: issues, &quot;selected&quot;: selected, &quot;expected&quot;: expected,
+    &quot;restoration&quot;: &quot;NOT_PERFORMED&quot;,
+    &quot;reconciliation&quot;: &quot;PENDING_OWNER_DECISION&quot;}</code></pre>
+<p>After recording all three judgments, reveal their checks and explanations together:</p>
+<pre class="bash"><code>python3 companion/start.py review B4 \
+  --candidate-ids B4-P01 B4-P02 B4-P03 \
+  --output work/evidence/b4-review.json</code></pre>
+<h2 id="decide-restore-the-fixture-binding-and-preserve-the-question">4. Decide: restore the fixture binding and preserve the question</h2>
+<pre class="bash"><code>python3 companion/start.py continue B4 \
+  --candidate work/b4 \
+  --output work/evidence/b4-handoff.json</code></pre>
+<p>The continuation creates two clearly labeled ledgers using your retained ledger code. It records the wrong-state diagnosis and the recovery plan. It then restores only the local fixture’s <code>selected_state.json</code> binding to the expected ledger, observes the clean positive control, and runs historical replay plus a new v2 probe on <code>verification_copy.sqlite</code>. It reopens that disposable copy to confirm the new record survives restart. Both original ledgers remain byte-identical.</p>
+<p>Inspect the artifacts under <code>work/evidence/b4-handoff/</code>:</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Artifact</th>
+<th style="text-align: left;">Review question</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>diagnosis.json</code></td>
+<td style="text-align: left;">Which code and state were observed, and which mismatches support the diagnosis?</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>recovery_plan.json</code></td>
+<td style="text-align: left;">What binding is proposed, what must be preserved, and what is not authorized?</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>restoration.json</code></td>
+<td style="text-align: left;">Which local configuration changed, which checks ran on a copy, and what remained unchanged?</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>expected.sqlite</code>, <code>wrong.sqlite</code></td>
+<td style="text-align: left;">Which original evidence remains available for later reconciliation?</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>cost_report.json</code></td>
+<td style="text-align: left;">Were all included attempts counted, with a stated accepted-outcome denominator?</td>
+</tr>
+</tbody>
+</table>
+<p>The actual AP-B4 v2 continuation executed this local restoration and retained both original ledgers unchanged. It kept <code>production_authorized=False</code> and <code>reconciliation=PENDING_OWNER_DECISION</code>. Those boundaries also govern your handoff; the fixture result does not resolve the wrong ledger’s records.</p>
+<p>The cost report uses labeled illustrative inputs: a failed diagnosis, investigation and review, then fixture restoration checks. It includes all three in the numerator. Its one accepted outcome is a scenario assumption, not evidence that a human reviewer accepted your work or that an actual incident met its recovery objective. Your own economic claim needs observed costs, a defined acceptance unit and an appropriate comparison.</p>
+<p>Finish the analytical dossier with selected state, expected binding, source version, observed policy, preserved evidence, restoration scope, unresolved reconciliation, next authorized check and the responsible owner. Add your three proposal judgments and what changed after observation. A reader should be able to distinguish “the fixture now selects the expected state” from “all consequences of the earlier state selection have been resolved.”</p>
+<p>The completed Treasury chain carries your numerical repair, explicit text contract, bounded intake, preserved policy history and diagnosed state. Its identified candidates and scoped evidence still require a human decision about use.</p>
+<h2 id="explain-the-decision">Explain the decision</h2>
+<p>Why can the correct source produce the wrong current behavior? What could a create-capable database open conceal during diagnosis? Why does a matching decision ID fail to establish ledger lineage? Which observations support restoration, and which records still require reconciliation? Why are probes made on a copy? What would be required before turning this local recovery plan into an authorized production action?</p>
+<h3 class="unnumbered" id="recorded-example">Recorded example</h3>
+<p><code>evidence/agent_process_v4/AP-B4/</code> preserves both contracts’ acceptance results, the blocked and successful handoffs, <code>OPERATOR_DECISION_02.json</code> and the continuation instruction.</p>
+</article></main><footer class="foot"><p>Enrico Papalini · Edition 5.6 · 2026-11-22</p><p><a href="../NOTICE.html">Rights and notices</a> · <a href="../NATIVE_STATUS.json">Native-client status</a> · <a href="../MANIFEST.json">Package manifest</a> · <a href="https://github.com/popoloni/esa_ai">Companion repository</a></p></footer></body></html>

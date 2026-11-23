@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Eight practical missions, local checks and recorded agent tours for Engineering Software with Agentic AI."><title>G2. Complete the rules without losing stored work · Engineering Software with Agentic AI</title><link rel="stylesheet" href="../assets/companion.css"></head><body><a class="skip" href="#main">Skip to content</a><header class="sitehead"><div><a class="brand" href="../index.html">Engineering Software with Agentic AI<span>Practical companion · version 5.6</span></a><nav aria-label="Main navigation"><a href="../index.html">Start</a><a href="index.html">Missions</a><a href="../companion/agent_sessions/README.html">Agent guide</a><a href="../traces/index.html">Recorded tours</a><a href="../companion/series/READING_THE_SERIES.html">Four volumes</a></nav></div></header><main id="main"><article data-source-sha256="681330e60c5623ce9516561192e61c7e6c6d7c3a724d40bcd33ef9672e72f0d1"><p class="docmeta meta"><a href="G2.md">Markdown source</a> · Companion 5.6 · 2026-11-22</p><h1 id="mission-g2">G2. Complete the rules without losing stored work</h1><p class="mission-meta">Run commands from the package root. <a href="../companion/agent_sessions/README.html">Live-client setup and current status</a> · <a href="../traces/index.html">Offline recorded tours</a></p>
+<p><strong>Session planning target:</strong> setup 10 min · implementation 40 min · review and handoff 20 min (70 min total).</p>
+<p>Your retained G1 can store a reservation and retrieve it after the writer exits. Now a member retries, two members request one asset, and a release opens old storage. Delegate these new obligations while preserving the committed work.</p>
+<h2 id="expect-carry-the-first-increment-forward">1. Expect: carry the first increment forward</h2>
+<p>After your G1 handoff succeeds:</p>
+<pre class="bash"><code>python3 companion/start.py advance G2 \
+  --from-candidate work/g1 \
+  --dest work/g2</code></pre>
+<p>The tool verifies the predecessor, preserves its source and entry under <code>prior/</code>, and carries your actual <code>booking.py</code> forward. A failed predecessor handoff blocks transition; the old directory remains unchanged. Independent entry is available:</p>
+<pre class="bash"><code>python3 companion/start.py new G2 \
+  --dest work/g2</code></pre>
+<p>Choose one: both target <code>work/g2</code>, and existing directories are protected from overwrite. Independent entry supplies a minimal G1 and the documented historical fixtures. Read <code>docs/contract.md</code> and <code>docs/G2-OD-02.md</code> before the diagnostic:</p>
+<pre class="bash"><code>python3 companion/start.py check G2 \
+  --candidate work/g2 \
+  --output work/evidence/g2-initial.json</code></pre>
+<p>G1 is expected to be incomplete under the expanded contract. Record what changed in <code>DOSSIER.md</code> before editing. The public functions remain <code>init_db</code>, <code>reserve</code> and <code>get_reservation</code>, with explicit member, asset, timestamps and request key.</p>
+<p><strong>Table: The expanded reservation observations.</strong></p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Situation</th>
+<th style="text-align: left;">Required result and effect</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">A valid, available interval</td>
+<td style="text-align: left;"><code>201/confirmed</code>; one committed reservation</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Same member and key, same asset and interval</td>
+<td style="text-align: left;"><code>200/confirmed</code>, original identifier, <code>replayed=True</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Same member and key, different payload</td>
+<td style="text-align: left;"><code>409/idempotency-key-reused</code>; no replacement</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">New request overlaps the same asset</td>
+<td style="text-align: left;"><code>409/interval-conflict</code>; no reservation created</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Adjacent intervals or a different asset</td>
+<td style="text-align: left;">Independent valid reservations may succeed</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Invalid identifier, timestamp or interval</td>
+<td style="text-align: left;">Corresponding distinct <code>422</code> result; no reservation created</td>
+</tr>
+</tbody>
+</table>
+<p>Intervals are half-open. Timestamps use exact UTC seconds, <code>YYYY-MM-DDTHH:MM:SSZ</code>; duration is positive and at most 24 hours. Identifiers are nonempty strings of at most 128 characters. Canonical timestamps support chronological string comparison; arbitrary date text would break that assumption.</p>
+<p>Before delegating, specify <code>lathe-2</code>, 13:00–14:00 on 16 May 2025; an adjacent 14:00–15:00 request; and reuse of the original member/key with its end changed to 15:00. State the distinguishing result and what existing state must survive.</p>
+<h2 id="delegate-resolve-scope-before-converting-history">2. Delegate: resolve scope before converting history</h2>
+<p>G2-OD-01 permits two supplied historical representations: the original column schema and <code>bookings_v2</code> JSON. G2-OD-02 explicitly adds the actual AP-G1 schema: <code>reservation_id</code>, <code>trusted_member_id</code>, <code>asset_id</code>, <code>starts_at</code>, <code>ends_at</code>, <code>idempotency_key</code>. Preserve identifiers, public values and original tables. Unknown mappings, competing sources, invalid or overlapping rows and duplicate identities must not produce a partial conversion. A valid custom G1 can still need a new migration decision; public compatibility does not authorize guessing.</p>
+<p>The AP-G2 agent encountered two different problems. Its first task excluded migration despite G2-OD-01, so it paused until the operator corrected the task. It then found that the retained schema had no approved mapping and paused again. The operator supplied G2-OD-02 and two protected controls before coding resumed. The final continuation instruction was:</p>
+<blockquote>
+<p>The recording operator has supplied the explicit teaching decision docs/G2-OD-02.md. Read it before resuming. It authorizes only the exact retained public-column G1 representation and states its mapping and refusal cases. The original two migration sources remain required. The protected test suite now has 17 methods, with two added controls and the retained actual G1 fixture legacy_g1_recorded.py. These changes were delivered by the operator, not written by you. Original baseline and earlier checks remain retained.</p>
+<p>Implement the full updated supplied G2 contract in booking.py, preserving prior behavior and documented history. Continue using the recorder. Only booking.py and DOSSIER.md may change. Record this decision and its actual scope in the dossier. This is the second operator continuation/correction cycle; if another consequential owner mapping is missing, stop and report it rather than inventing one.</p>
+</blockquote>
+<p>Your prepared session starts with the current supplied decisions. Inspect its context, allowed paths, budget and stop conditions before launch; opening times are planning targets, not measured performance.</p>
+<p><strong>EDOD/1 work order mission_G2 — Persistent effect.</strong></p>
+<p><strong>Expect</strong> — <strong>outcome:</strong> Complete admission and replay while preserving stored G1 work. <strong>authority:</strong> Workshop coordinator, RES-001/v1 + G2-OD-01 + G2-OD-02 (teaching contract). <strong>acceptance:</strong> Identity, conflicts and migration preserve public fields/history for the three explicitly authorized G1 signatures; unknown mappings are refused.</p>
+<p><strong>Delegate</strong> — <strong>editable_paths:</strong> <code>booking.py</code>, <code>DOSSIER.md</code>. <strong>protected_paths:</strong> <code>docs/</code>, <code>tests/</code>, <code>READER_ENTRY.json</code>, <code>prior/</code>, <code>legacy_g1.py</code>, <code>legacy_g1_json.py</code>, <code>legacy_g1_recorded.py</code>. <strong>budget:</strong> 3 attempts / 40 implementation minutes; 30 s per check process; 0 external integration calls. <strong>stop_conditions:</strong> Ambiguous legacy identity, unknown schema or new recurring-series rule. Protected inputs change or the declared attempt/time budget is spent.</p>
+<p><strong>Observe</strong> — <strong>checks:</strong> <code>g2.check</code>, <code>g2.continue</code> (commands below). <strong>receipt_fields:</strong> <code>candidate_sha256_before</code>, <code>groups</code>, <code>inputs_unchanged</code>, <code>verification_progress</code>, <code>human_acceptance</code>.</p>
+<p><strong>Decide</strong> — <strong>owner:</strong> Learner reviewer; Workshop coordinator for a changed rule. <strong>object:</strong> G2 candidate, identified bytes and its scoped handoff. <strong>allowed_decisions:</strong> ACCEPT, REJECT, ASK.</p>
+<pre class="bash"><code>python3 companion/agent_session.py prepare G2 \
+  --candidate work/g2 --output work/g2-agent
+python3 companion/agent_session.py run \
+  --session work/g2-agent --client claude \
+  --max-budget-usd 5</code></pre>
+<p>Watch the agent’s source reads and plan before mutation. Require it to explain which asset/interval fields its fingerprint binds to the member/key identity. Consistent serialization and identity serve different obligations. Overlap inspection and insertion must share a transaction; <code>BEGIN IMMEDIATE</code> addresses the local SQLite writer race, not distributed locking. Retain its actual diff, commands, final response and any operator correction.</p>
+<h2 id="observe-behavior-migration-and-refusal">3. Observe: behavior, migration and refusal</h2>
+<p>In AP-G2, record 011 planned separate current storage with original tables untouched. Record 013 edited <code>booking.py</code>; 014 passed all seventeen development methods. Record 015 added bounded development probes for validation, replay, concurrency and migration. These are worker feedback; run the independent gate:</p>
+<pre class="bash"><code>python3 companion/start.py check G2 \
+  --candidate work/g2 \
+  --output work/evidence/g2-first.json</code></pre>
+<p>The seventeen methods include retained-G1 migration/replay and invalid-row preservation controls. Some contain multiple examples. Review the requirement reached, not just a count: replay must recover the original identifier; changed payload must preserve it; refused migration must preserve database bytes. A synchronized local writer test is useful evidence, not proof across every schedule or several database servers.</p>
+<p>The operator independently passed all seventeen on the actual AP-G2 candidate. The final handoff still required a separate observation. First record your judgment, governing rule and discriminating observation for each proposal:</p>
+<h3 id="g2-p01">G2-P01</h3>
+<p>Retries should not allocate another reservation. This proposal recognizes the prior operation early and returns its existing identifier, keeping the original row untouched. The common successful-retry path is consequently short, and later conflict checks can concentrate on new operations. The review should consider both repeated delivery and callers that reuse an identifier while revising their request.</p>
+<p><em>Artifact: reserve: the selected identity and its replay branch.</em></p>
+<pre class="python"><code>prior = con.execute(&quot;&quot;&quot;
+            SELECT id, request_key FROM reservations
+            WHERE member_id = ? AND request_key = ?
+        &quot;&quot;&quot;, (trusted_member_id, idempotency_key)).fetchone()
+if prior is not None:
+    con.execute(&#39;COMMIT&#39;)
+    if prior[1] == idempotency_key:
+        return Outcome(
+            200, &#39;confirmed&#39;, prior[0], replayed=True
+        )
+    return Outcome(409, &#39;idempotency-key-reused&#39;)</code></pre>
+<h3 id="g2-p02">G2-P02</h3>
+<p>A coordinator planning several weeks needs an actionable schedule even when some requested dates are occupied. This helper collects the available dates and omits conflicting ones, so the offered schedule can still contain useful appointments. The existing single-reservation API remains intact. The proposed series operation presents that partial set as the dates to book for the request.</p>
+<p><em>Artifact: The proposed new series API; existing single-reservation behavior is unchanged.</em></p>
+<pre class="python"><code>def plan_recurring(slots, is_available):
+    &quot;&quot;&quot;Proposed series planner; returns the dates it would
+    book.
+    &quot;&quot;&quot;
+    return [slot for slot in slots if is_available(slot)]</code></pre>
+<h3 id="g2-p03">G2-P03</h3>
+<p>Migration is a compatibility operation with a clear rollback boundary. The conversion carries the approved representations into the current schema, preserving identifiers and public values, and leaves the source rows available for explanation. Ambiguous identities and invalid old commitments stop the conversion. Reinitialization and replay of an imported request are useful checks on whether that preservation is complete.</p>
+<p><em>Artifact: init_db: selected row-conversion statements inside the migration loop, then exception cleanup; identifier, member, asset, start, end and key come from the legacy row.</em></p>
+<pre class="python"><code>request_hash = hashlib.sha256(json.dumps([asset,start,end],
+    separators=(&quot;,&quot;, &quot;:&quot;), ensure_ascii=True).encode()).hexdigest()
+con.execute(&quot;INSERT INTO reservations VALUES(?,?,?,?,?,?,?)&quot;,
+            (identifier, asset, member, start, end, key,
+                request_hash))
+if con.in_transaction: con.execute(&quot;ROLLBACK&quot;)
+raise</code></pre>
+<p>Reveal checks and explanations after all three judgments:</p>
+<pre class="bash"><code>python3 companion/start.py review G2 \
+  --candidate-ids G2-P01 G2-P02 G2-P03 \
+  --output work/evidence/g2-review.json</code></pre>
+<h2 id="decide-retain-a-compatible-increment">4. Decide: retain a compatible increment</h2>
+<pre class="bash"><code>python3 companion/start.py continue G2 \
+  --candidate work/g2 \
+  --output work/evidence/g2-handoff.json</code></pre>
+<p>Continuation migrates a historical reservation, retries its identity, challenges changed content and creates an adjacent reservation. Its database and <code>continuation.json</code> remain in <code>work/evidence/g2-handoff/</code>; the receipt identifies candidate, expectations, actual commands and artifact hashes.</p>
+<p>AP-G2’s first continuation failed because the checker assumed the reference name <code>archived_g1_reservations</code>. The agent had preserved the original table in place. The operator inspected the contract and corrected the checker to compare original columns and rows. Repeating the gate and continuation succeeded with the candidate unchanged. Keep both receipts: a failed check does not identify which layer is wrong, and a checker correction needs its own justification.</p>
+<p>The successful record preserved identifier 1 and all six fields, replayed it with <code>200</code>, refused changed content with <code>409</code>, and created adjacent identifier 2 with <code>201</code>. One original historical row remained. <code>SCOPED_HANDOFF_READY</code> describes this verified local transition. Retain your source, agent record, decisions and receipts for G3.</p>
+<p>Which observation distinguishes replay from a second insertion? Which unknown mapping should stop your agent? Which state must survive refusal? Answer before opening the worked solutions.</p>
+<h3 class="unnumbered" id="recorded-example">Recorded example</h3>
+<p><code>evidence/agent_process_v4/AP-G2/</code> retains the prompts, command snapshots, operator decisions and independent receipts, including the corrected public-history check in <code>handoff_g2_public_history.json</code>.</p>
+<div class="notice"><p>After the accepted handoff, continue to <a href="G3.html">G3</a> with your retained candidate.</p></div></article></main><footer class="foot"><p>Enrico Papalini · Edition 5.6 · 2026-11-22</p><p><a href="../NOTICE.html">Rights and notices</a> · <a href="../NATIVE_STATUS.json">Native-client status</a> · <a href="../MANIFEST.json">Package manifest</a> · <a href="https://github.com/popoloni/esa_ai">Companion repository</a></p></footer></body></html>

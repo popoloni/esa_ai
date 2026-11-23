@@ -1,0 +1,22 @@
+{
+  "schema": "esa-prototype-entry/v2",
+  "mission": "G1",
+  "release": "ESA-Series-Handbook-Review-5-20261116",
+  "route": "GREENFIELD_RESERVATION_STUDIO",
+  "mode": "INCOMPLETE_STARTER",
+  "solution_variant": null,
+  "human_acceptance": "PENDING",
+  "scope": "G1/I01 first durable reservation and public read; final RES-001/v1 remains separate.",
+  "api_contract": "G1/I01",
+  "specification_stage": "QUESTION_PENDING",
+  "owner_decision": null,
+  "recorded_at_utc": "2026-11-16T22:10:43.181723+00:00",
+  "command": [
+    "/usr/local/bin/python3",
+    "companion/start.py",
+    "new",
+    "G1",
+    "--dest",
+    "work/g1"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "at_utc": "2026-11-16T15:58:18.663721+00:00",
+  "operator": "AI recording facilitator /root",
+  "decision": "Select the proposed one-file direct-versus-callable comparison and stop after discriminating observations.",
+  "basis": "Current one-provider requirement; explicit substitution scenario; no performance or maintenance measurement.",
+  "contract": "workspace/DESIGN_CONTRACT.md",
+  "scope": "Authored teaching investigation; no production acceptance."
+}

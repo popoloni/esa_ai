@@ -1,0 +1,33 @@
+{
+  "schema": "esa-curriculum-demonstration/v1",
+  "mission": "B4",
+  "recorded_at_utc": "2026-11-16T22:18:08.390725+00:00",
+  "command": [
+    "/usr/local/bin/python3",
+    "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/companion/curriculum_demo.py",
+    "B4",
+    "--candidate",
+    "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/b4",
+    "--output",
+    "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/evidence/b4-handoff"
+  ],
+  "origin": "EXECUTED_OFFLINE_TEACHING_FIXTURE",
+  "observed_human_pilot": false,
+  "observed_model_run": false,
+  "result": {
+    "diagnosis": "WRONG_LEDGER",
+    "local_configuration_fixture_restored": true,
+    "original_ledgers_unchanged": true,
+    "reconciliation": "PENDING_OWNER_DECISION",
+    "production_authorized": false,
+    "cost_scenario": {
+      "attempts": 3,
+      "accepted_outcomes": 1,
+      "total_cost_eur": "2.50",
+      "total_minutes": "34",
+      "cost_per_accepted_eur": "2.50",
+      "minutes_per_accepted": "34",
+      "status": "ACCOUNTED"
+    }
+  }
+}

@@ -1,0 +1,447 @@
+{
+  "schema": "esa-offline-candidate-review-batch/v1",
+  "release": "ESA-Series-Handbook-Review-5-20261116",
+  "mission": "G3",
+  "candidate_ids": [
+    "G3-P01",
+    "G3-P02",
+    "G3-P03"
+  ],
+  "status": "REVIEW_BATCH_RECORDED",
+  "evidence_origin": "EXECUTED_CONSTRUCTED_TEACHING_VARIANTS",
+  "learner_source_modified": false,
+  "results": [
+    {
+      "schema": "esa-full-mission-check/v1",
+      "mission": "G3",
+      "release": "ESA-Series-Handbook-Review-5-20261116",
+      "contract": "RES-002/v1",
+      "candidate_sha256_before": "dd69da9693b933a2ece681ca07ac3a67d3cf8f4b900d23329047aa4d87d63b62",
+      "protected_input_sha256": {
+        "docs/contract.md": "bb12ae4381e7fec5bb982de67573852c5e7f63d4736a10977d492c3be38f1dce",
+        "tests/test_g3.py": "bdaa37d91057f2e85692290f91ea3208d109e40c3996156db129977754b8bf6d",
+        "legacy_booking.py": "81df006d0653a44260b03425294e8542effe0263c8592a7743e50e14bddcdef6"
+      },
+      "candidate_path": "/tmp/esa-full-review-svk17c1m/candidate",
+      "human_acceptance": "PENDING",
+      "model_run": false,
+      "scope": "Executable local teaching controls; no human reader performance or production authority.",
+      "groups": {
+        "contract": {
+          "command": [
+            "/usr/local/bin/python3",
+            "-m",
+            "unittest",
+            "discover",
+            "-s",
+            "tests",
+            "-p",
+            "test_g3.py",
+            "-v"
+          ],
+          "elapsed_process_seconds": 0.11602213799994843,
+          "timeout_seconds": 30,
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "test_cancel_releases_slot_without_erasing_history (test_g3.Cancellation.test_cancel_releases_slot_without_erasing_history) ... ok\ntest_migration_preserves_old_public_record (test_g3.Cancellation.test_migration_preserves_old_public_record) ... ok\ntest_missing_id_is_not_found (test_g3.Cancellation.test_missing_id_is_not_found) ... ok\ntest_other_member_cannot_cancel (test_g3.Cancellation.test_other_member_cannot_cancel) ... ok\ntest_repeat_with_current_version_is_idempotent (test_g3.Cancellation.test_repeat_with_current_version_is_idempotent) ... ok\ntest_retry_original_operation_does_not_revive_cancelled_row (test_g3.Cancellation.test_retry_original_operation_does_not_revive_cancelled_row) ... ok\ntest_stale_version_cannot_change_state (test_g3.Cancellation.test_stale_version_cannot_change_state) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.049s\n\nOK\n",
+          "timed_out": false,
+          "tests_run": 7,
+          "expected_tests": 7,
+          "methods_passed": 7,
+          "methods_failed": [],
+          "methods_errored": [],
+          "status": "PASSED"
+        }
+      },
+      "tests_run": 7,
+      "candidate_sha256_after": "dd69da9693b933a2ece681ca07ac3a67d3cf8f4b900d23329047aa4d87d63b62",
+      "inputs_unchanged": true,
+      "status": "SELECTED_CHECKS_PASSED",
+      "candidate_id": "G3-P01",
+      "origin": "EXECUTED_CONSTRUCTED_TEACHING_VARIANT",
+      "ground_truth": {
+        "schema": "esa-review-ground-truth/v4",
+        "mission": "G3",
+        "candidate_id": "G3-P01",
+        "created_on": "2026-11-02",
+        "origin": "CONSTRUCTED_TEACHING_VARIANT",
+        "actual_model_trace": false,
+        "expected_decision": "ASK",
+        "expected_check_pass": true,
+        "targeted_assertions": [],
+        "explanation": "The proposed new refund interface contains an unapproved 24-hour/50-percent business rule. It does not bypass cancellation ownership or mutate a payment. Ask for the refund policy before exposing the quote; the current cancellation behavior can be assessed separately.",
+        "required_human_decision": "Which refund amounts, deadlines and rounding rules has the owner approved for the new quote interface?",
+        "contract": "RES-002/v1",
+        "scope": "Constructed public practice, not a human assessment result.",
+        "revised_on": "2026-11-03",
+        "release_scope": "ESA-Complete-Review-3-20261103"
+      },
+      "rationale": "# Proposal G3-P01\n\nThe cancellation screen would be more useful if a member could see the refund consequence before confirming. I have included a quote based on time remaining: the full amount before the 24-hour window and half within it. The quote is separate from the reservation status operation. The proposal is ready for review alongside the cancellation experience and its financial assumptions.\n",
+      "learner_source_modified": false,
+      "recorded_at_utc": "2026-11-16T22:19:13.150576+00:00",
+      "command": [
+        "/usr/local/bin/python3",
+        "companion/start.py",
+        "review",
+        "G3",
+        "--candidate-ids",
+        "G3-P01",
+        "G3-P02",
+        "G3-P03",
+        "--output",
+        "work/evidence/g3-review-02.json"
+      ],
+      "verification_progress": {
+        "schema": "esa-verification-progress/v1",
+        "derivation": "CURRENT_RECEIPT_FIELDS_ONLY_NO_ADDITIONAL_EXECUTION",
+        "source_fields_sha256": "d42233d096ca854377bc72dbaa48edfc128175264f08182ef7c2f00f11a21760",
+        "work_order": "mission_G3",
+        "evidence_profile": "persistent_effect",
+        "profile_basis": "The named mission work order.",
+        "phase": "mission",
+        "stages": {
+          "startup": {
+            "status": "PASS",
+            "evidence": [
+              "schema",
+              "mission",
+              "candidate_path"
+            ],
+            "reason": "The intended runner accepted the entry identity and emitted this check receipt. This does not establish candidate import."
+          },
+          "integrity": {
+            "status": "PASS",
+            "evidence": [
+              "inputs_unchanged",
+              "candidate_sha256_before",
+              "candidate_sha256_after"
+            ],
+            "reason": "The recorded before/after comparison found inputs unchanged."
+          },
+          "contract": {
+            "status": "PASS",
+            "evidence": [
+              "groups.contract"
+            ],
+            "reason": "Status uses each selected group and any contract-specific supplemental probe; an import placeholder is not behavioral evidence. A candidate stack frame or known protected assertion supports reached behavior; a method count alone does not. Groups within this stage may retain multiple failures.",
+            "behavior_reached": true
+          },
+          "integration": {
+            "status": "NOT_RUN",
+            "evidence": [],
+            "reason": "No continuation or consumer/process observation is present."
+          },
+          "artifact": {
+            "status": "NOT_RUN",
+            "evidence": [],
+            "reason": "This receipt has no separate archive/extraction gate. Local demonstration hashes alone do not establish release fitness."
+          },
+          "authorization": {
+            "status": "NOT_RUN",
+            "evidence": [
+              "human_acceptance"
+            ],
+            "reason": "No owner acceptance or release authorization is recorded. Passing checks do not supply that decision."
+          }
+        },
+        "first_failed_stage": null,
+        "last_observed_stage": "contract",
+        "limits": "A stage label interprets the retained fields; it is not an independent attestation. NOT_APPLICABLE needs an explicit scope exclusion; absence alone remains NOT_RUN."
+      }
+    },
+    {
+      "schema": "esa-full-mission-check/v1",
+      "mission": "G3",
+      "release": "ESA-Series-Handbook-Review-5-20261116",
+      "contract": "RES-002/v1",
+      "candidate_sha256_before": "ad89e1350b80d674b30f8fd97927107adb77e2df625805d7a0a49cb8837b5b17",
+      "protected_input_sha256": {
+        "docs/contract.md": "bb12ae4381e7fec5bb982de67573852c5e7f63d4736a10977d492c3be38f1dce",
+        "tests/test_g3.py": "bdaa37d91057f2e85692290f91ea3208d109e40c3996156db129977754b8bf6d",
+        "legacy_booking.py": "81df006d0653a44260b03425294e8542effe0263c8592a7743e50e14bddcdef6"
+      },
+      "candidate_path": "/tmp/esa-full-review-m5s9ny3s/candidate",
+      "human_acceptance": "PENDING",
+      "model_run": false,
+      "scope": "Executable local teaching controls; no human reader performance or production authority.",
+      "groups": {
+        "contract": {
+          "command": [
+            "/usr/local/bin/python3",
+            "-m",
+            "unittest",
+            "discover",
+            "-s",
+            "tests",
+            "-p",
+            "test_g3.py",
+            "-v"
+          ],
+          "elapsed_process_seconds": 0.10948658899997099,
+          "timeout_seconds": 30,
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "test_cancel_releases_slot_without_erasing_history (test_g3.Cancellation.test_cancel_releases_slot_without_erasing_history) ... ok\ntest_migration_preserves_old_public_record (test_g3.Cancellation.test_migration_preserves_old_public_record) ... ok\ntest_missing_id_is_not_found (test_g3.Cancellation.test_missing_id_is_not_found) ... ok\ntest_other_member_cannot_cancel (test_g3.Cancellation.test_other_member_cannot_cancel) ... ok\ntest_repeat_with_current_version_is_idempotent (test_g3.Cancellation.test_repeat_with_current_version_is_idempotent) ... ok\ntest_retry_original_operation_does_not_revive_cancelled_row (test_g3.Cancellation.test_retry_original_operation_does_not_revive_cancelled_row) ... ok\ntest_stale_version_cannot_change_state (test_g3.Cancellation.test_stale_version_cannot_change_state) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.051s\n\nOK\n",
+          "timed_out": false,
+          "tests_run": 7,
+          "expected_tests": 7,
+          "methods_passed": 7,
+          "methods_failed": [],
+          "methods_errored": [],
+          "status": "PASSED"
+        }
+      },
+      "tests_run": 7,
+      "candidate_sha256_after": "ad89e1350b80d674b30f8fd97927107adb77e2df625805d7a0a49cb8837b5b17",
+      "inputs_unchanged": true,
+      "status": "SELECTED_CHECKS_PASSED",
+      "candidate_id": "G3-P02",
+      "origin": "EXECUTED_CONSTRUCTED_TEACHING_VARIANT",
+      "ground_truth": {
+        "schema": "esa-review-ground-truth/v4",
+        "mission": "G3",
+        "candidate_id": "G3-P02",
+        "created_on": "2026-11-02",
+        "origin": "CONSTRUCTED_TEACHING_VARIANT",
+        "actual_model_trace": false,
+        "expected_decision": "ACCEPT",
+        "expected_check_pass": true,
+        "targeted_assertions": [],
+        "explanation": "Old callers retain their shape while current-state clients can observe a cancelled reservation without replay reviving it.",
+        "required_human_decision": null,
+        "contract": "RES-002/v1",
+        "scope": "Constructed public practice, not a human assessment result.",
+        "revised_on": "2026-11-03",
+        "release_scope": "ESA-Complete-Review-3-20261103"
+      },
+      "rationale": "# Proposal G3-P02\n\nThe original read continues to answer the historical question; a separate operation reports the reservation's current state. Cancellation checks the trusted owner and expected version within the state transition. A repeat can be recognized without another increment. The interaction to inspect is a cancellation followed by an old reservation retry and a new request for the freed interval.\n",
+      "learner_source_modified": false,
+      "recorded_at_utc": "2026-11-16T22:19:13.263677+00:00",
+      "command": [
+        "/usr/local/bin/python3",
+        "companion/start.py",
+        "review",
+        "G3",
+        "--candidate-ids",
+        "G3-P01",
+        "G3-P02",
+        "G3-P03",
+        "--output",
+        "work/evidence/g3-review-02.json"
+      ],
+      "verification_progress": {
+        "schema": "esa-verification-progress/v1",
+        "derivation": "CURRENT_RECEIPT_FIELDS_ONLY_NO_ADDITIONAL_EXECUTION",
+        "source_fields_sha256": "4dda4708a79ab0c00bc768f3a78c8cd3e2d07fdd1194970a59af7707068940a2",
+        "work_order": "mission_G3",
+        "evidence_profile": "persistent_effect",
+        "profile_basis": "The named mission work order.",
+        "phase": "mission",
+        "stages": {
+          "startup": {
+            "status": "PASS",
+            "evidence": [
+              "schema",
+              "mission",
+              "candidate_path"
+            ],
+            "reason": "The intended runner accepted the entry identity and emitted this check receipt. This does not establish candidate import."
+          },
+          "integrity": {
+            "status": "PASS",
+            "evidence": [
+              "inputs_unchanged",
+              "candidate_sha256_before",
+              "candidate_sha256_after"
+            ],
+            "reason": "The recorded before/after comparison found inputs unchanged."
+          },
+          "contract": {
+            "status": "PASS",
+            "evidence": [
+              "groups.contract"
+            ],
+            "reason": "Status uses each selected group and any contract-specific supplemental probe; an import placeholder is not behavioral evidence. A candidate stack frame or known protected assertion supports reached behavior; a method count alone does not. Groups within this stage may retain multiple failures.",
+            "behavior_reached": true
+          },
+          "integration": {
+            "status": "NOT_RUN",
+            "evidence": [],
+            "reason": "No continuation or consumer/process observation is present."
+          },
+          "artifact": {
+            "status": "NOT_RUN",
+            "evidence": [],
+            "reason": "This receipt has no separate archive/extraction gate. Local demonstration hashes alone do not establish release fitness."
+          },
+          "authorization": {
+            "status": "NOT_RUN",
+            "evidence": [
+              "human_acceptance"
+            ],
+            "reason": "No owner acceptance or release authorization is recorded. Passing checks do not supply that decision."
+          }
+        },
+        "first_failed_stage": null,
+        "last_observed_stage": "contract",
+        "limits": "A stage label interprets the retained fields; it is not an independent attestation. NOT_APPLICABLE needs an explicit scope exclusion; absence alone remains NOT_RUN."
+      }
+    },
+    {
+      "schema": "esa-full-mission-check/v1",
+      "mission": "G3",
+      "release": "ESA-Series-Handbook-Review-5-20261116",
+      "contract": "RES-002/v1",
+      "candidate_sha256_before": "c500883043fdaef464683494e68ffb42b61d6d0b32b67a71163b3f6b1995dc9b",
+      "protected_input_sha256": {
+        "docs/contract.md": "bb12ae4381e7fec5bb982de67573852c5e7f63d4736a10977d492c3be38f1dce",
+        "tests/test_g3.py": "bdaa37d91057f2e85692290f91ea3208d109e40c3996156db129977754b8bf6d",
+        "legacy_booking.py": "81df006d0653a44260b03425294e8542effe0263c8592a7743e50e14bddcdef6"
+      },
+      "candidate_path": "/tmp/esa-full-review-8wbp98bj/candidate",
+      "human_acceptance": "PENDING",
+      "model_run": false,
+      "scope": "Executable local teaching controls; no human reader performance or production authority.",
+      "groups": {
+        "contract": {
+          "command": [
+            "/usr/local/bin/python3",
+            "-m",
+            "unittest",
+            "discover",
+            "-s",
+            "tests",
+            "-p",
+            "test_g3.py",
+            "-v"
+          ],
+          "elapsed_process_seconds": 0.12048470600007022,
+          "timeout_seconds": 30,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "test_cancel_releases_slot_without_erasing_history (test_g3.Cancellation.test_cancel_releases_slot_without_erasing_history) ... ok\ntest_migration_preserves_old_public_record (test_g3.Cancellation.test_migration_preserves_old_public_record) ... ok\ntest_missing_id_is_not_found (test_g3.Cancellation.test_missing_id_is_not_found) ... ok\ntest_other_member_cannot_cancel (test_g3.Cancellation.test_other_member_cannot_cancel) ... FAIL\ntest_repeat_with_current_version_is_idempotent (test_g3.Cancellation.test_repeat_with_current_version_is_idempotent) ... ok\ntest_retry_original_operation_does_not_revive_cancelled_row (test_g3.Cancellation.test_retry_original_operation_does_not_revive_cancelled_row) ... ok\ntest_stale_version_cannot_change_state (test_g3.Cancellation.test_stale_version_cannot_change_state) ... ok\n\n======================================================================\nFAIL: test_other_member_cannot_cancel (test_g3.Cancellation.test_other_member_cannot_cancel)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/esa-full-review-8wbp98bj/candidate/tests/test_g3.py\", line 22, in test_other_member_cannot_cancel\n    self.assertEqual(booking.reservation_status(self.db,self.original.reservation_id)[\"state\"],\"active\")\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 'cancelled' != 'active'\n- cancelled\n+ active\n\n\n----------------------------------------------------------------------\nRan 7 tests in 0.051s\n\nFAILED (failures=1)\n",
+          "timed_out": false,
+          "tests_run": 7,
+          "expected_tests": 7,
+          "methods_passed": 6,
+          "methods_failed": [
+            "test_other_member_cannot_cancel"
+          ],
+          "methods_errored": [],
+          "status": "FAILED"
+        }
+      },
+      "tests_run": 7,
+      "candidate_sha256_after": "c500883043fdaef464683494e68ffb42b61d6d0b32b67a71163b3f6b1995dc9b",
+      "inputs_unchanged": true,
+      "status": "CHECKS_FAILED",
+      "candidate_id": "G3-P03",
+      "origin": "EXECUTED_CONSTRUCTED_TEACHING_VARIANT",
+      "ground_truth": {
+        "schema": "esa-review-ground-truth/v4",
+        "mission": "G3",
+        "candidate_id": "G3-P03",
+        "created_on": "2026-11-02",
+        "origin": "CONSTRUCTED_TEACHING_VARIANT",
+        "actual_model_trace": false,
+        "expected_decision": "REJECT",
+        "expected_check_pass": false,
+        "targeted_assertions": [
+          "test_other_member_cannot_cancel"
+        ],
+        "explanation": "The response refuses the other member, but the committed update has already cancelled the reservation. RES-002/v1 requires ownership before changing state.",
+        "required_human_decision": null,
+        "contract": "RES-002/v1",
+        "scope": "Constructed public practice, not a human assessment result.",
+        "revised_on": "2026-11-03",
+        "release_scope": "ESA-Complete-Review-3-20261103"
+      },
+      "rationale": "# Proposal G3-P03\n\nThis version keeps cancellation handling within one write transaction and produces the established owner and version responses from that operation. The code has one state-transition path to follow during review. A requester who does not own the booking still receives the not-owner response, and the current owner receives the normal cancellation response. Check the complete transaction alongside those returned statuses.\n",
+      "learner_source_modified": false,
+      "recorded_at_utc": "2026-11-16T22:19:13.387768+00:00",
+      "command": [
+        "/usr/local/bin/python3",
+        "companion/start.py",
+        "review",
+        "G3",
+        "--candidate-ids",
+        "G3-P01",
+        "G3-P02",
+        "G3-P03",
+        "--output",
+        "work/evidence/g3-review-02.json"
+      ],
+      "verification_progress": {
+        "schema": "esa-verification-progress/v1",
+        "derivation": "CURRENT_RECEIPT_FIELDS_ONLY_NO_ADDITIONAL_EXECUTION",
+        "source_fields_sha256": "30f7d42a5f4b56ec9ab95afb99466adf21581d5ef53d1a0fb2cd8641aaf77bf2",
+        "work_order": "mission_G3",
+        "evidence_profile": "persistent_effect",
+        "profile_basis": "The named mission work order.",
+        "phase": "mission",
+        "stages": {
+          "startup": {
+            "status": "PASS",
+            "evidence": [
+              "schema",
+              "mission",
+              "candidate_path"
+            ],
+            "reason": "The intended runner accepted the entry identity and emitted this check receipt. This does not establish candidate import."
+          },
+          "integrity": {
+            "status": "PASS",
+            "evidence": [
+              "inputs_unchanged",
+              "candidate_sha256_before",
+              "candidate_sha256_after"
+            ],
+            "reason": "The recorded before/after comparison found inputs unchanged."
+          },
+          "contract": {
+            "status": "FAIL",
+            "evidence": [
+              "groups.contract"
+            ],
+            "reason": "Status uses each selected group and any contract-specific supplemental probe; an import placeholder is not behavioral evidence. A candidate stack frame or known protected assertion supports reached behavior; a method count alone does not. Groups within this stage may retain multiple failures.",
+            "behavior_reached": true
+          },
+          "integration": {
+            "status": "NOT_RUN",
+            "evidence": [],
+            "reason": "No continuation or consumer/process observation is present."
+          },
+          "artifact": {
+            "status": "NOT_RUN",
+            "evidence": [],
+            "reason": "This receipt has no separate archive/extraction gate. Local demonstration hashes alone do not establish release fitness."
+          },
+          "authorization": {
+            "status": "NOT_RUN",
+            "evidence": [
+              "human_acceptance"
+            ],
+            "reason": "No owner acceptance or release authorization is recorded. Passing checks do not supply that decision."
+          }
+        },
+        "first_failed_stage": "contract",
+        "last_observed_stage": "contract",
+        "limits": "A stage label interprets the retained fields; it is not an independent attestation. NOT_APPLICABLE needs an explicit scope exclusion; absence alone remains NOT_RUN."
+      }
+    }
+  ],
+  "scope": "Each result names its contract, source and observed checks.",
+  "recorded_at_utc": "2026-11-16T22:19:13.389737+00:00",
+  "command": [
+    "/usr/local/bin/python3",
+    "companion/start.py",
+    "review",
+    "G3",
+    "--candidate-ids",
+    "G3-P01",
+    "G3-P02",
+    "G3-P03",
+    "--output",
+    "work/evidence/g3-review-02.json"
+  ]
+}

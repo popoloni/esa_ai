@@ -1,0 +1,27 @@
+{
+  "at_utc": "2026-11-22T17:36:10.081761+00:00",
+  "operator": "Claude Code live test",
+  "operator_kind": "AI",
+  "decision": "accept",
+  "note": "B1 v1 12/12; scope limited to routing.py and DOSSIER.md.\n",
+  "decision_binding": {
+    "candidate_hashes": {
+      "AGENTS.md": "538789285a9887bd0fffc983b7192e817680b5adfa5546791e703dc4a0b7f45c",
+      "DOSSIER.md": "5ac4c3680ed237cbac9a21d0349445921770b07aec19c1616574c1cc6eeccec8",
+      "READER_ENTRY.json": "e99cd669214292178ffe6dc3683a949dd9bf96a8bbc860f2782eab9f641f5305",
+      "docs/B1-API.md": "e631804217257dfd5eabf3f9a3feeca025156822acc561bab7b5ab8b722914c2",
+      "docs/BR-001.md": "b88e648e2133cc0668a68b94d8e2b905a2fe09bd76780e36e20bbe68793b991a",
+      "docs/legacy_note.json": "ed8b81d04572c5e1925faa5b7473f220e3184f27287646ed61005a146dc6a95a",
+      "docs/policy.json": "3737b95b728bea32cfc2c82c489fe12267fd3096404a44639f27eec9de88deed",
+      "src/treasury/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "src/treasury/routing.py": "55f5ea84fd53c5d4cb1852eca2d0b4c7550559c2f0bf176bf0f60edcda7e8fab",
+      "tests/test_routing.py": "6e5aa5706dd989bdbbeec9374a84d13c41cf6f36e23a5e5d2762a3b16e551c9b",
+      "tests/test_routing_extended.py": "f797d7f08cf34e97f8d1b2f3b9dae18e5cf1aa1cafbb66334ad855c0c9fc1051"
+    },
+    "inventory_sha256": "83c9a804a8147796e82309e4772166035ae5428c0c1ea48b072a21719c1d0996",
+    "latest_run": "runs/01",
+    "latest_result_sha256": "86efda92850fe247498780d8d755f6c88517770a4c75ad80684ff96fdad49a97",
+    "session_spec_sha256": "95e257b28fb1472c46a70740bcb3a81668fe4270b40d11a8a89ca967922fdbce"
+  },
+  "meaning": "Recorded operator statement; this tool does not certify its authority or correctness."
+}

@@ -1,0 +1,59 @@
+{
+  "schema": "esa-workbook-packet/v1",
+  "edition": "d16_4",
+  "base_commit": "13a1182fc64c2a2c3b3677852b9dfdd95d4be908",
+  "data_origin": "CONSTRUCTED_TEACHING_CASE",
+  "real_users_observed": false,
+  "real_owner_approval": false,
+  "unit": "GF08",
+  "meaning": "Selected cases guide diagnosis; only the full ten-case suite covers the original local acceptance target. Selection identifiers are supported by tools/check_candidate.py.",
+  "increments": [
+    {
+      "id": "I01",
+      "goal": "Initialize the schema and confirm one valid reservation",
+      "selection": [
+        "first"
+      ],
+      "goal_it": "Inizializzare lo schema e confermare una prenotazione valida"
+    },
+    {
+      "id": "I02",
+      "goal": "Reject invalid or overlong intervals and noncanonical timestamps",
+      "selection": [
+        "invalid-interval",
+        "duration-format"
+      ],
+      "goal_it": "Rifiutare intervalli errati o troppo lunghi e orari non canonici"
+    },
+    {
+      "id": "I03",
+      "goal": "Separate overlap, adjacency and another asset",
+      "selection": [
+        "overlap",
+        "adjacent",
+        "assets"
+      ],
+      "goal_it": "Distinguere sovrapposizione, adiacenza e altra risorsa"
+    },
+    {
+      "id": "I04",
+      "goal": "Replay identical requests and reject conflicting key reuse",
+      "selection": [
+        "replay",
+        "changed-key",
+        "member-scope"
+      ],
+      "goal_it": "Riconoscere ripetizioni identiche e rifiutare il riuso incompatibile della chiave"
+    },
+    {
+      "id": "I05",
+      "goal": "Protect the read/write boundary and rerun all scenarios",
+      "selection": [
+        "concurrent",
+        "all"
+      ],
+      "goal_it": "Proteggere il confine di lettura e scrittura e rieseguire tutti gli scenari"
+    }
+  ],
+  "meaning_it": "I casi selezionati aiutano la diagnosi; solo la suite completa di dieci casi copre l’obiettivo locale di accettazione originale. I selettori sono supportati da tools/check_candidate.py."
+}

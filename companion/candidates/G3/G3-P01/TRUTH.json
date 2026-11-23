@@ -1,0 +1,17 @@
+{
+  "schema": "esa-review-ground-truth/v4",
+  "mission": "G3",
+  "candidate_id": "G3-P01",
+  "created_on": "2026-11-02",
+  "origin": "CONSTRUCTED_TEACHING_VARIANT",
+  "actual_model_trace": false,
+  "expected_decision": "ASK",
+  "expected_check_pass": true,
+  "targeted_assertions": [],
+  "explanation": "The proposed new refund interface contains an unapproved 24-hour/50-percent business rule. It does not bypass cancellation ownership or mutate a payment. Ask for the refund policy before exposing the quote; the current cancellation behavior can be assessed separately.",
+  "required_human_decision": "Which refund amounts, deadlines and rounding rules has the owner approved for the new quote interface?",
+  "contract": "RES-002/v1",
+  "scope": "Constructed public practice, not a human assessment result.",
+  "revised_on": "2026-11-03",
+  "release_scope": "ESA-Complete-Review-3-20261103"
+}

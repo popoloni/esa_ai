@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Eight practical missions, local checks and recorded agent tours for Engineering Software with Agentic AI."><title>G4 proposal cards · Engineering Software with Agentic AI</title><link rel="stylesheet" href="../../../assets/companion.css"></head><body><a class="skip" href="#main">Skip to content</a><header class="sitehead"><div><a class="brand" href="../../../index.html">Engineering Software with Agentic AI<span>Practical companion · version 5.6</span></a><nav aria-label="Main navigation"><a href="../../../index.html">Start</a><a href="../../../missions/index.html">Missions</a><a href="../../agent_sessions/README.html">Agent guide</a><a href="../../../traces/index.html">Recorded tours</a><a href="../../series/READING_THE_SERIES.html">Four volumes</a></nav></div></header><main id="main"><article data-source-sha256="a92f149760fccdd6a7da4926b70c8a73d656b1fd63c28cd0212d272b637d28be"><p class="docmeta meta"><a href="G4.md">Markdown source</a> · Companion 5.6 · 2026-11-22</p><h1>G4 proposal cards</h1>
+<h2 id="g4-p01">G4-P01</h2>
+<p>The report is an observation of identified storage. It records the resolved path, schema and digest, then checks that the bytes remained stable while it inspected current rows. Cost accounting consumes the complete supplied attempt ledger and the separately determined accepted count. An empty denominator produces an explicitly unavailable unit measure rather than a plausible zero.</p>
+<p><em>Artifact: cost_summary: result after validating and summing every supplied attempt.</em></p>
+<pre class="python"><code>return {
+    &quot;attempts&quot;: len(attempts),
+    &quot;accepted_outcomes&quot;: accepted,
+    &quot;total_cost_eur&quot;: str(money),
+    &quot;total_minutes&quot;: str(minutes),
+    &quot;cost_per_accepted_eur&quot;: (
+        None if accepted == 0 else str(money / accepted)),
+    &quot;minutes_per_accepted&quot;: (
+        None if accepted == 0 else str(minutes / accepted)),
+    &quot;status&quot;: (
+        &quot;NO_ACCEPTED_OUTCOME&quot; if accepted == 0 else &quot;ACCOUNTED&quot;)}</code></pre>
+<h2 id="g4-p02">G4-P02</h2>
+<p>I retained the total spend and elapsed effort so the dashboard can show how much work the experiments consumed. The unit figures summarize that work across completed attempts, using the existing output fields for compatibility with the dashboard. This gives a stable average as further experiments arrive. The reviewer should check which management question each displayed unit actually answers.</p>
+<p><em>Artifact: cost_summary: result after the attempt totals have been accumulated.</em></p>
+<pre class="python"><code>return {
+    &quot;attempts&quot;: len(attempts),
+    &quot;accepted_outcomes&quot;: accepted,
+    &quot;total_cost_eur&quot;: str(money),
+    &quot;total_minutes&quot;: str(minutes),
+    &quot;cost_per_accepted_eur&quot;: (
+        None if accepted == 0 else str(money / len(attempts))),
+    &quot;minutes_per_accepted&quot;: (
+        None if accepted == 0 else str(minutes / accepted)),
+    &quot;status&quot;: (
+        &quot;NO_ACCEPTED_OUTCOME&quot; if accepted == 0 else &quot;ACCOUNTED&quot;)}</code></pre>
+<h2 id="g4-p03">G4-P03</h2>
+<p>The summary is organized around work that progressed to a usable delivery result. It retains the supplied accepted count, the normal output shape and the underlying cost/time values selected for the report. This makes it convenient to compare delivery periods that contain different numbers of exploratory runs. Please review the selection step as well as the arithmetic.</p>
+<p><em>Artifact: The new helper and its call at the start of cost_summary; subsequent accounting is unchanged.</em></p>
+<pre class="python"><code>def _billable_attempts(attempts):
+    return [a for a in attempts if a.get(&quot;status&quot;) != &quot;FAILED&quot;]
+attempts = _billable_attempts(attempts)</code></pre>
+</article></main><footer class="foot"><p>Enrico Papalini · Edition 5.6 · 2026-11-22</p><p><a href="../../../NOTICE.html">Rights and notices</a> · <a href="../../../NATIVE_STATUS.json">Native-client status</a> · <a href="../../../MANIFEST.json">Package manifest</a> · <a href="https://github.com/popoloni/esa_ai">Companion repository</a></p></footer></body></html>

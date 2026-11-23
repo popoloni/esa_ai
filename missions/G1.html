@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Eight practical missions, local checks and recorded agent tours for Engineering Software with Agentic AI."><title>G1. Your first persistent reservation · Engineering Software with Agentic AI</title><link rel="stylesheet" href="../assets/companion.css"></head><body><a class="skip" href="#main">Skip to content</a><header class="sitehead"><div><a class="brand" href="../index.html">Engineering Software with Agentic AI<span>Practical companion · version 5.6</span></a><nav aria-label="Main navigation"><a href="../index.html">Start</a><a href="index.html">Missions</a><a href="../companion/agent_sessions/README.html">Agent guide</a><a href="../traces/index.html">Recorded tours</a><a href="../companion/series/READING_THE_SERIES.html">Four volumes</a></nav></div></header><main id="main"><article data-source-sha256="5a5b881d6975c0579432e2088c7ec72e325ff320965523b8f0430013f1dbe82d"><p class="docmeta meta"><a href="G1.md">Markdown source</a> · Companion 5.6 · 2026-11-22</p><h1 id="mission-g1">G1. Your first persistent reservation</h1><p class="mission-meta">Run commands from the package root. <a href="../companion/agent_sessions/README.html">Live-client setup and current status</a> · <a href="../traces/index.html">Offline recorded tours</a></p>
+<p><strong>Session planning target:</strong> setup 10 min · implementation 25 min · review and handoff 20 min (55 min total).</p>
+<p>An equipment workshop needs one valid reservation committed and readable after the writer exits. You will specify that increment, delegate it to an agent, observe its work, judge three proposals and retain your implementation for G2. G1/I01 covers this first durable effect; validation, conflicts, retries and concurrency belong to the final RES-001/v1 contract developed in G2.</p>
+<h2 id="expect-specify-before-seeing-the-answer">0. Expect: specify before seeing the answer</h2>
+<p>From the folder containing <code>START_HERE.html</code>:</p>
+<pre class="bash"><code>python3 companion/start.py doctor
+python3 companion/start.py new G1 \
+  --dest work/g1</code></pre>
+<p>Read <code>work/g1/docs/G1-I01.md</code>, <code>docs/decisions/0001-storage.md</code> and the public interface in <code>booking.py</code>. The initial brief is incomplete; tests arrive later. Before delegating, write your acceptance example in <code>DOSSIER.md</code> and unresolved owner questions in <code>QUESTIONS.md</code>. Use member <code>member-1</code>, asset <code>A</code>, interval <code>2025-05-16T09:00:00Z</code> to <code>2025-05-16T10:00:00Z</code>, and request key <code>key-1</code>. Include both the returned outcome and another process’s observation.</p>
+<p><code>init_db(path)</code> prepares storage; <code>reserve(...)</code> returns an <code>Outcome</code>; <code>get_reservation(path, reservation_id)</code> retrieves the public record. Success is <code>201</code>, <code>confirmed</code>, a positive identifier and <code>replayed=False</code>. These teaching statuses imply no HTTP server; authentication has already supplied the trusted member. What does each function promise, and what decision is missing?</p>
+<p>Now delegate <strong>question formation only</strong>. The complete task body in recorded session AP-G1 was:</p>
+<blockquote>
+<p>First stage only: inspect docs/G1-I01.md, docs/decisions/0001-storage.md and the public interface in booking.py. The brief is intentionally incomplete. Form a concrete acceptance example for trusted member member-1, asset A, 2025-05-16T09:00:00Z to 2025-05-16T10:00:00Z, key-1. Record your own unresolved owner questions in QUESTIONS.md and your expectation in DOSSIER.md. Do not implement booking.py, initialize storage, or look for future tests/solutions. Stop with your question for the owner; the recording operator will provide the supplied owner response in a later turn.</p>
+</blockquote>
+<p>Inspect the prepared prompt, protected question snapshot and run limits before launching. The full recorded instruction is in <code>evidence/agent_process_v4/AP-G1/prompt_01.txt</code>.</p>
+<pre class="bash"><code>python3 companion/agent_session.py prepare G1 \
+  --stage question \
+  --candidate work/g1 --output work/g1-question
+python3 companion/agent_session.py run \
+  --session work/g1-question --client claude \
+  --max-budget-usd 5</code></pre>
+<p>The USD 5 ceiling applies to this Claude launch. A follow-up has its own ceiling. Without <code>--model</code>, Claude uses its configured default. Add <code>--model MODEL_ID</code> to request an available model. Inspect the recorded model field to see which backend actually replied.</p>
+<p>Check that the agent stopped with a question. Preserve your original wording before comparing its reasoning. Only then release the supplied response:</p>
+<pre class="bash"><code>python3 companion/start.py clarify G1 \
+  --candidate work/g1 \
+  --question-file work/g1/QUESTIONS.md</code></pre>
+<p>Read <code>docs/G1-OD-01.md</code> before the tests. This completes the fictional case; it is not live owner approval. AP-G1 asked whether an absent identifier should return <code>None</code> or raise. Its first file-creation attempt failed because a template already existed; the worker inspected it and recovered without changing code. The operator retained the question, released the decision and authorized the second stage. Finding an omission and implementing its answer are separate skills.</p>
+<h2 id="delegate-implement-the-first-durable-effect">1. Delegate: implement the first durable effect</h2>
+<p>Observe the starter before implementation:</p>
+<pre class="bash"><code>python3 companion/start.py check G1 \
+  --candidate work/g1 \
+  --select slice \
+  --output work/evidence/g1-initial.json</code></pre>
+<p><code>NotImplementedError</code> is expected; a missing module or runtime problem is a setup failure. The actual AP-G1 implementation request was:</p>
+<blockquote>
+<p>Read that decision first through the same recorder. Continue from your existing candidate and original QUESTIONS.md. Implement only the completed G1/I01 contract in booking.py. Preserve the public interface and six fields. Use parameter binding and durable SQLite storage; commit before confirmation. Unexpected storage failures must remain visible. Reads must not initialize a missing database, and existing data must survive initialization. Do not implement G2 conflict/retry/concurrency behavior ahead of its contract. Update DOSSIER.md with the actual scope, observed checks, and remaining work; preserve the original question.</p>
+</blockquote>
+<p>Its envelope restricted edits to <code>booking.py</code> and <code>DOSSIER.md</code>, protected the question and tests, and retained the original 40-command budget with 45 seconds per command. These were recorded instructions, not an operating-system sandbox. The complete follow-up is <code>AP-G1/prompt_02.txt</code>.</p>
+<p>The public record has <code>reservation_id</code>, <code>trusted_member_id</code>, <code>asset_id</code>, <code>starts_at</code>, <code>ends_at</code> and <code>idempotency_key</code>. Inputs are nonempty string identifiers, canonical UTC timestamps and a valid interval of at most 24 hours.</p>
+<p><strong>EDOD/1 work order mission_G1 — New capability.</strong></p>
+<p><strong>Expect</strong> — <strong>outcome:</strong> Commit the first reservation and retrieve its six public fields. <strong>authority:</strong> Workshop coordinator, G1/I01 + G1-OD-01 (teaching contract). <strong>acceptance:</strong> One valid request survives writer exit; missing-ID and missing-storage outcomes follow the owner decision.</p>
+<p><strong>Delegate</strong> — <strong>editable_paths:</strong> <code>booking.py</code>, <code>DOSSIER.md</code>. <strong>protected_paths:</strong> <code>docs/</code>, <code>tests/</code>, <code>READER_ENTRY.json</code>, <code>prior/</code>, <code>historical_tests/</code>. <strong>budget:</strong> 3 attempts / 25 implementation minutes; 15 s per check process; 0 external integration calls. <strong>stop_conditions:</strong> No supplied lookup decision; new replay or overlap policy. Protected inputs change or the declared attempt/time budget is spent.</p>
+<p><strong>Observe</strong> — <strong>checks:</strong> <code>g1.check</code>, <code>g1.continue</code> (commands below). <strong>receipt_fields:</strong> <code>candidate_sha256_before</code>, <code>groups</code>, <code>inputs_unchanged</code>, <code>verification_progress</code>, <code>human_acceptance</code>.</p>
+<p><strong>Decide</strong> — <strong>owner:</strong> Learner reviewer; Workshop coordinator for a changed rule. <strong>object:</strong> G1 candidate, identified bytes and its scoped handoff. <strong>allowed_decisions:</strong> ACCEPT, REJECT, ASK.</p>
+<pre class="bash"><code>python3 companion/agent_session.py prepare G1 \
+  --stage implement \
+  --candidate work/g1 --output work/g1-implementation
+python3 companion/agent_session.py run \
+  --session work/g1-implementation --client claude \
+  --max-budget-usd 5</code></pre>
+<p>Inspect the prepared context before launch. The live adapter requires the released decision. Watch reads, changed paths, actual commands and returned errors; stop for scope expansion or an unresolved decision. Retain the final response and patch. A fluent completion message does not supply persistence.</p>
+<h2 id="observe-distinguish-the-public-checks">2. Observe: distinguish the public checks</h2>
+<p>In AP-G1, records 005–009 read the follow-up, owner decision, checks and workspace instructions. Record 010 implemented the three functions; 011 passed six development methods; 012 updated the dossier. The original question remained unchanged. The AI recording operator then chose independent verification:</p>
+<pre class="bash"><code>python3 companion/start.py check G1 \
+  --candidate work/g1 \
+  --select slice \
+  --output work/evidence/g1-first.json</code></pre>
+<p>The four <code>slice</code> methods exercise confirmation/public retrieval, the owner’s lookup behavior, quoted request values and repeated initialization. They inspect the public interface, not a required private table design. The actual protected receipt passed all four on the retained AP-G1 candidate.</p>
+<pre class="bash"><code>python3 companion/start.py check G1 \
+  --candidate work/g1 \
+  --select all \
+  --output work/evidence/g1-all.json</code></pre>
+<p>This broader diagnostic adds ten final-contract methods. Validation, overlap and retry failures identify G2 work; they neither invalidate a satisfied increment nor justify deleting future expectations. Keep the groups distinct.</p>
+<p>Record a decision, governing rule and discriminating observation for each card:</p>
+<h3 id="g1-p01">G1-P01</h3>
+<p>The persistence boundary is the public record, so I kept storage layout behind that interface. A row identifier locates a JSON representation of the five request fields; each read reconstructs a new mapping with the identifier added. This makes an alternative physical layout possible while keeping callers unchanged. Please judge the returned fields and the process-boundary observation together.</p>
+<p><em>Artifact: reserve: the write transaction after constructing payload and opening the connection.</em></p>
+<pre class="python"><code>try:
+    cursor = connection.execute(
+        &quot;INSERT INTO bookings_v2 (payload) VALUES (?)&quot;,
+                                (json.dumps(payload),))
+    identifier = cursor.lastrowid
+    connection.commit()
+finally:
+    connection.close()
+return Outcome(201, &quot;confirmed&quot;, identifier)</code></pre>
+<h3 id="g1-p02">G1-P02</h3>
+<p>The three public operations share a path-keyed record registry. Initialization establishes the database location, and writes make the complete record immediately available to subsequent lookups. That arrangement keeps the first increment small and avoids introducing a larger persistence abstraction. The local scenarios exercise creation and retrieval through the public functions; the same interface remains available for the next increment.</p>
+<p><em>Artifact: The module registry and reserve; get_reservation reads this same registry.</em></p>
+<pre class="python"><code>_records = {}
+def reserve(path, **request):
+    identifier = len(_records.setdefault(str(path), {})) + 1
+    _records[str(path)][identifier] = {&quot;reservation_id&quot;:
+        identifier, **request}
+    return Outcome(201, &quot;confirmed&quot;, identifier)</code></pre>
+<h3 id="g1-p03">G1-P03</h3>
+<p>I separated an empty lookup from unavailable storage at the connection boundary. The read opens an existing database and lets storage errors reach its caller; an initialized store can still report that the requested identifier is absent. The URI construction also needs scrutiny for filenames containing reserved characters. No initialization or recovery step is hidden inside this read.</p>
+<p><em>Artifact: get_reservation: the unknown-record branch; the helper supplies its read-only URI.</em></p>
+<pre class="python"><code>if row is None:
+    return None
+def _readonly_uri(path):
+    return Path(path).resolve().as_uri() + &quot;?mode=ro&quot;</code></pre>
+<p>Reveal the checks and explanations only after all three judgments:</p>
+<pre class="bash"><code>python3 companion/start.py review G1 \
+  --candidate-ids G1-P01 G1-P02 G1-P03 \
+  --output work/evidence/g1-review.json</code></pre>
+<h2 id="decide-preserve-implementation-and-evidence">3. Decide: preserve implementation and evidence</h2>
+<pre class="bash"><code>python3 companion/start.py continue G1 \
+  --candidate work/g1 \
+  --output work/evidence/g1-handoff.json</code></pre>
+<p>The handoff repeats the four slice methods and two separately named read-only checks: absent record versus missing database, and filenames containing spaces, <code>?</code> and <code>#</code>. A read must not create storage. A writer then creates a reservation and exits; another process retrieves it and compares all six public fields. A filename alone proves no durable record.</p>
+<p>AP-G1 passed these six methods and the process probe, retaining the same candidate with <code>SCOPED_HANDOFF_READY</code> for G2. The observation covers a normal process boundary; power-loss recovery and concurrent writers require their own checks. Different storage schemas, including the supplied column and JSON solutions, can satisfy this increment.</p>
+<p>Finish <code>DOSSIER.md</code> with your original question, owner response, task/final response, patch, independent receipts, three judgments and remaining work. Retain the implementation for G2. Which observation would force you to reopen your decision after another change?</p>
+<h3 class="unnumbered" id="record-and-practice-routes">Record and practice routes</h3>
+<p>For guided rehearsal, run:</p>
+<pre class="bash"><code>python3 companion/agent_session.py trace \
+  --task AP-G1 \
+  --output work/g1-trace</code></pre>
+<p>Decide at each pause before revealing the next observation. The companion retains both prompts, final responses, command snapshots and independent <code>acceptance_g1</code> / <code>handoff_g1</code> receipts. Record whether your own attempt used a live agent, the saved trace or a manual implementation.</p>
+<div class="notice"><p>After the accepted handoff, continue to <a href="G2.html">G2</a> with your retained candidate.</p></div></article></main><footer class="foot"><p>Enrico Papalini · Edition 5.6 · 2026-11-22</p><p><a href="../NOTICE.html">Rights and notices</a> · <a href="../NATIVE_STATUS.json">Native-client status</a> · <a href="../MANIFEST.json">Package manifest</a> · <a href="https://github.com/popoloni/esa_ai">Companion repository</a></p></footer></body></html>

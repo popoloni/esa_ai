@@ -1,0 +1,5 @@
+{
+  "model_calls": 0,
+  "reason": "PRODUCER_CANNOT_PROMOTE_OWN_RECORD",
+  "status": "REFUSED"
+}

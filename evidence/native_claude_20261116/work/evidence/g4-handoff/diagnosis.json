@@ -1,0 +1,37 @@
+{
+  "origin": "CONSTRUCTED_CORRUPTION_FIXTURE",
+  "clean_control": {
+    "diagnosis": "NO_ACTIVE_OVERLAP_OBSERVED",
+    "counts": {
+      "active": 1
+    },
+    "active_overlap_pairs": [],
+    "schema_version": 3,
+    "representation": "reservations_v2",
+    "path": "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/evidence/g4-handoff/incident_fixture.sqlite",
+    "digest": "cc5b35960cdfd14d56bf7635e6581104c9fcd7f9975a03e58d86d0d8be7fa411",
+    "digest_before": "cc5b35960cdfd14d56bf7635e6581104c9fcd7f9975a03e58d86d0d8be7fa411",
+    "digest_after": "cc5b35960cdfd14d56bf7635e6581104c9fcd7f9975a03e58d86d0d8be7fa411",
+    "unchanged": true
+  },
+  "observation": {
+    "diagnosis": "ACTIVE_OVERLAP",
+    "counts": {
+      "active": 2
+    },
+    "active_overlap_pairs": [
+      [
+        1,
+        2
+      ]
+    ],
+    "schema_version": 3,
+    "representation": "reservations_v2",
+    "path": "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/evidence/g4-handoff/incident_fixture.sqlite",
+    "digest": "eeba13a76b134e5bdd7d79354c9a3040fe4a4fee7c48d975de3e3d325a753bd9",
+    "digest_before": "eeba13a76b134e5bdd7d79354c9a3040fe4a4fee7c48d975de3e3d325a753bd9",
+    "digest_after": "eeba13a76b134e5bdd7d79354c9a3040fe4a4fee7c48d975de3e3d325a753bd9",
+    "unchanged": true
+  },
+  "repair_performed": false
+}

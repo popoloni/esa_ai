@@ -1,0 +1,92 @@
+{
+  "id": "mission_G3",
+  "schema_version": 1,
+  "evidence_profile": "persistent_effect",
+  "expect": {
+    "outcome": "Cancel atomically without changing the historical reservation interface.",
+    "authority": {
+      "owner": "Workshop coordinator",
+      "source": "companion/contracts/G3.md",
+      "version": "RES-002/v1",
+      "status": "TEACHING_CONTRACT"
+    },
+    "acceptance": [
+      "Owner/version guards preserve refused state; successful cancellation increments once; old replay retains the original reservation."
+    ]
+  },
+  "delegate": {
+    "editable_paths": [
+      "booking.py",
+      "DOSSIER.md"
+    ],
+    "protected_paths": [
+      "docs/",
+      "tests/",
+      "READER_ENTRY.json",
+      "prior/",
+      "legacy_booking.py"
+    ],
+    "budget": {
+      "max_attempts": 3,
+      "implementation_minutes": 30,
+      "check_timeout_seconds": 30,
+      "max_external_calls": 0
+    },
+    "stop_conditions": [
+      "Refund, deletion or staff-override policy is required.",
+      "Protected inputs change or the declared attempt/time budget is spent."
+    ]
+  },
+  "observe": {
+    "checks": [
+      {
+        "id": "g3.check",
+        "stage": "contract",
+        "method": "command",
+        "argv": [
+          "python3",
+          "companion/start.py",
+          "check",
+          "G3",
+          "--candidate",
+          "work/g3",
+          "--output",
+          "work/evidence/g3-first.json"
+        ],
+        "expected": "Selected public checks pass on unchanged inputs."
+      },
+      {
+        "id": "g3.continue",
+        "stage": "integration",
+        "method": "command",
+        "argv": [
+          "python3",
+          "companion/start.py",
+          "continue",
+          "G3",
+          "--candidate",
+          "work/g3",
+          "--output",
+          "work/evidence/g3-handoff.json"
+        ],
+        "expected": "Current candidate completes its scoped continuation; inspect retained observations."
+      }
+    ],
+    "receipt_fields": [
+      "candidate_sha256_before",
+      "groups",
+      "inputs_unchanged",
+      "verification_progress",
+      "human_acceptance"
+    ]
+  },
+  "decide": {
+    "owner": "Learner reviewer; Workshop coordinator for a changed rule.",
+    "object": "G3 candidate, identified bytes and its scoped handoff.",
+    "allowed_decisions": [
+      "ACCEPT",
+      "REJECT",
+      "ASK"
+    ]
+  }
+}

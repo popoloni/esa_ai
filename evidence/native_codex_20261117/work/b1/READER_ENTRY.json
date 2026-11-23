@@ -1,0 +1,20 @@
+{
+  "schema": "esa-prototype-entry/v2",
+  "mission": "B1",
+  "release": "ESA-Series-Handbook-Review-5-20261116",
+  "route": "BROWNFIELD_TREASURY_REPAIR",
+  "mode": "INCOMPLETE_STARTER",
+  "solution_variant": null,
+  "human_acceptance": "PENDING",
+  "scope": "BR-001/v1 finite positive amounts and unchanged EUR 5,000 boundary; B1 str API.",
+  "api_contract": "B1-API/v1",
+  "recorded_at_utc": "2026-11-16T23:09:43.476356+00:00",
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "companion/start.py",
+    "new",
+    "B1",
+    "--dest",
+    "evidence/native_codex_20261117/work/b1"
+  ]
+}

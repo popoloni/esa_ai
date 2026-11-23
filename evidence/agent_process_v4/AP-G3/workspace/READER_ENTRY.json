@@ -1,0 +1,39 @@
+{
+  "schema": "esa-full-mission/v1",
+  "release": "ESA-Complete-Review-3-20261103",
+  "mission": "G3",
+  "mode": "LEARNER",
+  "contract": "RES-002/v1",
+  "module": "booking.py",
+  "lineage": {
+    "mission": "G2",
+    "source_sha256": "f283f8f0e2c4814b5429ca99589e358afbc8f41cd9254c95aa55daa13ae24ec5",
+    "source_path": "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G2/workspace/booking.py",
+    "handoff_status": "SCOPED_HANDOFF_READY",
+    "stored_snapshot": "prior/booking.py",
+    "copied_parent_demonstration": "prior/parent-check-artifacts"
+  },
+  "human_acceptance": "PENDING",
+  "dependency_sha256": {
+    "legacy_booking.py": "499e3cdeb581edf3130a89afa7d81a30bbf685429aa62f514857cfafe6ea97cf"
+  },
+  "prior_sha256": {
+    "prior/parent-entry.json": "5a94b59e1de2ef4cae5889837fa8c3fdb1b89c9b85a8c39081c1a186e0e296b8",
+    "prior/booking.py": "f283f8f0e2c4814b5429ca99589e358afbc8f41cd9254c95aa55daa13ae24ec5",
+    "prior/parent-handoff.json": "1fa07f59a1b16027b25867484d449989a2213e106dc591bc4813b04218b9518a",
+    "prior/parent-check-artifacts/continuation.json": "56ef61ac51beb004496f365a9c9d096a88f51a9d540a19f44d5234cfaac2008a",
+    "prior/parent-check-artifacts/DEMONSTRATION.json": "3e98c2bf2357011244ffad1704f6b4540914c987cbe73650ca3f7aa313887792",
+    "prior/parent-check-artifacts/reservations.sqlite": "e6c9d79ff4e9ea96fed9885711b6e8315e7c0c3886c0f616da94890c5bc01576"
+  },
+  "recorded_at_utc": "2026-11-16T15:50:09.147295+00:00",
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/companion/start.py",
+    "advance",
+    "G3",
+    "--from-candidate",
+    "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G2/workspace",
+    "--dest",
+    "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G3/workspace"
+  ]
+}

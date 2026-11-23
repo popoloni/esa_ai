@@ -1,0 +1,929 @@
+{
+  "actual_owner_approvals": 0,
+  "checks": [
+    {
+      "check": "actual_v1_exponent_accepted",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "actual_v2_exponent_rejected",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "initialize_exit",
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      },
+      "passed": true
+    },
+    {
+      "check": "propose_B1-V1-EXPONENT_exit",
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      },
+      "passed": true
+    },
+    {
+      "check": "propose_B1-V1-EXPONENT_prior_bytes_preserved",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "pending_not_retrieved_exit",
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      },
+      "passed": true
+    },
+    {
+      "check": "pending_not_retrieved_byte_bound",
+      "detail": {
+        "actual": 456,
+        "bound": 12000
+      },
+      "passed": true
+    },
+    {
+      "check": "proposal_requires_promotion",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "promote_B1-V1-EXPONENT_wrong_actor_exit",
+      "detail": {
+        "actual": 2,
+        "expected": 2
+      },
+      "passed": true
+    },
+    {
+      "check": "promote_B1-V1-EXPONENT_wrong_actor_prior_bytes_preserved",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "ungranted_actor_refused",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "promote_B1-V1-EXPONENT_wrong_hash_exit",
+      "detail": {
+        "actual": 2,
+        "expected": 2
+      },
+      "passed": true
+    },
+    {
+      "check": "promote_B1-V1-EXPONENT_wrong_hash_prior_bytes_preserved",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "approval_binds_record_bytes",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "promote_B1-V1-EXPONENT_exit",
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      },
+      "passed": true
+    },
+    {
+      "check": "promote_B1-V1-EXPONENT_prior_bytes_preserved",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "v1_retrieval_exit",
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      },
+      "passed": true
+    },
+    {
+      "check": "v1_retrieval_byte_bound",
+      "detail": {
+        "actual": 2829,
+        "bound": 12000
+      },
+      "passed": true
+    },
+    {
+      "check": "applicable_v1_memory_retrieved",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "v1_excluded_from_v2_exit",
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      },
+      "passed": true
+    },
+    {
+      "check": "v1_excluded_from_v2_byte_bound",
+      "detail": {
+        "actual": 462,
+        "bound": 12000
+      },
+      "passed": true
+    },
+    {
+      "check": "v1_history_not_v2_authority",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "refuse_B1-UNSUPPORTED_exit",
+      "detail": {
+        "actual": 2,
+        "expected": 2
+      },
+      "passed": true
+    },
+    {
+      "check": "refuse_B1-UNSUPPORTED_prior_bytes_preserved",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "B1-UNSUPPORTED_reason",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "B1-UNSUPPORTED_claim_not_ingested",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "refuse_B1-POISON-CONTROL_exit",
+      "detail": {
+        "actual": 2,
+        "expected": 2
+      },
+      "passed": true
+    },
+    {
+      "check": "refuse_B1-POISON-CONTROL_prior_bytes_preserved",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "B1-POISON-CONTROL_reason",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "B1-POISON-CONTROL_claim_not_ingested",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "refuse_B1-SECRET-CONTROL_exit",
+      "detail": {
+        "actual": 2,
+        "expected": 2
+      },
+      "passed": true
+    },
+    {
+      "check": "refuse_B1-SECRET-CONTROL_prior_bytes_preserved",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "B1-SECRET-CONTROL_reason",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "B1-SECRET-CONTROL_claim_not_ingested",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "propose_B1-V2-EXPIRES_exit",
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      },
+      "passed": true
+    },
+    {
+      "check": "propose_B1-V2-EXPIRES_prior_bytes_preserved",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "promote_B1-V2-EXPIRES_exit",
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      },
+      "passed": true
+    },
+    {
+      "check": "promote_B1-V2-EXPIRES_prior_bytes_preserved",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "expired_excluded_exit",
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      },
+      "passed": true
+    },
+    {
+      "check": "expired_excluded_byte_bound",
+      "detail": {
+        "actual": 474,
+        "bound": 12000
+      },
+      "passed": true
+    },
+    {
+      "check": "expired_record_not_retrieved",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "propose_B1-V2-BASE_exit",
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      },
+      "passed": true
+    },
+    {
+      "check": "propose_B1-V2-BASE_prior_bytes_preserved",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "promote_B1-V2-BASE_exit",
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      },
+      "passed": true
+    },
+    {
+      "check": "promote_B1-V2-BASE_prior_bytes_preserved",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "v2_retrieval_exit",
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      },
+      "passed": true
+    },
+    {
+      "check": "v2_retrieval_byte_bound",
+      "detail": {
+        "actual": 2829,
+        "bound": 12000
+      },
+      "passed": true
+    },
+    {
+      "check": "current_v2_memory_retrieved",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "wrong_task_exit",
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      },
+      "passed": true
+    },
+    {
+      "check": "wrong_task_byte_bound",
+      "detail": {
+        "actual": 460,
+        "bound": 12000
+      },
+      "passed": true
+    },
+    {
+      "check": "task_scope_excludes_memory",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "wrong_component_exit",
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      },
+      "passed": true
+    },
+    {
+      "check": "wrong_component_byte_bound",
+      "detail": {
+        "actual": 454,
+        "bound": 12000
+      },
+      "passed": true
+    },
+    {
+      "check": "component_scope_excludes_memory",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "wrong_schema_exit",
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      },
+      "passed": true
+    },
+    {
+      "check": "wrong_schema_byte_bound",
+      "detail": {
+        "actual": 439,
+        "bound": 12000
+      },
+      "passed": true
+    },
+    {
+      "check": "schema_scope_excludes_memory",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "small_output_budget_exit",
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      },
+      "passed": true
+    },
+    {
+      "check": "small_output_budget_byte_bound",
+      "detail": {
+        "actual": 473,
+        "bound": 2048
+      },
+      "passed": true
+    },
+    {
+      "check": "oversize_card_is_omitted_not_truncated",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "duplicate_id_refused_exit",
+      "detail": {
+        "actual": 2,
+        "expected": 2
+      },
+      "passed": true
+    },
+    {
+      "check": "duplicate_id_refused_prior_bytes_preserved",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "no_silent_record_overwrite",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "propose_B1-V2-PLUS-WRONG_exit",
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      },
+      "passed": true
+    },
+    {
+      "check": "propose_B1-V2-PLUS-WRONG_prior_bytes_preserved",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "promote_B1-V2-PLUS-WRONG_exit",
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      },
+      "passed": true
+    },
+    {
+      "check": "promote_B1-V2-PLUS-WRONG_prior_bytes_preserved",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "before_contradiction_exit",
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      },
+      "passed": true
+    },
+    {
+      "check": "before_contradiction_byte_bound",
+      "detail": {
+        "actual": 5205,
+        "bound": 12000
+      },
+      "passed": true
+    },
+    {
+      "check": "wrong_control_present_before_counterevidence",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "actual_counterexample_retained",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "wrong_counterevidence_refused_exit",
+      "detail": {
+        "actual": 2,
+        "expected": 2
+      },
+      "passed": true
+    },
+    {
+      "check": "wrong_counterevidence_refused_prior_bytes_preserved",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "counterevidence_identity_required_for_revocation",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "revoke_wrong_memory_exit",
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      },
+      "passed": true
+    },
+    {
+      "check": "revoke_wrong_memory_prior_bytes_preserved",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "after_contradiction_exit",
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      },
+      "passed": true
+    },
+    {
+      "check": "after_contradiction_byte_bound",
+      "detail": {
+        "actual": 2841,
+        "bound": 12000
+      },
+      "passed": true
+    },
+    {
+      "check": "revoked_memory_not_retrieved",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "propose_B1-V2-PLUS-CORRECTED_exit",
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      },
+      "passed": true
+    },
+    {
+      "check": "propose_B1-V2-PLUS-CORRECTED_prior_bytes_preserved",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "correction_pending_exit",
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      },
+      "passed": true
+    },
+    {
+      "check": "correction_pending_byte_bound",
+      "detail": {
+        "actual": 2854,
+        "bound": 12000
+      },
+      "passed": true
+    },
+    {
+      "check": "correction_requires_new_promotion",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "promote_B1-V2-PLUS-CORRECTED_exit",
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      },
+      "passed": true
+    },
+    {
+      "check": "promote_B1-V2-PLUS-CORRECTED_prior_bytes_preserved",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "corrected_retrieval_exit",
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      },
+      "passed": true
+    },
+    {
+      "check": "corrected_retrieval_byte_bound",
+      "detail": {
+        "actual": 5275,
+        "bound": 12000
+      },
+      "passed": true
+    },
+    {
+      "check": "corrected_memory_retrieved",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "propose_B1-V2-HASH-CONTROL_exit",
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      },
+      "passed": true
+    },
+    {
+      "check": "propose_B1-V2-HASH-CONTROL_prior_bytes_preserved",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "promote_B1-V2-HASH-CONTROL_exit",
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      },
+      "passed": true
+    },
+    {
+      "check": "promote_B1-V2-HASH-CONTROL_prior_bytes_preserved",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "changed_source_excluded_exit",
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      },
+      "passed": true
+    },
+    {
+      "check": "changed_source_excluded_byte_bound",
+      "detail": {
+        "actual": 5324,
+        "bound": 12000
+      },
+      "passed": true
+    },
+    {
+      "check": "changed_source_identity_blocks_retrieval",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "propose_B1-SELF-PROMOTION-CONTROL_exit",
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      },
+      "passed": true
+    },
+    {
+      "check": "propose_B1-SELF-PROMOTION-CONTROL_prior_bytes_preserved",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "promote_B1-SELF-PROMOTION-CONTROL_self_exit",
+      "detail": {
+        "actual": 2,
+        "expected": 2
+      },
+      "passed": true
+    },
+    {
+      "check": "promote_B1-SELF-PROMOTION-CONTROL_self_prior_bytes_preserved",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "declared_producer_cannot_self_promote",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "propose_B1-RECENCY-OLD_exit",
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      },
+      "passed": true
+    },
+    {
+      "check": "propose_B1-RECENCY-OLD_prior_bytes_preserved",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "promote_B1-RECENCY-OLD_exit",
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      },
+      "passed": true
+    },
+    {
+      "check": "promote_B1-RECENCY-OLD_prior_bytes_preserved",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "propose_B1-RECENCY-NEW_exit",
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      },
+      "passed": true
+    },
+    {
+      "check": "propose_B1-RECENCY-NEW_prior_bytes_preserved",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "promote_B1-RECENCY-NEW_exit",
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      },
+      "passed": true
+    },
+    {
+      "check": "promote_B1-RECENCY-NEW_prior_bytes_preserved",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "mixed_utc_recency_exit",
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      },
+      "passed": true
+    },
+    {
+      "check": "mixed_utc_recency_byte_bound",
+      "detail": {
+        "actual": 2896,
+        "bound": 12000
+      },
+      "passed": true
+    },
+    {
+      "check": "parsed_instant_beats_lexicographic_timestamp",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "propose_B1-RECENCY-A-TIE_exit",
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      },
+      "passed": true
+    },
+    {
+      "check": "propose_B1-RECENCY-A-TIE_prior_bytes_preserved",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "promote_B1-RECENCY-A-TIE_exit",
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      },
+      "passed": true
+    },
+    {
+      "check": "promote_B1-RECENCY-A-TIE_prior_bytes_preserved",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "equal_instant_stable_tie_exit",
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      },
+      "passed": true
+    },
+    {
+      "check": "equal_instant_stable_tie_byte_bound",
+      "detail": {
+        "actual": 2896,
+        "bound": 12000
+      },
+      "passed": true
+    },
+    {
+      "check": "equal_instants_use_stable_record_id_tie_break",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "recency_controls_preserve_primary_teaching_ledger",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "changed_event_detected_exit",
+      "detail": {
+        "actual": 2,
+        "expected": 2
+      },
+      "passed": true
+    },
+    {
+      "check": "event_hash_chain_detects_change",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "unterminated_inspection_refused_exit",
+      "detail": {
+        "actual": 2,
+        "expected": 2
+      },
+      "passed": true
+    },
+    {
+      "check": "unterminated_tail_has_distinct_refusal",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "unterminated_append_refused_exit",
+      "detail": {
+        "actual": 2,
+        "expected": 2
+      },
+      "passed": true
+    },
+    {
+      "check": "unterminated_append_has_same_refusal",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "unterminated_tail_bytes_preserved",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "valid_tail_accepts_refusal_event_exit",
+      "detail": {
+        "actual": 2,
+        "expected": 2
+      },
+      "passed": true
+    },
+    {
+      "check": "valid_tail_reaches_normal_duplicate_guard",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "valid_tail_still_parseable_exit",
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      },
+      "passed": true
+    },
+    {
+      "check": "valid_control_appends_one_event_and_preserves_prefix",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "actual_ledger_preserved_after_control",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "final_inspection_exit",
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      },
+      "passed": true
+    },
+    {
+      "check": "v1_still_approved_historically",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "wrong_version_retained_as_revoked",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "correction_link_retained",
+      "detail": null,
+      "passed": true
+    },
+    {
+      "check": "existing_contracts_unchanged",
+      "detail": null,
+      "passed": true
+    }
+  ],
+  "checks_recorded": 137,
+  "commands_run": 51,
+  "events": 23,
+  "final_states": {
+    "B1-SELF-PROMOTION-CONTROL": "proposed",
+    "B1-V1-EXPONENT": "approved",
+    "B1-V2-BASE": "approved",
+    "B1-V2-EXPIRES": "approved",
+    "B1-V2-HASH-CONTROL": "approved",
+    "B1-V2-PLUS-CORRECTED": "approved",
+    "B1-V2-PLUS-WRONG": "revoked"
+  },
+  "human_sessions": 0,
+  "ledger": "evidence/memory_lab_20261116/recorded_01/events.jsonl",
+  "ledger_sha256": "7e1dee46eb500336f3ab165855ec38f9268666f2bcb6bedb2238999c830d6dc6",
+  "limits": [
+    "The false approved card and owner grants are deliberately constructed controls.",
+    "Hash and role checks do not establish semantic entailment or real owner identity.",
+    "Closed-schema sensitivity/override refusals are not general secret detection or prompt-injection protection.",
+    "The same file owner can rewrite the ledger and recompute its chain.",
+    "External records change future task context; model weights and human skill are not measured."
+  ],
+  "model_calls": 0,
+  "native_client_launches": 0,
+  "origin": "DETERMINISTIC_LOCAL_CONTROLS_WITH_ACTUAL_REFERENCE_PROBES",
+  "recorded_at_utc": "2026-11-16T20:40:09.812198Z",
+  "retrieval_as_of": "2026-11-16T22:40:07Z",
+  "schema": "b1-memory-lab-results/v1",
+  "source_sha256": {
+    "companion/contracts/B1_API.md": "e631804217257dfd5eabf3f9a3feeca025156822acc561bab7b5ab8b722914c2",
+    "companion/contracts/B1_API_V2.md": "75035676814847b356cd844300c32d5384a68327822225dbb45e92692470db06",
+    "companion/memory/demo.py": "670c82f8f98c7817d8504274ddde9afdb065d5991cd681d96262e1f877ae0867",
+    "companion/memory/ledger.py": "cf8d524e23e17544efaa1cd5cb76965285b3195e3cbc751136b7e8ccd554265e",
+    "companion/solutions/B1/routing.py": "1437ec85a33cb73acb6b198a5cb55ce782ef72662429d0b1059af2e739f76503",
+    "companion/solutions/B1/routing_v2.py": "ba10df386844e218864d0016088f8ed742554eac1fab7d1b0aa4af56bf9cc55d"
+  },
+  "status": "PASS",
+  "time_limit": "Controlled UTC fixture dates demonstrate expiry and mixed-format recency; they are not observed waiting intervals or later human/agent checks."
+}

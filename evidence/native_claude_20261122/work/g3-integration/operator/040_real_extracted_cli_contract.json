@@ -1,0 +1,31 @@
+{
+  "recorded_at_utc": "2026-11-22T17:32:56.596223+00:00",
+  "operation": "real_extracted_cli_contract",
+  "authority": {
+    "principal": "ESA AI integration reviewer / recording operator",
+    "kind": "AI reviewer and local recording operator",
+    "authorized_by": "Author instruction to implement ESA agent-process remediation",
+    "scope": "Scoped teaching integration, independent checks and provenance recording",
+    "human_operator": false,
+    "human_acceptance": "PENDING",
+    "production_authorization": false
+  },
+  "returncode": 0,
+  "stdout": "{\"status\": \"TRANSPORT_CHECKS_PASSED\", \"cases\": 9, \"receipt\": \"/home/claude/work/live22/agentic-ai-5.2/work/g3-integration/operator/transport-001.json\"}\n",
+  "stderr": "",
+  "timed_out": false,
+  "argv": [
+    "/usr/local/bin/python3",
+    "-B",
+    "/home/claude/work/live22/agentic-ai-5.2/companion/integration_assets/verify_transport.py",
+    "--package",
+    "/home/claude/work/live22/agentic-ai-5.2/work/g3-integration/extracted/integration-001",
+    "--output",
+    "/home/claude/work/live22/agentic-ai-5.2/work/g3-integration/operator/transport-001.json",
+    "--state-dir",
+    "/home/claude/work/live22/agentic-ai-5.2/work/g3-integration/transport-state/attempt-001"
+  ],
+  "cwd": "/home/claude/work/live22/agentic-ai-5.2/work/g3-integration",
+  "timeout_seconds": 60,
+  "elapsed_process_seconds": 0.6267343089999713
+}

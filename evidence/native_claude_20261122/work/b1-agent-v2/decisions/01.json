@@ -1,0 +1,29 @@
+{
+  "at_utc": "2026-11-22T17:36:41.858347+00:00",
+  "operator": "Claude Code live test",
+  "operator_kind": "AI",
+  "decision": "accept",
+  "note": "B1 v2 protected check passed; scope limited to routing.py and DOSSIER.md.\n",
+  "decision_binding": {
+    "candidate_hashes": {
+      "AGENTS.md": "538789285a9887bd0fffc983b7192e817680b5adfa5546791e703dc4a0b7f45c",
+      "DOSSIER.md": "13a1e0ff42608b337dbf615fba8f5cdba0214d91963bb5e4b750390fd478685a",
+      "READER_ENTRY.json": "cad094a05da050f874f8bd4f1a451ad60c96b58c5d33e690fd126285b9d06740",
+      "docs/B1-API-v2.md": "75035676814847b356cd844300c32d5384a68327822225dbb45e92692470db06",
+      "docs/B1-API.md": "e631804217257dfd5eabf3f9a3feeca025156822acc561bab7b5ab8b722914c2",
+      "docs/BR-001.md": "b88e648e2133cc0668a68b94d8e2b905a2fe09bd76780e36e20bbe68793b991a",
+      "docs/legacy_note.json": "ed8b81d04572c5e1925faa5b7473f220e3184f27287646ed61005a146dc6a95a",
+      "docs/policy.json": "3737b95b728bea32cfc2c82c489fe12267fd3096404a44639f27eec9de88deed",
+      "src/treasury/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "src/treasury/routing.py": "e8fdab89acfa5d28041c74a5d2dcf9801fb0e85324dcc160013a56cf63f89cfd",
+      "tests/test_b1_v2.py": "06741c0ea68e5872f6120aa619e1ce730c44768b2d3a4fe2a385ea4e524de93b",
+      "tests/test_routing.py": "6e5aa5706dd989bdbbeec9374a84d13c41cf6f36e23a5e5d2762a3b16e551c9b",
+      "tests/test_routing_extended.py": "f797d7f08cf34e97f8d1b2f3b9dae18e5cf1aa1cafbb66334ad855c0c9fc1051"
+    },
+    "inventory_sha256": "799b719adea1a2f6316b7029eae3e543bcc343df0b6f859ca7450c133dda4be3",
+    "latest_run": "runs/01",
+    "latest_result_sha256": "9f819fdda9634406811ea1b0279f486e5ce222e73f1b8fbbda6b366b78a03b61",
+    "session_spec_sha256": "199eada0ccbed29688a13483ada7c1060b40a1761a910c5da0c3983e15e779a0"
+  },
+  "meaning": "Recorded operator statement; this tool does not certify its authority or correctness."
+}

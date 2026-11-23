@@ -1,0 +1,5 @@
+PASS competing cancellations: [{'status': 409, 'code': 'stale-version'}, {'status': 200, 'code': 'cancelled', 'version': 2}]
+PASS competing claims on released interval: [Outcome(status=409, code='interval-conflict', reservation_id=None, replayed=False), Outcome(status=201, code='confirmed', reservation_id=2, replayed=False)]
+PASS concurrent original-operation identity: [Outcome(status=200, code='confirmed', reservation_id=3, replayed=True), Outcome(status=201, code='confirmed', reservation_id=3, replayed=False)]
+PASS simultaneous cancellation and reservation: [{'status': 200, 'code': 'cancelled', 'version': 2}, Outcome(status=409, code='interval-conflict', reservation_id=None, replayed=False)]
+PASS all four atomicity/concurrency scenarios

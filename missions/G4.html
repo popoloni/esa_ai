@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Eight practical missions, local checks and recorded agent tours for Engineering Software with Agentic AI."><title>G4. Diagnose first, then account for the decision · Engineering Software with Agentic AI</title><link rel="stylesheet" href="../assets/companion.css"></head><body><a class="skip" href="#main">Skip to content</a><header class="sitehead"><div><a class="brand" href="../index.html">Engineering Software with Agentic AI<span>Practical companion · version 5.6</span></a><nav aria-label="Main navigation"><a href="../index.html">Start</a><a href="index.html">Missions</a><a href="../companion/agent_sessions/README.html">Agent guide</a><a href="../traces/index.html">Recorded tours</a><a href="../companion/series/READING_THE_SERIES.html">Four volumes</a></nav></div></header><main id="main"><article data-source-sha256="f2d7439d56c191ea26674eb59d1df34ae8ac0acc98ce7e64d42f474ee92efeaa"><p class="docmeta meta"><a href="G4.md">Markdown source</a> · Companion 5.6 · 2026-11-22</p><h1 id="mission-g4">G4. Diagnose first, then account for the decision</h1><p class="mission-meta">Run commands from the package root. <a href="../companion/agent_sessions/README.html">Live-client setup and current status</a> · <a href="../traces/index.html">Offline recorded tours</a></p>
+<p><strong>Session planning target:</strong> setup 10 min · implementation 25 min · review and handoff 20 min (55 min total).</p>
+<p>An operator reports that two active reservations overlap. A proposed repair would remove one row immediately. Another proposal claims a low cost per outcome by dividing effort by every attempted diagnosis. Before changing either data or the business case, establish what the evidence actually says.</p>
+<p>Your deliverable combines working diagnostic code with an analytical handoff. You must observe existing state without changing it, distinguish diagnosis from repair authority, and count the total effort required to obtain an accepted outcome. All databases and cost inputs in this mission are identified teaching fixtures; they do not describe a production incident or measured team productivity.</p>
+<h2 id="expect-define-the-observation-boundary">1. Expect: define the observation boundary</h2>
+<p>Continue your accepted G3 integration from <code>work/g3-integration/workspace</code>:</p>
+<pre class="bash"><code>python3 companion/start.py advance G4 \
+  --from-candidate work/g3-integration/workspace \
+  --dest work/g4</code></pre>
+<p>G4 protects your actual <code>booking.py</code>, <code>reservation_report.py</code> and <code>reservation_cli.py</code>, retains the integration receipt, and creates <code>operations.py</code>. The earlier candidate remains available. For independent entry, use the declared bundled dependency instead:</p>
+<pre class="bash"><code>python3 companion/start.py new G4 \
+  --dest work/g4</code></pre>
+<p>These are alternative entry commands into <code>work/g4</code>. Read <code>docs/contract.md</code> and observe the unimplemented diagnostic and accounting functions:</p>
+<pre class="bash"><code>python3 companion/start.py check G4 \
+  --candidate work/g4 \
+  --output work/evidence/g4-initial.json</code></pre>
+<p>OPS-G4/v3 names three exact schema-3 mappings: the supplied reference <code>reservations</code> representation and two retained <code>reservations_v2</code> layouts. Match their complete documented signatures; preserved historical tables are not current reservations. Refuse unsupported or competing mappings. Schema version alone does not authorize a guess or change G1’s public acceptance contract.</p>
+<p>Your own G3 may keep its reservations in another table. In that case <code>advance</code> issues the owner mapping G4-OD-01 for your lineage alone, in <code>docs/G4-OD-01.md</code> and <code>docs/G4-SCHEMA-MAP.json</code>, when every column uses a name that the named layouts already give to the same role. Read it before delegating: it adds one current representation and keeps every refusal. If no mapping follows from the names, <code>advance</code> refuses and shows how to supply one with <code>--schema-map</code>, acting for the owner.</p>
+<p><code>diagnose(path)</code> must read an existing database, report its resolved path, schema version, state counts and overlapping active pairs, and record a digest. It must exclude adjacency and cancelled reservations. It must not initialize missing storage, delete a reservation or quietly repair an inconsistency. If bytes change during the observation, it must refuse to claim a stable result.</p>
+<p>Write two hypotheses before delegating: an actual active overlap and a false alarm caused by counting a cancelled row. Specify the observation that separates them. Then name who may authorize a correction. A diagnostic implementation can identify two rows without determining which reservation should take precedence.</p>
+<h2 id="delegate-retain-evidence-and-count-all-attempts">2. Delegate: retain evidence and count all attempts</h2>
+<p>The second function is <code>cost_summary(attempts, accepted)</code>. Each attempt supplies <code>cost_eur</code> and <code>minutes</code>. Include failed generations, debugging, review and recovery when those costs belong to the comparison. Sum finite, nonnegative values with Decimal arithmetic. Nonnumeric, nonfinite and negative cost or time must raise <code>ValueError</code>, so malformed text has the same public failure category as other invalid numeric values. The number of accepted outcomes is a separately supplied decision count. It is not the number of attempts and is not inferred from tests.</p>
+<p>For example, the continuation uses three illustrative attempts costing EUR 3.40, EUR 0.60 and EUR 1.50, with 12, 7 and 18 minutes. If one outcome is accepted, the account includes all EUR 5.50 and all 37 minutes. Those inputs are scenario values, not measurements from a real reader or model session. A different experiment must supply its own observed costs and an explicit acceptance rule.</p>
+<p>When no outcome has been accepted, unit cost and unit time are unavailable. Return <code>null</code> for those metrics and status <code>NO_ACCEPTED_OUTCOME</code>. Returning zero would make an unsuccessful experiment appear maximally efficient; dividing by zero would discard the useful total-cost observation.</p>
+<p><strong>EDOD/1 work order mission_G4 — Persistent effect.</strong></p>
+<p><strong>Expect</strong> — <strong>outcome:</strong> Diagnose retained storage read-only and account for all attempts. <strong>authority:</strong> Operations lead, OPS-G4/v3 (teaching contract). <strong>acceptance:</strong> Read-only diagnosis recognizes the three explicitly documented G3 schema3 representations and refuses unknown/competing mappings. All attempts count toward accepted-outcome accounting.</p>
+<p><strong>Delegate</strong> — <strong>editable_paths:</strong> <code>operations.py</code>, <code>DOSSIER.md</code>. <strong>protected_paths:</strong> <code>docs/</code>, <code>tests/</code>, <code>READER_ENTRY.json</code>, <code>prior/</code>, <code>booking.py</code>, <code>g4_fixture.py</code>, <code>reference_g3.py</code>. <strong>budget:</strong> 3 attempts / 25 implementation minutes; 30 s per check process; 0 external integration calls. <strong>stop_conditions:</strong> Missing or unsupported storage, changing bytes, or a requested repair. Protected inputs change or the declared attempt/time budget is spent.</p>
+<p><strong>Observe</strong> — <strong>checks:</strong> <code>g4.check</code>, <code>g4.continue</code> (commands below). <strong>receipt_fields:</strong> <code>candidate_sha256_before</code>, <code>groups</code>, <code>inputs_unchanged</code>, <code>verification_progress</code>, <code>human_acceptance</code>.</p>
+<p><strong>Decide</strong> — <strong>owner:</strong> Learner reviewer; Operations lead for a changed rule. <strong>object:</strong> G4 candidate, identified bytes and its scoped handoff. <strong>allowed_decisions:</strong> ACCEPT, REJECT, ASK.</p>
+<p>Prepare and inspect the agent task before launch:</p>
+<pre class="bash"><code>python3 companion/agent_session.py prepare G4 \
+  --candidate work/g4 --output work/g4-agent
+python3 companion/agent_session.py run \
+  --session work/g4-agent --client claude \
+  --max-budget-usd 5</code></pre>
+<p>Watch its acceptance examples, retained-schema inspection and first reproduction before edits. Keep repair authority outside the task. Preserve failed probes and distinguish a fixture correction from a product-code correction.</p>
+<p>The protected booking dependency creates a valid starting state. The incident fixture then inserts an overlapping row directly through SQL. Your diagnosis must detect that inconsistency while preserving the evidence; the fault was not created through the approved reservation API.</p>
+<h2 id="observe-a-clean-control-and-an-incident-fixture">3. Observe: a clean control and an incident fixture</h2>
+<pre class="bash"><code>python3 companion/start.py check G4 \
+  --candidate work/g4 \
+  --output work/evidence/g4-first.json</code></pre>
+<p>Thirteen methods cover clean/overlapping state, cancelled-row exclusion, missing storage, all-attempt accounting, zero acceptance, invalid/nonnumeric values, failed attempts, the explicit reference mapping and refusal of unknown or competing current mappings. They compare storage before/after. The AP-G4 worker passed the then-current OPS-G4/v2 suite, then wrote an extra WAL probe whose fixture failed before <code>diagnose</code>. It corrected the probe by retaining a reader transaction; two focused checks passed without changing product code. Chapter 7 examines that real verification mistake. In that recorded run, the operator independently passed all eleven methods. A clean result still concerns this identified state and selected query, not general reliability.</p>
+<p>Record a decision, its governing rule and the observation that could change it for each card.</p>
+<h3 id="g4-p01">G4-P01</h3>
+<p>The report is an observation of identified storage. It records the resolved path, schema and digest, then checks that the bytes remained stable while it inspected current rows. Cost accounting consumes the complete supplied attempt ledger and the separately determined accepted count. An empty denominator produces an explicitly unavailable unit measure rather than a plausible zero.</p>
+<p><em>Artifact: cost_summary: result after validating and summing every supplied attempt.</em></p>
+<pre class="python"><code>return {
+    &quot;attempts&quot;: len(attempts),
+    &quot;accepted_outcomes&quot;: accepted,
+    &quot;total_cost_eur&quot;: str(money),
+    &quot;total_minutes&quot;: str(minutes),
+    &quot;cost_per_accepted_eur&quot;: (
+        None if accepted == 0 else str(money / accepted)),
+    &quot;minutes_per_accepted&quot;: (
+        None if accepted == 0 else str(minutes / accepted)),
+    &quot;status&quot;: (
+        &quot;NO_ACCEPTED_OUTCOME&quot; if accepted == 0 else &quot;ACCOUNTED&quot;)}</code></pre>
+<h3 id="g4-p02">G4-P02</h3>
+<p>I retained the total spend and elapsed effort so the dashboard can show how much work the experiments consumed. The unit figures summarize that work across completed attempts, using the existing output fields for compatibility with the dashboard. This gives a stable average as further experiments arrive. The reviewer should check which management question each displayed unit actually answers.</p>
+<p><em>Artifact: cost_summary: result after the attempt totals have been accumulated.</em></p>
+<pre class="python"><code>return {
+    &quot;attempts&quot;: len(attempts),
+    &quot;accepted_outcomes&quot;: accepted,
+    &quot;total_cost_eur&quot;: str(money),
+    &quot;total_minutes&quot;: str(minutes),
+    &quot;cost_per_accepted_eur&quot;: (
+        None if accepted == 0 else str(money / len(attempts))),
+    &quot;minutes_per_accepted&quot;: (
+        None if accepted == 0 else str(minutes / accepted)),
+    &quot;status&quot;: (
+        &quot;NO_ACCEPTED_OUTCOME&quot; if accepted == 0 else &quot;ACCOUNTED&quot;)}</code></pre>
+<h3 id="g4-p03">G4-P03</h3>
+<p>The summary is organized around work that progressed to a usable delivery result. It retains the supplied accepted count, the normal output shape and the underlying cost/time values selected for the report. This makes it convenient to compare delivery periods that contain different numbers of exploratory runs. Please review the selection step as well as the arithmetic.</p>
+<p><em>Artifact: The new helper and its call at the start of cost_summary; subsequent accounting is unchanged.</em></p>
+<pre class="python"><code>def _billable_attempts(attempts):
+    return [a for a in attempts if a.get(&quot;status&quot;) != &quot;FAILED&quot;]
+attempts = _billable_attempts(attempts)</code></pre>
+<p>After recording all three judgments, reveal their checks and explanations together:</p>
+<pre class="bash"><code>python3 companion/start.py review G4 \
+  --candidate-ids G4-P01 G4-P02 G4-P03 \
+  --output work/evidence/g4-review.json</code></pre>
+<h2 id="decide-write-an-operational-and-economic-handoff">4. Decide: write an operational and economic handoff</h2>
+<pre class="bash"><code>python3 companion/start.py continue G4 \
+  --candidate work/g4 \
+  --output work/evidence/g4-handoff.json</code></pre>
+<p>Continuation observes a clean fixture, introduces labeled corruption, then runs your diagnostic without repair. It retains <code>incident_fixture.sqlite</code>, <code>diagnosis.json</code> and <code>cost_report.json</code> under <code>work/evidence/g4-handoff/</code>. The actual AP-G4 handoff found <code>ACTIVE_OVERLAP</code> with unchanged evidence and <code>repair_authorized=False</code>; its independent receipt retained the candidate. The EUR 5.50/37-minute cost inputs remain illustrative, not coding-agent costs.</p>
+<p>Complete two short sections in <code>DOSSIER.md</code>. The operational section names the selected state, observed overlap, unchanged evidence, supported hypothesis, remaining uncertainty and owner of the repair decision. The economic section states the cost boundary, all included attempts, accepted-outcome definition, totals, denominator and next experiment. Keep a proposed repair separate from an executed repair; the latter has not occurred in this mission.</p>
+<p>Suppose another diagnostic run would cost ten minutes and EUR 0.80. Explain what new information would justify it. Repeating the same query against unchanged state supplies little additional evidence; checking a different hypothesis might change the decision. This is an analytical judgment, not a required fabricated measurement. Record your assumptions clearly.</p>
+<h2 id="explain-the-decision">Explain the decision</h2>
+<p>Why is a read-only connection useful even when you intend to run only SELECTs? What would a changed before/after digest invalidate? Why must cancelled rows be excluded from the overlap diagnosis? How does an accepted-outcome denominator differ from an attempts denominator? What remains meaningful when accepted is zero? State exactly which owner decision would be necessary before deleting one of the incident fixture’s rows.</p>
+<h3 class="unnumbered" id="recorded-example">Recorded example</h3>
+<p><code>evidence/agent_process_v4/AP-G4/</code> retains the task, failed probe 009, corrected probe 010, <code>acceptance_g4.json</code> and <code>handoff_g4.json</code>, together with the integrated G3 candidate used by the worker.</p>
+</article></main><footer class="foot"><p>Enrico Papalini · Edition 5.6 · 2026-11-22</p><p><a href="../NOTICE.html">Rights and notices</a> · <a href="../NATIVE_STATUS.json">Native-client status</a> · <a href="../MANIFEST.json">Package manifest</a> · <a href="https://github.com/popoloni/esa_ai">Companion repository</a></p></footer></body></html>

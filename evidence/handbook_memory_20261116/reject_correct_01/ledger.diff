@@ -1,0 +1,16 @@
+--- before/companion/memory/ledger.py
++++ after/companion/memory/ledger.py
+@@ -164,9 +164,12 @@
+ def load_events(path):
+     if not path.is_file() or path.is_symlink():
+         raise Refused('INITIALIZED_REGULAR_LEDGER_REQUIRED')
++    data = path.read_bytes()
++    if data and not data.endswith(b'\n'):
++        raise Refused('UNTERMINATED_EVENT_TAIL')
+     events = []
+     previous = None
+-    for number, raw in enumerate(path.read_bytes().splitlines(), 1):
++    for number, raw in enumerate(data.splitlines(), 1):
+         try:
+             event = json.loads(raw)
+         except (UnicodeError, json.JSONDecodeError):

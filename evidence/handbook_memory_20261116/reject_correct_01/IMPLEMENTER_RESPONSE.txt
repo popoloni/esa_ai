@@ -1,0 +1,3 @@
+Recorded collaboration response from /root/handbook_native_route (AI implementer):
+
+Acknowledged REJECT. I will preserve the exact defective ledger and demo, your scoped correction instruction, the independent reproduction and candidate hashes before changing code. The patch will only refuse a nonempty ledger without its terminating newline before any write; no silent repair or unrelated change. I will retain rejected-candidate bytes, post-fix bytes and a valid-ledger append control, labelled as this actual AI-operated development episode, with zero human/native-Codex claims.

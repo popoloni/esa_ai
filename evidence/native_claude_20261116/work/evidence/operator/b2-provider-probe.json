@@ -1,0 +1,1 @@
+{"same_object": true, "calls": ["r1", "r2"], "snapshot_has_r1": true, "snapshot_calls": 2, "extra_field": "ProviderProtocolError", "extra_calls": 1, "nonstring_class": "ProviderProtocolError", "record": [{"request_id": "z", "status": "CLASSIFIED", "route": "HUMAN_REVIEW", "reason": "AT_OR_ABOVE_LIMIT", "classification": "REVIEW"}]}

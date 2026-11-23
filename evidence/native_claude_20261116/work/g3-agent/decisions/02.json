@@ -1,0 +1,8 @@
+{
+  "at_utc": "2026-11-16T22:19:40.694939+00:00",
+  "operator": "Claude (claude-opus-5-5), AI operator in the author's review session",
+  "operator_kind": "AI",
+  "decision": "accept",
+  "note": "Observation: follow-up run 02 completed (claude-sonnet-5-5, 0.191 USD reported, 57 s). Changed booking.py (+21/-1) and\nDOSSIER.md. It reproduced the setUp failure first, added a name-based mapping for the supplied G2 fixture layout\n(recomputing the fingerprint rather than copying request_hash, source table untouched) and kept refusing unknown\nversion-2 layouts with \"owner mapping required\". It reported the remaining choices honestly (owner-before-version\norder in cancel, untested multi-row and concurrent cases).\nIndependent: check G3 7/7 (work/evidence/g3-second.json); continue G3 SCOPED_HANDOFF_READY (g3-handoff-02.json).\nThe run-01 receipts g3-first.json (CHECKS_FAILED) and g3-handoff.json (HANDOFF_BLOCKED) are retained.\nOperator probe work/evidence/operator/g3-retained-g2-probe.json: a database made by the retained native G2 migrates\nwith the identical six-field record, cancels to version 2, a replay returns id 1 with replayed=True without reviving\nit, and the released slot accepts a new member.\nDecision: ACCEPT for RES-002/v1 scope. Next: report/CLI integration roles.\nLimit: AI operator; the run-01 block was caused by the operator's task omission, recorded in decision 01.\n",
+  "meaning": "Recorded operator statement; this tool does not certify its authority or correctness."
+}

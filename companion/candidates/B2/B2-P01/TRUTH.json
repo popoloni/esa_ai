@@ -1,0 +1,19 @@
+{
+  "schema": "esa-review-ground-truth/v4",
+  "mission": "B2",
+  "candidate_id": "B2-P01",
+  "created_on": "2026-11-02",
+  "origin": "CONSTRUCTED_TEACHING_VARIANT",
+  "actual_model_trace": false,
+  "expected_decision": "REJECT",
+  "expected_check_pass": false,
+  "targeted_assertions": [
+    "test_global_call_budget_stops_new_calls"
+  ],
+  "explanation": "A global budget of two permits two attempts in total, including failed attempts.",
+  "required_human_decision": null,
+  "contract": "INTAKE/v1",
+  "scope": "Constructed public practice, not a human assessment result.",
+  "revised_on": "2026-11-03",
+  "release_scope": "ESA-Complete-Review-3-20261103"
+}

@@ -1,0 +1,11 @@
+Observation: native run 01 completed (claude-sonnet-5-5, 0.192 USD reported, 53 s). Changed incident.py and DOSSIER.md.
+One heredoc write was denied by the client; the worker used the Write tool. The worker also ran a read-only git status
+from the parent directory and reported files modified under ../../companion/: those are the operator's adapter edits in
+the package being prepared, visible because the operator kept that package under git. Recorded as a read outside the
+candidate; no write occurred there.
+Code review: inspect_ledger opens SQLite read-only (mode=ro URI); recovery_plan keeps automatic_merge and
+production_authorized False and leaves reconciliation PENDING_OWNER_DECISION.
+Independent: check B4 7/7; continue B4 SCOPED_HANDOFF_READY on the first attempt; operator probe
+work/evidence/operator/b4-readonly-probe.json: a missing ledger raises FileNotFoundError and is not created.
+Decision: ACCEPT for OPS-B4/v2 scope. The Brownfield route B1-B4 is complete.
+Limit: AI operator; reconciliation of incident history remains an owner decision by contract.

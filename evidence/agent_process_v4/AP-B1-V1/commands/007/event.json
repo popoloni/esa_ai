@@ -1,0 +1,48 @@
+{
+  "task": "AP-B1-V1",
+  "event": 7,
+  "argv": [
+    "env",
+    "PYTHONPATH=src",
+    "python3",
+    "-B",
+    "-c",
+    "from unittest.mock import patch\nfrom treasury import routing\ninjected = RuntimeError(\"injected conversion failure\")\nwith patch.object(routing, \"Decimal\", side_effect=injected):\n    try:\n        routing.assess(\"4000\")\n    except RuntimeError as caught:\n        assert caught is injected\n        print(\"PASS: injected conversion RuntimeError propagates unchanged\")\n    else:\n        raise AssertionError(\"Unexpected conversion failure was swallowed\")\nfor raw in (\"1e3\", \"4_000\"):\n    result = routing.assess(raw)\n    assert (result.route, result.reason, result.policy_version) == (\"STANDARD_QUEUE\", \"BELOW_LIMIT\", \"BR-001/v1\"), (raw, result)\n    print(\"PASS: existing Decimal-supported form\", repr(raw), \"routes to STANDARD_QUEUE\")"
+  ],
+  "cwd": "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B1-V1/workspace",
+  "started_at_utc": "2026-11-16T15:37:00.632908+00:00",
+  "elapsed_seconds": 0.145133,
+  "returncode": 0,
+  "timeout": false,
+  "before": {
+    "AGENTS.md": "538789285a9887bd0fffc983b7192e817680b5adfa5546791e703dc4a0b7f45c",
+    "DOSSIER.md": "dc49623c69b514a577576a2cd82e946db2c80cd9700913d10e69dd8559246bd2",
+    "READER_ENTRY.json": "c462dd2f4ffd70a4920fe58f52593965a6d4b24d7cca1a2eea4fe516399c54b0",
+    "docs/B1-API.md": "e631804217257dfd5eabf3f9a3feeca025156822acc561bab7b5ab8b722914c2",
+    "docs/BR-001.md": "b88e648e2133cc0668a68b94d8e2b905a2fe09bd76780e36e20bbe68793b991a",
+    "docs/legacy_note.json": "ed8b81d04572c5e1925faa5b7473f220e3184f27287646ed61005a146dc6a95a",
+    "docs/policy.json": "3737b95b728bea32cfc2c82c489fe12267fd3096404a44639f27eec9de88deed",
+    "src/treasury/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/treasury/routing.py": "f244f527a7229047299c4d77c20a4078261953343bcd4df67ab62edceddd3ad2",
+    "tests/test_routing.py": "6e5aa5706dd989bdbbeec9374a84d13c41cf6f36e23a5e5d2762a3b16e551c9b",
+    "tests/test_routing_extended.py": "f797d7f08cf34e97f8d1b2f3b9dae18e5cf1aa1cafbb66334ad855c0c9fc1051"
+  },
+  "after": {
+    "AGENTS.md": "538789285a9887bd0fffc983b7192e817680b5adfa5546791e703dc4a0b7f45c",
+    "DOSSIER.md": "dc49623c69b514a577576a2cd82e946db2c80cd9700913d10e69dd8559246bd2",
+    "READER_ENTRY.json": "c462dd2f4ffd70a4920fe58f52593965a6d4b24d7cca1a2eea4fe516399c54b0",
+    "docs/B1-API.md": "e631804217257dfd5eabf3f9a3feeca025156822acc561bab7b5ab8b722914c2",
+    "docs/BR-001.md": "b88e648e2133cc0668a68b94d8e2b905a2fe09bd76780e36e20bbe68793b991a",
+    "docs/legacy_note.json": "ed8b81d04572c5e1925faa5b7473f220e3184f27287646ed61005a146dc6a95a",
+    "docs/policy.json": "3737b95b728bea32cfc2c82c489fe12267fd3096404a44639f27eec9de88deed",
+    "src/treasury/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/treasury/routing.py": "f244f527a7229047299c4d77c20a4078261953343bcd4df67ab62edceddd3ad2",
+    "tests/test_routing.py": "6e5aa5706dd989bdbbeec9374a84d13c41cf6f36e23a5e5d2762a3b16e551c9b",
+    "tests/test_routing_extended.py": "f797d7f08cf34e97f8d1b2f3b9dae18e5cf1aa1cafbb66334ad855c0c9fc1051"
+  },
+  "changed_files": [],
+  "stdout_sha256": "be5d530f4a9bf4de0322e3afc0381f018a3a6cc81b1e087af23390cdb4e6daaf",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "recorder_sha256": "58781a554cf89bb7a5c5fbc673825901820002e6036095198a2c062aa3e0126f",
+  "scope": "Actual submitted subprocess and workspace snapshots. This recorder is not a complete native-client trace or an OS sandbox."
+}

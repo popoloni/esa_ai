@@ -1,0 +1,42 @@
+{
+  "claim": "B1-API/v2 permits a leading plus sign within its 32-character ASCII grammar; +4999.99 routes to STANDARD_QUEUE.",
+  "evidence_refs": [
+    {
+      "locator": "$.actual_result",
+      "path": "evidence/memory_lab_20261116/recorded_01/observations/plus_counterevidence.json",
+      "sha256": "507dffeee87567882d5994ef4720e550166bec78e3ac3c5ca8986e2c979aff08"
+    }
+  ],
+  "expires_at": "2026-12-16T20:40:07Z",
+  "last_checked_at": "2026-11-16T20:40:07Z",
+  "memory_type": "fact",
+  "producer": {
+    "id": "offline-demonstrator",
+    "kind": "automated_control"
+  },
+  "record_id": "B1-V2-PLUS-CORRECTED",
+  "revisit_if": [
+    "The task, component, API or field shape changes.",
+    "A source, evidence or approval digest changes.",
+    "Current-contract counterevidence contradicts the claim.",
+    "The declared validity interval ends."
+  ],
+  "schema": "agent-memory-record/v1",
+  "scope": {
+    "component": "treasury.routing.assess",
+    "contract": "B1-API/v2",
+    "schema": "RoutingDecision(route,reason,policy_version)",
+    "task": "B1-grammar-check"
+  },
+  "sensitivity": "public",
+  "source_refs": [
+    {
+      "locator": "Monetary text grammar and declared API behavior",
+      "path": "companion/contracts/B1_API_V2.md",
+      "sha256": "75035676814847b356cd844300c32d5384a68327822225dbb45e92692470db06"
+    }
+  ],
+  "supersedes": "B1-V2-PLUS-WRONG",
+  "valid_from": "2026-11-16T20:40:07Z",
+  "version": 2
+}

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Eight practical missions, local checks and recorded agent tours for Engineering Software with Agentic AI."><title>G3 proposal cards · Engineering Software with Agentic AI</title><link rel="stylesheet" href="../../../assets/companion.css"></head><body><a class="skip" href="#main">Skip to content</a><header class="sitehead"><div><a class="brand" href="../../../index.html">Engineering Software with Agentic AI<span>Practical companion · version 5.6</span></a><nav aria-label="Main navigation"><a href="../../../index.html">Start</a><a href="../../../missions/index.html">Missions</a><a href="../../agent_sessions/README.html">Agent guide</a><a href="../../../traces/index.html">Recorded tours</a><a href="../../series/READING_THE_SERIES.html">Four volumes</a></nav></div></header><main id="main"><article data-source-sha256="b4d7775810e441df467917dbc96a76c03960c7d573cfcdc7d8dc4e25e863f81d"><p class="docmeta meta"><a href="G3.md">Markdown source</a> · Companion 5.6 · 2026-11-22</p><h1>G3 proposal cards</h1>
+<h2 id="g3-p01">G3-P01</h2>
+<p>The cancellation screen would be more useful if a member could see the refund consequence before confirming. I have included a quote based on time remaining: the full amount before the 24-hour window and half within it. The quote is separate from the reservation status operation. The proposal is ready for review alongside the cancellation experience and its financial assumptions.</p>
+<p><em>Artifact: The proposed refund API; cancellation ownership and state handling are unchanged.</em></p>
+<pre class="python"><code>def quote_refund(paid_eur, *, hours_before):
+    &quot;&quot;&quot;Proposed quote for a new refund interface; no payment
+    is made.
+    &quot;&quot;&quot;
+    from decimal import Decimal
+    fraction = Decimal(&quot;1&quot;) if hours_before &gt;= 24 else Decimal(
+        &quot;0.5&quot;)
+    return Decimal(str(paid_eur)) * fraction</code></pre>
+<h2 id="g3-p02">G3-P02</h2>
+<p>The original read continues to answer the historical question; a separate operation reports the reservation’s current state. Cancellation checks the trusted owner and expected version within the state transition. A repeat can be recognized without another increment. The interaction to inspect is a cancellation followed by an old reservation retry and a new request for the freed interval.</p>
+<p><em>Artifact: cancel: the decision after reading owner, state and version in one write transaction.</em></p>
+<pre class="python"><code>if row is None:
+    result = {&quot;status&quot;:404, &quot;code&quot;:&quot;not-found&quot;}
+elif row[0] != trusted_member_id:
+    result = {&quot;status&quot;:403, &quot;code&quot;:&quot;not-owner&quot;}
+elif row[2] != expected_version:
+    result = {&quot;status&quot;:409, &quot;code&quot;:&quot;stale-version&quot;}
+elif row[1] == &quot;cancelled&quot;:
+    result = {&quot;status&quot;:200, &quot;code&quot;:&quot;already-cancelled&quot;,
+              &quot;version&quot;:row[2]}
+else:
+    con.execute(&quot;&quot;&quot;
+                UPDATE reservations SET state=&#39;cancelled&#39;,
+                version=version+1 WHERE id=?
+            &quot;&quot;&quot;, (reservation_id,))
+    result = {&quot;status&quot;:200, &quot;code&quot;:&quot;cancelled&quot;,
+              &quot;version&quot;:row[2]+1}</code></pre>
+<h2 id="g3-p03">G3-P03</h2>
+<p>This version keeps cancellation handling within one write transaction and produces the established owner and version responses from that operation. The code has one state-transition path to follow during review. A requester who does not own the booking still receives the not-owner response, and the current owner receives the normal cancellation response. Check the complete transaction alongside those returned statuses.</p>
+<p><em>Artifact: cancel: selected statements in the update branch after the version/state checks, before commit.</em></p>
+<pre class="python"><code>con.execute(&quot;&quot;&quot;
+                UPDATE reservations SET state=&#39;cancelled&#39;,
+                version=version+1 WHERE id=?
+            &quot;&quot;&quot;, (reservation_id,))
+if row[0] != trusted_member_id:
+    result = {&quot;status&quot;:403, &quot;code&quot;:&quot;not-owner&quot;}
+else:
+    result = {&quot;status&quot;:200, &quot;code&quot;:&quot;cancelled&quot;,
+              &quot;version&quot;:row[2]+1}</code></pre>
+</article></main><footer class="foot"><p>Enrico Papalini · Edition 5.6 · 2026-11-22</p><p><a href="../../../NOTICE.html">Rights and notices</a> · <a href="../../../NATIVE_STATUS.json">Native-client status</a> · <a href="../../../MANIFEST.json">Package manifest</a> · <a href="https://github.com/popoloni/esa_ai">Companion repository</a></p></footer></body></html>

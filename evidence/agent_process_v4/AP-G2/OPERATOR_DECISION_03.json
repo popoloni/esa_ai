@@ -1,0 +1,19 @@
+{
+  "at_utc": "2026-11-16T15:44:46.388316+00:00",
+  "kind": "explicit-teaching-case-mapping-decision",
+  "decision": "G2-OD-02",
+  "operator": "AI recording facilitator /root",
+  "authority": "Author instruction to complete progressive ESA curriculum",
+  "human_business_owner_approval": false,
+  "delivered_files": [
+    "docs/G2-OD-02.md",
+    "tests/test_g2.py",
+    "legacy_g1_recorded.py",
+    "READER_ENTRY.json"
+  ],
+  "original_expectations_retained": "baseline/",
+  "why": "Actual accepted G1 schema is valid at public API but unmapped by the original G2 migration decision.",
+  "observed_agent_error": false,
+  "original_tests": 15,
+  "current_tests": 17
+}

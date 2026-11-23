@@ -1,0 +1,142 @@
+{
+  "schema": "esa-full-mission-check/v1",
+  "mission": "G4",
+  "release": "ESA-Series-Handbook-Review-5-20261116",
+  "contract": "OPS-G4/v3",
+  "candidate_sha256_before": "61989caa6adaabf768a3d4b7331b61d2574bd18daef4e4ff5c03c670ade689e5",
+  "protected_input_sha256": {
+    "docs/contract.md": "0edc7998494e571035acf19d27deb310cfeeedb6dfc7b62f5cf6218fa6407fc8",
+    "tests/test_g4.py": "b9e3af154e42a1af76ea323b8ad34025898c0ff4aa0d58207d7c837de697169a",
+    "booking.py": "7b02037f25564beb431bd1deeaa70da7df845ebc71426b99b882a855193b27a6",
+    "g4_fixture.py": "1936ec148931969220f01fc7dd8cfecf5d3d2e3b7be532cc9fbc24eda092ea04",
+    "reference_g3.py": "ad89e1350b80d674b30f8fd97927107adb77e2df625805d7a0a49cb8837b5b17",
+    "reservation_report.py": "33c881e7a0ef08f8e00d62a139f3706e80d8be0636e786693691c6b41093c7eb",
+    "reservation_cli.py": "3d9d266cb8c8bf64aae77e096a5daaaf31e4fe7f476433ab8a8faaec135676a4",
+    "prior/parent-handoff.json": "b1b1a3cdcd28c529370310707ac8f86b6f946ba893ba36577a9ab02e60124840",
+    "prior/parent-entry.json": "29589ad710fb889f51a440fd852198903bddc67e12d2c7b3fac5095c5f2a8f05",
+    "prior/integration-acceptance.json": "810d5e2356434f27f69987b8fedad9a6a0151e98a3ef8a1883746e00d0e026c9",
+    "prior/booking.py": "7b02037f25564beb431bd1deeaa70da7df845ebc71426b99b882a855193b27a6",
+    "prior/parent-check-artifacts/DEMONSTRATION.json": "70b156d22bb9040a7b62053563a5acee9307fb8be236b987419b40e305cdbadc",
+    "prior/parent-check-artifacts/reservations.sqlite": "f401ee09ade425237858f7240a320df3cd059c714775de34772c6ed4b928507a",
+    "prior/parent-check-artifacts/continuation.json": "9298378697846b42368d2a633326847ba0c679b9dd2e39ca8b1e3ddd3e804a5e",
+    "prior/integration/reservation_cli.py": "3d9d266cb8c8bf64aae77e096a5daaaf31e4fe7f476433ab8a8faaec135676a4",
+    "prior/integration/reservation_report.py": "33c881e7a0ef08f8e00d62a139f3706e80d8be0636e786693691c6b41093c7eb",
+    "prior/integration/booking.py": "7b02037f25564beb431bd1deeaa70da7df845ebc71426b99b882a855193b27a6"
+  },
+  "candidate_path": "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g4",
+  "human_acceptance": "PENDING",
+  "model_run": false,
+  "scope": "Executable local teaching controls; no human reader performance or production authority.",
+  "integration": {
+    "source_sha256": {
+      "booking.py": "7b02037f25564beb431bd1deeaa70da7df845ebc71426b99b882a855193b27a6",
+      "reservation_report.py": "33c881e7a0ef08f8e00d62a139f3706e80d8be0636e786693691c6b41093c7eb",
+      "reservation_cli.py": "3d9d266cb8c8bf64aae77e096a5daaaf31e4fe7f476433ab8a8faaec135676a4"
+    },
+    "receipt_sha256": "810d5e2356434f27f69987b8fedad9a6a0151e98a3ef8a1883746e00d0e026c9",
+    "bundle_sha256": "a458a386bf56e5a18eb55b4d2f0d05b5749613f7c1c15b19ffc7212f234b40a5"
+  },
+  "groups": {
+    "contract": {
+      "command": [
+        "/usr/local/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_g4.py",
+        "-v"
+      ],
+      "elapsed_process_seconds": 0.13913608100006059,
+      "timeout_seconds": 30,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "test_active_overlap_is_detected_not_repaired (test_g4.OperationalEvidence.test_active_overlap_is_detected_not_repaired) ... ERROR\ntest_all_attempts_count_toward_accepted_outcome_cost (test_g4.OperationalEvidence.test_all_attempts_count_toward_accepted_outcome_cost) ... ok\ntest_cancelled_row_does_not_create_false_alarm (test_g4.OperationalEvidence.test_cancelled_row_does_not_create_false_alarm) ... ERROR\ntest_clean_storage_is_observed_without_mutation (test_g4.OperationalEvidence.test_clean_storage_is_observed_without_mutation) ... ERROR\ntest_failed_attempts_remain_in_the_cost_numerator (test_g4.OperationalEvidence.test_failed_attempts_remain_in_the_cost_numerator) ... ok\ntest_invalid_cost_or_time_is_refused (test_g4.OperationalEvidence.test_invalid_cost_or_time_is_refused) ... ok\ntest_missing_path_is_not_created (test_g4.OperationalEvidence.test_missing_path_is_not_created) ... ok\ntest_nonnumeric_cost_and_time_raise_value_error (test_g4.OperationalEvidence.test_nonnumeric_cost_and_time_raise_value_error) ... ok\ntest_reference_schema_remains_explicitly_supported (test_g4.OperationalEvidence.test_reference_schema_remains_explicitly_supported) ... ok\ntest_version_number_alone_does_not_authorize_unknown_schema (test_g4.OperationalEvidence.test_version_number_alone_does_not_authorize_unknown_schema) ... ok\ntest_zero_accepted_is_not_zero_unit_cost (test_g4.OperationalEvidence.test_zero_accepted_is_not_zero_unit_cost) ... ok\n\n======================================================================\nERROR: test_active_overlap_is_detected_not_repaired (test_g4.OperationalEvidence.test_active_overlap_is_detected_not_repaired)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g4/tests/test_g4.py\", line 20, in test_active_overlap_is_detected_not_repaired\n    before=self.db.read_bytes();result=diagnose(self.db)\n                                       ~~~~~~~~^^^^^^^^^\n  File \"/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g4/operations.py\", line 39, in diagnose\n    raise ValueError(\"no supported current reservation representation found\")\nValueError: no supported current reservation representation found\n\n======================================================================\nERROR: test_cancelled_row_does_not_create_false_alarm (test_g4.OperationalEvidence.test_cancelled_row_does_not_create_false_alarm)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g4/tests/test_g4.py\", line 27, in test_cancelled_row_does_not_create_false_alarm\n    self.assertEqual(diagnose(self.db)[\"active_overlap_pairs\"],[])\n                     ~~~~~~~~^^^^^^^^^\n  File \"/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g4/operations.py\", line 39, in diagnose\n    raise ValueError(\"no supported current reservation representation found\")\nValueError: no supported current reservation representation found\n\n======================================================================\nERROR: test_clean_storage_is_observed_without_mutation (test_g4.OperationalEvidence.test_clean_storage_is_observed_without_mutation)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g4/tests/test_g4.py\", line 13, in test_clean_storage_is_observed_without_mutation\n    before=self.db.read_bytes();result=diagnose(self.db)\n                                       ~~~~~~~~^^^^^^^^^\n  File \"/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g4/operations.py\", line 39, in diagnose\n    raise ValueError(\"no supported current reservation representation found\")\nValueError: no supported current reservation representation found\n\n----------------------------------------------------------------------\nRan 11 tests in 0.068s\n\nFAILED (errors=3)\n",
+      "timed_out": false,
+      "tests_run": 11,
+      "expected_tests": 11,
+      "methods_passed": 8,
+      "methods_failed": [],
+      "methods_errored": [
+        "test_active_overlap_is_detected_not_repaired",
+        "test_cancelled_row_does_not_create_false_alarm",
+        "test_clean_storage_is_observed_without_mutation"
+      ],
+      "status": "FAILED"
+    }
+  },
+  "tests_run": 11,
+  "candidate_sha256_after": "61989caa6adaabf768a3d4b7331b61d2574bd18daef4e4ff5c03c670ade689e5",
+  "inputs_unchanged": true,
+  "status": "CHECKS_FAILED",
+  "recorded_at_utc": "2026-11-16T22:27:14.427748+00:00",
+  "command": [
+    "/usr/local/bin/python3",
+    "companion/start.py",
+    "check",
+    "G4",
+    "--candidate",
+    "work/g4",
+    "--output",
+    "work/evidence/g4-carried-v3.json"
+  ],
+  "verification_progress": {
+    "schema": "esa-verification-progress/v1",
+    "derivation": "CURRENT_RECEIPT_FIELDS_ONLY_NO_ADDITIONAL_EXECUTION",
+    "source_fields_sha256": "c1691a133db80c1d2794e1b1b99017df31caaac9c36ae10c981ace10ac096132",
+    "work_order": "mission_G4",
+    "evidence_profile": "persistent_effect",
+    "profile_basis": "The named mission work order.",
+    "phase": "mission",
+    "stages": {
+      "startup": {
+        "status": "PASS",
+        "evidence": [
+          "schema",
+          "mission",
+          "candidate_path"
+        ],
+        "reason": "The intended runner accepted the entry identity and emitted this check receipt. This does not establish candidate import."
+      },
+      "integrity": {
+        "status": "PASS",
+        "evidence": [
+          "inputs_unchanged",
+          "candidate_sha256_before",
+          "candidate_sha256_after"
+        ],
+        "reason": "The recorded before/after comparison found inputs unchanged."
+      },
+      "contract": {
+        "status": "FAIL",
+        "evidence": [
+          "groups.contract"
+        ],
+        "reason": "Status uses each selected group and any contract-specific supplemental probe; an import placeholder is not behavioral evidence. A candidate stack frame or known protected assertion supports reached behavior; a method count alone does not. Groups within this stage may retain multiple failures.",
+        "behavior_reached": true
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "evidence": [],
+        "reason": "No continuation or consumer/process observation is present."
+      },
+      "artifact": {
+        "status": "NOT_RUN",
+        "evidence": [],
+        "reason": "This receipt has no separate archive/extraction gate. Local demonstration hashes alone do not establish release fitness."
+      },
+      "authorization": {
+        "status": "NOT_RUN",
+        "evidence": [
+          "human_acceptance"
+        ],
+        "reason": "No owner acceptance or release authorization is recorded. Passing checks do not supply that decision."
+      }
+    },
+    "first_failed_stage": "contract",
+    "last_observed_stage": "contract",
+    "limits": "A stage label interprets the retained fields; it is not an independent attestation. NOT_APPLICABLE needs an explicit scope exclusion; absence alone remains NOT_RUN."
+  }
+}

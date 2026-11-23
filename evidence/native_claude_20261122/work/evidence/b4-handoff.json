@@ -1,0 +1,188 @@
+{
+  "schema": "esa-full-mission-check/v1",
+  "mission": "B4",
+  "release": "Engineering-Software-with-Agentic-AI-Review-5.2-20261117",
+  "contract": "OPS-B4/v2",
+  "candidate_sha256_before": "330db1ff9134da97fd1f1dc75bae7b6bcab04714d9af3616b4c8ecb002afe6eb",
+  "protected_input_sha256": {
+    "docs/contract.md": "89c3ae88ae62e4fd292b5cfd3e14c219cf3d6d9c44d6aed50923beb517a7c429",
+    "tests/test_b4.py": "c59850930b5b56d0629cce27260ad2de1d1bc362d964f5d18589774c85b347fa",
+    "docs/policy_catalog.json": "9c1b4078c49e118f1001d138484bd9b046ab595935e16b63ea160d619068c7ab",
+    "ledger.py": "8e87f6bd508a9372b40be2c004ef22b6c912830765fadac55b9896018d4799dc",
+    "routing.py": "e8fdab89acfa5d28041c74a5d2dcf9801fb0e85324dcc160013a56cf63f89cfd",
+    "operations.py": "f0162261026327358188be23ed4daa6f01134b3ee1817a087694551bbcbfa580",
+    "prior/ledger.py": "8e87f6bd508a9372b40be2c004ef22b6c912830765fadac55b9896018d4799dc",
+    "prior/parent-handoff.json": "e41ad32d6215705ef071928af9e316deec8c7156bcea2888f1b0c1891b9b5adc",
+    "prior/parent-entry.json": "0ad05047101af63a1715751040488c1a59662e806dfad4d6ef27c05294caea81",
+    "prior/parent-check-artifacts/DEMONSTRATION.json": "3922dbf150db1276292de8dc6cd98e1aa01390bbdd408e9a53c17f3e995168ea",
+    "prior/parent-check-artifacts/ledger.sqlite": "1039601147525da7d2fc0bd9890df5e057c20a6709078bae4cb1057eb39eefa5",
+    "prior/parent-check-artifacts/history.json": "6e81a9e4c781bf227979cb59c9fb8db39a92fe5087343bef07477d287990e194"
+  },
+  "candidate_path": "/home/claude/work/live22/agentic-ai-5.2/work/b4",
+  "human_acceptance": "PENDING",
+  "model_run": false,
+  "scope": "Executable local teaching controls; no human reader performance or production authority.",
+  "groups": {
+    "contract": {
+      "command": [
+        "/usr/local/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_b4.py",
+        "-v"
+      ],
+      "elapsed_process_seconds": 0.2769072619998951,
+      "timeout_seconds": 30,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_proposed_configuration_binding_has_explicit_consumer_field (test_b4.RecoveryConsumerContract.test_proposed_configuration_binding_has_explicit_consumer_field) ... ok\ntest_deterministic_id_does_not_establish_same_ledger (test_b4.WrongLedger.test_deterministic_id_does_not_establish_same_ledger) ... ok\ntest_expected_binding_is_clean_positive_control (test_b4.WrongLedger.test_expected_binding_is_clean_positive_control) ... ok\ntest_missing_path_is_not_initialized (test_b4.WrongLedger.test_missing_path_is_not_initialized) ... ok\ntest_recovery_cost_includes_failed_attempt (test_b4.WrongLedger.test_recovery_cost_includes_failed_attempt) ... ok\ntest_recovery_plan_does_not_merge_or_authorize (test_b4.WrongLedger.test_recovery_plan_does_not_merge_or_authorize) ... ok\ntest_same_code_wrong_state_is_identified (test_b4.WrongLedger.test_same_code_wrong_state_is_identified) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.216s\n\nOK\n",
+      "timed_out": false,
+      "tests_run": 7,
+      "expected_tests": 7,
+      "methods_passed": 7,
+      "methods_failed": [],
+      "methods_errored": [],
+      "status": "PASSED"
+    }
+  },
+  "tests_run": 7,
+  "candidate_sha256_after": "330db1ff9134da97fd1f1dc75bae7b6bcab04714d9af3616b4c8ecb002afe6eb",
+  "inputs_unchanged": true,
+  "status": "SCOPED_HANDOFF_READY",
+  "demonstration_process": {
+    "command": [
+      "/usr/local/bin/python3",
+      "/home/claude/work/live22/agentic-ai-5.2/companion/curriculum_demo.py",
+      "B4",
+      "--candidate",
+      "/home/claude/work/live22/agentic-ai-5.2/work/b4",
+      "--output",
+      "/home/claude/work/live22/agentic-ai-5.2/work/evidence/b4-handoff"
+    ],
+    "elapsed_process_seconds": 0.0742718959999138,
+    "timeout_seconds": 30,
+    "returncode": 0,
+    "stdout": "{\n  \"schema\": \"esa-curriculum-demonstration/v1\",\n  \"mission\": \"B4\",\n  \"recorded_at_utc\": \"2026-11-22T17:38:50.707436+00:00\",\n  \"command\": [\n    \"/usr/local/bin/python3\",\n    \"/home/claude/work/live22/agentic-ai-5.2/companion/curriculum_demo.py\",\n    \"B4\",\n    \"--candidate\",\n    \"/home/claude/work/live22/agentic-ai-5.2/work/b4\",\n    \"--output\",\n    \"/home/claude/work/live22/agentic-ai-5.2/work/evidence/b4-handoff\"\n  ],\n  \"origin\": \"EXECUTED_OFFLINE_TEACHING_FIXTURE\",\n  \"observed_human_pilot\": false,\n  \"observed_model_run\": false,\n  \"result\": {\n    \"diagnosis\": \"WRONG_LEDGER\",\n    \"local_configuration_fixture_restored\": true,\n    \"original_ledgers_unchanged\": true,\n    \"reconciliation\": \"PENDING_OWNER_DECISION\",\n    \"production_authorized\": false,\n    \"cost_scenario\": {\n      \"attempts\": 3,\n      \"accepted_outcomes\": 1,\n      \"total_cost_eur\": \"2.50\",\n      \"total_minutes\": \"34\",\n      \"cost_per_accepted_eur\": \"2.50\",\n      \"minutes_per_accepted\": \"34\",\n      \"status\": \"ACCOUNTED\"\n    }\n  }\n}\n",
+    "stderr": "",
+    "timed_out": false
+  },
+  "demonstration": {
+    "schema": "esa-curriculum-demonstration/v1",
+    "mission": "B4",
+    "recorded_at_utc": "2026-11-22T17:38:50.707436+00:00",
+    "command": [
+      "/usr/local/bin/python3",
+      "/home/claude/work/live22/agentic-ai-5.2/companion/curriculum_demo.py",
+      "B4",
+      "--candidate",
+      "/home/claude/work/live22/agentic-ai-5.2/work/b4",
+      "--output",
+      "/home/claude/work/live22/agentic-ai-5.2/work/evidence/b4-handoff"
+    ],
+    "origin": "EXECUTED_OFFLINE_TEACHING_FIXTURE",
+    "observed_human_pilot": false,
+    "observed_model_run": false,
+    "result": {
+      "diagnosis": "WRONG_LEDGER",
+      "local_configuration_fixture_restored": true,
+      "original_ledgers_unchanged": true,
+      "reconciliation": "PENDING_OWNER_DECISION",
+      "production_authorized": false,
+      "cost_scenario": {
+        "attempts": 3,
+        "accepted_outcomes": 1,
+        "total_cost_eur": "2.50",
+        "total_minutes": "34",
+        "cost_per_accepted_eur": "2.50",
+        "minutes_per_accepted": "34",
+        "status": "ACCOUNTED"
+      }
+    }
+  },
+  "demonstration_files_sha256": {
+    "DEMONSTRATION.json": "ca8970bc34397bd8d810041a47fa297d728c7de2a302b46661021c52b886e2ab",
+    "cost_report.json": "f2343920e59b860f275762f2fd4ff91581ecf23acbd650162481d2619f092690",
+    "diagnosis.json": "7b0b38e1af6a595e3e0765a95988d6b7d533ce86ad22655342bf8a60fd8af2ee",
+    "expected.sqlite": "34f82e875b300f3f03c33b3283b50d7dfe0d13c14f9b887d7d07309b515987f5",
+    "recovery_plan.json": "6e88c6008af8057e803fb384a286f962c15dc6658f22f4f6df671bff510d2ac0",
+    "restoration.json": "d6f1e66683f12e8587a9e5252e12faeba1ebf1b009b644234d258b787f18e7b2",
+    "selected_state.json": "c9ba7d846af8eaf64f9447f8cc367c35f9804c5811bc0c91353073ef1e0f44de",
+    "verification_copy.sqlite": "98aad853f128bdc064a8d82cf6b3f84eb254b457460443c02e96b2f5fee8061d",
+    "wrong.sqlite": "597d6c4ed8bbb0f9d830b8d3f8c02a85a15e469a2a04fcd7c707ba0c37b695c9"
+  },
+  "candidate_retained": true,
+  "recorded_at_utc": "2026-11-22T17:38:50.719317+00:00",
+  "command": [
+    "/usr/local/bin/python3",
+    "companion/start.py",
+    "continue",
+    "B4",
+    "--candidate",
+    "work/b4",
+    "--output",
+    "work/evidence/b4-handoff.json"
+  ],
+  "verification_progress": {
+    "schema": "esa-verification-progress/v1",
+    "derivation": "CURRENT_RECEIPT_FIELDS_ONLY_NO_ADDITIONAL_EXECUTION",
+    "source_fields_sha256": "0f695c5c21097948553543129b56167b9205fd6ddec19956d1d4140f407fa0b6",
+    "work_order": "mission_B4",
+    "evidence_profile": "persistent_effect",
+    "profile_basis": "The named mission work order.",
+    "phase": "mission",
+    "stages": {
+      "startup": {
+        "status": "PASS",
+        "evidence": [
+          "schema",
+          "mission",
+          "candidate_path"
+        ],
+        "reason": "The intended runner accepted the entry identity and emitted this check receipt. This does not establish candidate import."
+      },
+      "integrity": {
+        "status": "PASS",
+        "evidence": [
+          "inputs_unchanged",
+          "candidate_sha256_before",
+          "candidate_sha256_after"
+        ],
+        "reason": "The recorded before/after comparison found inputs unchanged."
+      },
+      "contract": {
+        "status": "PASS",
+        "evidence": [
+          "groups.contract"
+        ],
+        "reason": "Status uses each selected group and any contract-specific supplemental probe; an import placeholder is not behavioral evidence. A candidate stack frame or known protected assertion supports reached behavior; a method count alone does not. Groups within this stage may retain multiple failures.",
+        "behavior_reached": true
+      },
+      "integration": {
+        "status": "PASS",
+        "evidence": [
+          "demonstration_process"
+        ],
+        "reason": "An actual continuation or process-boundary probe is retained; the result applies to this local consumer and candidate only."
+      },
+      "artifact": {
+        "status": "NOT_RUN",
+        "evidence": [],
+        "reason": "This receipt has no separate archive/extraction gate. Local demonstration hashes alone do not establish release fitness."
+      },
+      "authorization": {
+        "status": "NOT_RUN",
+        "evidence": [
+          "human_acceptance"
+        ],
+        "reason": "No owner acceptance or release authorization is recorded. Passing checks do not supply that decision."
+      }
+    },
+    "first_failed_stage": null,
+    "last_observed_stage": "integration",
+    "limits": "A stage label interprets the retained fields; it is not an independent attestation. NOT_APPLICABLE needs an explicit scope exclusion; absence alone remains NOT_RUN."
+  }
+}

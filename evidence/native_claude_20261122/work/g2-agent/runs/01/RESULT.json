@@ -1,0 +1,888 @@
+{
+  "at_utc": "2026-11-22T17:30:57.658286+00:00",
+  "client": "claude",
+  "exit_code": 0,
+  "timed_out": false,
+  "permission_denials": [
+    {
+      "event_line": 1948,
+      "value": {
+        "tool_name": "Bash",
+        "tool_use_id": "toolu_015vQw8ajiqWiw4hM1mTBaif",
+        "tool_input": {
+          "command": "cat > booking.py <<'EOF'\n\"\"\"G2 public interface: validated, idempotent, conflict-free reservations.\n\nContract RES-001/v1 + G2-OD-01 + G2-OD-02 (docs/). API: init_db, reserve,\nget_reservation. Schema version 2 is private: table ``reservations_v2`` plus\n``PRAGMA user_version = 2``. Legacy tables are never modified or dropped.\n\"\"\"\nimport hashlib\nimport json\nimport re\nimport sqlite3\nfrom contextlib import closing\nfrom dataclasses import dataclass\nfrom datetime import datetime, timedelta, timezone\nfrom pathlib import Path\n\nSCHEMA_VERSION = 2\n_FIELDS = (\"trusted_member_id\", \"asset_id\", \"starts_at\", \"ends_at\",\n           \"idempotency_key\")\n_TS = re.compile(r\"\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z\")\n\n# Authorized legacy representations (exact column signatures).\n_G1_COLUMNS = [\"id\", \"member_id\", \"asset_id\", \"starts_at\", \"ends_at\",\n               \"request_key\"]\n_RECORDED_COLUMNS = [\"reservation_id\", \"trusted_member_id\", \"asset_id\",\n                     \"starts_at\", \"ends_at\", \"idempotency_key\"]\n_JSON_COLUMNS = [\"booking_no\", \"payload\"]\n\n\n@dataclass(frozen=True)\nclass Outcome:\n    status: int\n    code: str\n    reservation_id: int | None = None\n    replayed: bool = False\n\n\ndef _parse(value):\n    if not isinstance(value, str) or not _TS.fullmatch(value):\n        return None\n    try:\n        return datetime.strptime(value, \"%Y-%m-%dT%H:%M:%SZ\").replace(\n            tzinfo=timezone.utc)\n    except ValueError:\n        return None\n\n\ndef _validate(member, asset, start, end, key):\n    \"\"\"Return None if valid, else (status, code).\"\"\"\n    for v in (member, asset, key):\n        if not isinstance(v, str) or not 1 <= len(v) <= 128:\n            return 422, \"invalid-identifier\"\n    s, e = _parse(start), _parse(end)\n    if s is None or e is None:\n        return 422, \"invalid-timestamp\"\n    if not timedelta(0) < e - s <= timedelta(hours=24):\n        return 422, \"invalid-interval\"\n    return None\n\n\ndef _fingerprint(asset, start, end):\n    return hashlib.sha256(json.dumps([asset, start, end]).encode()).hexdigest()\n\n\ndef _columns(conn, table):\n    quoted = '\"' + table.replace('\"', '\"\"') + '\"'\n    return [r[1] for r in conn.execute(f\"PRAGMA table_info({quoted})\")]\n\n\ndef _legacy_rows(conn, table, columns):\n    \"\"\"Return (id, member, asset, start, end, key) tuples from a legacy table.\"\"\"\n    quoted = '\"' + table.replace('\"', '\"\"') + '\"'\n    rows = conn.execute(f\"SELECT * FROM {quoted} ORDER BY 1\").fetchall()\n    out = []\n    for row in rows:\n        if columns == _JSON_COLUMNS:\n            try:\n                p = json.loads(row[1])\n            except (TypeError, ValueError):\n                raise ValueError(f\"unreadable legacy JSON in {table}; owner mapping required\")\n            if not isinstance(p, dict) or set(p) != set(_FIELDS):\n                raise ValueError(f\"unknown legacy payload in {table}; owner mapping required\")\n            row = (row[0],) + tuple(p[f] for f in _FIELDS)\n        if type(row[0]) is not int:\n            raise ValueError(f\"non-integer legacy identifier in {table}\")\n        out.append(tuple(row))\n    return out\n\n\ndef _migrate(conn, table, columns):\n    rows = _legacy_rows(conn, table, columns)\n    seen = {}\n    for rid, member, asset, start, end, key in rows:\n        if (member, key) in seen:\n            raise sqlite3.IntegrityError(\n                f\"duplicate legacy identity {(member, key)!r}; owner mapping required\")\n        seen[(member, key)] = rid\n    accepted = []\n    for rid, member, asset, start, end, key in rows:\n        bad = _validate(member, asset, start, end, key)\n        if bad:\n            raise ValueError(f\"invalid legacy row {rid} ({bad[1]}); owner mapping required\")\n        for _, a, s, e in accepted:\n            if a == asset and s < end and start < e:\n                raise ValueError(f\"overlapping legacy row {rid}; owner mapping required\")\n        accepted.append((rid, asset, start, end))\n    _create_v2(conn)\n    for rid, member, asset, start, end, key in rows:\n        conn.execute(\n            \"INSERT INTO reservations_v2 (id, trusted_member_id, asset_id, \"\n            \"starts_at, ends_at, idempotency_key, fingerprint) \"\n            \"VALUES (?, ?, ?, ?, ?, ?, ?)\",\n            (rid, member, asset, start, end, key,\n             _fingerprint(asset, start, end)))\n\n\ndef _create_v2(conn):\n    conn.execute(\n        \"CREATE TABLE reservations_v2 (\"\n        \"id INTEGER PRIMARY KEY AUTOINCREMENT, \"\n        \"trusted_member_id TEXT NOT NULL, asset_id TEXT NOT NULL, \"\n        \"starts_at TEXT NOT NULL, ends_at TEXT NOT NULL, \"\n        \"idempotency_key TEXT NOT NULL, fingerprint TEXT NOT NULL, \"\n        \"UNIQUE (trusted_member_id, idempotency_key))\")\n    conn.execute(\"CREATE INDEX reservations_v2_slot \"\n                 \"ON reservations_v2 (asset_id, starts_at, ends_at)\")\n\n\ndef init_db(path: str | Path) -> None:\n    \"\"\"Create or migrate to schema 2; idempotent. Refusal leaves bytes unchanged.\"\"\"\n    conn = sqlite3.connect(path, isolation_level=None, timeout=30)\n    try:\n        conn.execute(\"BEGIN IMMEDIATE\")\n        try:\n            version = conn.execute(\"PRAGMA user_version\").fetchone()[0]\n            tables = [r[0] for r in conn.execute(\n                \"SELECT name FROM sqlite_master WHERE type='table' \"\n                \"AND name NOT LIKE 'sqlite_%'\")]\n            if version == SCHEMA_VERSION:\n                if \"reservations_v2\" not in tables:\n                    raise ValueError(\"schema version 2 without reservations_v2\")\n            elif version != 0:\n                raise ValueError(f\"unknown schema version {version}\")\n            elif not tables:\n                _create_v2(conn)\n            else:\n                found = []\n                for t in tables:\n                    cols = _columns(conn, t)\n                    if (t == \"reservations\" and cols in (_G1_COLUMNS, _RECORDED_COLUMNS)) \\\n                            or (t == \"bookings_v2\" and cols == _JSON_COLUMNS):\n                        found.append((t, cols))\n                    else:\n                        raise ValueError(f\"unknown table {t!r}; owner mapping required\")\n                if len(found) != 1:\n                    raise ValueError(\"competing legacy tables; owner mapping required\")\n                _migrate(conn, *found[0])\n            conn.execute(f\"PRAGMA user_version = {SCHEMA_VERSION}\")\n            conn.execute(\"COMMIT\")\n        except BaseException:\n            conn.execute(\"ROLLBACK\")\n            raise\n    finally:\n        conn.close()\n\n\ndef reserve(db_path: str | Path, *, trusted_member_id: str,\n            asset_id: str, starts_at: str, ends_at: str,\n            idempotency_key: str) -> Outcome:\n    bad = _validate(trusted_member_id, asset_id, starts_at, ends_at,\n                    idempotency_key)\n    if bad:\n        return Outcome(*bad)\n    fp = _fingerprint(asset_id, starts_at, ends_at)\n    conn = sqlite3.connect(db_path, isolation_level=None, timeout=30)\n    try:\n        conn.execute(\"BEGIN IMMEDIATE\")  # check and insert are one write txn\n        try:\n            row = conn.execute(\n                \"SELECT id, fingerprint FROM reservations_v2 WHERE \"\n                \"trusted_member_id = ? AND idempotency_key = ?\",\n                (trusted_member_id, idempotency_key)).fetchone()\n            if row:\n                outcome = (Outcome(200, \"confirmed\", row[0], True)\n                           if row[1] == fp else\n                           Outcome(409, \"idempotency-key-reused\"))\n            elif conn.execute(\n                    \"SELECT 1 FROM reservations_v2 WHERE asset_id = ? \"\n                    \"AND starts_at < ? AND ? < ends_at\",\n                    (asset_id, ends_at, starts_at)).fetchone():\n                outcome = Outcome(409, \"interval-conflict\")\n            else:\n                cur = conn.execute(\n                    \"INSERT INTO reservations_v2 (trusted_member_id, asset_id, \"\n                    \"starts_at, ends_at, idempotency_key, fingerprint) \"\n                    \"VALUES (?, ?, ?, ?, ?, ?)\",\n                    (trusted_member_id, asset_id, starts_at, ends_at,\n                     idempotency_key, fp))\n                outcome = Outcome(201, \"confirmed\", cur.lastrowid, False)\n            conn.execute(\"COMMIT\")\n        except BaseException:\n            conn.execute(\"ROLLBACK\")\n            raise\n        return outcome\n    finally:\n        conn.close()\n\n\ndef get_reservation(path: str | Path, reservation_id: int):\n    # Read-only URI: a missing file raises sqlite3.OperationalError, not created.\n    uri = Path(path).resolve().as_uri() + \"?mode=ro\"\n    with closing(sqlite3.connect(uri, uri=True)) as conn:\n        row = conn.execute(\n            \"SELECT id, trusted_member_id, asset_id, starts_at, ends_at, \"\n            \"idempotency_key FROM reservations_v2 WHERE id = ?\",\n            (reservation_id,)).fetchone()\n    if row is None:\n        return None\n    return {\"reservation_id\": row[0], **dict(zip(_FIELDS, row[1:]))}\nEOF\npython -m unittest discover -s tests 2>&1 | tail -25"
+        }
+      }
+    },
+    {
+      "event_line": 1948,
+      "value": {
+        "tool_name": "Bash",
+        "tool_use_id": "toolu_01KCwpgprRCcDipPhw84zb8T",
+        "tool_input": {
+          "command": "python -I - <<'EOF'\nimport sys,tempfile,pathlib,sqlite3\nsys.path.insert(0,'.')\nimport booking as b\nd=pathlib.Path(tempfile.mkdtemp())/\"x.db\"; b.init_db(d); b.init_db(d)\nS=\"2025-05-16T09:00:00Z\";E=\"2025-05-16T10:00:00Z\"\nk=dict(trusted_member_id=\"m\",asset_id=\"A\",starts_at=S,ends_at=E,idempotency_key=\"k\")\nprint(b.reserve(d,**{**k,\"asset_id\":\"\"}), b.reserve(d,**{**k,\"starts_at\":\"x\"}), b.reserve(d,**{**k,\"ends_at\":S}))\nprint(b.reserve(d,**k), b.reserve(d,**k), b.reserve(d,**{**k,\"ends_at\":\"2025-05-16T11:00:00Z\"}))\n# prior-candidate schema (id column) -> refused?\np=pathlib.Path(tempfile.mkdtemp())/\"p.db\"\nc=sqlite3.connect(p);c.execute(\"create table reservations(id integer primary key autoincrement,trusted_member_id text,asset_id text,starts_at text,ends_at text,idempotency_key text)\");c.commit();c.close()\ntry:b.init_db(p)\nexcept Exception as e:print(type(e).__name__,e)\nEOF\ncmp prior/booking.py prior/booking.py && sha256sum prior/booking.py READER_ENTRY.json"
+        }
+      }
+    }
+  ],
+  "reported_cost_usd": [
+    0.29853620000000003
+  ],
+  "elapsed_seconds": 92.27094,
+  "event_count": 1949,
+  "malformed_native_event_lines": [],
+  "changed_files": [
+    "DOSSIER.md",
+    "booking.py"
+  ],
+  "scope_changes_requiring_review": [],
+  "before": {
+    "AGENTS.md": "494bf71b3ee5f7454d62a1de19f11b9ab5f1bce70a706c46bd232840118e99ab",
+    "DOSSIER.md": "b3dad53e8826ba4da728b82761ed637d38f0f1c2eb41168f72947b2609d29a9b",
+    "READER_ENTRY.json": "38d69192231fe918dd9a420247013280af72599df0287f0bf2a2c09c3b91e4a9",
+    "booking.py": "a93c8fa26357c4c5bf4c4eb40fbd15427692d074d3ee101f2a0a6980cb79007c",
+    "docs/G2-OD-02.md": "6760602fa7acb3523365062dcb61885e3ac603233e1e3cd6dbd92b3a19876462",
+    "docs/contract.md": "76ffefaa7a20e1a3047b0885be0332cfddf86362e6514fa7cfad151106f68dcd",
+    "legacy_g1.py": "bb3ec4063f41eb10ad6a0850b9fa3d40da7badb4bcff19a38fdab3c80ea4efba",
+    "legacy_g1_json.py": "d5b98f73120fb70ccfe6c8366e19f64ac8b311d54684e872f2ca3c7d6813b191",
+    "legacy_g1_recorded.py": "cedfaf4d936232b94eb7220d0d0594e2e919b75eff6f5dcd8a8690582ff569ce",
+    "prior/booking.py": "a93c8fa26357c4c5bf4c4eb40fbd15427692d074d3ee101f2a0a6980cb79007c",
+    "prior/parent-entry.json": "5dce40590573482fa2b5e23dd2187eb817f2f9670bae13f8b76304ca71fdacee",
+    "prior/parent-handoff.json": "1613a459535e2987002bf2904e1dba2a0a24867e575d09fb7b30ff968970fdd6",
+    "tests/test_g2.py": "c804bb7328ba7f8846a03beaed296c4430e5de143e233c8ff9f3170bcc9d0c53"
+  },
+  "after": {
+    "AGENTS.md": "494bf71b3ee5f7454d62a1de19f11b9ab5f1bce70a706c46bd232840118e99ab",
+    "DOSSIER.md": "9b1d6e92706062e5fa8a323baa26c9e34b1593bcc45c720538e95ae07c15a8b3",
+    "READER_ENTRY.json": "38d69192231fe918dd9a420247013280af72599df0287f0bf2a2c09c3b91e4a9",
+    "booking.py": "3acd48b844deab0ee87a0c7270782465ddfb533400a18ab214678ffc6a7433dd",
+    "docs/G2-OD-02.md": "6760602fa7acb3523365062dcb61885e3ac603233e1e3cd6dbd92b3a19876462",
+    "docs/contract.md": "76ffefaa7a20e1a3047b0885be0332cfddf86362e6514fa7cfad151106f68dcd",
+    "legacy_g1.py": "bb3ec4063f41eb10ad6a0850b9fa3d40da7badb4bcff19a38fdab3c80ea4efba",
+    "legacy_g1_json.py": "d5b98f73120fb70ccfe6c8366e19f64ac8b311d54684e872f2ca3c7d6813b191",
+    "legacy_g1_recorded.py": "cedfaf4d936232b94eb7220d0d0594e2e919b75eff6f5dcd8a8690582ff569ce",
+    "prior/booking.py": "a93c8fa26357c4c5bf4c4eb40fbd15427692d074d3ee101f2a0a6980cb79007c",
+    "prior/parent-entry.json": "5dce40590573482fa2b5e23dd2187eb817f2f9670bae13f8b76304ca71fdacee",
+    "prior/parent-handoff.json": "1613a459535e2987002bf2904e1dba2a0a24867e575d09fb7b30ff968970fdd6",
+    "tests/test_g2.py": "c804bb7328ba7f8846a03beaed296c4430e5de143e233c8ff9f3170bcc9d0c53"
+  },
+  "thread_ids": [
+    "9c224d5f-5066-4488-a954-9202e65572c8"
+  ],
+  "usage_events": [
+    {
+      "duration_api_ms": 90855,
+      "stop_reason": "end_turn",
+      "session_id": "9c224d5f-5066-4488-a954-9202e65572c8",
+      "total_cost_usd": 0.29853620000000003,
+      "usage": {
+        "input_tokens": 22,
+        "cache_creation_input_tokens": 30284,
+        "cache_read_input_tokens": 259862,
+        "output_tokens": 15137,
+        "output_tokens_details": {
+          "thinking_tokens": 2573
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 30284,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 968,
+            "cache_read_input_tokens": 34752,
+            "cache_creation_input_tokens": 1769,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 1769
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard",
+        "fallback_credit": null
+      },
+      "modelUsage": {
+        "claude-sonnet-5-5": {
+          "inputTokens": 22,
+          "outputTokens": 15137,
+          "cacheReadInputTokens": 259862,
+          "cacheCreationInputTokens": 30284,
+          "webSearchRequests": 0,
+          "costUSD": 0.29853620000000003,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 64000,
+          "thinkingTokens": 2573,
+          "cacheCreationEphemeral5mInputTokens": 0,
+          "cacheCreationEphemeral1hInputTokens": 30284,
+          "canonicalModel": "claude-sonnet-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "permission_denials": [
+        {
+          "tool_name": "Bash",
+          "tool_use_id": "toolu_015vQw8ajiqWiw4hM1mTBaif",
+          "tool_input": {
+            "command": "cat > booking.py <<'EOF'\n\"\"\"G2 public interface: validated, idempotent, conflict-free reservations.\n\nContract RES-001/v1 + G2-OD-01 + G2-OD-02 (docs/). API: init_db, reserve,\nget_reservation. Schema version 2 is private: table ``reservations_v2`` plus\n``PRAGMA user_version = 2``. Legacy tables are never modified or dropped.\n\"\"\"\nimport hashlib\nimport json\nimport re\nimport sqlite3\nfrom contextlib import closing\nfrom dataclasses import dataclass\nfrom datetime import datetime, timedelta, timezone\nfrom pathlib import Path\n\nSCHEMA_VERSION = 2\n_FIELDS = (\"trusted_member_id\", \"asset_id\", \"starts_at\", \"ends_at\",\n           \"idempotency_key\")\n_TS = re.compile(r\"\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z\")\n\n# Authorized legacy representations (exact column signatures).\n_G1_COLUMNS = [\"id\", \"member_id\", \"asset_id\", \"starts_at\", \"ends_at\",\n               \"request_key\"]\n_RECORDED_COLUMNS = [\"reservation_id\", \"trusted_member_id\", \"asset_id\",\n                     \"starts_at\", \"ends_at\", \"idempotency_key\"]\n_JSON_COLUMNS = [\"booking_no\", \"payload\"]\n\n\n@dataclass(frozen=True)\nclass Outcome:\n    status: int\n    code: str\n    reservation_id: int | None = None\n    replayed: bool = False\n\n\ndef _parse(value):\n    if not isinstance(value, str) or not _TS.fullmatch(value):\n        return None\n    try:\n        return datetime.strptime(value, \"%Y-%m-%dT%H:%M:%SZ\").replace(\n            tzinfo=timezone.utc)\n    except ValueError:\n        return None\n\n\ndef _validate(member, asset, start, end, key):\n    \"\"\"Return None if valid, else (status, code).\"\"\"\n    for v in (member, asset, key):\n        if not isinstance(v, str) or not 1 <= len(v) <= 128:\n            return 422, \"invalid-identifier\"\n    s, e = _parse(start), _parse(end)\n    if s is None or e is None:\n        return 422, \"invalid-timestamp\"\n    if not timedelta(0) < e - s <= timedelta(hours=24):\n        return 422, \"invalid-interval\"\n    return None\n\n\ndef _fingerprint(asset, start, end):\n    return hashlib.sha256(json.dumps([asset, start, end]).encode()).hexdigest()\n\n\ndef _columns(conn, table):\n    quoted = '\"' + table.replace('\"', '\"\"') + '\"'\n    return [r[1] for r in conn.execute(f\"PRAGMA table_info({quoted})\")]\n\n\ndef _legacy_rows(conn, table, columns):\n    \"\"\"Return (id, member, asset, start, end, key) tuples from a legacy table.\"\"\"\n    quoted = '\"' + table.replace('\"', '\"\"') + '\"'\n    rows = conn.execute(f\"SELECT * FROM {quoted} ORDER BY 1\").fetchall()\n    out = []\n    for row in rows:\n        if columns == _JSON_COLUMNS:\n            try:\n                p = json.loads(row[1])\n            except (TypeError, ValueError):\n                raise ValueError(f\"unreadable legacy JSON in {table}; owner mapping required\")\n            if not isinstance(p, dict) or set(p) != set(_FIELDS):\n                raise ValueError(f\"unknown legacy payload in {table}; owner mapping required\")\n            row = (row[0],) + tuple(p[f] for f in _FIELDS)\n        if type(row[0]) is not int:\n            raise ValueError(f\"non-integer legacy identifier in {table}\")\n        out.append(tuple(row))\n    return out\n\n\ndef _migrate(conn, table, columns):\n    rows = _legacy_rows(conn, table, columns)\n    seen = {}\n    for rid, member, asset, start, end, key in rows:\n        if (member, key) in seen:\n            raise sqlite3.IntegrityError(\n                f\"duplicate legacy identity {(member, key)!r}; owner mapping required\")\n        seen[(member, key)] = rid\n    accepted = []\n    for rid, member, asset, start, end, key in rows:\n        bad = _validate(member, asset, start, end, key)\n        if bad:\n            raise ValueError(f\"invalid legacy row {rid} ({bad[1]}); owner mapping required\")\n        for _, a, s, e in accepted:\n            if a == asset and s < end and start < e:\n                raise ValueError(f\"overlapping legacy row {rid}; owner mapping required\")\n        accepted.append((rid, asset, start, end))\n    _create_v2(conn)\n    for rid, member, asset, start, end, key in rows:\n        conn.execute(\n            \"INSERT INTO reservations_v2 (id, trusted_member_id, asset_id, \"\n            \"starts_at, ends_at, idempotency_key, fingerprint) \"\n            \"VALUES (?, ?, ?, ?, ?, ?, ?)\",\n            (rid, member, asset, start, end, key,\n             _fingerprint(asset, start, end)))\n\n\ndef _create_v2(conn):\n    conn.execute(\n        \"CREATE TABLE reservations_v2 (\"\n        \"id INTEGER PRIMARY KEY AUTOINCREMENT, \"\n        \"trusted_member_id TEXT NOT NULL, asset_id TEXT NOT NULL, \"\n        \"starts_at TEXT NOT NULL, ends_at TEXT NOT NULL, \"\n        \"idempotency_key TEXT NOT NULL, fingerprint TEXT NOT NULL, \"\n        \"UNIQUE (trusted_member_id, idempotency_key))\")\n    conn.execute(\"CREATE INDEX reservations_v2_slot \"\n                 \"ON reservations_v2 (asset_id, starts_at, ends_at)\")\n\n\ndef init_db(path: str | Path) -> None:\n    \"\"\"Create or migrate to schema 2; idempotent. Refusal leaves bytes unchanged.\"\"\"\n    conn = sqlite3.connect(path, isolation_level=None, timeout=30)\n    try:\n        conn.execute(\"BEGIN IMMEDIATE\")\n        try:\n            version = conn.execute(\"PRAGMA user_version\").fetchone()[0]\n            tables = [r[0] for r in conn.execute(\n                \"SELECT name FROM sqlite_master WHERE type='table' \"\n                \"AND name NOT LIKE 'sqlite_%'\")]\n            if version == SCHEMA_VERSION:\n                if \"reservations_v2\" not in tables:\n                    raise ValueError(\"schema version 2 without reservations_v2\")\n            elif version != 0:\n                raise ValueError(f\"unknown schema version {version}\")\n            elif not tables:\n                _create_v2(conn)\n            else:\n                found = []\n                for t in tables:\n                    cols = _columns(conn, t)\n                    if (t == \"reservations\" and cols in (_G1_COLUMNS, _RECORDED_COLUMNS)) \\\n                            or (t == \"bookings_v2\" and cols == _JSON_COLUMNS):\n                        found.append((t, cols))\n                    else:\n                        raise ValueError(f\"unknown table {t!r}; owner mapping required\")\n                if len(found) != 1:\n                    raise ValueError(\"competing legacy tables; owner mapping required\")\n                _migrate(conn, *found[0])\n            conn.execute(f\"PRAGMA user_version = {SCHEMA_VERSION}\")\n            conn.execute(\"COMMIT\")\n        except BaseException:\n            conn.execute(\"ROLLBACK\")\n            raise\n    finally:\n        conn.close()\n\n\ndef reserve(db_path: str | Path, *, trusted_member_id: str,\n            asset_id: str, starts_at: str, ends_at: str,\n            idempotency_key: str) -> Outcome:\n    bad = _validate(trusted_member_id, asset_id, starts_at, ends_at,\n                    idempotency_key)\n    if bad:\n        return Outcome(*bad)\n    fp = _fingerprint(asset_id, starts_at, ends_at)\n    conn = sqlite3.connect(db_path, isolation_level=None, timeout=30)\n    try:\n        conn.execute(\"BEGIN IMMEDIATE\")  # check and insert are one write txn\n        try:\n            row = conn.execute(\n                \"SELECT id, fingerprint FROM reservations_v2 WHERE \"\n                \"trusted_member_id = ? AND idempotency_key = ?\",\n                (trusted_member_id, idempotency_key)).fetchone()\n            if row:\n                outcome = (Outcome(200, \"confirmed\", row[0], True)\n                           if row[1] == fp else\n                           Outcome(409, \"idempotency-key-reused\"))\n            elif conn.execute(\n                    \"SELECT 1 FROM reservations_v2 WHERE asset_id = ? \"\n                    \"AND starts_at < ? AND ? < ends_at\",\n                    (asset_id, ends_at, starts_at)).fetchone():\n                outcome = Outcome(409, \"interval-conflict\")\n            else:\n                cur = conn.execute(\n                    \"INSERT INTO reservations_v2 (trusted_member_id, asset_id, \"\n                    \"starts_at, ends_at, idempotency_key, fingerprint) \"\n                    \"VALUES (?, ?, ?, ?, ?, ?)\",\n                    (trusted_member_id, asset_id, starts_at, ends_at,\n                     idempotency_key, fp))\n                outcome = Outcome(201, \"confirmed\", cur.lastrowid, False)\n            conn.execute(\"COMMIT\")\n        except BaseException:\n            conn.execute(\"ROLLBACK\")\n            raise\n        return outcome\n    finally:\n        conn.close()\n\n\ndef get_reservation(path: str | Path, reservation_id: int):\n    # Read-only URI: a missing file raises sqlite3.OperationalError, not created.\n    uri = Path(path).resolve().as_uri() + \"?mode=ro\"\n    with closing(sqlite3.connect(uri, uri=True)) as conn:\n        row = conn.execute(\n            \"SELECT id, trusted_member_id, asset_id, starts_at, ends_at, \"\n            \"idempotency_key FROM reservations_v2 WHERE id = ?\",\n            (reservation_id,)).fetchone()\n    if row is None:\n        return None\n    return {\"reservation_id\": row[0], **dict(zip(_FIELDS, row[1:]))}\nEOF\npython -m unittest discover -s tests 2>&1 | tail -25"
+          }
+        },
+        {
+          "tool_name": "Bash",
+          "tool_use_id": "toolu_01KCwpgprRCcDipPhw84zb8T",
+          "tool_input": {
+            "command": "python -I - <<'EOF'\nimport sys,tempfile,pathlib,sqlite3\nsys.path.insert(0,'.')\nimport booking as b\nd=pathlib.Path(tempfile.mkdtemp())/\"x.db\"; b.init_db(d); b.init_db(d)\nS=\"2025-05-16T09:00:00Z\";E=\"2025-05-16T10:00:00Z\"\nk=dict(trusted_member_id=\"m\",asset_id=\"A\",starts_at=S,ends_at=E,idempotency_key=\"k\")\nprint(b.reserve(d,**{**k,\"asset_id\":\"\"}), b.reserve(d,**{**k,\"starts_at\":\"x\"}), b.reserve(d,**{**k,\"ends_at\":S}))\nprint(b.reserve(d,**k), b.reserve(d,**k), b.reserve(d,**{**k,\"ends_at\":\"2025-05-16T11:00:00Z\"}))\n# prior-candidate schema (id column) -> refused?\np=pathlib.Path(tempfile.mkdtemp())/\"p.db\"\nc=sqlite3.connect(p);c.execute(\"create table reservations(id integer primary key autoincrement,trusted_member_id text,asset_id text,starts_at text,ends_at text,idempotency_key text)\");c.commit();c.close()\ntry:b.init_db(p)\nexcept Exception as e:print(type(e).__name__,e)\nEOF\ncmp prior/booking.py prior/booking.py && sha256sum prior/booking.py READER_ENTRY.json"
+          }
+        }
+      ],
+      "terminal_reason": "completed",
+      "fast_mode_state": "off",
+      "fast_mode_disabled_reason": "sdk_opt_in_required",
+      "subagent_stats": {
+        "spawned": 0,
+        "requested": {
+          "background": 0,
+          "foreground": 0,
+          "unset": 0
+        },
+        "started_in_background": 0,
+        "max_depth": 0,
+        "spawned_by_subagents": 0,
+        "completed": 0,
+        "failed": 0,
+        "killed": {
+          "parent": 0,
+          "user": 0,
+          "system": 0
+        },
+        "refused": {
+          "depth_limit": 0,
+          "concurrency_limit": 0,
+          "budget": 0
+        },
+        "by_type": {}
+      },
+      "safety_stops": 0,
+      "is_error": false,
+      "num_turns": 13,
+      "subtype": "success",
+      "api_error_status": null,
+      "result": "G2 is implemented. The 17 supplied development tests pass (`python -m unittest discover -s tests`). I did not run protected acceptance. Human acceptance is not observed; `READER_ENTRY.json` still says PENDING.\n\n**Outcome:** `booking.py` keeps the public API (`init_db`, `reserve`, `get_reservation`, `Outcome`) and now:\n- returns distinct 422 codes for identifier, timestamp and interval errors;\n- returns 201 for a new reservation, and 200 with `replayed=True` and the original id for the same identity and payload;\n- returns 409 `idempotency-key-reused` for a changed payload and 409 `interval-conflict` for an overlap;\n- runs the replay/conflict check and the insert in one `BEGIN IMMEDIATE` transaction.\n\n**Migration:** `init_db` migrates three sources:\n- the original G1 `reservations` table;\n- the `bookings_v2` JSON table;\n- the retained public-column `reservations` table from G2-OD-02.\n\nIt runs in one transaction and writes the new table `reservations_v2` plus `user_version=2`. The legacy tables are left untouched. Unknown, dual or invalid data is refused.\n\n**Acceptance example:** a record created through `legacy_g1_recorded` is migrated and read back with the same id and values. Replaying the same request returns 200 with the same id. A second `init_db` changes nothing. The same data with `starts_at=\"bad\"` raises ValueError and leaves the file bytes unchanged.\n\n**Correction:** my first implementation failed 2 of 17 tests. Rows with an invalid field that shared an identity raised IntegrityError, but the tests expect ValueError. Migration now checks row validity first, then duplicate identity (IntegrityError), then overlap (ValueError).\n\n**Changed files:** only `booking.py` and `DOSSIER.md`. I checked that the `legacy_g1*.py` and `prior/booking.py` hashes match the ones recorded in `READER_ENTRY.json` / its `prior_sha256`; docs and tests were not edited.\n\n**Commands:** the test run before and after the change, one manual probe, and a hash check. About 9 tool commands, within the allowance.\n\n**Open question for the owner:** a database written by the prior candidate `prior/booking.py` has an `id` plus `idempotency_key` schema that no decision authorizes. It is refused with ValueError rather than guessed. If it should be migrated, the owner needs to supply a mapping.\n\n**Other limits:**\n- `reserve` and `get_reservation` do not auto-migrate; an unmigrated file raises `sqlite3.OperationalError`.\n- Concurrency is covered by one two-thread test on local SQLite only.\n- The `reservations_v2` table name is my choice; the tests don't prescribe one.\n\nThese are also recorded in `DOSSIER.md`.",
+      "ttft_ms": 1303,
+      "type": "result",
+      "duration_ms": 91708,
+      "uuid": "36cade19-4bce-40eb-b6a7-71c941db3084",
+      "begun_message_ids": [
+        "msg_011ChJMyEQR3JucNMSXLxjAg",
+        "msg_011ChJMyKwHwyBk2fNkQxayQ",
+        "msg_011ChJMySgbyBcVxmPHbEVvr",
+        "msg_011ChJMyYMvLsoN32Mu3uVAh",
+        "msg_011ChJN2F3x9AATHuobDg4YQ",
+        "msg_011ChJN3YrYDUKPja7xDFTN2",
+        "msg_011ChJN3wFwJTfiMDAXTASN6",
+        "msg_011ChJN4FLsCYh8of9YmCQLo",
+        "msg_011ChJN4WaQCxQQnejEHTytR",
+        "msg_011ChJN4dRf4YxfYaYGjzAB2",
+        "msg_011ChJN5Vt1omv4hdazdJXTy"
+      ],
+      "ttft_stream_ms": 745,
+      "time_to_request_ms": 105,
+      "time_to_request_phases_ms": {
+        "other": 7,
+        "system_prompt": 49,
+        "resume_other": 0,
+        "process_user_input": 3,
+        "input_attachments": 7,
+        "input_hooks": 3,
+        "conversation_append": 0,
+        "tool_pool_refresh": 0,
+        "init_message": 2,
+        "init_frame_send": 1,
+        "engine_pickup": 1,
+        "loop_entry": 5,
+        "message_prep": 2,
+        "model_config_wait": 0,
+        "autocompact": 1,
+        "request_announcements": 7,
+        "query_setup": 1,
+        "model_gates": 0,
+        "tool_schema_build": 6,
+        "message_normalization": 2,
+        "client_creation": 3,
+        "request_build": 5
+      },
+      "turn_start_resume_kind": "none",
+      "process_turn_index": 0,
+      "time_to_request_loop_lag_ms": 54,
+      "time_to_request_cpu_ms": 83,
+      "time_to_request_major_faults": 0,
+      "process_rss_mib_turn_start": 210,
+      "process_anon_mib_turn_start": 131,
+      "process_rss_mib_result": 246,
+      "process_anon_mib_result": 150,
+      "process_peak_rss_mib": 246,
+      "process_cpu_ms_turn": 1922,
+      "process_wall_ms_turn": 91707,
+      "tool_pool_build_count": 4,
+      "tool_pool_build_lapsed_count": 2,
+      "tool_pool_moved_at_lapse_count": 0,
+      "tool_pool_limit_ms": 30000,
+      "process_cpu_ms_streaming": 1297,
+      "process_wall_ms_streaming": 79614,
+      "main_stream_count": 11,
+      "main_stream_event_count": 1860,
+      "main_stream_chunk_count": 441,
+      "process_turn_states": {
+        "main_stream": {
+          "cpu_ms": 1297,
+          "wall_ms": 79614,
+          "entries": 11
+        },
+        "tool": {
+          "cpu_ms": 157,
+          "wall_ms": 613,
+          "entries": 10
+        },
+        "first_event_wait": {
+          "cpu_ms": 201,
+          "wall_ms": 11197,
+          "entries": 11
+        },
+        "before_first_request": {
+          "cpu_ms": 84,
+          "wall_ms": 105,
+          "entries": 1
+        },
+        "between_requests": {
+          "cpu_ms": 171,
+          "wall_ms": 166,
+          "entries": 10
+        },
+        "after_last_request": {
+          "cpu_ms": 12,
+          "wall_ms": 12,
+          "entries": 1
+        }
+      },
+      "input_attachments_detail": {
+        "slowest_producer": "artifact_opening_prefetch",
+        "slowest_producer_ms": 2,
+        "cpu_ms": 8,
+        "major_faults": 0,
+        "setup_ms": 0,
+        "prompt_producers_ms": 0,
+        "ambient_start_ms": 3,
+        "ambient_wait_ms": 1,
+        "render_ms": 1,
+        "producers": 42,
+        "token_counts": 0
+      },
+      "tool_schema_build_detail": {
+        "betas_ms": 0,
+        "waits_ms": 1,
+        "placement_ms": 0,
+        "render_ms": 5,
+        "after_ms": 0,
+        "other_ms": 0,
+        "tools": 6,
+        "new_schemas": 6
+      },
+      "message_normalization_detail": {
+        "before_ms": 0,
+        "normalize_ms": 1,
+        "images_ms": 1,
+        "post_process_ms": 0,
+        "after_ms": 0,
+        "other_ms": 0,
+        "messages": 10,
+        "wire_messages": 2
+      },
+      "request_build_detail": {
+        "records_ms": 0,
+        "system_ms": 1,
+        "headers_ms": 1,
+        "cache_break_record_ms": 0,
+        "plans_ms": 1,
+        "retry_setup_ms": 0,
+        "sent_build_ms": 2,
+        "record_attempt_ms": 0,
+        "other_ms": 0,
+        "sent_build_safety_context_ms": 0,
+        "sent_build_cache_breakpoints_ms": 0,
+        "sent_build_surrogate_scan_ms": 0
+      },
+      "first_content_frame_ms": 746,
+      "time_to_request_from_spawn_ms": 232437,
+      "warm_spare_claimed": false,
+      "flag_fetch_kick": "started_in_init_warm",
+      "time_origin_ms": 1795368565390.69,
+      "queued_turn_count": 0,
+      "result_index": 0,
+      "model_usage_since_last_result": {
+        "claude-sonnet-5-5": {
+          "inputTokens": 22,
+          "outputTokens": 15137,
+          "cacheReadInputTokens": 259862,
+          "cacheCreationInputTokens": 30284,
+          "webSearchRequests": 0,
+          "costUSD": 0.29853620000000003,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 64000,
+          "thinkingTokens": 2573,
+          "cacheCreationEphemeral5mInputTokens": 0,
+          "cacheCreationEphemeral1hInputTokens": 30284,
+          "canonicalModel": "claude-sonnet-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "process_start_tuning": 0
+    }
+  ],
+  "native_observations": {
+    "protocol_client": "claude",
+    "unexpected_protocol_lines": [],
+    "completed_turn_lines": [
+      1948
+    ],
+    "failed_turn_or_error_lines": [],
+    "agent_message_lines": [
+      1455,
+      1943
+    ],
+    "tool_operation_lines": [
+      21,
+      45,
+      57,
+      79,
+      632,
+      1104,
+      1120,
+      1230,
+      1327,
+      1414,
+      1446,
+      1767
+    ],
+    "model_observations": [
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 3,
+        "field": "model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 21,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 45,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 57,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 79,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 119,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 632,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 644,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 1104,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 1120,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 1135,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 1166,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 1230,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 1243,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 1327,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 1414,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 1446,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 1455,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 1767,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 1943,
+        "field": "message.model"
+      }
+    ],
+    "usage_observations": [
+      {
+        "event_line": 21,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 3572,
+          "cache_read_input_tokens": 6237,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 3572
+          },
+          "output_tokens": 16,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 45,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 928,
+          "cache_read_input_tokens": 9809,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 928
+          },
+          "output_tokens": 16,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 57,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 928,
+          "cache_read_input_tokens": 9809,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 928
+          },
+          "output_tokens": 16,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 79,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 7403,
+          "cache_read_input_tokens": 10737,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 7403
+          },
+          "output_tokens": 16,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 119,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 2783,
+          "cache_read_input_tokens": 18140,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 2783
+          },
+          "output_tokens": 6,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 632,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 2783,
+          "cache_read_input_tokens": 18140,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 2783
+          },
+          "output_tokens": 6,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 644,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 6062,
+          "cache_read_input_tokens": 20923,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 6062
+          },
+          "output_tokens": 8,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 1104,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 6062,
+          "cache_read_input_tokens": 20923,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 6062
+          },
+          "output_tokens": 8,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 1120,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 6062,
+          "cache_read_input_tokens": 20923,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 6062
+          },
+          "output_tokens": 8,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 1135,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 4813,
+          "cache_read_input_tokens": 26985,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 4813
+          },
+          "output_tokens": 10,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 1166,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 4813,
+          "cache_read_input_tokens": 26985,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 4813
+          },
+          "output_tokens": 10,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 1230,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 4813,
+          "cache_read_input_tokens": 26985,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 4813
+          },
+          "output_tokens": 10,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 1243,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 968,
+          "cache_read_input_tokens": 31798,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 968
+          },
+          "output_tokens": 3,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 1327,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 968,
+          "cache_read_input_tokens": 31798,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 968
+          },
+          "output_tokens": 3,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 1414,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 724,
+          "cache_read_input_tokens": 32766,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 724
+          },
+          "output_tokens": 16,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 1446,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 735,
+          "cache_read_input_tokens": 33490,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 735
+          },
+          "output_tokens": 16,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 1455,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 527,
+          "cache_read_input_tokens": 34225,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 527
+          },
+          "output_tokens": 24,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 1767,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 527,
+          "cache_read_input_tokens": 34225,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 527
+          },
+          "output_tokens": 24,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 1943,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1769,
+          "cache_read_input_tokens": 34752,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1769
+          },
+          "output_tokens": 740,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 1948,
+        "field": "usage",
+        "value": {
+          "input_tokens": 22,
+          "cache_creation_input_tokens": 30284,
+          "cache_read_input_tokens": 259862,
+          "output_tokens": 15137,
+          "output_tokens_details": {
+            "thinking_tokens": 2573
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 30284,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "global",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 968,
+              "cache_read_input_tokens": 34752,
+              "cache_creation_input_tokens": 1769,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 1769
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "fallback_credit": null
+        }
+      }
+    ],
+    "permission_denials": [
+      {
+        "event_line": 1948,
+        "value": {
+          "tool_name": "Bash",
+          "tool_use_id": "toolu_015vQw8ajiqWiw4hM1mTBaif",
+          "tool_input": {
+            "command": "cat > booking.py <<'EOF'\n\"\"\"G2 public interface: validated, idempotent, conflict-free reservations.\n\nContract RES-001/v1 + G2-OD-01 + G2-OD-02 (docs/). API: init_db, reserve,\nget_reservation. Schema version 2 is private: table ``reservations_v2`` plus\n``PRAGMA user_version = 2``. Legacy tables are never modified or dropped.\n\"\"\"\nimport hashlib\nimport json\nimport re\nimport sqlite3\nfrom contextlib import closing\nfrom dataclasses import dataclass\nfrom datetime import datetime, timedelta, timezone\nfrom pathlib import Path\n\nSCHEMA_VERSION = 2\n_FIELDS = (\"trusted_member_id\", \"asset_id\", \"starts_at\", \"ends_at\",\n           \"idempotency_key\")\n_TS = re.compile(r\"\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z\")\n\n# Authorized legacy representations (exact column signatures).\n_G1_COLUMNS = [\"id\", \"member_id\", \"asset_id\", \"starts_at\", \"ends_at\",\n               \"request_key\"]\n_RECORDED_COLUMNS = [\"reservation_id\", \"trusted_member_id\", \"asset_id\",\n                     \"starts_at\", \"ends_at\", \"idempotency_key\"]\n_JSON_COLUMNS = [\"booking_no\", \"payload\"]\n\n\n@dataclass(frozen=True)\nclass Outcome:\n    status: int\n    code: str\n    reservation_id: int | None = None\n    replayed: bool = False\n\n\ndef _parse(value):\n    if not isinstance(value, str) or not _TS.fullmatch(value):\n        return None\n    try:\n        return datetime.strptime(value, \"%Y-%m-%dT%H:%M:%SZ\").replace(\n            tzinfo=timezone.utc)\n    except ValueError:\n        return None\n\n\ndef _validate(member, asset, start, end, key):\n    \"\"\"Return None if valid, else (status, code).\"\"\"\n    for v in (member, asset, key):\n        if not isinstance(v, str) or not 1 <= len(v) <= 128:\n            return 422, \"invalid-identifier\"\n    s, e = _parse(start), _parse(end)\n    if s is None or e is None:\n        return 422, \"invalid-timestamp\"\n    if not timedelta(0) < e - s <= timedelta(hours=24):\n        return 422, \"invalid-interval\"\n    return None\n\n\ndef _fingerprint(asset, start, end):\n    return hashlib.sha256(json.dumps([asset, start, end]).encode()).hexdigest()\n\n\ndef _columns(conn, table):\n    quoted = '\"' + table.replace('\"', '\"\"') + '\"'\n    return [r[1] for r in conn.execute(f\"PRAGMA table_info({quoted})\")]\n\n\ndef _legacy_rows(conn, table, columns):\n    \"\"\"Return (id, member, asset, start, end, key) tuples from a legacy table.\"\"\"\n    quoted = '\"' + table.replace('\"', '\"\"') + '\"'\n    rows = conn.execute(f\"SELECT * FROM {quoted} ORDER BY 1\").fetchall()\n    out = []\n    for row in rows:\n        if columns == _JSON_COLUMNS:\n            try:\n                p = json.loads(row[1])\n            except (TypeError, ValueError):\n                raise ValueError(f\"unreadable legacy JSON in {table}; owner mapping required\")\n            if not isinstance(p, dict) or set(p) != set(_FIELDS):\n                raise ValueError(f\"unknown legacy payload in {table}; owner mapping required\")\n            row = (row[0],) + tuple(p[f] for f in _FIELDS)\n        if type(row[0]) is not int:\n            raise ValueError(f\"non-integer legacy identifier in {table}\")\n        out.append(tuple(row))\n    return out\n\n\ndef _migrate(conn, table, columns):\n    rows = _legacy_rows(conn, table, columns)\n    seen = {}\n    for rid, member, asset, start, end, key in rows:\n        if (member, key) in seen:\n            raise sqlite3.IntegrityError(\n                f\"duplicate legacy identity {(member, key)!r}; owner mapping required\")\n        seen[(member, key)] = rid\n    accepted = []\n    for rid, member, asset, start, end, key in rows:\n        bad = _validate(member, asset, start, end, key)\n        if bad:\n            raise ValueError(f\"invalid legacy row {rid} ({bad[1]}); owner mapping required\")\n        for _, a, s, e in accepted:\n            if a == asset and s < end and start < e:\n                raise ValueError(f\"overlapping legacy row {rid}; owner mapping required\")\n        accepted.append((rid, asset, start, end))\n    _create_v2(conn)\n    for rid, member, asset, start, end, key in rows:\n        conn.execute(\n            \"INSERT INTO reservations_v2 (id, trusted_member_id, asset_id, \"\n            \"starts_at, ends_at, idempotency_key, fingerprint) \"\n            \"VALUES (?, ?, ?, ?, ?, ?, ?)\",\n            (rid, member, asset, start, end, key,\n             _fingerprint(asset, start, end)))\n\n\ndef _create_v2(conn):\n    conn.execute(\n        \"CREATE TABLE reservations_v2 (\"\n        \"id INTEGER PRIMARY KEY AUTOINCREMENT, \"\n        \"trusted_member_id TEXT NOT NULL, asset_id TEXT NOT NULL, \"\n        \"starts_at TEXT NOT NULL, ends_at TEXT NOT NULL, \"\n        \"idempotency_key TEXT NOT NULL, fingerprint TEXT NOT NULL, \"\n        \"UNIQUE (trusted_member_id, idempotency_key))\")\n    conn.execute(\"CREATE INDEX reservations_v2_slot \"\n                 \"ON reservations_v2 (asset_id, starts_at, ends_at)\")\n\n\ndef init_db(path: str | Path) -> None:\n    \"\"\"Create or migrate to schema 2; idempotent. Refusal leaves bytes unchanged.\"\"\"\n    conn = sqlite3.connect(path, isolation_level=None, timeout=30)\n    try:\n        conn.execute(\"BEGIN IMMEDIATE\")\n        try:\n            version = conn.execute(\"PRAGMA user_version\").fetchone()[0]\n            tables = [r[0] for r in conn.execute(\n                \"SELECT name FROM sqlite_master WHERE type='table' \"\n                \"AND name NOT LIKE 'sqlite_%'\")]\n            if version == SCHEMA_VERSION:\n                if \"reservations_v2\" not in tables:\n                    raise ValueError(\"schema version 2 without reservations_v2\")\n            elif version != 0:\n                raise ValueError(f\"unknown schema version {version}\")\n            elif not tables:\n                _create_v2(conn)\n            else:\n                found = []\n                for t in tables:\n                    cols = _columns(conn, t)\n                    if (t == \"reservations\" and cols in (_G1_COLUMNS, _RECORDED_COLUMNS)) \\\n                            or (t == \"bookings_v2\" and cols == _JSON_COLUMNS):\n                        found.append((t, cols))\n                    else:\n                        raise ValueError(f\"unknown table {t!r}; owner mapping required\")\n                if len(found) != 1:\n                    raise ValueError(\"competing legacy tables; owner mapping required\")\n                _migrate(conn, *found[0])\n            conn.execute(f\"PRAGMA user_version = {SCHEMA_VERSION}\")\n            conn.execute(\"COMMIT\")\n        except BaseException:\n            conn.execute(\"ROLLBACK\")\n            raise\n    finally:\n        conn.close()\n\n\ndef reserve(db_path: str | Path, *, trusted_member_id: str,\n            asset_id: str, starts_at: str, ends_at: str,\n            idempotency_key: str) -> Outcome:\n    bad = _validate(trusted_member_id, asset_id, starts_at, ends_at,\n                    idempotency_key)\n    if bad:\n        return Outcome(*bad)\n    fp = _fingerprint(asset_id, starts_at, ends_at)\n    conn = sqlite3.connect(db_path, isolation_level=None, timeout=30)\n    try:\n        conn.execute(\"BEGIN IMMEDIATE\")  # check and insert are one write txn\n        try:\n            row = conn.execute(\n                \"SELECT id, fingerprint FROM reservations_v2 WHERE \"\n                \"trusted_member_id = ? AND idempotency_key = ?\",\n                (trusted_member_id, idempotency_key)).fetchone()\n            if row:\n                outcome = (Outcome(200, \"confirmed\", row[0], True)\n                           if row[1] == fp else\n                           Outcome(409, \"idempotency-key-reused\"))\n            elif conn.execute(\n                    \"SELECT 1 FROM reservations_v2 WHERE asset_id = ? \"\n                    \"AND starts_at < ? AND ? < ends_at\",\n                    (asset_id, ends_at, starts_at)).fetchone():\n                outcome = Outcome(409, \"interval-conflict\")\n            else:\n                cur = conn.execute(\n                    \"INSERT INTO reservations_v2 (trusted_member_id, asset_id, \"\n                    \"starts_at, ends_at, idempotency_key, fingerprint) \"\n                    \"VALUES (?, ?, ?, ?, ?, ?)\",\n                    (trusted_member_id, asset_id, starts_at, ends_at,\n                     idempotency_key, fp))\n                outcome = Outcome(201, \"confirmed\", cur.lastrowid, False)\n            conn.execute(\"COMMIT\")\n        except BaseException:\n            conn.execute(\"ROLLBACK\")\n            raise\n        return outcome\n    finally:\n        conn.close()\n\n\ndef get_reservation(path: str | Path, reservation_id: int):\n    # Read-only URI: a missing file raises sqlite3.OperationalError, not created.\n    uri = Path(path).resolve().as_uri() + \"?mode=ro\"\n    with closing(sqlite3.connect(uri, uri=True)) as conn:\n        row = conn.execute(\n            \"SELECT id, trusted_member_id, asset_id, starts_at, ends_at, \"\n            \"idempotency_key FROM reservations_v2 WHERE id = ?\",\n            (reservation_id,)).fetchone()\n    if row is None:\n        return None\n    return {\"reservation_id\": row[0], **dict(zip(_FIELDS, row[1:]))}\nEOF\npython -m unittest discover -s tests 2>&1 | tail -25"
+          }
+        }
+      },
+      {
+        "event_line": 1948,
+        "value": {
+          "tool_name": "Bash",
+          "tool_use_id": "toolu_01KCwpgprRCcDipPhw84zb8T",
+          "tool_input": {
+            "command": "python -I - <<'EOF'\nimport sys,tempfile,pathlib,sqlite3\nsys.path.insert(0,'.')\nimport booking as b\nd=pathlib.Path(tempfile.mkdtemp())/\"x.db\"; b.init_db(d); b.init_db(d)\nS=\"2025-05-16T09:00:00Z\";E=\"2025-05-16T10:00:00Z\"\nk=dict(trusted_member_id=\"m\",asset_id=\"A\",starts_at=S,ends_at=E,idempotency_key=\"k\")\nprint(b.reserve(d,**{**k,\"asset_id\":\"\"}), b.reserve(d,**{**k,\"starts_at\":\"x\"}), b.reserve(d,**{**k,\"ends_at\":S}))\nprint(b.reserve(d,**k), b.reserve(d,**k), b.reserve(d,**{**k,\"ends_at\":\"2025-05-16T11:00:00Z\"}))\n# prior-candidate schema (id column) -> refused?\np=pathlib.Path(tempfile.mkdtemp())/\"p.db\"\nc=sqlite3.connect(p);c.execute(\"create table reservations(id integer primary key autoincrement,trusted_member_id text,asset_id text,starts_at text,ends_at text,idempotency_key text)\");c.commit();c.close()\ntry:b.init_db(p)\nexcept Exception as e:print(type(e).__name__,e)\nEOF\ncmp prior/booking.py prior/booking.py && sha256sum prior/booking.py READER_ENTRY.json"
+          }
+        }
+      }
+    ],
+    "reported_cost_observations": [
+      {
+        "event_line": 1948,
+        "field": "total_cost_usd",
+        "value": 0.29853620000000003
+      }
+    ],
+    "thread_ids": [
+      "9c224d5f-5066-4488-a954-9202e65572c8"
+    ]
+  },
+  "requested_model": "claude-sonnet-5-5",
+  "capture_sha256": {
+    "native_events.jsonl": "025cc081708fdc3e7221bf317b15f305966a9fe46fc60b98e22c333bfc6accd5",
+    "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "agent_final.txt": "367c6fac93085ae53a42aa89a5235ecdf22f7ac8ef4a6f86eec206a65f028dc1"
+  },
+  "observed_model_ids": [
+    "claude-sonnet-5-5"
+  ],
+  "model_identity_observed": true,
+  "native_completion_event_observed": true,
+  "native_turn_completed": true,
+  "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+  "acceptance": "NOT_ESTABLISHED",
+  "scope_note": "Native events retained as emitted; absence of usage is unknown, not zero."
+}

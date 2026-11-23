@@ -1,0 +1,28 @@
+`diagnose` now supports all three schema-3 representations from contract OPS-G4/v3, and the 11 development checks in `tests/test_g4.py` pass. The 3 earlier errors are gone. I haven't run the protected acceptance.
+
+**Outcome.** The earlier run stopped and asked about the native `reservations_v2` signature that `booking.py` creates. v3 documents it, with id column `id` and fingerprint column `fingerprint`, so I added that mapping and nothing else.
+
+**Acceptance example.** A DB with active rows 1 (09:00–10:00) and 2 (09:30–10:30) on asset A gives `ACTIVE_OVERLAP` with pairs `[[1,2]]` and file bytes unchanged. Cost summary with 2.20 + 0.80 EUR and 1 accepted gives `3.00`. With 0 accepted it gives null unit metrics and `NO_ACCEPTED_OUTCOME`.
+
+**Changes.** I edited only `operations.py` and `DOSSIER.md`.
+- **`operations.py`:**
+  - If a `reservations_v2` table exists, it is the current table and must match the recorded or native signature exactly. Any other signature is refused.
+  - An original `reservations` table beside it is historical. It isn't counted and isn't used as a fallback.
+  - Without `reservations_v2`, `reservations` must match the reference signature.
+  - The `user_version == 3` requirement and the read-only open are unchanged. `cost_summary` is unchanged.
+- **`DOSSIER.md`:** the blocking question is marked resolved, and it now holds the observed results and the limits below.
+
+**Commands and results.**
+- `python -m unittest tests.test_g4` gives 11 tests, all OK, run twice. The first run was before the dossier edit and the second after.
+- An ad hoc check, outside the supplied tests, on a native DB plus `insert_overlap` gave `ACTIVE_OVERLAP` with `[[1,2]]`.
+- In the same ad hoc check, adding a historical `reservations` table with an active row on the same asset left the pairs unchanged.
+- A `reservations_v2` table with an unrelated signature was refused.
+
+**Remaining uncertainty.**
+- No supplied test covers a DB with the recorded signature (`reservation_id`).
+- Overlap compares ISO-8601 strings lexically, which is only valid for uniform `...Z` timestamps.
+- Concurrent-modification detection compares before and after digests, so it misses a change that is made and then reverted. No test exercises it.
+- The contract doesn't define "competing representations" beyond the cases above. I refuse whenever the current table doesn't match exactly one signature, and I didn't invent a stricter rule.
+- No repair is proposed or authorized. That decision belongs to the operations lead.
+
+`git status` from the parent directory showed modified files under `companion/` and `missions/` that were already changed. I didn't touch them. Tests, docs, `prior/` and `READER_ENTRY.json` are untouched. I used 7 of the 40 tool commands.

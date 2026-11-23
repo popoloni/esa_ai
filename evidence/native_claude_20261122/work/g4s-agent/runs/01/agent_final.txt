@@ -1,0 +1,24 @@
+`diagnose` and `cost_summary` are implemented, and all 13 supplied development tests now pass. I haven't run protected acceptance, and no human approval has been observed (`READER_ENTRY.json` still says `PENDING`).
+
+**Changed files:** `operations.py` and `DOSSIER.md`. Docs, tests, `booking.py`, `reference_g3.py`, `g4_fixture.py` and `READER_ENTRY.json` are untouched. I created one scratch script at `/tmp/claude-0/-home-claude-work-live22-agentic-ai-5-2-work-g4-standalone/b8b0cd94-1e74-44bf-8891-bb083e18c577/scratchpad/chk.py`, outside the project.
+
+**Acceptance example:** active rows 09:00–10:00 and 09:30–10:30 on asset A, plus a cancelled row and an adjacent 10:30–11:00 row, give `ACTIVE_OVERLAP` with only the pair `[[1,2]]`. The file bytes are identical afterwards. For cost, a failed 2.20 EUR/12 min attempt plus an accepted 0.80 EUR/8 min attempt with accepted=1 gives 3.00 EUR and 20 min per outcome. With accepted=0 the unit metrics are null and the status is `NO_ACCEPTED_OUTCOME`.
+
+**Commands and outcomes:**
+- `python3 -m unittest tests.test_g4` before the change: FAILED, errors=17, because the stubs raised `NotImplementedError`. That was the only defect.
+- The same command after the change: 13 tests, OK.
+- My scratch check of the recorded and native layouts, with a historical `reservations` table alongside, found the overlap and did not pair the adjacent row. The supplied tests don't cover those two layouts.
+
+**How it works:**
+- **Layout matching:** `diagnose` matches the full column signature of the reference, recorded or native layout. It refuses zero matches and competing current layouts, and ignores a historical table with a different signature.
+- **Read-only:** it opens the file read-only and does not create a missing file. It hashes the file before and after, and raises `RuntimeError` if the hash changed.
+- **Cost:** `cost_summary` uses Decimal. It raises `ValueError` for non-numeric, NaN, infinite, negative, bool or missing values, and for an invalid accepted count.
+
+**Remaining uncertainty:**
+- **Schema version:** I refuse any `user_version` other than 3, because the contract targets schema 3 only. That is my reading, and the owner may confirm it.
+- **Concurrent writes:** the concurrent-modification check compares whole-file hashes before and after. It cannot prove a snapshot against a writer active mid-read.
+- **Not exercised:** a live concurrent writer, WAL-mode databases, malformed timestamps and large tables.
+
+`DOSSIER.md` also records the decisions. I accept the first two proposals (diagnosis and cost accounting) at development level only. Any repair of overlapping rows is an ASK for the owner, since nothing here authorizes it.
+
+I used about 10 tool commands, well inside the 40 allowed.

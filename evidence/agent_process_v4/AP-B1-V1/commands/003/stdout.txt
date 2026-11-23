@@ -1,0 +1,82 @@
+
+FILE tests/test_routing.py
+"""Independent acceptance cases. In the lab, keep this directory outside agent write scope."""
+import unittest
+from treasury.routing import assess
+
+class RoutingAcceptance(unittest.TestCase):
+    def check(self, raw, route, reason):
+        result = assess(raw)
+        self.assertEqual((result.route, result.reason, result.policy_version),
+                         (route, reason, "BR-001/v1"))
+
+    def test_positive_below_limit(self):
+        self.check("4000.00", "STANDARD_QUEUE", "BELOW_LIMIT")
+
+    def test_exact_boundary_requires_review(self):
+        self.check("5000.00", "HUMAN_REVIEW", "AT_OR_ABOVE_LIMIT")
+
+    def test_above_boundary_requires_review(self):
+        self.check("5001.00", "HUMAN_REVIEW", "AT_OR_ABOVE_LIMIT")
+
+    def test_negative_amount_rejected(self):
+        self.check("-0.01", "REJECTED", "INVALID_AMOUNT")
+
+    def test_zero_amount_rejected(self):
+        self.check("0.00", "REJECTED", "INVALID_AMOUNT")
+
+    def test_nonnumeric_amount_rejected(self):
+        self.check("not-an-amount", "REJECTED", "INVALID_AMOUNT")
+
+    def test_nonfinite_amount_rejected(self):
+        self.check("NaN", "REJECTED", "INVALID_AMOUNT")
+
+if __name__ == "__main__":
+    unittest.main()
+
+
+FILE tests/test_routing_extended.py
+"""Five protected public-API diagnostics added to the unchanged seven historical cases."""
+import unittest
+from treasury import routing
+
+
+class RoutingExtended(unittest.TestCase):
+    def assert_rejected(self, amount):
+        result = routing.assess(amount)
+        self.assertEqual((result.route, result.reason, result.policy_version),
+                         ("REJECTED", "INVALID_AMOUNT", "BR-001/v1"))
+
+    def test_positive_infinity_rejected(self):
+        self.assert_rejected("Infinity")
+
+    def test_negative_infinity_rejected(self):
+        self.assert_rejected("-Infinity")
+
+    def test_short_infinity_rejected(self):
+        self.assert_rejected("inf")
+
+    def test_signaling_nan_rejected(self):
+        self.assert_rejected("sNaN")
+
+    def test_non_string_argument_is_programming_error(self):
+        for value in (None, 4000, 4000.0, object()):
+            with self.subTest(value_type=type(value).__name__):
+                with self.assertRaises(TypeError):
+                    routing.assess(value)
+
+
+FILE docs/policy.json
+{
+  "source_id": "BR-001/v1",
+  "status": "approved",
+  "owner": "Treasury policy owner",
+  "effective_date": "2025-05-12",
+  "currency": "EUR",
+  "threshold": "5000.00",
+  "requires_finite_positive": true,
+  "at_threshold": "HUMAN_REVIEW",
+  "rule_file": "BR-001.md",
+  "calendar_scope": "FICTIONAL_TEACHING_CASE"
+}
+

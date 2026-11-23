@@ -1,0 +1,46 @@
+{
+  "task": "AP-B2",
+  "event": 8,
+  "argv": [
+    "python3",
+    "-B",
+    "-c",
+    "from pathlib import Path\nPath('intake.py').write_text(\"\\\"\\\"\\\"Bounded local classification using the retained recommendation router.\\n\\nInvocation budgets do not provide a deadline for a blocking Provider. Receipts\\nare local snapshots and neither authorize payments nor provide stored identity.\\n\\\"\\\"\\\"\\n\\nfrom collections.abc import Mapping\\n\\nfrom routing import assess\\n\\n\\nclass ProviderUnavailable(RuntimeError):\\n    \\\"\\\"\\\"The cooperative Provider could not classify this attempt.\\\"\\\"\\\"\\n\\n\\nclass ProviderProtocolError(ValueError):\\n    \\\"\\\"\\\"A returned Provider response violates the classification contract.\\\"\\\"\\\"\\n\\n\\ndef _snapshot(receipt):\\n    \\\"\\\"\\\"Copy records and attempts so exceptions retain completed local work.\\\"\\\"\\\"\\n    return {\\n        \\\"records\\\": [record.copy() for record in receipt[\\\"records\\\"]],\\n        \\\"attempts\\\": [attempt.copy() for attempt in receipt[\\\"attempts\\\"]],\\n        \\\"calls\\\": receipt[\\\"calls\\\"],\\n        \\\"payment_authorized\\\": False,\\n    }\\n\\n\\ndef evaluate_batch(requests, provider, *, max_attempts=2, max_calls=4):\\n    \\\"\\\"\\\"Route requests and obtain attributed classifications within call budgets.\\n\\n    The injected local Provider is called as provider(request_id, amount_eur).\\n    Only ProviderUnavailable is retried. Every escaping exception is annotated\\n    with the current receipt and re-raised without replacing the exception.\\n    \\\"\\\"\\\"\\n    receipt = {\\n        \\\"records\\\": [],\\n        \\\"attempts\\\": [],\\n        \\\"calls\\\": 0,\\n        \\\"payment_authorized\\\": False,\\n    }\\n    try:\\n        for name, value in (\\n            (\\\"max_attempts\\\", max_attempts), (\\\"max_calls\\\", max_calls)\\n        ):\\n            if isinstance(value, bool) or not isinstance(value, int):\\n                raise TypeError(f\\\"{name} must be a nonnegative integer\\\")\\n            if value < 0:\\n                raise ValueError(f\\\"{name} must be a nonnegative integer\\\")\\n\\n        # Preflight the whole batch, including late duplicates, before any call.\\n        # Save immutable identity/amount values independently of caller mappings.\\n        batch = []\\n        seen = set()\\n        for request in requests:\\n            if not isinstance(request, Mapping):\\n                raise TypeError(\\\"each request must be a mapping\\\")\\n            request_id = request[\\\"request_id\\\"]\\n            amount = request[\\\"amount_eur\\\"]\\n            if not isinstance(request_id, str):\\n                raise TypeError(\\\"request_id must be a string\\\")\\n            if not request_id:\\n                raise ValueError(\\\"request_id must not be empty\\\")\\n            if request_id in seen:\\n                raise ValueError(f\\\"duplicate request_id: {request_id}\\\")\\n            seen.add(request_id)\\n            batch.append((request_id, amount))\\n\\n        for request_id, amount in batch:\\n            decision = assess(amount)\\n            record = {\\n                \\\"request_id\\\": request_id,\\n                \\\"amount_eur\\\": amount,\\n                \\\"route\\\": decision.route,\\n                \\\"reason\\\": decision.reason,\\n                \\\"policy_version\\\": decision.policy_version,\\n            }\\n            if decision.route == \\\"REJECTED\\\":\\n                record[\\\"status\\\"] = \\\"REJECTED\\\"\\n                receipt[\\\"records\\\"].append(record)\\n                continue\\n\\n            record[\\\"status\\\"] = \\\"DEFERRED\\\"\\n            for attempt_number in range(1, max_attempts + 1):\\n                if receipt[\\\"calls\\\"] >= max_calls:\\n                    break\\n                attempt = {\\n                    \\\"request_id\\\": request_id,\\n                    \\\"attempt\\\": attempt_number,\\n                }\\n                receipt[\\\"calls\\\"] += 1\\n                try:\\n                    response = provider(request_id, amount)\\n                except ProviderUnavailable:\\n                    attempt[\\\"outcome\\\"] = \\\"UNAVAILABLE\\\"\\n                    receipt[\\\"attempts\\\"].append(attempt)\\n                    continue\\n                except BaseException as error:\\n                    attempt[\\\"outcome\\\"] = \\\"PROVIDER_ERROR\\\"\\n                    attempt[\\\"error_type\\\"] = type(error).__name__\\n                    receipt[\\\"attempts\\\"].append(attempt)\\n                    raise\\n\\n                if (\\n                    not isinstance(response, Mapping)\\n                    or set(response) != {\\\"request_id\\\", \\\"classification\\\"}\\n                    or response[\\\"request_id\\\"] != request_id\\n                    or not isinstance(response[\\\"classification\\\"], str)\\n                    or response[\\\"classification\\\"] not in (\\\"MATCH\\\", \\\"REVIEW\\\")\\n                ):\\n                    attempt[\\\"outcome\\\"] = \\\"INVALID_RESPONSE\\\"\\n                    receipt[\\\"attempts\\\"].append(attempt)\\n                    raise ProviderProtocolError(\\n                        \\\"response must contain exactly the matching request_id \\\"\\n                        \\\"and a string classification of MATCH or REVIEW\\\"\\n                    )\\n\\n                classification = response[\\\"classification\\\"]\\n                attempt[\\\"outcome\\\"] = classification\\n                receipt[\\\"attempts\\\"].append(attempt)\\n                record[\\\"status\\\"] = \\\"CLASSIFIED\\\"\\n                record[\\\"classification\\\"] = classification\\n                break\\n\\n            receipt[\\\"records\\\"].append(record)\\n\\n        return _snapshot(receipt)\\n    except BaseException as error:\\n        snapshot = _snapshot(receipt)\\n        error.receipt = snapshot\\n        error.attempts = snapshot[\\\"attempts\\\"]\\n        error.records = snapshot[\\\"records\\\"]\\n        error.calls = snapshot[\\\"calls\\\"]\\n        raise\\n\", encoding='utf-8')"
+  ],
+  "cwd": "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B2/workspace",
+  "started_at_utc": "2026-11-16T15:48:34.934379+00:00",
+  "elapsed_seconds": 0.03215,
+  "returncode": 0,
+  "timeout": false,
+  "before": {
+    "AGENTS.md": "60c816b03a88dd0593dafcc7cb82ed7c9ec33e96ec4f226057f2625295e6f0fc",
+    "DOSSIER.md": "4bf3c90302a2bf1f5fa8d4c6ed8652c5fb5fb364cb064c36c084d8104ff7935d",
+    "READER_ENTRY.json": "256f273bb295ae3d76d899960c2171ef287a38cf5a241f73f43aca80d8d87c0a",
+    "docs/contract.md": "7322b946c06acf1e5ca4fc2031419d077cec88fb201aaa6ba6d9e2603bb9992d",
+    "intake.py": "696f7d077b7bd7ba75df7980eebe33ddeae02aae7555aee20ad4df78f5fbe293",
+    "prior/parent-entry.json": "6d28d305543edbf520a1a95c2c274d0453f1f2c0f0f5d270a0553d6d614eac71",
+    "prior/parent-handoff.json": "e43852b8b0cc5688d3b9f8cc668e69197b412b784e395c7e0b1cdac3e5927327",
+    "prior/routing.py": "c2b093e60d6893274701814d00c3bf63d25bfb6c2926feefb23a93941c51e4a0",
+    "routing.py": "c2b093e60d6893274701814d00c3bf63d25bfb6c2926feefb23a93941c51e4a0",
+    "tests/test_b2.py": "13c76494bb51344136c06e4b49cb071872f8737375f81ceac1a491f9bd3ccc06"
+  },
+  "after": {
+    "AGENTS.md": "60c816b03a88dd0593dafcc7cb82ed7c9ec33e96ec4f226057f2625295e6f0fc",
+    "DOSSIER.md": "4bf3c90302a2bf1f5fa8d4c6ed8652c5fb5fb364cb064c36c084d8104ff7935d",
+    "READER_ENTRY.json": "256f273bb295ae3d76d899960c2171ef287a38cf5a241f73f43aca80d8d87c0a",
+    "docs/contract.md": "7322b946c06acf1e5ca4fc2031419d077cec88fb201aaa6ba6d9e2603bb9992d",
+    "intake.py": "c039ea5ecae3bccd9b1647e7f8e4054b20790d79d595c976d8f48700239562ea",
+    "prior/parent-entry.json": "6d28d305543edbf520a1a95c2c274d0453f1f2c0f0f5d270a0553d6d614eac71",
+    "prior/parent-handoff.json": "e43852b8b0cc5688d3b9f8cc668e69197b412b784e395c7e0b1cdac3e5927327",
+    "prior/routing.py": "c2b093e60d6893274701814d00c3bf63d25bfb6c2926feefb23a93941c51e4a0",
+    "routing.py": "c2b093e60d6893274701814d00c3bf63d25bfb6c2926feefb23a93941c51e4a0",
+    "tests/test_b2.py": "13c76494bb51344136c06e4b49cb071872f8737375f81ceac1a491f9bd3ccc06"
+  },
+  "changed_files": [
+    "intake.py"
+  ],
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "recorder_sha256": "58781a554cf89bb7a5c5fbc673825901820002e6036095198a2c062aa3e0126f",
+  "scope": "Actual submitted subprocess and workspace snapshots. This recorder is not a complete native-client trace or an OS sandbox."
+}

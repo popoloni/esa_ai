@@ -1,0 +1,25 @@
+I implemented the CLI contribution, and the component test passes. That test uses a fake report provider, so it says nothing about the combined behavior.
+
+**Changed files**
+- `reservation_cli.py` now has `main(argv=None)` with the `inspect --database PATH --reservation-id POSITIVE_INTEGER` subcommand.
+  - It calls `reservation_report.build_report` and prints one JSON object on stdout.
+  - Exit codes are 0 for found and 3 for absent.
+  - Invalid or missing arguments exit 2. This includes `0`, `-1` and `abc` as the id.
+  - A storage error (`sqlite3.Error` or `OSError`) prints one `error:` line on stderr, leaves stdout empty and exits 2. Any other exception propagates.
+  - Importing the module does not run the CLI, and the `__main__` entry exits with `main`'s status.
+  - It does no SQL, storage initialization or report semantics.
+- `CONTRIBUTION_B.md` is new. It holds the acceptance table I wrote before editing the code, plus design notes, verification status and assumptions.
+- `INTEGRATION_ROLE.json` was already untracked when I started, and I did not modify it. No other files were touched, and I did not commit.
+
+**Checks**
+- `python -m unittest tests.test_integration_b` ran 3 tests, all OK.
+- The only fake is `build_report`, patched with `unittest.mock`. No real storage or booking API was involved.
+- I did not run the CLI against Contribution A, an extracted package or a real database.
+- I removed the `__pycache__` directories my test run created.
+
+**Integration assumptions for the operator**
+- `build_report` returns a dict with a boolean `found`, as the contract says.
+- A raises storage errors unchanged, such as the `sqlite3.OperationalError` that `booking` raises for a missing database. If A wraps them in another exception type, B won't map them to exit 2.
+- Still to be checked on the combined package: a confirmed record, a cancelled record, an absent id and missing storage. For missing storage, confirm the database file isn't created.
+
+I used about 5 of the 40 tool commands.

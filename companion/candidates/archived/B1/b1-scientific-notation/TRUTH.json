@@ -1,0 +1,29 @@
+{
+  "schema": "esa-review-ground-truth/v1",
+  "mission": "B1",
+  "candidate_id": "b1-scientific-notation",
+  "created_on": "2026-11-02",
+  "origin": "CONSTRUCTED_TEACHING_VARIANT",
+  "rationale_origin": "CONSTRUCTED",
+  "actual_model_trace": false,
+  "code_path": "variant.py",
+  "rationale_path": "RATIONALE.md",
+  "expected_decision": "REQUEST_REQUIREMENTS_DECISION",
+  "expected_historical_pass": true,
+  "expected_extended_pass": true,
+  "targeted_assertions": [],
+  "explanation": "The implementation preserves the current Decimal-based behavior, including 1e3 and 4_000, and passes both suites. The accompanying proposal to restrict the input grammar is a requirements change, not an inference licensed by BR-001 or by passing tests. Request a product or policy decision before introducing a narrower lexical grammar; no failing assertion is claimed.",
+  "expected_observations": {
+    "historical": "7 passed, 0 failed, 0 errors",
+    "extended_target": "No expected failure; 1e3 and 4_000 currently produce STANDARD_QUEUE/BELOW_LIMIT",
+    "current_extended_scope": "Five public checks; separate one-method conversion fault probe."
+  },
+  "required_human_decision": "Must BR-001 accept every finite positive numeric string parsed by Decimal, or must a separately approved lexical contract restrict scientific notation, underscores, whitespace, signs, Unicode digits, or precision? Name the owner and record examples before changing the parser.",
+  "limitations": [
+    "This variant is a deterministic teaching fixture, not evidence about a model or an agent.",
+    "Expected outcomes must be checked against executed receipts; metadata is not a test run."
+  ],
+  "supplemental_probe": "b1_conversion_fault",
+  "expected_supplemental_pass": true,
+  "scope_note": "Current extended acceptance is five public-API methods. The conversion fault is a separate candidate-specific probe of the known Decimal binding; AUTHOR_CHECK.json retains the earlier combined six-method author experiment."
+}

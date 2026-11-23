@@ -1,0 +1,31 @@
+{
+  "at_utc": "2026-11-22T17:29:14.622326+00:00",
+  "operator": "Claude Code live test",
+  "operator_kind": "AI",
+  "decision": "accept",
+  "note": "Slice 4/4 on the agent candidate; scope limited to booking.py and DOSSIER.md.\n",
+  "decision_binding": {
+    "candidate_hashes": {
+      "AGENTS.md": "78be262e9924077d0d92ab0abaffdf172d0e1b1bc0d83a5b28d0d75e47fd6cd6",
+      "AGENT_PLAN.md": "a81daca8c1013dc17b8af3607435508dc1228f33b943b824563a67f228ac4ab5",
+      "AGENT_QUESTIONS.md": "bb5b9b329d32c42f9ff86b26629a3c815b90d9d9265f7d648f4dc43e0da04a7a",
+      "DOSSIER.md": "f57579afe243480f5bd2845a5557e9d00b3adea19c36da21682d79ad143fcadd",
+      "QUESTIONS.md": "961aea8d74161fc2575b8965680385b1f6fc917d6a1d3a3fbf97b6d211ce88fb",
+      "READER_ENTRY.json": "5dce40590573482fa2b5e23dd2187eb817f2f9670bae13f8b76304ca71fdacee",
+      "booking.py": "a93c8fa26357c4c5bf4c4eb40fbd15427692d074d3ee101f2a0a6980cb79007c",
+      "docs/G1-I01.md": "07a417cd7e7eeaca0bc5827e67eb965d0c7ebb75f387146f80a37e172fb89a50",
+      "docs/G1-OD-01.md": "baf835ffff57a64023ce8f5233b9e3e3588a2f6017f46f68b168919eae4b38db",
+      "docs/contract.md": "9c6c95077f305744728b9929f51ea36d8a534ab67cd2e7ebe8112ad35eb7ebba",
+      "docs/decisions/0001-storage.md": "c1b8a31f24fb5fe34e929049e8ed3cc3d1910b6d4194a40d4d303e70582f6762",
+      "historical_tests/test_booking.py": "3fede5b6fff032747fe1017836b915d375b7bef01417e6bbf246506e413b4e89",
+      "tests/test_g1_full_api.py": "8c46c06e0b8677dc74c9fb840f4f1f4b5f2c190095317b24f58d1cde92c8c538",
+      "tests/test_g1_readonly.py": "cd2f92b5adac1b2cc1ef5e1c23ff9309bd26133c933ec429368c7463308f5e4f",
+      "tests/test_g1_slice.py": "6242a53920d075fb038a8efbaeead6390f8f0a0d5b69dba3da6c31783abda98b"
+    },
+    "inventory_sha256": "e10cc2f6415fdbdff204428f86726a16ac4d385c70f4d9e6100abc9c97dc7258",
+    "latest_run": "runs/01",
+    "latest_result_sha256": "d8fb068c1508ec13d0a8bfb4d0e69c4cd8bd26be8b8b24b9ac1405b3a949b9ba",
+    "session_spec_sha256": "d0e847a8e18715808492a848693f5b88f85898690592f4a401df6e58006ba7b9"
+  },
+  "meaning": "Recorded operator statement; this tool does not certify its authority or correctness."
+}

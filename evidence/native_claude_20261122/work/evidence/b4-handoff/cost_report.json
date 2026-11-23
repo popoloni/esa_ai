@@ -1,0 +1,30 @@
+{
+  "origin": "ILLUSTRATIVE_COST_INPUTS_NOT_MEASURED_PRODUCTIVITY",
+  "attempts": [
+    {
+      "id": "failed-diagnosis",
+      "cost_eur": "0.45",
+      "minutes": "4"
+    },
+    {
+      "id": "diagnosis-and-review",
+      "cost_eur": "1.35",
+      "minutes": "19"
+    },
+    {
+      "id": "fixture-restoration-check",
+      "cost_eur": "0.70",
+      "minutes": "11"
+    }
+  ],
+  "accepted_outcomes": 1,
+  "summary": {
+    "attempts": 3,
+    "accepted_outcomes": 1,
+    "total_cost_eur": "2.50",
+    "total_minutes": "34",
+    "cost_per_accepted_eur": "2.50",
+    "minutes_per_accepted": "34",
+    "status": "ACCOUNTED"
+  }
+}

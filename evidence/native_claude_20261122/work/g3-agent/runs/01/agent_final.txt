@@ -1,0 +1,31 @@
+The cancellation increment for RES-002/v1 is implemented, and the 7 supplied tests in `tests/test_g3.py` now pass (they all failed before). I changed only `booking.py` and `DOSSIER.md`. Human acceptance is still PENDING, and I did not run protected acceptance or continuation.
+
+**Acceptance example.** Member-1 reserves asset A for 09:00–10:00 and gets id 1 at version 1.
+- `cancel(..., "member-1", 1)` returns 200 `cancelled` at version 2.
+- Repeating with version 1 returns 409 `stale-version`. Repeating with version 2 returns 200 `already-cancelled` at version 2.
+- Member-2 can now reserve the same slot (201).
+- Replaying member-1's original request returns id 1 as a replay, and the status stays `cancelled`.
+
+**What changed in `booking.py`**
+- **Schema:** the new table is `reservations_v3`, with `state` and `version` columns, and `user_version` is now 3. Older tables are kept untouched.
+- **Migration:** G2 rows become `active` at version 1 with the same IDs and the same six public fields. Running `init_db` again does nothing.
+- **Status and cancel:** `reservation_status` returns `{state, version}` or `None`. `cancel` runs in one `BEGIN IMMEDIATE` transaction and applies the checks in the order 404, 403, 409. Those three outcomes change nothing.
+- **Cancelled slots:** the conflict check only counts `active` rows, so a cancelled interval no longer blocks a new reservation. The idempotency lookup ignores state, so a replay can never revive a cancelled row.
+
+**Corrections**
+- **Baseline failure:** the test fixture builds its database with `legacy_booking.py`, which writes `user_version=2` and a plain `reservations` table. The old `init_db` refused that layout. I now migrate it as well as the G2 `reservations_v2` layout, since the field mapping is one-to-one and needs no new policy.
+- **Fingerprints:** I recompute them during migration, because the legacy JSON serialisation differs from this module's.
+
+**Checks**
+- `python -m pytest -q tests`: 7 failed before, 7 passed after.
+- I ran one ad hoc script on a database made by `prior/booking.py`. Migration, the unchanged `get_reservation` record, 403, 200 and 409 all behaved as expected, and `reservations_v2` was retained.
+- The hashes of `legacy_booking.py` and `prior/booking.py` still match `READER_ENTRY.json`.
+
+**Remaining uncertainty**
+- **Concurrency:** no multi-process test was run. Atomicity relies on `BEGIN IMMEDIATE`.
+- **Invalid legacy data:** I did not test migration of overlapping or invalid rows in schema-2 data.
+- **Owner questions, left open:**
+  - The contract does not say what `cancel` does with a non-integer or bool `expected_version`.
+  - I made 403, 404 and 409 results omit `version`. The contract is silent on this, so it needs the owner's confirmation.
+
+I used 6 tool commands out of the 40 allowed.

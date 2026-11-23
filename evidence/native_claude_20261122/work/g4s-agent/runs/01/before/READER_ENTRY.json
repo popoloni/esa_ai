@@ -1,0 +1,25 @@
+{
+  "schema": "esa-full-mission/v1",
+  "release": "Engineering-Software-with-Agentic-AI-Review-5.2-20261117",
+  "mission": "G4",
+  "mode": "LEARNER",
+  "contract": "OPS-G4/v3",
+  "module": "operations.py",
+  "lineage": null,
+  "human_acceptance": "PENDING",
+  "dependency_sha256": {
+    "booking.py": "ad89e1350b80d674b30f8fd97927107adb77e2df625805d7a0a49cb8837b5b17",
+    "g4_fixture.py": "ad3f11b994538f16247722a7667641128d87e1e2ad41b01989ee334310c1c739",
+    "reference_g3.py": "ad89e1350b80d674b30f8fd97927107adb77e2df625805d7a0a49cb8837b5b17"
+  },
+  "prior_sha256": {},
+  "recorded_at_utc": "2026-11-22T17:34:29.818067+00:00",
+  "command": [
+    "/usr/local/bin/python3",
+    "companion/start.py",
+    "new",
+    "G4",
+    "--dest",
+    "work/g4-standalone"
+  ]
+}

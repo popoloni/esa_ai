@@ -1,0 +1,257 @@
+{
+  "schema": "esa-full-mission-check/v1",
+  "mission": "B2",
+  "release": "ESA-Series-Handbook-Review-5-20261116",
+  "contract": "INTAKE/v1",
+  "candidate_sha256_before": "57197331ea19009ba3de9bb0a9b9d156095c05420cbf03f33c30882b0b5380ab",
+  "protected_input_sha256": {
+    "docs/contract.md": "7322b946c06acf1e5ca4fc2031419d077cec88fb201aaa6ba6d9e2603bb9992d",
+    "tests/test_b2.py": "13c76494bb51344136c06e4b49cb071872f8737375f81ceac1a491f9bd3ccc06",
+    "routing.py": "975aa67da6fa58c02a5af9402f338a248e39c3ad9c2b21ce5e1518a6539c1f3a",
+    "prior/routing.py": "975aa67da6fa58c02a5af9402f338a248e39c3ad9c2b21ce5e1518a6539c1f3a",
+    "prior/parent-handoff.json": "0bd16d7dee1302c9325a092b5202f59c5b72afca288a73f066c45949b50b2383",
+    "prior/parent-entry.json": "202c10016257af7213c18b3504e5c6f4c40706fd224f7432f9960b9bbc2d585b"
+  },
+  "candidate_path": "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/b2",
+  "human_acceptance": "PENDING",
+  "model_run": false,
+  "scope": "Executable local teaching controls; no human reader performance or production authority.",
+  "groups": {
+    "contract": {
+      "command": [
+        "/usr/local/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_b2.py",
+        "-v"
+      ],
+      "elapsed_process_seconds": 0.05725020600004882,
+      "timeout_seconds": 30,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_duplicate_request_id_is_a_caller_error (test_b2.BoundedIntake.test_duplicate_request_id_is_a_caller_error) ... ok\ntest_global_call_budget_stops_new_calls (test_b2.BoundedIntake.test_global_call_budget_stops_new_calls) ... ok\ntest_invalid_amount_does_not_call_provider (test_b2.BoundedIntake.test_invalid_amount_does_not_call_provider) ... ok\ntest_invalid_response_after_retry_retains_unavailability (test_b2.BoundedIntake.test_invalid_response_after_retry_retains_unavailability) ... ok\ntest_matching_classification_is_attributed (test_b2.BoundedIntake.test_matching_classification_is_attributed) ... ok\ntest_nonstring_classification_is_a_protocol_error_with_receipt (test_b2.BoundedIntake.test_nonstring_classification_is_a_protocol_error_with_receipt) ... ok\ntest_protocol_error_preserves_prior_and_invalid_attempts (test_b2.BoundedIntake.test_protocol_error_preserves_prior_and_invalid_attempts) ... ok\ntest_provider_value_error_keeps_identity_and_failed_cost (test_b2.BoundedIntake.test_provider_value_error_keeps_identity_and_failed_cost) ... ok\ntest_transient_retry_preserves_identity (test_b2.BoundedIntake.test_transient_retry_preserves_identity) ... ok\ntest_unexpected_failure_is_not_retried (test_b2.BoundedIntake.test_unexpected_failure_is_not_retried) ... ok\ntest_unknown_response_shape_is_refused (test_b2.BoundedIntake.test_unknown_response_shape_is_refused) ... ok\ntest_wrong_response_id_is_refused (test_b2.BoundedIntake.test_wrong_response_id_is_refused) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "timed_out": false,
+      "tests_run": 12,
+      "expected_tests": 12,
+      "methods_passed": 12,
+      "methods_failed": [],
+      "methods_errored": [],
+      "status": "PASSED"
+    }
+  },
+  "tests_run": 12,
+  "candidate_sha256_after": "57197331ea19009ba3de9bb0a9b9d156095c05420cbf03f33c30882b0b5380ab",
+  "inputs_unchanged": true,
+  "status": "SCOPED_HANDOFF_READY",
+  "demonstration_process": {
+    "command": [
+      "/usr/local/bin/python3",
+      "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/companion/curriculum_demo.py",
+      "B2",
+      "--candidate",
+      "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/b2",
+      "--output",
+      "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/evidence/b2-handoff"
+    ],
+    "elapsed_process_seconds": 0.05608160899998893,
+    "timeout_seconds": 30,
+    "returncode": 0,
+    "stdout": "{\n  \"schema\": \"esa-curriculum-demonstration/v1\",\n  \"mission\": \"B2\",\n  \"recorded_at_utc\": \"2026-11-16T22:14:46.375803+00:00\",\n  \"command\": [\n    \"/usr/local/bin/python3\",\n    \"/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/companion/curriculum_demo.py\",\n    \"B2\",\n    \"--candidate\",\n    \"/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/b2\",\n    \"--output\",\n    \"/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/evidence/b2-handoff\"\n  ],\n  \"origin\": \"EXECUTED_OFFLINE_TEACHING_FIXTURE\",\n  \"observed_human_pilot\": false,\n  \"observed_model_run\": false,\n  \"result\": {\n    \"attempts\": [\n      {\n        \"request_id\": \"item-1\",\n        \"attempt\": 1,\n        \"outcome\": \"UNAVAILABLE\"\n      },\n      {\n        \"request_id\": \"item-1\",\n        \"attempt\": 2,\n        \"outcome\": \"MATCH\"\n      },\n      {\n        \"request_id\": \"item-2\",\n        \"attempt\": 1,\n        \"outcome\": \"REVIEW\"\n      }\n    ],\n    \"calls\": 3,\n    \"records\": [\n      {\n        \"request_id\": \"item-invalid\",\n        \"status\": \"REJECTED\",\n        \"route\": \"REJECTED\",\n        \"reason\": \"INVALID_AMOUNT\"\n      },\n      {\n        \"request_id\": \"item-1\",\n        \"status\": \"CLASSIFIED\",\n        \"route\": \"STANDARD_QUEUE\",\n        \"reason\": \"BELOW_LIMIT\",\n        \"classification\": \"MATCH\"\n      },\n      {\n        \"request_id\": \"item-2\",\n        \"status\": \"CLASSIFIED\",\n        \"route\": \"HUMAN_REVIEW\",\n        \"reason\": \"AT_OR_ABOVE_LIMIT\",\n        \"classification\": \"REVIEW\"\n      },\n      {\n        \"request_id\": \"item-3\",\n        \"status\": \"DEFERRED\",\n        \"route\": \"STANDARD_QUEUE\",\n        \"reason\": \"BELOW_LIMIT\"\n      }\n    ],\n    \"payment_authorized\": false,\n    \"receipt\": {\n      \"attempts\": [\n        {\n          \"request_id\": \"item-1\",\n          \"attempt\": 1,\n          \"outcome\": \"UNAVAILABLE\"\n        },\n        {\n          \"request_id\": \"item-1\",\n          \"attempt\": 2,\n          \"outcome\": \"MATCH\"\n        },\n        {\n          \"request_id\": \"item-2\",\n          \"attempt\": 1,\n          \"outcome\": \"REVIEW\"\n        }\n      ],\n      \"calls\": 3,\n      \"records\": [\n        {\n          \"request_id\": \"item-invalid\",\n          \"status\": \"REJECTED\",\n          \"route\": \"REJECTED\",\n          \"reason\": \"INVALID_AMOUNT\"\n        },\n        {\n          \"request_id\": \"item-1\",\n          \"status\": \"CLASSIFIED\",\n          \"route\": \"STANDARD_QUEUE\",\n          \"reason\": \"BELOW_LIMIT\",\n          \"classification\": \"MATCH\"\n        },\n        {\n          \"request_id\": \"item-2\",\n          \"status\": \"CLASSIFIED\",\n          \"route\": \"HUMAN_REVIEW\",\n          \"reason\": \"AT_OR_ABOVE_LIMIT\",\n          \"classification\": \"REVIEW\"\n        },\n        {\n          \"request_id\": \"item-3\",\n          \"status\": \"DEFERRED\",\n          \"route\": \"STANDARD_QUEUE\",\n          \"reason\": \"BELOW_LIMIT\"\n        }\n      ],\n      \"payment_authorized\": false\n    }\n  }\n}\n",
+    "stderr": "",
+    "timed_out": false
+  },
+  "demonstration": {
+    "schema": "esa-curriculum-demonstration/v1",
+    "mission": "B2",
+    "recorded_at_utc": "2026-11-16T22:14:46.375803+00:00",
+    "command": [
+      "/usr/local/bin/python3",
+      "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/companion/curriculum_demo.py",
+      "B2",
+      "--candidate",
+      "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/b2",
+      "--output",
+      "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/evidence/b2-handoff"
+    ],
+    "origin": "EXECUTED_OFFLINE_TEACHING_FIXTURE",
+    "observed_human_pilot": false,
+    "observed_model_run": false,
+    "result": {
+      "attempts": [
+        {
+          "request_id": "item-1",
+          "attempt": 1,
+          "outcome": "UNAVAILABLE"
+        },
+        {
+          "request_id": "item-1",
+          "attempt": 2,
+          "outcome": "MATCH"
+        },
+        {
+          "request_id": "item-2",
+          "attempt": 1,
+          "outcome": "REVIEW"
+        }
+      ],
+      "calls": 3,
+      "records": [
+        {
+          "request_id": "item-invalid",
+          "status": "REJECTED",
+          "route": "REJECTED",
+          "reason": "INVALID_AMOUNT"
+        },
+        {
+          "request_id": "item-1",
+          "status": "CLASSIFIED",
+          "route": "STANDARD_QUEUE",
+          "reason": "BELOW_LIMIT",
+          "classification": "MATCH"
+        },
+        {
+          "request_id": "item-2",
+          "status": "CLASSIFIED",
+          "route": "HUMAN_REVIEW",
+          "reason": "AT_OR_ABOVE_LIMIT",
+          "classification": "REVIEW"
+        },
+        {
+          "request_id": "item-3",
+          "status": "DEFERRED",
+          "route": "STANDARD_QUEUE",
+          "reason": "BELOW_LIMIT"
+        }
+      ],
+      "payment_authorized": false,
+      "receipt": {
+        "attempts": [
+          {
+            "request_id": "item-1",
+            "attempt": 1,
+            "outcome": "UNAVAILABLE"
+          },
+          {
+            "request_id": "item-1",
+            "attempt": 2,
+            "outcome": "MATCH"
+          },
+          {
+            "request_id": "item-2",
+            "attempt": 1,
+            "outcome": "REVIEW"
+          }
+        ],
+        "calls": 3,
+        "records": [
+          {
+            "request_id": "item-invalid",
+            "status": "REJECTED",
+            "route": "REJECTED",
+            "reason": "INVALID_AMOUNT"
+          },
+          {
+            "request_id": "item-1",
+            "status": "CLASSIFIED",
+            "route": "STANDARD_QUEUE",
+            "reason": "BELOW_LIMIT",
+            "classification": "MATCH"
+          },
+          {
+            "request_id": "item-2",
+            "status": "CLASSIFIED",
+            "route": "HUMAN_REVIEW",
+            "reason": "AT_OR_ABOVE_LIMIT",
+            "classification": "REVIEW"
+          },
+          {
+            "request_id": "item-3",
+            "status": "DEFERRED",
+            "route": "STANDARD_QUEUE",
+            "reason": "BELOW_LIMIT"
+          }
+        ],
+        "payment_authorized": false
+      }
+    }
+  },
+  "demonstration_files_sha256": {
+    "DEMONSTRATION.json": "b256fe516b6baa3260f78da9dc7a843d380ade85981880466e47f478eb407449",
+    "classification.json": "9cc9a36709ea2ac9e2fb07d191972d429ffc87d13e797b346588510a8449472e"
+  },
+  "candidate_retained": true,
+  "recorded_at_utc": "2026-11-16T22:14:46.386405+00:00",
+  "command": [
+    "/usr/local/bin/python3",
+    "companion/start.py",
+    "continue",
+    "B2",
+    "--candidate",
+    "work/b2",
+    "--output",
+    "work/evidence/b2-handoff.json"
+  ],
+  "verification_progress": {
+    "schema": "esa-verification-progress/v1",
+    "derivation": "CURRENT_RECEIPT_FIELDS_ONLY_NO_ADDITIONAL_EXECUTION",
+    "source_fields_sha256": "d1f73bff5122872bfdf3c436d440337063a2ebc2544369221145bb1c8cc35e7a",
+    "work_order": "mission_B2",
+    "evidence_profile": "new_capability",
+    "profile_basis": "The named mission work order.",
+    "phase": "mission",
+    "stages": {
+      "startup": {
+        "status": "PASS",
+        "evidence": [
+          "schema",
+          "mission",
+          "candidate_path"
+        ],
+        "reason": "The intended runner accepted the entry identity and emitted this check receipt. This does not establish candidate import."
+      },
+      "integrity": {
+        "status": "PASS",
+        "evidence": [
+          "inputs_unchanged",
+          "candidate_sha256_before",
+          "candidate_sha256_after"
+        ],
+        "reason": "The recorded before/after comparison found inputs unchanged."
+      },
+      "contract": {
+        "status": "PASS",
+        "evidence": [
+          "groups.contract"
+        ],
+        "reason": "Status uses each selected group and any contract-specific supplemental probe; an import placeholder is not behavioral evidence. A candidate stack frame or known protected assertion supports reached behavior; a method count alone does not. Groups within this stage may retain multiple failures.",
+        "behavior_reached": true
+      },
+      "integration": {
+        "status": "PASS",
+        "evidence": [
+          "demonstration_process"
+        ],
+        "reason": "An actual continuation or process-boundary probe is retained; the result applies to this local consumer and candidate only."
+      },
+      "artifact": {
+        "status": "NOT_RUN",
+        "evidence": [],
+        "reason": "This receipt has no separate archive/extraction gate. Local demonstration hashes alone do not establish release fitness."
+      },
+      "authorization": {
+        "status": "NOT_RUN",
+        "evidence": [
+          "human_acceptance"
+        ],
+        "reason": "No owner acceptance or release authorization is recorded. Passing checks do not supply that decision."
+      }
+    },
+    "first_failed_stage": null,
+    "last_observed_stage": "integration",
+    "limits": "A stage label interprets the retained fields; it is not an independent attestation. NOT_APPLICABLE needs an explicit scope exclusion; absence alone remains NOT_RUN."
+  }
+}

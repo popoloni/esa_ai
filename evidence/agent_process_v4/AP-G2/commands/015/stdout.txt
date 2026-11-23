@@ -1,0 +1,9 @@
+BOUNDARIES: 42 invalid cases; exact 24h and 128-character limits; public fields; fingerprint storage; no rejection/replay mutation PASS
+CONCURRENCY identical: 8 synchronized callers, 1 durable reservation PASS
+CONCURRENCY conflicting: 8 synchronized callers, 1 durable reservation PASS
+CONCURRENCY changed-identity: 8 synchronized callers, 1 durable reservation PASS
+MIGRATION legacy_g1: noncontiguous IDs, exact public values, original DDL/rows, replay, byte-stable reinit, append PASS
+MIGRATION legacy_g1_json: noncontiguous IDs, exact public values, original DDL/rows, replay, byte-stable reinit, append PASS
+MIGRATION legacy_g1_recorded: noncontiguous IDs, exact public values, original DDL/rows, replay, byte-stable reinit, append PASS
+REFUSALS: 22 cases across all three sources, malformed/ambiguous JSON and unknown columns; owner mapping errors; unchanged bytes PASS
+ROLLBACK: injected failures after migration DDL/inserts and after reservation INSERT leave unchanged bytes and no partial records; subsequent write succeeds PASS

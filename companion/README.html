@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Eight practical missions, local checks and recorded agent tours for Engineering Software with Agentic AI."><title>Companion — operate an agent through eight missions · Engineering Software with Agentic AI</title><link rel="stylesheet" href="../assets/companion.css"></head><body><a class="skip" href="#main">Skip to content</a><header class="sitehead"><div><a class="brand" href="../index.html">Engineering Software with Agentic AI<span>Practical companion · version 5.6</span></a><nav aria-label="Main navigation"><a href="../index.html">Start</a><a href="../missions/index.html">Missions</a><a href="agent_sessions/README.html">Agent guide</a><a href="../traces/index.html">Recorded tours</a><a href="series/READING_THE_SERIES.html">Four volumes</a></nav></div></header><main id="main"><article data-source-sha256="4a658a45ba3fb8dcc2095afd857fefc0c144a37ff2f67230160b634b1c8c66e5"><p class="docmeta meta"><a href="README.md">Markdown source</a> · Companion 5.6 · 2026-11-22</p><h1 id="companion-operate-an-agent-through-eight-missions">Companion — operate an agent through eight missions</h1>
+<p>Begin at <a href="../START_HERE.html">Start here</a> and the book’s Part V practice guide. The main route is a live coding agent working on a candidate you retain across missions. Use the <a href="agent_sessions/README.html">agent practice guide</a> to prepare a session, observe its actions and record your next instruction. The same guide provides recorded trace tours when a live client is unavailable.</p>
+<p>The local tools require Python 3.10 or later with standard-library SQLite. G3 integration also requires Git. Product Provider examples are deterministic local fixtures; the coding agent is the participant that develops the product. Proposal reviews and protected acceptance checks run without a model call.</p>
+<h2 id="one-entry-point-two-continuous-routes">One entry point, two continuous routes</h2>
+<p>Run every command from the folder containing <code>START_HERE.html</code>. In the full archive this is <code>book/</code>. Create a fresh destination and use a fresh receipt filename for every attempt. The CLI refuses to overwrite either. To repeat a printed check, keep the earlier receipt and add <code>-02</code>, <code>-03</code> and so on to its name; the native ledger reads these retries and takes the most recently recorded one as the gate. <code>work/</code> is your working area; packaged contracts, checks and references remain under <code>companion/</code>.</p>
+<p>When upgrading from 5.3 or 5.4, keep your learner directory and earlier receipts. Point the new companion’s <code>check</code> or <code>continue</code> command at that directory and choose a fresh receipt name. For B1, <code>extend</code> creates a separate v2 directory while preserving your v1 work. Each new check runs the current protected suite against the retained implementation.</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Mission</th>
+<th style="text-align: left;">Editable implementation</th>
+<th style="text-align: left;">Current check scope</th>
+<th style="text-align: left;">Continuation artifact</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">G1</td>
+<td style="text-align: left;"><code>booking.py</code></td>
+<td style="text-align: left;">Four public slice methods; two additional read-only methods at handoff</td>
+<td style="text-align: left;">Normal write/read across two processes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">G2</td>
+<td style="text-align: left;"><code>booking.py</code></td>
+<td style="text-align: left;">Seventeen behavior and migration methods</td>
+<td style="text-align: left;">Migrated record, replay, payload conflict and adjacency</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">G3</td>
+<td style="text-align: left;"><code>booking.py</code></td>
+<td style="text-align: left;">Seven compatibility and cancellation methods</td>
+<td style="text-align: left;">Historical record, current state and replacement reservation</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">G4</td>
+<td style="text-align: left;"><code>operations.py</code></td>
+<td style="text-align: left;">Thirteen diagnosis and accounting methods</td>
+<td style="text-align: left;">Read-only incident diagnosis and illustrative cost report</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">B1</td>
+<td style="text-align: left;"><code>src/treasury/routing.py</code></td>
+<td style="text-align: left;">Seven core + five extended under v1; six additional grammar methods under v2</td>
+<td style="text-align: left;">Retained routing previews and explicit API extension</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B2</td>
+<td style="text-align: left;"><code>intake.py</code></td>
+<td style="text-align: left;">Twelve bounded-provider methods</td>
+<td style="text-align: left;">Actual local call sequence and classifications</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">B3</td>
+<td style="text-align: left;"><code>ledger.py</code></td>
+<td style="text-align: left;">Ten history and migration methods</td>
+<td style="text-align: left;">Policy activation, old retry, new evaluation and restart</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B4</td>
+<td style="text-align: left;"><code>incident.py</code></td>
+<td style="text-align: left;">Seven wrong-state and recovery methods</td>
+<td style="text-align: left;">Diagnosis, local fixture restoration, preserved ledgers and costs</td>
+</tr>
+</tbody>
+</table>
+<pre class="sh"><code>python3 companion/start.py doctor
+python3 companion/start.py new G1 --dest work/g1</code></pre>
+<p>G1 begins with an incomplete brief. Write your question in <code>work/g1/QUESTIONS.md</code> before asking for the supplied owner response. The starter does not disclose the missing lookup decision through its signature or error text. Then run:</p>
+<pre class="sh"><code>python3 companion/start.py clarify G1 --candidate work/g1 --question-file work/g1/QUESTIONS.md
+python3 companion/start.py check G1 --candidate work/g1 --select slice --output work/evidence/g1-initial.json</code></pre>
+<p>The starter fails because implementation is incomplete. Read the supplied decision before implementing. <code>clarify</code> records the provided text and makes the dated teaching decision available; it is not a live human approval or access-control boundary. After implementation, use a new receipt filename and run the handoff. The G1 mission in Part V provides the complete sequence and three proposal judgments.</p>
+<p>For every later mission, choose one of two entry paths. <code>advance</code> checks a retained learner predecessor and carries its source/dependencies into a fresh candidate, keeping a source snapshot, entry and handoff under <code>prior/</code>. <code>new</code> supplies an independent starter and its explicit dependencies. Do not run both into the same destination. For example:</p>
+<pre class="sh"><code>python3 companion/start.py advance G2 --from-candidate work/g1 --dest work/g2</code></pre>
+<p>The Reservation route continues G1 → G2 → G3 → report/CLI integration → G4. Follow the <a href="integration_assets/README.html">G3 integration guide</a> to combine the two worktrees and check the extracted package before advancing the accepted integrated workspace to G4. The Treasury route continues B1 → explicit B1 v2 extension → B2 → B3 → B4. <code>advance B2</code> requires the B1 v2 entry, because a v1 receipt does not identify the changed input contract.</p>
+<p>Subsequent missions retain earlier work while adding a named module or API. B3 introduces durable storage for the history that B2 held only in memory.</p>
+<h2 id="current-and-archived-scopes">Current and archived scopes</h2>
+<p>G1 <code>slice</code> (alias <code>first</code>) runs four public-interface methods after G1-OD-01 is available. <code>all</code> remains four slice plus ten final-contract API diagnostics. The minimal slice passes four; its final-contract group has three passes and seven assertion failures, identifying work for G2. <code>readonly</code> runs two extra public checks; G1 handoff runs slice + readonly and then a separately reported two-process persistence observation. A missing storage path must not be created.</p>
+<p>G1 <code>archived</code> runs the original ten schema-dependent methods; <code>historical</code> remains a compatibility alias. G1’s current checks use the public interface and accept the ordinary and JSON representations. G2’s migration decisions authorize those two representations and the exact six-column <code>reservations</code> signature in <a href="contracts/G2_OD_02.html">G2-OD-02</a>. Unsupported mappings require an owner decision. <a href="contracts/G4.html">G4’s contract</a> recognizes three specific schema-3 representations: the reference <code>reservations</code> table and the recorded and native <code>reservations_v2</code> tables. When your own G3 keeps its current reservations in another layout, <code>advance G4</code> records the owner mapping G4-OD-01 for that lineage (<code>docs/G4-OD-01.md</code> and <code>docs/G4-SCHEMA-MAP.json</code>) if every column uses a name the named layouts already use for the same role. Otherwise it refuses and explains how to supply a mapping with <code>--schema-map</code>, acting for the owner; the companion checks it against the columns your <code>init_db</code> creates. These later mappings do not narrow G1’s public acceptance contract.</p>
+<p>B1 <code>core</code> runs seven unchanged numeric methods; <code>extended</code> runs five additional public finite/type methods. Under B1-API/v1, <code>all</code> runs both groups. A separate B1-API/v2 working copy adds six grammar methods, making eighteen in total. B1’s <code>historical</code> selection remains an alias for core. Two public precision probes are separate proposal-review observations under v1; their inputs are outside the v2 grammar and must not silently be reused as v2 defect claims.</p>
+<h2 id="proposal-review-and-separate-solutions">Proposal review and separate solutions</h2>
+<p>Each mission has three proposals. Read the printed cards or <code>variant.py</code> and <code>RATIONALE.md</code>, record an ACCEPT, REJECT or ASK judgment with its reason, then reveal the batch receipt. Open <code>TRUTH.json</code> only after recording your judgment; it contains the solution.</p>
+<pre class="sh"><code>python3 companion/start.py review G2 --candidate-ids G2-P01 G2-P02 G2-P03 --output work/evidence/g2-review.json
+python3 companion/start.py review B1 --candidate-id B1-H01 --output work/evidence/b1-recorded.json</code></pre>
+<p>The mission proposals are constructed teaching variants, not model transcripts. B1-H01 contains code and an edit event retained from a native agent session on 22 October 2026; no final agent rationale was captured. Its historical numeric result is distinct from the current API’s additional obligation.</p>
+<p><code>review</code> leaves learner source unchanged. Exit 0 means the review receipt was saved, even when the candidate fails. Inspect the observed check status and expected decision after making your own judgment. <code>check</code> and <code>continue</code> return 0 for their scoped success, 1 for observed failure, and 2 for a refused request. Timeouts and input-integrity checks are diagnostic controls, not an operating system sandbox for arbitrary Python.</p>
+<pre class="sh"><code>python3 companion/start.py solution B3 --dest work/solution-b3
+python3 companion/start.py check B3 --candidate work/solution-b3 --reference --output work/evidence/b3-reference.json</code></pre>
+<p>Reference exports require a separate directory and <code>--reference</code> for checks. They cannot become learner handoffs. A reference receipt belongs to its own bytes. Your dossier records acceptance reasoning; a CLI result establishes only the behavior observed by its selected checks.</p>
+<h2 id="further-practice-and-case-limits">Further practice and case limits</h2>
+<p>The <a href="mechanisms/README.html">mechanisms lab</a> lets you inspect recorded instruction delivery, operating-system file denials and a local MCP exchange. Follow its setup requirements and interpret each observation within its stated scope.</p>
+<p>G4/B4 monetary and time inputs are explicitly illustrative scenarios. B4 executes restoration only of its local JSON state-binding fixture and verifies new policy on a disposable ledger copy. The preserved originals remain unchanged; reconciliation stays pending. No production recovery or financial authority is implied by a passing demonstration.</p>
+<h2 id="license-and-recorded-cases">License and recorded cases</h2>
+<p>The companion retains its <a href="LICENSE">Apache 2.0 license</a> and <a href="NOTICE.html">notice of changes</a>. The <a href="agent_sessions/README.html">agent practice guide</a> maps recorded cases to their commands, source files and decisions. The <a href="../evidence/historical_episode/README.html">historical native episode</a> has its own capture and contract limits. Use Part V of the book for the mission sequence and return to a source record when you need to inspect a specific claim.</p>
+</article></main><footer class="foot"><p>Enrico Papalini · Edition 5.6 · 2026-11-22</p><p><a href="../NOTICE.html">Rights and notices</a> · <a href="../NATIVE_STATUS.json">Native-client status</a> · <a href="../MANIFEST.json">Package manifest</a> · <a href="https://github.com/popoloni/esa_ai">Companion repository</a></p></footer></body></html>

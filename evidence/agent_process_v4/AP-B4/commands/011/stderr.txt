@@ -1,0 +1,21 @@
+test_proposed_configuration_binding_has_explicit_consumer_field (test_b4.RecoveryConsumerContract.test_proposed_configuration_binding_has_explicit_consumer_field) ... ERROR
+test_deterministic_id_does_not_establish_same_ledger (test_b4.WrongLedger.test_deterministic_id_does_not_establish_same_ledger) ... ok
+test_expected_binding_is_clean_positive_control (test_b4.WrongLedger.test_expected_binding_is_clean_positive_control) ... ok
+test_missing_path_is_not_initialized (test_b4.WrongLedger.test_missing_path_is_not_initialized) ... ok
+test_recovery_cost_includes_failed_attempt (test_b4.WrongLedger.test_recovery_cost_includes_failed_attempt) ... ok
+test_recovery_plan_does_not_merge_or_authorize (test_b4.WrongLedger.test_recovery_plan_does_not_merge_or_authorize) ... ok
+test_same_code_wrong_state_is_identified (test_b4.WrongLedger.test_same_code_wrong_state_is_identified) ... ok
+
+======================================================================
+ERROR: test_proposed_configuration_binding_has_explicit_consumer_field (test_b4.RecoveryConsumerContract.test_proposed_configuration_binding_has_explicit_consumer_field)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B4/workspace/tests/test_b4.py", line 65, in test_proposed_configuration_binding_has_explicit_consumer_field
+    self.assertEqual(plan["restore_configuration_to"],str(expected.resolve()))
+                     ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'restore_configuration_to'
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.029s
+
+FAILED (errors=1)

@@ -1,0 +1,727 @@
+{
+  "at_utc": "2026-11-22T17:38:50.093280+00:00",
+  "client": "claude",
+  "exit_code": 0,
+  "timed_out": false,
+  "permission_denials": [
+    {
+      "event_line": 1066,
+      "value": {
+        "tool_name": "Bash",
+        "tool_use_id": "toolu_01QxrirfykQoxKGdbPgMbsyY",
+        "tool_input": {
+          "command": "cat > incident.py <<'EOF'\n\"\"\"Read-only wrong-ledger diagnosis and recovery planning (OPS-B4/v2).\n\nNothing here writes to, initializes, merges or restores a ledger.\n\"\"\"\nfrom contextlib import closing\nfrom pathlib import Path\nimport hashlib\nimport sqlite3\n\nimport ledger\nfrom operations import cost_summary  # noqa: F401  (G4 accepted-outcome accounting, re-exported)\n\n\ndef _sha(path):\n    return hashlib.sha256(path.read_bytes()).hexdigest()\n\n\ndef inspect_ledger(path):\n    \"\"\"Observe an existing HISTORY schema 2 ledger without creating or changing it.\"\"\"\n    path = Path(path).resolve()\n    if not path.is_file():\n        raise FileNotFoundError(str(path))  # never create a missing path\n    before = _sha(path)\n    with closing(sqlite3.connect(path.as_uri() + \"?mode=ro\", uri=True)) as con:\n        con.row_factory = sqlite3.Row\n        if con.execute(\"PRAGMA application_id\").fetchone()[0] != ledger.APPLICATION_ID:\n            raise ledger.HistoryError(\"WRONG_DATABASE\")\n        if con.execute(\"PRAGMA user_version\").fetchone()[0] != ledger.SCHEMA_VERSION:\n            raise ledger.HistoryError(\"UNSUPPORTED_SCHEMA\")\n        row = con.execute(\"SELECT value FROM settings WHERE name='active_policy'\").fetchone()\n        if row is None:\n            raise ledger.HistoryError(\"ACTIVE_POLICY_MISSING\")\n        decisions = [{\"request_id\": r[\"request_key\"], \"decision_id\": r[\"decision_id\"],\n                      \"policy_version\": r[\"policy_version\"], \"parent_key\": r[\"parent_key\"]}\n                     for r in con.execute(\n                         \"SELECT request_key,decision_id,policy_version,parent_key \"\n                         \"FROM decisions ORDER BY request_key\")]\n        audit_count = con.execute(\"SELECT COUNT(*) FROM audit_events\").fetchone()[0]\n        active = row[0]\n    after = _sha(path)\n    if before != after:\n        raise RuntimeError(\"ledger changed during read-only inspection\")\n    return {\"path\": str(path), \"digest\": before, \"active_policy\": active,\n            \"decisions\": decisions, \"audit_count\": audit_count}\n\n\ndef diagnose(selected_path, expected_path, *, expected_policy, anchor_key):\n    \"\"\"Compare selected state with the expected ledger; state, not source code, is judged.\"\"\"\n    selected = inspect_ledger(selected_path)\n    expected = inspect_ledger(expected_path)\n    issues = []\n    if selected[\"path\"] != expected[\"path\"]:\n        issues.append(\"STATE_PATH_MISMATCH\")\n    if selected[\"active_policy\"] != expected_policy:\n        issues.append(\"ACTIVE_POLICY_MISMATCH\")\n    if anchor_key not in {d[\"request_id\"] for d in selected[\"decisions\"]}:\n        issues.append(\"ANCHOR_MISSING\")\n    return {\n        \"status\": \"WRONG_LEDGER\" if issues else \"EXPECTED_LEDGER_SELECTED\",\n        \"issues\": issues,\n        \"selected\": selected,\n        \"expected\": expected,\n        \"expected_policy\": expected_policy,\n        \"anchor_key\": anchor_key,\n        \"source_regression_established\": False,\n        \"lineage_note\": \"Equal deterministic decision IDs across ledgers do not establish replay lineage.\",\n        \"ledgers_unchanged\": True,\n    }\n\n\ndef recovery_plan(diagnosis):\n    \"\"\"Propose (never perform or authorize) restoring the expected state binding.\"\"\"\n    sel, exp = diagnosis[\"selected\"][\"path\"], diagnosis[\"expected\"][\"path\"]\n    return {\n        \"status\": \"PROPOSAL_ONLY\",\n        \"diagnosis_status\": diagnosis[\"status\"],\n        \"restore_configuration_to\": exp,\n        \"preserve_ledgers\": [exp] if sel == exp else [exp, sel],\n        \"automatic_merge\": False,\n        \"production_authorized\": False,\n        \"restoration\": {\"proposed\": diagnosis[\"status\"] == \"WRONG_LEDGER\",\n                        \"performed\": False, \"owner\": \"operator (separate local fixture change)\"},\n        \"reconciliation\": \"PENDING_OWNER_DECISION\",\n        \"reconciliation_note\": (\"Records created while the wrong state was selected need the owner, \"\n                                \"conflict analysis and separate evidence; no rows are merged.\"),\n        \"next_checks\": [\n            \"historical replay of recorded decisions against the expected ledger\",\n            \"new-current-policy probe on a disposable copy only\",\n            \"restart/state check after the operator restores the binding\",\n        ],\n    }\nEOF\npython -m unittest tests.test_b4 2>&1 | tail -8; sha256sum ledger.py routing.py operations.py"
+        }
+      }
+    }
+  ],
+  "reported_cost_usd": [
+    0.1773557
+  ],
+  "elapsed_seconds": 47.112432,
+  "event_count": 1067,
+  "malformed_native_event_lines": [],
+  "changed_files": [
+    "DOSSIER.md",
+    "incident.py"
+  ],
+  "scope_changes_requiring_review": [],
+  "before": {
+    "AGENTS.md": "a1634ba6823a492da6db687371031505fc4706a4c515eb0e72e362c18b10cd68",
+    "DOSSIER.md": "b677f8900462d9d446ec956ae06d0c785b398d33e24e77d7fdadcec1611f5b86",
+    "READER_ENTRY.json": "681d60d25f2cd280caf5b3739a9a7bfce75ed29f9681dfe7db64c1396bdd1449",
+    "docs/contract.md": "89c3ae88ae62e4fd292b5cfd3e14c219cf3d6d9c44d6aed50923beb517a7c429",
+    "docs/policy_catalog.json": "9c1b4078c49e118f1001d138484bd9b046ab595935e16b63ea160d619068c7ab",
+    "incident.py": "30102a2908abd3f1931f812fd7115cf86aa63817e4d225c3b09cb044276a7e2c",
+    "ledger.py": "8e87f6bd508a9372b40be2c004ef22b6c912830765fadac55b9896018d4799dc",
+    "operations.py": "f0162261026327358188be23ed4daa6f01134b3ee1817a087694551bbcbfa580",
+    "prior/ledger.py": "8e87f6bd508a9372b40be2c004ef22b6c912830765fadac55b9896018d4799dc",
+    "prior/parent-check-artifacts/DEMONSTRATION.json": "3922dbf150db1276292de8dc6cd98e1aa01390bbdd408e9a53c17f3e995168ea",
+    "prior/parent-check-artifacts/history.json": "6e81a9e4c781bf227979cb59c9fb8db39a92fe5087343bef07477d287990e194",
+    "prior/parent-check-artifacts/ledger.sqlite": "1039601147525da7d2fc0bd9890df5e057c20a6709078bae4cb1057eb39eefa5",
+    "prior/parent-entry.json": "0ad05047101af63a1715751040488c1a59662e806dfad4d6ef27c05294caea81",
+    "prior/parent-handoff.json": "e41ad32d6215705ef071928af9e316deec8c7156bcea2888f1b0c1891b9b5adc",
+    "routing.py": "e8fdab89acfa5d28041c74a5d2dcf9801fb0e85324dcc160013a56cf63f89cfd",
+    "tests/test_b4.py": "c59850930b5b56d0629cce27260ad2de1d1bc362d964f5d18589774c85b347fa"
+  },
+  "after": {
+    "AGENTS.md": "a1634ba6823a492da6db687371031505fc4706a4c515eb0e72e362c18b10cd68",
+    "DOSSIER.md": "baed4ec30434501b3d13a4ba8dcdb2f4f1909d800e99c20535e04da3d3714ac2",
+    "READER_ENTRY.json": "681d60d25f2cd280caf5b3739a9a7bfce75ed29f9681dfe7db64c1396bdd1449",
+    "docs/contract.md": "89c3ae88ae62e4fd292b5cfd3e14c219cf3d6d9c44d6aed50923beb517a7c429",
+    "docs/policy_catalog.json": "9c1b4078c49e118f1001d138484bd9b046ab595935e16b63ea160d619068c7ab",
+    "incident.py": "330db1ff9134da97fd1f1dc75bae7b6bcab04714d9af3616b4c8ecb002afe6eb",
+    "ledger.py": "8e87f6bd508a9372b40be2c004ef22b6c912830765fadac55b9896018d4799dc",
+    "operations.py": "f0162261026327358188be23ed4daa6f01134b3ee1817a087694551bbcbfa580",
+    "prior/ledger.py": "8e87f6bd508a9372b40be2c004ef22b6c912830765fadac55b9896018d4799dc",
+    "prior/parent-check-artifacts/DEMONSTRATION.json": "3922dbf150db1276292de8dc6cd98e1aa01390bbdd408e9a53c17f3e995168ea",
+    "prior/parent-check-artifacts/history.json": "6e81a9e4c781bf227979cb59c9fb8db39a92fe5087343bef07477d287990e194",
+    "prior/parent-check-artifacts/ledger.sqlite": "1039601147525da7d2fc0bd9890df5e057c20a6709078bae4cb1057eb39eefa5",
+    "prior/parent-entry.json": "0ad05047101af63a1715751040488c1a59662e806dfad4d6ef27c05294caea81",
+    "prior/parent-handoff.json": "e41ad32d6215705ef071928af9e316deec8c7156bcea2888f1b0c1891b9b5adc",
+    "routing.py": "e8fdab89acfa5d28041c74a5d2dcf9801fb0e85324dcc160013a56cf63f89cfd",
+    "tests/test_b4.py": "c59850930b5b56d0629cce27260ad2de1d1bc362d964f5d18589774c85b347fa"
+  },
+  "thread_ids": [
+    "8368bc6b-d765-4a54-8c88-489150f23969"
+  ],
+  "usage_events": [
+    {
+      "duration_api_ms": 45922,
+      "stop_reason": "end_turn",
+      "session_id": "8368bc6b-d765-4a54-8c88-489150f23969",
+      "total_cost_usd": 0.1773557,
+      "usage": {
+        "input_tokens": 14,
+        "cache_creation_input_tokens": 22797,
+        "cache_read_input_tokens": 119397,
+        "output_tokens": 7420,
+        "output_tokens_details": {
+          "thinking_tokens": 874
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 22797,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 880,
+            "cache_read_input_tokens": 27379,
+            "cache_creation_input_tokens": 1655,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 1655
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard",
+        "fallback_credit": null
+      },
+      "modelUsage": {
+        "claude-sonnet-5-5": {
+          "inputTokens": 14,
+          "outputTokens": 7420,
+          "cacheReadInputTokens": 119397,
+          "cacheCreationInputTokens": 22797,
+          "webSearchRequests": 0,
+          "costUSD": 0.1773557,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 64000,
+          "thinkingTokens": 874,
+          "cacheCreationEphemeral5mInputTokens": 0,
+          "cacheCreationEphemeral1hInputTokens": 22797,
+          "canonicalModel": "claude-sonnet-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "permission_denials": [
+        {
+          "tool_name": "Bash",
+          "tool_use_id": "toolu_01QxrirfykQoxKGdbPgMbsyY",
+          "tool_input": {
+            "command": "cat > incident.py <<'EOF'\n\"\"\"Read-only wrong-ledger diagnosis and recovery planning (OPS-B4/v2).\n\nNothing here writes to, initializes, merges or restores a ledger.\n\"\"\"\nfrom contextlib import closing\nfrom pathlib import Path\nimport hashlib\nimport sqlite3\n\nimport ledger\nfrom operations import cost_summary  # noqa: F401  (G4 accepted-outcome accounting, re-exported)\n\n\ndef _sha(path):\n    return hashlib.sha256(path.read_bytes()).hexdigest()\n\n\ndef inspect_ledger(path):\n    \"\"\"Observe an existing HISTORY schema 2 ledger without creating or changing it.\"\"\"\n    path = Path(path).resolve()\n    if not path.is_file():\n        raise FileNotFoundError(str(path))  # never create a missing path\n    before = _sha(path)\n    with closing(sqlite3.connect(path.as_uri() + \"?mode=ro\", uri=True)) as con:\n        con.row_factory = sqlite3.Row\n        if con.execute(\"PRAGMA application_id\").fetchone()[0] != ledger.APPLICATION_ID:\n            raise ledger.HistoryError(\"WRONG_DATABASE\")\n        if con.execute(\"PRAGMA user_version\").fetchone()[0] != ledger.SCHEMA_VERSION:\n            raise ledger.HistoryError(\"UNSUPPORTED_SCHEMA\")\n        row = con.execute(\"SELECT value FROM settings WHERE name='active_policy'\").fetchone()\n        if row is None:\n            raise ledger.HistoryError(\"ACTIVE_POLICY_MISSING\")\n        decisions = [{\"request_id\": r[\"request_key\"], \"decision_id\": r[\"decision_id\"],\n                      \"policy_version\": r[\"policy_version\"], \"parent_key\": r[\"parent_key\"]}\n                     for r in con.execute(\n                         \"SELECT request_key,decision_id,policy_version,parent_key \"\n                         \"FROM decisions ORDER BY request_key\")]\n        audit_count = con.execute(\"SELECT COUNT(*) FROM audit_events\").fetchone()[0]\n        active = row[0]\n    after = _sha(path)\n    if before != after:\n        raise RuntimeError(\"ledger changed during read-only inspection\")\n    return {\"path\": str(path), \"digest\": before, \"active_policy\": active,\n            \"decisions\": decisions, \"audit_count\": audit_count}\n\n\ndef diagnose(selected_path, expected_path, *, expected_policy, anchor_key):\n    \"\"\"Compare selected state with the expected ledger; state, not source code, is judged.\"\"\"\n    selected = inspect_ledger(selected_path)\n    expected = inspect_ledger(expected_path)\n    issues = []\n    if selected[\"path\"] != expected[\"path\"]:\n        issues.append(\"STATE_PATH_MISMATCH\")\n    if selected[\"active_policy\"] != expected_policy:\n        issues.append(\"ACTIVE_POLICY_MISMATCH\")\n    if anchor_key not in {d[\"request_id\"] for d in selected[\"decisions\"]}:\n        issues.append(\"ANCHOR_MISSING\")\n    return {\n        \"status\": \"WRONG_LEDGER\" if issues else \"EXPECTED_LEDGER_SELECTED\",\n        \"issues\": issues,\n        \"selected\": selected,\n        \"expected\": expected,\n        \"expected_policy\": expected_policy,\n        \"anchor_key\": anchor_key,\n        \"source_regression_established\": False,\n        \"lineage_note\": \"Equal deterministic decision IDs across ledgers do not establish replay lineage.\",\n        \"ledgers_unchanged\": True,\n    }\n\n\ndef recovery_plan(diagnosis):\n    \"\"\"Propose (never perform or authorize) restoring the expected state binding.\"\"\"\n    sel, exp = diagnosis[\"selected\"][\"path\"], diagnosis[\"expected\"][\"path\"]\n    return {\n        \"status\": \"PROPOSAL_ONLY\",\n        \"diagnosis_status\": diagnosis[\"status\"],\n        \"restore_configuration_to\": exp,\n        \"preserve_ledgers\": [exp] if sel == exp else [exp, sel],\n        \"automatic_merge\": False,\n        \"production_authorized\": False,\n        \"restoration\": {\"proposed\": diagnosis[\"status\"] == \"WRONG_LEDGER\",\n                        \"performed\": False, \"owner\": \"operator (separate local fixture change)\"},\n        \"reconciliation\": \"PENDING_OWNER_DECISION\",\n        \"reconciliation_note\": (\"Records created while the wrong state was selected need the owner, \"\n                                \"conflict analysis and separate evidence; no rows are merged.\"),\n        \"next_checks\": [\n            \"historical replay of recorded decisions against the expected ledger\",\n            \"new-current-policy probe on a disposable copy only\",\n            \"restart/state check after the operator restores the binding\",\n        ],\n    }\nEOF\npython -m unittest tests.test_b4 2>&1 | tail -8; sha256sum ledger.py routing.py operations.py"
+          }
+        }
+      ],
+      "terminal_reason": "completed",
+      "fast_mode_state": "off",
+      "fast_mode_disabled_reason": "sdk_opt_in_required",
+      "subagent_stats": {
+        "spawned": 0,
+        "requested": {
+          "background": 0,
+          "foreground": 0,
+          "unset": 0
+        },
+        "started_in_background": 0,
+        "max_depth": 0,
+        "spawned_by_subagents": 0,
+        "completed": 0,
+        "failed": 0,
+        "killed": {
+          "parent": 0,
+          "user": 0,
+          "system": 0
+        },
+        "refused": {
+          "depth_limit": 0,
+          "concurrency_limit": 0,
+          "budget": 0
+        },
+        "by_type": {}
+      },
+      "safety_stops": 0,
+      "is_error": false,
+      "num_turns": 9,
+      "subtype": "success",
+      "api_error_status": null,
+      "result": "I implemented `inspect_ledger`, `diagnose` and `recovery_plan` in `incident.py`, and `python -m unittest tests.test_b4` now passes all 7 tests. Before the change, 6 of the 7 failed with `NotImplementedError`, so the missing behavior was reproduced.\n\n**Changed files:** `incident.py` and `DOSSIER.md`. `ledger.py`, `routing.py` and `operations.py` still match the `READER_ENTRY.json` hashes. I did not change the docs, tests, `prior/` or `READER_ENTRY.json`.\n\n**Acceptance example:** diagnosing a fresh wrong ledger against the expected one returns `WRONG_LEDGER` with exactly `STATE_PATH_MISMATCH`, `ACTIVE_POLICY_MISMATCH` and `ANCHOR_MISSING`. Both files stay byte-identical, and the shared decision ID for \"old\" is not treated as proof of the same ledger. Diagnosing the expected ledger against itself returns `EXPECTED_LEDGER_SELECTED` with no issues.\n\n**Behavior:**\n- **Inspection:** it opens the database read-only, checks the application ID and schema version, and raises `FileNotFoundError` for a missing path without creating it.\n- **Recovery plan:** it is proposal-only. It sets `restore_configuration_to` to the resolved expected path, `automatic_merge` and `production_authorized` to false, and reconciliation to `PENDING_OWNER_DECISION`. It preserves both ledgers and lists the replay, disposable-copy probe and restart checks.\n\n**Commands:** about 6 of the 40 allowed. A heredoc write of `incident.py` was blocked by the tool's safety check, and I rewrote the file with the edit tool instead.\n\n**Remaining uncertainty:**\n- `inspect_ledger` does not run the full record-integrity checks that `PolicyStore` does, because that would initialize or write the file.\n- `diagnose` reports the expected ledger's own policy and anchor but does not judge them.\n- The wrong-database, unsupported-schema, WAL-mode and corrupted-file paths were not tested.\n- No document lists the \"three proposals\" that `DOSSIER.md`'s Decide section refers to. I assumed them to be state-based diagnosis, a proposal-only recovery plan, and wrong-ledger reconciliation. I marked the first two ACCEPT and the third ASK, so please correct them if they differ.\n- Human acceptance is still `PENDING`. Protected acceptance and continuation are left to you.",
+      "ttft_ms": 1307,
+      "type": "result",
+      "duration_ms": 46504,
+      "uuid": "750651f7-8762-4229-931c-4c28969d1f07",
+      "begun_message_ids": [
+        "msg_011ChJNdPp2XmcSaucyxu7hP",
+        "msg_011ChJNdVMtVHAVUxFQBPDZg",
+        "msg_011ChJNdcaUm6TJanF4DNV3e",
+        "msg_011ChJNdmhQWTRRoZHWBftiB",
+        "msg_011ChJNeuB8rzc1bkG2PsJSe",
+        "msg_011ChJNfaHcQPZC3EHWXUcvB",
+        "msg_011ChJNgPspqjVkcRvcNeX71"
+      ],
+      "ttft_stream_ms": 796,
+      "time_to_request_ms": 110,
+      "time_to_request_phases_ms": {
+        "other": 7,
+        "system_prompt": 43,
+        "resume_other": 0,
+        "process_user_input": 4,
+        "input_attachments": 8,
+        "input_hooks": 3,
+        "conversation_append": 1,
+        "tool_pool_refresh": 0,
+        "init_message": 3,
+        "init_frame_send": 1,
+        "engine_pickup": 1,
+        "loop_entry": 5,
+        "message_prep": 2,
+        "model_config_wait": 0,
+        "autocompact": 2,
+        "request_announcements": 8,
+        "query_setup": 1,
+        "model_gates": 1,
+        "tool_schema_build": 7,
+        "message_normalization": 2,
+        "client_creation": 4,
+        "request_build": 7
+      },
+      "turn_start_resume_kind": "none",
+      "process_turn_index": 0,
+      "time_to_request_loop_lag_ms": 60,
+      "time_to_request_cpu_ms": 103,
+      "time_to_request_major_faults": 0,
+      "process_rss_mib_turn_start": 211,
+      "process_anon_mib_turn_start": 132,
+      "process_rss_mib_result": 237,
+      "process_anon_mib_result": 142,
+      "process_peak_rss_mib": 239,
+      "process_cpu_ms_turn": 1524,
+      "process_wall_ms_turn": 46503,
+      "tool_pool_build_count": 3,
+      "tool_pool_build_lapsed_count": 1,
+      "tool_pool_moved_at_lapse_count": 0,
+      "tool_pool_limit_ms": 30000,
+      "process_cpu_ms_streaming": 935,
+      "process_wall_ms_streaming": 36636,
+      "main_stream_count": 7,
+      "main_stream_event_count": 1020,
+      "main_stream_chunk_count": 228,
+      "process_turn_states": {
+        "main_stream": {
+          "cpu_ms": 935,
+          "wall_ms": 36636,
+          "entries": 7
+        },
+        "tool": {
+          "cpu_ms": 119,
+          "wall_ms": 402,
+          "entries": 6
+        },
+        "first_event_wait": {
+          "cpu_ms": 262,
+          "wall_ms": 9256,
+          "entries": 7
+        },
+        "before_first_request": {
+          "cpu_ms": 104,
+          "wall_ms": 110,
+          "entries": 1
+        },
+        "between_requests": {
+          "cpu_ms": 92,
+          "wall_ms": 87,
+          "entries": 6
+        },
+        "after_last_request": {
+          "cpu_ms": 12,
+          "wall_ms": 12,
+          "entries": 1
+        }
+      },
+      "input_attachments_detail": {
+        "slowest_producer": "artifact_opening_prefetch",
+        "slowest_producer_ms": 2,
+        "cpu_ms": 9,
+        "major_faults": 0,
+        "setup_ms": 0,
+        "prompt_producers_ms": 0,
+        "ambient_start_ms": 3,
+        "ambient_wait_ms": 2,
+        "render_ms": 1,
+        "producers": 42,
+        "token_counts": 0
+      },
+      "tool_schema_build_detail": {
+        "betas_ms": 0,
+        "waits_ms": 1,
+        "placement_ms": 1,
+        "render_ms": 5,
+        "after_ms": 0,
+        "other_ms": 0,
+        "tools": 6,
+        "new_schemas": 6
+      },
+      "message_normalization_detail": {
+        "before_ms": 0,
+        "normalize_ms": 2,
+        "images_ms": 0,
+        "post_process_ms": 0,
+        "after_ms": 0,
+        "other_ms": 0,
+        "messages": 10,
+        "wire_messages": 2
+      },
+      "request_build_detail": {
+        "records_ms": 0,
+        "system_ms": 1,
+        "headers_ms": 1,
+        "cache_break_record_ms": 1,
+        "plans_ms": 1,
+        "retry_setup_ms": 0,
+        "sent_build_ms": 2,
+        "record_attempt_ms": 1,
+        "other_ms": 0,
+        "sent_build_safety_context_ms": 0,
+        "sent_build_cache_breakpoints_ms": 1,
+        "sent_build_surrogate_scan_ms": 0
+      },
+      "first_content_frame_ms": 797,
+      "time_to_request_from_spawn_ms": 750149,
+      "warm_spare_claimed": false,
+      "flag_fetch_kick": "started_in_init_warm",
+      "time_origin_ms": 1795369082984.7136,
+      "queued_turn_count": 0,
+      "result_index": 0,
+      "model_usage_since_last_result": {
+        "claude-sonnet-5-5": {
+          "inputTokens": 14,
+          "outputTokens": 7420,
+          "cacheReadInputTokens": 119397,
+          "cacheCreationInputTokens": 22797,
+          "webSearchRequests": 0,
+          "costUSD": 0.1773557,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 64000,
+          "thinkingTokens": 874,
+          "cacheCreationEphemeral5mInputTokens": 0,
+          "cacheCreationEphemeral1hInputTokens": 22797,
+          "canonicalModel": "claude-sonnet-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "process_start_tuning": 0
+    }
+  ],
+  "native_observations": {
+    "protocol_client": "claude",
+    "unexpected_protocol_lines": [],
+    "completed_turn_lines": [
+      1066
+    ],
+    "failed_turn_or_error_lines": [],
+    "agent_message_lines": [
+      625,
+      1060
+    ],
+    "tool_operation_lines": [
+      20,
+      44,
+      57,
+      92,
+      366,
+      592,
+      609,
+      911
+    ],
+    "model_observations": [
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 3,
+        "field": "model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 20,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 44,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 57,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 70,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 92,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 112,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 366,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 378,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 592,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 609,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 625,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 911,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 1060,
+        "field": "message.model"
+      }
+    ],
+    "usage_observations": [
+      {
+        "event_line": 20,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 3556,
+          "cache_read_input_tokens": 6237,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 3556
+          },
+          "output_tokens": 16,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 44,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 920,
+          "cache_read_input_tokens": 9793,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 920
+          },
+          "output_tokens": 16,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 57,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 920,
+          "cache_read_input_tokens": 9793,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 920
+          },
+          "output_tokens": 16,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 70,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 6583,
+          "cache_read_input_tokens": 10713,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 6583
+          },
+          "output_tokens": 3,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 92,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 6583,
+          "cache_read_input_tokens": 10713,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 6583
+          },
+          "output_tokens": 3,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 112,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 5392,
+          "cache_read_input_tokens": 17296,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 5392
+          },
+          "output_tokens": 7,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 366,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 5392,
+          "cache_read_input_tokens": 17296,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 5392
+          },
+          "output_tokens": 7,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 378,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 2603,
+          "cache_read_input_tokens": 22688,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 2603
+          },
+          "output_tokens": 3,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 592,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 2603,
+          "cache_read_input_tokens": 22688,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 2603
+          },
+          "output_tokens": 3,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 609,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 2603,
+          "cache_read_input_tokens": 22688,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 2603
+          },
+          "output_tokens": 3,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 625,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 2088,
+          "cache_read_input_tokens": 25291,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 2088
+          },
+          "output_tokens": 54,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 911,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 2088,
+          "cache_read_input_tokens": 25291,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 2088
+          },
+          "output_tokens": 54,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 1060,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1655,
+          "cache_read_input_tokens": 27379,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1655
+          },
+          "output_tokens": 799,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 1066,
+        "field": "usage",
+        "value": {
+          "input_tokens": 14,
+          "cache_creation_input_tokens": 22797,
+          "cache_read_input_tokens": 119397,
+          "output_tokens": 7420,
+          "output_tokens_details": {
+            "thinking_tokens": 874
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 22797,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "global",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 880,
+              "cache_read_input_tokens": 27379,
+              "cache_creation_input_tokens": 1655,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 1655
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "fallback_credit": null
+        }
+      }
+    ],
+    "permission_denials": [
+      {
+        "event_line": 1066,
+        "value": {
+          "tool_name": "Bash",
+          "tool_use_id": "toolu_01QxrirfykQoxKGdbPgMbsyY",
+          "tool_input": {
+            "command": "cat > incident.py <<'EOF'\n\"\"\"Read-only wrong-ledger diagnosis and recovery planning (OPS-B4/v2).\n\nNothing here writes to, initializes, merges or restores a ledger.\n\"\"\"\nfrom contextlib import closing\nfrom pathlib import Path\nimport hashlib\nimport sqlite3\n\nimport ledger\nfrom operations import cost_summary  # noqa: F401  (G4 accepted-outcome accounting, re-exported)\n\n\ndef _sha(path):\n    return hashlib.sha256(path.read_bytes()).hexdigest()\n\n\ndef inspect_ledger(path):\n    \"\"\"Observe an existing HISTORY schema 2 ledger without creating or changing it.\"\"\"\n    path = Path(path).resolve()\n    if not path.is_file():\n        raise FileNotFoundError(str(path))  # never create a missing path\n    before = _sha(path)\n    with closing(sqlite3.connect(path.as_uri() + \"?mode=ro\", uri=True)) as con:\n        con.row_factory = sqlite3.Row\n        if con.execute(\"PRAGMA application_id\").fetchone()[0] != ledger.APPLICATION_ID:\n            raise ledger.HistoryError(\"WRONG_DATABASE\")\n        if con.execute(\"PRAGMA user_version\").fetchone()[0] != ledger.SCHEMA_VERSION:\n            raise ledger.HistoryError(\"UNSUPPORTED_SCHEMA\")\n        row = con.execute(\"SELECT value FROM settings WHERE name='active_policy'\").fetchone()\n        if row is None:\n            raise ledger.HistoryError(\"ACTIVE_POLICY_MISSING\")\n        decisions = [{\"request_id\": r[\"request_key\"], \"decision_id\": r[\"decision_id\"],\n                      \"policy_version\": r[\"policy_version\"], \"parent_key\": r[\"parent_key\"]}\n                     for r in con.execute(\n                         \"SELECT request_key,decision_id,policy_version,parent_key \"\n                         \"FROM decisions ORDER BY request_key\")]\n        audit_count = con.execute(\"SELECT COUNT(*) FROM audit_events\").fetchone()[0]\n        active = row[0]\n    after = _sha(path)\n    if before != after:\n        raise RuntimeError(\"ledger changed during read-only inspection\")\n    return {\"path\": str(path), \"digest\": before, \"active_policy\": active,\n            \"decisions\": decisions, \"audit_count\": audit_count}\n\n\ndef diagnose(selected_path, expected_path, *, expected_policy, anchor_key):\n    \"\"\"Compare selected state with the expected ledger; state, not source code, is judged.\"\"\"\n    selected = inspect_ledger(selected_path)\n    expected = inspect_ledger(expected_path)\n    issues = []\n    if selected[\"path\"] != expected[\"path\"]:\n        issues.append(\"STATE_PATH_MISMATCH\")\n    if selected[\"active_policy\"] != expected_policy:\n        issues.append(\"ACTIVE_POLICY_MISMATCH\")\n    if anchor_key not in {d[\"request_id\"] for d in selected[\"decisions\"]}:\n        issues.append(\"ANCHOR_MISSING\")\n    return {\n        \"status\": \"WRONG_LEDGER\" if issues else \"EXPECTED_LEDGER_SELECTED\",\n        \"issues\": issues,\n        \"selected\": selected,\n        \"expected\": expected,\n        \"expected_policy\": expected_policy,\n        \"anchor_key\": anchor_key,\n        \"source_regression_established\": False,\n        \"lineage_note\": \"Equal deterministic decision IDs across ledgers do not establish replay lineage.\",\n        \"ledgers_unchanged\": True,\n    }\n\n\ndef recovery_plan(diagnosis):\n    \"\"\"Propose (never perform or authorize) restoring the expected state binding.\"\"\"\n    sel, exp = diagnosis[\"selected\"][\"path\"], diagnosis[\"expected\"][\"path\"]\n    return {\n        \"status\": \"PROPOSAL_ONLY\",\n        \"diagnosis_status\": diagnosis[\"status\"],\n        \"restore_configuration_to\": exp,\n        \"preserve_ledgers\": [exp] if sel == exp else [exp, sel],\n        \"automatic_merge\": False,\n        \"production_authorized\": False,\n        \"restoration\": {\"proposed\": diagnosis[\"status\"] == \"WRONG_LEDGER\",\n                        \"performed\": False, \"owner\": \"operator (separate local fixture change)\"},\n        \"reconciliation\": \"PENDING_OWNER_DECISION\",\n        \"reconciliation_note\": (\"Records created while the wrong state was selected need the owner, \"\n                                \"conflict analysis and separate evidence; no rows are merged.\"),\n        \"next_checks\": [\n            \"historical replay of recorded decisions against the expected ledger\",\n            \"new-current-policy probe on a disposable copy only\",\n            \"restart/state check after the operator restores the binding\",\n        ],\n    }\nEOF\npython -m unittest tests.test_b4 2>&1 | tail -8; sha256sum ledger.py routing.py operations.py"
+          }
+        }
+      }
+    ],
+    "reported_cost_observations": [
+      {
+        "event_line": 1066,
+        "field": "total_cost_usd",
+        "value": 0.1773557
+      }
+    ],
+    "thread_ids": [
+      "8368bc6b-d765-4a54-8c88-489150f23969"
+    ]
+  },
+  "requested_model": "claude-sonnet-5-5",
+  "capture_sha256": {
+    "native_events.jsonl": "1613239bcea00c3aeec4daa23033dc24c648ce91643831acc807dca3fc2e6ea1",
+    "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "agent_final.txt": "db50153e80c0dc2e623518dd12d1ea1010366cb837f7dfab87385d531eae0223"
+  },
+  "observed_model_ids": [
+    "claude-sonnet-5-5"
+  ],
+  "model_identity_observed": true,
+  "native_completion_event_observed": true,
+  "native_turn_completed": true,
+  "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+  "acceptance": "NOT_ESTABLISHED",
+  "scope_note": "Native events retained as emitted; absence of usage is unknown, not zero."
+}

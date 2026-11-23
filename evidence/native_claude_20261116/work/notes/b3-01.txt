@@ -1,0 +1,12 @@
+Observation: native run 01 completed (claude-sonnet-5-5, 0.191 USD reported, 56 s). Changed ledger.py (1 insertion,
+3 deletions) and DOSSIER.md. Three shell commands were denied by the client profile (environment-variable prefix,
+heredoc into python3 -B, a script path in the client scratchpad); the worker found allowed equivalents.
+Diff: replay no longer recomputes the stored decision under the currently active policy; the supplied migration
+body is enabled by removing its NotImplementedError guard. No new migration logic was written.
+The worker flagged, without changing it, that the supplied migration adds immutability triggers to
+legacy_decisions while the contract says the legacy table is retained unchanged.
+Independent: check B3 10/10; continue B3 SCOPED_HANDOFF_READY.
+Decision: ACCEPT for the B3 contract scope and advance to B4.
+Open owner question (ASK; object: contract wording): does "retains the legacy table unchanged" cover rows only,
+or also the table's schema objects such as triggers? Recorded for the author; not decided here.
+Limit: AI operator; technical acceptance within the fictional case.

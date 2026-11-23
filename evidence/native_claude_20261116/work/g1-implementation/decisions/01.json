@@ -1,0 +1,8 @@
+{
+  "at_utc": "2026-11-16T22:13:36.777799+00:00",
+  "operator": "Claude (claude-opus-5-5), AI operator in the author's review session",
+  "operator_kind": "AI",
+  "decision": "accept",
+  "note": "Observation: native run 01 completed (claude-sonnet-5-5, 0.160 USD reported). Changed booking.py and DOSSIER.md only.\nTwo shell commands were denied by the client (compound command needing approval; unverifiable variable);\nthe worker switched to the Write tool and to a probe script. That probe script was written to the\nclient-assigned session scratchpad under /tmp/claude-0/..., outside the candidate. The client permitted it;\nthe candidate snapshot does not cover it. It contradicts the literal task wording (\"no files outside this\nworkspace\") but has no candidate effect. Recorded as an instruction-versus-enforcement observation.\nIndependent: check G1 slice 4/4 passed; continue G1 SCOPED_HANDOFF_READY (6 methods); check --select all\nfails on g1_final_api as the brief requires (G2 backlog left visible). Operator probe\nwork/evidence/operator/g1-public-probe.json: separate-process read of quoted values through a path with\nspaces, ? and #; absent id -> None; missing path -> OperationalError without creating a file.\nDecision: ACCEPT this candidate for G1/I01 scope and advance it to G2.\nLimit: AI operator; fictional owner decision; technical acceptance only.\n",
+  "meaning": "Recorded operator statement; this tool does not certify its authority or correctness."
+}

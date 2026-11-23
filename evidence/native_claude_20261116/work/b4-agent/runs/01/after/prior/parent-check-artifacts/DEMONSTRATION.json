@@ -1,0 +1,25 @@
+{
+  "schema": "esa-curriculum-demonstration/v1",
+  "mission": "B3",
+  "recorded_at_utc": "2026-11-16T22:16:26.490603+00:00",
+  "command": [
+    "/usr/local/bin/python3",
+    "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/companion/curriculum_demo.py",
+    "B3",
+    "--candidate",
+    "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/b3",
+    "--output",
+    "/tmp/esa-parent-check-aktjn2n3/parent-handoff"
+  ],
+  "origin": "EXECUTED_OFFLINE_TEACHING_FIXTURE",
+  "observed_human_pilot": false,
+  "observed_model_run": false,
+  "result": {
+    "retry_status": "REPLAYED",
+    "retry_rows_unchanged": true,
+    "original_policy": "BR-001/v1",
+    "active_policy": "BR-001/v2",
+    "new_parent": "case-original",
+    "payment_authorized": false
+  }
+}

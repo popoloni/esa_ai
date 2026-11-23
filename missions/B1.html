@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Eight practical missions, local checks and recorded agent tours for Engineering Software with Agentic AI."><title>B1. Repair a boundary, then implement a new decision · Engineering Software with Agentic AI</title><link rel="stylesheet" href="../assets/companion.css"></head><body><a class="skip" href="#main">Skip to content</a><header class="sitehead"><div><a class="brand" href="../index.html">Engineering Software with Agentic AI<span>Practical companion · version 5.6</span></a><nav aria-label="Main navigation"><a href="../index.html">Start</a><a href="index.html">Missions</a><a href="../companion/agent_sessions/README.html">Agent guide</a><a href="../traces/index.html">Recorded tours</a><a href="../companion/series/READING_THE_SERIES.html">Four volumes</a></nav></div></header><main id="main"><article data-source-sha256="c7c606b2646199ad76c3ceb3fab4115c3efacbbad81b7e0bfd01bad73c231b9e"><p class="docmeta meta"><a href="B1.md">Markdown source</a> · Companion 5.6 · 2026-11-22</p><h1 id="mission-b1">B1. Repair a boundary, then implement a new decision</h1><p class="mission-meta">Run commands from the package root. <a href="../companion/agent_sessions/README.html">Live-client setup and current status</a> · <a href="../traces/index.html">Offline recorded tours</a></p>
+<p><strong>Session planning target:</strong> setup 5 min · implementation 25 min · review and handoff 20 min (50 min total). The separate v2 session targets 35 minutes: setup 5, implementation 20, review 10.</p>
+<p>Treasury’s router violates an approved rule. Delegate its repair, judge three new proposals, then carry the retained implementation into a separately authorized interface change. G1 supplies useful practice but no software dependency.</p>
+<h2 id="expect-identify-both-the-rule-and-the-api">1. Expect: identify both the rule and the API</h2>
+<p>Under BR-001/v1, <code>assess(amount_eur: str)</code> returns a <code>RoutingDecision</code> with <code>route</code>, <code>reason</code> and <code>policy_version</code>.</p>
+<p><strong>Table: The unchanged numeric routing rule.</strong></p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Amount</th>
+<th style="text-align: left;">Required outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Malformed, nonfinite, zero or negative</td>
+<td style="text-align: left;"><code>REJECTED</code> / <code>INVALID_AMOUNT</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Finite, positive, below EUR 5,000</td>
+<td style="text-align: left;"><code>STANDARD_QUEUE</code> / <code>BELOW_LIMIT</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Finite and at least EUR 5,000</td>
+<td style="text-align: left;"><code>HUMAN_REVIEW</code> / <code>AT_OR_ABOVE_LIMIT</code></td>
+</tr>
+</tbody>
+</table>
+<p>B1-API/v1 separately requires <code>TypeError</code> for non-string callers and propagation of unexpected internal failures. The AP-B1-V1 agent received both this API contract and BR-001/v1. An earlier historical example used a narrower contract; its results must be interpreted against that original scope.</p>
+<pre class="bash"><code>python3 companion/start.py new B1 \
+  --dest work/b1
+python3 companion/start.py check B1 \
+  --candidate work/b1 \
+  --select core \
+  --output work/evidence/b1-initial.json</code></pre>
+<p>The seven-case core gives three passes, two assertion failures and two errors. Inspect the failure, not just the total. Read <code>docs/BR-001.md</code>, <code>docs/B1-API.md</code>, the policy projection and <code>src/treasury/routing.py</code> in <code>work/b1</code>. Write your expected invalid-input rejection and valid-input controls before delegating. <code>docs/legacy_note.json</code> is a newer proposal from an unknown owner: recency does not authorize a threshold change.</p>
+<h2 id="delegate-repair-the-agreed-behavior">2. Delegate: repair the agreed behavior</h2>
+<p>Chapter 1 prints AP-B1-V1’s complete task body, actual repair and final response. Use the same bounded objective with your candidate. The prepared prompt must identify both contracts, the sole editable router, protected checks/policy, command budget, stop conditions and evidence to retain.</p>
+<p><strong>EDOD/1 work order mission_B1 — Bounded repair.</strong></p>
+<p><strong>Expect</strong> — <strong>outcome:</strong> Repair finite-positive routing under the current string API. <strong>authority:</strong> Treasury policy owner and API maintainer, BR-001/v1 + B1-API/v1 (teaching contract). <strong>acceptance:</strong> Reject invalid amounts; below 5000 uses STANDARD_QUEUE, equality uses HUMAN_REVIEW; non-string callers raise TypeError and unexpected errors propagate.</p>
+<p><strong>Delegate</strong> — <strong>editable_paths:</strong> <code>src/treasury/routing.py</code>, <code>DOSSIER.md</code>. <strong>protected_paths:</strong> <code>docs/</code>, <code>tests/</code>, <code>READER_ENTRY.json</code>, <code>prior/</code>. <strong>budget:</strong> 3 attempts / 25 implementation minutes; 15 s per check process; 0 external integration calls. <strong>stop_conditions:</strong> Threshold, precision or API change lacks an owner decision. Protected inputs change or the declared attempt/time budget is spent.</p>
+<p><strong>Observe</strong> — <strong>checks:</strong> <code>b1.check</code>, <code>b1.continue</code> (commands below). <strong>receipt_fields:</strong> <code>candidate_sha256_before</code>, <code>groups</code>, <code>inputs_unchanged</code>, <code>verification_progress</code>, <code>human_acceptance</code>.</p>
+<p><strong>Decide</strong> — <strong>owner:</strong> Learner reviewer; Treasury policy owner and API maintainer for a changed rule. <strong>object:</strong> B1 candidate, identified bytes and its scoped handoff. <strong>allowed_decisions:</strong> ACCEPT, REJECT, ASK.</p>
+<pre class="bash"><code>python3 companion/agent_session.py prepare B1 --api v1 \
+  --candidate work/b1 --output work/b1-agent-v1
+python3 companion/agent_session.py run \
+  --session work/b1-agent-v1 --client claude \
+  --max-budget-usd 5</code></pre>
+<p>The USD 5 ceiling applies to this Claude launch. A follow-up has its own ceiling. Without <code>--model</code>, Claude uses its configured default. Add <code>--model MODEL_ID</code> to request an available model. Inspect the recorded model field to see which backend actually replied.</p>
+<p>Opening times are planning targets; inspect the prepared context and launch/time limits before running. Follow the agent’s reads, diff and returned commands. Parsing, validity and classification are separate decisions: finiteness must precede Decimal ordering, and a narrow conversion handler must preserve unexpected faults. Import style and guard layout remain implementation choices. Stop if the worker changes authority or spends its budget without resolving the defect; retain useful state before deciding the next task.</p>
+<p>AP-B1-V1’s worker reproduced the failure, edited only the router, obtained twelve development passes and probed exception propagation and accepted v1 spellings. It needed no operator correction. The AI recording operator continued with the independent public selection:</p>
+<pre class="bash"><code>python3 companion/start.py check B1 \
+  --candidate work/b1 \
+  --output work/evidence/b1-check.json</code></pre>
+<p>Seven core plus five extended methods cover the original cases, positive and negative infinity, <code>inf</code>, signaling NaN and non-string callers. Twelve passes support those cases, not every string or internal failure. Compare the retained patch and final explanation with the protected receipt before judging your run.</p>
+<h2 id="observe-make-three-new-proposal-decisions">3. Observe: make three new proposal decisions</h2>
+<p>Record a decision, governing rule and discriminating observation for each card.</p>
+<h3 id="b1-p01">B1-P01</h3>
+<p>The routing decision stays in decimal arithmetic from conversion through comparison. The rejection path handles values outside the admitted numeric domain, while the existing result object and policy identity remain unchanged. The branch arrangement differs from the worked repair, so the review should trace representative invalid inputs and equality instead of relying on visual similarity.</p>
+<p><em>Artifact: assess: exact parsing, validity guard, routing and returned fields; the string-type guard precedes this region.</em></p>
+<pre class="python"><code>try:
+    amount = Decimal(amount_eur)
+except InvalidOperation:
+    amount = None
+if amount is None or not amount.is_finite() or amount.is_signed() \
+    or amount.is_zero():
+    route, reason = &quot;REJECTED&quot;, &quot;INVALID_AMOUNT&quot;
+elif amount &gt;= THRESHOLD_EUR:
+    route, reason = &quot;HUMAN_REVIEW&quot;, &quot;AT_OR_ABOVE_LIMIT&quot;
+else:
+    route, reason = &quot;STANDARD_QUEUE&quot;, &quot;BELOW_LIMIT&quot;
+return RoutingDecision(route, reason, POLICY_VERSION)</code></pre>
+<h3 id="b1-p02">B1-P02</h3>
+<p>The implementation uses a familiar numeric representation and checks finiteness explicitly before choosing a queue. Its result fields and ordinary boundary examples agree with the current interface. This keeps the parser and comparison compact. I would review the conversion boundary together with the admitted input language, especially where two different source strings can map to the same stored numeric value.</p>
+<p><em>Artifact: assess: numeric parsing and routing after the string-type guard.</em></p>
+<pre class="python"><code>try:
+    amount = float(amount_eur)
+except ValueError:
+    return RoutingDecision(&quot;REJECTED&quot;, &quot;INVALID_AMOUNT&quot;,
+        POLICY_VERSION)
+if not math.isfinite(amount) or amount &lt;= 0:
+    return RoutingDecision(&quot;REJECTED&quot;, &quot;INVALID_AMOUNT&quot;,
+        POLICY_VERSION)
+if amount &lt; 5000.0:
+    return RoutingDecision(&quot;STANDARD_QUEUE&quot;, &quot;BELOW_LIMIT&quot;,
+        POLICY_VERSION)
+return RoutingDecision(&quot;HUMAN_REVIEW&quot;, &quot;AT_OR_ABOVE_LIMIT&quot;,
+    POLICY_VERSION)</code></pre>
+<h3 id="b1-p03">B1-P03</h3>
+<p>Users see monetary amounts with two decimal places. This input proposal makes the displayed amount the basis for routing by applying half-up rounding before the threshold comparison. The bounded validation repair remains a separate change, while the proposed normalization would give forms and routing one shared amount representation. Additional fractional digits would be resolved once at the input boundary.</p>
+<p><em>Artifact: The separate input-policy artifact submitted with the unchanged exact assess implementation.</em></p>
+<pre class="python"><code>PROPOSED_INPUT_POLICY = {
+    &quot;positive_input_scale&quot;: 2,
+    &quot;rounding&quot;: &quot;ROUND_HALF_UP&quot;,
+    &quot;apply_before&quot;: &quot;routing_threshold_comparison&quot;,
+    &quot;example_input&quot;: &quot;4999.995&quot;,
+    &quot;example_routing_amount&quot;: &quot;5000.00&quot;,
+    &quot;implemented_in_assess&quot;: False,
+}</code></pre>
+<p>Only after all three judgments:</p>
+<pre class="bash"><code>python3 companion/start.py review B1 \
+  --candidate-ids B1-P01 B1-P02 B1-P03 \
+  --output work/evidence/b1-review.json</code></pre>
+<p>Two precision probes supplement the twelve methods. Under v1, valid text can have more than two fractional digits or exponent notation. The same probes exercise the correct alternative and float variant; the positive control shows that setup failure is not masquerading as detection of the numeric defect.</p>
+<p>Optional historical replay follows the required judgments:</p>
+<pre class="bash"><code>python3 companion/start.py review B1 \
+  --candidate-ids B1-H01 \
+  --output work/evidence/review-B1-H01.json</code></pre>
+<p>Keep its original numeric evidence distinct from later API diagnostics. That older record has no complete native final explanation.</p>
+<h2 id="decide-retain-the-v1-repair">4. Decide: retain the v1 repair</h2>
+<pre class="bash"><code>python3 companion/start.py continue B1 \
+  --candidate work/b1 \
+  --output work/evidence/b1-context.json</code></pre>
+<p>Continuation repeats twelve methods and obtains read-only previews for <code>-0.01</code>, <code>4000</code> and <code>5000</code>. It records candidate and expectation identities, command and time. <code>CONTEXT_HANDOFF_READY</code> concerns this context transfer; <code>candidate_retained</code> confirms unchanged source bytes. No payment or financial authorization occurs. AP-B1-V1 passed this independent continuation, so the operator retained v1 and stopped that task.</p>
+<p>Close your dossier with scope, task/final response, patch, independent receipt, three judgments and pending decisions. Keep this directory and its evidence.</p>
+<h2 id="expect-again-a-new-decision-changes-the-interface">5. Expect again: a new decision changes the interface</h2>
+<p>The second session has the <strong>New capability</strong> profile. B1-OD-02, the fictional maintainer and rule owner’s decision dated 20 May 2025, introduces B1-API/v2 while retaining BR-001/v1. Create a separate copy of your retained v1 candidate:</p>
+<pre class="bash"><code>python3 companion/start.py extend B1 \
+  --candidate work/b1 \
+  --dest work/b1-v2</code></pre>
+<p>Read <code>work/b1-v2/docs/B1-API-v2.md</code> before its tests. Exact ASCII monetary text now follows <code>[+-]?[0-9]+(?:\.[0-9]{1,2})?</code>, with at most 32 characters including sign and point. Leading zeros and plus signs are allowed. Negative and zero amounts are syntactically recognized but numerically rejected. Nothing is rounded.</p>
+<p><strong>Table: The approved v2 text boundary.</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Example</th>
+<th style="text-align: left;">Owner’s decision</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>004000.00</code>, <code>+4999.99</code></td>
+<td style="text-align: left;">Valid positive text below the limit</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>5000</code>, <code>5000.0</code></td>
+<td style="text-align: left;">Valid text at the review boundary</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>-1.00</code>, <code>+0.00</code></td>
+<td style="text-align: left;">Syntax recognized; numeric amount rejected</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>1e3</code>, <code>4_000</code>, whitespace</td>
+<td style="text-align: left;">Text form rejected</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>.50</code>, <code>5000.</code>, <code>4999.995</code></td>
+<td style="text-align: left;">Text form rejected</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Commas or non-ASCII digits</td>
+<td style="text-align: left;">Text form rejected</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">More than 32 characters</td>
+<td style="text-align: left;">Text form rejected</td>
+</tr>
+</tbody>
+</table>
+<pre class="bash"><code>python3 companion/start.py check B1 \
+  --candidate work/b1-v2 \
+  --output work/evidence/b1-v2-initial.json</code></pre>
+<p>The old numeric/type cases can pass while new grammar cases fail. This preserves the truth of v1’s receipt and establishes why a new implementation is necessary. Write accepted/rejected examples under the new decision before delegating.</p>
+<h2 id="delegate-and-observe-the-new-behavior">6. Delegate and observe the new behavior</h2>
+<p>AP-B1-V2 began with AP-B1-V1’s retained candidate in a new workspace and task context. Its complete task body was:</p>
+<blockquote>
+<p>Read docs/BR-001.md, docs/B1-API.md and the new docs/B1-API-v2.md before editing. Preserve BR-001/v1 and its strict numeric boundary; v2 changes textual grammar, not the policy. The supplied decision is a fictional teaching contract. First run the available tests to observe the unchanged v1 candidate against the new v2 expectation. Then change only src/treasury/routing.py to implement the approved whole-input ASCII grammar and length limit while preserving caller TypeError, exact Decimal comparison and propagation of unexpected internal failures. Do not edit docs, tests, policy or other source files. Do not retrieve solutions or files outside this workspace. No network, credentials or external services.</p>
+</blockquote>
+<p>The full instruction, including scope and run limits, is retained in <code>evidence/agent_process_v4/AP-B1-V2/prompt_01.txt</code>.</p>
+<pre class="bash"><code>python3 companion/agent_session.py prepare B1 --api v2 \
+  --candidate work/b1-v2 --output work/b1-agent-v2
+python3 companion/agent_session.py run \
+  --session work/b1-agent-v2 --client claude \
+  --max-budget-usd 5</code></pre>
+<p>Inspect the prepared context, then observe your run. In AP-B1-V2, record 004 exposed the new failures; 006 changed only the router; 007 challenged exception, precision and length boundaries; 008 passed eighteen development methods. The operator independently checked that candidate and continued it:</p>
+<pre class="bash"><code>python3 companion/start.py check B1 \
+  --candidate work/b1-v2 \
+  --output work/evidence/b1-v2-check.json
+python3 companion/start.py continue B1 \
+  --candidate work/b1-v2 \
+  --output work/evidence/b1-v2-handoff.json</code></pre>
+<p>The actual full check and handoff passed twelve original plus six v2 methods, retaining B1-API/v2 and BR-001/v1 as distinct identities. The operator kept both versions. V1 precision counterexamples cannot certify a v2 false green when their spellings are now forbidden; a changed contract changes the right challenge.</p>
+<h3 id="read-the-grammar-as-a-whole-input-contract">Read the grammar as a whole-input contract</h3>
+<p>Use <code>[0-9]</code> and <code>fullmatch</code>: <code>\d</code> includes Unicode digits, and <code>$</code> can match before a final newline. The checks include non-ASCII text and <code>"4000\n"</code> alongside valid ASCII controls. <code>isdigit()</code> is no substitute for the chosen grammar.</p>
+<p>B3’s HISTORY-API/v1 is different: optional minus, 1–12 integer digits, up to two fractional digits, leading zeros but no plus. B1 v2 permits either sign and 32 total characters. Thus <code>+4000.00</code> is valid routing text but invalid history; <code>004000.0</code> is valid in both and canonicalizes to <code>4000.00</code> for history identity. Do not copy an expression between APIs without its contract.</p>
+<h3 class="unnumbered" id="record-and-practice-routes">Record and practice routes</h3>
+<p>For guided rehearsal, run:</p>
+<pre class="bash"><code>python3 companion/agent_session.py trace \
+  --task AP-B1-V1 \
+  --output work/b1-trace</code></pre>
+<p>Use the separate AP-B1-V2 tour for the later contract. Decide at each pause before revealing the next action. Identify whether your own attempt used a live agent, a saved trace or manual implementation. Explain why each receipt applies to its particular candidate and contract, and what the next engineer must rerun after a change.</p>
+<div class="notice"><p>After the accepted handoff, continue to <a href="B2.html">B2</a> with your retained candidate.</p></div></article></main><footer class="foot"><p>Enrico Papalini · Edition 5.6 · 2026-11-22</p><p><a href="../NOTICE.html">Rights and notices</a> · <a href="../NATIVE_STATUS.json">Native-client status</a> · <a href="../MANIFEST.json">Package manifest</a> · <a href="https://github.com/popoloni/esa_ai">Companion repository</a></p></footer></body></html>

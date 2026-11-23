@@ -1,0 +1,17 @@
+{
+  "decision": "PROMOTE",
+  "reason": "AUTOMATED CONTROL ONLY: exercise the declared-role and exact-record promotion gate. This is not actual owner approval.",
+  "record_sha256": "744ba29f779811bdfefa9e5b50c65d62ebc3d38cc0fe26aab31b5de1cd4e3bbb",
+  "reviewed_refs": [
+    {
+      "locator": "Monetary text grammar and declared API behavior",
+      "path": "companion/contracts/B1_API_V2.md",
+      "sha256": "75035676814847b356cd844300c32d5384a68327822225dbb45e92692470db06"
+    },
+    {
+      "locator": "$.cases",
+      "path": "evidence/memory_lab_20261116/recorded_01/observations/initial_reference_probe.json",
+      "sha256": "4ca4734abba82e8df93775f9995aed7218aff7b9874f75e96642fe51b1132d54"
+    }
+  ]
+}

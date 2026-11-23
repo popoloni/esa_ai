@@ -1,0 +1,25 @@
+G1/I01 is implemented in `booking.py`. All 6 supplied G1 checks pass, but I have not run the protected acceptance, and no human approval is claimed.
+
+**Outcome:** `reserve` commits one row and then returns `201/confirmed`. `get_reservation` returns the six public fields, or `None` for an unknown id in an initialised database. For a missing path it raises `sqlite3.OperationalError` and creates no file, as G1-OD-01 requires.
+
+**Acceptance example:** Given an empty database, `member-1`, asset `A`, 09:00–10:00Z and key `key-1`, `reserve` returns `201/confirmed` with an id above 0 and `replayed=False`. A new process then reads back all six fields. Id 999 gives `None`, and a missing path raises `OperationalError` with no file left behind.
+
+**Files changed:** `booking.py` and `DOSSIER.md`. I left `docs/`, `tests/`, `historical_tests/` and `READER_ENTRY.json` untouched. I also left `QUESTIONS.md` alone, because the task allows only the two files above.
+
+**Commands and results** (9 tool commands used, mostly reading; the rest were runs and the edits):
+- **Before the edit:** all 6 G1 checks failed with `NotImplementedError`. One earlier run failed on an import error from my own use of `-I`, not on the code.
+- **After the edit:** the G1 slice and read-only checks ran 6 tests and all passed.
+- **Separate-process probe:** the write returned `201/confirmed` with id 1. A second process read the six fields correctly and got `None` for id 999.
+- **Expected failures:** the full-contract diagnostic and the historical suite each fail 7 of 10. These cover overlap, replay, changed key, validation and concurrency, which belong to G2, so I left them failing.
+
+**Explanation of changes:**
+- `init_db` creates one private table if it doesn't exist, so existing data survives.
+- `reserve` uses a parameterised INSERT in a transaction and builds the `Outcome` only after the commit. Storage errors propagate.
+- `get_reservation` opens a read-only URI built from `Path.resolve().as_uri()` and runs a parameterised SELECT. It returns a fresh dict.
+
+**Remaining uncertainty:**
+- Calling `reserve` before `init_db` is not specified. A plain connect would create an empty file and then fail on the missing table. I didn't invent a policy for it.
+- Non-positive ids simply find no row and return `None`, which the read-only test requires for -77. The owner has not ruled on bad id types or values.
+- Concurrency and duplicate handling are untested, and I make no crash-recovery claim.
+
+The operator should run protected acceptance and decide how to continue.

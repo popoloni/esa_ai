@@ -1,0 +1,29 @@
+{
+  "schema": "esa-constructed-variant-author-check/v1",
+  "candidate_id": "b1-scientific-notation",
+  "origin": "EXECUTED_LOCAL_DETERMINISTIC_CHECKS_NO_MODEL",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "historical_source": "companion/upstream/base_13a1182/reader_side/acceptance/test_routing.py",
+  "extended_scope": "Six local test methods matching the declared CP1.1 assertion names; release harness verification is separate.",
+  "outcomes": {
+    "historical": {
+      "tests_run": 7,
+      "passed": true,
+      "failures": 0,
+      "errors": 0,
+      "failing_test_methods": [],
+      "error_test_methods": [],
+      "output": "test_above_boundary_requires_review (historical_candidate_b1_scientific_notation.RoutingAcceptance.test_above_boundary_requires_review) ... ok\ntest_exact_boundary_requires_review (historical_candidate_b1_scientific_notation.RoutingAcceptance.test_exact_boundary_requires_review) ... ok\ntest_negative_amount_rejected (historical_candidate_b1_scientific_notation.RoutingAcceptance.test_negative_amount_rejected) ... ok\ntest_nonfinite_amount_rejected (historical_candidate_b1_scientific_notation.RoutingAcceptance.test_nonfinite_amount_rejected) ... ok\ntest_nonnumeric_amount_rejected (historical_candidate_b1_scientific_notation.RoutingAcceptance.test_nonnumeric_amount_rejected) ... ok\ntest_positive_below_limit (historical_candidate_b1_scientific_notation.RoutingAcceptance.test_positive_below_limit) ... ok\ntest_zero_amount_rejected (historical_candidate_b1_scientific_notation.RoutingAcceptance.test_zero_amount_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.000s\n\nOK\n"
+    },
+    "extended": {
+      "tests_run": 6,
+      "passed": true,
+      "failures": 0,
+      "errors": 0,
+      "failing_test_methods": [],
+      "error_test_methods": [],
+      "output": "test_negative_infinity_rejected (__main__.Extended.test_negative_infinity_rejected) ... ok\ntest_non_string_argument_is_programming_error (__main__.Extended.test_non_string_argument_is_programming_error) ... ok\ntest_positive_infinity_rejected (__main__.Extended.test_positive_infinity_rejected) ... ok\ntest_short_infinity_rejected (__main__.Extended.test_short_infinity_rejected) ... ok\ntest_signaling_nan_rejected (__main__.Extended.test_signaling_nan_rejected) ... ok\ntest_unexpected_conversion_failure_propagates (__main__.Extended.test_unexpected_conversion_failure_propagates) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.000s\n\nOK\n"
+    }
+  },
+  "scope_notice": "This retained author experiment combined five public API methods and one candidate-specific conversion fault probe in six local methods. The released harness separates those scopes: default B1 has seven historical plus five public methods; review records the fault probe separately. The original observed output below is preserved."
+}

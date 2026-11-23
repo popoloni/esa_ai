@@ -1,0 +1,94 @@
+{
+  "id": "mission_G4",
+  "schema_version": 1,
+  "evidence_profile": "persistent_effect",
+  "expect": {
+    "outcome": "Diagnose retained storage read-only and account for all attempts.",
+    "authority": {
+      "owner": "Operations lead",
+      "source": "companion/contracts/G4.md",
+      "version": "OPS-G4/v3",
+      "status": "TEACHING_CONTRACT"
+    },
+    "acceptance": [
+      "Read-only diagnosis recognizes the three explicitly documented G3 schema3 representations and refuses unknown/competing mappings. All attempts count toward accepted-outcome accounting."
+    ]
+  },
+  "delegate": {
+    "editable_paths": [
+      "operations.py",
+      "DOSSIER.md"
+    ],
+    "protected_paths": [
+      "docs/",
+      "tests/",
+      "READER_ENTRY.json",
+      "prior/",
+      "booking.py",
+      "g4_fixture.py",
+      "reference_g3.py"
+    ],
+    "budget": {
+      "max_attempts": 3,
+      "implementation_minutes": 25,
+      "check_timeout_seconds": 30,
+      "max_external_calls": 0
+    },
+    "stop_conditions": [
+      "Missing or unsupported storage, changing bytes, or a requested repair.",
+      "Protected inputs change or the declared attempt/time budget is spent."
+    ]
+  },
+  "observe": {
+    "checks": [
+      {
+        "id": "g4.check",
+        "stage": "contract",
+        "method": "command",
+        "argv": [
+          "python3",
+          "companion/start.py",
+          "check",
+          "G4",
+          "--candidate",
+          "work/g4",
+          "--output",
+          "work/evidence/g4-first.json"
+        ],
+        "expected": "Selected public checks pass on unchanged inputs."
+      },
+      {
+        "id": "g4.continue",
+        "stage": "integration",
+        "method": "command",
+        "argv": [
+          "python3",
+          "companion/start.py",
+          "continue",
+          "G4",
+          "--candidate",
+          "work/g4",
+          "--output",
+          "work/evidence/g4-handoff.json"
+        ],
+        "expected": "Current candidate completes its scoped continuation; inspect retained observations."
+      }
+    ],
+    "receipt_fields": [
+      "candidate_sha256_before",
+      "groups",
+      "inputs_unchanged",
+      "verification_progress",
+      "human_acceptance"
+    ]
+  },
+  "decide": {
+    "owner": "Learner reviewer; Operations lead for a changed rule.",
+    "object": "G4 candidate, identified bytes and its scoped handoff.",
+    "allowed_decisions": [
+      "ACCEPT",
+      "REJECT",
+      "ASK"
+    ]
+  }
+}

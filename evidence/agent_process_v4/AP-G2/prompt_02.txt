@@ -1,0 +1,7 @@
+Correction from the AI recording operator: your reported scope conflict is valid. The original sentence excluding migration was my error. Retain prompt_01.txt and your original observation; do not rewrite that history.
+
+The intended authorized task is the full supplied G2 contract, including the explicit G2-OD-01 migration decision in docs/contract.md. Proceed with that documented migration and the validation, exclusion, replay and atomic write behavior. Only the two documented legacy representations are authorized; reject or stop on an unknown mapping rather than guessing. Preserve current IDs, public values and old tables as stated by that decision.
+
+The contract specifies distinct 422 outcomes without mandating their exact code spellings. Your proposed distinct invalid-identifier, invalid-timestamp and invalid-interval labels are a documented implementation choice within that contract; do not describe them as a newly obtained owner approval. Keep the specified success/conflict code spellings exact. If the retained actual G1 representation cannot be mapped under the supplied decision, identify that specific incompatibility and stop before inventing a new migration rule.
+
+Continue in the same workspace through the same recorder. Only booking.py and DOSSIER.md may change. This correction resolves an operator task-writing error; it is not evidence that the agent made an implementation error. There is one remaining operator correction cycle under the original two-cycle allowance.

@@ -1,0 +1,42 @@
+{
+  "claim": "The v2 reference routes 4000 to STANDARD_QUEUE.",
+  "evidence_refs": [
+    {
+      "locator": "$.cases",
+      "path": "evidence/memory_lab_20261116/recorded_01/observations/initial_reference_probe.json",
+      "sha256": "4ca4734abba82e8df93775f9995aed7218aff7b9874f75e96642fe51b1132d54"
+    }
+  ],
+  "expires_at": "2026-11-16T21:40:07Z",
+  "last_checked_at": "2026-11-16T20:40:07Z",
+  "memory_type": "fact",
+  "producer": {
+    "id": "offline-demonstrator",
+    "kind": "automated_control"
+  },
+  "record_id": "B1-V2-EXPIRES",
+  "revisit_if": [
+    "The task, component, API or field shape changes.",
+    "A source, evidence or approval digest changes.",
+    "Current-contract counterevidence contradicts the claim.",
+    "The declared validity interval ends."
+  ],
+  "schema": "agent-memory-record/v1",
+  "scope": {
+    "component": "treasury.routing.assess",
+    "contract": "B1-API/v2",
+    "schema": "RoutingDecision(route,reason,policy_version)",
+    "task": "B1-grammar-check"
+  },
+  "sensitivity": "public",
+  "source_refs": [
+    {
+      "locator": "Monetary text grammar and declared API behavior",
+      "path": "companion/contracts/B1_API_V2.md",
+      "sha256": "75035676814847b356cd844300c32d5384a68327822225dbb45e92692470db06"
+    }
+  ],
+  "supersedes": null,
+  "valid_from": "2026-11-16T20:40:07Z",
+  "version": 1
+}

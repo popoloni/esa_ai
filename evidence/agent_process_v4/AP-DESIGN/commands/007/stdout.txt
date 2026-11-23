@@ -1,0 +1,11 @@
+PASS direct 4000.00: {"notice": "Queue recommendation; payment approval is separate.", "payment_authorized": false, "policy_version": "BR-001/v1", "reason": "BELOW_LIMIT", "route": "STANDARD_QUEUE"}
+PASS direct 5000.00: {"notice": "Queue recommendation; payment approval is separate.", "payment_authorized": false, "policy_version": "BR-001/v1", "reason": "AT_OR_ABOVE_LIMIT", "route": "HUMAN_REVIEW"}
+PASS direct -0.01: {"notice": "Queue recommendation; payment approval is separate.", "payment_authorized": false, "policy_version": "BR-001/v1", "reason": "INVALID_AMOUNT", "route": "REJECTED"}
+PASS with_actual 4000.00: {"notice": "Queue recommendation; payment approval is separate.", "payment_authorized": false, "policy_version": "BR-001/v1", "reason": "BELOW_LIMIT", "route": "STANDARD_QUEUE"}
+PASS with_actual 5000.00: {"notice": "Queue recommendation; payment approval is separate.", "payment_authorized": false, "policy_version": "BR-001/v1", "reason": "AT_OR_ABOVE_LIMIT", "route": "HUMAN_REVIEW"}
+PASS with_actual -0.01: {"notice": "Queue recommendation; payment approval is separate.", "payment_authorized": false, "policy_version": "BR-001/v1", "reason": "INVALID_AMOUNT", "route": "REJECTED"}
+PASS supplied fake input: ['+0001.00']; output: {"notice": "Queue recommendation; payment approval is separate.", "payment_authorized": false, "policy_version": "OPS/preview:17+audit", "reason": "SUBSTITUTE_OBSERVATION", "route": "HUMAN_REVIEW"}
+PASS direct renderer: {"notice": "Queue recommendation; payment approval is separate.", "payment_authorized": false, "policy_version": "OPS/preview:17+audit", "reason": "SUBSTITUTE_OBSERVATION", "route": "HUMAN_REVIEW"}
+PASS supplied fake EXPRESS_QUEUE: ValueError: Unsupported route: 'EXPRESS_QUEUE'
+PASS direct renderer EXPRESS_QUEUE: ValueError: Unsupported route: 'EXPRESS_QUEUE'
+Completed: 6 actual-provider cases, 2 unusual-policy results, 2 unsupported-route refusals.

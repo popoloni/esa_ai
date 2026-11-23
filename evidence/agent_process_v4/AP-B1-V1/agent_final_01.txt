@@ -1,0 +1,14 @@
+Completed **AP-B1-V1**. Changed only routing.py in the recorded workspace.
+
+The repair adds an explicit TypeError for non-string arguments, catches only decimal.InvalidOperation around Decimal conversion, and rejects nonfinite or nonpositive values before ordered comparison. The public interface, BR-001/v1 identity, and EUR 5,000 boundary remain unchanged.
+
+Recorded evidence:
+004: env PYTHONPATH=src python3 -B -m unittest discover -s tests -v, before repair: 12 test methods; 7 failures and 3 errors; exit 1.
+005: Scoped edit and printed unified diff: only src/treasury/routing.py changed.
+006: Same unittest command, after repair: all 12 test methods passed; exit 0.
+007: Injected RuntimeError at the Decimal conversion binding: exception propagated unchanged.
+007: Compatibility checks for "1e3" and "4_000": both retained STANDARD_QUEUE / BELOW_LIMIT / BR-001/v1.
+
+Used 7 recorded commands. No correction cycle was needed. These checks are development feedback; independent acceptance remains with the operator. A stricter textual grammar was not introduced because it requires an owner decision.
+
+Retention note: this is a faithful plain-text transcription of the worker final response; Markdown file link and table presentation were normalized. The underlying commands and outputs are retained verbatim in commands/.

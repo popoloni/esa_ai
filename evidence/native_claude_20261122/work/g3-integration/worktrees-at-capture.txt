@@ -1,0 +1,3 @@
+/home/claude/work/live22/agentic-ai-5.2/work/g3-integration/workspace         1898d5c [integration]
+/home/claude/work/live22/agentic-ai-5.2/work/g3-integration/worktrees/cli     bf69a79 [contribution-cli]
+/home/claude/work/live22/agentic-ai-5.2/work/g3-integration/worktrees/report  dc2806a [contribution-report]

@@ -1,0 +1,19 @@
+{
+  "schema": "esa-review-ground-truth/v4",
+  "mission": "B3",
+  "candidate_id": "B3-P02",
+  "created_on": "2026-11-02",
+  "origin": "CONSTRUCTED_TEACHING_VARIANT",
+  "actual_model_trace": false,
+  "expected_decision": "REJECT",
+  "expected_check_pass": false,
+  "targeted_assertions": [
+    "test_retry_after_policy_change_returns_exact_old_decision"
+  ],
+  "explanation": "Changing the returned decision under an old identity violates replay even if no row is appended.",
+  "required_human_decision": null,
+  "contract": "HISTORY-API/v1 + MIGRATION/v1",
+  "scope": "Constructed public practice, not a human assessment result.",
+  "revised_on": "2026-11-03",
+  "release_scope": "ESA-Complete-Review-3-20261103"
+}

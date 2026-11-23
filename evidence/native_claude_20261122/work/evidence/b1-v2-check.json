@@ -1,0 +1,286 @@
+{
+  "schema": "esa-prototype-check/v2",
+  "selection": "all",
+  "candidate_path": "/home/claude/work/live22/agentic-ai-5.2/work/b1-v2",
+  "candidate_sha256_before": "e8fdab89acfa5d28041c74a5d2dcf9801fb0e85324dcc160013a56cf63f89cfd",
+  "protected_before": [
+    {
+      "path": "tests/test_routing.py",
+      "expected_sha256": "6e5aa5706dd989bdbbeec9374a84d13c41cf6f36e23a5e5d2762a3b16e551c9b",
+      "candidate_sha256": "6e5aa5706dd989bdbbeec9374a84d13c41cf6f36e23a5e5d2762a3b16e551c9b",
+      "symlink": false
+    },
+    {
+      "path": "tests/test_routing_extended.py",
+      "expected_sha256": "f797d7f08cf34e97f8d1b2f3b9dae18e5cf1aa1cafbb66334ad855c0c9fc1051",
+      "candidate_sha256": "f797d7f08cf34e97f8d1b2f3b9dae18e5cf1aa1cafbb66334ad855c0c9fc1051",
+      "symlink": false
+    },
+    {
+      "path": "docs/BR-001.md",
+      "expected_sha256": "b88e648e2133cc0668a68b94d8e2b905a2fe09bd76780e36e20bbe68793b991a",
+      "candidate_sha256": "b88e648e2133cc0668a68b94d8e2b905a2fe09bd76780e36e20bbe68793b991a",
+      "symlink": false
+    },
+    {
+      "path": "docs/B1-API.md",
+      "expected_sha256": "e631804217257dfd5eabf3f9a3feeca025156822acc561bab7b5ab8b722914c2",
+      "candidate_sha256": "e631804217257dfd5eabf3f9a3feeca025156822acc561bab7b5ab8b722914c2",
+      "symlink": false
+    },
+    {
+      "path": "docs/policy.json",
+      "expected_sha256": "3737b95b728bea32cfc2c82c489fe12267fd3096404a44639f27eec9de88deed",
+      "candidate_sha256": "3737b95b728bea32cfc2c82c489fe12267fd3096404a44639f27eec9de88deed",
+      "symlink": false
+    },
+    {
+      "path": "docs/legacy_note.json",
+      "expected_sha256": "ed8b81d04572c5e1925faa5b7473f220e3184f27287646ed61005a146dc6a95a",
+      "candidate_sha256": "ed8b81d04572c5e1925faa5b7473f220e3184f27287646ed61005a146dc6a95a",
+      "symlink": false
+    },
+    {
+      "path": "src/treasury/__init__.py",
+      "expected_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "candidate_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "symlink": false
+    },
+    {
+      "path": "docs/B1-API-v2.md",
+      "expected_sha256": "75035676814847b356cd844300c32d5384a68327822225dbb45e92692470db06",
+      "candidate_sha256": "75035676814847b356cd844300c32d5384a68327822225dbb45e92692470db06",
+      "symlink": false
+    },
+    {
+      "path": "tests/test_b1_v2.py",
+      "expected_sha256": "06741c0ea68e5872f6120aa619e1ce730c44768b2d3a4fe2a385ea4e524de93b",
+      "candidate_sha256": "06741c0ea68e5872f6120aa619e1ce730c44768b2d3a4fe2a385ea4e524de93b",
+      "symlink": false
+    }
+  ],
+  "human_acceptance": "PENDING",
+  "groups": {
+    "b1_core": {
+      "command": [
+        "/usr/local/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_routing.py",
+        "-v"
+      ],
+      "elapsed_process_seconds": 0.051630405000082646,
+      "timeout_seconds": 15,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_above_boundary_requires_review (test_routing.RoutingAcceptance.test_above_boundary_requires_review) ... ok\ntest_exact_boundary_requires_review (test_routing.RoutingAcceptance.test_exact_boundary_requires_review) ... ok\ntest_negative_amount_rejected (test_routing.RoutingAcceptance.test_negative_amount_rejected) ... ok\ntest_nonfinite_amount_rejected (test_routing.RoutingAcceptance.test_nonfinite_amount_rejected) ... ok\ntest_nonnumeric_amount_rejected (test_routing.RoutingAcceptance.test_nonnumeric_amount_rejected) ... ok\ntest_positive_below_limit (test_routing.RoutingAcceptance.test_positive_below_limit) ... ok\ntest_zero_amount_rejected (test_routing.RoutingAcceptance.test_zero_amount_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.000s\n\nOK\n",
+      "timed_out": false,
+      "tests_run": 7,
+      "expected_tests": 7,
+      "methods_passed": 7,
+      "methods_failed": [],
+      "methods_errored": [],
+      "status": "PASSED"
+    },
+    "b1_extended": {
+      "command": [
+        "/usr/local/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_routing_extended.py",
+        "-v"
+      ],
+      "elapsed_process_seconds": 0.04674521399999776,
+      "timeout_seconds": 15,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_negative_infinity_rejected (test_routing_extended.RoutingExtended.test_negative_infinity_rejected) ... ok\ntest_non_string_argument_is_programming_error (test_routing_extended.RoutingExtended.test_non_string_argument_is_programming_error) ... ok\ntest_positive_infinity_rejected (test_routing_extended.RoutingExtended.test_positive_infinity_rejected) ... ok\ntest_short_infinity_rejected (test_routing_extended.RoutingExtended.test_short_infinity_rejected) ... ok\ntest_signaling_nan_rejected (test_routing_extended.RoutingExtended.test_signaling_nan_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.000s\n\nOK\n",
+      "timed_out": false,
+      "tests_run": 5,
+      "expected_tests": 5,
+      "methods_passed": 5,
+      "methods_failed": [],
+      "methods_errored": [],
+      "status": "PASSED"
+    },
+    "b1_v2": {
+      "command": [
+        "/usr/local/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_b1_v2.py",
+        "-v"
+      ],
+      "elapsed_process_seconds": 0.05414718500003346,
+      "timeout_seconds": 15,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_boundary_and_larger_values_require_review (test_b1_v2.MonetaryTextV2.test_boundary_and_larger_values_require_review) ... ok\ntest_length_limit_counts_sign_and_point (test_b1_v2.MonetaryTextV2.test_length_limit_counts_sign_and_point) ... ok\ntest_non_string_is_a_caller_error (test_b1_v2.MonetaryTextV2.test_non_string_is_a_caller_error) ... ok\ntest_nonpositive_values_are_rejected (test_b1_v2.MonetaryTextV2.test_nonpositive_values_are_rejected) ... ok\ntest_unapproved_lexical_forms_are_rejected (test_b1_v2.MonetaryTextV2.test_unapproved_lexical_forms_are_rejected) ... ok\ntest_valid_spellings_preserve_numeric_policy (test_b1_v2.MonetaryTextV2.test_valid_spellings_preserve_numeric_policy) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.001s\n\nOK\n",
+      "timed_out": false,
+      "tests_run": 6,
+      "expected_tests": 6,
+      "methods_passed": 6,
+      "methods_failed": [],
+      "methods_errored": [],
+      "status": "PASSED"
+    }
+  },
+  "tests_run": 18,
+  "expected_tests": 18,
+  "methods_passed": 18,
+  "stdout": "",
+  "stderr": "test_above_boundary_requires_review (test_routing.RoutingAcceptance.test_above_boundary_requires_review) ... ok\ntest_exact_boundary_requires_review (test_routing.RoutingAcceptance.test_exact_boundary_requires_review) ... ok\ntest_negative_amount_rejected (test_routing.RoutingAcceptance.test_negative_amount_rejected) ... ok\ntest_nonfinite_amount_rejected (test_routing.RoutingAcceptance.test_nonfinite_amount_rejected) ... ok\ntest_nonnumeric_amount_rejected (test_routing.RoutingAcceptance.test_nonnumeric_amount_rejected) ... ok\ntest_positive_below_limit (test_routing.RoutingAcceptance.test_positive_below_limit) ... ok\ntest_zero_amount_rejected (test_routing.RoutingAcceptance.test_zero_amount_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.000s\n\nOK\ntest_negative_infinity_rejected (test_routing_extended.RoutingExtended.test_negative_infinity_rejected) ... ok\ntest_non_string_argument_is_programming_error (test_routing_extended.RoutingExtended.test_non_string_argument_is_programming_error) ... ok\ntest_positive_infinity_rejected (test_routing_extended.RoutingExtended.test_positive_infinity_rejected) ... ok\ntest_short_infinity_rejected (test_routing_extended.RoutingExtended.test_short_infinity_rejected) ... ok\ntest_signaling_nan_rejected (test_routing_extended.RoutingExtended.test_signaling_nan_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.000s\n\nOK\ntest_boundary_and_larger_values_require_review (test_b1_v2.MonetaryTextV2.test_boundary_and_larger_values_require_review) ... ok\ntest_length_limit_counts_sign_and_point (test_b1_v2.MonetaryTextV2.test_length_limit_counts_sign_and_point) ... ok\ntest_non_string_is_a_caller_error (test_b1_v2.MonetaryTextV2.test_non_string_is_a_caller_error) ... ok\ntest_nonpositive_values_are_rejected (test_b1_v2.MonetaryTextV2.test_nonpositive_values_are_rejected) ... ok\ntest_unapproved_lexical_forms_are_rejected (test_b1_v2.MonetaryTextV2.test_unapproved_lexical_forms_are_rejected) ... ok\ntest_valid_spellings_preserve_numeric_policy (test_b1_v2.MonetaryTextV2.test_valid_spellings_preserve_numeric_policy) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.001s\n\nOK\n",
+  "timed_out": false,
+  "returncode": 0,
+  "protected_after": [
+    {
+      "path": "tests/test_routing.py",
+      "expected_sha256": "6e5aa5706dd989bdbbeec9374a84d13c41cf6f36e23a5e5d2762a3b16e551c9b",
+      "candidate_sha256": "6e5aa5706dd989bdbbeec9374a84d13c41cf6f36e23a5e5d2762a3b16e551c9b",
+      "symlink": false
+    },
+    {
+      "path": "tests/test_routing_extended.py",
+      "expected_sha256": "f797d7f08cf34e97f8d1b2f3b9dae18e5cf1aa1cafbb66334ad855c0c9fc1051",
+      "candidate_sha256": "f797d7f08cf34e97f8d1b2f3b9dae18e5cf1aa1cafbb66334ad855c0c9fc1051",
+      "symlink": false
+    },
+    {
+      "path": "docs/BR-001.md",
+      "expected_sha256": "b88e648e2133cc0668a68b94d8e2b905a2fe09bd76780e36e20bbe68793b991a",
+      "candidate_sha256": "b88e648e2133cc0668a68b94d8e2b905a2fe09bd76780e36e20bbe68793b991a",
+      "symlink": false
+    },
+    {
+      "path": "docs/B1-API.md",
+      "expected_sha256": "e631804217257dfd5eabf3f9a3feeca025156822acc561bab7b5ab8b722914c2",
+      "candidate_sha256": "e631804217257dfd5eabf3f9a3feeca025156822acc561bab7b5ab8b722914c2",
+      "symlink": false
+    },
+    {
+      "path": "docs/policy.json",
+      "expected_sha256": "3737b95b728bea32cfc2c82c489fe12267fd3096404a44639f27eec9de88deed",
+      "candidate_sha256": "3737b95b728bea32cfc2c82c489fe12267fd3096404a44639f27eec9de88deed",
+      "symlink": false
+    },
+    {
+      "path": "docs/legacy_note.json",
+      "expected_sha256": "ed8b81d04572c5e1925faa5b7473f220e3184f27287646ed61005a146dc6a95a",
+      "candidate_sha256": "ed8b81d04572c5e1925faa5b7473f220e3184f27287646ed61005a146dc6a95a",
+      "symlink": false
+    },
+    {
+      "path": "src/treasury/__init__.py",
+      "expected_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "candidate_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "symlink": false
+    },
+    {
+      "path": "docs/B1-API-v2.md",
+      "expected_sha256": "75035676814847b356cd844300c32d5384a68327822225dbb45e92692470db06",
+      "candidate_sha256": "75035676814847b356cd844300c32d5384a68327822225dbb45e92692470db06",
+      "symlink": false
+    },
+    {
+      "path": "tests/test_b1_v2.py",
+      "expected_sha256": "06741c0ea68e5872f6120aa619e1ce730c44768b2d3a4fe2a385ea4e524de93b",
+      "candidate_sha256": "06741c0ea68e5872f6120aa619e1ce730c44768b2d3a4fe2a385ea4e524de93b",
+      "symlink": false
+    }
+  ],
+  "candidate_sha256_after": "e8fdab89acfa5d28041c74a5d2dcf9801fb0e85324dcc160013a56cf63f89cfd",
+  "inputs_unchanged": true,
+  "status": "SELECTED_CHECKS_PASSED",
+  "mission": "B1",
+  "prototype_release": "Engineering-Software-with-Agentic-AI-Review-5.2-20261117",
+  "evidence_origin": "IDENTIFIED_LEARNER_CANDIDATE",
+  "scope": [
+    "BR-001/v1 seven unchanged core cases",
+    "B1 five extended public-API finite-value and type diagnostics",
+    "B1-API/v2 six methods covering the explicit owner grammar decision"
+  ],
+  "api_contract": "B1-API/v2",
+  "meaning": "Checks on these bytes and selected cases; human acceptance remains pending. Integrity and timeout checks do not sandbox arbitrary code.",
+  "recorded_at_utc": "2026-11-22T17:36:41.814146+00:00",
+  "command": [
+    "/usr/local/bin/python3",
+    "companion/start.py",
+    "check",
+    "B1",
+    "--candidate",
+    "work/b1-v2",
+    "--output",
+    "work/evidence/b1-v2-check.json"
+  ],
+  "verification_progress": {
+    "schema": "esa-verification-progress/v1",
+    "derivation": "CURRENT_RECEIPT_FIELDS_ONLY_NO_ADDITIONAL_EXECUTION",
+    "source_fields_sha256": "54bc76165d3e9edc0a514749ec69dca72777a440d35c5dd38db72b2cb13fbca3",
+    "work_order": "mission_B1",
+    "evidence_profile": "new_capability",
+    "profile_basis": "B1-OD-02 / B1-API/v2 separately authorizes the new grammar; the base mission work order identifies the v1 repair.",
+    "phase": "approved_v2_grammar_extension",
+    "stages": {
+      "startup": {
+        "status": "PASS",
+        "evidence": [
+          "schema",
+          "mission",
+          "candidate_path"
+        ],
+        "reason": "The intended runner accepted the entry identity and emitted this check receipt. This does not establish candidate import."
+      },
+      "integrity": {
+        "status": "PASS",
+        "evidence": [
+          "inputs_unchanged",
+          "candidate_sha256_before",
+          "candidate_sha256_after"
+        ],
+        "reason": "The recorded before/after comparison found inputs unchanged."
+      },
+      "contract": {
+        "status": "PASS",
+        "evidence": [
+          "groups.b1_core",
+          "groups.b1_extended",
+          "groups.b1_v2"
+        ],
+        "reason": "Status uses each selected group and any contract-specific supplemental probe; an import placeholder is not behavioral evidence. A candidate stack frame or known protected assertion supports reached behavior; a method count alone does not. Groups within this stage may retain multiple failures.",
+        "behavior_reached": true
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "evidence": [],
+        "reason": "No continuation or consumer/process observation is present."
+      },
+      "artifact": {
+        "status": "NOT_RUN",
+        "evidence": [],
+        "reason": "This receipt has no separate archive/extraction gate. Local demonstration hashes alone do not establish release fitness."
+      },
+      "authorization": {
+        "status": "NOT_RUN",
+        "evidence": [
+          "human_acceptance"
+        ],
+        "reason": "No owner acceptance or release authorization is recorded. Passing checks do not supply that decision."
+      }
+    },
+    "first_failed_stage": null,
+    "last_observed_stage": "contract",
+    "limits": "A stage label interprets the retained fields; it is not an independent attestation. NOT_APPLICABLE needs an explicit scope exclusion; absence alone remains NOT_RUN."
+  }
+}

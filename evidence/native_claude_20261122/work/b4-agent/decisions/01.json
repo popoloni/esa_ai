@@ -1,0 +1,32 @@
+{
+  "at_utc": "2026-11-22T17:38:50.314196+00:00",
+  "operator": "Claude Code live test",
+  "operator_kind": "AI",
+  "decision": "accept",
+  "note": "B4 protected check passed; scope limited to the mission module and DOSSIER.md.\n",
+  "decision_binding": {
+    "candidate_hashes": {
+      "AGENTS.md": "a1634ba6823a492da6db687371031505fc4706a4c515eb0e72e362c18b10cd68",
+      "DOSSIER.md": "baed4ec30434501b3d13a4ba8dcdb2f4f1909d800e99c20535e04da3d3714ac2",
+      "READER_ENTRY.json": "681d60d25f2cd280caf5b3739a9a7bfce75ed29f9681dfe7db64c1396bdd1449",
+      "docs/contract.md": "89c3ae88ae62e4fd292b5cfd3e14c219cf3d6d9c44d6aed50923beb517a7c429",
+      "docs/policy_catalog.json": "9c1b4078c49e118f1001d138484bd9b046ab595935e16b63ea160d619068c7ab",
+      "incident.py": "330db1ff9134da97fd1f1dc75bae7b6bcab04714d9af3616b4c8ecb002afe6eb",
+      "ledger.py": "8e87f6bd508a9372b40be2c004ef22b6c912830765fadac55b9896018d4799dc",
+      "operations.py": "f0162261026327358188be23ed4daa6f01134b3ee1817a087694551bbcbfa580",
+      "prior/ledger.py": "8e87f6bd508a9372b40be2c004ef22b6c912830765fadac55b9896018d4799dc",
+      "prior/parent-check-artifacts/DEMONSTRATION.json": "3922dbf150db1276292de8dc6cd98e1aa01390bbdd408e9a53c17f3e995168ea",
+      "prior/parent-check-artifacts/history.json": "6e81a9e4c781bf227979cb59c9fb8db39a92fe5087343bef07477d287990e194",
+      "prior/parent-check-artifacts/ledger.sqlite": "1039601147525da7d2fc0bd9890df5e057c20a6709078bae4cb1057eb39eefa5",
+      "prior/parent-entry.json": "0ad05047101af63a1715751040488c1a59662e806dfad4d6ef27c05294caea81",
+      "prior/parent-handoff.json": "e41ad32d6215705ef071928af9e316deec8c7156bcea2888f1b0c1891b9b5adc",
+      "routing.py": "e8fdab89acfa5d28041c74a5d2dcf9801fb0e85324dcc160013a56cf63f89cfd",
+      "tests/test_b4.py": "c59850930b5b56d0629cce27260ad2de1d1bc362d964f5d18589774c85b347fa"
+    },
+    "inventory_sha256": "eb4b1123629b975035580566baf09c516bb7a3ff25643d701b455887fedd13c6",
+    "latest_run": "runs/01",
+    "latest_result_sha256": "0d51052cf426861d46d864d16ae6468cf4451aca9afb47100c1b5e1b098396a3",
+    "session_spec_sha256": "77a1eca91c278b0f78d6880c2e414bb0b22c8a47e9abb7204a25ded09a1742aa"
+  },
+  "meaning": "Recorded operator statement; this tool does not certify its authority or correctness."
+}

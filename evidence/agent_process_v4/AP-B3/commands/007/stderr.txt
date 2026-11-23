@@ -1,0 +1,15 @@
+test_activation_and_history_survive_restart (test_b3.PersistentDecisions.test_activation_and_history_survive_restart) ... ok
+test_changed_payload_conflicts_without_new_rows (test_b3.PersistentDecisions.test_changed_payload_conflicts_without_new_rows) ... ok
+test_explicit_migration_preserves_legacy_payload (test_b3.PersistentDecisions.test_explicit_migration_preserves_legacy_payload) ... ok
+test_history_cannot_be_updated_or_deleted (test_b3.PersistentDecisions.test_history_cannot_be_updated_or_deleted) ... ok
+test_missing_provenance_stops_without_mutation (test_b3.PersistentDecisions.test_missing_provenance_stops_without_mutation) ... ok
+test_non_ascii_numeric_input_is_outside_history_api (test_b3.PersistentDecisions.test_non_ascii_numeric_input_is_outside_history_api) ... ok
+test_original_payload_survives_canonical_retry (test_b3.PersistentDecisions.test_original_payload_survives_canonical_retry) ... ok
+test_recompute_uses_recorded_policy_without_mutation (test_b3.PersistentDecisions.test_recompute_uses_recorded_policy_without_mutation) ... ok
+test_reevaluation_requires_new_identity_and_parent (test_b3.PersistentDecisions.test_reevaluation_requires_new_identity_and_parent) ... ok
+test_retry_after_policy_change_returns_exact_old_decision (test_b3.PersistentDecisions.test_retry_after_policy_change_returns_exact_old_decision) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.018s
+
+OK

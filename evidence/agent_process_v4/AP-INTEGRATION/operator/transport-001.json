@@ -1,0 +1,447 @@
+{
+  "schema": "esa-integration-transport-check/v1",
+  "recorded_at_utc": "2026-11-16T16:05:16.265120+00:00",
+  "package": "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-INTEGRATION/extracted/integration-001",
+  "package_sha256_before": {
+    "AGENTS.md": "52c90448417e93ef35de6f3f44ad0eaf20e8923698bddfa4408ba90c5e10774a",
+    "CONTRIBUTION_A.md": "0c9690aa3be323d3bdbe65d3db217ac3299db309853869d55e69f55b2254b006",
+    "CONTRIBUTION_B.md": "d4c02a536e88ed8c26b94f759b1790fa1788f6e5046d28ab71d8e679faaf9d3b",
+    "DOSSIER.md": "a7dcdf762118daec46002da9556fa93ece476788ae6383bb2a86497f2aeb3fac",
+    "READER_ENTRY.json": "2cc0bffc31f4601be601a061a354fb94a496a878365fa69e9c9354bedc0760ad",
+    "booking.py": "adff2a866ec3c3709b428731949fe756bd62f63bb902dbaaf1a4da72ececf748",
+    "docs/INTEGRATION-G3.md": "86e17d09c9a012559ae7502343cbc9181fa08477cc00c2cacacb55dd49cb0a54",
+    "docs/contract.md": "bb12ae4381e7fec5bb982de67573852c5e7f63d4736a10977d492c3be38f1dce",
+    "legacy_booking.py": "499e3cdeb581edf3130a89afa7d81a30bbf685429aa62f514857cfafe6ea97cf",
+    "prior/booking.py": "f283f8f0e2c4814b5429ca99589e358afbc8f41cd9254c95aa55daa13ae24ec5",
+    "prior/parent-check-artifacts/DEMONSTRATION.json": "3e98c2bf2357011244ffad1704f6b4540914c987cbe73650ca3f7aa313887792",
+    "prior/parent-check-artifacts/continuation.json": "56ef61ac51beb004496f365a9c9d096a88f51a9d540a19f44d5234cfaac2008a",
+    "prior/parent-check-artifacts/reservations.sqlite": "e6c9d79ff4e9ea96fed9885711b6e8315e7c0c3886c0f616da94890c5bc01576",
+    "prior/parent-entry.json": "5a94b59e1de2ef4cae5889837fa8c3fdb1b89c9b85a8c39081c1a186e0e296b8",
+    "prior/parent-handoff.json": "1fa07f59a1b16027b25867484d449989a2213e106dc591bc4813b04218b9518a",
+    "reservation_cli.py": "05d6f0cd68cab19a05703d8ca5c9521f6f139c14259483a79e72393b3460c9e4",
+    "reservation_report.py": "6e99b547429ce65d174bd57be2c26f56297ac610888e56be03b9f69e65c77a65",
+    "tests/test_g3.py": "bdaa37d91057f2e85692290f91ea3208d109e40c3996156db129977754b8bf6d",
+    "tests/test_integration_a.py": "b729c29e069f2c79629bdadd5291baec5ec0a670204e07f8a55952116ca151a7",
+    "tests/test_integration_b.py": "de80a957daf0cd0a60a26f2a5284677cb5ba338497841cccbe9b7f0118068165"
+  },
+  "oracle": "Explicit INTEGRATION-G3/v1 examples; real composed modules and public booking API.",
+  "fake_provider_used": false,
+  "cases": [
+    {
+      "case": "import_has_no_cli_side_effect",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "-c",
+        "import reservation_cli"
+      ],
+      "cwd": "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-INTEGRATION/extracted/integration-001",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timed_out": false,
+      "elapsed_process_seconds": 0.07836018800298916,
+      "expected_exit_status": 0,
+      "expected_json": null,
+      "state_sha256_before": {},
+      "state_sha256_after": {},
+      "checks": {
+        "exit_status": true,
+        "not_timed_out": true,
+        "state_unchanged": true,
+        "stdout_empty": true,
+        "stderr_empty": true
+      },
+      "passed": true
+    },
+    {
+      "case": "confirmed_record",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "reservation_cli.py",
+        "inspect",
+        "--database",
+        "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-INTEGRATION/transport-state/attempt-001/reservations.sqlite",
+        "--reservation-id",
+        "1"
+      ],
+      "cwd": "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-INTEGRATION/extracted/integration-001",
+      "returncode": 0,
+      "stdout": "{\"found\": true, \"reservation\": {\"reservation_id\": 1, \"trusted_member_id\": \"integration-member\", \"asset_id\": \"ROOM-17\", \"starts_at\": \"2026-11-16T09:00:00Z\", \"ends_at\": \"2026-11-16T10:00:00Z\", \"idempotency_key\": \"integration-reservation-1\"}, \"current\": {\"state\": \"active\", \"version\": 1}}\n",
+      "stderr": "",
+      "timed_out": false,
+      "elapsed_process_seconds": 0.06136490999779198,
+      "expected_exit_status": 0,
+      "expected_json": {
+        "found": true,
+        "reservation": {
+          "reservation_id": 1,
+          "trusted_member_id": "integration-member",
+          "asset_id": "ROOM-17",
+          "starts_at": "2026-11-16T09:00:00Z",
+          "ends_at": "2026-11-16T10:00:00Z",
+          "idempotency_key": "integration-reservation-1"
+        },
+        "current": {
+          "state": "active",
+          "version": 1
+        }
+      },
+      "state_sha256_before": {
+        "reservations.sqlite": "0164aa45d8a8e97682264380b04a6c35e3c78183bfff73c81dd2131fbd9dc344"
+      },
+      "state_sha256_after": {
+        "reservations.sqlite": "0164aa45d8a8e97682264380b04a6c35e3c78183bfff73c81dd2131fbd9dc344"
+      },
+      "checks": {
+        "exit_status": true,
+        "not_timed_out": true,
+        "state_unchanged": true,
+        "exact_report": true,
+        "stderr_empty": true
+      },
+      "passed": true
+    },
+    {
+      "case": "cancelled_record_preserves_history",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "reservation_cli.py",
+        "inspect",
+        "--database",
+        "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-INTEGRATION/transport-state/attempt-001/reservations.sqlite",
+        "--reservation-id",
+        "1"
+      ],
+      "cwd": "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-INTEGRATION/extracted/integration-001",
+      "returncode": 0,
+      "stdout": "{\"found\": true, \"reservation\": {\"reservation_id\": 1, \"trusted_member_id\": \"integration-member\", \"asset_id\": \"ROOM-17\", \"starts_at\": \"2026-11-16T09:00:00Z\", \"ends_at\": \"2026-11-16T10:00:00Z\", \"idempotency_key\": \"integration-reservation-1\"}, \"current\": {\"state\": \"cancelled\", \"version\": 2}}\n",
+      "stderr": "",
+      "timed_out": false,
+      "elapsed_process_seconds": 0.05885655699967174,
+      "expected_exit_status": 0,
+      "expected_json": {
+        "found": true,
+        "reservation": {
+          "reservation_id": 1,
+          "trusted_member_id": "integration-member",
+          "asset_id": "ROOM-17",
+          "starts_at": "2026-11-16T09:00:00Z",
+          "ends_at": "2026-11-16T10:00:00Z",
+          "idempotency_key": "integration-reservation-1"
+        },
+        "current": {
+          "state": "cancelled",
+          "version": 2
+        }
+      },
+      "state_sha256_before": {
+        "reservations.sqlite": "16fd425f82b1cb841d4b243b2add9e4a17857afe500a1a8a32d842a62ae3e49e"
+      },
+      "state_sha256_after": {
+        "reservations.sqlite": "16fd425f82b1cb841d4b243b2add9e4a17857afe500a1a8a32d842a62ae3e49e"
+      },
+      "checks": {
+        "exit_status": true,
+        "not_timed_out": true,
+        "state_unchanged": true,
+        "exact_report": true,
+        "stderr_empty": true
+      },
+      "passed": true
+    },
+    {
+      "case": "absent_identifier",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "reservation_cli.py",
+        "inspect",
+        "--database",
+        "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-INTEGRATION/transport-state/attempt-001/reservations.sqlite",
+        "--reservation-id",
+        "1001"
+      ],
+      "cwd": "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-INTEGRATION/extracted/integration-001",
+      "returncode": 3,
+      "stdout": "{\"found\": false, \"reservation\": null, \"current\": null}\n",
+      "stderr": "",
+      "timed_out": false,
+      "elapsed_process_seconds": 0.048867871999391355,
+      "expected_exit_status": 3,
+      "expected_json": {
+        "found": false,
+        "reservation": null,
+        "current": null
+      },
+      "state_sha256_before": {
+        "reservations.sqlite": "16fd425f82b1cb841d4b243b2add9e4a17857afe500a1a8a32d842a62ae3e49e"
+      },
+      "state_sha256_after": {
+        "reservations.sqlite": "16fd425f82b1cb841d4b243b2add9e4a17857afe500a1a8a32d842a62ae3e49e"
+      },
+      "checks": {
+        "exit_status": true,
+        "not_timed_out": true,
+        "state_unchanged": true,
+        "exact_report": true,
+        "stderr_empty": true
+      },
+      "passed": true
+    },
+    {
+      "case": "missing_storage_is_not_created",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "reservation_cli.py",
+        "inspect",
+        "--database",
+        "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-INTEGRATION/transport-state/attempt-001/missing.sqlite",
+        "--reservation-id",
+        "1"
+      ],
+      "cwd": "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-INTEGRATION/extracted/integration-001",
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "reservation_cli: storage error: unable to open database file\n",
+      "timed_out": false,
+      "elapsed_process_seconds": 0.06312360700030695,
+      "expected_exit_status": 2,
+      "expected_json": null,
+      "state_sha256_before": {
+        "reservations.sqlite": "16fd425f82b1cb841d4b243b2add9e4a17857afe500a1a8a32d842a62ae3e49e"
+      },
+      "state_sha256_after": {
+        "reservations.sqlite": "16fd425f82b1cb841d4b243b2add9e4a17857afe500a1a8a32d842a62ae3e49e"
+      },
+      "checks": {
+        "exit_status": true,
+        "not_timed_out": true,
+        "state_unchanged": true,
+        "stdout_empty": true,
+        "stderr_present": true
+      },
+      "passed": true
+    },
+    {
+      "case": "invalid_identifier_0",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "reservation_cli.py",
+        "inspect",
+        "--database",
+        "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-INTEGRATION/transport-state/attempt-001/reservations.sqlite",
+        "--reservation-id",
+        "0"
+      ],
+      "cwd": "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-INTEGRATION/extracted/integration-001",
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "usage: reservation_cli inspect [-h] --database DATABASE --reservation-id\n                               RESERVATION_ID\nreservation_cli inspect: error: argument --reservation-id: must be a positive integer\n",
+      "timed_out": false,
+      "elapsed_process_seconds": 0.05384450299970922,
+      "expected_exit_status": 2,
+      "expected_json": null,
+      "state_sha256_before": {
+        "reservations.sqlite": "16fd425f82b1cb841d4b243b2add9e4a17857afe500a1a8a32d842a62ae3e49e"
+      },
+      "state_sha256_after": {
+        "reservations.sqlite": "16fd425f82b1cb841d4b243b2add9e4a17857afe500a1a8a32d842a62ae3e49e"
+      },
+      "checks": {
+        "exit_status": true,
+        "not_timed_out": true,
+        "state_unchanged": true,
+        "stdout_empty": true,
+        "stderr_present": true
+      },
+      "passed": true
+    },
+    {
+      "case": "invalid_identifier_-1",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "reservation_cli.py",
+        "inspect",
+        "--database",
+        "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-INTEGRATION/transport-state/attempt-001/reservations.sqlite",
+        "--reservation-id",
+        "-1"
+      ],
+      "cwd": "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-INTEGRATION/extracted/integration-001",
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "usage: reservation_cli inspect [-h] --database DATABASE --reservation-id\n                               RESERVATION_ID\nreservation_cli inspect: error: argument --reservation-id: must be a positive integer\n",
+      "timed_out": false,
+      "elapsed_process_seconds": 0.05456335000053514,
+      "expected_exit_status": 2,
+      "expected_json": null,
+      "state_sha256_before": {
+        "reservations.sqlite": "16fd425f82b1cb841d4b243b2add9e4a17857afe500a1a8a32d842a62ae3e49e"
+      },
+      "state_sha256_after": {
+        "reservations.sqlite": "16fd425f82b1cb841d4b243b2add9e4a17857afe500a1a8a32d842a62ae3e49e"
+      },
+      "checks": {
+        "exit_status": true,
+        "not_timed_out": true,
+        "state_unchanged": true,
+        "stdout_empty": true,
+        "stderr_present": true
+      },
+      "passed": true
+    },
+    {
+      "case": "invalid_identifier_abc",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "reservation_cli.py",
+        "inspect",
+        "--database",
+        "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-INTEGRATION/transport-state/attempt-001/reservations.sqlite",
+        "--reservation-id",
+        "abc"
+      ],
+      "cwd": "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-INTEGRATION/extracted/integration-001",
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "usage: reservation_cli inspect [-h] --database DATABASE --reservation-id\n                               RESERVATION_ID\nreservation_cli inspect: error: argument --reservation-id: must be a positive integer\n",
+      "timed_out": false,
+      "elapsed_process_seconds": 0.06305224899915629,
+      "expected_exit_status": 2,
+      "expected_json": null,
+      "state_sha256_before": {
+        "reservations.sqlite": "16fd425f82b1cb841d4b243b2add9e4a17857afe500a1a8a32d842a62ae3e49e"
+      },
+      "state_sha256_after": {
+        "reservations.sqlite": "16fd425f82b1cb841d4b243b2add9e4a17857afe500a1a8a32d842a62ae3e49e"
+      },
+      "checks": {
+        "exit_status": true,
+        "not_timed_out": true,
+        "state_unchanged": true,
+        "stdout_empty": true,
+        "stderr_present": true
+      },
+      "passed": true
+    },
+    {
+      "case": "missing_required_argument",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "reservation_cli.py",
+        "inspect",
+        "--database",
+        "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-INTEGRATION/transport-state/attempt-001/reservations.sqlite"
+      ],
+      "cwd": "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-INTEGRATION/extracted/integration-001",
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "usage: reservation_cli inspect [-h] --database DATABASE --reservation-id\n                               RESERVATION_ID\nreservation_cli inspect: error: the following arguments are required: --reservation-id\n",
+      "timed_out": false,
+      "elapsed_process_seconds": 0.056319490999158006,
+      "expected_exit_status": 2,
+      "expected_json": null,
+      "state_sha256_before": {
+        "reservations.sqlite": "16fd425f82b1cb841d4b243b2add9e4a17857afe500a1a8a32d842a62ae3e49e"
+      },
+      "state_sha256_after": {
+        "reservations.sqlite": "16fd425f82b1cb841d4b243b2add9e4a17857afe500a1a8a32d842a62ae3e49e"
+      },
+      "checks": {
+        "exit_status": true,
+        "not_timed_out": true,
+        "state_unchanged": true,
+        "stdout_empty": true,
+        "stderr_present": true
+      },
+      "passed": true
+    }
+  ],
+  "fixture_operations": [
+    {
+      "call": "booking.init_db",
+      "args": [
+        "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-INTEGRATION/transport-state/attempt-001/reservations.sqlite"
+      ],
+      "result": null,
+      "state_sha256": {
+        "reservations.sqlite": "06afb678e85a76efc6d5797482e18f432adb4b8dc2c971acad5599044148c284"
+      }
+    },
+    {
+      "call": "booking.reserve",
+      "args": [
+        "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-INTEGRATION/transport-state/attempt-001/reservations.sqlite"
+      ],
+      "kwargs": {
+        "trusted_member_id": "integration-member",
+        "asset_id": "ROOM-17",
+        "starts_at": "2026-11-16T09:00:00Z",
+        "ends_at": "2026-11-16T10:00:00Z",
+        "idempotency_key": "integration-reservation-1"
+      },
+      "result": {
+        "status": 201,
+        "code": "confirmed",
+        "reservation_id": 1,
+        "replayed": false
+      },
+      "state_sha256": {
+        "reservations.sqlite": "0164aa45d8a8e97682264380b04a6c35e3c78183bfff73c81dd2131fbd9dc344"
+      }
+    },
+    {
+      "call": "booking.cancel",
+      "args": [
+        "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-INTEGRATION/transport-state/attempt-001/reservations.sqlite",
+        1
+      ],
+      "kwargs": {
+        "trusted_member_id": "integration-member",
+        "expected_version": 1
+      },
+      "result": {
+        "status": 200,
+        "code": "cancelled",
+        "version": 2
+      },
+      "state_sha256": {
+        "reservations.sqlite": "16fd425f82b1cb841d4b243b2add9e4a17857afe500a1a8a32d842a62ae3e49e"
+      }
+    }
+  ],
+  "human_acceptance": "PENDING",
+  "production_authorization": false,
+  "package_sha256_after": {
+    "AGENTS.md": "52c90448417e93ef35de6f3f44ad0eaf20e8923698bddfa4408ba90c5e10774a",
+    "CONTRIBUTION_A.md": "0c9690aa3be323d3bdbe65d3db217ac3299db309853869d55e69f55b2254b006",
+    "CONTRIBUTION_B.md": "d4c02a536e88ed8c26b94f759b1790fa1788f6e5046d28ab71d8e679faaf9d3b",
+    "DOSSIER.md": "a7dcdf762118daec46002da9556fa93ece476788ae6383bb2a86497f2aeb3fac",
+    "READER_ENTRY.json": "2cc0bffc31f4601be601a061a354fb94a496a878365fa69e9c9354bedc0760ad",
+    "booking.py": "adff2a866ec3c3709b428731949fe756bd62f63bb902dbaaf1a4da72ececf748",
+    "docs/INTEGRATION-G3.md": "86e17d09c9a012559ae7502343cbc9181fa08477cc00c2cacacb55dd49cb0a54",
+    "docs/contract.md": "bb12ae4381e7fec5bb982de67573852c5e7f63d4736a10977d492c3be38f1dce",
+    "legacy_booking.py": "499e3cdeb581edf3130a89afa7d81a30bbf685429aa62f514857cfafe6ea97cf",
+    "prior/booking.py": "f283f8f0e2c4814b5429ca99589e358afbc8f41cd9254c95aa55daa13ae24ec5",
+    "prior/parent-check-artifacts/DEMONSTRATION.json": "3e98c2bf2357011244ffad1704f6b4540914c987cbe73650ca3f7aa313887792",
+    "prior/parent-check-artifacts/continuation.json": "56ef61ac51beb004496f365a9c9d096a88f51a9d540a19f44d5234cfaac2008a",
+    "prior/parent-check-artifacts/reservations.sqlite": "e6c9d79ff4e9ea96fed9885711b6e8315e7c0c3886c0f616da94890c5bc01576",
+    "prior/parent-entry.json": "5a94b59e1de2ef4cae5889837fa8c3fdb1b89c9b85a8c39081c1a186e0e296b8",
+    "prior/parent-handoff.json": "1fa07f59a1b16027b25867484d449989a2213e106dc591bc4813b04218b9518a",
+    "reservation_cli.py": "05d6f0cd68cab19a05703d8ca5c9521f6f139c14259483a79e72393b3460c9e4",
+    "reservation_report.py": "6e99b547429ce65d174bd57be2c26f56297ac610888e56be03b9f69e65c77a65",
+    "tests/test_g3.py": "bdaa37d91057f2e85692290f91ea3208d109e40c3996156db129977754b8bf6d",
+    "tests/test_integration_a.py": "b729c29e069f2c79629bdadd5291baec5ec0a670204e07f8a55952116ca151a7",
+    "tests/test_integration_b.py": "de80a957daf0cd0a60a26f2a5284677cb5ba338497841cccbe9b7f0118068165"
+  },
+  "package_unchanged": true,
+  "status": "TRANSPORT_CHECKS_PASSED"
+}

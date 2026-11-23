@@ -1,0 +1,12 @@
+{
+  "source_id": "BR-001/v1",
+  "status": "approved",
+  "owner": "Treasury policy owner",
+  "effective_date": "2025-05-12",
+  "currency": "EUR",
+  "threshold": "5000.00",
+  "requires_finite_positive": true,
+  "at_threshold": "HUMAN_REVIEW",
+  "rule_file": "BR-001.md",
+  "calendar_scope": "FICTIONAL_TEACHING_CASE"
+}

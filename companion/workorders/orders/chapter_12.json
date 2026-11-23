@@ -1,0 +1,64 @@
+{
+  "id": "chapter_12",
+  "schema_version": 1,
+  "evidence_profile": "investigation",
+  "expect": {
+    "outcome": "Run a bounded evidence-index trial with a complete cost and acceptance account.",
+    "authority": {
+      "owner": "Incident reviewer for the handoff; trial owner for keep/revise/retire.",
+      "source": "Approved teaching trial agreement in Section 12.1; accounting rule in Sections 12.5\u201312.7.",
+      "version": "Teaching trial12.1/v1; accounting12.5\u201312.7",
+      "status": "TEACHING_CONTRACT"
+    },
+    "acceptance": [
+      "Index preserves source links and gaps; every attempt counted; accepted outcome is a distinct reviewed handoff; missing observations remain missing."
+    ]
+  },
+  "delegate": {
+    "editable_paths": [
+      "trial/evidence-index.md",
+      "trial/ACCOUNT.json"
+    ],
+    "protected_paths": [
+      "approved_context/",
+      "source_evidence/"
+    ],
+    "budget": {
+      "max_attempts": 2,
+      "implementation_minutes": 30,
+      "check_timeout_seconds": 30,
+      "max_external_calls": 0
+    },
+    "stop_conditions": [
+      "Required authority or source evidence is missing.",
+      "Declared budget is spent or a proposed edit crosses protected scope."
+    ]
+  },
+  "observe": {
+    "checks": [
+      {
+        "id": "chapter_12.review",
+        "stage": "contract",
+        "method": "review",
+        "argv": [],
+        "expected": "Index fidelity review; attempt/outcome reconciliation; cost recalculation and sensitivity; human learning observations only if actually collected."
+      }
+    ],
+    "receipt_fields": [
+      "candidate_identity",
+      "authority_version",
+      "actual_checks",
+      "reached_stage",
+      "remaining_question"
+    ]
+  },
+  "decide": {
+    "owner": "Incident reviewer for the handoff; trial owner for keep/revise/retire.",
+    "object": "The index and trial decision, not an operational repair or measured learning claim.",
+    "allowed_decisions": [
+      "ACCEPT",
+      "REJECT",
+      "ASK"
+    ]
+  }
+}

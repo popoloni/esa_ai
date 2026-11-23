@@ -1,0 +1,1050 @@
+{
+  "schema": "esa-offline-candidate-review-batch/v1",
+  "release": "ESA-Series-Handbook-Review-5-20261116",
+  "mission": "G1",
+  "candidate_ids": [
+    "G1-P01",
+    "G1-P02",
+    "G1-P03"
+  ],
+  "status": "REVIEW_BATCH_RECORDED",
+  "evidence_origin": "EXECUTED_CONSTRUCTED_TEACHING_VARIANTS",
+  "learner_source_modified": false,
+  "results": [
+    {
+      "schema": "esa-offline-candidate-review/v1",
+      "selection": "slice",
+      "candidate_path": "/tmp/esa-offline-review-ncl50qdw/candidate",
+      "candidate_sha256_before": "d5b98f73120fb70ccfe6c8366e19f64ac8b311d54684e872f2ca3c7d6813b191",
+      "protected_before": [
+        {
+          "path": "docs/contract.md",
+          "expected_sha256": "9c6c95077f305744728b9929f51ea36d8a534ab67cd2e7ebe8112ad35eb7ebba",
+          "candidate_sha256": "9c6c95077f305744728b9929f51ea36d8a534ab67cd2e7ebe8112ad35eb7ebba",
+          "symlink": false
+        },
+        {
+          "path": "docs/G1-I01.md",
+          "expected_sha256": "07a417cd7e7eeaca0bc5827e67eb965d0c7ebb75f387146f80a37e172fb89a50",
+          "candidate_sha256": "07a417cd7e7eeaca0bc5827e67eb965d0c7ebb75f387146f80a37e172fb89a50",
+          "symlink": false
+        },
+        {
+          "path": "docs/G1-OD-01.md",
+          "expected_sha256": "baf835ffff57a64023ce8f5233b9e3e3588a2f6017f46f68b168919eae4b38db",
+          "candidate_sha256": "baf835ffff57a64023ce8f5233b9e3e3588a2f6017f46f68b168919eae4b38db",
+          "symlink": false
+        },
+        {
+          "path": "docs/decisions/0001-storage.md",
+          "expected_sha256": "c1b8a31f24fb5fe34e929049e8ed3cc3d1910b6d4194a40d4d303e70582f6762",
+          "candidate_sha256": "c1b8a31f24fb5fe34e929049e8ed3cc3d1910b6d4194a40d4d303e70582f6762",
+          "symlink": false
+        },
+        {
+          "path": "tests/test_g1_slice.py",
+          "expected_sha256": "6242a53920d075fb038a8efbaeead6390f8f0a0d5b69dba3da6c31783abda98b",
+          "candidate_sha256": "6242a53920d075fb038a8efbaeead6390f8f0a0d5b69dba3da6c31783abda98b",
+          "symlink": false
+        },
+        {
+          "path": "tests/test_g1_full_api.py",
+          "expected_sha256": "8c46c06e0b8677dc74c9fb840f4f1f4b5f2c190095317b24f58d1cde92c8c538",
+          "candidate_sha256": "8c46c06e0b8677dc74c9fb840f4f1f4b5f2c190095317b24f58d1cde92c8c538",
+          "symlink": false
+        },
+        {
+          "path": "tests/test_g1_readonly.py",
+          "expected_sha256": "cd2f92b5adac1b2cc1ef5e1c23ff9309bd26133c933ec429368c7463308f5e4f",
+          "candidate_sha256": "cd2f92b5adac1b2cc1ef5e1c23ff9309bd26133c933ec429368c7463308f5e4f",
+          "symlink": false
+        },
+        {
+          "path": "historical_tests/test_booking.py",
+          "expected_sha256": "3fede5b6fff032747fe1017836b915d375b7bef01417e6bbf246506e413b4e89",
+          "candidate_sha256": "3fede5b6fff032747fe1017836b915d375b7bef01417e6bbf246506e413b4e89",
+          "symlink": false
+        }
+      ],
+      "human_acceptance": "PENDING",
+      "groups": {
+        "g1_slice": {
+          "command": [
+            "/usr/local/bin/python3",
+            "-m",
+            "unittest",
+            "discover",
+            "-s",
+            "tests",
+            "-p",
+            "test_g1_slice.py",
+            "-v"
+          ],
+          "elapsed_process_seconds": 0.07282168299991554,
+          "timeout_seconds": 15,
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "test_first_reservation_confirms_and_public_read_matches (test_g1_slice.ReservationSlice.test_first_reservation_confirms_and_public_read_matches) ... ok\ntest_init_db_preserves_existing_reservation (test_g1_slice.ReservationSlice.test_init_db_preserves_existing_reservation) ... ok\ntest_missing_reservation_returns_none (test_g1_slice.ReservationSlice.test_missing_reservation_returns_none) ... ok\ntest_quoted_identifiers_round_trip (test_g1_slice.ReservationSlice.test_quoted_identifiers_round_trip) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.014s\n\nOK\n",
+          "timed_out": false,
+          "tests_run": 4,
+          "expected_tests": 4,
+          "methods_passed": 4,
+          "methods_failed": [],
+          "methods_errored": [],
+          "status": "PASSED"
+        }
+      },
+      "tests_run": 4,
+      "expected_tests": 4,
+      "methods_passed": 4,
+      "stdout": "",
+      "stderr": "test_first_reservation_confirms_and_public_read_matches (test_g1_slice.ReservationSlice.test_first_reservation_confirms_and_public_read_matches) ... ok\ntest_init_db_preserves_existing_reservation (test_g1_slice.ReservationSlice.test_init_db_preserves_existing_reservation) ... ok\ntest_missing_reservation_returns_none (test_g1_slice.ReservationSlice.test_missing_reservation_returns_none) ... ok\ntest_quoted_identifiers_round_trip (test_g1_slice.ReservationSlice.test_quoted_identifiers_round_trip) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.014s\n\nOK\n",
+      "timed_out": false,
+      "returncode": 0,
+      "protected_after": [
+        {
+          "path": "docs/contract.md",
+          "expected_sha256": "9c6c95077f305744728b9929f51ea36d8a534ab67cd2e7ebe8112ad35eb7ebba",
+          "candidate_sha256": "9c6c95077f305744728b9929f51ea36d8a534ab67cd2e7ebe8112ad35eb7ebba",
+          "symlink": false
+        },
+        {
+          "path": "docs/G1-I01.md",
+          "expected_sha256": "07a417cd7e7eeaca0bc5827e67eb965d0c7ebb75f387146f80a37e172fb89a50",
+          "candidate_sha256": "07a417cd7e7eeaca0bc5827e67eb965d0c7ebb75f387146f80a37e172fb89a50",
+          "symlink": false
+        },
+        {
+          "path": "docs/G1-OD-01.md",
+          "expected_sha256": "baf835ffff57a64023ce8f5233b9e3e3588a2f6017f46f68b168919eae4b38db",
+          "candidate_sha256": "baf835ffff57a64023ce8f5233b9e3e3588a2f6017f46f68b168919eae4b38db",
+          "symlink": false
+        },
+        {
+          "path": "docs/decisions/0001-storage.md",
+          "expected_sha256": "c1b8a31f24fb5fe34e929049e8ed3cc3d1910b6d4194a40d4d303e70582f6762",
+          "candidate_sha256": "c1b8a31f24fb5fe34e929049e8ed3cc3d1910b6d4194a40d4d303e70582f6762",
+          "symlink": false
+        },
+        {
+          "path": "tests/test_g1_slice.py",
+          "expected_sha256": "6242a53920d075fb038a8efbaeead6390f8f0a0d5b69dba3da6c31783abda98b",
+          "candidate_sha256": "6242a53920d075fb038a8efbaeead6390f8f0a0d5b69dba3da6c31783abda98b",
+          "symlink": false
+        },
+        {
+          "path": "tests/test_g1_full_api.py",
+          "expected_sha256": "8c46c06e0b8677dc74c9fb840f4f1f4b5f2c190095317b24f58d1cde92c8c538",
+          "candidate_sha256": "8c46c06e0b8677dc74c9fb840f4f1f4b5f2c190095317b24f58d1cde92c8c538",
+          "symlink": false
+        },
+        {
+          "path": "tests/test_g1_readonly.py",
+          "expected_sha256": "cd2f92b5adac1b2cc1ef5e1c23ff9309bd26133c933ec429368c7463308f5e4f",
+          "candidate_sha256": "cd2f92b5adac1b2cc1ef5e1c23ff9309bd26133c933ec429368c7463308f5e4f",
+          "symlink": false
+        },
+        {
+          "path": "historical_tests/test_booking.py",
+          "expected_sha256": "3fede5b6fff032747fe1017836b915d375b7bef01417e6bbf246506e413b4e89",
+          "candidate_sha256": "3fede5b6fff032747fe1017836b915d375b7bef01417e6bbf246506e413b4e89",
+          "symlink": false
+        }
+      ],
+      "candidate_sha256_after": "d5b98f73120fb70ccfe6c8366e19f64ac8b311d54684e872f2ca3c7d6813b191",
+      "inputs_unchanged": true,
+      "status": "SELECTED_CHECKS_PASSED",
+      "prototype_release": "ESA-Series-Handbook-Review-5-20261116",
+      "candidate_id": "G1-P01",
+      "mission": "G1",
+      "evidence_origin": "EXECUTED_CONSTRUCTED_TEACHING_VARIANT",
+      "candidate_pack": "candidates/G1/G1-P01",
+      "candidate_sha256": "d5b98f73120fb70ccfe6c8366e19f64ac8b311d54684e872f2ca3c7d6813b191",
+      "rationale": "# Proposal G1-P01\n\nThe persistence boundary is the public record, so I kept storage layout behind that interface. A row identifier locates a JSON representation of the five request fields; each read reconstructs a new mapping with the identifier added. This makes an alternative physical layout possible while keeping callers unchanged. Please judge the returned fields and the process-boundary observation together.\n",
+      "ground_truth": {
+        "schema": "esa-review-ground-truth/v4",
+        "mission": "G1",
+        "candidate_id": "G1-P01",
+        "created_on": "2026-11-02",
+        "origin": "CONSTRUCTED_TEACHING_VARIANT",
+        "rationale_origin": "CONSTRUCTED",
+        "actual_model_trace": false,
+        "expected_decision": "ACCEPT",
+        "expected_slice_pass": true,
+        "expected_core_pass": true,
+        "expected_extended_pass": true,
+        "supplemental_probe": "g1_cross_process",
+        "expected_supplemental_pass": true,
+        "targeted_assertions": [],
+        "explanation": "The alternate schema satisfies the scoped public contract and survives a process boundary.",
+        "required_human_decision": null,
+        "contract": "G1/I01 + G1-OD-01",
+        "scope": "Constructed public practice, not a human assessment result.",
+        "revised_on": "2026-11-03",
+        "release_scope": "ESA-Complete-Review-3-20261103"
+      },
+      "supplemental_probe": {
+        "status": "PASSED",
+        "tests_run": 1,
+        "expected_tests": 1,
+        "methods_passed": 1,
+        "methods_failed": [],
+        "methods_errored": [],
+        "observation": {
+          "succeeded": true,
+          "database": "/tmp/esa-offline-review-ncl50qdw/readback.sqlite",
+          "processes": [
+            {
+              "command": [
+                "/usr/local/bin/python3",
+                "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/companion/tools/reservation_persistence.py",
+                "write",
+                "--candidate",
+                "/tmp/esa-offline-review-ncl50qdw/candidate",
+                "--database",
+                "/tmp/esa-offline-review-ncl50qdw/readback.sqlite"
+              ],
+              "elapsed_process_seconds": 0.04756402499992873,
+              "timeout_seconds": 15,
+              "returncode": 0,
+              "stdout": "{\n  \"status\": \"FIRST_WRITE_COMPLETED\",\n  \"request\": {\n    \"trusted_member_id\": \"member-1\",\n    \"asset_id\": \"A\",\n    \"starts_at\": \"2026-11-02T09:00:00Z\",\n    \"ends_at\": \"2026-11-02T10:00:00Z\",\n    \"idempotency_key\": \"g1-durable-1\"\n  },\n  \"outcome\": {\n    \"status\": 201,\n    \"code\": \"confirmed\",\n    \"reservation_id\": 1,\n    \"replayed\": false\n  }\n}\n",
+              "stderr": "",
+              "timed_out": false
+            },
+            {
+              "command": [
+                "/usr/local/bin/python3",
+                "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/companion/tools/reservation_persistence.py",
+                "read",
+                "--candidate",
+                "/tmp/esa-offline-review-ncl50qdw/candidate",
+                "--database",
+                "/tmp/esa-offline-review-ncl50qdw/readback.sqlite",
+                "--reservation-id",
+                "1"
+              ],
+              "elapsed_process_seconds": 0.05088774600005763,
+              "timeout_seconds": 15,
+              "returncode": 0,
+              "stdout": "{\n  \"status\": \"PUBLIC_RECORD_REOPENED\",\n  \"reservation\": {\n    \"reservation_id\": 1,\n    \"trusted_member_id\": \"member-1\",\n    \"asset_id\": \"A\",\n    \"starts_at\": \"2026-11-02T09:00:00Z\",\n    \"ends_at\": \"2026-11-02T10:00:00Z\",\n    \"idempotency_key\": \"g1-durable-1\"\n  },\n  \"public_api\": \"get_reservation(path, reservation_id)\"\n}\n",
+              "stderr": "",
+              "timed_out": false
+            }
+          ],
+          "writer": {
+            "status": "FIRST_WRITE_COMPLETED",
+            "request": {
+              "trusted_member_id": "member-1",
+              "asset_id": "A",
+              "starts_at": "2026-11-02T09:00:00Z",
+              "ends_at": "2026-11-02T10:00:00Z",
+              "idempotency_key": "g1-durable-1"
+            },
+            "outcome": {
+              "status": 201,
+              "code": "confirmed",
+              "reservation_id": 1,
+              "replayed": false
+            }
+          },
+          "reader": {
+            "status": "PUBLIC_RECORD_REOPENED",
+            "reservation": {
+              "reservation_id": 1,
+              "trusted_member_id": "member-1",
+              "asset_id": "A",
+              "starts_at": "2026-11-02T09:00:00Z",
+              "ends_at": "2026-11-02T10:00:00Z",
+              "idempotency_key": "g1-durable-1"
+            },
+            "public_api": "get_reservation(path, reservation_id)"
+          },
+          "record_mismatches": [],
+          "public_api": "get_reservation(path, reservation_id)",
+          "meaning": "A new process imports the retained implementation and retrieves the committed record through its public API; no table or column mapping is imposed. Normal writer exit is not crash recovery."
+        },
+        "meaning": "A process-boundary probe, not an additional unittest method."
+      },
+      "human_decision": "PENDING",
+      "learner_source_modified": false,
+      "meaning": "Offline proposal review; code and rationale were constructed for teaching. No model call or learner performance is represented. Compare your written decision with the observed assertion and ground truth.",
+      "candidate_path_note": "Temporary review workspace removed after execution; exact variant bytes remain in the candidate pack.",
+      "recorded_at_utc": "2026-11-16T22:13:04.153262+00:00",
+      "command": [
+        "/usr/local/bin/python3",
+        "companion/start.py",
+        "review",
+        "G1",
+        "--candidate-ids",
+        "G1-P01",
+        "G1-P02",
+        "G1-P03",
+        "--output",
+        "work/evidence/g1-review.json"
+      ],
+      "verification_progress": {
+        "schema": "esa-verification-progress/v1",
+        "derivation": "CURRENT_RECEIPT_FIELDS_ONLY_NO_ADDITIONAL_EXECUTION",
+        "source_fields_sha256": "a7cf403b668851cdafe93ff0d88025ded14976443aae5b560652e6ee75ae26f8",
+        "work_order": "mission_G1",
+        "evidence_profile": "new_capability",
+        "profile_basis": "The named mission work order.",
+        "phase": "mission",
+        "stages": {
+          "startup": {
+            "status": "PASS",
+            "evidence": [
+              "schema",
+              "mission",
+              "candidate_path"
+            ],
+            "reason": "The intended runner accepted the entry identity and emitted this check receipt. This does not establish candidate import."
+          },
+          "integrity": {
+            "status": "PASS",
+            "evidence": [
+              "inputs_unchanged",
+              "candidate_sha256_before",
+              "candidate_sha256_after"
+            ],
+            "reason": "The recorded before/after comparison found inputs unchanged."
+          },
+          "contract": {
+            "status": "PASS",
+            "evidence": [
+              "groups.g1_slice"
+            ],
+            "reason": "Status uses each selected group and any contract-specific supplemental probe; an import placeholder is not behavioral evidence. A candidate stack frame or known protected assertion supports reached behavior; a method count alone does not. Groups within this stage may retain multiple failures.",
+            "behavior_reached": true
+          },
+          "integration": {
+            "status": "PASS",
+            "evidence": [
+              "supplemental_probe.observation"
+            ],
+            "reason": "An actual continuation or process-boundary probe is retained; the result applies to this local consumer and candidate only."
+          },
+          "artifact": {
+            "status": "NOT_RUN",
+            "evidence": [],
+            "reason": "This receipt has no separate archive/extraction gate. Local demonstration hashes alone do not establish release fitness."
+          },
+          "authorization": {
+            "status": "NOT_RUN",
+            "evidence": [
+              "human_acceptance"
+            ],
+            "reason": "No owner acceptance or release authorization is recorded. Passing checks do not supply that decision."
+          }
+        },
+        "first_failed_stage": null,
+        "last_observed_stage": "integration",
+        "limits": "A stage label interprets the retained fields; it is not an independent attestation. NOT_APPLICABLE needs an explicit scope exclusion; absence alone remains NOT_RUN."
+      }
+    },
+    {
+      "schema": "esa-offline-candidate-review/v1",
+      "selection": "slice",
+      "candidate_path": "/tmp/esa-offline-review-chfp2es7/candidate",
+      "candidate_sha256_before": "ced77c616fbc6a100453ca7b13012e5684672c27dc58ff869d6ab039475d943d",
+      "protected_before": [
+        {
+          "path": "docs/contract.md",
+          "expected_sha256": "9c6c95077f305744728b9929f51ea36d8a534ab67cd2e7ebe8112ad35eb7ebba",
+          "candidate_sha256": "9c6c95077f305744728b9929f51ea36d8a534ab67cd2e7ebe8112ad35eb7ebba",
+          "symlink": false
+        },
+        {
+          "path": "docs/G1-I01.md",
+          "expected_sha256": "07a417cd7e7eeaca0bc5827e67eb965d0c7ebb75f387146f80a37e172fb89a50",
+          "candidate_sha256": "07a417cd7e7eeaca0bc5827e67eb965d0c7ebb75f387146f80a37e172fb89a50",
+          "symlink": false
+        },
+        {
+          "path": "docs/G1-OD-01.md",
+          "expected_sha256": "baf835ffff57a64023ce8f5233b9e3e3588a2f6017f46f68b168919eae4b38db",
+          "candidate_sha256": "baf835ffff57a64023ce8f5233b9e3e3588a2f6017f46f68b168919eae4b38db",
+          "symlink": false
+        },
+        {
+          "path": "docs/decisions/0001-storage.md",
+          "expected_sha256": "c1b8a31f24fb5fe34e929049e8ed3cc3d1910b6d4194a40d4d303e70582f6762",
+          "candidate_sha256": "c1b8a31f24fb5fe34e929049e8ed3cc3d1910b6d4194a40d4d303e70582f6762",
+          "symlink": false
+        },
+        {
+          "path": "tests/test_g1_slice.py",
+          "expected_sha256": "6242a53920d075fb038a8efbaeead6390f8f0a0d5b69dba3da6c31783abda98b",
+          "candidate_sha256": "6242a53920d075fb038a8efbaeead6390f8f0a0d5b69dba3da6c31783abda98b",
+          "symlink": false
+        },
+        {
+          "path": "tests/test_g1_full_api.py",
+          "expected_sha256": "8c46c06e0b8677dc74c9fb840f4f1f4b5f2c190095317b24f58d1cde92c8c538",
+          "candidate_sha256": "8c46c06e0b8677dc74c9fb840f4f1f4b5f2c190095317b24f58d1cde92c8c538",
+          "symlink": false
+        },
+        {
+          "path": "tests/test_g1_readonly.py",
+          "expected_sha256": "cd2f92b5adac1b2cc1ef5e1c23ff9309bd26133c933ec429368c7463308f5e4f",
+          "candidate_sha256": "cd2f92b5adac1b2cc1ef5e1c23ff9309bd26133c933ec429368c7463308f5e4f",
+          "symlink": false
+        },
+        {
+          "path": "historical_tests/test_booking.py",
+          "expected_sha256": "3fede5b6fff032747fe1017836b915d375b7bef01417e6bbf246506e413b4e89",
+          "candidate_sha256": "3fede5b6fff032747fe1017836b915d375b7bef01417e6bbf246506e413b4e89",
+          "symlink": false
+        }
+      ],
+      "human_acceptance": "PENDING",
+      "groups": {
+        "g1_slice": {
+          "command": [
+            "/usr/local/bin/python3",
+            "-m",
+            "unittest",
+            "discover",
+            "-s",
+            "tests",
+            "-p",
+            "test_g1_slice.py",
+            "-v"
+          ],
+          "elapsed_process_seconds": 0.059607078999988516,
+          "timeout_seconds": 15,
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "test_first_reservation_confirms_and_public_read_matches (test_g1_slice.ReservationSlice.test_first_reservation_confirms_and_public_read_matches) ... ok\ntest_init_db_preserves_existing_reservation (test_g1_slice.ReservationSlice.test_init_db_preserves_existing_reservation) ... ok\ntest_missing_reservation_returns_none (test_g1_slice.ReservationSlice.test_missing_reservation_returns_none) ... ok\ntest_quoted_identifiers_round_trip (test_g1_slice.ReservationSlice.test_quoted_identifiers_round_trip) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.003s\n\nOK\n",
+          "timed_out": false,
+          "tests_run": 4,
+          "expected_tests": 4,
+          "methods_passed": 4,
+          "methods_failed": [],
+          "methods_errored": [],
+          "status": "PASSED"
+        }
+      },
+      "tests_run": 4,
+      "expected_tests": 4,
+      "methods_passed": 4,
+      "stdout": "",
+      "stderr": "test_first_reservation_confirms_and_public_read_matches (test_g1_slice.ReservationSlice.test_first_reservation_confirms_and_public_read_matches) ... ok\ntest_init_db_preserves_existing_reservation (test_g1_slice.ReservationSlice.test_init_db_preserves_existing_reservation) ... ok\ntest_missing_reservation_returns_none (test_g1_slice.ReservationSlice.test_missing_reservation_returns_none) ... ok\ntest_quoted_identifiers_round_trip (test_g1_slice.ReservationSlice.test_quoted_identifiers_round_trip) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.003s\n\nOK\n",
+      "timed_out": false,
+      "returncode": 0,
+      "protected_after": [
+        {
+          "path": "docs/contract.md",
+          "expected_sha256": "9c6c95077f305744728b9929f51ea36d8a534ab67cd2e7ebe8112ad35eb7ebba",
+          "candidate_sha256": "9c6c95077f305744728b9929f51ea36d8a534ab67cd2e7ebe8112ad35eb7ebba",
+          "symlink": false
+        },
+        {
+          "path": "docs/G1-I01.md",
+          "expected_sha256": "07a417cd7e7eeaca0bc5827e67eb965d0c7ebb75f387146f80a37e172fb89a50",
+          "candidate_sha256": "07a417cd7e7eeaca0bc5827e67eb965d0c7ebb75f387146f80a37e172fb89a50",
+          "symlink": false
+        },
+        {
+          "path": "docs/G1-OD-01.md",
+          "expected_sha256": "baf835ffff57a64023ce8f5233b9e3e3588a2f6017f46f68b168919eae4b38db",
+          "candidate_sha256": "baf835ffff57a64023ce8f5233b9e3e3588a2f6017f46f68b168919eae4b38db",
+          "symlink": false
+        },
+        {
+          "path": "docs/decisions/0001-storage.md",
+          "expected_sha256": "c1b8a31f24fb5fe34e929049e8ed3cc3d1910b6d4194a40d4d303e70582f6762",
+          "candidate_sha256": "c1b8a31f24fb5fe34e929049e8ed3cc3d1910b6d4194a40d4d303e70582f6762",
+          "symlink": false
+        },
+        {
+          "path": "tests/test_g1_slice.py",
+          "expected_sha256": "6242a53920d075fb038a8efbaeead6390f8f0a0d5b69dba3da6c31783abda98b",
+          "candidate_sha256": "6242a53920d075fb038a8efbaeead6390f8f0a0d5b69dba3da6c31783abda98b",
+          "symlink": false
+        },
+        {
+          "path": "tests/test_g1_full_api.py",
+          "expected_sha256": "8c46c06e0b8677dc74c9fb840f4f1f4b5f2c190095317b24f58d1cde92c8c538",
+          "candidate_sha256": "8c46c06e0b8677dc74c9fb840f4f1f4b5f2c190095317b24f58d1cde92c8c538",
+          "symlink": false
+        },
+        {
+          "path": "tests/test_g1_readonly.py",
+          "expected_sha256": "cd2f92b5adac1b2cc1ef5e1c23ff9309bd26133c933ec429368c7463308f5e4f",
+          "candidate_sha256": "cd2f92b5adac1b2cc1ef5e1c23ff9309bd26133c933ec429368c7463308f5e4f",
+          "symlink": false
+        },
+        {
+          "path": "historical_tests/test_booking.py",
+          "expected_sha256": "3fede5b6fff032747fe1017836b915d375b7bef01417e6bbf246506e413b4e89",
+          "candidate_sha256": "3fede5b6fff032747fe1017836b915d375b7bef01417e6bbf246506e413b4e89",
+          "symlink": false
+        }
+      ],
+      "candidate_sha256_after": "ced77c616fbc6a100453ca7b13012e5684672c27dc58ff869d6ab039475d943d",
+      "inputs_unchanged": true,
+      "status": "CHECKS_FAILED",
+      "prototype_release": "ESA-Series-Handbook-Review-5-20261116",
+      "candidate_id": "G1-P02",
+      "mission": "G1",
+      "evidence_origin": "EXECUTED_CONSTRUCTED_TEACHING_VARIANT",
+      "candidate_pack": "candidates/G1/G1-P02",
+      "candidate_sha256": "ced77c616fbc6a100453ca7b13012e5684672c27dc58ff869d6ab039475d943d",
+      "rationale": "# Proposal G1-P02\n\nThe three public operations share a path-keyed record registry. Initialization establishes the database location, and writes make the complete record immediately available to subsequent lookups. That arrangement keeps the first increment small and avoids introducing a larger persistence abstraction. The local scenarios exercise creation and retrieval through the public functions; the same interface remains available for the next increment.\n",
+      "ground_truth": {
+        "schema": "esa-review-ground-truth/v4",
+        "mission": "G1",
+        "candidate_id": "G1-P02",
+        "created_on": "2026-11-02",
+        "origin": "CONSTRUCTED_TEACHING_VARIANT",
+        "rationale_origin": "CONSTRUCTED",
+        "actual_model_trace": false,
+        "expected_decision": "REJECT",
+        "expected_slice_pass": true,
+        "expected_core_pass": true,
+        "expected_extended_pass": true,
+        "supplemental_probe": "g1_cross_process",
+        "expected_supplemental_pass": false,
+        "targeted_assertions": [
+          "public_record_survives_writer_exit"
+        ],
+        "explanation": "The process-local registry disappears when the writer exits; creating a database file is not persistence of the reservation.",
+        "required_human_decision": null,
+        "contract": "G1/I01 + G1-OD-01",
+        "scope": "Constructed public practice, not a human assessment result.",
+        "revised_on": "2026-11-03",
+        "release_scope": "ESA-Complete-Review-3-20261103"
+      },
+      "supplemental_probe": {
+        "status": "FAILED",
+        "tests_run": 1,
+        "expected_tests": 1,
+        "methods_passed": 0,
+        "methods_failed": [
+          "public_record_survives_writer_exit"
+        ],
+        "methods_errored": [],
+        "observation": {
+          "succeeded": false,
+          "database": "/tmp/esa-offline-review-chfp2es7/readback.sqlite",
+          "processes": [
+            {
+              "command": [
+                "/usr/local/bin/python3",
+                "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/companion/tools/reservation_persistence.py",
+                "write",
+                "--candidate",
+                "/tmp/esa-offline-review-chfp2es7/candidate",
+                "--database",
+                "/tmp/esa-offline-review-chfp2es7/readback.sqlite"
+              ],
+              "elapsed_process_seconds": 0.044341417999930854,
+              "timeout_seconds": 15,
+              "returncode": 0,
+              "stdout": "{\n  \"status\": \"FIRST_WRITE_COMPLETED\",\n  \"request\": {\n    \"trusted_member_id\": \"member-1\",\n    \"asset_id\": \"A\",\n    \"starts_at\": \"2026-11-02T09:00:00Z\",\n    \"ends_at\": \"2026-11-02T10:00:00Z\",\n    \"idempotency_key\": \"g1-durable-1\"\n  },\n  \"outcome\": {\n    \"status\": 201,\n    \"code\": \"confirmed\",\n    \"reservation_id\": 1,\n    \"replayed\": false\n  }\n}\n",
+              "stderr": "",
+              "timed_out": false
+            },
+            {
+              "command": [
+                "/usr/local/bin/python3",
+                "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/companion/tools/reservation_persistence.py",
+                "read",
+                "--candidate",
+                "/tmp/esa-offline-review-chfp2es7/candidate",
+                "--database",
+                "/tmp/esa-offline-review-chfp2es7/readback.sqlite",
+                "--reservation-id",
+                "1"
+              ],
+              "elapsed_process_seconds": 0.043795034000027044,
+              "timeout_seconds": 15,
+              "returncode": 0,
+              "stdout": "{\n  \"status\": \"PUBLIC_RECORD_MISSING\",\n  \"reservation\": null,\n  \"public_api\": \"get_reservation(path, reservation_id)\"\n}\n",
+              "stderr": "",
+              "timed_out": false
+            }
+          ],
+          "writer": {
+            "status": "FIRST_WRITE_COMPLETED",
+            "request": {
+              "trusted_member_id": "member-1",
+              "asset_id": "A",
+              "starts_at": "2026-11-02T09:00:00Z",
+              "ends_at": "2026-11-02T10:00:00Z",
+              "idempotency_key": "g1-durable-1"
+            },
+            "outcome": {
+              "status": 201,
+              "code": "confirmed",
+              "reservation_id": 1,
+              "replayed": false
+            }
+          },
+          "reader": {
+            "status": "PUBLIC_RECORD_MISSING",
+            "reservation": null,
+            "public_api": "get_reservation(path, reservation_id)"
+          },
+          "record_mismatches": [
+            {
+              "field": "reservation_id",
+              "expected": 1,
+              "actual": null
+            },
+            {
+              "field": "trusted_member_id",
+              "expected": "member-1",
+              "actual": null
+            },
+            {
+              "field": "asset_id",
+              "expected": "A",
+              "actual": null
+            },
+            {
+              "field": "starts_at",
+              "expected": "2026-11-02T09:00:00Z",
+              "actual": null
+            },
+            {
+              "field": "ends_at",
+              "expected": "2026-11-02T10:00:00Z",
+              "actual": null
+            },
+            {
+              "field": "idempotency_key",
+              "expected": "g1-durable-1",
+              "actual": null
+            }
+          ],
+          "public_api": "get_reservation(path, reservation_id)",
+          "meaning": "A new process imports the retained implementation and retrieves the committed record through its public API; no table or column mapping is imposed. Normal writer exit is not crash recovery."
+        },
+        "meaning": "A process-boundary probe, not an additional unittest method."
+      },
+      "human_decision": "PENDING",
+      "learner_source_modified": false,
+      "meaning": "Offline proposal review; code and rationale were constructed for teaching. No model call or learner performance is represented. Compare your written decision with the observed assertion and ground truth.",
+      "candidate_path_note": "Temporary review workspace removed after execution; exact variant bytes remain in the candidate pack.",
+      "recorded_at_utc": "2026-11-16T22:13:04.308597+00:00",
+      "command": [
+        "/usr/local/bin/python3",
+        "companion/start.py",
+        "review",
+        "G1",
+        "--candidate-ids",
+        "G1-P01",
+        "G1-P02",
+        "G1-P03",
+        "--output",
+        "work/evidence/g1-review.json"
+      ],
+      "verification_progress": {
+        "schema": "esa-verification-progress/v1",
+        "derivation": "CURRENT_RECEIPT_FIELDS_ONLY_NO_ADDITIONAL_EXECUTION",
+        "source_fields_sha256": "6f33c536d074c8281a2dca7f35bf4553cb507fdde81438b52db088e20a947e05",
+        "work_order": "mission_G1",
+        "evidence_profile": "new_capability",
+        "profile_basis": "The named mission work order.",
+        "phase": "mission",
+        "stages": {
+          "startup": {
+            "status": "PASS",
+            "evidence": [
+              "schema",
+              "mission",
+              "candidate_path"
+            ],
+            "reason": "The intended runner accepted the entry identity and emitted this check receipt. This does not establish candidate import."
+          },
+          "integrity": {
+            "status": "PASS",
+            "evidence": [
+              "inputs_unchanged",
+              "candidate_sha256_before",
+              "candidate_sha256_after"
+            ],
+            "reason": "The recorded before/after comparison found inputs unchanged."
+          },
+          "contract": {
+            "status": "PASS",
+            "evidence": [
+              "groups.g1_slice"
+            ],
+            "reason": "Status uses each selected group and any contract-specific supplemental probe; an import placeholder is not behavioral evidence. A candidate stack frame or known protected assertion supports reached behavior; a method count alone does not. Groups within this stage may retain multiple failures.",
+            "behavior_reached": true
+          },
+          "integration": {
+            "status": "FAIL",
+            "evidence": [
+              "supplemental_probe.observation"
+            ],
+            "reason": "An actual continuation or process-boundary probe is retained; the result applies to this local consumer and candidate only."
+          },
+          "artifact": {
+            "status": "NOT_RUN",
+            "evidence": [],
+            "reason": "This receipt has no separate archive/extraction gate. Local demonstration hashes alone do not establish release fitness."
+          },
+          "authorization": {
+            "status": "NOT_RUN",
+            "evidence": [
+              "human_acceptance"
+            ],
+            "reason": "No owner acceptance or release authorization is recorded. Passing checks do not supply that decision."
+          }
+        },
+        "first_failed_stage": "integration",
+        "last_observed_stage": "integration",
+        "limits": "A stage label interprets the retained fields; it is not an independent attestation. NOT_APPLICABLE needs an explicit scope exclusion; absence alone remains NOT_RUN."
+      }
+    },
+    {
+      "schema": "esa-offline-candidate-review/v1",
+      "selection": "slice",
+      "candidate_path": "/tmp/esa-offline-review-knl6moa1/candidate",
+      "candidate_sha256_before": "ff6db5e9e93e9790babb52c6ba11c8e0913813759816a1472feb06ff27d859cc",
+      "protected_before": [
+        {
+          "path": "docs/contract.md",
+          "expected_sha256": "9c6c95077f305744728b9929f51ea36d8a534ab67cd2e7ebe8112ad35eb7ebba",
+          "candidate_sha256": "9c6c95077f305744728b9929f51ea36d8a534ab67cd2e7ebe8112ad35eb7ebba",
+          "symlink": false
+        },
+        {
+          "path": "docs/G1-I01.md",
+          "expected_sha256": "07a417cd7e7eeaca0bc5827e67eb965d0c7ebb75f387146f80a37e172fb89a50",
+          "candidate_sha256": "07a417cd7e7eeaca0bc5827e67eb965d0c7ebb75f387146f80a37e172fb89a50",
+          "symlink": false
+        },
+        {
+          "path": "docs/G1-OD-01.md",
+          "expected_sha256": "baf835ffff57a64023ce8f5233b9e3e3588a2f6017f46f68b168919eae4b38db",
+          "candidate_sha256": "baf835ffff57a64023ce8f5233b9e3e3588a2f6017f46f68b168919eae4b38db",
+          "symlink": false
+        },
+        {
+          "path": "docs/decisions/0001-storage.md",
+          "expected_sha256": "c1b8a31f24fb5fe34e929049e8ed3cc3d1910b6d4194a40d4d303e70582f6762",
+          "candidate_sha256": "c1b8a31f24fb5fe34e929049e8ed3cc3d1910b6d4194a40d4d303e70582f6762",
+          "symlink": false
+        },
+        {
+          "path": "tests/test_g1_slice.py",
+          "expected_sha256": "6242a53920d075fb038a8efbaeead6390f8f0a0d5b69dba3da6c31783abda98b",
+          "candidate_sha256": "6242a53920d075fb038a8efbaeead6390f8f0a0d5b69dba3da6c31783abda98b",
+          "symlink": false
+        },
+        {
+          "path": "tests/test_g1_full_api.py",
+          "expected_sha256": "8c46c06e0b8677dc74c9fb840f4f1f4b5f2c190095317b24f58d1cde92c8c538",
+          "candidate_sha256": "8c46c06e0b8677dc74c9fb840f4f1f4b5f2c190095317b24f58d1cde92c8c538",
+          "symlink": false
+        },
+        {
+          "path": "tests/test_g1_readonly.py",
+          "expected_sha256": "cd2f92b5adac1b2cc1ef5e1c23ff9309bd26133c933ec429368c7463308f5e4f",
+          "candidate_sha256": "cd2f92b5adac1b2cc1ef5e1c23ff9309bd26133c933ec429368c7463308f5e4f",
+          "symlink": false
+        },
+        {
+          "path": "historical_tests/test_booking.py",
+          "expected_sha256": "3fede5b6fff032747fe1017836b915d375b7bef01417e6bbf246506e413b4e89",
+          "candidate_sha256": "3fede5b6fff032747fe1017836b915d375b7bef01417e6bbf246506e413b4e89",
+          "symlink": false
+        }
+      ],
+      "human_acceptance": "PENDING",
+      "groups": {
+        "g1_slice": {
+          "command": [
+            "/usr/local/bin/python3",
+            "-m",
+            "unittest",
+            "discover",
+            "-s",
+            "tests",
+            "-p",
+            "test_g1_slice.py",
+            "-v"
+          ],
+          "elapsed_process_seconds": 0.07578656099997261,
+          "timeout_seconds": 15,
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "test_first_reservation_confirms_and_public_read_matches (test_g1_slice.ReservationSlice.test_first_reservation_confirms_and_public_read_matches) ... ok\ntest_init_db_preserves_existing_reservation (test_g1_slice.ReservationSlice.test_init_db_preserves_existing_reservation) ... ok\ntest_missing_reservation_returns_none (test_g1_slice.ReservationSlice.test_missing_reservation_returns_none) ... ok\ntest_quoted_identifiers_round_trip (test_g1_slice.ReservationSlice.test_quoted_identifiers_round_trip) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.015s\n\nOK\n",
+          "timed_out": false,
+          "tests_run": 4,
+          "expected_tests": 4,
+          "methods_passed": 4,
+          "methods_failed": [],
+          "methods_errored": [],
+          "status": "PASSED"
+        }
+      },
+      "tests_run": 4,
+      "expected_tests": 4,
+      "methods_passed": 4,
+      "stdout": "",
+      "stderr": "test_first_reservation_confirms_and_public_read_matches (test_g1_slice.ReservationSlice.test_first_reservation_confirms_and_public_read_matches) ... ok\ntest_init_db_preserves_existing_reservation (test_g1_slice.ReservationSlice.test_init_db_preserves_existing_reservation) ... ok\ntest_missing_reservation_returns_none (test_g1_slice.ReservationSlice.test_missing_reservation_returns_none) ... ok\ntest_quoted_identifiers_round_trip (test_g1_slice.ReservationSlice.test_quoted_identifiers_round_trip) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.015s\n\nOK\n",
+      "timed_out": false,
+      "returncode": 0,
+      "protected_after": [
+        {
+          "path": "docs/contract.md",
+          "expected_sha256": "9c6c95077f305744728b9929f51ea36d8a534ab67cd2e7ebe8112ad35eb7ebba",
+          "candidate_sha256": "9c6c95077f305744728b9929f51ea36d8a534ab67cd2e7ebe8112ad35eb7ebba",
+          "symlink": false
+        },
+        {
+          "path": "docs/G1-I01.md",
+          "expected_sha256": "07a417cd7e7eeaca0bc5827e67eb965d0c7ebb75f387146f80a37e172fb89a50",
+          "candidate_sha256": "07a417cd7e7eeaca0bc5827e67eb965d0c7ebb75f387146f80a37e172fb89a50",
+          "symlink": false
+        },
+        {
+          "path": "docs/G1-OD-01.md",
+          "expected_sha256": "baf835ffff57a64023ce8f5233b9e3e3588a2f6017f46f68b168919eae4b38db",
+          "candidate_sha256": "baf835ffff57a64023ce8f5233b9e3e3588a2f6017f46f68b168919eae4b38db",
+          "symlink": false
+        },
+        {
+          "path": "docs/decisions/0001-storage.md",
+          "expected_sha256": "c1b8a31f24fb5fe34e929049e8ed3cc3d1910b6d4194a40d4d303e70582f6762",
+          "candidate_sha256": "c1b8a31f24fb5fe34e929049e8ed3cc3d1910b6d4194a40d4d303e70582f6762",
+          "symlink": false
+        },
+        {
+          "path": "tests/test_g1_slice.py",
+          "expected_sha256": "6242a53920d075fb038a8efbaeead6390f8f0a0d5b69dba3da6c31783abda98b",
+          "candidate_sha256": "6242a53920d075fb038a8efbaeead6390f8f0a0d5b69dba3da6c31783abda98b",
+          "symlink": false
+        },
+        {
+          "path": "tests/test_g1_full_api.py",
+          "expected_sha256": "8c46c06e0b8677dc74c9fb840f4f1f4b5f2c190095317b24f58d1cde92c8c538",
+          "candidate_sha256": "8c46c06e0b8677dc74c9fb840f4f1f4b5f2c190095317b24f58d1cde92c8c538",
+          "symlink": false
+        },
+        {
+          "path": "tests/test_g1_readonly.py",
+          "expected_sha256": "cd2f92b5adac1b2cc1ef5e1c23ff9309bd26133c933ec429368c7463308f5e4f",
+          "candidate_sha256": "cd2f92b5adac1b2cc1ef5e1c23ff9309bd26133c933ec429368c7463308f5e4f",
+          "symlink": false
+        },
+        {
+          "path": "historical_tests/test_booking.py",
+          "expected_sha256": "3fede5b6fff032747fe1017836b915d375b7bef01417e6bbf246506e413b4e89",
+          "candidate_sha256": "3fede5b6fff032747fe1017836b915d375b7bef01417e6bbf246506e413b4e89",
+          "symlink": false
+        }
+      ],
+      "candidate_sha256_after": "ff6db5e9e93e9790babb52c6ba11c8e0913813759816a1472feb06ff27d859cc",
+      "inputs_unchanged": true,
+      "status": "SELECTED_CHECKS_PASSED",
+      "prototype_release": "ESA-Series-Handbook-Review-5-20261116",
+      "candidate_id": "G1-P03",
+      "mission": "G1",
+      "evidence_origin": "EXECUTED_CONSTRUCTED_TEACHING_VARIANT",
+      "candidate_pack": "candidates/G1/G1-P03",
+      "candidate_sha256": "ff6db5e9e93e9790babb52c6ba11c8e0913813759816a1472feb06ff27d859cc",
+      "rationale": "# Proposal G1-P03\n\nI separated an empty lookup from unavailable storage at the connection boundary. The read opens an existing database and lets storage errors reach its caller; an initialized store can still report that the requested identifier is absent. The URI construction also needs scrutiny for filenames containing reserved characters. No initialization or recovery step is hidden inside this read.\n",
+      "ground_truth": {
+        "schema": "esa-review-ground-truth/v4",
+        "mission": "G1",
+        "candidate_id": "G1-P03",
+        "created_on": "2026-11-02",
+        "origin": "CONSTRUCTED_TEACHING_VARIANT",
+        "rationale_origin": "CONSTRUCTED",
+        "actual_model_trace": false,
+        "expected_decision": "ACCEPT",
+        "expected_slice_pass": true,
+        "expected_core_pass": true,
+        "expected_extended_pass": true,
+        "supplemental_probe": "g1_cross_process",
+        "expected_supplemental_pass": true,
+        "targeted_assertions": [],
+        "explanation": "G1-OD-01 already decides both cases: None for an absent identifier in existing storage; storage errors remain visible. Asking the owner again would not resolve a missing rule.",
+        "required_human_decision": null,
+        "contract": "G1/I01 + G1-OD-01",
+        "scope": "Constructed public practice, not a human assessment result.",
+        "revised_on": "2026-11-03",
+        "release_scope": "ESA-Complete-Review-3-20261103"
+      },
+      "supplemental_probe": {
+        "status": "PASSED",
+        "tests_run": 1,
+        "expected_tests": 1,
+        "methods_passed": 1,
+        "methods_failed": [],
+        "methods_errored": [],
+        "observation": {
+          "succeeded": true,
+          "database": "/tmp/esa-offline-review-knl6moa1/readback.sqlite",
+          "processes": [
+            {
+              "command": [
+                "/usr/local/bin/python3",
+                "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/companion/tools/reservation_persistence.py",
+                "write",
+                "--candidate",
+                "/tmp/esa-offline-review-knl6moa1/candidate",
+                "--database",
+                "/tmp/esa-offline-review-knl6moa1/readback.sqlite"
+              ],
+              "elapsed_process_seconds": 0.051181833999976334,
+              "timeout_seconds": 15,
+              "returncode": 0,
+              "stdout": "{\n  \"status\": \"FIRST_WRITE_COMPLETED\",\n  \"request\": {\n    \"trusted_member_id\": \"member-1\",\n    \"asset_id\": \"A\",\n    \"starts_at\": \"2026-11-02T09:00:00Z\",\n    \"ends_at\": \"2026-11-02T10:00:00Z\",\n    \"idempotency_key\": \"g1-durable-1\"\n  },\n  \"outcome\": {\n    \"status\": 201,\n    \"code\": \"confirmed\",\n    \"reservation_id\": 1,\n    \"replayed\": false\n  }\n}\n",
+              "stderr": "",
+              "timed_out": false
+            },
+            {
+              "command": [
+                "/usr/local/bin/python3",
+                "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/companion/tools/reservation_persistence.py",
+                "read",
+                "--candidate",
+                "/tmp/esa-offline-review-knl6moa1/candidate",
+                "--database",
+                "/tmp/esa-offline-review-knl6moa1/readback.sqlite",
+                "--reservation-id",
+                "1"
+              ],
+              "elapsed_process_seconds": 0.05030217500006984,
+              "timeout_seconds": 15,
+              "returncode": 0,
+              "stdout": "{\n  \"status\": \"PUBLIC_RECORD_REOPENED\",\n  \"reservation\": {\n    \"reservation_id\": 1,\n    \"trusted_member_id\": \"member-1\",\n    \"asset_id\": \"A\",\n    \"starts_at\": \"2026-11-02T09:00:00Z\",\n    \"ends_at\": \"2026-11-02T10:00:00Z\",\n    \"idempotency_key\": \"g1-durable-1\"\n  },\n  \"public_api\": \"get_reservation(path, reservation_id)\"\n}\n",
+              "stderr": "",
+              "timed_out": false
+            }
+          ],
+          "writer": {
+            "status": "FIRST_WRITE_COMPLETED",
+            "request": {
+              "trusted_member_id": "member-1",
+              "asset_id": "A",
+              "starts_at": "2026-11-02T09:00:00Z",
+              "ends_at": "2026-11-02T10:00:00Z",
+              "idempotency_key": "g1-durable-1"
+            },
+            "outcome": {
+              "status": 201,
+              "code": "confirmed",
+              "reservation_id": 1,
+              "replayed": false
+            }
+          },
+          "reader": {
+            "status": "PUBLIC_RECORD_REOPENED",
+            "reservation": {
+              "reservation_id": 1,
+              "trusted_member_id": "member-1",
+              "asset_id": "A",
+              "starts_at": "2026-11-02T09:00:00Z",
+              "ends_at": "2026-11-02T10:00:00Z",
+              "idempotency_key": "g1-durable-1"
+            },
+            "public_api": "get_reservation(path, reservation_id)"
+          },
+          "record_mismatches": [],
+          "public_api": "get_reservation(path, reservation_id)",
+          "meaning": "A new process imports the retained implementation and retrieves the committed record through its public API; no table or column mapping is imposed. Normal writer exit is not crash recovery."
+        },
+        "meaning": "A process-boundary probe, not an additional unittest method."
+      },
+      "human_decision": "PENDING",
+      "learner_source_modified": false,
+      "meaning": "Offline proposal review; code and rationale were constructed for teaching. No model call or learner performance is represented. Compare your written decision with the observed assertion and ground truth.",
+      "candidate_path_note": "Temporary review workspace removed after execution; exact variant bytes remain in the candidate pack.",
+      "recorded_at_utc": "2026-11-16T22:13:04.491799+00:00",
+      "command": [
+        "/usr/local/bin/python3",
+        "companion/start.py",
+        "review",
+        "G1",
+        "--candidate-ids",
+        "G1-P01",
+        "G1-P02",
+        "G1-P03",
+        "--output",
+        "work/evidence/g1-review.json"
+      ],
+      "verification_progress": {
+        "schema": "esa-verification-progress/v1",
+        "derivation": "CURRENT_RECEIPT_FIELDS_ONLY_NO_ADDITIONAL_EXECUTION",
+        "source_fields_sha256": "4ef407496541f126ec7adaef6a4642540d2ad54782d7150404af49dda54ab800",
+        "work_order": "mission_G1",
+        "evidence_profile": "new_capability",
+        "profile_basis": "The named mission work order.",
+        "phase": "mission",
+        "stages": {
+          "startup": {
+            "status": "PASS",
+            "evidence": [
+              "schema",
+              "mission",
+              "candidate_path"
+            ],
+            "reason": "The intended runner accepted the entry identity and emitted this check receipt. This does not establish candidate import."
+          },
+          "integrity": {
+            "status": "PASS",
+            "evidence": [
+              "inputs_unchanged",
+              "candidate_sha256_before",
+              "candidate_sha256_after"
+            ],
+            "reason": "The recorded before/after comparison found inputs unchanged."
+          },
+          "contract": {
+            "status": "PASS",
+            "evidence": [
+              "groups.g1_slice"
+            ],
+            "reason": "Status uses each selected group and any contract-specific supplemental probe; an import placeholder is not behavioral evidence. A candidate stack frame or known protected assertion supports reached behavior; a method count alone does not. Groups within this stage may retain multiple failures.",
+            "behavior_reached": true
+          },
+          "integration": {
+            "status": "PASS",
+            "evidence": [
+              "supplemental_probe.observation"
+            ],
+            "reason": "An actual continuation or process-boundary probe is retained; the result applies to this local consumer and candidate only."
+          },
+          "artifact": {
+            "status": "NOT_RUN",
+            "evidence": [],
+            "reason": "This receipt has no separate archive/extraction gate. Local demonstration hashes alone do not establish release fitness."
+          },
+          "authorization": {
+            "status": "NOT_RUN",
+            "evidence": [
+              "human_acceptance"
+            ],
+            "reason": "No owner acceptance or release authorization is recorded. Passing checks do not supply that decision."
+          }
+        },
+        "first_failed_stage": null,
+        "last_observed_stage": "integration",
+        "limits": "A stage label interprets the retained fields; it is not an independent attestation. NOT_APPLICABLE needs an explicit scope exclusion; absence alone remains NOT_RUN."
+      }
+    }
+  ],
+  "scope": "Each result names its contract, source and observed checks.",
+  "recorded_at_utc": "2026-11-16T22:13:04.495411+00:00",
+  "command": [
+    "/usr/local/bin/python3",
+    "companion/start.py",
+    "review",
+    "G1",
+    "--candidate-ids",
+    "G1-P01",
+    "G1-P02",
+    "G1-P03",
+    "--output",
+    "work/evidence/g1-review.json"
+  ]
+}

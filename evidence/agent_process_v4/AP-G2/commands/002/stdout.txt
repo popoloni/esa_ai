@@ -1,0 +1,54 @@
+=== AGENTS.md ===
+# G2 scope
+
+Edit booking.py and DOSSIER.md. Preserve docs, tests, dependencies, prior snapshots and READER_ENTRY.json. Run checks as feedback. Report actual behavior. This instruction is not an operating-system boundary.
+
+=== supplied docs ===
+=== docs/contract.md ===
+# G2: compatible reservation completion
+
+Owner: fictional workshop coordinator. Approved teaching contract (fictional case date) RES-001/v1
+plus migration decision G2-OD-01, 2025-05-16. API stays init_db, reserve and
+get_reservation; Outcome fields are unchanged. G1 lookup decisions still apply.
+
+An interval is half-open [start,end), expressed exactly as UTC seconds
+YYYY-MM-DDTHH:MM:SSZ, positive and at most 24 hours. Nonempty member, asset and
+request keys are strings of at most 128 characters. Invalid identifiers,
+timestamps and intervals return distinct 422 outcomes. For one asset, overlapping
+active reservations conflict; adjacency and distinct assets are allowed.
+
+Identity is (trusted_member_id,idempotency_key). Store a fingerprint of asset,
+start and end. Same identity and same payload returns the original ID with
+200/confirmed and replayed=True, without adding a reservation. Changed payload
+under the same identity returns 409/idempotency-key-reused without mutation.
+A new interval conflict returns 409/interval-conflict. New success is 201.
+The conflict/replay check and insert are one atomic write transaction.
+
+G2-OD-01 authorizes migrations from the two supplied G1 representations only:
+the columnar reservations table and the bookings_v2 JSON table. Preserve IDs,
+all public values and the original table as historical evidence. A migration
+with duplicate identities, invalid or overlapping old intervals, two competing legacy tables or an unknown schema must roll back
+and request an owner mapping, not discard rows or invent a historical outcome.
+The current schema version is 2. Reinitialization is safe and idempotent.
+Concurrent observations apply to local SQLite in the tested process environment;
+no distributed-system or crash-recovery claim follows.
+
+=== DOSSIER.md ===
+# G2 decision record
+
+## Expect
+
+State the contract, acceptance example and open owner question.
+
+## Delegate
+
+Bound the implementation change.
+
+## Observe
+
+Record commands and identified receipts, including failures.
+
+## Decide
+
+Explain ACCEPT/REJECT/ASK for the three proposals and the handoff scope.
+

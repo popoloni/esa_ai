@@ -1,0 +1,33 @@
+{
+  "schema": "esa-prototype-entry/v2",
+  "mission": "B1",
+  "release": "Engineering-Software-with-Agentic-AI-Review-5.2-20261117",
+  "route": "BROWNFIELD_TREASURY_REPAIR",
+  "mode": "LEARNER_V2_EXTENSION",
+  "solution_variant": null,
+  "human_acceptance": "PENDING",
+  "scope": "B1-API/v2 text grammar; BR-001/v1 numeric policy unchanged.",
+  "api_contract": "B1-API/v2",
+  "recorded_at_utc": "2026-11-22T17:35:39.155358+00:00",
+  "command": [
+    "/usr/local/bin/python3",
+    "companion/start.py",
+    "new",
+    "B1",
+    "--dest",
+    "work/b1"
+  ],
+  "extended_at_utc": "2026-11-22T17:36:10.319292+00:00",
+  "extension_command": [
+    "/usr/local/bin/python3",
+    "companion/start.py",
+    "extend",
+    "B1",
+    "--candidate",
+    "work/b1",
+    "--dest",
+    "work/b1-v2"
+  ],
+  "owner_decision": "B1-OD-02",
+  "parent_candidate_sha256": "55f5ea84fd53c5d4cb1852eca2d0b4c7550559c2f0bf176bf0f60edcda7e8fab"
+}

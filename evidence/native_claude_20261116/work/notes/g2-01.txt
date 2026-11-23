@@ -1,0 +1,14 @@
+Observation: native run 01 completed (claude-sonnet-5-5, 0.287 USD reported, 99 s). Changed booking.py and DOSSIER.md.
+The client denied four operations, including a Write to the package root (probe_g2.py) outside the candidate;
+the worker then wrote its probe to the client session scratchpad. Validation, replay, 409 reuse/conflict, adjacency,
+atomic check-and-insert and migration of the three authorized G1 representations are implemented.
+Decisive observation: the worker recognised that its own predecessor's table g1_reservation (native G1 candidate)
+is not an authorized source and refuses it. Operator probe work/evidence/operator/g2-own-predecessor-probe.json:
+ValueError "owner mapping required", database bytes unchanged.
+Independent: check G2 17/17; continue G2 SCOPED_HANDOFF_READY.
+Decision on the candidate: ACCEPT for RES-001/v1 + G2-OD-01 + G2-OD-02 scope; refusing the unknown schema is the
+contracted behaviour.
+Open owner question (ASK; object: a migration mapping, not this candidate): may records written by the native
+G1 representation g1_reservation(id, trusted_member_id, asset_id, starts_at, ends_at, idempotency_key) be mapped
+column-for-column like G2-OD-02? Not authored here; no mapping was invented.
+Limit: AI operator; the authorized sources are fictional teaching decisions.

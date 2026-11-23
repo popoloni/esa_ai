@@ -1,0 +1,23 @@
+test_boundary_and_larger_values_require_review (test_b1_v2.MonetaryTextV2.test_boundary_and_larger_values_require_review) ... ok
+test_length_limit_counts_sign_and_point (test_b1_v2.MonetaryTextV2.test_length_limit_counts_sign_and_point) ... ok
+test_non_string_is_a_caller_error (test_b1_v2.MonetaryTextV2.test_non_string_is_a_caller_error) ... ok
+test_nonpositive_values_are_rejected (test_b1_v2.MonetaryTextV2.test_nonpositive_values_are_rejected) ... ok
+test_unapproved_lexical_forms_are_rejected (test_b1_v2.MonetaryTextV2.test_unapproved_lexical_forms_are_rejected) ... ok
+test_valid_spellings_preserve_numeric_policy (test_b1_v2.MonetaryTextV2.test_valid_spellings_preserve_numeric_policy) ... ok
+test_above_boundary_requires_review (test_routing.RoutingAcceptance.test_above_boundary_requires_review) ... ok
+test_exact_boundary_requires_review (test_routing.RoutingAcceptance.test_exact_boundary_requires_review) ... ok
+test_negative_amount_rejected (test_routing.RoutingAcceptance.test_negative_amount_rejected) ... ok
+test_nonfinite_amount_rejected (test_routing.RoutingAcceptance.test_nonfinite_amount_rejected) ... ok
+test_nonnumeric_amount_rejected (test_routing.RoutingAcceptance.test_nonnumeric_amount_rejected) ... ok
+test_positive_below_limit (test_routing.RoutingAcceptance.test_positive_below_limit) ... ok
+test_zero_amount_rejected (test_routing.RoutingAcceptance.test_zero_amount_rejected) ... ok
+test_negative_infinity_rejected (test_routing_extended.RoutingExtended.test_negative_infinity_rejected) ... ok
+test_non_string_argument_is_programming_error (test_routing_extended.RoutingExtended.test_non_string_argument_is_programming_error) ... ok
+test_positive_infinity_rejected (test_routing_extended.RoutingExtended.test_positive_infinity_rejected) ... ok
+test_short_infinity_rejected (test_routing_extended.RoutingExtended.test_short_infinity_rejected) ... ok
+test_signaling_nan_rejected (test_routing_extended.RoutingExtended.test_signaling_nan_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.001s
+
+OK

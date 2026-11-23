@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "python3",
+    "-B",
+    "companion/memory/ledger.py",
+    "--workspace",
+    ".",
+    "--ledger",
+    "evidence/memory_lab_20261116/recorded_01/controls/valid_append_control.jsonl",
+    "propose",
+    "--record",
+    "evidence/memory_lab_20261116/recorded_01/proposals/B1-V2-BASE.json"
+  ],
+  "exit": 2,
+  "expected_exit": 2,
+  "label": "valid_tail_accepts_refusal_event",
+  "origin": "AUTOMATED_LOCAL_CONTROL_NO_MODEL_OR_HUMAN",
+  "stderr": "",
+  "stdout": "{\"model_calls\":0,\"reason\":\"RECORD_ID_ALREADY_EXISTS_CREATE_A_NEW_VERSION\",\"status\":\"REFUSED\"}\n"
+}

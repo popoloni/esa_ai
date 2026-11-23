@@ -1,0 +1,34 @@
+{
+  "schema": "esa-g4-schema-map/v1",
+  "decision": "G4-OD-01",
+  "extends": "OPS-G4/v3",
+  "origin": "DERIVED_FROM_NAMED_COLUMNS",
+  "table": "reservations_v3",
+  "signature": [
+    "id",
+    "trusted_member_id",
+    "asset_id",
+    "starts_at",
+    "ends_at",
+    "idempotency_key",
+    "fingerprint",
+    "state",
+    "version"
+  ],
+  "roles": {
+    "id": "id",
+    "asset_id": "asset_id",
+    "member_id": "trusted_member_id",
+    "starts_at": "starts_at",
+    "ends_at": "ends_at",
+    "request_key": "idempotency_key",
+    "request_hash": "fingerprint",
+    "state": "state",
+    "version": "version"
+  },
+  "schema_version": 3,
+  "booking_sha256": "c0b3857de28f86624e329cd1dcfbc4d9c52af3691e78e84b60f66bfcfffbb887",
+  "tables_created_by_init_db": [
+    "reservations_v3"
+  ]
+}

@@ -1,0 +1,27 @@
+"""Constructed teaching variant; no model run or learner observation is claimed."""
+from dataclasses import dataclass
+from decimal import Decimal, InvalidOperation
+
+THRESHOLD_EUR = Decimal("5000.00")
+POLICY_VERSION = "BR-001/v1"
+
+
+@dataclass(frozen=True)
+class RoutingDecision:
+    route: str
+    reason: str
+    policy_version: str
+
+
+def assess(amount_eur: str) -> RoutingDecision:
+    if not isinstance(amount_eur, str):
+        raise TypeError("amount_eur must be a string")
+    try:
+        amount = Decimal(amount_eur)
+    except InvalidOperation:
+        return RoutingDecision("REJECTED", "INVALID_AMOUNT", POLICY_VERSION)
+    if not amount.is_finite() or amount <= 0:
+        return RoutingDecision("REJECTED", "INVALID_AMOUNT", POLICY_VERSION)
+    if amount <= THRESHOLD_EUR:
+        return RoutingDecision("STANDARD_QUEUE", "BELOW_LIMIT", POLICY_VERSION)
+    return RoutingDecision("HUMAN_REVIEW", "AT_OR_ABOVE_LIMIT", POLICY_VERSION)

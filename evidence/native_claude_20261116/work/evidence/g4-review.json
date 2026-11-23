@@ -1,0 +1,458 @@
+{
+  "schema": "esa-offline-candidate-review-batch/v1",
+  "release": "ESA-Series-Handbook-Review-5-20261116",
+  "mission": "G4",
+  "candidate_ids": [
+    "G4-P01",
+    "G4-P02",
+    "G4-P03"
+  ],
+  "status": "REVIEW_BATCH_RECORDED",
+  "evidence_origin": "EXECUTED_CONSTRUCTED_TEACHING_VARIANTS",
+  "learner_source_modified": false,
+  "results": [
+    {
+      "schema": "esa-full-mission-check/v1",
+      "mission": "G4",
+      "release": "ESA-Series-Handbook-Review-5-20261116",
+      "contract": "OPS-G4/v3",
+      "candidate_sha256_before": "34ab27744b20a406fc85ecdfd0db4739683d5fb58aaa7454809bdcd5ba98443f",
+      "protected_input_sha256": {
+        "docs/contract.md": "0edc7998494e571035acf19d27deb310cfeeedb6dfc7b62f5cf6218fa6407fc8",
+        "tests/test_g4.py": "b9e3af154e42a1af76ea323b8ad34025898c0ff4aa0d58207d7c837de697169a",
+        "booking.py": "ad89e1350b80d674b30f8fd97927107adb77e2df625805d7a0a49cb8837b5b17",
+        "g4_fixture.py": "1936ec148931969220f01fc7dd8cfecf5d3d2e3b7be532cc9fbc24eda092ea04",
+        "reference_g3.py": "ad89e1350b80d674b30f8fd97927107adb77e2df625805d7a0a49cb8837b5b17"
+      },
+      "candidate_path": "/tmp/esa-full-review-lc5kleo2/candidate",
+      "human_acceptance": "PENDING",
+      "model_run": false,
+      "scope": "Executable local teaching controls; no human reader performance or production authority.",
+      "groups": {
+        "contract": {
+          "command": [
+            "/usr/local/bin/python3",
+            "-m",
+            "unittest",
+            "discover",
+            "-s",
+            "tests",
+            "-p",
+            "test_g4.py",
+            "-v"
+          ],
+          "elapsed_process_seconds": 0.17138674500006346,
+          "timeout_seconds": 30,
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "test_active_overlap_is_detected_not_repaired (test_g4.OperationalEvidence.test_active_overlap_is_detected_not_repaired) ... ok\ntest_all_attempts_count_toward_accepted_outcome_cost (test_g4.OperationalEvidence.test_all_attempts_count_toward_accepted_outcome_cost) ... ok\ntest_cancelled_row_does_not_create_false_alarm (test_g4.OperationalEvidence.test_cancelled_row_does_not_create_false_alarm) ... ok\ntest_clean_storage_is_observed_without_mutation (test_g4.OperationalEvidence.test_clean_storage_is_observed_without_mutation) ... ok\ntest_failed_attempts_remain_in_the_cost_numerator (test_g4.OperationalEvidence.test_failed_attempts_remain_in_the_cost_numerator) ... ok\ntest_invalid_cost_or_time_is_refused (test_g4.OperationalEvidence.test_invalid_cost_or_time_is_refused) ... ok\ntest_missing_path_is_not_created (test_g4.OperationalEvidence.test_missing_path_is_not_created) ... ok\ntest_nonnumeric_cost_and_time_raise_value_error (test_g4.OperationalEvidence.test_nonnumeric_cost_and_time_raise_value_error) ... ok\ntest_reference_schema_remains_explicitly_supported (test_g4.OperationalEvidence.test_reference_schema_remains_explicitly_supported) ... ok\ntest_version_number_alone_does_not_authorize_unknown_schema (test_g4.OperationalEvidence.test_version_number_alone_does_not_authorize_unknown_schema) ... ok\ntest_zero_accepted_is_not_zero_unit_cost (test_g4.OperationalEvidence.test_zero_accepted_is_not_zero_unit_cost) ... ok\n\n----------------------------------------------------------------------\nRan 11 tests in 0.088s\n\nOK\n",
+          "timed_out": false,
+          "tests_run": 11,
+          "expected_tests": 11,
+          "methods_passed": 11,
+          "methods_failed": [],
+          "methods_errored": [],
+          "status": "PASSED"
+        }
+      },
+      "tests_run": 11,
+      "candidate_sha256_after": "34ab27744b20a406fc85ecdfd0db4739683d5fb58aaa7454809bdcd5ba98443f",
+      "inputs_unchanged": true,
+      "status": "SELECTED_CHECKS_PASSED",
+      "candidate_id": "G4-P01",
+      "origin": "EXECUTED_CONSTRUCTED_TEACHING_VARIANT",
+      "ground_truth": {
+        "schema": "esa-review-ground-truth/v4",
+        "mission": "G4",
+        "candidate_id": "G4-P01",
+        "created_on": "2026-11-02",
+        "origin": "CONSTRUCTED_TEACHING_VARIANT",
+        "actual_model_trace": false,
+        "expected_decision": "ACCEPT",
+        "expected_check_pass": true,
+        "targeted_assertions": [],
+        "explanation": "The diagnostic does not change either incident evidence or the accepted-outcome denominator.",
+        "required_human_decision": null,
+        "contract": "OPS-G4/v1",
+        "scope": "Constructed public practice, not a human assessment result.",
+        "revised_on": "2026-11-03",
+        "release_scope": "ESA-Complete-Review-3-20261103"
+      },
+      "rationale": "# Proposal G4-P01\n\nThe report is an observation of identified storage. It records the resolved path, schema and digest, then checks that the bytes remained stable while it inspected current rows. Cost accounting consumes the complete supplied attempt ledger and the separately determined accepted count. An empty denominator produces an explicitly unavailable unit measure rather than a plausible zero.\n",
+      "learner_source_modified": false,
+      "recorded_at_utc": "2026-11-16T22:28:08.823019+00:00",
+      "command": [
+        "/usr/local/bin/python3",
+        "companion/start.py",
+        "review",
+        "G4",
+        "--candidate-ids",
+        "G4-P01",
+        "G4-P02",
+        "G4-P03",
+        "--output",
+        "work/evidence/g4-review.json"
+      ],
+      "verification_progress": {
+        "schema": "esa-verification-progress/v1",
+        "derivation": "CURRENT_RECEIPT_FIELDS_ONLY_NO_ADDITIONAL_EXECUTION",
+        "source_fields_sha256": "5f57bbfb29fad5f75d5b6170289e09630b33178493cd5308f3f01290bb78e964",
+        "work_order": "mission_G4",
+        "evidence_profile": "persistent_effect",
+        "profile_basis": "The named mission work order.",
+        "phase": "mission",
+        "stages": {
+          "startup": {
+            "status": "PASS",
+            "evidence": [
+              "schema",
+              "mission",
+              "candidate_path"
+            ],
+            "reason": "The intended runner accepted the entry identity and emitted this check receipt. This does not establish candidate import."
+          },
+          "integrity": {
+            "status": "PASS",
+            "evidence": [
+              "inputs_unchanged",
+              "candidate_sha256_before",
+              "candidate_sha256_after"
+            ],
+            "reason": "The recorded before/after comparison found inputs unchanged."
+          },
+          "contract": {
+            "status": "PASS",
+            "evidence": [
+              "groups.contract"
+            ],
+            "reason": "Status uses each selected group and any contract-specific supplemental probe; an import placeholder is not behavioral evidence. A candidate stack frame or known protected assertion supports reached behavior; a method count alone does not. Groups within this stage may retain multiple failures.",
+            "behavior_reached": true
+          },
+          "integration": {
+            "status": "NOT_RUN",
+            "evidence": [],
+            "reason": "No continuation or consumer/process observation is present."
+          },
+          "artifact": {
+            "status": "NOT_RUN",
+            "evidence": [],
+            "reason": "This receipt has no separate archive/extraction gate. Local demonstration hashes alone do not establish release fitness."
+          },
+          "authorization": {
+            "status": "NOT_RUN",
+            "evidence": [
+              "human_acceptance"
+            ],
+            "reason": "No owner acceptance or release authorization is recorded. Passing checks do not supply that decision."
+          }
+        },
+        "first_failed_stage": null,
+        "last_observed_stage": "contract",
+        "limits": "A stage label interprets the retained fields; it is not an independent attestation. NOT_APPLICABLE needs an explicit scope exclusion; absence alone remains NOT_RUN."
+      }
+    },
+    {
+      "schema": "esa-full-mission-check/v1",
+      "mission": "G4",
+      "release": "ESA-Series-Handbook-Review-5-20261116",
+      "contract": "OPS-G4/v3",
+      "candidate_sha256_before": "e984197461bb86b3d2c8f68b22d591547c587ed995ca035f4978421031136ced",
+      "protected_input_sha256": {
+        "docs/contract.md": "0edc7998494e571035acf19d27deb310cfeeedb6dfc7b62f5cf6218fa6407fc8",
+        "tests/test_g4.py": "b9e3af154e42a1af76ea323b8ad34025898c0ff4aa0d58207d7c837de697169a",
+        "booking.py": "ad89e1350b80d674b30f8fd97927107adb77e2df625805d7a0a49cb8837b5b17",
+        "g4_fixture.py": "1936ec148931969220f01fc7dd8cfecf5d3d2e3b7be532cc9fbc24eda092ea04",
+        "reference_g3.py": "ad89e1350b80d674b30f8fd97927107adb77e2df625805d7a0a49cb8837b5b17"
+      },
+      "candidate_path": "/tmp/esa-full-review-ld946q5c/candidate",
+      "human_acceptance": "PENDING",
+      "model_run": false,
+      "scope": "Executable local teaching controls; no human reader performance or production authority.",
+      "groups": {
+        "contract": {
+          "command": [
+            "/usr/local/bin/python3",
+            "-m",
+            "unittest",
+            "discover",
+            "-s",
+            "tests",
+            "-p",
+            "test_g4.py",
+            "-v"
+          ],
+          "elapsed_process_seconds": 0.13686986899983822,
+          "timeout_seconds": 30,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "test_active_overlap_is_detected_not_repaired (test_g4.OperationalEvidence.test_active_overlap_is_detected_not_repaired) ... ok\ntest_all_attempts_count_toward_accepted_outcome_cost (test_g4.OperationalEvidence.test_all_attempts_count_toward_accepted_outcome_cost) ... FAIL\ntest_cancelled_row_does_not_create_false_alarm (test_g4.OperationalEvidence.test_cancelled_row_does_not_create_false_alarm) ... ok\ntest_clean_storage_is_observed_without_mutation (test_g4.OperationalEvidence.test_clean_storage_is_observed_without_mutation) ... ok\ntest_failed_attempts_remain_in_the_cost_numerator (test_g4.OperationalEvidence.test_failed_attempts_remain_in_the_cost_numerator) ... FAIL\ntest_invalid_cost_or_time_is_refused (test_g4.OperationalEvidence.test_invalid_cost_or_time_is_refused) ... ok\ntest_missing_path_is_not_created (test_g4.OperationalEvidence.test_missing_path_is_not_created) ... ok\ntest_nonnumeric_cost_and_time_raise_value_error (test_g4.OperationalEvidence.test_nonnumeric_cost_and_time_raise_value_error) ... ok\ntest_reference_schema_remains_explicitly_supported (test_g4.OperationalEvidence.test_reference_schema_remains_explicitly_supported) ... ok\ntest_version_number_alone_does_not_authorize_unknown_schema (test_g4.OperationalEvidence.test_version_number_alone_does_not_authorize_unknown_schema) ... ok\ntest_zero_accepted_is_not_zero_unit_cost (test_g4.OperationalEvidence.test_zero_accepted_is_not_zero_unit_cost) ... ok\n\n======================================================================\nFAIL: test_all_attempts_count_toward_accepted_outcome_cost (test_g4.OperationalEvidence.test_all_attempts_count_toward_accepted_outcome_cost)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/esa-full-review-ld946q5c/candidate/tests/test_g4.py\", line 35, in test_all_attempts_count_toward_accepted_outcome_cost\n    self.assertEqual(r[\"cost_per_accepted_eur\"],\"3.00\")\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: '1.50' != '3.00'\n- 1.50\n+ 3.00\n\n\n======================================================================\nFAIL: test_failed_attempts_remain_in_the_cost_numerator (test_g4.OperationalEvidence.test_failed_attempts_remain_in_the_cost_numerator)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/esa-full-review-ld946q5c/candidate/tests/test_g4.py\", line 60, in test_failed_attempts_remain_in_the_cost_numerator\n    self.assertEqual(result[\"cost_per_accepted_eur\"], \"3.00\")\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: '1.50' != '3.00'\n- 1.50\n+ 3.00\n\n\n----------------------------------------------------------------------\nRan 11 tests in 0.070s\n\nFAILED (failures=2)\n",
+          "timed_out": false,
+          "tests_run": 11,
+          "expected_tests": 11,
+          "methods_passed": 9,
+          "methods_failed": [
+            "test_all_attempts_count_toward_accepted_outcome_cost",
+            "test_failed_attempts_remain_in_the_cost_numerator"
+          ],
+          "methods_errored": [],
+          "status": "FAILED"
+        }
+      },
+      "tests_run": 11,
+      "candidate_sha256_after": "e984197461bb86b3d2c8f68b22d591547c587ed995ca035f4978421031136ced",
+      "inputs_unchanged": true,
+      "status": "CHECKS_FAILED",
+      "candidate_id": "G4-P02",
+      "origin": "EXECUTED_CONSTRUCTED_TEACHING_VARIANT",
+      "ground_truth": {
+        "schema": "esa-review-ground-truth/v4",
+        "mission": "G4",
+        "candidate_id": "G4-P02",
+        "created_on": "2026-11-02",
+        "origin": "CONSTRUCTED_TEACHING_VARIANT",
+        "actual_model_trace": false,
+        "expected_decision": "REJECT",
+        "expected_check_pass": false,
+        "targeted_assertions": [
+          "test_all_attempts_count_toward_accepted_outcome_cost"
+        ],
+        "explanation": "Learning attempts remain in the numerator; they are not accepted outcomes in the denominator.",
+        "required_human_decision": null,
+        "contract": "OPS-G4/v1",
+        "scope": "Constructed public practice, not a human assessment result.",
+        "revised_on": "2026-11-03",
+        "release_scope": "ESA-Complete-Review-3-20261103"
+      },
+      "rationale": "# Proposal G4-P02\n\nI retained the total spend and elapsed effort so the dashboard can show how much work the experiments consumed. The unit figures summarize that work across completed attempts, using the existing output fields for compatibility with the dashboard. This gives a stable average as further experiments arrive. The reviewer should check which management question each displayed unit actually answers.\n",
+      "learner_source_modified": false,
+      "recorded_at_utc": "2026-11-16T22:28:08.963958+00:00",
+      "command": [
+        "/usr/local/bin/python3",
+        "companion/start.py",
+        "review",
+        "G4",
+        "--candidate-ids",
+        "G4-P01",
+        "G4-P02",
+        "G4-P03",
+        "--output",
+        "work/evidence/g4-review.json"
+      ],
+      "verification_progress": {
+        "schema": "esa-verification-progress/v1",
+        "derivation": "CURRENT_RECEIPT_FIELDS_ONLY_NO_ADDITIONAL_EXECUTION",
+        "source_fields_sha256": "6c9e25f4481a77871332d7ed8d81f28bd81af2e907fe02f82f97a9448e5f0b75",
+        "work_order": "mission_G4",
+        "evidence_profile": "persistent_effect",
+        "profile_basis": "The named mission work order.",
+        "phase": "mission",
+        "stages": {
+          "startup": {
+            "status": "PASS",
+            "evidence": [
+              "schema",
+              "mission",
+              "candidate_path"
+            ],
+            "reason": "The intended runner accepted the entry identity and emitted this check receipt. This does not establish candidate import."
+          },
+          "integrity": {
+            "status": "PASS",
+            "evidence": [
+              "inputs_unchanged",
+              "candidate_sha256_before",
+              "candidate_sha256_after"
+            ],
+            "reason": "The recorded before/after comparison found inputs unchanged."
+          },
+          "contract": {
+            "status": "FAIL",
+            "evidence": [
+              "groups.contract"
+            ],
+            "reason": "Status uses each selected group and any contract-specific supplemental probe; an import placeholder is not behavioral evidence. A candidate stack frame or known protected assertion supports reached behavior; a method count alone does not. Groups within this stage may retain multiple failures.",
+            "behavior_reached": true
+          },
+          "integration": {
+            "status": "NOT_RUN",
+            "evidence": [],
+            "reason": "No continuation or consumer/process observation is present."
+          },
+          "artifact": {
+            "status": "NOT_RUN",
+            "evidence": [],
+            "reason": "This receipt has no separate archive/extraction gate. Local demonstration hashes alone do not establish release fitness."
+          },
+          "authorization": {
+            "status": "NOT_RUN",
+            "evidence": [
+              "human_acceptance"
+            ],
+            "reason": "No owner acceptance or release authorization is recorded. Passing checks do not supply that decision."
+          }
+        },
+        "first_failed_stage": "contract",
+        "last_observed_stage": "contract",
+        "limits": "A stage label interprets the retained fields; it is not an independent attestation. NOT_APPLICABLE needs an explicit scope exclusion; absence alone remains NOT_RUN."
+      }
+    },
+    {
+      "schema": "esa-full-mission-check/v1",
+      "mission": "G4",
+      "release": "ESA-Series-Handbook-Review-5-20261116",
+      "contract": "OPS-G4/v3",
+      "candidate_sha256_before": "7e4f91e7bf21cf2cfce7c64775965a4e06160622c1052188613c58fad7fc5c90",
+      "protected_input_sha256": {
+        "docs/contract.md": "0edc7998494e571035acf19d27deb310cfeeedb6dfc7b62f5cf6218fa6407fc8",
+        "tests/test_g4.py": "b9e3af154e42a1af76ea323b8ad34025898c0ff4aa0d58207d7c837de697169a",
+        "booking.py": "ad89e1350b80d674b30f8fd97927107adb77e2df625805d7a0a49cb8837b5b17",
+        "g4_fixture.py": "1936ec148931969220f01fc7dd8cfecf5d3d2e3b7be532cc9fbc24eda092ea04",
+        "reference_g3.py": "ad89e1350b80d674b30f8fd97927107adb77e2df625805d7a0a49cb8837b5b17"
+      },
+      "candidate_path": "/tmp/esa-full-review-ct3nfnv6/candidate",
+      "human_acceptance": "PENDING",
+      "model_run": false,
+      "scope": "Executable local teaching controls; no human reader performance or production authority.",
+      "groups": {
+        "contract": {
+          "command": [
+            "/usr/local/bin/python3",
+            "-m",
+            "unittest",
+            "discover",
+            "-s",
+            "tests",
+            "-p",
+            "test_g4.py",
+            "-v"
+          ],
+          "elapsed_process_seconds": 0.12752488299997822,
+          "timeout_seconds": 30,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "test_active_overlap_is_detected_not_repaired (test_g4.OperationalEvidence.test_active_overlap_is_detected_not_repaired) ... ok\ntest_all_attempts_count_toward_accepted_outcome_cost (test_g4.OperationalEvidence.test_all_attempts_count_toward_accepted_outcome_cost) ... ok\ntest_cancelled_row_does_not_create_false_alarm (test_g4.OperationalEvidence.test_cancelled_row_does_not_create_false_alarm) ... ok\ntest_clean_storage_is_observed_without_mutation (test_g4.OperationalEvidence.test_clean_storage_is_observed_without_mutation) ... ok\ntest_failed_attempts_remain_in_the_cost_numerator (test_g4.OperationalEvidence.test_failed_attempts_remain_in_the_cost_numerator) ... FAIL\ntest_invalid_cost_or_time_is_refused (test_g4.OperationalEvidence.test_invalid_cost_or_time_is_refused) ... ok\ntest_missing_path_is_not_created (test_g4.OperationalEvidence.test_missing_path_is_not_created) ... ok\ntest_nonnumeric_cost_and_time_raise_value_error (test_g4.OperationalEvidence.test_nonnumeric_cost_and_time_raise_value_error) ... ok\ntest_reference_schema_remains_explicitly_supported (test_g4.OperationalEvidence.test_reference_schema_remains_explicitly_supported) ... ok\ntest_version_number_alone_does_not_authorize_unknown_schema (test_g4.OperationalEvidence.test_version_number_alone_does_not_authorize_unknown_schema) ... ok\ntest_zero_accepted_is_not_zero_unit_cost (test_g4.OperationalEvidence.test_zero_accepted_is_not_zero_unit_cost) ... ok\n\n======================================================================\nFAIL: test_failed_attempts_remain_in_the_cost_numerator (test_g4.OperationalEvidence.test_failed_attempts_remain_in_the_cost_numerator)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/esa-full-review-ct3nfnv6/candidate/tests/test_g4.py\", line 59, in test_failed_attempts_remain_in_the_cost_numerator\n    self.assertEqual(result[\"total_cost_eur\"], \"3.00\")\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: '0.80' != '3.00'\n- 0.80\n+ 3.00\n\n\n----------------------------------------------------------------------\nRan 11 tests in 0.066s\n\nFAILED (failures=1)\n",
+          "timed_out": false,
+          "tests_run": 11,
+          "expected_tests": 11,
+          "methods_passed": 10,
+          "methods_failed": [
+            "test_failed_attempts_remain_in_the_cost_numerator"
+          ],
+          "methods_errored": [],
+          "status": "FAILED"
+        }
+      },
+      "tests_run": 11,
+      "candidate_sha256_after": "7e4f91e7bf21cf2cfce7c64775965a4e06160622c1052188613c58fad7fc5c90",
+      "inputs_unchanged": true,
+      "status": "CHECKS_FAILED",
+      "candidate_id": "G4-P03",
+      "origin": "EXECUTED_CONSTRUCTED_TEACHING_VARIANT",
+      "ground_truth": {
+        "schema": "esa-review-ground-truth/v4",
+        "mission": "G4",
+        "candidate_id": "G4-P03",
+        "created_on": "2026-11-02",
+        "origin": "CONSTRUCTED_TEACHING_VARIANT",
+        "actual_model_trace": false,
+        "expected_decision": "REJECT",
+        "expected_check_pass": false,
+        "targeted_assertions": [
+          "test_failed_attempts_remain_in_the_cost_numerator"
+        ],
+        "explanation": "OPS-G4/v1 already includes failed generations, review and recovery in the numerator. Excluding FAILED rows is a contract violation, not an unanswered policy question.",
+        "required_human_decision": null,
+        "contract": "OPS-G4/v1",
+        "scope": "Constructed public practice, not a human assessment result.",
+        "revised_on": "2026-11-03",
+        "release_scope": "ESA-Complete-Review-3-20261103"
+      },
+      "rationale": "# Proposal G4-P03\n\nThe summary is organized around work that progressed to a usable delivery result. It retains the supplied accepted count, the normal output shape and the underlying cost/time values selected for the report. This makes it convenient to compare delivery periods that contain different numbers of exploratory runs. Please review the selection step as well as the arithmetic.\n",
+      "learner_source_modified": false,
+      "recorded_at_utc": "2026-11-16T22:28:09.096024+00:00",
+      "command": [
+        "/usr/local/bin/python3",
+        "companion/start.py",
+        "review",
+        "G4",
+        "--candidate-ids",
+        "G4-P01",
+        "G4-P02",
+        "G4-P03",
+        "--output",
+        "work/evidence/g4-review.json"
+      ],
+      "verification_progress": {
+        "schema": "esa-verification-progress/v1",
+        "derivation": "CURRENT_RECEIPT_FIELDS_ONLY_NO_ADDITIONAL_EXECUTION",
+        "source_fields_sha256": "de7b34ab2d3ffa359593e101472421673d4cc53885e476c48143230ebd809b9f",
+        "work_order": "mission_G4",
+        "evidence_profile": "persistent_effect",
+        "profile_basis": "The named mission work order.",
+        "phase": "mission",
+        "stages": {
+          "startup": {
+            "status": "PASS",
+            "evidence": [
+              "schema",
+              "mission",
+              "candidate_path"
+            ],
+            "reason": "The intended runner accepted the entry identity and emitted this check receipt. This does not establish candidate import."
+          },
+          "integrity": {
+            "status": "PASS",
+            "evidence": [
+              "inputs_unchanged",
+              "candidate_sha256_before",
+              "candidate_sha256_after"
+            ],
+            "reason": "The recorded before/after comparison found inputs unchanged."
+          },
+          "contract": {
+            "status": "FAIL",
+            "evidence": [
+              "groups.contract"
+            ],
+            "reason": "Status uses each selected group and any contract-specific supplemental probe; an import placeholder is not behavioral evidence. A candidate stack frame or known protected assertion supports reached behavior; a method count alone does not. Groups within this stage may retain multiple failures.",
+            "behavior_reached": true
+          },
+          "integration": {
+            "status": "NOT_RUN",
+            "evidence": [],
+            "reason": "No continuation or consumer/process observation is present."
+          },
+          "artifact": {
+            "status": "NOT_RUN",
+            "evidence": [],
+            "reason": "This receipt has no separate archive/extraction gate. Local demonstration hashes alone do not establish release fitness."
+          },
+          "authorization": {
+            "status": "NOT_RUN",
+            "evidence": [
+              "human_acceptance"
+            ],
+            "reason": "No owner acceptance or release authorization is recorded. Passing checks do not supply that decision."
+          }
+        },
+        "first_failed_stage": "contract",
+        "last_observed_stage": "contract",
+        "limits": "A stage label interprets the retained fields; it is not an independent attestation. NOT_APPLICABLE needs an explicit scope exclusion; absence alone remains NOT_RUN."
+      }
+    }
+  ],
+  "scope": "Each result names its contract, source and observed checks.",
+  "recorded_at_utc": "2026-11-16T22:28:09.098288+00:00",
+  "command": [
+    "/usr/local/bin/python3",
+    "companion/start.py",
+    "review",
+    "G4",
+    "--candidate-ids",
+    "G4-P01",
+    "G4-P02",
+    "G4-P03",
+    "--output",
+    "work/evidence/g4-review.json"
+  ]
+}

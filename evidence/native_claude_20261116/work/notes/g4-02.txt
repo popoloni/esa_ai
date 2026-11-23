@@ -1,0 +1,10 @@
+Observation: native run 01 of the fresh G4 session (OPS-G4/v3 candidate with the earlier worker's files carried over,
+see g4-carry-02.txt) completed (claude-sonnet-5-5, 0.153 USD reported, 48 s). Changed operations.py and DOSSIER.md.
+The worker read v3, marked its earlier question resolved and added only the native signature mapping; it refused other
+reservations_v2 signatures and kept historical tables out of the count. It noted that no supplied test covers the
+AP-recorded signature.
+Independent: check G4 11/11 (work/evidence/g4-first.json); continue G4 SCOPED_HANDOFF_READY. Operator probe
+work/evidence/operator/g4-signatures-probe.json: recorded signature -> pairs [[1,2]], cancelled row excluded; native
+signature with an adjacent booking and the fixture overlap -> [[1,3],[2,3]], adjacency excluded; bytes unchanged.
+Decision: ACCEPT for OPS-G4/v3 scope. The Greenfield route G1-G4 is complete.
+Limit: AI operator; OPS-G4/v3 is an AI-authored teaching-case extension awaiting the author's review.

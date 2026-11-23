@@ -1,0 +1,2 @@
+WAL observation: committed row visible; main, WAL and SHM bytes unchanged.
+WAL-only concurrent commit: rejected despite unchanged main database bytes.

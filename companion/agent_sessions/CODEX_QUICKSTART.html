@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Eight practical missions, local checks and recorded agent tours for Engineering Software with Agentic AI."><title>Run the companion with Codex CLI · Engineering Software with Agentic AI</title><link rel="stylesheet" href="../../assets/companion.css"></head><body><a class="skip" href="#main">Skip to content</a><header class="sitehead"><div><a class="brand" href="../../index.html">Engineering Software with Agentic AI<span>Practical companion · version 5.6</span></a><nav aria-label="Main navigation"><a href="../../index.html">Start</a><a href="../../missions/index.html">Missions</a><a href="README.html">Agent guide</a><a href="../../traces/index.html">Recorded tours</a><a href="../series/READING_THE_SERIES.html">Four volumes</a></nav></div></header><main id="main"><article data-source-sha256="ed89615402b1204c4d592c81ad5d99da0d01a1ee7b51d68d168a59d838936bc2"><p class="docmeta meta"><a href="CODEX_QUICKSTART.md">Markdown source</a> · Companion 5.6 · 2026-11-22</p><h1 id="run-the-companion-with-codex-cli">Run the companion with Codex CLI</h1>
+<p>Edition 5.3 checked the installed version and required local flags with Codex CLI 0.172.0-alpha.2. The archived 17 November attempt, using 0.167.0-alpha.4, stopped during startup. The project has recorded no completed native Codex mission.</p>
+<p>The exercises in <em>Engineering Software with Agentic AI</em> support Codex CLI as well as the Claude Code commands printed in the book. Use the same contract, candidate, protected checks and operator decisions. Choose <code>--client codex</code> when launching the worker. Use a fresh working copy to compare clients.</p>
+<p><strong>Edition 5.2 verification:</strong> the installed Codex CLI passes local syntax inspection, and the adapter’s transport controls pass. The retained native B1 attempt and a separate direct CLI control both stopped during client startup with a read-only app-server error, before any model event or candidate change. Codex mission execution therefore remains unverified in this edition. Read the <a href="CODEX_STATUS_20261117.html">Codex verification record</a> for the exact evidence.</p>
+<p>Run these commands from the folder containing <code>START_HERE.html</code>. In the complete author archive, that folder is <code>book/</code>. Python 3.10 or later and SQLite are required. G3 integration also needs Git. Install and authenticate Codex using the <a href="https://developers.openai.com/codex/cli">official Codex documentation</a>, then inspect the client available on your machine:</p>
+<pre class="bash"><code>python3 companion/start.py doctor
+python3 companion/agent_session.py inspect-client --client codex \
+  --output work/client-inspection-codex
+codex login status</code></pre>
+<p>Inspection records the installed version and local help. It makes no model call, does not log you in, and does not prove that your account can run a model. <code>CLIENT_SYNTAX_AVAILABLE_LIVE_NOT_TESTED</code> establishes only the required syntax. Keep its receipt with the subsequent run.</p>
+<h2 id="first-complete-session-b1-v1">First complete session: B1 v1</h2>
+<p>B1 has no software dependency on the Guild missions. Start with its deliberately faulty router:</p>
+<pre class="bash"><code>python3 companion/start.py new B1 --dest work/b1
+python3 companion/start.py check B1 --candidate work/b1 --select core \
+  --output work/evidence/b1-initial.json
+python3 companion/agent_session.py prepare B1 --api v1 \
+  --candidate work/b1 --output work/b1-agent-v1</code></pre>
+<p>The initial check is expected to fail on the supplied defect. Read <code>work/b1/docs/BR-001.md</code>, <code>work/b1/docs/B1-API.md</code> and <code>work/b1-agent-v1/task.txt</code>. Write your own acceptance examples and confirm the allowed edits before launching:</p>
+<pre class="bash"><code>python3 companion/agent_session.py run \
+  --session work/b1-agent-v1 --client codex</code></pre>
+<p>This uses your client’s configured model. To select a model available to your account, append <code>--model MODEL_ID</code> with its exact identifier. A Claude model identifier is not interchangeable with a Codex model identifier. <code>--max-budget-usd</code> is a Claude Code option; for Codex, configure the account’s usage controls. The adapter enforces the work order’s attempt allowance and outer wall time, not a monetary limit or the model’s internal tool count.</p>
+<p>Read <code>work/b1-agent-v1/runs/01/RESULT.json</code>, <code>native_events.jsonl</code>, <code>stderr.txt</code> and <code>agent_final.txt</code> when present. Compare the before/after files. A completed turn remains a proposal to review. Run the protected checks yourself:</p>
+<pre class="bash"><code>python3 companion/start.py check B1 --candidate work/b1 \
+  --output work/evidence/b1-check.json
+python3 companion/start.py continue B1 --candidate work/b1 \
+  --output work/evidence/b1-context.json</code></pre>
+<p>Only after inspecting the receipts and patch, write a decision note naming the observations, permitted scope, verdict and remaining limits. For an accepted candidate, a human operator records their own decision as follows:</p>
+<pre class="bash"><code>python3 companion/agent_session.py decide \
+  --session work/b1-agent-v1 --operator &quot;your name&quot; --operator-kind human \
+  --decision accept --note-file work/b1-acceptance.txt</code></pre>
+<p>Create that note yourself; the command does not generate or certify it. An AI operator must use <code>--operator-kind AI</code>. If the evidence supports correction, rejection or a question, record that disposition instead. A follow-up requires an explicit <code>--task-file</code> and opens a fresh client conversation with the retained candidate files. Preserve the earlier attempt; do not reset the budget by silently creating another session for the same unfinished task.</p>
+<p>The recorded decision binds the current candidate inventory, session specification and latest run result. A later edit requires new checks and a new decision. That binding makes the record reviewable; it does not establish the operator’s authority.</p>
+<h2 id="continue-through-the-book">Continue through the book</h2>
+<p>Keep the printed <code>new</code>, <code>clarify</code>, <code>advance</code>, <code>extend</code>, integration, <code>prepare</code>, <code>check</code> and <code>continue</code> commands. In each printed <code>agent_session.py run</code>, replace <code>--client claude</code> with <code>--client codex</code>. The expected session paths are:</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Mission</th>
+<th style="text-align: left;">Session paths under <code>work/</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">G1</td>
+<td style="text-align: left;"><code>g1-question</code>, then <code>g1-implementation</code> after clarification</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">G2</td>
+<td style="text-align: left;"><code>g2-agent</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">G3</td>
+<td style="text-align: left;"><code>g3-agent</code>, then the separately prepared <code>g3-report-agent</code> and <code>g3-cli-agent</code> roles</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">G4</td>
+<td style="text-align: left;"><code>g4-agent</code> from the accepted integrated G3 candidate</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">B1</td>
+<td style="text-align: left;"><code>b1-agent-v1</code>, then <code>b1-agent-v2</code> in the separately extended candidate</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B2</td>
+<td style="text-align: left;"><code>b2-agent</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">B3</td>
+<td style="text-align: left;"><code>b3-agent</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B4</td>
+<td style="text-align: left;"><code>b4-agent</code></td>
+</tr>
+</tbody>
+</table>
+<p>G1’s first stage is question practice before the supplied owner response is released. B1 v2 is a separately authorized interface change. G3 roles have fixed contribution scopes and independent records. Changing the client does not skip any of those transitions.</p>
+<h2 id="read-the-native-record-correctly">Read the native record correctly</h2>
+<p>The adapter invokes <code>codex exec --json --sandbox workspace-write</code> in the candidate directory. It preserves your installed configuration, authentication and approval policy. <code>launch_profile</code> records the requested settings; it does not claim that effective host permissions were verified. Review those permissions before running. The adapter neither grants additional writable directories nor bypasses approvals. Candidate snapshots cover the candidate tree, excluding Git internals and Python/test caches; they do not monitor all host files or enforce an operating-system boundary.</p>
+<p>Codex emits thread, turn and item events. The recorder requires a valid stream, an agent message, a completed turn, process exit zero and no covered change outside the permitted paths. A wrong-client stream is rejected. Native transport files are retained with hashes so later changes can be detected.</p>
+<p>The <a href="https://developers.openai.com/codex/noninteractive">official noninteractive guide</a> documents the JSON event families and final-message option. Model identity is read only from native metadata fields when emitted. A requested model name, login identity or the worker’s prose is not proof of a backend model. Missing usage, model or cost fields mean unknown, not zero or success.</p>
+<p>If startup fails before model events, retain the failed attempt and inspect <code>stderr.txt</code>. A read-only client state database, authentication failure or unavailable model is a setup observation. Keep existing permissions and configuration while diagnosing it; use the supported client setup or ask the environment administrator to resolve the cause. Preserve the candidate and failed capture when continuing in a working environment.</p>
+<h2 id="collect-codex-coverage-separately">Collect Codex coverage separately</h2>
+<pre class="bash"><code>python3 companion/agent_sessions/collect_native.py \
+  --workspace-root . --client codex \
+  --output work/evidence/native-codex-coverage.json</code></pre>
+<p>Choose a fresh output filename each time. The report gives completed stages, completed missions and separately identified client/model counts. It also includes per-client coverage and every retained attempt. Only the latest Codex attempt for a stage contributes to the Codex selection. Claude’s successful runs cannot fill a Codex gap. A completed run with no emitted model identity keeps the identity requirement open.</p>
+<p>The <a href="../NATIVE_STATUS.json">native status record</a> describes the evidence shipped with this edition. Local adapter controls and replaying retained captures make no model call. Only a newly launched native client can supply evidence about a new run, and its product still needs the independent checks and an operator’s decision.</p>
+</article></main><footer class="foot"><p>Enrico Papalini · Edition 5.6 · 2026-11-22</p><p><a href="../../NOTICE.html">Rights and notices</a> · <a href="../../NATIVE_STATUS.json">Native-client status</a> · <a href="../../MANIFEST.json">Package manifest</a> · <a href="https://github.com/popoloni/esa_ai">Companion repository</a></p></footer></body></html>

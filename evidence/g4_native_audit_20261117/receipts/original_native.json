@@ -1,0 +1,141 @@
+{
+  "schema": "esa-full-mission-check/v1",
+  "mission": "G4",
+  "release": "ESA-Series-Handbook-Review-5-20261116",
+  "contract": "OPS-G4/v3",
+  "candidate_sha256_before": "2903fba69859c4ff7560873c7911b89051a22d89485ec4558f5c96220f769c41",
+  "protected_input_sha256": {
+    "docs/contract.md": "0edc7998494e571035acf19d27deb310cfeeedb6dfc7b62f5cf6218fa6407fc8",
+    "tests/test_g4.py": "7f2247596e269a5e66d919dde9ac3b21097ef02495359340e6af0d765f78751b",
+    "booking.py": "7b02037f25564beb431bd1deeaa70da7df845ebc71426b99b882a855193b27a6",
+    "g4_fixture.py": "ad3f11b994538f16247722a7667641128d87e1e2ad41b01989ee334310c1c739",
+    "reference_g3.py": "ad89e1350b80d674b30f8fd97927107adb77e2df625805d7a0a49cb8837b5b17",
+    "reservation_report.py": "33c881e7a0ef08f8e00d62a139f3706e80d8be0636e786693691c6b41093c7eb",
+    "reservation_cli.py": "3d9d266cb8c8bf64aae77e096a5daaaf31e4fe7f476433ab8a8faaec135676a4",
+    "prior/parent-handoff.json": "b1b1a3cdcd28c529370310707ac8f86b6f946ba893ba36577a9ab02e60124840",
+    "prior/parent-entry.json": "29589ad710fb889f51a440fd852198903bddc67e12d2c7b3fac5095c5f2a8f05",
+    "prior/integration-acceptance.json": "810d5e2356434f27f69987b8fedad9a6a0151e98a3ef8a1883746e00d0e026c9",
+    "prior/booking.py": "7b02037f25564beb431bd1deeaa70da7df845ebc71426b99b882a855193b27a6",
+    "prior/parent-check-artifacts/DEMONSTRATION.json": "70b156d22bb9040a7b62053563a5acee9307fb8be236b987419b40e305cdbadc",
+    "prior/parent-check-artifacts/reservations.sqlite": "f401ee09ade425237858f7240a320df3cd059c714775de34772c6ed4b928507a",
+    "prior/parent-check-artifacts/continuation.json": "9298378697846b42368d2a633326847ba0c679b9dd2e39ca8b1e3ddd3e804a5e",
+    "prior/integration/reservation_cli.py": "3d9d266cb8c8bf64aae77e096a5daaaf31e4fe7f476433ab8a8faaec135676a4",
+    "prior/integration/reservation_report.py": "33c881e7a0ef08f8e00d62a139f3706e80d8be0636e786693691c6b41093c7eb",
+    "prior/integration/booking.py": "7b02037f25564beb431bd1deeaa70da7df845ebc71426b99b882a855193b27a6"
+  },
+  "candidate_path": "/workspace/scratch/c02668b5f4f9/ESA_v5_2_Codex_Compatibility_20261117/book/validation/codex_compatibility_20261117/claude_audit/contract_controls_02/g4_original_native",
+  "human_acceptance": "PENDING",
+  "model_run": false,
+  "scope": "Executable local teaching controls; no human reader performance or production authority.",
+  "integration": {
+    "source_sha256": {
+      "booking.py": "7b02037f25564beb431bd1deeaa70da7df845ebc71426b99b882a855193b27a6",
+      "reservation_report.py": "33c881e7a0ef08f8e00d62a139f3706e80d8be0636e786693691c6b41093c7eb",
+      "reservation_cli.py": "3d9d266cb8c8bf64aae77e096a5daaaf31e4fe7f476433ab8a8faaec135676a4"
+    },
+    "receipt_sha256": "810d5e2356434f27f69987b8fedad9a6a0151e98a3ef8a1883746e00d0e026c9",
+    "bundle_sha256": "a458a386bf56e5a18eb55b4d2f0d05b5749613f7c1c15b19ffc7212f234b40a5"
+  },
+  "groups": {
+    "contract": {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_g4.py",
+        "-v"
+      ],
+      "elapsed_process_seconds": 0.0995826139987912,
+      "timeout_seconds": 30,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "test_active_overlap_is_detected_not_repaired (test_g4.OperationalEvidence.test_active_overlap_is_detected_not_repaired) ... ok\ntest_all_attempts_count_toward_accepted_outcome_cost (test_g4.OperationalEvidence.test_all_attempts_count_toward_accepted_outcome_cost) ... ok\ntest_cancelled_row_does_not_create_false_alarm (test_g4.OperationalEvidence.test_cancelled_row_does_not_create_false_alarm) ... ok\ntest_clean_storage_is_observed_without_mutation (test_g4.OperationalEvidence.test_clean_storage_is_observed_without_mutation) ... ok\ntest_failed_attempts_remain_in_the_cost_numerator (test_g4.OperationalEvidence.test_failed_attempts_remain_in_the_cost_numerator) ... ok\ntest_invalid_cost_or_time_is_refused (test_g4.OperationalEvidence.test_invalid_cost_or_time_is_refused) ... ok\ntest_missing_path_is_not_created (test_g4.OperationalEvidence.test_missing_path_is_not_created) ... ok\ntest_nonnumeric_cost_and_time_raise_value_error (test_g4.OperationalEvidence.test_nonnumeric_cost_and_time_raise_value_error) ... ok\ntest_reference_and_native_current_layouts_are_refused (test_g4.OperationalEvidence.test_reference_and_native_current_layouts_are_refused) ... FAIL\ntest_reference_and_recorded_current_layouts_are_refused (test_g4.OperationalEvidence.test_reference_and_recorded_current_layouts_are_refused) ... FAIL\ntest_reference_schema_remains_explicitly_supported (test_g4.OperationalEvidence.test_reference_schema_remains_explicitly_supported) ... ok\ntest_version_number_alone_does_not_authorize_unknown_schema (test_g4.OperationalEvidence.test_version_number_alone_does_not_authorize_unknown_schema) ... ok\ntest_zero_accepted_is_not_zero_unit_cost (test_g4.OperationalEvidence.test_zero_accepted_is_not_zero_unit_cost) ... ok\n\n======================================================================\nFAIL: test_reference_and_native_current_layouts_are_refused (test_g4.OperationalEvidence.test_reference_and_native_current_layouts_are_refused)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/workspace/scratch/c02668b5f4f9/ESA_v5_2_Codex_Compatibility_20261117/book/validation/codex_compatibility_20261117/claude_audit/contract_controls_02/g4_original_native/tests/test_g4.py\", line 96, in test_reference_and_native_current_layouts_are_refused\n    self._competing_current_layouts_are_refused(\"native\")\n  File \"/workspace/scratch/c02668b5f4f9/ESA_v5_2_Codex_Compatibility_20261117/book/validation/codex_compatibility_20261117/claude_audit/contract_controls_02/g4_original_native/tests/test_g4.py\", line 91, in _competing_current_layouts_are_refused\n    with self.assertRaises(ValueError):\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ValueError not raised\n\n======================================================================\nFAIL: test_reference_and_recorded_current_layouts_are_refused (test_g4.OperationalEvidence.test_reference_and_recorded_current_layouts_are_refused)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/workspace/scratch/c02668b5f4f9/ESA_v5_2_Codex_Compatibility_20261117/book/validation/codex_compatibility_20261117/claude_audit/contract_controls_02/g4_original_native/tests/test_g4.py\", line 99, in test_reference_and_recorded_current_layouts_are_refused\n    self._competing_current_layouts_are_refused(\"recorded\")\n  File \"/workspace/scratch/c02668b5f4f9/ESA_v5_2_Codex_Compatibility_20261117/book/validation/codex_compatibility_20261117/claude_audit/contract_controls_02/g4_original_native/tests/test_g4.py\", line 91, in _competing_current_layouts_are_refused\n    with self.assertRaises(ValueError):\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ValueError not raised\n\n----------------------------------------------------------------------\nRan 13 tests in 0.019s\n\nFAILED (failures=2)\n",
+      "timed_out": false,
+      "tests_run": 13,
+      "expected_tests": 13,
+      "methods_passed": 11,
+      "methods_failed": [
+        "test_reference_and_native_current_layouts_are_refused",
+        "test_reference_and_recorded_current_layouts_are_refused"
+      ],
+      "methods_errored": [],
+      "status": "FAILED"
+    }
+  },
+  "tests_run": 13,
+  "candidate_sha256_after": "2903fba69859c4ff7560873c7911b89051a22d89485ec4558f5c96220f769c41",
+  "inputs_unchanged": true,
+  "status": "CHECKS_FAILED",
+  "recorded_at_utc": "2026-11-16T23:10:58.401463+00:00",
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "/workspace/scratch/c02668b5f4f9/ESA_v5_2_Codex_Compatibility_20261117/book/companion/start.py",
+    "check",
+    "G4",
+    "--candidate",
+    "/workspace/scratch/c02668b5f4f9/ESA_v5_2_Codex_Compatibility_20261117/book/validation/codex_compatibility_20261117/claude_audit/contract_controls_02/g4_original_native",
+    "--output",
+    "/workspace/scratch/c02668b5f4f9/ESA_v5_2_Codex_Compatibility_20261117/book/validation/codex_compatibility_20261117/claude_audit/contract_controls_02/g4_original_native.json"
+  ],
+  "verification_progress": {
+    "schema": "esa-verification-progress/v1",
+    "derivation": "CURRENT_RECEIPT_FIELDS_ONLY_NO_ADDITIONAL_EXECUTION",
+    "source_fields_sha256": "a4f9cd710bf35e67691295993fe1fc6f3673a75f36213690bcb4ea71bf041018",
+    "work_order": "mission_G4",
+    "evidence_profile": "persistent_effect",
+    "profile_basis": "The named mission work order.",
+    "phase": "mission",
+    "stages": {
+      "startup": {
+        "status": "PASS",
+        "evidence": [
+          "schema",
+          "mission",
+          "candidate_path"
+        ],
+        "reason": "The intended runner accepted the entry identity and emitted this check receipt. This does not establish candidate import."
+      },
+      "integrity": {
+        "status": "PASS",
+        "evidence": [
+          "inputs_unchanged",
+          "candidate_sha256_before",
+          "candidate_sha256_after"
+        ],
+        "reason": "The recorded before/after comparison found inputs unchanged."
+      },
+      "contract": {
+        "status": "FAIL",
+        "evidence": [
+          "groups.contract"
+        ],
+        "reason": "Status uses each selected group and any contract-specific supplemental probe; an import placeholder is not behavioral evidence. A candidate stack frame or known protected assertion supports reached behavior; a method count alone does not. Groups within this stage may retain multiple failures.",
+        "behavior_reached": true
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "evidence": [],
+        "reason": "No continuation or consumer/process observation is present."
+      },
+      "artifact": {
+        "status": "NOT_RUN",
+        "evidence": [],
+        "reason": "This receipt has no separate archive/extraction gate. Local demonstration hashes alone do not establish release fitness."
+      },
+      "authorization": {
+        "status": "NOT_RUN",
+        "evidence": [
+          "human_acceptance"
+        ],
+        "reason": "No owner acceptance or release authorization is recorded. Passing checks do not supply that decision."
+      }
+    },
+    "first_failed_stage": "contract",
+    "last_observed_stage": "contract",
+    "limits": "A stage label interprets the retained fields; it is not an independent attestation. NOT_APPLICABLE needs an explicit scope exclusion; absence alone remains NOT_RUN."
+  }
+}

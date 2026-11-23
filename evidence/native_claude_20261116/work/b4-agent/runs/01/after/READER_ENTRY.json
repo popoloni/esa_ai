@@ -1,0 +1,41 @@
+{
+  "schema": "esa-full-mission/v1",
+  "release": "ESA-Series-Handbook-Review-5-20261116",
+  "mission": "B4",
+  "mode": "LEARNER",
+  "contract": "OPS-B4/v2",
+  "module": "incident.py",
+  "lineage": {
+    "mission": "B3",
+    "source_sha256": "5a2706de0a399e0cf7d0844a4f579895d3f545a6d42a0051af1c2a9cf75ec93b",
+    "source_path": "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/b3/ledger.py",
+    "handoff_status": "SCOPED_HANDOFF_READY",
+    "stored_snapshot": "prior/ledger.py",
+    "copied_parent_demonstration": "prior/parent-check-artifacts"
+  },
+  "human_acceptance": "PENDING",
+  "dependency_sha256": {
+    "ledger.py": "5a2706de0a399e0cf7d0844a4f579895d3f545a6d42a0051af1c2a9cf75ec93b",
+    "routing.py": "975aa67da6fa58c02a5af9402f338a248e39c3ad9c2b21ce5e1518a6539c1f3a",
+    "operations.py": "34ab27744b20a406fc85ecdfd0db4739683d5fb58aaa7454809bdcd5ba98443f"
+  },
+  "prior_sha256": {
+    "prior/ledger.py": "5a2706de0a399e0cf7d0844a4f579895d3f545a6d42a0051af1c2a9cf75ec93b",
+    "prior/parent-handoff.json": "25ac3b1e5292ee287314cc700f830d7d7fce352e204fed8787c99ba20ca1806c",
+    "prior/parent-entry.json": "51f503a27353a0d6f3326d65e0aa4d7a6c99b9e8a07cfbc1d99f734975ff9e6a",
+    "prior/parent-check-artifacts/DEMONSTRATION.json": "939c3810032fbba00c400c094c16c9e48b5248930961e09e35d9de55a7689e80",
+    "prior/parent-check-artifacts/ledger.sqlite": "1039601147525da7d2fc0bd9890df5e057c20a6709078bae4cb1057eb39eefa5",
+    "prior/parent-check-artifacts/history.json": "6e81a9e4c781bf227979cb59c9fb8db39a92fe5087343bef07477d287990e194"
+  },
+  "recorded_at_utc": "2026-11-16T22:16:26.519259+00:00",
+  "command": [
+    "/usr/local/bin/python3",
+    "companion/start.py",
+    "advance",
+    "B4",
+    "--from-candidate",
+    "work/b3",
+    "--dest",
+    "work/b4"
+  ]
+}

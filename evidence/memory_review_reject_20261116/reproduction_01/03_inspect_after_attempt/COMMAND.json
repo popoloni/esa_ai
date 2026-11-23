@@ -1,0 +1,29 @@
+{
+  "label": "03_inspect_after_attempt",
+  "started_at_utc": "2026-11-16T20:35:45.833412+00:00",
+  "finished_at_utc": "2026-11-16T20:35:45.931803+00:00",
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-B",
+    "/workspace/scratch/c02668b5f4f9/ESA_v5_Series_Handbook_20261116/book/evidence/handbook_memory_20261116/reject_correct_01/before/companion/memory/ledger.py",
+    "--workspace",
+    "/workspace/scratch/c02668b5f4f9/ESA_v5_Series_Handbook_20261116/book",
+    "--ledger",
+    "/workspace/scratch/c02668b5f4f9/ESA_v5_Series_Handbook_20261116/book/evidence/memory_review_reject_20261116/reproduction_01/UNTERMINATED_COPY.jsonl",
+    "inspect"
+  ],
+  "cwd": "/workspace/scratch/c02668b5f4f9/ESA_v5_Series_Handbook_20261116/book",
+  "returncode": 2,
+  "runtime_sha256": "ec0790a5531aecc9b339cdb23cda4f7312ca103985cf04dadf1dee6f1180ef0b",
+  "stdout_sha256": "0803c67696c0d40c75b5a0a03d60dc3dcf97fb237f684b11c1ae25fd76d33009",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "ledger_before_sha256": "ffe1666ca12507f3099c7da9d9801723a5f5fb74f87ed44591618fe99dfe70a5",
+  "ledger_after_sha256": "ffe1666ca12507f3099c7da9d9801723a5f5fb74f87ed44591618fe99dfe70a5",
+  "ledger_bytes_unchanged": true,
+  "result_status": "REFUSED",
+  "reason": "BROKEN_EVENT_JSON",
+  "events": null,
+  "actor_kind": "AI_ASSISTANT_INDEPENDENT_REVIEWER",
+  "native_model_session": false,
+  "human_session": false
+}

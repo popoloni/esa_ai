@@ -1,0 +1,11 @@
+test_first_reservation_confirms_and_public_read_matches (test_g1_slice.ReservationSlice.test_first_reservation_confirms_and_public_read_matches) ... ok
+test_init_db_preserves_existing_reservation (test_g1_slice.ReservationSlice.test_init_db_preserves_existing_reservation) ... ok
+test_missing_reservation_returns_none (test_g1_slice.ReservationSlice.test_missing_reservation_returns_none) ... ok
+test_quoted_identifiers_round_trip (test_g1_slice.ReservationSlice.test_quoted_identifiers_round_trip) ... ok
+test_missing_database_is_not_created (test_g1_readonly.ReadOnlyLookup.test_missing_database_is_not_created) ... ok
+test_uri_special_characters_and_unchanged_database (test_g1_readonly.ReadOnlyLookup.test_uri_special_characters_and_unchanged_database) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.018s
+
+OK

@@ -1,0 +1,219 @@
+{
+  "schema": "esa-full-mission-check/v1",
+  "mission": "G3",
+  "release": "ESA-Series-Handbook-Review-5-20261116",
+  "contract": "RES-002/v1",
+  "candidate_sha256_before": "7b02037f25564beb431bd1deeaa70da7df845ebc71426b99b882a855193b27a6",
+  "protected_input_sha256": {
+    "docs/contract.md": "bb12ae4381e7fec5bb982de67573852c5e7f63d4736a10977d492c3be38f1dce",
+    "tests/test_g3.py": "bdaa37d91057f2e85692290f91ea3208d109e40c3996156db129977754b8bf6d",
+    "legacy_booking.py": "81df006d0653a44260b03425294e8542effe0263c8592a7743e50e14bddcdef6",
+    "reservation_report.py": "33c881e7a0ef08f8e00d62a139f3706e80d8be0636e786693691c6b41093c7eb",
+    "reservation_cli.py": "3d9d266cb8c8bf64aae77e096a5daaaf31e4fe7f476433ab8a8faaec135676a4",
+    "prior/parent-handoff.json": "8e14ef3d76ba047c76c6dafdac30b33b89cc8182082dc3e4cea752df38975a5b",
+    "prior/parent-entry.json": "2f8deb16d11e5c724bda9f7968b7c85d7f67a502108c00fe95c905e84abb033e",
+    "prior/booking.py": "aa54ad117c2f3aac2d9d497db3b9457bed1562d742b4b9e9009a438e1929c20c",
+    "prior/parent-check-artifacts/DEMONSTRATION.json": "d034dcb2b27edf013ee69ec3b096afe2209d19eb2dece27773585bf696e05ad9",
+    "prior/parent-check-artifacts/reservations.sqlite": "520163ab69f2e45f8362197c66672bc6b4097e63c0b0b600d39d3442484f98bc",
+    "prior/parent-check-artifacts/continuation.json": "56ef61ac51beb004496f365a9c9d096a88f51a9d540a19f44d5234cfaac2008a"
+  },
+  "candidate_path": "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g3-integration/workspace",
+  "human_acceptance": "PENDING",
+  "model_run": false,
+  "scope": "Executable local teaching controls; no human reader performance or production authority.",
+  "integration": {
+    "source_sha256": {
+      "booking.py": "7b02037f25564beb431bd1deeaa70da7df845ebc71426b99b882a855193b27a6",
+      "reservation_report.py": "33c881e7a0ef08f8e00d62a139f3706e80d8be0636e786693691c6b41093c7eb",
+      "reservation_cli.py": "3d9d266cb8c8bf64aae77e096a5daaaf31e4fe7f476433ab8a8faaec135676a4"
+    },
+    "receipt_sha256": "810d5e2356434f27f69987b8fedad9a6a0151e98a3ef8a1883746e00d0e026c9",
+    "bundle_sha256": "a458a386bf56e5a18eb55b4d2f0d05b5749613f7c1c15b19ffc7212f234b40a5"
+  },
+  "groups": {
+    "contract": {
+      "command": [
+        "/usr/local/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_g3.py",
+        "-v"
+      ],
+      "elapsed_process_seconds": 0.10909015900006125,
+      "timeout_seconds": 30,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_cancel_releases_slot_without_erasing_history (test_g3.Cancellation.test_cancel_releases_slot_without_erasing_history) ... ok\ntest_migration_preserves_old_public_record (test_g3.Cancellation.test_migration_preserves_old_public_record) ... ok\ntest_missing_id_is_not_found (test_g3.Cancellation.test_missing_id_is_not_found) ... ok\ntest_other_member_cannot_cancel (test_g3.Cancellation.test_other_member_cannot_cancel) ... ok\ntest_repeat_with_current_version_is_idempotent (test_g3.Cancellation.test_repeat_with_current_version_is_idempotent) ... ok\ntest_retry_original_operation_does_not_revive_cancelled_row (test_g3.Cancellation.test_retry_original_operation_does_not_revive_cancelled_row) ... ok\ntest_stale_version_cannot_change_state (test_g3.Cancellation.test_stale_version_cannot_change_state) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.042s\n\nOK\n",
+      "timed_out": false,
+      "tests_run": 7,
+      "expected_tests": 7,
+      "methods_passed": 7,
+      "methods_failed": [],
+      "methods_errored": [],
+      "status": "PASSED"
+    }
+  },
+  "tests_run": 7,
+  "candidate_sha256_after": "7b02037f25564beb431bd1deeaa70da7df845ebc71426b99b882a855193b27a6",
+  "inputs_unchanged": true,
+  "status": "SCOPED_HANDOFF_READY",
+  "demonstration_process": {
+    "command": [
+      "/usr/local/bin/python3",
+      "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/companion/curriculum_demo.py",
+      "G3",
+      "--candidate",
+      "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g3-integration/workspace",
+      "--output",
+      "/tmp/esa-parent-check-q11hu0hg/parent-handoff"
+    ],
+    "elapsed_process_seconds": 0.07389569700012544,
+    "timeout_seconds": 30,
+    "returncode": 0,
+    "stdout": "{\n  \"schema\": \"esa-curriculum-demonstration/v1\",\n  \"mission\": \"G3\",\n  \"recorded_at_utc\": \"2026-11-16T22:21:41.370030+00:00\",\n  \"command\": [\n    \"/usr/local/bin/python3\",\n    \"/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/companion/curriculum_demo.py\",\n    \"G3\",\n    \"--candidate\",\n    \"/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g3-integration/workspace\",\n    \"--output\",\n    \"/tmp/esa-parent-check-q11hu0hg/parent-handoff\"\n  ],\n  \"origin\": \"EXECUTED_OFFLINE_TEACHING_FIXTURE\",\n  \"observed_human_pilot\": false,\n  \"observed_model_run\": false,\n  \"result\": {\n    \"old_public_record\": {\n      \"reservation_id\": 1,\n      \"trusted_member_id\": \"member-14\",\n      \"asset_id\": \"lathe-2\",\n      \"starts_at\": \"2025-05-16T13:00:00Z\",\n      \"ends_at\": \"2025-05-16T14:00:00Z\",\n      \"idempotency_key\": \"original\"\n    },\n    \"wrong_owner\": {\n      \"status\": 403,\n      \"code\": \"not-owner\",\n      \"reservation_id\": 1,\n      \"version\": null\n    },\n    \"cancellation\": {\n      \"status\": 200,\n      \"code\": \"cancelled\",\n      \"reservation_id\": 1,\n      \"version\": 2\n    },\n    \"stale_version\": {\n      \"status\": 409,\n      \"code\": \"stale-version\",\n      \"reservation_id\": 1,\n      \"version\": null\n    },\n    \"current_state\": {\n      \"state\": \"cancelled\",\n      \"version\": 2\n    },\n    \"original_operation_replay\": {\n      \"status\": 200,\n      \"code\": \"confirmed\",\n      \"reservation_id\": 1,\n      \"replayed\": true\n    },\n    \"replacement\": {\n      \"status\": 201,\n      \"code\": \"confirmed\",\n      \"reservation_id\": 2,\n      \"replayed\": false\n    }\n  }\n}\n",
+    "stderr": "",
+    "timed_out": false
+  },
+  "demonstration": {
+    "schema": "esa-curriculum-demonstration/v1",
+    "mission": "G3",
+    "recorded_at_utc": "2026-11-16T22:21:41.370030+00:00",
+    "command": [
+      "/usr/local/bin/python3",
+      "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/companion/curriculum_demo.py",
+      "G3",
+      "--candidate",
+      "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g3-integration/workspace",
+      "--output",
+      "/tmp/esa-parent-check-q11hu0hg/parent-handoff"
+    ],
+    "origin": "EXECUTED_OFFLINE_TEACHING_FIXTURE",
+    "observed_human_pilot": false,
+    "observed_model_run": false,
+    "result": {
+      "old_public_record": {
+        "reservation_id": 1,
+        "trusted_member_id": "member-14",
+        "asset_id": "lathe-2",
+        "starts_at": "2025-05-16T13:00:00Z",
+        "ends_at": "2025-05-16T14:00:00Z",
+        "idempotency_key": "original"
+      },
+      "wrong_owner": {
+        "status": 403,
+        "code": "not-owner",
+        "reservation_id": 1,
+        "version": null
+      },
+      "cancellation": {
+        "status": 200,
+        "code": "cancelled",
+        "reservation_id": 1,
+        "version": 2
+      },
+      "stale_version": {
+        "status": 409,
+        "code": "stale-version",
+        "reservation_id": 1,
+        "version": null
+      },
+      "current_state": {
+        "state": "cancelled",
+        "version": 2
+      },
+      "original_operation_replay": {
+        "status": 200,
+        "code": "confirmed",
+        "reservation_id": 1,
+        "replayed": true
+      },
+      "replacement": {
+        "status": 201,
+        "code": "confirmed",
+        "reservation_id": 2,
+        "replayed": false
+      }
+    }
+  },
+  "demonstration_files_sha256": {
+    "DEMONSTRATION.json": "b0e1844bb7d25661166c84a1e25ffb1a0798802fee59d08612b23117eb7633f6",
+    "continuation.json": "9298378697846b42368d2a633326847ba0c679b9dd2e39ca8b1e3ddd3e804a5e",
+    "reservations.sqlite": "f401ee09ade425237858f7240a320df3cd059c714775de34772c6ed4b928507a"
+  },
+  "candidate_retained": true,
+  "integration_inputs_retained": true,
+  "recorded_at_utc": "2026-11-16T22:21:41.381895+00:00",
+  "command": [
+    "/usr/local/bin/python3",
+    "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/companion/start.py",
+    "continue",
+    "G3",
+    "--candidate",
+    "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g3-integration/workspace",
+    "--output",
+    "/tmp/esa-parent-check-q11hu0hg/parent-handoff.json"
+  ],
+  "verification_progress": {
+    "schema": "esa-verification-progress/v1",
+    "derivation": "CURRENT_RECEIPT_FIELDS_ONLY_NO_ADDITIONAL_EXECUTION",
+    "source_fields_sha256": "d05342cad0f6cdc508ebbbb3d586646d6fd4ddf2ec201c080c7d5555b5c604f3",
+    "work_order": "mission_G3",
+    "evidence_profile": "persistent_effect",
+    "profile_basis": "The named mission work order.",
+    "phase": "mission",
+    "stages": {
+      "startup": {
+        "status": "PASS",
+        "evidence": [
+          "schema",
+          "mission",
+          "candidate_path"
+        ],
+        "reason": "The intended runner accepted the entry identity and emitted this check receipt. This does not establish candidate import."
+      },
+      "integrity": {
+        "status": "PASS",
+        "evidence": [
+          "inputs_unchanged",
+          "candidate_sha256_before",
+          "candidate_sha256_after"
+        ],
+        "reason": "The recorded before/after comparison found inputs unchanged."
+      },
+      "contract": {
+        "status": "PASS",
+        "evidence": [
+          "groups.contract"
+        ],
+        "reason": "Status uses each selected group and any contract-specific supplemental probe; an import placeholder is not behavioral evidence. A candidate stack frame or known protected assertion supports reached behavior; a method count alone does not. Groups within this stage may retain multiple failures.",
+        "behavior_reached": true
+      },
+      "integration": {
+        "status": "PASS",
+        "evidence": [
+          "demonstration_process"
+        ],
+        "reason": "An actual continuation or process-boundary probe is retained; the result applies to this local consumer and candidate only."
+      },
+      "artifact": {
+        "status": "NOT_RUN",
+        "evidence": [],
+        "reason": "This receipt has no separate archive/extraction gate. Local demonstration hashes alone do not establish release fitness."
+      },
+      "authorization": {
+        "status": "NOT_RUN",
+        "evidence": [
+          "human_acceptance"
+        ],
+        "reason": "No owner acceptance or release authorization is recorded. Passing checks do not supply that decision."
+      }
+    },
+    "first_failed_stage": null,
+    "last_observed_stage": "integration",
+    "limits": "A stage label interprets the retained fields; it is not an independent attestation. NOT_APPLICABLE needs an explicit scope exclusion; absence alone remains NOT_RUN."
+  }
+}

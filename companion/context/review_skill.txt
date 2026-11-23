@@ -1,0 +1,9 @@
+# Review a routing proposal
+
+Read BR-001 and the candidate diff.
+Check whether each changed decision follows the approved rule.
+Run the core and extended suites; retain the result and candidate
+digest.
+Ask the user to decide unresolved amount-format requirements.
+Recommend accept, reject or ASK, citing an
+observation.

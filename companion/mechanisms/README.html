@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Eight practical missions, local checks and recorded agent tours for Engineering Software with Agentic AI."><title>Observe the mechanism · Engineering Software with Agentic AI</title><link rel="stylesheet" href="../../assets/companion.css"></head><body><a class="skip" href="#main">Skip to content</a><header class="sitehead"><div><a class="brand" href="../../index.html">Engineering Software with Agentic AI<span>Practical companion · version 5.6</span></a><nav aria-label="Main navigation"><a href="../../index.html">Start</a><a href="../../missions/index.html">Missions</a><a href="../agent_sessions/README.html">Agent guide</a><a href="../../traces/index.html">Recorded tours</a><a href="../series/READING_THE_SERIES.html">Four volumes</a></nav></div></header><main id="main"><article data-source-sha256="d2ceed214ef296d47b74703d4397db0cb4b852e1ff78621e2a06763112a37736"><p class="docmeta meta"><a href="README.md">Markdown source</a> · Companion 5.6 · 2026-11-22</p><h1 id="observe-the-mechanism">Observe the mechanism</h1>
+<p>The three observations answer different questions: which instruction bytes occur in a recorded client event, which attempted file operations the operating system denies, and which messages a small tool server actually exchanges. None of them is evidence that an autonomous agent followed every instruction.</p>
+<h2 id="run-the-portable-protocol-example">Run the portable protocol example</h2>
+<p>From the unpacked project root with Python 3.10 or later:</p>
+<pre class="sh"><code>python3 companion/mechanisms/mcp_client.py --output work/mcp</code></pre>
+<p>Choose a fresh output directory. The command starts the fixed-source server, records nine request/response pairs, and requires no model account or third-party package. It returns exit code 0 only when the checks pass. For the behavioral checks of the published protocol subset:</p>
+<pre class="sh"><code>python3 companion/mechanisms/verify_profile.py --output work/mcp-profile</code></pre>
+<p>The profile checks invoke a separate server process, including a valid <code>tools/call</code> as the first request. They cover discovery, source identity, returned bytes, rejection paths, required metadata, unsupported versions, and recovery after a rejected request. They do not certify all MCP features.</p>
+<h2 id="repeat-all-observations">Repeat all observations</h2>
+<p>In a trusted Linux test environment whose setup process can create a different worker identity:</p>
+<pre class="sh"><code>python3 companion/mechanisms/observations.py --output work/mechanisms</code></pre>
+<p>The access-control experiment requires a privileged <strong>setup process</strong> with CHOWN, SETUID, SETGID and SETPCAP capabilities. The setup only builds a temporary fixture and starts the shipped probe. It is not a recipe for running a proposed agent patch as root. The worker executes after all capability sets and supplementary groups are cleared, UID/GID are changed to 65534, and <code>no_new_privs</code> is enabled.</p>
+<p>Without those prerequisites, including on macOS and Windows, the program still records the portable observations but marks the access experiment and overall result <code>UNSUPPORTED</code>, exiting with code 2. It does not retry with the worker as owner. Read the retained Linux receipt in <code>evidence/mechanisms_full_20261102/</code> when that experiment cannot be repeated locally.</p>
+<h2 id="what-the-command-establishes">What the command establishes</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Evidence</th>
+<th>Operation</th>
+<th>Supported conclusion</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Recorded model run, 22 October 2026</td>
+<td>Re-read the retained OpenCode event and compare the historical <code>AGENTS.md</code> body</td>
+<td>A client-attached instruction block occurs in the <code>read</code> tool result for <code>routing.py</code>; the capture does not demonstrate startup injection or compliance.</td>
+</tr>
+<tr class="even">
+<td>Executed control</td>
+<td>Start a worker with a different UID/GID from the protected-file owner</td>
+<td>The worker can read the file and write in its own area, but cannot modify the protected file or its relevant directories by the attempted operations.</td>
+</tr>
+<tr class="odd">
+<td>Executed control</td>
+<td>Exchange JSON-RPC with the local policy server</td>
+<td>The bounded MCP profile completes the recorded reads and distinguishes protocol errors from tool execution errors. No model selects these calls.</td>
+</tr>
+</tbody>
+</table>
+<p>The old CP1.1 permission receipt remains historical. Its initial write and replacement denials did not test the owner’s ability to restore permission bits. The new fixture addresses that defect through identity separation, rather than treating <code>0444</code> alone as protection.</p>
+<h3 id="access-control-boundary">Access-control boundary</h3>
+<p>The protected file is owned by setup UID 0 with mode <code>0444</code>. Its <code>tests/</code> directory is <code>0555</code>; the enclosing fixture is <code>0755</code>, also owned by setup. The temporary fixture sits below <code>/tmp</code>; the receipt includes its ancestor metadata, including the sticky directory. The worker owns only its <code>0700</code> scratch area inside the fixture.</p>
+<p>In the same worker process, the probe first reads the actual protected file, then writes and reads a positive-control file. It attempts write, replacement, <code>chmod</code> on the file, <code>chmod</code> on the protected directory, <code>chmod</code> on the fixture parent, and renaming of the protected directory. Each event records the target, expected error class and actual errno. The command also checks owner/mode metadata and the protected file’s digest before and after.</p>
+<p>This is a file-integrity demonstration on a disposable fixture. It does not constrain network access, CPU use or every file on the host; it is not a general code sandbox. The worker is not trusted to set up its own boundary. A failure to establish the required identity or capability state is a failure of the experiment, not proof of denial.</p>
+<h2 id="protocol-pin-and-source-authority">Protocol pin and source authority</h2>
+<p>The main example now pins MCP <strong>2026-07-28</strong>. <code>PROTOCOL_PIN.json</code> records the decision; <code>SOURCES.json</code> identifies the official pages checked on 2 November 2026. The previous handshake-based captures retain their original <strong>2025-11-25</strong> pin.</p>
+<p>Every request carries protocol version and client capabilities in <code>params._meta</code>; this client also sends its name and version. <code>server/discover</code> advertises the supported revision. Results carry <code>resultType: complete</code>; discovery and tool-list results also carry cache freshness and scope. There is no <code>initialize</code> or <code>notifications/initialized</code> exchange.</p>
+<p><code>read_policy</code> accepts one domain argument, <code>source_id</code>, with the fixed values <code>BR-001/v1</code> and <code>legacy-note-001</code>. The schema, request and returned provenance use those same values. The outer JSON-RPC <code>id</code> correlates one request and response; it does not identify a policy document.</p>
+<p>An unlisted tool name produces a JSON-RPC error. An unknown <code>source_id</code>, including a path-shaped string, produces a completed tool result with <code>isError: true</code>: the call reached the tool’s input boundary, but the value is not permitted. The handler never joins the argument to a filesystem path. A newer returned note remains a <code>proposal</code> with owner <code>unknown</code>; successful transport does not make it authoritative. <code>readOnlyHint</code> remains descriptive, separate from process permissions.</p>
+<h2 id="evidence-files">Evidence files</h2>
+<p><code>RECEIPT.json</code> records the real execution time, environment, source digests, checks and limits. <code>agents.historical_event.json</code> and <code>agents.historical_output.txt</code> retain the exact event and output rechecked from the archive. This process does not invoke OpenCode again.</p>
+<p><code>access.command.json</code>, <code>access.stdout.txt</code>, <code>access.stderr.txt</code> and <code>access.operations.json</code> retain the setup and probe results. The fixture is removed after observation; its names in the log are historical run paths, not files the reader must recover.</p>
+<p>Under <code>mcp/</code>, <code>mcp.stdin.jsonl</code> and <code>mcp.stdout.jsonl</code> contain exact UTF-8 wire lines. <code>mcp.transcript.json</code> pairs parsed messages, and <code>mcp.stderr.txt</code> contains diagnostics. Stdout contains only JSON-RPC. <code>excerpts/</code> contains complete messages rendered as indented JSON and selected-field summaries clearly labelled as projections. Pretty-printing changes whitespace only; the corresponding JSON values remain identical.</p>
+<p>The local unsent request-assembly control from CP1.1 is no longer part of the current command or its instruction-delivery claim. The retained client event, the fresh OS fixture and the stdio exchange are separate observations. No new integrated model session or human reader result is implied.</p>
+</article></main><footer class="foot"><p>Enrico Papalini · Edition 5.6 · 2026-11-22</p><p><a href="../../NOTICE.html">Rights and notices</a> · <a href="../../NATIVE_STATUS.json">Native-client status</a> · <a href="../../MANIFEST.json">Package manifest</a> · <a href="https://github.com/popoloni/esa_ai">Companion repository</a></p></footer></body></html>

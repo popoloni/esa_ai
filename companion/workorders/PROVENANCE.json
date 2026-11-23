@@ -1,0 +1,124 @@
+{
+  "schema": "esa-edod-workorder-derivation/v1",
+  "registry_sha256": "8ebbde755717605a84d078b8e4b5e1f8b42fd4a63dcfef5ebeaa2d31b7ebd28d",
+  "schema_sha256": "3dd6644271fb5517027ecc9976ceca629d1d2c343dcd709e1cf6514a4cd9c760",
+  "records": [
+    {
+      "id": "mission_G1",
+      "json": "orders/mission_G1.json",
+      "sha256": "31285504130f0f0ea1d85a22550321d8b345429c20b0407d6c7d05430253a200",
+      "printed": "printed/mission_G1.md",
+      "printed_sha256": "6caad624334dfa95afc0c3ef937d48d9cd2d2f2e7efa3d5a58ac761932076fdd"
+    },
+    {
+      "id": "mission_G2",
+      "json": "orders/mission_G2.json",
+      "sha256": "22e04b477269c05cbd9ce9a1888af6a015468dfdef1f28d0c32eed2b400d3e8c",
+      "printed": "printed/mission_G2.md",
+      "printed_sha256": "442904699e86442e87f14e8d3cad3ae9e60c0a89415cf1af87be91a8a4425053"
+    },
+    {
+      "id": "mission_G3",
+      "json": "orders/mission_G3.json",
+      "sha256": "9e506eb4b19492c34773f529d43ce124a1c4f0781eed66f9f2f6ecda455b971d",
+      "printed": "printed/mission_G3.md",
+      "printed_sha256": "ea1a699b11b53779d707f881352a5cb1f7af93666c2386a73f2c2337b1ab67fc"
+    },
+    {
+      "id": "mission_G4",
+      "json": "orders/mission_G4.json",
+      "sha256": "44c9c6d63d7487c1353ed7ec55ccf0f83227e25919f212ba4de702199fe56dd7",
+      "printed": "printed/mission_G4.md",
+      "printed_sha256": "ccca52a9e24a5f7ec751e1384ef763f5182011d075a4e41ccd17e55004b8925a"
+    },
+    {
+      "id": "mission_B1",
+      "json": "orders/mission_B1.json",
+      "sha256": "adfa1b21e47b27dd0338d098f42b77523db9274cb863775f8b9003dd17dece17",
+      "printed": "printed/mission_B1.md",
+      "printed_sha256": "9cd3b929fad94031d44d7e26f5e8a7b0e0ebc180e3b8179cbd50017a14a24efd"
+    },
+    {
+      "id": "mission_B2",
+      "json": "orders/mission_B2.json",
+      "sha256": "8a5a3d024a0b3f27f61f54747b971560317eb95abce5ccabb01e882078da95ad",
+      "printed": "printed/mission_B2.md",
+      "printed_sha256": "c4eedcf40649a06b21f8bc8d081c327c57cef202a17f0faf05322023cf21cd22"
+    },
+    {
+      "id": "mission_B3",
+      "json": "orders/mission_B3.json",
+      "sha256": "b91fc7f081a8e4199c4e8040d3a0e417651a61c750e3743322e304f7c9822306",
+      "printed": "printed/mission_B3.md",
+      "printed_sha256": "2f7fb107dd348df8402f4f4d9bc4ad369c36ecf92747bf26dd3ec3c8411a9377"
+    },
+    {
+      "id": "mission_B4",
+      "json": "orders/mission_B4.json",
+      "sha256": "fc7b643db52acc2ed8801ef03b777f7bf6c0581845fa56280115274155e2ec62",
+      "printed": "printed/mission_B4.md",
+      "printed_sha256": "79cd9d5b23b486f924d9936c3acaecadda8ae358a528c8b7720bc667b6144c54"
+    },
+    {
+      "id": "chapter_01",
+      "json": "orders/chapter_01.json",
+      "sha256": "37847f2a051f366f5d18ca10d985382eff75ab2b763e65cc9351cacf3822d21b"
+    },
+    {
+      "id": "chapter_02",
+      "json": "orders/chapter_02.json",
+      "sha256": "f574c0be81dc1400a8d9d936012d6f826a129ee05e50a30743c345ff9c74d1f3"
+    },
+    {
+      "id": "chapter_03",
+      "json": "orders/chapter_03.json",
+      "sha256": "0d9e7345c6f8d5f4ede1457be0ce1a7b6f4ceff14e1de8d5dbf5fa3645d3bed9"
+    },
+    {
+      "id": "chapter_04",
+      "json": "orders/chapter_04.json",
+      "sha256": "e60f11c4f7f3a4728e22be48ec03202a7c759d3cbb9a2ca6c558ec3cc9c98143"
+    },
+    {
+      "id": "chapter_05",
+      "json": "orders/chapter_05.json",
+      "sha256": "c09d96ccfecfb7820c44ac895f280948e8b0413fcec13e5f3d2066cf3cc5bf23"
+    },
+    {
+      "id": "chapter_06",
+      "json": "orders/chapter_06.json",
+      "sha256": "526cc009ed23348a88eb19081e4f6dd76060def32c2bd3f623ef58b3b19d3169"
+    },
+    {
+      "id": "chapter_07",
+      "json": "orders/chapter_07.json",
+      "sha256": "333d275613a7648f0e36c5cf19e010d97e9946fe15118443309ba875061f8a05"
+    },
+    {
+      "id": "chapter_08",
+      "json": "orders/chapter_08.json",
+      "sha256": "77a5e96f59eae7d4d62a3e51d2c5c4c667d46e93c653668254f80fc66ce2dd90"
+    },
+    {
+      "id": "chapter_09",
+      "json": "orders/chapter_09.json",
+      "sha256": "6214c7d454b69e0059e7c29d69e81884e7e407fec69b689dcb6a2c5a45b6f3e4"
+    },
+    {
+      "id": "chapter_10",
+      "json": "orders/chapter_10.json",
+      "sha256": "2afe7b9a1bb76e1c48c290cb2be9d606dea951b642dbd181c05461286ae799b0"
+    },
+    {
+      "id": "chapter_11",
+      "json": "orders/chapter_11.json",
+      "sha256": "f3f6bd5e91797e6464c77b24781206997d1d24bafef474063dd82b15d9883add"
+    },
+    {
+      "id": "chapter_12",
+      "json": "orders/chapter_12.json",
+      "sha256": "732c49b1682488cf15729e570684aa0a93efed7c7c2df0f2f4be625c52b3d30d"
+    }
+  ],
+  "claim": "Authored task specifications; no execution or approval is inferred."
+}

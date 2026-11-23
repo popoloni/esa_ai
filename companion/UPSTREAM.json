@@ -1,0 +1,87 @@
+{
+  "schema": "esa-prototype-upstream/v1",
+  "baseline": "ESA_d16_4_Final_Current_and_Packt_EN_IT_20261101.zip",
+  "base_commit": "13a1182fc64c2a2c3b3677852b9dfdd95d4be908",
+  "files": [
+    {
+      "path": "upstream/base_13a1182/greenfield_studio/starter/booking.py",
+      "baseline_path": "companion_materials/base_13a1182/greenfield_studio/starter/booking.py",
+      "sha256": "9ba67c0c733e21d55abe7153c74ce9b2fd02a1fc69c7c0869d64957227d30a5d"
+    },
+    {
+      "path": "upstream/base_13a1182/greenfield_studio/reference/booking.py",
+      "baseline_path": "companion_materials/base_13a1182/greenfield_studio/reference/booking.py",
+      "sha256": "fc07bf6bda8c58408c4093fe76202a4a4dad0dc8273771c5c547a85d31bb96a9"
+    },
+    {
+      "path": "upstream/base_13a1182/greenfield_studio/tests/test_booking.py",
+      "baseline_path": "companion_materials/base_13a1182/greenfield_studio/tests/test_booking.py",
+      "sha256": "3fede5b6fff032747fe1017836b915d375b7bef01417e6bbf246506e413b4e89"
+    },
+    {
+      "path": "upstream/base_13a1182/greenfield_studio/docs/contract.md",
+      "baseline_path": "companion_materials/base_13a1182/greenfield_studio/docs/contract.md",
+      "sha256": "9c6c95077f305744728b9929f51ea36d8a534ab67cd2e7ebe8112ad35eb7ebba"
+    },
+    {
+      "path": "upstream/base_13a1182/greenfield_studio/docs/decisions/0001-storage.md",
+      "baseline_path": "companion_materials/base_13a1182/greenfield_studio/docs/decisions/0001-storage.md",
+      "sha256": "9ca31a97a4cdee9e4bf37e2931481387cc7eb4483bc45cce8ef54a432170745f"
+    },
+    {
+      "path": "upstream/base_13a1182/greenfield_studio/tools/scaffold.py",
+      "baseline_path": "companion_materials/base_13a1182/greenfield_studio/tools/scaffold.py",
+      "sha256": "60f0a7fd815a8d5fe27f118d4fc152f42029c7d501637f3b7b4fd9f4d681c35b"
+    },
+    {
+      "path": "upstream/base_13a1182/greenfield_studio/tools/check_reference.py",
+      "baseline_path": "companion_materials/base_13a1182/greenfield_studio/tools/check_reference.py",
+      "sha256": "f67b29c5912964646b760e6f752936031553deaaebc9e4a20abbb1e5f462952b"
+    },
+    {
+      "path": "upstream/base_13a1182/reader_side/routing/unsafe_routing_fixture.py",
+      "baseline_path": "companion_materials/base_13a1182/reader_side/routing/unsafe_routing_fixture.py",
+      "sha256": "39c5afc8888b748c8e96147f1bc143839dedfe73963bf5675f3e8ebf4978457a"
+    },
+    {
+      "path": "upstream/base_13a1182/reader_side/reference_solution/routing.py",
+      "baseline_path": "companion_materials/base_13a1182/reader_side/reference_solution/routing.py",
+      "sha256": "14d186a327a418dddb405144bfefb5810ed27e626b981424c9ad3b66742e8b32"
+    },
+    {
+      "path": "upstream/base_13a1182/reader_side/acceptance/test_routing.py",
+      "baseline_path": "companion_materials/base_13a1182/reader_side/acceptance/test_routing.py",
+      "sha256": "6e5aa5706dd989bdbbeec9374a84d13c41cf6f36e23a5e5d2762a3b16e551c9b"
+    },
+    {
+      "path": "upstream/base_13a1182/reader_side/intent/INT-001.md",
+      "baseline_path": "companion_materials/base_13a1182/reader_side/intent/INT-001.md",
+      "sha256": "209ee2f218448d83178bd02fd5947cf68b021657a72b38e682e4a895fa102947"
+    },
+    {
+      "path": "upstream/base_13a1182/reader_side/discovery/sources/SRC-POL-001.json",
+      "baseline_path": "companion_materials/base_13a1182/reader_side/discovery/sources/SRC-POL-001.json",
+      "sha256": "1de2d20f2fe72c4a2ae698093078deb2a05b5d7fd85eec819438cabb7928aacb"
+    },
+    {
+      "path": "upstream/base_13a1182/reader_side/discovery/sources/SRC-WIKI-OLD.json",
+      "baseline_path": "companion_materials/base_13a1182/reader_side/discovery/sources/SRC-WIKI-OLD.json",
+      "sha256": "85294ab0c9627da940dbce25820f5caed54ceacde4b49a6f4ad5ea5417cdfc93"
+    },
+    {
+      "path": "upstream/base_13a1182/LICENSE",
+      "baseline_path": "companion_materials/base_13a1182/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "path": "upstream/workbook_d16_4/tools/check_candidate.py",
+      "baseline_path": "companion_materials/workbook_d16_4/tools/check_candidate.py",
+      "sha256": "8551212967ab39373f6ac5d502b15679aec0c2aa3016d19cc5efd305ef3697cc"
+    },
+    {
+      "path": "upstream/workbook_d16_4/data/GF08/increments.json",
+      "baseline_path": "companion_materials/workbook_d16_4/data/GF08/increments.json",
+      "sha256": "38e9c4073d13b05d0356de4b2c48efa9958d64ebd886fc7623233d14942bf2ef"
+    }
+  ]
+}

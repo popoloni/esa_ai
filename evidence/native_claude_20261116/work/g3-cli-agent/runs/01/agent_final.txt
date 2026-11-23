@@ -1,0 +1,20 @@
+I implemented the CLI, and the three `test_integration_b.py` tests pass (`python -m unittest tests.test_integration_b`). That test file patches `build_report` with a fake provider. It never touches the real report module or `booking.py`, so it says nothing about the combined behaviour.
+
+**Changed files**
+- `reservation_cli.py` is the implementation.
+- `CONTRIBUTION_B.md` is new. It holds the acceptance example I wrote before editing, the design, and the integration assumptions.
+- `INTEGRATION_ROLE.json` was already untracked when I started, and I did not touch it.
+- I removed the `__pycache__` directories my test run created. I did not commit.
+
+**What it does**
+- **Arguments:** `main(argv=None)` takes `inspect --database PATH --reservation-id N`, where N must be a positive integer.
+- **Report call:** it calls `reservation_report.build_report(path, id)` through the module attribute and prints one JSON object. It writes nothing else to stdout.
+- **Exit codes:** 0 for found and 3 for absent. Bad or missing arguments, including 0, -1 and abc, exit 2 with empty stdout.
+- **Storage errors:** `sqlite3.Error` and `OSError` print one line to stderr and exit 2. Other exceptions propagate.
+- **Entry point:** importing the module runs nothing, and `__main__` exits with `main`'s status.
+- **Unchanged:** it does no SQL, storage initialisation, report logic or embedded data. `booking.py`, the A stub, the docs and the tests are untouched.
+
+**Assumptions for the operator**
+- A's `build_report` returns a JSON-serialisable dict with a boolean `found`.
+- A lets a missing database surface as `sqlite3.OperationalError`, which is what booking's read-only open raises. If A raises another type for missing storage, such as `ValueError`, the CLI shows a traceback instead of exiting 2.
+- Still unchecked, and left to the operator in the extracted package: the real CLI on a confirmed record, after cancellation, on an absent ID, and on missing storage.

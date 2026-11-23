@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Eight practical missions, local checks and recorded agent tours for Engineering Software with Agentic AI."><title>Native run of all eight missions, 16 November 2026 · Engineering Software with Agentic AI</title><link rel="stylesheet" href="../../assets/companion.css"></head><body><a class="skip" href="#main">Skip to content</a><header class="sitehead"><div><a class="brand" href="../../index.html">Engineering Software with Agentic AI<span>Practical companion · version 5.6</span></a><nav aria-label="Main navigation"><a href="../../index.html">Start</a><a href="../../missions/index.html">Missions</a><a href="README.html">Agent guide</a><a href="../../traces/index.html">Recorded tours</a><a href="../series/READING_THE_SERIES.html">Four volumes</a></nav></div></header><main id="main"><article data-source-sha256="60956adcd4991fbb0dbcbab81ae21a5889a751c26fbcb4ced63c0828e24bc832"><p class="docmeta meta"><a href="NATIVE_RUN_20261116.md">Markdown source</a> · Companion 5.6 · 2026-11-22</p><h1 id="native-run-of-all-eight-missions-16-november-2026">Native run of all eight missions, 16 November 2026</h1>
+<p>All eight missions and all twelve required stages of <code>NATIVE_SESSION_MATRIX.json</code> completed through <code>agent_session.py</code> with a native coding client, and every mission’s printed protected check and continuation passed on the candidate the agent produced. <code>native_ledger.py</code> reports <code>verified_native_missions: 8</code>.</p>
+<p>The operator was an AI. Claude (model <code>claude-opus-5-5</code>), working in the author’s review session, wrote the operator questions, launched each run, read the events, ran the protected checks and its own probes, and recorded every decision with <code>--operator-kind AI</code>. No human operated, steered or accepted a mission. This run closes the <em>native-route</em> gap; it does not close the <em>human-operator</em> gap.</p>
+<h2 id="setup">Setup</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Item</th>
+<th style="text-align: left;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Client</td>
+<td style="text-align: left;">Claude Code 2.1.325, <code>--client claude</code> (new in edition 5.1)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Worker model</td>
+<td style="text-align: left;"><code>claude-sonnet-5-5</code>, requested and observed in every <code>init</code> event and assistant <code>message.model</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Launch profile</td>
+<td style="text-align: left;">Six built-in tools; Bash limited to listed prefixes; no MCP servers, skills, browser, user settings or session persistence; <code>--max-budget-usd 5</code> per launch</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Operator</td>
+<td style="text-align: left;">AI (Claude, <code>claude-opus-5-5</code>); every decision file says so</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Window</td>
+<td style="text-align: left;">22:11–22:28 UTC (23:11–23:28 Europe/Rome)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Reported client cost</td>
+<td style="text-align: left;">2.01 USD for the twelve matrix stages; 2.18 USD for all fifteen launches</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Codex CLI</td>
+<td style="text-align: left;">Not installed in this environment; that route remains unverified</td>
+</tr>
+</tbody>
+</table>
+<h2 id="stages">Stages</h2>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Stage</th>
+<th style="text-align: left;">Launches</th>
+<th style="text-align: right;">Time</th>
+<th style="text-align: right;">Cost (USD)</th>
+<th style="text-align: right;">Denied operations</th>
+<th style="text-align: left;">Operator decision</th>
+<th style="text-align: left;">Final gate</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">G1 question</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">25 s</td>
+<td style="text-align: right;">0.067</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">stop (asked the right question)</td>
+<td style="text-align: left;">owner response released</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">G1 implementation</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">45 s</td>
+<td style="text-align: right;">0.160</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">accept</td>
+<td style="text-align: left;">slice 4/4; handoff ready</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">G2</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">99 s</td>
+<td style="text-align: right;">0.287</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">accept</td>
+<td style="text-align: left;">17/17; handoff ready</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">G3</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">85 + 57 s</td>
+<td style="text-align: right;">0.437</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: left;">correct, then accept</td>
+<td style="text-align: left;">7/7; handoff ready</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">G3 report role</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">23 s</td>
+<td style="text-align: right;">0.081</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">accept</td>
+<td style="text-align: left;">integration 9/9 on the extracted package</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">G3 CLI role</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">23 s</td>
+<td style="text-align: right;">0.072</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">accept</td>
+<td style="text-align: left;">integration 9/9 on the extracted package</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">G4</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">48 s</td>
+<td style="text-align: right;">0.153</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">accept</td>
+<td style="text-align: left;">11/11; handoff ready</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B1 v1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">34 s</td>
+<td style="text-align: right;">0.116</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">accept</td>
+<td style="text-align: left;">12/12; context handoff ready</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">B1 v2</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">39 s</td>
+<td style="text-align: right;">0.123</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">accept</td>
+<td style="text-align: left;">18/18; context handoff ready</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B2</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">45 s</td>
+<td style="text-align: right;">0.133</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">accept</td>
+<td style="text-align: left;">12/12; handoff ready</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">B3</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">56 s</td>
+<td style="text-align: right;">0.191</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">accept</td>
+<td style="text-align: left;">10/10; handoff ready</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B4</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">53 s</td>
+<td style="text-align: right;">0.192</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">accept</td>
+<td style="text-align: left;">7/7; handoff ready</td>
+</tr>
+</tbody>
+</table>
+<p>Two further G4 sessions are retained outside the matrix: one stopped by an account usage limit before any model work (<code>CLIENT_EXIT_NONZERO</code>, cost 0), and one in which the worker stopped and asked (below).</p>
+<h2 id="what-the-operator-had-to-decide">What the operator had to decide</h2>
+<p><strong>G1, question stage.</strong> The worker stopped without implementing and asked what <code>get_reservation</code> returns for an absent identifier, the same gap the operator had written down. Only then was the supplied owner response released.</p>
+<p><strong>G2, the worker refused its own predecessor.</strong> The native G1 stores <code>g1_reservation(id, …)</code>, which no G2 decision authorizes. The worker migrated the three authorized representations and refused its own lineage’s table with “owner mapping required”, leaving the bytes unchanged. That is the contracted behaviour. The checks do not exercise it, because the continuation migrates the reference representation; the operator probed it separately.</p>
+<p><strong>G3, an operator error.</strong> The first G3 run blocked: every protected method failed in <code>setUp</code> because the test fixture builds the reference G2 layout, which the candidate refused. Part V says the AP-G3 task required <em>both</em> the retained G2 schema and the supplied fixture; the operator’s task had omitted that. A bounded follow-up with the printed AP-G3 wording passed. The failed receipts are retained.</p>
+<p><strong>G3 integration, a checker defect.</strong> Both role checks passed, but the first combination blocked: <code>verify_transport.py</code> required <code>cancel()</code> to equal the reference dictionary <code>{status, code, version}</code> exactly, and the native candidate also returns <code>reservation_id</code>. Neither RES-002/v1 nor INTEGRATION-G3/v1 fixes the key set, and the protected G3 tests read only those three fields. The checker was narrowed to the contracted fields; the resumed combination passed nine of nine cases on the extracted package. The blocked receipt is retained.</p>
+<p><strong>G4, ASK and a contract extension.</strong> OPS-G4/v2 recognised only the reference and the AP-recorded schema-3 tables and said it “does not certify an arbitrary schema3 database”. The worker implemented <code>diagnose</code> and <code>cost_summary</code>, then stopped because the native G3 table matches neither (8 of 11 methods). Following the precedent of G2-OD-02 and OPS-G4/v2, both authored by the AI recording operator under the author’s instruction, the operator authored <strong>OPS-G4/v3</strong>, adding the native signature. G4 was re-advanced from the same accepted G3 integration with the worker’s two files carried over unchanged (hashes in <code>work/notes/g4-carry-02.txt</code>), and a fresh session passed.</p>
+<h2 id="instruction-versus-enforcement">Instruction versus enforcement</h2>
+<p>The client denied 25 operations across the fifteen launches, all reported in the final <code>permission_denials</code> field: compound commands, environment-variable prefixes, heredoc writes, and one <code>Write</code> to the package root outside the candidate. Each time the worker found an allowed route and said so. Three observations matter for Chapter 4:</p>
+<ul>
+<li>Claude Code gives each session a scratchpad directory outside the candidate and permits writes there. Several workers wrote probe scripts in it, contrary to the literal task wording. The candidate snapshot does not cover that directory.</li>
+<li>In <code>acceptEdits</code> mode the client also approved <code>rm -rf __pycache__</code> inside the CLI worktree without a denial.</li>
+<li>Workers ran read-only <code>git status</code> in parent directories and reported the operator’s own uncommitted adapter edits in this package.</li>
+</ul>
+<h2 id="open-owner-questions">Open owner questions</h2>
+<ol type="1">
+<li>G2: may records written by the native G1 representation <code>g1_reservation</code> be mapped column for column, like G2-OD-02? Nothing was invented; migration refuses them.</li>
+<li>B3: does “retains the legacy table unchanged” cover only rows, or also the triggers the supplied migration adds?</li>
+<li>OPS-G4/v3 is an AI-authored teaching-case extension and needs the author’s review. It still cannot certify any other learner schema; a general mapping step would remove the problem for every lineage.</li>
+</ol>
+<h2 id="changes-in-companion-5.1">Changes in companion 5.1</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">File</th>
+<th style="text-align: left;">Change</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>companion/agent_session.py</code></td>
+<td style="text-align: left;"><code>--client claude</code>, Claude stream-json observations, spend ceiling, isolation profile</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>companion/agent_sessions/collect_native.py</code></td>
+<td style="text-align: left;">Accepts both runtime labels; records client, cost and denials</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>companion/agent_sessions/verify_native_capture.py</code></td>
+<td style="text-align: left;">28 new synthetic Claude controls (87 in all)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>companion/agent_sessions/native_ledger.py</code></td>
+<td style="text-align: left;">New: joins captures, decisions and receipts per mission</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>companion/integration_assets/verify_transport.py</code></td>
+<td style="text-align: left;">Checks the contracted cancellation fields, not the reference dictionary</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>companion/contracts/G4.md</code>, <code>checks/fixtures/g4_fixture.py</code>, <code>solutions/G4/operations.py</code></td>
+<td style="text-align: left;">OPS-G4/v3 with the native signature</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Work orders, curriculum manifest, <code>missions/G4.*</code></td>
+<td style="text-align: left;">Label OPS-G4/v3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>evidence/native_claude_20261116/</code></td>
+<td style="text-align: left;">The complete run: sessions, candidates, receipts, operator notes and probes</td>
+</tr>
+</tbody>
+</table>
+<p>A defect that predates 5.1 is unchanged: the replay command printed in <code>companion/integration_assets/README.md</code> needs <code>evidence/agent_process_v4/AP-INTEGRATION/packages/integration-001.zip</code>, which the public companion does not include. The guide now says so.</p>
+<h2 id="what-this-run-does-not-establish">What this run does not establish</h2>
+<ul>
+<li>Human operation, human acceptance, usability or learning: no person took part.</li>
+<li>The Codex CLI route: it was not available here.</li>
+<li>Stability: each stage ran once with one model; a different run can differ.</li>
+<li>Owner authority: every owner decision remains part of the fictional case.</li>
+</ul>
+<h2 id="check-it-yourself">Check it yourself</h2>
+<pre class="bash"><code>python3 -B companion/agent_sessions/collect_native.py \
+  --workspace-root evidence/native_claude_20261116 \
+  --output work/native-coverage.json
+python3 -B companion/agent_sessions/native_ledger.py \
+  --workspace-root evidence/native_claude_20261116 \
+  --output work/native-ledger.json</code></pre>
+<p>Both read retained files only and launch nothing.</p>
+</article></main><footer class="foot"><p>Enrico Papalini · Edition 5.6 · 2026-11-22</p><p><a href="../../NOTICE.html">Rights and notices</a> · <a href="../../NATIVE_STATUS.json">Native-client status</a> · <a href="../../MANIFEST.json">Package manifest</a> · <a href="https://github.com/popoloni/esa_ai">Companion repository</a></p></footer></body></html>

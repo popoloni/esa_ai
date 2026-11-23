@@ -1,0 +1,29 @@
+{
+  "at_utc": "2026-11-22T17:31:04.427554+00:00",
+  "operator": "Claude Code live test",
+  "operator_kind": "AI",
+  "decision": "accept",
+  "note": "G2 17/17 on the agent candidate; only booking.py and DOSSIER.md changed.\n",
+  "decision_binding": {
+    "candidate_hashes": {
+      "AGENTS.md": "494bf71b3ee5f7454d62a1de19f11b9ab5f1bce70a706c46bd232840118e99ab",
+      "DOSSIER.md": "9b1d6e92706062e5fa8a323baa26c9e34b1593bcc45c720538e95ae07c15a8b3",
+      "READER_ENTRY.json": "38d69192231fe918dd9a420247013280af72599df0287f0bf2a2c09c3b91e4a9",
+      "booking.py": "3acd48b844deab0ee87a0c7270782465ddfb533400a18ab214678ffc6a7433dd",
+      "docs/G2-OD-02.md": "6760602fa7acb3523365062dcb61885e3ac603233e1e3cd6dbd92b3a19876462",
+      "docs/contract.md": "76ffefaa7a20e1a3047b0885be0332cfddf86362e6514fa7cfad151106f68dcd",
+      "legacy_g1.py": "bb3ec4063f41eb10ad6a0850b9fa3d40da7badb4bcff19a38fdab3c80ea4efba",
+      "legacy_g1_json.py": "d5b98f73120fb70ccfe6c8366e19f64ac8b311d54684e872f2ca3c7d6813b191",
+      "legacy_g1_recorded.py": "cedfaf4d936232b94eb7220d0d0594e2e919b75eff6f5dcd8a8690582ff569ce",
+      "prior/booking.py": "a93c8fa26357c4c5bf4c4eb40fbd15427692d074d3ee101f2a0a6980cb79007c",
+      "prior/parent-entry.json": "5dce40590573482fa2b5e23dd2187eb817f2f9670bae13f8b76304ca71fdacee",
+      "prior/parent-handoff.json": "1613a459535e2987002bf2904e1dba2a0a24867e575d09fb7b30ff968970fdd6",
+      "tests/test_g2.py": "c804bb7328ba7f8846a03beaed296c4430e5de143e233c8ff9f3170bcc9d0c53"
+    },
+    "inventory_sha256": "87a0256e60b9064b196d0436fb13a518d38ba5be27eea54282cab60676525c04",
+    "latest_run": "runs/01",
+    "latest_result_sha256": "91a8013e842c1e4f97d2a30e52d85603b5cc2617f5f8ed831c382e995d4130d8",
+    "session_spec_sha256": "70ba1bbbcd4ae239470916652dfde6e1a13dd2edc3193923b336cd34c55ecc20"
+  },
+  "meaning": "Recorded operator statement; this tool does not certify its authority or correctness."
+}

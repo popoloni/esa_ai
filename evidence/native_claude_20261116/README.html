@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Eight practical missions, local checks and recorded agent tours for Engineering Software with Agentic AI."><title>Native Claude Code run, 16 November 2026 · Engineering Software with Agentic AI</title><link rel="stylesheet" href="../../assets/companion.css"></head><body><a class="skip" href="#main">Skip to content</a><header class="sitehead"><div><a class="brand" href="../../index.html">Engineering Software with Agentic AI<span>Practical companion · version 5.6</span></a><nav aria-label="Main navigation"><a href="../../index.html">Start</a><a href="../../missions/index.html">Missions</a><a href="../../companion/agent_sessions/README.html">Agent guide</a><a href="../../traces/index.html">Recorded tours</a><a href="../../companion/series/READING_THE_SERIES.html">Four volumes</a></nav></div></header><main id="main"><article data-source-sha256="16b321c4594fc38ce1c222f67fbcf2e5eea7b97ec5b36b03858c5fcb85bb8100"><p class="docmeta meta"><a href="README.md">Markdown source</a> · Companion 5.6 · 2026-11-22</p><h1 id="native-claude-code-run-16-november-2026">Native Claude Code run, 16 November 2026</h1>
+<p>This folder is the complete <code>work/</code> tree of the run described in <a href="../../companion/agent_sessions/NATIVE_RUN_20261116.html">NATIVE_RUN_20261116.md</a>, copied after the last decision. Paths inside keep the <code>work/...</code> layout the printed commands use, so the collector and the ledger read it directly.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Path</th>
+<th style="text-align: left;">Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>work/&lt;mission&gt;/</code></td>
+<td style="text-align: left;">The candidate each mission produced, as checked</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>work/&lt;session&gt;/</code></td>
+<td style="text-align: left;"><code>SESSION.json</code>, <code>task.txt</code>, <code>runs/NN/</code> (native events, stderr, final message, before/after snapshots, <code>INVOCATION.json</code>, <code>RESULT.json</code>) and <code>decisions/</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>work/evidence/</code></td>
+<td style="text-align: left;">Every printed check, review and continuation receipt, the operator’s probes in <code>operator/</code>, <code>NATIVE_RUN_LEDGER.json</code> and <code>NATIVE_COVERAGE.json</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>work/notes/</code></td>
+<td style="text-align: left;">The operator’s decision notes, follow-up task text and the G4 carry-over hashes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>work/g3-integration/</code></td>
+<td style="text-align: left;">Integration manifest, both combine receipts, operator command records, the extracted package, and the commit history as <code>integration-history.bundle</code> and <code>integration-history.log</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>work/g4-ops-v2/</code>, <code>work/g4-agent-ask-01/</code>, <code>work/g4-agent-usage-limit-01/</code></td>
+<td style="text-align: left;">Retained G4 candidate and sessions from before OPS-G4/v3 and from the usage-limit stop</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>work/client-inspection-claude/</code></td>
+<td style="text-align: left;">Local version and flag inspection of the client</td>
+</tr>
+</tbody>
+</table>
+<p><code>.git</code> directories were left out, as in <code>evidence/agent_process_v4/</code>. Inspect the integration commits with <code>git clone work/g3-integration/integration-history.bundle</code>. Absolute paths inside the records point to the operator’s original workspace.</p>
+<pre class="bash"><code>python3 -B companion/agent_sessions/native_ledger.py \
+  --workspace-root evidence/native_claude_20261116 \
+  --output work/native-ledger.json</code></pre>
+<p>The operator of every session was an AI. Nothing here shows a human operating, accepting or learning from a mission.</p>
+</article></main><footer class="foot"><p>Enrico Papalini · Edition 5.6 · 2026-11-22</p><p><a href="../../NOTICE.html">Rights and notices</a> · <a href="../../NATIVE_STATUS.json">Native-client status</a> · <a href="../../MANIFEST.json">Package manifest</a> · <a href="https://github.com/popoloni/esa_ai">Companion repository</a></p></footer></body></html>

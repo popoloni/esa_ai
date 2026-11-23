@@ -1,0 +1,101 @@
+{
+  "schema": "esa-agent-session/v1",
+  "created_at_utc": "2026-11-22T17:38:02.926295+00:00",
+  "mission": "B4",
+  "stage": "implement",
+  "candidate": "/home/claude/work/live22/agentic-ai-5.2/work/b4",
+  "entry": {
+    "schema": "esa-full-mission/v1",
+    "release": "Engineering-Software-with-Agentic-AI-Review-5.2-20261117",
+    "mission": "B4",
+    "mode": "LEARNER",
+    "contract": "OPS-B4/v2",
+    "module": "incident.py",
+    "lineage": {
+      "mission": "B3",
+      "source_sha256": "8e87f6bd508a9372b40be2c004ef22b6c912830765fadac55b9896018d4799dc",
+      "source_path": "/home/claude/work/live22/agentic-ai-5.2/work/b3/ledger.py",
+      "handoff_status": "SCOPED_HANDOFF_READY",
+      "stored_snapshot": "prior/ledger.py",
+      "copied_parent_demonstration": "prior/parent-check-artifacts"
+    },
+    "human_acceptance": "PENDING",
+    "dependency_sha256": {
+      "ledger.py": "8e87f6bd508a9372b40be2c004ef22b6c912830765fadac55b9896018d4799dc",
+      "routing.py": "e8fdab89acfa5d28041c74a5d2dcf9801fb0e85324dcc160013a56cf63f89cfd",
+      "operations.py": "f0162261026327358188be23ed4daa6f01134b3ee1817a087694551bbcbfa580"
+    },
+    "prior_sha256": {
+      "prior/ledger.py": "8e87f6bd508a9372b40be2c004ef22b6c912830765fadac55b9896018d4799dc",
+      "prior/parent-handoff.json": "e41ad32d6215705ef071928af9e316deec8c7156bcea2888f1b0c1891b9b5adc",
+      "prior/parent-entry.json": "0ad05047101af63a1715751040488c1a59662e806dfad4d6ef27c05294caea81",
+      "prior/parent-check-artifacts/DEMONSTRATION.json": "3922dbf150db1276292de8dc6cd98e1aa01390bbdd408e9a53c17f3e995168ea",
+      "prior/parent-check-artifacts/ledger.sqlite": "1039601147525da7d2fc0bd9890df5e057c20a6709078bae4cb1057eb39eefa5",
+      "prior/parent-check-artifacts/history.json": "6e81a9e4c781bf227979cb59c9fb8db39a92fe5087343bef07477d287990e194"
+    },
+    "recorded_at_utc": "2026-11-22T17:38:02.701360+00:00",
+    "command": [
+      "/usr/local/bin/python3",
+      "companion/start.py",
+      "advance",
+      "B4",
+      "--from-candidate",
+      "work/b3",
+      "--dest",
+      "work/b4"
+    ]
+  },
+  "integration_role": null,
+  "integration_manifest_sha256": null,
+  "task_contract": "OPS-B4/v2",
+  "api": null,
+  "editable_paths": [
+    "incident.py",
+    "DOSSIER.md"
+  ],
+  "before": {
+    "AGENTS.md": "a1634ba6823a492da6db687371031505fc4706a4c515eb0e72e362c18b10cd68",
+    "DOSSIER.md": "b677f8900462d9d446ec956ae06d0c785b398d33e24e77d7fdadcec1611f5b86",
+    "READER_ENTRY.json": "681d60d25f2cd280caf5b3739a9a7bfce75ed29f9681dfe7db64c1396bdd1449",
+    "docs/contract.md": "89c3ae88ae62e4fd292b5cfd3e14c219cf3d6d9c44d6aed50923beb517a7c429",
+    "docs/policy_catalog.json": "9c1b4078c49e118f1001d138484bd9b046ab595935e16b63ea160d619068c7ab",
+    "incident.py": "30102a2908abd3f1931f812fd7115cf86aa63817e4d225c3b09cb044276a7e2c",
+    "ledger.py": "8e87f6bd508a9372b40be2c004ef22b6c912830765fadac55b9896018d4799dc",
+    "operations.py": "f0162261026327358188be23ed4daa6f01134b3ee1817a087694551bbcbfa580",
+    "prior/ledger.py": "8e87f6bd508a9372b40be2c004ef22b6c912830765fadac55b9896018d4799dc",
+    "prior/parent-check-artifacts/DEMONSTRATION.json": "3922dbf150db1276292de8dc6cd98e1aa01390bbdd408e9a53c17f3e995168ea",
+    "prior/parent-check-artifacts/history.json": "6e81a9e4c781bf227979cb59c9fb8db39a92fe5087343bef07477d287990e194",
+    "prior/parent-check-artifacts/ledger.sqlite": "1039601147525da7d2fc0bd9890df5e057c20a6709078bae4cb1057eb39eefa5",
+    "prior/parent-entry.json": "0ad05047101af63a1715751040488c1a59662e806dfad4d6ef27c05294caea81",
+    "prior/parent-handoff.json": "e41ad32d6215705ef071928af9e316deec8c7156bcea2888f1b0c1891b9b5adc",
+    "routing.py": "e8fdab89acfa5d28041c74a5d2dcf9801fb0e85324dcc160013a56cf63f89cfd",
+    "tests/test_b4.py": "c59850930b5b56d0629cce27260ad2de1d1bc362d964f5d18589774c85b347fa"
+  },
+  "protected_sha256": {
+    "AGENTS.md": "a1634ba6823a492da6db687371031505fc4706a4c515eb0e72e362c18b10cd68",
+    "READER_ENTRY.json": "681d60d25f2cd280caf5b3739a9a7bfce75ed29f9681dfe7db64c1396bdd1449",
+    "docs/contract.md": "89c3ae88ae62e4fd292b5cfd3e14c219cf3d6d9c44d6aed50923beb517a7c429",
+    "docs/policy_catalog.json": "9c1b4078c49e118f1001d138484bd9b046ab595935e16b63ea160d619068c7ab",
+    "ledger.py": "8e87f6bd508a9372b40be2c004ef22b6c912830765fadac55b9896018d4799dc",
+    "operations.py": "f0162261026327358188be23ed4daa6f01134b3ee1817a087694551bbcbfa580",
+    "prior/ledger.py": "8e87f6bd508a9372b40be2c004ef22b6c912830765fadac55b9896018d4799dc",
+    "prior/parent-check-artifacts/DEMONSTRATION.json": "3922dbf150db1276292de8dc6cd98e1aa01390bbdd408e9a53c17f3e995168ea",
+    "prior/parent-check-artifacts/history.json": "6e81a9e4c781bf227979cb59c9fb8db39a92fe5087343bef07477d287990e194",
+    "prior/parent-check-artifacts/ledger.sqlite": "1039601147525da7d2fc0bd9890df5e057c20a6709078bae4cb1057eb39eefa5",
+    "prior/parent-entry.json": "0ad05047101af63a1715751040488c1a59662e806dfad4d6ef27c05294caea81",
+    "prior/parent-handoff.json": "e41ad32d6215705ef071928af9e316deec8c7156bcea2888f1b0c1891b9b5adc",
+    "routing.py": "e8fdab89acfa5d28041c74a5d2dcf9801fb0e85324dcc160013a56cf63f89cfd",
+    "tests/test_b4.py": "c59850930b5b56d0629cce27260ad2de1d1bc362d964f5d18589774c85b347fa"
+  },
+  "max_runs": 3,
+  "wall_seconds_per_run": 900,
+  "session_seconds_from_first_launch": 1800,
+  "session_clock_scope": "Wall time from first native launch across follow-ups; manual work before launch and later review remain operator recorded.",
+  "requested_tool_commands_per_run": 40,
+  "tool_limit_enforced_by_adapter": false,
+  "token_or_spend_limit": "Not enforced or measured by this adapter; configure the client/account before use.",
+  "runtime": "Real installed coding client selected at launch (Codex CLI or Claude Code); no model responses are simulated.",
+  "security_scope": "Host/client permissions plus post-run file integrity checks; adapter is not an OS sandbox.",
+  "human_acceptance": "PENDING",
+  "model_run": false
+}

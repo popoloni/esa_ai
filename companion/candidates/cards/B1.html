@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Eight practical missions, local checks and recorded agent tours for Engineering Software with Agentic AI."><title>B1 proposal cards · Engineering Software with Agentic AI</title><link rel="stylesheet" href="../../../assets/companion.css"></head><body><a class="skip" href="#main">Skip to content</a><header class="sitehead"><div><a class="brand" href="../../../index.html">Engineering Software with Agentic AI<span>Practical companion · version 5.6</span></a><nav aria-label="Main navigation"><a href="../../../index.html">Start</a><a href="../../../missions/index.html">Missions</a><a href="../../agent_sessions/README.html">Agent guide</a><a href="../../../traces/index.html">Recorded tours</a><a href="../../series/READING_THE_SERIES.html">Four volumes</a></nav></div></header><main id="main"><article data-source-sha256="16fce74a51c6cce157ee845a8f2206e1560b6427f3047f89cf9b9ceb243f47f2"><p class="docmeta meta"><a href="B1.md">Markdown source</a> · Companion 5.6 · 2026-11-22</p><h1>B1 proposal cards</h1>
+<h2 id="b1-p01">B1-P01</h2>
+<p>The routing decision stays in decimal arithmetic from conversion through comparison. The rejection path handles values outside the admitted numeric domain, while the existing result object and policy identity remain unchanged. The branch arrangement differs from the worked repair, so the review should trace representative invalid inputs and equality instead of relying on visual similarity.</p>
+<p><em>Artifact: assess: exact parsing, validity guard, routing and returned fields; the string-type guard precedes this region.</em></p>
+<pre class="python"><code>try:
+    amount = Decimal(amount_eur)
+except InvalidOperation:
+    amount = None
+if amount is None or not amount.is_finite() or amount.is_signed() \
+    or amount.is_zero():
+    route, reason = &quot;REJECTED&quot;, &quot;INVALID_AMOUNT&quot;
+elif amount &gt;= THRESHOLD_EUR:
+    route, reason = &quot;HUMAN_REVIEW&quot;, &quot;AT_OR_ABOVE_LIMIT&quot;
+else:
+    route, reason = &quot;STANDARD_QUEUE&quot;, &quot;BELOW_LIMIT&quot;
+return RoutingDecision(route, reason, POLICY_VERSION)</code></pre>
+<h2 id="b1-p02">B1-P02</h2>
+<p>The implementation uses a familiar numeric representation and checks finiteness explicitly before choosing a queue. Its result fields and ordinary boundary examples agree with the current interface. This keeps the parser and comparison compact. I would review the conversion boundary together with the admitted input language, especially where two different source strings can map to the same stored numeric value.</p>
+<p><em>Artifact: assess: numeric parsing and routing after the string-type guard.</em></p>
+<pre class="python"><code>try:
+    amount = float(amount_eur)
+except ValueError:
+    return RoutingDecision(&quot;REJECTED&quot;, &quot;INVALID_AMOUNT&quot;,
+        POLICY_VERSION)
+if not math.isfinite(amount) or amount &lt;= 0:
+    return RoutingDecision(&quot;REJECTED&quot;, &quot;INVALID_AMOUNT&quot;,
+        POLICY_VERSION)
+if amount &lt; 5000.0:
+    return RoutingDecision(&quot;STANDARD_QUEUE&quot;, &quot;BELOW_LIMIT&quot;,
+        POLICY_VERSION)
+return RoutingDecision(&quot;HUMAN_REVIEW&quot;, &quot;AT_OR_ABOVE_LIMIT&quot;,
+    POLICY_VERSION)</code></pre>
+<h2 id="b1-p03">B1-P03</h2>
+<p>Users see monetary amounts with two decimal places. This input proposal makes the displayed amount the basis for routing by applying half-up rounding before the threshold comparison. The bounded validation repair remains a separate change, while the proposed normalization would give forms and routing one shared amount representation. Additional fractional digits would be resolved once at the input boundary.</p>
+<p><em>Artifact: The separate input-policy artifact submitted with the unchanged exact assess implementation.</em></p>
+<pre class="python"><code>PROPOSED_INPUT_POLICY = {
+    &quot;positive_input_scale&quot;: 2,
+    &quot;rounding&quot;: &quot;ROUND_HALF_UP&quot;,
+    &quot;apply_before&quot;: &quot;routing_threshold_comparison&quot;,
+    &quot;example_input&quot;: &quot;4999.995&quot;,
+    &quot;example_routing_amount&quot;: &quot;5000.00&quot;,
+    &quot;implemented_in_assess&quot;: False,
+}</code></pre>
+</article></main><footer class="foot"><p>Enrico Papalini · Edition 5.6 · 2026-11-22</p><p><a href="../../../NOTICE.html">Rights and notices</a> · <a href="../../../NATIVE_STATUS.json">Native-client status</a> · <a href="../../../MANIFEST.json">Package manifest</a> · <a href="https://github.com/popoloni/esa_ai">Companion repository</a></p></footer></body></html>

@@ -1,0 +1,51 @@
+{
+  "task": "AP-G1",
+  "event": 10,
+  "argv": [
+    "python3",
+    "-c",
+    "from pathlib import Path\nPath(\"booking.py\").write_text(\"\\\"\\\"\\\"The completed G1/I01 durable reservation and public read interface.\\\"\\\"\\\"\\nfrom contextlib import closing\\nfrom dataclasses import dataclass\\nfrom pathlib import Path\\nimport sqlite3\\n\\n\\n@dataclass(frozen=True)\\nclass Outcome:\\n    status: int\\n    code: str\\n    reservation_id: int | None = None\\n    replayed: bool = False\\n\\n\\ndef init_db(path: str | Path) -> None:\\n    with closing(sqlite3.connect(path)) as connection:\\n        with connection:\\n            connection.execute(\\n                \\\"\\\"\\\"\\n                CREATE TABLE IF NOT EXISTS reservations (\\n                    reservation_id INTEGER PRIMARY KEY,\\n                    trusted_member_id TEXT NOT NULL,\\n                    asset_id TEXT NOT NULL,\\n                    starts_at TEXT NOT NULL,\\n                    ends_at TEXT NOT NULL,\\n                    idempotency_key TEXT NOT NULL\\n                )\\n                \\\"\\\"\\\"\\n            )\\n\\n\\ndef reserve(db_path: str | Path, *, trusted_member_id: str,\\n            asset_id: str, starts_at: str, ends_at: str,\\n            idempotency_key: str) -> Outcome:\\n    with closing(sqlite3.connect(db_path)) as connection:\\n        with connection:\\n            cursor = connection.execute(\\n                \\\"\\\"\\\"\\n                INSERT INTO reservations (\\n                    trusted_member_id, asset_id, starts_at, ends_at,\\n                    idempotency_key\\n                ) VALUES (?, ?, ?, ?, ?)\\n                \\\"\\\"\\\",\\n                (trusted_member_id, asset_id, starts_at, ends_at,\\n                 idempotency_key),\\n            )\\n            reservation_id = cursor.lastrowid\\n\\n    return Outcome(\\n        status=201,\\n        code=\\\"confirmed\\\",\\n        reservation_id=reservation_id,\\n        replayed=False,\\n    )\\n\\n\\ndef get_reservation(path: str | Path, reservation_id: int):\\n    uri = Path(path).resolve().as_uri() + \\\"?mode=ro\\\"\\n    with closing(sqlite3.connect(uri, uri=True)) as connection:\\n        connection.row_factory = sqlite3.Row\\n        row = connection.execute(\\n            \\\"\\\"\\\"\\n            SELECT reservation_id, trusted_member_id, asset_id, starts_at,\\n                   ends_at, idempotency_key\\n            FROM reservations\\n            WHERE reservation_id = ?\\n            \\\"\\\"\\\",\\n            (reservation_id,),\\n        ).fetchone()\\n\\n    return None if row is None else dict(row)\\n\", encoding=\"utf-8\")\nprint(\"Updated booking.py\")\n"
+  ],
+  "cwd": "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G1/workspace",
+  "started_at_utc": "2026-11-16T15:40:56.359961+00:00",
+  "elapsed_seconds": 0.039343,
+  "returncode": 0,
+  "timeout": false,
+  "before": {
+    "AGENTS.md": "78be262e9924077d0d92ab0abaffdf172d0e1b1bc0d83a5b28d0d75e47fd6cd6",
+    "DOSSIER.md": "7eb53791e5b5a587111b3cf4d75bbbdb2b63d47acd1c42ae84669aa463c74c69",
+    "QUESTIONS.md": "b7eb6551c58653a8953e35c846b01702a548136c0f6cfb20b720270d1152bd1e",
+    "READER_ENTRY.json": "839701804c16447342bd660c76cab06a1cfbfd85994880f43b09d94129a3a35d",
+    "booking.py": "19ea131d1fec1ea4c575cf30fe1c25c358bb880027193945f08baeb0e6308e69",
+    "docs/G1-I01.md": "07a417cd7e7eeaca0bc5827e67eb965d0c7ebb75f387146f80a37e172fb89a50",
+    "docs/G1-OD-01.md": "baf835ffff57a64023ce8f5233b9e3e3588a2f6017f46f68b168919eae4b38db",
+    "docs/contract.md": "9c6c95077f305744728b9929f51ea36d8a534ab67cd2e7ebe8112ad35eb7ebba",
+    "docs/decisions/0001-storage.md": "c1b8a31f24fb5fe34e929049e8ed3cc3d1910b6d4194a40d4d303e70582f6762",
+    "historical_tests/test_booking.py": "3fede5b6fff032747fe1017836b915d375b7bef01417e6bbf246506e413b4e89",
+    "tests/test_g1_full_api.py": "8c46c06e0b8677dc74c9fb840f4f1f4b5f2c190095317b24f58d1cde92c8c538",
+    "tests/test_g1_readonly.py": "cd2f92b5adac1b2cc1ef5e1c23ff9309bd26133c933ec429368c7463308f5e4f",
+    "tests/test_g1_slice.py": "6242a53920d075fb038a8efbaeead6390f8f0a0d5b69dba3da6c31783abda98b"
+  },
+  "after": {
+    "AGENTS.md": "78be262e9924077d0d92ab0abaffdf172d0e1b1bc0d83a5b28d0d75e47fd6cd6",
+    "DOSSIER.md": "7eb53791e5b5a587111b3cf4d75bbbdb2b63d47acd1c42ae84669aa463c74c69",
+    "QUESTIONS.md": "b7eb6551c58653a8953e35c846b01702a548136c0f6cfb20b720270d1152bd1e",
+    "READER_ENTRY.json": "839701804c16447342bd660c76cab06a1cfbfd85994880f43b09d94129a3a35d",
+    "booking.py": "cedfaf4d936232b94eb7220d0d0594e2e919b75eff6f5dcd8a8690582ff569ce",
+    "docs/G1-I01.md": "07a417cd7e7eeaca0bc5827e67eb965d0c7ebb75f387146f80a37e172fb89a50",
+    "docs/G1-OD-01.md": "baf835ffff57a64023ce8f5233b9e3e3588a2f6017f46f68b168919eae4b38db",
+    "docs/contract.md": "9c6c95077f305744728b9929f51ea36d8a534ab67cd2e7ebe8112ad35eb7ebba",
+    "docs/decisions/0001-storage.md": "c1b8a31f24fb5fe34e929049e8ed3cc3d1910b6d4194a40d4d303e70582f6762",
+    "historical_tests/test_booking.py": "3fede5b6fff032747fe1017836b915d375b7bef01417e6bbf246506e413b4e89",
+    "tests/test_g1_full_api.py": "8c46c06e0b8677dc74c9fb840f4f1f4b5f2c190095317b24f58d1cde92c8c538",
+    "tests/test_g1_readonly.py": "cd2f92b5adac1b2cc1ef5e1c23ff9309bd26133c933ec429368c7463308f5e4f",
+    "tests/test_g1_slice.py": "6242a53920d075fb038a8efbaeead6390f8f0a0d5b69dba3da6c31783abda98b"
+  },
+  "changed_files": [
+    "booking.py"
+  ],
+  "stdout_sha256": "e2ce5619b8f26c449aad7e7dd2940607bfe47cc26c0ed798e18cf5227206d642",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "recorder_sha256": "58781a554cf89bb7a5c5fbc673825901820002e6036095198a2c062aa3e0126f",
+  "scope": "Actual submitted subprocess and workspace snapshots. This recorder is not a complete native-client trace or an OS sandbox."
+}

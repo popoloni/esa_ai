@@ -1,0 +1,25 @@
+{
+  "recorded_at_utc": "2026-11-22T17:32:54.956714+00:00",
+  "operation": "cli_commit_identity",
+  "authority": {
+    "principal": "ESA AI integration reviewer / recording operator",
+    "kind": "AI reviewer and local recording operator",
+    "authorized_by": "Author instruction to implement ESA agent-process remediation",
+    "scope": "Scoped teaching integration, independent checks and provenance recording",
+    "human_operator": false,
+    "human_acceptance": "PENDING",
+    "production_authorization": false
+  },
+  "returncode": 0,
+  "stdout": "bf69a79f3f2c62228f8392eab52f7cf0669a1535\n",
+  "stderr": "",
+  "timed_out": false,
+  "argv": [
+    "git",
+    "rev-parse",
+    "HEAD"
+  ],
+  "cwd": "/home/claude/work/live22/agentic-ai-5.2/work/g3-integration/worktrees/cli",
+  "timeout_seconds": 45,
+  "elapsed_process_seconds": 0.0022179260000143586
+}

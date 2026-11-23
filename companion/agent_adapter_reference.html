@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Eight practical missions, local checks and recorded agent tours for Engineering Software with Agentic AI."><title>EDOD and current agent tools · Engineering Software with Agentic AI</title><link rel="stylesheet" href="../assets/companion.css"></head><body><a class="skip" href="#main">Skip to content</a><header class="sitehead"><div><a class="brand" href="../index.html">Engineering Software with Agentic AI<span>Practical companion · version 5.6</span></a><nav aria-label="Main navigation"><a href="../index.html">Start</a><a href="../missions/index.html">Missions</a><a href="agent_sessions/README.html">Agent guide</a><a href="../traces/index.html">Recorded tours</a><a href="series/READING_THE_SERIES.html">Four volumes</a></nav></div></header><main id="main"><article data-source-sha256="71ecd1b4c3baea6ff900f37f0b3e7fee5f6e7bc2e6c3af59499f86f224dacc1e"><p class="docmeta meta"><a href="agent_adapter_reference.md">Markdown source</a> · Companion 5.6 · 2026-11-22</p><h1 id="edod-and-current-agent-tools">EDOD and current agent tools</h1>
+<p>Documentation snapshot: <strong>3 November 2026</strong>. This is a mapping from an engineering obligation to a product mechanism. It records documentation checks, not successful execution of these clients. Use the installed client’s version and help output when recording a real run.</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Primitive</th>
+<th style="text-align: left;">EDOD role</th>
+<th style="text-align: left;">Observation to retain</th>
+<th style="text-align: left;">Boundary</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Codex or OpenCode <code>AGENTS.md</code>; Claude Code <code>CLAUDE.md</code></td>
+<td style="text-align: left;">Expect / Delegate: supply project instructions</td>
+<td style="text-align: left;">Effective instruction paths and content hashes; a contract-resolving probe</td>
+<td style="text-align: left;">Instructions do not make protected files unwritable. Discovery and precedence differ by client.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Skill</td>
+<td style="text-align: left;">Delegate: load a reusable procedure</td>
+<td style="text-align: left;">Skill identity, version and actual invocation</td>
+<td style="text-align: left;">Loading instructions does not prove that each step ran.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Lifecycle hook</td>
+<td style="text-align: left;">Observe / control a transition</td>
+<td style="text-align: left;">Matched event, hook command, exit status and failure handling</td>
+<td style="text-align: left;">A hook covers its configured event and tools. It is not a complete filesystem boundary.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Tool permission and OS sandbox</td>
+<td style="text-align: left;">Delegate: constrain capabilities</td>
+<td style="text-align: left;">Effective permissions and a denied-action probe under the worker identity</td>
+<td style="text-align: left;">A tool allow/deny rule and OS enforcement have different scopes. Neither defines correct business behavior.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Claude Code <code>/goal</code></td>
+<td style="text-align: left;">Repeat toward a stated completion condition</td>
+<td style="text-align: left;">Goal text, evaluator verdicts, turn count and independent check output</td>
+<td style="text-align: left;">The documented evaluator reads the conversation; it does not independently run commands or inspect files. It does not change the permission mode.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Claude Code <code>/loop</code></td>
+<td style="text-align: left;">Schedule another attempt</td>
+<td style="text-align: left;">Schedule, job identifier and observed invocation time</td>
+<td style="text-align: left;">A trigger says when to run. It supplies neither an acceptance oracle nor release authority.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Subagent</td>
+<td style="text-align: left;">Delegate / Observe: separate tasks and context</td>
+<td style="text-align: left;">Prompt, returned artifact, tools and independently checked result</td>
+<td style="text-align: left;">A separate context is not automatically a separate oracle or a security sandbox.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MCP</td>
+<td style="text-align: left;">Delegate / Observe: expose structured tools</td>
+<td style="text-align: left;">Server/tool identity, request, response and the governing resource version</td>
+<td style="text-align: left;">Protocol-valid data can still be stale, unauthorized for the proposed action, or semantically wrong.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="capture-a-real-adapter-observation">Capture a real adapter observation</h2>
+<p>Record the installed client and version before interpreting a command. Save the work order, effective configuration and protected-file identities; invoke the client in a disposable copy with an explicit budget. Preserve all returned output, changed files, check commands and exit statuses. Run the acceptance checks separately, then bind the review decision to that candidate. The five retained current episodes in this edition use the ChatGPT Work collaboration interface; they are not executions of the native clients listed here.</p>
+<p>The product syntax belongs here, away from the book’s stable decision rules. For example, Claude Code’s documented <code>/goal &lt;condition&gt;</code> sets a session goal; <code>/goal clear</code> removes it. <code>/loop &lt;interval&gt; &lt;prompt&gt;</code> requests recurring work. These are <strong>documentation examples, NOT_RUN in this edition</strong>. Do not put a production action into either command until the corresponding work order and authority are concrete.</p>
+<h2 id="primary-documentation">Primary documentation</h2>
+<ul>
+<li><a href="https://learn.chatgpt.com/docs/agent-configuration/agents-md">Codex / ChatGPT agent configuration: AGENTS.md</a>, reached from the official Codex guide.</li>
+<li><a href="https://opencode.ai/docs/rules/">OpenCode: rules</a>.</li>
+<li><a href="https://code.claude.com/docs/en/features-overview">Claude Code: extension mechanisms</a>.</li>
+<li><a href="https://code.claude.com/docs/en/permissions">Claude Code: permissions and sandboxing</a>.</li>
+<li><a href="https://code.claude.com/docs/en/goal">Claude Code: goals</a>.</li>
+<li><a href="https://code.claude.com/docs/en/scheduled-tasks">Claude Code: scheduled tasks</a>.</li>
+<li><a href="https://modelcontextprotocol.io/docs/2025-11-25/tutorials/security/security_best_practices">MCP: security considerations</a>.</li>
+</ul>
+<p>These links and their access date establish the documentation used. They are not claims that every feature is available in every account, provider or client version. A future adapter run must record its own capabilities.</p>
+</article></main><footer class="foot"><p>Enrico Papalini · Edition 5.6 · 2026-11-22</p><p><a href="../NOTICE.html">Rights and notices</a> · <a href="../NATIVE_STATUS.json">Native-client status</a> · <a href="../MANIFEST.json">Package manifest</a> · <a href="https://github.com/popoloni/esa_ai">Companion repository</a></p></footer></body></html>

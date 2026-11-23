@@ -1,0 +1,77 @@
+{
+  "schema": "esa-candidate-index/v3",
+  "origin": "CONSTRUCTED_TEACHING_VARIANTS",
+  "model_trace": false,
+  "usage": "Read the printed proposal cards or complete variants; record ACCEPT, REJECT or ASK, then run the mission batch review. Counts are not a clue. TRUTH.json and receipts contain solutions.",
+  "candidate_ids": {
+    "G1": [
+      "G1-P01",
+      "G1-P02",
+      "G1-P03"
+    ],
+    "B1": [
+      "B1-P01",
+      "B1-P02",
+      "B1-P03"
+    ],
+    "G2": [
+      "G2-P01",
+      "G2-P02",
+      "G2-P03"
+    ],
+    "G3": [
+      "G3-P01",
+      "G3-P02",
+      "G3-P03"
+    ],
+    "G4": [
+      "G4-P01",
+      "G4-P02",
+      "G4-P03"
+    ],
+    "B2": [
+      "B2-P01",
+      "B2-P02",
+      "B2-P03"
+    ],
+    "B3": [
+      "B3-P01",
+      "B3-P02",
+      "B3-P03"
+    ],
+    "B4": [
+      "B4-P01",
+      "B4-P02",
+      "B4-P03"
+    ]
+  },
+  "archived_candidate_ids": {
+    "G1": [
+      "g1-interpolated-sql",
+      "g1-no-commit",
+      "g1-swallowed-integrity"
+    ],
+    "B1": [
+      "b1-boundary-inclusive",
+      "b1-broad-catch",
+      "b1-nan-only",
+      "b1-reordered-guard",
+      "b1-scientific-notation"
+    ]
+  },
+  "recorded_candidate_ids": {
+    "B1": [
+      "B1-H01"
+    ]
+  },
+  "historical_candidate_ids": {
+    "B1": [
+      "B1-H01"
+    ]
+  },
+  "archived_path": "archived/",
+  "recorded_path": "historical/B1-H01/",
+  "compatibility_note": "historical_candidate_ids and the historical path retain archival identity; current prose calls the native run recorded.",
+  "current_release": "ESA-Complete-Review-2-20261103",
+  "prior_release_semantics": "The complete Review 1 archive retains prior candidate bytes and decisions; identical IDs in this revision identify revised authored items."
+}

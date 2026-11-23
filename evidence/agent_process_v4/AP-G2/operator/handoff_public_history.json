@@ -1,0 +1,18 @@
+{
+  "at_utc": "2026-11-16T15:50:08.748507+00:00",
+  "argv": [
+    "python3",
+    "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/companion/start.py",
+    "continue",
+    "G2",
+    "--candidate",
+    "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G2/workspace",
+    "--output",
+    "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G2/handoff_g2_public_history.json"
+  ],
+  "returncode": 0,
+  "stdout": "{\n  \"status\": \"SCOPED_HANDOFF_READY\",\n  \"mission\": \"G2\",\n  \"tests_run\": 17,\n  \"receipt\": \"/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G2/handoff_g2_public_history.json\"\n}\n",
+  "stderr": "",
+  "change": "Checker repaired to examine original column signature and retained rows without imposing reference archive name. Earlier failed receipt retained. Agent candidate unchanged.",
+  "observed_agent_error": false
+}

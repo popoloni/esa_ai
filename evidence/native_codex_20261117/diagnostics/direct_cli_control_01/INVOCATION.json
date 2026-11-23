@@ -1,0 +1,24 @@
+{
+  "at_utc": "2026-11-16T23:10:53.820812+00:00",
+  "argv": [
+    "/opt/codex/bin/codex",
+    "exec",
+    "--json",
+    "--sandbox",
+    "read-only",
+    "--skip-git-repo-check",
+    "--color",
+    "never",
+    "-C",
+    "/workspace/scratch/c02668b5f4f9/ESA_v5_2_Codex_Compatibility_20261117/book/validation/codex_compatibility_20261117/direct_cli_control_01/empty_workspace",
+    "-o",
+    "/workspace/scratch/c02668b5f4f9/ESA_v5_2_Codex_Compatibility_20261117/book/validation/codex_compatibility_20261117/direct_cli_control_01/agent_final.txt",
+    "-"
+  ],
+  "task_sha256": "6fa4d18bb24418ae19bab4e352bdd186406baea8744faf8707789b1b981d5e06",
+  "environment": "Existing environment and configuration inherited without overrides.",
+  "timeout_seconds": 60,
+  "purpose": "Single direct CLI control in an empty working directory; no companion task or candidate supplied.",
+  "native_client_launches_requested": 1,
+  "product_acceptance": "NOT_APPLICABLE"
+}

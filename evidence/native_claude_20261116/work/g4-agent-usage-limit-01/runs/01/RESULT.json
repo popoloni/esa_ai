@@ -1,0 +1,234 @@
+{
+  "at_utc": "2026-11-16T22:21:46.079068+00:00",
+  "client": "claude",
+  "exit_code": 1,
+  "timed_out": false,
+  "permission_denials": [],
+  "reported_cost_usd": [
+    0
+  ],
+  "elapsed_seconds": 1.173436,
+  "event_count": 7,
+  "malformed_native_event_lines": [],
+  "changed_files": [],
+  "scope_changes_requiring_review": [],
+  "before": {
+    "AGENTS.md": "3b93869be62f5fa832481275c8d37a9acb6b8b6fb6cf2841230ac0ab2e47e294",
+    "DOSSIER.md": "617be3697a2054a984fab77a0596315bde4ae1246138bcb9071e4cf9631e8c17",
+    "READER_ENTRY.json": "c649c0b9ff0c9e7b5e9dd59e9ca1a9931123e0b962100dfd95dcfa92a452995b",
+    "booking.py": "7b02037f25564beb431bd1deeaa70da7df845ebc71426b99b882a855193b27a6",
+    "docs/contract.md": "3917cc7ead53e670c4904ef7d9a9ade8572f026bdac0d34b2094b162d7cc1885",
+    "g4_fixture.py": "acfff09ae7b805745dcd8a83c769c86c0088704eac134eaf23ee8dd58e73566c",
+    "operations.py": "4675a173bfd4da1c62abcee573be6273ef196a1c759fc89ecf2b8156eb8ffcd8",
+    "prior/booking.py": "7b02037f25564beb431bd1deeaa70da7df845ebc71426b99b882a855193b27a6",
+    "prior/integration/booking.py": "7b02037f25564beb431bd1deeaa70da7df845ebc71426b99b882a855193b27a6",
+    "prior/integration/reservation_cli.py": "3d9d266cb8c8bf64aae77e096a5daaaf31e4fe7f476433ab8a8faaec135676a4",
+    "prior/integration/reservation_report.py": "33c881e7a0ef08f8e00d62a139f3706e80d8be0636e786693691c6b41093c7eb",
+    "prior/integration-acceptance.json": "810d5e2356434f27f69987b8fedad9a6a0151e98a3ef8a1883746e00d0e026c9",
+    "prior/parent-check-artifacts/DEMONSTRATION.json": "b0e1844bb7d25661166c84a1e25ffb1a0798802fee59d08612b23117eb7633f6",
+    "prior/parent-check-artifacts/continuation.json": "9298378697846b42368d2a633326847ba0c679b9dd2e39ca8b1e3ddd3e804a5e",
+    "prior/parent-check-artifacts/reservations.sqlite": "f401ee09ade425237858f7240a320df3cd059c714775de34772c6ed4b928507a",
+    "prior/parent-entry.json": "29589ad710fb889f51a440fd852198903bddc67e12d2c7b3fac5095c5f2a8f05",
+    "prior/parent-handoff.json": "9f6ad8a6e6c21a5282d2a173ca4789c166b0620a22367632f6320f0c05b25c4c",
+    "reference_g3.py": "ad89e1350b80d674b30f8fd97927107adb77e2df625805d7a0a49cb8837b5b17",
+    "reservation_cli.py": "3d9d266cb8c8bf64aae77e096a5daaaf31e4fe7f476433ab8a8faaec135676a4",
+    "reservation_report.py": "33c881e7a0ef08f8e00d62a139f3706e80d8be0636e786693691c6b41093c7eb",
+    "tests/test_g4.py": "b9e3af154e42a1af76ea323b8ad34025898c0ff4aa0d58207d7c837de697169a"
+  },
+  "after": {
+    "AGENTS.md": "3b93869be62f5fa832481275c8d37a9acb6b8b6fb6cf2841230ac0ab2e47e294",
+    "DOSSIER.md": "617be3697a2054a984fab77a0596315bde4ae1246138bcb9071e4cf9631e8c17",
+    "READER_ENTRY.json": "c649c0b9ff0c9e7b5e9dd59e9ca1a9931123e0b962100dfd95dcfa92a452995b",
+    "booking.py": "7b02037f25564beb431bd1deeaa70da7df845ebc71426b99b882a855193b27a6",
+    "docs/contract.md": "3917cc7ead53e670c4904ef7d9a9ade8572f026bdac0d34b2094b162d7cc1885",
+    "g4_fixture.py": "acfff09ae7b805745dcd8a83c769c86c0088704eac134eaf23ee8dd58e73566c",
+    "operations.py": "4675a173bfd4da1c62abcee573be6273ef196a1c759fc89ecf2b8156eb8ffcd8",
+    "prior/booking.py": "7b02037f25564beb431bd1deeaa70da7df845ebc71426b99b882a855193b27a6",
+    "prior/integration/booking.py": "7b02037f25564beb431bd1deeaa70da7df845ebc71426b99b882a855193b27a6",
+    "prior/integration/reservation_cli.py": "3d9d266cb8c8bf64aae77e096a5daaaf31e4fe7f476433ab8a8faaec135676a4",
+    "prior/integration/reservation_report.py": "33c881e7a0ef08f8e00d62a139f3706e80d8be0636e786693691c6b41093c7eb",
+    "prior/integration-acceptance.json": "810d5e2356434f27f69987b8fedad9a6a0151e98a3ef8a1883746e00d0e026c9",
+    "prior/parent-check-artifacts/DEMONSTRATION.json": "b0e1844bb7d25661166c84a1e25ffb1a0798802fee59d08612b23117eb7633f6",
+    "prior/parent-check-artifacts/continuation.json": "9298378697846b42368d2a633326847ba0c679b9dd2e39ca8b1e3ddd3e804a5e",
+    "prior/parent-check-artifacts/reservations.sqlite": "f401ee09ade425237858f7240a320df3cd059c714775de34772c6ed4b928507a",
+    "prior/parent-entry.json": "29589ad710fb889f51a440fd852198903bddc67e12d2c7b3fac5095c5f2a8f05",
+    "prior/parent-handoff.json": "9f6ad8a6e6c21a5282d2a173ca4789c166b0620a22367632f6320f0c05b25c4c",
+    "reference_g3.py": "ad89e1350b80d674b30f8fd97927107adb77e2df625805d7a0a49cb8837b5b17",
+    "reservation_cli.py": "3d9d266cb8c8bf64aae77e096a5daaaf31e4fe7f476433ab8a8faaec135676a4",
+    "reservation_report.py": "33c881e7a0ef08f8e00d62a139f3706e80d8be0636e786693691c6b41093c7eb",
+    "tests/test_g4.py": "b9e3af154e42a1af76ea323b8ad34025898c0ff4aa0d58207d7c837de697169a"
+  },
+  "thread_ids": [
+    "68bd7803-acda-4ee8-8afb-2f373ddb9342"
+  ],
+  "usage_events": [
+    {
+      "duration_api_ms": 0,
+      "stop_reason": "stop_sequence",
+      "session_id": "68bd7803-acda-4ee8-8afb-2f373ddb9342",
+      "total_cost_usd": 0,
+      "usage": {
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "input_tokens": 0,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 0,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "",
+        "iterations": [],
+        "speed": "standard",
+        "fallback_credit": null
+      },
+      "modelUsage": {},
+      "permission_denials": [],
+      "terminal_reason": "api_error",
+      "fast_mode_state": "off",
+      "fast_mode_disabled_reason": "sdk_opt_in_required",
+      "subagent_stats": {
+        "spawned": 0,
+        "requested": {
+          "background": 0,
+          "foreground": 0,
+          "unset": 0
+        },
+        "started_in_background": 0,
+        "max_depth": 0,
+        "spawned_by_subagents": 0,
+        "completed": 0,
+        "failed": 0,
+        "killed": {
+          "parent": 0,
+          "user": 0,
+          "system": 0
+        },
+        "refused": {
+          "depth_limit": 0,
+          "concurrency_limit": 0,
+          "budget": 0
+        },
+        "by_type": {}
+      },
+      "safety_stops": 0,
+      "is_error": true,
+      "num_turns": 1,
+      "subtype": "success",
+      "api_error_status": 429,
+      "api_error_type": "rate_limit_error",
+      "api_error": "usage_limit_reached",
+      "result": "You've hit your 5-hour limit \u00b7 resets 1:30am (Europe/Rome)",
+      "type": "result",
+      "duration_ms": 307,
+      "uuid": "626c8c1c-c726-42f8-996d-ea2b134fa6cf",
+      "process_turn_index": 0,
+      "queued_turn_count": 0,
+      "result_index": 0,
+      "model_usage_since_last_result": {},
+      "process_start_tuning": 0
+    }
+  ],
+  "native_observations": {
+    "completed_turn_lines": [],
+    "failed_turn_or_error_lines": [
+      7
+    ],
+    "agent_message_lines": [
+      6
+    ],
+    "tool_operation_lines": [],
+    "model_observations": [
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 3,
+        "field": "model"
+      },
+      {
+        "value": "<synthetic>",
+        "event_line": 6,
+        "field": "message.model"
+      }
+    ],
+    "usage_observations": [
+      {
+        "event_line": 6,
+        "field": "message.usage",
+        "value": {
+          "output_tokens_details": null,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": null,
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": null,
+          "iterations": null,
+          "speed": null,
+          "fallback_credit": null
+        }
+      },
+      {
+        "event_line": 7,
+        "field": "usage",
+        "value": {
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "input_tokens": 0,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 0,
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "",
+          "iterations": [],
+          "speed": "standard",
+          "fallback_credit": null
+        }
+      }
+    ],
+    "permission_denials": [],
+    "reported_cost_observations": [
+      {
+        "event_line": 7,
+        "field": "total_cost_usd",
+        "value": 0
+      }
+    ],
+    "thread_ids": [
+      "68bd7803-acda-4ee8-8afb-2f373ddb9342"
+    ]
+  },
+  "requested_model": "claude-sonnet-5-5",
+  "observed_model_ids": [
+    "<synthetic>",
+    "claude-sonnet-5-5"
+  ],
+  "model_identity_observed": true,
+  "native_turn_completed": false,
+  "status": "CLIENT_EXIT_NONZERO",
+  "acceptance": "NOT_ESTABLISHED",
+  "scope_note": "Native events retained as emitted; absence of usage is unknown, not zero."
+}

@@ -1,0 +1,28 @@
+{
+  "schema": "esa-protocol-pin-decision/v1",
+  "decision_date": "2026-11-02",
+  "action": "R23",
+  "decision": "MIGRATE",
+  "previous": "2025-11-25",
+  "selected": "2026-07-28",
+  "scope": "Bounded synchronous stdio teaching profile",
+  "reason": "Remove obsolete lifecycle from the main teaching example while preserving the old raw evidence. Make per-request metadata and the distinction between source identity and RPC correlation visible.",
+  "changes": [
+    "server/discover without initialize",
+    "required request metadata on every request",
+    "resultType and server identity on successful results",
+    "cache metadata on discovery and listing",
+    "source_id canonical values in schema, arguments and returned metadata",
+    "tool validation error distinct from unknown-tool protocol error"
+  ],
+  "compatibility": "Modern-only demonstration; no silent handshake fallback. The old pin remains documented in historical receipts.",
+  "validation": [
+    "evidence/mechanisms_full_20261102/RECEIPT.json",
+    "validation/full_mechanisms/protocol_profile/RESULTS.json"
+  ],
+  "limitations": [
+    "Not a general MCP SDK or production server.",
+    "No HTTP, OAuth, subscriptions, sampling, elicitation or real model session exercised."
+  ],
+  "sources": "companion/mechanisms/SOURCES.json"
+}

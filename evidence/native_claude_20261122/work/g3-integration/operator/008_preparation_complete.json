@@ -1,0 +1,16 @@
+{
+  "recorded_at_utc": "2026-11-22T17:32:06.514968+00:00",
+  "operation": "preparation_complete",
+  "authority": {
+    "principal": "ESA AI integration reviewer / recording operator",
+    "kind": "AI reviewer and local recording operator",
+    "authorized_by": "Author instruction to implement ESA agent-process remediation",
+    "scope": "Scoped teaching integration, independent checks and provenance recording",
+    "human_operator": false,
+    "human_acceptance": "PENDING",
+    "production_authorization": false
+  },
+  "manifest": "INTEGRATION.json",
+  "sha256": "5611f9b52eb1e348ae80d098ddf4dad15a8ef08e6a558a9f10e180d4e1a87029",
+  "parent_unchanged": true
+}

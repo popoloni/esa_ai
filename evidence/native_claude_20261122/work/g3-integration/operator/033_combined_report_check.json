@@ -1,0 +1,32 @@
+{
+  "recorded_at_utc": "2026-11-22T17:32:55.176734+00:00",
+  "operation": "combined_report_check",
+  "authority": {
+    "principal": "ESA AI integration reviewer / recording operator",
+    "kind": "AI reviewer and local recording operator",
+    "authorized_by": "Author instruction to implement ESA agent-process remediation",
+    "scope": "Scoped teaching integration, independent checks and provenance recording",
+    "human_operator": false,
+    "human_acceptance": "PENDING",
+    "production_authorization": false
+  },
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "test_absent_is_an_observation (test_integration_a.ReportContract.test_absent_is_an_observation) ... ok\ntest_history_and_current_state_remain_distinct (test_integration_a.ReportContract.test_history_and_current_state_remain_distinct) ... ok\ntest_missing_storage_is_not_created (test_integration_a.ReportContract.test_missing_storage_is_not_created) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.071s\n\nOK\n",
+  "timed_out": false,
+  "argv": [
+    "/usr/local/bin/python3",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_integration_a.py",
+    "-v"
+  ],
+  "cwd": "/home/claude/work/live22/agentic-ai-5.2/work/g3-integration/workspace",
+  "timeout_seconds": 45,
+  "elapsed_process_seconds": 0.14304648900002803
+}

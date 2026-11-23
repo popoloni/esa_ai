@@ -1,0 +1,137 @@
+{
+  "schema": "esa-full-mission-check/v1",
+  "mission": "G2",
+  "release": "Engineering-Software-with-Agentic-AI-Review-5.2-20261117",
+  "contract": "RES-001/v1 + G2-OD-01 + G2-OD-02",
+  "candidate_sha256_before": "a93c8fa26357c4c5bf4c4eb40fbd15427692d074d3ee101f2a0a6980cb79007c",
+  "protected_input_sha256": {
+    "docs/contract.md": "76ffefaa7a20e1a3047b0885be0332cfddf86362e6514fa7cfad151106f68dcd",
+    "tests/test_g2.py": "c804bb7328ba7f8846a03beaed296c4430e5de143e233c8ff9f3170bcc9d0c53",
+    "docs/G2-OD-02.md": "6760602fa7acb3523365062dcb61885e3ac603233e1e3cd6dbd92b3a19876462",
+    "legacy_g1.py": "bb3ec4063f41eb10ad6a0850b9fa3d40da7badb4bcff19a38fdab3c80ea4efba",
+    "legacy_g1_json.py": "d5b98f73120fb70ccfe6c8366e19f64ac8b311d54684e872f2ca3c7d6813b191",
+    "legacy_g1_recorded.py": "cedfaf4d936232b94eb7220d0d0594e2e919b75eff6f5dcd8a8690582ff569ce",
+    "prior/parent-handoff.json": "1613a459535e2987002bf2904e1dba2a0a24867e575d09fb7b30ff968970fdd6",
+    "prior/parent-entry.json": "5dce40590573482fa2b5e23dd2187eb817f2f9670bae13f8b76304ca71fdacee",
+    "prior/booking.py": "a93c8fa26357c4c5bf4c4eb40fbd15427692d074d3ee101f2a0a6980cb79007c"
+  },
+  "candidate_path": "/home/claude/work/live22/agentic-ai-5.2/work/g2",
+  "human_acceptance": "PENDING",
+  "model_run": false,
+  "scope": "Executable local teaching controls; no human reader performance or production authority.",
+  "groups": {
+    "contract": {
+      "command": [
+        "/usr/local/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_g2.py",
+        "-v"
+      ],
+      "elapsed_process_seconds": 0.16825119999998606,
+      "timeout_seconds": 30,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "test_invalid_retained_public_column_record_refuses_without_byte_change (test_g2.RecordedG1Migration.test_invalid_retained_public_column_record_refuses_without_byte_change) ... FAIL\ntest_retained_public_column_schema_preserves_read_replay_and_reinit (test_g2.RecordedG1Migration.test_retained_public_column_schema_preserves_read_replay_and_reinit) ... ERROR\ntest_adjacent_reservation_succeeds (test_g2.ReservationFullAPI.test_adjacent_reservation_succeeds) ... ok\ntest_changed_request_with_same_key_fails (test_g2.ReservationFullAPI.test_changed_request_with_same_key_fails) ... FAIL\ntest_different_assets_do_not_conflict (test_g2.ReservationFullAPI.test_different_assets_do_not_conflict) ... ok\ntest_duration_limit_and_timestamp_format (test_g2.ReservationFullAPI.test_duration_limit_and_timestamp_format) ... FAIL\ntest_first_reservation_confirms (test_g2.ReservationFullAPI.test_first_reservation_confirms) ... ok\ntest_invalid_zero_or_reverse_interval_has_no_effect (test_g2.ReservationFullAPI.test_invalid_zero_or_reverse_interval_has_no_effect) ... FAIL\ntest_other_member_same_key_is_independent_but_conflicts_on_slot (test_g2.ReservationFullAPI.test_other_member_same_key_is_independent_but_conflicts_on_slot) ... FAIL\ntest_overlap_fails_without_insert (test_g2.ReservationFullAPI.test_overlap_fails_without_insert) ... FAIL\ntest_same_request_key_replays_original (test_g2.ReservationFullAPI.test_same_request_key_replays_original) ... FAIL\ntest_two_writers_do_not_both_confirm_same_slot (test_g2.ReservationFullAPI.test_two_writers_do_not_both_confirm_same_slot) ... FAIL\ntest_both_supplied_g1_schemas_preserve_record_and_identity (test_g2.ReservationMigration.test_both_supplied_g1_schemas_preserve_record_and_identity) ... \n  test_both_supplied_g1_schemas_preserve_record_and_identity (test_g2.ReservationMigration.test_both_supplied_g1_schemas_preserve_record_and_identity) (schema='legacy_g1') ... ERROR\n  test_both_supplied_g1_schemas_preserve_record_and_identity (test_g2.ReservationMigration.test_both_supplied_g1_schemas_preserve_record_and_identity) (schema='legacy_g1_json') ... FAIL\ntest_duplicate_legacy_identity_rolls_back_migration (test_g2.ReservationMigration.test_duplicate_legacy_identity_rolls_back_migration) ... FAIL\ntest_invalid_or_overlapping_legacy_rows_require_owner_mapping (test_g2.ReservationMigration.test_invalid_or_overlapping_legacy_rows_require_owner_mapping) ... \n  test_invalid_or_overlapping_legacy_rows_require_owner_mapping (test_g2.ReservationMigration.test_invalid_or_overlapping_legacy_rows_require_owner_mapping) (change={'starts_at': 'not-a-timestamp'}) ... FAIL\n  test_invalid_or_overlapping_legacy_rows_require_owner_mapping (test_g2.ReservationMigration.test_invalid_or_overlapping_legacy_rows_require_owner_mapping) (change={'asset_id': ''}) ... FAIL\n  test_invalid_or_overlapping_legacy_rows_require_owner_mapping (test_g2.ReservationMigration.test_invalid_or_overlapping_legacy_rows_require_owner_mapping) (change={'idempotency_key': 'other-key'}) ... FAIL\ntest_read_of_missing_storage_does_not_create_file (test_g2.ReservationMigration.test_read_of_missing_storage_does_not_create_file) ... ok\ntest_unknown_or_dual_legacy_schema_is_not_guessed (test_g2.ReservationMigration.test_unknown_or_dual_legacy_schema_is_not_guessed) ... \n  test_unknown_or_dual_legacy_schema_is_not_guessed (test_g2.ReservationMigration.test_unknown_or_dual_legacy_schema_is_not_guessed) (dual=False) ... FAIL\n  test_unknown_or_dual_legacy_schema_is_not_guessed (test_g2.ReservationMigration.test_unknown_or_dual_legacy_schema_is_not_guessed) (dual=True) ... FAIL\n\n======================================================================\nERROR: test_retained_public_column_schema_preserves_read_replay_and_reinit (test_g2.RecordedG1Migration.test_retained_public_column_schema_preserves_read_replay_and_reinit)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g2/tests/test_g2.py\", line 175, in test_retained_public_column_schema_preserves_read_replay_and_reinit\n    self.assertEqual(booking.get_reservation(path, saved.reservation_id), expected)\n                     ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g2/booking.py\", line 55, in get_reservation\n    row = conn.execute(\n          ~~~~~~~~~~~~^\n        \"SELECT id, trusted_member_id, asset_id, starts_at, ends_at, \"\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        \"idempotency_key FROM reservations WHERE id = ?\",\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        (reservation_id,)).fetchone()\n        ^^^^^^^^^^^^^^^^^^\nsqlite3.OperationalError: no such column: id\n\n======================================================================\nERROR: test_both_supplied_g1_schemas_preserve_record_and_identity (test_g2.ReservationMigration.test_both_supplied_g1_schemas_preserve_record_and_identity) (schema='legacy_g1')\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g2/tests/test_g2.py\", line 109, in test_both_supplied_g1_schemas_preserve_record_and_identity\n    self.assertEqual(booking.get_reservation(path, original.reservation_id),\n                     ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g2/booking.py\", line 55, in get_reservation\n    row = conn.execute(\n          ~~~~~~~~~~~~^\n        \"SELECT id, trusted_member_id, asset_id, starts_at, ends_at, \"\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        \"idempotency_key FROM reservations WHERE id = ?\",\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        (reservation_id,)).fetchone()\n        ^^^^^^^^^^^^^^^^^^\nsqlite3.OperationalError: no such column: trusted_member_id\n\n======================================================================\nFAIL: test_invalid_retained_public_column_record_refuses_without_byte_change (test_g2.RecordedG1Migration.test_invalid_retained_public_column_record_refuses_without_byte_change)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g2/tests/test_g2.py\", line 201, in test_invalid_retained_public_column_record_refuses_without_byte_change\n    with self.assertRaises(ValueError):\n         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^\nAssertionError: ValueError not raised\n\n======================================================================\nFAIL: test_changed_request_with_same_key_fails (test_g2.ReservationFullAPI.test_changed_request_with_same_key_fails)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g2/tests/test_g2.py\", line 66, in test_changed_request_with_same_key_fails\n    self.assertEqual((change.status, change.code), (409, \"idempotency-key-reused\"))\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Tuples differ: (201, 'confirmed') != (409, 'idempotency-key-reused')\n\nFirst differing element 0:\n201\n409\n\n- (201, 'confirmed')\n+ (409, 'idempotency-key-reused')\n\n======================================================================\nFAIL: test_duration_limit_and_timestamp_format (test_g2.ReservationFullAPI.test_duration_limit_and_timestamp_format)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g2/tests/test_g2.py\", line 77, in test_duration_limit_and_timestamp_format\n    self.assertEqual(result.status, 422)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^\nAssertionError: 201 != 422\n\n======================================================================\nFAIL: test_invalid_zero_or_reverse_interval_has_no_effect (test_g2.ReservationFullAPI.test_invalid_zero_or_reverse_interval_has_no_effect)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g2/tests/test_g2.py\", line 72, in test_invalid_zero_or_reverse_interval_has_no_effect\n    self.assertEqual(result.status, 422)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^\nAssertionError: 201 != 422\n\n======================================================================\nFAIL: test_other_member_same_key_is_independent_but_conflicts_on_slot (test_g2.ReservationFullAPI.test_other_member_same_key_is_independent_but_conflicts_on_slot)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g2/tests/test_g2.py\", line 83, in test_other_member_same_key_is_independent_but_conflicts_on_slot\n    self.assertEqual((result.status, result.code), (409, \"interval-conflict\"))\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Tuples differ: (201, 'confirmed') != (409, 'interval-conflict')\n\nFirst differing element 0:\n201\n409\n\n- (201, 'confirmed')\n+ (409, 'interval-conflict')\n\n======================================================================\nFAIL: test_overlap_fails_without_insert (test_g2.ReservationFullAPI.test_overlap_fails_without_insert)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g2/tests/test_g2.py\", line 39, in test_overlap_fails_without_insert\n    self.assertEqual((result.status, result.code), (409, \"interval-conflict\"))\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Tuples differ: (201, 'confirmed') != (409, 'interval-conflict')\n\nFirst differing element 0:\n201\n409\n\n- (201, 'confirmed')\n+ (409, 'interval-conflict')\n\n======================================================================\nFAIL: test_same_request_key_replays_original (test_g2.ReservationFullAPI.test_same_request_key_replays_original)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g2/tests/test_g2.py\", line 59, in test_same_request_key_replays_original\n    self.assertEqual(repeated.status, 200)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 201 != 200\n\n======================================================================\nFAIL: test_two_writers_do_not_both_confirm_same_slot (test_g2.ReservationFullAPI.test_two_writers_do_not_both_confirm_same_slot)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g2/tests/test_g2.py\", line 91, in test_two_writers_do_not_both_confirm_same_slot\n    self.assertEqual(sorted(result.status for result in results), [201, 409])\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Lists differ: [201, 201] != [201, 409]\n\nFirst differing element 1:\n201\n409\n\n- [201, 201]\n?       ^ ^\n\n+ [201, 409]\n?       ^ ^\n\n\n======================================================================\nFAIL: test_both_supplied_g1_schemas_preserve_record_and_identity (test_g2.ReservationMigration.test_both_supplied_g1_schemas_preserve_record_and_identity) (schema='legacy_g1_json')\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g2/tests/test_g2.py\", line 109, in test_both_supplied_g1_schemas_preserve_record_and_identity\n    self.assertEqual(booking.get_reservation(path, original.reservation_id),\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n                     {\"reservation_id\":original.reservation_id,**request})\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: None != {'reservation_id': 1, 'trusted_member_id'[127 chars]key'}\n\n======================================================================\nFAIL: test_duplicate_legacy_identity_rolls_back_migration (test_g2.ReservationMigration.test_duplicate_legacy_identity_rolls_back_migration)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g2/tests/test_g2.py\", line 125, in test_duplicate_legacy_identity_rolls_back_migration\n    with self.assertRaises(sqlite3.IntegrityError):booking.init_db(path)\n         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: IntegrityError not raised\n\n======================================================================\nFAIL: test_invalid_or_overlapping_legacy_rows_require_owner_mapping (test_g2.ReservationMigration.test_invalid_or_overlapping_legacy_rows_require_owner_mapping) (change={'starts_at': 'not-a-timestamp'})\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g2/tests/test_g2.py\", line 148, in test_invalid_or_overlapping_legacy_rows_require_owner_mapping\n    with self.assertRaises(ValueError):booking.init_db(path)\n         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^\nAssertionError: ValueError not raised\n\n======================================================================\nFAIL: test_invalid_or_overlapping_legacy_rows_require_owner_mapping (test_g2.ReservationMigration.test_invalid_or_overlapping_legacy_rows_require_owner_mapping) (change={'asset_id': ''})\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g2/tests/test_g2.py\", line 148, in test_invalid_or_overlapping_legacy_rows_require_owner_mapping\n    with self.assertRaises(ValueError):booking.init_db(path)\n         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^\nAssertionError: ValueError not raised\n\n======================================================================\nFAIL: test_invalid_or_overlapping_legacy_rows_require_owner_mapping (test_g2.ReservationMigration.test_invalid_or_overlapping_legacy_rows_require_owner_mapping) (change={'idempotency_key': 'other-key'})\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g2/tests/test_g2.py\", line 148, in test_invalid_or_overlapping_legacy_rows_require_owner_mapping\n    with self.assertRaises(ValueError):booking.init_db(path)\n         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^\nAssertionError: ValueError not raised\n\n======================================================================\nFAIL: test_unknown_or_dual_legacy_schema_is_not_guessed (test_g2.ReservationMigration.test_unknown_or_dual_legacy_schema_is_not_guessed) (dual=False)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g2/tests/test_g2.py\", line 160, in test_unknown_or_dual_legacy_schema_is_not_guessed\n    with self.assertRaises(ValueError):booking.init_db(path)\n         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^\nAssertionError: ValueError not raised\n\n======================================================================\nFAIL: test_unknown_or_dual_legacy_schema_is_not_guessed (test_g2.ReservationMigration.test_unknown_or_dual_legacy_schema_is_not_guessed) (dual=True)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g2/tests/test_g2.py\", line 160, in test_unknown_or_dual_legacy_schema_is_not_guessed\n    with self.assertRaises(ValueError):booking.init_db(path)\n         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^\nAssertionError: ValueError not raised\n\n----------------------------------------------------------------------\nRan 17 tests in 0.107s\n\nFAILED (failures=15, errors=2)\n",
+      "timed_out": false,
+      "tests_run": 17,
+      "expected_tests": 17,
+      "methods_passed": 4,
+      "methods_failed": [
+        "test_both_supplied_g1_schemas_preserve_record_and_identity",
+        "test_changed_request_with_same_key_fails",
+        "test_duplicate_legacy_identity_rolls_back_migration",
+        "test_duration_limit_and_timestamp_format",
+        "test_invalid_or_overlapping_legacy_rows_require_owner_mapping",
+        "test_invalid_retained_public_column_record_refuses_without_byte_change",
+        "test_invalid_zero_or_reverse_interval_has_no_effect",
+        "test_other_member_same_key_is_independent_but_conflicts_on_slot",
+        "test_overlap_fails_without_insert",
+        "test_same_request_key_replays_original",
+        "test_two_writers_do_not_both_confirm_same_slot",
+        "test_unknown_or_dual_legacy_schema_is_not_guessed"
+      ],
+      "methods_errored": [
+        "test_both_supplied_g1_schemas_preserve_record_and_identity",
+        "test_retained_public_column_schema_preserves_read_replay_and_reinit"
+      ],
+      "status": "FAILED"
+    }
+  },
+  "tests_run": 17,
+  "candidate_sha256_after": "a93c8fa26357c4c5bf4c4eb40fbd15427692d074d3ee101f2a0a6980cb79007c",
+  "inputs_unchanged": true,
+  "status": "CHECKS_FAILED",
+  "recorded_at_utc": "2026-11-22T17:29:15.414237+00:00",
+  "command": [
+    "/usr/local/bin/python3",
+    "companion/start.py",
+    "check",
+    "G2",
+    "--candidate",
+    "work/g2",
+    "--output",
+    "work/evidence/g2-initial.json"
+  ],
+  "verification_progress": {
+    "schema": "esa-verification-progress/v1",
+    "derivation": "CURRENT_RECEIPT_FIELDS_ONLY_NO_ADDITIONAL_EXECUTION",
+    "source_fields_sha256": "471a362199fa76e68a197a8be82d327d36fe4339ee4cd15b6a71719d39171ab8",
+    "work_order": "mission_G2",
+    "evidence_profile": "persistent_effect",
+    "profile_basis": "The named mission work order.",
+    "phase": "mission",
+    "stages": {
+      "startup": {
+        "status": "PASS",
+        "evidence": [
+          "schema",
+          "mission",
+          "candidate_path"
+        ],
+        "reason": "The intended runner accepted the entry identity and emitted this check receipt. This does not establish candidate import."
+      },
+      "integrity": {
+        "status": "PASS",
+        "evidence": [
+          "inputs_unchanged",
+          "candidate_sha256_before",
+          "candidate_sha256_after"
+        ],
+        "reason": "The recorded before/after comparison found inputs unchanged."
+      },
+      "contract": {
+        "status": "FAIL",
+        "evidence": [
+          "groups.contract"
+        ],
+        "reason": "Status uses each selected group and any contract-specific supplemental probe; an import placeholder is not behavioral evidence. A candidate stack frame or known protected assertion supports reached behavior; a method count alone does not. Groups within this stage may retain multiple failures.",
+        "behavior_reached": true
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "evidence": [],
+        "reason": "No continuation or consumer/process observation is present."
+      },
+      "artifact": {
+        "status": "NOT_RUN",
+        "evidence": [],
+        "reason": "This receipt has no separate archive/extraction gate. Local demonstration hashes alone do not establish release fitness."
+      },
+      "authorization": {
+        "status": "NOT_RUN",
+        "evidence": [
+          "human_acceptance"
+        ],
+        "reason": "No owner acceptance or release authorization is recorded. Passing checks do not supply that decision."
+      }
+    },
+    "first_failed_stage": "contract",
+    "last_observed_stage": "contract",
+    "limits": "A stage label interprets the retained fields; it is not an independent attestation. NOT_APPLICABLE needs an explicit scope exclusion; absence alone remains NOT_RUN."
+  }
+}

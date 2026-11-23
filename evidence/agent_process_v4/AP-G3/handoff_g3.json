@@ -1,0 +1,202 @@
+{
+  "schema": "esa-full-mission-check/v1",
+  "mission": "G3",
+  "release": "ESA-Complete-Review-3-20261103",
+  "contract": "RES-002/v1",
+  "candidate_sha256_before": "adff2a866ec3c3709b428731949fe756bd62f63bb902dbaaf1a4da72ececf748",
+  "protected_input_sha256": {
+    "docs/contract.md": "bb12ae4381e7fec5bb982de67573852c5e7f63d4736a10977d492c3be38f1dce",
+    "tests/test_g3.py": "bdaa37d91057f2e85692290f91ea3208d109e40c3996156db129977754b8bf6d",
+    "legacy_booking.py": "499e3cdeb581edf3130a89afa7d81a30bbf685429aa62f514857cfafe6ea97cf",
+    "prior/parent-entry.json": "5a94b59e1de2ef4cae5889837fa8c3fdb1b89c9b85a8c39081c1a186e0e296b8",
+    "prior/booking.py": "f283f8f0e2c4814b5429ca99589e358afbc8f41cd9254c95aa55daa13ae24ec5",
+    "prior/parent-handoff.json": "1fa07f59a1b16027b25867484d449989a2213e106dc591bc4813b04218b9518a",
+    "prior/parent-check-artifacts/continuation.json": "56ef61ac51beb004496f365a9c9d096a88f51a9d540a19f44d5234cfaac2008a",
+    "prior/parent-check-artifacts/DEMONSTRATION.json": "3e98c2bf2357011244ffad1704f6b4540914c987cbe73650ca3f7aa313887792",
+    "prior/parent-check-artifacts/reservations.sqlite": "e6c9d79ff4e9ea96fed9885711b6e8315e7c0c3886c0f616da94890c5bc01576"
+  },
+  "candidate_path": "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G3/workspace",
+  "human_acceptance": "PENDING",
+  "model_run": false,
+  "scope": "Executable local teaching controls; no human reader performance or production authority.",
+  "groups": {
+    "contract": {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_g3.py",
+        "-v"
+      ],
+      "elapsed_process_seconds": 0.14621592800176586,
+      "timeout_seconds": 30,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_cancel_releases_slot_without_erasing_history (test_g3.Cancellation.test_cancel_releases_slot_without_erasing_history) ... ok\ntest_migration_preserves_old_public_record (test_g3.Cancellation.test_migration_preserves_old_public_record) ... ok\ntest_missing_id_is_not_found (test_g3.Cancellation.test_missing_id_is_not_found) ... ok\ntest_other_member_cannot_cancel (test_g3.Cancellation.test_other_member_cannot_cancel) ... ok\ntest_repeat_with_current_version_is_idempotent (test_g3.Cancellation.test_repeat_with_current_version_is_idempotent) ... ok\ntest_retry_original_operation_does_not_revive_cancelled_row (test_g3.Cancellation.test_retry_original_operation_does_not_revive_cancelled_row) ... ok\ntest_stale_version_cannot_change_state (test_g3.Cancellation.test_stale_version_cannot_change_state) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.016s\n\nOK\n",
+      "timed_out": false,
+      "tests_run": 7,
+      "expected_tests": 7,
+      "methods_passed": 7,
+      "methods_failed": [],
+      "methods_errored": [],
+      "status": "PASSED"
+    }
+  },
+  "tests_run": 7,
+  "candidate_sha256_after": "adff2a866ec3c3709b428731949fe756bd62f63bb902dbaaf1a4da72ececf748",
+  "inputs_unchanged": true,
+  "status": "SCOPED_HANDOFF_READY",
+  "demonstration_process": {
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/companion/curriculum_demo.py",
+      "G3",
+      "--candidate",
+      "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G3/workspace",
+      "--output",
+      "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G3/handoff_g3"
+    ],
+    "elapsed_process_seconds": 0.10430707699924824,
+    "timeout_seconds": 30,
+    "returncode": 0,
+    "stdout": "{\n  \"schema\": \"esa-curriculum-demonstration/v1\",\n  \"mission\": \"G3\",\n  \"recorded_at_utc\": \"2026-11-16T15:54:45.747019+00:00\",\n  \"command\": [\n    \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3\",\n    \"/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/companion/curriculum_demo.py\",\n    \"G3\",\n    \"--candidate\",\n    \"/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G3/workspace\",\n    \"--output\",\n    \"/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G3/handoff_g3\"\n  ],\n  \"origin\": \"EXECUTED_OFFLINE_TEACHING_FIXTURE\",\n  \"observed_human_pilot\": false,\n  \"observed_model_run\": false,\n  \"result\": {\n    \"old_public_record\": {\n      \"reservation_id\": 1,\n      \"trusted_member_id\": \"member-14\",\n      \"asset_id\": \"lathe-2\",\n      \"starts_at\": \"2025-05-16T13:00:00Z\",\n      \"ends_at\": \"2025-05-16T14:00:00Z\",\n      \"idempotency_key\": \"original\"\n    },\n    \"wrong_owner\": {\n      \"status\": 403,\n      \"code\": \"not-owner\"\n    },\n    \"cancellation\": {\n      \"status\": 200,\n      \"code\": \"cancelled\",\n      \"version\": 2\n    },\n    \"stale_version\": {\n      \"status\": 409,\n      \"code\": \"stale-version\"\n    },\n    \"current_state\": {\n      \"state\": \"cancelled\",\n      \"version\": 2\n    },\n    \"original_operation_replay\": {\n      \"status\": 200,\n      \"code\": \"confirmed\",\n      \"reservation_id\": 1,\n      \"replayed\": true\n    },\n    \"replacement\": {\n      \"status\": 201,\n      \"code\": \"confirmed\",\n      \"reservation_id\": 2,\n      \"replayed\": false\n    }\n  }\n}\n",
+    "stderr": "",
+    "timed_out": false
+  },
+  "demonstration": {
+    "schema": "esa-curriculum-demonstration/v1",
+    "mission": "G3",
+    "recorded_at_utc": "2026-11-16T15:54:45.747019+00:00",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/companion/curriculum_demo.py",
+      "G3",
+      "--candidate",
+      "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G3/workspace",
+      "--output",
+      "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G3/handoff_g3"
+    ],
+    "origin": "EXECUTED_OFFLINE_TEACHING_FIXTURE",
+    "observed_human_pilot": false,
+    "observed_model_run": false,
+    "result": {
+      "old_public_record": {
+        "reservation_id": 1,
+        "trusted_member_id": "member-14",
+        "asset_id": "lathe-2",
+        "starts_at": "2025-05-16T13:00:00Z",
+        "ends_at": "2025-05-16T14:00:00Z",
+        "idempotency_key": "original"
+      },
+      "wrong_owner": {
+        "status": 403,
+        "code": "not-owner"
+      },
+      "cancellation": {
+        "status": 200,
+        "code": "cancelled",
+        "version": 2
+      },
+      "stale_version": {
+        "status": 409,
+        "code": "stale-version"
+      },
+      "current_state": {
+        "state": "cancelled",
+        "version": 2
+      },
+      "original_operation_replay": {
+        "status": 200,
+        "code": "confirmed",
+        "reservation_id": 1,
+        "replayed": true
+      },
+      "replacement": {
+        "status": 201,
+        "code": "confirmed",
+        "reservation_id": 2,
+        "replayed": false
+      }
+    }
+  },
+  "demonstration_files_sha256": {
+    "DEMONSTRATION.json": "1b3cbe0cb825bdb3c077d3cc2deee7a6b75872940ddfa6d887bee15d3b499373",
+    "continuation.json": "296004eb2bfb595e339317891b3b8958694306bf8db5dd75be76dc94bf27e237",
+    "reservations.sqlite": "6feadff4913e0a88d9b1e5a616bac71d0ded46aeb92dd1d6df8b8f30f819723c"
+  },
+  "candidate_retained": true,
+  "recorded_at_utc": "2026-11-16T15:54:45.756324+00:00",
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/companion/start.py",
+    "continue",
+    "G3",
+    "--candidate",
+    "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G3/workspace",
+    "--output",
+    "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G3/handoff_g3.json"
+  ],
+  "verification_progress": {
+    "schema": "esa-verification-progress/v1",
+    "derivation": "CURRENT_RECEIPT_FIELDS_ONLY_NO_ADDITIONAL_EXECUTION",
+    "source_fields_sha256": "d569c3f9c162892a040d4ba84f05401b90464595a99e7b518edfe2c8a9f4e72e",
+    "work_order": "mission_G3",
+    "evidence_profile": "persistent_effect",
+    "profile_basis": "The named mission work order.",
+    "phase": "mission",
+    "stages": {
+      "startup": {
+        "status": "PASS",
+        "evidence": [
+          "schema",
+          "mission",
+          "candidate_path"
+        ],
+        "reason": "The intended runner accepted the entry identity and emitted this check receipt. This does not establish candidate import."
+      },
+      "integrity": {
+        "status": "PASS",
+        "evidence": [
+          "inputs_unchanged",
+          "candidate_sha256_before",
+          "candidate_sha256_after"
+        ],
+        "reason": "The recorded before/after comparison found inputs unchanged."
+      },
+      "contract": {
+        "status": "PASS",
+        "evidence": [
+          "groups.contract"
+        ],
+        "reason": "Status uses each selected group and any contract-specific supplemental probe; an import placeholder is not behavioral evidence. A candidate stack frame or known protected assertion supports reached behavior; a method count alone does not. Groups within this stage may retain multiple failures.",
+        "behavior_reached": true
+      },
+      "integration": {
+        "status": "PASS",
+        "evidence": [
+          "demonstration_process"
+        ],
+        "reason": "An actual continuation or process-boundary probe is retained; the result applies to this local consumer and candidate only."
+      },
+      "artifact": {
+        "status": "NOT_RUN",
+        "evidence": [],
+        "reason": "This receipt has no separate archive/extraction gate. Local demonstration hashes alone do not establish release fitness."
+      },
+      "authorization": {
+        "status": "NOT_RUN",
+        "evidence": [
+          "human_acceptance"
+        ],
+        "reason": "No owner acceptance or release authorization is recorded. Passing checks do not supply that decision."
+      }
+    },
+    "first_failed_stage": null,
+    "last_observed_stage": "integration",
+    "limits": "A stage label interprets the retained fields; it is not an independent attestation. NOT_APPLICABLE needs an explicit scope exclusion; absence alone remains NOT_RUN."
+  }
+}

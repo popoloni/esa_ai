@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Eight practical missions, local checks and recorded agent tours for Engineering Software with Agentic AI."><title>EDOD work orders and reached verification stages · Engineering Software with Agentic AI</title><link rel="stylesheet" href="../../assets/companion.css"></head><body><a class="skip" href="#main">Skip to content</a><header class="sitehead"><div><a class="brand" href="../../index.html">Engineering Software with Agentic AI<span>Practical companion · version 5.6</span></a><nav aria-label="Main navigation"><a href="../../index.html">Start</a><a href="../../missions/index.html">Missions</a><a href="../agent_sessions/README.html">Agent guide</a><a href="../../traces/index.html">Recorded tours</a><a href="../series/READING_THE_SERIES.html">Four volumes</a></nav></div></header><main id="main"><article data-source-sha256="298a2ec2d0c9bf66458fd7c7a9f145473bd929838ff83a245d28c8f6e0003706"><p class="docmeta meta"><a href="README.md">Markdown source</a> · Companion 5.6 · 2026-11-22</p><h1 id="edod-work-orders-and-reached-verification-stages">EDOD work orders and reached verification stages</h1>
+<p><code>schema.json</code> defines EDOD work-order version 1. <code>registry.json</code> holds 12 chapter cases and eight missions; <code>generate.py</code> emits complete, independently validatable JSON files in <code>orders/</code> and the concise mission text in <code>printed/</code>. The authored contracts are teaching specifications, not execution receipts or observed owner approvals. A work order names the authority, its version, the candidate scope, an operational budget and the decision that remains with its owner.</p>
+<p>From the extracted package root:</p>
+<pre class="bash"><code>python3 companion/workorders/validate.py --all --output work/evidence/workorders-validation.json</code></pre>
+<p>The standard-library validator checks the keywords used by the shipped JSON Schema, plus consistency between editable/protected paths and command/review checks. It is not a general validator for arbitrary JSON Schema documents. A valid shape does not establish that a contract is approved or its scope is adequate. Review those claims against the named source. Chapter orders use explicit manual checks where the chapter asks for a specification, analysis or plan; an empty command array then means no shell execution is asserted.</p>
+<h2 id="profiles-follow-the-consequence">Profiles follow the consequence</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Value</th>
+<th>Reader name</th>
+<th>Minimum decision evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>investigation</code></td>
+<td>Investigation</td>
+<td>Question or decision to resolve, bounded inquiry or plan, observations and limits; the investigation or plan owner decides the next action.</td>
+</tr>
+<tr class="even">
+<td><code>bounded_repair</code></td>
+<td>Bounded repair</td>
+<td>Reproducer, scoped diff, valid control and regression; the implementation reviewer decides.</td>
+</tr>
+<tr class="odd">
+<td><code>new_capability</code></td>
+<td>New capability</td>
+<td>Approved behavior, independent acceptance examples and a consumer check; the capability owner decides.</td>
+</tr>
+<tr class="even">
+<td><code>persistent_effect</code></td>
+<td>Persistent effect</td>
+<td>Applicable evidence above plus retained-state/history, artifact or recovery controls; the relevant data/release owner decides.</td>
+</tr>
+</tbody>
+</table>
+<p>Chapters 2, 6 and 12 use Investigation: they decide an inquiry, a plan or a reader trial, without claiming a delivered capability.</p>
+<p>These are evidence profiles, distinct from an autonomy classification. G1 creates a new capability in a disposable fixture. G2 preserves existing G1 history and therefore uses Persistent effect. The presence of SQLite does not choose a profile. B1’s initial repair uses Bounded repair; the explicit B1 v2 grammar extension is New capability and keeps its separate owner decision.</p>
+<p>Attempt and implementation-minute values are <strong>declared teaching budgets</strong>. They are not measured completion times or automatically enforced by schema validation. The local runner enforces a timeout per check process; an entire session can contain several such processes. <code>max_external_calls=0</code> applies to the candidate integration, whose providers are local fixtures. It does not prohibit the live coding-agent operation used by the primary practice route. B2’s separate per-item/global provider invocation limits remain part of INTAKE/v1.</p>
+<h2 id="progress-is-derived-from-observations">Progress is derived from observations</h2>
+<p>Current <code>check</code>, <code>continue</code> and individual proposal results add <code>verification_progress</code>. Batch receipts retain that field in each nested result. <code>progress.py</code> interprets existing fields; it executes no extra test. The source-field digest excludes only the added progress object and allows the interpretation to be reproduced. Existing raw receipts are not rewritten.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Stage</th>
+<th>Evidence used</th>
+<th>Meaning and stopping boundary</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>startup</code></td>
+<td>Receipt schema, mission and accepted entry identity</td>
+<td>The intended runner reached its check path. Candidate import is separate. A pre-entry refusal can produce no receipt.</td>
+</tr>
+<tr class="even">
+<td><code>integrity</code></td>
+<td>Protected-input comparisons and candidate-retention fields</td>
+<td>A changed/missing protected input blocks tests. A later change remains a failure even when some checks already ran.</td>
+</tr>
+<tr class="odd">
+<td><code>contract</code></td>
+<td>Named groups and contract-specific supplemental probes</td>
+<td>The selected observation passed or failed. <code>behavior_reached</code> is separate: an import placeholder is not a candidate assertion; incomplete output may be unknown.</td>
+</tr>
+<tr class="even">
+<td><code>integration</code></td>
+<td>Present continuation, consumer or process-boundary observations</td>
+<td>The retained candidate was exercised in that local composition. Contract/integrity failure does not start the normal continuation.</td>
+</tr>
+<tr class="odd">
+<td><code>artifact</code></td>
+<td>Separate artifact/extraction gate, when supplied</td>
+<td>Mission-local receipt and demonstration hashes alone do not prove release fitness; these receipts leave the stage NOT_RUN.</td>
+</tr>
+<tr class="even">
+<td><code>authorization</code></td>
+<td>A decision by the responsible owner on the identified object</td>
+<td>Tests and the teaching answer key do not supply it. Current mission receipts leave it NOT_RUN.</td>
+</tr>
+</tbody>
+</table>
+<p>PASS and FAIL require actual recorded evidence. NOT_RUN means no observation for that stage is present. NOT_APPLICABLE requires an explicit scope exclusion by the work order; missing evidence alone never supplies one. Multiple groups within the contract stage may collect diagnostic failures before the stage stops later continuation. The progress record is an interpretation of the receipt, not an independent attestation of its truth.</p>
+<h2 id="diagnostic-controls">Diagnostic controls</h2>
+<p>The workbook’s two tables are backed by constructed cases in <code>verify.py</code>: G1 missing-owner entry refusal; starter <code>NotImplementedError</code>; slice-versus- final scope; protected-input stop without module import; B1 boundary failure versus <code>_FailedTest</code>; B2 wrong API predecessor and budgeted DEFERRED outcome; B3 missing-provenance refusal with a valid-provenance control; B4 known WRONG_LEDGER diagnosis; and refusal to overwrite an earlier receipt.</p>
+<p>The same verifier challenges the work-order schema with missing authority, wrong profiles, empty acceptance, impossible/boolean budgets, unexpected approval fields and conflicting path scopes. Its observations are local fixture executions: no human participant, human agreement score, model frequency or measured completion time is inferred.</p>
+</article></main><footer class="foot"><p>Enrico Papalini · Edition 5.6 · 2026-11-22</p><p><a href="../../NOTICE.html">Rights and notices</a> · <a href="../../NATIVE_STATUS.json">Native-client status</a> · <a href="../../MANIFEST.json">Package manifest</a> · <a href="https://github.com/popoloni/esa_ai">Companion repository</a></p></footer></body></html>

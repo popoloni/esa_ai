@@ -1,0 +1,74 @@
+commit 7c147535a6c9a15e5cdff00fd89c4cb437a9c4ad
+Author:     ESA AI recording operator <esa-ai-recording@example.invalid>
+AuthorDate: Mon Nov 16 23:21:21 2026 +0100
+Commit:     ESA AI recording operator <esa-ai-recording@example.invalid>
+CommitDate: Mon Nov 16 23:21:21 2026 +0100
+
+    Bind independently checked integration to retained G3 lineage
+
+ READER_ENTRY.json | 29 +++++++++++++++++++++++++++--
+ 1 file changed, 27 insertions(+), 2 deletions(-)
+
+commit 737009b68eed637833be0257d6ad5f53c86b2b84
+Author:     ESA AI recording operator <esa-ai-recording@example.invalid>
+AuthorDate: Mon Nov 16 23:20:26 2026 +0100
+Commit:     ESA AI recording operator <esa-ai-recording@example.invalid>
+CommitDate: Mon Nov 16 23:20:26 2026 +0100
+
+    Record actual cli contribution under INTEGRATION-G3/v1
+
+ CONTRIBUTION_B.md  | 36 ++++++++++++++++++++++++++++++++++++
+ reservation_cli.py | 47 ++++++++++++++++++++++++++++++++++++++++++++++-
+ 2 files changed, 82 insertions(+), 1 deletion(-)
+
+commit ee55af1ec283907873ce8dd0628e37f79a296f42
+Author:     ESA AI recording operator <esa-ai-recording@example.invalid>
+AuthorDate: Mon Nov 16 23:20:26 2026 +0100
+Commit:     ESA AI recording operator <esa-ai-recording@example.invalid>
+CommitDate: Mon Nov 16 23:20:26 2026 +0100
+
+    Record actual report contribution under INTEGRATION-G3/v1
+
+ CONTRIBUTION_A.md     | 17 +++++++++++++++++
+ reservation_report.py | 18 +++++++++++++++++-
+ 2 files changed, 34 insertions(+), 1 deletion(-)
+
+commit bbbbef78eeeff238a2e68d9302ff67ed5b781610
+Author:     ESA AI recording operator <esa-ai-recording@example.invalid>
+AuthorDate: Mon Nov 16 23:20:26 2026 +0100
+Commit:     ESA AI recording operator <esa-ai-recording@example.invalid>
+CommitDate: Mon Nov 16 23:20:26 2026 +0100
+
+    Record actual cli contribution under INTEGRATION-G3/v1
+
+ CONTRIBUTION_B.md  | 36 ++++++++++++++++++++++++++++++++++++
+ reservation_cli.py | 47 ++++++++++++++++++++++++++++++++++++++++++++++-
+ 2 files changed, 82 insertions(+), 1 deletion(-)
+
+commit b69f50f5809b2c7e0a8581b76fe248bd8e5a5fa0
+Author:     ESA AI recording operator <esa-ai-recording@example.invalid>
+AuthorDate: Mon Nov 16 23:19:41 2026 +0100
+Commit:     ESA AI recording operator <esa-ai-recording@example.invalid>
+CommitDate: Mon Nov 16 23:19:41 2026 +0100
+
+    Freeze retained G3 and shared integration contract
+
+ AGENTS.md                                        |   9 +
+ DOSSIER.md                                       | 100 ++++++++
+ READER_ENTRY.json                                |  39 ++++
+ booking.py                                       | 285 +++++++++++++++++++++++
+ docs/INTEGRATION-G3.md                           |  32 +++
+ docs/contract.md                                 |  24 ++
+ legacy_booking.py                                | 182 +++++++++++++++
+ prior/booking.py                                 | 213 +++++++++++++++++
+ prior/parent-check-artifacts/DEMONSTRATION.json  |  58 +++++
+ prior/parent-check-artifacts/continuation.json   |  41 ++++
+ prior/parent-check-artifacts/reservations.sqlite | Bin 0 -> 20480 bytes
+ prior/parent-entry.json                          |  38 +++
+ prior/parent-handoff.json                        | 204 ++++++++++++++++
+ reservation_cli.py                               |   5 +
+ reservation_report.py                            |   2 +
+ tests/test_g3.py                                 |  47 ++++
+ tests/test_integration_a.py                      |  26 +++
+ tests/test_integration_b.py                      |  35 +++
+ 18 files changed, 1340 insertions(+)

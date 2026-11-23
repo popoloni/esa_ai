@@ -1,0 +1,115 @@
+{
+  "schema": "esa-curriculum-demonstration/v1",
+  "mission": "B2",
+  "recorded_at_utc": "2026-11-16T22:14:46.375803+00:00",
+  "command": [
+    "/usr/local/bin/python3",
+    "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/companion/curriculum_demo.py",
+    "B2",
+    "--candidate",
+    "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/b2",
+    "--output",
+    "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/evidence/b2-handoff"
+  ],
+  "origin": "EXECUTED_OFFLINE_TEACHING_FIXTURE",
+  "observed_human_pilot": false,
+  "observed_model_run": false,
+  "result": {
+    "attempts": [
+      {
+        "request_id": "item-1",
+        "attempt": 1,
+        "outcome": "UNAVAILABLE"
+      },
+      {
+        "request_id": "item-1",
+        "attempt": 2,
+        "outcome": "MATCH"
+      },
+      {
+        "request_id": "item-2",
+        "attempt": 1,
+        "outcome": "REVIEW"
+      }
+    ],
+    "calls": 3,
+    "records": [
+      {
+        "request_id": "item-invalid",
+        "status": "REJECTED",
+        "route": "REJECTED",
+        "reason": "INVALID_AMOUNT"
+      },
+      {
+        "request_id": "item-1",
+        "status": "CLASSIFIED",
+        "route": "STANDARD_QUEUE",
+        "reason": "BELOW_LIMIT",
+        "classification": "MATCH"
+      },
+      {
+        "request_id": "item-2",
+        "status": "CLASSIFIED",
+        "route": "HUMAN_REVIEW",
+        "reason": "AT_OR_ABOVE_LIMIT",
+        "classification": "REVIEW"
+      },
+      {
+        "request_id": "item-3",
+        "status": "DEFERRED",
+        "route": "STANDARD_QUEUE",
+        "reason": "BELOW_LIMIT"
+      }
+    ],
+    "payment_authorized": false,
+    "receipt": {
+      "attempts": [
+        {
+          "request_id": "item-1",
+          "attempt": 1,
+          "outcome": "UNAVAILABLE"
+        },
+        {
+          "request_id": "item-1",
+          "attempt": 2,
+          "outcome": "MATCH"
+        },
+        {
+          "request_id": "item-2",
+          "attempt": 1,
+          "outcome": "REVIEW"
+        }
+      ],
+      "calls": 3,
+      "records": [
+        {
+          "request_id": "item-invalid",
+          "status": "REJECTED",
+          "route": "REJECTED",
+          "reason": "INVALID_AMOUNT"
+        },
+        {
+          "request_id": "item-1",
+          "status": "CLASSIFIED",
+          "route": "STANDARD_QUEUE",
+          "reason": "BELOW_LIMIT",
+          "classification": "MATCH"
+        },
+        {
+          "request_id": "item-2",
+          "status": "CLASSIFIED",
+          "route": "HUMAN_REVIEW",
+          "reason": "AT_OR_ABOVE_LIMIT",
+          "classification": "REVIEW"
+        },
+        {
+          "request_id": "item-3",
+          "status": "DEFERRED",
+          "route": "STANDARD_QUEUE",
+          "reason": "BELOW_LIMIT"
+        }
+      ],
+      "payment_authorized": false
+    }
+  }
+}

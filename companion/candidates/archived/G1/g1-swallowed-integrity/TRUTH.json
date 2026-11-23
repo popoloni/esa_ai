@@ -1,0 +1,19 @@
+{
+  "schema": "esa-review-ground-truth/v1",
+  "mission": "G1",
+  "candidate_id": "g1-swallowed-integrity",
+  "created_on": "2026-11-02",
+  "origin": "CONSTRUCTED_TEACHING_VARIANT",
+  "rationale_origin": "CONSTRUCTED",
+  "actual_model_trace": false,
+  "code_path": "variant.py",
+  "rationale_path": "RATIONALE.md",
+  "expected_decision": "REJECT",
+  "expected_slice_pass": true,
+  "supplemental_probe": "g1_integrity_fault",
+  "targeted_assertions": [
+    "test_storage_integrity_failure_propagates"
+  ],
+  "explanation": "REJECT: an unexpected storage failure cannot become 201/confirmed for an invented identifier. The supplied pack passes the four ordinary slice cases; its supplementary fault probe shows the false confirmation. Implementing retry semantics belongs to G2 and is not the demanded repair.",
+  "required_human_decision": null
+}

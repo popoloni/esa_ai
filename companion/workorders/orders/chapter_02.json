@@ -1,0 +1,64 @@
+{
+  "id": "chapter_02",
+  "schema_version": 1,
+  "evidence_profile": "investigation",
+  "expect": {
+    "outcome": "Return an evidence-based comparison of causes of conflicting workshop booking expectations.",
+    "authority": {
+      "owner": "Workshop coordinator.",
+      "source": "Coordinator mandate R-01; selected de-identified booking and maintenance records.",
+      "version": "R-01; teaching work-order/v1",
+      "status": "TEACHING_CONTRACT"
+    },
+    "acceptance": [
+      "Each causal claim names a supplied source or a missing observation; no invented interviews or benefits."
+    ]
+  },
+  "delegate": {
+    "editable_paths": [
+      "reports/discovery.md"
+    ],
+    "protected_paths": [
+      "approved_context/",
+      "source_evidence/"
+    ],
+    "budget": {
+      "max_attempts": 1,
+      "implementation_minutes": 30,
+      "check_timeout_seconds": 30,
+      "max_external_calls": 0
+    },
+    "stop_conditions": [
+      "Required authority or source evidence is missing.",
+      "Declared budget is spent or a proposed edit crosses protected scope.",
+      "One investigation pass produces no supported next observation."
+    ]
+  },
+  "observe": {
+    "checks": [
+      {
+        "id": "chapter_02.review",
+        "stage": "contract",
+        "method": "review",
+        "argv": [],
+        "expected": "Source-to-claim audit; compare chronology predictions; check that no operational action occurred."
+      }
+    ],
+    "receipt_fields": [
+      "candidate_identity",
+      "authority_version",
+      "actual_checks",
+      "reached_stage",
+      "remaining_question"
+    ]
+  },
+  "decide": {
+    "owner": "Workshop coordinator.",
+    "object": "The discovery report and its proposed next observation, not a booking service.",
+    "allowed_decisions": [
+      "ACCEPT",
+      "REJECT",
+      "ASK"
+    ]
+  }
+}

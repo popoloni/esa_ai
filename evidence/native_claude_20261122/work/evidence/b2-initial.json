@@ -1,0 +1,132 @@
+{
+  "schema": "esa-full-mission-check/v1",
+  "mission": "B2",
+  "release": "Engineering-Software-with-Agentic-AI-Review-5.2-20261117",
+  "contract": "INTAKE/v1",
+  "candidate_sha256_before": "696f7d077b7bd7ba75df7980eebe33ddeae02aae7555aee20ad4df78f5fbe293",
+  "protected_input_sha256": {
+    "docs/contract.md": "7322b946c06acf1e5ca4fc2031419d077cec88fb201aaa6ba6d9e2603bb9992d",
+    "tests/test_b2.py": "13c76494bb51344136c06e4b49cb071872f8737375f81ceac1a491f9bd3ccc06",
+    "routing.py": "e8fdab89acfa5d28041c74a5d2dcf9801fb0e85324dcc160013a56cf63f89cfd",
+    "prior/routing.py": "e8fdab89acfa5d28041c74a5d2dcf9801fb0e85324dcc160013a56cf63f89cfd",
+    "prior/parent-handoff.json": "a3aff787c8cd7c5898bbb5aa2516535595ca7719b672be5ab13cafb30d9d6c47",
+    "prior/parent-entry.json": "cad094a05da050f874f8bd4f1a451ad60c96b58c5d33e690fd126285b9d06740"
+  },
+  "candidate_path": "/home/claude/work/live22/agentic-ai-5.2/work/b2",
+  "human_acceptance": "PENDING",
+  "model_run": false,
+  "scope": "Executable local teaching controls; no human reader performance or production authority.",
+  "groups": {
+    "contract": {
+      "command": [
+        "/usr/local/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_b2.py",
+        "-v"
+      ],
+      "elapsed_process_seconds": 0.05207942100003038,
+      "timeout_seconds": 30,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "test_duplicate_request_id_is_a_caller_error (test_b2.BoundedIntake.test_duplicate_request_id_is_a_caller_error) ... ERROR\ntest_global_call_budget_stops_new_calls (test_b2.BoundedIntake.test_global_call_budget_stops_new_calls) ... ERROR\ntest_invalid_amount_does_not_call_provider (test_b2.BoundedIntake.test_invalid_amount_does_not_call_provider) ... ERROR\ntest_invalid_response_after_retry_retains_unavailability (test_b2.BoundedIntake.test_invalid_response_after_retry_retains_unavailability) ... ERROR\ntest_matching_classification_is_attributed (test_b2.BoundedIntake.test_matching_classification_is_attributed) ... ERROR\ntest_nonstring_classification_is_a_protocol_error_with_receipt (test_b2.BoundedIntake.test_nonstring_classification_is_a_protocol_error_with_receipt) ... \n  test_nonstring_classification_is_a_protocol_error_with_receipt (test_b2.BoundedIntake.test_nonstring_classification_is_a_protocol_error_with_receipt) (classification=[]) ... ERROR\n  test_nonstring_classification_is_a_protocol_error_with_receipt (test_b2.BoundedIntake.test_nonstring_classification_is_a_protocol_error_with_receipt) (classification={}) ... ERROR\n  test_nonstring_classification_is_a_protocol_error_with_receipt (test_b2.BoundedIntake.test_nonstring_classification_is_a_protocol_error_with_receipt) (classification=None) ... ERROR\n  test_nonstring_classification_is_a_protocol_error_with_receipt (test_b2.BoundedIntake.test_nonstring_classification_is_a_protocol_error_with_receipt) (classification=1) ... ERROR\n  test_nonstring_classification_is_a_protocol_error_with_receipt (test_b2.BoundedIntake.test_nonstring_classification_is_a_protocol_error_with_receipt) (classification=['MATCH']) ... ERROR\n  test_nonstring_classification_is_a_protocol_error_with_receipt (test_b2.BoundedIntake.test_nonstring_classification_is_a_protocol_error_with_receipt) (classification={'MATCH': True}) ... ERROR\ntest_nonstring_classification_is_a_protocol_error_with_receipt (test_b2.BoundedIntake.test_nonstring_classification_is_a_protocol_error_with_receipt) ... ERROR\ntest_protocol_error_preserves_prior_and_invalid_attempts (test_b2.BoundedIntake.test_protocol_error_preserves_prior_and_invalid_attempts) ... ERROR\ntest_provider_value_error_keeps_identity_and_failed_cost (test_b2.BoundedIntake.test_provider_value_error_keeps_identity_and_failed_cost) ... ERROR\ntest_transient_retry_preserves_identity (test_b2.BoundedIntake.test_transient_retry_preserves_identity) ... ERROR\ntest_unexpected_failure_is_not_retried (test_b2.BoundedIntake.test_unexpected_failure_is_not_retried) ... FAIL\ntest_unknown_response_shape_is_refused (test_b2.BoundedIntake.test_unknown_response_shape_is_refused) ... ERROR\ntest_wrong_response_id_is_refused (test_b2.BoundedIntake.test_wrong_response_id_is_refused) ... ERROR\n\n======================================================================\nERROR: test_duplicate_request_id_is_a_caller_error (test_b2.BoundedIntake.test_duplicate_request_id_is_a_caller_error)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b2/tests/test_b2.py\", line 40, in test_duplicate_request_id_is_a_caller_error\n    evaluate_batch([self.request(), self.request()], provider)\n    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b2/intake.py\", line 5, in evaluate_batch\n    raise NotImplementedError(\"Implement bounded classification and result attribution\")\nNotImplementedError: Implement bounded classification and result attribution\n\n======================================================================\nERROR: test_global_call_budget_stops_new_calls (test_b2.BoundedIntake.test_global_call_budget_stops_new_calls)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b2/tests/test_b2.py\", line 24, in test_global_call_budget_stops_new_calls\n    r=evaluate_batch([self.request(\"a\"),self.request(\"b\")],provider,max_attempts=3,max_calls=2)\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b2/intake.py\", line 5, in evaluate_batch\n    raise NotImplementedError(\"Implement bounded classification and result attribution\")\nNotImplementedError: Implement bounded classification and result attribution\n\n======================================================================\nERROR: test_invalid_amount_does_not_call_provider (test_b2.BoundedIntake.test_invalid_amount_does_not_call_provider)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b2/tests/test_b2.py\", line 7, in test_invalid_amount_does_not_call_provider\n    r=evaluate_batch([self.request(amount=\"-1\")],forbidden)\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b2/intake.py\", line 5, in evaluate_batch\n    raise NotImplementedError(\"Implement bounded classification and result attribution\")\nNotImplementedError: Implement bounded classification and result attribution\n\n======================================================================\nERROR: test_invalid_response_after_retry_retains_unavailability (test_b2.BoundedIntake.test_invalid_response_after_retry_retains_unavailability)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b2/tests/test_b2.py\", line 93, in test_invalid_response_after_retry_retains_unavailability\n    evaluate_batch([self.request()], provider)\n    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b2/intake.py\", line 5, in evaluate_batch\n    raise NotImplementedError(\"Implement bounded classification and result attribution\")\nNotImplementedError: Implement bounded classification and result attribution\n\n======================================================================\nERROR: test_matching_classification_is_attributed (test_b2.BoundedIntake.test_matching_classification_is_attributed)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b2/tests/test_b2.py\", line 10, in test_matching_classification_is_attributed\n    r=evaluate_batch([self.request()],lambda k,a:{\"request_id\":k,\"classification\":\"MATCH\"})\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b2/intake.py\", line 5, in evaluate_batch\n    raise NotImplementedError(\"Implement bounded classification and result attribution\")\nNotImplementedError: Implement bounded classification and result attribution\n\n======================================================================\nERROR: test_nonstring_classification_is_a_protocol_error_with_receipt (test_b2.BoundedIntake.test_nonstring_classification_is_a_protocol_error_with_receipt) (classification=[])\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b2/tests/test_b2.py\", line 104, in test_nonstring_classification_is_a_protocol_error_with_receipt\n    evaluate_batch([self.request()], provider)\n    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b2/intake.py\", line 5, in evaluate_batch\n    raise NotImplementedError(\"Implement bounded classification and result attribution\")\nNotImplementedError: Implement bounded classification and result attribution\n\n======================================================================\nERROR: test_nonstring_classification_is_a_protocol_error_with_receipt (test_b2.BoundedIntake.test_nonstring_classification_is_a_protocol_error_with_receipt) (classification={})\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b2/tests/test_b2.py\", line 104, in test_nonstring_classification_is_a_protocol_error_with_receipt\n    evaluate_batch([self.request()], provider)\n    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b2/intake.py\", line 5, in evaluate_batch\n    raise NotImplementedError(\"Implement bounded classification and result attribution\")\nNotImplementedError: Implement bounded classification and result attribution\n\n======================================================================\nERROR: test_nonstring_classification_is_a_protocol_error_with_receipt (test_b2.BoundedIntake.test_nonstring_classification_is_a_protocol_error_with_receipt) (classification=None)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b2/tests/test_b2.py\", line 104, in test_nonstring_classification_is_a_protocol_error_with_receipt\n    evaluate_batch([self.request()], provider)\n    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b2/intake.py\", line 5, in evaluate_batch\n    raise NotImplementedError(\"Implement bounded classification and result attribution\")\nNotImplementedError: Implement bounded classification and result attribution\n\n======================================================================\nERROR: test_nonstring_classification_is_a_protocol_error_with_receipt (test_b2.BoundedIntake.test_nonstring_classification_is_a_protocol_error_with_receipt) (classification=1)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b2/tests/test_b2.py\", line 104, in test_nonstring_classification_is_a_protocol_error_with_receipt\n    evaluate_batch([self.request()], provider)\n    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b2/intake.py\", line 5, in evaluate_batch\n    raise NotImplementedError(\"Implement bounded classification and result attribution\")\nNotImplementedError: Implement bounded classification and result attribution\n\n======================================================================\nERROR: test_nonstring_classification_is_a_protocol_error_with_receipt (test_b2.BoundedIntake.test_nonstring_classification_is_a_protocol_error_with_receipt) (classification=['MATCH'])\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b2/tests/test_b2.py\", line 104, in test_nonstring_classification_is_a_protocol_error_with_receipt\n    evaluate_batch([self.request()], provider)\n    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b2/intake.py\", line 5, in evaluate_batch\n    raise NotImplementedError(\"Implement bounded classification and result attribution\")\nNotImplementedError: Implement bounded classification and result attribution\n\n======================================================================\nERROR: test_nonstring_classification_is_a_protocol_error_with_receipt (test_b2.BoundedIntake.test_nonstring_classification_is_a_protocol_error_with_receipt) (classification={'MATCH': True})\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b2/tests/test_b2.py\", line 104, in test_nonstring_classification_is_a_protocol_error_with_receipt\n    evaluate_batch([self.request()], provider)\n    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b2/intake.py\", line 5, in evaluate_batch\n    raise NotImplementedError(\"Implement bounded classification and result attribution\")\nNotImplementedError: Implement bounded classification and result attribution\n\n======================================================================\nERROR: test_nonstring_classification_is_a_protocol_error_with_receipt (test_b2.BoundedIntake.test_nonstring_classification_is_a_protocol_error_with_receipt)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b2/tests/test_b2.py\", line 111, in test_nonstring_classification_is_a_protocol_error_with_receipt\n    result = evaluate_batch([self.request()],\n        lambda key, amount: {\"request_id\": key,\n                             \"classification\": valid})\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b2/intake.py\", line 5, in evaluate_batch\n    raise NotImplementedError(\"Implement bounded classification and result attribution\")\nNotImplementedError: Implement bounded classification and result attribution\n\n======================================================================\nERROR: test_protocol_error_preserves_prior_and_invalid_attempts (test_b2.BoundedIntake.test_protocol_error_preserves_prior_and_invalid_attempts)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b2/tests/test_b2.py\", line 58, in test_protocol_error_preserves_prior_and_invalid_attempts\n    evaluate_batch([self.request(\"good\"), self.request(\"bad\")], provider)\n    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b2/intake.py\", line 5, in evaluate_batch\n    raise NotImplementedError(\"Implement bounded classification and result attribution\")\nNotImplementedError: Implement bounded classification and result attribution\n\n======================================================================\nERROR: test_provider_value_error_keeps_identity_and_failed_cost (test_b2.BoundedIntake.test_provider_value_error_keeps_identity_and_failed_cost)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b2/tests/test_b2.py\", line 76, in test_provider_value_error_keeps_identity_and_failed_cost\n    evaluate_batch([self.request(\"good\"), self.request(\"bad\")], provider)\n    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b2/intake.py\", line 5, in evaluate_batch\n    raise NotImplementedError(\"Implement bounded classification and result attribution\")\nNotImplementedError: Implement bounded classification and result attribution\n\n======================================================================\nERROR: test_transient_retry_preserves_identity (test_b2.BoundedIntake.test_transient_retry_preserves_identity)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b2/tests/test_b2.py\", line 19, in test_transient_retry_preserves_identity\n    r=evaluate_batch([self.request()],provider)\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b2/intake.py\", line 5, in evaluate_batch\n    raise NotImplementedError(\"Implement bounded classification and result attribution\")\nNotImplementedError: Implement bounded classification and result attribution\n\n======================================================================\nERROR: test_unknown_response_shape_is_refused (test_b2.BoundedIntake.test_unknown_response_shape_is_refused)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b2/tests/test_b2.py\", line 49, in test_unknown_response_shape_is_refused\n    with self.assertRaises(ProviderProtocolError):evaluate_batch([self.request()],lambda k,a:{\"request_id\":k,\"classification\":\"PAY\",\"approved\":True})\n                                                  ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b2/intake.py\", line 5, in evaluate_batch\n    raise NotImplementedError(\"Implement bounded classification and result attribution\")\nNotImplementedError: Implement bounded classification and result attribution\n\n======================================================================\nERROR: test_wrong_response_id_is_refused (test_b2.BoundedIntake.test_wrong_response_id_is_refused)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b2/tests/test_b2.py\", line 28, in test_wrong_response_id_is_refused\n    with self.assertRaises(ProviderProtocolError):evaluate_batch([self.request()],lambda k,a:{\"request_id\":\"someone-else\",\"classification\":\"MATCH\"})\n                                                  ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b2/intake.py\", line 5, in evaluate_batch\n    raise NotImplementedError(\"Implement bounded classification and result attribution\")\nNotImplementedError: Implement bounded classification and result attribution\n\n======================================================================\nFAIL: test_unexpected_failure_is_not_retried (test_b2.BoundedIntake.test_unexpected_failure_is_not_retried)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b2/tests/test_b2.py\", line 33, in test_unexpected_failure_is_not_retried\n    self.assertEqual(calls,[\"r1\"])\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^\nAssertionError: Lists differ: [] != ['r1']\n\nSecond list contains 1 additional elements.\nFirst extra element 0:\n'r1'\n\n- []\n+ ['r1']\n\n----------------------------------------------------------------------\nRan 12 tests in 0.004s\n\nFAILED (failures=1, errors=17)\n",
+      "timed_out": false,
+      "tests_run": 12,
+      "expected_tests": 12,
+      "methods_passed": 0,
+      "methods_failed": [
+        "test_unexpected_failure_is_not_retried"
+      ],
+      "methods_errored": [
+        "test_duplicate_request_id_is_a_caller_error",
+        "test_global_call_budget_stops_new_calls",
+        "test_invalid_amount_does_not_call_provider",
+        "test_invalid_response_after_retry_retains_unavailability",
+        "test_matching_classification_is_attributed",
+        "test_nonstring_classification_is_a_protocol_error_with_receipt",
+        "test_protocol_error_preserves_prior_and_invalid_attempts",
+        "test_provider_value_error_keeps_identity_and_failed_cost",
+        "test_transient_retry_preserves_identity",
+        "test_unknown_response_shape_is_refused",
+        "test_wrong_response_id_is_refused"
+      ],
+      "status": "FAILED"
+    }
+  },
+  "tests_run": 12,
+  "candidate_sha256_after": "696f7d077b7bd7ba75df7980eebe33ddeae02aae7555aee20ad4df78f5fbe293",
+  "inputs_unchanged": true,
+  "status": "CHECKS_FAILED",
+  "recorded_at_utc": "2026-11-22T17:36:46.755881+00:00",
+  "command": [
+    "/usr/local/bin/python3",
+    "companion/start.py",
+    "check",
+    "B2",
+    "--candidate",
+    "work/b2",
+    "--output",
+    "work/evidence/b2-initial.json"
+  ],
+  "verification_progress": {
+    "schema": "esa-verification-progress/v1",
+    "derivation": "CURRENT_RECEIPT_FIELDS_ONLY_NO_ADDITIONAL_EXECUTION",
+    "source_fields_sha256": "96aa7fb9dd44b058bd841e7e79c6030cebf6d279c8ed6484a81ef286b49d9fb1",
+    "work_order": "mission_B2",
+    "evidence_profile": "new_capability",
+    "profile_basis": "The named mission work order.",
+    "phase": "mission",
+    "stages": {
+      "startup": {
+        "status": "PASS",
+        "evidence": [
+          "schema",
+          "mission",
+          "candidate_path"
+        ],
+        "reason": "The intended runner accepted the entry identity and emitted this check receipt. This does not establish candidate import."
+      },
+      "integrity": {
+        "status": "PASS",
+        "evidence": [
+          "inputs_unchanged",
+          "candidate_sha256_before",
+          "candidate_sha256_after"
+        ],
+        "reason": "The recorded before/after comparison found inputs unchanged."
+      },
+      "contract": {
+        "status": "FAIL",
+        "evidence": [
+          "groups.contract"
+        ],
+        "reason": "Status uses each selected group and any contract-specific supplemental probe; an import placeholder is not behavioral evidence. A candidate stack frame or known protected assertion supports reached behavior; a method count alone does not. Groups within this stage may retain multiple failures.",
+        "behavior_reached": true
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "evidence": [],
+        "reason": "No continuation or consumer/process observation is present."
+      },
+      "artifact": {
+        "status": "NOT_RUN",
+        "evidence": [],
+        "reason": "This receipt has no separate archive/extraction gate. Local demonstration hashes alone do not establish release fitness."
+      },
+      "authorization": {
+        "status": "NOT_RUN",
+        "evidence": [
+          "human_acceptance"
+        ],
+        "reason": "No owner acceptance or release authorization is recorded. Passing checks do not supply that decision."
+      }
+    },
+    "first_failed_stage": "contract",
+    "last_observed_stage": "contract",
+    "limits": "A stage label interprets the retained fields; it is not an independent attestation. NOT_APPLICABLE needs an explicit scope exclusion; absence alone remains NOT_RUN."
+  }
+}

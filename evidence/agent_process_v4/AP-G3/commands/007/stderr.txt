@@ -1,0 +1,12 @@
+test_cancel_releases_slot_without_erasing_history (test_g3.Cancellation.test_cancel_releases_slot_without_erasing_history) ... ok
+test_migration_preserves_old_public_record (test_g3.Cancellation.test_migration_preserves_old_public_record) ... ok
+test_missing_id_is_not_found (test_g3.Cancellation.test_missing_id_is_not_found) ... ok
+test_other_member_cannot_cancel (test_g3.Cancellation.test_other_member_cannot_cancel) ... ok
+test_repeat_with_current_version_is_idempotent (test_g3.Cancellation.test_repeat_with_current_version_is_idempotent) ... ok
+test_retry_original_operation_does_not_revive_cancelled_row (test_g3.Cancellation.test_retry_original_operation_does_not_revive_cancelled_row) ... ok
+test_stale_version_cannot_change_state (test_g3.Cancellation.test_stale_version_cannot_change_state) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.013s
+
+OK

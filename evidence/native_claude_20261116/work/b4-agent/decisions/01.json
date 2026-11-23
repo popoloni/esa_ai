@@ -1,0 +1,8 @@
+{
+  "at_utc": "2026-11-16T22:18:24.008174+00:00",
+  "operator": "Claude (claude-opus-5-5), AI operator in the author's review session",
+  "operator_kind": "AI",
+  "decision": "accept",
+  "note": "Observation: native run 01 completed (claude-sonnet-5-5, 0.192 USD reported, 53 s). Changed incident.py and DOSSIER.md.\nOne heredoc write was denied by the client; the worker used the Write tool. The worker also ran a read-only git status\nfrom the parent directory and reported files modified under ../../companion/: those are the operator's adapter edits in\nthe package being prepared, visible because the operator kept that package under git. Recorded as a read outside the\ncandidate; no write occurred there.\nCode review: inspect_ledger opens SQLite read-only (mode=ro URI); recovery_plan keeps automatic_merge and\nproduction_authorized False and leaves reconciliation PENDING_OWNER_DECISION.\nIndependent: check B4 7/7; continue B4 SCOPED_HANDOFF_READY on the first attempt; operator probe\nwork/evidence/operator/b4-readonly-probe.json: a missing ledger raises FileNotFoundError and is not created.\nDecision: ACCEPT for OPS-B4/v2 scope. The Brownfield route B1-B4 is complete.\nLimit: AI operator; reconciliation of incident history remains an owner decision by contract.\n",
+  "meaning": "Recorded operator statement; this tool does not certify its authority or correctness."
+}

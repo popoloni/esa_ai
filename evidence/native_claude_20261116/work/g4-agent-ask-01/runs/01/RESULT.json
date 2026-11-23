@@ -1,0 +1,787 @@
+{
+  "at_utc": "2026-11-16T22:24:45.948194+00:00",
+  "client": "claude",
+  "exit_code": 0,
+  "timed_out": false,
+  "permission_denials": [
+    {
+      "event_line": 1280,
+      "value": {
+        "tool_name": "Bash",
+        "tool_use_id": "toolu_01HBxGSKhzZxqFfgNxpQqn3L",
+        "tool_input": {
+          "command": "cat > operations.py <<'EOF'\n\"\"\"G4 operations: read-only diagnosis and accepted-outcome cost accounting (OPS-G4/v2).\n\ndiagnose() targets only the two documented G3 schema-3 representations; it does not\ncertify arbitrary databases. It never repairs, deletes or initialises anything.\n\"\"\"\nimport hashlib\nimport sqlite3\nfrom decimal import Decimal, InvalidOperation\nfrom pathlib import Path\n\n_REFERENCE = (\"id\", \"asset_id\", \"member_id\", \"starts_at\", \"ends_at\",\n              \"request_key\", \"request_hash\", \"state\", \"version\")\n_RECORDED = (\"reservation_id\", \"trusted_member_id\", \"asset_id\", \"starts_at\", \"ends_at\",\n             \"idempotency_key\", \"payload_fingerprint\", \"state\", \"version\")\n_REPRESENTATIONS = ((\"reservations\", \"id\", _REFERENCE),\n                    (\"reservations_v2\", \"reservation_id\", _RECORDED))\n\n\ndef _digest(path):\n    return hashlib.sha256(path.read_bytes()).hexdigest()\n\n\ndef diagnose(path):\n    p = Path(path).resolve()\n    if not p.is_file():\n        raise FileNotFoundError(f\"storage not found: {p}\")\n    before = _digest(p)\n    uri = p.as_uri() + \"?mode=ro\"\n    con = sqlite3.connect(uri, uri=True)\n    try:\n        version = con.execute(\"PRAGMA user_version\").fetchone()[0]\n        if version != 3:\n            raise ValueError(f\"unsupported schema version {version}; only schema 3 is supported\")\n        matches = []\n        for table, id_col, signature in _REPRESENTATIONS:\n            cols = tuple(r[1] for r in con.execute(f\"PRAGMA table_info({table})\"))\n            if cols == signature:\n                matches.append((table, id_col))\n        if not matches:\n            raise ValueError(\"no supported current reservation representation found\")\n        if len(matches) > 1:\n            raise ValueError(\"competing current reservation representations; refusing to guess\")\n        table, id_col = matches[0]\n        counts = dict(con.execute(f\"SELECT state, COUNT(*) FROM {table} GROUP BY state ORDER BY state\"))\n        rows = con.execute(\n            f\"SELECT {id_col}, asset_id, starts_at, ends_at FROM {table} \"\n            \"WHERE state = 'active' ORDER BY asset_id, \" + id_col).fetchall()\n    finally:\n        con.close()\n    after = _digest(p)\n    if before != after:\n        raise RuntimeError(\"storage changed during diagnosis; no stable snapshot\")\n    pairs = []\n    for i, a in enumerate(rows):\n        for b in rows[i + 1:]:\n            # strict inequalities: adjacency (end == start) is not an overlap\n            if a[1] == b[1] and a[2] < b[3] and b[2] < a[3]:\n                pairs.append([a[0], b[0]])\n    pairs.sort()\n    return {\n        \"diagnosis\": \"ACTIVE_OVERLAP\" if pairs else \"NO_ACTIVE_OVERLAP_OBSERVED\",\n        \"counts\": counts,\n        \"active_overlap_pairs\": pairs,\n        \"schema_version\": version,\n        \"representation\": table,\n        \"path\": str(p),\n        \"digest\": after,\n        \"digest_before\": before,\n        \"digest_after\": after,\n        \"unchanged\": True,\n    }\n\n\ndef _number(value, name):\n    if isinstance(value, bool) or value is None:\n        raise ValueError(f\"{name} must be a number\")\n    try:\n        d = Decimal(str(value).strip())\n    except (InvalidOperation, ValueError):\n        raise ValueError(f\"{name} is not numeric: {value!r}\")\n    if not d.is_finite() or d < 0:\n        raise ValueError(f\"{name} must be finite and nonnegative: {value!r}\")\n    return d\n\n\ndef cost_summary(attempts, accepted):\n    if isinstance(accepted, bool) or not isinstance(accepted, int) or accepted < 0:\n        raise ValueError(\"accepted must be a nonnegative integer\")\n    cost = Decimal(0)\n    minutes = Decimal(0)\n    n = 0\n    for a in attempts:\n        try:\n            c, m = a[\"cost_eur\"], a[\"minutes\"]\n        except (KeyError, TypeError):\n            raise ValueError(\"every attempt needs cost_eur and minutes\")\n        cost += _number(c, \"cost_eur\")\n        minutes += _number(m, \"minutes\")\n        n += 1\n    result = {\"attempts\": n, \"accepted\": accepted,\n              \"total_cost_eur\": str(cost), \"total_minutes\": str(minutes)}\n    if accepted == 0:\n        result.update(cost_per_accepted_eur=None, minutes_per_accepted=None,\n                      status=\"NO_ACCEPTED_OUTCOME\")\n    else:\n        result.update(cost_per_accepted_eur=str(cost / accepted),\n                      minutes_per_accepted=str(minutes / accepted), status=\"OK\")\n    return result\nEOF\npython -m unittest tests.test_g4 2>&1 | tail -15; git status --short . "
+        }
+      }
+    }
+  ],
+  "reported_cost_usd": [
+    0.1693725
+  ],
+  "elapsed_seconds": 58.268063,
+  "event_count": 1281,
+  "malformed_native_event_lines": [],
+  "changed_files": [
+    "DOSSIER.md",
+    "operations.py"
+  ],
+  "scope_changes_requiring_review": [],
+  "before": {
+    "AGENTS.md": "3b93869be62f5fa832481275c8d37a9acb6b8b6fb6cf2841230ac0ab2e47e294",
+    "DOSSIER.md": "617be3697a2054a984fab77a0596315bde4ae1246138bcb9071e4cf9631e8c17",
+    "READER_ENTRY.json": "c649c0b9ff0c9e7b5e9dd59e9ca1a9931123e0b962100dfd95dcfa92a452995b",
+    "booking.py": "7b02037f25564beb431bd1deeaa70da7df845ebc71426b99b882a855193b27a6",
+    "docs/contract.md": "3917cc7ead53e670c4904ef7d9a9ade8572f026bdac0d34b2094b162d7cc1885",
+    "g4_fixture.py": "acfff09ae7b805745dcd8a83c769c86c0088704eac134eaf23ee8dd58e73566c",
+    "operations.py": "4675a173bfd4da1c62abcee573be6273ef196a1c759fc89ecf2b8156eb8ffcd8",
+    "prior/booking.py": "7b02037f25564beb431bd1deeaa70da7df845ebc71426b99b882a855193b27a6",
+    "prior/integration/booking.py": "7b02037f25564beb431bd1deeaa70da7df845ebc71426b99b882a855193b27a6",
+    "prior/integration/reservation_cli.py": "3d9d266cb8c8bf64aae77e096a5daaaf31e4fe7f476433ab8a8faaec135676a4",
+    "prior/integration/reservation_report.py": "33c881e7a0ef08f8e00d62a139f3706e80d8be0636e786693691c6b41093c7eb",
+    "prior/integration-acceptance.json": "810d5e2356434f27f69987b8fedad9a6a0151e98a3ef8a1883746e00d0e026c9",
+    "prior/parent-check-artifacts/DEMONSTRATION.json": "b0e1844bb7d25661166c84a1e25ffb1a0798802fee59d08612b23117eb7633f6",
+    "prior/parent-check-artifacts/continuation.json": "9298378697846b42368d2a633326847ba0c679b9dd2e39ca8b1e3ddd3e804a5e",
+    "prior/parent-check-artifacts/reservations.sqlite": "f401ee09ade425237858f7240a320df3cd059c714775de34772c6ed4b928507a",
+    "prior/parent-entry.json": "29589ad710fb889f51a440fd852198903bddc67e12d2c7b3fac5095c5f2a8f05",
+    "prior/parent-handoff.json": "9f6ad8a6e6c21a5282d2a173ca4789c166b0620a22367632f6320f0c05b25c4c",
+    "reference_g3.py": "ad89e1350b80d674b30f8fd97927107adb77e2df625805d7a0a49cb8837b5b17",
+    "reservation_cli.py": "3d9d266cb8c8bf64aae77e096a5daaaf31e4fe7f476433ab8a8faaec135676a4",
+    "reservation_report.py": "33c881e7a0ef08f8e00d62a139f3706e80d8be0636e786693691c6b41093c7eb",
+    "tests/test_g4.py": "b9e3af154e42a1af76ea323b8ad34025898c0ff4aa0d58207d7c837de697169a"
+  },
+  "after": {
+    "AGENTS.md": "3b93869be62f5fa832481275c8d37a9acb6b8b6fb6cf2841230ac0ab2e47e294",
+    "DOSSIER.md": "ef46e6a63db3be5f1723c2b86bd7beac5ac01e1ca411ee3603c02c8b91e50a22",
+    "READER_ENTRY.json": "c649c0b9ff0c9e7b5e9dd59e9ca1a9931123e0b962100dfd95dcfa92a452995b",
+    "booking.py": "7b02037f25564beb431bd1deeaa70da7df845ebc71426b99b882a855193b27a6",
+    "docs/contract.md": "3917cc7ead53e670c4904ef7d9a9ade8572f026bdac0d34b2094b162d7cc1885",
+    "g4_fixture.py": "acfff09ae7b805745dcd8a83c769c86c0088704eac134eaf23ee8dd58e73566c",
+    "operations.py": "61989caa6adaabf768a3d4b7331b61d2574bd18daef4e4ff5c03c670ade689e5",
+    "prior/booking.py": "7b02037f25564beb431bd1deeaa70da7df845ebc71426b99b882a855193b27a6",
+    "prior/integration/booking.py": "7b02037f25564beb431bd1deeaa70da7df845ebc71426b99b882a855193b27a6",
+    "prior/integration/reservation_cli.py": "3d9d266cb8c8bf64aae77e096a5daaaf31e4fe7f476433ab8a8faaec135676a4",
+    "prior/integration/reservation_report.py": "33c881e7a0ef08f8e00d62a139f3706e80d8be0636e786693691c6b41093c7eb",
+    "prior/integration-acceptance.json": "810d5e2356434f27f69987b8fedad9a6a0151e98a3ef8a1883746e00d0e026c9",
+    "prior/parent-check-artifacts/DEMONSTRATION.json": "b0e1844bb7d25661166c84a1e25ffb1a0798802fee59d08612b23117eb7633f6",
+    "prior/parent-check-artifacts/continuation.json": "9298378697846b42368d2a633326847ba0c679b9dd2e39ca8b1e3ddd3e804a5e",
+    "prior/parent-check-artifacts/reservations.sqlite": "f401ee09ade425237858f7240a320df3cd059c714775de34772c6ed4b928507a",
+    "prior/parent-entry.json": "29589ad710fb889f51a440fd852198903bddc67e12d2c7b3fac5095c5f2a8f05",
+    "prior/parent-handoff.json": "9f6ad8a6e6c21a5282d2a173ca4789c166b0620a22367632f6320f0c05b25c4c",
+    "reference_g3.py": "ad89e1350b80d674b30f8fd97927107adb77e2df625805d7a0a49cb8837b5b17",
+    "reservation_cli.py": "3d9d266cb8c8bf64aae77e096a5daaaf31e4fe7f476433ab8a8faaec135676a4",
+    "reservation_report.py": "33c881e7a0ef08f8e00d62a139f3706e80d8be0636e786693691c6b41093c7eb",
+    "tests/test_g4.py": "b9e3af154e42a1af76ea323b8ad34025898c0ff4aa0d58207d7c837de697169a"
+  },
+  "thread_ids": [
+    "6198bc0c-ff97-4908-ba9c-19b5096b35d0"
+  ],
+  "usage_events": [
+    {
+      "duration_api_ms": 56845,
+      "stop_reason": "end_turn",
+      "session_id": "6198bc0c-ff97-4908-ba9c-19b5096b35d0",
+      "total_cost_usd": 0.1693725,
+      "usage": {
+        "input_tokens": 18,
+        "cache_creation_input_tokens": 17927,
+        "cache_read_input_tokens": 139985,
+        "output_tokens": 8363,
+        "output_tokens_details": {
+          "thinking_tokens": 826
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 17927,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 1151,
+            "cache_read_input_tokens": 22409,
+            "cache_creation_input_tokens": 1697,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 1697
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard",
+        "fallback_credit": null
+      },
+      "modelUsage": {
+        "claude-sonnet-5-5": {
+          "inputTokens": 18,
+          "outputTokens": 8363,
+          "cacheReadInputTokens": 139985,
+          "cacheCreationInputTokens": 17927,
+          "webSearchRequests": 0,
+          "costUSD": 0.1693725,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 64000,
+          "thinkingTokens": 826,
+          "cacheCreationEphemeral5mInputTokens": 0,
+          "cacheCreationEphemeral1hInputTokens": 17927,
+          "canonicalModel": "claude-sonnet-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "permission_denials": [
+        {
+          "tool_name": "Bash",
+          "tool_use_id": "toolu_01HBxGSKhzZxqFfgNxpQqn3L",
+          "tool_input": {
+            "command": "cat > operations.py <<'EOF'\n\"\"\"G4 operations: read-only diagnosis and accepted-outcome cost accounting (OPS-G4/v2).\n\ndiagnose() targets only the two documented G3 schema-3 representations; it does not\ncertify arbitrary databases. It never repairs, deletes or initialises anything.\n\"\"\"\nimport hashlib\nimport sqlite3\nfrom decimal import Decimal, InvalidOperation\nfrom pathlib import Path\n\n_REFERENCE = (\"id\", \"asset_id\", \"member_id\", \"starts_at\", \"ends_at\",\n              \"request_key\", \"request_hash\", \"state\", \"version\")\n_RECORDED = (\"reservation_id\", \"trusted_member_id\", \"asset_id\", \"starts_at\", \"ends_at\",\n             \"idempotency_key\", \"payload_fingerprint\", \"state\", \"version\")\n_REPRESENTATIONS = ((\"reservations\", \"id\", _REFERENCE),\n                    (\"reservations_v2\", \"reservation_id\", _RECORDED))\n\n\ndef _digest(path):\n    return hashlib.sha256(path.read_bytes()).hexdigest()\n\n\ndef diagnose(path):\n    p = Path(path).resolve()\n    if not p.is_file():\n        raise FileNotFoundError(f\"storage not found: {p}\")\n    before = _digest(p)\n    uri = p.as_uri() + \"?mode=ro\"\n    con = sqlite3.connect(uri, uri=True)\n    try:\n        version = con.execute(\"PRAGMA user_version\").fetchone()[0]\n        if version != 3:\n            raise ValueError(f\"unsupported schema version {version}; only schema 3 is supported\")\n        matches = []\n        for table, id_col, signature in _REPRESENTATIONS:\n            cols = tuple(r[1] for r in con.execute(f\"PRAGMA table_info({table})\"))\n            if cols == signature:\n                matches.append((table, id_col))\n        if not matches:\n            raise ValueError(\"no supported current reservation representation found\")\n        if len(matches) > 1:\n            raise ValueError(\"competing current reservation representations; refusing to guess\")\n        table, id_col = matches[0]\n        counts = dict(con.execute(f\"SELECT state, COUNT(*) FROM {table} GROUP BY state ORDER BY state\"))\n        rows = con.execute(\n            f\"SELECT {id_col}, asset_id, starts_at, ends_at FROM {table} \"\n            \"WHERE state = 'active' ORDER BY asset_id, \" + id_col).fetchall()\n    finally:\n        con.close()\n    after = _digest(p)\n    if before != after:\n        raise RuntimeError(\"storage changed during diagnosis; no stable snapshot\")\n    pairs = []\n    for i, a in enumerate(rows):\n        for b in rows[i + 1:]:\n            # strict inequalities: adjacency (end == start) is not an overlap\n            if a[1] == b[1] and a[2] < b[3] and b[2] < a[3]:\n                pairs.append([a[0], b[0]])\n    pairs.sort()\n    return {\n        \"diagnosis\": \"ACTIVE_OVERLAP\" if pairs else \"NO_ACTIVE_OVERLAP_OBSERVED\",\n        \"counts\": counts,\n        \"active_overlap_pairs\": pairs,\n        \"schema_version\": version,\n        \"representation\": table,\n        \"path\": str(p),\n        \"digest\": after,\n        \"digest_before\": before,\n        \"digest_after\": after,\n        \"unchanged\": True,\n    }\n\n\ndef _number(value, name):\n    if isinstance(value, bool) or value is None:\n        raise ValueError(f\"{name} must be a number\")\n    try:\n        d = Decimal(str(value).strip())\n    except (InvalidOperation, ValueError):\n        raise ValueError(f\"{name} is not numeric: {value!r}\")\n    if not d.is_finite() or d < 0:\n        raise ValueError(f\"{name} must be finite and nonnegative: {value!r}\")\n    return d\n\n\ndef cost_summary(attempts, accepted):\n    if isinstance(accepted, bool) or not isinstance(accepted, int) or accepted < 0:\n        raise ValueError(\"accepted must be a nonnegative integer\")\n    cost = Decimal(0)\n    minutes = Decimal(0)\n    n = 0\n    for a in attempts:\n        try:\n            c, m = a[\"cost_eur\"], a[\"minutes\"]\n        except (KeyError, TypeError):\n            raise ValueError(\"every attempt needs cost_eur and minutes\")\n        cost += _number(c, \"cost_eur\")\n        minutes += _number(m, \"minutes\")\n        n += 1\n    result = {\"attempts\": n, \"accepted\": accepted,\n              \"total_cost_eur\": str(cost), \"total_minutes\": str(minutes)}\n    if accepted == 0:\n        result.update(cost_per_accepted_eur=None, minutes_per_accepted=None,\n                      status=\"NO_ACCEPTED_OUTCOME\")\n    else:\n        result.update(cost_per_accepted_eur=str(cost / accepted),\n                      minutes_per_accepted=str(minutes / accepted), status=\"OK\")\n    return result\nEOF\npython -m unittest tests.test_g4 2>&1 | tail -15; git status --short . "
+          }
+        }
+      ],
+      "terminal_reason": "completed",
+      "fast_mode_state": "off",
+      "fast_mode_disabled_reason": "sdk_opt_in_required",
+      "subagent_stats": {
+        "spawned": 0,
+        "requested": {
+          "background": 0,
+          "foreground": 0,
+          "unset": 0
+        },
+        "started_in_background": 0,
+        "max_depth": 0,
+        "spawned_by_subagents": 0,
+        "completed": 0,
+        "failed": 0,
+        "killed": {
+          "parent": 0,
+          "user": 0,
+          "system": 0
+        },
+        "refused": {
+          "depth_limit": 0,
+          "concurrency_limit": 0,
+          "budget": 0
+        },
+        "by_type": {}
+      },
+      "safety_stops": 0,
+      "is_error": false,
+      "num_turns": 10,
+      "subtype": "success",
+      "api_error_status": null,
+      "result": "I've stopped on an owner question. The retained G3 candidate's table matches neither schema in the contract, so 3 of the 11 development checks still fail.\n\n**The question for the owner.** `booking.py` (identical to `prior/booking.py`) creates `reservations_v2` with columns `id, trusted_member_id, \u2026, fingerprint, state, version`. The contract's two supported signatures are:\n- the reference table, with `id`, `member_id`, `request_key` and `request_hash`;\n- the recorded table, with `reservation_id` and `payload_fingerprint`.\n\nThe candidate matches neither, and the contract says to refuse unsupported schemas and not to guess a mapping. Should the owner approve a third signature (ID column `id`, fingerprint column `fingerprint`), or is the contract text or the candidate wrong? `g4_fixture.insert_overlap` also can't write to that table, because it inserts `payload_fingerprint`.\n\n**Acceptance example.**\n- Two active rows on asset A, 09:00\u201310:00 and 09:30\u201310:30, should give `ACTIVE_OVERLAP` with pairs `[[1,2]]` and unchanged file bytes.\n- `cost_summary` with 2.20 + 0.80 EUR and 1 accepted outcome should give `3.00`.\n- With 0 accepted outcomes it should give null unit metrics and `NO_ACCEPTED_OUTCOME`.\n\n**Changed files:** `operations.py` and `DOSSIER.md` only. I didn't touch docs, tests, prior snapshots or `READER_ENTRY.json`.\n\n**What I implemented:**\n- `diagnose`:\n  - It opens the file read-only and refuses a missing path without creating it.\n  - It requires `user_version` 3 and an exact column match for exactly one supported table.\n  - It reports state counts, strict-overlap pairs among active rows on the same asset, the resolved path and a sha256 digest. Cancelled rows and adjacent bookings are excluded.\n  - It raises an error if the file's digest changes during the read.\n- `cost_summary`:\n  - It sums with `Decimal`.\n  - It raises `ValueError` for non-numeric, NaN, infinite, negative or boolean values.\n  - It returns null unit metrics and `NO_ACCEPTED_OUTCOME` when there are zero accepted outcomes.\n\n**Commands run:** `python -m unittest tests.test_g4` once, plus a few read-only inspections.\n- **Result:** 11 tests ran, 8 passed and 3 errored. The 3 errors are the clean-storage, active-overlap and cancelled-row tests. They error with \"no supported current reservation representation found\".\n- **Why:** those tests build the database with the retained `booking.init_db`, so they hit the mismatch above. I left the refusal in place rather than loosen it to get a pass.\n- **Passing:** the reference-schema test, the unknown-schema refusal and all the cost tests.\n\n**Remaining uncertainty:**\n- Overlap comparison is lexical on ISO strings, which is only valid for the uniform `\u2026Z` format.\n- Concurrent-change detection compares digests before and after, so it can miss a change that is made and then reverted. No test covers it.\n\n**For the operator:** the work isn't ready for protected acceptance until the owner decides the mapping. I claim no human approval and no backend identity. I used about 7 of the 40 allowed tool commands.",
+      "ttft_ms": 2137,
+      "type": "result",
+      "duration_ms": 57466,
+      "uuid": "852fc0c8-3f94-494f-90af-6e088e8ba825",
+      "ttft_stream_ms": 1396,
+      "time_to_request_ms": 106,
+      "time_to_request_phases_ms": {
+        "other": 7,
+        "system_prompt": 44,
+        "resume_other": 0,
+        "process_user_input": 4,
+        "input_attachments": 8,
+        "input_hooks": 2,
+        "conversation_append": 1,
+        "tool_pool_refresh": 0,
+        "init_message": 2,
+        "init_frame_send": 1,
+        "engine_pickup": 1,
+        "loop_entry": 5,
+        "message_prep": 1,
+        "model_config_wait": 2,
+        "autocompact": 1,
+        "request_announcements": 6,
+        "query_setup": 1,
+        "model_gates": 0,
+        "tool_schema_build": 8,
+        "message_normalization": 3,
+        "client_creation": 2,
+        "request_build": 7
+      },
+      "turn_start_resume_kind": "none",
+      "process_turn_index": 0,
+      "time_to_request_loop_lag_ms": 56,
+      "time_to_request_cpu_ms": 110,
+      "time_to_request_major_faults": 0,
+      "process_rss_mib_turn_start": 210,
+      "process_anon_mib_turn_start": 134,
+      "process_rss_mib_result": 228,
+      "process_anon_mib_result": 139,
+      "process_peak_rss_mib": 235,
+      "process_cpu_ms_turn": 1744,
+      "process_wall_ms_turn": 57466,
+      "tool_pool_build_count": 3,
+      "tool_pool_build_lapsed_count": 1,
+      "tool_pool_moved_at_lapse_count": 0,
+      "tool_pool_limit_ms": 30000,
+      "process_cpu_ms_streaming": 940,
+      "process_wall_ms_streaming": 41779,
+      "main_stream_count": 9,
+      "main_stream_event_count": 1227,
+      "main_stream_chunk_count": 268,
+      "process_turn_states": {
+        "main_stream": {
+          "cpu_ms": 940,
+          "wall_ms": 41779,
+          "entries": 9
+        },
+        "tool": {
+          "cpu_ms": 149,
+          "wall_ms": 412,
+          "entries": 8
+        },
+        "first_event_wait": {
+          "cpu_ms": 391,
+          "wall_ms": 15028,
+          "entries": 9
+        },
+        "before_first_request": {
+          "cpu_ms": 109,
+          "wall_ms": 105,
+          "entries": 1
+        },
+        "between_requests": {
+          "cpu_ms": 139,
+          "wall_ms": 127,
+          "entries": 8
+        },
+        "after_last_request": {
+          "cpu_ms": 16,
+          "wall_ms": 15,
+          "entries": 1
+        }
+      },
+      "input_attachments_detail": {
+        "slowest_producer": "artifact_opening_prefetch",
+        "slowest_producer_ms": 1,
+        "cpu_ms": 8,
+        "major_faults": 0,
+        "setup_ms": 0,
+        "prompt_producers_ms": 0,
+        "ambient_start_ms": 4,
+        "ambient_wait_ms": 1,
+        "render_ms": 1,
+        "producers": 41,
+        "token_counts": 0
+      },
+      "tool_schema_build_detail": {
+        "betas_ms": 0,
+        "waits_ms": 1,
+        "placement_ms": 1,
+        "render_ms": 6,
+        "after_ms": 0,
+        "other_ms": 0,
+        "tools": 6,
+        "new_schemas": 6
+      },
+      "message_normalization_detail": {
+        "before_ms": 0,
+        "normalize_ms": 2,
+        "images_ms": 0,
+        "post_process_ms": 0,
+        "after_ms": 1,
+        "other_ms": 0,
+        "messages": 10,
+        "wire_messages": 2
+      },
+      "request_build_detail": {
+        "records_ms": 1,
+        "system_ms": 1,
+        "headers_ms": 1,
+        "cache_break_record_ms": 1,
+        "plans_ms": 1,
+        "retry_setup_ms": 0,
+        "sent_build_ms": 1,
+        "record_attempt_ms": 1,
+        "other_ms": 0,
+        "sent_build_safety_context_ms": 0,
+        "sent_build_cache_breakpoints_ms": 0,
+        "sent_build_surrogate_scan_ms": 1
+      },
+      "first_content_frame_ms": 1396,
+      "time_to_request_from_spawn_ms": 1162269,
+      "warm_spare_claimed": false,
+      "flag_fetch_kick": "started_in_init_warm",
+      "time_origin_ms": 1794867827684.1912,
+      "queued_turn_count": 0,
+      "result_index": 0,
+      "model_usage_since_last_result": {
+        "claude-sonnet-5-5": {
+          "inputTokens": 18,
+          "outputTokens": 8363,
+          "cacheReadInputTokens": 139985,
+          "cacheCreationInputTokens": 17927,
+          "webSearchRequests": 0,
+          "costUSD": 0.1693725,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 64000,
+          "thinkingTokens": 826,
+          "cacheCreationEphemeral5mInputTokens": 0,
+          "cacheCreationEphemeral1hInputTokens": 17927,
+          "canonicalModel": "claude-sonnet-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "process_start_tuning": 0
+    }
+  ],
+  "native_observations": {
+    "completed_turn_lines": [
+      1280
+    ],
+    "failed_turn_or_error_lines": [],
+    "agent_message_lines": [
+      680,
+      1275
+    ],
+    "tool_operation_lines": [
+      28,
+      58,
+      97,
+      390,
+      637,
+      658,
+      725,
+      770,
+      1070
+    ],
+    "model_observations": [
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 3,
+        "field": "model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 28,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 58,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 68,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 97,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 116,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 390,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 402,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 637,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 658,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 680,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 725,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 738,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 770,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 784,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 1070,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 1275,
+        "field": "message.model"
+      }
+    ],
+    "usage_observations": [
+      {
+        "event_line": 28,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 3388,
+          "cache_read_input_tokens": 6179,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 3388
+          },
+          "output_tokens": 16,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 58,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 931,
+          "cache_read_input_tokens": 9567,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 931
+          },
+          "output_tokens": 16,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 68,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 4005,
+          "cache_read_input_tokens": 10498,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 4005
+          },
+          "output_tokens": 10,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 97,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 4005,
+          "cache_read_input_tokens": 10498,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 4005
+          },
+          "output_tokens": 10,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 116,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1274,
+          "cache_read_input_tokens": 14503,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1274
+          },
+          "output_tokens": 3,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 390,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1274,
+          "cache_read_input_tokens": 14503,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1274
+          },
+          "output_tokens": 3,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 402,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 2414,
+          "cache_read_input_tokens": 15777,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 2414
+          },
+          "output_tokens": 4,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 637,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 2414,
+          "cache_read_input_tokens": 15777,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 2414
+          },
+          "output_tokens": 4,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 658,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 2414,
+          "cache_read_input_tokens": 15777,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 2414
+          },
+          "output_tokens": 4,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 680,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 2758,
+          "cache_read_input_tokens": 18191,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 2758
+          },
+          "output_tokens": 52,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 725,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 2758,
+          "cache_read_input_tokens": 18191,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 2758
+          },
+          "output_tokens": 52,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 738,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 963,
+          "cache_read_input_tokens": 20949,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 963
+          },
+          "output_tokens": 10,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 770,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 963,
+          "cache_read_input_tokens": 20949,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 963
+          },
+          "output_tokens": 10,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 784,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 497,
+          "cache_read_input_tokens": 21912,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 497
+          },
+          "output_tokens": 5,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 1070,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 497,
+          "cache_read_input_tokens": 21912,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 497
+          },
+          "output_tokens": 5,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 1275,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1697,
+          "cache_read_input_tokens": 22409,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1697
+          },
+          "output_tokens": 788,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 1280,
+        "field": "usage",
+        "value": {
+          "input_tokens": 18,
+          "cache_creation_input_tokens": 17927,
+          "cache_read_input_tokens": 139985,
+          "output_tokens": 8363,
+          "output_tokens_details": {
+            "thinking_tokens": 826
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 17927,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "global",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 1151,
+              "cache_read_input_tokens": 22409,
+              "cache_creation_input_tokens": 1697,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 1697
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "fallback_credit": null
+        }
+      }
+    ],
+    "permission_denials": [
+      {
+        "event_line": 1280,
+        "value": {
+          "tool_name": "Bash",
+          "tool_use_id": "toolu_01HBxGSKhzZxqFfgNxpQqn3L",
+          "tool_input": {
+            "command": "cat > operations.py <<'EOF'\n\"\"\"G4 operations: read-only diagnosis and accepted-outcome cost accounting (OPS-G4/v2).\n\ndiagnose() targets only the two documented G3 schema-3 representations; it does not\ncertify arbitrary databases. It never repairs, deletes or initialises anything.\n\"\"\"\nimport hashlib\nimport sqlite3\nfrom decimal import Decimal, InvalidOperation\nfrom pathlib import Path\n\n_REFERENCE = (\"id\", \"asset_id\", \"member_id\", \"starts_at\", \"ends_at\",\n              \"request_key\", \"request_hash\", \"state\", \"version\")\n_RECORDED = (\"reservation_id\", \"trusted_member_id\", \"asset_id\", \"starts_at\", \"ends_at\",\n             \"idempotency_key\", \"payload_fingerprint\", \"state\", \"version\")\n_REPRESENTATIONS = ((\"reservations\", \"id\", _REFERENCE),\n                    (\"reservations_v2\", \"reservation_id\", _RECORDED))\n\n\ndef _digest(path):\n    return hashlib.sha256(path.read_bytes()).hexdigest()\n\n\ndef diagnose(path):\n    p = Path(path).resolve()\n    if not p.is_file():\n        raise FileNotFoundError(f\"storage not found: {p}\")\n    before = _digest(p)\n    uri = p.as_uri() + \"?mode=ro\"\n    con = sqlite3.connect(uri, uri=True)\n    try:\n        version = con.execute(\"PRAGMA user_version\").fetchone()[0]\n        if version != 3:\n            raise ValueError(f\"unsupported schema version {version}; only schema 3 is supported\")\n        matches = []\n        for table, id_col, signature in _REPRESENTATIONS:\n            cols = tuple(r[1] for r in con.execute(f\"PRAGMA table_info({table})\"))\n            if cols == signature:\n                matches.append((table, id_col))\n        if not matches:\n            raise ValueError(\"no supported current reservation representation found\")\n        if len(matches) > 1:\n            raise ValueError(\"competing current reservation representations; refusing to guess\")\n        table, id_col = matches[0]\n        counts = dict(con.execute(f\"SELECT state, COUNT(*) FROM {table} GROUP BY state ORDER BY state\"))\n        rows = con.execute(\n            f\"SELECT {id_col}, asset_id, starts_at, ends_at FROM {table} \"\n            \"WHERE state = 'active' ORDER BY asset_id, \" + id_col).fetchall()\n    finally:\n        con.close()\n    after = _digest(p)\n    if before != after:\n        raise RuntimeError(\"storage changed during diagnosis; no stable snapshot\")\n    pairs = []\n    for i, a in enumerate(rows):\n        for b in rows[i + 1:]:\n            # strict inequalities: adjacency (end == start) is not an overlap\n            if a[1] == b[1] and a[2] < b[3] and b[2] < a[3]:\n                pairs.append([a[0], b[0]])\n    pairs.sort()\n    return {\n        \"diagnosis\": \"ACTIVE_OVERLAP\" if pairs else \"NO_ACTIVE_OVERLAP_OBSERVED\",\n        \"counts\": counts,\n        \"active_overlap_pairs\": pairs,\n        \"schema_version\": version,\n        \"representation\": table,\n        \"path\": str(p),\n        \"digest\": after,\n        \"digest_before\": before,\n        \"digest_after\": after,\n        \"unchanged\": True,\n    }\n\n\ndef _number(value, name):\n    if isinstance(value, bool) or value is None:\n        raise ValueError(f\"{name} must be a number\")\n    try:\n        d = Decimal(str(value).strip())\n    except (InvalidOperation, ValueError):\n        raise ValueError(f\"{name} is not numeric: {value!r}\")\n    if not d.is_finite() or d < 0:\n        raise ValueError(f\"{name} must be finite and nonnegative: {value!r}\")\n    return d\n\n\ndef cost_summary(attempts, accepted):\n    if isinstance(accepted, bool) or not isinstance(accepted, int) or accepted < 0:\n        raise ValueError(\"accepted must be a nonnegative integer\")\n    cost = Decimal(0)\n    minutes = Decimal(0)\n    n = 0\n    for a in attempts:\n        try:\n            c, m = a[\"cost_eur\"], a[\"minutes\"]\n        except (KeyError, TypeError):\n            raise ValueError(\"every attempt needs cost_eur and minutes\")\n        cost += _number(c, \"cost_eur\")\n        minutes += _number(m, \"minutes\")\n        n += 1\n    result = {\"attempts\": n, \"accepted\": accepted,\n              \"total_cost_eur\": str(cost), \"total_minutes\": str(minutes)}\n    if accepted == 0:\n        result.update(cost_per_accepted_eur=None, minutes_per_accepted=None,\n                      status=\"NO_ACCEPTED_OUTCOME\")\n    else:\n        result.update(cost_per_accepted_eur=str(cost / accepted),\n                      minutes_per_accepted=str(minutes / accepted), status=\"OK\")\n    return result\nEOF\npython -m unittest tests.test_g4 2>&1 | tail -15; git status --short . "
+          }
+        }
+      }
+    ],
+    "reported_cost_observations": [
+      {
+        "event_line": 1280,
+        "field": "total_cost_usd",
+        "value": 0.1693725
+      }
+    ],
+    "thread_ids": [
+      "6198bc0c-ff97-4908-ba9c-19b5096b35d0"
+    ]
+  },
+  "requested_model": "claude-sonnet-5-5",
+  "observed_model_ids": [
+    "claude-sonnet-5-5"
+  ],
+  "model_identity_observed": true,
+  "native_turn_completed": true,
+  "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+  "acceptance": "NOT_ESTABLISHED",
+  "scope_note": "Native events retained as emitted; absence of usage is unknown, not zero."
+}

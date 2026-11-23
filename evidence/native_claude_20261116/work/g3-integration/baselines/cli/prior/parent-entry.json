@@ -1,0 +1,38 @@
+{
+  "schema": "esa-full-mission/v1",
+  "release": "ESA-Series-Handbook-Review-5-20261116",
+  "mission": "G2",
+  "mode": "LEARNER",
+  "contract": "RES-001/v1 + G2-OD-01 + G2-OD-02",
+  "module": "booking.py",
+  "lineage": {
+    "mission": "G1",
+    "source_sha256": "48d2daa0e45965088f42ddf307ece4e0f5e8a2330415ee575819a8421d6119cc",
+    "source_path": "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g1/booking.py",
+    "handoff_status": "SCOPED_HANDOFF_READY",
+    "stored_snapshot": "prior/booking.py",
+    "copied_parent_demonstration": null
+  },
+  "human_acceptance": "PENDING",
+  "dependency_sha256": {
+    "legacy_g1.py": "bb3ec4063f41eb10ad6a0850b9fa3d40da7badb4bcff19a38fdab3c80ea4efba",
+    "legacy_g1_json.py": "d5b98f73120fb70ccfe6c8366e19f64ac8b311d54684e872f2ca3c7d6813b191",
+    "legacy_g1_recorded.py": "cedfaf4d936232b94eb7220d0d0594e2e919b75eff6f5dcd8a8690582ff569ce"
+  },
+  "prior_sha256": {
+    "prior/parent-handoff.json": "585bd3dca6f320cd4950a304d9b1d0e59da5d59ed4ce96b8b972706cab98fac5",
+    "prior/parent-entry.json": "a99629f417a2dd4bf904a3e30209667e666275e8a2209594f71bda97e595ddd9",
+    "prior/booking.py": "48d2daa0e45965088f42ddf307ece4e0f5e8a2330415ee575819a8421d6119cc"
+  },
+  "recorded_at_utc": "2026-11-16T22:13:37.118993+00:00",
+  "command": [
+    "/usr/local/bin/python3",
+    "companion/start.py",
+    "advance",
+    "G2",
+    "--from-candidate",
+    "work/g1",
+    "--dest",
+    "work/g2"
+  ]
+}

@@ -1,0 +1,505 @@
+{
+  "events": 23,
+  "head_sha256": "09c0a758fe7363cc322ecd5d773b5b45e00368751e2397f9c078c8663de3c526",
+  "model_calls": 0,
+  "records": {
+    "B1-SELF-PROMOTION-CONTROL": {
+      "approval": null,
+      "content_sha256": "4ff242f6b2c1b3eceddfd105d54c5a309e0a0086f6ce4b738f0421384997b55a",
+      "created_at": "2026-11-16T20:40:09.146724Z",
+      "invalidation": null,
+      "proposal_event_sha256": "49ba635b47a4d90678a190e230a7a7fa93c4cbcacd458fa00be10ca84af79d8c",
+      "record": {
+        "claim": "A grant must not let a declared producer promote its own proposal.",
+        "evidence_refs": [
+          {
+            "locator": "$.cases",
+            "path": "evidence/memory_lab_20261116/recorded_01/observations/initial_reference_probe.json",
+            "sha256": "4ca4734abba82e8df93775f9995aed7218aff7b9874f75e96642fe51b1132d54"
+          }
+        ],
+        "expires_at": "2026-12-16T20:40:07Z",
+        "last_checked_at": "2026-11-16T20:40:07Z",
+        "memory_type": "fact",
+        "producer": {
+          "id": "demo-owner-control",
+          "kind": "automated_control"
+        },
+        "record_id": "B1-SELF-PROMOTION-CONTROL",
+        "revisit_if": [
+          "The task, component, API or field shape changes.",
+          "A source, evidence or approval digest changes.",
+          "Current-contract counterevidence contradicts the claim.",
+          "The declared validity interval ends."
+        ],
+        "schema": "agent-memory-record/v1",
+        "scope": {
+          "component": "treasury.routing.assess",
+          "contract": "B1-API/v2",
+          "schema": "RoutingDecision(route,reason,policy_version)",
+          "task": "B1-grammar-check"
+        },
+        "sensitivity": "public",
+        "source_refs": [
+          {
+            "locator": "Monetary text grammar and declared API behavior",
+            "path": "companion/contracts/B1_API_V2.md",
+            "sha256": "75035676814847b356cd844300c32d5384a68327822225dbb45e92692470db06"
+          }
+        ],
+        "supersedes": null,
+        "valid_from": "2026-11-16T20:40:07Z",
+        "version": 1
+      },
+      "record_sha256": "eca80fe923bbf11375a977ef4f9cf4000b1960d6da55d5577b7cf5611a3ed9d3",
+      "status": "proposed"
+    },
+    "B1-V1-EXPONENT": {
+      "approval": {
+        "actor": {
+          "id": "demo-owner-control",
+          "kind": "automated_control"
+        },
+        "authority_basis": {
+          "locator": "Owner and approved teaching contract declaration",
+          "path": "companion/contracts/B1_API.md",
+          "sha256": "e631804217257dfd5eabf3f9a3feeca025156822acc561bab7b5ab8b722914c2"
+        },
+        "decision_ref": {
+          "locator": "whole file",
+          "path": "evidence/memory_lab_20261116/recorded_01/decisions/B1-V1-EXPONENT_promote.json",
+          "sha256": "34d9805af997ff93592fa5b23b378696c303b4e0e1f83759ad393e534558a711"
+        },
+        "event_sha256": "129bc92d692ad463c09e355ceeff10a858041899d9c23c823a4f3b89e6f21eab",
+        "identity_authenticated": false,
+        "reason": "AUTOMATED CONTROL ONLY: exercise the declared-role and exact-record promotion gate. This is not actual owner approval.",
+        "record_id": "B1-V1-EXPONENT",
+        "record_sha256": "f48e303622b778e6aa39c5f699c600a4124586dd2504da15e230a4fcc9de0b3c"
+      },
+      "content_sha256": "7185cececdafe553fa53c8c9e3ef35d83350602229d0a6c5f2a51f89b1468928",
+      "created_at": "2026-11-16T20:40:07.602475Z",
+      "invalidation": null,
+      "proposal_event_sha256": "f2fecf9a2c1a2a7681077ae08fb6b8f00df3d9e8716ca7841c381f4f02a1fcaf",
+      "record": {
+        "claim": "B1-API/v1 admits Decimal-supported exponent text such as 1e3; the finite-positive numeric routing rule still applies.",
+        "evidence_refs": [
+          {
+            "locator": "$.cases",
+            "path": "evidence/memory_lab_20261116/recorded_01/observations/initial_reference_probe.json",
+            "sha256": "4ca4734abba82e8df93775f9995aed7218aff7b9874f75e96642fe51b1132d54"
+          }
+        ],
+        "expires_at": "2026-12-16T20:40:07Z",
+        "last_checked_at": "2026-11-16T20:40:07Z",
+        "memory_type": "fact",
+        "producer": {
+          "id": "offline-demonstrator",
+          "kind": "automated_control"
+        },
+        "record_id": "B1-V1-EXPONENT",
+        "revisit_if": [
+          "The task, component, API or field shape changes.",
+          "A source, evidence or approval digest changes.",
+          "Current-contract counterevidence contradicts the claim.",
+          "The declared validity interval ends."
+        ],
+        "schema": "agent-memory-record/v1",
+        "scope": {
+          "component": "treasury.routing.assess",
+          "contract": "B1-API/v1",
+          "schema": "RoutingDecision(route,reason,policy_version)",
+          "task": "B1-grammar-check"
+        },
+        "sensitivity": "public",
+        "source_refs": [
+          {
+            "locator": "Monetary text grammar and declared API behavior",
+            "path": "companion/contracts/B1_API.md",
+            "sha256": "e631804217257dfd5eabf3f9a3feeca025156822acc561bab7b5ab8b722914c2"
+          }
+        ],
+        "supersedes": null,
+        "valid_from": "2026-11-16T20:40:07Z",
+        "version": 1
+      },
+      "record_sha256": "f48e303622b778e6aa39c5f699c600a4124586dd2504da15e230a4fcc9de0b3c",
+      "status": "approved"
+    },
+    "B1-V2-BASE": {
+      "approval": {
+        "actor": {
+          "id": "demo-owner-control",
+          "kind": "automated_control"
+        },
+        "authority_basis": {
+          "locator": "Owner and approved teaching contract declaration",
+          "path": "companion/contracts/B1_API_V2.md",
+          "sha256": "75035676814847b356cd844300c32d5384a68327822225dbb45e92692470db06"
+        },
+        "decision_ref": {
+          "locator": "whole file",
+          "path": "evidence/memory_lab_20261116/recorded_01/decisions/B1-V2-BASE_promote.json",
+          "sha256": "6176e9dc4a1b3542e9c9cc849592351887e4aeaafeeb7b09ce39c2f0673a9235"
+        },
+        "event_sha256": "d4c93ad28f7098c13b40df8fc415cdce0b67a777575230f76abd899cc701c14e",
+        "identity_authenticated": false,
+        "reason": "AUTOMATED CONTROL ONLY: exercise the declared-role and exact-record promotion gate. This is not actual owner approval.",
+        "record_id": "B1-V2-BASE",
+        "record_sha256": "3e0f9ace340a8ead6213eec5fb25a9882450e4e9d9df45e75a9cc7a917771707"
+      },
+      "content_sha256": "7a35e14f445698a3a1c02e95e52d576aa7ceba34c8b3f3fa8f5ab7028a3bcc3e",
+      "created_at": "2026-11-16T20:40:08.159529Z",
+      "invalidation": null,
+      "proposal_event_sha256": "1d06ba73a19bbca6fd93130940691d5f30dc6346472ac70539aa6930b4562ba6",
+      "record": {
+        "claim": "Under B1-API/v2, 4000 satisfies the ASCII monetary-text grammar and routes to STANDARD_QUEUE.",
+        "evidence_refs": [
+          {
+            "locator": "$.cases",
+            "path": "evidence/memory_lab_20261116/recorded_01/observations/initial_reference_probe.json",
+            "sha256": "4ca4734abba82e8df93775f9995aed7218aff7b9874f75e96642fe51b1132d54"
+          }
+        ],
+        "expires_at": "2026-12-16T20:40:07Z",
+        "last_checked_at": "2026-11-16T20:40:07Z",
+        "memory_type": "fact",
+        "producer": {
+          "id": "offline-demonstrator",
+          "kind": "automated_control"
+        },
+        "record_id": "B1-V2-BASE",
+        "revisit_if": [
+          "The task, component, API or field shape changes.",
+          "A source, evidence or approval digest changes.",
+          "Current-contract counterevidence contradicts the claim.",
+          "The declared validity interval ends."
+        ],
+        "schema": "agent-memory-record/v1",
+        "scope": {
+          "component": "treasury.routing.assess",
+          "contract": "B1-API/v2",
+          "schema": "RoutingDecision(route,reason,policy_version)",
+          "task": "B1-grammar-check"
+        },
+        "sensitivity": "public",
+        "source_refs": [
+          {
+            "locator": "Monetary text grammar and declared API behavior",
+            "path": "companion/contracts/B1_API_V2.md",
+            "sha256": "75035676814847b356cd844300c32d5384a68327822225dbb45e92692470db06"
+          }
+        ],
+        "supersedes": null,
+        "valid_from": "2026-11-16T20:40:07Z",
+        "version": 1
+      },
+      "record_sha256": "3e0f9ace340a8ead6213eec5fb25a9882450e4e9d9df45e75a9cc7a917771707",
+      "status": "approved"
+    },
+    "B1-V2-EXPIRES": {
+      "approval": {
+        "actor": {
+          "id": "demo-owner-control",
+          "kind": "automated_control"
+        },
+        "authority_basis": {
+          "locator": "Owner and approved teaching contract declaration",
+          "path": "companion/contracts/B1_API_V2.md",
+          "sha256": "75035676814847b356cd844300c32d5384a68327822225dbb45e92692470db06"
+        },
+        "decision_ref": {
+          "locator": "whole file",
+          "path": "evidence/memory_lab_20261116/recorded_01/decisions/B1-V2-EXPIRES_promote.json",
+          "sha256": "dfdf4a74282219620f2478912021162f815e68ef8029711f873ef273d982156e"
+        },
+        "event_sha256": "630cb9cf1caf18750e189e1da5d955803c6d6f5199c60cc2dd5951196e3f9703",
+        "identity_authenticated": false,
+        "reason": "AUTOMATED CONTROL ONLY: exercise the declared-role and exact-record promotion gate. This is not actual owner approval.",
+        "record_id": "B1-V2-EXPIRES",
+        "record_sha256": "ab1f24ede13f4234c0439bcdeb59f67c7284cfb04211a413ef407572f8137dd3"
+      },
+      "content_sha256": "682c132d313fe6aee7801852ed85a573edff81f1dcef65aaba9c169976f29608",
+      "created_at": "2026-11-16T20:40:08.023324Z",
+      "invalidation": null,
+      "proposal_event_sha256": "c691654616c15b5657cdf65a1240ccf29209053c3163c63d1418e50a83fd556c",
+      "record": {
+        "claim": "The v2 reference routes 4000 to STANDARD_QUEUE.",
+        "evidence_refs": [
+          {
+            "locator": "$.cases",
+            "path": "evidence/memory_lab_20261116/recorded_01/observations/initial_reference_probe.json",
+            "sha256": "4ca4734abba82e8df93775f9995aed7218aff7b9874f75e96642fe51b1132d54"
+          }
+        ],
+        "expires_at": "2026-11-16T21:40:07Z",
+        "last_checked_at": "2026-11-16T20:40:07Z",
+        "memory_type": "fact",
+        "producer": {
+          "id": "offline-demonstrator",
+          "kind": "automated_control"
+        },
+        "record_id": "B1-V2-EXPIRES",
+        "revisit_if": [
+          "The task, component, API or field shape changes.",
+          "A source, evidence or approval digest changes.",
+          "Current-contract counterevidence contradicts the claim.",
+          "The declared validity interval ends."
+        ],
+        "schema": "agent-memory-record/v1",
+        "scope": {
+          "component": "treasury.routing.assess",
+          "contract": "B1-API/v2",
+          "schema": "RoutingDecision(route,reason,policy_version)",
+          "task": "B1-grammar-check"
+        },
+        "sensitivity": "public",
+        "source_refs": [
+          {
+            "locator": "Monetary text grammar and declared API behavior",
+            "path": "companion/contracts/B1_API_V2.md",
+            "sha256": "75035676814847b356cd844300c32d5384a68327822225dbb45e92692470db06"
+          }
+        ],
+        "supersedes": null,
+        "valid_from": "2026-11-16T20:40:07Z",
+        "version": 1
+      },
+      "record_sha256": "ab1f24ede13f4234c0439bcdeb59f67c7284cfb04211a413ef407572f8137dd3",
+      "status": "approved"
+    },
+    "B1-V2-HASH-CONTROL": {
+      "approval": {
+        "actor": {
+          "id": "demo-owner-control",
+          "kind": "automated_control"
+        },
+        "authority_basis": {
+          "locator": "Owner and approved teaching contract declaration",
+          "path": "companion/contracts/B1_API_V2.md",
+          "sha256": "75035676814847b356cd844300c32d5384a68327822225dbb45e92692470db06"
+        },
+        "decision_ref": {
+          "locator": "whole file",
+          "path": "evidence/memory_lab_20261116/recorded_01/decisions/B1-V2-HASH-CONTROL_promote.json",
+          "sha256": "23cc62e5a0eceb240324a0afda0256eb4704d3b5014f369839fa3a186b2b8a07"
+        },
+        "event_sha256": "5adfa6a8aed7b71903fab9ba81105b52f910ee57b1abc8caaf00b9de46bda02f",
+        "identity_authenticated": false,
+        "reason": "AUTOMATED CONTROL ONLY: exercise the declared-role and exact-record promotion gate. This is not actual owner approval.",
+        "record_id": "B1-V2-HASH-CONTROL",
+        "record_sha256": "814c5356abdd978d9d9f2fa796f40e75bd1b52f3dce00380d17e0eabd240aa2d"
+      },
+      "content_sha256": "8c27b246395a3da8834ed4865647de7a6e0965f7b2a7f3afaed93dfbf5b6a16e",
+      "created_at": "2026-11-16T20:40:09.002071Z",
+      "invalidation": null,
+      "proposal_event_sha256": "6944d5bf0fcb2298cba4a38b09c3374cd2eba712b23ba4f31baca2b931269966",
+      "record": {
+        "claim": "This control binds a copied source whose identity must remain unchanged.",
+        "evidence_refs": [
+          {
+            "locator": "$.cases",
+            "path": "evidence/memory_lab_20261116/recorded_01/observations/initial_reference_probe.json",
+            "sha256": "4ca4734abba82e8df93775f9995aed7218aff7b9874f75e96642fe51b1132d54"
+          }
+        ],
+        "expires_at": "2026-12-16T20:40:07Z",
+        "last_checked_at": "2026-11-16T20:40:07Z",
+        "memory_type": "fact",
+        "producer": {
+          "id": "offline-demonstrator",
+          "kind": "automated_control"
+        },
+        "record_id": "B1-V2-HASH-CONTROL",
+        "revisit_if": [
+          "The task, component, API or field shape changes.",
+          "A source, evidence or approval digest changes.",
+          "Current-contract counterevidence contradicts the claim.",
+          "The declared validity interval ends."
+        ],
+        "schema": "agent-memory-record/v1",
+        "scope": {
+          "component": "treasury.routing.assess",
+          "contract": "B1-API/v2",
+          "schema": "RoutingDecision(route,reason,policy_version)",
+          "task": "B1-grammar-check"
+        },
+        "sensitivity": "public",
+        "source_refs": [
+          {
+            "locator": "whole file",
+            "path": "evidence/memory_lab_20261116/recorded_01/controls/source_copy.md",
+            "sha256": "75035676814847b356cd844300c32d5384a68327822225dbb45e92692470db06"
+          }
+        ],
+        "supersedes": null,
+        "valid_from": "2026-11-16T20:40:07Z",
+        "version": 1
+      },
+      "record_sha256": "814c5356abdd978d9d9f2fa796f40e75bd1b52f3dce00380d17e0eabd240aa2d",
+      "status": "approved"
+    },
+    "B1-V2-PLUS-CORRECTED": {
+      "approval": {
+        "actor": {
+          "id": "demo-owner-control",
+          "kind": "automated_control"
+        },
+        "authority_basis": {
+          "locator": "Owner and approved teaching contract declaration",
+          "path": "companion/contracts/B1_API_V2.md",
+          "sha256": "75035676814847b356cd844300c32d5384a68327822225dbb45e92692470db06"
+        },
+        "decision_ref": {
+          "locator": "whole file",
+          "path": "evidence/memory_lab_20261116/recorded_01/decisions/B1-V2-PLUS-CORRECTED_promote.json",
+          "sha256": "7576996ca28201e6af4c5084bcaceb58ae0914bbf33f1097c1fd120056a3a7ca"
+        },
+        "event_sha256": "985e44c10b537df07ab4c79a639f3fe423ccacc1eb4e9f5cf5a7ef08d2da8032",
+        "identity_authenticated": false,
+        "reason": "AUTOMATED CONTROL ONLY: exercise the declared-role and exact-record promotion gate. This is not actual owner approval.",
+        "record_id": "B1-V2-PLUS-CORRECTED",
+        "record_sha256": "c380016a83ba2065a60152ecf90e489c4dfda02ecfe1ba8023ee348b8a482f5e"
+      },
+      "content_sha256": "d913c3ac12da66319c5d336d5a8b6d3c97ad3efb7a02e8d02b35a71928410449",
+      "created_at": "2026-11-16T20:40:08.825525Z",
+      "invalidation": null,
+      "proposal_event_sha256": "bd5d891a97a46e797f03c6e49489072480a96b2fe29c48d3b1406ef4d69d2c9c",
+      "record": {
+        "claim": "B1-API/v2 permits a leading plus sign within its 32-character ASCII grammar; +4999.99 routes to STANDARD_QUEUE.",
+        "evidence_refs": [
+          {
+            "locator": "$.actual_result",
+            "path": "evidence/memory_lab_20261116/recorded_01/observations/plus_counterevidence.json",
+            "sha256": "507dffeee87567882d5994ef4720e550166bec78e3ac3c5ca8986e2c979aff08"
+          }
+        ],
+        "expires_at": "2026-12-16T20:40:07Z",
+        "last_checked_at": "2026-11-16T20:40:07Z",
+        "memory_type": "fact",
+        "producer": {
+          "id": "offline-demonstrator",
+          "kind": "automated_control"
+        },
+        "record_id": "B1-V2-PLUS-CORRECTED",
+        "revisit_if": [
+          "The task, component, API or field shape changes.",
+          "A source, evidence or approval digest changes.",
+          "Current-contract counterevidence contradicts the claim.",
+          "The declared validity interval ends."
+        ],
+        "schema": "agent-memory-record/v1",
+        "scope": {
+          "component": "treasury.routing.assess",
+          "contract": "B1-API/v2",
+          "schema": "RoutingDecision(route,reason,policy_version)",
+          "task": "B1-grammar-check"
+        },
+        "sensitivity": "public",
+        "source_refs": [
+          {
+            "locator": "Monetary text grammar and declared API behavior",
+            "path": "companion/contracts/B1_API_V2.md",
+            "sha256": "75035676814847b356cd844300c32d5384a68327822225dbb45e92692470db06"
+          }
+        ],
+        "supersedes": "B1-V2-PLUS-WRONG",
+        "valid_from": "2026-11-16T20:40:07Z",
+        "version": 2
+      },
+      "record_sha256": "c380016a83ba2065a60152ecf90e489c4dfda02ecfe1ba8023ee348b8a482f5e",
+      "status": "approved"
+    },
+    "B1-V2-PLUS-WRONG": {
+      "approval": {
+        "actor": {
+          "id": "demo-owner-control",
+          "kind": "automated_control"
+        },
+        "authority_basis": {
+          "locator": "Owner and approved teaching contract declaration",
+          "path": "companion/contracts/B1_API_V2.md",
+          "sha256": "75035676814847b356cd844300c32d5384a68327822225dbb45e92692470db06"
+        },
+        "decision_ref": {
+          "locator": "whole file",
+          "path": "evidence/memory_lab_20261116/recorded_01/decisions/B1-V2-PLUS-WRONG_promote.json",
+          "sha256": "f501357ccbf03bd2a91cf8688672051b115a72b0946fc54fa20fca9830eaf6b1"
+        },
+        "event_sha256": "cb033c9dd1c248a55fe5aa9fdaa702aea2db6cd393595b3717a07ad2b8a21d50",
+        "identity_authenticated": false,
+        "reason": "AUTOMATED CONTROL ONLY: exercise the declared-role and exact-record promotion gate. This is not actual owner approval.",
+        "record_id": "B1-V2-PLUS-WRONG",
+        "record_sha256": "7d62aa6c8a1bf9bd42972f1071afb5819acb86efa4d3944ea9f504ee714b569e"
+      },
+      "content_sha256": "8d451adf2b175b55c6f0b3b290f5e77e6b2d0eb77a60d0bee9cba57236fba454",
+      "created_at": "2026-11-16T20:40:08.543953Z",
+      "invalidation": {
+        "actor": {
+          "id": "demo-owner-control",
+          "kind": "automated_control"
+        },
+        "counterevidence_ref": {
+          "locator": "$.actual_result",
+          "path": "evidence/memory_lab_20261116/recorded_01/observations/plus_counterevidence.json",
+          "sha256": "507dffeee87567882d5994ef4720e550166bec78e3ac3c5ca8986e2c979aff08"
+        },
+        "decision_ref": {
+          "locator": "whole file",
+          "path": "evidence/memory_lab_20261116/recorded_01/decisions/revoke_plus_wrong.json",
+          "sha256": "d7ec1bbaf6309a4b97b5252d71def29fb255029773f3403d09c88215548da0ef"
+        },
+        "event_sha256": "ba785b79085ad480f780e6a5d772f3fef493121172867cb6724d80a3bb1d9eb6",
+        "identity_authenticated": false,
+        "reason": "Actual +4999.99 probe returns STANDARD_QUEUE under the current v2 authority; the deliberately planted universal rejection claim is false.",
+        "record_id": "B1-V2-PLUS-WRONG",
+        "record_sha256": "7d62aa6c8a1bf9bd42972f1071afb5819acb86efa4d3944ea9f504ee714b569e"
+      },
+      "proposal_event_sha256": "b3c000672e390125afe3e2f324d89479ace8b0afdc321efd96604e8d8bcf43cd",
+      "record": {
+        "claim": "DELIBERATELY WRONG CONTROL: B1-API/v2 rejects every amount with a leading plus sign.",
+        "evidence_refs": [
+          {
+            "locator": "$.cases",
+            "path": "evidence/memory_lab_20261116/recorded_01/observations/initial_reference_probe.json",
+            "sha256": "4ca4734abba82e8df93775f9995aed7218aff7b9874f75e96642fe51b1132d54"
+          }
+        ],
+        "expires_at": "2026-12-16T20:40:07Z",
+        "last_checked_at": "2026-11-16T20:40:07Z",
+        "memory_type": "fact",
+        "producer": {
+          "id": "offline-demonstrator",
+          "kind": "automated_control"
+        },
+        "record_id": "B1-V2-PLUS-WRONG",
+        "revisit_if": [
+          "The task, component, API or field shape changes.",
+          "A source, evidence or approval digest changes.",
+          "Current-contract counterevidence contradicts the claim.",
+          "The declared validity interval ends."
+        ],
+        "schema": "agent-memory-record/v1",
+        "scope": {
+          "component": "treasury.routing.assess",
+          "contract": "B1-API/v2",
+          "schema": "RoutingDecision(route,reason,policy_version)",
+          "task": "B1-grammar-check"
+        },
+        "sensitivity": "public",
+        "source_refs": [
+          {
+            "locator": "Monetary text grammar and declared API behavior",
+            "path": "companion/contracts/B1_API_V2.md",
+            "sha256": "75035676814847b356cd844300c32d5384a68327822225dbb45e92692470db06"
+          }
+        ],
+        "supersedes": null,
+        "valid_from": "2026-11-16T20:40:07Z",
+        "version": 1
+      },
+      "record_sha256": "7d62aa6c8a1bf9bd42972f1071afb5819acb86efa4d3944ea9f504ee714b569e",
+      "status": "revoked"
+    }
+  },
+  "status": "INSPECTED"
+}
