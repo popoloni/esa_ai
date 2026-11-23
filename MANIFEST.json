@@ -52,9 +52,9 @@
       "sha256": "51439a2c2aa99ca1d507d89f93416ae182146531e1cf47d10b93b07fcfdc5f61"
     },
     {
-      "bytes": 2322,
+      "bytes": 2308,
       "path": "README.md",
-      "sha256": "e81f4d20ca525c457276ce5d6dbc46cb55f15b14da0dbd655216f7be532732b3"
+      "sha256": "2cd77997fe2c0570783cea8e46b24b5a5134489fb5d46a1a4cbb28abda76566b"
     },
     {
       "bytes": 6775,
@@ -17207,9 +17207,9 @@
       "sha256": "f797d7f08cf34e97f8d1b2f3b9dae18e5cf1aa1cafbb66334ad855c0c9fc1051"
     },
     {
-      "bytes": 6775,
+      "bytes": 7116,
       "path": "index.html",
-      "sha256": "1a1bc31eed54ed5c96118785010a6f682bef9b03e21bb3b9e55cea0fa9d92480"
+      "sha256": "810c2d95a1d2ffbba453e9ec874c65be816cf51e48d7eaf8415478bc77c4c8de"
     },
     {
       "bytes": 19722,
