@@ -1,0 +1,77 @@
+{
+  "schema": "esa-full-mission/v1",
+  "release": "ESA-Complete-Review-3-20261103",
+  "mission": "G4",
+  "mode": "LEARNER",
+  "contract": "OPS-G4/v2",
+  "module": "operations.py",
+  "lineage": {
+    "mission": "G3",
+    "source_sha256": "adff2a866ec3c3709b428731949fe756bd62f63bb902dbaaf1a4da72ececf748",
+    "source_path": "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-INTEGRATION/workspace/booking.py",
+    "handoff_status": "SCOPED_HANDOFF_READY",
+    "stored_snapshot": "prior/booking.py",
+    "copied_parent_demonstration": "prior/parent-check-artifacts",
+    "integration_source_sha256": {
+      "booking.py": "adff2a866ec3c3709b428731949fe756bd62f63bb902dbaaf1a4da72ececf748",
+      "reservation_report.py": "6e99b547429ce65d174bd57be2c26f56297ac610888e56be03b9f69e65c77a65",
+      "reservation_cli.py": "05d6f0cd68cab19a05703d8ca5c9521f6f139c14259483a79e72393b3460c9e4"
+    },
+    "integration_receipt_sha256": "b777724d0928ec972833b9d74977050902bdf9a89bcee8f2649caa1c885edb86",
+    "integration_snapshots": "prior/integration"
+  },
+  "human_acceptance": "PENDING",
+  "dependency_sha256": {
+    "booking.py": "adff2a866ec3c3709b428731949fe756bd62f63bb902dbaaf1a4da72ececf748",
+    "g4_fixture.py": "acfff09ae7b805745dcd8a83c769c86c0088704eac134eaf23ee8dd58e73566c",
+    "reference_g3.py": "ad89e1350b80d674b30f8fd97927107adb77e2df625805d7a0a49cb8837b5b17",
+    "reservation_report.py": "6e99b547429ce65d174bd57be2c26f56297ac610888e56be03b9f69e65c77a65",
+    "reservation_cli.py": "05d6f0cd68cab19a05703d8ca5c9521f6f139c14259483a79e72393b3460c9e4"
+  },
+  "prior_sha256": {
+    "prior/parent-entry.json": "268a436d0485726e2efd653176ca94fdc6802c02414ba55416d8bb5cc32f9a7f",
+    "prior/booking.py": "adff2a866ec3c3709b428731949fe756bd62f63bb902dbaaf1a4da72ececf748",
+    "prior/integration-acceptance.json": "b777724d0928ec972833b9d74977050902bdf9a89bcee8f2649caa1c885edb86",
+    "prior/parent-handoff.json": "6b75d7948489ed582281074e9191218b864e951b9f773108980485edbf8683db",
+    "prior/parent-check-artifacts/continuation.json": "296004eb2bfb595e339317891b3b8958694306bf8db5dd75be76dc94bf27e237",
+    "prior/parent-check-artifacts/DEMONSTRATION.json": "c7aadadf30d2cc0803d7a9b8a79f844e177a4c2253bd8abb4f8f142357042a9f",
+    "prior/parent-check-artifacts/reservations.sqlite": "6feadff4913e0a88d9b1e5a616bac71d0ded46aeb92dd1d6df8b8f30f819723c",
+    "prior/integration/reservation_report.py": "6e99b547429ce65d174bd57be2c26f56297ac610888e56be03b9f69e65c77a65",
+    "prior/integration/booking.py": "adff2a866ec3c3709b428731949fe756bd62f63bb902dbaaf1a4da72ececf748",
+    "prior/integration/reservation_cli.py": "05d6f0cd68cab19a05703d8ca5c9521f6f139c14259483a79e72393b3460c9e4"
+  },
+  "integration": {
+    "schema": "esa-accepted-integration/v1",
+    "contract": "INTEGRATION-G3/v1",
+    "status": "INTEGRATION_CHECKS_PASSED",
+    "source_sha256": {
+      "booking.py": "adff2a866ec3c3709b428731949fe756bd62f63bb902dbaaf1a4da72ececf748",
+      "reservation_report.py": "6e99b547429ce65d174bd57be2c26f56297ac610888e56be03b9f69e65c77a65",
+      "reservation_cli.py": "05d6f0cd68cab19a05703d8ca5c9521f6f139c14259483a79e72393b3460c9e4"
+    },
+    "receipt": "prior/integration-acceptance.json",
+    "receipt_sha256": "b777724d0928ec972833b9d74977050902bdf9a89bcee8f2649caa1c885edb86",
+    "bundle_sha256": "22f03d372f5016a3d04e08ccd8a049cf87bdfd56c6f7779a746638a9d816321a",
+    "combined_commit": "8c871e3ebd7f32f1ce0832933d05dc2d092a51ce",
+    "authority": {
+      "principal": "ESA AI integration reviewer / recording operator",
+      "kind": "AI reviewer and local recording operator",
+      "authorized_by": "Author instruction to implement ESA agent-process remediation",
+      "scope": "Scoped teaching integration, independent checks and provenance recording",
+      "human_operator": false,
+      "human_acceptance": "PENDING",
+      "production_authorization": false
+    }
+  },
+  "recorded_at_utc": "2026-11-16T16:06:09.592356+00:00",
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/companion/start.py",
+    "advance",
+    "G4",
+    "--from-candidate",
+    "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-INTEGRATION/workspace",
+    "--dest",
+    "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G4/workspace"
+  ]
+}

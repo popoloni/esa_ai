@@ -1,0 +1,7 @@
+{
+  "at_utc": "2026-11-16T16:07:10.244484+00:00",
+  "decision": "Supply executed harmless controls for interpretation; no new privileged operation authorized",
+  "new_context": "workspace/observed_controls.json",
+  "operator": "AI recording facilitator /root",
+  "claim": "Agent abstention and application-tool denials remain separate; direct process control refutes a host-isolation claim."
+}

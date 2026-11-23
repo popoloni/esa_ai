@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "python3",
+    "-B",
+    "companion/memory/ledger.py",
+    "--workspace",
+    ".",
+    "--ledger",
+    "evidence/memory_lab_20261116/recorded_01/events.jsonl",
+    "propose",
+    "--record",
+    "evidence/memory_lab_20261116/recorded_01/proposals/B1-V2-HASH-CONTROL.json"
+  ],
+  "exit": 0,
+  "expected_exit": 0,
+  "label": "propose_B1-V2-HASH-CONTROL",
+  "origin": "AUTOMATED_LOCAL_CONTROL_NO_MODEL_OR_HUMAN",
+  "stderr": "",
+  "stdout": "{\"event_sha256\":\"6944d5bf0fcb2298cba4a38b09c3374cd2eba712b23ba4f31baca2b931269966\",\"record_id\":\"B1-V2-HASH-CONTROL\",\"record_sha256\":\"814c5356abdd978d9d9f2fa796f40e75bd1b52f3dce00380d17e0eabd240aa2d\",\"status\":\"PROPOSED_NOT_RETRIEVABLE\"}\n"
+}

@@ -1,0 +1,64 @@
+{
+  "id": "chapter_08",
+  "schema_version": 1,
+  "evidence_profile": "new_capability",
+  "expect": {
+    "outcome": "Construct independent verification for the selected routing and Reservation obligations.",
+    "authority": {
+      "owner": "Verification reviewer; expectation owner for checker changes.",
+      "source": "BR-001/v1, B1-API/v1, G1 and G2 public contracts.",
+      "version": "BR-001/v1; B1-API/v1; G1/I01; RES-001/v1",
+      "status": "TEACHING_CONTRACT"
+    },
+    "acceptance": [
+      "Expected results have an independent source; candidate identity and reached stage recorded; valid control passes and deliberate fault reaches the intended assertion."
+    ]
+  },
+  "delegate": {
+    "editable_paths": [
+      "verification/independent_checks.py",
+      "verification/ARGUMENT.md"
+    ],
+    "protected_paths": [
+      "approved_context/",
+      "source_evidence/"
+    ],
+    "budget": {
+      "max_attempts": 2,
+      "implementation_minutes": 30,
+      "check_timeout_seconds": 30,
+      "max_external_calls": 0
+    },
+    "stop_conditions": [
+      "Required authority or source evidence is missing.",
+      "Declared budget is spent or a proposed edit crosses protected scope."
+    ]
+  },
+  "observe": {
+    "checks": [
+      {
+        "id": "chapter_08.review",
+        "stage": "contract",
+        "method": "review",
+        "argv": [],
+        "expected": "Oracle review; equality and nonfinite cases; controlled fault with positive control; relevant state and consumer checks."
+      }
+    ],
+    "receipt_fields": [
+      "candidate_identity",
+      "authority_version",
+      "actual_checks",
+      "reached_stage",
+      "remaining_question"
+    ]
+  },
+  "decide": {
+    "owner": "Verification reviewer; expectation owner for checker changes.",
+    "object": "The verification argument and its concrete receipts.",
+    "allowed_decisions": [
+      "ACCEPT",
+      "REJECT",
+      "ASK"
+    ]
+  }
+}

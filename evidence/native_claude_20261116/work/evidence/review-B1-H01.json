@@ -1,0 +1,295 @@
+{
+  "schema": "esa-offline-candidate-review-batch/v1",
+  "release": "ESA-Series-Handbook-Review-5-20261116",
+  "mission": "B1",
+  "candidate_ids": [
+    "B1-H01"
+  ],
+  "status": "REVIEW_BATCH_RECORDED",
+  "evidence_origin": "EXECUTED_CONSTRUCTED_TEACHING_VARIANTS",
+  "learner_source_modified": false,
+  "results": [
+    {
+      "schema": "esa-offline-candidate-review/v1",
+      "selection": "all",
+      "candidate_path": "/tmp/esa-offline-review-4ttrpkmd/candidate",
+      "candidate_sha256_before": "dac968f4738761cc85a6b71f0d7265a2d8d1860f122cd22576a9645bc9139fe7",
+      "protected_before": [
+        {
+          "path": "tests/test_routing.py",
+          "expected_sha256": "6e5aa5706dd989bdbbeec9374a84d13c41cf6f36e23a5e5d2762a3b16e551c9b",
+          "candidate_sha256": "6e5aa5706dd989bdbbeec9374a84d13c41cf6f36e23a5e5d2762a3b16e551c9b",
+          "symlink": false
+        },
+        {
+          "path": "tests/test_routing_extended.py",
+          "expected_sha256": "f797d7f08cf34e97f8d1b2f3b9dae18e5cf1aa1cafbb66334ad855c0c9fc1051",
+          "candidate_sha256": "f797d7f08cf34e97f8d1b2f3b9dae18e5cf1aa1cafbb66334ad855c0c9fc1051",
+          "symlink": false
+        },
+        {
+          "path": "docs/BR-001.md",
+          "expected_sha256": "b88e648e2133cc0668a68b94d8e2b905a2fe09bd76780e36e20bbe68793b991a",
+          "candidate_sha256": "b88e648e2133cc0668a68b94d8e2b905a2fe09bd76780e36e20bbe68793b991a",
+          "symlink": false
+        },
+        {
+          "path": "docs/B1-API.md",
+          "expected_sha256": "e631804217257dfd5eabf3f9a3feeca025156822acc561bab7b5ab8b722914c2",
+          "candidate_sha256": "e631804217257dfd5eabf3f9a3feeca025156822acc561bab7b5ab8b722914c2",
+          "symlink": false
+        },
+        {
+          "path": "docs/policy.json",
+          "expected_sha256": "3737b95b728bea32cfc2c82c489fe12267fd3096404a44639f27eec9de88deed",
+          "candidate_sha256": "3737b95b728bea32cfc2c82c489fe12267fd3096404a44639f27eec9de88deed",
+          "symlink": false
+        },
+        {
+          "path": "docs/legacy_note.json",
+          "expected_sha256": "ed8b81d04572c5e1925faa5b7473f220e3184f27287646ed61005a146dc6a95a",
+          "candidate_sha256": "ed8b81d04572c5e1925faa5b7473f220e3184f27287646ed61005a146dc6a95a",
+          "symlink": false
+        },
+        {
+          "path": "src/treasury/__init__.py",
+          "expected_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "candidate_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "symlink": false
+        }
+      ],
+      "human_acceptance": "PENDING",
+      "groups": {
+        "b1_core": {
+          "command": [
+            "/usr/local/bin/python3",
+            "-m",
+            "unittest",
+            "discover",
+            "-s",
+            "tests",
+            "-p",
+            "test_routing.py",
+            "-v"
+          ],
+          "elapsed_process_seconds": 0.06290059600001996,
+          "timeout_seconds": 15,
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "test_above_boundary_requires_review (test_routing.RoutingAcceptance.test_above_boundary_requires_review) ... ok\ntest_exact_boundary_requires_review (test_routing.RoutingAcceptance.test_exact_boundary_requires_review) ... ok\ntest_negative_amount_rejected (test_routing.RoutingAcceptance.test_negative_amount_rejected) ... ok\ntest_nonfinite_amount_rejected (test_routing.RoutingAcceptance.test_nonfinite_amount_rejected) ... ok\ntest_nonnumeric_amount_rejected (test_routing.RoutingAcceptance.test_nonnumeric_amount_rejected) ... ok\ntest_positive_below_limit (test_routing.RoutingAcceptance.test_positive_below_limit) ... ok\ntest_zero_amount_rejected (test_routing.RoutingAcceptance.test_zero_amount_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.000s\n\nOK\n",
+          "timed_out": false,
+          "tests_run": 7,
+          "expected_tests": 7,
+          "methods_passed": 7,
+          "methods_failed": [],
+          "methods_errored": [],
+          "status": "PASSED"
+        },
+        "b1_extended": {
+          "command": [
+            "/usr/local/bin/python3",
+            "-m",
+            "unittest",
+            "discover",
+            "-s",
+            "tests",
+            "-p",
+            "test_routing_extended.py",
+            "-v"
+          ],
+          "elapsed_process_seconds": 0.054462694999983796,
+          "timeout_seconds": 15,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "test_negative_infinity_rejected (test_routing_extended.RoutingExtended.test_negative_infinity_rejected) ... ok\ntest_non_string_argument_is_programming_error (test_routing_extended.RoutingExtended.test_non_string_argument_is_programming_error) ... \n  test_non_string_argument_is_programming_error (test_routing_extended.RoutingExtended.test_non_string_argument_is_programming_error) (value_type='int') ... FAIL\n  test_non_string_argument_is_programming_error (test_routing_extended.RoutingExtended.test_non_string_argument_is_programming_error) (value_type='float') ... FAIL\ntest_positive_infinity_rejected (test_routing_extended.RoutingExtended.test_positive_infinity_rejected) ... ok\ntest_short_infinity_rejected (test_routing_extended.RoutingExtended.test_short_infinity_rejected) ... ok\ntest_signaling_nan_rejected (test_routing_extended.RoutingExtended.test_signaling_nan_rejected) ... ok\n\n======================================================================\nFAIL: test_non_string_argument_is_programming_error (test_routing_extended.RoutingExtended.test_non_string_argument_is_programming_error) (value_type='int')\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/esa-offline-review-4ttrpkmd/candidate/tests/test_routing_extended.py\", line 27, in test_non_string_argument_is_programming_error\n    with self.assertRaises(TypeError):\n         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^\nAssertionError: TypeError not raised\n\n======================================================================\nFAIL: test_non_string_argument_is_programming_error (test_routing_extended.RoutingExtended.test_non_string_argument_is_programming_error) (value_type='float')\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/esa-offline-review-4ttrpkmd/candidate/tests/test_routing_extended.py\", line 27, in test_non_string_argument_is_programming_error\n    with self.assertRaises(TypeError):\n         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^\nAssertionError: TypeError not raised\n\n----------------------------------------------------------------------\nRan 5 tests in 0.001s\n\nFAILED (failures=2)\n",
+          "timed_out": false,
+          "tests_run": 5,
+          "expected_tests": 5,
+          "methods_passed": 4,
+          "methods_failed": [
+            "test_non_string_argument_is_programming_error"
+          ],
+          "methods_errored": [],
+          "status": "FAILED"
+        }
+      },
+      "tests_run": 12,
+      "expected_tests": 12,
+      "methods_passed": 11,
+      "stdout": "",
+      "stderr": "test_above_boundary_requires_review (test_routing.RoutingAcceptance.test_above_boundary_requires_review) ... ok\ntest_exact_boundary_requires_review (test_routing.RoutingAcceptance.test_exact_boundary_requires_review) ... ok\ntest_negative_amount_rejected (test_routing.RoutingAcceptance.test_negative_amount_rejected) ... ok\ntest_nonfinite_amount_rejected (test_routing.RoutingAcceptance.test_nonfinite_amount_rejected) ... ok\ntest_nonnumeric_amount_rejected (test_routing.RoutingAcceptance.test_nonnumeric_amount_rejected) ... ok\ntest_positive_below_limit (test_routing.RoutingAcceptance.test_positive_below_limit) ... ok\ntest_zero_amount_rejected (test_routing.RoutingAcceptance.test_zero_amount_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.000s\n\nOK\ntest_negative_infinity_rejected (test_routing_extended.RoutingExtended.test_negative_infinity_rejected) ... ok\ntest_non_string_argument_is_programming_error (test_routing_extended.RoutingExtended.test_non_string_argument_is_programming_error) ... \n  test_non_string_argument_is_programming_error (test_routing_extended.RoutingExtended.test_non_string_argument_is_programming_error) (value_type='int') ... FAIL\n  test_non_string_argument_is_programming_error (test_routing_extended.RoutingExtended.test_non_string_argument_is_programming_error) (value_type='float') ... FAIL\ntest_positive_infinity_rejected (test_routing_extended.RoutingExtended.test_positive_infinity_rejected) ... ok\ntest_short_infinity_rejected (test_routing_extended.RoutingExtended.test_short_infinity_rejected) ... ok\ntest_signaling_nan_rejected (test_routing_extended.RoutingExtended.test_signaling_nan_rejected) ... ok\n\n======================================================================\nFAIL: test_non_string_argument_is_programming_error (test_routing_extended.RoutingExtended.test_non_string_argument_is_programming_error) (value_type='int')\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/esa-offline-review-4ttrpkmd/candidate/tests/test_routing_extended.py\", line 27, in test_non_string_argument_is_programming_error\n    with self.assertRaises(TypeError):\n         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^\nAssertionError: TypeError not raised\n\n======================================================================\nFAIL: test_non_string_argument_is_programming_error (test_routing_extended.RoutingExtended.test_non_string_argument_is_programming_error) (value_type='float')\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/esa-offline-review-4ttrpkmd/candidate/tests/test_routing_extended.py\", line 27, in test_non_string_argument_is_programming_error\n    with self.assertRaises(TypeError):\n         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^\nAssertionError: TypeError not raised\n\n----------------------------------------------------------------------\nRan 5 tests in 0.001s\n\nFAILED (failures=2)\n",
+      "timed_out": false,
+      "returncode": 1,
+      "protected_after": [
+        {
+          "path": "tests/test_routing.py",
+          "expected_sha256": "6e5aa5706dd989bdbbeec9374a84d13c41cf6f36e23a5e5d2762a3b16e551c9b",
+          "candidate_sha256": "6e5aa5706dd989bdbbeec9374a84d13c41cf6f36e23a5e5d2762a3b16e551c9b",
+          "symlink": false
+        },
+        {
+          "path": "tests/test_routing_extended.py",
+          "expected_sha256": "f797d7f08cf34e97f8d1b2f3b9dae18e5cf1aa1cafbb66334ad855c0c9fc1051",
+          "candidate_sha256": "f797d7f08cf34e97f8d1b2f3b9dae18e5cf1aa1cafbb66334ad855c0c9fc1051",
+          "symlink": false
+        },
+        {
+          "path": "docs/BR-001.md",
+          "expected_sha256": "b88e648e2133cc0668a68b94d8e2b905a2fe09bd76780e36e20bbe68793b991a",
+          "candidate_sha256": "b88e648e2133cc0668a68b94d8e2b905a2fe09bd76780e36e20bbe68793b991a",
+          "symlink": false
+        },
+        {
+          "path": "docs/B1-API.md",
+          "expected_sha256": "e631804217257dfd5eabf3f9a3feeca025156822acc561bab7b5ab8b722914c2",
+          "candidate_sha256": "e631804217257dfd5eabf3f9a3feeca025156822acc561bab7b5ab8b722914c2",
+          "symlink": false
+        },
+        {
+          "path": "docs/policy.json",
+          "expected_sha256": "3737b95b728bea32cfc2c82c489fe12267fd3096404a44639f27eec9de88deed",
+          "candidate_sha256": "3737b95b728bea32cfc2c82c489fe12267fd3096404a44639f27eec9de88deed",
+          "symlink": false
+        },
+        {
+          "path": "docs/legacy_note.json",
+          "expected_sha256": "ed8b81d04572c5e1925faa5b7473f220e3184f27287646ed61005a146dc6a95a",
+          "candidate_sha256": "ed8b81d04572c5e1925faa5b7473f220e3184f27287646ed61005a146dc6a95a",
+          "symlink": false
+        },
+        {
+          "path": "src/treasury/__init__.py",
+          "expected_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "candidate_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "symlink": false
+        }
+      ],
+      "candidate_sha256_after": "dac968f4738761cc85a6b71f0d7265a2d8d1860f122cd22576a9645bc9139fe7",
+      "inputs_unchanged": true,
+      "status": "HISTORICAL_SCOPE_PASSED_CURRENT_API_DIFFERENCE",
+      "prototype_release": "ESA-Series-Handbook-Review-5-20261116",
+      "candidate_id": "B1-H01",
+      "mission": "B1",
+      "evidence_origin": "REPLAY_OF_HISTORICAL_NATIVE_EDIT",
+      "candidate_pack": "candidates/historical/B1-H01",
+      "candidate_sha256": "dac968f4738761cc85a6b71f0d7265a2d8d1860f122cd22576a9645bc9139fe7",
+      "rationale": "# B1-H01 — actual retained proposal, 22 October 2026\n\nOrigin: HISTORICAL_NATIVE_MODEL_EDIT. The code is the exact retained candidate\nfrom attempt_02, SHA-256 dac968f4738761cc85a6b71f0d7265a2d8d1860f122cd22576a9645bc9139fe7.\nThe native edit event and patch are retained beside it. The client was OpenCode\n1.19.3 with local Qwen3-4B. This was a guided recovery attempt after an earlier\nattempt made no edit. The author had already seen worked solutions.\n\nNo final explanation or acceptance command completed inside that native session.\nIt timed out after editing. There is no recorded model rationale to quote here;\nthis paragraph is an editorial provenance note, not a reconstructed response.\nReview the actual code, patch and event, then write your own reasoned decision.\n\nIndependent checks and disposition were produced by an assistant outside the\nnative client. The retained disposition is READY_FOR_HUMAN_REVIEW_NOT_ACCEPTED;\nhuman acceptance remains pending. The current replay checks the original seven\nand separately runs the five newer public diagnostics. A missing CP1.1 non-string guard\nis an API migration difference, not a retroactive claim about the 2026-10-22 task.\n",
+      "ground_truth": {
+        "schema": "esa-review-ground-truth/v1",
+        "mission": "B1",
+        "candidate_id": "B1-H01",
+        "origin": "HISTORICAL_NATIVE_MODEL_EDIT",
+        "rationale_origin": "UNAVAILABLE_NATIVE_FINAL_SUMMARY_NOT_COMPLETED",
+        "actual_model_trace": true,
+        "actual_model_rationale_available": false,
+        "expected_decision": "ACCEPT_WITHIN_HISTORICAL_SCOPE_REQUEST_API_MIGRATION",
+        "human_acceptance": "PENDING",
+        "expected_historical_pass": true,
+        "expected_extended_pass": false,
+        "targeted_assertions": [
+          "test_non_string_argument_is_programming_error"
+        ],
+        "explanation": "The retained guided edit satisfies the original string-input policy and seven cases. It accepts integer and float arguments, whereas the newer CP1.1 API requires TypeError. Review the current API difference separately; this is not evidence the original task required that guard. No retrospective model rationale is invented.",
+        "native_candidate_sha256": "dac968f4738761cc85a6b71f0d7265a2d8d1860f122cd22576a9645bc9139fe7",
+        "native_session_id": "ses_e9dc53064ffes94dIoRs5Jj30n",
+        "source_files": [
+          "evidence/historical_episode/native_20261022/attempt_02/stdout.txt",
+          "evidence/historical_episode/native_20261022/attempt_02/OUTCOME.json",
+          "evidence/historical_episode/native_20261022/independent_review/REVIEW.json",
+          "evidence/historical_episode/native_20261022/independent_review/routing.py"
+        ],
+        "native_edit_event_line": 5,
+        "native_edit_event_sha256": "2dbb459a64d443bf0ced4ef0788eee28db8e9978cb196f7ccda1d17b7497f087",
+        "required_human_decision": "Approve the bounded historical result, then decide and implement the current API migration before current continuation."
+      },
+      "supplemental_probe": null,
+      "human_decision": "PENDING",
+      "learner_source_modified": false,
+      "meaning": "Replay of the exact retained native edit. Original policy cases and new API diagnostics are separate; no missing model explanation is reconstructed. Human acceptance remains pending.",
+      "current_api_check_status": "CHECKS_FAILED",
+      "historical_scope_passed": true,
+      "candidate_path_note": "Temporary review workspace removed after execution; exact variant bytes remain in the candidate pack.",
+      "recorded_at_utc": "2026-11-16T22:12:02.769267+00:00",
+      "command": [
+        "/usr/local/bin/python3",
+        "companion/start.py",
+        "review",
+        "B1",
+        "--candidate-ids",
+        "B1-H01",
+        "--output",
+        "work/evidence/review-B1-H01.json"
+      ],
+      "verification_progress": {
+        "schema": "esa-verification-progress/v1",
+        "derivation": "CURRENT_RECEIPT_FIELDS_ONLY_NO_ADDITIONAL_EXECUTION",
+        "source_fields_sha256": "cabae60f5dcd760ea3a99a230aeb42c201d64c4b87a176651c36772b82a055a5",
+        "work_order": "mission_B1",
+        "evidence_profile": "bounded_repair",
+        "profile_basis": "The named mission work order.",
+        "phase": "mission",
+        "stages": {
+          "startup": {
+            "status": "PASS",
+            "evidence": [
+              "schema",
+              "mission",
+              "candidate_path"
+            ],
+            "reason": "The intended runner accepted the entry identity and emitted this check receipt. This does not establish candidate import."
+          },
+          "integrity": {
+            "status": "PASS",
+            "evidence": [
+              "inputs_unchanged",
+              "candidate_sha256_before",
+              "candidate_sha256_after"
+            ],
+            "reason": "The recorded before/after comparison found inputs unchanged."
+          },
+          "contract": {
+            "status": "FAIL",
+            "evidence": [
+              "groups.b1_core",
+              "groups.b1_extended"
+            ],
+            "reason": "Status uses each selected group and any contract-specific supplemental probe; an import placeholder is not behavioral evidence. A candidate stack frame or known protected assertion supports reached behavior; a method count alone does not. Groups within this stage may retain multiple failures.",
+            "behavior_reached": true
+          },
+          "integration": {
+            "status": "NOT_RUN",
+            "evidence": [],
+            "reason": "No continuation or consumer/process observation is present."
+          },
+          "artifact": {
+            "status": "NOT_RUN",
+            "evidence": [],
+            "reason": "This receipt has no separate archive/extraction gate. Local demonstration hashes alone do not establish release fitness."
+          },
+          "authorization": {
+            "status": "NOT_RUN",
+            "evidence": [
+              "human_acceptance"
+            ],
+            "reason": "No owner acceptance or release authorization is recorded. Passing checks do not supply that decision."
+          }
+        },
+        "first_failed_stage": "contract",
+        "last_observed_stage": "contract",
+        "limits": "A stage label interprets the retained fields; it is not an independent attestation. NOT_APPLICABLE needs an explicit scope exclusion; absence alone remains NOT_RUN."
+      }
+    }
+  ],
+  "scope": "Each result names its contract, source and observed checks.",
+  "recorded_at_utc": "2026-11-16T22:12:02.773075+00:00",
+  "command": [
+    "/usr/local/bin/python3",
+    "companion/start.py",
+    "review",
+    "B1",
+    "--candidate-ids",
+    "B1-H01",
+    "--output",
+    "work/evidence/review-B1-H01.json"
+  ]
+}

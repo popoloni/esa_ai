@@ -1,0 +1,160 @@
+{
+  "schema": "esa-curriculum-print-derivation/v1",
+  "command": "python3 companion/curriculum/derive_excerpts.py",
+  "records": [
+    {
+      "output": "curriculum/excerpts/g2_reserve.py",
+      "source": "solutions/G2/booking.py",
+      "selectors": [
+        "reserve"
+      ],
+      "source_sha256": "81df006d0653a44260b03425294e8542effe0263c8592a7743e50e14bddcdef6",
+      "output_sha256": "323771a5eac8d300864d1996b077ff8dc89e03ed0fb386cb73e7c8739b43d6e8",
+      "transformation": "AST-selected complete function; whitespace-only narrow layout at 68 columns; literal tokens retained exactly",
+      "literal_checks": [
+        {
+          "string_tokens_unchanged": true,
+          "introduced_implicit_concatenations": 0,
+          "introduced_escaped_newlines": 0,
+          "source_implicit_concatenations": 0
+        }
+      ],
+      "max_line_length": 64,
+      "ast_equivalent": true
+    },
+    {
+      "output": "curriculum/excerpts/g3_cancel.py",
+      "source": "solutions/G3/booking.py",
+      "selectors": [
+        "cancel"
+      ],
+      "source_sha256": "ad89e1350b80d674b30f8fd97927107adb77e2df625805d7a0a49cb8837b5b17",
+      "output_sha256": "7ab29d47d64bbc68f89400646513f53cb3eee371879d3a0f4df37dc4f0430877",
+      "transformation": "AST-selected complete function; whitespace-only narrow layout at 68 columns; literal tokens retained exactly",
+      "literal_checks": [
+        {
+          "string_tokens_unchanged": true,
+          "introduced_implicit_concatenations": 0,
+          "introduced_escaped_newlines": 0,
+          "source_implicit_concatenations": 0
+        }
+      ],
+      "max_line_length": 65,
+      "ast_equivalent": true
+    },
+    {
+      "output": "curriculum/excerpts/g4_cost_summary.py",
+      "source": "solutions/G4/operations.py",
+      "selectors": [
+        "cost_summary"
+      ],
+      "source_sha256": "808b55168a0ac7895c8ccf37eca9014fe98069d3c74a95f00579520a00928a53",
+      "output_sha256": "37803100c28846eaf448dfa0163adcb67802aad18e1aede8887eb9907250bc6c",
+      "transformation": "AST-selected complete function; whitespace-only narrow layout at 68 columns; literal tokens retained exactly",
+      "literal_checks": [
+        {
+          "string_tokens_unchanged": true,
+          "introduced_implicit_concatenations": 0,
+          "introduced_escaped_newlines": 0,
+          "source_implicit_concatenations": 0
+        }
+      ],
+      "max_line_length": 64,
+      "ast_equivalent": true
+    },
+    {
+      "output": "curriculum/excerpts/b2_evaluate_batch.py",
+      "source": "solutions/B2/intake.py",
+      "selectors": [
+        "_receipt",
+        "evaluate_batch"
+      ],
+      "source_sha256": "4a22412fd32fe49ad3f6f345117b6f468c8ece09790bf9929ce18cc72cc73cee",
+      "output_sha256": "108d997a03aeadf1ccaf95fb68a760dbe4904024c52c1ddfb7f41d3f0ee3b57a",
+      "transformation": "AST-selected complete function; whitespace-only narrow layout at 68 columns; literal tokens retained exactly",
+      "literal_checks": [
+        {
+          "string_tokens_unchanged": true,
+          "introduced_implicit_concatenations": 0,
+          "introduced_escaped_newlines": 0,
+          "source_implicit_concatenations": 0
+        },
+        {
+          "string_tokens_unchanged": true,
+          "introduced_implicit_concatenations": 0,
+          "introduced_escaped_newlines": 0,
+          "source_implicit_concatenations": 0
+        }
+      ],
+      "max_line_length": 68,
+      "ast_equivalent": true
+    },
+    {
+      "output": "curriculum/excerpts/b3_decide.py",
+      "source": "solutions/B3/ledger.py",
+      "selectors": [
+        "PolicyStore._decide"
+      ],
+      "source_sha256": "bc17f98582a512a2760795f012220ea29e5e7b79f355aed30cdaea493aa7eb16",
+      "output_sha256": "f34b06c1f5a8fecbbf0212468b92148a8007fa6d792060a384795748f536a5ec",
+      "transformation": "AST-selected complete function; whitespace-only narrow layout at 68 columns; literal tokens retained exactly",
+      "literal_checks": [
+        {
+          "string_tokens_unchanged": true,
+          "introduced_implicit_concatenations": 0,
+          "introduced_escaped_newlines": 0,
+          "source_implicit_concatenations": 0
+        }
+      ],
+      "max_line_length": 62,
+      "ast_equivalent": true
+    },
+    {
+      "output": "curriculum/excerpts/b3_reevaluate.py",
+      "source": "solutions/B3/ledger.py",
+      "selectors": [
+        "PolicyStore.reevaluate"
+      ],
+      "source_sha256": "bc17f98582a512a2760795f012220ea29e5e7b79f355aed30cdaea493aa7eb16",
+      "output_sha256": "6e82a14ea4fbb39eab6a95a497f04b57eb623a3192dfa83ebd1db61cffd235d9",
+      "transformation": "AST-selected complete function; whitespace-only narrow layout at 68 columns; literal tokens retained exactly",
+      "literal_checks": [
+        {
+          "string_tokens_unchanged": true,
+          "introduced_implicit_concatenations": 0,
+          "introduced_escaped_newlines": 0,
+          "source_implicit_concatenations": 0
+        }
+      ],
+      "max_line_length": 61,
+      "ast_equivalent": true
+    },
+    {
+      "output": "curriculum/excerpts/b4_diagnose_plan.py",
+      "source": "solutions/B4/incident.py",
+      "selectors": [
+        "diagnose",
+        "recovery_plan"
+      ],
+      "source_sha256": "f61e60f4c49e1a50cdd8fd6c02432feb6cafee195fa2861694a1602320215fcc",
+      "output_sha256": "123cdfcef250883ebb5dd27c0b1b0f73873c0c183aca7eb099a3be80afc80e52",
+      "transformation": "AST-selected complete function; whitespace-only narrow layout at 68 columns; literal tokens retained exactly",
+      "literal_checks": [
+        {
+          "string_tokens_unchanged": true,
+          "introduced_implicit_concatenations": 0,
+          "introduced_escaped_newlines": 0,
+          "source_implicit_concatenations": 0
+        },
+        {
+          "string_tokens_unchanged": true,
+          "introduced_implicit_concatenations": 0,
+          "introduced_escaped_newlines": 0,
+          "source_implicit_concatenations": 0
+        }
+      ],
+      "max_line_length": 66,
+      "ast_equivalent": true
+    }
+  ]
+}

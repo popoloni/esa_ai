@@ -1,0 +1,30 @@
+{
+  "recorded_at_utc": "2026-11-16T22:21:20.422604+00:00",
+  "operation": "extracted_g3_check",
+  "authority": {
+    "principal": "ESA AI integration reviewer / recording operator",
+    "kind": "AI reviewer and local recording operator",
+    "authorized_by": "Author instruction to implement ESA agent-process remediation",
+    "scope": "Scoped teaching integration, independent checks and provenance recording",
+    "human_operator": false,
+    "human_acceptance": "PENDING",
+    "production_authorization": false
+  },
+  "returncode": 0,
+  "stdout": "{\n  \"status\": \"SELECTED_CHECKS_PASSED\",\n  \"mission\": \"G3\",\n  \"tests_run\": 7,\n  \"receipt\": \"/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g3-integration/operator/extracted_g3_check_62_receipt.json\"\n}\n",
+  "stderr": "",
+  "timed_out": false,
+  "argv": [
+    "/usr/local/bin/python3",
+    "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/companion/start.py",
+    "check",
+    "G3",
+    "--candidate",
+    "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g3-integration/extracted/integration-002",
+    "--output",
+    "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g3-integration/operator/extracted_g3_check_62_receipt.json"
+  ],
+  "cwd": "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/companion",
+  "timeout_seconds": 60,
+  "elapsed_process_seconds": 0.19831099099997118
+}

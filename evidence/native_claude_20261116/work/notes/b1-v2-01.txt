@@ -1,0 +1,9 @@
+Observation: native run 01 completed (claude-sonnet-5-5, 0.123 USD reported). Changed routing.py and DOSSIER.md only.
+Two compound shell commands were denied by the client profile; the worker split them into allowed reads.
+Diff: a fullmatch syntax gate with ASCII [0-9] and a 32-character limit before Decimal conversion; numeric rule,
+policy identity, TypeError and exception propagation unchanged; legacy note again treated as an unapproved proposal.
+Independent: check B1 on work/b1-v2 18/18 (core, extended, v2); continue B1 CONTEXT_HANDOFF_READY; operator probe
+work/evidence/operator/b1-v2-grammar-probe.json covers every example in B1-API-v2.md plus trailing newline,
+signed zeros, Arabic-Indic and full-width digits, 32 and 33 characters.
+Decision: ACCEPT for B1-API/v2. The v1 working copy and receipts stay as the record of v1. Advance to B2.
+Limit: AI operator; technical acceptance within the fictional case.

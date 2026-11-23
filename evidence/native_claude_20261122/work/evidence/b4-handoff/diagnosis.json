@@ -1,0 +1,59 @@
+{
+  "origin": "CONSTRUCTED_WRONG_LEDGER_FIXTURE",
+  "ledger_source_sha256": "8e87f6bd508a9372b40be2c004ef22b6c912830765fadac55b9896018d4799dc",
+  "observation": {
+    "status": "WRONG_LEDGER",
+    "issues": [
+      "STATE_PATH_MISMATCH",
+      "ACTIVE_POLICY_MISMATCH",
+      "ANCHOR_MISSING"
+    ],
+    "selected": {
+      "path": "/home/claude/work/live22/agentic-ai-5.2/work/evidence/b4-handoff/wrong.sqlite",
+      "digest": "597d6c4ed8bbb0f9d830b8d3f8c02a85a15e469a2a04fcd7c707ba0c37b695c9",
+      "active_policy": "BR-001/v1",
+      "decisions": [
+        {
+          "request_id": "old",
+          "decision_id": "a7329fc31747d65632eafa7507b9a96c7b4869a58feb0ee6d162c5bc23b337a2",
+          "policy_version": "BR-001/v1",
+          "parent_key": null
+        }
+      ],
+      "audit_count": 1
+    },
+    "expected": {
+      "path": "/home/claude/work/live22/agentic-ai-5.2/work/evidence/b4-handoff/expected.sqlite",
+      "digest": "34f82e875b300f3f03c33b3283b50d7dfe0d13c14f9b887d7d07309b515987f5",
+      "active_policy": "BR-001/v2",
+      "decisions": [
+        {
+          "request_id": "anchor",
+          "decision_id": "945d2dfcccf2591bf3697571b0733542d7e35eee1e698b05132a513f61207af8",
+          "policy_version": "BR-001/v1",
+          "parent_key": null
+        },
+        {
+          "request_id": "old",
+          "decision_id": "a7329fc31747d65632eafa7507b9a96c7b4869a58feb0ee6d162c5bc23b337a2",
+          "policy_version": "BR-001/v1",
+          "parent_key": null
+        }
+      ],
+      "audit_count": 3
+    },
+    "expected_policy": "BR-001/v2",
+    "anchor_key": "anchor",
+    "source_regression_established": false,
+    "lineage_note": "Equal deterministic decision IDs across ledgers do not establish replay lineage.",
+    "ledgers_unchanged": true
+  },
+  "preserved_before": {
+    "/home/claude/work/live22/agentic-ai-5.2/work/evidence/b4-handoff/expected.sqlite": "34f82e875b300f3f03c33b3283b50d7dfe0d13c14f9b887d7d07309b515987f5",
+    "/home/claude/work/live22/agentic-ai-5.2/work/evidence/b4-handoff/wrong.sqlite": "597d6c4ed8bbb0f9d830b8d3f8c02a85a15e469a2a04fcd7c707ba0c37b695c9"
+  },
+  "preserved_after": {
+    "/home/claude/work/live22/agentic-ai-5.2/work/evidence/b4-handoff/expected.sqlite": "34f82e875b300f3f03c33b3283b50d7dfe0d13c14f9b887d7d07309b515987f5",
+    "/home/claude/work/live22/agentic-ai-5.2/work/evidence/b4-handoff/wrong.sqlite": "597d6c4ed8bbb0f9d830b8d3f8c02a85a15e469a2a04fcd7c707ba0c37b695c9"
+  }
+}

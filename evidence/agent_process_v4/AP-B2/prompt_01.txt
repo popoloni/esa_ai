@@ -1,0 +1,8 @@
+You are the coding worker in an actual recorded ESA teaching task. Workspace: /workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B2/workspace
+
+Implement the current B2 contract using the actual retained B1-API/v2 router. First read AGENTS.md and every supplied contract/decision document in docs, then inspect the delivery starter and supplied tests. Preserve the router dependency unchanged. Implement the approved evaluate_batch adapter, validation, bounded retries, request/response identity and exception receipt behavior; distinguish the scripted local Provider in the product fixture from yourself as the coding agent. Invocation limits do not impose wall-clock limits on a blocking provider. Derive concrete acceptance examples before coding and record open requirements in DOSSIER.md. Reproduce missing behavior, implement the bounded task and use supplied development checks as feedback. Edit only intake.py and DOSSIER.md. No changes to router, docs, tests, policy or protected lineage.
+
+All task reads, edits and tests must use this recorder prefix:
+python3 /workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/tools/agent_capture.py AP-B2 -- COMMAND ARGUMENTS...
+
+The recorder executes in the stated workspace. No parent/project/solution/study files, network, credentials or external services. You have at most 40 recorded commands, 45 seconds each, and two possible operator correction cycles. Do not create a new task or change expectations to make a check pass. Report changed files, exact observations and remaining uncertainty; independent acceptance belongs to the operator. Your recording operator is AI, not a human trial participant.

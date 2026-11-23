@@ -1,0 +1,17 @@
+test_above_boundary_requires_review (test_routing.RoutingAcceptance.test_above_boundary_requires_review) ... ok
+test_exact_boundary_requires_review (test_routing.RoutingAcceptance.test_exact_boundary_requires_review) ... ok
+test_negative_amount_rejected (test_routing.RoutingAcceptance.test_negative_amount_rejected) ... ok
+test_nonfinite_amount_rejected (test_routing.RoutingAcceptance.test_nonfinite_amount_rejected) ... ok
+test_nonnumeric_amount_rejected (test_routing.RoutingAcceptance.test_nonnumeric_amount_rejected) ... ok
+test_positive_below_limit (test_routing.RoutingAcceptance.test_positive_below_limit) ... ok
+test_zero_amount_rejected (test_routing.RoutingAcceptance.test_zero_amount_rejected) ... ok
+test_negative_infinity_rejected (test_routing_extended.RoutingExtended.test_negative_infinity_rejected) ... ok
+test_non_string_argument_is_programming_error (test_routing_extended.RoutingExtended.test_non_string_argument_is_programming_error) ... ok
+test_positive_infinity_rejected (test_routing_extended.RoutingExtended.test_positive_infinity_rejected) ... ok
+test_short_infinity_rejected (test_routing_extended.RoutingExtended.test_short_infinity_rejected) ... ok
+test_signaling_nan_rejected (test_routing_extended.RoutingExtended.test_signaling_nan_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.001s
+
+OK

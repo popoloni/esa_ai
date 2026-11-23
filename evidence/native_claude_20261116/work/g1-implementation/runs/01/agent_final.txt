@@ -1,0 +1,27 @@
+I implemented the G1/I01 public interface in `booking.py`. All 6 G1 checks pass, and the 7 full-contract failures are G2 behavior I left visible, as the brief says.
+
+**Outcome:** a first valid `reserve` commits one row and returns `201/confirmed` with a positive id and `replayed=False`. `get_reservation` reads it back with exactly the six public fields.
+
+**Acceptance example:** given an empty database, `member-1`, asset `A`, 2025-05-14T09:00:00Z to 10:00:00Z and key `key-1`, `reserve` returns `Outcome(201, "confirmed", 1, False)`. A separate process then reads id 1 and gets all six fields equal to the request. Id 2 returns `None`. A nonexistent path raises `sqlite3.OperationalError` and creates no file.
+
+**Documents:** I found no conflicts. G1-OD-01 resolves the missing-identifier rule, so I didn't need to ask anything. The documents leave nothing else consequential unspecified.
+
+**Files changed:** `booking.py` and `DOSSIER.md` only. `git status --short .` printed nothing, so I never saw a git listing of the changes. `QUESTIONS.md`, `docs/`, `tests/`, `historical_tests/` and `READER_ENTRY.json` were not edited.
+
+**Implementation:**
+- `init_db` creates a private `g1_reservation` table if it doesn't exist, so existing data is kept.
+- `reserve` uses a parameterized insert and commits before it returns. Storage errors propagate.
+- `get_reservation` opens the database read-only, using a URI built from `Path.resolve().as_uri()` plus `?mode=ro`. It returns a fresh dict, or `None` when the id is absent.
+
+**Correction:** my first write of `booking.py` was blocked by a command check before it ran. The file was still the stub, as the 6 errors confirmed. I rewrote it and re-ran the checks.
+
+**Commands and results:**
+- `python3 -m unittest tests.test_g1_slice tests.test_g1_readonly`: 6 tests OK. Before the implementation it was 6 errors.
+- `python3 -m unittest tests.test_g1_full_api`: 3 of 10 pass. The 7 failures are overlap, replay, changed key, validation and concurrency.
+- `python3 -m unittest historical_tests.test_booking`: 7 failures and 3 errors. It counts the original `reservations` table, and ADR 0001 says it doesn't gate this slice.
+- A separate-process probe confirmed the results in the acceptance example above.
+
+**Remaining limits:**
+- None of the G2 behavior exists, and concurrent `reserve` calls get only SQLite's defaults.
+- I didn't test crash recovery, corrupt or unwritable storage, or non-integer ids.
+- I observed no human approval. I did not run protected acceptance, which is yours to run.

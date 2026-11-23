@@ -1,0 +1,8 @@
+{
+  "at_utc": "2026-11-16T22:22:35.524521+00:00",
+  "operator": "Claude (claude-opus-5-5), AI operator in the author's review session",
+  "operator_kind": "AI",
+  "decision": "stop",
+  "note": "Observation: launch 01 of the G4 session exited 1 after 7 native events and 0.307 s of API time. The only assistant\ntext and the final result read \"You've hit your 5-hour limit \u00b7 resets 1:30am (Europe/Rome)\"; api_error_status 429,\ntotal_cost_usd 0, no file changed. The final event carried subtype \"success\" with is_error true; the adapter\nclassified the attempt CLIENT_EXIT_NONZERO, as its controls require.\nDiagnosis: account usage limit of the operator's environment, not a candidate, task or agent observation.\nDecision: STOP this session. Its declared session time runs from this launch and will be spent before the limit\nresets, so the directory is retained as work/g4-agent-usage-limit-01 and a fresh session will be prepared at\nwork/g4-agent after the reset, on the same unchanged candidate work/g4.\nLimit: AI operator.\n",
+  "meaning": "Recorded operator statement; this tool does not certify its authority or correctness."
+}

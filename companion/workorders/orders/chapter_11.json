@@ -1,0 +1,66 @@
+{
+  "id": "chapter_11",
+  "schema_version": 1,
+  "evidence_profile": "persistent_effect",
+  "expect": {
+    "outcome": "Diagnose the effective ledger and prepare restoration without deciding incident-history disposition.",
+    "authority": {
+      "owner": "Incident owner for restoration; business owner for reconciliation.",
+      "source": "Incident INC-017; approved policy activation and B3/B4 history contracts.",
+      "version": "INC-017; OPS-B4/v1",
+      "status": "TEACHING_CONTRACT"
+    },
+    "acceptance": [
+      "Hold code/request constant in state-selection comparison; missing-state probe creates no database; restoration preserves replay and incident history."
+    ]
+  },
+  "delegate": {
+    "editable_paths": [
+      "incident/DIAGNOSIS.md",
+      "incident/RESTORATION.md"
+    ],
+    "protected_paths": [
+      "approved_context/",
+      "source_evidence/",
+      "retained_history/",
+      "previous_release/"
+    ],
+    "budget": {
+      "max_attempts": 2,
+      "implementation_minutes": 45,
+      "check_timeout_seconds": 30,
+      "max_external_calls": 0
+    },
+    "stop_conditions": [
+      "Required authority or source evidence is missing.",
+      "Declared budget is spent or a proposed edit crosses protected scope."
+    ]
+  },
+  "observe": {
+    "checks": [
+      {
+        "id": "chapter_11.review",
+        "stage": "contract",
+        "method": "review",
+        "argv": [],
+        "expected": "Read-only known/missing ledger controls; explicit-v2 calculation; same-ledger replay; path-only comparison; restoration controls."
+      }
+    ],
+    "receipt_fields": [
+      "candidate_identity",
+      "authority_version",
+      "actual_checks",
+      "reached_stage",
+      "remaining_question"
+    ]
+  },
+  "decide": {
+    "owner": "Incident owner for restoration; business owner for reconciliation.",
+    "object": "The causal argument and bounded restoration proposal.",
+    "allowed_decisions": [
+      "ACCEPT",
+      "REJECT",
+      "ASK"
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+Completed the authorized G1/I01 implementation.
+
+Files changed in this continuation: booking.py and DOSSIER.md. The original QUESTIONS.md and first-stage records were retained; docs, tests, and entry metadata were unchanged.
+
+booking.py now creates durable SQLite storage without replacing existing records, binds request values safely, commits a reservation before returning 201/confirmed, and returns fresh mappings containing exactly the six public fields. Lookup returns None for an absent identifier in initialized storage. A missing database raises sqlite3.OperationalError without creating a file, using the prescribed read-only URI. Storage exceptions remain visible.
+
+Observed development result — recorder AP-G1/011: 6 passed, 0 failures, 0 errors; exit 0, comprising:
+- Four G1 slice checks: first reservation, missing identifier, quoted identifiers, and initialization preserving a reservation.
+- Two read-only checks: missing database not created, and URI special characters with unchanged database bytes.
+
+No implementation correction or test rerun was required. Recorder AP-G1/012 confirmed that only DOSSIER.md changed in the final documentation update and its readback succeeded.
+
+Limits: No protected checks or separate-process continuation were run by this worker. The full-contract diagnostic remains unchanged and was not run. G2 validation, conflict, replay, migration, and concurrency behavior remain deferred. The recording operator owns the next independent checks.
+
+Retention note: faithful plain-text transcription of the actual final response; Markdown emphasis was normalized. Raw submitted operations and outputs remain in commands/.

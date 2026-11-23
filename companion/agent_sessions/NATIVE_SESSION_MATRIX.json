@@ -1,0 +1,100 @@
+{
+  "schema": "engineering-native-session-matrix/v1",
+  "purpose": "Expected session paths printed in Part V; these rows are requirements, not observed runs.",
+  "required_missions": [
+    "G1",
+    "G2",
+    "G3",
+    "G4",
+    "B1",
+    "B2",
+    "B3",
+    "B4"
+  ],
+  "sessions": [
+    {
+      "id": "G1-question",
+      "mission": "G1",
+      "stage": "question",
+      "session_path": "work/g1-question",
+      "required": true
+    },
+    {
+      "id": "G1-implementation",
+      "mission": "G1",
+      "stage": "implement",
+      "session_path": "work/g1-implementation",
+      "required": true
+    },
+    {
+      "id": "G2",
+      "mission": "G2",
+      "stage": "implement",
+      "session_path": "work/g2-agent",
+      "required": true
+    },
+    {
+      "id": "G3",
+      "mission": "G3",
+      "stage": "implement",
+      "session_path": "work/g3-agent",
+      "required": true
+    },
+    {
+      "id": "G3-report",
+      "mission": "G3",
+      "stage": "report",
+      "session_path": "work/g3-report-agent",
+      "required": true
+    },
+    {
+      "id": "G3-cli",
+      "mission": "G3",
+      "stage": "cli",
+      "session_path": "work/g3-cli-agent",
+      "required": true
+    },
+    {
+      "id": "G4",
+      "mission": "G4",
+      "stage": "implement",
+      "session_path": "work/g4-agent",
+      "required": true
+    },
+    {
+      "id": "B1-v1",
+      "mission": "B1",
+      "stage": "v1",
+      "session_path": "work/b1-agent-v1",
+      "required": true
+    },
+    {
+      "id": "B1-v2",
+      "mission": "B1",
+      "stage": "v2",
+      "session_path": "work/b1-agent-v2",
+      "required": true
+    },
+    {
+      "id": "B2",
+      "mission": "B2",
+      "stage": "implement",
+      "session_path": "work/b2-agent",
+      "required": true
+    },
+    {
+      "id": "B3",
+      "mission": "B3",
+      "stage": "implement",
+      "session_path": "work/b3-agent",
+      "required": true
+    },
+    {
+      "id": "B4",
+      "mission": "B4",
+      "stage": "implement",
+      "session_path": "work/b4-agent",
+      "required": true
+    }
+  ]
+}

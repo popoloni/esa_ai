@@ -1,0 +1,32 @@
+{
+  "argv": [
+    "python3",
+    "-B",
+    "companion/memory/ledger.py",
+    "--workspace",
+    ".",
+    "--ledger",
+    "evidence/memory_lab_20261116/recorded_01/events.jsonl",
+    "retrieve",
+    "--at",
+    "2026-11-16T22:40:07Z",
+    "--limit",
+    "3",
+    "--max-bytes",
+    "12000",
+    "--task",
+    "B1-grammar-check",
+    "--component",
+    "treasury.ledger",
+    "--contract",
+    "B1-API/v2",
+    "--schema",
+    "RoutingDecision(route,reason,policy_version)"
+  ],
+  "exit": 0,
+  "expected_exit": 0,
+  "label": "wrong_component",
+  "origin": "AUTOMATED_LOCAL_CONTROL_NO_MODEL_OR_HUMAN",
+  "stderr": "",
+  "stdout": "{\"as_of\":\"2026-11-16T22:40:07Z\",\"authority_limit\":\"Approved is a checked local declaration, not authenticated owner approval.\",\"budget\":{\"max_bytes\":12000,\"max_records\":3},\"excluded_counts\":{\"scope_mismatch\":3},\"model_calls\":0,\"omitted_by_count_or_byte_budget\":0,\"records\":[],\"scope\":{\"component\":\"treasury.ledger\",\"contract\":\"B1-API/v2\",\"schema\":\"RoutingDecision(route,reason,policy_version)\",\"task\":\"B1-grammar-check\"},\"status\":\"NO_APPLICABLE_MEMORY\"}\n"
+}

@@ -1,0 +1,20 @@
+{
+  "schema": "esa-prototype-entry/v2",
+  "mission": "B1",
+  "release": "Engineering-Software-with-Agentic-AI-Review-5.2-20261117",
+  "route": "BROWNFIELD_TREASURY_REPAIR",
+  "mode": "INCOMPLETE_STARTER",
+  "solution_variant": null,
+  "human_acceptance": "PENDING",
+  "scope": "BR-001/v1 finite positive amounts and unchanged EUR 5,000 boundary; B1 str API.",
+  "api_contract": "B1-API/v1",
+  "recorded_at_utc": "2026-11-22T17:35:39.155358+00:00",
+  "command": [
+    "/usr/local/bin/python3",
+    "companion/start.py",
+    "new",
+    "B1",
+    "--dest",
+    "work/b1"
+  ]
+}

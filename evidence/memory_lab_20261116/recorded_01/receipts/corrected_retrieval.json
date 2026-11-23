@@ -1,0 +1,166 @@
+{
+  "as_of": "2026-11-16T22:40:07Z",
+  "authority_limit": "Approved is a checked local declaration, not authenticated owner approval.",
+  "budget": {
+    "max_bytes": 12000,
+    "max_records": 3
+  },
+  "excluded_counts": {
+    "expired": 1,
+    "revoked": 1,
+    "scope_mismatch": 1
+  },
+  "model_calls": 0,
+  "omitted_by_count_or_byte_budget": 0,
+  "records": [
+    {
+      "approval": {
+        "actor": {
+          "id": "demo-owner-control",
+          "kind": "automated_control"
+        },
+        "authority_basis": {
+          "locator": "Owner and approved teaching contract declaration",
+          "path": "companion/contracts/B1_API_V2.md",
+          "sha256": "75035676814847b356cd844300c32d5384a68327822225dbb45e92692470db06"
+        },
+        "decision_ref": {
+          "locator": "whole file",
+          "path": "evidence/memory_lab_20261116/recorded_01/decisions/B1-V2-PLUS-CORRECTED_promote.json",
+          "sha256": "7576996ca28201e6af4c5084bcaceb58ae0914bbf33f1097c1fd120056a3a7ca"
+        },
+        "event_sha256": "985e44c10b537df07ab4c79a639f3fe423ccacc1eb4e9f5cf5a7ef08d2da8032",
+        "identity_authenticated": false,
+        "reason": "AUTOMATED CONTROL ONLY: exercise the declared-role and exact-record promotion gate. This is not actual owner approval.",
+        "record_id": "B1-V2-PLUS-CORRECTED",
+        "record_sha256": "c380016a83ba2065a60152ecf90e489c4dfda02ecfe1ba8023ee348b8a482f5e"
+      },
+      "content_sha256": "d913c3ac12da66319c5d336d5a8b6d3c97ad3efb7a02e8d02b35a71928410449",
+      "created_at": "2026-11-16T20:40:08.825525Z",
+      "invalidation": null,
+      "proposal_event_sha256": "bd5d891a97a46e797f03c6e49489072480a96b2fe29c48d3b1406ef4d69d2c9c",
+      "record": {
+        "claim": "B1-API/v2 permits a leading plus sign within its 32-character ASCII grammar; +4999.99 routes to STANDARD_QUEUE.",
+        "evidence_refs": [
+          {
+            "locator": "$.actual_result",
+            "path": "evidence/memory_lab_20261116/recorded_01/observations/plus_counterevidence.json",
+            "sha256": "507dffeee87567882d5994ef4720e550166bec78e3ac3c5ca8986e2c979aff08"
+          }
+        ],
+        "expires_at": "2026-12-16T20:40:07Z",
+        "last_checked_at": "2026-11-16T20:40:07Z",
+        "memory_type": "fact",
+        "producer": {
+          "id": "offline-demonstrator",
+          "kind": "automated_control"
+        },
+        "record_id": "B1-V2-PLUS-CORRECTED",
+        "revisit_if": [
+          "The task, component, API or field shape changes.",
+          "A source, evidence or approval digest changes.",
+          "Current-contract counterevidence contradicts the claim.",
+          "The declared validity interval ends."
+        ],
+        "schema": "agent-memory-record/v1",
+        "scope": {
+          "component": "treasury.routing.assess",
+          "contract": "B1-API/v2",
+          "schema": "RoutingDecision(route,reason,policy_version)",
+          "task": "B1-grammar-check"
+        },
+        "sensitivity": "public",
+        "source_refs": [
+          {
+            "locator": "Monetary text grammar and declared API behavior",
+            "path": "companion/contracts/B1_API_V2.md",
+            "sha256": "75035676814847b356cd844300c32d5384a68327822225dbb45e92692470db06"
+          }
+        ],
+        "supersedes": "B1-V2-PLUS-WRONG",
+        "valid_from": "2026-11-16T20:40:07Z",
+        "version": 2
+      },
+      "record_sha256": "c380016a83ba2065a60152ecf90e489c4dfda02ecfe1ba8023ee348b8a482f5e",
+      "status": "approved"
+    },
+    {
+      "approval": {
+        "actor": {
+          "id": "demo-owner-control",
+          "kind": "automated_control"
+        },
+        "authority_basis": {
+          "locator": "Owner and approved teaching contract declaration",
+          "path": "companion/contracts/B1_API_V2.md",
+          "sha256": "75035676814847b356cd844300c32d5384a68327822225dbb45e92692470db06"
+        },
+        "decision_ref": {
+          "locator": "whole file",
+          "path": "evidence/memory_lab_20261116/recorded_01/decisions/B1-V2-BASE_promote.json",
+          "sha256": "6176e9dc4a1b3542e9c9cc849592351887e4aeaafeeb7b09ce39c2f0673a9235"
+        },
+        "event_sha256": "d4c93ad28f7098c13b40df8fc415cdce0b67a777575230f76abd899cc701c14e",
+        "identity_authenticated": false,
+        "reason": "AUTOMATED CONTROL ONLY: exercise the declared-role and exact-record promotion gate. This is not actual owner approval.",
+        "record_id": "B1-V2-BASE",
+        "record_sha256": "3e0f9ace340a8ead6213eec5fb25a9882450e4e9d9df45e75a9cc7a917771707"
+      },
+      "content_sha256": "7a35e14f445698a3a1c02e95e52d576aa7ceba34c8b3f3fa8f5ab7028a3bcc3e",
+      "created_at": "2026-11-16T20:40:08.159529Z",
+      "invalidation": null,
+      "proposal_event_sha256": "1d06ba73a19bbca6fd93130940691d5f30dc6346472ac70539aa6930b4562ba6",
+      "record": {
+        "claim": "Under B1-API/v2, 4000 satisfies the ASCII monetary-text grammar and routes to STANDARD_QUEUE.",
+        "evidence_refs": [
+          {
+            "locator": "$.cases",
+            "path": "evidence/memory_lab_20261116/recorded_01/observations/initial_reference_probe.json",
+            "sha256": "4ca4734abba82e8df93775f9995aed7218aff7b9874f75e96642fe51b1132d54"
+          }
+        ],
+        "expires_at": "2026-12-16T20:40:07Z",
+        "last_checked_at": "2026-11-16T20:40:07Z",
+        "memory_type": "fact",
+        "producer": {
+          "id": "offline-demonstrator",
+          "kind": "automated_control"
+        },
+        "record_id": "B1-V2-BASE",
+        "revisit_if": [
+          "The task, component, API or field shape changes.",
+          "A source, evidence or approval digest changes.",
+          "Current-contract counterevidence contradicts the claim.",
+          "The declared validity interval ends."
+        ],
+        "schema": "agent-memory-record/v1",
+        "scope": {
+          "component": "treasury.routing.assess",
+          "contract": "B1-API/v2",
+          "schema": "RoutingDecision(route,reason,policy_version)",
+          "task": "B1-grammar-check"
+        },
+        "sensitivity": "public",
+        "source_refs": [
+          {
+            "locator": "Monetary text grammar and declared API behavior",
+            "path": "companion/contracts/B1_API_V2.md",
+            "sha256": "75035676814847b356cd844300c32d5384a68327822225dbb45e92692470db06"
+          }
+        ],
+        "supersedes": null,
+        "valid_from": "2026-11-16T20:40:07Z",
+        "version": 1
+      },
+      "record_sha256": "3e0f9ace340a8ead6213eec5fb25a9882450e4e9d9df45e75a9cc7a917771707",
+      "status": "approved"
+    }
+  ],
+  "scope": {
+    "component": "treasury.routing.assess",
+    "contract": "B1-API/v2",
+    "schema": "RoutingDecision(route,reason,policy_version)",
+    "task": "B1-grammar-check"
+  },
+  "status": "RETRIEVED"
+}

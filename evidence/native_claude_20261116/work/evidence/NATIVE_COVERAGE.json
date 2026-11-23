@@ -1,0 +1,614 @@
+{
+  "schema": "engineering-native-coverage-inventory/v1",
+  "at_utc": "2026-11-16T22:28:42.302468+00:00",
+  "status": "NATIVE_CAPTURES_READY_FOR_REVIEW",
+  "matrix_sha256": "e4f70c29268a788cc40e5a4a26cd00a3630681835672debbeeb1271190026604",
+  "workspace": "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0",
+  "sessions": [
+    {
+      "id": "G1-question",
+      "mission": "G1",
+      "stage": "question",
+      "session_path": "work/g1-question",
+      "required": true,
+      "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+      "attempts": [
+        {
+          "path": "work/g1-question/runs/01",
+          "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+          "capture_hashes_match": true,
+          "client": "claude",
+          "client_version": "2.1.325 (Claude Code)",
+          "reported_cost_usd": [
+            0.06662080000000001
+          ],
+          "permission_denial_count": 0,
+          "requested_model": "claude-sonnet-5-5",
+          "observed_model_ids": [
+            "claude-sonnet-5-5"
+          ],
+          "event_count": 569,
+          "failed_event_lines": [],
+          "usage_observation_count": 6,
+          "native_turn_completed": true,
+          "changed_files": [
+            "AGENT_PLAN.md",
+            "AGENT_QUESTIONS.md"
+          ],
+          "scope_changes_requiring_review": []
+        }
+      ],
+      "client_version": "2.1.325 (Claude Code)",
+      "observed_model_ids": [
+        "claude-sonnet-5-5"
+      ],
+      "native_turn_completed": true,
+      "client_and_model_identified": true,
+      "product_acceptance": "NOT_ASSESSED",
+      "human_operator_and_authorizer": "NOT_VERIFIED",
+      "session_contract_matches": true
+    },
+    {
+      "id": "G1-implementation",
+      "mission": "G1",
+      "stage": "implement",
+      "session_path": "work/g1-implementation",
+      "required": true,
+      "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+      "attempts": [
+        {
+          "path": "work/g1-implementation/runs/01",
+          "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+          "capture_hashes_match": true,
+          "client": "claude",
+          "client_version": "2.1.325 (Claude Code)",
+          "reported_cost_usd": [
+            0.16040390000000002
+          ],
+          "permission_denial_count": 2,
+          "requested_model": "claude-sonnet-5-5",
+          "observed_model_ids": [
+            "claude-sonnet-5-5"
+          ],
+          "event_count": 1078,
+          "failed_event_lines": [],
+          "usage_observation_count": 16,
+          "native_turn_completed": true,
+          "changed_files": [
+            "DOSSIER.md",
+            "booking.py"
+          ],
+          "scope_changes_requiring_review": []
+        }
+      ],
+      "client_version": "2.1.325 (Claude Code)",
+      "observed_model_ids": [
+        "claude-sonnet-5-5"
+      ],
+      "native_turn_completed": true,
+      "client_and_model_identified": true,
+      "product_acceptance": "NOT_ASSESSED",
+      "human_operator_and_authorizer": "NOT_VERIFIED",
+      "session_contract_matches": true
+    },
+    {
+      "id": "G2",
+      "mission": "G2",
+      "stage": "implement",
+      "session_path": "work/g2-agent",
+      "required": true,
+      "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+      "attempts": [
+        {
+          "path": "work/g2-agent/runs/01",
+          "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+          "capture_hashes_match": true,
+          "client": "claude",
+          "client_version": "2.1.325 (Claude Code)",
+          "reported_cost_usd": [
+            0.2868343
+          ],
+          "permission_denial_count": 4,
+          "requested_model": "claude-sonnet-5-5",
+          "observed_model_ids": [
+            "claude-sonnet-5-5"
+          ],
+          "event_count": 1917,
+          "failed_event_lines": [],
+          "usage_observation_count": 25,
+          "native_turn_completed": true,
+          "changed_files": [
+            "DOSSIER.md",
+            "booking.py"
+          ],
+          "scope_changes_requiring_review": []
+        }
+      ],
+      "client_version": "2.1.325 (Claude Code)",
+      "observed_model_ids": [
+        "claude-sonnet-5-5"
+      ],
+      "native_turn_completed": true,
+      "client_and_model_identified": true,
+      "product_acceptance": "NOT_ASSESSED",
+      "human_operator_and_authorizer": "NOT_VERIFIED",
+      "session_contract_matches": true
+    },
+    {
+      "id": "G3",
+      "mission": "G3",
+      "stage": "implement",
+      "session_path": "work/g3-agent",
+      "required": true,
+      "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+      "attempts": [
+        {
+          "path": "work/g3-agent/runs/01",
+          "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+          "capture_hashes_match": true,
+          "client": "claude",
+          "client_version": "2.1.325 (Claude Code)",
+          "reported_cost_usd": [
+            0.24584080000000005
+          ],
+          "permission_denial_count": 3,
+          "requested_model": "claude-sonnet-5-5",
+          "observed_model_ids": [
+            "claude-sonnet-5-5"
+          ],
+          "event_count": 1736,
+          "failed_event_lines": [],
+          "usage_observation_count": 22,
+          "native_turn_completed": true,
+          "changed_files": [
+            "DOSSIER.md",
+            "booking.py"
+          ],
+          "scope_changes_requiring_review": []
+        },
+        {
+          "path": "work/g3-agent/runs/02",
+          "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+          "capture_hashes_match": true,
+          "client": "claude",
+          "client_version": "2.1.325 (Claude Code)",
+          "reported_cost_usd": [
+            0.19060300000000002
+          ],
+          "permission_denial_count": 3,
+          "requested_model": "claude-sonnet-5-5",
+          "observed_model_ids": [
+            "claude-sonnet-5-5"
+          ],
+          "event_count": 1222,
+          "failed_event_lines": [],
+          "usage_observation_count": 18,
+          "native_turn_completed": true,
+          "changed_files": [
+            "DOSSIER.md",
+            "booking.py"
+          ],
+          "scope_changes_requiring_review": []
+        }
+      ],
+      "client_version": "2.1.325 (Claude Code)",
+      "observed_model_ids": [
+        "claude-sonnet-5-5"
+      ],
+      "native_turn_completed": true,
+      "client_and_model_identified": true,
+      "product_acceptance": "NOT_ASSESSED",
+      "human_operator_and_authorizer": "NOT_VERIFIED",
+      "session_contract_matches": true
+    },
+    {
+      "id": "G3-report",
+      "mission": "G3",
+      "stage": "report",
+      "session_path": "work/g3-report-agent",
+      "required": true,
+      "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+      "attempts": [
+        {
+          "path": "work/g3-report-agent/runs/01",
+          "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+          "capture_hashes_match": true,
+          "client": "claude",
+          "client_version": "2.1.325 (Claude Code)",
+          "reported_cost_usd": [
+            0.0811197
+          ],
+          "permission_denial_count": 1,
+          "requested_model": "claude-sonnet-5-5",
+          "observed_model_ids": [
+            "claude-sonnet-5-5"
+          ],
+          "event_count": 522,
+          "failed_event_lines": [],
+          "usage_observation_count": 11,
+          "native_turn_completed": true,
+          "changed_files": [
+            "CONTRIBUTION_A.md",
+            "reservation_report.py"
+          ],
+          "scope_changes_requiring_review": []
+        }
+      ],
+      "client_version": "2.1.325 (Claude Code)",
+      "observed_model_ids": [
+        "claude-sonnet-5-5"
+      ],
+      "native_turn_completed": true,
+      "client_and_model_identified": true,
+      "product_acceptance": "NOT_ASSESSED",
+      "human_operator_and_authorizer": "NOT_VERIFIED",
+      "session_contract_matches": true
+    },
+    {
+      "id": "G3-cli",
+      "mission": "G3",
+      "stage": "cli",
+      "session_path": "work/g3-cli-agent",
+      "required": true,
+      "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+      "attempts": [
+        {
+          "path": "work/g3-cli-agent/runs/01",
+          "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+          "capture_hashes_match": true,
+          "client": "claude",
+          "client_version": "2.1.325 (Claude Code)",
+          "reported_cost_usd": [
+            0.07167989999999999
+          ],
+          "permission_denial_count": 0,
+          "requested_model": "claude-sonnet-5-5",
+          "observed_model_ids": [
+            "claude-sonnet-5-5"
+          ],
+          "event_count": 489,
+          "failed_event_lines": [],
+          "usage_observation_count": 8,
+          "native_turn_completed": true,
+          "changed_files": [
+            "CONTRIBUTION_B.md",
+            "reservation_cli.py"
+          ],
+          "scope_changes_requiring_review": []
+        }
+      ],
+      "client_version": "2.1.325 (Claude Code)",
+      "observed_model_ids": [
+        "claude-sonnet-5-5"
+      ],
+      "native_turn_completed": true,
+      "client_and_model_identified": true,
+      "product_acceptance": "NOT_ASSESSED",
+      "human_operator_and_authorizer": "NOT_VERIFIED",
+      "session_contract_matches": true
+    },
+    {
+      "id": "G4",
+      "mission": "G4",
+      "stage": "implement",
+      "session_path": "work/g4-agent",
+      "required": true,
+      "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+      "attempts": [
+        {
+          "path": "work/g4-agent/runs/01",
+          "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+          "capture_hashes_match": true,
+          "client": "claude",
+          "client_version": "2.1.325 (Claude Code)",
+          "reported_cost_usd": [
+            0.1531067
+          ],
+          "permission_denial_count": 1,
+          "requested_model": "claude-sonnet-5-5",
+          "observed_model_ids": [
+            "claude-sonnet-5-5"
+          ],
+          "event_count": 1089,
+          "failed_event_lines": [],
+          "usage_observation_count": 17,
+          "native_turn_completed": true,
+          "changed_files": [
+            "DOSSIER.md",
+            "operations.py"
+          ],
+          "scope_changes_requiring_review": []
+        }
+      ],
+      "client_version": "2.1.325 (Claude Code)",
+      "observed_model_ids": [
+        "claude-sonnet-5-5"
+      ],
+      "native_turn_completed": true,
+      "client_and_model_identified": true,
+      "product_acceptance": "NOT_ASSESSED",
+      "human_operator_and_authorizer": "NOT_VERIFIED",
+      "session_contract_matches": true
+    },
+    {
+      "id": "B1-v1",
+      "mission": "B1",
+      "stage": "v1",
+      "session_path": "work/b1-agent-v1",
+      "required": true,
+      "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+      "attempts": [
+        {
+          "path": "work/b1-agent-v1/runs/01",
+          "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+          "capture_hashes_match": true,
+          "client": "claude",
+          "client_version": "2.1.325 (Claude Code)",
+          "reported_cost_usd": [
+            0.11574689999999999
+          ],
+          "permission_denial_count": 2,
+          "requested_model": "claude-sonnet-5-5",
+          "observed_model_ids": [
+            "claude-sonnet-5-5"
+          ],
+          "event_count": 750,
+          "failed_event_lines": [],
+          "usage_observation_count": 15,
+          "native_turn_completed": true,
+          "changed_files": [
+            "DOSSIER.md",
+            "src/treasury/routing.py"
+          ],
+          "scope_changes_requiring_review": []
+        }
+      ],
+      "client_version": "2.1.325 (Claude Code)",
+      "observed_model_ids": [
+        "claude-sonnet-5-5"
+      ],
+      "native_turn_completed": true,
+      "client_and_model_identified": true,
+      "product_acceptance": "NOT_ASSESSED",
+      "human_operator_and_authorizer": "NOT_VERIFIED",
+      "session_contract_matches": true
+    },
+    {
+      "id": "B1-v2",
+      "mission": "B1",
+      "stage": "v2",
+      "session_path": "work/b1-agent-v2",
+      "required": true,
+      "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+      "attempts": [
+        {
+          "path": "work/b1-agent-v2/runs/01",
+          "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+          "capture_hashes_match": true,
+          "client": "claude",
+          "client_version": "2.1.325 (Claude Code)",
+          "reported_cost_usd": [
+            0.12262089999999999
+          ],
+          "permission_denial_count": 2,
+          "requested_model": "claude-sonnet-5-5",
+          "observed_model_ids": [
+            "claude-sonnet-5-5"
+          ],
+          "event_count": 887,
+          "failed_event_lines": [],
+          "usage_observation_count": 18,
+          "native_turn_completed": true,
+          "changed_files": [
+            "DOSSIER.md",
+            "src/treasury/routing.py"
+          ],
+          "scope_changes_requiring_review": []
+        }
+      ],
+      "client_version": "2.1.325 (Claude Code)",
+      "observed_model_ids": [
+        "claude-sonnet-5-5"
+      ],
+      "native_turn_completed": true,
+      "client_and_model_identified": true,
+      "product_acceptance": "NOT_ASSESSED",
+      "human_operator_and_authorizer": "NOT_VERIFIED",
+      "session_contract_matches": true
+    },
+    {
+      "id": "B2",
+      "mission": "B2",
+      "stage": "implement",
+      "session_path": "work/b2-agent",
+      "required": true,
+      "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+      "attempts": [
+        {
+          "path": "work/b2-agent/runs/01",
+          "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+          "capture_hashes_match": true,
+          "client": "claude",
+          "client_version": "2.1.325 (Claude Code)",
+          "reported_cost_usd": [
+            0.13331590000000001
+          ],
+          "permission_denial_count": 2,
+          "requested_model": "claude-sonnet-5-5",
+          "observed_model_ids": [
+            "claude-sonnet-5-5"
+          ],
+          "event_count": 968,
+          "failed_event_lines": [],
+          "usage_observation_count": 13,
+          "native_turn_completed": true,
+          "changed_files": [
+            "DOSSIER.md",
+            "intake.py"
+          ],
+          "scope_changes_requiring_review": []
+        }
+      ],
+      "client_version": "2.1.325 (Claude Code)",
+      "observed_model_ids": [
+        "claude-sonnet-5-5"
+      ],
+      "native_turn_completed": true,
+      "client_and_model_identified": true,
+      "product_acceptance": "NOT_ASSESSED",
+      "human_operator_and_authorizer": "NOT_VERIFIED",
+      "session_contract_matches": true
+    },
+    {
+      "id": "B3",
+      "mission": "B3",
+      "stage": "implement",
+      "session_path": "work/b3-agent",
+      "required": true,
+      "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+      "attempts": [
+        {
+          "path": "work/b3-agent/runs/01",
+          "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+          "capture_hashes_match": true,
+          "client": "claude",
+          "client_version": "2.1.325 (Claude Code)",
+          "reported_cost_usd": [
+            0.19073659999999998
+          ],
+          "permission_denial_count": 3,
+          "requested_model": "claude-sonnet-5-5",
+          "observed_model_ids": [
+            "claude-sonnet-5-5"
+          ],
+          "event_count": 1123,
+          "failed_event_lines": [],
+          "usage_observation_count": 22,
+          "native_turn_completed": true,
+          "changed_files": [
+            "DOSSIER.md",
+            "ledger.py"
+          ],
+          "scope_changes_requiring_review": []
+        }
+      ],
+      "client_version": "2.1.325 (Claude Code)",
+      "observed_model_ids": [
+        "claude-sonnet-5-5"
+      ],
+      "native_turn_completed": true,
+      "client_and_model_identified": true,
+      "product_acceptance": "NOT_ASSESSED",
+      "human_operator_and_authorizer": "NOT_VERIFIED",
+      "session_contract_matches": true
+    },
+    {
+      "id": "B4",
+      "mission": "B4",
+      "stage": "implement",
+      "session_path": "work/b4-agent",
+      "required": true,
+      "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+      "attempts": [
+        {
+          "path": "work/b4-agent/runs/01",
+          "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+          "capture_hashes_match": true,
+          "client": "claude",
+          "client_version": "2.1.325 (Claude Code)",
+          "reported_cost_usd": [
+            0.1916698
+          ],
+          "permission_denial_count": 1,
+          "requested_model": "claude-sonnet-5-5",
+          "observed_model_ids": [
+            "claude-sonnet-5-5"
+          ],
+          "event_count": 1232,
+          "failed_event_lines": [],
+          "usage_observation_count": 15,
+          "native_turn_completed": true,
+          "changed_files": [
+            "DOSSIER.md",
+            "incident.py"
+          ],
+          "scope_changes_requiring_review": []
+        }
+      ],
+      "client_version": "2.1.325 (Claude Code)",
+      "observed_model_ids": [
+        "claude-sonnet-5-5"
+      ],
+      "native_turn_completed": true,
+      "client_and_model_identified": true,
+      "product_acceptance": "NOT_ASSESSED",
+      "human_operator_and_authorizer": "NOT_VERIFIED",
+      "session_contract_matches": true
+    }
+  ],
+  "missions": [
+    {
+      "mission": "G1",
+      "required_sessions": 2,
+      "native_sessions_completed": 2,
+      "complete_native_capture": true,
+      "client_and_model_identified": true
+    },
+    {
+      "mission": "G2",
+      "required_sessions": 1,
+      "native_sessions_completed": 1,
+      "complete_native_capture": true,
+      "client_and_model_identified": true
+    },
+    {
+      "mission": "G3",
+      "required_sessions": 3,
+      "native_sessions_completed": 3,
+      "complete_native_capture": true,
+      "client_and_model_identified": true
+    },
+    {
+      "mission": "G4",
+      "required_sessions": 1,
+      "native_sessions_completed": 1,
+      "complete_native_capture": true,
+      "client_and_model_identified": true
+    },
+    {
+      "mission": "B1",
+      "required_sessions": 2,
+      "native_sessions_completed": 2,
+      "complete_native_capture": true,
+      "client_and_model_identified": true
+    },
+    {
+      "mission": "B2",
+      "required_sessions": 1,
+      "native_sessions_completed": 1,
+      "complete_native_capture": true,
+      "client_and_model_identified": true
+    },
+    {
+      "mission": "B3",
+      "required_sessions": 1,
+      "native_sessions_completed": 1,
+      "complete_native_capture": true,
+      "client_and_model_identified": true
+    },
+    {
+      "mission": "B4",
+      "required_sessions": 1,
+      "native_sessions_completed": 1,
+      "complete_native_capture": true,
+      "client_and_model_identified": true
+    }
+  ],
+  "completed_missions": 8,
+  "client_and_model_identified_missions": 8,
+  "native_client_launches_by_this_collector": 0,
+  "product_acceptance": "NOT_ASSESSED",
+  "human_operator_identity": "NOT_VERIFIED",
+  "publication_ready": false,
+  "scope": "Retained local transport and snapshot consistency only. Review operator authority, product acceptance, coverage and human evidence separately."
+}

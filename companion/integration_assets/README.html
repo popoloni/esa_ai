@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Eight practical missions, local checks and recorded agent tours for Engineering Software with Agentic AI."><title>G3 paired-worktree integration · Engineering Software with Agentic AI</title><link rel="stylesheet" href="../../assets/companion.css"></head><body><a class="skip" href="#main">Skip to content</a><header class="sitehead"><div><a class="brand" href="../../index.html">Engineering Software with Agentic AI<span>Practical companion · version 5.6</span></a><nav aria-label="Main navigation"><a href="../../index.html">Start</a><a href="../../missions/index.html">Missions</a><a href="../agent_sessions/README.html">Agent guide</a><a href="../../traces/index.html">Recorded tours</a><a href="../series/READING_THE_SERIES.html">Four volumes</a></nav></div></header><main id="main"><article data-source-sha256="be8e8bc072eead74e031616c57bcdd3c3e258cc59979fc9e585645a493a9b95a"><p class="docmeta meta"><a href="README.md">Markdown source</a> · Companion 5.6 · 2026-11-22</p><h1 id="g3-paired-worktree-integration">G3 paired-worktree integration</h1>
+<p>This increment continues a retained G3 candidate. One coding-agent role implements a read-only report through the public booking API; the other implements a CLI against that report interface. The separate component checks deliberately leave a composition question for the integration reviewer.</p>
+<h2 id="prepare-and-operate-the-two-roles">Prepare and operate the two roles</h2>
+<p>Run from the extracted ESA package root:</p>
+<pre class="bash"><code>python3 companion/integration.py prepare \
+  --candidate work/g3 \
+  --dest work/g3-integration</code></pre>
+<p>The helper first checks the retained G3 handoff, then creates a local Git repository at <code>work/g3-integration/workspace</code> and two actual worktrees:</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Role</th>
+<th style="text-align: left;">Workspace</th>
+<th style="text-align: left;">Allowed edits</th>
+<th style="text-align: left;">Component selection</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">report</td>
+<td style="text-align: left;"><code>work/g3-integration/worktrees/report</code></td>
+<td style="text-align: left;"><code>reservation_report.py</code>, <code>CONTRIBUTION_A.md</code></td>
+<td style="text-align: left;"><code>test_integration_a.py</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">cli</td>
+<td style="text-align: left;"><code>work/g3-integration/worktrees/cli</code></td>
+<td style="text-align: left;"><code>reservation_cli.py</code>, <code>CONTRIBUTION_B.md</code></td>
+<td style="text-align: left;"><code>test_integration_b.py</code></td>
+</tr>
+</tbody>
+</table>
+<p>Each role receives the same <code>docs/INTEGRATION-G3.md</code>, protected tests and retained <code>booking.py</code>. Its <code>INTEGRATION_ROLE.json</code> records its scope and shared-contract hash. Operate a real coding client in each worktree and retain the actual interaction separately. The helper does not invoke or simulate a model. The report component uses the real booking API; the CLI component uses an explicitly identified fake report provider. Those selections do not establish the combined behavior.</p>
+<p>The workers should leave their changes uncommitted. The integration helper checks complete file inventories against the prepared baselines, stages only the declared source and note files, and records their commits as the AI recording operator. Git is used locally; no push occurs.</p>
+<h2 id="combine-and-check-the-transported-package">Combine and check the transported package</h2>
+<pre class="bash"><code>python3 companion/integration.py combine \
+  --workspace work/g3-integration/workspace \
+  --output work/g3-integration/REPORT.json</code></pre>
+<p>The helper retains each actual command and result under <code>operator/</code>, combines the contributions with local cherry-picks, repeats the component selections and G3 handoff, packages the combined candidate, and extracts that ZIP into a separate directory. It checks the components and G3 contract again there, then executes the actual CLI with the actual report provider.</p>
+<p>The independent CLI observations cover import behavior; a confirmed record; the same historical record after cancellation; an absent identifier; missing storage; invalid identifiers <code>0</code>, <code>-1</code> and <code>abc</code>; and a missing required argument. Expected JSON is type-sensitive and comes from the shared contract. Every read observation checks the fixture’s file hashes before and after. The package’s complete extracted inventory must equal its combined-source inventory.</p>
+<p>A failure remains in its command receipt and the requested report. A failed cherry-pick is not reset or replaced with a reference. Preserve that state, inspect the failure and define the next correction before another attempt. Receipt paths are never reused. Git commits are provenance records; the helper makes no claim that a commit alone proves correctness.</p>
+<p>On success, <code>READER_ENTRY.json</code> receives an integration record bound to the exact <code>booking.py</code>, <code>reservation_report.py</code> and <code>reservation_cli.py</code>, an immutable acceptance receipt and the tested archive. The ZIP represents the combined candidate <strong>before</strong> this acceptance metadata is added; <code>REPORT.json</code> separately binds the updated entry and the final Git commit. Human acceptance remains pending, and no production authorization or performance improvement is inferred.</p>
+<h2 id="continue-the-same-candidate-into-g4">Continue the same candidate into G4</h2>
+<pre class="bash"><code>python3 companion/start.py advance G4 \
+  --from-candidate work/g3-integration/workspace \
+  --dest work/g4</code></pre>
+<p>When the retained G3 stores its current reservations in a layout that OPS-G4/v3 does not name, <code>advance</code> also writes the owner mapping <code>docs/G4-OD-01.md</code> and <code>docs/G4-SCHEMA-MAP.json</code> for this lineage and prints <code>owner_mapping</code> in its output. Read the decision before delegating. If no mapping follows from the column names, <code>advance</code> refuses and shows how to supply one with <code>--schema-map</code>.</p>
+<p>G4 verifies the acceptance receipt and all three source hashes, copies the report and CLI alongside booking, retains their source snapshots and a local receipt copy, and includes the forwarded modules in dependency checks. Changing an integrated source blocks the check before the mission tests run. The standalone <code>new G4</code> and <code>solution G4</code> routes still serve their separate fixture/reference purpose; <code>advance G4</code> requires the integrated learner lineage.</p>
+<h2 id="reuse-an-existing-recorded-layout">Reuse an existing recorded layout</h2>
+<p><code>INTEGRATION.json</code> explicitly records <code>main_workspace</code>, each role’s <code>workspace</code> and <code>baseline</code>, baseline inventories and the shared baseline commit. Paths are relative to that manifest and may identify retained sibling workspaces. Pass <code>--manifest PATH</code> to <code>combine</code> when the manifest is not next to the main workspace. Adapting this metadata does not move or rewrite a raw recording.</p>
+<p>The edition’s actual observation is retained at <code>evidence/agent_process_v4/AP-INTEGRATION/REPORT.json</code>, with the original sibling worktrees and worker command records preserved.</p>
+<h2 id="exercise-the-helper-using-a-retained-actual-bundle">Exercise the helper using a retained actual bundle</h2>
+<pre class="bash"><code>python3 -B companion/integration_assets/verify_helper.py \
+  --candidate evidence/agent_process_v4/AP-G3/workspace \
+  --recorded-report evidence/agent_process_v4/AP-INTEGRATION/REPORT.json \
+  --workdir work/integration-helper-replay \
+  --output work/integration-helper-test.json</code></pre>
+<p>It needs <code>evidence/agent_process_v4/AP-INTEGRATION/packages/integration-001.zip</code>, which this public companion does not include; here the command stops with <code>FileNotFoundError</code>. This system test extracts the recorded bundle, copies only its actual contribution bytes into freshly prepared role worktrees, combines them again, performs the transport checks and verifies G4 forwarding. It also retains a deliberate changed-source refusal and an unintegrated-G4 refusal. These are labelled source replay and controlled integrity tests; they are not new agent observations or G4 completion.</p>
+</article></main><footer class="foot"><p>Enrico Papalini · Edition 5.6 · 2026-11-22</p><p><a href="../../NOTICE.html">Rights and notices</a> · <a href="../../NATIVE_STATUS.json">Native-client status</a> · <a href="../../MANIFEST.json">Package manifest</a> · <a href="https://github.com/popoloni/esa_ai">Companion repository</a></p></footer></body></html>

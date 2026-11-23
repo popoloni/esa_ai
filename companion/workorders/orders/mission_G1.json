@@ -1,0 +1,94 @@
+{
+  "id": "mission_G1",
+  "schema_version": 1,
+  "evidence_profile": "new_capability",
+  "expect": {
+    "outcome": "Commit the first reservation and retrieve its six public fields.",
+    "authority": {
+      "owner": "Workshop coordinator",
+      "source": "companion/contracts/G1_I01.md; companion/contracts/G1_OWNER_DECISION.md",
+      "version": "G1/I01 + G1-OD-01",
+      "status": "TEACHING_CONTRACT"
+    },
+    "acceptance": [
+      "One valid request survives writer exit; missing-ID and missing-storage outcomes follow the owner decision."
+    ]
+  },
+  "delegate": {
+    "editable_paths": [
+      "booking.py",
+      "DOSSIER.md"
+    ],
+    "protected_paths": [
+      "docs/",
+      "tests/",
+      "READER_ENTRY.json",
+      "prior/",
+      "historical_tests/"
+    ],
+    "budget": {
+      "max_attempts": 3,
+      "implementation_minutes": 25,
+      "check_timeout_seconds": 15,
+      "max_external_calls": 0
+    },
+    "stop_conditions": [
+      "No supplied lookup decision; new replay or overlap policy.",
+      "Protected inputs change or the declared attempt/time budget is spent."
+    ]
+  },
+  "observe": {
+    "checks": [
+      {
+        "id": "g1.check",
+        "stage": "contract",
+        "method": "command",
+        "argv": [
+          "python3",
+          "companion/start.py",
+          "check",
+          "G1",
+          "--candidate",
+          "work/g1",
+          "--select",
+          "slice",
+          "--output",
+          "work/evidence/g1-first.json"
+        ],
+        "expected": "Selected public checks pass on unchanged inputs."
+      },
+      {
+        "id": "g1.continue",
+        "stage": "integration",
+        "method": "command",
+        "argv": [
+          "python3",
+          "companion/start.py",
+          "continue",
+          "G1",
+          "--candidate",
+          "work/g1",
+          "--output",
+          "work/evidence/g1-handoff.json"
+        ],
+        "expected": "Current candidate completes its scoped continuation; inspect retained observations."
+      }
+    ],
+    "receipt_fields": [
+      "candidate_sha256_before",
+      "groups",
+      "inputs_unchanged",
+      "verification_progress",
+      "human_acceptance"
+    ]
+  },
+  "decide": {
+    "owner": "Learner reviewer; Workshop coordinator for a changed rule.",
+    "object": "G1 candidate, identified bytes and its scoped handoff.",
+    "allowed_decisions": [
+      "ACCEPT",
+      "REJECT",
+      "ASK"
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+test_adjacency_and_different_assets_are_excluded (__main__.BoundaryProbes.test_adjacency_and_different_assets_are_excluded) ... ok
+test_competing_current_representations_are_refused (__main__.BoundaryProbes.test_competing_current_representations_are_refused) ... ok
+test_concurrent_main_and_wal_changes_invalidate_observation (__main__.BoundaryProbes.test_concurrent_main_and_wal_changes_invalidate_observation) ... ok
+test_decimal_totals_preserve_precision_and_all_attempt_kinds (__main__.BoundaryProbes.test_decimal_totals_preserve_precision_and_all_attempt_kinds) ... ok
+test_identical_byte_replacement_invalidates_observation (__main__.BoundaryProbes.test_identical_byte_replacement_invalidates_observation) ... ok
+test_incomplete_extra_and_unknown_mappings_are_refused (__main__.BoundaryProbes.test_incomplete_extra_and_unknown_mappings_are_refused) ... ok
+test_retained_g1_history_is_excluded (__main__.BoundaryProbes.test_retained_g1_history_is_excluded) ... ok
+test_retained_g2_and_archive_are_excluded (__main__.BoundaryProbes.test_retained_g2_and_archive_are_excluded) ... ok
+test_retained_json_history_is_excluded (__main__.BoundaryProbes.test_retained_json_history_is_excluded) ... ok
+test_wal_commits_are_observed_without_changing_any_source_bytes (__main__.BoundaryProbes.test_wal_commits_are_observed_without_changing_any_source_bytes) ... FAIL
+test_zero_empty_separate_denominator_and_invalid_values (__main__.BoundaryProbes.test_zero_empty_separate_denominator_and_invalid_values) ... ok
+
+======================================================================
+FAIL: test_wal_commits_are_observed_without_changing_any_source_bytes (__main__.BoundaryProbes.test_wal_commits_are_observed_without_changing_any_source_bytes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<string>", line 118, in test_wal_commits_are_observed_without_changing_any_source_bytes
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.027s
+
+FAILED (failures=1)

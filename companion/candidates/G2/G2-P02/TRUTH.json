@@ -1,0 +1,17 @@
+{
+  "schema": "esa-review-ground-truth/v4",
+  "mission": "G2",
+  "candidate_id": "G2-P02",
+  "created_on": "2026-11-02",
+  "origin": "CONSTRUCTED_TEACHING_VARIANT",
+  "actual_model_trace": false,
+  "expected_decision": "ASK",
+  "expected_check_pass": true,
+  "targeted_assertions": [],
+  "explanation": "The new planner implements partial-series acceptance. RES-001/v1 does not choose partial completion versus all-or-nothing for a recurring series. Existing single-slot checks passing cannot authorize that choice.",
+  "required_human_decision": "May a recurring series omit unavailable dates, or must the entire series be refused? Who accepts partial delivery and how is it reported?",
+  "contract": "RES-001/v1 + G2-OD-01",
+  "scope": "Constructed public practice, not a human assessment result.",
+  "revised_on": "2026-11-03",
+  "release_scope": "ESA-Complete-Review-3-20261103"
+}

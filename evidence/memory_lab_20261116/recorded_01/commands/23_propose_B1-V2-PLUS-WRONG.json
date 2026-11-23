@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "python3",
+    "-B",
+    "companion/memory/ledger.py",
+    "--workspace",
+    ".",
+    "--ledger",
+    "evidence/memory_lab_20261116/recorded_01/events.jsonl",
+    "propose",
+    "--record",
+    "evidence/memory_lab_20261116/recorded_01/proposals/B1-V2-PLUS-WRONG.json"
+  ],
+  "exit": 0,
+  "expected_exit": 0,
+  "label": "propose_B1-V2-PLUS-WRONG",
+  "origin": "AUTOMATED_LOCAL_CONTROL_NO_MODEL_OR_HUMAN",
+  "stderr": "",
+  "stdout": "{\"event_sha256\":\"b3c000672e390125afe3e2f324d89479ace8b0afdc321efd96604e8d8bcf43cd\",\"record_id\":\"B1-V2-PLUS-WRONG\",\"record_sha256\":\"7d62aa6c8a1bf9bd42972f1071afb5819acb86efa4d3944ea9f504ee714b569e\",\"status\":\"PROPOSED_NOT_RETRIEVABLE\"}\n"
+}

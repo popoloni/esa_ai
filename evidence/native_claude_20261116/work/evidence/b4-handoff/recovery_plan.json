@@ -1,0 +1,25 @@
+{
+  "restore_configuration_to": "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/evidence/b4-handoff/expected.sqlite",
+  "restore_state_binding_to": "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/evidence/b4-handoff/expected.sqlite",
+  "restoration_needed": true,
+  "automatic_merge": false,
+  "production_authorized": false,
+  "preserve_ledgers": [
+    "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/evidence/b4-handoff/expected.sqlite",
+    "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/evidence/b4-handoff/wrong.sqlite"
+  ],
+  "reconciliation": "PENDING_OWNER_DECISION",
+  "reconciliation_note": "Records created while the wrong state was selected need the owner, conflict analysis and separate evidence; this plan does not decide them.",
+  "steps": [
+    "restore the expected state binding (separate operator change)",
+    "historical replay of recorded decisions with recorded policy snapshots",
+    "new-current-policy probe on a disposable copy only",
+    "restart and state checks"
+  ],
+  "issues": [
+    "STATE_PATH_MISMATCH",
+    "ACTIVE_POLICY_MISMATCH",
+    "ANCHOR_MISSING"
+  ],
+  "next_authorized_check": "operator-run restart/state check after the binding is restored"
+}

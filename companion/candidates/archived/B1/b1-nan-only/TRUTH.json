@@ -1,0 +1,32 @@
+{
+  "schema": "esa-review-ground-truth/v1",
+  "mission": "B1",
+  "candidate_id": "b1-nan-only",
+  "created_on": "2026-11-02",
+  "origin": "CONSTRUCTED_TEACHING_VARIANT",
+  "rationale_origin": "CONSTRUCTED",
+  "actual_model_trace": false,
+  "code_path": "variant.py",
+  "rationale_path": "RATIONALE.md",
+  "expected_decision": "REJECT",
+  "expected_historical_pass": true,
+  "expected_extended_pass": false,
+  "targeted_assertions": [
+    "test_positive_infinity_rejected",
+    "test_short_infinity_rejected"
+  ],
+  "explanation": "is_nan() catches NaN but is not a finiteness predicate. Positive Infinity and inf exceed the threshold and are routed to HUMAN_REVIEW instead of being rejected. Negative Infinity is rejected by the nonpositive comparison; sNaN is rejected by is_nan().",
+  "expected_observations": {
+    "historical": "7 passed, 0 failed, 0 errors",
+    "extended_target": "Infinity and inf return HUMAN_REVIEW/AT_OR_ABOVE_LIMIT rather than REJECTED/INVALID_AMOUNT",
+    "current_extended_scope": "Five public checks; separate one-method conversion fault probe."
+  },
+  "required_human_decision": null,
+  "limitations": [
+    "This variant is a deterministic teaching fixture, not evidence about a model or an agent.",
+    "Expected outcomes must be checked against executed receipts; metadata is not a test run."
+  ],
+  "supplemental_probe": "b1_conversion_fault",
+  "expected_supplemental_pass": true,
+  "scope_note": "Current extended acceptance is five public-API methods. The conversion fault is a separate candidate-specific probe of the known Decimal binding; AUTHOR_CHECK.json retains the earlier combined six-method author experiment."
+}

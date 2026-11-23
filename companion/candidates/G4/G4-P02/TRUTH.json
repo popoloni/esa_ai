@@ -1,0 +1,19 @@
+{
+  "schema": "esa-review-ground-truth/v4",
+  "mission": "G4",
+  "candidate_id": "G4-P02",
+  "created_on": "2026-11-02",
+  "origin": "CONSTRUCTED_TEACHING_VARIANT",
+  "actual_model_trace": false,
+  "expected_decision": "REJECT",
+  "expected_check_pass": false,
+  "targeted_assertions": [
+    "test_all_attempts_count_toward_accepted_outcome_cost"
+  ],
+  "explanation": "Learning attempts remain in the numerator; they are not accepted outcomes in the denominator.",
+  "required_human_decision": null,
+  "contract": "OPS-G4/v3",
+  "scope": "Constructed public practice, not a human assessment result.",
+  "revised_on": "2026-11-17",
+  "release_scope": "ESA-Complete-Review-3-20261103"
+}

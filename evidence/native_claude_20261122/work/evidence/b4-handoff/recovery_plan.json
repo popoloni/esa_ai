@@ -1,0 +1,23 @@
+{
+  "status": "PROPOSAL_ONLY",
+  "diagnosis_status": "WRONG_LEDGER",
+  "restore_configuration_to": "/home/claude/work/live22/agentic-ai-5.2/work/evidence/b4-handoff/expected.sqlite",
+  "preserve_ledgers": [
+    "/home/claude/work/live22/agentic-ai-5.2/work/evidence/b4-handoff/expected.sqlite",
+    "/home/claude/work/live22/agentic-ai-5.2/work/evidence/b4-handoff/wrong.sqlite"
+  ],
+  "automatic_merge": false,
+  "production_authorized": false,
+  "restoration": {
+    "proposed": true,
+    "performed": false,
+    "owner": "operator (separate local fixture change)"
+  },
+  "reconciliation": "PENDING_OWNER_DECISION",
+  "reconciliation_note": "Records created while the wrong state was selected need the owner, conflict analysis and separate evidence; no rows are merged.",
+  "next_checks": [
+    "historical replay of recorded decisions against the expected ledger",
+    "new-current-policy probe on a disposable copy only",
+    "restart/state check after the operator restores the binding"
+  ]
+}

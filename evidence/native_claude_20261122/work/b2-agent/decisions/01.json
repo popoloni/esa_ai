@@ -1,0 +1,26 @@
+{
+  "at_utc": "2026-11-22T17:37:28.247388+00:00",
+  "operator": "Claude Code live test",
+  "operator_kind": "AI",
+  "decision": "accept",
+  "note": "B2 protected check passed; scope limited to the mission module and DOSSIER.md.\n",
+  "decision_binding": {
+    "candidate_hashes": {
+      "AGENTS.md": "60c816b03a88dd0593dafcc7cb82ed7c9ec33e96ec4f226057f2625295e6f0fc",
+      "DOSSIER.md": "d5ab27a4c75814ed8dd197ebdf1f554308c97bc64c3ac23db58c898de3faea6d",
+      "READER_ENTRY.json": "d6a518a900326a687dc101fefd462701f13d7d0f9ef2f1854cfc3dda4824009f",
+      "docs/contract.md": "7322b946c06acf1e5ca4fc2031419d077cec88fb201aaa6ba6d9e2603bb9992d",
+      "intake.py": "d078ca5b06de61638ce653eac0b7419c3f6246181a1b50a96d8f84d480672f0c",
+      "prior/parent-entry.json": "cad094a05da050f874f8bd4f1a451ad60c96b58c5d33e690fd126285b9d06740",
+      "prior/parent-handoff.json": "a3aff787c8cd7c5898bbb5aa2516535595ca7719b672be5ab13cafb30d9d6c47",
+      "prior/routing.py": "e8fdab89acfa5d28041c74a5d2dcf9801fb0e85324dcc160013a56cf63f89cfd",
+      "routing.py": "e8fdab89acfa5d28041c74a5d2dcf9801fb0e85324dcc160013a56cf63f89cfd",
+      "tests/test_b2.py": "13c76494bb51344136c06e4b49cb071872f8737375f81ceac1a491f9bd3ccc06"
+    },
+    "inventory_sha256": "8357a562beaf3c783843ced874e8526b722b4559d7a15176f7eab035df3dbd14",
+    "latest_run": "runs/01",
+    "latest_result_sha256": "2ae2746df1d0df96578069b1b9f36a8291940ee006249f335186925609132fee",
+    "session_spec_sha256": "dd73fc8deb80202e93dd7b3a47916635de8fad526e5225ede26cf97f14e9b926"
+  },
+  "meaning": "Recorded operator statement; this tool does not certify its authority or correctness."
+}

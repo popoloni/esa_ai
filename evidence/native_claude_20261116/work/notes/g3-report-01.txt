@@ -1,0 +1,13 @@
+Observation: native run 01 of the report role completed (claude-sonnet-5-5, 0.081 USD reported, 23 s). Changed
+reservation_report.py and CONTRIBUTION_A.md only. One heredoc was denied by the client; the worker used Write.
+It wrote its acceptance example first, used only the public booking reads and stated that its component test
+cannot establish combined behaviour. The two roles ran concurrently in separate worktrees of one repository.
+Integration: the first combine (work/g3-integration/REPORT.json) was INTEGRATION_BLOCKED before the cancelled-record
+case. Cause: companion/integration_assets/verify_transport.py required cancel() to equal the reference dictionary
+{status, code, version} exactly; the native booking.py also returns reservation_id. Neither RES-002/v1 nor
+INTEGRATION-G3/v1 fixes the key set, and the protected G3 tests read only status, code and version. Checker defect,
+not a contribution or candidate defect. The operator narrowed the checker to the contracted fields (comment in the
+file) and resumed combine under a new receipt: REPORT-02.json INTEGRATION_CHECKS_PASSED; transport-002.json 9/9 cases
+on the extracted package, package unchanged. The blocked receipt is retained.
+Decision: ACCEPT the report contribution within INTEGRATION-G3/v1.
+Limit: AI operator; the checker correction is itself a change to the companion that needs the author's review.

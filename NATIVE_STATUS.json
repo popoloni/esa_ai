@@ -1,0 +1,129 @@
+{
+  "adapters": {
+    "Claude Code": "TWO_RUNS_12_OF_12_STAGES_LATEST_8_OF_8_MISSIONS_VERIFIED_AFTER_G4_LINEAGE_FIX",
+    "Codex CLI": "LOCAL_SYNTAX_AND_ADAPTER_CONTROLS_VERIFIED_NO_COMPLETED_MISSION"
+  },
+  "as_of": "2026-11-22",
+  "completed_capture_stages": 12,
+  "evidence": "evidence/native_claude_20261122/",
+  "human_operator_sessions": 0,
+  "human_proficiency_established": false,
+  "ledger": "evidence/native_claude_20261122/work/evidence/NATIVE_RUN_LEDGER-02.json",
+  "note": "Claude Code exercised eight missions and twelve stages twice under an AI operator. In the 16 November run the original protected checks and continuations passed; a later G4 competing-current-schema regression exposed two missing refusal cases in its retained candidate, and a separately labelled audit correction is revalidated. The 22 November run, from a fresh public companion, found that a G3 lineage could store reservations in a layout no G4 contract named; advance G4 now records the owner mapping G4-OD-01 for such a lineage, G4 was re-advanced on the same lineage and passed, and the ledger reports 8 of 8 missions. The 17 November Codex launch stopped during startup. Edition 5.3 verified local Codex CLI 0.172.0-alpha.2 syntax and adapter controls. No native Codex turn was completed. No native Codex mission or human operator acceptance is established.",
+  "operator": "Claude (claude-opus-5-5), AI operator in the author's review session",
+  "operator_kind": "AI",
+  "recorded_tour_origin": "Retained ChatGPT Work coding-worker sessions",
+  "report": "companion/agent_sessions/NATIVE_RUN_20261122.md",
+  "reported_client_cost_usd": {
+    "matrix_stages": 2.0178,
+    "all_launches": 2.43
+  },
+  "required_capture_stages": 12,
+  "required_native_missions": 8,
+  "schema": "agentic-ai-public-native-status/v1",
+  "status": "NATIVE_CAPTURE_RECORDED_WITH_REVIEW_FINDING",
+  "trace_is_new_model_execution": false,
+  "verified_client": {
+    "name": "Claude Code",
+    "version": "2.1.330",
+    "observed_models": {
+      "claude-sonnet-5-5": "eleven matrix stages, requested",
+      "claude-opus-5-5": "G1 question stage, client default without --model"
+    }
+  },
+  "verified_native_missions": 8,
+  "version": "5.6",
+  "verified_native_missions_semantics": "The 22 November matrix from companion 5.2 after the documented G4 mapping fix. This is historical native evidence carried into 5.6.",
+  "codex": {
+    "client_version": "0.167.0-alpha.4",
+    "completed_native_missions": 0,
+    "required_native_missions": 8,
+    "completed_capture_stages": 0,
+    "required_capture_stages": 12,
+    "startup_status": "CLIENT_START_OR_CONNECTION_FAILED",
+    "error": "failed to initialize in-process app-server client: Read-only file system (os error 30)",
+    "event_count": 0,
+    "candidate_changes": 0,
+    "model_identity_observed": false,
+    "result": "evidence/native_codex_20261117/work/b1-agent-v1/runs/01/RESULT.json",
+    "historical_attempt_date": "2026-11-17",
+    "review_5_3": {
+      "inspected_version": "0.172.0-alpha.2",
+      "local_inspection": "CLIENT_SYNTAX_AVAILABLE_LIVE_NOT_TESTED",
+      "new_verified_native_stages": 0,
+      "new_verified_native_missions": 0,
+      "new_live_status": "NO_COMPLETED_TURN",
+      "record": "companion/agent_sessions/CODEX_QUICKSTART.md"
+    }
+  },
+  "review_note": "companion/agent_sessions/NATIVE_REVIEW_20261117.md",
+  "g4_current_contract_review": {
+    "contract": "OPS-G4/v3",
+    "protected_methods_before": 11,
+    "protected_methods_now": 13,
+    "original_native_candidate": "FAIL_ON_TWO_ADDED_COMPETING_MAPPING_CONTROLS",
+    "historical_receipt_preserved": true,
+    "correction_origin": "SEPARATE_CURRENT_AI_AUDIT_OPERATOR_NOT_A_NEW_CLAUDE_RUN",
+    "evidence": "evidence/g4_native_audit_20261117/"
+  },
+  "latest_claude_run": {
+    "date": "2026-11-22",
+    "client_version": "2.1.330",
+    "observed_models": {
+      "claude-sonnet-5-5": "eleven matrix stages, requested",
+      "claude-opus-5-5": "G1 question stage, client default without --model"
+    },
+    "verified_native_missions": 8,
+    "completed_capture_stages": 12,
+    "operator_kind": "AI",
+    "human_operator_sessions": 0,
+    "reported_client_cost_usd": {
+      "matrix_stages": 2.0178,
+      "all_launches": 2.43
+    },
+    "findings_fixed": [
+      "G3 lineage layout not named by OPS-G4/v3: owner mapping G4-OD-01 at advance G4",
+      "Printed receipt names could not be superseded: numbered retries read by the ledger"
+    ],
+    "report": "companion/agent_sessions/NATIVE_RUN_20261122.md",
+    "evidence": "evidence/native_claude_20261122/",
+    "ledger": "evidence/native_claude_20261122/work/evidence/NATIVE_RUN_LEDGER-02.json",
+    "companion_version": "5.2"
+  },
+  "native_evidence_companion_version": "5.2",
+  "reviewer_5_3": {
+    "source": "22 November 2026 assessment of edition 5.3, supplied by the author",
+    "provenance": "Reviewer-reported live observations. Raw receipts for these three launches were not supplied with the assessment.",
+    "client": "Claude Code 2.1.330",
+    "observed_default_model": "claude-opus-5-5",
+    "stages": [
+      "G1 question",
+      "G1 implementation",
+      "B1 v1"
+    ],
+    "protected_results": {
+      "G1 implementation": "4/4 slice checks, six-method handoff",
+      "B1 v1": "12/12, context handoff"
+    },
+    "reported_launches": 3,
+    "reported_cost_usd": 0.98,
+    "reported_range_per_launch_usd": [
+      0.24,
+      0.4
+    ],
+    "reported_budget_usd_per_launch": 5
+  },
+  "current_native_status": "The reviewer reported one live Claude Code B1 v2 launch on companion 5.5, following three launches on 5.3. The two complete recorded Claude Code runs used companion 5.2. The 5.6 release checks ran offline with zero new model calls and zero human pilot sessions.",
+  "reviewer_5_5": {
+    "source": "Author-supplied 22 November final check of review edition 5.5",
+    "provenance": "Reviewer-reported live result. The supplied assessment summarizes the run.",
+    "client": "Claude Code",
+    "observed_model": "claude-opus-5-5",
+    "candidate_origin_version": "5.3",
+    "companion_version": "5.5",
+    "stage": "B1 v2",
+    "reported_launches": 1,
+    "reported_cost_usd": 0.53,
+    "protected_result": "18 of 18 checks passed; accepted with handoff."
+  }
+}

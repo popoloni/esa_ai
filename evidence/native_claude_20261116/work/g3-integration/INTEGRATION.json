@@ -1,0 +1,119 @@
+{
+  "schema": "esa-g3-integration/v1",
+  "created_at_utc": "2026-11-16T22:19:41.089609+00:00",
+  "contract": "INTEGRATION-G3/v1",
+  "main_workspace": "workspace",
+  "baseline_commit": "b69f50f5809b2c7e0a8581b76fe248bd8e5a5fa0",
+  "main_baseline_sha256": {
+    "AGENTS.md": "00d6ed7fccaa9fea5a7a297cc59987aa17705bd854c6c49851018d3938701145",
+    "DOSSIER.md": "e49251a574a1de4d3761f17337d7fdd9aca4b3190d7dd4a9f366e2b0ebb1ef86",
+    "READER_ENTRY.json": "626735f378982cb5df108e775d6ab02522876e91d0d7cfc5602256d059b0a091",
+    "booking.py": "7b02037f25564beb431bd1deeaa70da7df845ebc71426b99b882a855193b27a6",
+    "docs/INTEGRATION-G3.md": "86e17d09c9a012559ae7502343cbc9181fa08477cc00c2cacacb55dd49cb0a54",
+    "docs/contract.md": "bb12ae4381e7fec5bb982de67573852c5e7f63d4736a10977d492c3be38f1dce",
+    "legacy_booking.py": "81df006d0653a44260b03425294e8542effe0263c8592a7743e50e14bddcdef6",
+    "prior/booking.py": "aa54ad117c2f3aac2d9d497db3b9457bed1562d742b4b9e9009a438e1929c20c",
+    "prior/parent-check-artifacts/DEMONSTRATION.json": "d034dcb2b27edf013ee69ec3b096afe2209d19eb2dece27773585bf696e05ad9",
+    "prior/parent-check-artifacts/continuation.json": "56ef61ac51beb004496f365a9c9d096a88f51a9d540a19f44d5234cfaac2008a",
+    "prior/parent-check-artifacts/reservations.sqlite": "520163ab69f2e45f8362197c66672bc6b4097e63c0b0b600d39d3442484f98bc",
+    "prior/parent-entry.json": "2f8deb16d11e5c724bda9f7968b7c85d7f67a502108c00fe95c905e84abb033e",
+    "prior/parent-handoff.json": "8e14ef3d76ba047c76c6dafdac30b33b89cc8182082dc3e4cea752df38975a5b",
+    "reservation_cli.py": "6585483249878d6e3ea1f6bbff9be208dfb94022ad883f5a11ffdf90faa85054",
+    "reservation_report.py": "f70238a1cf5215bc0639b49048e4ce9cf1244f3fcae725d8967a912243e41ae2",
+    "tests/test_g3.py": "bdaa37d91057f2e85692290f91ea3208d109e40c3996156db129977754b8bf6d",
+    "tests/test_integration_a.py": "b729c29e069f2c79629bdadd5291baec5ec0a670204e07f8a55952116ca151a7",
+    "tests/test_integration_b.py": "de80a957daf0cd0a60a26f2a5284677cb5ba338497841cccbe9b7f0118068165"
+  },
+  "parent_candidate": "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g3",
+  "parent_booking_sha256": "7b02037f25564beb431bd1deeaa70da7df845ebc71426b99b882a855193b27a6",
+  "parent_handoff": {
+    "status": "SCOPED_HANDOFF_READY",
+    "tests_run": 7,
+    "receipt": "operator/parent_g3_handoff_receipt.json",
+    "sha256": "a8c23e8ba22a98be64d6db49fb46aec5551ab813126da646bf5697c7af0418ad",
+    "operation_receipt": "operator/001_parent_g3_handoff.json"
+  },
+  "shared_contract": "docs/INTEGRATION-G3.md",
+  "asset_sha256": {
+    "docs/INTEGRATION-G3.md": "86e17d09c9a012559ae7502343cbc9181fa08477cc00c2cacacb55dd49cb0a54",
+    "tests/test_integration_a.py": "b729c29e069f2c79629bdadd5291baec5ec0a670204e07f8a55952116ca151a7",
+    "tests/test_integration_b.py": "de80a957daf0cd0a60a26f2a5284677cb5ba338497841cccbe9b7f0118068165"
+  },
+  "roles": {
+    "report": {
+      "module": "reservation_report.py",
+      "note": "CONTRIBUTION_A.md",
+      "test": "test_integration_a.py",
+      "workspace": "worktrees/report",
+      "baseline": "baselines/report",
+      "baseline_sha256": {
+        "AGENTS.md": "00d6ed7fccaa9fea5a7a297cc59987aa17705bd854c6c49851018d3938701145",
+        "DOSSIER.md": "e49251a574a1de4d3761f17337d7fdd9aca4b3190d7dd4a9f366e2b0ebb1ef86",
+        "INTEGRATION_ROLE.json": "19475f946d4ddcc75718a22983dfbe088f2b9a4b1a3930c3b3964991d32a06b6",
+        "READER_ENTRY.json": "626735f378982cb5df108e775d6ab02522876e91d0d7cfc5602256d059b0a091",
+        "booking.py": "7b02037f25564beb431bd1deeaa70da7df845ebc71426b99b882a855193b27a6",
+        "docs/INTEGRATION-G3.md": "86e17d09c9a012559ae7502343cbc9181fa08477cc00c2cacacb55dd49cb0a54",
+        "docs/contract.md": "bb12ae4381e7fec5bb982de67573852c5e7f63d4736a10977d492c3be38f1dce",
+        "legacy_booking.py": "81df006d0653a44260b03425294e8542effe0263c8592a7743e50e14bddcdef6",
+        "prior/booking.py": "aa54ad117c2f3aac2d9d497db3b9457bed1562d742b4b9e9009a438e1929c20c",
+        "prior/parent-check-artifacts/DEMONSTRATION.json": "d034dcb2b27edf013ee69ec3b096afe2209d19eb2dece27773585bf696e05ad9",
+        "prior/parent-check-artifacts/continuation.json": "56ef61ac51beb004496f365a9c9d096a88f51a9d540a19f44d5234cfaac2008a",
+        "prior/parent-check-artifacts/reservations.sqlite": "520163ab69f2e45f8362197c66672bc6b4097e63c0b0b600d39d3442484f98bc",
+        "prior/parent-entry.json": "2f8deb16d11e5c724bda9f7968b7c85d7f67a502108c00fe95c905e84abb033e",
+        "prior/parent-handoff.json": "8e14ef3d76ba047c76c6dafdac30b33b89cc8182082dc3e4cea752df38975a5b",
+        "reservation_cli.py": "6585483249878d6e3ea1f6bbff9be208dfb94022ad883f5a11ffdf90faa85054",
+        "reservation_report.py": "f70238a1cf5215bc0639b49048e4ce9cf1244f3fcae725d8967a912243e41ae2",
+        "tests/test_g3.py": "bdaa37d91057f2e85692290f91ea3208d109e40c3996156db129977754b8bf6d",
+        "tests/test_integration_a.py": "b729c29e069f2c79629bdadd5291baec5ec0a670204e07f8a55952116ca151a7",
+        "tests/test_integration_b.py": "de80a957daf0cd0a60a26f2a5284677cb5ba338497841cccbe9b7f0118068165"
+      },
+      "baseline_commit": "b69f50f5809b2c7e0a8581b76fe248bd8e5a5fa0",
+      "editable_paths": [
+        "reservation_report.py",
+        "CONTRIBUTION_A.md"
+      ]
+    },
+    "cli": {
+      "module": "reservation_cli.py",
+      "note": "CONTRIBUTION_B.md",
+      "test": "test_integration_b.py",
+      "workspace": "worktrees/cli",
+      "baseline": "baselines/cli",
+      "baseline_sha256": {
+        "AGENTS.md": "00d6ed7fccaa9fea5a7a297cc59987aa17705bd854c6c49851018d3938701145",
+        "DOSSIER.md": "e49251a574a1de4d3761f17337d7fdd9aca4b3190d7dd4a9f366e2b0ebb1ef86",
+        "INTEGRATION_ROLE.json": "dc0d0ab551d1f718c0fe657c5249c186a757eb6fa4d061e68d6d9525b2e46ae5",
+        "READER_ENTRY.json": "626735f378982cb5df108e775d6ab02522876e91d0d7cfc5602256d059b0a091",
+        "booking.py": "7b02037f25564beb431bd1deeaa70da7df845ebc71426b99b882a855193b27a6",
+        "docs/INTEGRATION-G3.md": "86e17d09c9a012559ae7502343cbc9181fa08477cc00c2cacacb55dd49cb0a54",
+        "docs/contract.md": "bb12ae4381e7fec5bb982de67573852c5e7f63d4736a10977d492c3be38f1dce",
+        "legacy_booking.py": "81df006d0653a44260b03425294e8542effe0263c8592a7743e50e14bddcdef6",
+        "prior/booking.py": "aa54ad117c2f3aac2d9d497db3b9457bed1562d742b4b9e9009a438e1929c20c",
+        "prior/parent-check-artifacts/DEMONSTRATION.json": "d034dcb2b27edf013ee69ec3b096afe2209d19eb2dece27773585bf696e05ad9",
+        "prior/parent-check-artifacts/continuation.json": "56ef61ac51beb004496f365a9c9d096a88f51a9d540a19f44d5234cfaac2008a",
+        "prior/parent-check-artifacts/reservations.sqlite": "520163ab69f2e45f8362197c66672bc6b4097e63c0b0b600d39d3442484f98bc",
+        "prior/parent-entry.json": "2f8deb16d11e5c724bda9f7968b7c85d7f67a502108c00fe95c905e84abb033e",
+        "prior/parent-handoff.json": "8e14ef3d76ba047c76c6dafdac30b33b89cc8182082dc3e4cea752df38975a5b",
+        "reservation_cli.py": "6585483249878d6e3ea1f6bbff9be208dfb94022ad883f5a11ffdf90faa85054",
+        "reservation_report.py": "f70238a1cf5215bc0639b49048e4ce9cf1244f3fcae725d8967a912243e41ae2",
+        "tests/test_g3.py": "bdaa37d91057f2e85692290f91ea3208d109e40c3996156db129977754b8bf6d",
+        "tests/test_integration_a.py": "b729c29e069f2c79629bdadd5291baec5ec0a670204e07f8a55952116ca151a7",
+        "tests/test_integration_b.py": "de80a957daf0cd0a60a26f2a5284677cb5ba338497841cccbe9b7f0118068165"
+      },
+      "baseline_commit": "b69f50f5809b2c7e0a8581b76fe248bd8e5a5fa0",
+      "editable_paths": [
+        "reservation_cli.py",
+        "CONTRIBUTION_B.md"
+      ]
+    }
+  },
+  "authority": {
+    "principal": "ESA AI integration reviewer / recording operator",
+    "kind": "AI reviewer and local recording operator",
+    "authorized_by": "Author instruction to implement ESA agent-process remediation",
+    "scope": "Scoped teaching integration, independent checks and provenance recording",
+    "human_operator": false,
+    "human_acceptance": "PENDING",
+    "production_authorization": false
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "argv": [
+    "python3",
+    "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/companion/start.py",
+    "extend",
+    "B1",
+    "--candidate",
+    "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B1-V1/workspace",
+    "--dest",
+    "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B1-V2/workspace"
+  ],
+  "returncode": 0,
+  "stdout": "{\n  \"status\": \"V2_WORKING_COPY_CREATED\",\n  \"candidate\": \"/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B1-V2/workspace\",\n  \"read_first\": \"docs/B1-API-v2.md\",\n  \"v1_preserved\": true,\n  \"meaning\": \"The new decision precedes implementation; old v1 receipts do not certify v2.\"\n}\n",
+  "stderr": "",
+  "parent": "AP-B1-V1",
+  "recorded_at_utc": "2026-11-16T15:39:47.682888+00:00"
+}

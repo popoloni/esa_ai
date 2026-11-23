@@ -1,0 +1,132 @@
+{
+  "schema": "g4-replay-release-rebind/v1",
+  "recorded_at_utc": "2026-11-16T23:27:26.228084+00:00",
+  "origin": "CURRENT_AI_AUDIT_OPERATOR_METADATA_ONLY_REBIND",
+  "new_model_calls": 0,
+  "current_release": "Engineering-Software-with-Agentic-AI-Review-5.2-20261117",
+  "original_audit_candidates_and_receipts_unchanged": true,
+  "historical_native_files_edited": false,
+  "scope": "Current-release replay copies. Only top-level READER_ENTRY.json.release changed; implementation and protected input bytes are identical to the existing audit candidates. Original candidate/receipt records remain unchanged.",
+  "cases": [
+    {
+      "candidate": "original_native",
+      "source": "candidates/original_native",
+      "replay_candidate": "replay_candidates/original_native",
+      "old_release": "ESA-Series-Handbook-Review-5-20261116",
+      "current_release": "Engineering-Software-with-Agentic-AI-Review-5.2-20261117",
+      "changed_files": [
+        "READER_ENTRY.json"
+      ],
+      "changed_entry_fields": [
+        "release"
+      ],
+      "all_other_file_bytes_identical": true,
+      "source_entry_sha256": "ef0526027685c7abae326de651b24fe5bf197ba5f4e3961b8445323d89c2c217",
+      "replay_entry_sha256": "a299dcc4f327d19833c4d10b398de0a254fe662a208a477bbebc1b171b94c5d5",
+      "operation_source_sha256": "2903fba69859c4ff7560873c7911b89051a22d89485ec4558f5c96220f769c41",
+      "receipt": "replay_receipts/original_native.json",
+      "receipt_sha256": "13134f48e3658695cfcbe41785e6a0c2cb306f20fb02388247145496c218edb3",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "companion/start.py",
+        "check",
+        "G4",
+        "--candidate",
+        "evidence/g4_native_audit_20261117/replay_candidates/original_native",
+        "--output",
+        "evidence/g4_native_audit_20261117/replay_receipts/original_native.json"
+      ],
+      "returncode": 1,
+      "status": "CHECKS_FAILED",
+      "tests_run": 13,
+      "methods_passed": 11,
+      "methods_failed": [
+        "test_reference_and_native_current_layouts_are_refused",
+        "test_reference_and_recorded_current_layouts_are_refused"
+      ],
+      "methods_errored": [],
+      "stdout": "{\n  \"status\": \"CHECKS_FAILED\",\n  \"mission\": \"G4\",\n  \"tests_run\": 13,\n  \"receipt\": \"/workspace/scratch/c02668b5f4f9/ESA_v5_2_Codex_Compatibility_20261117/book/evidence/g4_native_audit_20261117/replay_receipts/original_native.json\"\n}\n",
+      "stderr": "",
+      "expected_result_observed": true
+    },
+    {
+      "candidate": "audit_correction",
+      "source": "candidates/audit_correction",
+      "replay_candidate": "replay_candidates/audit_correction",
+      "old_release": "ESA-Series-Handbook-Review-5-20261116",
+      "current_release": "Engineering-Software-with-Agentic-AI-Review-5.2-20261117",
+      "changed_files": [
+        "READER_ENTRY.json"
+      ],
+      "changed_entry_fields": [
+        "release"
+      ],
+      "all_other_file_bytes_identical": true,
+      "source_entry_sha256": "ef0526027685c7abae326de651b24fe5bf197ba5f4e3961b8445323d89c2c217",
+      "replay_entry_sha256": "a299dcc4f327d19833c4d10b398de0a254fe662a208a477bbebc1b171b94c5d5",
+      "operation_source_sha256": "0079583231078c747464ea29fd0338db4a6e6f9e13c56448d50e65c3957dcb1e",
+      "receipt": "replay_receipts/audit_correction.json",
+      "receipt_sha256": "2b49b3f437bf66a5a57de6fb77faf2cc6c511cbe39de147c3d090cbc2aded2a7",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "companion/start.py",
+        "check",
+        "G4",
+        "--candidate",
+        "evidence/g4_native_audit_20261117/replay_candidates/audit_correction",
+        "--output",
+        "evidence/g4_native_audit_20261117/replay_receipts/audit_correction.json"
+      ],
+      "returncode": 0,
+      "status": "SELECTED_CHECKS_PASSED",
+      "tests_run": 13,
+      "methods_passed": 13,
+      "methods_failed": [],
+      "methods_errored": [],
+      "stdout": "{\n  \"status\": \"SELECTED_CHECKS_PASSED\",\n  \"mission\": \"G4\",\n  \"tests_run\": 13,\n  \"receipt\": \"/workspace/scratch/c02668b5f4f9/ESA_v5_2_Codex_Compatibility_20261117/book/evidence/g4_native_audit_20261117/replay_receipts/audit_correction.json\"\n}\n",
+      "stderr": "",
+      "expected_result_observed": true
+    },
+    {
+      "candidate": "reference_operations",
+      "source": "candidates/reference_operations",
+      "replay_candidate": "replay_candidates/reference_operations",
+      "old_release": "ESA-Series-Handbook-Review-5-20261116",
+      "current_release": "Engineering-Software-with-Agentic-AI-Review-5.2-20261117",
+      "changed_files": [
+        "READER_ENTRY.json"
+      ],
+      "changed_entry_fields": [
+        "release"
+      ],
+      "all_other_file_bytes_identical": true,
+      "source_entry_sha256": "ef0526027685c7abae326de651b24fe5bf197ba5f4e3961b8445323d89c2c217",
+      "replay_entry_sha256": "a299dcc4f327d19833c4d10b398de0a254fe662a208a477bbebc1b171b94c5d5",
+      "operation_source_sha256": "f0162261026327358188be23ed4daa6f01134b3ee1817a087694551bbcbfa580",
+      "receipt": "replay_receipts/reference_operations.json",
+      "receipt_sha256": "a71f94eeb369907ca3cf8fd02585b6d6347bd021e581aec1387b20f052e6625e",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "companion/start.py",
+        "check",
+        "G4",
+        "--candidate",
+        "evidence/g4_native_audit_20261117/replay_candidates/reference_operations",
+        "--output",
+        "evidence/g4_native_audit_20261117/replay_receipts/reference_operations.json"
+      ],
+      "returncode": 0,
+      "status": "SELECTED_CHECKS_PASSED",
+      "tests_run": 13,
+      "methods_passed": 13,
+      "methods_failed": [],
+      "methods_errored": [],
+      "stdout": "{\n  \"status\": \"SELECTED_CHECKS_PASSED\",\n  \"mission\": \"G4\",\n  \"tests_run\": 13,\n  \"receipt\": \"/workspace/scratch/c02668b5f4f9/ESA_v5_2_Codex_Compatibility_20261117/book/evidence/g4_native_audit_20261117/replay_receipts/reference_operations.json\"\n}\n",
+      "stderr": "",
+      "expected_result_observed": true
+    }
+  ]
+}

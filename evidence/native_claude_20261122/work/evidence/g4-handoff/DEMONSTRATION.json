@@ -1,0 +1,32 @@
+{
+  "schema": "esa-curriculum-demonstration/v1",
+  "mission": "G4",
+  "recorded_at_utc": "2026-11-22T17:55:53.661333+00:00",
+  "command": [
+    "/usr/local/bin/python3",
+    "/home/claude/work/live22/agentic-ai-5.2/companion/curriculum_demo.py",
+    "G4",
+    "--candidate",
+    "/home/claude/work/live22/agentic-ai-5.2/work/g4",
+    "--output",
+    "/home/claude/work/live22/agentic-ai-5.2/work/evidence/g4-handoff"
+  ],
+  "origin": "EXECUTED_OFFLINE_TEACHING_FIXTURE",
+  "observed_human_pilot": false,
+  "observed_model_run": false,
+  "result": {
+    "diagnosis": "ACTIVE_OVERLAP",
+    "evidence_unchanged": true,
+    "repair_authorized": false,
+    "cost_scenario": {
+      "attempts": 3,
+      "accepted": 1,
+      "total_cost_eur": "5.50",
+      "total_minutes": "37",
+      "cost_per_accepted_eur": "5.50",
+      "minutes_per_accepted": "37",
+      "status": "OK"
+    },
+    "human_acceptance": "PENDING"
+  }
+}

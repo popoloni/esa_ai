@@ -1,0 +1,15 @@
+{
+  "schema": "esa-integration-role/v1",
+  "role": "report",
+  "contract": "INTEGRATION-G3/v1",
+  "editable_paths": [
+    "reservation_report.py",
+    "CONTRIBUTION_A.md"
+  ],
+  "shared_contract": "docs/INTEGRATION-G3.md",
+  "shared_contract_sha256": "86e17d09c9a012559ae7502343cbc9181fa08477cc00c2cacacb55dd49cb0a54",
+  "integration_manifest": "../../INTEGRATION.json",
+  "baseline_commit": "b69f50f5809b2c7e0a8581b76fe248bd8e5a5fa0",
+  "component_test": "test_integration_a.py",
+  "scope": "One contribution only; operator combines and independently checks the real transport bundle."
+}

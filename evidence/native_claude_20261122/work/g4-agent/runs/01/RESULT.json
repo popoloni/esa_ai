@@ -1,0 +1,834 @@
+{
+  "at_utc": "2026-11-22T17:55:43.056261+00:00",
+  "client": "claude",
+  "exit_code": 0,
+  "timed_out": false,
+  "permission_denials": [
+    {
+      "event_line": 1169,
+      "value": {
+        "tool_name": "Bash",
+        "tool_use_id": "toolu_01P21skevH6myZXQNTLrey9J",
+        "tool_input": {
+          "command": "python - <<'E' 2>&1\nimport sqlite3,tempfile,pathlib,booking\nfrom operations import diagnose,cost_summary\nd=pathlib.Path(tempfile.mkdtemp())\n# wrong signature same name\np=d/\"a.sqlite\"\nwith sqlite3.connect(p) as c:\n    c.execute(\"create table reservations_v3(id integer, x text)\");c.execute(\"pragma user_version=3\")\ntry: diagnose(p)\nexcept ValueError as e: print(\"wrong sig refused:\",e)\n# mapped + reference competing\nfrom g4_fixture import create_competing_representations as cc\nq=d/\"b.sqlite\";cc(q,progressive=\"native\")\ntry: diagnose(q)\nexcept ValueError as e: print(\"competing:\",e)\n# migrated from G1/G2 legacy not available quickly; check v3 only\nr=d/\"c.sqlite\";booking.init_db(r);print(diagnose(r))\nfor bad in (\"1e999\",\"abc\",None,True,\"-0.1\"):\n    try: cost_summary([{\"cost_eur\":bad,\"minutes\":1}],1);print(\"NOT refused\",bad)\n    except ValueError: pass\nprint(cost_summary([{\"cost_eur\":1,\"minutes\":\"1\"},{\"cost_eur\":\"0.1\",\"minutes\":\"2\"}],3))\nE"
+        }
+      }
+    }
+  ],
+  "reported_cost_usd": [
+    0.18453729999999996
+  ],
+  "elapsed_seconds": 50.424028,
+  "event_count": 1170,
+  "malformed_native_event_lines": [],
+  "changed_files": [
+    "DOSSIER.md",
+    "operations.py"
+  ],
+  "scope_changes_requiring_review": [],
+  "before": {
+    "AGENTS.md": "3b93869be62f5fa832481275c8d37a9acb6b8b6fb6cf2841230ac0ab2e47e294",
+    "DOSSIER.md": "617be3697a2054a984fab77a0596315bde4ae1246138bcb9071e4cf9631e8c17",
+    "READER_ENTRY.json": "2ab9e39a0db82f916c8b09f41940218b4bca274c5ca48dca0a7a6098e4aaf3f9",
+    "booking.py": "c0b3857de28f86624e329cd1dcfbc4d9c52af3691e78e84b60f66bfcfffbb887",
+    "docs/G4-OD-01.md": "17afc2eb9ae699c20edb609367db95078fe3fce8f4681ab658fbe5bca86a8ce9",
+    "docs/G4-SCHEMA-MAP.json": "f3e716053d5bf80f16562c275da10c2f4a1aa5acaa1ce31a9ff9a257f9f35ee3",
+    "docs/contract.md": "0edc7998494e571035acf19d27deb310cfeeedb6dfc7b62f5cf6218fa6407fc8",
+    "g4_fixture.py": "8abd3fde352bd083a739002fd36a59fcef0bb0814c80c687f9ea527baf61c613",
+    "operations.py": "4675a173bfd4da1c62abcee573be6273ef196a1c759fc89ecf2b8156eb8ffcd8",
+    "prior/booking.py": "c0b3857de28f86624e329cd1dcfbc4d9c52af3691e78e84b60f66bfcfffbb887",
+    "prior/integration/booking.py": "c0b3857de28f86624e329cd1dcfbc4d9c52af3691e78e84b60f66bfcfffbb887",
+    "prior/integration/reservation_cli.py": "481178182a46a05f62f3580c722220471f8ccff40375169dec7457ad9a04a5c1",
+    "prior/integration/reservation_report.py": "d3aa8fff9219cdf977a00c50a3c797cb38b0d3cf84270c70d1eb2b83a17d7645",
+    "prior/integration-acceptance.json": "2b69ab566d1ff120d651b6cd46cf3c861502480e9b1ce4728f620d42d8c27c40",
+    "prior/parent-check-artifacts/DEMONSTRATION.json": "ec5675da02bb99574ed6ae05bffe08dd7431f852d7cd579042ed7e1a98e3ab1c",
+    "prior/parent-check-artifacts/continuation.json": "296004eb2bfb595e339317891b3b8958694306bf8db5dd75be76dc94bf27e237",
+    "prior/parent-check-artifacts/reservations.sqlite": "64e6f1159dbd64c6f94584a2dea0cba02ff54466ea32f2a311621726731b7323",
+    "prior/parent-entry.json": "899113a49878c5eec179d06397cd05f4fbf120731955dd527d8e869e347cb14b",
+    "prior/parent-handoff.json": "9ea5f1b0f91576c0c497d9a3ffa8243c5af935519c807a04c5a5691ac7db4a81",
+    "reference_g3.py": "ad89e1350b80d674b30f8fd97927107adb77e2df625805d7a0a49cb8837b5b17",
+    "reservation_cli.py": "481178182a46a05f62f3580c722220471f8ccff40375169dec7457ad9a04a5c1",
+    "reservation_report.py": "d3aa8fff9219cdf977a00c50a3c797cb38b0d3cf84270c70d1eb2b83a17d7645",
+    "tests/test_g4.py": "7f2247596e269a5e66d919dde9ac3b21097ef02495359340e6af0d765f78751b"
+  },
+  "after": {
+    "AGENTS.md": "3b93869be62f5fa832481275c8d37a9acb6b8b6fb6cf2841230ac0ab2e47e294",
+    "DOSSIER.md": "dcd7ceba57779d58c2a1e98247009cd51d4ff858232f9a9a451f75c4eea12778",
+    "READER_ENTRY.json": "2ab9e39a0db82f916c8b09f41940218b4bca274c5ca48dca0a7a6098e4aaf3f9",
+    "booking.py": "c0b3857de28f86624e329cd1dcfbc4d9c52af3691e78e84b60f66bfcfffbb887",
+    "docs/G4-OD-01.md": "17afc2eb9ae699c20edb609367db95078fe3fce8f4681ab658fbe5bca86a8ce9",
+    "docs/G4-SCHEMA-MAP.json": "f3e716053d5bf80f16562c275da10c2f4a1aa5acaa1ce31a9ff9a257f9f35ee3",
+    "docs/contract.md": "0edc7998494e571035acf19d27deb310cfeeedb6dfc7b62f5cf6218fa6407fc8",
+    "g4_fixture.py": "8abd3fde352bd083a739002fd36a59fcef0bb0814c80c687f9ea527baf61c613",
+    "operations.py": "5035ec01f22a2701cdef9a5a1e5b617fbe9c1883792b31ab95328941d8e2946a",
+    "prior/booking.py": "c0b3857de28f86624e329cd1dcfbc4d9c52af3691e78e84b60f66bfcfffbb887",
+    "prior/integration/booking.py": "c0b3857de28f86624e329cd1dcfbc4d9c52af3691e78e84b60f66bfcfffbb887",
+    "prior/integration/reservation_cli.py": "481178182a46a05f62f3580c722220471f8ccff40375169dec7457ad9a04a5c1",
+    "prior/integration/reservation_report.py": "d3aa8fff9219cdf977a00c50a3c797cb38b0d3cf84270c70d1eb2b83a17d7645",
+    "prior/integration-acceptance.json": "2b69ab566d1ff120d651b6cd46cf3c861502480e9b1ce4728f620d42d8c27c40",
+    "prior/parent-check-artifacts/DEMONSTRATION.json": "ec5675da02bb99574ed6ae05bffe08dd7431f852d7cd579042ed7e1a98e3ab1c",
+    "prior/parent-check-artifacts/continuation.json": "296004eb2bfb595e339317891b3b8958694306bf8db5dd75be76dc94bf27e237",
+    "prior/parent-check-artifacts/reservations.sqlite": "64e6f1159dbd64c6f94584a2dea0cba02ff54466ea32f2a311621726731b7323",
+    "prior/parent-entry.json": "899113a49878c5eec179d06397cd05f4fbf120731955dd527d8e869e347cb14b",
+    "prior/parent-handoff.json": "9ea5f1b0f91576c0c497d9a3ffa8243c5af935519c807a04c5a5691ac7db4a81",
+    "reference_g3.py": "ad89e1350b80d674b30f8fd97927107adb77e2df625805d7a0a49cb8837b5b17",
+    "reservation_cli.py": "481178182a46a05f62f3580c722220471f8ccff40375169dec7457ad9a04a5c1",
+    "reservation_report.py": "d3aa8fff9219cdf977a00c50a3c797cb38b0d3cf84270c70d1eb2b83a17d7645",
+    "tests/test_g4.py": "7f2247596e269a5e66d919dde9ac3b21097ef02495359340e6af0d765f78751b"
+  },
+  "thread_ids": [
+    "df08314b-f73c-4fae-96d8-f368225db061"
+  ],
+  "usage_events": [
+    {
+      "duration_api_ms": 48959,
+      "stop_reason": "end_turn",
+      "session_id": "df08314b-f73c-4fae-96d8-f368225db061",
+      "total_cost_usd": 0.18453729999999996,
+      "usage": {
+        "input_tokens": 20,
+        "cache_creation_input_tokens": 22366,
+        "cache_read_input_tokens": 192633,
+        "output_tokens": 7577,
+        "output_tokens_details": {
+          "thinking_tokens": 906
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 22366,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 884,
+            "cache_read_input_tokens": 26884,
+            "cache_creation_input_tokens": 1719,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 1719
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard",
+        "fallback_credit": null
+      },
+      "modelUsage": {
+        "claude-sonnet-5-5": {
+          "inputTokens": 20,
+          "outputTokens": 7577,
+          "cacheReadInputTokens": 192633,
+          "cacheCreationInputTokens": 22366,
+          "webSearchRequests": 0,
+          "costUSD": 0.18453729999999996,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 64000,
+          "thinkingTokens": 906,
+          "cacheCreationEphemeral5mInputTokens": 0,
+          "cacheCreationEphemeral1hInputTokens": 22366,
+          "canonicalModel": "claude-sonnet-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "permission_denials": [
+        {
+          "tool_name": "Bash",
+          "tool_use_id": "toolu_01P21skevH6myZXQNTLrey9J",
+          "tool_input": {
+            "command": "python - <<'E' 2>&1\nimport sqlite3,tempfile,pathlib,booking\nfrom operations import diagnose,cost_summary\nd=pathlib.Path(tempfile.mkdtemp())\n# wrong signature same name\np=d/\"a.sqlite\"\nwith sqlite3.connect(p) as c:\n    c.execute(\"create table reservations_v3(id integer, x text)\");c.execute(\"pragma user_version=3\")\ntry: diagnose(p)\nexcept ValueError as e: print(\"wrong sig refused:\",e)\n# mapped + reference competing\nfrom g4_fixture import create_competing_representations as cc\nq=d/\"b.sqlite\";cc(q,progressive=\"native\")\ntry: diagnose(q)\nexcept ValueError as e: print(\"competing:\",e)\n# migrated from G1/G2 legacy not available quickly; check v3 only\nr=d/\"c.sqlite\";booking.init_db(r);print(diagnose(r))\nfor bad in (\"1e999\",\"abc\",None,True,\"-0.1\"):\n    try: cost_summary([{\"cost_eur\":bad,\"minutes\":1}],1);print(\"NOT refused\",bad)\n    except ValueError: pass\nprint(cost_summary([{\"cost_eur\":1,\"minutes\":\"1\"},{\"cost_eur\":\"0.1\",\"minutes\":\"2\"}],3))\nE"
+          }
+        }
+      ],
+      "terminal_reason": "completed",
+      "fast_mode_state": "off",
+      "fast_mode_disabled_reason": "sdk_opt_in_required",
+      "subagent_stats": {
+        "spawned": 0,
+        "requested": {
+          "background": 0,
+          "foreground": 0,
+          "unset": 0
+        },
+        "started_in_background": 0,
+        "max_depth": 0,
+        "spawned_by_subagents": 0,
+        "completed": 0,
+        "failed": 0,
+        "killed": {
+          "parent": 0,
+          "user": 0,
+          "system": 0
+        },
+        "refused": {
+          "depth_limit": 0,
+          "concurrency_limit": 0,
+          "budget": 0
+        },
+        "by_type": {}
+      },
+      "safety_stops": 0,
+      "is_error": false,
+      "num_turns": 11,
+      "subtype": "success",
+      "api_error_status": null,
+      "result": "I implemented `diagnose` and `cost_summary` in `operations.py` and wrote up the results in `DOSSIER.md`. The supplied suite (`python -m unittest discover -s tests`) failed with 17 errors on the stubs and passes (13 tests, OK) after the change. I did not run protected acceptance, which the operator invokes separately.\n\n**Contract.** `docs/contract.md`, `docs/G4-OD-01.md` and `docs/G4-SCHEMA-MAP.json` don't conflict. The `booking.py` SHA-256 matches the one the owner recorded, so I did not need to stop and ask.\n\n**Acceptance example.** A `booking.init_db` database (table `reservations_v3`) with one active row plus an inserted overlapping active row gives `ACTIVE_OVERLAP` with pairs `[[1,2]]` and unchanged file bytes. A cancelled row does not trigger it. `reservations_v3` with other columns, or next to `reservations`, raises `ValueError`.\n\n**Changes in `operations.py`**\n- **`diagnose`:**\n  - It opens the file read-only, never creates it, and requires schema version 3.\n  - It matches the full column signature of the three named layouts plus the mapped `reservations_v3` from `docs/G4-SCHEMA-MAP.json`. Zero or more than one match raises `ValueError`.\n  - It compares file digests before and after, and raises `RuntimeError` if they differ.\n- **`cost_summary`:** it sums every attempt with `Decimal`. Non-numeric, `None`, bool, NaN, infinite and negative values raise `ValueError`. Zero accepted outcomes returns null unit metrics and `NO_ACCEPTED_OUTCOME`.\n\n**Other checks.** An extra probe confirmed a wrong-signature table is refused, `reservations` plus mapped `reservations_v3` is refused as competing, and a fresh database diagnoses cleanly.\n\n**Remaining uncertainty**\n- No concurrent-writer test was run. The digest check would miss a change that is reverted between the two reads, and it does not hash WAL sidecar files.\n- `\"1e999\"` is accepted as a finite number. The contract doesn't address it, so I added no rule.\n- \"The three proposals\" in the dossier's Decide section aren't defined in the supplied files, so I made no per-proposal call. I recorded ACCEPT, REJECT and ASK for the increment as a whole instead.\n- I observed no human approval.\n\nOnly `operations.py` and `DOSSIER.md` were edited. The probe script is in the scratchpad, outside the project.",
+      "ttft_ms": 933,
+      "type": "result",
+      "duration_ms": 49760,
+      "uuid": "cd33172e-e3c1-4686-9b92-60ea36cbcc41",
+      "begun_message_ids": [
+        "msg_011ChJPupiYWiNMPsoBW3Ja4",
+        "msg_011ChJPutaTqCtreoLAfdpc6",
+        "msg_011ChJPuxxtFRL7HLgqqQ6ey",
+        "msg_011ChJPv9b78EUrSd7FjQpRG",
+        "msg_011ChJPvcufAZg5EpEqYszmw",
+        "msg_011ChJPwYbETMTATAXMYmzmh",
+        "msg_011ChJPwsfx2vPYSdfRJtjKi",
+        "msg_011ChJPx7RS4oiZQSZdDZrJK",
+        "msg_011ChJPxCghDmVK5NYwgmGM1",
+        "msg_011ChJPy56KCb2QUg9uvPa2v"
+      ],
+      "ttft_stream_ms": 519,
+      "time_to_request_ms": 139,
+      "time_to_request_phases_ms": {
+        "other": 8,
+        "system_prompt": 60,
+        "resume_other": 0,
+        "process_user_input": 5,
+        "input_attachments": 11,
+        "input_hooks": 4,
+        "conversation_append": 0,
+        "tool_pool_refresh": 0,
+        "init_message": 3,
+        "init_frame_send": 2,
+        "engine_pickup": 1,
+        "loop_entry": 6,
+        "message_prep": 1,
+        "model_config_wait": 1,
+        "autocompact": 2,
+        "request_announcements": 9,
+        "query_setup": 1,
+        "model_gates": 1,
+        "tool_schema_build": 9,
+        "message_normalization": 3,
+        "client_creation": 4,
+        "request_build": 8
+      },
+      "turn_start_resume_kind": "none",
+      "process_turn_index": 0,
+      "time_to_request_loop_lag_ms": 38,
+      "time_to_request_cpu_ms": 121,
+      "time_to_request_major_faults": 9,
+      "process_rss_mib_turn_start": 210,
+      "process_anon_mib_turn_start": 132,
+      "process_rss_mib_result": 236,
+      "process_anon_mib_result": 143,
+      "process_peak_rss_mib": 237,
+      "process_cpu_ms_turn": 1807,
+      "process_wall_ms_turn": 49759,
+      "tool_pool_build_count": 3,
+      "tool_pool_build_lapsed_count": 1,
+      "tool_pool_moved_at_lapse_count": 0,
+      "tool_pool_limit_ms": 30000,
+      "process_cpu_ms_streaming": 1074,
+      "process_wall_ms_streaming": 40686,
+      "main_stream_count": 10,
+      "main_stream_event_count": 1111,
+      "main_stream_chunk_count": 256,
+      "process_turn_states": {
+        "main_stream": {
+          "cpu_ms": 1074,
+          "wall_ms": 40686,
+          "entries": 10
+        },
+        "tool": {
+          "cpu_ms": 167,
+          "wall_ms": 528,
+          "entries": 8
+        },
+        "first_event_wait": {
+          "cpu_ms": 261,
+          "wall_ms": 8232,
+          "entries": 10
+        },
+        "before_first_request": {
+          "cpu_ms": 121,
+          "wall_ms": 138,
+          "entries": 1
+        },
+        "between_requests": {
+          "cpu_ms": 167,
+          "wall_ms": 159,
+          "entries": 9
+        },
+        "after_last_request": {
+          "cpu_ms": 17,
+          "wall_ms": 16,
+          "entries": 1
+        }
+      },
+      "input_attachments_detail": {
+        "slowest_producer": "artifact_opening_prefetch",
+        "slowest_producer_ms": 3,
+        "cpu_ms": 11,
+        "major_faults": 3,
+        "setup_ms": 0,
+        "prompt_producers_ms": 0,
+        "ambient_start_ms": 4,
+        "ambient_wait_ms": 3,
+        "render_ms": 1,
+        "producers": 42,
+        "token_counts": 0
+      },
+      "tool_schema_build_detail": {
+        "betas_ms": 0,
+        "waits_ms": 1,
+        "placement_ms": 1,
+        "render_ms": 7,
+        "after_ms": 0,
+        "other_ms": 0,
+        "tools": 6,
+        "new_schemas": 6
+      },
+      "message_normalization_detail": {
+        "before_ms": 0,
+        "normalize_ms": 2,
+        "images_ms": 0,
+        "post_process_ms": 1,
+        "after_ms": 0,
+        "other_ms": 0,
+        "messages": 10,
+        "wire_messages": 2
+      },
+      "request_build_detail": {
+        "records_ms": 0,
+        "system_ms": 2,
+        "headers_ms": 1,
+        "cache_break_record_ms": 0,
+        "plans_ms": 2,
+        "retry_setup_ms": 0,
+        "sent_build_ms": 2,
+        "record_attempt_ms": 0,
+        "other_ms": 1,
+        "sent_build_safety_context_ms": 0,
+        "sent_build_cache_breakpoints_ms": 1,
+        "sent_build_surrogate_scan_ms": 0
+      },
+      "first_content_frame_ms": 521,
+      "time_to_request_from_spawn_ms": 1759844,
+      "warm_spare_claimed": false,
+      "flag_fetch_kick": "started_in_init_warm",
+      "time_origin_ms": 1795370092636.1243,
+      "queued_turn_count": 0,
+      "result_index": 0,
+      "model_usage_since_last_result": {
+        "claude-sonnet-5-5": {
+          "inputTokens": 20,
+          "outputTokens": 7577,
+          "cacheReadInputTokens": 192633,
+          "cacheCreationInputTokens": 22366,
+          "webSearchRequests": 0,
+          "costUSD": 0.18453729999999996,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 64000,
+          "thinkingTokens": 906,
+          "cacheCreationEphemeral5mInputTokens": 0,
+          "cacheCreationEphemeral1hInputTokens": 22366,
+          "canonicalModel": "claude-sonnet-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "process_start_tuning": 0
+    }
+  ],
+  "native_observations": {
+    "protocol_client": "claude",
+    "unexpected_protocol_lines": [],
+    "completed_turn_lines": [
+      1169
+    ],
+    "failed_turn_or_error_lines": [],
+    "agent_message_lines": [
+      495,
+      1164
+    ],
+    "tool_operation_lines": [
+      16,
+      41,
+      82,
+      123,
+      456,
+      469,
+      582,
+      666,
+      693,
+      1008
+    ],
+    "model_observations": [
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 3,
+        "field": "model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 16,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 41,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 54,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 82,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 103,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 123,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 134,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 456,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 469,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 480,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 495,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 582,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 666,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 693,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 706,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 1008,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 1164,
+        "field": "message.model"
+      }
+    ],
+    "usage_observations": [
+      {
+        "event_line": 16,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 3579,
+          "cache_read_input_tokens": 6237,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 3579
+          },
+          "output_tokens": 16,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 41,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1630,
+          "cache_read_input_tokens": 9816,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1630
+          },
+          "output_tokens": 16,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 54,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 6704,
+          "cache_read_input_tokens": 11446,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 6704
+          },
+          "output_tokens": 3,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 82,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 6704,
+          "cache_read_input_tokens": 11446,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 6704
+          },
+          "output_tokens": 3,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 103,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 2676,
+          "cache_read_input_tokens": 18150,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 2676
+          },
+          "output_tokens": 7,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 123,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 2676,
+          "cache_read_input_tokens": 18150,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 2676
+          },
+          "output_tokens": 7,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 134,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1520,
+          "cache_read_input_tokens": 20826,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1520
+          },
+          "output_tokens": 8,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 456,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1520,
+          "cache_read_input_tokens": 20826,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1520
+          },
+          "output_tokens": 8,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 469,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1520,
+          "cache_read_input_tokens": 20826,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1520
+          },
+          "output_tokens": 8,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 480,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 2603,
+          "cache_read_input_tokens": 22346,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 2603
+          },
+          "output_tokens": 3,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 495,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 2603,
+          "cache_read_input_tokens": 22346,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 2603
+          },
+          "output_tokens": 3,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 582,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 2603,
+          "cache_read_input_tokens": 22346,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 2603
+          },
+          "output_tokens": 3,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 666,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 680,
+          "cache_read_input_tokens": 24949,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 680
+          },
+          "output_tokens": 16,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 693,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 721,
+          "cache_read_input_tokens": 25629,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 721
+          },
+          "output_tokens": 16,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 706,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 534,
+          "cache_read_input_tokens": 26350,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 534
+          },
+          "output_tokens": 8,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 1008,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 534,
+          "cache_read_input_tokens": 26350,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 534
+          },
+          "output_tokens": 8,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 1164,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1719,
+          "cache_read_input_tokens": 26884,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1719
+          },
+          "output_tokens": 786,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 1169,
+        "field": "usage",
+        "value": {
+          "input_tokens": 20,
+          "cache_creation_input_tokens": 22366,
+          "cache_read_input_tokens": 192633,
+          "output_tokens": 7577,
+          "output_tokens_details": {
+            "thinking_tokens": 906
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 22366,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "global",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 884,
+              "cache_read_input_tokens": 26884,
+              "cache_creation_input_tokens": 1719,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 1719
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "fallback_credit": null
+        }
+      }
+    ],
+    "permission_denials": [
+      {
+        "event_line": 1169,
+        "value": {
+          "tool_name": "Bash",
+          "tool_use_id": "toolu_01P21skevH6myZXQNTLrey9J",
+          "tool_input": {
+            "command": "python - <<'E' 2>&1\nimport sqlite3,tempfile,pathlib,booking\nfrom operations import diagnose,cost_summary\nd=pathlib.Path(tempfile.mkdtemp())\n# wrong signature same name\np=d/\"a.sqlite\"\nwith sqlite3.connect(p) as c:\n    c.execute(\"create table reservations_v3(id integer, x text)\");c.execute(\"pragma user_version=3\")\ntry: diagnose(p)\nexcept ValueError as e: print(\"wrong sig refused:\",e)\n# mapped + reference competing\nfrom g4_fixture import create_competing_representations as cc\nq=d/\"b.sqlite\";cc(q,progressive=\"native\")\ntry: diagnose(q)\nexcept ValueError as e: print(\"competing:\",e)\n# migrated from G1/G2 legacy not available quickly; check v3 only\nr=d/\"c.sqlite\";booking.init_db(r);print(diagnose(r))\nfor bad in (\"1e999\",\"abc\",None,True,\"-0.1\"):\n    try: cost_summary([{\"cost_eur\":bad,\"minutes\":1}],1);print(\"NOT refused\",bad)\n    except ValueError: pass\nprint(cost_summary([{\"cost_eur\":1,\"minutes\":\"1\"},{\"cost_eur\":\"0.1\",\"minutes\":\"2\"}],3))\nE"
+          }
+        }
+      }
+    ],
+    "reported_cost_observations": [
+      {
+        "event_line": 1169,
+        "field": "total_cost_usd",
+        "value": 0.18453729999999996
+      }
+    ],
+    "thread_ids": [
+      "df08314b-f73c-4fae-96d8-f368225db061"
+    ]
+  },
+  "requested_model": "claude-sonnet-5-5",
+  "capture_sha256": {
+    "native_events.jsonl": "ab4f2ba17178a25420b7e90547f72d0ee3e4767d86d756c1077059b5097fb2c0",
+    "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "agent_final.txt": "bdc4bdca575ca162cedc915cc69d1c74cad2f63102c476dbd9a433b2ed03954b"
+  },
+  "observed_model_ids": [
+    "claude-sonnet-5-5"
+  ],
+  "model_identity_observed": true,
+  "native_completion_event_observed": true,
+  "native_turn_completed": true,
+  "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+  "acceptance": "NOT_ESTABLISHED",
+  "scope_note": "Native events retained as emitted; absence of usage is unknown, not zero."
+}

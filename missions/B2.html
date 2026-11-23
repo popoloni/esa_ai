@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Eight practical missions, local checks and recorded agent tours for Engineering Software with Agentic AI."><title>B2. Bound the provider and preserve attribution · Engineering Software with Agentic AI</title><link rel="stylesheet" href="../assets/companion.css"></head><body><a class="skip" href="#main">Skip to content</a><header class="sitehead"><div><a class="brand" href="../index.html">Engineering Software with Agentic AI<span>Practical companion · version 5.6</span></a><nav aria-label="Main navigation"><a href="../index.html">Start</a><a href="index.html">Missions</a><a href="../companion/agent_sessions/README.html">Agent guide</a><a href="../traces/index.html">Recorded tours</a><a href="../companion/series/READING_THE_SERIES.html">Four volumes</a></nav></div></header><main id="main"><article data-source-sha256="74cc7a00e547f5b13060f0f87aaf3194a19e74efd54151ee07911fdf2b5bc17d"><p class="docmeta meta"><a href="B2.md">Markdown source</a> · Companion 5.6 · 2026-11-22</p><h1 id="mission-b2">B2. Bound the provider and preserve attribution</h1><p class="mission-meta">Run commands from the package root. <a href="../companion/agent_sessions/README.html">Live-client setup and current status</a> · <a href="../traces/index.html">Offline recorded tours</a></p>
+<p><strong>Session planning target:</strong> setup 10 min · implementation 30 min · review and handoff 20 min (60 min total).</p>
+<p>Delegate a bounded intake adapter around your repaired Treasury router. There are two distinct actors: <strong>your coding agent</strong> reads, edits and checks <code>intake.py</code>; the product’s injected <strong>Provider</strong> is a scripted local fixture. The latter classifies valid requests as <code>MATCH</code> or <code>REVIEW</code>; it is not the agent implementing the adapter. Invalid amounts are rejected locally.</p>
+<p>A transient provider failure consumes an attempt; a response must belong to its request. Your result classifies requests without authorizing payment. The product fixture needs no network or paid provider. The live coding route uses the separately configured client described in the companion.</p>
+<h2 id="expect-carry-the-explicit-api-version">1. Expect: carry the explicit API version</h2>
+<p>Complete the B1-API/v2 extension before continuing from your own work:</p>
+<pre class="bash"><code>python3 companion/start.py advance B2 \
+  --from-candidate work/b1-v2 \
+  --dest work/b2</code></pre>
+<p>The command verifies the retained B1 v2 candidate, copies its actual router as protected <code>routing.py</code>, and creates <code>intake.py</code> for the new implementation. It preserves the earlier source and handoff under <code>prior/</code>. A B1 v1 entry is refused: the fact that its numeric repair passed does not identify the later text contract. If you are entering independently, choose this alternative:</p>
+<pre class="bash"><code>python3 companion/start.py new B2 \
+  --dest work/b2</code></pre>
+<p>The independent entry supplies the v2 router and the same contract. Choose one entry into <code>work/b2</code>, read <code>docs/contract.md</code>, then observe the starter:</p>
+<pre class="bash"><code>python3 companion/start.py check B2 \
+  --candidate work/b2 \
+  --output work/evidence/b2-initial.json</code></pre>
+<p>The new API is:</p>
+<pre class="python"><code>def evaluate_batch(requests, provider, *,
+                   max_attempts=2, max_calls=4):
+    ...</code></pre>
+<p>Each request supplies <code>request_id</code> and <code>amount_eur</code>. The injected provider takes those two values and returns exactly <code>{"request_id": ..., "classification": ...}</code>. Its classification is either <code>MATCH</code> or <code>REVIEW</code>. The local router’s outcome and the provider’s classification are distinct fields. Neither field is a payment approval, and the combined result keeps <code>payment_authorized=False</code>.</p>
+<p>Write an example before coding. A batch contains an invalid negative amount, a valid item whose first provider call is unavailable, and two more valid items. With a total budget of three calls, decide which calls may occur, what the final item should report when the budget is exhausted, and what evidence a reviewer needs to attribute the response to its request. Count the failed attempt in the budget.</p>
+<p>INTAKE/v1 distinguishes three ordinary record states. <code>REJECTED</code> means local validation prevented a provider call. <code>CLASSIFIED</code> means a valid, matching response was received. <code>DEFERRED</code> means the allowed work ended without such a response. Deferral is not a successful classification, and the implementation must not fill it with a default <code>MATCH</code> to keep the batch looking complete.</p>
+<h2 id="delegate-retries-are-part-of-the-contract">2. Delegate: retries are part of the contract</h2>
+<p>Only <code>ProviderUnavailable</code> is retryable. An unexpected exception remains visible. A response with another request’s identity, an unknown classification or a different field set raises <code>ProviderProtocolError</code>. Preserve request identity across every retry and report each attempt’s number and outcome. Duplicate request IDs in one batch are caller errors: validate the entire batch before any provider call. A duplicate therefore raises <code>ValueError</code> with <code>calls=0</code>, not after partial work. Errors retain their original type and expose <code>receipt</code>, <code>attempts</code>, <code>records</code> and <code>calls</code>. Keep preceding successes and the final <code>INVALID_RESPONSE</code> or <code>PROVIDER_ERROR</code> attempt. A raised exception must not erase consumed calls or make their later cost accounting disappear.</p>
+<p>The limits have different scopes. <code>max_attempts</code> bounds each request; <code>max_calls</code> bounds the whole batch. A per-request loop can still overspend the batch budget if it resets the total count for every item. Conversely, checking the total only after a call permits one call beyond the approved limit. Derive your boundary examples from those two observations.</p>
+<p><strong>EDOD/1 work order mission_B2 — New capability.</strong></p>
+<p><strong>Expect</strong> — <strong>outcome:</strong> Classify a bounded local batch with attributable attempts. <strong>authority:</strong> Treasury service owner, INTAKE/v1 (teaching contract). <strong>acceptance:</strong> Preflight duplicate IDs before calls; cap attempts; validate returned identity/classification; preserve failed attempts and original errors.</p>
+<p><strong>Delegate</strong> — <strong>editable_paths:</strong> <code>intake.py</code>, <code>DOSSIER.md</code>. <strong>protected_paths:</strong> <code>docs/</code>, <code>tests/</code>, <code>READER_ENTRY.json</code>, <code>prior/</code>, <code>routing.py</code>. <strong>budget:</strong> 3 attempts / 30 implementation minutes; 30 s per check process; 0 external integration calls. <strong>stop_conditions:</strong> Provider blocks, response violates its protocol, or invocation budget is exhausted. Protected inputs change or the declared attempt/time budget is spent.</p>
+<p><strong>Observe</strong> — <strong>checks:</strong> <code>b2.check</code>, <code>b2.continue</code> (commands below). <strong>receipt_fields:</strong> <code>candidate_sha256_before</code>, <code>groups</code>, <code>inputs_unchanged</code>, <code>verification_progress</code>, <code>human_acceptance</code>.</p>
+<p><strong>Decide</strong> — <strong>owner:</strong> Learner reviewer; Treasury service owner for a changed rule. <strong>object:</strong> B2 candidate, identified bytes and its scoped handoff. <strong>allowed_decisions:</strong> ACCEPT, REJECT, ASK.</p>
+<p>Prepare the task, inspect its retained router, allowed files and <code>task.txt</code>, then launch the coding agent:</p>
+<pre class="bash"><code>python3 companion/agent_session.py prepare B2 \
+  --candidate work/b2 --output work/b2-agent
+python3 companion/agent_session.py run \
+  --session work/b2-agent --client claude \
+  --max-budget-usd 5</code></pre>
+<p>Watch it derive examples and separate per-request attempts from the batch budget before editing. Intervene if it treats provider deferral as success or changes the protected router. Preserve your instruction and its actual response.</p>
+<p>An invocation bound does not bound wall-clock time if the provider blocks forever inside one call. The contract deliberately describes a cooperative local adapter. An external untrusted process would require a separate execution boundary and a specific cancellation policy. Do not claim that a loop counter has supplied those properties. The companion runner’s process timeout is also a separate mechanism; it does not turn the intake function into a production network client.</p>
+<h2 id="observe-budget-and-identity-failures">3. Observe: budget and identity failures</h2>
+<p>AP-B2 first observed the incomplete starter, wrote examples in record 006, implemented in 008 and passed twelve development methods in 009. Its additional probe exercised twenty attempt/call-budget combinations. These are worker observations; run the independent gate on your retained candidate:</p>
+<pre class="bash"><code>python3 companion/start.py check B2 \
+  --candidate work/b2 \
+  --output work/evidence/b2-first.json</code></pre>
+<p>Twelve methods challenge local rejection, attribution, identity-preserving retry, the global budget, response identity/shape and non-retryable exceptions. They retain preceding successes, provider <code>ValueError</code>, unavailability before malformed responses, and invalid attempts. Duplicate-ID refusal proves zero calls beside a valid unique-ID control. Protocol controls reject nonstring classifications with <code>ProviderProtocolError</code> and <code>INVALID_RESPONSE</code>, alongside valid <code>MATCH</code>/<code>REVIEW</code>. Trace each assertion to its obligation: correct shape does not compensate for a wrong request ID or unknown classification.</p>
+<p>For the retry case, inspect the sequence of actual calls. For the global budget, count all attempts across all items. For an unexpected exception, verify that the adapter did not retry it. These observations matter more than a single “completed” label at the end of a batch.</p>
+<p>Record a decision, its governing rule and the observation that could change it for each card.</p>
+<h3 id="b2-p01">B2-P01</h3>
+<p>The batch loop tries to finish an item already in progress after a transient provider interruption. It preserves the request identifier and records every invocation so the caller can see the effort spent before the batch returns. The completion path is designed to avoid abandoning useful work at the edge of an allowance. Review that path against both the item-level and batch-level budgets.</p>
+<p><em>Artifact: evaluate_batch: the budget guard before the next provider invocation.</em></p>
+<pre class="python"><code>if len(attempts) &gt; max_calls:
+    break
+event = {&quot;request_id&quot;: key, &quot;attempt&quot;: attempt}
+attempts.append(event)</code></pre>
+<h3 id="b2-p02">B2-P02</h3>
+<p>A classification is usable only when its response belongs to the submitted request and has the agreed shape. The adapter checks that relationship before adding a completed record. It distinguishes the retryable provider condition from other failures and retains the attempt evidence on exceptions. Invocation bounds and response validity remain separate decisions in the loop.</p>
+<p><em>Artifact: evaluate_batch: response validation after recording the current attempt; exceptions retain the receipt.</em></p>
+<pre class="python"><code>if (
+    not isinstance(response, dict)
+    or set(response) != {
+        &quot;request_id&quot;, &quot;classification&quot;}
+    or response[&quot;request_id&quot;] != key
+    or not isinstance(
+        response[&quot;classification&quot;], str)
+    or response[&quot;classification&quot;] not in (
+        &quot;MATCH&quot;, &quot;REVIEW&quot;)
+):
+    event[&quot;outcome&quot;] = &quot;INVALID_RESPONSE&quot;
+    raise ProviderProtocolError(
+        &quot;response identity or schema does not match&quot;
+    )
+event[&quot;outcome&quot;] = response[&quot;classification&quot;]</code></pre>
+<h3 id="b2-p03">B2-P03</h3>
+<p>Duplicate detection belongs before the first provider effect. This proposal examines the entire submitted batch before entering the existing bounded loop, so a late duplicate cannot invalidate work after calls have already occurred. It addresses identity within this batch only. A later process retry still needs the durable identity contract introduced in the history mission.</p>
+<p><em>Artifact: Preflight helper called before the provider loop; error snapshots are attached by evaluate_batch.</em></p>
+<pre class="python"><code>def _unique_requests(requests):
+    rows = list(requests)
+    ids = [row[&quot;request_id&quot;] for row in rows]
+    if len(ids) != len(set(ids)):
+        raise ValueError(&quot;duplicate request_id in this batch&quot;)
+    return rows
+requests = _unique_requests(requests)</code></pre>
+<p>After recording all three judgments, reveal their checks and explanations together:</p>
+<pre class="bash"><code>python3 companion/start.py review B2 \
+  --candidate-ids B2-P01 B2-P02 B2-P03 \
+  --output work/evidence/b2-review.json</code></pre>
+<h2 id="decide-hand-off-a-bounded-classification-receipt">4. Decide: hand off a bounded classification receipt</h2>
+<pre class="bash"><code>python3 companion/start.py continue B2 \
+  --candidate work/b2 \
+  --output work/evidence/b2-handoff.json</code></pre>
+<p>The continuation uses your retained module with a deterministic provider that fails once, then returns matching classifications. The batch includes a locally invalid request and a final valid item reached after the global budget is spent. It saves <code>classification.json</code> under <code>work/evidence/b2-handoff/</code>, containing the inputs, observed provider calls and result. The receipt identifies source bytes, protected dependencies, current tests and artifact hashes.</p>
+<p>The actual AP-B2 operator independently passed all twelve methods and this continuation. Its three product calls were <code>UNAVAILABLE</code>, <code>MATCH</code> for the same request, then <code>REVIEW</code> for another. The invalid item consumed no call; the final valid item was <code>DEFERRED</code>. Read your complete sequence and explain its identities. These product attempts are neither coding-agent retries nor a model bill.</p>
+<p>Finish the dossier with budget assumptions, the response contract, actual command receipts, the three proposal decisions, and the distinction between invocation count and elapsed time. A successful result is a local <code>SCOPED_HANDOFF_READY</code>. It does not prove provider availability or persistence across a process restart.</p>
+<p>The next mission introduces durable decision identity and a policy history. B2’s provider attempt receipt remains useful evidence, but it is not automatically a durable business ledger. A continuation must say what is newly stored and what still belongs only to this batch observation.</p>
+<h2 id="explain-the-decision">Explain the decision</h2>
+<p>Why does the failed attempt consume budget? Which response fields establish attribution? Why is <code>DEFERRED</code> preferable to an invented successful classification? Why should an unexpected programming error remain visible rather than trigger a retry? Which guarantees would an external blocking provider require beyond this function? What owner decisions are needed to retry tomorrow under the same or a new durable identity?</p>
+<h3 class="unnumbered" id="recorded-example">Recorded example</h3>
+<p><code>evidence/agent_process_v4/AP-B2/</code> retains the task, command snapshots, <code>acceptance_b2.json</code> and <code>handoff_b2.json</code>. Use the command trace to distinguish the coding agent’s work from the product provider’s scripted calls.</p>
+<div class="notice"><p>After the accepted handoff, continue to <a href="B3.html">B3</a> with your retained candidate.</p></div></article></main><footer class="foot"><p>Enrico Papalini · Edition 5.6 · 2026-11-22</p><p><a href="../NOTICE.html">Rights and notices</a> · <a href="../NATIVE_STATUS.json">Native-client status</a> · <a href="../MANIFEST.json">Package manifest</a> · <a href="https://github.com/popoloni/esa_ai">Companion repository</a></p></footer></body></html>

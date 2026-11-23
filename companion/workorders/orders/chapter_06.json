@@ -1,0 +1,63 @@
+{
+  "id": "chapter_06",
+  "schema_version": 1,
+  "evidence_profile": "investigation",
+  "expect": {
+    "outcome": "Plan the approved Reservation overlap increment with explicit decision prerequisites.",
+    "authority": {
+      "owner": "Task coordinator; designated owners for unresolved behavior.",
+      "source": "S-02 and the selected public Reservation interface; accepted scope/design decision before writing.",
+      "version": "S-02; teaching work-order/v1",
+      "status": "TEACHING_CONTRACT"
+    },
+    "acceptance": [
+      "A writing task consumes the accepted decision and fixed baseline; independent investigations may return before that decision."
+    ]
+  },
+  "delegate": {
+    "editable_paths": [
+      "plans/overlap-work.md"
+    ],
+    "protected_paths": [
+      "approved_context/",
+      "source_evidence/"
+    ],
+    "budget": {
+      "max_attempts": 2,
+      "implementation_minutes": 30,
+      "check_timeout_seconds": 30,
+      "max_external_calls": 0
+    },
+    "stop_conditions": [
+      "Required authority or source evidence is missing.",
+      "Declared budget is spent or a proposed edit crosses protected scope."
+    ]
+  },
+  "observe": {
+    "checks": [
+      {
+        "id": "chapter_06.review",
+        "stage": "contract",
+        "method": "review",
+        "argv": [],
+        "expected": "Inspect task dependencies, writable scopes, result identities and stopping conditions."
+      }
+    ],
+    "receipt_fields": [
+      "candidate_identity",
+      "authority_version",
+      "actual_checks",
+      "reached_stage",
+      "remaining_question"
+    ]
+  },
+  "decide": {
+    "owner": "Task coordinator; designated owners for unresolved behavior.",
+    "object": "The dispatchable plan and work orders.",
+    "allowed_decisions": [
+      "ACCEPT",
+      "REJECT",
+      "ASK"
+    ]
+  }
+}

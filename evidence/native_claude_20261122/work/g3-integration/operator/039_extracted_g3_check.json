@@ -1,0 +1,30 @@
+{
+  "recorded_at_utc": "2026-11-22T17:32:55.968609+00:00",
+  "operation": "extracted_g3_check",
+  "authority": {
+    "principal": "ESA AI integration reviewer / recording operator",
+    "kind": "AI reviewer and local recording operator",
+    "authorized_by": "Author instruction to implement ESA agent-process remediation",
+    "scope": "Scoped teaching integration, independent checks and provenance recording",
+    "human_operator": false,
+    "human_acceptance": "PENDING",
+    "production_authorization": false
+  },
+  "returncode": 0,
+  "stdout": "{\n  \"status\": \"SELECTED_CHECKS_PASSED\",\n  \"mission\": \"G3\",\n  \"tests_run\": 7,\n  \"receipt\": \"/home/claude/work/live22/agentic-ai-5.2/work/g3-integration/operator/extracted_g3_check_receipt.json\"\n}\n",
+  "stderr": "",
+  "timed_out": false,
+  "argv": [
+    "/usr/local/bin/python3",
+    "/home/claude/work/live22/agentic-ai-5.2/companion/start.py",
+    "check",
+    "G3",
+    "--candidate",
+    "/home/claude/work/live22/agentic-ai-5.2/work/g3-integration/extracted/integration-001",
+    "--output",
+    "/home/claude/work/live22/agentic-ai-5.2/work/g3-integration/operator/extracted_g3_check_receipt.json"
+  ],
+  "cwd": "/home/claude/work/live22/agentic-ai-5.2/companion",
+  "timeout_seconds": 60,
+  "elapsed_process_seconds": 0.13788506700001335
+}

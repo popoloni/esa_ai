@@ -1,0 +1,10 @@
+{
+  "at_utc": "2026-11-16T16:01:41.401715+00:00",
+  "operator": "AI recording facilitator /root",
+  "scope": "Author-instructed teaching-case interface clarification",
+  "observed": "Six-method check passed; consumer requested an unspecified key and stopped.",
+  "decision": "Make required proposed binding field explicit in OPS-B4/v2; preserve previous evidence and request bounded update.",
+  "agent_error_under_prior_contract": false,
+  "previous_tests": 6,
+  "current_tests": 7
+}

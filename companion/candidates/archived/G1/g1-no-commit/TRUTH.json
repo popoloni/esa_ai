@@ -1,0 +1,19 @@
+{
+  "schema": "esa-review-ground-truth/v1",
+  "mission": "G1",
+  "candidate_id": "g1-no-commit",
+  "created_on": "2026-11-02",
+  "origin": "CONSTRUCTED_TEACHING_VARIANT",
+  "rationale_origin": "CONSTRUCTED",
+  "actual_model_trace": false,
+  "code_path": "variant.py",
+  "rationale_path": "RATIONALE.md",
+  "expected_decision": "REJECT",
+  "expected_slice_pass": false,
+  "supplemental_probe": null,
+  "targeted_assertions": [
+    "test_first_reservation_confirms_and_public_read_matches"
+  ],
+  "explanation": "REJECT: lastrowid identifies an uncommitted insert. Closing this connection rolls it back; the public read returns None despite a 201 confirmation. This is a G1 durability failure, not a request to implement G2.",
+  "required_human_decision": null
+}

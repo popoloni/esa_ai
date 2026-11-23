@@ -1,0 +1,33 @@
+{
+  "schema": "esa-prototype-entry/v2",
+  "mission": "B1",
+  "release": "ESA-Series-Handbook-Review-5-20261116",
+  "route": "BROWNFIELD_TREASURY_REPAIR",
+  "mode": "LEARNER_V2_EXTENSION",
+  "solution_variant": null,
+  "human_acceptance": "PENDING",
+  "scope": "B1-API/v2 text grammar; BR-001/v1 numeric policy unchanged.",
+  "api_contract": "B1-API/v2",
+  "recorded_at_utc": "2026-11-16T22:10:43.233599+00:00",
+  "command": [
+    "/usr/local/bin/python3",
+    "companion/start.py",
+    "new",
+    "B1",
+    "--dest",
+    "work/b1"
+  ],
+  "extended_at_utc": "2026-11-16T22:12:15.256011+00:00",
+  "extension_command": [
+    "/usr/local/bin/python3",
+    "companion/start.py",
+    "extend",
+    "B1",
+    "--candidate",
+    "work/b1",
+    "--dest",
+    "work/b1-v2"
+  ],
+  "owner_decision": "B1-OD-02",
+  "parent_candidate_sha256": "5097fdba1bb2fa3b626e019e8da0e5189114fb3c5e379bd9771e907ba22b20ac"
+}

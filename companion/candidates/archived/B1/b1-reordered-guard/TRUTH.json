@@ -1,0 +1,32 @@
+{
+  "schema": "esa-review-ground-truth/v1",
+  "mission": "B1",
+  "candidate_id": "b1-reordered-guard",
+  "created_on": "2026-11-02",
+  "origin": "CONSTRUCTED_TEACHING_VARIANT",
+  "rationale_origin": "CONSTRUCTED",
+  "actual_model_trace": false,
+  "code_path": "variant.py",
+  "rationale_path": "RATIONALE.md",
+  "expected_decision": "REJECT",
+  "expected_historical_pass": false,
+  "expected_extended_pass": false,
+  "targeted_assertions": [
+    "test_nonfinite_amount_rejected",
+    "test_signaling_nan_rejected"
+  ],
+  "explanation": "The comparison is evaluated before the finiteness guard. Decimal NaN and sNaN raise InvalidOperation under the default decimal context, so the protected cases end as errors rather than producing REJECTED/INVALID_AMOUNT.",
+  "expected_observations": {
+    "historical": "6 passed, 0 failed, 1 error",
+    "extended_target": "test_signaling_nan_rejected ends in InvalidOperation; no business rejection is returned",
+    "current_extended_scope": "Five public checks; separate one-method conversion fault probe."
+  },
+  "required_human_decision": null,
+  "limitations": [
+    "This variant is a deterministic teaching fixture, not evidence about a model or an agent.",
+    "Expected outcomes must be checked against executed receipts; metadata is not a test run."
+  ],
+  "supplemental_probe": "b1_conversion_fault",
+  "expected_supplemental_pass": true,
+  "scope_note": "Current extended acceptance is five public-API methods. The conversion fault is a separate candidate-specific probe of the known Decimal binding; AUTHOR_CHECK.json retains the earlier combined six-method author experiment."
+}

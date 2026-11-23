@@ -1,0 +1,216 @@
+test_duplicate_request_id_is_a_caller_error (test_b2.BoundedIntake.test_duplicate_request_id_is_a_caller_error) ... ERROR
+test_global_call_budget_stops_new_calls (test_b2.BoundedIntake.test_global_call_budget_stops_new_calls) ... ERROR
+test_invalid_amount_does_not_call_provider (test_b2.BoundedIntake.test_invalid_amount_does_not_call_provider) ... ERROR
+test_invalid_response_after_retry_retains_unavailability (test_b2.BoundedIntake.test_invalid_response_after_retry_retains_unavailability) ... ERROR
+test_matching_classification_is_attributed (test_b2.BoundedIntake.test_matching_classification_is_attributed) ... ERROR
+test_nonstring_classification_is_a_protocol_error_with_receipt (test_b2.BoundedIntake.test_nonstring_classification_is_a_protocol_error_with_receipt) ... 
+  test_nonstring_classification_is_a_protocol_error_with_receipt (test_b2.BoundedIntake.test_nonstring_classification_is_a_protocol_error_with_receipt) (classification=[]) ... ERROR
+  test_nonstring_classification_is_a_protocol_error_with_receipt (test_b2.BoundedIntake.test_nonstring_classification_is_a_protocol_error_with_receipt) (classification={}) ... ERROR
+  test_nonstring_classification_is_a_protocol_error_with_receipt (test_b2.BoundedIntake.test_nonstring_classification_is_a_protocol_error_with_receipt) (classification=None) ... ERROR
+  test_nonstring_classification_is_a_protocol_error_with_receipt (test_b2.BoundedIntake.test_nonstring_classification_is_a_protocol_error_with_receipt) (classification=1) ... ERROR
+  test_nonstring_classification_is_a_protocol_error_with_receipt (test_b2.BoundedIntake.test_nonstring_classification_is_a_protocol_error_with_receipt) (classification=['MATCH']) ... ERROR
+  test_nonstring_classification_is_a_protocol_error_with_receipt (test_b2.BoundedIntake.test_nonstring_classification_is_a_protocol_error_with_receipt) (classification={'MATCH': True}) ... ERROR
+test_nonstring_classification_is_a_protocol_error_with_receipt (test_b2.BoundedIntake.test_nonstring_classification_is_a_protocol_error_with_receipt) ... ERROR
+test_protocol_error_preserves_prior_and_invalid_attempts (test_b2.BoundedIntake.test_protocol_error_preserves_prior_and_invalid_attempts) ... ERROR
+test_provider_value_error_keeps_identity_and_failed_cost (test_b2.BoundedIntake.test_provider_value_error_keeps_identity_and_failed_cost) ... ERROR
+test_transient_retry_preserves_identity (test_b2.BoundedIntake.test_transient_retry_preserves_identity) ... ERROR
+test_unexpected_failure_is_not_retried (test_b2.BoundedIntake.test_unexpected_failure_is_not_retried) ... FAIL
+test_unknown_response_shape_is_refused (test_b2.BoundedIntake.test_unknown_response_shape_is_refused) ... ERROR
+test_wrong_response_id_is_refused (test_b2.BoundedIntake.test_wrong_response_id_is_refused) ... ERROR
+
+======================================================================
+ERROR: test_duplicate_request_id_is_a_caller_error (test_b2.BoundedIntake.test_duplicate_request_id_is_a_caller_error)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B2/workspace/tests/test_b2.py", line 40, in test_duplicate_request_id_is_a_caller_error
+    evaluate_batch([self.request(), self.request()], provider)
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B2/workspace/intake.py", line 5, in evaluate_batch
+    raise NotImplementedError("Implement bounded classification and result attribution")
+NotImplementedError: Implement bounded classification and result attribution
+
+======================================================================
+ERROR: test_global_call_budget_stops_new_calls (test_b2.BoundedIntake.test_global_call_budget_stops_new_calls)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B2/workspace/tests/test_b2.py", line 24, in test_global_call_budget_stops_new_calls
+    r=evaluate_batch([self.request("a"),self.request("b")],provider,max_attempts=3,max_calls=2)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B2/workspace/intake.py", line 5, in evaluate_batch
+    raise NotImplementedError("Implement bounded classification and result attribution")
+NotImplementedError: Implement bounded classification and result attribution
+
+======================================================================
+ERROR: test_invalid_amount_does_not_call_provider (test_b2.BoundedIntake.test_invalid_amount_does_not_call_provider)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B2/workspace/tests/test_b2.py", line 7, in test_invalid_amount_does_not_call_provider
+    r=evaluate_batch([self.request(amount="-1")],forbidden)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B2/workspace/intake.py", line 5, in evaluate_batch
+    raise NotImplementedError("Implement bounded classification and result attribution")
+NotImplementedError: Implement bounded classification and result attribution
+
+======================================================================
+ERROR: test_invalid_response_after_retry_retains_unavailability (test_b2.BoundedIntake.test_invalid_response_after_retry_retains_unavailability)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B2/workspace/tests/test_b2.py", line 93, in test_invalid_response_after_retry_retains_unavailability
+    evaluate_batch([self.request()], provider)
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B2/workspace/intake.py", line 5, in evaluate_batch
+    raise NotImplementedError("Implement bounded classification and result attribution")
+NotImplementedError: Implement bounded classification and result attribution
+
+======================================================================
+ERROR: test_matching_classification_is_attributed (test_b2.BoundedIntake.test_matching_classification_is_attributed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B2/workspace/tests/test_b2.py", line 10, in test_matching_classification_is_attributed
+    r=evaluate_batch([self.request()],lambda k,a:{"request_id":k,"classification":"MATCH"})
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B2/workspace/intake.py", line 5, in evaluate_batch
+    raise NotImplementedError("Implement bounded classification and result attribution")
+NotImplementedError: Implement bounded classification and result attribution
+
+======================================================================
+ERROR: test_nonstring_classification_is_a_protocol_error_with_receipt (test_b2.BoundedIntake.test_nonstring_classification_is_a_protocol_error_with_receipt) (classification=[])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B2/workspace/tests/test_b2.py", line 104, in test_nonstring_classification_is_a_protocol_error_with_receipt
+    evaluate_batch([self.request()], provider)
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B2/workspace/intake.py", line 5, in evaluate_batch
+    raise NotImplementedError("Implement bounded classification and result attribution")
+NotImplementedError: Implement bounded classification and result attribution
+
+======================================================================
+ERROR: test_nonstring_classification_is_a_protocol_error_with_receipt (test_b2.BoundedIntake.test_nonstring_classification_is_a_protocol_error_with_receipt) (classification={})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B2/workspace/tests/test_b2.py", line 104, in test_nonstring_classification_is_a_protocol_error_with_receipt
+    evaluate_batch([self.request()], provider)
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B2/workspace/intake.py", line 5, in evaluate_batch
+    raise NotImplementedError("Implement bounded classification and result attribution")
+NotImplementedError: Implement bounded classification and result attribution
+
+======================================================================
+ERROR: test_nonstring_classification_is_a_protocol_error_with_receipt (test_b2.BoundedIntake.test_nonstring_classification_is_a_protocol_error_with_receipt) (classification=None)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B2/workspace/tests/test_b2.py", line 104, in test_nonstring_classification_is_a_protocol_error_with_receipt
+    evaluate_batch([self.request()], provider)
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B2/workspace/intake.py", line 5, in evaluate_batch
+    raise NotImplementedError("Implement bounded classification and result attribution")
+NotImplementedError: Implement bounded classification and result attribution
+
+======================================================================
+ERROR: test_nonstring_classification_is_a_protocol_error_with_receipt (test_b2.BoundedIntake.test_nonstring_classification_is_a_protocol_error_with_receipt) (classification=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B2/workspace/tests/test_b2.py", line 104, in test_nonstring_classification_is_a_protocol_error_with_receipt
+    evaluate_batch([self.request()], provider)
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B2/workspace/intake.py", line 5, in evaluate_batch
+    raise NotImplementedError("Implement bounded classification and result attribution")
+NotImplementedError: Implement bounded classification and result attribution
+
+======================================================================
+ERROR: test_nonstring_classification_is_a_protocol_error_with_receipt (test_b2.BoundedIntake.test_nonstring_classification_is_a_protocol_error_with_receipt) (classification=['MATCH'])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B2/workspace/tests/test_b2.py", line 104, in test_nonstring_classification_is_a_protocol_error_with_receipt
+    evaluate_batch([self.request()], provider)
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B2/workspace/intake.py", line 5, in evaluate_batch
+    raise NotImplementedError("Implement bounded classification and result attribution")
+NotImplementedError: Implement bounded classification and result attribution
+
+======================================================================
+ERROR: test_nonstring_classification_is_a_protocol_error_with_receipt (test_b2.BoundedIntake.test_nonstring_classification_is_a_protocol_error_with_receipt) (classification={'MATCH': True})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B2/workspace/tests/test_b2.py", line 104, in test_nonstring_classification_is_a_protocol_error_with_receipt
+    evaluate_batch([self.request()], provider)
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B2/workspace/intake.py", line 5, in evaluate_batch
+    raise NotImplementedError("Implement bounded classification and result attribution")
+NotImplementedError: Implement bounded classification and result attribution
+
+======================================================================
+ERROR: test_nonstring_classification_is_a_protocol_error_with_receipt (test_b2.BoundedIntake.test_nonstring_classification_is_a_protocol_error_with_receipt)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B2/workspace/tests/test_b2.py", line 111, in test_nonstring_classification_is_a_protocol_error_with_receipt
+    result = evaluate_batch([self.request()],
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B2/workspace/intake.py", line 5, in evaluate_batch
+    raise NotImplementedError("Implement bounded classification and result attribution")
+NotImplementedError: Implement bounded classification and result attribution
+
+======================================================================
+ERROR: test_protocol_error_preserves_prior_and_invalid_attempts (test_b2.BoundedIntake.test_protocol_error_preserves_prior_and_invalid_attempts)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B2/workspace/tests/test_b2.py", line 58, in test_protocol_error_preserves_prior_and_invalid_attempts
+    evaluate_batch([self.request("good"), self.request("bad")], provider)
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B2/workspace/intake.py", line 5, in evaluate_batch
+    raise NotImplementedError("Implement bounded classification and result attribution")
+NotImplementedError: Implement bounded classification and result attribution
+
+======================================================================
+ERROR: test_provider_value_error_keeps_identity_and_failed_cost (test_b2.BoundedIntake.test_provider_value_error_keeps_identity_and_failed_cost)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B2/workspace/tests/test_b2.py", line 76, in test_provider_value_error_keeps_identity_and_failed_cost
+    evaluate_batch([self.request("good"), self.request("bad")], provider)
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B2/workspace/intake.py", line 5, in evaluate_batch
+    raise NotImplementedError("Implement bounded classification and result attribution")
+NotImplementedError: Implement bounded classification and result attribution
+
+======================================================================
+ERROR: test_transient_retry_preserves_identity (test_b2.BoundedIntake.test_transient_retry_preserves_identity)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B2/workspace/tests/test_b2.py", line 19, in test_transient_retry_preserves_identity
+    r=evaluate_batch([self.request()],provider)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B2/workspace/intake.py", line 5, in evaluate_batch
+    raise NotImplementedError("Implement bounded classification and result attribution")
+NotImplementedError: Implement bounded classification and result attribution
+
+======================================================================
+ERROR: test_unknown_response_shape_is_refused (test_b2.BoundedIntake.test_unknown_response_shape_is_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B2/workspace/tests/test_b2.py", line 49, in test_unknown_response_shape_is_refused
+    with self.assertRaises(ProviderProtocolError):evaluate_batch([self.request()],lambda k,a:{"request_id":k,"classification":"PAY","approved":True})
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B2/workspace/intake.py", line 5, in evaluate_batch
+    raise NotImplementedError("Implement bounded classification and result attribution")
+NotImplementedError: Implement bounded classification and result attribution
+
+======================================================================
+ERROR: test_wrong_response_id_is_refused (test_b2.BoundedIntake.test_wrong_response_id_is_refused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B2/workspace/tests/test_b2.py", line 28, in test_wrong_response_id_is_refused
+    with self.assertRaises(ProviderProtocolError):evaluate_batch([self.request()],lambda k,a:{"request_id":"someone-else","classification":"MATCH"})
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B2/workspace/intake.py", line 5, in evaluate_batch
+    raise NotImplementedError("Implement bounded classification and result attribution")
+NotImplementedError: Implement bounded classification and result attribution
+
+======================================================================
+FAIL: test_unexpected_failure_is_not_retried (test_b2.BoundedIntake.test_unexpected_failure_is_not_retried)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B2/workspace/tests/test_b2.py", line 33, in test_unexpected_failure_is_not_retried
+    self.assertEqual(calls,["r1"])
+AssertionError: Lists differ: [] != ['r1']
+
+Second list contains 1 additional elements.
+First extra element 0:
+'r1'
+
+- []
++ ['r1']
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.003s
+
+FAILED (failures=1, errors=17)

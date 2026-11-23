@@ -1,0 +1,5 @@
+Operator carry-over, 2026-11-16T22:27:14Z: work/g4 re-advanced from the accepted G3 integration under OPS-G4/v3.
+Copied unchanged from the retained OPS-G4/v2 candidate work/g4-ops-v2:
+operations.py sha256 61989caa6adaabf768a3d4b7331b61d2574bd18daef4e4ff5c03c670ade689e5
+DOSSIER.md    sha256 ef46e6a63db3be5f1723c2b86bd7beac5ac01e1ca411ee3603c02c8b91e50a22
+No other file was copied; docs/contract.md and g4_fixture.py are the v3 protected copies.

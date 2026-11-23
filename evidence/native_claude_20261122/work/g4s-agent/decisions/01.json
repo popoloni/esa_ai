@@ -1,0 +1,25 @@
+{
+  "at_utc": "2026-11-22T17:35:38.813002+00:00",
+  "operator": "Claude Code live test",
+  "operator_kind": "AI",
+  "decision": "accept",
+  "note": "G4 standalone 13/13; only operations.py and DOSSIER.md changed.\n",
+  "decision_binding": {
+    "candidate_hashes": {
+      "AGENTS.md": "3b93869be62f5fa832481275c8d37a9acb6b8b6fb6cf2841230ac0ab2e47e294",
+      "DOSSIER.md": "ea61433e32b621143b67eb723561ca1f3a8acfb4b2d5ed8c8a9e22ace2230e9f",
+      "READER_ENTRY.json": "56be6088689c86f988edf401b14d47663723946b51ed556eca4f4a7fd698f469",
+      "booking.py": "ad89e1350b80d674b30f8fd97927107adb77e2df625805d7a0a49cb8837b5b17",
+      "docs/contract.md": "0edc7998494e571035acf19d27deb310cfeeedb6dfc7b62f5cf6218fa6407fc8",
+      "g4_fixture.py": "ad3f11b994538f16247722a7667641128d87e1e2ad41b01989ee334310c1c739",
+      "operations.py": "7d1d62db686be68dec8f2c197e45124a366b2789da3d3618ba9f53080119853a",
+      "reference_g3.py": "ad89e1350b80d674b30f8fd97927107adb77e2df625805d7a0a49cb8837b5b17",
+      "tests/test_g4.py": "7f2247596e269a5e66d919dde9ac3b21097ef02495359340e6af0d765f78751b"
+    },
+    "inventory_sha256": "bc2d16e662b5f5d9e58295f4a1b497216372e0a0e39d59ab3c4fc639b558ca27",
+    "latest_run": "runs/01",
+    "latest_result_sha256": "e7852b020170cab19fd3cefde8097c1965d4a558e77e625df508b35c2d499e18",
+    "session_spec_sha256": "8a67f3cb38c2028a5530e6a5cafe0be098a28832e6e18d0708c92e92d730b345"
+  },
+  "meaning": "Recorded operator statement; this tool does not certify its authority or correctness."
+}

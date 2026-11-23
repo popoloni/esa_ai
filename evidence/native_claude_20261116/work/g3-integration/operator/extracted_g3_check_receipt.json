@@ -1,0 +1,121 @@
+{
+  "schema": "esa-full-mission-check/v1",
+  "mission": "G3",
+  "release": "ESA-Series-Handbook-Review-5-20261116",
+  "contract": "RES-002/v1",
+  "candidate_sha256_before": "7b02037f25564beb431bd1deeaa70da7df845ebc71426b99b882a855193b27a6",
+  "protected_input_sha256": {
+    "docs/contract.md": "bb12ae4381e7fec5bb982de67573852c5e7f63d4736a10977d492c3be38f1dce",
+    "tests/test_g3.py": "bdaa37d91057f2e85692290f91ea3208d109e40c3996156db129977754b8bf6d",
+    "legacy_booking.py": "81df006d0653a44260b03425294e8542effe0263c8592a7743e50e14bddcdef6",
+    "prior/parent-handoff.json": "8e14ef3d76ba047c76c6dafdac30b33b89cc8182082dc3e4cea752df38975a5b",
+    "prior/parent-entry.json": "2f8deb16d11e5c724bda9f7968b7c85d7f67a502108c00fe95c905e84abb033e",
+    "prior/booking.py": "aa54ad117c2f3aac2d9d497db3b9457bed1562d742b4b9e9009a438e1929c20c",
+    "prior/parent-check-artifacts/DEMONSTRATION.json": "d034dcb2b27edf013ee69ec3b096afe2209d19eb2dece27773585bf696e05ad9",
+    "prior/parent-check-artifacts/reservations.sqlite": "520163ab69f2e45f8362197c66672bc6b4097e63c0b0b600d39d3442484f98bc",
+    "prior/parent-check-artifacts/continuation.json": "56ef61ac51beb004496f365a9c9d096a88f51a9d540a19f44d5234cfaac2008a"
+  },
+  "candidate_path": "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g3-integration/extracted/integration-001",
+  "human_acceptance": "PENDING",
+  "model_run": false,
+  "scope": "Executable local teaching controls; no human reader performance or production authority.",
+  "groups": {
+    "contract": {
+      "command": [
+        "/usr/local/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_g3.py",
+        "-v"
+      ],
+      "elapsed_process_seconds": 0.11068089100001544,
+      "timeout_seconds": 30,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_cancel_releases_slot_without_erasing_history (test_g3.Cancellation.test_cancel_releases_slot_without_erasing_history) ... ok\ntest_migration_preserves_old_public_record (test_g3.Cancellation.test_migration_preserves_old_public_record) ... ok\ntest_missing_id_is_not_found (test_g3.Cancellation.test_missing_id_is_not_found) ... ok\ntest_other_member_cannot_cancel (test_g3.Cancellation.test_other_member_cannot_cancel) ... ok\ntest_repeat_with_current_version_is_idempotent (test_g3.Cancellation.test_repeat_with_current_version_is_idempotent) ... ok\ntest_retry_original_operation_does_not_revive_cancelled_row (test_g3.Cancellation.test_retry_original_operation_does_not_revive_cancelled_row) ... ok\ntest_stale_version_cannot_change_state (test_g3.Cancellation.test_stale_version_cannot_change_state) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.046s\n\nOK\n",
+      "timed_out": false,
+      "tests_run": 7,
+      "expected_tests": 7,
+      "methods_passed": 7,
+      "methods_failed": [],
+      "methods_errored": [],
+      "status": "PASSED"
+    }
+  },
+  "tests_run": 7,
+  "candidate_sha256_after": "7b02037f25564beb431bd1deeaa70da7df845ebc71426b99b882a855193b27a6",
+  "inputs_unchanged": true,
+  "status": "SELECTED_CHECKS_PASSED",
+  "recorded_at_utc": "2026-11-16T22:20:27.573336+00:00",
+  "command": [
+    "/usr/local/bin/python3",
+    "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/companion/start.py",
+    "check",
+    "G3",
+    "--candidate",
+    "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g3-integration/extracted/integration-001",
+    "--output",
+    "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g3-integration/operator/extracted_g3_check_receipt.json"
+  ],
+  "verification_progress": {
+    "schema": "esa-verification-progress/v1",
+    "derivation": "CURRENT_RECEIPT_FIELDS_ONLY_NO_ADDITIONAL_EXECUTION",
+    "source_fields_sha256": "4540ae1222056909d154d35007afe1a2a4e180b802d17c95796f81c232979478",
+    "work_order": "mission_G3",
+    "evidence_profile": "persistent_effect",
+    "profile_basis": "The named mission work order.",
+    "phase": "mission",
+    "stages": {
+      "startup": {
+        "status": "PASS",
+        "evidence": [
+          "schema",
+          "mission",
+          "candidate_path"
+        ],
+        "reason": "The intended runner accepted the entry identity and emitted this check receipt. This does not establish candidate import."
+      },
+      "integrity": {
+        "status": "PASS",
+        "evidence": [
+          "inputs_unchanged",
+          "candidate_sha256_before",
+          "candidate_sha256_after"
+        ],
+        "reason": "The recorded before/after comparison found inputs unchanged."
+      },
+      "contract": {
+        "status": "PASS",
+        "evidence": [
+          "groups.contract"
+        ],
+        "reason": "Status uses each selected group and any contract-specific supplemental probe; an import placeholder is not behavioral evidence. A candidate stack frame or known protected assertion supports reached behavior; a method count alone does not. Groups within this stage may retain multiple failures.",
+        "behavior_reached": true
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "evidence": [],
+        "reason": "No continuation or consumer/process observation is present."
+      },
+      "artifact": {
+        "status": "NOT_RUN",
+        "evidence": [],
+        "reason": "This receipt has no separate archive/extraction gate. Local demonstration hashes alone do not establish release fitness."
+      },
+      "authorization": {
+        "status": "NOT_RUN",
+        "evidence": [
+          "human_acceptance"
+        ],
+        "reason": "No owner acceptance or release authorization is recorded. Passing checks do not supply that decision."
+      }
+    },
+    "first_failed_stage": null,
+    "last_observed_stage": "contract",
+    "limits": "A stage label interprets the retained fields; it is not an independent attestation. NOT_APPLICABLE needs an explicit scope exclusion; absence alone remains NOT_RUN."
+  }
+}

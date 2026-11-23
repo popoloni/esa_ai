@@ -1,0 +1,17 @@
+{
+  "schema": "esa-review-ground-truth/v4",
+  "mission": "B4",
+  "candidate_id": "B4-P03",
+  "created_on": "2026-11-02",
+  "origin": "CONSTRUCTED_TEACHING_VARIANT",
+  "actual_model_trace": false,
+  "expected_decision": "ACCEPT",
+  "expected_check_pass": true,
+  "targeted_assertions": [],
+  "explanation": "The report identifies wrong state with the same source code and does not infer production recovery authority.",
+  "required_human_decision": null,
+  "contract": "OPS-B4/v1",
+  "scope": "Constructed public practice, not a human assessment result.",
+  "revised_on": "2026-11-03",
+  "release_scope": "ESA-Complete-Review-3-20261103"
+}

@@ -1,0 +1,144 @@
+{
+  "schema": "esa-full-mission-check/v1",
+  "mission": "B4",
+  "release": "ESA-Complete-Review-3-20261103",
+  "contract": "OPS-B4/v1",
+  "candidate_sha256_before": "a42affa6ab221ad707a8c9e094cf8ce68d5a09aab0511f309555cc7bf8719485",
+  "protected_input_sha256": {
+    "docs/contract.md": "9a42a557626f8e22575ff27654d0ffac1db3ff78737ee2709fb35c698d9934eb",
+    "tests/test_b4.py": "03c8243e1a7fd9ab531ba5995da5f8c48e71cc3f686f4cedd0103147e7326fd5",
+    "docs/policy_catalog.json": "9c1b4078c49e118f1001d138484bd9b046ab595935e16b63ea160d619068c7ab",
+    "ledger.py": "9062d9fd7d72b3e95076c33f601455f82328ab502a270e9d4167fb52caf63c4b",
+    "routing.py": "c2b093e60d6893274701814d00c3bf63d25bfb6c2926feefb23a93941c51e4a0",
+    "operations.py": "082b404ec54e61763aa19852bb30050e50574f2fb9a8c5290ff32c07b79ef0d6",
+    "prior/parent-entry.json": "2ab015d9888f9643d1541d0291da11dd8823c2781e4e312d21ece7630b9a23b1",
+    "prior/ledger.py": "9062d9fd7d72b3e95076c33f601455f82328ab502a270e9d4167fb52caf63c4b",
+    "prior/parent-handoff.json": "2672a027c5f8329676404fe952c2dfc614bc2bfe5ec3990748c359cbeb18f294",
+    "prior/parent-check-artifacts/DEMONSTRATION.json": "87db0b01c5ae1be236bfa64e8c82a57b9cfaf9cbb98215e7325091af7a631868",
+    "prior/parent-check-artifacts/ledger.sqlite": "1039601147525da7d2fc0bd9890df5e057c20a6709078bae4cb1057eb39eefa5",
+    "prior/parent-check-artifacts/history.json": "6e81a9e4c781bf227979cb59c9fb8db39a92fe5087343bef07477d287990e194"
+  },
+  "candidate_path": "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B4/workspace",
+  "human_acceptance": "PENDING",
+  "model_run": false,
+  "scope": "Executable local teaching controls; no human reader performance or production authority.",
+  "groups": {
+    "contract": {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_b4.py",
+        "-v"
+      ],
+      "elapsed_process_seconds": 0.11899181300032069,
+      "timeout_seconds": 30,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_deterministic_id_does_not_establish_same_ledger (test_b4.WrongLedger.test_deterministic_id_does_not_establish_same_ledger) ... ok\ntest_expected_binding_is_clean_positive_control (test_b4.WrongLedger.test_expected_binding_is_clean_positive_control) ... ok\ntest_missing_path_is_not_initialized (test_b4.WrongLedger.test_missing_path_is_not_initialized) ... ok\ntest_recovery_cost_includes_failed_attempt (test_b4.WrongLedger.test_recovery_cost_includes_failed_attempt) ... ok\ntest_recovery_plan_does_not_merge_or_authorize (test_b4.WrongLedger.test_recovery_plan_does_not_merge_or_authorize) ... ok\ntest_same_code_wrong_state_is_identified (test_b4.WrongLedger.test_same_code_wrong_state_is_identified) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.017s\n\nOK\n",
+      "timed_out": false,
+      "tests_run": 6,
+      "expected_tests": 6,
+      "methods_passed": 6,
+      "methods_failed": [],
+      "methods_errored": [],
+      "status": "PASSED"
+    }
+  },
+  "tests_run": 6,
+  "candidate_sha256_after": "a42affa6ab221ad707a8c9e094cf8ce68d5a09aab0511f309555cc7bf8719485",
+  "inputs_unchanged": true,
+  "status": "HANDOFF_BLOCKED",
+  "demonstration_process": {
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/companion/curriculum_demo.py",
+      "B4",
+      "--candidate",
+      "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B4/workspace",
+      "--output",
+      "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B4/handoff_b4"
+    ],
+    "elapsed_process_seconds": 0.09622944199873018,
+    "timeout_seconds": 30,
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/companion/curriculum_demo.py\", line 253, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/companion/curriculum_demo.py\", line 243, in main\n    result = globals()[args.mission.lower()](output)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/companion/curriculum_demo.py\", line 203, in b4\n    write(folder,\"selected_state.json\",{\"ledger_path\":plan[\"restore_configuration_to\"]})\n                                                      ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nKeyError: 'restore_configuration_to'\n",
+    "timed_out": false
+  },
+  "candidate_retained": true,
+  "recorded_at_utc": "2026-11-16T16:00:32.143101+00:00",
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/companion/start.py",
+    "continue",
+    "B4",
+    "--candidate",
+    "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B4/workspace",
+    "--output",
+    "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B4/handoff_b4.json"
+  ],
+  "verification_progress": {
+    "schema": "esa-verification-progress/v1",
+    "derivation": "CURRENT_RECEIPT_FIELDS_ONLY_NO_ADDITIONAL_EXECUTION",
+    "source_fields_sha256": "7d7e60197ccf070f357a0cb91c860347bacd68a12a1e4fff7d432afce08f2476",
+    "work_order": "mission_B4",
+    "evidence_profile": "persistent_effect",
+    "profile_basis": "The named mission work order.",
+    "phase": "mission",
+    "stages": {
+      "startup": {
+        "status": "PASS",
+        "evidence": [
+          "schema",
+          "mission",
+          "candidate_path"
+        ],
+        "reason": "The intended runner accepted the entry identity and emitted this check receipt. This does not establish candidate import."
+      },
+      "integrity": {
+        "status": "PASS",
+        "evidence": [
+          "inputs_unchanged",
+          "candidate_sha256_before",
+          "candidate_sha256_after"
+        ],
+        "reason": "The recorded before/after comparison found inputs unchanged."
+      },
+      "contract": {
+        "status": "PASS",
+        "evidence": [
+          "groups.contract"
+        ],
+        "reason": "Status uses each selected group and any contract-specific supplemental probe; an import placeholder is not behavioral evidence. A candidate stack frame or known protected assertion supports reached behavior; a method count alone does not. Groups within this stage may retain multiple failures.",
+        "behavior_reached": true
+      },
+      "integration": {
+        "status": "FAIL",
+        "evidence": [
+          "demonstration_process"
+        ],
+        "reason": "An actual continuation or process-boundary probe is retained; the result applies to this local consumer and candidate only."
+      },
+      "artifact": {
+        "status": "NOT_RUN",
+        "evidence": [],
+        "reason": "This receipt has no separate archive/extraction gate. Local demonstration hashes alone do not establish release fitness."
+      },
+      "authorization": {
+        "status": "NOT_RUN",
+        "evidence": [
+          "human_acceptance"
+        ],
+        "reason": "No owner acceptance or release authorization is recorded. Passing checks do not supply that decision."
+      }
+    },
+    "first_failed_stage": "integration",
+    "last_observed_stage": "integration",
+    "limits": "A stage label interprets the retained fields; it is not an independent attestation. NOT_APPLICABLE needs an explicit scope exclusion; absence alone remains NOT_RUN."
+  }
+}

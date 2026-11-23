@@ -1,0 +1,216 @@
+{
+  "schema": "esa-prototype-check/v2",
+  "selection": "core",
+  "candidate_path": "/home/claude/work/live22/agentic-ai-5.2/work/b1",
+  "candidate_sha256_before": "39c5afc8888b748c8e96147f1bc143839dedfe73963bf5675f3e8ebf4978457a",
+  "protected_before": [
+    {
+      "path": "tests/test_routing.py",
+      "expected_sha256": "6e5aa5706dd989bdbbeec9374a84d13c41cf6f36e23a5e5d2762a3b16e551c9b",
+      "candidate_sha256": "6e5aa5706dd989bdbbeec9374a84d13c41cf6f36e23a5e5d2762a3b16e551c9b",
+      "symlink": false
+    },
+    {
+      "path": "tests/test_routing_extended.py",
+      "expected_sha256": "f797d7f08cf34e97f8d1b2f3b9dae18e5cf1aa1cafbb66334ad855c0c9fc1051",
+      "candidate_sha256": "f797d7f08cf34e97f8d1b2f3b9dae18e5cf1aa1cafbb66334ad855c0c9fc1051",
+      "symlink": false
+    },
+    {
+      "path": "docs/BR-001.md",
+      "expected_sha256": "b88e648e2133cc0668a68b94d8e2b905a2fe09bd76780e36e20bbe68793b991a",
+      "candidate_sha256": "b88e648e2133cc0668a68b94d8e2b905a2fe09bd76780e36e20bbe68793b991a",
+      "symlink": false
+    },
+    {
+      "path": "docs/B1-API.md",
+      "expected_sha256": "e631804217257dfd5eabf3f9a3feeca025156822acc561bab7b5ab8b722914c2",
+      "candidate_sha256": "e631804217257dfd5eabf3f9a3feeca025156822acc561bab7b5ab8b722914c2",
+      "symlink": false
+    },
+    {
+      "path": "docs/policy.json",
+      "expected_sha256": "3737b95b728bea32cfc2c82c489fe12267fd3096404a44639f27eec9de88deed",
+      "candidate_sha256": "3737b95b728bea32cfc2c82c489fe12267fd3096404a44639f27eec9de88deed",
+      "symlink": false
+    },
+    {
+      "path": "docs/legacy_note.json",
+      "expected_sha256": "ed8b81d04572c5e1925faa5b7473f220e3184f27287646ed61005a146dc6a95a",
+      "candidate_sha256": "ed8b81d04572c5e1925faa5b7473f220e3184f27287646ed61005a146dc6a95a",
+      "symlink": false
+    },
+    {
+      "path": "src/treasury/__init__.py",
+      "expected_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "candidate_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "symlink": false
+    }
+  ],
+  "human_acceptance": "PENDING",
+  "groups": {
+    "b1_core": {
+      "command": [
+        "/usr/local/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_routing.py",
+        "-v"
+      ],
+      "elapsed_process_seconds": 0.06210077999992336,
+      "timeout_seconds": 15,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "test_above_boundary_requires_review (test_routing.RoutingAcceptance.test_above_boundary_requires_review) ... ok\ntest_exact_boundary_requires_review (test_routing.RoutingAcceptance.test_exact_boundary_requires_review) ... ok\ntest_negative_amount_rejected (test_routing.RoutingAcceptance.test_negative_amount_rejected) ... FAIL\ntest_nonfinite_amount_rejected (test_routing.RoutingAcceptance.test_nonfinite_amount_rejected) ... ERROR\ntest_nonnumeric_amount_rejected (test_routing.RoutingAcceptance.test_nonnumeric_amount_rejected) ... ERROR\ntest_positive_below_limit (test_routing.RoutingAcceptance.test_positive_below_limit) ... ok\ntest_zero_amount_rejected (test_routing.RoutingAcceptance.test_zero_amount_rejected) ... FAIL\n\n======================================================================\nERROR: test_nonfinite_amount_rejected (test_routing.RoutingAcceptance.test_nonfinite_amount_rejected)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b1/tests/test_routing.py\", line 30, in test_nonfinite_amount_rejected\n    self.check(\"NaN\", \"REJECTED\", \"INVALID_AMOUNT\")\n    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b1/tests/test_routing.py\", line 7, in check\n    result = assess(raw)\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b1/src/treasury/routing.py\", line 17, in assess\n    if amount < THRESHOLD_EUR:\n       ^^^^^^^^^^^^^^^^^^^^^^\ndecimal.InvalidOperation: [<class 'decimal.InvalidOperation'>]\n\n======================================================================\nERROR: test_nonnumeric_amount_rejected (test_routing.RoutingAcceptance.test_nonnumeric_amount_rejected)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b1/tests/test_routing.py\", line 27, in test_nonnumeric_amount_rejected\n    self.check(\"not-an-amount\", \"REJECTED\", \"INVALID_AMOUNT\")\n    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b1/tests/test_routing.py\", line 7, in check\n    result = assess(raw)\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b1/src/treasury/routing.py\", line 16, in assess\n    amount = Decimal(amount_eur)\ndecimal.InvalidOperation: [<class 'decimal.ConversionSyntax'>]\n\n======================================================================\nFAIL: test_negative_amount_rejected (test_routing.RoutingAcceptance.test_negative_amount_rejected)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b1/tests/test_routing.py\", line 21, in test_negative_amount_rejected\n    self.check(\"-0.01\", \"REJECTED\", \"INVALID_AMOUNT\")\n    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b1/tests/test_routing.py\", line 8, in check\n    self.assertEqual((result.route, result.reason, result.policy_version),\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n                     (route, reason, \"BR-001/v1\"))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Tuples differ: ('STANDARD_QUEUE', 'BELOW_LIMIT', 'BR-001/v1') != ('REJECTED', 'INVALID_AMOUNT', 'BR-001/v1')\n\nFirst differing element 0:\n'STANDARD_QUEUE'\n'REJECTED'\n\n- ('STANDARD_QUEUE', 'BELOW_LIMIT', 'BR-001/v1')\n+ ('REJECTED', 'INVALID_AMOUNT', 'BR-001/v1')\n\n======================================================================\nFAIL: test_zero_amount_rejected (test_routing.RoutingAcceptance.test_zero_amount_rejected)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b1/tests/test_routing.py\", line 24, in test_zero_amount_rejected\n    self.check(\"0.00\", \"REJECTED\", \"INVALID_AMOUNT\")\n    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b1/tests/test_routing.py\", line 8, in check\n    self.assertEqual((result.route, result.reason, result.policy_version),\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n                     (route, reason, \"BR-001/v1\"))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Tuples differ: ('STANDARD_QUEUE', 'BELOW_LIMIT', 'BR-001/v1') != ('REJECTED', 'INVALID_AMOUNT', 'BR-001/v1')\n\nFirst differing element 0:\n'STANDARD_QUEUE'\n'REJECTED'\n\n- ('STANDARD_QUEUE', 'BELOW_LIMIT', 'BR-001/v1')\n+ ('REJECTED', 'INVALID_AMOUNT', 'BR-001/v1')\n\n----------------------------------------------------------------------\nRan 7 tests in 0.002s\n\nFAILED (failures=2, errors=2)\n",
+      "timed_out": false,
+      "tests_run": 7,
+      "expected_tests": 7,
+      "methods_passed": 3,
+      "methods_failed": [
+        "test_negative_amount_rejected",
+        "test_zero_amount_rejected"
+      ],
+      "methods_errored": [
+        "test_nonfinite_amount_rejected",
+        "test_nonnumeric_amount_rejected"
+      ],
+      "status": "FAILED"
+    }
+  },
+  "tests_run": 7,
+  "expected_tests": 7,
+  "methods_passed": 3,
+  "stdout": "",
+  "stderr": "test_above_boundary_requires_review (test_routing.RoutingAcceptance.test_above_boundary_requires_review) ... ok\ntest_exact_boundary_requires_review (test_routing.RoutingAcceptance.test_exact_boundary_requires_review) ... ok\ntest_negative_amount_rejected (test_routing.RoutingAcceptance.test_negative_amount_rejected) ... FAIL\ntest_nonfinite_amount_rejected (test_routing.RoutingAcceptance.test_nonfinite_amount_rejected) ... ERROR\ntest_nonnumeric_amount_rejected (test_routing.RoutingAcceptance.test_nonnumeric_amount_rejected) ... ERROR\ntest_positive_below_limit (test_routing.RoutingAcceptance.test_positive_below_limit) ... ok\ntest_zero_amount_rejected (test_routing.RoutingAcceptance.test_zero_amount_rejected) ... FAIL\n\n======================================================================\nERROR: test_nonfinite_amount_rejected (test_routing.RoutingAcceptance.test_nonfinite_amount_rejected)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b1/tests/test_routing.py\", line 30, in test_nonfinite_amount_rejected\n    self.check(\"NaN\", \"REJECTED\", \"INVALID_AMOUNT\")\n    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b1/tests/test_routing.py\", line 7, in check\n    result = assess(raw)\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b1/src/treasury/routing.py\", line 17, in assess\n    if amount < THRESHOLD_EUR:\n       ^^^^^^^^^^^^^^^^^^^^^^\ndecimal.InvalidOperation: [<class 'decimal.InvalidOperation'>]\n\n======================================================================\nERROR: test_nonnumeric_amount_rejected (test_routing.RoutingAcceptance.test_nonnumeric_amount_rejected)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b1/tests/test_routing.py\", line 27, in test_nonnumeric_amount_rejected\n    self.check(\"not-an-amount\", \"REJECTED\", \"INVALID_AMOUNT\")\n    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b1/tests/test_routing.py\", line 7, in check\n    result = assess(raw)\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b1/src/treasury/routing.py\", line 16, in assess\n    amount = Decimal(amount_eur)\ndecimal.InvalidOperation: [<class 'decimal.ConversionSyntax'>]\n\n======================================================================\nFAIL: test_negative_amount_rejected (test_routing.RoutingAcceptance.test_negative_amount_rejected)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b1/tests/test_routing.py\", line 21, in test_negative_amount_rejected\n    self.check(\"-0.01\", \"REJECTED\", \"INVALID_AMOUNT\")\n    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b1/tests/test_routing.py\", line 8, in check\n    self.assertEqual((result.route, result.reason, result.policy_version),\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n                     (route, reason, \"BR-001/v1\"))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Tuples differ: ('STANDARD_QUEUE', 'BELOW_LIMIT', 'BR-001/v1') != ('REJECTED', 'INVALID_AMOUNT', 'BR-001/v1')\n\nFirst differing element 0:\n'STANDARD_QUEUE'\n'REJECTED'\n\n- ('STANDARD_QUEUE', 'BELOW_LIMIT', 'BR-001/v1')\n+ ('REJECTED', 'INVALID_AMOUNT', 'BR-001/v1')\n\n======================================================================\nFAIL: test_zero_amount_rejected (test_routing.RoutingAcceptance.test_zero_amount_rejected)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b1/tests/test_routing.py\", line 24, in test_zero_amount_rejected\n    self.check(\"0.00\", \"REJECTED\", \"INVALID_AMOUNT\")\n    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/b1/tests/test_routing.py\", line 8, in check\n    self.assertEqual((result.route, result.reason, result.policy_version),\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n                     (route, reason, \"BR-001/v1\"))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Tuples differ: ('STANDARD_QUEUE', 'BELOW_LIMIT', 'BR-001/v1') != ('REJECTED', 'INVALID_AMOUNT', 'BR-001/v1')\n\nFirst differing element 0:\n'STANDARD_QUEUE'\n'REJECTED'\n\n- ('STANDARD_QUEUE', 'BELOW_LIMIT', 'BR-001/v1')\n+ ('REJECTED', 'INVALID_AMOUNT', 'BR-001/v1')\n\n----------------------------------------------------------------------\nRan 7 tests in 0.002s\n\nFAILED (failures=2, errors=2)\n",
+  "timed_out": false,
+  "returncode": 1,
+  "protected_after": [
+    {
+      "path": "tests/test_routing.py",
+      "expected_sha256": "6e5aa5706dd989bdbbeec9374a84d13c41cf6f36e23a5e5d2762a3b16e551c9b",
+      "candidate_sha256": "6e5aa5706dd989bdbbeec9374a84d13c41cf6f36e23a5e5d2762a3b16e551c9b",
+      "symlink": false
+    },
+    {
+      "path": "tests/test_routing_extended.py",
+      "expected_sha256": "f797d7f08cf34e97f8d1b2f3b9dae18e5cf1aa1cafbb66334ad855c0c9fc1051",
+      "candidate_sha256": "f797d7f08cf34e97f8d1b2f3b9dae18e5cf1aa1cafbb66334ad855c0c9fc1051",
+      "symlink": false
+    },
+    {
+      "path": "docs/BR-001.md",
+      "expected_sha256": "b88e648e2133cc0668a68b94d8e2b905a2fe09bd76780e36e20bbe68793b991a",
+      "candidate_sha256": "b88e648e2133cc0668a68b94d8e2b905a2fe09bd76780e36e20bbe68793b991a",
+      "symlink": false
+    },
+    {
+      "path": "docs/B1-API.md",
+      "expected_sha256": "e631804217257dfd5eabf3f9a3feeca025156822acc561bab7b5ab8b722914c2",
+      "candidate_sha256": "e631804217257dfd5eabf3f9a3feeca025156822acc561bab7b5ab8b722914c2",
+      "symlink": false
+    },
+    {
+      "path": "docs/policy.json",
+      "expected_sha256": "3737b95b728bea32cfc2c82c489fe12267fd3096404a44639f27eec9de88deed",
+      "candidate_sha256": "3737b95b728bea32cfc2c82c489fe12267fd3096404a44639f27eec9de88deed",
+      "symlink": false
+    },
+    {
+      "path": "docs/legacy_note.json",
+      "expected_sha256": "ed8b81d04572c5e1925faa5b7473f220e3184f27287646ed61005a146dc6a95a",
+      "candidate_sha256": "ed8b81d04572c5e1925faa5b7473f220e3184f27287646ed61005a146dc6a95a",
+      "symlink": false
+    },
+    {
+      "path": "src/treasury/__init__.py",
+      "expected_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "candidate_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "symlink": false
+    }
+  ],
+  "candidate_sha256_after": "39c5afc8888b748c8e96147f1bc143839dedfe73963bf5675f3e8ebf4978457a",
+  "inputs_unchanged": true,
+  "status": "CHECKS_FAILED",
+  "mission": "B1",
+  "prototype_release": "Engineering-Software-with-Agentic-AI-Review-5.2-20261117",
+  "evidence_origin": "IDENTIFIED_LEARNER_CANDIDATE",
+  "scope": [
+    "BR-001/v1 seven unchanged core cases"
+  ],
+  "api_contract": "B1-API/v1",
+  "meaning": "Checks on these bytes and selected cases; human acceptance remains pending. Integrity and timeout checks do not sandbox arbitrary code.",
+  "recorded_at_utc": "2026-11-22T17:35:39.268279+00:00",
+  "command": [
+    "/usr/local/bin/python3",
+    "companion/start.py",
+    "check",
+    "B1",
+    "--candidate",
+    "work/b1",
+    "--select",
+    "core",
+    "--output",
+    "work/evidence/b1-initial.json"
+  ],
+  "verification_progress": {
+    "schema": "esa-verification-progress/v1",
+    "derivation": "CURRENT_RECEIPT_FIELDS_ONLY_NO_ADDITIONAL_EXECUTION",
+    "source_fields_sha256": "cf5d42875c62dcbdba0d5278c3db123bfbbd4ddd0c17f2469075597ec1e74cca",
+    "work_order": "mission_B1",
+    "evidence_profile": "bounded_repair",
+    "profile_basis": "The named mission work order.",
+    "phase": "mission",
+    "stages": {
+      "startup": {
+        "status": "PASS",
+        "evidence": [
+          "schema",
+          "mission",
+          "candidate_path"
+        ],
+        "reason": "The intended runner accepted the entry identity and emitted this check receipt. This does not establish candidate import."
+      },
+      "integrity": {
+        "status": "PASS",
+        "evidence": [
+          "inputs_unchanged",
+          "candidate_sha256_before",
+          "candidate_sha256_after"
+        ],
+        "reason": "The recorded before/after comparison found inputs unchanged."
+      },
+      "contract": {
+        "status": "FAIL",
+        "evidence": [
+          "groups.b1_core"
+        ],
+        "reason": "Status uses each selected group and any contract-specific supplemental probe; an import placeholder is not behavioral evidence. A candidate stack frame or known protected assertion supports reached behavior; a method count alone does not. Groups within this stage may retain multiple failures.",
+        "behavior_reached": true
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "evidence": [],
+        "reason": "No continuation or consumer/process observation is present."
+      },
+      "artifact": {
+        "status": "NOT_RUN",
+        "evidence": [],
+        "reason": "This receipt has no separate archive/extraction gate. Local demonstration hashes alone do not establish release fitness."
+      },
+      "authorization": {
+        "status": "NOT_RUN",
+        "evidence": [
+          "human_acceptance"
+        ],
+        "reason": "No owner acceptance or release authorization is recorded. Passing checks do not supply that decision."
+      }
+    },
+    "first_failed_stage": "contract",
+    "last_observed_stage": "contract",
+    "limits": "A stage label interprets the retained fields; it is not an independent attestation. NOT_APPLICABLE needs an explicit scope exclusion; absence alone remains NOT_RUN."
+  }
+}

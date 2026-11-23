@@ -1,0 +1,1533 @@
+{
+  "schema": "esa-edod-workorder-registry/v1",
+  "origin": "AUTHORED_TEACHING_SPECIFICATIONS_NOT_EXECUTION_RECORDS",
+  "budget_note": "Attempts/minutes are declared ceilings. The native adapter bounds launches and elapsed time from first launch; manual setup and review remain operator-recorded. check_timeout_seconds is the local check-process limit. max_external_calls refers to candidate integration fixtures, not the outer coding agent; model usage is separately retained when exposed.",
+  "orders": [
+    {
+      "id": "mission_G1",
+      "schema_version": 1,
+      "evidence_profile": "new_capability",
+      "expect": {
+        "outcome": "Commit the first reservation and retrieve its six public fields.",
+        "authority": {
+          "owner": "Workshop coordinator",
+          "source": "companion/contracts/G1_I01.md; companion/contracts/G1_OWNER_DECISION.md",
+          "version": "G1/I01 + G1-OD-01",
+          "status": "TEACHING_CONTRACT"
+        },
+        "acceptance": [
+          "One valid request survives writer exit; missing-ID and missing-storage outcomes follow the owner decision."
+        ]
+      },
+      "delegate": {
+        "editable_paths": [
+          "booking.py",
+          "DOSSIER.md"
+        ],
+        "protected_paths": [
+          "docs/",
+          "tests/",
+          "READER_ENTRY.json",
+          "prior/",
+          "historical_tests/"
+        ],
+        "budget": {
+          "max_attempts": 3,
+          "implementation_minutes": 25,
+          "check_timeout_seconds": 15,
+          "max_external_calls": 0
+        },
+        "stop_conditions": [
+          "No supplied lookup decision; new replay or overlap policy.",
+          "Protected inputs change or the declared attempt/time budget is spent."
+        ]
+      },
+      "observe": {
+        "checks": [
+          {
+            "id": "g1.check",
+            "stage": "contract",
+            "method": "command",
+            "argv": [
+              "python3",
+              "companion/start.py",
+              "check",
+              "G1",
+              "--candidate",
+              "work/g1",
+              "--select",
+              "slice",
+              "--output",
+              "work/evidence/g1-first.json"
+            ],
+            "expected": "Selected public checks pass on unchanged inputs."
+          },
+          {
+            "id": "g1.continue",
+            "stage": "integration",
+            "method": "command",
+            "argv": [
+              "python3",
+              "companion/start.py",
+              "continue",
+              "G1",
+              "--candidate",
+              "work/g1",
+              "--output",
+              "work/evidence/g1-handoff.json"
+            ],
+            "expected": "Current candidate completes its scoped continuation; inspect retained observations."
+          }
+        ],
+        "receipt_fields": [
+          "candidate_sha256_before",
+          "groups",
+          "inputs_unchanged",
+          "verification_progress",
+          "human_acceptance"
+        ]
+      },
+      "decide": {
+        "owner": "Learner reviewer; Workshop coordinator for a changed rule.",
+        "object": "G1 candidate, identified bytes and its scoped handoff.",
+        "allowed_decisions": [
+          "ACCEPT",
+          "REJECT",
+          "ASK"
+        ]
+      }
+    },
+    {
+      "id": "mission_G2",
+      "schema_version": 1,
+      "evidence_profile": "persistent_effect",
+      "expect": {
+        "outcome": "Complete admission and replay while preserving stored G1 work.",
+        "authority": {
+          "owner": "Workshop coordinator",
+          "source": "companion/contracts/G2.md; companion/contracts/G2_OD_02.md",
+          "version": "RES-001/v1 + G2-OD-01 + G2-OD-02",
+          "status": "TEACHING_CONTRACT"
+        },
+        "acceptance": [
+          "Identity, conflicts and migration preserve public fields/history for the three explicitly authorized G1 signatures; unknown mappings are refused."
+        ]
+      },
+      "delegate": {
+        "editable_paths": [
+          "booking.py",
+          "DOSSIER.md"
+        ],
+        "protected_paths": [
+          "docs/",
+          "tests/",
+          "READER_ENTRY.json",
+          "prior/",
+          "legacy_g1.py",
+          "legacy_g1_json.py",
+          "legacy_g1_recorded.py"
+        ],
+        "budget": {
+          "max_attempts": 3,
+          "implementation_minutes": 40,
+          "check_timeout_seconds": 30,
+          "max_external_calls": 0
+        },
+        "stop_conditions": [
+          "Ambiguous legacy identity, unknown schema or new recurring-series rule.",
+          "Protected inputs change or the declared attempt/time budget is spent."
+        ]
+      },
+      "observe": {
+        "checks": [
+          {
+            "id": "g2.check",
+            "stage": "contract",
+            "method": "command",
+            "argv": [
+              "python3",
+              "companion/start.py",
+              "check",
+              "G2",
+              "--candidate",
+              "work/g2",
+              "--output",
+              "work/evidence/g2-first.json"
+            ],
+            "expected": "Selected public checks pass on unchanged inputs."
+          },
+          {
+            "id": "g2.continue",
+            "stage": "integration",
+            "method": "command",
+            "argv": [
+              "python3",
+              "companion/start.py",
+              "continue",
+              "G2",
+              "--candidate",
+              "work/g2",
+              "--output",
+              "work/evidence/g2-handoff.json"
+            ],
+            "expected": "Current candidate completes its scoped continuation; inspect retained observations."
+          }
+        ],
+        "receipt_fields": [
+          "candidate_sha256_before",
+          "groups",
+          "inputs_unchanged",
+          "verification_progress",
+          "human_acceptance"
+        ]
+      },
+      "decide": {
+        "owner": "Learner reviewer; Workshop coordinator for a changed rule.",
+        "object": "G2 candidate, identified bytes and its scoped handoff.",
+        "allowed_decisions": [
+          "ACCEPT",
+          "REJECT",
+          "ASK"
+        ]
+      }
+    },
+    {
+      "id": "mission_G3",
+      "schema_version": 1,
+      "evidence_profile": "persistent_effect",
+      "expect": {
+        "outcome": "Cancel atomically without changing the historical reservation interface.",
+        "authority": {
+          "owner": "Workshop coordinator",
+          "source": "companion/contracts/G3.md",
+          "version": "RES-002/v1",
+          "status": "TEACHING_CONTRACT"
+        },
+        "acceptance": [
+          "Owner/version guards preserve refused state; successful cancellation increments once; old replay retains the original reservation."
+        ]
+      },
+      "delegate": {
+        "editable_paths": [
+          "booking.py",
+          "DOSSIER.md"
+        ],
+        "protected_paths": [
+          "docs/",
+          "tests/",
+          "READER_ENTRY.json",
+          "prior/",
+          "legacy_booking.py"
+        ],
+        "budget": {
+          "max_attempts": 3,
+          "implementation_minutes": 30,
+          "check_timeout_seconds": 30,
+          "max_external_calls": 0
+        },
+        "stop_conditions": [
+          "Refund, deletion or staff-override policy is required.",
+          "Protected inputs change or the declared attempt/time budget is spent."
+        ]
+      },
+      "observe": {
+        "checks": [
+          {
+            "id": "g3.check",
+            "stage": "contract",
+            "method": "command",
+            "argv": [
+              "python3",
+              "companion/start.py",
+              "check",
+              "G3",
+              "--candidate",
+              "work/g3",
+              "--output",
+              "work/evidence/g3-first.json"
+            ],
+            "expected": "Selected public checks pass on unchanged inputs."
+          },
+          {
+            "id": "g3.continue",
+            "stage": "integration",
+            "method": "command",
+            "argv": [
+              "python3",
+              "companion/start.py",
+              "continue",
+              "G3",
+              "--candidate",
+              "work/g3",
+              "--output",
+              "work/evidence/g3-handoff.json"
+            ],
+            "expected": "Current candidate completes its scoped continuation; inspect retained observations."
+          }
+        ],
+        "receipt_fields": [
+          "candidate_sha256_before",
+          "groups",
+          "inputs_unchanged",
+          "verification_progress",
+          "human_acceptance"
+        ]
+      },
+      "decide": {
+        "owner": "Learner reviewer; Workshop coordinator for a changed rule.",
+        "object": "G3 candidate, identified bytes and its scoped handoff.",
+        "allowed_decisions": [
+          "ACCEPT",
+          "REJECT",
+          "ASK"
+        ]
+      }
+    },
+    {
+      "id": "mission_G4",
+      "schema_version": 1,
+      "evidence_profile": "persistent_effect",
+      "expect": {
+        "outcome": "Diagnose retained storage read-only and account for all attempts.",
+        "authority": {
+          "owner": "Operations lead",
+          "source": "companion/contracts/G4.md",
+          "version": "OPS-G4/v3",
+          "status": "TEACHING_CONTRACT"
+        },
+        "acceptance": [
+          "Read-only diagnosis recognizes the three explicitly documented G3 schema3 representations and refuses unknown/competing mappings. All attempts count toward accepted-outcome accounting."
+        ]
+      },
+      "delegate": {
+        "editable_paths": [
+          "operations.py",
+          "DOSSIER.md"
+        ],
+        "protected_paths": [
+          "docs/",
+          "tests/",
+          "READER_ENTRY.json",
+          "prior/",
+          "booking.py",
+          "g4_fixture.py",
+          "reference_g3.py"
+        ],
+        "budget": {
+          "max_attempts": 3,
+          "implementation_minutes": 25,
+          "check_timeout_seconds": 30,
+          "max_external_calls": 0
+        },
+        "stop_conditions": [
+          "Missing or unsupported storage, changing bytes, or a requested repair.",
+          "Protected inputs change or the declared attempt/time budget is spent."
+        ]
+      },
+      "observe": {
+        "checks": [
+          {
+            "id": "g4.check",
+            "stage": "contract",
+            "method": "command",
+            "argv": [
+              "python3",
+              "companion/start.py",
+              "check",
+              "G4",
+              "--candidate",
+              "work/g4",
+              "--output",
+              "work/evidence/g4-first.json"
+            ],
+            "expected": "Selected public checks pass on unchanged inputs."
+          },
+          {
+            "id": "g4.continue",
+            "stage": "integration",
+            "method": "command",
+            "argv": [
+              "python3",
+              "companion/start.py",
+              "continue",
+              "G4",
+              "--candidate",
+              "work/g4",
+              "--output",
+              "work/evidence/g4-handoff.json"
+            ],
+            "expected": "Current candidate completes its scoped continuation; inspect retained observations."
+          }
+        ],
+        "receipt_fields": [
+          "candidate_sha256_before",
+          "groups",
+          "inputs_unchanged",
+          "verification_progress",
+          "human_acceptance"
+        ]
+      },
+      "decide": {
+        "owner": "Learner reviewer; Operations lead for a changed rule.",
+        "object": "G4 candidate, identified bytes and its scoped handoff.",
+        "allowed_decisions": [
+          "ACCEPT",
+          "REJECT",
+          "ASK"
+        ]
+      }
+    },
+    {
+      "id": "mission_B1",
+      "schema_version": 1,
+      "evidence_profile": "bounded_repair",
+      "expect": {
+        "outcome": "Repair finite-positive routing under the current string API.",
+        "authority": {
+          "owner": "Treasury policy owner and API maintainer",
+          "source": "companion/context/BR-001.md; companion/contracts/B1_API.md",
+          "version": "BR-001/v1 + B1-API/v1",
+          "status": "TEACHING_CONTRACT"
+        },
+        "acceptance": [
+          "Reject invalid amounts; below 5000 uses STANDARD_QUEUE, equality uses HUMAN_REVIEW; non-string callers raise TypeError and unexpected errors propagate."
+        ]
+      },
+      "delegate": {
+        "editable_paths": [
+          "src/treasury/routing.py",
+          "DOSSIER.md"
+        ],
+        "protected_paths": [
+          "docs/",
+          "tests/",
+          "READER_ENTRY.json",
+          "prior/"
+        ],
+        "budget": {
+          "max_attempts": 3,
+          "implementation_minutes": 25,
+          "check_timeout_seconds": 15,
+          "max_external_calls": 0
+        },
+        "stop_conditions": [
+          "Threshold, precision or API change lacks an owner decision.",
+          "Protected inputs change or the declared attempt/time budget is spent."
+        ]
+      },
+      "observe": {
+        "checks": [
+          {
+            "id": "b1.check",
+            "stage": "contract",
+            "method": "command",
+            "argv": [
+              "python3",
+              "companion/start.py",
+              "check",
+              "B1",
+              "--candidate",
+              "work/b1",
+              "--output",
+              "work/evidence/b1-check.json"
+            ],
+            "expected": "Selected public checks pass on unchanged inputs."
+          },
+          {
+            "id": "b1.continue",
+            "stage": "integration",
+            "method": "command",
+            "argv": [
+              "python3",
+              "companion/start.py",
+              "continue",
+              "B1",
+              "--candidate",
+              "work/b1",
+              "--output",
+              "work/evidence/b1-context.json"
+            ],
+            "expected": "Current candidate completes its scoped continuation; inspect retained observations."
+          }
+        ],
+        "receipt_fields": [
+          "candidate_sha256_before",
+          "groups",
+          "inputs_unchanged",
+          "verification_progress",
+          "human_acceptance"
+        ]
+      },
+      "decide": {
+        "owner": "Learner reviewer; Treasury policy owner and API maintainer for a changed rule.",
+        "object": "B1 candidate, identified bytes and its scoped handoff.",
+        "allowed_decisions": [
+          "ACCEPT",
+          "REJECT",
+          "ASK"
+        ]
+      }
+    },
+    {
+      "id": "mission_B2",
+      "schema_version": 1,
+      "evidence_profile": "new_capability",
+      "expect": {
+        "outcome": "Classify a bounded local batch with attributable attempts.",
+        "authority": {
+          "owner": "Treasury service owner",
+          "source": "companion/contracts/B2.md",
+          "version": "INTAKE/v1",
+          "status": "TEACHING_CONTRACT"
+        },
+        "acceptance": [
+          "Preflight duplicate IDs before calls; cap attempts; validate returned identity/classification; preserve failed attempts and original errors."
+        ]
+      },
+      "delegate": {
+        "editable_paths": [
+          "intake.py",
+          "DOSSIER.md"
+        ],
+        "protected_paths": [
+          "docs/",
+          "tests/",
+          "READER_ENTRY.json",
+          "prior/",
+          "routing.py"
+        ],
+        "budget": {
+          "max_attempts": 3,
+          "implementation_minutes": 30,
+          "check_timeout_seconds": 30,
+          "max_external_calls": 0
+        },
+        "stop_conditions": [
+          "Provider blocks, response violates its protocol, or invocation budget is exhausted.",
+          "Protected inputs change or the declared attempt/time budget is spent."
+        ]
+      },
+      "observe": {
+        "checks": [
+          {
+            "id": "b2.check",
+            "stage": "contract",
+            "method": "command",
+            "argv": [
+              "python3",
+              "companion/start.py",
+              "check",
+              "B2",
+              "--candidate",
+              "work/b2",
+              "--output",
+              "work/evidence/b2-first.json"
+            ],
+            "expected": "Selected public checks pass on unchanged inputs."
+          },
+          {
+            "id": "b2.continue",
+            "stage": "integration",
+            "method": "command",
+            "argv": [
+              "python3",
+              "companion/start.py",
+              "continue",
+              "B2",
+              "--candidate",
+              "work/b2",
+              "--output",
+              "work/evidence/b2-handoff.json"
+            ],
+            "expected": "Current candidate completes its scoped continuation; inspect retained observations."
+          }
+        ],
+        "receipt_fields": [
+          "candidate_sha256_before",
+          "groups",
+          "inputs_unchanged",
+          "verification_progress",
+          "human_acceptance"
+        ]
+      },
+      "decide": {
+        "owner": "Learner reviewer; Treasury service owner for a changed rule.",
+        "object": "B2 candidate, identified bytes and its scoped handoff.",
+        "allowed_decisions": [
+          "ACCEPT",
+          "REJECT",
+          "ASK"
+        ]
+      }
+    },
+    {
+      "id": "mission_B3",
+      "schema_version": 1,
+      "evidence_profile": "persistent_effect",
+      "expect": {
+        "outcome": "Preserve recorded decisions through policy change and migration.",
+        "authority": {
+          "owner": "Treasury policy owner and ledger maintainer",
+          "source": "companion/contracts/B3.md",
+          "version": "HISTORY-API/v1 + MIGRATION/v1",
+          "status": "TEACHING_CONTRACT"
+        },
+        "acceptance": [
+          "Replay keeps the saved answer; conflicts preserve history; reevaluation creates a linked ID; migration requires original evidence and commits atomically."
+        ]
+      },
+      "delegate": {
+        "editable_paths": [
+          "ledger.py",
+          "DOSSIER.md"
+        ],
+        "protected_paths": [
+          "docs/",
+          "tests/",
+          "READER_ENTRY.json",
+          "prior/",
+          "routing.py"
+        ],
+        "budget": {
+          "max_attempts": 3,
+          "implementation_minutes": 40,
+          "check_timeout_seconds": 30,
+          "max_external_calls": 0
+        },
+        "stop_conditions": [
+          "Missing historical provenance, conflicting identity or unavailable policy mapping.",
+          "Protected inputs change or the declared attempt/time budget is spent."
+        ]
+      },
+      "observe": {
+        "checks": [
+          {
+            "id": "b3.check",
+            "stage": "contract",
+            "method": "command",
+            "argv": [
+              "python3",
+              "companion/start.py",
+              "check",
+              "B3",
+              "--candidate",
+              "work/b3",
+              "--output",
+              "work/evidence/b3-first.json"
+            ],
+            "expected": "Selected public checks pass on unchanged inputs."
+          },
+          {
+            "id": "b3.continue",
+            "stage": "integration",
+            "method": "command",
+            "argv": [
+              "python3",
+              "companion/start.py",
+              "continue",
+              "B3",
+              "--candidate",
+              "work/b3",
+              "--output",
+              "work/evidence/b3-handoff.json"
+            ],
+            "expected": "Current candidate completes its scoped continuation; inspect retained observations."
+          }
+        ],
+        "receipt_fields": [
+          "candidate_sha256_before",
+          "groups",
+          "inputs_unchanged",
+          "verification_progress",
+          "human_acceptance"
+        ]
+      },
+      "decide": {
+        "owner": "Learner reviewer; Treasury policy owner and ledger maintainer for a changed rule.",
+        "object": "B3 candidate, identified bytes and its scoped handoff.",
+        "allowed_decisions": [
+          "ACCEPT",
+          "REJECT",
+          "ASK"
+        ]
+      }
+    },
+    {
+      "id": "mission_B4",
+      "schema_version": 1,
+      "evidence_profile": "persistent_effect",
+      "expect": {
+        "outcome": "Diagnose the selected ledger and propose a bounded restoration.",
+        "authority": {
+          "owner": "Service operations lead",
+          "source": "companion/contracts/B4.md",
+          "version": "OPS-B4/v2",
+          "status": "TEACHING_CONTRACT"
+        },
+        "acceptance": [
+          "Compare actual and expected path, policy and anchor read-only; preserve both ledgers; leave reconciliation and production approval pending.",
+          "The structured proposal includes restore_configuration_to with the resolved expected path; it does not perform or authorize restoration."
+        ]
+      },
+      "delegate": {
+        "editable_paths": [
+          "incident.py",
+          "DOSSIER.md"
+        ],
+        "protected_paths": [
+          "docs/",
+          "tests/",
+          "READER_ENTRY.json",
+          "prior/",
+          "ledger.py",
+          "routing.py",
+          "operations.py"
+        ],
+        "budget": {
+          "max_attempts": 3,
+          "implementation_minutes": 30,
+          "check_timeout_seconds": 30,
+          "max_external_calls": 0
+        },
+        "stop_conditions": [
+          "Missing ledger, changing evidence or requested record reconciliation.",
+          "Protected inputs change or the declared attempt/time budget is spent."
+        ]
+      },
+      "observe": {
+        "checks": [
+          {
+            "id": "b4.check",
+            "stage": "contract",
+            "method": "command",
+            "argv": [
+              "python3",
+              "companion/start.py",
+              "check",
+              "B4",
+              "--candidate",
+              "work/b4",
+              "--output",
+              "work/evidence/b4-first.json"
+            ],
+            "expected": "Selected public checks pass on unchanged inputs."
+          },
+          {
+            "id": "b4.continue",
+            "stage": "integration",
+            "method": "command",
+            "argv": [
+              "python3",
+              "companion/start.py",
+              "continue",
+              "B4",
+              "--candidate",
+              "work/b4",
+              "--output",
+              "work/evidence/b4-handoff.json"
+            ],
+            "expected": "Current candidate completes its scoped continuation; inspect retained observations."
+          }
+        ],
+        "receipt_fields": [
+          "candidate_sha256_before",
+          "groups",
+          "inputs_unchanged",
+          "verification_progress",
+          "human_acceptance"
+        ]
+      },
+      "decide": {
+        "owner": "Learner reviewer; Service operations lead for a changed rule.",
+        "object": "B4 candidate, identified bytes and its scoped handoff.",
+        "allowed_decisions": [
+          "ACCEPT",
+          "REJECT",
+          "ASK"
+        ]
+      }
+    },
+    {
+      "id": "chapter_01",
+      "schema_version": 1,
+      "evidence_profile": "bounded_repair",
+      "expect": {
+        "outcome": "Repair invalid-amount routing while preserving BR-001/v1 and B1-API/v1.",
+        "authority": {
+          "owner": "Implementation reviewer; policy or API owner for changes to their rules.",
+          "source": "Treasury policy owner: BR-001/v1; API maintainer: B1-API/v1.",
+          "version": "BR-001/v1 + B1-API/v1",
+          "status": "TEACHING_CONTRACT"
+        },
+        "acceptance": [
+          "Finite positive routing, EUR 5000 equality, all three result fields, TypeError for a non-string caller; unexpected programming faults remain visible."
+        ]
+      },
+      "delegate": {
+        "editable_paths": [
+          "src/treasury/routing.py",
+          "DOSSIER.md"
+        ],
+        "protected_paths": [
+          "approved_context/",
+          "source_evidence/",
+          "contracts/",
+          "tests/"
+        ],
+        "budget": {
+          "max_attempts": 2,
+          "implementation_minutes": 30,
+          "check_timeout_seconds": 30,
+          "max_external_calls": 0
+        },
+        "stop_conditions": [
+          "Required authority or source evidence is missing.",
+          "Declared budget is spent or a proposed edit crosses protected scope."
+        ]
+      },
+      "observe": {
+        "checks": [
+          {
+            "id": "chapter_01.review",
+            "stage": "contract",
+            "method": "review",
+            "argv": [],
+            "expected": "Core and extended B1 cases; narrow-exception probe; protected-source comparison."
+          }
+        ],
+        "receipt_fields": [
+          "candidate_identity",
+          "authority_version",
+          "actual_checks",
+          "reached_stage",
+          "remaining_question"
+        ]
+      },
+      "decide": {
+        "owner": "Implementation reviewer; policy or API owner for changes to their rules.",
+        "object": "The identified routing candidate under the v1 contract.",
+        "allowed_decisions": [
+          "ACCEPT",
+          "REJECT",
+          "ASK"
+        ]
+      }
+    },
+    {
+      "id": "chapter_02",
+      "schema_version": 1,
+      "evidence_profile": "investigation",
+      "expect": {
+        "outcome": "Return an evidence-based comparison of causes of conflicting workshop booking expectations.",
+        "authority": {
+          "owner": "Workshop coordinator.",
+          "source": "Coordinator mandate R-01; selected de-identified booking and maintenance records.",
+          "version": "R-01; teaching work-order/v1",
+          "status": "TEACHING_CONTRACT"
+        },
+        "acceptance": [
+          "Each causal claim names a supplied source or a missing observation; no invented interviews or benefits."
+        ]
+      },
+      "delegate": {
+        "editable_paths": [
+          "reports/discovery.md"
+        ],
+        "protected_paths": [
+          "approved_context/",
+          "source_evidence/"
+        ],
+        "budget": {
+          "max_attempts": 1,
+          "implementation_minutes": 30,
+          "check_timeout_seconds": 30,
+          "max_external_calls": 0
+        },
+        "stop_conditions": [
+          "Required authority or source evidence is missing.",
+          "Declared budget is spent or a proposed edit crosses protected scope.",
+          "One investigation pass produces no supported next observation."
+        ]
+      },
+      "observe": {
+        "checks": [
+          {
+            "id": "chapter_02.review",
+            "stage": "contract",
+            "method": "review",
+            "argv": [],
+            "expected": "Source-to-claim audit; compare chronology predictions; check that no operational action occurred."
+          }
+        ],
+        "receipt_fields": [
+          "candidate_identity",
+          "authority_version",
+          "actual_checks",
+          "reached_stage",
+          "remaining_question"
+        ]
+      },
+      "decide": {
+        "owner": "Workshop coordinator.",
+        "object": "The discovery report and its proposed next observation, not a booking service.",
+        "allowed_decisions": [
+          "ACCEPT",
+          "REJECT",
+          "ASK"
+        ]
+      }
+    },
+    {
+      "id": "chapter_03",
+      "schema_version": 1,
+      "evidence_profile": "new_capability",
+      "expect": {
+        "outcome": "Produce a behavioral contract for S-02 overlap admission.",
+        "authority": {
+          "owner": "Workshop coordinator for meaning; specification reviewer for faithful derivation.",
+          "source": "Workshop coordinator: S-02, 16 May 2025.",
+          "version": "S-02; 2025-05-16",
+          "status": "TEACHING_CONTRACT"
+        },
+        "acceptance": [
+          "Adjacent half-open intervals allowed; same-resource overlap refused; different resources independent; prior state preserved after refusal."
+        ]
+      },
+      "delegate": {
+        "editable_paths": [
+          "specification/acceptance.md"
+        ],
+        "protected_paths": [
+          "approved_context/",
+          "source_evidence/"
+        ],
+        "budget": {
+          "max_attempts": 2,
+          "implementation_minutes": 30,
+          "check_timeout_seconds": 30,
+          "max_external_calls": 0
+        },
+        "stop_conditions": [
+          "Required authority or source evidence is missing.",
+          "Declared budget is spent or a proposed edit crosses protected scope."
+        ]
+      },
+      "observe": {
+        "checks": [
+          {
+            "id": "chapter_03.review",
+            "stage": "contract",
+            "method": "review",
+            "argv": [],
+            "expected": "Derive adjacency, containment, resource-separation and refusal-state examples independently of code."
+          }
+        ],
+        "receipt_fields": [
+          "candidate_identity",
+          "authority_version",
+          "actual_checks",
+          "reached_stage",
+          "remaining_question"
+        ]
+      },
+      "decide": {
+        "owner": "Workshop coordinator for meaning; specification reviewer for faithful derivation.",
+        "object": "The acceptance contract and examples.",
+        "allowed_decisions": [
+          "ACCEPT",
+          "REJECT",
+          "ASK"
+        ]
+      }
+    },
+    {
+      "id": "chapter_04",
+      "schema_version": 1,
+      "evidence_profile": "bounded_repair",
+      "expect": {
+        "outcome": "Prepare the governing context and a truthful handoff for the current Treasury repair.",
+        "authority": {
+          "owner": "Technical reviewer; Treasury policy owner for a changed threshold.",
+          "source": "Approved BR-001/v1 and B1-API/v1; the later legacy note remains an unapproved proposal.",
+          "version": "BR-001/v1 + B1-API/v1",
+          "status": "TEACHING_CONTRACT"
+        },
+        "acceptance": [
+          "Retain source status/owner/version, candidate identity and actual completed checks; preserve the approved threshold."
+        ]
+      },
+      "delegate": {
+        "editable_paths": [
+          "context/PACKET.md",
+          "HANDOFF.md"
+        ],
+        "protected_paths": [
+          "approved_context/",
+          "source_evidence/",
+          "contracts/",
+          "tests/"
+        ],
+        "budget": {
+          "max_attempts": 2,
+          "implementation_minutes": 30,
+          "check_timeout_seconds": 30,
+          "max_external_calls": 0
+        },
+        "stop_conditions": [
+          "Required authority or source evidence is missing.",
+          "Declared budget is spent or a proposed edit crosses protected scope."
+        ]
+      },
+      "observe": {
+        "checks": [
+          {
+            "id": "chapter_04.review",
+            "stage": "contract",
+            "method": "review",
+            "argv": [],
+            "expected": "Inspect source precedence and current candidate; compare recorded instruction delivery with subsequent action; check receipt applicability."
+          }
+        ],
+        "receipt_fields": [
+          "candidate_identity",
+          "authority_version",
+          "actual_checks",
+          "reached_stage",
+          "remaining_question"
+        ]
+      },
+      "decide": {
+        "owner": "Technical reviewer; Treasury policy owner for a changed threshold.",
+        "object": "The context packet and retained-candidate handoff.",
+        "allowed_decisions": [
+          "ACCEPT",
+          "REJECT",
+          "ASK"
+        ]
+      }
+    },
+    {
+      "id": "chapter_05",
+      "schema_version": 1,
+      "evidence_profile": "new_capability",
+      "expect": {
+        "outcome": "Compare direct and supplied-provider explanation designs while preserving the agreed routing view.",
+        "authority": {
+          "owner": "Design reviewer; presentation owner for changed view semantics.",
+          "source": "Presentation contract in Chapters 3 and 5; BR-001/v1 for routing meaning.",
+          "version": "Presentation teaching contract/v1",
+          "status": "TEACHING_CONTRACT"
+        },
+        "acceptance": [
+          "Preserve route, reason, supplied policy version and separate payment authority; reject unknown route vocabulary."
+        ]
+      },
+      "delegate": {
+        "editable_paths": [
+          "prototype/view.py",
+          "reports/design-comparison.md"
+        ],
+        "protected_paths": [
+          "approved_context/",
+          "source_evidence/",
+          "contracts/",
+          "tests/"
+        ],
+        "budget": {
+          "max_attempts": 2,
+          "implementation_minutes": 30,
+          "check_timeout_seconds": 30,
+          "max_external_calls": 0
+        },
+        "stop_conditions": [
+          "Required authority or source evidence is missing.",
+          "Declared budget is spent or a proposed edit crosses protected scope."
+        ]
+      },
+      "observe": {
+        "checks": [
+          {
+            "id": "chapter_05.review",
+            "stage": "contract",
+            "method": "review",
+            "argv": [],
+            "expected": "Independent contract examples through each composition; fake-provider preservation; unknown-route refusal."
+          }
+        ],
+        "receipt_fields": [
+          "candidate_identity",
+          "authority_version",
+          "actual_checks",
+          "reached_stage",
+          "remaining_question"
+        ]
+      },
+      "decide": {
+        "owner": "Design reviewer; presentation owner for changed view semantics.",
+        "object": "A proposed design decision and bounded prototype.",
+        "allowed_decisions": [
+          "ACCEPT",
+          "REJECT",
+          "ASK"
+        ]
+      }
+    },
+    {
+      "id": "chapter_06",
+      "schema_version": 1,
+      "evidence_profile": "investigation",
+      "expect": {
+        "outcome": "Plan the approved Reservation overlap increment with explicit decision prerequisites.",
+        "authority": {
+          "owner": "Task coordinator; designated owners for unresolved behavior.",
+          "source": "S-02 and the selected public Reservation interface; accepted scope/design decision before writing.",
+          "version": "S-02; teaching work-order/v1",
+          "status": "TEACHING_CONTRACT"
+        },
+        "acceptance": [
+          "A writing task consumes the accepted decision and fixed baseline; independent investigations may return before that decision."
+        ]
+      },
+      "delegate": {
+        "editable_paths": [
+          "plans/overlap-work.md"
+        ],
+        "protected_paths": [
+          "approved_context/",
+          "source_evidence/"
+        ],
+        "budget": {
+          "max_attempts": 2,
+          "implementation_minutes": 30,
+          "check_timeout_seconds": 30,
+          "max_external_calls": 0
+        },
+        "stop_conditions": [
+          "Required authority or source evidence is missing.",
+          "Declared budget is spent or a proposed edit crosses protected scope."
+        ]
+      },
+      "observe": {
+        "checks": [
+          {
+            "id": "chapter_06.review",
+            "stage": "contract",
+            "method": "review",
+            "argv": [],
+            "expected": "Inspect task dependencies, writable scopes, result identities and stopping conditions."
+          }
+        ],
+        "receipt_fields": [
+          "candidate_identity",
+          "authority_version",
+          "actual_checks",
+          "reached_stage",
+          "remaining_question"
+        ]
+      },
+      "decide": {
+        "owner": "Task coordinator; designated owners for unresolved behavior.",
+        "object": "The dispatchable plan and work orders.",
+        "allowed_decisions": [
+          "ACCEPT",
+          "REJECT",
+          "ASK"
+        ]
+      }
+    },
+    {
+      "id": "chapter_07",
+      "schema_version": 1,
+      "evidence_profile": "new_capability",
+      "expect": {
+        "outcome": "Repair the presentation projection without changing routing policy or API.",
+        "authority": {
+          "owner": "Implementation reviewer; presentation owner for new wording authority.",
+          "source": "Presentation owner contract in Section 7.1; BR-001/v1 and B1-API/v1 remain fixed.",
+          "version": "Presentation contract7.1/v1",
+          "status": "TEACHING_CONTRACT"
+        },
+        "acceptance": [
+          "Display recommendation, preserve reason and original policy version, include routing-only notice, refuse unknown routes."
+        ]
+      },
+      "delegate": {
+        "editable_paths": [
+          "view.py",
+          "reports/reproducer.md"
+        ],
+        "protected_paths": [
+          "approved_context/",
+          "source_evidence/",
+          "contracts/",
+          "tests/",
+          "routing.py"
+        ],
+        "budget": {
+          "max_attempts": 2,
+          "implementation_minutes": 30,
+          "check_timeout_seconds": 30,
+          "max_external_calls": 0
+        },
+        "stop_conditions": [
+          "Required authority or source evidence is missing.",
+          "Declared budget is spent or a proposed edit crosses protected scope.",
+          "Two distinct hypotheses have been tested without localizing the defect."
+        ]
+      },
+      "observe": {
+        "checks": [
+          {
+            "id": "chapter_07.review",
+            "stage": "contract",
+            "method": "review",
+            "argv": [],
+            "expected": "Reproducer through router/adapter/view; lower-boundary, equality, invalid and unknown-route view checks."
+          }
+        ],
+        "receipt_fields": [
+          "candidate_identity",
+          "authority_version",
+          "actual_checks",
+          "reached_stage",
+          "remaining_question"
+        ]
+      },
+      "decide": {
+        "owner": "Implementation reviewer; presentation owner for new wording authority.",
+        "object": "The bounded view candidate. The separate G2 state-transition example uses Persistent effect.",
+        "allowed_decisions": [
+          "ACCEPT",
+          "REJECT",
+          "ASK"
+        ]
+      }
+    },
+    {
+      "id": "chapter_08",
+      "schema_version": 1,
+      "evidence_profile": "new_capability",
+      "expect": {
+        "outcome": "Construct independent verification for the selected routing and Reservation obligations.",
+        "authority": {
+          "owner": "Verification reviewer; expectation owner for checker changes.",
+          "source": "BR-001/v1, B1-API/v1, G1 and G2 public contracts.",
+          "version": "BR-001/v1; B1-API/v1; G1/I01; RES-001/v1",
+          "status": "TEACHING_CONTRACT"
+        },
+        "acceptance": [
+          "Expected results have an independent source; candidate identity and reached stage recorded; valid control passes and deliberate fault reaches the intended assertion."
+        ]
+      },
+      "delegate": {
+        "editable_paths": [
+          "verification/independent_checks.py",
+          "verification/ARGUMENT.md"
+        ],
+        "protected_paths": [
+          "approved_context/",
+          "source_evidence/"
+        ],
+        "budget": {
+          "max_attempts": 2,
+          "implementation_minutes": 30,
+          "check_timeout_seconds": 30,
+          "max_external_calls": 0
+        },
+        "stop_conditions": [
+          "Required authority or source evidence is missing.",
+          "Declared budget is spent or a proposed edit crosses protected scope."
+        ]
+      },
+      "observe": {
+        "checks": [
+          {
+            "id": "chapter_08.review",
+            "stage": "contract",
+            "method": "review",
+            "argv": [],
+            "expected": "Oracle review; equality and nonfinite cases; controlled fault with positive control; relevant state and consumer checks."
+          }
+        ],
+        "receipt_fields": [
+          "candidate_identity",
+          "authority_version",
+          "actual_checks",
+          "reached_stage",
+          "remaining_question"
+        ]
+      },
+      "decide": {
+        "owner": "Verification reviewer; expectation owner for checker changes.",
+        "object": "The verification argument and its concrete receipts.",
+        "allowed_decisions": [
+          "ACCEPT",
+          "REJECT",
+          "ASK"
+        ]
+      }
+    },
+    {
+      "id": "chapter_09",
+      "schema_version": 1,
+      "evidence_profile": "persistent_effect",
+      "expect": {
+        "outcome": "Prepare an identified local demonstration archive and its recovery selection for review.",
+        "authority": {
+          "owner": "Local-demonstration release owner.",
+          "source": "Presentation owner acceptance for the stated local demonstration; selected target and release contract.",
+          "version": "Local demonstration teaching release/v1",
+          "status": "TEACHING_CONTRACT"
+        },
+        "acceptance": [
+          "Combined candidate and fresh extraction preserve view meaning; recovery preserves shared route/policy obligations."
+        ]
+      },
+      "delegate": {
+        "editable_paths": [
+          "release/REVIEW.md",
+          "release/recovery-selection.json"
+        ],
+        "protected_paths": [
+          "approved_context/",
+          "source_evidence/",
+          "retained_history/",
+          "previous_release/"
+        ],
+        "budget": {
+          "max_attempts": 2,
+          "implementation_minutes": 45,
+          "check_timeout_seconds": 30,
+          "max_external_calls": 0
+        },
+        "stop_conditions": [
+          "Required authority or source evidence is missing.",
+          "Declared budget is spent or a proposed edit crosses protected scope."
+        ]
+      },
+      "observe": {
+        "checks": [
+          {
+            "id": "chapter_09.review",
+            "stage": "contract",
+            "method": "review",
+            "argv": [],
+            "expected": "Combined contract; extracted public entry; current/previous/current selection rehearsal."
+          }
+        ],
+        "receipt_fields": [
+          "candidate_identity",
+          "authority_version",
+          "actual_checks",
+          "reached_stage",
+          "remaining_question"
+        ]
+      },
+      "decide": {
+        "owner": "Local-demonstration release owner.",
+        "object": "The exact archive, effective configuration and stated use.",
+        "allowed_decisions": [
+          "ACCEPT",
+          "REJECT",
+          "ASK"
+        ]
+      }
+    },
+    {
+      "id": "chapter_10",
+      "schema_version": 1,
+      "evidence_profile": "persistent_effect",
+      "expect": {
+        "outcome": "Activate BR-001/v2 for new decisions while preserving recorded v1 history and replay.",
+        "authority": {
+          "owner": "Policy owner and migration/release reviewer.",
+          "source": "Policy owner: BR-001/v2, 21 May 2025; ledger history contract B3.",
+          "version": "BR-001/v2; HISTORY-API/v1; MIGRATION/v1",
+          "status": "TEACHING_CONTRACT"
+        },
+        "acceptance": [
+          "Equivalent-key retry returns the saved policy/answer; conflicting payload leaves history unchanged; reevaluation uses a new linked identity."
+        ]
+      },
+      "delegate": {
+        "editable_paths": [
+          "ledger.py",
+          "migration/PLAN.md"
+        ],
+        "protected_paths": [
+          "approved_context/",
+          "source_evidence/",
+          "retained_history/",
+          "previous_release/"
+        ],
+        "budget": {
+          "max_attempts": 2,
+          "implementation_minutes": 45,
+          "check_timeout_seconds": 30,
+          "max_external_calls": 0
+        },
+        "stop_conditions": [
+          "Required authority or source evidence is missing.",
+          "Declared budget is spent or a proposed edit crosses protected scope."
+        ]
+      },
+      "observe": {
+        "checks": [
+          {
+            "id": "chapter_10.review",
+            "stage": "contract",
+            "method": "review",
+            "argv": [],
+            "expected": "Activation/restart/replay sequence; conflicting reuse; rollback after second-write failure; atomic migration refusal and positive control."
+          }
+        ],
+        "receipt_fields": [
+          "candidate_identity",
+          "authority_version",
+          "actual_checks",
+          "reached_stage",
+          "remaining_question"
+        ]
+      },
+      "decide": {
+        "owner": "Policy owner and migration/release reviewer.",
+        "object": "The migration and history-preserving ledger candidate.",
+        "allowed_decisions": [
+          "ACCEPT",
+          "REJECT",
+          "ASK"
+        ]
+      }
+    },
+    {
+      "id": "chapter_11",
+      "schema_version": 1,
+      "evidence_profile": "persistent_effect",
+      "expect": {
+        "outcome": "Diagnose the effective ledger and prepare restoration without deciding incident-history disposition.",
+        "authority": {
+          "owner": "Incident owner for restoration; business owner for reconciliation.",
+          "source": "Incident INC-017; approved policy activation and B3/B4 history contracts.",
+          "version": "INC-017; OPS-B4/v1",
+          "status": "TEACHING_CONTRACT"
+        },
+        "acceptance": [
+          "Hold code/request constant in state-selection comparison; missing-state probe creates no database; restoration preserves replay and incident history."
+        ]
+      },
+      "delegate": {
+        "editable_paths": [
+          "incident/DIAGNOSIS.md",
+          "incident/RESTORATION.md"
+        ],
+        "protected_paths": [
+          "approved_context/",
+          "source_evidence/",
+          "retained_history/",
+          "previous_release/"
+        ],
+        "budget": {
+          "max_attempts": 2,
+          "implementation_minutes": 45,
+          "check_timeout_seconds": 30,
+          "max_external_calls": 0
+        },
+        "stop_conditions": [
+          "Required authority or source evidence is missing.",
+          "Declared budget is spent or a proposed edit crosses protected scope."
+        ]
+      },
+      "observe": {
+        "checks": [
+          {
+            "id": "chapter_11.review",
+            "stage": "contract",
+            "method": "review",
+            "argv": [],
+            "expected": "Read-only known/missing ledger controls; explicit-v2 calculation; same-ledger replay; path-only comparison; restoration controls."
+          }
+        ],
+        "receipt_fields": [
+          "candidate_identity",
+          "authority_version",
+          "actual_checks",
+          "reached_stage",
+          "remaining_question"
+        ]
+      },
+      "decide": {
+        "owner": "Incident owner for restoration; business owner for reconciliation.",
+        "object": "The causal argument and bounded restoration proposal.",
+        "allowed_decisions": [
+          "ACCEPT",
+          "REJECT",
+          "ASK"
+        ]
+      }
+    },
+    {
+      "id": "chapter_12",
+      "schema_version": 1,
+      "evidence_profile": "investigation",
+      "expect": {
+        "outcome": "Run a bounded evidence-index trial with a complete cost and acceptance account.",
+        "authority": {
+          "owner": "Incident reviewer for the handoff; trial owner for keep/revise/retire.",
+          "source": "Approved teaching trial agreement in Section 12.1; accounting rule in Sections 12.5\u201312.7.",
+          "version": "Teaching trial12.1/v1; accounting12.5\u201312.7",
+          "status": "TEACHING_CONTRACT"
+        },
+        "acceptance": [
+          "Index preserves source links and gaps; every attempt counted; accepted outcome is a distinct reviewed handoff; missing observations remain missing."
+        ]
+      },
+      "delegate": {
+        "editable_paths": [
+          "trial/evidence-index.md",
+          "trial/ACCOUNT.json"
+        ],
+        "protected_paths": [
+          "approved_context/",
+          "source_evidence/"
+        ],
+        "budget": {
+          "max_attempts": 2,
+          "implementation_minutes": 30,
+          "check_timeout_seconds": 30,
+          "max_external_calls": 0
+        },
+        "stop_conditions": [
+          "Required authority or source evidence is missing.",
+          "Declared budget is spent or a proposed edit crosses protected scope."
+        ]
+      },
+      "observe": {
+        "checks": [
+          {
+            "id": "chapter_12.review",
+            "stage": "contract",
+            "method": "review",
+            "argv": [],
+            "expected": "Index fidelity review; attempt/outcome reconciliation; cost recalculation and sensitivity; human learning observations only if actually collected."
+          }
+        ],
+        "receipt_fields": [
+          "candidate_identity",
+          "authority_version",
+          "actual_checks",
+          "reached_stage",
+          "remaining_question"
+        ]
+      },
+      "decide": {
+        "owner": "Incident reviewer for the handoff; trial owner for keep/revise/retire.",
+        "object": "The index and trial decision, not an operational repair or measured learning claim.",
+        "allowed_decisions": [
+          "ACCEPT",
+          "REJECT",
+          "ASK"
+        ]
+      }
+    }
+  ]
+}

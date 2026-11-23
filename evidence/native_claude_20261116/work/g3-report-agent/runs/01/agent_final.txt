@@ -1,0 +1,17 @@
+The report contribution is implemented, and its component test passes: 3 tests, OK. That test only covers this side. It doesn't show that the report and the CLI work together.
+
+**Changed files**
+- `reservation_report.py`: `build_report(path, reservation_id)` calls `booking.get_reservation`. If that returns nothing, it returns `{"found": false, "reservation": null, "current": null}`. Otherwise it calls `booking.reservation_status` and returns the found/reservation/current shape from the contract.
+- `CONTRIBUTION_A.md` (new): the acceptance example, which I wrote before editing, plus the checks and assumptions below.
+
+**Observations**
+- The report does no SQL, initialization or mutation of its own. Both booking reads open the database read-only, so errors such as a missing database file (`sqlite3.OperationalError`) propagate. The test confirms the missing file is not created and the database bytes are unchanged.
+- The component test uses the real `booking` API on temporary SQLite files. It has no fake dependencies.
+- If a record exists but its status read returns nothing, the report raises `LookupError` instead of guessing. This isn't in the contract. It can only happen if a row is deleted between the two reads, which the contract says aren't one snapshot.
+- Running the test left untracked `__pycache__/` and `tests/__pycache__/` directories. I didn't remove them. `INTEGRATION_ROLE.json` was already untracked when I started.
+
+**Integration assumptions**
+- The CLI imports `reservation_report.build_report`. It exits 0 when `found` is true, 3 when it's false, and 2 on storage errors.
+- The operator still has to combine both contributions and check the real CLI in an extracted package: a confirmed record, after cancellation, an absent ID and missing storage.
+
+I didn't commit, touch `reservation_cli.py` or `CONTRIBUTION_B.md`, or inspect another worktree.

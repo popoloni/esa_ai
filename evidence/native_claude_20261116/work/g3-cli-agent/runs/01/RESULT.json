@@ -1,0 +1,550 @@
+{
+  "at_utc": "2026-11-16T22:20:08.742643+00:00",
+  "client": "claude",
+  "exit_code": 0,
+  "timed_out": false,
+  "permission_denials": [],
+  "reported_cost_usd": [
+    0.07167989999999999
+  ],
+  "elapsed_seconds": 22.872675,
+  "event_count": 489,
+  "malformed_native_event_lines": [],
+  "changed_files": [
+    "CONTRIBUTION_B.md",
+    "reservation_cli.py"
+  ],
+  "scope_changes_requiring_review": [],
+  "before": {
+    "AGENTS.md": "00d6ed7fccaa9fea5a7a297cc59987aa17705bd854c6c49851018d3938701145",
+    "DOSSIER.md": "e49251a574a1de4d3761f17337d7fdd9aca4b3190d7dd4a9f366e2b0ebb1ef86",
+    "INTEGRATION_ROLE.json": "dc0d0ab551d1f718c0fe657c5249c186a757eb6fa4d061e68d6d9525b2e46ae5",
+    "READER_ENTRY.json": "626735f378982cb5df108e775d6ab02522876e91d0d7cfc5602256d059b0a091",
+    "booking.py": "7b02037f25564beb431bd1deeaa70da7df845ebc71426b99b882a855193b27a6",
+    "docs/INTEGRATION-G3.md": "86e17d09c9a012559ae7502343cbc9181fa08477cc00c2cacacb55dd49cb0a54",
+    "docs/contract.md": "bb12ae4381e7fec5bb982de67573852c5e7f63d4736a10977d492c3be38f1dce",
+    "legacy_booking.py": "81df006d0653a44260b03425294e8542effe0263c8592a7743e50e14bddcdef6",
+    "prior/booking.py": "aa54ad117c2f3aac2d9d497db3b9457bed1562d742b4b9e9009a438e1929c20c",
+    "prior/parent-check-artifacts/DEMONSTRATION.json": "d034dcb2b27edf013ee69ec3b096afe2209d19eb2dece27773585bf696e05ad9",
+    "prior/parent-check-artifacts/continuation.json": "56ef61ac51beb004496f365a9c9d096a88f51a9d540a19f44d5234cfaac2008a",
+    "prior/parent-check-artifacts/reservations.sqlite": "520163ab69f2e45f8362197c66672bc6b4097e63c0b0b600d39d3442484f98bc",
+    "prior/parent-entry.json": "2f8deb16d11e5c724bda9f7968b7c85d7f67a502108c00fe95c905e84abb033e",
+    "prior/parent-handoff.json": "8e14ef3d76ba047c76c6dafdac30b33b89cc8182082dc3e4cea752df38975a5b",
+    "reservation_cli.py": "6585483249878d6e3ea1f6bbff9be208dfb94022ad883f5a11ffdf90faa85054",
+    "reservation_report.py": "f70238a1cf5215bc0639b49048e4ce9cf1244f3fcae725d8967a912243e41ae2",
+    "tests/test_g3.py": "bdaa37d91057f2e85692290f91ea3208d109e40c3996156db129977754b8bf6d",
+    "tests/test_integration_a.py": "b729c29e069f2c79629bdadd5291baec5ec0a670204e07f8a55952116ca151a7",
+    "tests/test_integration_b.py": "de80a957daf0cd0a60a26f2a5284677cb5ba338497841cccbe9b7f0118068165"
+  },
+  "after": {
+    "AGENTS.md": "00d6ed7fccaa9fea5a7a297cc59987aa17705bd854c6c49851018d3938701145",
+    "CONTRIBUTION_B.md": "aae687257a5014f8c01d4640e682854be6c6c1ee88a10a451e7a4d2f6f8b32f9",
+    "DOSSIER.md": "e49251a574a1de4d3761f17337d7fdd9aca4b3190d7dd4a9f366e2b0ebb1ef86",
+    "INTEGRATION_ROLE.json": "dc0d0ab551d1f718c0fe657c5249c186a757eb6fa4d061e68d6d9525b2e46ae5",
+    "READER_ENTRY.json": "626735f378982cb5df108e775d6ab02522876e91d0d7cfc5602256d059b0a091",
+    "booking.py": "7b02037f25564beb431bd1deeaa70da7df845ebc71426b99b882a855193b27a6",
+    "docs/INTEGRATION-G3.md": "86e17d09c9a012559ae7502343cbc9181fa08477cc00c2cacacb55dd49cb0a54",
+    "docs/contract.md": "bb12ae4381e7fec5bb982de67573852c5e7f63d4736a10977d492c3be38f1dce",
+    "legacy_booking.py": "81df006d0653a44260b03425294e8542effe0263c8592a7743e50e14bddcdef6",
+    "prior/booking.py": "aa54ad117c2f3aac2d9d497db3b9457bed1562d742b4b9e9009a438e1929c20c",
+    "prior/parent-check-artifacts/DEMONSTRATION.json": "d034dcb2b27edf013ee69ec3b096afe2209d19eb2dece27773585bf696e05ad9",
+    "prior/parent-check-artifacts/continuation.json": "56ef61ac51beb004496f365a9c9d096a88f51a9d540a19f44d5234cfaac2008a",
+    "prior/parent-check-artifacts/reservations.sqlite": "520163ab69f2e45f8362197c66672bc6b4097e63c0b0b600d39d3442484f98bc",
+    "prior/parent-entry.json": "2f8deb16d11e5c724bda9f7968b7c85d7f67a502108c00fe95c905e84abb033e",
+    "prior/parent-handoff.json": "8e14ef3d76ba047c76c6dafdac30b33b89cc8182082dc3e4cea752df38975a5b",
+    "reservation_cli.py": "3d9d266cb8c8bf64aae77e096a5daaaf31e4fe7f476433ab8a8faaec135676a4",
+    "reservation_report.py": "f70238a1cf5215bc0639b49048e4ce9cf1244f3fcae725d8967a912243e41ae2",
+    "tests/test_g3.py": "bdaa37d91057f2e85692290f91ea3208d109e40c3996156db129977754b8bf6d",
+    "tests/test_integration_a.py": "b729c29e069f2c79629bdadd5291baec5ec0a670204e07f8a55952116ca151a7",
+    "tests/test_integration_b.py": "de80a957daf0cd0a60a26f2a5284677cb5ba338497841cccbe9b7f0118068165"
+  },
+  "thread_ids": [
+    "fc2cf8ae-1640-49fb-ad6a-d4c6abf17c97"
+  ],
+  "usage_events": [
+    {
+      "duration_api_ms": 21829,
+      "stop_reason": "end_turn",
+      "session_id": "fc2cf8ae-1640-49fb-ad6a-d4c6abf17c97",
+      "total_cost_usd": 0.07167989999999999,
+      "usage": {
+        "input_tokens": 10,
+        "cache_creation_input_tokens": 9441,
+        "cache_read_input_tokens": 56759,
+        "output_tokens": 2822,
+        "output_tokens_details": {
+          "thinking_tokens": 319
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 9441,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 712,
+            "cache_read_input_tokens": 15457,
+            "cache_creation_input_tokens": 163,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 163
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard",
+        "fallback_credit": null
+      },
+      "modelUsage": {
+        "claude-sonnet-5-5": {
+          "inputTokens": 10,
+          "outputTokens": 2822,
+          "cacheReadInputTokens": 56759,
+          "cacheCreationInputTokens": 9441,
+          "webSearchRequests": 0,
+          "costUSD": 0.07167989999999999,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 64000,
+          "thinkingTokens": 319,
+          "cacheCreationEphemeral5mInputTokens": 0,
+          "cacheCreationEphemeral1hInputTokens": 9441,
+          "canonicalModel": "claude-sonnet-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "permission_denials": [],
+      "terminal_reason": "completed",
+      "fast_mode_state": "off",
+      "fast_mode_disabled_reason": "sdk_opt_in_required",
+      "subagent_stats": {
+        "spawned": 0,
+        "requested": {
+          "background": 0,
+          "foreground": 0,
+          "unset": 0
+        },
+        "started_in_background": 0,
+        "max_depth": 0,
+        "spawned_by_subagents": 0,
+        "completed": 0,
+        "failed": 0,
+        "killed": {
+          "parent": 0,
+          "user": 0,
+          "system": 0
+        },
+        "refused": {
+          "depth_limit": 0,
+          "concurrency_limit": 0,
+          "budget": 0
+        },
+        "by_type": {}
+      },
+      "safety_stops": 0,
+      "is_error": false,
+      "num_turns": 5,
+      "subtype": "success",
+      "api_error_status": null,
+      "result": "I implemented the CLI, and the three `test_integration_b.py` tests pass (`python -m unittest tests.test_integration_b`). That test file patches `build_report` with a fake provider. It never touches the real report module or `booking.py`, so it says nothing about the combined behaviour.\n\n**Changed files**\n- `reservation_cli.py` is the implementation.\n- `CONTRIBUTION_B.md` is new. It holds the acceptance example I wrote before editing, the design, and the integration assumptions.\n- `INTEGRATION_ROLE.json` was already untracked when I started, and I did not touch it.\n- I removed the `__pycache__` directories my test run created. I did not commit.\n\n**What it does**\n- **Arguments:** `main(argv=None)` takes `inspect --database PATH --reservation-id N`, where N must be a positive integer.\n- **Report call:** it calls `reservation_report.build_report(path, id)` through the module attribute and prints one JSON object. It writes nothing else to stdout.\n- **Exit codes:** 0 for found and 3 for absent. Bad or missing arguments, including 0, -1 and abc, exit 2 with empty stdout.\n- **Storage errors:** `sqlite3.Error` and `OSError` print one line to stderr and exit 2. Other exceptions propagate.\n- **Entry point:** importing the module runs nothing, and `__main__` exits with `main`'s status.\n- **Unchanged:** it does no SQL, storage initialisation, report logic or embedded data. `booking.py`, the A stub, the docs and the tests are untouched.\n\n**Assumptions for the operator**\n- A's `build_report` returns a JSON-serialisable dict with a boolean `found`.\n- A lets a missing database surface as `sqlite3.OperationalError`, which is what booking's read-only open raises. If A raises another type for missing storage, such as `ValueError`, the CLI shows a traceback instead of exiting 2.\n- Still unchecked, and left to the operator in the extracted package: the real CLI on a confirmed record, after cancellation, on an absent ID, and on missing storage.",
+      "ttft_ms": 1416,
+      "type": "result",
+      "duration_ms": 22283,
+      "uuid": "3c425e07-9d85-4cbd-85f4-e3b56022ea6f",
+      "ttft_stream_ms": 986,
+      "time_to_request_ms": 168,
+      "time_to_request_phases_ms": {
+        "other": 6,
+        "system_prompt": 98,
+        "resume_other": 1,
+        "process_user_input": 4,
+        "input_attachments": 12,
+        "input_hooks": 3,
+        "conversation_append": 1,
+        "tool_pool_refresh": 0,
+        "init_message": 4,
+        "init_frame_send": 1,
+        "engine_pickup": 1,
+        "loop_entry": 7,
+        "message_prep": 2,
+        "model_config_wait": 1,
+        "autocompact": 2,
+        "request_announcements": 8,
+        "query_setup": 1,
+        "model_gates": 0,
+        "tool_schema_build": 6,
+        "message_normalization": 2,
+        "client_creation": 3,
+        "request_build": 5
+      },
+      "turn_start_resume_kind": "none",
+      "process_turn_index": 0,
+      "time_to_request_loop_lag_ms": 67,
+      "time_to_request_cpu_ms": 124,
+      "time_to_request_major_faults": 0,
+      "process_rss_mib_turn_start": 207,
+      "process_anon_mib_turn_start": 131,
+      "process_rss_mib_result": 220,
+      "process_anon_mib_result": 133,
+      "process_peak_rss_mib": 234,
+      "process_cpu_ms_turn": 1064,
+      "process_wall_ms_turn": 22282,
+      "tool_pool_build_count": 2,
+      "tool_pool_build_lapsed_count": 0,
+      "tool_pool_moved_at_lapse_count": 0,
+      "tool_pool_limit_ms": 30000,
+      "process_cpu_ms_streaming": 516,
+      "process_wall_ms_streaming": 12420,
+      "main_stream_count": 5,
+      "main_stream_event_count": 461,
+      "main_stream_chunk_count": 84,
+      "process_turn_states": {
+        "main_stream": {
+          "cpu_ms": 516,
+          "wall_ms": 12420,
+          "entries": 5
+        },
+        "tool": {
+          "cpu_ms": 109,
+          "wall_ms": 241,
+          "entries": 4
+        },
+        "first_event_wait": {
+          "cpu_ms": 246,
+          "wall_ms": 9387,
+          "entries": 5
+        },
+        "before_first_request": {
+          "cpu_ms": 124,
+          "wall_ms": 168,
+          "entries": 1
+        },
+        "between_requests": {
+          "cpu_ms": 58,
+          "wall_ms": 55,
+          "entries": 4
+        },
+        "after_last_request": {
+          "cpu_ms": 11,
+          "wall_ms": 11,
+          "entries": 1
+        }
+      },
+      "input_attachments_detail": {
+        "slowest_producer": "artifact_opening_prefetch",
+        "slowest_producer_ms": 2,
+        "cpu_ms": 11,
+        "major_faults": 0,
+        "setup_ms": 0,
+        "prompt_producers_ms": 0,
+        "ambient_start_ms": 6,
+        "ambient_wait_ms": 1,
+        "render_ms": 1,
+        "producers": 41,
+        "token_counts": 0
+      },
+      "tool_schema_build_detail": {
+        "betas_ms": 0,
+        "waits_ms": 1,
+        "placement_ms": 0,
+        "render_ms": 5,
+        "after_ms": 0,
+        "other_ms": 0,
+        "tools": 6,
+        "new_schemas": 6
+      },
+      "message_normalization_detail": {
+        "before_ms": 0,
+        "normalize_ms": 1,
+        "images_ms": 0,
+        "post_process_ms": 1,
+        "after_ms": 0,
+        "other_ms": 0,
+        "messages": 10,
+        "wire_messages": 2
+      },
+      "request_build_detail": {
+        "records_ms": 0,
+        "system_ms": 1,
+        "headers_ms": 1,
+        "cache_break_record_ms": 1,
+        "plans_ms": 0,
+        "retry_setup_ms": 1,
+        "sent_build_ms": 1,
+        "record_attempt_ms": 0,
+        "other_ms": 0,
+        "sent_build_safety_context_ms": 0,
+        "sent_build_cache_breakpoints_ms": 0,
+        "sent_build_surrogate_scan_ms": 0
+      },
+      "first_content_frame_ms": 987,
+      "time_to_request_from_spawn_ms": 920410,
+      "warm_spare_claimed": false,
+      "flag_fetch_kick": "started_in_init_warm",
+      "time_origin_ms": 1794867585873.1697,
+      "queued_turn_count": 0,
+      "result_index": 0,
+      "model_usage_since_last_result": {
+        "claude-sonnet-5-5": {
+          "inputTokens": 10,
+          "outputTokens": 2822,
+          "cacheReadInputTokens": 56759,
+          "cacheCreationInputTokens": 9441,
+          "webSearchRequests": 0,
+          "costUSD": 0.07167989999999999,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 64000,
+          "thinkingTokens": 319,
+          "cacheCreationEphemeral5mInputTokens": 0,
+          "cacheCreationEphemeral1hInputTokens": 9441,
+          "canonicalModel": "claude-sonnet-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "process_start_tuning": 0
+    }
+  ],
+  "native_observations": {
+    "completed_turn_lines": [
+      488
+    ],
+    "failed_turn_or_error_lines": [],
+    "agent_message_lines": [
+      483
+    ],
+    "tool_operation_lines": [
+      18,
+      39,
+      318,
+      337
+    ],
+    "model_observations": [
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 3,
+        "field": "model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 18,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 39,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 54,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 318,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 328,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 337,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 483,
+        "field": "message.model"
+      }
+    ],
+    "usage_observations": [
+      {
+        "event_line": 18,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 3757,
+          "cache_read_input_tokens": 6179,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 3757
+          },
+          "output_tokens": 16,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 39,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1738,
+          "cache_read_input_tokens": 9936,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1738
+          },
+          "output_tokens": 16,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 54,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1839,
+          "cache_read_input_tokens": 11674,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1839
+          },
+          "output_tokens": 6,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 318,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1839,
+          "cache_read_input_tokens": 11674,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1839
+          },
+          "output_tokens": 6,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 328,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1944,
+          "cache_read_input_tokens": 13513,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1944
+          },
+          "output_tokens": 10,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 337,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1944,
+          "cache_read_input_tokens": 13513,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1944
+          },
+          "output_tokens": 10,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 483,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 163,
+          "cache_read_input_tokens": 15457,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 163
+          },
+          "output_tokens": 712,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 488,
+        "field": "usage",
+        "value": {
+          "input_tokens": 10,
+          "cache_creation_input_tokens": 9441,
+          "cache_read_input_tokens": 56759,
+          "output_tokens": 2822,
+          "output_tokens_details": {
+            "thinking_tokens": 319
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 9441,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "global",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 712,
+              "cache_read_input_tokens": 15457,
+              "cache_creation_input_tokens": 163,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 163
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "fallback_credit": null
+        }
+      }
+    ],
+    "permission_denials": [],
+    "reported_cost_observations": [
+      {
+        "event_line": 488,
+        "field": "total_cost_usd",
+        "value": 0.07167989999999999
+      }
+    ],
+    "thread_ids": [
+      "fc2cf8ae-1640-49fb-ad6a-d4c6abf17c97"
+    ]
+  },
+  "requested_model": "claude-sonnet-5-5",
+  "observed_model_ids": [
+    "claude-sonnet-5-5"
+  ],
+  "model_identity_observed": true,
+  "native_turn_completed": true,
+  "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+  "acceptance": "NOT_ESTABLISHED",
+  "scope_note": "Native events retained as emitted; absence of usage is unknown, not zero."
+}

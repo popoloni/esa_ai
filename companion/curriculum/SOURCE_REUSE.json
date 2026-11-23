@@ -1,0 +1,126 @@
+{
+  "B3": {
+    "source": "companion/archived/source_policy_history.py",
+    "source_sha256": "ffb65ac016bc797ad850a5e00cd244c005ce8f3aedb1ee519d1eb4cf59461577",
+    "adaptation": "Import treasury.routing becomes protected local routing; numeric regexes are explicitly restricted to ASCII for HISTORY-API/v1. Original corpus is preserved. PolicyStore and migration algorithms reused. Review 3 N2 wraps source docstrings, formats SQL as intact triple-quoted blocks and reflows displayed function statements. The appended eight contextual replacements reconstruct those exact source bytes; SQL token streams and the other executable AST remain unchanged.",
+    "original_baseline_path": "companion_materials/base_13a1182/reader_side/reference_solution/ch11/policy_history.py",
+    "baseline_archive": "ESA_d16_4_Final_Current_and_Packt_EN_IT_20261101.zip",
+    "adaptation_sha256": "bc17f98582a512a2760795f012220ea29e5e7b79f355aed30cdaea493aa7eb16",
+    "transformations": [
+      {
+        "find": "from treasury.routing import assess",
+        "replace": "from routing import assess"
+      },
+      {
+        "find": "\\d",
+        "replace": "[0-9]"
+      },
+      {
+        "find": "\"\"\"Versioned synthetic routing history; never a payment or release authority.\n\nThis NEW persistence API accepts finite decimal strings with at most two decimal\nplaces. The inherited treasury.routing.assess API and its input semantics stay\nunchanged. Retry identity excludes the currently active policy.\n\"\"\"\nfrom contextlib import contextmanager\nfrom decimal import Decimal\n",
+        "replace": "\"\"\"Versioned synthetic routing history; never a payment or\nrelease authority.\n\nThis NEW persistence API accepts finite decimal strings\nwith at most two decimal places. The inherited\ntreasury.routing.assess API and its input semantics stay\nunchanged. Retry identity excludes the currently active\npolicy.\n\"\"\"\nfrom contextlib import contextmanager\nfrom decimal import Decimal\n",
+        "reason": "Review 3 N2: Wrap the module docstring in its executable source; wording and meaning retained.",
+        "expected_occurrences": 1,
+        "review2_line_span": [
+          1,
+          8
+        ],
+        "find_sha256": "8261ea2496d49bb4317f20c9ca14cbdb8033151d51b097186706177bc773a6ca",
+        "replace_sha256": "e36aab7398afcf660b208b910e4b4b76a6f245464710a55e9364b339933f39c5"
+      },
+      {
+        "find": "def _schema(conn):\n    # execute(), not executescript(): DDL stays in the caller's transaction.\n    statements = [\n        \"CREATE TABLE policy_versions(version TEXT PRIMARY KEY, policy_json TEXT NOT NULL, policy_sha256 TEXT NOT NULL)\",\n        \"CREATE TABLE settings(name TEXT PRIMARY KEY, value TEXT NOT NULL)\",\n        \"\"\"CREATE TABLE decisions(\n          request_key TEXT PRIMARY KEY, payload_json TEXT NOT NULL,\n          payload_sha256 TEXT NOT NULL, request_fingerprint TEXT NOT NULL,\n          policy_version TEXT NOT NULL REFERENCES policy_versions(version),\n          policy_json TEXT NOT NULL, policy_sha256 TEXT NOT NULL,\n          decision_json TEXT NOT NULL, decision_sha256 TEXT NOT NULL,\n          decision_id TEXT NOT NULL UNIQUE, parent_key TEXT REFERENCES decisions(request_key))\"\"\",\n        \"\"\"CREATE TABLE audit_events(\n          event_id INTEGER PRIMARY KEY AUTOINCREMENT, event_type TEXT NOT NULL,\n          request_key TEXT, evidence_json TEXT NOT NULL)\"\"\",\n    ]\n    for statement in statements:\n        conn.execute(statement)\n",
+        "replace": "def _schema(conn):\n    # execute(), not executescript(): DDL stays in the caller's transaction.\n    statements = [\n        \"\"\"\n            CREATE TABLE policy_versions ( version TEXT PRIMARY KEY\n            , policy_json TEXT NOT NULL , policy_sha256 TEXT NOT\n            NULL )\n        \"\"\",\n        \"\"\"\n            CREATE TABLE settings ( name TEXT PRIMARY KEY , value\n            TEXT NOT NULL )\n        \"\"\",\n        \"\"\"\n            CREATE TABLE decisions ( request_key TEXT PRIMARY KEY ,\n            payload_json TEXT NOT NULL , payload_sha256 TEXT NOT\n            NULL , request_fingerprint TEXT NOT NULL ,\n            policy_version TEXT NOT NULL REFERENCES policy_versions\n            ( version ) , policy_json TEXT NOT NULL , policy_sha256\n            TEXT NOT NULL , decision_json TEXT NOT NULL ,\n            decision_sha256 TEXT NOT NULL , decision_id TEXT NOT\n            NULL UNIQUE , parent_key TEXT REFERENCES decisions (\n            request_key ) )\n        \"\"\",\n        \"\"\"\n            CREATE TABLE audit_events ( event_id INTEGER PRIMARY KEY\n            AUTOINCREMENT , event_type TEXT NOT NULL , request_key\n            TEXT , evidence_json TEXT NOT NULL )\n        \"\"\",\n    ]\n    for statement in statements:\n        conn.execute(statement)\n",
+        "reason": "Review 3 N2: Render schema DDL as readable triple-quoted SQL blocks; SQL token sequence retained.",
+        "expected_occurrences": 1,
+        "review2_line_span": [
+          107,
+          124
+        ],
+        "find_sha256": "e70df1b69d5fcf7a3f47da4070c30bdf62df4a730a725278f1d3412d183f89b4",
+        "replace_sha256": "34f65a3919aba573b34d6cf2902cd6eea197b8b70f4ef9e3b9d0f0cdf91ccd99"
+      },
+      {
+        "find": "    for version, policy in sorted(catalog.items()):\n        raw = canonical(policy)\n        conn.execute(\"INSERT INTO policy_versions VALUES(?,?,?)\", (version, raw, digest(raw)))\n    conn.execute(\"INSERT INTO settings VALUES('active_policy','BR-001/v1')\")\n    conn.execute(f\"PRAGMA application_id={APPLICATION_ID}\")\n    conn.execute(f\"PRAGMA user_version={SCHEMA_VERSION}\")\n\n",
+        "replace": "    for version, policy in sorted(catalog.items()):\n        raw = canonical(policy)\n        conn.execute(\"INSERT INTO policy_versions VALUES(?,?,?)\", (version, raw, digest(raw)))\n    conn.execute(\"\"\"\n        INSERT INTO settings VALUES ( 'active_policy' , 'BR-001/v1'\n        )\n    \"\"\")\n    conn.execute(f\"PRAGMA application_id={APPLICATION_ID}\")\n    conn.execute(f\"PRAGMA user_version={SCHEMA_VERSION}\")\n\n",
+        "reason": "Review 3 N2: Render the initial active-policy INSERT as a triple-quoted SQL block; SQL token sequence retained.",
+        "expected_occurrences": 1,
+        "review2_line_span": [
+          133,
+          139
+        ],
+        "find_sha256": "2eace6d826fe5fbfcd4cda8b4951739265a7c6fcb895f639799df41f5f322403",
+        "replace_sha256": "d1b2d4fd2d6422f97143f252a1ddd76d40830b32e7c62a9f2deae76104fe631a"
+      },
+      {
+        "find": "            old = self.active_policy()\n            if old != version:\n                self.conn.execute(\"UPDATE settings SET value=? WHERE name='active_policy'\", (version,))\n                self.conn.execute(\"INSERT INTO audit_events(event_type,evidence_json) VALUES('POLICY_ACTIVATED',?)\",\n                                  (canonical({\"from\": old, \"to\": version}),))\n        return {\"active_policy\": version, \"payment_authorized\": False}\n\n",
+        "replace": "            old = self.active_policy()\n            if old != version:\n                self.conn.execute(\"UPDATE settings SET value=? WHERE name='active_policy'\", (version,))\n                self.conn.execute(\"\"\"\n            INSERT INTO audit_events ( event_type , evidence_json )\n            VALUES ( 'POLICY_ACTIVATED' , ? )\n                \"\"\",\n                                  (canonical({\"from\": old, \"to\": version}),))\n        return {\"active_policy\": version, \"payment_authorized\": False}\n\n",
+        "reason": "Review 3 N2: Render the policy-activation audit INSERT as a triple-quoted SQL block; SQL token sequence retained.",
+        "expected_occurrences": 1,
+        "review2_line_span": [
+          214,
+          220
+        ],
+        "find_sha256": "c3b6cd62bfd59c6bd9de51553e1ca878e8474aeea5c6af314199b84f3186560a",
+        "replace_sha256": "5267ca66a2814e25594b6838f679735da85abe97a368f21906c6224232ccc6c5"
+      },
+      {
+        "find": "                \"policy\": json.loads(row[\"policy_json\"]), \"decision\": json.loads(row[\"decision_json\"])}\n\n    def replay(self, key):\n        \"\"\"Return the exact stored response; no policy recomputation or writes.\"\"\"\n        valid_key(key)\n        return self._record(self.conn.execute(\"SELECT * FROM decisions WHERE request_key=?\", (key,)).fetchone())\n\n    def recompute(self, key):\n        \"\"\"Recalculate using the recorded snapshot; do not create a new decision.\"\"\"\n        record = self.replay(key)\n        calculated = outcome(record[\"payload\"], record[\"policy\"])\n        if calculated != record[\"decision\"]:\n",
+        "replace": "                \"policy\": json.loads(row[\"policy_json\"]), \"decision\": json.loads(row[\"decision_json\"])}\n\n    def replay(self, key):\n        \"\"\"Return the exact stored response; no policy\n        recomputation or writes.\n        \"\"\"\n        valid_key(key)\n        return self._record(self.conn.execute(\"SELECT * FROM decisions WHERE request_key=?\", (key,)).fetchone())\n\n    def recompute(self, key):\n        \"\"\"Recalculate using the recorded snapshot; do not\n        create a new decision.\n        \"\"\"\n        record = self.replay(key)\n        calculated = outcome(record[\"payload\"], record[\"policy\"])\n        if calculated != record[\"decision\"]:\n",
+        "reason": "Review 3 N2: Wrap the replay and recompute docstrings in their executable source.",
+        "expected_occurrences": 1,
+        "review2_line_span": [
+          235,
+          246
+        ],
+        "find_sha256": "e990737acb0e70b12f35e2ab6d850d7d8be7cd7ff22ff6764af8a39c40e0031f",
+        "replace_sha256": "927b340284669229d78f0b63143335fbe7899d28a62dc9cd234739ee58db1e35"
+      },
+      {
+        "find": "        valid_key(key)\n        fingerprint = digest(canonical_payload(payload))\n        if version is not None:\n            self._policy(version)  # Explicit caller intent is not an ambient default.\n        existing = self.conn.execute(\"SELECT * FROM decisions WHERE request_key=?\", (key,)).fetchone()\n        if existing is not None:\n            record = self._record(existing)\n            if (record[\"request_fingerprint\"] != fingerprint or record[\"parent_key\"] != parent\n                    or (version is not None and version != record[\"policy_version\"])):\n                raise HistoryError(\"IDEMPOTENCY_CONFLICT\")\n            return {\"status\": \"REPLAYED\", \"record\": record}\n        policy = self._policy(version or self.active_policy())\n        identity = _insert(self.conn, key, canonical(payload), canonical(policy),\n                           canonical(outcome(payload, policy)), parent)\n        self.conn.execute(\"INSERT INTO audit_events(event_type,request_key,evidence_json) VALUES('DECISION_RECORDED',?,?)\",\n                          (key, canonical({\"decision_id\": identity, \"parent_key\": parent})))\n        return {\"status\": \"CREATED\", \"record\": self.replay(key)}\n\n    def decide(self, key, payload, policy_version=None):\n",
+        "replace": "        valid_key(key)\n        fingerprint = digest(canonical_payload(payload))\n        if version is not None:\n            # Explicit caller intent is separate from the ambient policy.\n            self._policy(version)\n        existing = self.conn.execute(\n            \"SELECT * FROM decisions WHERE request_key=?\", (key,)\n        ).fetchone()\n        if existing is not None:\n            record = self._record(existing)\n            if (\n                record[\"request_fingerprint\"] != fingerprint\n                or record[\"parent_key\"] != parent\n                or (version is not None\n                    and version != record[\"policy_version\"])\n            ):\n                raise HistoryError(\"IDEMPOTENCY_CONFLICT\")\n            return {\"status\": \"REPLAYED\", \"record\": record}\n        policy = self._policy(version or self.active_policy())\n        identity = _insert(\n            self.conn, key, canonical(payload), canonical(policy),\n            canonical(outcome(payload, policy)), parent\n        )\n        self.conn.execute(\"\"\"\n            INSERT INTO audit_events (\n                event_type, request_key, evidence_json\n            ) VALUES ('DECISION_RECORDED',?,?)\n        \"\"\", (key, canonical({\n            \"decision_id\": identity, \"parent_key\": parent})))\n        return {\"status\": \"CREATED\", \"record\": self.replay(key)}\n\n    def decide(self, key, payload, policy_version=None):\n",
+        "reason": "Review 3 N2: Lay out PolicyStore._decide with conventional continuation indentation and triple-quoted audit SQL; clarify the existing caller-intent comment.",
+        "expected_occurrences": 1,
+        "review2_line_span": [
+          252,
+          270
+        ],
+        "find_sha256": "3d0e4032e62760b72d9994a5441d79cebc935910062196e4ad04fbc6518e919a",
+        "replace_sha256": "3d426f08c90319a28423500416ba45c65a2fb1ad068f975cb0a244ea897f54ec"
+      },
+      {
+        "find": "        with transaction(self.conn):\n            old = self.replay(old_key)\n            self._policy(policy_version)\n            return self._decide(new_key, old[\"payload\"], policy_version, old_key)\n\n\ndef migrate_legacy(path, catalog, provenance):\n    \"\"\"Atomic conversion of an explicitly evidenced synthetic v1 fixture.\n\n    Provenance is a trusted owner-supplied input to this reusable API; the owner\n    CLI independently binds it to a protected synthetic fixture. This is not\n    authentication of real-world historical records.\n    Missing provenance, policy or outcome is a stop condition, never a default\n    to today's policy. The original legacy_decisions table remains untouched.\n    \"\"\"\n    catalog = checked_catalog(catalog)\n    conn = _connect(path)\n",
+        "replace": "        with transaction(self.conn):\n            old = self.replay(old_key)\n            self._policy(policy_version)\n            return self._decide(\n                new_key, old[\"payload\"], policy_version, old_key)\n\n\ndef migrate_legacy(path, catalog, provenance):\n    \"\"\"Atomic conversion of an explicitly evidenced synthetic\n    v1 fixture.\n\n    Provenance is a trusted owner-supplied input to this\n    reusable API; the owner CLI independently binds it to\n    a protected synthetic fixture. This is not\n    authentication of real-world historical records.\n    Missing provenance, policy or outcome is a stop\n    condition, never a default to today's policy. The\n    original legacy_decisions table remains untouched.\n    \"\"\"\n    catalog = checked_catalog(catalog)\n    conn = _connect(path)\n",
+        "reason": "Review 3 N2: Lay out the reevaluate call and wrap the migrate_legacy docstring.",
+        "expected_occurrences": 1,
+        "review2_line_span": [
+          277,
+          293
+        ],
+        "find_sha256": "d46f21a1a32c05f07fe85626acb491db3074af3ad0a7a362a504e9f1be74bd54",
+        "replace_sha256": "95359ac8a41f30cd595f0d3127a69f58f558e499766845f05b86b5e55f836cf7"
+      },
+      {
+        "find": "            _install_catalog(conn, catalog)\n            for row in validated:\n                identity = _insert(conn, row[\"request_key\"], row[\"payload_json\"], row[\"policy_json\"], row[\"decision_json\"])\n                conn.execute(\"INSERT INTO audit_events(event_type,request_key,evidence_json) VALUES('LEGACY_IMPORTED',?,?)\",\n                             (row[\"request_key\"], canonical({\"decision_id\": identity, \"source_id\": provenance.get(\"source_id\"),\n                                                            \"rows_sha256\": provenance[\"rows_sha256\"]})))\n            for action in (\"UPDATE\", \"DELETE\"):\n",
+        "replace": "            _install_catalog(conn, catalog)\n            for row in validated:\n                identity = _insert(conn, row[\"request_key\"], row[\"payload_json\"], row[\"policy_json\"], row[\"decision_json\"])\n                conn.execute(\"\"\"\n            INSERT INTO audit_events ( event_type , request_key ,\n            evidence_json ) VALUES ( 'LEGACY_IMPORTED' , ? , ? )\n                \"\"\",\n                             (row[\"request_key\"], canonical({\"decision_id\": identity, \"source_id\": provenance.get(\"source_id\"),\n                                                            \"rows_sha256\": provenance[\"rows_sha256\"]})))\n            for action in (\"UPDATE\", \"DELETE\"):\n",
+        "reason": "Review 3 N2: Render the legacy-import audit INSERT as a triple-quoted SQL block; SQL token sequence retained.",
+        "expected_occurrences": 1,
+        "review2_line_span": [
+          317,
+          323
+        ],
+        "find_sha256": "cef7238aad159073685f83297da3f92835e387058579a2ca4b0db9c35383e831",
+        "replace_sha256": "fe823b9f2a7693b8750e1001d5dfbe9a505036bb5c3ab90a8faa7da4b1fef347"
+      }
+    ],
+    "exact_transformation_verified": true,
+    "review2_adaptation_sha256": "8e87f6bd508a9372b40be2c004ef22b6c912830765fadac55b9896018d4799dc",
+    "review2_transformation_count": 2
+  },
+  "G2": {
+    "source": "companion/solutions/G1/booking_full.py",
+    "adaptation": "Explicit transactional migration of both supplied G1 schemas; original archived G1 tables preserved.",
+    "source_sha256": "928d6e1d40ae8e7df244d1343a4bfb87e0d9bf2b211aac514f2f66747728f2b6",
+    "review2_source_sha256": "332af0b105aa1aad5d221d4b99b5758318ff1534535cc7949585ed9ed81f11c0",
+    "source_revision_note": "Review 3 N2 source formatting; predecessor path and behavior retained."
+  }
+}

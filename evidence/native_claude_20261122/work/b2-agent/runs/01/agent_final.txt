@@ -1,0 +1,28 @@
+I implemented `evaluate_batch` in `intake.py`, and the 12 supplied tests pass. I ran `python3 -m unittest discover -s tests` once, after the implementation, and it printed `Ran 12 tests … OK`. I did not run protected acceptance, and human acceptance is still pending.
+
+**Changed files:** `intake.py` (was a `NotImplementedError` stub) and `DOSSIER.md`. I did not touch `routing.py`, the tests, `docs/`, `prior/` or `READER_ENTRY.json`.
+
+**Outcome:** `evaluate_batch` classifies requests through the B1 router with bounded calls and a receipt. `payment_authorized` is always False.
+
+**Acceptance example:** the batch is `good` and `bad`, and the provider answers `good` correctly but returns request ID `wrong` for `bad`. The expected result is a `ProviderProtocolError` with `calls == 2` and attempts `good/1/MATCH` then `bad/1/INVALID_RESPONSE`. The completed `good` record is kept. The supplied test `test_protocol_error_preserves_prior_and_invalid_attempts` covers this and passes.
+
+**Behavior implemented:**
+- Duplicate request IDs are checked across the whole batch before any call and raise `ValueError` with zero calls.
+- Invalid amounts are rejected without calling the provider.
+- Only `ProviderUnavailable` is retried.
+- Each request gets at most `max_attempts` calls and the batch at most `max_calls`. On exhaustion the request is marked `DEFERRED`.
+- A response must be a dict with exactly `request_id` and `classification`, the ID must match, and the classification must be the string `MATCH` or `REVIEW`. Otherwise it is an `INVALID_RESPONSE` attempt and a `ProviderProtocolError`.
+- Any other provider exception is recorded as `PROVIDER_ERROR` with `error_type`, counted as a call and not retried. It is re-raised as the same object.
+- Every raised exception carries `receipt`, `attempts`, `records` and `calls` snapshots.
+
+**Corrections:** none. The first full run passed, so there was nothing to explain. One earlier attempt to write the file through the shell was refused by the tool's safety check, and nothing ran. I then wrote it with the file-edit tool.
+
+**Remaining uncertainty for the owner:**
+- **Field names:** the contract does not name the record and receipt fields. I took them from the tests. For REJECTED and DEFERRED records I chose `request_id`, `status`, `route` and `reason`.
+- **Invalid bounds:** the contract does not say what to do with `max_attempts` or `max_calls` set to 0 or negative. I added no policy, so those values just produce no calls and `DEFERRED` records.
+- **Other errors:** a malformed request dict or a `TypeError` from the router also surfaces with snapshots attached. The contract does not discuss this.
+- **Exotic exceptions:** attaching the snapshots assumes the exception accepts attribute assignment. That holds for ordinary exceptions and is unverified for exotic ones.
+- **Contract limits:** there is no wall-clock bound on a blocking provider, and the snapshots are not a durable ledger.
+- **Proposals:** the task mentions three proposals to accept or reject, but none are in the supplied documents. `DOSSIER.md` says so and records only the contract's own rejections.
+
+I used 5 of the 40 tool commands.

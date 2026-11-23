@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "python3",
+    "-B",
+    "companion/memory/ledger.py",
+    "--workspace",
+    ".",
+    "--ledger",
+    "evidence/memory_lab_20261116/recorded_01/events.jsonl",
+    "propose",
+    "--record",
+    "evidence/memory_lab_20261116/recorded_01/proposals/B1-V1-EXPONENT.json"
+  ],
+  "exit": 0,
+  "expected_exit": 0,
+  "label": "propose_B1-V1-EXPONENT",
+  "origin": "AUTOMATED_LOCAL_CONTROL_NO_MODEL_OR_HUMAN",
+  "stderr": "",
+  "stdout": "{\"event_sha256\":\"f2fecf9a2c1a2a7681077ae08fb6b8f00df3d9e8716ca7841c381f4f02a1fcaf\",\"record_id\":\"B1-V1-EXPONENT\",\"record_sha256\":\"f48e303622b778e6aa39c5f699c600a4124586dd2504da15e230a4fcc9de0b3c\",\"status\":\"PROPOSED_NOT_RETRIEVABLE\"}\n"
+}

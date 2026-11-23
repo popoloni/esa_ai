@@ -1,0 +1,3 @@
+Retained candidate schema: 2
+status: Implement the approved status API
+cancel: Implement the approved cancellation API

@@ -1,0 +1,51 @@
+{
+  "task": "AP-B1-V2",
+  "event": 7,
+  "argv": [
+    "env",
+    "PYTHONPATH=src",
+    "python3",
+    "-c",
+    "from decimal import InvalidOperation, localcontext\nfrom unittest.mock import patch\nfrom treasury import routing\n\nexpected = (\"REJECTED\", \"INVALID_AMOUNT\", \"BR-001/v1\")\nwith patch.object(routing, \"Decimal\", side_effect=InvalidOperation(\"injected conversion failure\")):\n    result = routing.assess(\"4000.00\")\n    assert (result.route, result.reason, result.policy_version) == expected\nprint(\"PASS: InvalidOperation from Decimal conversion becomes INVALID_AMOUNT\")\n\nfailure = RuntimeError(\"injected conversion failure\")\nwith patch.object(routing, \"Decimal\", side_effect=failure):\n    try:\n        routing.assess(\"4000.00\")\n    except RuntimeError as actual:\n        assert actual is failure\n    else:\n        raise AssertionError(\"RuntimeError was swallowed\")\nprint(\"PASS: unexpected Decimal conversion failure propagates unchanged\")\n\nclass BrokenAmount:\n    def is_finite(self):\n        return True\n    def __le__(self, other):\n        raise failure\n\nwith patch.object(routing, \"Decimal\", return_value=BrokenAmount()):\n    try:\n        routing.assess(\"4000.00\")\n    except RuntimeError as actual:\n        assert actual is failure\n    else:\n        raise AssertionError(\"comparison RuntimeError was swallowed\")\nprint(\"PASS: unexpected numeric comparison failure propagates unchanged\")\n\nwith localcontext() as context:\n    context.prec = 1\n    for value, expected_route in (\n        (\"+4999.99\", \"STANDARD_QUEUE\"),\n        (\"5000.00\", \"HUMAN_REVIEW\"),\n        (\"+\" + \"0\" * 24 + \"4999.99\", \"STANDARD_QUEUE\"),\n        (\"+\" + \"0\" * 25 + \"4999.99\", \"REJECTED\"),\n    ):\n        assert routing.assess(value).route == expected_route, value\nprint(\"PASS: exact boundary and 32/33-character sign/point checks under precision=1\")\n"
+  ],
+  "cwd": "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B1-V2/workspace",
+  "started_at_utc": "2026-11-16T15:40:46.584476+00:00",
+  "elapsed_seconds": 0.159732,
+  "returncode": 0,
+  "timeout": false,
+  "before": {
+    "AGENTS.md": "538789285a9887bd0fffc983b7192e817680b5adfa5546791e703dc4a0b7f45c",
+    "DOSSIER.md": "dc49623c69b514a577576a2cd82e946db2c80cd9700913d10e69dd8559246bd2",
+    "READER_ENTRY.json": "6d28d305543edbf520a1a95c2c274d0453f1f2c0f0f5d270a0553d6d614eac71",
+    "docs/B1-API-v2.md": "75035676814847b356cd844300c32d5384a68327822225dbb45e92692470db06",
+    "docs/B1-API.md": "e631804217257dfd5eabf3f9a3feeca025156822acc561bab7b5ab8b722914c2",
+    "docs/BR-001.md": "b88e648e2133cc0668a68b94d8e2b905a2fe09bd76780e36e20bbe68793b991a",
+    "docs/legacy_note.json": "ed8b81d04572c5e1925faa5b7473f220e3184f27287646ed61005a146dc6a95a",
+    "docs/policy.json": "3737b95b728bea32cfc2c82c489fe12267fd3096404a44639f27eec9de88deed",
+    "src/treasury/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/treasury/routing.py": "c2b093e60d6893274701814d00c3bf63d25bfb6c2926feefb23a93941c51e4a0",
+    "tests/test_b1_v2.py": "06741c0ea68e5872f6120aa619e1ce730c44768b2d3a4fe2a385ea4e524de93b",
+    "tests/test_routing.py": "6e5aa5706dd989bdbbeec9374a84d13c41cf6f36e23a5e5d2762a3b16e551c9b",
+    "tests/test_routing_extended.py": "f797d7f08cf34e97f8d1b2f3b9dae18e5cf1aa1cafbb66334ad855c0c9fc1051"
+  },
+  "after": {
+    "AGENTS.md": "538789285a9887bd0fffc983b7192e817680b5adfa5546791e703dc4a0b7f45c",
+    "DOSSIER.md": "dc49623c69b514a577576a2cd82e946db2c80cd9700913d10e69dd8559246bd2",
+    "READER_ENTRY.json": "6d28d305543edbf520a1a95c2c274d0453f1f2c0f0f5d270a0553d6d614eac71",
+    "docs/B1-API-v2.md": "75035676814847b356cd844300c32d5384a68327822225dbb45e92692470db06",
+    "docs/B1-API.md": "e631804217257dfd5eabf3f9a3feeca025156822acc561bab7b5ab8b722914c2",
+    "docs/BR-001.md": "b88e648e2133cc0668a68b94d8e2b905a2fe09bd76780e36e20bbe68793b991a",
+    "docs/legacy_note.json": "ed8b81d04572c5e1925faa5b7473f220e3184f27287646ed61005a146dc6a95a",
+    "docs/policy.json": "3737b95b728bea32cfc2c82c489fe12267fd3096404a44639f27eec9de88deed",
+    "src/treasury/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/treasury/routing.py": "c2b093e60d6893274701814d00c3bf63d25bfb6c2926feefb23a93941c51e4a0",
+    "tests/test_b1_v2.py": "06741c0ea68e5872f6120aa619e1ce730c44768b2d3a4fe2a385ea4e524de93b",
+    "tests/test_routing.py": "6e5aa5706dd989bdbbeec9374a84d13c41cf6f36e23a5e5d2762a3b16e551c9b",
+    "tests/test_routing_extended.py": "f797d7f08cf34e97f8d1b2f3b9dae18e5cf1aa1cafbb66334ad855c0c9fc1051"
+  },
+  "changed_files": [],
+  "stdout_sha256": "81479752d989e11af77c16d0ff420da7b1ce3f5bb1a16255bdf3481d850046b7",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "recorder_sha256": "58781a554cf89bb7a5c5fbc673825901820002e6036095198a2c062aa3e0126f",
+  "scope": "Actual submitted subprocess and workspace snapshots. This recorder is not a complete native-client trace or an OS sandbox."
+}

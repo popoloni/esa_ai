@@ -1,0 +1,121 @@
+{
+  "schema": "esa-full-mission-check/v1",
+  "mission": "G3",
+  "release": "Engineering-Software-with-Agentic-AI-Review-5.2-20261117",
+  "contract": "RES-002/v1",
+  "candidate_sha256_before": "c0b3857de28f86624e329cd1dcfbc4d9c52af3691e78e84b60f66bfcfffbb887",
+  "protected_input_sha256": {
+    "docs/contract.md": "bb12ae4381e7fec5bb982de67573852c5e7f63d4736a10977d492c3be38f1dce",
+    "tests/test_g3.py": "bdaa37d91057f2e85692290f91ea3208d109e40c3996156db129977754b8bf6d",
+    "legacy_booking.py": "81df006d0653a44260b03425294e8542effe0263c8592a7743e50e14bddcdef6",
+    "prior/parent-handoff.json": "d53ace11c281ea95511c1fd44cadad3b2228cef806db1537ee43e9773574d664",
+    "prior/parent-entry.json": "38d69192231fe918dd9a420247013280af72599df0287f0bf2a2c09c3b91e4a9",
+    "prior/booking.py": "3acd48b844deab0ee87a0c7270782465ddfb533400a18ab214678ffc6a7433dd",
+    "prior/parent-check-artifacts/DEMONSTRATION.json": "5634fccf839b61821e530a3c57e7d5c749a3ffe233b175c398a7d79445e00a43",
+    "prior/parent-check-artifacts/reservations.sqlite": "e3158e3c8ed943e730943718577207f52bf8b00f5fa345a4574204bc689bda46",
+    "prior/parent-check-artifacts/continuation.json": "56ef61ac51beb004496f365a9c9d096a88f51a9d540a19f44d5234cfaac2008a"
+  },
+  "candidate_path": "/home/claude/work/live22/agentic-ai-5.2/work/g3-integration/extracted/integration-001",
+  "human_acceptance": "PENDING",
+  "model_run": false,
+  "scope": "Executable local teaching controls; no human reader performance or production authority.",
+  "groups": {
+    "contract": {
+      "command": [
+        "/usr/local/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_g3.py",
+        "-v"
+      ],
+      "elapsed_process_seconds": 0.09419442099999742,
+      "timeout_seconds": 30,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_cancel_releases_slot_without_erasing_history (test_g3.Cancellation.test_cancel_releases_slot_without_erasing_history) ... ok\ntest_migration_preserves_old_public_record (test_g3.Cancellation.test_migration_preserves_old_public_record) ... ok\ntest_missing_id_is_not_found (test_g3.Cancellation.test_missing_id_is_not_found) ... ok\ntest_other_member_cannot_cancel (test_g3.Cancellation.test_other_member_cannot_cancel) ... ok\ntest_repeat_with_current_version_is_idempotent (test_g3.Cancellation.test_repeat_with_current_version_is_idempotent) ... ok\ntest_retry_original_operation_does_not_revive_cancelled_row (test_g3.Cancellation.test_retry_original_operation_does_not_revive_cancelled_row) ... ok\ntest_stale_version_cannot_change_state (test_g3.Cancellation.test_stale_version_cannot_change_state) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.037s\n\nOK\n",
+      "timed_out": false,
+      "tests_run": 7,
+      "expected_tests": 7,
+      "methods_passed": 7,
+      "methods_failed": [],
+      "methods_errored": [],
+      "status": "PASSED"
+    }
+  },
+  "tests_run": 7,
+  "candidate_sha256_after": "c0b3857de28f86624e329cd1dcfbc4d9c52af3691e78e84b60f66bfcfffbb887",
+  "inputs_unchanged": true,
+  "status": "SELECTED_CHECKS_PASSED",
+  "recorded_at_utc": "2026-11-22T17:32:55.959398+00:00",
+  "command": [
+    "/usr/local/bin/python3",
+    "/home/claude/work/live22/agentic-ai-5.2/companion/start.py",
+    "check",
+    "G3",
+    "--candidate",
+    "/home/claude/work/live22/agentic-ai-5.2/work/g3-integration/extracted/integration-001",
+    "--output",
+    "/home/claude/work/live22/agentic-ai-5.2/work/g3-integration/operator/extracted_g3_check_receipt.json"
+  ],
+  "verification_progress": {
+    "schema": "esa-verification-progress/v1",
+    "derivation": "CURRENT_RECEIPT_FIELDS_ONLY_NO_ADDITIONAL_EXECUTION",
+    "source_fields_sha256": "2379c591e0d10c42ebaa2a40e92d951764c748b2eaa91aa3deb8319a9e43140e",
+    "work_order": "mission_G3",
+    "evidence_profile": "persistent_effect",
+    "profile_basis": "The named mission work order.",
+    "phase": "mission",
+    "stages": {
+      "startup": {
+        "status": "PASS",
+        "evidence": [
+          "schema",
+          "mission",
+          "candidate_path"
+        ],
+        "reason": "The intended runner accepted the entry identity and emitted this check receipt. This does not establish candidate import."
+      },
+      "integrity": {
+        "status": "PASS",
+        "evidence": [
+          "inputs_unchanged",
+          "candidate_sha256_before",
+          "candidate_sha256_after"
+        ],
+        "reason": "The recorded before/after comparison found inputs unchanged."
+      },
+      "contract": {
+        "status": "PASS",
+        "evidence": [
+          "groups.contract"
+        ],
+        "reason": "Status uses each selected group and any contract-specific supplemental probe; an import placeholder is not behavioral evidence. A candidate stack frame or known protected assertion supports reached behavior; a method count alone does not. Groups within this stage may retain multiple failures.",
+        "behavior_reached": true
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "evidence": [],
+        "reason": "No continuation or consumer/process observation is present."
+      },
+      "artifact": {
+        "status": "NOT_RUN",
+        "evidence": [],
+        "reason": "This receipt has no separate archive/extraction gate. Local demonstration hashes alone do not establish release fitness."
+      },
+      "authorization": {
+        "status": "NOT_RUN",
+        "evidence": [
+          "human_acceptance"
+        ],
+        "reason": "No owner acceptance or release authorization is recorded. Passing checks do not supply that decision."
+      }
+    },
+    "first_failed_stage": null,
+    "last_observed_stage": "contract",
+    "limits": "A stage label interprets the retained fields; it is not an independent attestation. NOT_APPLICABLE needs an explicit scope exclusion; absence alone remains NOT_RUN."
+  }
+}

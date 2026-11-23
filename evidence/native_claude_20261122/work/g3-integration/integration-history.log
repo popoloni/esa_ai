@@ -1,0 +1,6 @@
+* 1898d5c 2026-11-22 18:32:56 +0100 ESA AI recording operator Bind independently checked integration to retained G3 lineage
+* 66c2323 2026-11-22 18:32:54 +0100 ESA AI recording operator Record actual cli contribution under INTEGRATION-G3/v1
+* dc2806a 2026-11-22 18:32:54 +0100 ESA AI recording operator Record actual report contribution under INTEGRATION-G3/v1
+| * bf69a79 2026-11-22 18:32:54 +0100 ESA AI recording operator Record actual cli contribution under INTEGRATION-G3/v1
+|/  
+* 6a2e032 2026-11-22 18:32:06 +0100 ESA AI recording operator Freeze retained G3 and shared integration contract

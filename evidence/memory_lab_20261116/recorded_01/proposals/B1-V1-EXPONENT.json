@@ -1,0 +1,42 @@
+{
+  "claim": "B1-API/v1 admits Decimal-supported exponent text such as 1e3; the finite-positive numeric routing rule still applies.",
+  "evidence_refs": [
+    {
+      "locator": "$.cases",
+      "path": "evidence/memory_lab_20261116/recorded_01/observations/initial_reference_probe.json",
+      "sha256": "4ca4734abba82e8df93775f9995aed7218aff7b9874f75e96642fe51b1132d54"
+    }
+  ],
+  "expires_at": "2026-12-16T20:40:07Z",
+  "last_checked_at": "2026-11-16T20:40:07Z",
+  "memory_type": "fact",
+  "producer": {
+    "id": "offline-demonstrator",
+    "kind": "automated_control"
+  },
+  "record_id": "B1-V1-EXPONENT",
+  "revisit_if": [
+    "The task, component, API or field shape changes.",
+    "A source, evidence or approval digest changes.",
+    "Current-contract counterevidence contradicts the claim.",
+    "The declared validity interval ends."
+  ],
+  "schema": "agent-memory-record/v1",
+  "scope": {
+    "component": "treasury.routing.assess",
+    "contract": "B1-API/v1",
+    "schema": "RoutingDecision(route,reason,policy_version)",
+    "task": "B1-grammar-check"
+  },
+  "sensitivity": "public",
+  "source_refs": [
+    {
+      "locator": "Monetary text grammar and declared API behavior",
+      "path": "companion/contracts/B1_API.md",
+      "sha256": "e631804217257dfd5eabf3f9a3feeca025156822acc561bab7b5ab8b722914c2"
+    }
+  ],
+  "supersedes": null,
+  "valid_from": "2026-11-16T20:40:07Z",
+  "version": 1
+}

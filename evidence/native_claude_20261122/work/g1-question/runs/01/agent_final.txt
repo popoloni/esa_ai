@@ -1,0 +1,36 @@
+I've written my questions to `AGENT_QUESTIONS.md` and the acceptance examples and plan to `AGENT_PLAN.md`. I'm stopping here because the next step needs an answer from the owner.
+
+**The question that needs authority:**
+
+> **When `get_reservation(path, reservation_id)` is called with a positive integer identifier that has no reservation in an initialised database, what must it do: return `None`, or raise an exception — and if it raises, which exception type (e.g. `KeyError`, `LookupError`, or a named domain exception exported from `booking.py`)?**
+
+The brief only describes reading "for a reservation that exists" and says it "intentionally leaves a decision open". The two answers don't work together: code written for one handles the other wrongly, so a public test would catch it. This is the learner's first question, made exact.
+
+**Further open questions** (they would be best answered together with the first):
+- **Q2:** If the database file doesn't exist yet, should `get_reservation` fail without creating anything, or may it create empty storage? This is the learner's second question. I suggest it fails and creates nothing, but that isn't approved.
+- **Q3:** Must `reserve` work if `init_db` was never called?
+- **Q4:** What should happen for `0`, negative numbers, `bool` or `"1"` as the identifier?
+- **Q5:** Must the result be a plain `dict` with an `int` identifier?
+
+Things the brief puts off until G2 (second requests, overlap, replay, validation, fingerprinting) are marked out of scope rather than asked.
+
+**`AGENT_PLAN.md`** has eight Given/When/Then examples:
+- E1 and E2 are the brief's example: a confirmed booking, then a read from a separate process.
+- E3: values containing quotes are stored and read back exactly.
+- E4: reading returns a fresh copy and changes nothing.
+- E5: calling `init_db` again keeps existing data.
+- E6 and E7 wait on answers to Q1 and Q2.
+- E8: a storage failure raises an error instead of returning a confirmation.
+
+It also has a six-step implementation plan to follow only after the owner responds.
+
+**What I ran:** I listed the files, read `READER_ENTRY.json` and read the four sources (brief, storage decision, `booking.py`, `QUESTIONS.md`). I wrote two new files. That was 8 tool calls, one of which the harness rejected before it ran.
+
+**Not done:**
+- No code written and no database created.
+- No checks run. There is no `tests/` folder yet; the brief says the checks come with the owner's response.
+- I didn't ask for or see the owner's answer, and nothing is approved.
+
+**Things you should know:**
+- `AGENTS.md` lists `booking.py`, `QUESTIONS.md` and `DOSSIER.md` as the editable files. Your task allowed only `AGENT_QUESTIONS.md` and `AGENT_PLAN.md`, so I followed your narrower list. All three of those files are unchanged, including the learner's `QUESTIONS.md`.
+- The brief refers to `docs/contract.md` and the storage decision refers to `historical_tests/`, but neither exists in this workspace.

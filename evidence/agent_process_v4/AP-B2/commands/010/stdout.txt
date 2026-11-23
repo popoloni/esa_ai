@@ -1,0 +1,9 @@
+Invalid amount examples: 9 REJECTED records; calls=0.
+Retained router boundary: 4999.99 STANDARD_QUEUE; 5000.00 HUMAN_REVIEW; both classified, payment_authorized=false.
+Invocation budget matrix: 20 combinations (attempts 0..3, calls 0..4) respected both bounds.
+Response protocol: 8 nonmapping/missing/extra/unknown-class cases rejected with one INVALID_RESPONSE call.
+Late duplicate in a generator: ValueError with zero-call receipt.
+Retry identity: original ID and amount survive caller-mapping mutation.
+Later router TypeError: prior completed record and one-call receipt retained; subsequent batch does not alter snapshot.
+Documented budget validation: 4 invalid-domain cases preserve type and zero-call receipts.
+All focused development assertions passed.

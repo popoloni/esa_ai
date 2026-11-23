@@ -1,0 +1,66 @@
+{
+  "schema": "esa-agent-session/v1",
+  "created_at_utc": "2026-11-16T22:10:58.595822+00:00",
+  "mission": "G1",
+  "stage": "question",
+  "candidate": "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g1",
+  "entry": {
+    "schema": "esa-prototype-entry/v2",
+    "mission": "G1",
+    "release": "ESA-Series-Handbook-Review-5-20261116",
+    "route": "GREENFIELD_RESERVATION_STUDIO",
+    "mode": "INCOMPLETE_STARTER",
+    "solution_variant": null,
+    "human_acceptance": "PENDING",
+    "scope": "G1/I01 first durable reservation and public read; final RES-001/v1 remains separate.",
+    "api_contract": "G1/I01",
+    "specification_stage": "QUESTION_PENDING",
+    "owner_decision": null,
+    "recorded_at_utc": "2026-11-16T22:10:43.181723+00:00",
+    "command": [
+      "/usr/local/bin/python3",
+      "companion/start.py",
+      "new",
+      "G1",
+      "--dest",
+      "work/g1"
+    ]
+  },
+  "integration_role": null,
+  "integration_manifest_sha256": null,
+  "task_contract": "G1/I01",
+  "api": "G1/I01",
+  "editable_paths": [
+    "AGENT_QUESTIONS.md",
+    "AGENT_PLAN.md"
+  ],
+  "before": {
+    "AGENTS.md": "78be262e9924077d0d92ab0abaffdf172d0e1b1bc0d83a5b28d0d75e47fd6cd6",
+    "DOSSIER.md": "666026bb7ef8927c521c9857ce1527e2458210655af2fdbf99f5b863f5e3dd7c",
+    "QUESTIONS.md": "b9ac0f1d51acad4826f3194a457e58f959ca834d4a42550652e6fe94fdbdcf98",
+    "READER_ENTRY.json": "9c7df00c3eef9dbc4bc56fcfd17a037026bac792d958334ef200229358af1130",
+    "booking.py": "19ea131d1fec1ea4c575cf30fe1c25c358bb880027193945f08baeb0e6308e69",
+    "docs/G1-I01.md": "07a417cd7e7eeaca0bc5827e67eb965d0c7ebb75f387146f80a37e172fb89a50",
+    "docs/decisions/0001-storage.md": "c1b8a31f24fb5fe34e929049e8ed3cc3d1910b6d4194a40d4d303e70582f6762"
+  },
+  "protected_sha256": {
+    "AGENTS.md": "78be262e9924077d0d92ab0abaffdf172d0e1b1bc0d83a5b28d0d75e47fd6cd6",
+    "DOSSIER.md": "666026bb7ef8927c521c9857ce1527e2458210655af2fdbf99f5b863f5e3dd7c",
+    "QUESTIONS.md": "b9ac0f1d51acad4826f3194a457e58f959ca834d4a42550652e6fe94fdbdcf98",
+    "READER_ENTRY.json": "9c7df00c3eef9dbc4bc56fcfd17a037026bac792d958334ef200229358af1130",
+    "booking.py": "19ea131d1fec1ea4c575cf30fe1c25c358bb880027193945f08baeb0e6308e69",
+    "docs/G1-I01.md": "07a417cd7e7eeaca0bc5827e67eb965d0c7ebb75f387146f80a37e172fb89a50",
+    "docs/decisions/0001-storage.md": "c1b8a31f24fb5fe34e929049e8ed3cc3d1910b6d4194a40d4d303e70582f6762"
+  },
+  "max_runs": 1,
+  "wall_seconds_per_run": 900,
+  "session_seconds_from_first_launch": 600,
+  "session_clock_scope": "Wall time from first native launch across follow-ups; manual work before launch and later review remain operator recorded.",
+  "requested_tool_commands_per_run": 40,
+  "tool_limit_enforced_by_adapter": false,
+  "token_or_spend_limit": "Not enforced or measured by this adapter; configure the client/account before use.",
+  "runtime": "Real installed coding client selected at launch (Codex CLI or Claude Code); no model responses are simulated.",
+  "security_scope": "Host/client permissions plus post-run file integrity checks; adapter is not an OS sandbox.",
+  "human_acceptance": "PENDING",
+  "model_run": false
+}

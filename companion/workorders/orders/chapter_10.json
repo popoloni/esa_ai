@@ -1,0 +1,66 @@
+{
+  "id": "chapter_10",
+  "schema_version": 1,
+  "evidence_profile": "persistent_effect",
+  "expect": {
+    "outcome": "Activate BR-001/v2 for new decisions while preserving recorded v1 history and replay.",
+    "authority": {
+      "owner": "Policy owner and migration/release reviewer.",
+      "source": "Policy owner: BR-001/v2, 21 May 2025; ledger history contract B3.",
+      "version": "BR-001/v2; HISTORY-API/v1; MIGRATION/v1",
+      "status": "TEACHING_CONTRACT"
+    },
+    "acceptance": [
+      "Equivalent-key retry returns the saved policy/answer; conflicting payload leaves history unchanged; reevaluation uses a new linked identity."
+    ]
+  },
+  "delegate": {
+    "editable_paths": [
+      "ledger.py",
+      "migration/PLAN.md"
+    ],
+    "protected_paths": [
+      "approved_context/",
+      "source_evidence/",
+      "retained_history/",
+      "previous_release/"
+    ],
+    "budget": {
+      "max_attempts": 2,
+      "implementation_minutes": 45,
+      "check_timeout_seconds": 30,
+      "max_external_calls": 0
+    },
+    "stop_conditions": [
+      "Required authority or source evidence is missing.",
+      "Declared budget is spent or a proposed edit crosses protected scope."
+    ]
+  },
+  "observe": {
+    "checks": [
+      {
+        "id": "chapter_10.review",
+        "stage": "contract",
+        "method": "review",
+        "argv": [],
+        "expected": "Activation/restart/replay sequence; conflicting reuse; rollback after second-write failure; atomic migration refusal and positive control."
+      }
+    ],
+    "receipt_fields": [
+      "candidate_identity",
+      "authority_version",
+      "actual_checks",
+      "reached_stage",
+      "remaining_question"
+    ]
+  },
+  "decide": {
+    "owner": "Policy owner and migration/release reviewer.",
+    "object": "The migration and history-preserving ledger candidate.",
+    "allowed_decisions": [
+      "ACCEPT",
+      "REJECT",
+      "ASK"
+    ]
+  }
+}

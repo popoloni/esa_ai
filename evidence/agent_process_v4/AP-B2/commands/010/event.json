@@ -1,0 +1,44 @@
+{
+  "task": "AP-B2",
+  "event": 10,
+  "argv": [
+    "python3",
+    "-B",
+    "-c",
+    "from collections import Counter\nfrom intake import evaluate_batch, ProviderUnavailable, ProviderProtocolError\n\ndef request(key=\"r1\", amount=\"4000.00\"):\n    return {\"request_id\": key, \"amount_eur\": amount}\n\ndef match(key, amount):\n    return {\"request_id\": key, \"classification\": \"MATCH\"}\n\ndef forbidden(*args):\n    raise AssertionError(\"Provider should not be invoked\")\n\ninvalid_amounts = (\"-1\", \"0\", \"-0.00\", \"NaN\", \"Infinity\", \"1e3\", \"1.001\", \" 1.00\", \"1,000.00\")\nresult = evaluate_batch([request(str(i), amount) for i, amount in enumerate(invalid_amounts)], forbidden)\nassert result[\"calls\"] == 0 and result[\"attempts\"] == []\nassert all(record[\"status\"] == \"REJECTED\" for record in result[\"records\"])\nprint(\"Invalid amount examples: 9 REJECTED records; calls=0.\")\n\nresult = evaluate_batch([request(\"below\", \"4999.99\"), request(\"at\", \"5000.00\")], match)\nassert [record[\"route\"] for record in result[\"records\"]] == [\"STANDARD_QUEUE\", \"HUMAN_REVIEW\"]\nassert all(record[\"status\"] == \"CLASSIFIED\" and record[\"classification\"] == \"MATCH\" for record in result[\"records\"])\nassert result[\"payment_authorized\"] is False\nprint(\"Retained router boundary: 4999.99 STANDARD_QUEUE; 5000.00 HUMAN_REVIEW; both classified, payment_authorized=false.\")\n\nfor max_attempts in range(4):\n    for max_calls in range(5):\n        calls = []\n        def unavailable(key, amount):\n            calls.append((key, amount))\n            raise ProviderUnavailable()\n        result = evaluate_batch([request(\"a\"), request(\"b\"), request(\"c\")], unavailable,\n                                max_attempts=max_attempts, max_calls=max_calls)\n        assert result[\"calls\"] == len(calls) == min(3 * max_attempts, max_calls)\n        assert len(result[\"attempts\"]) == result[\"calls\"]\n        assert all(count <= max_attempts for count in Counter(key for key, _ in calls).values())\n        assert all(record[\"status\"] == \"DEFERRED\" and \"classification\" not in record for record in result[\"records\"])\nprint(\"Invocation budget matrix: 20 combinations (attempts 0..3, calls 0..4) respected both bounds.\")\n\nfor malformed in (None, [], \"MATCH\", {}, {\"request_id\": \"r1\"},\n                  {\"classification\": \"MATCH\"},\n                  {\"request_id\": \"r1\", \"classification\": \"MATCH\", \"extra\": True},\n                  {\"request_id\": \"r1\", \"classification\": \"PAY\"}):\n    try:\n        evaluate_batch([request()], lambda key, amount: malformed)\n    except ProviderProtocolError as error:\n        assert error.calls == 1 and error.records == []\n        assert error.attempts == [{\"request_id\": \"r1\", \"attempt\": 1, \"outcome\": \"INVALID_RESPONSE\"}]\n        assert error.receipt[\"calls\"] == error.calls and not error.receipt[\"payment_authorized\"]\n    else:\n        raise AssertionError(\"malformed response accepted\")\nprint(\"Response protocol: 8 nonmapping/missing/extra/unknown-class cases rejected with one INVALID_RESPONSE call.\")\n\ntry:\n    evaluate_batch((request(key) for key in (\"a\", \"b\", \"a\")), forbidden)\nexcept ValueError as error:\n    assert error.calls == 0 and error.attempts == [] and error.records == []\nelse:\n    raise AssertionError(\"late duplicate was accepted\")\nprint(\"Late duplicate in a generator: ValueError with zero-call receipt.\")\n\nsource = request(\"stable\")\nreceived = []\ndef mutating_provider(key, amount):\n    received.append((key, amount))\n    if len(received) == 1:\n        source.update(request_id=\"changed\", amount_eur=\"9999.00\")\n        raise ProviderUnavailable()\n    return {\"request_id\": key, \"classification\": \"REVIEW\"}\nresult = evaluate_batch([source], mutating_provider)\nassert received == [(\"stable\", \"4000.00\"), (\"stable\", \"4000.00\")]\nassert result[\"records\"][0][\"request_id\"] == \"stable\"\nassert result[\"records\"][0][\"classification\"] == \"REVIEW\"\nprint(\"Retry identity: original ID and amount survive caller-mapping mutation.\")\n\ntry:\n    evaluate_batch([request(\"good\"), request(\"bad\", 4.5)], match)\nexcept TypeError as error:\n    assert error.calls == 1 and len(error.records) == 1\n    assert error.records[0][\"request_id\"] == \"good\"\n    assert error.attempts == [{\"request_id\": \"good\", \"attempt\": 1, \"outcome\": \"MATCH\"}]\n    saved_receipt = error.receipt\nelse:\n    raise AssertionError(\"retained router type error was lost\")\nevaluate_batch([request(\"next\")], match)\nassert saved_receipt[\"calls\"] == 1 and saved_receipt[\"records\"][0][\"request_id\"] == \"good\"\nprint(\"Later router TypeError: prior completed record and one-call receipt retained; subsequent batch does not alter snapshot.\")\n\nfor options, expected in (({\"max_attempts\": -1}, ValueError),\n                          ({\"max_calls\": -1}, ValueError),\n                          ({\"max_attempts\": True}, TypeError),\n                          ({\"max_calls\": 1.5}, TypeError)):\n    try:\n        evaluate_batch([request()], forbidden, **options)\n    except expected as error:\n        assert error.calls == 0 and error.attempts == [] and error.records == []\n    else:\n        raise AssertionError(\"invalid budget accepted\")\nprint(\"Documented budget validation: 4 invalid-domain cases preserve type and zero-call receipts.\")\n\nprint(\"All focused development assertions passed.\")\n"
+  ],
+  "cwd": "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B2/workspace",
+  "started_at_utc": "2026-11-16T15:49:14.435297+00:00",
+  "elapsed_seconds": 0.043597,
+  "returncode": 0,
+  "timeout": false,
+  "before": {
+    "AGENTS.md": "60c816b03a88dd0593dafcc7cb82ed7c9ec33e96ec4f226057f2625295e6f0fc",
+    "DOSSIER.md": "4bf3c90302a2bf1f5fa8d4c6ed8652c5fb5fb364cb064c36c084d8104ff7935d",
+    "READER_ENTRY.json": "256f273bb295ae3d76d899960c2171ef287a38cf5a241f73f43aca80d8d87c0a",
+    "docs/contract.md": "7322b946c06acf1e5ca4fc2031419d077cec88fb201aaa6ba6d9e2603bb9992d",
+    "intake.py": "c039ea5ecae3bccd9b1647e7f8e4054b20790d79d595c976d8f48700239562ea",
+    "prior/parent-entry.json": "6d28d305543edbf520a1a95c2c274d0453f1f2c0f0f5d270a0553d6d614eac71",
+    "prior/parent-handoff.json": "e43852b8b0cc5688d3b9f8cc668e69197b412b784e395c7e0b1cdac3e5927327",
+    "prior/routing.py": "c2b093e60d6893274701814d00c3bf63d25bfb6c2926feefb23a93941c51e4a0",
+    "routing.py": "c2b093e60d6893274701814d00c3bf63d25bfb6c2926feefb23a93941c51e4a0",
+    "tests/test_b2.py": "13c76494bb51344136c06e4b49cb071872f8737375f81ceac1a491f9bd3ccc06"
+  },
+  "after": {
+    "AGENTS.md": "60c816b03a88dd0593dafcc7cb82ed7c9ec33e96ec4f226057f2625295e6f0fc",
+    "DOSSIER.md": "4bf3c90302a2bf1f5fa8d4c6ed8652c5fb5fb364cb064c36c084d8104ff7935d",
+    "READER_ENTRY.json": "256f273bb295ae3d76d899960c2171ef287a38cf5a241f73f43aca80d8d87c0a",
+    "docs/contract.md": "7322b946c06acf1e5ca4fc2031419d077cec88fb201aaa6ba6d9e2603bb9992d",
+    "intake.py": "c039ea5ecae3bccd9b1647e7f8e4054b20790d79d595c976d8f48700239562ea",
+    "prior/parent-entry.json": "6d28d305543edbf520a1a95c2c274d0453f1f2c0f0f5d270a0553d6d614eac71",
+    "prior/parent-handoff.json": "e43852b8b0cc5688d3b9f8cc668e69197b412b784e395c7e0b1cdac3e5927327",
+    "prior/routing.py": "c2b093e60d6893274701814d00c3bf63d25bfb6c2926feefb23a93941c51e4a0",
+    "routing.py": "c2b093e60d6893274701814d00c3bf63d25bfb6c2926feefb23a93941c51e4a0",
+    "tests/test_b2.py": "13c76494bb51344136c06e4b49cb071872f8737375f81ceac1a491f9bd3ccc06"
+  },
+  "changed_files": [],
+  "stdout_sha256": "b37273b2663ec261d2e5f34c95ab15e4680485ff35b0290a4326dcb0c4126f9b",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "recorder_sha256": "58781a554cf89bb7a5c5fbc673825901820002e6036095198a2c062aa3e0126f",
+  "scope": "Actual submitted subprocess and workspace snapshots. This recorder is not a complete native-client trace or an OS sandbox."
+}

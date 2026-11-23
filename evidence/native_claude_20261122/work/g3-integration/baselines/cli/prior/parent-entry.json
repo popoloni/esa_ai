@@ -1,0 +1,38 @@
+{
+  "schema": "esa-full-mission/v1",
+  "release": "Engineering-Software-with-Agentic-AI-Review-5.2-20261117",
+  "mission": "G2",
+  "mode": "LEARNER",
+  "contract": "RES-001/v1 + G2-OD-01 + G2-OD-02",
+  "module": "booking.py",
+  "lineage": {
+    "mission": "G1",
+    "source_sha256": "a93c8fa26357c4c5bf4c4eb40fbd15427692d074d3ee101f2a0a6980cb79007c",
+    "source_path": "/home/claude/work/live22/agentic-ai-5.2/work/g1/booking.py",
+    "handoff_status": "SCOPED_HANDOFF_READY",
+    "stored_snapshot": "prior/booking.py",
+    "copied_parent_demonstration": null
+  },
+  "human_acceptance": "PENDING",
+  "dependency_sha256": {
+    "legacy_g1.py": "bb3ec4063f41eb10ad6a0850b9fa3d40da7badb4bcff19a38fdab3c80ea4efba",
+    "legacy_g1_json.py": "d5b98f73120fb70ccfe6c8366e19f64ac8b311d54684e872f2ca3c7d6813b191",
+    "legacy_g1_recorded.py": "cedfaf4d936232b94eb7220d0d0594e2e919b75eff6f5dcd8a8690582ff569ce"
+  },
+  "prior_sha256": {
+    "prior/parent-handoff.json": "1613a459535e2987002bf2904e1dba2a0a24867e575d09fb7b30ff968970fdd6",
+    "prior/parent-entry.json": "5dce40590573482fa2b5e23dd2187eb817f2f9670bae13f8b76304ca71fdacee",
+    "prior/booking.py": "a93c8fa26357c4c5bf4c4eb40fbd15427692d074d3ee101f2a0a6980cb79007c"
+  },
+  "recorded_at_utc": "2026-11-22T17:29:15.202240+00:00",
+  "command": [
+    "/usr/local/bin/python3",
+    "companion/start.py",
+    "advance",
+    "G2",
+    "--from-candidate",
+    "work/g1",
+    "--dest",
+    "work/g2"
+  ]
+}

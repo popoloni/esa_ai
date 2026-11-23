@@ -1,0 +1,71 @@
+{
+  "schema": "esa-agent-session/v1",
+  "created_at_utc": "2026-11-22T17:34:30.053430+00:00",
+  "mission": "G4",
+  "stage": "implement",
+  "candidate": "/home/claude/work/live22/agentic-ai-5.2/work/g4-standalone",
+  "entry": {
+    "schema": "esa-full-mission/v1",
+    "release": "Engineering-Software-with-Agentic-AI-Review-5.2-20261117",
+    "mission": "G4",
+    "mode": "LEARNER",
+    "contract": "OPS-G4/v3",
+    "module": "operations.py",
+    "lineage": null,
+    "human_acceptance": "PENDING",
+    "dependency_sha256": {
+      "booking.py": "ad89e1350b80d674b30f8fd97927107adb77e2df625805d7a0a49cb8837b5b17",
+      "g4_fixture.py": "ad3f11b994538f16247722a7667641128d87e1e2ad41b01989ee334310c1c739",
+      "reference_g3.py": "ad89e1350b80d674b30f8fd97927107adb77e2df625805d7a0a49cb8837b5b17"
+    },
+    "prior_sha256": {},
+    "recorded_at_utc": "2026-11-22T17:34:29.818067+00:00",
+    "command": [
+      "/usr/local/bin/python3",
+      "companion/start.py",
+      "new",
+      "G4",
+      "--dest",
+      "work/g4-standalone"
+    ]
+  },
+  "integration_role": null,
+  "integration_manifest_sha256": null,
+  "task_contract": "OPS-G4/v3",
+  "api": null,
+  "editable_paths": [
+    "operations.py",
+    "DOSSIER.md"
+  ],
+  "before": {
+    "AGENTS.md": "3b93869be62f5fa832481275c8d37a9acb6b8b6fb6cf2841230ac0ab2e47e294",
+    "DOSSIER.md": "617be3697a2054a984fab77a0596315bde4ae1246138bcb9071e4cf9631e8c17",
+    "READER_ENTRY.json": "56be6088689c86f988edf401b14d47663723946b51ed556eca4f4a7fd698f469",
+    "booking.py": "ad89e1350b80d674b30f8fd97927107adb77e2df625805d7a0a49cb8837b5b17",
+    "docs/contract.md": "0edc7998494e571035acf19d27deb310cfeeedb6dfc7b62f5cf6218fa6407fc8",
+    "g4_fixture.py": "ad3f11b994538f16247722a7667641128d87e1e2ad41b01989ee334310c1c739",
+    "operations.py": "4675a173bfd4da1c62abcee573be6273ef196a1c759fc89ecf2b8156eb8ffcd8",
+    "reference_g3.py": "ad89e1350b80d674b30f8fd97927107adb77e2df625805d7a0a49cb8837b5b17",
+    "tests/test_g4.py": "7f2247596e269a5e66d919dde9ac3b21097ef02495359340e6af0d765f78751b"
+  },
+  "protected_sha256": {
+    "AGENTS.md": "3b93869be62f5fa832481275c8d37a9acb6b8b6fb6cf2841230ac0ab2e47e294",
+    "READER_ENTRY.json": "56be6088689c86f988edf401b14d47663723946b51ed556eca4f4a7fd698f469",
+    "booking.py": "ad89e1350b80d674b30f8fd97927107adb77e2df625805d7a0a49cb8837b5b17",
+    "docs/contract.md": "0edc7998494e571035acf19d27deb310cfeeedb6dfc7b62f5cf6218fa6407fc8",
+    "g4_fixture.py": "ad3f11b994538f16247722a7667641128d87e1e2ad41b01989ee334310c1c739",
+    "reference_g3.py": "ad89e1350b80d674b30f8fd97927107adb77e2df625805d7a0a49cb8837b5b17",
+    "tests/test_g4.py": "7f2247596e269a5e66d919dde9ac3b21097ef02495359340e6af0d765f78751b"
+  },
+  "max_runs": 3,
+  "wall_seconds_per_run": 900,
+  "session_seconds_from_first_launch": 1500,
+  "session_clock_scope": "Wall time from first native launch across follow-ups; manual work before launch and later review remain operator recorded.",
+  "requested_tool_commands_per_run": 40,
+  "tool_limit_enforced_by_adapter": false,
+  "token_or_spend_limit": "Not enforced or measured by this adapter; configure the client/account before use.",
+  "runtime": "Real installed coding client selected at launch (Codex CLI or Claude Code); no model responses are simulated.",
+  "security_scope": "Host/client permissions plus post-run file integrity checks; adapter is not an OS sandbox.",
+  "human_acceptance": "PENDING",
+  "model_run": false
+}

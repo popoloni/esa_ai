@@ -1,0 +1,66 @@
+{
+  "id": "chapter_01",
+  "schema_version": 1,
+  "evidence_profile": "bounded_repair",
+  "expect": {
+    "outcome": "Repair invalid-amount routing while preserving BR-001/v1 and B1-API/v1.",
+    "authority": {
+      "owner": "Implementation reviewer; policy or API owner for changes to their rules.",
+      "source": "Treasury policy owner: BR-001/v1; API maintainer: B1-API/v1.",
+      "version": "BR-001/v1 + B1-API/v1",
+      "status": "TEACHING_CONTRACT"
+    },
+    "acceptance": [
+      "Finite positive routing, EUR 5000 equality, all three result fields, TypeError for a non-string caller; unexpected programming faults remain visible."
+    ]
+  },
+  "delegate": {
+    "editable_paths": [
+      "src/treasury/routing.py",
+      "DOSSIER.md"
+    ],
+    "protected_paths": [
+      "approved_context/",
+      "source_evidence/",
+      "contracts/",
+      "tests/"
+    ],
+    "budget": {
+      "max_attempts": 2,
+      "implementation_minutes": 30,
+      "check_timeout_seconds": 30,
+      "max_external_calls": 0
+    },
+    "stop_conditions": [
+      "Required authority or source evidence is missing.",
+      "Declared budget is spent or a proposed edit crosses protected scope."
+    ]
+  },
+  "observe": {
+    "checks": [
+      {
+        "id": "chapter_01.review",
+        "stage": "contract",
+        "method": "review",
+        "argv": [],
+        "expected": "Core and extended B1 cases; narrow-exception probe; protected-source comparison."
+      }
+    ],
+    "receipt_fields": [
+      "candidate_identity",
+      "authority_version",
+      "actual_checks",
+      "reached_stage",
+      "remaining_question"
+    ]
+  },
+  "decide": {
+    "owner": "Implementation reviewer; policy or API owner for changes to their rules.",
+    "object": "The identified routing candidate under the v1 contract.",
+    "allowed_decisions": [
+      "ACCEPT",
+      "REJECT",
+      "ASK"
+    ]
+  }
+}

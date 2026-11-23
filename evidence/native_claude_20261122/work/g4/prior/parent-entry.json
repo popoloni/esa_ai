@@ -1,0 +1,64 @@
+{
+  "schema": "esa-full-mission/v1",
+  "release": "Engineering-Software-with-Agentic-AI-Review-5.2-20261117",
+  "mission": "G3",
+  "mode": "LEARNER",
+  "contract": "RES-002/v1",
+  "module": "booking.py",
+  "lineage": {
+    "mission": "G2",
+    "source_sha256": "3acd48b844deab0ee87a0c7270782465ddfb533400a18ab214678ffc6a7433dd",
+    "source_path": "/home/claude/work/live22/agentic-ai-5.2/work/g2/booking.py",
+    "handoff_status": "SCOPED_HANDOFF_READY",
+    "stored_snapshot": "prior/booking.py",
+    "copied_parent_demonstration": "prior/parent-check-artifacts"
+  },
+  "human_acceptance": "PENDING",
+  "dependency_sha256": {
+    "legacy_booking.py": "81df006d0653a44260b03425294e8542effe0263c8592a7743e50e14bddcdef6",
+    "reservation_report.py": "d3aa8fff9219cdf977a00c50a3c797cb38b0d3cf84270c70d1eb2b83a17d7645",
+    "reservation_cli.py": "481178182a46a05f62f3580c722220471f8ccff40375169dec7457ad9a04a5c1"
+  },
+  "prior_sha256": {
+    "prior/parent-handoff.json": "d53ace11c281ea95511c1fd44cadad3b2228cef806db1537ee43e9773574d664",
+    "prior/parent-entry.json": "38d69192231fe918dd9a420247013280af72599df0287f0bf2a2c09c3b91e4a9",
+    "prior/booking.py": "3acd48b844deab0ee87a0c7270782465ddfb533400a18ab214678ffc6a7433dd",
+    "prior/parent-check-artifacts/DEMONSTRATION.json": "5634fccf839b61821e530a3c57e7d5c749a3ffe233b175c398a7d79445e00a43",
+    "prior/parent-check-artifacts/reservations.sqlite": "e3158e3c8ed943e730943718577207f52bf8b00f5fa345a4574204bc689bda46",
+    "prior/parent-check-artifacts/continuation.json": "56ef61ac51beb004496f365a9c9d096a88f51a9d540a19f44d5234cfaac2008a"
+  },
+  "recorded_at_utc": "2026-11-22T17:31:04.927262+00:00",
+  "command": [
+    "/usr/local/bin/python3",
+    "companion/start.py",
+    "advance",
+    "G3",
+    "--from-candidate",
+    "work/g2",
+    "--dest",
+    "work/g3"
+  ],
+  "integration": {
+    "schema": "esa-accepted-integration/v1",
+    "contract": "INTEGRATION-G3/v1",
+    "status": "INTEGRATION_CHECKS_PASSED",
+    "source_sha256": {
+      "booking.py": "c0b3857de28f86624e329cd1dcfbc4d9c52af3691e78e84b60f66bfcfffbb887",
+      "reservation_report.py": "d3aa8fff9219cdf977a00c50a3c797cb38b0d3cf84270c70d1eb2b83a17d7645",
+      "reservation_cli.py": "481178182a46a05f62f3580c722220471f8ccff40375169dec7457ad9a04a5c1"
+    },
+    "receipt": "../operator/041_integration_acceptance.json",
+    "receipt_sha256": "2b69ab566d1ff120d651b6cd46cf3c861502480e9b1ce4728f620d42d8c27c40",
+    "bundle_sha256": "58a0bb7ff5543b6995f8b2dc3ddfa3a021a6b8064a2dfb8acc0312ba62e2ed30",
+    "combined_commit": "66c23235fd05763cf040a7f289f94cdbd4e85150",
+    "authority": {
+      "principal": "ESA AI integration reviewer / recording operator",
+      "kind": "AI reviewer and local recording operator",
+      "authorized_by": "Author instruction to implement ESA agent-process remediation",
+      "scope": "Scoped teaching integration, independent checks and provenance recording",
+      "human_operator": false,
+      "human_acceptance": "PENDING",
+      "production_authorization": false
+    }
+  }
+}

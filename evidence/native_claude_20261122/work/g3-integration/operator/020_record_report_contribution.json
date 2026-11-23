@@ -1,0 +1,30 @@
+{
+  "recorded_at_utc": "2026-11-22T17:32:54.817923+00:00",
+  "operation": "record_report_contribution",
+  "authority": {
+    "principal": "ESA AI integration reviewer / recording operator",
+    "kind": "AI reviewer and local recording operator",
+    "authorized_by": "Author instruction to implement ESA agent-process remediation",
+    "scope": "Scoped teaching integration, independent checks and provenance recording",
+    "human_operator": false,
+    "human_acceptance": "PENDING",
+    "production_authorization": false
+  },
+  "returncode": 0,
+  "stdout": "[contribution-report dc2806a] Record actual report contribution under INTEGRATION-G3/v1\n 2 files changed, 51 insertions(+), 1 deletion(-)\n create mode 100644 CONTRIBUTION_A.md\n",
+  "stderr": "",
+  "timed_out": false,
+  "argv": [
+    "git",
+    "-c",
+    "user.name=ESA AI recording operator",
+    "-c",
+    "user.email=esa-ai-recording@example.invalid",
+    "commit",
+    "-m",
+    "Record actual report contribution under INTEGRATION-G3/v1"
+  ],
+  "cwd": "/home/claude/work/live22/agentic-ai-5.2/work/g3-integration/worktrees/report",
+  "timeout_seconds": 45,
+  "elapsed_process_seconds": 0.07235698300002014
+}

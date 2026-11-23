@@ -1,0 +1,92 @@
+{
+  "id": "mission_B2",
+  "schema_version": 1,
+  "evidence_profile": "new_capability",
+  "expect": {
+    "outcome": "Classify a bounded local batch with attributable attempts.",
+    "authority": {
+      "owner": "Treasury service owner",
+      "source": "companion/contracts/B2.md",
+      "version": "INTAKE/v1",
+      "status": "TEACHING_CONTRACT"
+    },
+    "acceptance": [
+      "Preflight duplicate IDs before calls; cap attempts; validate returned identity/classification; preserve failed attempts and original errors."
+    ]
+  },
+  "delegate": {
+    "editable_paths": [
+      "intake.py",
+      "DOSSIER.md"
+    ],
+    "protected_paths": [
+      "docs/",
+      "tests/",
+      "READER_ENTRY.json",
+      "prior/",
+      "routing.py"
+    ],
+    "budget": {
+      "max_attempts": 3,
+      "implementation_minutes": 30,
+      "check_timeout_seconds": 30,
+      "max_external_calls": 0
+    },
+    "stop_conditions": [
+      "Provider blocks, response violates its protocol, or invocation budget is exhausted.",
+      "Protected inputs change or the declared attempt/time budget is spent."
+    ]
+  },
+  "observe": {
+    "checks": [
+      {
+        "id": "b2.check",
+        "stage": "contract",
+        "method": "command",
+        "argv": [
+          "python3",
+          "companion/start.py",
+          "check",
+          "B2",
+          "--candidate",
+          "work/b2",
+          "--output",
+          "work/evidence/b2-first.json"
+        ],
+        "expected": "Selected public checks pass on unchanged inputs."
+      },
+      {
+        "id": "b2.continue",
+        "stage": "integration",
+        "method": "command",
+        "argv": [
+          "python3",
+          "companion/start.py",
+          "continue",
+          "B2",
+          "--candidate",
+          "work/b2",
+          "--output",
+          "work/evidence/b2-handoff.json"
+        ],
+        "expected": "Current candidate completes its scoped continuation; inspect retained observations."
+      }
+    ],
+    "receipt_fields": [
+      "candidate_sha256_before",
+      "groups",
+      "inputs_unchanged",
+      "verification_progress",
+      "human_acceptance"
+    ]
+  },
+  "decide": {
+    "owner": "Learner reviewer; Treasury service owner for a changed rule.",
+    "object": "B2 candidate, identified bytes and its scoped handoff.",
+    "allowed_decisions": [
+      "ACCEPT",
+      "REJECT",
+      "ASK"
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+I've stopped on an owner question. The retained G3 candidate's table matches neither schema in the contract, so 3 of the 11 development checks still fail.
+
+**The question for the owner.** `booking.py` (identical to `prior/booking.py`) creates `reservations_v2` with columns `id, trusted_member_id, …, fingerprint, state, version`. The contract's two supported signatures are:
+- the reference table, with `id`, `member_id`, `request_key` and `request_hash`;
+- the recorded table, with `reservation_id` and `payload_fingerprint`.
+
+The candidate matches neither, and the contract says to refuse unsupported schemas and not to guess a mapping. Should the owner approve a third signature (ID column `id`, fingerprint column `fingerprint`), or is the contract text or the candidate wrong? `g4_fixture.insert_overlap` also can't write to that table, because it inserts `payload_fingerprint`.
+
+**Acceptance example.**
+- Two active rows on asset A, 09:00–10:00 and 09:30–10:30, should give `ACTIVE_OVERLAP` with pairs `[[1,2]]` and unchanged file bytes.
+- `cost_summary` with 2.20 + 0.80 EUR and 1 accepted outcome should give `3.00`.
+- With 0 accepted outcomes it should give null unit metrics and `NO_ACCEPTED_OUTCOME`.
+
+**Changed files:** `operations.py` and `DOSSIER.md` only. I didn't touch docs, tests, prior snapshots or `READER_ENTRY.json`.
+
+**What I implemented:**
+- `diagnose`:
+  - It opens the file read-only and refuses a missing path without creating it.
+  - It requires `user_version` 3 and an exact column match for exactly one supported table.
+  - It reports state counts, strict-overlap pairs among active rows on the same asset, the resolved path and a sha256 digest. Cancelled rows and adjacent bookings are excluded.
+  - It raises an error if the file's digest changes during the read.
+- `cost_summary`:
+  - It sums with `Decimal`.
+  - It raises `ValueError` for non-numeric, NaN, infinite, negative or boolean values.
+  - It returns null unit metrics and `NO_ACCEPTED_OUTCOME` when there are zero accepted outcomes.
+
+**Commands run:** `python -m unittest tests.test_g4` once, plus a few read-only inspections.
+- **Result:** 11 tests ran, 8 passed and 3 errored. The 3 errors are the clean-storage, active-overlap and cancelled-row tests. They error with "no supported current reservation representation found".
+- **Why:** those tests build the database with the retained `booking.init_db`, so they hit the mismatch above. I left the refusal in place rather than loosen it to get a pass.
+- **Passing:** the reference-schema test, the unknown-schema refusal and all the cost tests.
+
+**Remaining uncertainty:**
+- Overlap comparison is lexical on ISO strings, which is only valid for the uniform `…Z` format.
+- Concurrent-change detection compares digests before and after, so it can miss a change that is made and then reverted. No test covers it.
+
+**For the operator:** the work isn't ready for protected acceptance until the owner decides the mapping. I claim no human approval and no backend identity. I used about 7 of the 40 allowed tool commands.

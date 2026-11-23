@@ -1,0 +1,77 @@
+{
+  "schema": "esa-full-mission/v1",
+  "release": "ESA-Series-Handbook-Review-5-20261116",
+  "mission": "G4",
+  "mode": "LEARNER",
+  "contract": "OPS-G4/v2",
+  "module": "operations.py",
+  "lineage": {
+    "mission": "G3",
+    "source_sha256": "7b02037f25564beb431bd1deeaa70da7df845ebc71426b99b882a855193b27a6",
+    "source_path": "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g3-integration/workspace/booking.py",
+    "handoff_status": "SCOPED_HANDOFF_READY",
+    "stored_snapshot": "prior/booking.py",
+    "copied_parent_demonstration": "prior/parent-check-artifacts",
+    "integration_source_sha256": {
+      "booking.py": "7b02037f25564beb431bd1deeaa70da7df845ebc71426b99b882a855193b27a6",
+      "reservation_report.py": "33c881e7a0ef08f8e00d62a139f3706e80d8be0636e786693691c6b41093c7eb",
+      "reservation_cli.py": "3d9d266cb8c8bf64aae77e096a5daaaf31e4fe7f476433ab8a8faaec135676a4"
+    },
+    "integration_receipt_sha256": "810d5e2356434f27f69987b8fedad9a6a0151e98a3ef8a1883746e00d0e026c9",
+    "integration_snapshots": "prior/integration"
+  },
+  "human_acceptance": "PENDING",
+  "dependency_sha256": {
+    "booking.py": "7b02037f25564beb431bd1deeaa70da7df845ebc71426b99b882a855193b27a6",
+    "g4_fixture.py": "acfff09ae7b805745dcd8a83c769c86c0088704eac134eaf23ee8dd58e73566c",
+    "reference_g3.py": "ad89e1350b80d674b30f8fd97927107adb77e2df625805d7a0a49cb8837b5b17",
+    "reservation_report.py": "33c881e7a0ef08f8e00d62a139f3706e80d8be0636e786693691c6b41093c7eb",
+    "reservation_cli.py": "3d9d266cb8c8bf64aae77e096a5daaaf31e4fe7f476433ab8a8faaec135676a4"
+  },
+  "prior_sha256": {
+    "prior/parent-handoff.json": "9f6ad8a6e6c21a5282d2a173ca4789c166b0620a22367632f6320f0c05b25c4c",
+    "prior/parent-entry.json": "29589ad710fb889f51a440fd852198903bddc67e12d2c7b3fac5095c5f2a8f05",
+    "prior/integration-acceptance.json": "810d5e2356434f27f69987b8fedad9a6a0151e98a3ef8a1883746e00d0e026c9",
+    "prior/booking.py": "7b02037f25564beb431bd1deeaa70da7df845ebc71426b99b882a855193b27a6",
+    "prior/parent-check-artifacts/DEMONSTRATION.json": "b0e1844bb7d25661166c84a1e25ffb1a0798802fee59d08612b23117eb7633f6",
+    "prior/parent-check-artifacts/reservations.sqlite": "f401ee09ade425237858f7240a320df3cd059c714775de34772c6ed4b928507a",
+    "prior/parent-check-artifacts/continuation.json": "9298378697846b42368d2a633326847ba0c679b9dd2e39ca8b1e3ddd3e804a5e",
+    "prior/integration/reservation_cli.py": "3d9d266cb8c8bf64aae77e096a5daaaf31e4fe7f476433ab8a8faaec135676a4",
+    "prior/integration/reservation_report.py": "33c881e7a0ef08f8e00d62a139f3706e80d8be0636e786693691c6b41093c7eb",
+    "prior/integration/booking.py": "7b02037f25564beb431bd1deeaa70da7df845ebc71426b99b882a855193b27a6"
+  },
+  "integration": {
+    "schema": "esa-accepted-integration/v1",
+    "contract": "INTEGRATION-G3/v1",
+    "status": "INTEGRATION_CHECKS_PASSED",
+    "source_sha256": {
+      "booking.py": "7b02037f25564beb431bd1deeaa70da7df845ebc71426b99b882a855193b27a6",
+      "reservation_report.py": "33c881e7a0ef08f8e00d62a139f3706e80d8be0636e786693691c6b41093c7eb",
+      "reservation_cli.py": "3d9d266cb8c8bf64aae77e096a5daaaf31e4fe7f476433ab8a8faaec135676a4"
+    },
+    "receipt": "prior/integration-acceptance.json",
+    "receipt_sha256": "810d5e2356434f27f69987b8fedad9a6a0151e98a3ef8a1883746e00d0e026c9",
+    "bundle_sha256": "a458a386bf56e5a18eb55b4d2f0d05b5749613f7c1c15b19ffc7212f234b40a5",
+    "combined_commit": "bbbbef78eeeff238a2e68d9302ff67ed5b781610",
+    "authority": {
+      "principal": "ESA AI integration reviewer / recording operator",
+      "kind": "AI reviewer and local recording operator",
+      "authorized_by": "Author instruction to implement ESA agent-process remediation",
+      "scope": "Scoped teaching integration, independent checks and provenance recording",
+      "human_operator": false,
+      "human_acceptance": "PENDING",
+      "production_authorization": false
+    }
+  },
+  "recorded_at_utc": "2026-11-16T22:21:41.395031+00:00",
+  "command": [
+    "/usr/local/bin/python3",
+    "companion/start.py",
+    "advance",
+    "G4",
+    "--from-candidate",
+    "work/g3-integration/workspace",
+    "--dest",
+    "work/g4"
+  ]
+}

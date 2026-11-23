@@ -1,0 +1,11 @@
+--- retained-native/operations.py
++++ audit-correction/operations.py
+@@ -39,6 +39,8 @@
+             return tuple(r[1] for r in con.execute("PRAGMA table_info(" + t + ")"))
+         matches = []
+         if columns("reservations_v2"):
++            if columns("reservations") == _REFERENCE:
++                raise ValueError("competing current reservation representations; refusing to guess")
+             # progressive table present: it is the current one; another signature is unsupported
+             # (the old `reservations` table is historical and must not be used as a fallback).
+             cols = columns("reservations_v2")

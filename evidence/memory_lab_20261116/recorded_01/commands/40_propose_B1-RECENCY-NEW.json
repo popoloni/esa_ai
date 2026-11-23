@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "python3",
+    "-B",
+    "companion/memory/ledger.py",
+    "--workspace",
+    ".",
+    "--ledger",
+    "evidence/memory_lab_20261116/recorded_01/controls/recency_ledger.jsonl",
+    "propose",
+    "--record",
+    "evidence/memory_lab_20261116/recorded_01/proposals/B1-RECENCY-NEW.json"
+  ],
+  "exit": 0,
+  "expected_exit": 0,
+  "label": "propose_B1-RECENCY-NEW",
+  "origin": "AUTOMATED_LOCAL_CONTROL_NO_MODEL_OR_HUMAN",
+  "stderr": "",
+  "stdout": "{\"event_sha256\":\"e8b31531ea6d9e41e5e94417d98a49238f0962d645449bc20561496a2d35a311\",\"record_id\":\"B1-RECENCY-NEW\",\"record_sha256\":\"c992d16547c6c287406b7515f26d62861499a636ac8f36b0c6771eb4532d4eff\",\"status\":\"PROPOSED_NOT_RETRIEVABLE\"}\n"
+}

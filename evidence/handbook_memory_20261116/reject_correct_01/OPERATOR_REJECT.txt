@@ -1,0 +1,3 @@
+Recorded collaboration message from /root (AI operator):
+
+Please preserve the exact defective ledger.py and its digest before changing the unterminated-tail bug just found by the independent reviewer. This is a real current product defect, so retain the failed reproduction and original candidate. As the AI operator I explicitly REJECT this candidate for allowing a subsequent append to corrupt the accepted unterminated ledger. Bound correction to refusing an unterminated tail before any write, with no silent repair; retain pre/post bytes and a valid-control recheck. This is an actual AI-operated development episode, not human operation or a native Codex run. Do not relabel it as those.

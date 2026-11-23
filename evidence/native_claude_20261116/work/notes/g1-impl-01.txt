@@ -1,0 +1,12 @@
+Observation: native run 01 completed (claude-sonnet-5-5, 0.160 USD reported). Changed booking.py and DOSSIER.md only.
+Two shell commands were denied by the client (compound command needing approval; unverifiable variable);
+the worker switched to the Write tool and to a probe script. That probe script was written to the
+client-assigned session scratchpad under /tmp/claude-0/..., outside the candidate. The client permitted it;
+the candidate snapshot does not cover it. It contradicts the literal task wording ("no files outside this
+workspace") but has no candidate effect. Recorded as an instruction-versus-enforcement observation.
+Independent: check G1 slice 4/4 passed; continue G1 SCOPED_HANDOFF_READY (6 methods); check --select all
+fails on g1_final_api as the brief requires (G2 backlog left visible). Operator probe
+work/evidence/operator/g1-public-probe.json: separate-process read of quoted values through a path with
+spaces, ? and #; absent id -> None; missing path -> OperationalError without creating a file.
+Decision: ACCEPT this candidate for G1/I01 scope and advance it to G2.
+Limit: AI operator; fictional owner decision; technical acceptance only.

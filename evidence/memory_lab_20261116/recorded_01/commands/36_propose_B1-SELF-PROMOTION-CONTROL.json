@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "python3",
+    "-B",
+    "companion/memory/ledger.py",
+    "--workspace",
+    ".",
+    "--ledger",
+    "evidence/memory_lab_20261116/recorded_01/events.jsonl",
+    "propose",
+    "--record",
+    "evidence/memory_lab_20261116/recorded_01/proposals/B1-SELF-PROMOTION-CONTROL.json"
+  ],
+  "exit": 0,
+  "expected_exit": 0,
+  "label": "propose_B1-SELF-PROMOTION-CONTROL",
+  "origin": "AUTOMATED_LOCAL_CONTROL_NO_MODEL_OR_HUMAN",
+  "stderr": "",
+  "stdout": "{\"event_sha256\":\"49ba635b47a4d90678a190e230a7a7fa93c4cbcacd458fa00be10ca84af79d8c\",\"record_id\":\"B1-SELF-PROMOTION-CONTROL\",\"record_sha256\":\"eca80fe923bbf11375a977ef4f9cf4000b1960d6da55d5577b7cf5611a3ed9d3\",\"status\":\"PROPOSED_NOT_RETRIEVABLE\"}\n"
+}

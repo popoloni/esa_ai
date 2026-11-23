@@ -1,0 +1,8 @@
+test_absent_exit_is_distinct (test_integration_b.CLIContract.test_absent_exit_is_distinct) ... ok
+test_found_uses_report_and_prints_exact_json (test_integration_b.CLIContract.test_found_uses_report_and_prints_exact_json) ... ok
+test_storage_error_and_bad_identifier (test_integration_b.CLIContract.test_storage_error_and_bad_identifier) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.003s
+
+OK

@@ -1,0 +1,22 @@
+{
+  "schema": "esa-review-ground-truth/v4",
+  "mission": "B1",
+  "candidate_id": "B1-P01",
+  "created_on": "2026-11-02",
+  "origin": "CONSTRUCTED_TEACHING_VARIANT",
+  "rationale_origin": "CONSTRUCTED",
+  "actual_model_trace": false,
+  "expected_decision": "ACCEPT",
+  "expected_slice_pass": true,
+  "expected_core_pass": true,
+  "expected_extended_pass": true,
+  "supplemental_probe": "b1_precision",
+  "expected_supplemental_pass": true,
+  "targeted_assertions": [],
+  "explanation": "The sign/zero formulation satisfies v1, including the high-precision and tiny-positive public counterexamples.",
+  "required_human_decision": null,
+  "contract": "B1-API/v1 + BR-001/v1",
+  "scope": "Constructed public practice, not a human assessment result.",
+  "revised_on": "2026-11-03",
+  "release_scope": "ESA-Complete-Review-3-20261103"
+}

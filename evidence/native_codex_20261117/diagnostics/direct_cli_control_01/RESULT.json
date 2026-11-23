@@ -1,0 +1,19 @@
+{
+  "at_utc": "2026-11-16T23:11:03.927565+00:00",
+  "status": "DIRECT_CLI_STARTUP_FAILURE",
+  "exit_code": 1,
+  "timed_out": false,
+  "elapsed_seconds": 10.107,
+  "event_lines": 0,
+  "workspace_files_after": [],
+  "native_client_launches": 1,
+  "model_completion_observed": false,
+  "mission_coverage": 0,
+  "synthetic": false,
+  "capture_sha256": {
+    "task.txt": "6fa4d18bb24418ae19bab4e352bdd186406baea8744faf8707789b1b981d5e06",
+    "native_events.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr.txt": "8b1cfa9d9bc69140f7cdb1f12333e44c1fcd137533bab35bef86c476ab55cc9c"
+  },
+  "scope": "Real direct CLI diagnostic only. No mission, product acceptance, model identity or human gate established."
+}

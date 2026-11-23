@@ -1,0 +1,47 @@
+{
+  "task": "AP-B1-V1",
+  "event": 5,
+  "argv": [
+    "python3",
+    "-c",
+    "from pathlib import Path; import difflib; path = Path(\"src/treasury/routing.py\"); before = path.read_text(); old = \"    amount = Decimal(amount_eur)\\n    if amount < THRESHOLD_EUR:\\n\"; new = \"    if not isinstance(amount_eur, str):\\n        raise TypeError(\\\"amount_eur must be a string\\\")\\n    try:\\n        amount = Decimal(amount_eur)\\n    except InvalidOperation:\\n        return RoutingDecision(\\\"REJECTED\\\", \\\"INVALID_AMOUNT\\\", POLICY_VERSION)\\n    if not amount.is_finite() or amount <= 0:\\n        return RoutingDecision(\\\"REJECTED\\\", \\\"INVALID_AMOUNT\\\", POLICY_VERSION)\\n    if amount < THRESHOLD_EUR:\\n\"; assert before.count(old) == 1; after = before.replace(old, new); path.write_text(after); print(\"\".join(difflib.unified_diff(before.splitlines(keepends=True), after.splitlines(keepends=True), fromfile=\"before/src/treasury/routing.py\", tofile=\"after/src/treasury/routing.py\")))"
+  ],
+  "cwd": "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B1-V1/workspace",
+  "started_at_utc": "2026-11-16T15:36:46.231470+00:00",
+  "elapsed_seconds": 0.041439,
+  "returncode": 0,
+  "timeout": false,
+  "before": {
+    "AGENTS.md": "538789285a9887bd0fffc983b7192e817680b5adfa5546791e703dc4a0b7f45c",
+    "DOSSIER.md": "dc49623c69b514a577576a2cd82e946db2c80cd9700913d10e69dd8559246bd2",
+    "READER_ENTRY.json": "c462dd2f4ffd70a4920fe58f52593965a6d4b24d7cca1a2eea4fe516399c54b0",
+    "docs/B1-API.md": "e631804217257dfd5eabf3f9a3feeca025156822acc561bab7b5ab8b722914c2",
+    "docs/BR-001.md": "b88e648e2133cc0668a68b94d8e2b905a2fe09bd76780e36e20bbe68793b991a",
+    "docs/legacy_note.json": "ed8b81d04572c5e1925faa5b7473f220e3184f27287646ed61005a146dc6a95a",
+    "docs/policy.json": "3737b95b728bea32cfc2c82c489fe12267fd3096404a44639f27eec9de88deed",
+    "src/treasury/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/treasury/routing.py": "39c5afc8888b748c8e96147f1bc143839dedfe73963bf5675f3e8ebf4978457a",
+    "tests/test_routing.py": "6e5aa5706dd989bdbbeec9374a84d13c41cf6f36e23a5e5d2762a3b16e551c9b",
+    "tests/test_routing_extended.py": "f797d7f08cf34e97f8d1b2f3b9dae18e5cf1aa1cafbb66334ad855c0c9fc1051"
+  },
+  "after": {
+    "AGENTS.md": "538789285a9887bd0fffc983b7192e817680b5adfa5546791e703dc4a0b7f45c",
+    "DOSSIER.md": "dc49623c69b514a577576a2cd82e946db2c80cd9700913d10e69dd8559246bd2",
+    "READER_ENTRY.json": "c462dd2f4ffd70a4920fe58f52593965a6d4b24d7cca1a2eea4fe516399c54b0",
+    "docs/B1-API.md": "e631804217257dfd5eabf3f9a3feeca025156822acc561bab7b5ab8b722914c2",
+    "docs/BR-001.md": "b88e648e2133cc0668a68b94d8e2b905a2fe09bd76780e36e20bbe68793b991a",
+    "docs/legacy_note.json": "ed8b81d04572c5e1925faa5b7473f220e3184f27287646ed61005a146dc6a95a",
+    "docs/policy.json": "3737b95b728bea32cfc2c82c489fe12267fd3096404a44639f27eec9de88deed",
+    "src/treasury/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/treasury/routing.py": "f244f527a7229047299c4d77c20a4078261953343bcd4df67ab62edceddd3ad2",
+    "tests/test_routing.py": "6e5aa5706dd989bdbbeec9374a84d13c41cf6f36e23a5e5d2762a3b16e551c9b",
+    "tests/test_routing_extended.py": "f797d7f08cf34e97f8d1b2f3b9dae18e5cf1aa1cafbb66334ad855c0c9fc1051"
+  },
+  "changed_files": [
+    "src/treasury/routing.py"
+  ],
+  "stdout_sha256": "27a3ef55be3720564af613ebf3268936bca1424f2d61e32fb23c31943a9eeba0",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "recorder_sha256": "58781a554cf89bb7a5c5fbc673825901820002e6036095198a2c062aa3e0126f",
+  "scope": "Actual submitted subprocess and workspace snapshots. This recorder is not a complete native-client trace or an OS sandbox."
+}

@@ -1,0 +1,38 @@
+{
+  "schema": "engineering-agent-client-inspection/v1",
+  "at_utc": "2026-11-16T22:31:25.215170+00:00",
+  "status": "CLIENT_SYNTAX_AVAILABLE_LIVE_NOT_TESTED",
+  "client": "claude",
+  "executable": "/opt/node22/bin/claude",
+  "client_version": "2.1.325 (Claude Code)",
+  "python": "3.13.18",
+  "platform": "Linux",
+  "commands": [
+    {
+      "label": "version",
+      "argv": [
+        "/opt/node22/bin/claude",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "version.stdout.txt",
+      "stderr": "version.stderr.txt"
+    },
+    {
+      "label": "help",
+      "argv": [
+        "/opt/node22/bin/claude",
+        "--help"
+      ],
+      "exit_code": 0,
+      "stdout": "help.stdout.txt",
+      "stderr": "help.stderr.txt"
+    }
+  ],
+  "required_flags_missing": [],
+  "authentication_checked": false,
+  "native_model_calls_requested": 0,
+  "live_run_verified": false,
+  "model_identity": null,
+  "scope": "Local version and help only; authentication, model access and the mission remain untested."
+}

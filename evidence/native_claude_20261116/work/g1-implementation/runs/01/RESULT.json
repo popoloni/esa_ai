@@ -1,0 +1,781 @@
+{
+  "at_utc": "2026-11-16T22:12:36.596666+00:00",
+  "client": "claude",
+  "exit_code": 0,
+  "timed_out": false,
+  "permission_denials": [
+    {
+      "event_line": 1077,
+      "value": {
+        "tool_name": "Bash",
+        "tool_use_id": "toolu_01GPyXmAeRPTQXgFpz3aruAb",
+        "tool_input": {
+          "command": "cat > booking.py <<'EOF'\n\"\"\"G1/I01 public interface: first durable reservation and public read.\n\nValidation, overlap, replay, fingerprints and atomic check-and-insert are G2.\n\"\"\"\nimport sqlite3\nfrom contextlib import closing\nfrom dataclasses import dataclass\nfrom pathlib import Path\n\n\n@dataclass(frozen=True)\nclass Outcome:\n    status: int\n    code: str\n    reservation_id: int | None = None\n    replayed: bool = False\n\n\n_SCHEMA = \"\"\"CREATE TABLE IF NOT EXISTS g1_reservation (\n    id INTEGER PRIMARY KEY,\n    trusted_member_id TEXT NOT NULL,\n    asset_id TEXT NOT NULL,\n    starts_at TEXT NOT NULL,\n    ends_at TEXT NOT NULL,\n    idempotency_key TEXT NOT NULL)\"\"\"\n\n\ndef init_db(path: str | Path) -> None:\n    with closing(sqlite3.connect(path)) as conn:\n        with conn:\n            conn.execute(_SCHEMA)\n\n\ndef reserve(db_path: str | Path, *, trusted_member_id: str,\n            asset_id: str, starts_at: str, ends_at: str,\n            idempotency_key: str) -> Outcome:\n    with closing(sqlite3.connect(db_path)) as conn:\n        with conn:  # commits before we return; rolls back and re-raises on error\n            cur = conn.execute(\n                \"INSERT INTO g1_reservation (trusted_member_id, asset_id, starts_at,\"\n                \" ends_at, idempotency_key) VALUES (?, ?, ?, ?, ?)\",\n                (trusted_member_id, asset_id, starts_at, ends_at, idempotency_key))\n            rid = cur.lastrowid\n    return Outcome(201, \"confirmed\", rid, False)\n\n\ndef get_reservation(path: str | Path, reservation_id: int):\n    # Missing file -> sqlite3.OperationalError; mode=ro never creates or mutates.\n    uri = Path(path).resolve().as_uri() + \"?mode=ro\"\n    with closing(sqlite3.connect(uri, uri=True)) as conn:\n        row = conn.execute(\n            \"SELECT id, trusted_member_id, asset_id, starts_at, ends_at,\"\n            \" idempotency_key FROM g1_reservation WHERE id = ?\",\n            (reservation_id,)).fetchone()\n    if row is None:\n        return None\n    keys = (\"reservation_id\", \"trusted_member_id\", \"asset_id\", \"starts_at\",\n            \"ends_at\", \"idempotency_key\")\n    return dict(zip(keys, row))\nEOF\npython3 -m unittest tests.test_g1_slice tests.test_g1_readonly 2>&1 | tail -5\npython3 -m unittest tests.test_g1_full_api 2>&1 | tail -15\npython3 -m unittest historical_tests.test_booking 2>&1 | tail -4\nd=$(mktemp -d); python3 -c \"\nimport booking,sys;p='$d/x.db';booking.init_db(p)\nr=booking.reserve(p,trusted_member_id='m',asset_id='A',starts_at='s',ends_at='e',idempotency_key='k');print(r)\"\npython3 -c \"import booking;print(booking.get_reservation('$d/x.db',1))\"; git status --short ."
+        }
+      }
+    },
+    {
+      "event_line": 1077,
+      "value": {
+        "tool_name": "Bash",
+        "tool_use_id": "toolu_0138DnDBxPgbXprnFT5PVMEM",
+        "tool_input": {
+          "command": "D=$(mktemp -d) && python3 -c \"\nimport booking;p='$D/x.db';booking.init_db(p)\nprint(booking.reserve(p,trusted_member_id='member-1',asset_id='A',starts_at='2025-05-14T09:00:00Z',ends_at='2025-05-14T10:00:00Z',idempotency_key='key-1'))\" && python3 -c \"\nimport booking;print(booking.get_reservation('$D/x.db',1), booking.get_reservation('$D/x.db',2))\ntry: booking.get_reservation('$D/nope.db',1)\nexcept Exception as e: print(type(e).__name__)\"; ls $D; python3 -m unittest historical_tests.test_booking 2>&1 | grep -E \"^(Ran|OK|FAILED)\""
+        }
+      }
+    }
+  ],
+  "reported_cost_usd": [
+    0.16040390000000002
+  ],
+  "elapsed_seconds": 44.706549,
+  "event_count": 1078,
+  "malformed_native_event_lines": [],
+  "changed_files": [
+    "DOSSIER.md",
+    "booking.py"
+  ],
+  "scope_changes_requiring_review": [],
+  "before": {
+    "AGENTS.md": "78be262e9924077d0d92ab0abaffdf172d0e1b1bc0d83a5b28d0d75e47fd6cd6",
+    "AGENT_PLAN.md": "fc4b43d7d8ab464b436766a32a0af252894d5f4d8b82db0ff09e432d88782334",
+    "AGENT_QUESTIONS.md": "893b31258c192de5db6afca0dabbf78995035b5a167f93854e2d0f554c56fff1",
+    "DOSSIER.md": "666026bb7ef8927c521c9857ce1527e2458210655af2fdbf99f5b863f5e3dd7c",
+    "QUESTIONS.md": "b9ac0f1d51acad4826f3194a457e58f959ca834d4a42550652e6fe94fdbdcf98",
+    "READER_ENTRY.json": "a99629f417a2dd4bf904a3e30209667e666275e8a2209594f71bda97e595ddd9",
+    "booking.py": "19ea131d1fec1ea4c575cf30fe1c25c358bb880027193945f08baeb0e6308e69",
+    "docs/G1-I01.md": "07a417cd7e7eeaca0bc5827e67eb965d0c7ebb75f387146f80a37e172fb89a50",
+    "docs/G1-OD-01.md": "baf835ffff57a64023ce8f5233b9e3e3588a2f6017f46f68b168919eae4b38db",
+    "docs/contract.md": "9c6c95077f305744728b9929f51ea36d8a534ab67cd2e7ebe8112ad35eb7ebba",
+    "docs/decisions/0001-storage.md": "c1b8a31f24fb5fe34e929049e8ed3cc3d1910b6d4194a40d4d303e70582f6762",
+    "historical_tests/test_booking.py": "3fede5b6fff032747fe1017836b915d375b7bef01417e6bbf246506e413b4e89",
+    "tests/test_g1_full_api.py": "8c46c06e0b8677dc74c9fb840f4f1f4b5f2c190095317b24f58d1cde92c8c538",
+    "tests/test_g1_readonly.py": "cd2f92b5adac1b2cc1ef5e1c23ff9309bd26133c933ec429368c7463308f5e4f",
+    "tests/test_g1_slice.py": "6242a53920d075fb038a8efbaeead6390f8f0a0d5b69dba3da6c31783abda98b"
+  },
+  "after": {
+    "AGENTS.md": "78be262e9924077d0d92ab0abaffdf172d0e1b1bc0d83a5b28d0d75e47fd6cd6",
+    "AGENT_PLAN.md": "fc4b43d7d8ab464b436766a32a0af252894d5f4d8b82db0ff09e432d88782334",
+    "AGENT_QUESTIONS.md": "893b31258c192de5db6afca0dabbf78995035b5a167f93854e2d0f554c56fff1",
+    "DOSSIER.md": "e62d640472198491a8bd7aceb1b61b5f9bf2edbf79b7deff4593e83e1d459efd",
+    "QUESTIONS.md": "b9ac0f1d51acad4826f3194a457e58f959ca834d4a42550652e6fe94fdbdcf98",
+    "READER_ENTRY.json": "a99629f417a2dd4bf904a3e30209667e666275e8a2209594f71bda97e595ddd9",
+    "booking.py": "48d2daa0e45965088f42ddf307ece4e0f5e8a2330415ee575819a8421d6119cc",
+    "docs/G1-I01.md": "07a417cd7e7eeaca0bc5827e67eb965d0c7ebb75f387146f80a37e172fb89a50",
+    "docs/G1-OD-01.md": "baf835ffff57a64023ce8f5233b9e3e3588a2f6017f46f68b168919eae4b38db",
+    "docs/contract.md": "9c6c95077f305744728b9929f51ea36d8a534ab67cd2e7ebe8112ad35eb7ebba",
+    "docs/decisions/0001-storage.md": "c1b8a31f24fb5fe34e929049e8ed3cc3d1910b6d4194a40d4d303e70582f6762",
+    "historical_tests/test_booking.py": "3fede5b6fff032747fe1017836b915d375b7bef01417e6bbf246506e413b4e89",
+    "tests/test_g1_full_api.py": "8c46c06e0b8677dc74c9fb840f4f1f4b5f2c190095317b24f58d1cde92c8c538",
+    "tests/test_g1_readonly.py": "cd2f92b5adac1b2cc1ef5e1c23ff9309bd26133c933ec429368c7463308f5e4f",
+    "tests/test_g1_slice.py": "6242a53920d075fb038a8efbaeead6390f8f0a0d5b69dba3da6c31783abda98b"
+  },
+  "thread_ids": [
+    "a90c493c-5bb7-4eec-9e19-95d30c1a89c1"
+  ],
+  "usage_events": [
+    {
+      "duration_api_ms": 43188,
+      "stop_reason": "end_turn",
+      "session_id": "a90c493c-5bb7-4eec-9e19-95d30c1a89c1",
+      "total_cost_usd": 0.16040390000000002,
+      "usage": {
+        "input_tokens": 18,
+        "cache_creation_input_tokens": 19829,
+        "cache_read_input_tokens": 164019,
+        "output_tokens": 6465,
+        "output_tokens_details": {
+          "thinking_tokens": 167
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 19829,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 988,
+            "cache_read_input_tokens": 24805,
+            "cache_creation_input_tokens": 1203,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 1203
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard",
+        "fallback_credit": null
+      },
+      "modelUsage": {
+        "claude-sonnet-5-5": {
+          "inputTokens": 18,
+          "outputTokens": 6465,
+          "cacheReadInputTokens": 164019,
+          "cacheCreationInputTokens": 19829,
+          "webSearchRequests": 0,
+          "costUSD": 0.16040390000000002,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 64000,
+          "thinkingTokens": 167,
+          "cacheCreationEphemeral5mInputTokens": 0,
+          "cacheCreationEphemeral1hInputTokens": 19829,
+          "canonicalModel": "claude-sonnet-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "permission_denials": [
+        {
+          "tool_name": "Bash",
+          "tool_use_id": "toolu_01GPyXmAeRPTQXgFpz3aruAb",
+          "tool_input": {
+            "command": "cat > booking.py <<'EOF'\n\"\"\"G1/I01 public interface: first durable reservation and public read.\n\nValidation, overlap, replay, fingerprints and atomic check-and-insert are G2.\n\"\"\"\nimport sqlite3\nfrom contextlib import closing\nfrom dataclasses import dataclass\nfrom pathlib import Path\n\n\n@dataclass(frozen=True)\nclass Outcome:\n    status: int\n    code: str\n    reservation_id: int | None = None\n    replayed: bool = False\n\n\n_SCHEMA = \"\"\"CREATE TABLE IF NOT EXISTS g1_reservation (\n    id INTEGER PRIMARY KEY,\n    trusted_member_id TEXT NOT NULL,\n    asset_id TEXT NOT NULL,\n    starts_at TEXT NOT NULL,\n    ends_at TEXT NOT NULL,\n    idempotency_key TEXT NOT NULL)\"\"\"\n\n\ndef init_db(path: str | Path) -> None:\n    with closing(sqlite3.connect(path)) as conn:\n        with conn:\n            conn.execute(_SCHEMA)\n\n\ndef reserve(db_path: str | Path, *, trusted_member_id: str,\n            asset_id: str, starts_at: str, ends_at: str,\n            idempotency_key: str) -> Outcome:\n    with closing(sqlite3.connect(db_path)) as conn:\n        with conn:  # commits before we return; rolls back and re-raises on error\n            cur = conn.execute(\n                \"INSERT INTO g1_reservation (trusted_member_id, asset_id, starts_at,\"\n                \" ends_at, idempotency_key) VALUES (?, ?, ?, ?, ?)\",\n                (trusted_member_id, asset_id, starts_at, ends_at, idempotency_key))\n            rid = cur.lastrowid\n    return Outcome(201, \"confirmed\", rid, False)\n\n\ndef get_reservation(path: str | Path, reservation_id: int):\n    # Missing file -> sqlite3.OperationalError; mode=ro never creates or mutates.\n    uri = Path(path).resolve().as_uri() + \"?mode=ro\"\n    with closing(sqlite3.connect(uri, uri=True)) as conn:\n        row = conn.execute(\n            \"SELECT id, trusted_member_id, asset_id, starts_at, ends_at,\"\n            \" idempotency_key FROM g1_reservation WHERE id = ?\",\n            (reservation_id,)).fetchone()\n    if row is None:\n        return None\n    keys = (\"reservation_id\", \"trusted_member_id\", \"asset_id\", \"starts_at\",\n            \"ends_at\", \"idempotency_key\")\n    return dict(zip(keys, row))\nEOF\npython3 -m unittest tests.test_g1_slice tests.test_g1_readonly 2>&1 | tail -5\npython3 -m unittest tests.test_g1_full_api 2>&1 | tail -15\npython3 -m unittest historical_tests.test_booking 2>&1 | tail -4\nd=$(mktemp -d); python3 -c \"\nimport booking,sys;p='$d/x.db';booking.init_db(p)\nr=booking.reserve(p,trusted_member_id='m',asset_id='A',starts_at='s',ends_at='e',idempotency_key='k');print(r)\"\npython3 -c \"import booking;print(booking.get_reservation('$d/x.db',1))\"; git status --short ."
+          }
+        },
+        {
+          "tool_name": "Bash",
+          "tool_use_id": "toolu_0138DnDBxPgbXprnFT5PVMEM",
+          "tool_input": {
+            "command": "D=$(mktemp -d) && python3 -c \"\nimport booking;p='$D/x.db';booking.init_db(p)\nprint(booking.reserve(p,trusted_member_id='member-1',asset_id='A',starts_at='2025-05-14T09:00:00Z',ends_at='2025-05-14T10:00:00Z',idempotency_key='key-1'))\" && python3 -c \"\nimport booking;print(booking.get_reservation('$D/x.db',1), booking.get_reservation('$D/x.db',2))\ntry: booking.get_reservation('$D/nope.db',1)\nexcept Exception as e: print(type(e).__name__)\"; ls $D; python3 -m unittest historical_tests.test_booking 2>&1 | grep -E \"^(Ran|OK|FAILED)\""
+          }
+        }
+      ],
+      "terminal_reason": "completed",
+      "fast_mode_state": "off",
+      "fast_mode_disabled_reason": "sdk_opt_in_required",
+      "subagent_stats": {
+        "spawned": 0,
+        "requested": {
+          "background": 0,
+          "foreground": 0,
+          "unset": 0
+        },
+        "started_in_background": 0,
+        "max_depth": 0,
+        "spawned_by_subagents": 0,
+        "completed": 0,
+        "failed": 0,
+        "killed": {
+          "parent": 0,
+          "user": 0,
+          "system": 0
+        },
+        "refused": {
+          "depth_limit": 0,
+          "concurrency_limit": 0,
+          "budget": 0
+        },
+        "by_type": {}
+      },
+      "safety_stops": 0,
+      "is_error": false,
+      "num_turns": 10,
+      "subtype": "success",
+      "api_error_status": null,
+      "result": "I implemented the G1/I01 public interface in `booking.py`. All 6 G1 checks pass, and the 7 full-contract failures are G2 behavior I left visible, as the brief says.\n\n**Outcome:** a first valid `reserve` commits one row and returns `201/confirmed` with a positive id and `replayed=False`. `get_reservation` reads it back with exactly the six public fields.\n\n**Acceptance example:** given an empty database, `member-1`, asset `A`, 2025-05-14T09:00:00Z to 10:00:00Z and key `key-1`, `reserve` returns `Outcome(201, \"confirmed\", 1, False)`. A separate process then reads id 1 and gets all six fields equal to the request. Id 2 returns `None`. A nonexistent path raises `sqlite3.OperationalError` and creates no file.\n\n**Documents:** I found no conflicts. G1-OD-01 resolves the missing-identifier rule, so I didn't need to ask anything. The documents leave nothing else consequential unspecified.\n\n**Files changed:** `booking.py` and `DOSSIER.md` only. `git status --short .` printed nothing, so I never saw a git listing of the changes. `QUESTIONS.md`, `docs/`, `tests/`, `historical_tests/` and `READER_ENTRY.json` were not edited.\n\n**Implementation:**\n- `init_db` creates a private `g1_reservation` table if it doesn't exist, so existing data is kept.\n- `reserve` uses a parameterized insert and commits before it returns. Storage errors propagate.\n- `get_reservation` opens the database read-only, using a URI built from `Path.resolve().as_uri()` plus `?mode=ro`. It returns a fresh dict, or `None` when the id is absent.\n\n**Correction:** my first write of `booking.py` was blocked by a command check before it ran. The file was still the stub, as the 6 errors confirmed. I rewrote it and re-ran the checks.\n\n**Commands and results:**\n- `python3 -m unittest tests.test_g1_slice tests.test_g1_readonly`: 6 tests OK. Before the implementation it was 6 errors.\n- `python3 -m unittest tests.test_g1_full_api`: 3 of 10 pass. The 7 failures are overlap, replay, changed key, validation and concurrency.\n- `python3 -m unittest historical_tests.test_booking`: 7 failures and 3 errors. It counts the original `reservations` table, and ADR 0001 says it doesn't gate this slice.\n- A separate-process probe confirmed the results in the acceptance example above.\n\n**Remaining limits:**\n- None of the G2 behavior exists, and concurrent `reserve` calls get only SQLite's defaults.\n- I didn't test crash recovery, corrupt or unwritable storage, or non-integer ids.\n- I observed no human approval. I did not run protected acceptance, which is yours to run.",
+      "ttft_ms": 1667,
+      "type": "result",
+      "duration_ms": 44109,
+      "uuid": "ddae1e7c-edef-43fe-a006-83508d66442c",
+      "ttft_stream_ms": 872,
+      "time_to_request_ms": 177,
+      "time_to_request_phases_ms": {
+        "other": 5,
+        "system_prompt": 116,
+        "resume_other": 0,
+        "process_user_input": 4,
+        "input_attachments": 9,
+        "input_hooks": 2,
+        "conversation_append": 0,
+        "tool_pool_refresh": 1,
+        "init_message": 2,
+        "init_frame_send": 1,
+        "engine_pickup": 1,
+        "loop_entry": 4,
+        "message_prep": 1,
+        "model_config_wait": 1,
+        "autocompact": 1,
+        "request_announcements": 7,
+        "query_setup": 1,
+        "model_gates": 0,
+        "tool_schema_build": 9,
+        "message_normalization": 2,
+        "client_creation": 3,
+        "request_build": 7
+      },
+      "turn_start_resume_kind": "none",
+      "process_turn_index": 0,
+      "time_to_request_loop_lag_ms": 20,
+      "time_to_request_cpu_ms": 109,
+      "time_to_request_major_faults": 0,
+      "process_rss_mib_turn_start": 206,
+      "process_anon_mib_turn_start": 130,
+      "process_rss_mib_result": 223,
+      "process_anon_mib_result": 134,
+      "process_peak_rss_mib": 232,
+      "process_cpu_ms_turn": 1575,
+      "process_wall_ms_turn": 44109,
+      "tool_pool_build_count": 3,
+      "tool_pool_build_lapsed_count": 1,
+      "tool_pool_moved_at_lapse_count": 0,
+      "tool_pool_limit_ms": 30000,
+      "process_cpu_ms_streaming": 888,
+      "process_wall_ms_streaming": 29081,
+      "main_stream_count": 9,
+      "main_stream_event_count": 1029,
+      "main_stream_chunk_count": 215,
+      "process_turn_states": {
+        "main_stream": {
+          "cpu_ms": 888,
+          "wall_ms": 29081,
+          "entries": 9
+        },
+        "tool": {
+          "cpu_ms": 119,
+          "wall_ms": 655,
+          "entries": 7
+        },
+        "first_event_wait": {
+          "cpu_ms": 326,
+          "wall_ms": 14070,
+          "entries": 9
+        },
+        "before_first_request": {
+          "cpu_ms": 109,
+          "wall_ms": 177,
+          "entries": 1
+        },
+        "between_requests": {
+          "cpu_ms": 122,
+          "wall_ms": 115,
+          "entries": 8
+        },
+        "after_last_request": {
+          "cpu_ms": 11,
+          "wall_ms": 11,
+          "entries": 1
+        }
+      },
+      "input_attachments_detail": {
+        "slowest_producer": "artifact_opening_prefetch",
+        "slowest_producer_ms": 1,
+        "cpu_ms": 9,
+        "major_faults": 0,
+        "setup_ms": 0,
+        "prompt_producers_ms": 0,
+        "ambient_start_ms": 4,
+        "ambient_wait_ms": 1,
+        "render_ms": 1,
+        "producers": 41,
+        "token_counts": 0
+      },
+      "tool_schema_build_detail": {
+        "betas_ms": 0,
+        "waits_ms": 1,
+        "placement_ms": 1,
+        "render_ms": 6,
+        "after_ms": 0,
+        "other_ms": 1,
+        "tools": 6,
+        "new_schemas": 6
+      },
+      "message_normalization_detail": {
+        "before_ms": 0,
+        "normalize_ms": 2,
+        "images_ms": 0,
+        "post_process_ms": 0,
+        "after_ms": 0,
+        "other_ms": 0,
+        "messages": 10,
+        "wire_messages": 2
+      },
+      "request_build_detail": {
+        "records_ms": 0,
+        "system_ms": 2,
+        "headers_ms": 0,
+        "cache_break_record_ms": 1,
+        "plans_ms": 1,
+        "retry_setup_ms": 0,
+        "sent_build_ms": 2,
+        "record_attempt_ms": 0,
+        "other_ms": 1,
+        "sent_build_safety_context_ms": 0,
+        "sent_build_cache_breakpoints_ms": 0,
+        "sent_build_surrogate_scan_ms": 0
+      },
+      "first_content_frame_ms": 872,
+      "time_to_request_from_spawn_ms": 446479,
+      "warm_spare_claimed": false,
+      "flag_fetch_kick": "started_in_init_warm",
+      "time_origin_ms": 1794867111893.8604,
+      "queued_turn_count": 0,
+      "result_index": 0,
+      "model_usage_since_last_result": {
+        "claude-sonnet-5-5": {
+          "inputTokens": 18,
+          "outputTokens": 6465,
+          "cacheReadInputTokens": 164019,
+          "cacheCreationInputTokens": 19829,
+          "webSearchRequests": 0,
+          "costUSD": 0.16040390000000002,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 64000,
+          "thinkingTokens": 167,
+          "cacheCreationEphemeral5mInputTokens": 0,
+          "cacheCreationEphemeral1hInputTokens": 19829,
+          "canonicalModel": "claude-sonnet-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "process_start_tuning": 0
+    }
+  ],
+  "native_observations": {
+    "completed_turn_lines": [
+      1077
+    ],
+    "failed_turn_or_error_lines": [],
+    "agent_message_lines": [
+      312,
+      491,
+      1072
+    ],
+    "tool_operation_lines": [
+      29,
+      65,
+      264,
+      298,
+      440,
+      470,
+      544,
+      674,
+      888
+    ],
+    "model_observations": [
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 3,
+        "field": "model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 29,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 65,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 78,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 264,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 276,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 298,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 312,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 440,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 470,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 491,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 544,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 674,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 684,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 888,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 1072,
+        "field": "message.model"
+      }
+    ],
+    "usage_observations": [
+      {
+        "event_line": 29,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 3482,
+          "cache_read_input_tokens": 6179,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 3482
+          },
+          "output_tokens": 16,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 65,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 4306,
+          "cache_read_input_tokens": 9661,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 4306
+          },
+          "output_tokens": 16,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 78,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 5597,
+          "cache_read_input_tokens": 13967,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 5597
+          },
+          "output_tokens": 8,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 264,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 5597,
+          "cache_read_input_tokens": 13967,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 5597
+          },
+          "output_tokens": 8,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 276,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1572,
+          "cache_read_input_tokens": 19564,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1572
+          },
+          "output_tokens": 4,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 298,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1572,
+          "cache_read_input_tokens": 19564,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1572
+          },
+          "output_tokens": 4,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 312,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 297,
+          "cache_read_input_tokens": 21136,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 297
+          },
+          "output_tokens": 41,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 440,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 297,
+          "cache_read_input_tokens": 21136,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 297
+          },
+          "output_tokens": 41,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 470,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 297,
+          "cache_read_input_tokens": 21136,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 297
+          },
+          "output_tokens": 41,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 491,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1958,
+          "cache_read_input_tokens": 21433,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1958
+          },
+          "output_tokens": 78,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 544,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1958,
+          "cache_read_input_tokens": 21433,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1958
+          },
+          "output_tokens": 78,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 674,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 492,
+          "cache_read_input_tokens": 23391,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 492
+          },
+          "output_tokens": 16,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 684,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 922,
+          "cache_read_input_tokens": 23883,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 922
+          },
+          "output_tokens": 5,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 888,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 922,
+          "cache_read_input_tokens": 23883,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 922
+          },
+          "output_tokens": 5,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 1072,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1203,
+          "cache_read_input_tokens": 24805,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1203
+          },
+          "output_tokens": 794,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 1077,
+        "field": "usage",
+        "value": {
+          "input_tokens": 18,
+          "cache_creation_input_tokens": 19829,
+          "cache_read_input_tokens": 164019,
+          "output_tokens": 6465,
+          "output_tokens_details": {
+            "thinking_tokens": 167
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 19829,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "global",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 988,
+              "cache_read_input_tokens": 24805,
+              "cache_creation_input_tokens": 1203,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 1203
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "fallback_credit": null
+        }
+      }
+    ],
+    "permission_denials": [
+      {
+        "event_line": 1077,
+        "value": {
+          "tool_name": "Bash",
+          "tool_use_id": "toolu_01GPyXmAeRPTQXgFpz3aruAb",
+          "tool_input": {
+            "command": "cat > booking.py <<'EOF'\n\"\"\"G1/I01 public interface: first durable reservation and public read.\n\nValidation, overlap, replay, fingerprints and atomic check-and-insert are G2.\n\"\"\"\nimport sqlite3\nfrom contextlib import closing\nfrom dataclasses import dataclass\nfrom pathlib import Path\n\n\n@dataclass(frozen=True)\nclass Outcome:\n    status: int\n    code: str\n    reservation_id: int | None = None\n    replayed: bool = False\n\n\n_SCHEMA = \"\"\"CREATE TABLE IF NOT EXISTS g1_reservation (\n    id INTEGER PRIMARY KEY,\n    trusted_member_id TEXT NOT NULL,\n    asset_id TEXT NOT NULL,\n    starts_at TEXT NOT NULL,\n    ends_at TEXT NOT NULL,\n    idempotency_key TEXT NOT NULL)\"\"\"\n\n\ndef init_db(path: str | Path) -> None:\n    with closing(sqlite3.connect(path)) as conn:\n        with conn:\n            conn.execute(_SCHEMA)\n\n\ndef reserve(db_path: str | Path, *, trusted_member_id: str,\n            asset_id: str, starts_at: str, ends_at: str,\n            idempotency_key: str) -> Outcome:\n    with closing(sqlite3.connect(db_path)) as conn:\n        with conn:  # commits before we return; rolls back and re-raises on error\n            cur = conn.execute(\n                \"INSERT INTO g1_reservation (trusted_member_id, asset_id, starts_at,\"\n                \" ends_at, idempotency_key) VALUES (?, ?, ?, ?, ?)\",\n                (trusted_member_id, asset_id, starts_at, ends_at, idempotency_key))\n            rid = cur.lastrowid\n    return Outcome(201, \"confirmed\", rid, False)\n\n\ndef get_reservation(path: str | Path, reservation_id: int):\n    # Missing file -> sqlite3.OperationalError; mode=ro never creates or mutates.\n    uri = Path(path).resolve().as_uri() + \"?mode=ro\"\n    with closing(sqlite3.connect(uri, uri=True)) as conn:\n        row = conn.execute(\n            \"SELECT id, trusted_member_id, asset_id, starts_at, ends_at,\"\n            \" idempotency_key FROM g1_reservation WHERE id = ?\",\n            (reservation_id,)).fetchone()\n    if row is None:\n        return None\n    keys = (\"reservation_id\", \"trusted_member_id\", \"asset_id\", \"starts_at\",\n            \"ends_at\", \"idempotency_key\")\n    return dict(zip(keys, row))\nEOF\npython3 -m unittest tests.test_g1_slice tests.test_g1_readonly 2>&1 | tail -5\npython3 -m unittest tests.test_g1_full_api 2>&1 | tail -15\npython3 -m unittest historical_tests.test_booking 2>&1 | tail -4\nd=$(mktemp -d); python3 -c \"\nimport booking,sys;p='$d/x.db';booking.init_db(p)\nr=booking.reserve(p,trusted_member_id='m',asset_id='A',starts_at='s',ends_at='e',idempotency_key='k');print(r)\"\npython3 -c \"import booking;print(booking.get_reservation('$d/x.db',1))\"; git status --short ."
+          }
+        }
+      },
+      {
+        "event_line": 1077,
+        "value": {
+          "tool_name": "Bash",
+          "tool_use_id": "toolu_0138DnDBxPgbXprnFT5PVMEM",
+          "tool_input": {
+            "command": "D=$(mktemp -d) && python3 -c \"\nimport booking;p='$D/x.db';booking.init_db(p)\nprint(booking.reserve(p,trusted_member_id='member-1',asset_id='A',starts_at='2025-05-14T09:00:00Z',ends_at='2025-05-14T10:00:00Z',idempotency_key='key-1'))\" && python3 -c \"\nimport booking;print(booking.get_reservation('$D/x.db',1), booking.get_reservation('$D/x.db',2))\ntry: booking.get_reservation('$D/nope.db',1)\nexcept Exception as e: print(type(e).__name__)\"; ls $D; python3 -m unittest historical_tests.test_booking 2>&1 | grep -E \"^(Ran|OK|FAILED)\""
+          }
+        }
+      }
+    ],
+    "reported_cost_observations": [
+      {
+        "event_line": 1077,
+        "field": "total_cost_usd",
+        "value": 0.16040390000000002
+      }
+    ],
+    "thread_ids": [
+      "a90c493c-5bb7-4eec-9e19-95d30c1a89c1"
+    ]
+  },
+  "requested_model": "claude-sonnet-5-5",
+  "observed_model_ids": [
+    "claude-sonnet-5-5"
+  ],
+  "model_identity_observed": true,
+  "native_turn_completed": true,
+  "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+  "acceptance": "NOT_ESTABLISHED",
+  "scope_note": "Native events retained as emitted; absence of usage is unknown, not zero."
+}

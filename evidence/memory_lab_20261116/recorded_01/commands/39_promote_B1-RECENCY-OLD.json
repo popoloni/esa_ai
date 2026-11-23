@@ -1,0 +1,26 @@
+{
+  "argv": [
+    "python3",
+    "-B",
+    "companion/memory/ledger.py",
+    "--workspace",
+    ".",
+    "--ledger",
+    "evidence/memory_lab_20261116/recorded_01/controls/recency_ledger.jsonl",
+    "promote",
+    "--record-id",
+    "B1-RECENCY-OLD",
+    "--actor",
+    "demo-owner-control",
+    "--actor-kind",
+    "automated_control",
+    "--decision",
+    "evidence/memory_lab_20261116/recorded_01/decisions/B1-RECENCY-OLD_promote.json"
+  ],
+  "exit": 0,
+  "expected_exit": 0,
+  "label": "promote_B1-RECENCY-OLD",
+  "origin": "AUTOMATED_LOCAL_CONTROL_NO_MODEL_OR_HUMAN",
+  "stderr": "",
+  "stdout": "{\"event_sha256\":\"c1faef112645a34a3de633a96802bdf5863ed9ddaa1894faf430cc8fc52a593f\",\"identity_authenticated\":false,\"record_id\":\"B1-RECENCY-OLD\",\"status\":\"APPROVED_LOCAL_DECLARATION\"}\n"
+}

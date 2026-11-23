@@ -1,0 +1,20 @@
+{
+  "at_utc": "2026-11-16T15:41:38.078075+00:00",
+  "argv": [
+    "python3",
+    "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/companion/start.py",
+    "continue",
+    "B1",
+    "--candidate",
+    "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B1-V2/workspace",
+    "--output",
+    "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B1-V2/handoff_v2",
+    "--select",
+    "v2"
+  ],
+  "returncode": 2,
+  "stdout": "",
+  "stderr": "REFUSED: Continuation requires the current protected suite, not a historical-only diagnostic.\n",
+  "operator": "AI recording facilitator /root",
+  "independence": "Protected expectations separately executed; not human review"
+}

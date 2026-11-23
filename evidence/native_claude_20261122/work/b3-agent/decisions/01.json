@@ -1,0 +1,29 @@
+{
+  "at_utc": "2026-11-22T17:38:02.245271+00:00",
+  "operator": "Claude Code live test",
+  "operator_kind": "AI",
+  "decision": "accept",
+  "note": "B3 protected check passed; scope limited to the mission module and DOSSIER.md.\n",
+  "decision_binding": {
+    "candidate_hashes": {
+      "AGENTS.md": "49b3fbbe06c9cd034e9cd97d6fb0a9c087a2f6b739169ae7f58af24735b2063c",
+      "DOSSIER.md": "60bfd6faceb0f62d72b9c858dc17d7049214620b49e42a85cf127d7d68ca1115",
+      "READER_ENTRY.json": "0ad05047101af63a1715751040488c1a59662e806dfad4d6ef27c05294caea81",
+      "docs/contract.md": "a3868114a71b664dfe907ffb90b61ddac6d6b7c039ede34708f9e3c20900eecb",
+      "docs/policy_catalog.json": "9c1b4078c49e118f1001d138484bd9b046ab595935e16b63ea160d619068c7ab",
+      "ledger.py": "8e87f6bd508a9372b40be2c004ef22b6c912830765fadac55b9896018d4799dc",
+      "prior/intake.py": "d078ca5b06de61638ce653eac0b7419c3f6246181a1b50a96d8f84d480672f0c",
+      "prior/parent-check-artifacts/DEMONSTRATION.json": "b875b177c608eacec6a5ed802f13c82fd0b055c90ca267053799aada98bdb082",
+      "prior/parent-check-artifacts/classification.json": "30deefb1e6adb6a37e4dbc20df5b00c652b9585e4e652cf335595868daa35e7b",
+      "prior/parent-entry.json": "d6a518a900326a687dc101fefd462701f13d7d0f9ef2f1854cfc3dda4824009f",
+      "prior/parent-handoff.json": "dddb54b8aadf7cc5f7c1b28e9eb68a514b7b27d032c67e6cdc08e28959adf954",
+      "routing.py": "e8fdab89acfa5d28041c74a5d2dcf9801fb0e85324dcc160013a56cf63f89cfd",
+      "tests/test_b3.py": "2b5ee5579c42106260fb3515b5f72b6ce017a7cb333f26159de1ebbfa5c6e2de"
+    },
+    "inventory_sha256": "5be8253d90f7b0e0ff7d047026ef8296cd4fdd39a04f67c12725d0a308e73bfc",
+    "latest_run": "runs/01",
+    "latest_result_sha256": "1ce3bb5428c2ca047ec496b885aa65c9516b6ed3b3f081f8c6f9bfa24ca9f773",
+    "session_spec_sha256": "be21a140682e80914b9bf487fb259a172c5783bae9b56087e5f7fd410cfb02e6"
+  },
+  "meaning": "Recorded operator statement; this tool does not certify its authority or correctness."
+}

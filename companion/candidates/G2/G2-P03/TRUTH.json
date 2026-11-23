@@ -1,0 +1,17 @@
+{
+  "schema": "esa-review-ground-truth/v4",
+  "mission": "G2",
+  "candidate_id": "G2-P03",
+  "created_on": "2026-11-02",
+  "origin": "CONSTRUCTED_TEACHING_VARIANT",
+  "actual_model_trace": false,
+  "expected_decision": "ACCEPT",
+  "expected_check_pass": true,
+  "targeted_assertions": [],
+  "explanation": "The current public behavior, migration and rollback controls hold for the supplied representations.",
+  "required_human_decision": null,
+  "contract": "RES-001/v1 + G2-OD-01",
+  "scope": "Constructed public practice, not a human assessment result.",
+  "revised_on": "2026-11-03",
+  "release_scope": "ESA-Complete-Review-3-20261103"
+}

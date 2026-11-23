@@ -1,0 +1,11 @@
+{
+  "origin": "EXACT_BYTES_FROM_IMMUTABLE_REVIEW1_ARCHIVE",
+  "archive": "dist/ESA_Complete_Review_1_EN_20261102.zip",
+  "archive_sha256": "3d5953a32bda918ce7eab475a365943dcaf523e6e98171e763368fd4fe120eaf",
+  "scope": "Historical mechanism derivation inputs; fictional current contracts are separate.",
+  "files": {
+    "legacy_note.json": "2c0ede42ae209d1a3231600eb5144eb647b93f516925cbff82a973598468ed6a",
+    "policy.json": "d29e9c72786c9fe1dfeeaa99d043948237f880772682726d56229008d8e7c445",
+    "BR-001.md": "0ccb86d1728cb8072f3c0b09be187510da9f0c05b8adf221bb81faa4bf3d0c51"
+  }
+}

@@ -1,0 +1,227 @@
+{
+  "schema": "esa-prototype-check/v2",
+  "selection": "slice",
+  "candidate_path": "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g1",
+  "candidate_sha256_before": "19ea131d1fec1ea4c575cf30fe1c25c358bb880027193945f08baeb0e6308e69",
+  "protected_before": [
+    {
+      "path": "docs/contract.md",
+      "expected_sha256": "9c6c95077f305744728b9929f51ea36d8a534ab67cd2e7ebe8112ad35eb7ebba",
+      "candidate_sha256": "9c6c95077f305744728b9929f51ea36d8a534ab67cd2e7ebe8112ad35eb7ebba",
+      "symlink": false
+    },
+    {
+      "path": "docs/G1-I01.md",
+      "expected_sha256": "07a417cd7e7eeaca0bc5827e67eb965d0c7ebb75f387146f80a37e172fb89a50",
+      "candidate_sha256": "07a417cd7e7eeaca0bc5827e67eb965d0c7ebb75f387146f80a37e172fb89a50",
+      "symlink": false
+    },
+    {
+      "path": "docs/G1-OD-01.md",
+      "expected_sha256": "baf835ffff57a64023ce8f5233b9e3e3588a2f6017f46f68b168919eae4b38db",
+      "candidate_sha256": "baf835ffff57a64023ce8f5233b9e3e3588a2f6017f46f68b168919eae4b38db",
+      "symlink": false
+    },
+    {
+      "path": "docs/decisions/0001-storage.md",
+      "expected_sha256": "c1b8a31f24fb5fe34e929049e8ed3cc3d1910b6d4194a40d4d303e70582f6762",
+      "candidate_sha256": "c1b8a31f24fb5fe34e929049e8ed3cc3d1910b6d4194a40d4d303e70582f6762",
+      "symlink": false
+    },
+    {
+      "path": "tests/test_g1_slice.py",
+      "expected_sha256": "6242a53920d075fb038a8efbaeead6390f8f0a0d5b69dba3da6c31783abda98b",
+      "candidate_sha256": "6242a53920d075fb038a8efbaeead6390f8f0a0d5b69dba3da6c31783abda98b",
+      "symlink": false
+    },
+    {
+      "path": "tests/test_g1_full_api.py",
+      "expected_sha256": "8c46c06e0b8677dc74c9fb840f4f1f4b5f2c190095317b24f58d1cde92c8c538",
+      "candidate_sha256": "8c46c06e0b8677dc74c9fb840f4f1f4b5f2c190095317b24f58d1cde92c8c538",
+      "symlink": false
+    },
+    {
+      "path": "tests/test_g1_readonly.py",
+      "expected_sha256": "cd2f92b5adac1b2cc1ef5e1c23ff9309bd26133c933ec429368c7463308f5e4f",
+      "candidate_sha256": "cd2f92b5adac1b2cc1ef5e1c23ff9309bd26133c933ec429368c7463308f5e4f",
+      "symlink": false
+    },
+    {
+      "path": "historical_tests/test_booking.py",
+      "expected_sha256": "3fede5b6fff032747fe1017836b915d375b7bef01417e6bbf246506e413b4e89",
+      "candidate_sha256": "3fede5b6fff032747fe1017836b915d375b7bef01417e6bbf246506e413b4e89",
+      "symlink": false
+    }
+  ],
+  "human_acceptance": "PENDING",
+  "groups": {
+    "g1_slice": {
+      "command": [
+        "/usr/local/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_g1_slice.py",
+        "-v"
+      ],
+      "elapsed_process_seconds": 0.062035229999992225,
+      "timeout_seconds": 15,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "test_first_reservation_confirms_and_public_read_matches (test_g1_slice.ReservationSlice.test_first_reservation_confirms_and_public_read_matches) ... ERROR\ntest_init_db_preserves_existing_reservation (test_g1_slice.ReservationSlice.test_init_db_preserves_existing_reservation) ... ERROR\ntest_missing_reservation_returns_none (test_g1_slice.ReservationSlice.test_missing_reservation_returns_none) ... ERROR\ntest_quoted_identifiers_round_trip (test_g1_slice.ReservationSlice.test_quoted_identifiers_round_trip) ... ERROR\n\n======================================================================\nERROR: test_first_reservation_confirms_and_public_read_matches (test_g1_slice.ReservationSlice.test_first_reservation_confirms_and_public_read_matches)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g1/tests/test_g1_slice.py\", line 17, in setUp\n    booking.init_db(self.db)\n    ~~~~~~~~~~~~~~~^^^^^^^^^\n  File \"/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g1/booking.py\", line 17, in init_db\n    raise NotImplementedError(\"Create the minimal durable storage\")\nNotImplementedError: Create the minimal durable storage\n\n======================================================================\nERROR: test_init_db_preserves_existing_reservation (test_g1_slice.ReservationSlice.test_init_db_preserves_existing_reservation)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g1/tests/test_g1_slice.py\", line 17, in setUp\n    booking.init_db(self.db)\n    ~~~~~~~~~~~~~~~^^^^^^^^^\n  File \"/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g1/booking.py\", line 17, in init_db\n    raise NotImplementedError(\"Create the minimal durable storage\")\nNotImplementedError: Create the minimal durable storage\n\n======================================================================\nERROR: test_missing_reservation_returns_none (test_g1_slice.ReservationSlice.test_missing_reservation_returns_none)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g1/tests/test_g1_slice.py\", line 17, in setUp\n    booking.init_db(self.db)\n    ~~~~~~~~~~~~~~~^^^^^^^^^\n  File \"/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g1/booking.py\", line 17, in init_db\n    raise NotImplementedError(\"Create the minimal durable storage\")\nNotImplementedError: Create the minimal durable storage\n\n======================================================================\nERROR: test_quoted_identifiers_round_trip (test_g1_slice.ReservationSlice.test_quoted_identifiers_round_trip)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g1/tests/test_g1_slice.py\", line 17, in setUp\n    booking.init_db(self.db)\n    ~~~~~~~~~~~~~~~^^^^^^^^^\n  File \"/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g1/booking.py\", line 17, in init_db\n    raise NotImplementedError(\"Create the minimal durable storage\")\nNotImplementedError: Create the minimal durable storage\n\n----------------------------------------------------------------------\nRan 4 tests in 0.004s\n\nFAILED (errors=4)\n",
+      "timed_out": false,
+      "tests_run": 4,
+      "expected_tests": 4,
+      "methods_passed": 0,
+      "methods_failed": [],
+      "methods_errored": [
+        "test_first_reservation_confirms_and_public_read_matches",
+        "test_init_db_preserves_existing_reservation",
+        "test_missing_reservation_returns_none",
+        "test_quoted_identifiers_round_trip"
+      ],
+      "status": "FAILED"
+    }
+  },
+  "tests_run": 4,
+  "expected_tests": 4,
+  "methods_passed": 0,
+  "stdout": "",
+  "stderr": "test_first_reservation_confirms_and_public_read_matches (test_g1_slice.ReservationSlice.test_first_reservation_confirms_and_public_read_matches) ... ERROR\ntest_init_db_preserves_existing_reservation (test_g1_slice.ReservationSlice.test_init_db_preserves_existing_reservation) ... ERROR\ntest_missing_reservation_returns_none (test_g1_slice.ReservationSlice.test_missing_reservation_returns_none) ... ERROR\ntest_quoted_identifiers_round_trip (test_g1_slice.ReservationSlice.test_quoted_identifiers_round_trip) ... ERROR\n\n======================================================================\nERROR: test_first_reservation_confirms_and_public_read_matches (test_g1_slice.ReservationSlice.test_first_reservation_confirms_and_public_read_matches)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g1/tests/test_g1_slice.py\", line 17, in setUp\n    booking.init_db(self.db)\n    ~~~~~~~~~~~~~~~^^^^^^^^^\n  File \"/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g1/booking.py\", line 17, in init_db\n    raise NotImplementedError(\"Create the minimal durable storage\")\nNotImplementedError: Create the minimal durable storage\n\n======================================================================\nERROR: test_init_db_preserves_existing_reservation (test_g1_slice.ReservationSlice.test_init_db_preserves_existing_reservation)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g1/tests/test_g1_slice.py\", line 17, in setUp\n    booking.init_db(self.db)\n    ~~~~~~~~~~~~~~~^^^^^^^^^\n  File \"/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g1/booking.py\", line 17, in init_db\n    raise NotImplementedError(\"Create the minimal durable storage\")\nNotImplementedError: Create the minimal durable storage\n\n======================================================================\nERROR: test_missing_reservation_returns_none (test_g1_slice.ReservationSlice.test_missing_reservation_returns_none)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g1/tests/test_g1_slice.py\", line 17, in setUp\n    booking.init_db(self.db)\n    ~~~~~~~~~~~~~~~^^^^^^^^^\n  File \"/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g1/booking.py\", line 17, in init_db\n    raise NotImplementedError(\"Create the minimal durable storage\")\nNotImplementedError: Create the minimal durable storage\n\n======================================================================\nERROR: test_quoted_identifiers_round_trip (test_g1_slice.ReservationSlice.test_quoted_identifiers_round_trip)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g1/tests/test_g1_slice.py\", line 17, in setUp\n    booking.init_db(self.db)\n    ~~~~~~~~~~~~~~~^^^^^^^^^\n  File \"/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g1/booking.py\", line 17, in init_db\n    raise NotImplementedError(\"Create the minimal durable storage\")\nNotImplementedError: Create the minimal durable storage\n\n----------------------------------------------------------------------\nRan 4 tests in 0.004s\n\nFAILED (errors=4)\n",
+  "timed_out": false,
+  "returncode": 1,
+  "protected_after": [
+    {
+      "path": "docs/contract.md",
+      "expected_sha256": "9c6c95077f305744728b9929f51ea36d8a534ab67cd2e7ebe8112ad35eb7ebba",
+      "candidate_sha256": "9c6c95077f305744728b9929f51ea36d8a534ab67cd2e7ebe8112ad35eb7ebba",
+      "symlink": false
+    },
+    {
+      "path": "docs/G1-I01.md",
+      "expected_sha256": "07a417cd7e7eeaca0bc5827e67eb965d0c7ebb75f387146f80a37e172fb89a50",
+      "candidate_sha256": "07a417cd7e7eeaca0bc5827e67eb965d0c7ebb75f387146f80a37e172fb89a50",
+      "symlink": false
+    },
+    {
+      "path": "docs/G1-OD-01.md",
+      "expected_sha256": "baf835ffff57a64023ce8f5233b9e3e3588a2f6017f46f68b168919eae4b38db",
+      "candidate_sha256": "baf835ffff57a64023ce8f5233b9e3e3588a2f6017f46f68b168919eae4b38db",
+      "symlink": false
+    },
+    {
+      "path": "docs/decisions/0001-storage.md",
+      "expected_sha256": "c1b8a31f24fb5fe34e929049e8ed3cc3d1910b6d4194a40d4d303e70582f6762",
+      "candidate_sha256": "c1b8a31f24fb5fe34e929049e8ed3cc3d1910b6d4194a40d4d303e70582f6762",
+      "symlink": false
+    },
+    {
+      "path": "tests/test_g1_slice.py",
+      "expected_sha256": "6242a53920d075fb038a8efbaeead6390f8f0a0d5b69dba3da6c31783abda98b",
+      "candidate_sha256": "6242a53920d075fb038a8efbaeead6390f8f0a0d5b69dba3da6c31783abda98b",
+      "symlink": false
+    },
+    {
+      "path": "tests/test_g1_full_api.py",
+      "expected_sha256": "8c46c06e0b8677dc74c9fb840f4f1f4b5f2c190095317b24f58d1cde92c8c538",
+      "candidate_sha256": "8c46c06e0b8677dc74c9fb840f4f1f4b5f2c190095317b24f58d1cde92c8c538",
+      "symlink": false
+    },
+    {
+      "path": "tests/test_g1_readonly.py",
+      "expected_sha256": "cd2f92b5adac1b2cc1ef5e1c23ff9309bd26133c933ec429368c7463308f5e4f",
+      "candidate_sha256": "cd2f92b5adac1b2cc1ef5e1c23ff9309bd26133c933ec429368c7463308f5e4f",
+      "symlink": false
+    },
+    {
+      "path": "historical_tests/test_booking.py",
+      "expected_sha256": "3fede5b6fff032747fe1017836b915d375b7bef01417e6bbf246506e413b4e89",
+      "candidate_sha256": "3fede5b6fff032747fe1017836b915d375b7bef01417e6bbf246506e413b4e89",
+      "symlink": false
+    }
+  ],
+  "candidate_sha256_after": "19ea131d1fec1ea4c575cf30fe1c25c358bb880027193945f08baeb0e6308e69",
+  "inputs_unchanged": true,
+  "status": "CHECKS_FAILED",
+  "mission": "G1",
+  "prototype_release": "ESA-Series-Handbook-Review-5-20261116",
+  "evidence_origin": "IDENTIFIED_LEARNER_CANDIDATE",
+  "scope": [
+    "G1/I01 four public-API methods"
+  ],
+  "api_contract": "G1/I01",
+  "meaning": "Checks on these bytes and selected cases; human acceptance remains pending. Integrity and timeout checks do not sandbox arbitrary code.",
+  "recorded_at_utc": "2026-11-16T22:11:49.019531+00:00",
+  "command": [
+    "/usr/local/bin/python3",
+    "companion/start.py",
+    "check",
+    "G1",
+    "--candidate",
+    "work/g1",
+    "--select",
+    "slice",
+    "--output",
+    "work/evidence/g1-initial.json"
+  ],
+  "verification_progress": {
+    "schema": "esa-verification-progress/v1",
+    "derivation": "CURRENT_RECEIPT_FIELDS_ONLY_NO_ADDITIONAL_EXECUTION",
+    "source_fields_sha256": "28e30e518fcbc94eebdd8d71e740f8c45079744de3402b01d895242c0207857b",
+    "work_order": "mission_G1",
+    "evidence_profile": "new_capability",
+    "profile_basis": "The named mission work order.",
+    "phase": "mission",
+    "stages": {
+      "startup": {
+        "status": "PASS",
+        "evidence": [
+          "schema",
+          "mission",
+          "candidate_path"
+        ],
+        "reason": "The intended runner accepted the entry identity and emitted this check receipt. This does not establish candidate import."
+      },
+      "integrity": {
+        "status": "PASS",
+        "evidence": [
+          "inputs_unchanged",
+          "candidate_sha256_before",
+          "candidate_sha256_after"
+        ],
+        "reason": "The recorded before/after comparison found inputs unchanged."
+      },
+      "contract": {
+        "status": "FAIL",
+        "evidence": [
+          "groups.g1_slice"
+        ],
+        "reason": "Status uses each selected group and any contract-specific supplemental probe; an import placeholder is not behavioral evidence. A candidate stack frame or known protected assertion supports reached behavior; a method count alone does not. Groups within this stage may retain multiple failures.",
+        "behavior_reached": true
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "evidence": [],
+        "reason": "No continuation or consumer/process observation is present."
+      },
+      "artifact": {
+        "status": "NOT_RUN",
+        "evidence": [],
+        "reason": "This receipt has no separate archive/extraction gate. Local demonstration hashes alone do not establish release fitness."
+      },
+      "authorization": {
+        "status": "NOT_RUN",
+        "evidence": [
+          "human_acceptance"
+        ],
+        "reason": "No owner acceptance or release authorization is recorded. Passing checks do not supply that decision."
+      }
+    },
+    "first_failed_stage": "contract",
+    "last_observed_stage": "contract",
+    "limits": "A stage label interprets the retained fields; it is not an independent attestation. NOT_APPLICABLE needs an explicit scope exclusion; absence alone remains NOT_RUN."
+  }
+}

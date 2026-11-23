@@ -1,0 +1,1129 @@
+{
+  "schema": "engineering-native-run-ledger/v2",
+  "at_utc": "2026-11-22T17:39:05.263755+00:00",
+  "workspace": "/home/claude/work/live22/agentic-ai-5.2",
+  "coverage_status": "NATIVE_CAPTURES_READY_FOR_REVIEW",
+  "client_filter": "claude",
+  "client_coverage": {
+    "codex": {
+      "completed_missions": 0,
+      "completed_native_sessions": 0,
+      "client_and_model_identified_missions": 0,
+      "required_missions": 8,
+      "required_native_sessions": 12
+    },
+    "claude": {
+      "completed_missions": 8,
+      "completed_native_sessions": 12,
+      "client_and_model_identified_missions": 8,
+      "required_missions": 8,
+      "required_native_sessions": 12
+    }
+  },
+  "verified_native_missions": 6,
+  "required_native_missions": 8,
+  "native_sessions_completed": 12,
+  "required_capture_stages": 12,
+  "operator_kinds_recorded": [
+    "AI"
+  ],
+  "human_operator_sessions": 0,
+  "reported_cost_usd_total": 2.044,
+  "reported_cost_scope": "Client-reported matrix attempts, including unsuccessful earlier attempts; not an invoice.",
+  "missions": [
+    {
+      "mission": "G1",
+      "native_capture_complete": true,
+      "operator_dispositions_settled": true,
+      "receipts_passing": true,
+      "receipt_candidate_bindings_match": true,
+      "natively_verified": true,
+      "sessions": [
+        {
+          "id": "G1-question",
+          "stage": "question",
+          "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+          "native_turn_completed": true,
+          "client_and_model_identified": true,
+          "selected_attempt_path": "work/g1-question/runs/01",
+          "attempts": [
+            {
+              "path": "work/g1-question/runs/01",
+              "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+              "client": "claude",
+              "client_version": "2.1.330 (Claude Code)",
+              "requested_model": null,
+              "observed_model_ids": [
+                "claude-opus-5-5"
+              ],
+              "reported_cost_usd": [
+                0.25471679999999997
+              ],
+              "permission_denial_count": 1,
+              "changed_files": [
+                "AGENT_PLAN.md",
+                "AGENT_QUESTIONS.md"
+              ],
+              "scope_changes_requiring_review": [],
+              "capture_hashes_match": true
+            }
+          ],
+          "operator_decisions": [
+            {
+              "file": "01.json",
+              "sha256": "6c931b10d339406b8c3193ee3f1cb9f294f27f5f6c8702bd8ef0779f48e4c8ce",
+              "decision": "stop",
+              "operator": "Claude Code live test",
+              "operator_kind": "AI",
+              "at_utc": "2026-11-22T17:28:07.250527+00:00"
+            }
+          ],
+          "operator_disposition_settled": true,
+          "operator_disposition_binding": {
+            "passing": true,
+            "binding": "RECORDED_BYTES_AND_RUN_MATCH",
+            "errors": []
+          }
+        },
+        {
+          "id": "G1-implementation",
+          "stage": "implement",
+          "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+          "native_turn_completed": true,
+          "client_and_model_identified": true,
+          "selected_attempt_path": "work/g1-implementation/runs/01",
+          "attempts": [
+            {
+              "path": "work/g1-implementation/runs/01",
+              "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+              "client": "claude",
+              "client_version": "2.1.330 (Claude Code)",
+              "requested_model": "claude-sonnet-5-5",
+              "observed_model_ids": [
+                "claude-sonnet-5-5"
+              ],
+              "reported_cost_usd": [
+                0.22459629999999997
+              ],
+              "permission_denial_count": 4,
+              "changed_files": [
+                "DOSSIER.md",
+                "booking.py"
+              ],
+              "scope_changes_requiring_review": [],
+              "capture_hashes_match": true
+            }
+          ],
+          "operator_decisions": [
+            {
+              "file": "01.json",
+              "sha256": "95251361b3163da2072f9008a9c24f8b614345fc8c84ed7637352d8ab0ab0a78",
+              "decision": "accept",
+              "operator": "Claude Code live test",
+              "operator_kind": "AI",
+              "at_utc": "2026-11-22T17:29:14.622326+00:00"
+            }
+          ],
+          "operator_disposition_settled": true,
+          "operator_disposition_binding": {
+            "passing": true,
+            "binding": "RECORDED_BYTES_AND_RUN_MATCH",
+            "errors": []
+          }
+        }
+      ],
+      "receipts": [
+        {
+          "kind": "check",
+          "path": "work/evidence/g1-first.json",
+          "present": true,
+          "superseded_attempts": [],
+          "status": "SELECTED_CHECKS_PASSED",
+          "tests_run": 4,
+          "candidate_sha256_after": "a93c8fa26357c4c5bf4c4eb40fbd15427692d074d3ee101f2a0a6980cb79007c",
+          "sha256": "45290ee961d008ad2adfcb69f1a1824f88ddd747f14eee6cdbb0a03a903185d1",
+          "passing": true,
+          "candidate_binding": {
+            "passing": true,
+            "errors": [],
+            "scope": "Retained receipt and snapshot identity; no new product execution",
+            "stage": "implement",
+            "selected_attempt": "work/g1-implementation/runs/01",
+            "module": "booking.py",
+            "expected_candidate_sha256": "a93c8fa26357c4c5bf4c4eb40fbd15427692d074d3ee101f2a0a6980cb79007c",
+            "protected_inputs_compared": 8
+          },
+          "bound_passing": true
+        },
+        {
+          "kind": "continue",
+          "path": "work/evidence/g1-handoff.json",
+          "present": true,
+          "superseded_attempts": [],
+          "status": "SCOPED_HANDOFF_READY",
+          "tests_run": 6,
+          "candidate_sha256_after": "a93c8fa26357c4c5bf4c4eb40fbd15427692d074d3ee101f2a0a6980cb79007c",
+          "sha256": "d26fd4d012443f0aab78a44657b394a246bea737572f2e6ba9c7c5336050beea",
+          "passing": true,
+          "candidate_binding": {
+            "passing": true,
+            "errors": [],
+            "scope": "Retained receipt and snapshot identity; no new product execution",
+            "stage": "implement",
+            "selected_attempt": "work/g1-implementation/runs/01",
+            "module": "booking.py",
+            "expected_candidate_sha256": "a93c8fa26357c4c5bf4c4eb40fbd15427692d074d3ee101f2a0a6980cb79007c",
+            "protected_inputs_compared": 8
+          },
+          "bound_passing": true
+        }
+      ]
+    },
+    {
+      "mission": "G2",
+      "native_capture_complete": true,
+      "operator_dispositions_settled": true,
+      "receipts_passing": false,
+      "receipt_candidate_bindings_match": false,
+      "natively_verified": false,
+      "sessions": [
+        {
+          "id": "G2",
+          "stage": "implement",
+          "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+          "native_turn_completed": true,
+          "client_and_model_identified": true,
+          "selected_attempt_path": "work/g2-agent/runs/01",
+          "attempts": [
+            {
+              "path": "work/g2-agent/runs/01",
+              "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+              "client": "claude",
+              "client_version": "2.1.330 (Claude Code)",
+              "requested_model": "claude-sonnet-5-5",
+              "observed_model_ids": [
+                "claude-sonnet-5-5"
+              ],
+              "reported_cost_usd": [
+                0.29853620000000003
+              ],
+              "permission_denial_count": 2,
+              "changed_files": [
+                "DOSSIER.md",
+                "booking.py"
+              ],
+              "scope_changes_requiring_review": [],
+              "capture_hashes_match": true
+            }
+          ],
+          "operator_decisions": [
+            {
+              "file": "01.json",
+              "sha256": "8cd1e70960636e6bf423f7ff7fb6fa7e155828be5e2f1eab545bc87d6ac3a809",
+              "decision": "accept",
+              "operator": "Claude Code live test",
+              "operator_kind": "AI",
+              "at_utc": "2026-11-22T17:31:04.427554+00:00"
+            }
+          ],
+          "operator_disposition_settled": true,
+          "operator_disposition_binding": {
+            "passing": true,
+            "binding": "RECORDED_BYTES_AND_RUN_MATCH",
+            "errors": []
+          }
+        }
+      ],
+      "receipts": [
+        {
+          "kind": "check",
+          "path": "work/evidence/g2-first.json",
+          "present": true,
+          "superseded_attempts": [],
+          "status": "CHECKS_FAILED",
+          "tests_run": 17,
+          "candidate_sha256_after": "a93c8fa26357c4c5bf4c4eb40fbd15427692d074d3ee101f2a0a6980cb79007c",
+          "sha256": "e30ad234f4c96ee5e227875b19440701a2e8ae364ebcbe6d5982e0539bbeda0f",
+          "passing": false,
+          "candidate_binding": {
+            "passing": false,
+            "errors": [
+              "Receipt candidate hashes do not match the selected native source"
+            ],
+            "scope": "Retained receipt and snapshot identity; no new product execution",
+            "stage": "implement",
+            "selected_attempt": "work/g2-agent/runs/01",
+            "module": "booking.py",
+            "expected_candidate_sha256": "3acd48b844deab0ee87a0c7270782465ddfb533400a18ab214678ffc6a7433dd"
+          },
+          "bound_passing": false
+        },
+        {
+          "kind": "continue",
+          "path": "work/evidence/g2-handoff.json",
+          "present": true,
+          "superseded_attempts": [],
+          "status": "SCOPED_HANDOFF_READY",
+          "tests_run": 17,
+          "candidate_sha256_after": "3acd48b844deab0ee87a0c7270782465ddfb533400a18ab214678ffc6a7433dd",
+          "sha256": "325673f044a646ab59f332b30d3bca8f1d64ea3bcbfa7a3bc4c60ed613baa374",
+          "passing": true,
+          "candidate_binding": {
+            "passing": true,
+            "errors": [],
+            "scope": "Retained receipt and snapshot identity; no new product execution",
+            "stage": "implement",
+            "selected_attempt": "work/g2-agent/runs/01",
+            "module": "booking.py",
+            "expected_candidate_sha256": "3acd48b844deab0ee87a0c7270782465ddfb533400a18ab214678ffc6a7433dd",
+            "protected_inputs_compared": 9
+          },
+          "bound_passing": true
+        }
+      ]
+    },
+    {
+      "mission": "G3",
+      "native_capture_complete": true,
+      "operator_dispositions_settled": true,
+      "receipts_passing": true,
+      "receipt_candidate_bindings_match": true,
+      "natively_verified": true,
+      "sessions": [
+        {
+          "id": "G3",
+          "stage": "implement",
+          "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+          "native_turn_completed": true,
+          "client_and_model_identified": true,
+          "selected_attempt_path": "work/g3-agent/runs/01",
+          "attempts": [
+            {
+              "path": "work/g3-agent/runs/01",
+              "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+              "client": "claude",
+              "client_version": "2.1.330 (Claude Code)",
+              "requested_model": "claude-sonnet-5-5",
+              "observed_model_ids": [
+                "claude-sonnet-5-5"
+              ],
+              "reported_cost_usd": [
+                0.19158500000000003
+              ],
+              "permission_denial_count": 0,
+              "changed_files": [
+                "DOSSIER.md",
+                "booking.py"
+              ],
+              "scope_changes_requiring_review": [],
+              "capture_hashes_match": true
+            }
+          ],
+          "operator_decisions": [
+            {
+              "file": "01.json",
+              "sha256": "62bd1d2565e2830c1ba5f43682d618864bdc32ba55299f4db385e2a317568e1d",
+              "decision": "accept",
+              "operator": "Claude Code live test",
+              "operator_kind": "AI",
+              "at_utc": "2026-11-22T17:32:05.847364+00:00"
+            }
+          ],
+          "operator_disposition_settled": true,
+          "operator_disposition_binding": {
+            "passing": true,
+            "binding": "RECORDED_BYTES_AND_RUN_MATCH",
+            "errors": []
+          }
+        },
+        {
+          "id": "G3-report",
+          "stage": "report",
+          "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+          "native_turn_completed": true,
+          "client_and_model_identified": true,
+          "selected_attempt_path": "work/g3-report-agent/runs/01",
+          "attempts": [
+            {
+              "path": "work/g3-report-agent/runs/01",
+              "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+              "client": "claude",
+              "client_version": "2.1.330 (Claude Code)",
+              "requested_model": "claude-sonnet-5-5",
+              "observed_model_ids": [
+                "claude-sonnet-5-5"
+              ],
+              "reported_cost_usd": [
+                0.105865
+              ],
+              "permission_denial_count": 4,
+              "changed_files": [
+                "CONTRIBUTION_A.md",
+                "reservation_report.py"
+              ],
+              "scope_changes_requiring_review": [],
+              "capture_hashes_match": true
+            }
+          ],
+          "operator_decisions": [
+            {
+              "file": "01.json",
+              "sha256": "25557d2bc50ec48363577e671aee5025c9956d90fed44654f76e50b921f520bc",
+              "decision": "accept",
+              "operator": "Claude Code live test",
+              "operator_kind": "AI",
+              "at_utc": "2026-11-22T17:32:54.452972+00:00"
+            }
+          ],
+          "operator_disposition_settled": true,
+          "operator_disposition_binding": {
+            "passing": true,
+            "binding": "RECORDED_BYTES_AND_RUN_MATCH",
+            "errors": []
+          }
+        },
+        {
+          "id": "G3-cli",
+          "stage": "cli",
+          "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+          "native_turn_completed": true,
+          "client_and_model_identified": true,
+          "selected_attempt_path": "work/g3-cli-agent/runs/01",
+          "attempts": [
+            {
+              "path": "work/g3-cli-agent/runs/01",
+              "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+              "client": "claude",
+              "client_version": "2.1.330 (Claude Code)",
+              "requested_model": "claude-sonnet-5-5",
+              "observed_model_ids": [
+                "claude-sonnet-5-5"
+              ],
+              "reported_cost_usd": [
+                0.07120000000000001
+              ],
+              "permission_denial_count": 0,
+              "changed_files": [
+                "CONTRIBUTION_B.md",
+                "reservation_cli.py"
+              ],
+              "scope_changes_requiring_review": [],
+              "capture_hashes_match": true
+            }
+          ],
+          "operator_decisions": [
+            {
+              "file": "01.json",
+              "sha256": "49ce410b07de9fe8502b70ff2b2101b06753a0d853f4a9076fa225a504ef6f05",
+              "decision": "accept",
+              "operator": "Claude Code live test",
+              "operator_kind": "AI",
+              "at_utc": "2026-11-22T17:32:54.498498+00:00"
+            }
+          ],
+          "operator_disposition_settled": true,
+          "operator_disposition_binding": {
+            "passing": true,
+            "binding": "RECORDED_BYTES_AND_RUN_MATCH",
+            "errors": []
+          }
+        }
+      ],
+      "receipts": [
+        {
+          "kind": "check",
+          "path": "work/evidence/g3-first.json",
+          "present": true,
+          "superseded_attempts": [],
+          "status": "SELECTED_CHECKS_PASSED",
+          "tests_run": 7,
+          "candidate_sha256_after": "c0b3857de28f86624e329cd1dcfbc4d9c52af3691e78e84b60f66bfcfffbb887",
+          "sha256": "fcfd7e8f8f9fe81b8f8d7c8e9374bdc4eb4289f89b418021beb35227b8ca4819",
+          "passing": true,
+          "candidate_binding": {
+            "passing": true,
+            "errors": [],
+            "scope": "Retained receipt and snapshot identity; no new product execution",
+            "stage": "implement",
+            "selected_attempt": "work/g3-agent/runs/01",
+            "module": "booking.py",
+            "expected_candidate_sha256": "c0b3857de28f86624e329cd1dcfbc4d9c52af3691e78e84b60f66bfcfffbb887",
+            "protected_inputs_compared": 9
+          },
+          "bound_passing": true
+        },
+        {
+          "kind": "continue",
+          "path": "work/evidence/g3-handoff.json",
+          "present": true,
+          "superseded_attempts": [],
+          "status": "SCOPED_HANDOFF_READY",
+          "tests_run": 7,
+          "candidate_sha256_after": "c0b3857de28f86624e329cd1dcfbc4d9c52af3691e78e84b60f66bfcfffbb887",
+          "sha256": "52242f80742fe9c9ed04d6546766b80a73fdfc2e8ce1291a2aac73fa27983e43",
+          "passing": true,
+          "candidate_binding": {
+            "passing": true,
+            "errors": [],
+            "scope": "Retained receipt and snapshot identity; no new product execution",
+            "stage": "implement",
+            "selected_attempt": "work/g3-agent/runs/01",
+            "module": "booking.py",
+            "expected_candidate_sha256": "c0b3857de28f86624e329cd1dcfbc4d9c52af3691e78e84b60f66bfcfffbb887",
+            "protected_inputs_compared": 9
+          },
+          "bound_passing": true
+        },
+        {
+          "kind": "integration",
+          "path": "work/g3-integration/REPORT.json",
+          "present": true,
+          "superseded_attempts": [],
+          "status": "INTEGRATION_CHECKS_PASSED",
+          "tests_run": null,
+          "candidate_sha256_after": null,
+          "sha256": "160cebbbbda797811892d270fbe3e171e0de263a91fdcb9875b4e59bd0fa7afd",
+          "passing": true,
+          "candidate_binding": {
+            "passing": true,
+            "errors": [],
+            "expected_source_sha256": {
+              "booking.py": "c0b3857de28f86624e329cd1dcfbc4d9c52af3691e78e84b60f66bfcfffbb887",
+              "reservation_report.py": "d3aa8fff9219cdf977a00c50a3c797cb38b0d3cf84270c70d1eb2b83a17d7645",
+              "reservation_cli.py": "481178182a46a05f62f3580c722220471f8ccff40375169dec7457ad9a04a5c1"
+            }
+          },
+          "bound_passing": true
+        }
+      ]
+    },
+    {
+      "mission": "G4",
+      "native_capture_complete": true,
+      "operator_dispositions_settled": false,
+      "receipts_passing": false,
+      "receipt_candidate_bindings_match": false,
+      "natively_verified": false,
+      "sessions": [
+        {
+          "id": "G4",
+          "stage": "implement",
+          "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+          "native_turn_completed": true,
+          "client_and_model_identified": true,
+          "selected_attempt_path": "work/g4-agent/runs/01",
+          "attempts": [
+            {
+              "path": "work/g4-agent/runs/01",
+              "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+              "client": "claude",
+              "client_version": "2.1.330 (Claude Code)",
+              "requested_model": "claude-sonnet-5-5",
+              "observed_model_ids": [
+                "claude-sonnet-5-5"
+              ],
+              "reported_cost_usd": [
+                0.2107029
+              ],
+              "permission_denial_count": 2,
+              "changed_files": [
+                "DOSSIER.md",
+                "operations.py"
+              ],
+              "scope_changes_requiring_review": [],
+              "capture_hashes_match": true
+            }
+          ],
+          "operator_decisions": [
+            {
+              "file": "01.json",
+              "sha256": "cd64123a871b36a59430d4c5ff1b1a9f2eb1d7ae6799e544e628d7afa48a15bb",
+              "decision": "ask",
+              "operator": "Claude Code live test",
+              "operator_kind": "AI",
+              "at_utc": "2026-11-22T17:34:29.771686+00:00"
+            }
+          ],
+          "operator_disposition_settled": false,
+          "operator_disposition_binding": {
+            "passing": false,
+            "binding": "NOT_ASSESSED",
+            "errors": [
+              "The last disposition is not accept"
+            ]
+          }
+        }
+      ],
+      "receipts": [
+        {
+          "kind": "check",
+          "path": "work/evidence/g4-first.json",
+          "present": true,
+          "superseded_attempts": [],
+          "status": "CHECKS_FAILED",
+          "tests_run": 13,
+          "candidate_sha256_after": "ec17d87e6a015c275f28224493cc985fecd6ceeedb50e3cb90bf20e51f7afe44",
+          "sha256": "5af35bef2d3905f6262d4e4facc00214926ef8f06f6a0faa07d3eb92d9516213",
+          "passing": false,
+          "candidate_binding": {
+            "passing": false,
+            "errors": [
+              "Receipt does not contain successful nonempty protected check groups"
+            ],
+            "scope": "Retained receipt and snapshot identity; no new product execution",
+            "stage": "implement",
+            "selected_attempt": "work/g4-agent/runs/01",
+            "module": "operations.py",
+            "expected_candidate_sha256": "ec17d87e6a015c275f28224493cc985fecd6ceeedb50e3cb90bf20e51f7afe44"
+          },
+          "bound_passing": false
+        },
+        {
+          "kind": "continue",
+          "path": "work/evidence/g4-handoff.json",
+          "present": false,
+          "superseded_attempts": [],
+          "candidate_binding": {
+            "passing": false,
+            "errors": [
+              "[Errno 2] No such file or directory: '/home/claude/work/live22/agentic-ai-5.2/work/evidence/g4-handoff.json'"
+            ],
+            "scope": "Retained receipt and snapshot identity; no new product execution"
+          },
+          "bound_passing": false
+        }
+      ]
+    },
+    {
+      "mission": "B1",
+      "native_capture_complete": true,
+      "operator_dispositions_settled": true,
+      "receipts_passing": true,
+      "receipt_candidate_bindings_match": true,
+      "natively_verified": true,
+      "sessions": [
+        {
+          "id": "B1-v1",
+          "stage": "v1",
+          "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+          "native_turn_completed": true,
+          "client_and_model_identified": true,
+          "selected_attempt_path": "work/b1-agent-v1/runs/01",
+          "attempts": [
+            {
+              "path": "work/b1-agent-v1/runs/01",
+              "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+              "client": "claude",
+              "client_version": "2.1.330 (Claude Code)",
+              "requested_model": "claude-sonnet-5-5",
+              "observed_model_ids": [
+                "claude-sonnet-5-5"
+              ],
+              "reported_cost_usd": [
+                0.11538009999999999
+              ],
+              "permission_denial_count": 4,
+              "changed_files": [
+                "DOSSIER.md",
+                "src/treasury/routing.py"
+              ],
+              "scope_changes_requiring_review": [],
+              "capture_hashes_match": true
+            }
+          ],
+          "operator_decisions": [
+            {
+              "file": "01.json",
+              "sha256": "0f62aa116c6705948a3884ab12db7d372aa9fe191d99ba24ee084be5a184aeb2",
+              "decision": "accept",
+              "operator": "Claude Code live test",
+              "operator_kind": "AI",
+              "at_utc": "2026-11-22T17:36:10.081761+00:00"
+            }
+          ],
+          "operator_disposition_settled": true,
+          "operator_disposition_binding": {
+            "passing": true,
+            "binding": "RECORDED_BYTES_AND_RUN_MATCH",
+            "errors": []
+          }
+        },
+        {
+          "id": "B1-v2",
+          "stage": "v2",
+          "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+          "native_turn_completed": true,
+          "client_and_model_identified": true,
+          "selected_attempt_path": "work/b1-agent-v2/runs/01",
+          "attempts": [
+            {
+              "path": "work/b1-agent-v2/runs/01",
+              "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+              "client": "claude",
+              "client_version": "2.1.330 (Claude Code)",
+              "requested_model": "claude-sonnet-5-5",
+              "observed_model_ids": [
+                "claude-sonnet-5-5"
+              ],
+              "reported_cost_usd": [
+                0.11708680000000002
+              ],
+              "permission_denial_count": 2,
+              "changed_files": [
+                "DOSSIER.md",
+                "src/treasury/routing.py"
+              ],
+              "scope_changes_requiring_review": [],
+              "capture_hashes_match": true
+            }
+          ],
+          "operator_decisions": [
+            {
+              "file": "01.json",
+              "sha256": "5612ea39b404bb84377cc7d8197bce67f4cc863352d76a28cd9cda3ef2ed31cb",
+              "decision": "accept",
+              "operator": "Claude Code live test",
+              "operator_kind": "AI",
+              "at_utc": "2026-11-22T17:36:41.858347+00:00"
+            }
+          ],
+          "operator_disposition_settled": true,
+          "operator_disposition_binding": {
+            "passing": true,
+            "binding": "RECORDED_BYTES_AND_RUN_MATCH",
+            "errors": []
+          }
+        }
+      ],
+      "receipts": [
+        {
+          "kind": "check",
+          "path": "work/evidence/b1-check.json",
+          "present": true,
+          "superseded_attempts": [],
+          "status": "SELECTED_CHECKS_PASSED",
+          "tests_run": 12,
+          "candidate_sha256_after": "55f5ea84fd53c5d4cb1852eca2d0b4c7550559c2f0bf176bf0f60edcda7e8fab",
+          "sha256": "8ac8437526ca3d5aead4c418dcd3e260684b981488424d9800b09d4ad4dc1ef7",
+          "passing": true,
+          "candidate_binding": {
+            "passing": true,
+            "errors": [],
+            "scope": "Retained receipt and snapshot identity; no new product execution",
+            "stage": "v1",
+            "selected_attempt": "work/b1-agent-v1/runs/01",
+            "module": "src/treasury/routing.py",
+            "expected_candidate_sha256": "55f5ea84fd53c5d4cb1852eca2d0b4c7550559c2f0bf176bf0f60edcda7e8fab",
+            "protected_inputs_compared": 7
+          },
+          "bound_passing": true
+        },
+        {
+          "kind": "continue",
+          "path": "work/evidence/b1-context.json",
+          "present": true,
+          "superseded_attempts": [],
+          "status": "CONTEXT_HANDOFF_READY",
+          "tests_run": 12,
+          "candidate_sha256_after": "55f5ea84fd53c5d4cb1852eca2d0b4c7550559c2f0bf176bf0f60edcda7e8fab",
+          "sha256": "207afe1fb2b4d7b6f16ff2f25fcf342c30bb25f2c51eeb936dea8ca4b3bf782d",
+          "passing": true,
+          "candidate_binding": {
+            "passing": true,
+            "errors": [],
+            "scope": "Retained receipt and snapshot identity; no new product execution",
+            "stage": "v1",
+            "selected_attempt": "work/b1-agent-v1/runs/01",
+            "module": "src/treasury/routing.py",
+            "expected_candidate_sha256": "55f5ea84fd53c5d4cb1852eca2d0b4c7550559c2f0bf176bf0f60edcda7e8fab",
+            "protected_inputs_compared": 7
+          },
+          "bound_passing": true
+        },
+        {
+          "kind": "check",
+          "path": "work/evidence/b1-v2-check.json",
+          "present": true,
+          "superseded_attempts": [],
+          "status": "SELECTED_CHECKS_PASSED",
+          "tests_run": 18,
+          "candidate_sha256_after": "e8fdab89acfa5d28041c74a5d2dcf9801fb0e85324dcc160013a56cf63f89cfd",
+          "sha256": "877707c5d595385340be6b9a231efab327eb7174c0460e1ac299ef65a4e1d7c8",
+          "passing": true,
+          "candidate_binding": {
+            "passing": true,
+            "errors": [],
+            "scope": "Retained receipt and snapshot identity; no new product execution",
+            "stage": "v2",
+            "selected_attempt": "work/b1-agent-v2/runs/01",
+            "module": "src/treasury/routing.py",
+            "expected_candidate_sha256": "e8fdab89acfa5d28041c74a5d2dcf9801fb0e85324dcc160013a56cf63f89cfd",
+            "protected_inputs_compared": 9
+          },
+          "bound_passing": true
+        },
+        {
+          "kind": "continue",
+          "path": "work/evidence/b1-v2-handoff.json",
+          "present": true,
+          "superseded_attempts": [],
+          "status": "CONTEXT_HANDOFF_READY",
+          "tests_run": 18,
+          "candidate_sha256_after": "e8fdab89acfa5d28041c74a5d2dcf9801fb0e85324dcc160013a56cf63f89cfd",
+          "sha256": "23f122f5422d1985f1a3df8a82bcf58716f10d75c3298f527eb8dd67555fdaed",
+          "passing": true,
+          "candidate_binding": {
+            "passing": true,
+            "errors": [],
+            "scope": "Retained receipt and snapshot identity; no new product execution",
+            "stage": "v2",
+            "selected_attempt": "work/b1-agent-v2/runs/01",
+            "module": "src/treasury/routing.py",
+            "expected_candidate_sha256": "e8fdab89acfa5d28041c74a5d2dcf9801fb0e85324dcc160013a56cf63f89cfd",
+            "protected_inputs_compared": 9
+          },
+          "bound_passing": true
+        }
+      ]
+    },
+    {
+      "mission": "B2",
+      "native_capture_complete": true,
+      "operator_dispositions_settled": true,
+      "receipts_passing": true,
+      "receipt_candidate_bindings_match": true,
+      "natively_verified": true,
+      "sessions": [
+        {
+          "id": "B2",
+          "stage": "implement",
+          "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+          "native_turn_completed": true,
+          "client_and_model_identified": true,
+          "selected_attempt_path": "work/b2-agent/runs/01",
+          "attempts": [
+            {
+              "path": "work/b2-agent/runs/01",
+              "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+              "client": "claude",
+              "client_version": "2.1.330 (Claude Code)",
+              "requested_model": "claude-sonnet-5-5",
+              "observed_model_ids": [
+                "claude-sonnet-5-5"
+              ],
+              "reported_cost_usd": [
+                0.1305153
+              ],
+              "permission_denial_count": 1,
+              "changed_files": [
+                "DOSSIER.md",
+                "intake.py"
+              ],
+              "scope_changes_requiring_review": [],
+              "capture_hashes_match": true
+            }
+          ],
+          "operator_decisions": [
+            {
+              "file": "01.json",
+              "sha256": "924a33965f89805a31f824fb442d450c2da7ada09a00808ab24201dc6669b3a2",
+              "decision": "accept",
+              "operator": "Claude Code live test",
+              "operator_kind": "AI",
+              "at_utc": "2026-11-22T17:37:28.247388+00:00"
+            }
+          ],
+          "operator_disposition_settled": true,
+          "operator_disposition_binding": {
+            "passing": true,
+            "binding": "RECORDED_BYTES_AND_RUN_MATCH",
+            "errors": []
+          }
+        }
+      ],
+      "receipts": [
+        {
+          "kind": "check",
+          "path": "work/evidence/b2-first.json",
+          "present": true,
+          "superseded_attempts": [],
+          "status": "SELECTED_CHECKS_PASSED",
+          "tests_run": 12,
+          "candidate_sha256_after": "d078ca5b06de61638ce653eac0b7419c3f6246181a1b50a96d8f84d480672f0c",
+          "sha256": "51c90d7caecd18e2a9da1985d2476bd3d0bf9999defa126f058ca5a322ad730a",
+          "passing": true,
+          "candidate_binding": {
+            "passing": true,
+            "errors": [],
+            "scope": "Retained receipt and snapshot identity; no new product execution",
+            "stage": "implement",
+            "selected_attempt": "work/b2-agent/runs/01",
+            "module": "intake.py",
+            "expected_candidate_sha256": "d078ca5b06de61638ce653eac0b7419c3f6246181a1b50a96d8f84d480672f0c",
+            "protected_inputs_compared": 6
+          },
+          "bound_passing": true
+        },
+        {
+          "kind": "continue",
+          "path": "work/evidence/b2-handoff.json",
+          "present": true,
+          "superseded_attempts": [],
+          "status": "SCOPED_HANDOFF_READY",
+          "tests_run": 12,
+          "candidate_sha256_after": "d078ca5b06de61638ce653eac0b7419c3f6246181a1b50a96d8f84d480672f0c",
+          "sha256": "4605ccc1c442312185ffe9e9c41a77b857a61764f9eb7bcad7370d6b1b894225",
+          "passing": true,
+          "candidate_binding": {
+            "passing": true,
+            "errors": [],
+            "scope": "Retained receipt and snapshot identity; no new product execution",
+            "stage": "implement",
+            "selected_attempt": "work/b2-agent/runs/01",
+            "module": "intake.py",
+            "expected_candidate_sha256": "d078ca5b06de61638ce653eac0b7419c3f6246181a1b50a96d8f84d480672f0c",
+            "protected_inputs_compared": 6
+          },
+          "bound_passing": true
+        }
+      ]
+    },
+    {
+      "mission": "B3",
+      "native_capture_complete": true,
+      "operator_dispositions_settled": true,
+      "receipts_passing": true,
+      "receipt_candidate_bindings_match": true,
+      "natively_verified": true,
+      "sessions": [
+        {
+          "id": "B3",
+          "stage": "implement",
+          "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+          "native_turn_completed": true,
+          "client_and_model_identified": true,
+          "selected_attempt_path": "work/b3-agent/runs/01",
+          "attempts": [
+            {
+              "path": "work/b3-agent/runs/01",
+              "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+              "client": "claude",
+              "client_version": "2.1.330 (Claude Code)",
+              "requested_model": "claude-sonnet-5-5",
+              "observed_model_ids": [
+                "claude-sonnet-5-5"
+              ],
+              "reported_cost_usd": [
+                0.14641560000000003
+              ],
+              "permission_denial_count": 1,
+              "changed_files": [
+                "DOSSIER.md",
+                "ledger.py"
+              ],
+              "scope_changes_requiring_review": [],
+              "capture_hashes_match": true
+            }
+          ],
+          "operator_decisions": [
+            {
+              "file": "01.json",
+              "sha256": "268182c29e41d34dd16befd7ca8001cfda6566783bb6e1f98ee63b2952e16666",
+              "decision": "accept",
+              "operator": "Claude Code live test",
+              "operator_kind": "AI",
+              "at_utc": "2026-11-22T17:38:02.245271+00:00"
+            }
+          ],
+          "operator_disposition_settled": true,
+          "operator_disposition_binding": {
+            "passing": true,
+            "binding": "RECORDED_BYTES_AND_RUN_MATCH",
+            "errors": []
+          }
+        }
+      ],
+      "receipts": [
+        {
+          "kind": "check",
+          "path": "work/evidence/b3-first.json",
+          "present": true,
+          "superseded_attempts": [],
+          "status": "SELECTED_CHECKS_PASSED",
+          "tests_run": 10,
+          "candidate_sha256_after": "8e87f6bd508a9372b40be2c004ef22b6c912830765fadac55b9896018d4799dc",
+          "sha256": "13c6a9b188ff806c23057f0899bba7ce6180cd362db6b0f01c5465f5b68af068",
+          "passing": true,
+          "candidate_binding": {
+            "passing": true,
+            "errors": [],
+            "scope": "Retained receipt and snapshot identity; no new product execution",
+            "stage": "implement",
+            "selected_attempt": "work/b3-agent/runs/01",
+            "module": "ledger.py",
+            "expected_candidate_sha256": "8e87f6bd508a9372b40be2c004ef22b6c912830765fadac55b9896018d4799dc",
+            "protected_inputs_compared": 9
+          },
+          "bound_passing": true
+        },
+        {
+          "kind": "continue",
+          "path": "work/evidence/b3-handoff.json",
+          "present": true,
+          "superseded_attempts": [],
+          "status": "SCOPED_HANDOFF_READY",
+          "tests_run": 10,
+          "candidate_sha256_after": "8e87f6bd508a9372b40be2c004ef22b6c912830765fadac55b9896018d4799dc",
+          "sha256": "ca34e9b330517b49544ab47b57ffb11bb96cc350c964d6ccf170ada559642cbc",
+          "passing": true,
+          "candidate_binding": {
+            "passing": true,
+            "errors": [],
+            "scope": "Retained receipt and snapshot identity; no new product execution",
+            "stage": "implement",
+            "selected_attempt": "work/b3-agent/runs/01",
+            "module": "ledger.py",
+            "expected_candidate_sha256": "8e87f6bd508a9372b40be2c004ef22b6c912830765fadac55b9896018d4799dc",
+            "protected_inputs_compared": 9
+          },
+          "bound_passing": true
+        }
+      ]
+    },
+    {
+      "mission": "B4",
+      "native_capture_complete": true,
+      "operator_dispositions_settled": true,
+      "receipts_passing": true,
+      "receipt_candidate_bindings_match": true,
+      "natively_verified": true,
+      "sessions": [
+        {
+          "id": "B4",
+          "stage": "implement",
+          "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+          "native_turn_completed": true,
+          "client_and_model_identified": true,
+          "selected_attempt_path": "work/b4-agent/runs/01",
+          "attempts": [
+            {
+              "path": "work/b4-agent/runs/01",
+              "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+              "client": "claude",
+              "client_version": "2.1.330 (Claude Code)",
+              "requested_model": "claude-sonnet-5-5",
+              "observed_model_ids": [
+                "claude-sonnet-5-5"
+              ],
+              "reported_cost_usd": [
+                0.1773557
+              ],
+              "permission_denial_count": 1,
+              "changed_files": [
+                "DOSSIER.md",
+                "incident.py"
+              ],
+              "scope_changes_requiring_review": [],
+              "capture_hashes_match": true
+            }
+          ],
+          "operator_decisions": [
+            {
+              "file": "01.json",
+              "sha256": "5aeb2527205dd10cc96af7f7726dd1b6cabdd9f6886382b7092d11291ef3a21e",
+              "decision": "accept",
+              "operator": "Claude Code live test",
+              "operator_kind": "AI",
+              "at_utc": "2026-11-22T17:38:50.314196+00:00"
+            }
+          ],
+          "operator_disposition_settled": true,
+          "operator_disposition_binding": {
+            "passing": true,
+            "binding": "RECORDED_BYTES_AND_RUN_MATCH",
+            "errors": []
+          }
+        }
+      ],
+      "receipts": [
+        {
+          "kind": "check",
+          "path": "work/evidence/b4-first.json",
+          "present": true,
+          "superseded_attempts": [],
+          "status": "SELECTED_CHECKS_PASSED",
+          "tests_run": 7,
+          "candidate_sha256_after": "330db1ff9134da97fd1f1dc75bae7b6bcab04714d9af3616b4c8ecb002afe6eb",
+          "sha256": "7b762393a984c913544f93afbad8e08e069b7edd58155b28e7db8ef83779d2aa",
+          "passing": true,
+          "candidate_binding": {
+            "passing": true,
+            "errors": [],
+            "scope": "Retained receipt and snapshot identity; no new product execution",
+            "stage": "implement",
+            "selected_attempt": "work/b4-agent/runs/01",
+            "module": "incident.py",
+            "expected_candidate_sha256": "330db1ff9134da97fd1f1dc75bae7b6bcab04714d9af3616b4c8ecb002afe6eb",
+            "protected_inputs_compared": 12
+          },
+          "bound_passing": true
+        },
+        {
+          "kind": "continue",
+          "path": "work/evidence/b4-handoff.json",
+          "present": true,
+          "superseded_attempts": [],
+          "status": "SCOPED_HANDOFF_READY",
+          "tests_run": 7,
+          "candidate_sha256_after": "330db1ff9134da97fd1f1dc75bae7b6bcab04714d9af3616b4c8ecb002afe6eb",
+          "sha256": "6fec45b1f0e04df75bf3205d6da5993ef8479ad90c63474a28c08dfdb5e562bd",
+          "passing": true,
+          "candidate_binding": {
+            "passing": true,
+            "errors": [],
+            "scope": "Retained receipt and snapshot identity; no new product execution",
+            "stage": "implement",
+            "selected_attempt": "work/b4-agent/runs/01",
+            "module": "incident.py",
+            "expected_candidate_sha256": "330db1ff9134da97fd1f1dc75bae7b6bcab04714d9af3616b4c8ecb002afe6eb",
+            "protected_inputs_compared": 12
+          },
+          "bound_passing": true
+        }
+      ]
+    }
+  ],
+  "retained_sessions_outside_matrix": [
+    {
+      "path": "work/g4s-agent",
+      "mission": "G4",
+      "attempts": [
+        {
+          "path": "work/g4s-agent/runs/01",
+          "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+          "exit_code": 0,
+          "reported_cost_usd": [
+            0.20118170000000002
+          ],
+          "changed_files": [
+            "DOSSIER.md",
+            "operations.py"
+          ]
+        }
+      ],
+      "operator_decisions": [
+        {
+          "file": "01.json",
+          "sha256": "b54cb6a2d73c67bec93a2c6ac319ae7d44e55181fb74731946697d74112e77f3",
+          "decision": "accept",
+          "operator": "Claude Code live test",
+          "operator_kind": "AI",
+          "at_utc": "2026-11-22T17:35:38.813002+00:00"
+        }
+      ],
+      "meaning": "Retained session outside the printed matrix; it neither opens nor closes a required stage."
+    }
+  ],
+  "retained_gate_scope": "The receipts bind to the captured historical source and historical test inputs. This ledger does not rerun the current suite or close later regression findings.",
+  "scope": "Native transport capture, recorded operator statements and protected receipts only. Operator identity and authority are not verified; product acceptance is technical within the fictional teaching case; no human learning outcome is measured."
+}

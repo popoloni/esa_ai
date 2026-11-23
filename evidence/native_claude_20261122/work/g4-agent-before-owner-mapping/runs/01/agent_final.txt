@@ -1,0 +1,25 @@
+`diagnose` and `cost_summary` are implemented, but 3 of the 13 development checks still fail because of a gap in the contract that I need you to rule on.
+
+**Question for the owner:** the retained `booking.py` creates a table named `reservations_v3` (native column list, `user_version=3`). OPS-G4/v3 only names `reservations` and `reservations_v2`, so `diagnose()` refuses it. Should the contract accept `reservations_v3` with the native signature? I did not guess that mapping. `g4_fixture.insert_overlap` also doesn't know that table, and fixtures are outside my edit scope.
+
+**Acceptance example:**
+- **Overlap:** a reference-layout database with active rows 1 and 2 on asset A (09:00–10:00 and 09:30–10:30) gives `ACTIVE_OVERLAP`, pairs `[[1,2]]`, and unchanged bytes.
+- **Cost:** costs 2.20 + 0.80 EUR and 12 + 8 minutes with 1 accepted outcome give 3.00 EUR and 20 minutes per accepted outcome. With 0 accepted, the unit metrics are null and the status is `NO_ACCEPTED_OUTCOME`.
+
+**Changed files:** only `operations.py` and `DOSSIER.md`.
+- `diagnose`:
+  - It opens SQLite read-only, requires `user_version == 3`, and matches the full column signature.
+  - It refuses unsupported or competing layouts, and raises `RuntimeError` if the file's hash, size or mtime changes mid-read.
+  - It excludes cancelled rows and adjacent (touching) ranges.
+- `cost_summary`: it uses Decimal over all attempts and rejects bad values with `ValueError`.
+
+**Commands and outcomes:**
+- `python -m unittest tests.test_g4` before my change: 17 errors, all `NotImplementedError` except one fixture `ValueError`.
+- The same command after my change: 13 tests, 10 pass, 3 error. The 3 errors are `test_clean_storage_is_observed_without_mutation`, `test_active_overlap_is_detected_not_repaired` and `test_cancelled_row_does_not_create_false_alarm`. They build their database with `booking.init_db`, so refusal is what the contract requires.
+- Two other commands did not run as intended. An attempt to write `operations.py` through a shell heredoc was blocked by the tool's filter, so I used the file-edit tool instead. A scratch check of the native `reservations_v2` layout was also blocked, and I skipped it.
+
+**Remaining uncertainty:**
+- Positive diagnosis of the native `reservations_v2` layout is untested.
+- The concurrent-modification branch is untested.
+- Requiring `user_version == 3` is my reading of "targets schema 3".
+- Protected acceptance and continuation are left to the operator.

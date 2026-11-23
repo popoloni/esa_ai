@@ -1,0 +1,36 @@
+{
+  "schema": "esa-full-mission/v1",
+  "release": "ESA-Series-Handbook-Review-5-20261116",
+  "mission": "B2",
+  "mode": "LEARNER",
+  "contract": "INTAKE/v1",
+  "module": "intake.py",
+  "lineage": {
+    "mission": "B1",
+    "source_sha256": "975aa67da6fa58c02a5af9402f338a248e39c3ad9c2b21ce5e1518a6539c1f3a",
+    "source_path": "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/b1-v2/src/treasury/routing.py",
+    "handoff_status": "CONTEXT_HANDOFF_READY",
+    "stored_snapshot": "prior/routing.py",
+    "copied_parent_demonstration": null
+  },
+  "human_acceptance": "PENDING",
+  "dependency_sha256": {
+    "routing.py": "975aa67da6fa58c02a5af9402f338a248e39c3ad9c2b21ce5e1518a6539c1f3a"
+  },
+  "prior_sha256": {
+    "prior/routing.py": "975aa67da6fa58c02a5af9402f338a248e39c3ad9c2b21ce5e1518a6539c1f3a",
+    "prior/parent-handoff.json": "0bd16d7dee1302c9325a092b5202f59c5b72afca288a73f066c45949b50b2383",
+    "prior/parent-entry.json": "202c10016257af7213c18b3504e5c6f4c40706fd224f7432f9960b9bbc2d585b"
+  },
+  "recorded_at_utc": "2026-11-16T22:13:53.841782+00:00",
+  "command": [
+    "/usr/local/bin/python3",
+    "companion/start.py",
+    "advance",
+    "B2",
+    "--from-candidate",
+    "work/b1-v2",
+    "--dest",
+    "work/b2"
+  ]
+}

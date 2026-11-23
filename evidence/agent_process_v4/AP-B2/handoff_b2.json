@@ -1,0 +1,216 @@
+{
+  "schema": "esa-full-mission-check/v1",
+  "mission": "B2",
+  "release": "ESA-Complete-Review-3-20261103",
+  "contract": "INTAKE/v1",
+  "candidate_sha256_before": "c039ea5ecae3bccd9b1647e7f8e4054b20790d79d595c976d8f48700239562ea",
+  "protected_input_sha256": {
+    "docs/contract.md": "7322b946c06acf1e5ca4fc2031419d077cec88fb201aaa6ba6d9e2603bb9992d",
+    "tests/test_b2.py": "13c76494bb51344136c06e4b49cb071872f8737375f81ceac1a491f9bd3ccc06",
+    "routing.py": "c2b093e60d6893274701814d00c3bf63d25bfb6c2926feefb23a93941c51e4a0",
+    "prior/routing.py": "c2b093e60d6893274701814d00c3bf63d25bfb6c2926feefb23a93941c51e4a0",
+    "prior/parent-entry.json": "6d28d305543edbf520a1a95c2c274d0453f1f2c0f0f5d270a0553d6d614eac71",
+    "prior/parent-handoff.json": "e43852b8b0cc5688d3b9f8cc668e69197b412b784e395c7e0b1cdac3e5927327"
+  },
+  "candidate_path": "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B2/workspace",
+  "human_acceptance": "PENDING",
+  "model_run": false,
+  "scope": "Executable local teaching controls; no human reader performance or production authority.",
+  "groups": {
+    "contract": {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_b2.py",
+        "-v"
+      ],
+      "elapsed_process_seconds": 0.06777526500081876,
+      "timeout_seconds": 30,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_duplicate_request_id_is_a_caller_error (test_b2.BoundedIntake.test_duplicate_request_id_is_a_caller_error) ... ok\ntest_global_call_budget_stops_new_calls (test_b2.BoundedIntake.test_global_call_budget_stops_new_calls) ... ok\ntest_invalid_amount_does_not_call_provider (test_b2.BoundedIntake.test_invalid_amount_does_not_call_provider) ... ok\ntest_invalid_response_after_retry_retains_unavailability (test_b2.BoundedIntake.test_invalid_response_after_retry_retains_unavailability) ... ok\ntest_matching_classification_is_attributed (test_b2.BoundedIntake.test_matching_classification_is_attributed) ... ok\ntest_nonstring_classification_is_a_protocol_error_with_receipt (test_b2.BoundedIntake.test_nonstring_classification_is_a_protocol_error_with_receipt) ... ok\ntest_protocol_error_preserves_prior_and_invalid_attempts (test_b2.BoundedIntake.test_protocol_error_preserves_prior_and_invalid_attempts) ... ok\ntest_provider_value_error_keeps_identity_and_failed_cost (test_b2.BoundedIntake.test_provider_value_error_keeps_identity_and_failed_cost) ... ok\ntest_transient_retry_preserves_identity (test_b2.BoundedIntake.test_transient_retry_preserves_identity) ... ok\ntest_unexpected_failure_is_not_retried (test_b2.BoundedIntake.test_unexpected_failure_is_not_retried) ... ok\ntest_unknown_response_shape_is_refused (test_b2.BoundedIntake.test_unknown_response_shape_is_refused) ... ok\ntest_wrong_response_id_is_refused (test_b2.BoundedIntake.test_wrong_response_id_is_refused) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "timed_out": false,
+      "tests_run": 12,
+      "expected_tests": 12,
+      "methods_passed": 12,
+      "methods_failed": [],
+      "methods_errored": [],
+      "status": "PASSED"
+    }
+  },
+  "tests_run": 12,
+  "candidate_sha256_after": "c039ea5ecae3bccd9b1647e7f8e4054b20790d79d595c976d8f48700239562ea",
+  "inputs_unchanged": true,
+  "status": "SCOPED_HANDOFF_READY",
+  "demonstration_process": {
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/companion/curriculum_demo.py",
+      "B2",
+      "--candidate",
+      "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B2/workspace",
+      "--output",
+      "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B2/handoff_b2"
+    ],
+    "elapsed_process_seconds": 0.04578096899786033,
+    "timeout_seconds": 30,
+    "returncode": 0,
+    "stdout": "{\n  \"schema\": \"esa-curriculum-demonstration/v1\",\n  \"mission\": \"B2\",\n  \"recorded_at_utc\": \"2026-11-16T15:50:35.824332+00:00\",\n  \"command\": [\n    \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3\",\n    \"/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/companion/curriculum_demo.py\",\n    \"B2\",\n    \"--candidate\",\n    \"/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B2/workspace\",\n    \"--output\",\n    \"/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B2/handoff_b2\"\n  ],\n  \"origin\": \"EXECUTED_OFFLINE_TEACHING_FIXTURE\",\n  \"observed_human_pilot\": false,\n  \"observed_model_run\": false,\n  \"result\": {\n    \"records\": [\n      {\n        \"request_id\": \"item-invalid\",\n        \"amount_eur\": \"-0.01\",\n        \"route\": \"REJECTED\",\n        \"reason\": \"INVALID_AMOUNT\",\n        \"policy_version\": \"BR-001/v1\",\n        \"status\": \"REJECTED\"\n      },\n      {\n        \"request_id\": \"item-1\",\n        \"amount_eur\": \"2400.00\",\n        \"route\": \"STANDARD_QUEUE\",\n        \"reason\": \"BELOW_LIMIT\",\n        \"policy_version\": \"BR-001/v1\",\n        \"status\": \"CLASSIFIED\",\n        \"classification\": \"MATCH\"\n      },\n      {\n        \"request_id\": \"item-2\",\n        \"amount_eur\": \"5000.00\",\n        \"route\": \"HUMAN_REVIEW\",\n        \"reason\": \"AT_OR_ABOVE_LIMIT\",\n        \"policy_version\": \"BR-001/v1\",\n        \"status\": \"CLASSIFIED\",\n        \"classification\": \"REVIEW\"\n      },\n      {\n        \"request_id\": \"item-3\",\n        \"amount_eur\": \"29.99\",\n        \"route\": \"STANDARD_QUEUE\",\n        \"reason\": \"BELOW_LIMIT\",\n        \"policy_version\": \"BR-001/v1\",\n        \"status\": \"DEFERRED\"\n      }\n    ],\n    \"attempts\": [\n      {\n        \"request_id\": \"item-1\",\n        \"attempt\": 1,\n        \"outcome\": \"UNAVAILABLE\"\n      },\n      {\n        \"request_id\": \"item-1\",\n        \"attempt\": 2,\n        \"outcome\": \"MATCH\"\n      },\n      {\n        \"request_id\": \"item-2\",\n        \"attempt\": 1,\n        \"outcome\": \"REVIEW\"\n      }\n    ],\n    \"calls\": 3,\n    \"payment_authorized\": false\n  }\n}\n",
+    "stderr": "",
+    "timed_out": false
+  },
+  "demonstration": {
+    "schema": "esa-curriculum-demonstration/v1",
+    "mission": "B2",
+    "recorded_at_utc": "2026-11-16T15:50:35.824332+00:00",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/companion/curriculum_demo.py",
+      "B2",
+      "--candidate",
+      "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B2/workspace",
+      "--output",
+      "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B2/handoff_b2"
+    ],
+    "origin": "EXECUTED_OFFLINE_TEACHING_FIXTURE",
+    "observed_human_pilot": false,
+    "observed_model_run": false,
+    "result": {
+      "records": [
+        {
+          "request_id": "item-invalid",
+          "amount_eur": "-0.01",
+          "route": "REJECTED",
+          "reason": "INVALID_AMOUNT",
+          "policy_version": "BR-001/v1",
+          "status": "REJECTED"
+        },
+        {
+          "request_id": "item-1",
+          "amount_eur": "2400.00",
+          "route": "STANDARD_QUEUE",
+          "reason": "BELOW_LIMIT",
+          "policy_version": "BR-001/v1",
+          "status": "CLASSIFIED",
+          "classification": "MATCH"
+        },
+        {
+          "request_id": "item-2",
+          "amount_eur": "5000.00",
+          "route": "HUMAN_REVIEW",
+          "reason": "AT_OR_ABOVE_LIMIT",
+          "policy_version": "BR-001/v1",
+          "status": "CLASSIFIED",
+          "classification": "REVIEW"
+        },
+        {
+          "request_id": "item-3",
+          "amount_eur": "29.99",
+          "route": "STANDARD_QUEUE",
+          "reason": "BELOW_LIMIT",
+          "policy_version": "BR-001/v1",
+          "status": "DEFERRED"
+        }
+      ],
+      "attempts": [
+        {
+          "request_id": "item-1",
+          "attempt": 1,
+          "outcome": "UNAVAILABLE"
+        },
+        {
+          "request_id": "item-1",
+          "attempt": 2,
+          "outcome": "MATCH"
+        },
+        {
+          "request_id": "item-2",
+          "attempt": 1,
+          "outcome": "REVIEW"
+        }
+      ],
+      "calls": 3,
+      "payment_authorized": false
+    }
+  },
+  "demonstration_files_sha256": {
+    "DEMONSTRATION.json": "8d67cce4260e66fbd5d81697bfe52c9a94881fd82f395dc6bec7f9e881dbfd4e",
+    "classification.json": "45208725eb1c36c2c7064254fbc67761d2481ddb8cf02f4001a5023f0917d34d"
+  },
+  "candidate_retained": true,
+  "recorded_at_utc": "2026-11-16T15:50:35.831145+00:00",
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/companion/start.py",
+    "continue",
+    "B2",
+    "--candidate",
+    "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B2/workspace",
+    "--output",
+    "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B2/handoff_b2.json"
+  ],
+  "verification_progress": {
+    "schema": "esa-verification-progress/v1",
+    "derivation": "CURRENT_RECEIPT_FIELDS_ONLY_NO_ADDITIONAL_EXECUTION",
+    "source_fields_sha256": "915ef5b3e2ff1af67ef4c109a44c483320a11892a25ef39463f6b5962c39bd8e",
+    "work_order": "mission_B2",
+    "evidence_profile": "new_capability",
+    "profile_basis": "The named mission work order.",
+    "phase": "mission",
+    "stages": {
+      "startup": {
+        "status": "PASS",
+        "evidence": [
+          "schema",
+          "mission",
+          "candidate_path"
+        ],
+        "reason": "The intended runner accepted the entry identity and emitted this check receipt. This does not establish candidate import."
+      },
+      "integrity": {
+        "status": "PASS",
+        "evidence": [
+          "inputs_unchanged",
+          "candidate_sha256_before",
+          "candidate_sha256_after"
+        ],
+        "reason": "The recorded before/after comparison found inputs unchanged."
+      },
+      "contract": {
+        "status": "PASS",
+        "evidence": [
+          "groups.contract"
+        ],
+        "reason": "Status uses each selected group and any contract-specific supplemental probe; an import placeholder is not behavioral evidence. A candidate stack frame or known protected assertion supports reached behavior; a method count alone does not. Groups within this stage may retain multiple failures.",
+        "behavior_reached": true
+      },
+      "integration": {
+        "status": "PASS",
+        "evidence": [
+          "demonstration_process"
+        ],
+        "reason": "An actual continuation or process-boundary probe is retained; the result applies to this local consumer and candidate only."
+      },
+      "artifact": {
+        "status": "NOT_RUN",
+        "evidence": [],
+        "reason": "This receipt has no separate archive/extraction gate. Local demonstration hashes alone do not establish release fitness."
+      },
+      "authorization": {
+        "status": "NOT_RUN",
+        "evidence": [
+          "human_acceptance"
+        ],
+        "reason": "No owner acceptance or release authorization is recorded. Passing checks do not supply that decision."
+      }
+    },
+    "first_failed_stage": null,
+    "last_observed_stage": "integration",
+    "limits": "A stage label interprets the retained fields; it is not an independent attestation. NOT_APPLICABLE needs an explicit scope exclusion; absence alone remains NOT_RUN."
+  }
+}

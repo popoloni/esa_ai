@@ -1,0 +1,92 @@
+{
+  "schema": "esa-agent-session/v1",
+  "created_at_utc": "2026-11-22T17:37:28.745336+00:00",
+  "mission": "B3",
+  "stage": "implement",
+  "candidate": "/home/claude/work/live22/agentic-ai-5.2/work/b3",
+  "entry": {
+    "schema": "esa-full-mission/v1",
+    "release": "Engineering-Software-with-Agentic-AI-Review-5.2-20261117",
+    "mission": "B3",
+    "mode": "LEARNER",
+    "contract": "HISTORY-API/v1 + MIGRATION/v1",
+    "module": "ledger.py",
+    "lineage": {
+      "mission": "B2",
+      "source_sha256": "d078ca5b06de61638ce653eac0b7419c3f6246181a1b50a96d8f84d480672f0c",
+      "source_path": "/home/claude/work/live22/agentic-ai-5.2/work/b2/intake.py",
+      "handoff_status": "SCOPED_HANDOFF_READY",
+      "stored_snapshot": "prior/intake.py",
+      "copied_parent_demonstration": "prior/parent-check-artifacts"
+    },
+    "human_acceptance": "PENDING",
+    "dependency_sha256": {
+      "routing.py": "e8fdab89acfa5d28041c74a5d2dcf9801fb0e85324dcc160013a56cf63f89cfd"
+    },
+    "prior_sha256": {
+      "prior/intake.py": "d078ca5b06de61638ce653eac0b7419c3f6246181a1b50a96d8f84d480672f0c",
+      "prior/parent-handoff.json": "dddb54b8aadf7cc5f7c1b28e9eb68a514b7b27d032c67e6cdc08e28959adf954",
+      "prior/parent-entry.json": "d6a518a900326a687dc101fefd462701f13d7d0f9ef2f1854cfc3dda4824009f",
+      "prior/parent-check-artifacts/DEMONSTRATION.json": "b875b177c608eacec6a5ed802f13c82fd0b055c90ca267053799aada98bdb082",
+      "prior/parent-check-artifacts/classification.json": "30deefb1e6adb6a37e4dbc20df5b00c652b9585e4e652cf335595868daa35e7b"
+    },
+    "recorded_at_utc": "2026-11-22T17:37:28.560005+00:00",
+    "command": [
+      "/usr/local/bin/python3",
+      "companion/start.py",
+      "advance",
+      "B3",
+      "--from-candidate",
+      "work/b2",
+      "--dest",
+      "work/b3"
+    ]
+  },
+  "integration_role": null,
+  "integration_manifest_sha256": null,
+  "task_contract": "HISTORY-API/v1 + MIGRATION/v1",
+  "api": null,
+  "editable_paths": [
+    "ledger.py",
+    "DOSSIER.md"
+  ],
+  "before": {
+    "AGENTS.md": "49b3fbbe06c9cd034e9cd97d6fb0a9c087a2f6b739169ae7f58af24735b2063c",
+    "DOSSIER.md": "279a980934093f6a456ab88e0c3ec15bacb98aa4683f53141c2d7211ea0f4af3",
+    "READER_ENTRY.json": "0ad05047101af63a1715751040488c1a59662e806dfad4d6ef27c05294caea81",
+    "docs/contract.md": "a3868114a71b664dfe907ffb90b61ddac6d6b7c039ede34708f9e3c20900eecb",
+    "docs/policy_catalog.json": "9c1b4078c49e118f1001d138484bd9b046ab595935e16b63ea160d619068c7ab",
+    "ledger.py": "62a6590b25b9236cc9acde0ca7c0fd2beb3b720224a996d773946fd1b5b4967a",
+    "prior/intake.py": "d078ca5b06de61638ce653eac0b7419c3f6246181a1b50a96d8f84d480672f0c",
+    "prior/parent-check-artifacts/DEMONSTRATION.json": "b875b177c608eacec6a5ed802f13c82fd0b055c90ca267053799aada98bdb082",
+    "prior/parent-check-artifacts/classification.json": "30deefb1e6adb6a37e4dbc20df5b00c652b9585e4e652cf335595868daa35e7b",
+    "prior/parent-entry.json": "d6a518a900326a687dc101fefd462701f13d7d0f9ef2f1854cfc3dda4824009f",
+    "prior/parent-handoff.json": "dddb54b8aadf7cc5f7c1b28e9eb68a514b7b27d032c67e6cdc08e28959adf954",
+    "routing.py": "e8fdab89acfa5d28041c74a5d2dcf9801fb0e85324dcc160013a56cf63f89cfd",
+    "tests/test_b3.py": "2b5ee5579c42106260fb3515b5f72b6ce017a7cb333f26159de1ebbfa5c6e2de"
+  },
+  "protected_sha256": {
+    "AGENTS.md": "49b3fbbe06c9cd034e9cd97d6fb0a9c087a2f6b739169ae7f58af24735b2063c",
+    "READER_ENTRY.json": "0ad05047101af63a1715751040488c1a59662e806dfad4d6ef27c05294caea81",
+    "docs/contract.md": "a3868114a71b664dfe907ffb90b61ddac6d6b7c039ede34708f9e3c20900eecb",
+    "docs/policy_catalog.json": "9c1b4078c49e118f1001d138484bd9b046ab595935e16b63ea160d619068c7ab",
+    "prior/intake.py": "d078ca5b06de61638ce653eac0b7419c3f6246181a1b50a96d8f84d480672f0c",
+    "prior/parent-check-artifacts/DEMONSTRATION.json": "b875b177c608eacec6a5ed802f13c82fd0b055c90ca267053799aada98bdb082",
+    "prior/parent-check-artifacts/classification.json": "30deefb1e6adb6a37e4dbc20df5b00c652b9585e4e652cf335595868daa35e7b",
+    "prior/parent-entry.json": "d6a518a900326a687dc101fefd462701f13d7d0f9ef2f1854cfc3dda4824009f",
+    "prior/parent-handoff.json": "dddb54b8aadf7cc5f7c1b28e9eb68a514b7b27d032c67e6cdc08e28959adf954",
+    "routing.py": "e8fdab89acfa5d28041c74a5d2dcf9801fb0e85324dcc160013a56cf63f89cfd",
+    "tests/test_b3.py": "2b5ee5579c42106260fb3515b5f72b6ce017a7cb333f26159de1ebbfa5c6e2de"
+  },
+  "max_runs": 3,
+  "wall_seconds_per_run": 900,
+  "session_seconds_from_first_launch": 2400,
+  "session_clock_scope": "Wall time from first native launch across follow-ups; manual work before launch and later review remain operator recorded.",
+  "requested_tool_commands_per_run": 40,
+  "tool_limit_enforced_by_adapter": false,
+  "token_or_spend_limit": "Not enforced or measured by this adapter; configure the client/account before use.",
+  "runtime": "Real installed coding client selected at launch (Codex CLI or Claude Code); no model responses are simulated.",
+  "security_scope": "Host/client permissions plus post-run file integrity checks; adapter is not an OS sandbox.",
+  "human_acceptance": "PENDING",
+  "model_run": false
+}

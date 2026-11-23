@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Eight practical missions, local checks and recorded agent tours for Engineering Software with Agentic AI."><title>G3. Cancel without erasing the past · Engineering Software with Agentic AI</title><link rel="stylesheet" href="../assets/companion.css"></head><body><a class="skip" href="#main">Skip to content</a><header class="sitehead"><div><a class="brand" href="../index.html">Engineering Software with Agentic AI<span>Practical companion · version 5.6</span></a><nav aria-label="Main navigation"><a href="../index.html">Start</a><a href="index.html">Missions</a><a href="../companion/agent_sessions/README.html">Agent guide</a><a href="../traces/index.html">Recorded tours</a><a href="../companion/series/READING_THE_SERIES.html">Four volumes</a></nav></div></header><main id="main"><article data-source-sha256="307121ecd7348d35fc4f81f05093edb205610549835b1dcd349368c4dd9feead"><p class="docmeta meta"><a href="G3.md">Markdown source</a> · Companion 5.6 · 2026-11-22</p><h1 id="mission-g3">G3. Cancel without erasing the past</h1><p class="mission-meta">Run commands from the package root. <a href="../companion/agent_sessions/README.html">Live-client setup and current status</a> · <a href="../traces/index.html">Offline recorded tours</a></p>
+<p><strong>Session planning target:</strong> setup 10 min · implementation 30 min · review and handoff 20 min (60 min total). Plan a separate session for the two-contribution integration below.</p>
+<p>A member cancels, a stale tab retries, and the original reservation request arrives again. Delegate the state change while preserving what each caller can observe. RES-002/v1, dated 19 May 2025, supplies the teaching owner’s approved behavior; neither an agent nor a checker grants new policy authority.</p>
+<h2 id="expect-preserve-the-callers-view">1. Expect: preserve the caller’s view</h2>
+<p>Continue your accepted G2 candidate:</p>
+<pre class="bash"><code>python3 companion/start.py advance G3 \
+  --from-candidate work/g2 \
+  --dest work/g3</code></pre>
+<p>The command verifies G2, preserves its source and handoff under <code>prior/</code>, and carries that implementation into G3 with two new public-function stubs. For an independent entry, use this instead:</p>
+<pre class="bash"><code>python3 companion/start.py new G3 \
+  --dest work/g3</code></pre>
+<p>Choose one; both target <code>work/g3</code>. Read <code>docs/contract.md</code>, inspect the retained implementation, and observe the initial result:</p>
+<pre class="bash"><code>python3 companion/start.py check G3 \
+  --candidate work/g3 \
+  --output work/evidence/g3-initial.json</code></pre>
+<p>Before delegation, write the compatibility promise in <code>DOSSIER.md</code>. <code>get_reservation</code> retains its six historical fields after cancellation. <code>reservation_status(path, reservation_id)</code> returns <code>{"state": "active", "version": 1}</code> for a newly migrated reservation, its current state/version after transition, or <code>None</code> for an unknown identifier. These calls answer different questions.</p>
+<p>Identity and version are mandatory keyword-only inputs, with no defaults:</p>
+<pre class="python"><code>def cancel(path, reservation_id, *, trusted_member_id,
+           expected_version):
+    ...
+
+cancel(path, reservation_id,
+       trusted_member_id=&quot;member-14&quot;, expected_version=1)</code></pre>
+<p>The boundary supplies trusted identity and a valid integer version. This local module does not authenticate network users.</p>
+<p><strong>Table: Cancellation outcomes and retained state.</strong></p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Condition</th>
+<th style="text-align: left;">Result</th>
+<th style="text-align: left;">State effect</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Unknown reservation</td>
+<td style="text-align: left;"><code>404/not-found</code></td>
+<td style="text-align: left;">None</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Caller is not the owner</td>
+<td style="text-align: left;"><code>403/not-owner</code></td>
+<td style="text-align: left;">None</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Expected version is stale</td>
+<td style="text-align: left;"><code>409/stale-version</code></td>
+<td style="text-align: left;">None</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Active reservation, owner and version match</td>
+<td style="text-align: left;"><code>200/cancelled</code></td>
+<td style="text-align: left;">Cancelled; version increments once</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Already cancelled, current version supplied</td>
+<td style="text-align: left;"><code>200/already-cancelled</code></td>
+<td style="text-align: left;">No further increment</td>
+</tr>
+</tbody>
+</table>
+<p>A repeat with the old version is stale even after cancellation. Predict an active version 1 reservation, successful cancellation to version 2, repeats with versions 1 and 2, and a request from another member. Include preserved state.</p>
+<h2 id="delegate-separate-record-state-and-operation-identity">2. Delegate: separate record, state and operation identity</h2>
+<p>Schema version 3 makes existing G2 rows active at version 1, retaining IDs and public values. Cancellation releases the interval without erasing history. Replaying the original member/key operation returns its original confirmation and identifier with <code>replayed=True</code>; current status still says cancelled. The retry must not revive the reservation.</p>
+<p>The actual AP-G3 task required both the retained G2 schema and the supplied historical fixture: “do not silently substitute it for the retained implementation.” Review that distinction in your context before launch.</p>
+<p><strong>EDOD/1 work order mission_G3 — Persistent effect.</strong></p>
+<p><strong>Expect</strong> — <strong>outcome:</strong> Cancel atomically without changing the historical reservation interface. <strong>authority:</strong> Workshop coordinator, RES-002/v1 (teaching contract). <strong>acceptance:</strong> Owner/version guards preserve refused state; successful cancellation increments once; old replay retains the original reservation.</p>
+<p><strong>Delegate</strong> — <strong>editable_paths:</strong> <code>booking.py</code>, <code>DOSSIER.md</code>. <strong>protected_paths:</strong> <code>docs/</code>, <code>tests/</code>, <code>READER_ENTRY.json</code>, <code>prior/</code>, <code>legacy_booking.py</code>. <strong>budget:</strong> 3 attempts / 30 implementation minutes; 30 s per check process; 0 external integration calls. <strong>stop_conditions:</strong> Refund, deletion or staff-override policy is required. Protected inputs change or the declared attempt/time budget is spent.</p>
+<p><strong>Observe</strong> — <strong>checks:</strong> <code>g3.check</code>, <code>g3.continue</code> (commands below). <strong>receipt_fields:</strong> <code>candidate_sha256_before</code>, <code>groups</code>, <code>inputs_unchanged</code>, <code>verification_progress</code>, <code>human_acceptance</code>.</p>
+<p><strong>Decide</strong> — <strong>owner:</strong> Learner reviewer; Workshop coordinator for a changed rule. <strong>object:</strong> G3 candidate, identified bytes and its scoped handoff. <strong>allowed_decisions:</strong> ACCEPT, REJECT, ASK.</p>
+<p>Prepare the session and inspect <code>task.txt</code> before the <code>run</code> command:</p>
+<pre class="bash"><code>python3 companion/agent_session.py prepare G3 \
+  --candidate work/g3 --output work/g3-agent
+python3 companion/agent_session.py run \
+  --session work/g3-agent --client claude \
+  --max-budget-usd 5</code></pre>
+<p>Watch the agent read the contracts and retained source, state acceptance examples, then reproduce missing behavior before editing. Pause it if an undocumented mapping, refund or staff override becomes necessary. Retain its commands, diff, final response and your continuation decisions.</p>
+<h2 id="observe-transition-and-non-transition-evidence">3. Observe: transition and non-transition evidence</h2>
+<p>In AP-G3, record 003 wrote acceptance examples before mutation. Record 004 observed seven errors in the incomplete starter. Record 006 implemented the transition; 007 passed seven development methods. Later probes also exercised the retained G2 representation. Those observations are agent feedback; invoke your independent gate:</p>
+<pre class="bash"><code>python3 companion/start.py check G3 \
+  --candidate work/g3 \
+  --output work/evidence/g3-first.json</code></pre>
+<p>The seven methods cover migration preserving the public record, wrong-owner and stale-version refusals, slot release with retained history, current-version repetition, reserve retry after cancellation, and an unknown identifier. Inspect state as well as result codes: refusal must not mutate; success must retain the historical record; replacement needs a distinct identifier; replay keeps the old identifier and cancelled state. Review the diff for accidental changes to the old return shape, “not found” substitutions and replay paths that recreate rows.</p>
+<p>The recording operator independently passed all seven on the actual candidate. Now record a judgment, governing rule and discriminating observation for each card before revealing their checks:</p>
+<h3 id="g3-p01">G3-P01</h3>
+<p>The cancellation screen would be more useful if a member could see the refund consequence before confirming. I have included a quote based on time remaining: the full amount before the 24-hour window and half within it. The quote is separate from the reservation status operation. The proposal is ready for review alongside the cancellation experience and its financial assumptions.</p>
+<p><em>Artifact: The proposed refund API; cancellation ownership and state handling are unchanged.</em></p>
+<pre class="python"><code>def quote_refund(paid_eur, *, hours_before):
+    &quot;&quot;&quot;Proposed quote for a new refund interface; no payment
+    is made.
+    &quot;&quot;&quot;
+    from decimal import Decimal
+    fraction = Decimal(&quot;1&quot;) if hours_before &gt;= 24 else Decimal(
+        &quot;0.5&quot;)
+    return Decimal(str(paid_eur)) * fraction</code></pre>
+<h3 id="g3-p02">G3-P02</h3>
+<p>The original read continues to answer the historical question; a separate operation reports the reservation’s current state. Cancellation checks the trusted owner and expected version within the state transition. A repeat can be recognized without another increment. The interaction to inspect is a cancellation followed by an old reservation retry and a new request for the freed interval.</p>
+<p><em>Artifact: cancel: the decision after reading owner, state and version in one write transaction.</em></p>
+<pre class="python"><code>if row is None:
+    result = {&quot;status&quot;:404, &quot;code&quot;:&quot;not-found&quot;}
+elif row[0] != trusted_member_id:
+    result = {&quot;status&quot;:403, &quot;code&quot;:&quot;not-owner&quot;}
+elif row[2] != expected_version:
+    result = {&quot;status&quot;:409, &quot;code&quot;:&quot;stale-version&quot;}
+elif row[1] == &quot;cancelled&quot;:
+    result = {&quot;status&quot;:200, &quot;code&quot;:&quot;already-cancelled&quot;,
+              &quot;version&quot;:row[2]}
+else:
+    con.execute(&quot;&quot;&quot;
+                UPDATE reservations SET state=&#39;cancelled&#39;,
+                version=version+1 WHERE id=?
+            &quot;&quot;&quot;, (reservation_id,))
+    result = {&quot;status&quot;:200, &quot;code&quot;:&quot;cancelled&quot;,
+              &quot;version&quot;:row[2]+1}</code></pre>
+<h3 id="g3-p03">G3-P03</h3>
+<p>This version keeps cancellation handling within one write transaction and produces the established owner and version responses from that operation. The code has one state-transition path to follow during review. A requester who does not own the booking still receives the not-owner response, and the current owner receives the normal cancellation response. Check the complete transaction alongside those returned statuses.</p>
+<p><em>Artifact: cancel: selected statements in the update branch after the version/state checks, before commit.</em></p>
+<pre class="python"><code>con.execute(&quot;&quot;&quot;
+                UPDATE reservations SET state=&#39;cancelled&#39;,
+                version=version+1 WHERE id=?
+            &quot;&quot;&quot;, (reservation_id,))
+if row[0] != trusted_member_id:
+    result = {&quot;status&quot;:403, &quot;code&quot;:&quot;not-owner&quot;}
+else:
+    result = {&quot;status&quot;:200, &quot;code&quot;:&quot;cancelled&quot;,
+              &quot;version&quot;:row[2]+1}</code></pre>
+<pre class="bash"><code>python3 companion/start.py review G3 \
+  --candidate-ids G3-P01 G3-P02 G3-P03 \
+  --output work/evidence/g3-review.json</code></pre>
+<h2 id="decide-hand-off-an-observable-history">4. Decide: hand off an observable history</h2>
+<pre class="bash"><code>python3 companion/start.py continue G3 \
+  --candidate work/g3 \
+  --output work/evidence/g3-handoff.json</code></pre>
+<p>Continuation runs your module against a fresh G2 fixture: wrong-owner refusal, cancellation, stale repeat, current state, original replay and replacement. It retains the database and <code>continuation.json</code> in <code>work/evidence/g3-handoff/</code>, with candidate digests before and after. <code>SCOPED_HANDOFF_READY</code> records this local observation. AP-G3 retained historical identifier 1, cancelled state/version 2 and replacement identifier 2.</p>
+<p>Explain the handoff to both callers: one still reads history and recognizes its original operation; the other queries current state and supplies a cancellation version. Carry this candidate into the next two agent contributions.</p>
+<h2 id="integrate-two-contributions-one-observable-result">5. Integrate: two contributions, one observable result</h2>
+<pre class="bash"><code>python3 companion/integration.py prepare \
+  --candidate work/g3 --dest work/g3-integration</code></pre>
+<p>Read the prepared shared contract, <code>docs/INTEGRATION-G3.md</code>, and role boundaries. The report agent owns <code>reservation_report.py</code> and its contribution note. It joins the existing historical read and current-state read without modifying storage. The CLI agent owns <code>reservation_cli.py</code> and its note; it prints the report as JSON with the specified exit status. Both must protect the accepted booking module and the opposite contribution, which starts as a stub. Predict confirmed, cancelled, absent and missing-storage observations before delegation. Prepare each session, inspect its <code>task.txt</code>, then run it:</p>
+<pre class="bash"><code>python3 companion/agent_session.py prepare G3 \
+  --role report \
+  --candidate work/g3-integration/worktrees/report \
+  --output work/g3-report-agent
+python3 companion/agent_session.py run \
+  --session work/g3-report-agent --client claude \
+  --max-budget-usd 5</code></pre>
+<pre class="bash"><code>python3 companion/agent_session.py prepare G3 \
+  --role cli \
+  --candidate work/g3-integration/worktrees/cli \
+  --output work/g3-cli-agent
+python3 companion/agent_session.py run \
+  --session work/g3-cli-agent --client claude \
+  --max-budget-usd 5</code></pre>
+<p>Inspect each task and resulting diff. Each contribution has three component methods; the CLI selection supplies a fake report. That fake verifies the boundary, leaving real composition unobserved. Keep both contributions isolated until you have reviewed scope, assumptions and component outcomes. Then invoke the operator’s combination and package checks:</p>
+<pre class="bash"><code>python3 companion/integration.py combine \
+  --workspace work/g3-integration/workspace \
+  --output work/g3-integration/REPORT.json</code></pre>
+<p>This records separate commits, combines them, reruns both selections and G3, then builds and extracts a ZIP and exercises the real CLI. In AP-INTEGRATION, the two workers ran sequentially in separate worktrees. Each passed three component methods; the combined and extracted candidates retained those results and all seven G3 methods. Nine real CLI cases passed, including cancelled history, absent identifiers, missing storage and invalid arguments. No fake provider was used for these process observations. The two API reads remain separate; this does not establish an atomic concurrent snapshot.</p>
+<p>Read <code>REPORT.json</code>, its immutable acceptance receipt and the extracted-package observations before accepting your integration. The ZIP captures the combined source before acceptance metadata is added; the receipt binds the same runnable bytes to the accepted workspace. If checks fail, retain the failed report, assign the correction to the responsible contribution and repeat affected observations. Continue to G4 from <strong><code>work/g3-integration/workspace</code></strong>, preserving your actual report and CLI as well as booking state.</p>
+<h2 id="explain-the-decision">Explain the decision</h2>
+<p>Why does the owner check precede the version check? How can an original confirmation and current cancelled status both be correct? Which observation must follow the CLI agent’s fake? What authority would a refund need?</p>
+<h3 class="unnumbered" id="recorded-example">Recorded example</h3>
+<p><code>evidence/agent_process_v4/AP-G3/</code> retains the prompts, command snapshots and independent receipts. <code>AP-INTEGRATION-A/</code>, <code>AP-INTEGRATION-B/</code> and <code>AP-INTEGRATION/</code> retain the separate contributions and combined package checks.</p>
+<div class="notice"><p>After the accepted handoff, continue to <a href="G4.html">G4</a> with your retained candidate.</p></div></article></main><footer class="foot"><p>Enrico Papalini · Edition 5.6 · 2026-11-22</p><p><a href="../NOTICE.html">Rights and notices</a> · <a href="../NATIVE_STATUS.json">Native-client status</a> · <a href="../MANIFEST.json">Package manifest</a> · <a href="https://github.com/popoloni/esa_ai">Companion repository</a></p></footer></body></html>

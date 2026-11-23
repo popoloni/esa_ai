@@ -1,0 +1,56 @@
+{
+  "schema": "esa-curriculum-demonstration/v1",
+  "mission": "G3",
+  "recorded_at_utc": "2026-11-22T17:32:55.512953+00:00",
+  "command": [
+    "/usr/local/bin/python3",
+    "/home/claude/work/live22/agentic-ai-5.2/companion/curriculum_demo.py",
+    "G3",
+    "--candidate",
+    "/home/claude/work/live22/agentic-ai-5.2/work/g3-integration/workspace",
+    "--output",
+    "/home/claude/work/live22/agentic-ai-5.2/work/g3-integration/operator/combined_g3_handoff_receipt"
+  ],
+  "origin": "EXECUTED_OFFLINE_TEACHING_FIXTURE",
+  "observed_human_pilot": false,
+  "observed_model_run": false,
+  "result": {
+    "old_public_record": {
+      "reservation_id": 1,
+      "trusted_member_id": "member-14",
+      "asset_id": "lathe-2",
+      "starts_at": "2025-05-16T13:00:00Z",
+      "ends_at": "2025-05-16T14:00:00Z",
+      "idempotency_key": "original"
+    },
+    "wrong_owner": {
+      "status": 403,
+      "code": "not-owner"
+    },
+    "cancellation": {
+      "status": 200,
+      "code": "cancelled",
+      "version": 2
+    },
+    "stale_version": {
+      "status": 409,
+      "code": "stale-version"
+    },
+    "current_state": {
+      "state": "cancelled",
+      "version": 2
+    },
+    "original_operation_replay": {
+      "status": 200,
+      "code": "confirmed",
+      "reservation_id": 1,
+      "replayed": true
+    },
+    "replacement": {
+      "status": 201,
+      "code": "confirmed",
+      "reservation_id": 2,
+      "replayed": false
+    }
+  }
+}

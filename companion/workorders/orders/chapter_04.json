@@ -1,0 +1,66 @@
+{
+  "id": "chapter_04",
+  "schema_version": 1,
+  "evidence_profile": "bounded_repair",
+  "expect": {
+    "outcome": "Prepare the governing context and a truthful handoff for the current Treasury repair.",
+    "authority": {
+      "owner": "Technical reviewer; Treasury policy owner for a changed threshold.",
+      "source": "Approved BR-001/v1 and B1-API/v1; the later legacy note remains an unapproved proposal.",
+      "version": "BR-001/v1 + B1-API/v1",
+      "status": "TEACHING_CONTRACT"
+    },
+    "acceptance": [
+      "Retain source status/owner/version, candidate identity and actual completed checks; preserve the approved threshold."
+    ]
+  },
+  "delegate": {
+    "editable_paths": [
+      "context/PACKET.md",
+      "HANDOFF.md"
+    ],
+    "protected_paths": [
+      "approved_context/",
+      "source_evidence/",
+      "contracts/",
+      "tests/"
+    ],
+    "budget": {
+      "max_attempts": 2,
+      "implementation_minutes": 30,
+      "check_timeout_seconds": 30,
+      "max_external_calls": 0
+    },
+    "stop_conditions": [
+      "Required authority or source evidence is missing.",
+      "Declared budget is spent or a proposed edit crosses protected scope."
+    ]
+  },
+  "observe": {
+    "checks": [
+      {
+        "id": "chapter_04.review",
+        "stage": "contract",
+        "method": "review",
+        "argv": [],
+        "expected": "Inspect source precedence and current candidate; compare recorded instruction delivery with subsequent action; check receipt applicability."
+      }
+    ],
+    "receipt_fields": [
+      "candidate_identity",
+      "authority_version",
+      "actual_checks",
+      "reached_stage",
+      "remaining_question"
+    ]
+  },
+  "decide": {
+    "owner": "Technical reviewer; Treasury policy owner for a changed threshold.",
+    "object": "The context packet and retained-candidate handoff.",
+    "allowed_decisions": [
+      "ACCEPT",
+      "REJECT",
+      "ASK"
+    ]
+  }
+}

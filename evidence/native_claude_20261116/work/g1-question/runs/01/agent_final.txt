@@ -1,0 +1,30 @@
+I've written `AGENT_QUESTIONS.md` and `AGENT_PLAN.md` and stopped before implementing anything. I ran no checks and did not touch `booking.py`, `QUESTIONS.md` or any other file. The git status shows modified files only outside this workspace (under `../../companion/`), which I did not change.
+
+I read the G1 brief, the storage decision, the `booking.py` stubs and the learner's `QUESTIONS.md`, which is unchanged. I did not seek an owner answer.
+
+**Question that needs the owner:** what must `get_reservation(path, reservation_id)` do for an identifier that was never created? The options are:
+- return `None`;
+- raise a specific exception, and if so which type;
+- return an empty mapping.
+
+The brief defines reads only for a reservation that exists. It also says storage failures must propagate. Without an answer, a caller can't tell an absent reservation from a storage failure. This is the same gap as the learner's Q1.
+
+`AGENT_QUESTIONS.md` also lists five lower-priority questions that can ride on the same owner response:
+- how non-positive or non-integer identifiers are handled;
+- what `reserve` does when `init_db` was never called;
+- whether re-running `init_db` only needs to preserve data;
+- what G1 does with second reservations and invalid input, which the brief assigns to G2, so I won't add that logic unless told to;
+- whether a plain `dict` with an `int` identifier is acceptable as the returned mapping.
+
+The same file has seven proposed acceptance examples:
+- the basic reserve returning `201/confirmed`;
+- a read-back from a new process;
+- identifiers containing quotes;
+- independent copies on repeated reads;
+- data kept after a second `init_db`;
+- an unknown identifier, pending the answer above;
+- a storage failure that propagates.
+
+`AGENT_PLAN.md` describes the intended implementation after the answer arrives. It is a plain SQLite table with parameterized SQL, a commit before returning `201`, and no G2 behavior.
+
+I used 3 of the 40 allowed tool commands.

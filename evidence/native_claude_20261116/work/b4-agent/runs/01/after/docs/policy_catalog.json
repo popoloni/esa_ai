@@ -1,0 +1,12 @@
+{
+  "BR-001/v1": {
+    "version": "BR-001/v1",
+    "threshold_eur": "5000.00",
+    "algorithm": "TREASURY_THRESHOLD_V1"
+  },
+  "BR-001/v2": {
+    "version": "BR-001/v2",
+    "threshold_eur": "3000.00",
+    "algorithm": "TREASURY_THRESHOLD_V1"
+  }
+}

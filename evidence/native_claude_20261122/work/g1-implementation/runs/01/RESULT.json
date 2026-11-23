@@ -1,0 +1,1364 @@
+{
+  "at_utc": "2026-11-22T17:28:59.309661+00:00",
+  "client": "claude",
+  "exit_code": 0,
+  "timed_out": false,
+  "permission_denials": [
+    {
+      "event_line": 1235,
+      "value": {
+        "tool_name": "Bash",
+        "tool_use_id": "toolu_01Xg5vdVPjFjnH5ezAgsCd5F",
+        "tool_input": {
+          "command": "for f in docs/*.md docs/decisions/* booking.py DOSSIER.md QUESTIONS.md AGENT_PLAN.md AGENT_QUESTIONS.md READER_ENTRY.json; do echo \"=== $f\"; cat $f; done"
+        }
+      }
+    },
+    {
+      "event_line": 1235,
+      "value": {
+        "tool_name": "Bash",
+        "tool_use_id": "toolu_01XUkjwjQ2EMV3oSYVEnn3uN",
+        "tool_input": {
+          "command": "for f in tests/*.py historical_tests/*.py; do echo \"=== $f\"; cat $f; done"
+        }
+      }
+    },
+    {
+      "event_line": 1235,
+      "value": {
+        "tool_name": "Bash",
+        "tool_use_id": "toolu_01K2SaVhPWQPQX7c8CBtBVFY",
+        "tool_input": {
+          "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=. python3 -m unittest discover -s tests -p 'test_g1_slice.py' 2>&1 | grep -E \"^(ERROR|FAIL|Ran|OK|FAILED|NotImpl)\" ; PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=. python3 -m unittest discover -s tests -p 'test_g1_readonly.py' 2>&1 | grep -E \"^(ERROR|FAIL|Ran|OK|FAILED)\""
+        }
+      }
+    },
+    {
+      "event_line": 1235,
+      "value": {
+        "tool_name": "Bash",
+        "tool_use_id": "toolu_01PXWyLhxz9yiq3WwyzTdb1J",
+        "tool_input": {
+          "command": "D=/tmp/claude-0/-home-claude-work-live22-agentic-ai-5-2-work-g1/03061179-97b9-44f1-8431-6c186cf12ea0/scratchpad && rm -f $D/p.db && python3 -B -c \"\nimport booking,sys\np=sys.argv[1]; booking.init_db(p)\nprint(booking.reserve(p,trusted_member_id='member-1',asset_id='A',starts_at='2025-05-14T09:00:00Z',ends_at='2025-05-14T10:00:00Z',idempotency_key='key-1'))\" $D/p.db && python3 -B -c \"\nimport booking,sys\nprint(booking.get_reservation(sys.argv[1],1)); print(booking.get_reservation(sys.argv[1],999))\" $D/p.db; ls -A | head -20"
+        }
+      }
+    }
+  ],
+  "reported_cost_usd": [
+    0.22459629999999997
+  ],
+  "elapsed_seconds": 49.688755,
+  "event_count": 1236,
+  "malformed_native_event_lines": [],
+  "changed_files": [
+    "DOSSIER.md",
+    "booking.py"
+  ],
+  "scope_changes_requiring_review": [],
+  "before": {
+    "AGENTS.md": "78be262e9924077d0d92ab0abaffdf172d0e1b1bc0d83a5b28d0d75e47fd6cd6",
+    "AGENT_PLAN.md": "a81daca8c1013dc17b8af3607435508dc1228f33b943b824563a67f228ac4ab5",
+    "AGENT_QUESTIONS.md": "bb5b9b329d32c42f9ff86b26629a3c815b90d9d9265f7d648f4dc43e0da04a7a",
+    "DOSSIER.md": "4233ddcbb65da0092cf7dc4a7564b7cd5dec0e0fde7f38cc878f51158bbf669a",
+    "QUESTIONS.md": "961aea8d74161fc2575b8965680385b1f6fc917d6a1d3a3fbf97b6d211ce88fb",
+    "READER_ENTRY.json": "5dce40590573482fa2b5e23dd2187eb817f2f9670bae13f8b76304ca71fdacee",
+    "booking.py": "19ea131d1fec1ea4c575cf30fe1c25c358bb880027193945f08baeb0e6308e69",
+    "docs/G1-I01.md": "07a417cd7e7eeaca0bc5827e67eb965d0c7ebb75f387146f80a37e172fb89a50",
+    "docs/G1-OD-01.md": "baf835ffff57a64023ce8f5233b9e3e3588a2f6017f46f68b168919eae4b38db",
+    "docs/contract.md": "9c6c95077f305744728b9929f51ea36d8a534ab67cd2e7ebe8112ad35eb7ebba",
+    "docs/decisions/0001-storage.md": "c1b8a31f24fb5fe34e929049e8ed3cc3d1910b6d4194a40d4d303e70582f6762",
+    "historical_tests/test_booking.py": "3fede5b6fff032747fe1017836b915d375b7bef01417e6bbf246506e413b4e89",
+    "tests/test_g1_full_api.py": "8c46c06e0b8677dc74c9fb840f4f1f4b5f2c190095317b24f58d1cde92c8c538",
+    "tests/test_g1_readonly.py": "cd2f92b5adac1b2cc1ef5e1c23ff9309bd26133c933ec429368c7463308f5e4f",
+    "tests/test_g1_slice.py": "6242a53920d075fb038a8efbaeead6390f8f0a0d5b69dba3da6c31783abda98b"
+  },
+  "after": {
+    "AGENTS.md": "78be262e9924077d0d92ab0abaffdf172d0e1b1bc0d83a5b28d0d75e47fd6cd6",
+    "AGENT_PLAN.md": "a81daca8c1013dc17b8af3607435508dc1228f33b943b824563a67f228ac4ab5",
+    "AGENT_QUESTIONS.md": "bb5b9b329d32c42f9ff86b26629a3c815b90d9d9265f7d648f4dc43e0da04a7a",
+    "DOSSIER.md": "f57579afe243480f5bd2845a5557e9d00b3adea19c36da21682d79ad143fcadd",
+    "QUESTIONS.md": "961aea8d74161fc2575b8965680385b1f6fc917d6a1d3a3fbf97b6d211ce88fb",
+    "READER_ENTRY.json": "5dce40590573482fa2b5e23dd2187eb817f2f9670bae13f8b76304ca71fdacee",
+    "booking.py": "a93c8fa26357c4c5bf4c4eb40fbd15427692d074d3ee101f2a0a6980cb79007c",
+    "docs/G1-I01.md": "07a417cd7e7eeaca0bc5827e67eb965d0c7ebb75f387146f80a37e172fb89a50",
+    "docs/G1-OD-01.md": "baf835ffff57a64023ce8f5233b9e3e3588a2f6017f46f68b168919eae4b38db",
+    "docs/contract.md": "9c6c95077f305744728b9929f51ea36d8a534ab67cd2e7ebe8112ad35eb7ebba",
+    "docs/decisions/0001-storage.md": "c1b8a31f24fb5fe34e929049e8ed3cc3d1910b6d4194a40d4d303e70582f6762",
+    "historical_tests/test_booking.py": "3fede5b6fff032747fe1017836b915d375b7bef01417e6bbf246506e413b4e89",
+    "tests/test_g1_full_api.py": "8c46c06e0b8677dc74c9fb840f4f1f4b5f2c190095317b24f58d1cde92c8c538",
+    "tests/test_g1_readonly.py": "cd2f92b5adac1b2cc1ef5e1c23ff9309bd26133c933ec429368c7463308f5e4f",
+    "tests/test_g1_slice.py": "6242a53920d075fb038a8efbaeead6390f8f0a0d5b69dba3da6c31783abda98b"
+  },
+  "thread_ids": [
+    "03061179-97b9-44f1-8431-6c186cf12ea0"
+  ],
+  "usage_events": [
+    {
+      "duration_api_ms": 47997,
+      "stop_reason": "end_turn",
+      "session_id": "03061179-97b9-44f1-8431-6c186cf12ea0",
+      "total_cost_usd": 0.22459629999999997,
+      "usage": {
+        "input_tokens": 26,
+        "cache_creation_input_tokens": 31442,
+        "cache_read_input_tokens": 264063,
+        "output_tokens": 7237,
+        "output_tokens_details": {
+          "thinking_tokens": 214
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 31442,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 930,
+            "cache_read_input_tokens": 29827,
+            "cache_creation_input_tokens": 1615,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 1615
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard",
+        "fallback_credit": null
+      },
+      "modelUsage": {
+        "claude-sonnet-5-5": {
+          "inputTokens": 26,
+          "outputTokens": 7237,
+          "cacheReadInputTokens": 264063,
+          "cacheCreationInputTokens": 31442,
+          "webSearchRequests": 0,
+          "costUSD": 0.22459629999999997,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 64000,
+          "thinkingTokens": 214,
+          "cacheCreationEphemeral5mInputTokens": 0,
+          "cacheCreationEphemeral1hInputTokens": 31442,
+          "canonicalModel": "claude-sonnet-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "permission_denials": [
+        {
+          "tool_name": "Bash",
+          "tool_use_id": "toolu_01Xg5vdVPjFjnH5ezAgsCd5F",
+          "tool_input": {
+            "command": "for f in docs/*.md docs/decisions/* booking.py DOSSIER.md QUESTIONS.md AGENT_PLAN.md AGENT_QUESTIONS.md READER_ENTRY.json; do echo \"=== $f\"; cat $f; done"
+          }
+        },
+        {
+          "tool_name": "Bash",
+          "tool_use_id": "toolu_01XUkjwjQ2EMV3oSYVEnn3uN",
+          "tool_input": {
+            "command": "for f in tests/*.py historical_tests/*.py; do echo \"=== $f\"; cat $f; done"
+          }
+        },
+        {
+          "tool_name": "Bash",
+          "tool_use_id": "toolu_01K2SaVhPWQPQX7c8CBtBVFY",
+          "tool_input": {
+            "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=. python3 -m unittest discover -s tests -p 'test_g1_slice.py' 2>&1 | grep -E \"^(ERROR|FAIL|Ran|OK|FAILED|NotImpl)\" ; PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=. python3 -m unittest discover -s tests -p 'test_g1_readonly.py' 2>&1 | grep -E \"^(ERROR|FAIL|Ran|OK|FAILED)\""
+          }
+        },
+        {
+          "tool_name": "Bash",
+          "tool_use_id": "toolu_01PXWyLhxz9yiq3WwyzTdb1J",
+          "tool_input": {
+            "command": "D=/tmp/claude-0/-home-claude-work-live22-agentic-ai-5-2-work-g1/03061179-97b9-44f1-8431-6c186cf12ea0/scratchpad && rm -f $D/p.db && python3 -B -c \"\nimport booking,sys\np=sys.argv[1]; booking.init_db(p)\nprint(booking.reserve(p,trusted_member_id='member-1',asset_id='A',starts_at='2025-05-14T09:00:00Z',ends_at='2025-05-14T10:00:00Z',idempotency_key='key-1'))\" $D/p.db && python3 -B -c \"\nimport booking,sys\nprint(booking.get_reservation(sys.argv[1],1)); print(booking.get_reservation(sys.argv[1],999))\" $D/p.db; ls -A | head -20"
+          }
+        }
+      ],
+      "terminal_reason": "completed",
+      "fast_mode_state": "off",
+      "fast_mode_disabled_reason": "sdk_opt_in_required",
+      "subagent_stats": {
+        "spawned": 0,
+        "requested": {
+          "background": 0,
+          "foreground": 0,
+          "unset": 0
+        },
+        "started_in_background": 0,
+        "max_depth": 0,
+        "spawned_by_subagents": 0,
+        "completed": 0,
+        "failed": 0,
+        "killed": {
+          "parent": 0,
+          "user": 0,
+          "system": 0
+        },
+        "refused": {
+          "depth_limit": 0,
+          "concurrency_limit": 0,
+          "budget": 0
+        },
+        "by_type": {}
+      },
+      "safety_stops": 0,
+      "is_error": false,
+      "num_turns": 27,
+      "subtype": "success",
+      "api_error_status": null,
+      "result": "G1/I01 is implemented in `booking.py`. All 6 supplied G1 checks pass, but I have not run the protected acceptance, and no human approval is claimed.\n\n**Outcome:** `reserve` commits one row and then returns `201/confirmed`. `get_reservation` returns the six public fields, or `None` for an unknown id in an initialised database. For a missing path it raises `sqlite3.OperationalError` and creates no file, as G1-OD-01 requires.\n\n**Acceptance example:** Given an empty database, `member-1`, asset `A`, 09:00\u201310:00Z and key `key-1`, `reserve` returns `201/confirmed` with an id above 0 and `replayed=False`. A new process then reads back all six fields. Id 999 gives `None`, and a missing path raises `OperationalError` with no file left behind.\n\n**Files changed:** `booking.py` and `DOSSIER.md`. I left `docs/`, `tests/`, `historical_tests/` and `READER_ENTRY.json` untouched. I also left `QUESTIONS.md` alone, because the task allows only the two files above.\n\n**Commands and results** (9 tool commands used, mostly reading; the rest were runs and the edits):\n- **Before the edit:** all 6 G1 checks failed with `NotImplementedError`. One earlier run failed on an import error from my own use of `-I`, not on the code.\n- **After the edit:** the G1 slice and read-only checks ran 6 tests and all passed.\n- **Separate-process probe:** the write returned `201/confirmed` with id 1. A second process read the six fields correctly and got `None` for id 999.\n- **Expected failures:** the full-contract diagnostic and the historical suite each fail 7 of 10. These cover overlap, replay, changed key, validation and concurrency, which belong to G2, so I left them failing.\n\n**Explanation of changes:**\n- `init_db` creates one private table if it doesn't exist, so existing data survives.\n- `reserve` uses a parameterised INSERT in a transaction and builds the `Outcome` only after the commit. Storage errors propagate.\n- `get_reservation` opens a read-only URI built from `Path.resolve().as_uri()` and runs a parameterised SELECT. It returns a fresh dict.\n\n**Remaining uncertainty:**\n- Calling `reserve` before `init_db` is not specified. A plain connect would create an empty file and then fail on the missing table. I didn't invent a policy for it.\n- Non-positive ids simply find no row and return `None`, which the read-only test requires for -77. The owner has not ruled on bad id types or values.\n- Concurrency and duplicate handling are untested, and I make no crash-recovery claim.\n\nThe operator should run protected acceptance and decide how to continue.",
+      "ttft_ms": 1484,
+      "type": "result",
+      "duration_ms": 49102,
+      "uuid": "986eb589-e563-4b6d-80a9-fda8e606f187",
+      "begun_message_ids": [
+        "msg_011ChJMsfDk9StMsAJzbqQ93",
+        "msg_011ChJMskyXGnhrTGE1hsh1J",
+        "msg_011ChJMstVxCZZuy2bEfyoaL",
+        "msg_011ChJMtBGGbRfHVPBfT6CHE",
+        "msg_011ChJMtMxD1tfvWW7x2bpF4",
+        "msg_011ChJMtYhMmVrYzC1zxqrWd",
+        "msg_011ChJMtiJ5Em5hjyA4ghQC3",
+        "msg_011ChJMtokywjRM4euJfkRBY",
+        "msg_011ChJMtwNP7J8F4acADxRNz",
+        "msg_011ChJMuYUVinog5pfjFpKpW",
+        "msg_011ChJMuo2cRyKbPhLGpoPpb",
+        "msg_011ChJMv16PaANArqtEoLQnb",
+        "msg_011ChJMvnHF8aVzeKwWmFyWt"
+      ],
+      "ttft_stream_ms": 820,
+      "time_to_request_ms": 251,
+      "time_to_request_phases_ms": {
+        "other": 6,
+        "system_prompt": 189,
+        "resume_other": 0,
+        "process_user_input": 4,
+        "input_attachments": 8,
+        "input_hooks": 3,
+        "conversation_append": 0,
+        "tool_pool_refresh": 0,
+        "init_message": 3,
+        "init_frame_send": 1,
+        "engine_pickup": 1,
+        "loop_entry": 4,
+        "message_prep": 2,
+        "model_config_wait": 0,
+        "autocompact": 2,
+        "request_announcements": 7,
+        "query_setup": 1,
+        "model_gates": 0,
+        "tool_schema_build": 9,
+        "message_normalization": 2,
+        "client_creation": 3,
+        "request_build": 6
+      },
+      "turn_start_resume_kind": "none",
+      "process_turn_index": 0,
+      "time_to_request_loop_lag_ms": 50,
+      "time_to_request_cpu_ms": 93,
+      "time_to_request_major_faults": 0,
+      "process_rss_mib_turn_start": 211,
+      "process_anon_mib_turn_start": 132,
+      "process_rss_mib_result": 246,
+      "process_anon_mib_result": 150,
+      "process_peak_rss_mib": 246,
+      "process_cpu_ms_turn": 2230,
+      "process_wall_ms_turn": 49101,
+      "tool_pool_build_count": 3,
+      "tool_pool_build_lapsed_count": 1,
+      "tool_pool_moved_at_lapse_count": 0,
+      "tool_pool_limit_ms": 30000,
+      "process_cpu_ms_streaming": 1292,
+      "process_wall_ms_streaming": 34538,
+      "main_stream_count": 13,
+      "main_stream_event_count": 1142,
+      "main_stream_chunk_count": 252,
+      "process_turn_states": {
+        "main_stream": {
+          "cpu_ms": 1292,
+          "wall_ms": 34538,
+          "entries": 13
+        },
+        "tool": {
+          "cpu_ms": 207,
+          "wall_ms": 700,
+          "entries": 11
+        },
+        "first_event_wait": {
+          "cpu_ms": 416,
+          "wall_ms": 13407,
+          "entries": 13
+        },
+        "before_first_request": {
+          "cpu_ms": 93,
+          "wall_ms": 251,
+          "entries": 1
+        },
+        "between_requests": {
+          "cpu_ms": 194,
+          "wall_ms": 187,
+          "entries": 12
+        },
+        "after_last_request": {
+          "cpu_ms": 28,
+          "wall_ms": 18,
+          "entries": 1
+        }
+      },
+      "input_attachments_detail": {
+        "slowest_producer": "artifact_opening_prefetch",
+        "slowest_producer_ms": 2,
+        "cpu_ms": 9,
+        "major_faults": 0,
+        "setup_ms": 0,
+        "prompt_producers_ms": 0,
+        "ambient_start_ms": 3,
+        "ambient_wait_ms": 2,
+        "render_ms": 1,
+        "producers": 42,
+        "token_counts": 0
+      },
+      "tool_schema_build_detail": {
+        "betas_ms": 0,
+        "waits_ms": 1,
+        "placement_ms": 0,
+        "render_ms": 7,
+        "after_ms": 1,
+        "other_ms": 0,
+        "tools": 6,
+        "new_schemas": 6
+      },
+      "message_normalization_detail": {
+        "before_ms": 0,
+        "normalize_ms": 2,
+        "images_ms": 0,
+        "post_process_ms": 0,
+        "after_ms": 0,
+        "other_ms": 0,
+        "messages": 10,
+        "wire_messages": 2
+      },
+      "request_build_detail": {
+        "records_ms": 0,
+        "system_ms": 1,
+        "headers_ms": 1,
+        "cache_break_record_ms": 0,
+        "plans_ms": 1,
+        "retry_setup_ms": 1,
+        "sent_build_ms": 1,
+        "record_attempt_ms": 1,
+        "other_ms": 0,
+        "sent_build_safety_context_ms": 0,
+        "sent_build_cache_breakpoints_ms": 0,
+        "sent_build_surrogate_scan_ms": 1
+      },
+      "first_content_frame_ms": 821,
+      "time_to_request_from_spawn_ms": 156851,
+      "warm_spare_claimed": false,
+      "flag_fetch_kick": "started_in_init_warm",
+      "time_origin_ms": 1795368489624.246,
+      "queued_turn_count": 0,
+      "result_index": 0,
+      "model_usage_since_last_result": {
+        "claude-sonnet-5-5": {
+          "inputTokens": 26,
+          "outputTokens": 7237,
+          "cacheReadInputTokens": 264063,
+          "cacheCreationInputTokens": 31442,
+          "webSearchRequests": 0,
+          "costUSD": 0.22459629999999997,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 64000,
+          "thinkingTokens": 214,
+          "cacheCreationEphemeral5mInputTokens": 0,
+          "cacheCreationEphemeral1hInputTokens": 31442,
+          "canonicalModel": "claude-sonnet-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "process_start_tuning": 0
+    }
+  ],
+  "native_observations": {
+    "protocol_client": "claude",
+    "unexpected_protocol_lines": [],
+    "completed_turn_lines": [
+      1235
+    ],
+    "failed_turn_or_error_lines": [],
+    "agent_message_lines": [
+      81,
+      276,
+      307,
+      386,
+      432,
+      646,
+      779,
+      1230
+    ],
+    "tool_operation_lines": [
+      24,
+      52,
+      69,
+      91,
+      103,
+      115,
+      127,
+      138,
+      150,
+      162,
+      174,
+      186,
+      202,
+      214,
+      227,
+      238,
+      249,
+      291,
+      347,
+      370,
+      407,
+      582,
+      618,
+      703,
+      768,
+      1053
+    ],
+    "model_observations": [
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 3,
+        "field": "model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 24,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 52,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 69,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 81,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 91,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 103,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 115,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 127,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 138,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 150,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 162,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 174,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 186,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 202,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 214,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 227,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 238,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 249,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 262,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 276,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 291,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 307,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 347,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 370,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 386,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 407,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 421,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 432,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 582,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 618,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 628,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 646,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 703,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 768,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 779,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 1053,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 1230,
+        "field": "message.model"
+      }
+    ],
+    "usage_observations": [
+      {
+        "event_line": 24,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 9887,
+          "cache_read_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 9887
+          },
+          "output_tokens": 16,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 52,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1332,
+          "cache_read_input_tokens": 9887,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1332
+          },
+          "output_tokens": 16,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 69,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1332,
+          "cache_read_input_tokens": 9887,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1332
+          },
+          "output_tokens": 16,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 81,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 387,
+          "cache_read_input_tokens": 11219,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 387
+          },
+          "output_tokens": 30,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 91,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 387,
+          "cache_read_input_tokens": 11219,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 387
+          },
+          "output_tokens": 30,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 103,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 387,
+          "cache_read_input_tokens": 11219,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 387
+          },
+          "output_tokens": 30,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 115,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 387,
+          "cache_read_input_tokens": 11219,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 387
+          },
+          "output_tokens": 30,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 127,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 387,
+          "cache_read_input_tokens": 11219,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 387
+          },
+          "output_tokens": 30,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 138,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 387,
+          "cache_read_input_tokens": 11219,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 387
+          },
+          "output_tokens": 30,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 150,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 387,
+          "cache_read_input_tokens": 11219,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 387
+          },
+          "output_tokens": 30,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 162,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 387,
+          "cache_read_input_tokens": 11219,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 387
+          },
+          "output_tokens": 30,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 174,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 387,
+          "cache_read_input_tokens": 11219,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 387
+          },
+          "output_tokens": 30,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 186,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 387,
+          "cache_read_input_tokens": 11219,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 387
+          },
+          "output_tokens": 30,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 202,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 7471,
+          "cache_read_input_tokens": 11606,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 7471
+          },
+          "output_tokens": 16,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 214,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 7471,
+          "cache_read_input_tokens": 11606,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 7471
+          },
+          "output_tokens": 16,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 227,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 7471,
+          "cache_read_input_tokens": 11606,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 7471
+          },
+          "output_tokens": 16,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 238,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 7471,
+          "cache_read_input_tokens": 11606,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 7471
+          },
+          "output_tokens": 16,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 249,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 7471,
+          "cache_read_input_tokens": 11606,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 7471
+          },
+          "output_tokens": 16,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 262,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 4637,
+          "cache_read_input_tokens": 19077,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 4637
+          },
+          "output_tokens": 8,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 276,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 4637,
+          "cache_read_input_tokens": 19077,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 4637
+          },
+          "output_tokens": 8,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 291,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 4637,
+          "cache_read_input_tokens": 19077,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 4637
+          },
+          "output_tokens": 8,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 307,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 504,
+          "cache_read_input_tokens": 23714,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 504
+          },
+          "output_tokens": 54,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 347,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 504,
+          "cache_read_input_tokens": 23714,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 504
+          },
+          "output_tokens": 54,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 370,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 537,
+          "cache_read_input_tokens": 24218,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 537
+          },
+          "output_tokens": 16,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 386,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 751,
+          "cache_read_input_tokens": 24755,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 751
+          },
+          "output_tokens": 57,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 407,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 751,
+          "cache_read_input_tokens": 24755,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 751
+          },
+          "output_tokens": 57,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 421,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 703,
+          "cache_read_input_tokens": 25506,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 703
+          },
+          "output_tokens": 7,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 432,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 703,
+          "cache_read_input_tokens": 25506,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 703
+          },
+          "output_tokens": 7,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 582,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 703,
+          "cache_read_input_tokens": 25506,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 703
+          },
+          "output_tokens": 7,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 618,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 703,
+          "cache_read_input_tokens": 25506,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 703
+          },
+          "output_tokens": 7,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 628,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 2558,
+          "cache_read_input_tokens": 26209,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 2558
+          },
+          "output_tokens": 3,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 646,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 2558,
+          "cache_read_input_tokens": 26209,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 2558
+          },
+          "output_tokens": 3,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 703,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 2558,
+          "cache_read_input_tokens": 26209,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 2558
+          },
+          "output_tokens": 3,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 768,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 511,
+          "cache_read_input_tokens": 28767,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 511
+          },
+          "output_tokens": 20,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 779,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 549,
+          "cache_read_input_tokens": 29278,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 549
+          },
+          "output_tokens": 35,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 1053,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 549,
+          "cache_read_input_tokens": 29278,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 549
+          },
+          "output_tokens": 35,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 1230,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1615,
+          "cache_read_input_tokens": 29827,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1615
+          },
+          "output_tokens": 750,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 1235,
+        "field": "usage",
+        "value": {
+          "input_tokens": 26,
+          "cache_creation_input_tokens": 31442,
+          "cache_read_input_tokens": 264063,
+          "output_tokens": 7237,
+          "output_tokens_details": {
+            "thinking_tokens": 214
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 31442,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "global",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 930,
+              "cache_read_input_tokens": 29827,
+              "cache_creation_input_tokens": 1615,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 1615
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "fallback_credit": null
+        }
+      }
+    ],
+    "permission_denials": [
+      {
+        "event_line": 1235,
+        "value": {
+          "tool_name": "Bash",
+          "tool_use_id": "toolu_01Xg5vdVPjFjnH5ezAgsCd5F",
+          "tool_input": {
+            "command": "for f in docs/*.md docs/decisions/* booking.py DOSSIER.md QUESTIONS.md AGENT_PLAN.md AGENT_QUESTIONS.md READER_ENTRY.json; do echo \"=== $f\"; cat $f; done"
+          }
+        }
+      },
+      {
+        "event_line": 1235,
+        "value": {
+          "tool_name": "Bash",
+          "tool_use_id": "toolu_01XUkjwjQ2EMV3oSYVEnn3uN",
+          "tool_input": {
+            "command": "for f in tests/*.py historical_tests/*.py; do echo \"=== $f\"; cat $f; done"
+          }
+        }
+      },
+      {
+        "event_line": 1235,
+        "value": {
+          "tool_name": "Bash",
+          "tool_use_id": "toolu_01K2SaVhPWQPQX7c8CBtBVFY",
+          "tool_input": {
+            "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=. python3 -m unittest discover -s tests -p 'test_g1_slice.py' 2>&1 | grep -E \"^(ERROR|FAIL|Ran|OK|FAILED|NotImpl)\" ; PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=. python3 -m unittest discover -s tests -p 'test_g1_readonly.py' 2>&1 | grep -E \"^(ERROR|FAIL|Ran|OK|FAILED)\""
+          }
+        }
+      },
+      {
+        "event_line": 1235,
+        "value": {
+          "tool_name": "Bash",
+          "tool_use_id": "toolu_01PXWyLhxz9yiq3WwyzTdb1J",
+          "tool_input": {
+            "command": "D=/tmp/claude-0/-home-claude-work-live22-agentic-ai-5-2-work-g1/03061179-97b9-44f1-8431-6c186cf12ea0/scratchpad && rm -f $D/p.db && python3 -B -c \"\nimport booking,sys\np=sys.argv[1]; booking.init_db(p)\nprint(booking.reserve(p,trusted_member_id='member-1',asset_id='A',starts_at='2025-05-14T09:00:00Z',ends_at='2025-05-14T10:00:00Z',idempotency_key='key-1'))\" $D/p.db && python3 -B -c \"\nimport booking,sys\nprint(booking.get_reservation(sys.argv[1],1)); print(booking.get_reservation(sys.argv[1],999))\" $D/p.db; ls -A | head -20"
+          }
+        }
+      }
+    ],
+    "reported_cost_observations": [
+      {
+        "event_line": 1235,
+        "field": "total_cost_usd",
+        "value": 0.22459629999999997
+      }
+    ],
+    "thread_ids": [
+      "03061179-97b9-44f1-8431-6c186cf12ea0"
+    ]
+  },
+  "requested_model": "claude-sonnet-5-5",
+  "capture_sha256": {
+    "native_events.jsonl": "4e177d620790f5a8fcc480f71ad33b5c083d9ccc2e3875658603b1bc2e342c38",
+    "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "agent_final.txt": "67b74825c1a39cb9465a43c095ca97464489469bc42674f5e439c55ffacf7bbf"
+  },
+  "observed_model_ids": [
+    "claude-sonnet-5-5"
+  ],
+  "model_identity_observed": true,
+  "native_completion_event_observed": true,
+  "native_turn_completed": true,
+  "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+  "acceptance": "NOT_ESTABLISHED",
+  "scope_note": "Native events retained as emitted; absence of usage is unknown, not zero."
+}

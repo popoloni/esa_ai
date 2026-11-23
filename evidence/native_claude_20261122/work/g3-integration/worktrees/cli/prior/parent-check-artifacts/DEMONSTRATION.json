@@ -1,0 +1,58 @@
+{
+  "schema": "esa-curriculum-demonstration/v1",
+  "mission": "G2",
+  "recorded_at_utc": "2026-11-22T17:31:04.905905+00:00",
+  "command": [
+    "/usr/local/bin/python3",
+    "/home/claude/work/live22/agentic-ai-5.2/companion/curriculum_demo.py",
+    "G2",
+    "--candidate",
+    "/home/claude/work/live22/agentic-ai-5.2/work/g2",
+    "--output",
+    "/tmp/esa-parent-check-fpsfabnw/parent-handoff"
+  ],
+  "origin": "EXECUTED_OFFLINE_TEACHING_FIXTURE",
+  "observed_human_pilot": false,
+  "observed_model_run": false,
+  "result": {
+    "initial_public_record": {
+      "reservation_id": 1,
+      "trusted_member_id": "member-14",
+      "asset_id": "lathe-2",
+      "starts_at": "2025-05-16T13:00:00Z",
+      "ends_at": "2025-05-16T14:00:00Z",
+      "idempotency_key": "original"
+    },
+    "after_migration": {
+      "reservation_id": 1,
+      "trusted_member_id": "member-14",
+      "asset_id": "lathe-2",
+      "starts_at": "2025-05-16T13:00:00Z",
+      "ends_at": "2025-05-16T14:00:00Z",
+      "idempotency_key": "original"
+    },
+    "same_identity_replay": {
+      "status": 200,
+      "code": "confirmed",
+      "reservation_id": 1,
+      "replayed": true
+    },
+    "changed_payload": {
+      "status": 409,
+      "code": "idempotency-key-reused",
+      "reservation_id": null,
+      "replayed": false
+    },
+    "adjacent_new_request": {
+      "status": 201,
+      "code": "confirmed",
+      "reservation_id": 2,
+      "replayed": false
+    },
+    "legacy_rows_preserved": 1,
+    "historical_tables": [
+      "reservations"
+    ],
+    "history_check": "Exact original column signature and rows; no reference-specific archive table name."
+  }
+}

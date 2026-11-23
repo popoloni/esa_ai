@@ -1,0 +1,46 @@
+test_activation_and_history_survive_restart (test_b3.PersistentDecisions.test_activation_and_history_survive_restart) ... ok
+test_changed_payload_conflicts_without_new_rows (test_b3.PersistentDecisions.test_changed_payload_conflicts_without_new_rows) ... ok
+test_explicit_migration_preserves_legacy_payload (test_b3.PersistentDecisions.test_explicit_migration_preserves_legacy_payload) ... ERROR
+test_history_cannot_be_updated_or_deleted (test_b3.PersistentDecisions.test_history_cannot_be_updated_or_deleted) ... ok
+test_missing_provenance_stops_without_mutation (test_b3.PersistentDecisions.test_missing_provenance_stops_without_mutation) ... ERROR
+test_non_ascii_numeric_input_is_outside_history_api (test_b3.PersistentDecisions.test_non_ascii_numeric_input_is_outside_history_api) ... ok
+test_original_payload_survives_canonical_retry (test_b3.PersistentDecisions.test_original_payload_survives_canonical_retry) ... ok
+test_recompute_uses_recorded_policy_without_mutation (test_b3.PersistentDecisions.test_recompute_uses_recorded_policy_without_mutation) ... ok
+test_reevaluation_requires_new_identity_and_parent (test_b3.PersistentDecisions.test_reevaluation_requires_new_identity_and_parent) ... ok
+test_retry_after_policy_change_returns_exact_old_decision (test_b3.PersistentDecisions.test_retry_after_policy_change_returns_exact_old_decision) ... FAIL
+
+======================================================================
+ERROR: test_explicit_migration_preserves_legacy_payload (test_b3.PersistentDecisions.test_explicit_migration_preserves_legacy_payload)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B3/workspace/tests/test_b3.py", line 55, in test_explicit_migration_preserves_legacy_payload
+    path,raw,proof=self.seed_legacy();r=ledger.migrate_legacy(path,CATALOG,proof)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B3/workspace/ledger.py", line 294, in migrate_legacy
+    raise NotImplementedError("Implement the explicit legacy migration")
+NotImplementedError: Implement the explicit legacy migration
+
+======================================================================
+ERROR: test_missing_provenance_stops_without_mutation (test_b3.PersistentDecisions.test_missing_provenance_stops_without_mutation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B3/workspace/tests/test_b3.py", line 63, in test_missing_provenance_stops_without_mutation
+    with self.assertRaises(ledger.HistoryError):ledger.migrate_legacy(path,CATALOG,{})
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B3/workspace/ledger.py", line 294, in migrate_legacy
+    raise NotImplementedError("Implement the explicit legacy migration")
+NotImplementedError: Implement the explicit legacy migration
+
+======================================================================
+FAIL: test_retry_after_policy_change_returns_exact_old_decision (test_b3.PersistentDecisions.test_retry_after_policy_change_returns_exact_old_decision)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B3/workspace/tests/test_b3.py", line 18, in test_retry_after_policy_change_returns_exact_old_decision
+    self.assertEqual(replay["record"],original)
+AssertionError: {'req[1087 chars]': {'route': 'HUMAN_REVIEW', 'reason_code': 'A[167 chars]ED'}} != {'req[1087 chars]': {'benefit_status': 'HYPOTHESIS_NOT_VALIDATE[163 chars]UE'}}
+Diff is 1854 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.016s
+
+FAILED (failures=1, errors=2)

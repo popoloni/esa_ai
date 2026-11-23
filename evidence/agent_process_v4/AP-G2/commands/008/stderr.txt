@@ -1,0 +1,189 @@
+test_adjacent_reservation_succeeds (test_g2.ReservationFullAPI.test_adjacent_reservation_succeeds) ... ok
+test_changed_request_with_same_key_fails (test_g2.ReservationFullAPI.test_changed_request_with_same_key_fails) ... FAIL
+test_different_assets_do_not_conflict (test_g2.ReservationFullAPI.test_different_assets_do_not_conflict) ... ok
+test_duration_limit_and_timestamp_format (test_g2.ReservationFullAPI.test_duration_limit_and_timestamp_format) ... FAIL
+test_first_reservation_confirms (test_g2.ReservationFullAPI.test_first_reservation_confirms) ... ok
+test_invalid_zero_or_reverse_interval_has_no_effect (test_g2.ReservationFullAPI.test_invalid_zero_or_reverse_interval_has_no_effect) ... FAIL
+test_other_member_same_key_is_independent_but_conflicts_on_slot (test_g2.ReservationFullAPI.test_other_member_same_key_is_independent_but_conflicts_on_slot) ... FAIL
+test_overlap_fails_without_insert (test_g2.ReservationFullAPI.test_overlap_fails_without_insert) ... FAIL
+test_same_request_key_replays_original (test_g2.ReservationFullAPI.test_same_request_key_replays_original) ... FAIL
+test_two_writers_do_not_both_confirm_same_slot (test_g2.ReservationFullAPI.test_two_writers_do_not_both_confirm_same_slot) ... FAIL
+test_both_supplied_g1_schemas_preserve_record_and_identity (test_g2.ReservationMigration.test_both_supplied_g1_schemas_preserve_record_and_identity) ... 
+  test_both_supplied_g1_schemas_preserve_record_and_identity (test_g2.ReservationMigration.test_both_supplied_g1_schemas_preserve_record_and_identity) (schema='legacy_g1') ... ERROR
+  test_both_supplied_g1_schemas_preserve_record_and_identity (test_g2.ReservationMigration.test_both_supplied_g1_schemas_preserve_record_and_identity) (schema='legacy_g1_json') ... FAIL
+test_duplicate_legacy_identity_rolls_back_migration (test_g2.ReservationMigration.test_duplicate_legacy_identity_rolls_back_migration) ... FAIL
+test_invalid_or_overlapping_legacy_rows_require_owner_mapping (test_g2.ReservationMigration.test_invalid_or_overlapping_legacy_rows_require_owner_mapping) ... 
+  test_invalid_or_overlapping_legacy_rows_require_owner_mapping (test_g2.ReservationMigration.test_invalid_or_overlapping_legacy_rows_require_owner_mapping) (change={'starts_at': 'not-a-timestamp'}) ... FAIL
+  test_invalid_or_overlapping_legacy_rows_require_owner_mapping (test_g2.ReservationMigration.test_invalid_or_overlapping_legacy_rows_require_owner_mapping) (change={'asset_id': ''}) ... FAIL
+  test_invalid_or_overlapping_legacy_rows_require_owner_mapping (test_g2.ReservationMigration.test_invalid_or_overlapping_legacy_rows_require_owner_mapping) (change={'idempotency_key': 'other-key'}) ... FAIL
+test_read_of_missing_storage_does_not_create_file (test_g2.ReservationMigration.test_read_of_missing_storage_does_not_create_file) ... ok
+test_unknown_or_dual_legacy_schema_is_not_guessed (test_g2.ReservationMigration.test_unknown_or_dual_legacy_schema_is_not_guessed) ... 
+  test_unknown_or_dual_legacy_schema_is_not_guessed (test_g2.ReservationMigration.test_unknown_or_dual_legacy_schema_is_not_guessed) (dual=False) ... FAIL
+  test_unknown_or_dual_legacy_schema_is_not_guessed (test_g2.ReservationMigration.test_unknown_or_dual_legacy_schema_is_not_guessed) (dual=True) ... FAIL
+
+======================================================================
+ERROR: test_both_supplied_g1_schemas_preserve_record_and_identity (test_g2.ReservationMigration.test_both_supplied_g1_schemas_preserve_record_and_identity) (schema='legacy_g1')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G2/workspace/tests/test_g2.py", line 109, in test_both_supplied_g1_schemas_preserve_record_and_identity
+    self.assertEqual(booking.get_reservation(path, original.reservation_id),
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G2/workspace/booking.py", line 62, in get_reservation
+    row = connection.execute(
+          ^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: reservation_id
+
+======================================================================
+FAIL: test_changed_request_with_same_key_fails (test_g2.ReservationFullAPI.test_changed_request_with_same_key_fails)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G2/workspace/tests/test_g2.py", line 66, in test_changed_request_with_same_key_fails
+    self.assertEqual((change.status, change.code), (409, "idempotency-key-reused"))
+AssertionError: Tuples differ: (201, 'confirmed') != (409, 'idempotency-key-reused')
+
+First differing element 0:
+201
+409
+
+- (201, 'confirmed')
++ (409, 'idempotency-key-reused')
+
+======================================================================
+FAIL: test_duration_limit_and_timestamp_format (test_g2.ReservationFullAPI.test_duration_limit_and_timestamp_format)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G2/workspace/tests/test_g2.py", line 77, in test_duration_limit_and_timestamp_format
+    self.assertEqual(result.status, 422)
+AssertionError: 201 != 422
+
+======================================================================
+FAIL: test_invalid_zero_or_reverse_interval_has_no_effect (test_g2.ReservationFullAPI.test_invalid_zero_or_reverse_interval_has_no_effect)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G2/workspace/tests/test_g2.py", line 72, in test_invalid_zero_or_reverse_interval_has_no_effect
+    self.assertEqual(result.status, 422)
+AssertionError: 201 != 422
+
+======================================================================
+FAIL: test_other_member_same_key_is_independent_but_conflicts_on_slot (test_g2.ReservationFullAPI.test_other_member_same_key_is_independent_but_conflicts_on_slot)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G2/workspace/tests/test_g2.py", line 83, in test_other_member_same_key_is_independent_but_conflicts_on_slot
+    self.assertEqual((result.status, result.code), (409, "interval-conflict"))
+AssertionError: Tuples differ: (201, 'confirmed') != (409, 'interval-conflict')
+
+First differing element 0:
+201
+409
+
+- (201, 'confirmed')
++ (409, 'interval-conflict')
+
+======================================================================
+FAIL: test_overlap_fails_without_insert (test_g2.ReservationFullAPI.test_overlap_fails_without_insert)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G2/workspace/tests/test_g2.py", line 39, in test_overlap_fails_without_insert
+    self.assertEqual((result.status, result.code), (409, "interval-conflict"))
+AssertionError: Tuples differ: (201, 'confirmed') != (409, 'interval-conflict')
+
+First differing element 0:
+201
+409
+
+- (201, 'confirmed')
++ (409, 'interval-conflict')
+
+======================================================================
+FAIL: test_same_request_key_replays_original (test_g2.ReservationFullAPI.test_same_request_key_replays_original)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G2/workspace/tests/test_g2.py", line 59, in test_same_request_key_replays_original
+    self.assertEqual(repeated.status, 200)
+AssertionError: 201 != 200
+
+======================================================================
+FAIL: test_two_writers_do_not_both_confirm_same_slot (test_g2.ReservationFullAPI.test_two_writers_do_not_both_confirm_same_slot)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G2/workspace/tests/test_g2.py", line 91, in test_two_writers_do_not_both_confirm_same_slot
+    self.assertEqual(sorted(result.status for result in results), [201, 409])
+AssertionError: Lists differ: [201, 201] != [201, 409]
+
+First differing element 1:
+201
+409
+
+- [201, 201]
+?       ^ ^
+
++ [201, 409]
+?       ^ ^
+
+
+======================================================================
+FAIL: test_both_supplied_g1_schemas_preserve_record_and_identity (test_g2.ReservationMigration.test_both_supplied_g1_schemas_preserve_record_and_identity) (schema='legacy_g1_json')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G2/workspace/tests/test_g2.py", line 109, in test_both_supplied_g1_schemas_preserve_record_and_identity
+    self.assertEqual(booking.get_reservation(path, original.reservation_id),
+AssertionError: None != {'reservation_id': 1, 'trusted_member_id'[127 chars]key'}
+
+======================================================================
+FAIL: test_duplicate_legacy_identity_rolls_back_migration (test_g2.ReservationMigration.test_duplicate_legacy_identity_rolls_back_migration)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G2/workspace/tests/test_g2.py", line 125, in test_duplicate_legacy_identity_rolls_back_migration
+    with self.assertRaises(sqlite3.IntegrityError):booking.init_db(path)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: IntegrityError not raised
+
+======================================================================
+FAIL: test_invalid_or_overlapping_legacy_rows_require_owner_mapping (test_g2.ReservationMigration.test_invalid_or_overlapping_legacy_rows_require_owner_mapping) (change={'starts_at': 'not-a-timestamp'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G2/workspace/tests/test_g2.py", line 148, in test_invalid_or_overlapping_legacy_rows_require_owner_mapping
+    with self.assertRaises(ValueError):booking.init_db(path)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_or_overlapping_legacy_rows_require_owner_mapping (test_g2.ReservationMigration.test_invalid_or_overlapping_legacy_rows_require_owner_mapping) (change={'asset_id': ''})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G2/workspace/tests/test_g2.py", line 148, in test_invalid_or_overlapping_legacy_rows_require_owner_mapping
+    with self.assertRaises(ValueError):booking.init_db(path)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_invalid_or_overlapping_legacy_rows_require_owner_mapping (test_g2.ReservationMigration.test_invalid_or_overlapping_legacy_rows_require_owner_mapping) (change={'idempotency_key': 'other-key'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G2/workspace/tests/test_g2.py", line 148, in test_invalid_or_overlapping_legacy_rows_require_owner_mapping
+    with self.assertRaises(ValueError):booking.init_db(path)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_unknown_or_dual_legacy_schema_is_not_guessed (test_g2.ReservationMigration.test_unknown_or_dual_legacy_schema_is_not_guessed) (dual=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G2/workspace/tests/test_g2.py", line 160, in test_unknown_or_dual_legacy_schema_is_not_guessed
+    with self.assertRaises(ValueError):booking.init_db(path)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_unknown_or_dual_legacy_schema_is_not_guessed (test_g2.ReservationMigration.test_unknown_or_dual_legacy_schema_is_not_guessed) (dual=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G2/workspace/tests/test_g2.py", line 160, in test_unknown_or_dual_legacy_schema_is_not_guessed
+    with self.assertRaises(ValueError):booking.init_db(path)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.023s
+
+FAILED (failures=14, errors=1)

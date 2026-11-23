@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Eight practical missions, local checks and recorded agent tours for Engineering Software with Agentic AI."><title>Second native run of all eight missions, 22 November 2026 · Engineering Software with Agentic AI</title><link rel="stylesheet" href="../../assets/companion.css"></head><body><a class="skip" href="#main">Skip to content</a><header class="sitehead"><div><a class="brand" href="../../index.html">Engineering Software with Agentic AI<span>Practical companion · version 5.6</span></a><nav aria-label="Main navigation"><a href="../../index.html">Start</a><a href="../../missions/index.html">Missions</a><a href="README.html">Agent guide</a><a href="../../traces/index.html">Recorded tours</a><a href="../series/READING_THE_SERIES.html">Four volumes</a></nav></div></header><main id="main"><article data-source-sha256="81c243a1156258413264aede213135583df090af58e20cd7fb01531673fe62d7"><p class="docmeta meta"><a href="NATIVE_RUN_20261122.md">Markdown source</a> · Companion 5.6 · 2026-11-22</p><h1 id="second-native-run-of-all-eight-missions-22-november-2026">Second native run of all eight missions, 22 November 2026</h1>
+<p>A second Claude Code run took all eight missions and all twelve required stages of <code>NATIVE_SESSION_MATRIX.json</code> through <code>agent_session.py</code>, from a fresh extraction of the public companion. It found one companion defect on the Reservation route. The defect was fixed and G4 was run again on the same lineage. <code>native_ledger.py</code> then reports <code>verified_native_missions: 8</code> with all twelve capture stages.</p>
+<p>The operator was an AI (Claude, working in the author’s session) and recorded every decision with <code>--operator-kind AI</code>. No human operated, steered or accepted a mission.</p>
+<h2 id="setup">Setup</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Item</th>
+<th style="text-align: left;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Client</td>
+<td style="text-align: left;">Claude Code 2.1.330, <code>--client claude</code>, logged in</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Worker model</td>
+<td style="text-align: left;"><code>claude-sonnet-5-5</code>, requested and observed, in eleven matrix stages; the G1 question stage ran without <code>--model</code> and observed the client default, <code>claude-opus-5-5</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Launch profile</td>
+<td style="text-align: left;">As in the 16 November run; <code>--max-budget-usd 5</code> per launch</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Reported client cost</td>
+<td style="text-align: left;">2.02 USD for the twelve matrix stages; 2.43 USD for all fourteen launches</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Evidence</td>
+<td style="text-align: left;"><code>evidence/native_claude_20261122/</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="stages">Stages</h2>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Stage</th>
+<th style="text-align: right;">Time</th>
+<th style="text-align: right;">Cost (USD)</th>
+<th style="text-align: right;">Denied operations</th>
+<th style="text-align: left;">Decision</th>
+<th style="text-align: left;">Protected check</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">G1 question</td>
+<td style="text-align: right;">52 s</td>
+<td style="text-align: right;">0.255</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">stop (asked the right question)</td>
+<td style="text-align: left;">owner response released</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">G1 implementation</td>
+<td style="text-align: right;">50 s</td>
+<td style="text-align: right;">0.225</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">accept</td>
+<td style="text-align: left;">slice 4/4; handoff 6/6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">G2</td>
+<td style="text-align: right;">92 s</td>
+<td style="text-align: right;">0.299</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">accept</td>
+<td style="text-align: left;">17/17; handoff ready</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">G3</td>
+<td style="text-align: right;">56 s</td>
+<td style="text-align: right;">0.192</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">accept</td>
+<td style="text-align: left;">7/7; handoff ready</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">G3 report role</td>
+<td style="text-align: right;">27 s</td>
+<td style="text-align: right;">0.106</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">accept</td>
+<td style="text-align: left;">integration passed on the extracted package</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">G3 CLI role</td>
+<td style="text-align: right;">18 s</td>
+<td style="text-align: right;">0.071</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">accept</td>
+<td style="text-align: left;">integration passed on the extracted package</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">G4, first attempt</td>
+<td style="text-align: right;">63 s</td>
+<td style="text-align: right;">0.211</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">ask</td>
+<td style="text-align: left;">9/13 (retained outside the matrix)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">G4, after the fix</td>
+<td style="text-align: right;">50 s</td>
+<td style="text-align: right;">0.185</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">accept</td>
+<td style="text-align: left;">13/13; handoff ready</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">B1 v1</td>
+<td style="text-align: right;">27 s</td>
+<td style="text-align: right;">0.115</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">accept</td>
+<td style="text-align: left;">12/12; context handoff ready</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B1 v2</td>
+<td style="text-align: right;">31 s</td>
+<td style="text-align: right;">0.117</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">accept</td>
+<td style="text-align: left;">18/18; context handoff ready</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">B2</td>
+<td style="text-align: right;">41 s</td>
+<td style="text-align: right;">0.131</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">accept</td>
+<td style="text-align: left;">12/12; handoff ready</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B3</td>
+<td style="text-align: right;">33 s</td>
+<td style="text-align: right;">0.146</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">accept</td>
+<td style="text-align: left;">10/10; handoff ready</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">B4</td>
+<td style="text-align: right;">47 s</td>
+<td style="text-align: right;">0.177</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">accept</td>
+<td style="text-align: left;">7/7; handoff ready</td>
+</tr>
+</tbody>
+</table>
+<p>A standalone <code>new G4</code> session (65 s, 0.201 USD, 13/13) is retained as <code>work/g4s-agent</code> and is not a matrix stage. Every worker stayed inside its allowed files.</p>
+<h2 id="what-the-run-found-and-what-changed">What the run found and what changed</h2>
+<p><strong>G3 to G4: a lineage layout that no contract named.</strong> This lineage’s G3 kept its reservations in a table named <code>reservations_v3</code>, with the native column list. OPS-G4/v3 names <code>reservations</code> and two <code>reservations_v2</code> layouts, so the first G4 worker implemented those three, refused this one and asked for an owner mapping, which is the contracted behaviour. The protected check could not pass: four methods failed because the corruption fixture builds only named layouts. The 16 November run met the same class of problem and answered it by writing OPS-G4/v3 for its own table. A reader whose agent picks any other name had no documented way forward.</p>
+<p>The companion now handles this at <code>advance G4</code>. When the retained G3 creates a layout that OPS-G4/v3 does not name, <code>advance</code> writes the owner decision G4-OD-01 for that lineage alone (<code>docs/G4-OD-01.md</code> and <code>docs/G4-SCHEMA-MAP.json</code>), provided every column uses a name the named layouts already give to the same role. Otherwise it refuses and explains how to supply a mapping with <code>--schema-map</code>, which it checks against the columns <code>init_db</code> creates. The contract, the tests and their count are unchanged; the fixture and the reference observer read the mapping when it exists. G4 was re-advanced from the same accepted G3 integration. The second worker read the decision, implemented the mapping generically, probed a wrong signature and a competing pair itself, and passed 13/13 and the handoff. The first attempt is retained as <code>work/g4-before-owner-mapping</code> and <code>work/g4-agent-before-owner-mapping</code>.</p>
+<p><strong>Receipts: a used name could not be superseded.</strong> The operator ran the printed G2 check once before the agent, which consumed <code>g2-first.json</code>; the ledger then read that failing receipt, although the agent’s candidate passed 17/17. The ledger now reads numbered retries of every printed receipt (<code>g2-first-02.json</code>, …) and gates on the most recently recorded one, listing earlier ones as superseded. The CLI’s refusal names the next free retry. G2 and G4 gate on their <code>-02</code> receipts.</p>
+<p><code>verify_curriculum.py</code> adds a deterministic control: a G3 lineage built from the reference by renaming its table goes through integration and <code>advance G4</code>; an observer that ignores the mapping fails four methods; the reference passes the handoff; three malformed or unnecessary operator maps are refused.</p>
+<h2 id="limits">Limits</h2>
+<p>One run per stage shows that the lineage gap occurs, not how often. Codex CLI was not available here. No human operator, reader trial or human acceptance is represented.</p>
+</article></main><footer class="foot"><p>Enrico Papalini · Edition 5.6 · 2026-11-22</p><p><a href="../../NOTICE.html">Rights and notices</a> · <a href="../../NATIVE_STATUS.json">Native-client status</a> · <a href="../../MANIFEST.json">Package manifest</a> · <a href="https://github.com/popoloni/esa_ai">Companion repository</a></p></footer></body></html>

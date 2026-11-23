@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Eight practical missions, local checks and recorded agent tours for Engineering Software with Agentic AI."><title>Historical episode used in Chapter 1 · Engineering Software with Agentic AI</title><link rel="stylesheet" href="../../assets/companion.css"></head><body><a class="skip" href="#main">Skip to content</a><header class="sitehead"><div><a class="brand" href="../../index.html">Engineering Software with Agentic AI<span>Practical companion · version 5.6</span></a><nav aria-label="Main navigation"><a href="../../index.html">Start</a><a href="../../missions/index.html">Missions</a><a href="../../companion/agent_sessions/README.html">Agent guide</a><a href="../../traces/index.html">Recorded tours</a><a href="../../companion/series/READING_THE_SERIES.html">Four volumes</a></nav></div></header><main id="main"><article data-source-sha256="de90718b558d1dbce521ab435509b1f4629aaadd9d8e979d53935e41d56445fb"><p class="docmeta meta"><a href="README.md">Markdown source</a> · Companion 5.6 · 2026-11-22</p><h1 id="historical-episode-used-in-chapter-1">Historical episode used in Chapter 1</h1>
+<p>These records were copied from the supplied d16.4 archive. They describe historical model executions; no new model execution is implied by their inclusion in the prototype. <code>PROVENANCE.json</code> identifies every copied source, destination, size and SHA-256. The copies preserve the original bytes, including historical absolute paths and filenames.</p>
+<h2 id="the-directly-inspectable-episode-22-october-2026">The directly inspectable episode: 22 October 2026</h2>
+<p>The source was <code>practice/native_client/observed/ch01_01</code> in the companion at commit <code>13a1182fc64c2a2c3b3677852b9dfdd95d4be908</code>. The selected extract is at <code>native_20261022/</code>.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Read to answer</th>
+<th>Included record</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>What was requested?</td>
+<td><code>configuration/TASK_PROMPT.txt</code></td>
+</tr>
+<tr class="even">
+<td>What did the client receive?</td>
+<td><code>starting_files/</code> and original task prompt</td>
+</tr>
+<tr class="odd">
+<td>What did the first attempt do?</td>
+<td><code>attempt_01/native-session.json</code>, <code>attempt_01/stdout.txt</code>, top-level <code>OUTCOME.json</code></td>
+</tr>
+<tr class="even">
+<td>What assistance changed?</td>
+<td><code>RECOVERY_INTERVENTION_02.json</code> and <code>configuration/TASK_PROMPT_RECOVERY_02.txt</code></td>
+</tr>
+<tr class="odd">
+<td>What did recovery do?</td>
+<td><code>attempt_02/native-session.json</code>, <code>stdout.txt</code>, <code>OUTCOME.json</code></td>
+</tr>
+<tr class="even">
+<td>What changed in the code?</td>
+<td><code>independent_review/routing.diff</code> and <code>routing.py</code></td>
+</tr>
+<tr class="odd">
+<td>Who checked the result?</td>
+<td><code>independent_review/REVIEW.json</code></td>
+</tr>
+<tr class="even">
+<td>What were the actual checks?</td>
+<td><code>independent_review/initial_acceptance.json</code>, <code>independent_acceptance.json</code>, <code>additional_cases.json</code>, <code>scope_guard.stdout.txt</code></td>
+</tr>
+<tr class="odd">
+<td>What was known in advance?</td>
+<td><code>INDEPENDENT_REVIEW_PLAN.json</code></td>
+</tr>
+<tr class="even">
+<td>What do the identities and totals cover?</td>
+<td><code>CLIENT_IDENTITIES.json</code>, <code>USAGE.json</code>, <code>OUTCOME.json</code></td>
+</tr>
+</tbody>
+</table>
+<p>The second native attempt edited the function but timed out before its planned checker and final summary. The original seven cases and the fourteen additional predeclared cases passed in the independent assistant review outside that native session. Those two sets overlap. The author had prior solution exposure and the recovery supplied specific API guidance. Human acceptance remained pending. These facts exclude autonomous, blind-benchmark and complete-productivity claims.</p>
+<p>This is a compact selected evidence packet, not the complete repository, runtime, model weights, client state or a self-contained historical replay. Large command receipts that embed a complete starting-tree manifest are omitted; their original hashes and omission reasons are recorded in the provenance index. Some references inside unchanged raw records identify files in the larger original packet. Use the source archive when that wider material is needed. Use the current prototype companion for the new offline exercises; do not execute the historical absolute paths.</p>
+<h2 id="the-later-report-24-october-2026">The later report: 24 October 2026</h2>
+<p><code>D16_DUAL_ROUTE_METAL_REPORT.md</code> preserves the source report unchanged. It reports a later M2 Max Metal environment, a guided Brownfield completion and a Greenfield completion requiring facilitator code correction. The supplied baseline contains that narrative report; this extract does not claim to hold the later run’s full prompts or raw sessions. Chapter 1 uses it only for the stated intervention distinction.</p>
+<h2 id="source-and-copying-boundary">Source and copying boundary</h2>
+<p>Source archive: <code>ESA_d16_4_Final_Current_and_Packt_EN_IT_20261101.zip</code>.</p>
+<p>Library identity: <code>libfile_42d04849947881919c3fbdc091e699bd</code>.</p>
+<p>Every copied file is listed in <code>PROVENANCE.json</code>. New explanatory text and the index are prototype editorial work; original event records, candidate sources, prompts and reports are historical observations.</p>
+</article></main><footer class="foot"><p>Enrico Papalini · Edition 5.6 · 2026-11-22</p><p><a href="../../NOTICE.html">Rights and notices</a> · <a href="../../NATIVE_STATUS.json">Native-client status</a> · <a href="../../MANIFEST.json">Package manifest</a> · <a href="https://github.com/popoloni/esa_ai">Companion repository</a></p></footer></body></html>

@@ -1,0 +1,25 @@
+{
+  "recorded_at_utc": "2026-11-16T22:20:26.301704+00:00",
+  "operation": "report_git_directory",
+  "authority": {
+    "principal": "ESA AI integration reviewer / recording operator",
+    "kind": "AI reviewer and local recording operator",
+    "authorized_by": "Author instruction to implement ESA agent-process remediation",
+    "scope": "Scoped teaching integration, independent checks and provenance recording",
+    "human_operator": false,
+    "human_acceptance": "PENDING",
+    "production_authorization": false
+  },
+  "returncode": 0,
+  "stdout": "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g3-integration/workspace/.git\n",
+  "stderr": "",
+  "timed_out": false,
+  "argv": [
+    "git",
+    "rev-parse",
+    "--git-common-dir"
+  ],
+  "cwd": "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g3-integration/worktrees/report",
+  "timeout_seconds": 45,
+  "elapsed_process_seconds": 0.00203130499994586
+}

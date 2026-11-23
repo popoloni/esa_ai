@@ -1,0 +1,22 @@
+test_invalid_retained_public_column_record_refuses_without_byte_change (test_g2.RecordedG1Migration.test_invalid_retained_public_column_record_refuses_without_byte_change) ... ok
+test_retained_public_column_schema_preserves_read_replay_and_reinit (test_g2.RecordedG1Migration.test_retained_public_column_schema_preserves_read_replay_and_reinit) ... ok
+test_adjacent_reservation_succeeds (test_g2.ReservationFullAPI.test_adjacent_reservation_succeeds) ... ok
+test_changed_request_with_same_key_fails (test_g2.ReservationFullAPI.test_changed_request_with_same_key_fails) ... ok
+test_different_assets_do_not_conflict (test_g2.ReservationFullAPI.test_different_assets_do_not_conflict) ... ok
+test_duration_limit_and_timestamp_format (test_g2.ReservationFullAPI.test_duration_limit_and_timestamp_format) ... ok
+test_first_reservation_confirms (test_g2.ReservationFullAPI.test_first_reservation_confirms) ... ok
+test_invalid_zero_or_reverse_interval_has_no_effect (test_g2.ReservationFullAPI.test_invalid_zero_or_reverse_interval_has_no_effect) ... ok
+test_other_member_same_key_is_independent_but_conflicts_on_slot (test_g2.ReservationFullAPI.test_other_member_same_key_is_independent_but_conflicts_on_slot) ... ok
+test_overlap_fails_without_insert (test_g2.ReservationFullAPI.test_overlap_fails_without_insert) ... ok
+test_same_request_key_replays_original (test_g2.ReservationFullAPI.test_same_request_key_replays_original) ... ok
+test_two_writers_do_not_both_confirm_same_slot (test_g2.ReservationFullAPI.test_two_writers_do_not_both_confirm_same_slot) ... ok
+test_both_supplied_g1_schemas_preserve_record_and_identity (test_g2.ReservationMigration.test_both_supplied_g1_schemas_preserve_record_and_identity) ... ok
+test_duplicate_legacy_identity_rolls_back_migration (test_g2.ReservationMigration.test_duplicate_legacy_identity_rolls_back_migration) ... ok
+test_invalid_or_overlapping_legacy_rows_require_owner_mapping (test_g2.ReservationMigration.test_invalid_or_overlapping_legacy_rows_require_owner_mapping) ... ok
+test_read_of_missing_storage_does_not_create_file (test_g2.ReservationMigration.test_read_of_missing_storage_does_not_create_file) ... ok
+test_unknown_or_dual_legacy_schema_is_not_guessed (test_g2.ReservationMigration.test_unknown_or_dual_legacy_schema_is_not_guessed) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.033s
+
+OK

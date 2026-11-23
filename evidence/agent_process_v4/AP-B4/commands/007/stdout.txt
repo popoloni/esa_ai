@@ -1,0 +1,54 @@
+{
+  "development_checks": [
+    "path_policy_anchor_binding",
+    "same_id_is_not_lineage",
+    "anchor_content_conflict",
+    "proposal_has_no_authority",
+    "EXPECTED_POLICY_MISMATCH",
+    "EXPECTED_ANCHOR_MISSING",
+    "UNSUPPORTED_SCHEMA",
+    "WRONG_DATABASE",
+    "UNSUPPORTED_OR_INVALID_HISTORY",
+    "HISTORY_INTEGRITY",
+    "STABLE_SNAPSHOT_REQUIRED",
+    "historical_v1_replay",
+    "new_v2_probe_on_disposable_copy",
+    "disposable_store_reopen",
+    "original_bytes_preserved",
+    "failed_attempts_with_zero_accepted"
+  ],
+  "selected_state": "/tmp/tmp32b68wpk/wrong.sqlite",
+  "observed_policy": "BR-001/v1",
+  "expected_state": "/tmp/tmp32b68wpk/expected #1.sqlite",
+  "expected_policy": "BR-001/v2",
+  "preserved_evidence": [
+    {
+      "path": "/tmp/tmp32b68wpk/wrong.sqlite",
+      "sha256": "597d6c4ed8bbb0f9d830b8d3f8c02a85a15e469a2a04fcd7c707ba0c37b695c9",
+      "active_policy": "BR-001/v1",
+      "audit_count": 1
+    },
+    {
+      "path": "/tmp/tmp32b68wpk/expected #1.sqlite",
+      "sha256": "34f82e875b300f3f03c33b3283b50d7dfe0d13c14f9b887d7d07309b515987f5",
+      "active_policy": "BR-001/v2",
+      "audit_count": 3
+    }
+  ],
+  "source_version": {
+    "history_schema": 2,
+    "ledger_sha256": "9062d9fd7d72b3e95076c33f601455f82328ab502a270e9d4167fb52caf63c4b",
+    "routing_sha256": "c2b093e60d6893274701814d00c3bf63d25bfb6c2926feefb23a93941c51e4a0"
+  },
+  "restoration": {
+    "decision": "PROPOSE_EXPECTED_STATE_BINDING",
+    "from": "/tmp/tmp32b68wpk/wrong.sqlite",
+    "to": "/tmp/tmp32b68wpk/expected #1.sqlite",
+    "executed": false,
+    "requires_owner_authorization": true
+  },
+  "reconciliation": "PENDING_OWNER_DECISION",
+  "historical_route": "STANDARD_QUEUE",
+  "current_route": "HUMAN_REVIEW",
+  "fixture_lifecycle": "temporary synthetic copies removed by test cleanup; original bytes unchanged throughout observation"
+}

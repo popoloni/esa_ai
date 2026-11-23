@@ -1,0 +1,302 @@
+{
+  "schema": "esa-g3-integration-report/v1",
+  "started_at_utc": "2026-11-22T17:32:54.537016+00:00",
+  "manifest": "/home/claude/work/live22/agentic-ai-5.2/work/g3-integration/INTEGRATION.json",
+  "manifest_sha256": "5611f9b52eb1e348ae80d098ddf4dad15a8ef08e6a558a9f10e180d4e1a87029",
+  "workspace": "/home/claude/work/live22/agentic-ai-5.2/work/g3-integration/workspace",
+  "authority": {
+    "principal": "ESA AI integration reviewer / recording operator",
+    "kind": "AI reviewer and local recording operator",
+    "authorized_by": "Author instruction to implement ESA agent-process remediation",
+    "scope": "Scoped teaching integration, independent checks and provenance recording",
+    "human_operator": false,
+    "human_acceptance": "PENDING",
+    "production_authorization": false
+  },
+  "model_run_by_helper": false,
+  "claim_scope": "Actual contributed sources, local Git composition and specified independent checks; no measured speedup or production authorization.",
+  "contributor_scope": {
+    "report": {
+      "changed_files": [
+        "CONTRIBUTION_A.md",
+        "reservation_report.py"
+      ],
+      "allowed_files": [
+        "reservation_report.py",
+        "CONTRIBUTION_A.md"
+      ],
+      "baseline_sha256": {
+        "AGENTS.md": "00d6ed7fccaa9fea5a7a297cc59987aa17705bd854c6c49851018d3938701145",
+        "DOSSIER.md": "6c1438163f70a16bbf2be904839c4e541330f72756dd7c572066d144b946f653",
+        "INTEGRATION_ROLE.json": "8934a0b92b2d65a223155a8292d547dc95d9847d1f6c898ae7d0ceb79e1f0ac0",
+        "READER_ENTRY.json": "c1b7b1b0e3bf129709614a8afaa626ae1003723e98fca1441d5e54d33b0a2fe0",
+        "booking.py": "c0b3857de28f86624e329cd1dcfbc4d9c52af3691e78e84b60f66bfcfffbb887",
+        "docs/INTEGRATION-G3.md": "86e17d09c9a012559ae7502343cbc9181fa08477cc00c2cacacb55dd49cb0a54",
+        "docs/contract.md": "bb12ae4381e7fec5bb982de67573852c5e7f63d4736a10977d492c3be38f1dce",
+        "legacy_booking.py": "81df006d0653a44260b03425294e8542effe0263c8592a7743e50e14bddcdef6",
+        "prior/booking.py": "3acd48b844deab0ee87a0c7270782465ddfb533400a18ab214678ffc6a7433dd",
+        "prior/parent-check-artifacts/DEMONSTRATION.json": "5634fccf839b61821e530a3c57e7d5c749a3ffe233b175c398a7d79445e00a43",
+        "prior/parent-check-artifacts/continuation.json": "56ef61ac51beb004496f365a9c9d096a88f51a9d540a19f44d5234cfaac2008a",
+        "prior/parent-check-artifacts/reservations.sqlite": "e3158e3c8ed943e730943718577207f52bf8b00f5fa345a4574204bc689bda46",
+        "prior/parent-entry.json": "38d69192231fe918dd9a420247013280af72599df0287f0bf2a2c09c3b91e4a9",
+        "prior/parent-handoff.json": "d53ace11c281ea95511c1fd44cadad3b2228cef806db1537ee43e9773574d664",
+        "reservation_cli.py": "6585483249878d6e3ea1f6bbff9be208dfb94022ad883f5a11ffdf90faa85054",
+        "reservation_report.py": "f70238a1cf5215bc0639b49048e4ce9cf1244f3fcae725d8967a912243e41ae2",
+        "tests/test_g3.py": "bdaa37d91057f2e85692290f91ea3208d109e40c3996156db129977754b8bf6d",
+        "tests/test_integration_a.py": "b729c29e069f2c79629bdadd5291baec5ec0a670204e07f8a55952116ca151a7",
+        "tests/test_integration_b.py": "de80a957daf0cd0a60a26f2a5284677cb5ba338497841cccbe9b7f0118068165"
+      },
+      "actual_sha256": {
+        "AGENTS.md": "00d6ed7fccaa9fea5a7a297cc59987aa17705bd854c6c49851018d3938701145",
+        "CONTRIBUTION_A.md": "ef3cea691b71f68592af15ef21a41ea875c5d608e2ee6efb617a5b899c17bfc0",
+        "DOSSIER.md": "6c1438163f70a16bbf2be904839c4e541330f72756dd7c572066d144b946f653",
+        "INTEGRATION_ROLE.json": "8934a0b92b2d65a223155a8292d547dc95d9847d1f6c898ae7d0ceb79e1f0ac0",
+        "READER_ENTRY.json": "c1b7b1b0e3bf129709614a8afaa626ae1003723e98fca1441d5e54d33b0a2fe0",
+        "booking.py": "c0b3857de28f86624e329cd1dcfbc4d9c52af3691e78e84b60f66bfcfffbb887",
+        "docs/INTEGRATION-G3.md": "86e17d09c9a012559ae7502343cbc9181fa08477cc00c2cacacb55dd49cb0a54",
+        "docs/contract.md": "bb12ae4381e7fec5bb982de67573852c5e7f63d4736a10977d492c3be38f1dce",
+        "legacy_booking.py": "81df006d0653a44260b03425294e8542effe0263c8592a7743e50e14bddcdef6",
+        "prior/booking.py": "3acd48b844deab0ee87a0c7270782465ddfb533400a18ab214678ffc6a7433dd",
+        "prior/parent-check-artifacts/DEMONSTRATION.json": "5634fccf839b61821e530a3c57e7d5c749a3ffe233b175c398a7d79445e00a43",
+        "prior/parent-check-artifacts/continuation.json": "56ef61ac51beb004496f365a9c9d096a88f51a9d540a19f44d5234cfaac2008a",
+        "prior/parent-check-artifacts/reservations.sqlite": "e3158e3c8ed943e730943718577207f52bf8b00f5fa345a4574204bc689bda46",
+        "prior/parent-entry.json": "38d69192231fe918dd9a420247013280af72599df0287f0bf2a2c09c3b91e4a9",
+        "prior/parent-handoff.json": "d53ace11c281ea95511c1fd44cadad3b2228cef806db1537ee43e9773574d664",
+        "reservation_cli.py": "6585483249878d6e3ea1f6bbff9be208dfb94022ad883f5a11ffdf90faa85054",
+        "reservation_report.py": "d3aa8fff9219cdf977a00c50a3c797cb38b0d3cf84270c70d1eb2b83a17d7645",
+        "tests/test_g3.py": "bdaa37d91057f2e85692290f91ea3208d109e40c3996156db129977754b8bf6d",
+        "tests/test_integration_a.py": "b729c29e069f2c79629bdadd5291baec5ec0a670204e07f8a55952116ca151a7",
+        "tests/test_integration_b.py": "de80a957daf0cd0a60a26f2a5284677cb5ba338497841cccbe9b7f0118068165"
+      },
+      "head_before": "6a2e0320561c20a31f3ae64cb61414ffc5affb99"
+    },
+    "cli": {
+      "changed_files": [
+        "CONTRIBUTION_B.md",
+        "reservation_cli.py"
+      ],
+      "allowed_files": [
+        "reservation_cli.py",
+        "CONTRIBUTION_B.md"
+      ],
+      "baseline_sha256": {
+        "AGENTS.md": "00d6ed7fccaa9fea5a7a297cc59987aa17705bd854c6c49851018d3938701145",
+        "DOSSIER.md": "6c1438163f70a16bbf2be904839c4e541330f72756dd7c572066d144b946f653",
+        "INTEGRATION_ROLE.json": "5238fb9c9a39db994764393b3ccd333145e5aca714257dfc4f8ba47657cede31",
+        "READER_ENTRY.json": "c1b7b1b0e3bf129709614a8afaa626ae1003723e98fca1441d5e54d33b0a2fe0",
+        "booking.py": "c0b3857de28f86624e329cd1dcfbc4d9c52af3691e78e84b60f66bfcfffbb887",
+        "docs/INTEGRATION-G3.md": "86e17d09c9a012559ae7502343cbc9181fa08477cc00c2cacacb55dd49cb0a54",
+        "docs/contract.md": "bb12ae4381e7fec5bb982de67573852c5e7f63d4736a10977d492c3be38f1dce",
+        "legacy_booking.py": "81df006d0653a44260b03425294e8542effe0263c8592a7743e50e14bddcdef6",
+        "prior/booking.py": "3acd48b844deab0ee87a0c7270782465ddfb533400a18ab214678ffc6a7433dd",
+        "prior/parent-check-artifacts/DEMONSTRATION.json": "5634fccf839b61821e530a3c57e7d5c749a3ffe233b175c398a7d79445e00a43",
+        "prior/parent-check-artifacts/continuation.json": "56ef61ac51beb004496f365a9c9d096a88f51a9d540a19f44d5234cfaac2008a",
+        "prior/parent-check-artifacts/reservations.sqlite": "e3158e3c8ed943e730943718577207f52bf8b00f5fa345a4574204bc689bda46",
+        "prior/parent-entry.json": "38d69192231fe918dd9a420247013280af72599df0287f0bf2a2c09c3b91e4a9",
+        "prior/parent-handoff.json": "d53ace11c281ea95511c1fd44cadad3b2228cef806db1537ee43e9773574d664",
+        "reservation_cli.py": "6585483249878d6e3ea1f6bbff9be208dfb94022ad883f5a11ffdf90faa85054",
+        "reservation_report.py": "f70238a1cf5215bc0639b49048e4ce9cf1244f3fcae725d8967a912243e41ae2",
+        "tests/test_g3.py": "bdaa37d91057f2e85692290f91ea3208d109e40c3996156db129977754b8bf6d",
+        "tests/test_integration_a.py": "b729c29e069f2c79629bdadd5291baec5ec0a670204e07f8a55952116ca151a7",
+        "tests/test_integration_b.py": "de80a957daf0cd0a60a26f2a5284677cb5ba338497841cccbe9b7f0118068165"
+      },
+      "actual_sha256": {
+        "AGENTS.md": "00d6ed7fccaa9fea5a7a297cc59987aa17705bd854c6c49851018d3938701145",
+        "CONTRIBUTION_B.md": "f9e88db21b693d601826ae2161c1e92e32fb9a5bc2e710a5d535cb0b01112568",
+        "DOSSIER.md": "6c1438163f70a16bbf2be904839c4e541330f72756dd7c572066d144b946f653",
+        "INTEGRATION_ROLE.json": "5238fb9c9a39db994764393b3ccd333145e5aca714257dfc4f8ba47657cede31",
+        "READER_ENTRY.json": "c1b7b1b0e3bf129709614a8afaa626ae1003723e98fca1441d5e54d33b0a2fe0",
+        "booking.py": "c0b3857de28f86624e329cd1dcfbc4d9c52af3691e78e84b60f66bfcfffbb887",
+        "docs/INTEGRATION-G3.md": "86e17d09c9a012559ae7502343cbc9181fa08477cc00c2cacacb55dd49cb0a54",
+        "docs/contract.md": "bb12ae4381e7fec5bb982de67573852c5e7f63d4736a10977d492c3be38f1dce",
+        "legacy_booking.py": "81df006d0653a44260b03425294e8542effe0263c8592a7743e50e14bddcdef6",
+        "prior/booking.py": "3acd48b844deab0ee87a0c7270782465ddfb533400a18ab214678ffc6a7433dd",
+        "prior/parent-check-artifacts/DEMONSTRATION.json": "5634fccf839b61821e530a3c57e7d5c749a3ffe233b175c398a7d79445e00a43",
+        "prior/parent-check-artifacts/continuation.json": "56ef61ac51beb004496f365a9c9d096a88f51a9d540a19f44d5234cfaac2008a",
+        "prior/parent-check-artifacts/reservations.sqlite": "e3158e3c8ed943e730943718577207f52bf8b00f5fa345a4574204bc689bda46",
+        "prior/parent-entry.json": "38d69192231fe918dd9a420247013280af72599df0287f0bf2a2c09c3b91e4a9",
+        "prior/parent-handoff.json": "d53ace11c281ea95511c1fd44cadad3b2228cef806db1537ee43e9773574d664",
+        "reservation_cli.py": "481178182a46a05f62f3580c722220471f8ccff40375169dec7457ad9a04a5c1",
+        "reservation_report.py": "f70238a1cf5215bc0639b49048e4ce9cf1244f3fcae725d8967a912243e41ae2",
+        "tests/test_g3.py": "bdaa37d91057f2e85692290f91ea3208d109e40c3996156db129977754b8bf6d",
+        "tests/test_integration_a.py": "b729c29e069f2c79629bdadd5291baec5ec0a670204e07f8a55952116ca151a7",
+        "tests/test_integration_b.py": "de80a957daf0cd0a60a26f2a5284677cb5ba338497841cccbe9b7f0118068165"
+      },
+      "head_before": "6a2e0320561c20a31f3ae64cb61414ffc5affb99"
+    }
+  },
+  "component_checks": {
+    "report": {
+      "status": "PASSED",
+      "tests_run": 3,
+      "operation_receipt": "operator/013_report_component_check.json"
+    },
+    "cli": {
+      "status": "PASSED",
+      "tests_run": 3,
+      "operation_receipt": "operator/017_cli_component_check.json"
+    }
+  },
+  "combined_commit": "66c23235fd05763cf040a7f289f94cdbd4e85150",
+  "source_sha256": {
+    "booking.py": "c0b3857de28f86624e329cd1dcfbc4d9c52af3691e78e84b60f66bfcfffbb887",
+    "reservation_report.py": "d3aa8fff9219cdf977a00c50a3c797cb38b0d3cf84270c70d1eb2b83a17d7645",
+    "reservation_cli.py": "481178182a46a05f62f3580c722220471f8ccff40375169dec7457ad9a04a5c1"
+  },
+  "combined_component_checks": {
+    "report": {
+      "status": "PASSED",
+      "tests_run": 3,
+      "operation_receipt": "operator/033_combined_report_check.json"
+    },
+    "cli": {
+      "status": "PASSED",
+      "tests_run": 3,
+      "operation_receipt": "operator/034_combined_cli_check.json"
+    }
+  },
+  "combined_g3_handoff": {
+    "status": "SCOPED_HANDOFF_READY",
+    "tests_run": 7,
+    "receipt": "operator/combined_g3_handoff_receipt.json",
+    "sha256": "50545a32675f530bc2924cb93401c2e6b47444a211b71b08d5aa8e16c9a51e48",
+    "operation_receipt": "operator/035_combined_g3_handoff.json"
+  },
+  "extracted_component_checks": {
+    "report": {
+      "status": "PASSED",
+      "tests_run": 3,
+      "operation_receipt": "operator/037_extracted_report_check.json"
+    },
+    "cli": {
+      "status": "PASSED",
+      "tests_run": 3,
+      "operation_receipt": "operator/038_extracted_cli_check.json"
+    }
+  },
+  "extracted_g3_check": {
+    "status": "SELECTED_CHECKS_PASSED",
+    "tests_run": 7,
+    "receipt": "operator/extracted_g3_check_receipt.json",
+    "sha256": "d73b44d2386fca4e5a5c3e355f04a2d6a121a9922c1901c04c545e6dce9db697",
+    "operation_receipt": "operator/039_extracted_g3_check.json"
+  },
+  "transport": {
+    "archive": "packages/integration-001.zip",
+    "archive_sha256": "58a0bb7ff5543b6995f8b2dc3ddfa3a021a6b8064a2dfb8acc0312ba62e2ed30",
+    "extracted": "extracted/integration-001",
+    "payload_file_sha256": {
+      "AGENTS.md": "00d6ed7fccaa9fea5a7a297cc59987aa17705bd854c6c49851018d3938701145",
+      "CONTRIBUTION_A.md": "ef3cea691b71f68592af15ef21a41ea875c5d608e2ee6efb617a5b899c17bfc0",
+      "CONTRIBUTION_B.md": "f9e88db21b693d601826ae2161c1e92e32fb9a5bc2e710a5d535cb0b01112568",
+      "DOSSIER.md": "6c1438163f70a16bbf2be904839c4e541330f72756dd7c572066d144b946f653",
+      "READER_ENTRY.json": "c1b7b1b0e3bf129709614a8afaa626ae1003723e98fca1441d5e54d33b0a2fe0",
+      "booking.py": "c0b3857de28f86624e329cd1dcfbc4d9c52af3691e78e84b60f66bfcfffbb887",
+      "docs/INTEGRATION-G3.md": "86e17d09c9a012559ae7502343cbc9181fa08477cc00c2cacacb55dd49cb0a54",
+      "docs/contract.md": "bb12ae4381e7fec5bb982de67573852c5e7f63d4736a10977d492c3be38f1dce",
+      "legacy_booking.py": "81df006d0653a44260b03425294e8542effe0263c8592a7743e50e14bddcdef6",
+      "prior/booking.py": "3acd48b844deab0ee87a0c7270782465ddfb533400a18ab214678ffc6a7433dd",
+      "prior/parent-check-artifacts/DEMONSTRATION.json": "5634fccf839b61821e530a3c57e7d5c749a3ffe233b175c398a7d79445e00a43",
+      "prior/parent-check-artifacts/continuation.json": "56ef61ac51beb004496f365a9c9d096a88f51a9d540a19f44d5234cfaac2008a",
+      "prior/parent-check-artifacts/reservations.sqlite": "e3158e3c8ed943e730943718577207f52bf8b00f5fa345a4574204bc689bda46",
+      "prior/parent-entry.json": "38d69192231fe918dd9a420247013280af72599df0287f0bf2a2c09c3b91e4a9",
+      "prior/parent-handoff.json": "d53ace11c281ea95511c1fd44cadad3b2228cef806db1537ee43e9773574d664",
+      "reservation_cli.py": "481178182a46a05f62f3580c722220471f8ccff40375169dec7457ad9a04a5c1",
+      "reservation_report.py": "d3aa8fff9219cdf977a00c50a3c797cb38b0d3cf84270c70d1eb2b83a17d7645",
+      "tests/test_g3.py": "bdaa37d91057f2e85692290f91ea3208d109e40c3996156db129977754b8bf6d",
+      "tests/test_integration_a.py": "b729c29e069f2c79629bdadd5291baec5ec0a670204e07f8a55952116ca151a7",
+      "tests/test_integration_b.py": "de80a957daf0cd0a60a26f2a5284677cb5ba338497841cccbe9b7f0118068165"
+    },
+    "extracted_file_sha256": {
+      "AGENTS.md": "00d6ed7fccaa9fea5a7a297cc59987aa17705bd854c6c49851018d3938701145",
+      "CONTRIBUTION_A.md": "ef3cea691b71f68592af15ef21a41ea875c5d608e2ee6efb617a5b899c17bfc0",
+      "CONTRIBUTION_B.md": "f9e88db21b693d601826ae2161c1e92e32fb9a5bc2e710a5d535cb0b01112568",
+      "DOSSIER.md": "6c1438163f70a16bbf2be904839c4e541330f72756dd7c572066d144b946f653",
+      "READER_ENTRY.json": "c1b7b1b0e3bf129709614a8afaa626ae1003723e98fca1441d5e54d33b0a2fe0",
+      "booking.py": "c0b3857de28f86624e329cd1dcfbc4d9c52af3691e78e84b60f66bfcfffbb887",
+      "docs/INTEGRATION-G3.md": "86e17d09c9a012559ae7502343cbc9181fa08477cc00c2cacacb55dd49cb0a54",
+      "docs/contract.md": "bb12ae4381e7fec5bb982de67573852c5e7f63d4736a10977d492c3be38f1dce",
+      "legacy_booking.py": "81df006d0653a44260b03425294e8542effe0263c8592a7743e50e14bddcdef6",
+      "prior/booking.py": "3acd48b844deab0ee87a0c7270782465ddfb533400a18ab214678ffc6a7433dd",
+      "prior/parent-check-artifacts/DEMONSTRATION.json": "5634fccf839b61821e530a3c57e7d5c749a3ffe233b175c398a7d79445e00a43",
+      "prior/parent-check-artifacts/continuation.json": "56ef61ac51beb004496f365a9c9d096a88f51a9d540a19f44d5234cfaac2008a",
+      "prior/parent-check-artifacts/reservations.sqlite": "e3158e3c8ed943e730943718577207f52bf8b00f5fa345a4574204bc689bda46",
+      "prior/parent-entry.json": "38d69192231fe918dd9a420247013280af72599df0287f0bf2a2c09c3b91e4a9",
+      "prior/parent-handoff.json": "d53ace11c281ea95511c1fd44cadad3b2228cef806db1537ee43e9773574d664",
+      "reservation_cli.py": "481178182a46a05f62f3580c722220471f8ccff40375169dec7457ad9a04a5c1",
+      "reservation_report.py": "d3aa8fff9219cdf977a00c50a3c797cb38b0d3cf84270c70d1eb2b83a17d7645",
+      "tests/test_g3.py": "bdaa37d91057f2e85692290f91ea3208d109e40c3996156db129977754b8bf6d",
+      "tests/test_integration_a.py": "b729c29e069f2c79629bdadd5291baec5ec0a670204e07f8a55952116ca151a7",
+      "tests/test_integration_b.py": "de80a957daf0cd0a60a26f2a5284677cb5ba338497841cccbe9b7f0118068165"
+    },
+    "payload_identity_sha256": "c302c07e33520fbcae7543c40295acb7affde3b035486742095985cb009c000a",
+    "extracted_identity_sha256": "c302c07e33520fbcae7543c40295acb7affde3b035486742095985cb009c000a",
+    "snapshot_scope": "Combined candidate before adding acceptance metadata; all runnable source bytes are bound.",
+    "source_sha256": {
+      "booking.py": "c0b3857de28f86624e329cd1dcfbc4d9c52af3691e78e84b60f66bfcfffbb887",
+      "reservation_report.py": "d3aa8fff9219cdf977a00c50a3c797cb38b0d3cf84270c70d1eb2b83a17d7645",
+      "reservation_cli.py": "481178182a46a05f62f3580c722220471f8ccff40375169dec7457ad9a04a5c1"
+    },
+    "checked_cli_cases": 9,
+    "cli_receipt": "operator/transport-001.json",
+    "cli_receipt_sha256": "1e8f629c111e191a63331e119ed1533041ba2255f65856397ec4192690714986",
+    "operation_receipt": "operator/040_real_extracted_cli_contract.json"
+  },
+  "accepted_commit": "1898d5c9d00fc68c24b1102f71907eb7b84b6209",
+  "accepted_entry_sha256": "899113a49878c5eec179d06397cd05f4fbf120731955dd527d8e869e347cb14b",
+  "acceptance_receipt": "operator/041_integration_acceptance.json",
+  "acceptance_receipt_sha256": "2b69ab566d1ff120d651b6cd46cf3c861502480e9b1ce4728f620d42d8c27c40",
+  "status": "INTEGRATION_CHECKS_PASSED",
+  "finished_at_utc": "2026-11-22T17:32:56.671516+00:00",
+  "operator_receipts_sha256": {
+    "operator/001_parent_g3_handoff.json": "3383071962f4635fa962fe5034448f2539391c6bd7fc107bae3ef40be2dfb329",
+    "operator/002_initialize_repository.json": "18366fd78904f1027381518662b4b52f0ea59698ebff5dc54bad8ea51f13dd11",
+    "operator/003_stage_shared_baseline.json": "c2a8b6f07b08a68005f383e3451439d39db9cdc47f08547d4afa009939cb263b",
+    "operator/004_commit_shared_baseline.json": "7bbfda85fdd6b85fd5fb9a0368697f7b852fbc13c2e4dafe5195349754417044",
+    "operator/005_record_baseline_commit.json": "f89c889f621bc8205d33b0adf0ad63b40906e179e226008ab9a62acfecc1d4b7",
+    "operator/006_create_report_worktree.json": "fa7d0497f8dbbe70b7ad0263c5a67edf36c9b2b7a301c2b915bde56d8ca2aaea",
+    "operator/007_create_cli_worktree.json": "972c08fe705a130193bef6c43cbb135c4bc3b653d6b81d85a8120ef489c1c90b",
+    "operator/008_preparation_complete.json": "d6d5feef3426bd9cae93f716b128036efa661b1c30fc2f603baeeade3082f6db",
+    "operator/009_main_git_directory.json": "c656d436503f81d866f0b8fd07d6b5a4bf97e8f0a924cf972e81b228aff60351",
+    "operator/010_report_git_directory.json": "6af60b027c7d3d35019ea1383da2bd41b1a47ef63ab8b5bf5b365d8c2ae22f75",
+    "operator/011_report_head_before.json": "8863a2e1915ce0bea6be628bac6180cdf69440c88078e8df566032ec66c8e85c",
+    "operator/012_report_scope_review.json": "1dd6c860244139e530d16c68a43faaec4d6ae4d2f23ae6bc50483d522b39309f",
+    "operator/013_report_component_check.json": "376d7d4b73e276d9d4f731cd81ca0cdd0215d51459c77a19393fe19b12fa939b",
+    "operator/014_cli_git_directory.json": "37d61846e505b1819c66b7146ce1f6daffad17ddcdc714c15cdf98b2b4691929",
+    "operator/015_cli_head_before.json": "e3e1e2ba05f35673bc648013d3a43eaad8366031a850ef2a15358cd72d294713",
+    "operator/016_cli_scope_review.json": "3be27a718b41b6a47e5970cad0f2e8830b742304c49d3d87b48af087deece17d",
+    "operator/017_cli_component_check.json": "56fc52a4f045722070d3004ff80e7f8ae4ae35479af1d84be64c5ada5ebe18f5",
+    "operator/018_stage_report_contribution.json": "7bdf813f78a3e0d80e871730fe5cba4cc39a19daf1223848516088ea68cb5d66",
+    "operator/019_report_staged_paths.json": "9574a549c51e7f5547161b80b2d899ef9f3ecbd919bb82230e0f9c5534d80b31",
+    "operator/020_record_report_contribution.json": "dc7da10de75c73e3c258e0a19ba754254e14eb6cda4e3787170a87f7c348b07c",
+    "operator/021_report_commit_identity.json": "69dfa8d16c5ff32574e5becb23b248dfc2a5d941a8ee7eca9e68f2c7f22083ad",
+    "operator/022_report_commit_bound.json": "20ccf68176e4a26316df859735aefcbf578bc9e7e35b54d55d2eba77f05cec40",
+    "operator/023_combine_report_contribution.json": "1665100951a18b929cdf042e4c8eb4391cd4672b02aeb0ebb6ecb17cf17d5094",
+    "operator/024_report_combined.json": "9ff675255692bfb76ca4246c78eeac4f78e392e71d7bf285f3c4d1a107355b26",
+    "operator/025_stage_cli_contribution.json": "460f0bcb3ba57e9ea4c541d009171e2c97419b2d33ba2bd3cadbb8f3e013d75c",
+    "operator/026_cli_staged_paths.json": "e46fbbcce5efbf6ec2ccb6fe98bad9630263559a4fd34e01dc0340873b0cf9ce",
+    "operator/027_record_cli_contribution.json": "3e22a5c040d6a08e5e800e76397d998746379310a6fb44c6106beaa9517bb2c7",
+    "operator/028_cli_commit_identity.json": "8022605a48a3dfa69f428bf0dee1ec9b5a2585be027687efa0938809dbb70ba4",
+    "operator/029_cli_commit_bound.json": "1a0c8920cf29ab9eb948e9775b029c3fe2f624df4dda4142d5fb494c87ca55c0",
+    "operator/030_combine_cli_contribution.json": "eb70b3ed11b570432ebef19930dfafba0147dc4392eed01417d250665c14e263",
+    "operator/031_cli_combined.json": "67942d24e6d25a18931a9cb0a5ac38d646f582b3512300c8ea3f98fed41aa9e9",
+    "operator/032_combined_commit_identity.json": "e541a01498263cfbcfcb3dca6e80fa629aae50cb479740ac5d7c4f03e515fe32",
+    "operator/033_combined_report_check.json": "05a91e9d184290a4471d7fe39316dd6cc14c19d6dd76ca3e2f41a0024904c232",
+    "operator/034_combined_cli_check.json": "e90f3dfe79da86e1330a09abce1ebb2a64e147c500a2500fc954da06ae10c0bf",
+    "operator/035_combined_g3_handoff.json": "3aae64232e66b07c778a4f7d1ffe60ac1b039cc295688127082ee488ad5118c5",
+    "operator/036_transport_snapshot_bound.json": "4e0cecec56493d142b726bbcab5d665644ea09a060c42fa6002012fbbde6d21f",
+    "operator/037_extracted_report_check.json": "d76815f66bbf068f22903151745c26ca87e13ff3650176ca52cca85e6803cee9",
+    "operator/038_extracted_cli_check.json": "fb2ec2fa4d4298f176e807e53fd586db92bf0b8453afa3e5c95e707a718ac76b",
+    "operator/039_extracted_g3_check.json": "e50e37951a6400c3e1679e4c263db3a37f1ebd480d9e76f0dcd4b23f87a1ff46",
+    "operator/040_real_extracted_cli_contract.json": "0e3aeb1883c57623efdce5ad5382c8af21e105d1773adffbd2cb600ad0f90cf1",
+    "operator/041_integration_acceptance.json": "2b69ab566d1ff120d651b6cd46cf3c861502480e9b1ce4728f620d42d8c27c40",
+    "operator/042_bind_integration_lineage.json": "bdae4b61162ca3388a002637799c30cc2a0c51d08c3e00814fa8b6aaf2dc01c0",
+    "operator/043_stage_integration_lineage.json": "1eda4772c68883f3354393153d90edf4e8d04199b24a6b151825a04f005feaa1",
+    "operator/044_commit_integration_lineage.json": "c22daa835b263599f5ecc0d55a28927d9471f6dc86b0975e298b276b0d20fe82",
+    "operator/045_accepted_commit_identity.json": "c3f5c9fa96d846a5c817d8ac6297888760ecc80e3d9ceb183bcd908406f1a74a",
+    "operator/combined_g3_handoff_receipt.json": "50545a32675f530bc2924cb93401c2e6b47444a211b71b08d5aa8e16c9a51e48",
+    "operator/extracted_g3_check_receipt.json": "d73b44d2386fca4e5a5c3e355f04a2d6a121a9922c1901c04c545e6dce9db697",
+    "operator/parent_g3_handoff_receipt.json": "7eacc0d00a89bc50ae6c8be652559f4b8543fea550bf3f3985fa35d3134ee443",
+    "operator/transport-001.json": "1e8f629c111e191a63331e119ed1533041ba2255f65856397ec4192690714986"
+  }
+}

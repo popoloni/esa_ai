@@ -1,0 +1,19 @@
+Engineering Software with Agentic AI — G3, follow-up run 02 (operator correction), contract RES-002/v1.
+Work only in the current directory. Allowed edits: booking.py, DOSSIER.md. Preserve docs, tests, prior/, legacy_booking.py,
+READER_ENTRY.json and all other files. No credentials, dependency installation, network or files outside this workspace.
+
+Context from run 01 (retained): you implemented schema version 3, reservation_status, owner/version-checked atomic
+cancel and migration of the retained G2 representation (reservations_v2). Every protected method then failed in setUp
+because legacy_booking.init_db creates the supplied historical G2 layout, which your init_db refused. You were right
+to stop rather than guess; the omission was in my task.
+
+Operator correction, from the printed G3 work order: migrate the retained current schema to version 3 with active state
+and version 1 for existing records. Also satisfy the explicitly supplied legacy G2 fixture (legacy_booking.py, a protected
+input of this mission): its existing rows are G2 rows under RES-002/v1 and must be migrated the same way, preserving IDs,
+the six-field get_reservation result, replay identity and the original data. Do not silently substitute the fixture for the
+retained implementation: both representations must work. Unknown or competing layouts still require an owner mapping.
+
+Reproduce the setUp failure first, make the bounded change, run python3 -m unittest tests.test_g3 as feedback and
+re-check that a database created by the retained G2 code still migrates. Update DOSSIER.md with observed results.
+Stop with changed files, commands, outcomes and remaining uncertainty. At most 40 tool commands.
+Do not claim checks, human approval or a backend identity that you have not observed.

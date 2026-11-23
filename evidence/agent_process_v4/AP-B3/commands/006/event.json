@@ -1,0 +1,52 @@
+{
+  "task": "AP-B3",
+  "event": 6,
+  "argv": [
+    "python3",
+    "-B",
+    "-"
+  ],
+  "cwd": "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B3/workspace",
+  "started_at_utc": "2026-11-16T15:51:56.030133+00:00",
+  "elapsed_seconds": 0.028525,
+  "returncode": 0,
+  "timeout": false,
+  "before": {
+    "AGENTS.md": "49b3fbbe06c9cd034e9cd97d6fb0a9c087a2f6b739169ae7f58af24735b2063c",
+    "DOSSIER.md": "f75d42a174f9c378b499bc4da559ea5abe7bd30b1e54ba1383397cfe26548137",
+    "READER_ENTRY.json": "2ab015d9888f9643d1541d0291da11dd8823c2781e4e312d21ece7630b9a23b1",
+    "docs/contract.md": "a3868114a71b664dfe907ffb90b61ddac6d6b7c039ede34708f9e3c20900eecb",
+    "docs/policy_catalog.json": "9c1b4078c49e118f1001d138484bd9b046ab595935e16b63ea160d619068c7ab",
+    "ledger.py": "62a6590b25b9236cc9acde0ca7c0fd2beb3b720224a996d773946fd1b5b4967a",
+    "prior/intake.py": "c039ea5ecae3bccd9b1647e7f8e4054b20790d79d595c976d8f48700239562ea",
+    "prior/parent-check-artifacts/DEMONSTRATION.json": "44622b6b048e5b65750cb82488874069089897ed113b5126a1e513d1a60d80f6",
+    "prior/parent-check-artifacts/classification.json": "45208725eb1c36c2c7064254fbc67761d2481ddb8cf02f4001a5023f0917d34d",
+    "prior/parent-entry.json": "256f273bb295ae3d76d899960c2171ef287a38cf5a241f73f43aca80d8d87c0a",
+    "prior/parent-handoff.json": "de59e745546a5b7e29c5ba8cbf7b5ad935a409003200aad60cd0d1352a9b2c00",
+    "routing.py": "c2b093e60d6893274701814d00c3bf63d25bfb6c2926feefb23a93941c51e4a0",
+    "tests/test_b3.py": "2b5ee5579c42106260fb3515b5f72b6ce017a7cb333f26159de1ebbfa5c6e2de"
+  },
+  "after": {
+    "AGENTS.md": "49b3fbbe06c9cd034e9cd97d6fb0a9c087a2f6b739169ae7f58af24735b2063c",
+    "DOSSIER.md": "2fa5c24c4d8e21341ce38f3f066f8384e638cf2443686022f9398a42c5fefed5",
+    "READER_ENTRY.json": "2ab015d9888f9643d1541d0291da11dd8823c2781e4e312d21ece7630b9a23b1",
+    "docs/contract.md": "a3868114a71b664dfe907ffb90b61ddac6d6b7c039ede34708f9e3c20900eecb",
+    "docs/policy_catalog.json": "9c1b4078c49e118f1001d138484bd9b046ab595935e16b63ea160d619068c7ab",
+    "ledger.py": "9062d9fd7d72b3e95076c33f601455f82328ab502a270e9d4167fb52caf63c4b",
+    "prior/intake.py": "c039ea5ecae3bccd9b1647e7f8e4054b20790d79d595c976d8f48700239562ea",
+    "prior/parent-check-artifacts/DEMONSTRATION.json": "44622b6b048e5b65750cb82488874069089897ed113b5126a1e513d1a60d80f6",
+    "prior/parent-check-artifacts/classification.json": "45208725eb1c36c2c7064254fbc67761d2481ddb8cf02f4001a5023f0917d34d",
+    "prior/parent-entry.json": "256f273bb295ae3d76d899960c2171ef287a38cf5a241f73f43aca80d8d87c0a",
+    "prior/parent-handoff.json": "de59e745546a5b7e29c5ba8cbf7b5ad935a409003200aad60cd0d1352a9b2c00",
+    "routing.py": "c2b093e60d6893274701814d00c3bf63d25bfb6c2926feefb23a93941c51e4a0",
+    "tests/test_b3.py": "2b5ee5579c42106260fb3515b5f72b6ce017a7cb333f26159de1ebbfa5c6e2de"
+  },
+  "changed_files": [
+    "DOSSIER.md",
+    "ledger.py"
+  ],
+  "stdout_sha256": "a63169e11370f39e4cedf08fafa06cfdea6c088e2766d6f2148754bb63bef001",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "recorder_sha256": "58781a554cf89bb7a5c5fbc673825901820002e6036095198a2c062aa3e0126f",
+  "scope": "Actual submitted subprocess and workspace snapshots. This recorder is not a complete native-client trace or an OS sandbox."
+}

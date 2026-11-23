@@ -1,0 +1,901 @@
+{
+  "schema": "engineering-native-run-ledger/v1",
+  "at_utc": "2026-11-16T22:28:42.149728+00:00",
+  "workspace": "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0",
+  "coverage_status": "NATIVE_CAPTURES_READY_FOR_REVIEW",
+  "verified_native_missions": 8,
+  "required_native_missions": 8,
+  "native_sessions_completed": 12,
+  "required_capture_stages": 12,
+  "operator_kinds_recorded": [
+    "AI"
+  ],
+  "human_operator_sessions": 0,
+  "reported_cost_usd_total": 2.0103,
+  "missions": [
+    {
+      "mission": "G1",
+      "native_capture_complete": true,
+      "operator_dispositions_settled": true,
+      "receipts_passing": true,
+      "natively_verified": true,
+      "sessions": [
+        {
+          "id": "G1-question",
+          "stage": "question",
+          "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+          "native_turn_completed": true,
+          "client_and_model_identified": true,
+          "attempts": [
+            {
+              "path": "work/g1-question/runs/01",
+              "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+              "client": "claude",
+              "client_version": "2.1.325 (Claude Code)",
+              "requested_model": "claude-sonnet-5-5",
+              "observed_model_ids": [
+                "claude-sonnet-5-5"
+              ],
+              "reported_cost_usd": [
+                0.06662080000000001
+              ],
+              "permission_denial_count": 0,
+              "changed_files": [
+                "AGENT_PLAN.md",
+                "AGENT_QUESTIONS.md"
+              ],
+              "scope_changes_requiring_review": [],
+              "capture_hashes_match": true
+            }
+          ],
+          "operator_decisions": [
+            {
+              "file": "01.json",
+              "decision": "stop",
+              "operator": "Claude (claude-opus-5-5), AI operator in the author's review session",
+              "operator_kind": "AI",
+              "at_utc": "2026-11-16T22:11:48.856885+00:00"
+            }
+          ],
+          "operator_disposition_settled": true
+        },
+        {
+          "id": "G1-implementation",
+          "stage": "implement",
+          "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+          "native_turn_completed": true,
+          "client_and_model_identified": true,
+          "attempts": [
+            {
+              "path": "work/g1-implementation/runs/01",
+              "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+              "client": "claude",
+              "client_version": "2.1.325 (Claude Code)",
+              "requested_model": "claude-sonnet-5-5",
+              "observed_model_ids": [
+                "claude-sonnet-5-5"
+              ],
+              "reported_cost_usd": [
+                0.16040390000000002
+              ],
+              "permission_denial_count": 2,
+              "changed_files": [
+                "DOSSIER.md",
+                "booking.py"
+              ],
+              "scope_changes_requiring_review": [],
+              "capture_hashes_match": true
+            }
+          ],
+          "operator_decisions": [
+            {
+              "file": "01.json",
+              "decision": "accept",
+              "operator": "Claude (claude-opus-5-5), AI operator in the author's review session",
+              "operator_kind": "AI",
+              "at_utc": "2026-11-16T22:13:36.777799+00:00"
+            }
+          ],
+          "operator_disposition_settled": true
+        }
+      ],
+      "receipts": [
+        {
+          "kind": "check",
+          "path": "work/evidence/g1-first.json",
+          "present": true,
+          "superseded_attempts": [],
+          "status": "SELECTED_CHECKS_PASSED",
+          "tests_run": 4,
+          "candidate_sha256_after": "48d2daa0e45965088f42ddf307ece4e0f5e8a2330415ee575819a8421d6119cc",
+          "sha256": "7adb40ea7183dc9b190802a0e35986a4827908a23bcd1113f47eae413b1735ca",
+          "passing": true
+        },
+        {
+          "kind": "continue",
+          "path": "work/evidence/g1-handoff.json",
+          "present": true,
+          "superseded_attempts": [],
+          "status": "SCOPED_HANDOFF_READY",
+          "tests_run": 6,
+          "candidate_sha256_after": "48d2daa0e45965088f42ddf307ece4e0f5e8a2330415ee575819a8421d6119cc",
+          "sha256": "608fa585c1527d758625893c2579bcb7ace5dd021452190bde5a5a17518ed82e",
+          "passing": true
+        }
+      ]
+    },
+    {
+      "mission": "G2",
+      "native_capture_complete": true,
+      "operator_dispositions_settled": true,
+      "receipts_passing": true,
+      "natively_verified": true,
+      "sessions": [
+        {
+          "id": "G2",
+          "stage": "implement",
+          "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+          "native_turn_completed": true,
+          "client_and_model_identified": true,
+          "attempts": [
+            {
+              "path": "work/g2-agent/runs/01",
+              "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+              "client": "claude",
+              "client_version": "2.1.325 (Claude Code)",
+              "requested_model": "claude-sonnet-5-5",
+              "observed_model_ids": [
+                "claude-sonnet-5-5"
+              ],
+              "reported_cost_usd": [
+                0.2868343
+              ],
+              "permission_denial_count": 4,
+              "changed_files": [
+                "DOSSIER.md",
+                "booking.py"
+              ],
+              "scope_changes_requiring_review": [],
+              "capture_hashes_match": true
+            }
+          ],
+          "operator_decisions": [
+            {
+              "file": "01.json",
+              "decision": "accept",
+              "operator": "Claude (claude-opus-5-5), AI operator in the author's review session",
+              "operator_kind": "AI",
+              "at_utc": "2026-11-16T22:15:49.885882+00:00"
+            }
+          ],
+          "operator_disposition_settled": true
+        }
+      ],
+      "receipts": [
+        {
+          "kind": "check",
+          "path": "work/evidence/g2-first.json",
+          "present": true,
+          "superseded_attempts": [],
+          "status": "SELECTED_CHECKS_PASSED",
+          "tests_run": 17,
+          "candidate_sha256_after": "aa54ad117c2f3aac2d9d497db3b9457bed1562d742b4b9e9009a438e1929c20c",
+          "sha256": "5d409bbb370ef69d79a3d24dbcf74cbf434c4a7cfcac2e4df70d3ea2693c8632",
+          "passing": true
+        },
+        {
+          "kind": "continue",
+          "path": "work/evidence/g2-handoff.json",
+          "present": true,
+          "superseded_attempts": [],
+          "status": "SCOPED_HANDOFF_READY",
+          "tests_run": 17,
+          "candidate_sha256_after": "aa54ad117c2f3aac2d9d497db3b9457bed1562d742b4b9e9009a438e1929c20c",
+          "sha256": "db51be279699cea567984fe1c252051f0ab2e2c4096d2118f163accd1edec273",
+          "passing": true
+        }
+      ]
+    },
+    {
+      "mission": "G3",
+      "native_capture_complete": true,
+      "operator_dispositions_settled": true,
+      "receipts_passing": true,
+      "natively_verified": true,
+      "sessions": [
+        {
+          "id": "G3",
+          "stage": "implement",
+          "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+          "native_turn_completed": true,
+          "client_and_model_identified": true,
+          "attempts": [
+            {
+              "path": "work/g3-agent/runs/01",
+              "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+              "client": "claude",
+              "client_version": "2.1.325 (Claude Code)",
+              "requested_model": "claude-sonnet-5-5",
+              "observed_model_ids": [
+                "claude-sonnet-5-5"
+              ],
+              "reported_cost_usd": [
+                0.24584080000000005
+              ],
+              "permission_denial_count": 3,
+              "changed_files": [
+                "DOSSIER.md",
+                "booking.py"
+              ],
+              "scope_changes_requiring_review": [],
+              "capture_hashes_match": true
+            },
+            {
+              "path": "work/g3-agent/runs/02",
+              "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+              "client": "claude",
+              "client_version": "2.1.325 (Claude Code)",
+              "requested_model": "claude-sonnet-5-5",
+              "observed_model_ids": [
+                "claude-sonnet-5-5"
+              ],
+              "reported_cost_usd": [
+                0.19060300000000002
+              ],
+              "permission_denial_count": 3,
+              "changed_files": [
+                "DOSSIER.md",
+                "booking.py"
+              ],
+              "scope_changes_requiring_review": [],
+              "capture_hashes_match": true
+            }
+          ],
+          "operator_decisions": [
+            {
+              "file": "01.json",
+              "decision": "correct",
+              "operator": "Claude (claude-opus-5-5), AI operator in the author's review session",
+              "operator_kind": "AI",
+              "at_utc": "2026-11-16T22:18:01.729474+00:00"
+            },
+            {
+              "file": "02.json",
+              "decision": "accept",
+              "operator": "Claude (claude-opus-5-5), AI operator in the author's review session",
+              "operator_kind": "AI",
+              "at_utc": "2026-11-16T22:19:40.694939+00:00"
+            }
+          ],
+          "operator_disposition_settled": true
+        },
+        {
+          "id": "G3-report",
+          "stage": "report",
+          "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+          "native_turn_completed": true,
+          "client_and_model_identified": true,
+          "attempts": [
+            {
+              "path": "work/g3-report-agent/runs/01",
+              "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+              "client": "claude",
+              "client_version": "2.1.325 (Claude Code)",
+              "requested_model": "claude-sonnet-5-5",
+              "observed_model_ids": [
+                "claude-sonnet-5-5"
+              ],
+              "reported_cost_usd": [
+                0.0811197
+              ],
+              "permission_denial_count": 1,
+              "changed_files": [
+                "CONTRIBUTION_A.md",
+                "reservation_report.py"
+              ],
+              "scope_changes_requiring_review": [],
+              "capture_hashes_match": true
+            }
+          ],
+          "operator_decisions": [
+            {
+              "file": "01.json",
+              "decision": "accept",
+              "operator": "Claude (claude-opus-5-5), AI operator in the author's review session",
+              "operator_kind": "AI",
+              "at_utc": "2026-11-16T22:21:41.058409+00:00"
+            }
+          ],
+          "operator_disposition_settled": true
+        },
+        {
+          "id": "G3-cli",
+          "stage": "cli",
+          "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+          "native_turn_completed": true,
+          "client_and_model_identified": true,
+          "attempts": [
+            {
+              "path": "work/g3-cli-agent/runs/01",
+              "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+              "client": "claude",
+              "client_version": "2.1.325 (Claude Code)",
+              "requested_model": "claude-sonnet-5-5",
+              "observed_model_ids": [
+                "claude-sonnet-5-5"
+              ],
+              "reported_cost_usd": [
+                0.07167989999999999
+              ],
+              "permission_denial_count": 0,
+              "changed_files": [
+                "CONTRIBUTION_B.md",
+                "reservation_cli.py"
+              ],
+              "scope_changes_requiring_review": [],
+              "capture_hashes_match": true
+            }
+          ],
+          "operator_decisions": [
+            {
+              "file": "01.json",
+              "decision": "accept",
+              "operator": "Claude (claude-opus-5-5), AI operator in the author's review session",
+              "operator_kind": "AI",
+              "at_utc": "2026-11-16T22:21:41.104586+00:00"
+            }
+          ],
+          "operator_disposition_settled": true
+        }
+      ],
+      "receipts": [
+        {
+          "kind": "check",
+          "path": "work/evidence/g3-second.json",
+          "present": true,
+          "superseded_attempts": [
+            {
+              "kind": "check",
+              "path": "work/evidence/g3-first.json",
+              "present": true,
+              "superseded_attempts": [],
+              "status": "CHECKS_FAILED",
+              "tests_run": 7,
+              "candidate_sha256_after": "250246a5289b2aa07281f5f42e6022e8249378010115334284dc5bda7d9f8b55",
+              "sha256": "871222e8371689fdc7e977d53ae558d56b04f55a8d1089864bf3ad03581b394e",
+              "passing": false
+            }
+          ],
+          "status": "SELECTED_CHECKS_PASSED",
+          "tests_run": 7,
+          "candidate_sha256_after": "7b02037f25564beb431bd1deeaa70da7df845ebc71426b99b882a855193b27a6",
+          "sha256": "bf1b0a387de9010b69e6ee7c1ca23f735808d02e9ec548df4cec88888c770f7d",
+          "passing": true
+        },
+        {
+          "kind": "continue",
+          "path": "work/evidence/g3-handoff-02.json",
+          "present": true,
+          "superseded_attempts": [
+            {
+              "kind": "continue",
+              "path": "work/evidence/g3-handoff.json",
+              "present": true,
+              "superseded_attempts": [],
+              "status": "HANDOFF_BLOCKED",
+              "tests_run": 7,
+              "candidate_sha256_after": "250246a5289b2aa07281f5f42e6022e8249378010115334284dc5bda7d9f8b55",
+              "sha256": "f580a799b7a592e6e94f6f32af3435ed49e9b47c71db014e73df58219ddcbaac",
+              "passing": false
+            }
+          ],
+          "status": "SCOPED_HANDOFF_READY",
+          "tests_run": 7,
+          "candidate_sha256_after": "7b02037f25564beb431bd1deeaa70da7df845ebc71426b99b882a855193b27a6",
+          "sha256": "dc43d8d4881e87615210d676815c45015c44b191c34b08dbb3641d00c07784cd",
+          "passing": true
+        },
+        {
+          "kind": "integration",
+          "path": "work/g3-integration/REPORT-02.json",
+          "present": true,
+          "superseded_attempts": [
+            {
+              "kind": "integration",
+              "path": "work/g3-integration/REPORT.json",
+              "present": true,
+              "superseded_attempts": [],
+              "status": "INTEGRATION_BLOCKED",
+              "tests_run": null,
+              "candidate_sha256_after": null,
+              "sha256": "438580b9b2fe777be1e74c7939a9ad60250bb1253615dab5f4e2b7b655e44090",
+              "passing": false
+            }
+          ],
+          "status": "INTEGRATION_CHECKS_PASSED",
+          "tests_run": null,
+          "candidate_sha256_after": null,
+          "sha256": "8bbe5329871da6cc54c2c6bdf845a857454c9b718cccd7293410dbd4d24137e0",
+          "passing": true
+        }
+      ]
+    },
+    {
+      "mission": "G4",
+      "native_capture_complete": true,
+      "operator_dispositions_settled": true,
+      "receipts_passing": true,
+      "natively_verified": true,
+      "sessions": [
+        {
+          "id": "G4",
+          "stage": "implement",
+          "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+          "native_turn_completed": true,
+          "client_and_model_identified": true,
+          "attempts": [
+            {
+              "path": "work/g4-agent/runs/01",
+              "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+              "client": "claude",
+              "client_version": "2.1.325 (Claude Code)",
+              "requested_model": "claude-sonnet-5-5",
+              "observed_model_ids": [
+                "claude-sonnet-5-5"
+              ],
+              "reported_cost_usd": [
+                0.1531067
+              ],
+              "permission_denial_count": 1,
+              "changed_files": [
+                "DOSSIER.md",
+                "operations.py"
+              ],
+              "scope_changes_requiring_review": [],
+              "capture_hashes_match": true
+            }
+          ],
+          "operator_decisions": [
+            {
+              "file": "01.json",
+              "decision": "accept",
+              "operator": "Claude (claude-opus-5-5), AI operator in the author's review session",
+              "operator_kind": "AI",
+              "at_utc": "2026-11-16T22:28:29.794424+00:00"
+            }
+          ],
+          "operator_disposition_settled": true
+        }
+      ],
+      "receipts": [
+        {
+          "kind": "check",
+          "path": "work/evidence/g4-first.json",
+          "present": true,
+          "superseded_attempts": [],
+          "status": "SELECTED_CHECKS_PASSED",
+          "tests_run": 11,
+          "candidate_sha256_after": "2903fba69859c4ff7560873c7911b89051a22d89485ec4558f5c96220f769c41",
+          "sha256": "cc758e6c2d7dae1ea2614ee18e8f41b72023e4dbc6fbd048fd1b027278a948c3",
+          "passing": true
+        },
+        {
+          "kind": "continue",
+          "path": "work/evidence/g4-handoff.json",
+          "present": true,
+          "superseded_attempts": [],
+          "status": "SCOPED_HANDOFF_READY",
+          "tests_run": 11,
+          "candidate_sha256_after": "2903fba69859c4ff7560873c7911b89051a22d89485ec4558f5c96220f769c41",
+          "sha256": "56664c8a5c995f2c86230a4f694233f70a71709a476add79e725f91b6b22156c",
+          "passing": true
+        }
+      ]
+    },
+    {
+      "mission": "B1",
+      "native_capture_complete": true,
+      "operator_dispositions_settled": true,
+      "receipts_passing": true,
+      "natively_verified": true,
+      "sessions": [
+        {
+          "id": "B1-v1",
+          "stage": "v1",
+          "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+          "native_turn_completed": true,
+          "client_and_model_identified": true,
+          "attempts": [
+            {
+              "path": "work/b1-agent-v1/runs/01",
+              "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+              "client": "claude",
+              "client_version": "2.1.325 (Claude Code)",
+              "requested_model": "claude-sonnet-5-5",
+              "observed_model_ids": [
+                "claude-sonnet-5-5"
+              ],
+              "reported_cost_usd": [
+                0.11574689999999999
+              ],
+              "permission_denial_count": 2,
+              "changed_files": [
+                "DOSSIER.md",
+                "src/treasury/routing.py"
+              ],
+              "scope_changes_requiring_review": [],
+              "capture_hashes_match": true
+            }
+          ],
+          "operator_decisions": [
+            {
+              "file": "01.json",
+              "decision": "accept",
+              "operator": "Claude (claude-opus-5-5), AI operator in the author's review session",
+              "operator_kind": "AI",
+              "at_utc": "2026-11-16T22:12:15.205712+00:00"
+            }
+          ],
+          "operator_disposition_settled": true
+        },
+        {
+          "id": "B1-v2",
+          "stage": "v2",
+          "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+          "native_turn_completed": true,
+          "client_and_model_identified": true,
+          "attempts": [
+            {
+              "path": "work/b1-agent-v2/runs/01",
+              "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+              "client": "claude",
+              "client_version": "2.1.325 (Claude Code)",
+              "requested_model": "claude-sonnet-5-5",
+              "observed_model_ids": [
+                "claude-sonnet-5-5"
+              ],
+              "reported_cost_usd": [
+                0.12262089999999999
+              ],
+              "permission_denial_count": 2,
+              "changed_files": [
+                "DOSSIER.md",
+                "src/treasury/routing.py"
+              ],
+              "scope_changes_requiring_review": [],
+              "capture_hashes_match": true
+            }
+          ],
+          "operator_decisions": [
+            {
+              "file": "01.json",
+              "decision": "accept",
+              "operator": "Claude (claude-opus-5-5), AI operator in the author's review session",
+              "operator_kind": "AI",
+              "at_utc": "2026-11-16T22:13:53.531026+00:00"
+            }
+          ],
+          "operator_disposition_settled": true
+        }
+      ],
+      "receipts": [
+        {
+          "kind": "check",
+          "path": "work/evidence/b1-check.json",
+          "present": true,
+          "superseded_attempts": [],
+          "status": "SELECTED_CHECKS_PASSED",
+          "tests_run": 12,
+          "candidate_sha256_after": "5097fdba1bb2fa3b626e019e8da0e5189114fb3c5e379bd9771e907ba22b20ac",
+          "sha256": "bdeb7983aba9b023f1cbc63c0461a452efe31170de40fcbed8c8a8a1c5fcc0dd",
+          "passing": true
+        },
+        {
+          "kind": "continue",
+          "path": "work/evidence/b1-context.json",
+          "present": true,
+          "superseded_attempts": [],
+          "status": "CONTEXT_HANDOFF_READY",
+          "tests_run": 12,
+          "candidate_sha256_after": "5097fdba1bb2fa3b626e019e8da0e5189114fb3c5e379bd9771e907ba22b20ac",
+          "sha256": "8a61f2d6edb7d959b9d2271660af27573fa7d44770d5a6702ab38ce0284e0366",
+          "passing": true
+        },
+        {
+          "kind": "check",
+          "path": "work/evidence/b1-v2-check.json",
+          "present": true,
+          "superseded_attempts": [],
+          "status": "SELECTED_CHECKS_PASSED",
+          "tests_run": 18,
+          "candidate_sha256_after": "975aa67da6fa58c02a5af9402f338a248e39c3ad9c2b21ce5e1518a6539c1f3a",
+          "sha256": "bc74b3d14b8bbf65baf9f48d3d442b07361888753f94c7649e50da9178731b3f",
+          "passing": true
+        },
+        {
+          "kind": "continue",
+          "path": "work/evidence/b1-v2-handoff.json",
+          "present": true,
+          "superseded_attempts": [],
+          "status": "CONTEXT_HANDOFF_READY",
+          "tests_run": 18,
+          "candidate_sha256_after": "975aa67da6fa58c02a5af9402f338a248e39c3ad9c2b21ce5e1518a6539c1f3a",
+          "sha256": "311dd5a826987995e598ad7bcd84b534733d309d0318eb59705f017b2a670644",
+          "passing": true
+        }
+      ]
+    },
+    {
+      "mission": "B2",
+      "native_capture_complete": true,
+      "operator_dispositions_settled": true,
+      "receipts_passing": true,
+      "natively_verified": true,
+      "sessions": [
+        {
+          "id": "B2",
+          "stage": "implement",
+          "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+          "native_turn_completed": true,
+          "client_and_model_identified": true,
+          "attempts": [
+            {
+              "path": "work/b2-agent/runs/01",
+              "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+              "client": "claude",
+              "client_version": "2.1.325 (Claude Code)",
+              "requested_model": "claude-sonnet-5-5",
+              "observed_model_ids": [
+                "claude-sonnet-5-5"
+              ],
+              "reported_cost_usd": [
+                0.13331590000000001
+              ],
+              "permission_denial_count": 2,
+              "changed_files": [
+                "DOSSIER.md",
+                "intake.py"
+              ],
+              "scope_changes_requiring_review": [],
+              "capture_hashes_match": true
+            }
+          ],
+          "operator_decisions": [
+            {
+              "file": "01.json",
+              "decision": "accept",
+              "operator": "Claude (claude-opus-5-5), AI operator in the author's review session",
+              "operator_kind": "AI",
+              "at_utc": "2026-11-16T22:15:07.070947+00:00"
+            }
+          ],
+          "operator_disposition_settled": true
+        }
+      ],
+      "receipts": [
+        {
+          "kind": "check",
+          "path": "work/evidence/b2-first.json",
+          "present": true,
+          "superseded_attempts": [],
+          "status": "SELECTED_CHECKS_PASSED",
+          "tests_run": 12,
+          "candidate_sha256_after": "57197331ea19009ba3de9bb0a9b9d156095c05420cbf03f33c30882b0b5380ab",
+          "sha256": "cccd6e8e6b39100a99bdd9d0513331a80b8c6e0e5e37fc5bc4625be9ff10c33f",
+          "passing": true
+        },
+        {
+          "kind": "continue",
+          "path": "work/evidence/b2-handoff.json",
+          "present": true,
+          "superseded_attempts": [],
+          "status": "SCOPED_HANDOFF_READY",
+          "tests_run": 12,
+          "candidate_sha256_after": "57197331ea19009ba3de9bb0a9b9d156095c05420cbf03f33c30882b0b5380ab",
+          "sha256": "788da827f394623df7e43b887145ee911c7d904608bee6ee7324a5e5c6550a7f",
+          "passing": true
+        }
+      ]
+    },
+    {
+      "mission": "B3",
+      "native_capture_complete": true,
+      "operator_dispositions_settled": true,
+      "receipts_passing": true,
+      "natively_verified": true,
+      "sessions": [
+        {
+          "id": "B3",
+          "stage": "implement",
+          "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+          "native_turn_completed": true,
+          "client_and_model_identified": true,
+          "attempts": [
+            {
+              "path": "work/b3-agent/runs/01",
+              "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+              "client": "claude",
+              "client_version": "2.1.325 (Claude Code)",
+              "requested_model": "claude-sonnet-5-5",
+              "observed_model_ids": [
+                "claude-sonnet-5-5"
+              ],
+              "reported_cost_usd": [
+                0.19073659999999998
+              ],
+              "permission_denial_count": 3,
+              "changed_files": [
+                "DOSSIER.md",
+                "ledger.py"
+              ],
+              "scope_changes_requiring_review": [],
+              "capture_hashes_match": true
+            }
+          ],
+          "operator_decisions": [
+            {
+              "file": "01.json",
+              "decision": "accept",
+              "operator": "Claude (claude-opus-5-5), AI operator in the author's review session",
+              "operator_kind": "AI",
+              "at_utc": "2026-11-16T22:16:26.173806+00:00"
+            }
+          ],
+          "operator_disposition_settled": true
+        }
+      ],
+      "receipts": [
+        {
+          "kind": "check",
+          "path": "work/evidence/b3-first.json",
+          "present": true,
+          "superseded_attempts": [],
+          "status": "SELECTED_CHECKS_PASSED",
+          "tests_run": 10,
+          "candidate_sha256_after": "5a2706de0a399e0cf7d0844a4f579895d3f545a6d42a0051af1c2a9cf75ec93b",
+          "sha256": "77a35df0774e713a47e3c15656cc25dc5eedbed33294def499335001cf459dbf",
+          "passing": true
+        },
+        {
+          "kind": "continue",
+          "path": "work/evidence/b3-handoff.json",
+          "present": true,
+          "superseded_attempts": [],
+          "status": "SCOPED_HANDOFF_READY",
+          "tests_run": 10,
+          "candidate_sha256_after": "5a2706de0a399e0cf7d0844a4f579895d3f545a6d42a0051af1c2a9cf75ec93b",
+          "sha256": "a0927df1c99801b42c474f0493af86f07e3a6df0259bedfab3eee833d485a054",
+          "passing": true
+        }
+      ]
+    },
+    {
+      "mission": "B4",
+      "native_capture_complete": true,
+      "operator_dispositions_settled": true,
+      "receipts_passing": true,
+      "natively_verified": true,
+      "sessions": [
+        {
+          "id": "B4",
+          "stage": "implement",
+          "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+          "native_turn_completed": true,
+          "client_and_model_identified": true,
+          "attempts": [
+            {
+              "path": "work/b4-agent/runs/01",
+              "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+              "client": "claude",
+              "client_version": "2.1.325 (Claude Code)",
+              "requested_model": "claude-sonnet-5-5",
+              "observed_model_ids": [
+                "claude-sonnet-5-5"
+              ],
+              "reported_cost_usd": [
+                0.1916698
+              ],
+              "permission_denial_count": 1,
+              "changed_files": [
+                "DOSSIER.md",
+                "incident.py"
+              ],
+              "scope_changes_requiring_review": [],
+              "capture_hashes_match": true
+            }
+          ],
+          "operator_decisions": [
+            {
+              "file": "01.json",
+              "decision": "accept",
+              "operator": "Claude (claude-opus-5-5), AI operator in the author's review session",
+              "operator_kind": "AI",
+              "at_utc": "2026-11-16T22:18:24.008174+00:00"
+            }
+          ],
+          "operator_disposition_settled": true
+        }
+      ],
+      "receipts": [
+        {
+          "kind": "check",
+          "path": "work/evidence/b4-first.json",
+          "present": true,
+          "superseded_attempts": [],
+          "status": "SELECTED_CHECKS_PASSED",
+          "tests_run": 7,
+          "candidate_sha256_after": "7b39a66c0d01523fa1a1d8804dbe24159287a5e79ea25a715b254aef7fd319b3",
+          "sha256": "13a9885b7e0de9b2409a88c655295c3604138bc0e118c14533c8b732dcc6223e",
+          "passing": true
+        },
+        {
+          "kind": "continue",
+          "path": "work/evidence/b4-handoff.json",
+          "present": true,
+          "superseded_attempts": [],
+          "status": "SCOPED_HANDOFF_READY",
+          "tests_run": 7,
+          "candidate_sha256_after": "7b39a66c0d01523fa1a1d8804dbe24159287a5e79ea25a715b254aef7fd319b3",
+          "sha256": "875bea6d8c73d73a164bf0ddfc39bf217c419b16234cb4e0abc37a85e6d61d41",
+          "passing": true
+        }
+      ]
+    }
+  ],
+  "retained_sessions_outside_matrix": [
+    {
+      "path": "work/g4-agent-ask-01",
+      "mission": "G4",
+      "attempts": [
+        {
+          "path": "work/g4-agent-ask-01/runs/01",
+          "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+          "exit_code": 0,
+          "reported_cost_usd": [
+            0.1693725
+          ],
+          "changed_files": [
+            "DOSSIER.md",
+            "operations.py"
+          ]
+        }
+      ],
+      "operator_decisions": [
+        {
+          "file": "01.json",
+          "decision": "ask",
+          "operator": "Claude (claude-opus-5-5), AI operator in the author's review session",
+          "operator_kind": "AI",
+          "at_utc": "2026-11-16T22:26:09.776597+00:00"
+        }
+      ],
+      "meaning": "Retained session outside the printed matrix; it neither opens nor closes a required stage."
+    },
+    {
+      "path": "work/g4-agent-usage-limit-01",
+      "mission": "G4",
+      "attempts": [
+        {
+          "path": "work/g4-agent-usage-limit-01/runs/01",
+          "status": "CLIENT_EXIT_NONZERO",
+          "exit_code": 1,
+          "reported_cost_usd": [
+            0
+          ],
+          "changed_files": []
+        }
+      ],
+      "operator_decisions": [
+        {
+          "file": "01.json",
+          "decision": "stop",
+          "operator": "Claude (claude-opus-5-5), AI operator in the author's review session",
+          "operator_kind": "AI",
+          "at_utc": "2026-11-16T22:22:35.524521+00:00"
+        }
+      ],
+      "meaning": "Retained session outside the printed matrix; it neither opens nor closes a required stage."
+    }
+  ],
+  "scope": "Native transport capture, recorded operator statements and protected receipts only. Operator identity and authority are not verified; product acceptance is technical within the fictional teaching case; no human learning outcome is measured."
+}

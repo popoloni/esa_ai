@@ -1,0 +1,142 @@
+{
+  "schema": "esa-curriculum/v1",
+  "release": "ESA-Complete-Review-1-20261102",
+  "origin": "CONSTRUCTED_OFFLINE_TEACHING_CURRICULUM",
+  "missions": {
+    "G2": {
+      "module": "booking.py",
+      "predecessor": "G1",
+      "contract": "RES-001/v1 + G2-OD-01 + G2-OD-02",
+      "starter": "starters/G2/booking.py",
+      "reference": "solutions/G2/booking.py",
+      "protected": {
+        "docs/contract.md": "contracts/G2.md",
+        "tests/test_g2.py": "checks/test_g2.py",
+        "docs/G2-OD-02.md": "contracts/G2_OD_02.md"
+      },
+      "dependencies": {
+        "legacy_g1.py": "solutions/G1/booking.py",
+        "legacy_g1_json.py": "solutions/G1/booking_alternative.py",
+        "legacy_g1_recorded.py": "checks/fixtures/legacy_g1_recorded.py"
+      },
+      "test_pattern": "test_g2.py",
+      "tests": 17,
+      "candidate_ids": [
+        "G2-P01",
+        "G2-P02",
+        "G2-P03"
+      ]
+    },
+    "G3": {
+      "module": "booking.py",
+      "predecessor": "G2",
+      "contract": "RES-002/v1",
+      "starter": "starters/G3/booking.py",
+      "reference": "solutions/G3/booking.py",
+      "protected": {
+        "docs/contract.md": "contracts/G3.md",
+        "tests/test_g3.py": "checks/test_g3.py"
+      },
+      "dependencies": {
+        "legacy_booking.py": "solutions/G2/booking.py"
+      },
+      "test_pattern": "test_g3.py",
+      "tests": 7,
+      "candidate_ids": [
+        "G3-P01",
+        "G3-P02",
+        "G3-P03"
+      ]
+    },
+    "G4": {
+      "module": "operations.py",
+      "predecessor": "G3",
+      "contract": "OPS-G4/v3",
+      "starter": "starters/G4/operations.py",
+      "reference": "solutions/G4/operations.py",
+      "protected": {
+        "docs/contract.md": "contracts/G4.md",
+        "tests/test_g4.py": "checks/test_g4.py"
+      },
+      "dependencies": {
+        "booking.py": "solutions/G3/booking.py",
+        "g4_fixture.py": "checks/fixtures/g4_fixture.py",
+        "reference_g3.py": "solutions/G3/booking.py"
+      },
+      "test_pattern": "test_g4.py",
+      "tests": 13,
+      "candidate_ids": [
+        "G4-P01",
+        "G4-P02",
+        "G4-P03"
+      ]
+    },
+    "B2": {
+      "module": "intake.py",
+      "predecessor": "B1",
+      "contract": "INTAKE/v1",
+      "starter": "starters/B2/intake.py",
+      "reference": "solutions/B2/intake.py",
+      "protected": {
+        "docs/contract.md": "contracts/B2.md",
+        "tests/test_b2.py": "checks/test_b2.py"
+      },
+      "dependencies": {
+        "routing.py": "solutions/B1/routing_v2.py"
+      },
+      "test_pattern": "test_b2.py",
+      "tests": 12,
+      "candidate_ids": [
+        "B2-P01",
+        "B2-P02",
+        "B2-P03"
+      ]
+    },
+    "B3": {
+      "module": "ledger.py",
+      "predecessor": "B2",
+      "contract": "HISTORY-API/v1 + MIGRATION/v1",
+      "starter": "starters/B3/ledger.py",
+      "reference": "solutions/B3/ledger.py",
+      "protected": {
+        "docs/contract.md": "contracts/B3.md",
+        "tests/test_b3.py": "checks/test_b3.py",
+        "docs/policy_catalog.json": "curriculum/policy_catalog.json"
+      },
+      "dependencies": {
+        "routing.py": "solutions/B1/routing.py"
+      },
+      "test_pattern": "test_b3.py",
+      "tests": 10,
+      "candidate_ids": [
+        "B3-P01",
+        "B3-P02",
+        "B3-P03"
+      ]
+    },
+    "B4": {
+      "module": "incident.py",
+      "predecessor": "B3",
+      "contract": "OPS-B4/v2",
+      "starter": "starters/B4/incident.py",
+      "reference": "solutions/B4/incident.py",
+      "protected": {
+        "docs/contract.md": "contracts/B4.md",
+        "tests/test_b4.py": "checks/test_b4.py",
+        "docs/policy_catalog.json": "curriculum/policy_catalog.json"
+      },
+      "dependencies": {
+        "ledger.py": "solutions/B3/ledger.py",
+        "routing.py": "solutions/B1/routing.py",
+        "operations.py": "solutions/G4/operations.py"
+      },
+      "test_pattern": "test_b4.py",
+      "tests": 7,
+      "candidate_ids": [
+        "B4-P01",
+        "B4-P02",
+        "B4-P03"
+      ]
+    }
+  }
+}

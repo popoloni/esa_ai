@@ -1,0 +1,49 @@
+{
+  "grants": [
+    {
+      "actions": [
+        "promote",
+        "invalidate"
+      ],
+      "actor": {
+        "id": "demo-owner-control",
+        "kind": "automated_control"
+      },
+      "basis": {
+        "locator": "Owner and approved teaching contract declaration",
+        "path": "companion/contracts/B1_API.md",
+        "sha256": "e631804217257dfd5eabf3f9a3feeca025156822acc561bab7b5ab8b722914c2"
+      },
+      "scope": {
+        "component": "treasury.routing.assess",
+        "contract": "B1-API/v1",
+        "schema": "RoutingDecision(route,reason,policy_version)",
+        "task": "B1-grammar-check"
+      }
+    },
+    {
+      "actions": [
+        "promote",
+        "invalidate"
+      ],
+      "actor": {
+        "id": "demo-owner-control",
+        "kind": "automated_control"
+      },
+      "basis": {
+        "locator": "Owner and approved teaching contract declaration",
+        "path": "companion/contracts/B1_API_V2.md",
+        "sha256": "75035676814847b356cd844300c32d5384a68327822225dbb45e92692470db06"
+      },
+      "scope": {
+        "component": "treasury.routing.assess",
+        "contract": "B1-API/v2",
+        "schema": "RoutingDecision(route,reason,policy_version)",
+        "task": "B1-grammar-check"
+      }
+    }
+  ],
+  "limit": "demo-owner-control is a declared test actor, not the fictional case owner or an authenticated human.",
+  "origin": "AUTOMATED_LOCAL_AUTHORITY_CONTROL",
+  "schema": "agent-memory-authority/v1"
+}

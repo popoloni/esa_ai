@@ -1,0 +1,30 @@
+{
+  "recorded_at_utc": "2026-11-22T17:32:06.479791+00:00",
+  "operation": "commit_shared_baseline",
+  "authority": {
+    "principal": "ESA AI integration reviewer / recording operator",
+    "kind": "AI reviewer and local recording operator",
+    "authorized_by": "Author instruction to implement ESA agent-process remediation",
+    "scope": "Scoped teaching integration, independent checks and provenance recording",
+    "human_operator": false,
+    "human_acceptance": "PENDING",
+    "production_authorization": false
+  },
+  "returncode": 0,
+  "stdout": "[integration (root-commit) 6a2e032] Freeze retained G3 and shared integration contract\n 18 files changed, 1291 insertions(+)\n create mode 100644 AGENTS.md\n create mode 100644 DOSSIER.md\n create mode 100644 READER_ENTRY.json\n create mode 100644 booking.py\n create mode 100644 docs/INTEGRATION-G3.md\n create mode 100644 docs/contract.md\n create mode 100644 legacy_booking.py\n create mode 100644 prior/booking.py\n create mode 100644 prior/parent-check-artifacts/DEMONSTRATION.json\n create mode 100644 prior/parent-check-artifacts/continuation.json\n create mode 100644 prior/parent-check-artifacts/reservations.sqlite\n create mode 100644 prior/parent-entry.json\n create mode 100644 prior/parent-handoff.json\n create mode 100644 reservation_cli.py\n create mode 100644 reservation_report.py\n create mode 100644 tests/test_g3.py\n create mode 100644 tests/test_integration_a.py\n create mode 100644 tests/test_integration_b.py\n",
+  "stderr": "",
+  "timed_out": false,
+  "argv": [
+    "git",
+    "-c",
+    "user.name=ESA AI recording operator",
+    "-c",
+    "user.email=esa-ai-recording@example.invalid",
+    "commit",
+    "-m",
+    "Freeze retained G3 and shared integration contract"
+  ],
+  "cwd": "/home/claude/work/live22/agentic-ai-5.2/work/g3-integration/workspace",
+  "timeout_seconds": 45,
+  "elapsed_process_seconds": 0.06102957199999537
+}

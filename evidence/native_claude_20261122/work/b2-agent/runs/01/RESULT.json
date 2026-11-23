@@ -1,0 +1,668 @@
+{
+  "at_utc": "2026-11-22T17:37:28.124030+00:00",
+  "client": "claude",
+  "exit_code": 0,
+  "timed_out": false,
+  "permission_denials": [
+    {
+      "event_line": 940,
+      "value": {
+        "tool_name": "Bash",
+        "tool_use_id": "toolu_01U5mFWozD1Z5247GsveAumk",
+        "tool_input": {
+          "command": "cat > intake.py <<'EOF'\n\"\"\"INTAKE/v1: bounded intake and cooperative-provider classification.\n\nNever authorizes a payment. Snapshots on exceptions are local evidence, not a\ndurable ledger; this is not durable idempotency (B3).\n\"\"\"\nimport copy\nfrom routing import assess\n\nclass ProviderUnavailable(RuntimeError): pass\nclass ProviderProtocolError(ValueError): pass\n\n_CLASSES = (\"MATCH\", \"REVIEW\")\n_FIELDS = {\"request_id\", \"classification\"}\n\n\ndef _snapshot(attempts, records, calls):\n    attempts, records = copy.deepcopy(attempts), copy.deepcopy(records)\n    return {\"attempts\": attempts, \"records\": records, \"calls\": calls,\n            \"payment_authorized\": False}\n\n\ndef _attach(exc, attempts, records, calls):\n    receipt = _snapshot(attempts, records, calls)\n    exc.receipt = receipt\n    exc.attempts = copy.deepcopy(attempts)\n    exc.records = copy.deepcopy(records)\n    exc.calls = calls\n    return exc\n\n\ndef _valid(response, request_id):\n    return (isinstance(response, dict) and set(response) == _FIELDS\n            and response[\"request_id\"] == request_id\n            and isinstance(response[\"classification\"], str)\n            and response[\"classification\"] in _CLASSES)\n\n\ndef evaluate_batch(requests, provider, *, max_attempts=2, max_calls=4):\n    attempts, records, calls = [], [], 0\n    try:\n        requests = list(requests)\n        # Whole-batch duplicate validation before any provider call.\n        seen = set()\n        for req in requests:\n            rid = req[\"request_id\"]\n            if rid in seen:\n                raise ValueError(f\"duplicate request_id: {rid!r}\")\n            seen.add(rid)\n\n        for req in requests:\n            rid, amount = req[\"request_id\"], req[\"amount_eur\"]\n            decision = assess(amount)\n            if decision.route == \"REJECTED\":\n                records.append({\"request_id\": rid, \"status\": \"REJECTED\",\n                                \"route\": decision.route, \"reason\": decision.reason})\n                continue\n            n, done = 0, False\n            while n < max_attempts and calls < max_calls:\n                n += 1\n                calls += 1\n                try:\n                    response = provider(rid, amount)\n                except ProviderUnavailable:\n                    attempts.append({\"request_id\": rid, \"attempt\": n,\n                                     \"outcome\": \"UNAVAILABLE\"})\n                    continue\n                except Exception as exc:\n                    attempts.append({\"request_id\": rid, \"attempt\": n,\n                                     \"outcome\": \"PROVIDER_ERROR\",\n                                     \"error_type\": type(exc).__name__})\n                    raise\n                if not _valid(response, rid):\n                    attempts.append({\"request_id\": rid, \"attempt\": n,\n                                     \"outcome\": \"INVALID_RESPONSE\"})\n                    raise ProviderProtocolError(\n                        f\"invalid provider response for request {rid!r}\")\n                cls = response[\"classification\"]\n                attempts.append({\"request_id\": rid, \"attempt\": n, \"outcome\": cls})\n                records.append({\"request_id\": rid, \"status\": \"CLASSIFIED\",\n                                \"route\": decision.route, \"reason\": decision.reason,\n                                \"classification\": cls})\n                done = True\n                break\n            if not done:\n                records.append({\"request_id\": rid, \"status\": \"DEFERRED\",\n                                \"route\": decision.route, \"reason\": decision.reason})\n    except Exception as exc:\n        raise _attach(exc, attempts, records, calls)\n    return _snapshot(attempts, records, calls)\nEOF\npython3 -m unittest discover -s tests 2>&1 | tail -15"
+        }
+      }
+    }
+  ],
+  "reported_cost_usd": [
+    0.1305153
+  ],
+  "elapsed_seconds": 41.230273,
+  "event_count": 941,
+  "malformed_native_event_lines": [],
+  "changed_files": [
+    "DOSSIER.md",
+    "intake.py"
+  ],
+  "scope_changes_requiring_review": [],
+  "before": {
+    "AGENTS.md": "60c816b03a88dd0593dafcc7cb82ed7c9ec33e96ec4f226057f2625295e6f0fc",
+    "DOSSIER.md": "3b4bdba31b00dbd80d604851dc08c976038c1f99d158fc4b14268267f2541cc2",
+    "READER_ENTRY.json": "d6a518a900326a687dc101fefd462701f13d7d0f9ef2f1854cfc3dda4824009f",
+    "docs/contract.md": "7322b946c06acf1e5ca4fc2031419d077cec88fb201aaa6ba6d9e2603bb9992d",
+    "intake.py": "696f7d077b7bd7ba75df7980eebe33ddeae02aae7555aee20ad4df78f5fbe293",
+    "prior/parent-entry.json": "cad094a05da050f874f8bd4f1a451ad60c96b58c5d33e690fd126285b9d06740",
+    "prior/parent-handoff.json": "a3aff787c8cd7c5898bbb5aa2516535595ca7719b672be5ab13cafb30d9d6c47",
+    "prior/routing.py": "e8fdab89acfa5d28041c74a5d2dcf9801fb0e85324dcc160013a56cf63f89cfd",
+    "routing.py": "e8fdab89acfa5d28041c74a5d2dcf9801fb0e85324dcc160013a56cf63f89cfd",
+    "tests/test_b2.py": "13c76494bb51344136c06e4b49cb071872f8737375f81ceac1a491f9bd3ccc06"
+  },
+  "after": {
+    "AGENTS.md": "60c816b03a88dd0593dafcc7cb82ed7c9ec33e96ec4f226057f2625295e6f0fc",
+    "DOSSIER.md": "d5ab27a4c75814ed8dd197ebdf1f554308c97bc64c3ac23db58c898de3faea6d",
+    "READER_ENTRY.json": "d6a518a900326a687dc101fefd462701f13d7d0f9ef2f1854cfc3dda4824009f",
+    "docs/contract.md": "7322b946c06acf1e5ca4fc2031419d077cec88fb201aaa6ba6d9e2603bb9992d",
+    "intake.py": "d078ca5b06de61638ce653eac0b7419c3f6246181a1b50a96d8f84d480672f0c",
+    "prior/parent-entry.json": "cad094a05da050f874f8bd4f1a451ad60c96b58c5d33e690fd126285b9d06740",
+    "prior/parent-handoff.json": "a3aff787c8cd7c5898bbb5aa2516535595ca7719b672be5ab13cafb30d9d6c47",
+    "prior/routing.py": "e8fdab89acfa5d28041c74a5d2dcf9801fb0e85324dcc160013a56cf63f89cfd",
+    "routing.py": "e8fdab89acfa5d28041c74a5d2dcf9801fb0e85324dcc160013a56cf63f89cfd",
+    "tests/test_b2.py": "13c76494bb51344136c06e4b49cb071872f8737375f81ceac1a491f9bd3ccc06"
+  },
+  "thread_ids": [
+    "088da0d4-93ab-4e36-ba15-b29a923cd769"
+  ],
+  "usage_events": [
+    {
+      "duration_api_ms": 40233,
+      "stop_reason": "end_turn",
+      "session_id": "088da0d4-93ab-4e36-ba15-b29a923cd769",
+      "total_cost_usd": 0.1305153,
+      "usage": {
+        "input_tokens": 12,
+        "cache_creation_input_tokens": 14704,
+        "cache_read_input_tokens": 79653,
+        "output_tokens": 6371,
+        "output_tokens_details": {
+          "thinking_tokens": 757
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 14704,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 1178,
+            "cache_read_input_tokens": 19438,
+            "cache_creation_input_tokens": 1503,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 1503
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard",
+        "fallback_credit": null
+      },
+      "modelUsage": {
+        "claude-sonnet-5-5": {
+          "inputTokens": 12,
+          "outputTokens": 6371,
+          "cacheReadInputTokens": 79653,
+          "cacheCreationInputTokens": 14704,
+          "webSearchRequests": 0,
+          "costUSD": 0.1305153,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 64000,
+          "thinkingTokens": 757,
+          "cacheCreationEphemeral5mInputTokens": 0,
+          "cacheCreationEphemeral1hInputTokens": 14704,
+          "canonicalModel": "claude-sonnet-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "permission_denials": [
+        {
+          "tool_name": "Bash",
+          "tool_use_id": "toolu_01U5mFWozD1Z5247GsveAumk",
+          "tool_input": {
+            "command": "cat > intake.py <<'EOF'\n\"\"\"INTAKE/v1: bounded intake and cooperative-provider classification.\n\nNever authorizes a payment. Snapshots on exceptions are local evidence, not a\ndurable ledger; this is not durable idempotency (B3).\n\"\"\"\nimport copy\nfrom routing import assess\n\nclass ProviderUnavailable(RuntimeError): pass\nclass ProviderProtocolError(ValueError): pass\n\n_CLASSES = (\"MATCH\", \"REVIEW\")\n_FIELDS = {\"request_id\", \"classification\"}\n\n\ndef _snapshot(attempts, records, calls):\n    attempts, records = copy.deepcopy(attempts), copy.deepcopy(records)\n    return {\"attempts\": attempts, \"records\": records, \"calls\": calls,\n            \"payment_authorized\": False}\n\n\ndef _attach(exc, attempts, records, calls):\n    receipt = _snapshot(attempts, records, calls)\n    exc.receipt = receipt\n    exc.attempts = copy.deepcopy(attempts)\n    exc.records = copy.deepcopy(records)\n    exc.calls = calls\n    return exc\n\n\ndef _valid(response, request_id):\n    return (isinstance(response, dict) and set(response) == _FIELDS\n            and response[\"request_id\"] == request_id\n            and isinstance(response[\"classification\"], str)\n            and response[\"classification\"] in _CLASSES)\n\n\ndef evaluate_batch(requests, provider, *, max_attempts=2, max_calls=4):\n    attempts, records, calls = [], [], 0\n    try:\n        requests = list(requests)\n        # Whole-batch duplicate validation before any provider call.\n        seen = set()\n        for req in requests:\n            rid = req[\"request_id\"]\n            if rid in seen:\n                raise ValueError(f\"duplicate request_id: {rid!r}\")\n            seen.add(rid)\n\n        for req in requests:\n            rid, amount = req[\"request_id\"], req[\"amount_eur\"]\n            decision = assess(amount)\n            if decision.route == \"REJECTED\":\n                records.append({\"request_id\": rid, \"status\": \"REJECTED\",\n                                \"route\": decision.route, \"reason\": decision.reason})\n                continue\n            n, done = 0, False\n            while n < max_attempts and calls < max_calls:\n                n += 1\n                calls += 1\n                try:\n                    response = provider(rid, amount)\n                except ProviderUnavailable:\n                    attempts.append({\"request_id\": rid, \"attempt\": n,\n                                     \"outcome\": \"UNAVAILABLE\"})\n                    continue\n                except Exception as exc:\n                    attempts.append({\"request_id\": rid, \"attempt\": n,\n                                     \"outcome\": \"PROVIDER_ERROR\",\n                                     \"error_type\": type(exc).__name__})\n                    raise\n                if not _valid(response, rid):\n                    attempts.append({\"request_id\": rid, \"attempt\": n,\n                                     \"outcome\": \"INVALID_RESPONSE\"})\n                    raise ProviderProtocolError(\n                        f\"invalid provider response for request {rid!r}\")\n                cls = response[\"classification\"]\n                attempts.append({\"request_id\": rid, \"attempt\": n, \"outcome\": cls})\n                records.append({\"request_id\": rid, \"status\": \"CLASSIFIED\",\n                                \"route\": decision.route, \"reason\": decision.reason,\n                                \"classification\": cls})\n                done = True\n                break\n            if not done:\n                records.append({\"request_id\": rid, \"status\": \"DEFERRED\",\n                                \"route\": decision.route, \"reason\": decision.reason})\n    except Exception as exc:\n        raise _attach(exc, attempts, records, calls)\n    return _snapshot(attempts, records, calls)\nEOF\npython3 -m unittest discover -s tests 2>&1 | tail -15"
+          }
+        }
+      ],
+      "terminal_reason": "completed",
+      "fast_mode_state": "off",
+      "fast_mode_disabled_reason": "sdk_opt_in_required",
+      "subagent_stats": {
+        "spawned": 0,
+        "requested": {
+          "background": 0,
+          "foreground": 0,
+          "unset": 0
+        },
+        "started_in_background": 0,
+        "max_depth": 0,
+        "spawned_by_subagents": 0,
+        "completed": 0,
+        "failed": 0,
+        "killed": {
+          "parent": 0,
+          "user": 0,
+          "system": 0
+        },
+        "refused": {
+          "depth_limit": 0,
+          "concurrency_limit": 0,
+          "budget": 0
+        },
+        "by_type": {}
+      },
+      "safety_stops": 0,
+      "is_error": false,
+      "num_turns": 7,
+      "subtype": "success",
+      "api_error_status": null,
+      "result": "I implemented `evaluate_batch` in `intake.py`, and the 12 supplied tests pass. I ran `python3 -m unittest discover -s tests` once, after the implementation, and it printed `Ran 12 tests \u2026 OK`. I did not run protected acceptance, and human acceptance is still pending.\n\n**Changed files:** `intake.py` (was a `NotImplementedError` stub) and `DOSSIER.md`. I did not touch `routing.py`, the tests, `docs/`, `prior/` or `READER_ENTRY.json`.\n\n**Outcome:** `evaluate_batch` classifies requests through the B1 router with bounded calls and a receipt. `payment_authorized` is always False.\n\n**Acceptance example:** the batch is `good` and `bad`, and the provider answers `good` correctly but returns request ID `wrong` for `bad`. The expected result is a `ProviderProtocolError` with `calls == 2` and attempts `good/1/MATCH` then `bad/1/INVALID_RESPONSE`. The completed `good` record is kept. The supplied test `test_protocol_error_preserves_prior_and_invalid_attempts` covers this and passes.\n\n**Behavior implemented:**\n- Duplicate request IDs are checked across the whole batch before any call and raise `ValueError` with zero calls.\n- Invalid amounts are rejected without calling the provider.\n- Only `ProviderUnavailable` is retried.\n- Each request gets at most `max_attempts` calls and the batch at most `max_calls`. On exhaustion the request is marked `DEFERRED`.\n- A response must be a dict with exactly `request_id` and `classification`, the ID must match, and the classification must be the string `MATCH` or `REVIEW`. Otherwise it is an `INVALID_RESPONSE` attempt and a `ProviderProtocolError`.\n- Any other provider exception is recorded as `PROVIDER_ERROR` with `error_type`, counted as a call and not retried. It is re-raised as the same object.\n- Every raised exception carries `receipt`, `attempts`, `records` and `calls` snapshots.\n\n**Corrections:** none. The first full run passed, so there was nothing to explain. One earlier attempt to write the file through the shell was refused by the tool's safety check, and nothing ran. I then wrote it with the file-edit tool.\n\n**Remaining uncertainty for the owner:**\n- **Field names:** the contract does not name the record and receipt fields. I took them from the tests. For REJECTED and DEFERRED records I chose `request_id`, `status`, `route` and `reason`.\n- **Invalid bounds:** the contract does not say what to do with `max_attempts` or `max_calls` set to 0 or negative. I added no policy, so those values just produce no calls and `DEFERRED` records.\n- **Other errors:** a malformed request dict or a `TypeError` from the router also surfaces with snapshots attached. The contract does not discuss this.\n- **Exotic exceptions:** attaching the snapshots assumes the exception accepts attribute assignment. That holds for ordinary exceptions and is unverified for exotic ones.\n- **Contract limits:** there is no wall-clock bound on a blocking provider, and the snapshots are not a durable ledger.\n- **Proposals:** the task mentions three proposals to accept or reject, but none are in the supplied documents. `DOSSIER.md` says so and records only the contract's own rejections.\n\nI used 5 of the 40 tool commands.",
+      "ttft_ms": 1491,
+      "type": "result",
+      "duration_ms": 40683,
+      "uuid": "1aca7e1c-2aa3-43d4-b9bc-7001baa64274",
+      "begun_message_ids": [
+        "msg_011ChJNXnaL5JqfaddpMdjym",
+        "msg_011ChJNXtNq9Rg5cbicoQYDS",
+        "msg_011ChJNXzGn2f52RgY2JSxZo",
+        "msg_011ChJNYwwB6cibRDtWL9k6e",
+        "msg_011ChJNZUSDusEBXQjHngYcf",
+        "msg_011ChJNaFZqb7v7tyG36zeEX"
+      ],
+      "ttft_stream_ms": 866,
+      "time_to_request_ms": 215,
+      "time_to_request_phases_ms": {
+        "other": 6,
+        "system_prompt": 163,
+        "resume_other": 0,
+        "process_user_input": 3,
+        "input_attachments": 7,
+        "input_hooks": 3,
+        "conversation_append": 0,
+        "tool_pool_refresh": 0,
+        "init_message": 2,
+        "init_frame_send": 1,
+        "engine_pickup": 1,
+        "loop_entry": 4,
+        "message_prep": 1,
+        "model_config_wait": 1,
+        "autocompact": 1,
+        "request_announcements": 6,
+        "query_setup": 1,
+        "model_gates": 0,
+        "tool_schema_build": 6,
+        "message_normalization": 2,
+        "client_creation": 3,
+        "request_build": 4
+      },
+      "turn_start_resume_kind": "none",
+      "process_turn_index": 0,
+      "time_to_request_loop_lag_ms": 8,
+      "time_to_request_cpu_ms": 85,
+      "time_to_request_major_faults": 0,
+      "process_rss_mib_turn_start": 211,
+      "process_anon_mib_turn_start": 132,
+      "process_rss_mib_result": 235,
+      "process_anon_mib_result": 141,
+      "process_peak_rss_mib": 238,
+      "process_cpu_ms_turn": 1276,
+      "process_wall_ms_turn": 40683,
+      "tool_pool_build_count": 3,
+      "tool_pool_build_lapsed_count": 1,
+      "tool_pool_moved_at_lapse_count": 0,
+      "tool_pool_limit_ms": 30000,
+      "process_cpu_ms_streaming": 829,
+      "process_wall_ms_streaming": 32600,
+      "main_stream_count": 6,
+      "main_stream_event_count": 901,
+      "main_stream_chunk_count": 201,
+      "process_turn_states": {
+        "main_stream": {
+          "cpu_ms": 829,
+          "wall_ms": 32600,
+          "entries": 6
+        },
+        "tool": {
+          "cpu_ms": 84,
+          "wall_ms": 173,
+          "entries": 5
+        },
+        "first_event_wait": {
+          "cpu_ms": 188,
+          "wall_ms": 7610,
+          "entries": 6
+        },
+        "before_first_request": {
+          "cpu_ms": 86,
+          "wall_ms": 215,
+          "entries": 1
+        },
+        "between_requests": {
+          "cpu_ms": 75,
+          "wall_ms": 72,
+          "entries": 5
+        },
+        "after_last_request": {
+          "cpu_ms": 14,
+          "wall_ms": 13,
+          "entries": 1
+        }
+      },
+      "input_attachments_detail": {
+        "slowest_producer": "artifact_opening_prefetch",
+        "slowest_producer_ms": 2,
+        "cpu_ms": 8,
+        "major_faults": 0,
+        "setup_ms": 0,
+        "prompt_producers_ms": 0,
+        "ambient_start_ms": 3,
+        "ambient_wait_ms": 1,
+        "render_ms": 1,
+        "producers": 42,
+        "token_counts": 0
+      },
+      "tool_schema_build_detail": {
+        "betas_ms": 0,
+        "waits_ms": 1,
+        "placement_ms": 0,
+        "render_ms": 4,
+        "after_ms": 1,
+        "other_ms": 0,
+        "tools": 6,
+        "new_schemas": 6
+      },
+      "message_normalization_detail": {
+        "before_ms": 0,
+        "normalize_ms": 1,
+        "images_ms": 0,
+        "post_process_ms": 1,
+        "after_ms": 0,
+        "other_ms": 0,
+        "messages": 10,
+        "wire_messages": 2
+      },
+      "request_build_detail": {
+        "records_ms": 0,
+        "system_ms": 1,
+        "headers_ms": 1,
+        "cache_break_record_ms": 0,
+        "plans_ms": 1,
+        "retry_setup_ms": 0,
+        "sent_build_ms": 1,
+        "record_attempt_ms": 0,
+        "other_ms": 0,
+        "sent_build_safety_context_ms": 0,
+        "sent_build_cache_breakpoints_ms": 0,
+        "sent_build_surrogate_scan_ms": 0
+      },
+      "first_content_frame_ms": 867,
+      "time_to_request_from_spawn_ms": 674072,
+      "warm_spare_claimed": false,
+      "flag_fetch_kick": "started_in_init_warm",
+      "time_origin_ms": 1795369006898.2444,
+      "queued_turn_count": 0,
+      "result_index": 0,
+      "model_usage_since_last_result": {
+        "claude-sonnet-5-5": {
+          "inputTokens": 12,
+          "outputTokens": 6371,
+          "cacheReadInputTokens": 79653,
+          "cacheCreationInputTokens": 14704,
+          "webSearchRequests": 0,
+          "costUSD": 0.1305153,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 64000,
+          "thinkingTokens": 757,
+          "cacheCreationEphemeral5mInputTokens": 0,
+          "cacheCreationEphemeral1hInputTokens": 14704,
+          "canonicalModel": "claude-sonnet-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "process_start_tuning": 0
+    }
+  ],
+  "native_observations": {
+    "protocol_client": "claude",
+    "unexpected_protocol_lines": [],
+    "completed_turn_lines": [
+      940
+    ],
+    "failed_turn_or_error_lines": [],
+    "agent_message_lines": [
+      87,
+      935
+    ],
+    "tool_operation_lines": [
+      23,
+      52,
+      274,
+      448,
+      462,
+      745
+    ],
+    "model_observations": [
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 3,
+        "field": "model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 23,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 52,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 71,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 87,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 274,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 285,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 448,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 462,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 476,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 745,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 935,
+        "field": "message.model"
+      }
+    ],
+    "usage_observations": [
+      {
+        "event_line": 23,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 3557,
+          "cache_read_input_tokens": 6237,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 3557
+          },
+          "output_tokens": 16,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 52,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 820,
+          "cache_read_input_tokens": 9794,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 820
+          },
+          "output_tokens": 16,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 71,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 5104,
+          "cache_read_input_tokens": 10614,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 5104
+          },
+          "output_tokens": 8,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 87,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 5104,
+          "cache_read_input_tokens": 10614,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 5104
+          },
+          "output_tokens": 8,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 274,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 5104,
+          "cache_read_input_tokens": 10614,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 5104
+          },
+          "output_tokens": 8,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 285,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 2134,
+          "cache_read_input_tokens": 15718,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 2134
+          },
+          "output_tokens": 8,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 448,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 2134,
+          "cache_read_input_tokens": 15718,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 2134
+          },
+          "output_tokens": 8,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 462,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 2134,
+          "cache_read_input_tokens": 15718,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 2134
+          },
+          "output_tokens": 8,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 476,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1586,
+          "cache_read_input_tokens": 17852,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1586
+          },
+          "output_tokens": 3,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 745,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1586,
+          "cache_read_input_tokens": 17852,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1586
+          },
+          "output_tokens": 3,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 935,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1503,
+          "cache_read_input_tokens": 19438,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1503
+          },
+          "output_tokens": 771,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 940,
+        "field": "usage",
+        "value": {
+          "input_tokens": 12,
+          "cache_creation_input_tokens": 14704,
+          "cache_read_input_tokens": 79653,
+          "output_tokens": 6371,
+          "output_tokens_details": {
+            "thinking_tokens": 757
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 14704,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "global",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 1178,
+              "cache_read_input_tokens": 19438,
+              "cache_creation_input_tokens": 1503,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 1503
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "fallback_credit": null
+        }
+      }
+    ],
+    "permission_denials": [
+      {
+        "event_line": 940,
+        "value": {
+          "tool_name": "Bash",
+          "tool_use_id": "toolu_01U5mFWozD1Z5247GsveAumk",
+          "tool_input": {
+            "command": "cat > intake.py <<'EOF'\n\"\"\"INTAKE/v1: bounded intake and cooperative-provider classification.\n\nNever authorizes a payment. Snapshots on exceptions are local evidence, not a\ndurable ledger; this is not durable idempotency (B3).\n\"\"\"\nimport copy\nfrom routing import assess\n\nclass ProviderUnavailable(RuntimeError): pass\nclass ProviderProtocolError(ValueError): pass\n\n_CLASSES = (\"MATCH\", \"REVIEW\")\n_FIELDS = {\"request_id\", \"classification\"}\n\n\ndef _snapshot(attempts, records, calls):\n    attempts, records = copy.deepcopy(attempts), copy.deepcopy(records)\n    return {\"attempts\": attempts, \"records\": records, \"calls\": calls,\n            \"payment_authorized\": False}\n\n\ndef _attach(exc, attempts, records, calls):\n    receipt = _snapshot(attempts, records, calls)\n    exc.receipt = receipt\n    exc.attempts = copy.deepcopy(attempts)\n    exc.records = copy.deepcopy(records)\n    exc.calls = calls\n    return exc\n\n\ndef _valid(response, request_id):\n    return (isinstance(response, dict) and set(response) == _FIELDS\n            and response[\"request_id\"] == request_id\n            and isinstance(response[\"classification\"], str)\n            and response[\"classification\"] in _CLASSES)\n\n\ndef evaluate_batch(requests, provider, *, max_attempts=2, max_calls=4):\n    attempts, records, calls = [], [], 0\n    try:\n        requests = list(requests)\n        # Whole-batch duplicate validation before any provider call.\n        seen = set()\n        for req in requests:\n            rid = req[\"request_id\"]\n            if rid in seen:\n                raise ValueError(f\"duplicate request_id: {rid!r}\")\n            seen.add(rid)\n\n        for req in requests:\n            rid, amount = req[\"request_id\"], req[\"amount_eur\"]\n            decision = assess(amount)\n            if decision.route == \"REJECTED\":\n                records.append({\"request_id\": rid, \"status\": \"REJECTED\",\n                                \"route\": decision.route, \"reason\": decision.reason})\n                continue\n            n, done = 0, False\n            while n < max_attempts and calls < max_calls:\n                n += 1\n                calls += 1\n                try:\n                    response = provider(rid, amount)\n                except ProviderUnavailable:\n                    attempts.append({\"request_id\": rid, \"attempt\": n,\n                                     \"outcome\": \"UNAVAILABLE\"})\n                    continue\n                except Exception as exc:\n                    attempts.append({\"request_id\": rid, \"attempt\": n,\n                                     \"outcome\": \"PROVIDER_ERROR\",\n                                     \"error_type\": type(exc).__name__})\n                    raise\n                if not _valid(response, rid):\n                    attempts.append({\"request_id\": rid, \"attempt\": n,\n                                     \"outcome\": \"INVALID_RESPONSE\"})\n                    raise ProviderProtocolError(\n                        f\"invalid provider response for request {rid!r}\")\n                cls = response[\"classification\"]\n                attempts.append({\"request_id\": rid, \"attempt\": n, \"outcome\": cls})\n                records.append({\"request_id\": rid, \"status\": \"CLASSIFIED\",\n                                \"route\": decision.route, \"reason\": decision.reason,\n                                \"classification\": cls})\n                done = True\n                break\n            if not done:\n                records.append({\"request_id\": rid, \"status\": \"DEFERRED\",\n                                \"route\": decision.route, \"reason\": decision.reason})\n    except Exception as exc:\n        raise _attach(exc, attempts, records, calls)\n    return _snapshot(attempts, records, calls)\nEOF\npython3 -m unittest discover -s tests 2>&1 | tail -15"
+          }
+        }
+      }
+    ],
+    "reported_cost_observations": [
+      {
+        "event_line": 940,
+        "field": "total_cost_usd",
+        "value": 0.1305153
+      }
+    ],
+    "thread_ids": [
+      "088da0d4-93ab-4e36-ba15-b29a923cd769"
+    ]
+  },
+  "requested_model": "claude-sonnet-5-5",
+  "capture_sha256": {
+    "native_events.jsonl": "a9c0172fd6299b37f417c8a922f25afe6ab628c4eb70583894868ea0f5aa8226",
+    "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "agent_final.txt": "9e01e71e492639b7a111ee86320741884e866a9c6cd8222bbd4b9385c459800d"
+  },
+  "observed_model_ids": [
+    "claude-sonnet-5-5"
+  ],
+  "model_identity_observed": true,
+  "native_completion_event_observed": true,
+  "native_turn_completed": true,
+  "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+  "acceptance": "NOT_ESTABLISHED",
+  "scope_note": "Native events retained as emitted; absence of usage is unknown, not zero."
+}

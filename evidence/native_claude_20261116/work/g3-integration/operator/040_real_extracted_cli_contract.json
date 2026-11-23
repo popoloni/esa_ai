@@ -1,0 +1,31 @@
+{
+  "recorded_at_utc": "2026-11-16T22:20:27.757601+00:00",
+  "operation": "real_extracted_cli_contract",
+  "authority": {
+    "principal": "ESA AI integration reviewer / recording operator",
+    "kind": "AI reviewer and local recording operator",
+    "authorized_by": "Author instruction to implement ESA agent-process remediation",
+    "scope": "Scoped teaching integration, independent checks and provenance recording",
+    "human_operator": false,
+    "human_acceptance": "PENDING",
+    "production_authorization": false
+  },
+  "returncode": 1,
+  "stdout": "{\"status\": \"TRANSPORT_CHECKS_FAILED\", \"cases\": 2, \"receipt\": \"/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g3-integration/operator/transport-001.json\"}\n",
+  "stderr": "",
+  "timed_out": false,
+  "argv": [
+    "/usr/local/bin/python3",
+    "-B",
+    "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/companion/integration_assets/verify_transport.py",
+    "--package",
+    "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g3-integration/extracted/integration-001",
+    "--output",
+    "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g3-integration/operator/transport-001.json",
+    "--state-dir",
+    "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g3-integration/transport-state/attempt-001"
+  ],
+  "cwd": "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g3-integration",
+  "timeout_seconds": 60,
+  "elapsed_process_seconds": 0.17374462000009316
+}

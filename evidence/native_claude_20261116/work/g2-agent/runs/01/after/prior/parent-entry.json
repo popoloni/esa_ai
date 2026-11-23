@@ -1,0 +1,25 @@
+{
+  "schema": "esa-prototype-entry/v2",
+  "mission": "G1",
+  "release": "ESA-Series-Handbook-Review-5-20261116",
+  "route": "GREENFIELD_RESERVATION_STUDIO",
+  "mode": "INCOMPLETE_STARTER",
+  "solution_variant": null,
+  "human_acceptance": "PENDING",
+  "scope": "G1/I01 first durable reservation and public read; final RES-001/v1 remains separate.",
+  "api_contract": "G1/I01",
+  "specification_stage": "DECISION_AVAILABLE",
+  "owner_decision": "G1-OD-01",
+  "recorded_at_utc": "2026-11-16T22:10:43.181723+00:00",
+  "command": [
+    "/usr/local/bin/python3",
+    "companion/start.py",
+    "new",
+    "G1",
+    "--dest",
+    "work/g1"
+  ],
+  "question_record": "# Operator questions before delegation (G1/I01)\n\nRecorded by the AI operator of the 16 November 2026 native run, before any agent session\nand before the supplied owner response was released.\n\n1. `get_reservation` is specified only \"for a reservation that exists\". What must it\n   return for an identifier that was never created: `None`, an exception, or an empty\n   mapping? A caller cannot distinguish \"absent\" from a storage failure until this is decided.\n2. Is a non-positive identifier (0, -1) the same case as an absent one, or a caller error?",
+  "question_origin": "LEARNER_PROVIDED_TEXT_NOT_HUMAN_OBSERVATION",
+  "decision_available_at_utc": "2026-11-16T22:11:48.906114+00:00"
+}

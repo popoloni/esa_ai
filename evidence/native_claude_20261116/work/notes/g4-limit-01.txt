@@ -1,0 +1,9 @@
+Observation: launch 01 of the G4 session exited 1 after 7 native events and 0.307 s of API time. The only assistant
+text and the final result read "You've hit your 5-hour limit · resets 1:30am (Europe/Rome)"; api_error_status 429,
+total_cost_usd 0, no file changed. The final event carried subtype "success" with is_error true; the adapter
+classified the attempt CLIENT_EXIT_NONZERO, as its controls require.
+Diagnosis: account usage limit of the operator's environment, not a candidate, task or agent observation.
+Decision: STOP this session. Its declared session time runs from this launch and will be spent before the limit
+resets, so the directory is retained as work/g4-agent-usage-limit-01 and a fresh session will be prepared at
+work/g4-agent after the reset, on the same unchanged candidate work/g4.
+Limit: AI operator.

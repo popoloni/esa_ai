@@ -1,0 +1,235 @@
+test_boundary_and_larger_values_require_review (test_b1_v2.MonetaryTextV2.test_boundary_and_larger_values_require_review) ... ok
+test_length_limit_counts_sign_and_point (test_b1_v2.MonetaryTextV2.test_length_limit_counts_sign_and_point) ... 
+  test_length_limit_counts_sign_and_point (test_b1_v2.MonetaryTextV2.test_length_limit_counts_sign_and_point) (value='111111111111111111111111111111111') ... FAIL
+  test_length_limit_counts_sign_and_point (test_b1_v2.MonetaryTextV2.test_length_limit_counts_sign_and_point) (value='+11111111111111111111111111111111') ... FAIL
+  test_length_limit_counts_sign_and_point (test_b1_v2.MonetaryTextV2.test_length_limit_counts_sign_and_point) (value='1111111111111111111111111111111.0') ... FAIL
+test_non_string_is_a_caller_error (test_b1_v2.MonetaryTextV2.test_non_string_is_a_caller_error) ... ok
+test_nonpositive_values_are_rejected (test_b1_v2.MonetaryTextV2.test_nonpositive_values_are_rejected) ... ok
+test_unapproved_lexical_forms_are_rejected (test_b1_v2.MonetaryTextV2.test_unapproved_lexical_forms_are_rejected) ... 
+  test_unapproved_lexical_forms_are_rejected (test_b1_v2.MonetaryTextV2.test_unapproved_lexical_forms_are_rejected) (value='1e3') ... FAIL
+  test_unapproved_lexical_forms_are_rejected (test_b1_v2.MonetaryTextV2.test_unapproved_lexical_forms_are_rejected) (value='4_000') ... FAIL
+  test_unapproved_lexical_forms_are_rejected (test_b1_v2.MonetaryTextV2.test_unapproved_lexical_forms_are_rejected) (value=' 4000') ... FAIL
+  test_unapproved_lexical_forms_are_rejected (test_b1_v2.MonetaryTextV2.test_unapproved_lexical_forms_are_rejected) (value='4000 ') ... FAIL
+  test_unapproved_lexical_forms_are_rejected (test_b1_v2.MonetaryTextV2.test_unapproved_lexical_forms_are_rejected) (value='.50') ... FAIL
+  test_unapproved_lexical_forms_are_rejected (test_b1_v2.MonetaryTextV2.test_unapproved_lexical_forms_are_rejected) (value='5000.') ... FAIL
+  test_unapproved_lexical_forms_are_rejected (test_b1_v2.MonetaryTextV2.test_unapproved_lexical_forms_are_rejected) (value='4999.995') ... FAIL
+  test_unapproved_lexical_forms_are_rejected (test_b1_v2.MonetaryTextV2.test_unapproved_lexical_forms_are_rejected) (value='４０００') ... FAIL
+  test_unapproved_lexical_forms_are_rejected (test_b1_v2.MonetaryTextV2.test_unapproved_lexical_forms_are_rejected) (value='١٢') ... FAIL
+  test_unapproved_lexical_forms_are_rejected (test_b1_v2.MonetaryTextV2.test_unapproved_lexical_forms_are_rejected) (value='4000\n') ... FAIL
+  test_unapproved_lexical_forms_are_rejected (test_b1_v2.MonetaryTextV2.test_unapproved_lexical_forms_are_rejected) (value='4000\r\n') ... FAIL
+test_valid_spellings_preserve_numeric_policy (test_b1_v2.MonetaryTextV2.test_valid_spellings_preserve_numeric_policy) ... ok
+test_above_boundary_requires_review (test_routing.RoutingAcceptance.test_above_boundary_requires_review) ... ok
+test_exact_boundary_requires_review (test_routing.RoutingAcceptance.test_exact_boundary_requires_review) ... ok
+test_negative_amount_rejected (test_routing.RoutingAcceptance.test_negative_amount_rejected) ... ok
+test_nonfinite_amount_rejected (test_routing.RoutingAcceptance.test_nonfinite_amount_rejected) ... ok
+test_nonnumeric_amount_rejected (test_routing.RoutingAcceptance.test_nonnumeric_amount_rejected) ... ok
+test_positive_below_limit (test_routing.RoutingAcceptance.test_positive_below_limit) ... ok
+test_zero_amount_rejected (test_routing.RoutingAcceptance.test_zero_amount_rejected) ... ok
+test_negative_infinity_rejected (test_routing_extended.RoutingExtended.test_negative_infinity_rejected) ... ok
+test_non_string_argument_is_programming_error (test_routing_extended.RoutingExtended.test_non_string_argument_is_programming_error) ... ok
+test_positive_infinity_rejected (test_routing_extended.RoutingExtended.test_positive_infinity_rejected) ... ok
+test_short_infinity_rejected (test_routing_extended.RoutingExtended.test_short_infinity_rejected) ... ok
+test_signaling_nan_rejected (test_routing_extended.RoutingExtended.test_signaling_nan_rejected) ... ok
+
+======================================================================
+FAIL: test_length_limit_counts_sign_and_point (test_b1_v2.MonetaryTextV2.test_length_limit_counts_sign_and_point) (value='111111111111111111111111111111111')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B1-V2/workspace/tests/test_b1_v2.py", line 34, in test_length_limit_counts_sign_and_point
+    self.assertEqual(routing.assess(value).route, "REJECTED")
+AssertionError: 'HUMAN_REVIEW' != 'REJECTED'
+- HUMAN_REVIEW
++ REJECTED
+
+
+======================================================================
+FAIL: test_length_limit_counts_sign_and_point (test_b1_v2.MonetaryTextV2.test_length_limit_counts_sign_and_point) (value='+11111111111111111111111111111111')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B1-V2/workspace/tests/test_b1_v2.py", line 34, in test_length_limit_counts_sign_and_point
+    self.assertEqual(routing.assess(value).route, "REJECTED")
+AssertionError: 'HUMAN_REVIEW' != 'REJECTED'
+- HUMAN_REVIEW
++ REJECTED
+
+
+======================================================================
+FAIL: test_length_limit_counts_sign_and_point (test_b1_v2.MonetaryTextV2.test_length_limit_counts_sign_and_point) (value='1111111111111111111111111111111.0')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B1-V2/workspace/tests/test_b1_v2.py", line 34, in test_length_limit_counts_sign_and_point
+    self.assertEqual(routing.assess(value).route, "REJECTED")
+AssertionError: 'HUMAN_REVIEW' != 'REJECTED'
+- HUMAN_REVIEW
++ REJECTED
+
+
+======================================================================
+FAIL: test_unapproved_lexical_forms_are_rejected (test_b1_v2.MonetaryTextV2.test_unapproved_lexical_forms_are_rejected) (value='1e3')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B1-V2/workspace/tests/test_b1_v2.py", line 27, in test_unapproved_lexical_forms_are_rejected
+    self.assertEqual((routing.assess(value).route, routing.assess(value).reason),
+AssertionError: Tuples differ: ('STANDARD_QUEUE', 'BELOW_LIMIT') != ('REJECTED', 'INVALID_AMOUNT')
+
+First differing element 0:
+'STANDARD_QUEUE'
+'REJECTED'
+
+- ('STANDARD_QUEUE', 'BELOW_LIMIT')
++ ('REJECTED', 'INVALID_AMOUNT')
+
+======================================================================
+FAIL: test_unapproved_lexical_forms_are_rejected (test_b1_v2.MonetaryTextV2.test_unapproved_lexical_forms_are_rejected) (value='4_000')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B1-V2/workspace/tests/test_b1_v2.py", line 27, in test_unapproved_lexical_forms_are_rejected
+    self.assertEqual((routing.assess(value).route, routing.assess(value).reason),
+AssertionError: Tuples differ: ('STANDARD_QUEUE', 'BELOW_LIMIT') != ('REJECTED', 'INVALID_AMOUNT')
+
+First differing element 0:
+'STANDARD_QUEUE'
+'REJECTED'
+
+- ('STANDARD_QUEUE', 'BELOW_LIMIT')
++ ('REJECTED', 'INVALID_AMOUNT')
+
+======================================================================
+FAIL: test_unapproved_lexical_forms_are_rejected (test_b1_v2.MonetaryTextV2.test_unapproved_lexical_forms_are_rejected) (value=' 4000')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B1-V2/workspace/tests/test_b1_v2.py", line 27, in test_unapproved_lexical_forms_are_rejected
+    self.assertEqual((routing.assess(value).route, routing.assess(value).reason),
+AssertionError: Tuples differ: ('STANDARD_QUEUE', 'BELOW_LIMIT') != ('REJECTED', 'INVALID_AMOUNT')
+
+First differing element 0:
+'STANDARD_QUEUE'
+'REJECTED'
+
+- ('STANDARD_QUEUE', 'BELOW_LIMIT')
++ ('REJECTED', 'INVALID_AMOUNT')
+
+======================================================================
+FAIL: test_unapproved_lexical_forms_are_rejected (test_b1_v2.MonetaryTextV2.test_unapproved_lexical_forms_are_rejected) (value='4000 ')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B1-V2/workspace/tests/test_b1_v2.py", line 27, in test_unapproved_lexical_forms_are_rejected
+    self.assertEqual((routing.assess(value).route, routing.assess(value).reason),
+AssertionError: Tuples differ: ('STANDARD_QUEUE', 'BELOW_LIMIT') != ('REJECTED', 'INVALID_AMOUNT')
+
+First differing element 0:
+'STANDARD_QUEUE'
+'REJECTED'
+
+- ('STANDARD_QUEUE', 'BELOW_LIMIT')
++ ('REJECTED', 'INVALID_AMOUNT')
+
+======================================================================
+FAIL: test_unapproved_lexical_forms_are_rejected (test_b1_v2.MonetaryTextV2.test_unapproved_lexical_forms_are_rejected) (value='.50')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B1-V2/workspace/tests/test_b1_v2.py", line 27, in test_unapproved_lexical_forms_are_rejected
+    self.assertEqual((routing.assess(value).route, routing.assess(value).reason),
+AssertionError: Tuples differ: ('STANDARD_QUEUE', 'BELOW_LIMIT') != ('REJECTED', 'INVALID_AMOUNT')
+
+First differing element 0:
+'STANDARD_QUEUE'
+'REJECTED'
+
+- ('STANDARD_QUEUE', 'BELOW_LIMIT')
++ ('REJECTED', 'INVALID_AMOUNT')
+
+======================================================================
+FAIL: test_unapproved_lexical_forms_are_rejected (test_b1_v2.MonetaryTextV2.test_unapproved_lexical_forms_are_rejected) (value='5000.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B1-V2/workspace/tests/test_b1_v2.py", line 27, in test_unapproved_lexical_forms_are_rejected
+    self.assertEqual((routing.assess(value).route, routing.assess(value).reason),
+AssertionError: Tuples differ: ('HUMAN_REVIEW', 'AT_OR_ABOVE_LIMIT') != ('REJECTED', 'INVALID_AMOUNT')
+
+First differing element 0:
+'HUMAN_REVIEW'
+'REJECTED'
+
+- ('HUMAN_REVIEW', 'AT_OR_ABOVE_LIMIT')
++ ('REJECTED', 'INVALID_AMOUNT')
+
+======================================================================
+FAIL: test_unapproved_lexical_forms_are_rejected (test_b1_v2.MonetaryTextV2.test_unapproved_lexical_forms_are_rejected) (value='4999.995')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B1-V2/workspace/tests/test_b1_v2.py", line 27, in test_unapproved_lexical_forms_are_rejected
+    self.assertEqual((routing.assess(value).route, routing.assess(value).reason),
+AssertionError: Tuples differ: ('STANDARD_QUEUE', 'BELOW_LIMIT') != ('REJECTED', 'INVALID_AMOUNT')
+
+First differing element 0:
+'STANDARD_QUEUE'
+'REJECTED'
+
+- ('STANDARD_QUEUE', 'BELOW_LIMIT')
++ ('REJECTED', 'INVALID_AMOUNT')
+
+======================================================================
+FAIL: test_unapproved_lexical_forms_are_rejected (test_b1_v2.MonetaryTextV2.test_unapproved_lexical_forms_are_rejected) (value='４０００')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B1-V2/workspace/tests/test_b1_v2.py", line 27, in test_unapproved_lexical_forms_are_rejected
+    self.assertEqual((routing.assess(value).route, routing.assess(value).reason),
+AssertionError: Tuples differ: ('STANDARD_QUEUE', 'BELOW_LIMIT') != ('REJECTED', 'INVALID_AMOUNT')
+
+First differing element 0:
+'STANDARD_QUEUE'
+'REJECTED'
+
+- ('STANDARD_QUEUE', 'BELOW_LIMIT')
++ ('REJECTED', 'INVALID_AMOUNT')
+
+======================================================================
+FAIL: test_unapproved_lexical_forms_are_rejected (test_b1_v2.MonetaryTextV2.test_unapproved_lexical_forms_are_rejected) (value='١٢')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B1-V2/workspace/tests/test_b1_v2.py", line 27, in test_unapproved_lexical_forms_are_rejected
+    self.assertEqual((routing.assess(value).route, routing.assess(value).reason),
+AssertionError: Tuples differ: ('STANDARD_QUEUE', 'BELOW_LIMIT') != ('REJECTED', 'INVALID_AMOUNT')
+
+First differing element 0:
+'STANDARD_QUEUE'
+'REJECTED'
+
+- ('STANDARD_QUEUE', 'BELOW_LIMIT')
++ ('REJECTED', 'INVALID_AMOUNT')
+
+======================================================================
+FAIL: test_unapproved_lexical_forms_are_rejected (test_b1_v2.MonetaryTextV2.test_unapproved_lexical_forms_are_rejected) (value='4000\n')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B1-V2/workspace/tests/test_b1_v2.py", line 27, in test_unapproved_lexical_forms_are_rejected
+    self.assertEqual((routing.assess(value).route, routing.assess(value).reason),
+AssertionError: Tuples differ: ('STANDARD_QUEUE', 'BELOW_LIMIT') != ('REJECTED', 'INVALID_AMOUNT')
+
+First differing element 0:
+'STANDARD_QUEUE'
+'REJECTED'
+
+- ('STANDARD_QUEUE', 'BELOW_LIMIT')
++ ('REJECTED', 'INVALID_AMOUNT')
+
+======================================================================
+FAIL: test_unapproved_lexical_forms_are_rejected (test_b1_v2.MonetaryTextV2.test_unapproved_lexical_forms_are_rejected) (value='4000\r\n')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-B1-V2/workspace/tests/test_b1_v2.py", line 27, in test_unapproved_lexical_forms_are_rejected
+    self.assertEqual((routing.assess(value).route, routing.assess(value).reason),
+AssertionError: Tuples differ: ('STANDARD_QUEUE', 'BELOW_LIMIT') != ('REJECTED', 'INVALID_AMOUNT')
+
+First differing element 0:
+'STANDARD_QUEUE'
+'REJECTED'
+
+- ('STANDARD_QUEUE', 'BELOW_LIMIT')
++ ('REJECTED', 'INVALID_AMOUNT')
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.004s
+
+FAILED (failures=14)

@@ -1,0 +1,22 @@
+{
+  "schema": "esa-integration-reference-provenance/v1",
+  "origin": "REFERENCE_COPY_OF_RETAINED_ACTUAL_CONTRIBUTION",
+  "actual_observation": "evidence/agent_process_v4/AP-INTEGRATION/REPORT.json",
+  "acceptance_receipt": "evidence/agent_process_v4/AP-INTEGRATION/operator/035_integration_acceptance.json",
+  "use": "Deterministic curriculum controls and explicit reference study; copying or executing these files is not a new model run.",
+  "files": [
+    {
+      "path": "reservation_report.py",
+      "sha256": "6e99b547429ce65d174bd57be2c26f56297ac610888e56be03b9f69e65c77a65",
+      "source": "evidence/agent_process_v4/AP-INTEGRATION/workspace/reservation_report.py",
+      "adaptation": "Exact source bytes copied; reference purpose is declared by this adjacent provenance record."
+    },
+    {
+      "path": "reservation_cli.py",
+      "sha256": "05d6f0cd68cab19a05703d8ca5c9521f6f139c14259483a79e72393b3460c9e4",
+      "source": "evidence/agent_process_v4/AP-INTEGRATION/workspace/reservation_cli.py",
+      "adaptation": "Exact source bytes copied; reference purpose is declared by this adjacent provenance record."
+    }
+  ],
+  "observed_new_model_runs": 0
+}

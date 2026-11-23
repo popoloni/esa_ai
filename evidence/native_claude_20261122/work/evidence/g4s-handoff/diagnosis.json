@@ -1,0 +1,35 @@
+{
+  "origin": "CONSTRUCTED_CORRUPTION_FIXTURE",
+  "clean_control": {
+    "diagnosis": "NO_ACTIVE_OVERLAP_OBSERVED",
+    "counts": {
+      "active": 1
+    },
+    "active_overlap_pairs": [],
+    "schema_version": 3,
+    "path": "/home/claude/work/live22/agentic-ai-5.2/work/evidence/g4s-handoff/incident_fixture.sqlite",
+    "digest": "41bf6ed34f74d23f35a1cf2bb059a5fcb9f8ce2a8dd299fc61ad334d3a2b5035",
+    "table": "reservations",
+    "unchanged": true,
+    "repair": "NOT_PERFORMED"
+  },
+  "observation": {
+    "diagnosis": "ACTIVE_OVERLAP",
+    "counts": {
+      "active": 2
+    },
+    "active_overlap_pairs": [
+      [
+        1,
+        2
+      ]
+    ],
+    "schema_version": 3,
+    "path": "/home/claude/work/live22/agentic-ai-5.2/work/evidence/g4s-handoff/incident_fixture.sqlite",
+    "digest": "9ed85a91e3b16f691ca7b4877cbc58ddcee01291eb8d96d245a491d8604e072b",
+    "table": "reservations",
+    "unchanged": true,
+    "repair": "NOT_PERFORMED"
+  },
+  "repair_performed": false
+}

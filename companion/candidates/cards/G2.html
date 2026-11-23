@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Eight practical missions, local checks and recorded agent tours for Engineering Software with Agentic AI."><title>G2 proposal cards · Engineering Software with Agentic AI</title><link rel="stylesheet" href="../../../assets/companion.css"></head><body><a class="skip" href="#main">Skip to content</a><header class="sitehead"><div><a class="brand" href="../../../index.html">Engineering Software with Agentic AI<span>Practical companion · version 5.6</span></a><nav aria-label="Main navigation"><a href="../../../index.html">Start</a><a href="../../../missions/index.html">Missions</a><a href="../../agent_sessions/README.html">Agent guide</a><a href="../../../traces/index.html">Recorded tours</a><a href="../../series/READING_THE_SERIES.html">Four volumes</a></nav></div></header><main id="main"><article data-source-sha256="acc0c6da2902bd89f9d4f8cf5d2397e3799342d3f5dcbccf7a26978c4a566a0b"><p class="docmeta meta"><a href="G2.md">Markdown source</a> · Companion 5.6 · 2026-11-22</p><h1>G2 proposal cards</h1>
+<h2 id="g2-p01">G2-P01</h2>
+<p>Retries should not allocate another reservation. This proposal recognizes the prior operation early and returns its existing identifier, keeping the original row untouched. The common successful-retry path is consequently short, and later conflict checks can concentrate on new operations. The review should consider both repeated delivery and callers that reuse an identifier while revising their request.</p>
+<p><em>Artifact: reserve: the selected identity and its replay branch.</em></p>
+<pre class="python"><code>prior = con.execute(&quot;&quot;&quot;
+            SELECT id, request_key FROM reservations
+            WHERE member_id = ? AND request_key = ?
+        &quot;&quot;&quot;, (trusted_member_id, idempotency_key)).fetchone()
+if prior is not None:
+    con.execute(&#39;COMMIT&#39;)
+    if prior[1] == idempotency_key:
+        return Outcome(
+            200, &#39;confirmed&#39;, prior[0], replayed=True
+        )
+    return Outcome(409, &#39;idempotency-key-reused&#39;)</code></pre>
+<h2 id="g2-p02">G2-P02</h2>
+<p>A coordinator planning several weeks needs an actionable schedule even when some requested dates are occupied. This helper collects the available dates and omits conflicting ones, so the offered schedule can still contain useful appointments. The existing single-reservation API remains intact. The proposed series operation presents that partial set as the dates to book for the request.</p>
+<p><em>Artifact: The proposed new series API; existing single-reservation behavior is unchanged.</em></p>
+<pre class="python"><code>def plan_recurring(slots, is_available):
+    &quot;&quot;&quot;Proposed series planner; returns the dates it would
+    book.
+    &quot;&quot;&quot;
+    return [slot for slot in slots if is_available(slot)]</code></pre>
+<h2 id="g2-p03">G2-P03</h2>
+<p>Migration is a compatibility operation with a clear rollback boundary. The conversion carries the approved representations into the current schema, preserving identifiers and public values, and leaves the source rows available for explanation. Ambiguous identities and invalid old commitments stop the conversion. Reinitialization and replay of an imported request are useful checks on whether that preservation is complete.</p>
+<p><em>Artifact: init_db: selected row-conversion statements inside the migration loop, then exception cleanup; identifier, member, asset, start, end and key come from the legacy row.</em></p>
+<pre class="python"><code>request_hash = hashlib.sha256(json.dumps([asset,start,end],
+    separators=(&quot;,&quot;, &quot;:&quot;), ensure_ascii=True).encode()).hexdigest()
+con.execute(&quot;INSERT INTO reservations VALUES(?,?,?,?,?,?,?)&quot;,
+            (identifier, asset, member, start, end, key,
+                request_hash))
+if con.in_transaction: con.execute(&quot;ROLLBACK&quot;)
+raise</code></pre>
+</article></main><footer class="foot"><p>Enrico Papalini · Edition 5.6 · 2026-11-22</p><p><a href="../../../NOTICE.html">Rights and notices</a> · <a href="../../../NATIVE_STATUS.json">Native-client status</a> · <a href="../../../MANIFEST.json">Package manifest</a> · <a href="https://github.com/popoloni/esa_ai">Companion repository</a></p></footer></body></html>

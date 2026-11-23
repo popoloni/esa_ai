@@ -1,0 +1,26 @@
+{
+  "argv": [
+    "python3",
+    "-B",
+    "companion/memory/ledger.py",
+    "--workspace",
+    ".",
+    "--ledger",
+    "evidence/memory_lab_20261116/recorded_01/events.jsonl",
+    "promote",
+    "--record-id",
+    "B1-V1-EXPONENT",
+    "--actor",
+    "demo-owner-control",
+    "--actor-kind",
+    "automated_control",
+    "--decision",
+    "evidence/memory_lab_20261116/recorded_01/decisions/B1-V1-EXPONENT_wrong_hash_promote.json"
+  ],
+  "exit": 2,
+  "expected_exit": 2,
+  "label": "promote_B1-V1-EXPONENT_wrong_hash",
+  "origin": "AUTOMATED_LOCAL_CONTROL_NO_MODEL_OR_HUMAN",
+  "stderr": "",
+  "stdout": "{\"model_calls\":0,\"reason\":\"APPROVAL_MUST_BIND_EXACT_RECORD_SHA256\",\"status\":\"REFUSED\"}\n"
+}

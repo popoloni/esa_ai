@@ -1,0 +1,91 @@
+{
+  "id": "mission_B1",
+  "schema_version": 1,
+  "evidence_profile": "bounded_repair",
+  "expect": {
+    "outcome": "Repair finite-positive routing under the current string API.",
+    "authority": {
+      "owner": "Treasury policy owner and API maintainer",
+      "source": "companion/context/BR-001.md; companion/contracts/B1_API.md",
+      "version": "BR-001/v1 + B1-API/v1",
+      "status": "TEACHING_CONTRACT"
+    },
+    "acceptance": [
+      "Reject invalid amounts; below 5000 uses STANDARD_QUEUE, equality uses HUMAN_REVIEW; non-string callers raise TypeError and unexpected errors propagate."
+    ]
+  },
+  "delegate": {
+    "editable_paths": [
+      "src/treasury/routing.py",
+      "DOSSIER.md"
+    ],
+    "protected_paths": [
+      "docs/",
+      "tests/",
+      "READER_ENTRY.json",
+      "prior/"
+    ],
+    "budget": {
+      "max_attempts": 3,
+      "implementation_minutes": 25,
+      "check_timeout_seconds": 15,
+      "max_external_calls": 0
+    },
+    "stop_conditions": [
+      "Threshold, precision or API change lacks an owner decision.",
+      "Protected inputs change or the declared attempt/time budget is spent."
+    ]
+  },
+  "observe": {
+    "checks": [
+      {
+        "id": "b1.check",
+        "stage": "contract",
+        "method": "command",
+        "argv": [
+          "python3",
+          "companion/start.py",
+          "check",
+          "B1",
+          "--candidate",
+          "work/b1",
+          "--output",
+          "work/evidence/b1-check.json"
+        ],
+        "expected": "Selected public checks pass on unchanged inputs."
+      },
+      {
+        "id": "b1.continue",
+        "stage": "integration",
+        "method": "command",
+        "argv": [
+          "python3",
+          "companion/start.py",
+          "continue",
+          "B1",
+          "--candidate",
+          "work/b1",
+          "--output",
+          "work/evidence/b1-context.json"
+        ],
+        "expected": "Current candidate completes its scoped continuation; inspect retained observations."
+      }
+    ],
+    "receipt_fields": [
+      "candidate_sha256_before",
+      "groups",
+      "inputs_unchanged",
+      "verification_progress",
+      "human_acceptance"
+    ]
+  },
+  "decide": {
+    "owner": "Learner reviewer; Treasury policy owner and API maintainer for a changed rule.",
+    "object": "B1 candidate, identified bytes and its scoped handoff.",
+    "allowed_decisions": [
+      "ACCEPT",
+      "REJECT",
+      "ASK"
+    ]
+  }
+}

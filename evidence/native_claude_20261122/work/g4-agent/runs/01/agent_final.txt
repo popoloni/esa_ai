@@ -1,0 +1,22 @@
+I implemented `diagnose` and `cost_summary` in `operations.py` and wrote up the results in `DOSSIER.md`. The supplied suite (`python -m unittest discover -s tests`) failed with 17 errors on the stubs and passes (13 tests, OK) after the change. I did not run protected acceptance, which the operator invokes separately.
+
+**Contract.** `docs/contract.md`, `docs/G4-OD-01.md` and `docs/G4-SCHEMA-MAP.json` don't conflict. The `booking.py` SHA-256 matches the one the owner recorded, so I did not need to stop and ask.
+
+**Acceptance example.** A `booking.init_db` database (table `reservations_v3`) with one active row plus an inserted overlapping active row gives `ACTIVE_OVERLAP` with pairs `[[1,2]]` and unchanged file bytes. A cancelled row does not trigger it. `reservations_v3` with other columns, or next to `reservations`, raises `ValueError`.
+
+**Changes in `operations.py`**
+- **`diagnose`:**
+  - It opens the file read-only, never creates it, and requires schema version 3.
+  - It matches the full column signature of the three named layouts plus the mapped `reservations_v3` from `docs/G4-SCHEMA-MAP.json`. Zero or more than one match raises `ValueError`.
+  - It compares file digests before and after, and raises `RuntimeError` if they differ.
+- **`cost_summary`:** it sums every attempt with `Decimal`. Non-numeric, `None`, bool, NaN, infinite and negative values raise `ValueError`. Zero accepted outcomes returns null unit metrics and `NO_ACCEPTED_OUTCOME`.
+
+**Other checks.** An extra probe confirmed a wrong-signature table is refused, `reservations` plus mapped `reservations_v3` is refused as competing, and a fresh database diagnoses cleanly.
+
+**Remaining uncertainty**
+- No concurrent-writer test was run. The digest check would miss a change that is reverted between the two reads, and it does not hash WAL sidecar files.
+- `"1e999"` is accepted as a finite number. The contract doesn't address it, so I added no rule.
+- "The three proposals" in the dossier's Decide section aren't defined in the supplied files, so I made no per-proposal call. I recorded ACCEPT, REJECT and ASK for the increment as a whole instead.
+- I observed no human approval.
+
+Only `operations.py` and `DOSSIER.md` were edited. The probe script is in the scratchpad, outside the project.

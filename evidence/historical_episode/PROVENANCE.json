@@ -1,0 +1,219 @@
+{
+  "schema": "esa-historical-evidence-subset/v1",
+  "baseline_archive": "ESA_d16_4_Final_Current_and_Packt_EN_IT_20261101.zip",
+  "baseline_library_file_id": "libfile_42d04849947881919c3fbdc091e699bd",
+  "public_commit": "13a1182fc64c2a2c3b3677852b9dfdd95d4be908",
+  "selection_date": "2026-11-02",
+  "scope": "Selected original Oct22 session and review records plus Oct24 narrative report; not a full runtime or a new model run.",
+  "files": [
+    {
+      "source": "companion_materials/base_13a1182/practice/native_client/observed/ch01_01/OUTCOME.json",
+      "destination": "evidence/historical_episode/native_20261022/OUTCOME.json",
+      "size_bytes": 2587,
+      "sha256": "89ac462e4d8718b3361ec281476614b366025e39838f860d064aac1ac48fad87",
+      "copy": "BYTE_IDENTICAL"
+    },
+    {
+      "source": "companion_materials/base_13a1182/practice/native_client/observed/ch01_01/CLIENT_IDENTITIES.json",
+      "destination": "evidence/historical_episode/native_20261022/CLIENT_IDENTITIES.json",
+      "size_bytes": 806,
+      "sha256": "b46e61edca8c28784aef1c757622c652f7b29c0a65de080b9554bc4633ba1f74",
+      "copy": "BYTE_IDENTICAL"
+    },
+    {
+      "source": "companion_materials/base_13a1182/practice/native_client/observed/ch01_01/RECOVERY_INTERVENTION_02.json",
+      "destination": "evidence/historical_episode/native_20261022/RECOVERY_INTERVENTION_02.json",
+      "size_bytes": 793,
+      "sha256": "b1fadc9154ebd070ee1921032ed0d2c0597d2cdee55d29e6248c905f4ca1895a",
+      "copy": "BYTE_IDENTICAL"
+    },
+    {
+      "source": "companion_materials/base_13a1182/practice/native_client/observed/ch01_01/INDEPENDENT_REVIEW_PLAN.json",
+      "destination": "evidence/historical_episode/native_20261022/INDEPENDENT_REVIEW_PLAN.json",
+      "size_bytes": 2683,
+      "sha256": "3d07e2b1f75b835022d7734eb52dd006050b8802808d7cc7a47cf7d6f6017e9b",
+      "copy": "BYTE_IDENTICAL"
+    },
+    {
+      "source": "companion_materials/base_13a1182/practice/native_client/observed/ch01_01/USAGE.json",
+      "destination": "evidence/historical_episode/native_20261022/USAGE.json",
+      "size_bytes": 2388,
+      "sha256": "c8c48ad995f6460689c0b2ab4b9685c695a0a27c6ec034ac1106721b2e10f123",
+      "copy": "BYTE_IDENTICAL"
+    },
+    {
+      "source": "companion_materials/base_13a1182/practice/native_client/observed/ch01_01/configuration/TASK_PROMPT.txt",
+      "destination": "evidence/historical_episode/native_20261022/configuration/TASK_PROMPT.txt",
+      "size_bytes": 1752,
+      "sha256": "ad930602dd95b3ceb954b1f4770fe55014c7e557ddd4bf9249606efdd86acd22",
+      "copy": "BYTE_IDENTICAL"
+    },
+    {
+      "source": "companion_materials/base_13a1182/practice/native_client/observed/ch01_01/configuration/TASK_PROMPT_RECOVERY_02.txt",
+      "destination": "evidence/historical_episode/native_20261022/configuration/TASK_PROMPT_RECOVERY_02.txt",
+      "size_bytes": 2556,
+      "sha256": "381f6545ca99ae49549e6897802636bb2b018092ccf38b4fe7341bc06118e70d",
+      "copy": "BYTE_IDENTICAL"
+    },
+    {
+      "source": "companion_materials/base_13a1182/practice/native_client/observed/ch01_01/attempt_01/stdout.txt",
+      "destination": "evidence/historical_episode/native_20261022/attempt_01/stdout.txt",
+      "size_bytes": 26328,
+      "sha256": "aaec2caf6ad807d5887089276153408c6d44761234c8c7d077b411f7dd4e08d0",
+      "copy": "BYTE_IDENTICAL"
+    },
+    {
+      "source": "companion_materials/base_13a1182/practice/native_client/observed/ch01_01/attempt_01/native-session.json",
+      "destination": "evidence/historical_episode/native_20261022/attempt_01/native-session.json",
+      "size_bytes": 33644,
+      "sha256": "f5060239c7702a00f28f2186b6d678e61d345cd86fb1c3473d09f327a4483b11",
+      "copy": "BYTE_IDENTICAL"
+    },
+    {
+      "source": "companion_materials/base_13a1182/practice/native_client/observed/ch01_01/attempt_02/OUTCOME.json",
+      "destination": "evidence/historical_episode/native_20261022/attempt_02/OUTCOME.json",
+      "size_bytes": 1484,
+      "sha256": "92d7577d06e80dfad2d666ef0d1beb6fa4afbcf64f3e647ef21d39e0a352cf1d",
+      "copy": "BYTE_IDENTICAL"
+    },
+    {
+      "source": "companion_materials/base_13a1182/practice/native_client/observed/ch01_01/attempt_02/stdout.txt",
+      "destination": "evidence/historical_episode/native_20261022/attempt_02/stdout.txt",
+      "size_bytes": 18003,
+      "sha256": "ca3804715a867bc6952b5eb2618d818c7b6ef127da63c7cfc7a5c9abe088bbb9",
+      "copy": "BYTE_IDENTICAL"
+    },
+    {
+      "source": "companion_materials/base_13a1182/practice/native_client/observed/ch01_01/attempt_02/native-session.json",
+      "destination": "evidence/historical_episode/native_20261022/attempt_02/native-session.json",
+      "size_bytes": 26378,
+      "sha256": "1bee958ecf8cdd07e33753d067d495ab0119dd3c0b1ff5419d4e47846e78129d",
+      "copy": "BYTE_IDENTICAL"
+    },
+    {
+      "source": "companion_materials/base_13a1182/practice/native_client/observed/ch01_01/independent_review/REVIEW.json",
+      "destination": "evidence/historical_episode/native_20261022/independent_review/REVIEW.json",
+      "size_bytes": 1398,
+      "sha256": "22877a4eb1cea100ea4618bbf13ff03d324d5cd092a6d8b450e9eda7b8eb20d6",
+      "copy": "BYTE_IDENTICAL"
+    },
+    {
+      "source": "companion_materials/base_13a1182/practice/native_client/observed/ch01_01/independent_review/initial_acceptance.json",
+      "destination": "evidence/historical_episode/native_20261022/independent_review/initial_acceptance.json",
+      "size_bytes": 5932,
+      "sha256": "b477c19df39c6c19f9ffaf63f6d615858d733f4eda05adcb210783a7d12e868a",
+      "copy": "BYTE_IDENTICAL"
+    },
+    {
+      "source": "companion_materials/base_13a1182/practice/native_client/observed/ch01_01/independent_review/attempt_01_native_acceptance.json",
+      "destination": "evidence/historical_episode/native_20261022/independent_review/attempt_01_native_acceptance.json",
+      "size_bytes": 5932,
+      "sha256": "393db2f5c0c82f542e8d289dc4fb736c9ecfc2ec92f6277f58fac1074d1327ed",
+      "copy": "BYTE_IDENTICAL"
+    },
+    {
+      "source": "companion_materials/base_13a1182/practice/native_client/observed/ch01_01/independent_review/independent_acceptance.json",
+      "destination": "evidence/historical_episode/native_20261022/independent_review/independent_acceptance.json",
+      "size_bytes": 1945,
+      "sha256": "37b53457420649010ce8e73f6b18e040d9064e9cfb3d6df7caeed8dc71f6d24d",
+      "copy": "BYTE_IDENTICAL"
+    },
+    {
+      "source": "companion_materials/base_13a1182/practice/native_client/observed/ch01_01/independent_review/additional_cases.json",
+      "destination": "evidence/historical_episode/native_20261022/independent_review/additional_cases.json",
+      "size_bytes": 4801,
+      "sha256": "f45200567c303d4f616b88b66d92249a617671aa8879d9744c9f0acc1de05454",
+      "copy": "BYTE_IDENTICAL"
+    },
+    {
+      "source": "companion_materials/base_13a1182/practice/native_client/observed/ch01_01/independent_review/scope_guard.command.json",
+      "destination": "evidence/historical_episode/native_20261022/independent_review/scope_guard.command.json",
+      "size_bytes": 513,
+      "sha256": "4980c1dc9b316b37e88b4a988b5499a4919e88891fa27ec3de7b0abe95be1299",
+      "copy": "BYTE_IDENTICAL"
+    },
+    {
+      "source": "companion_materials/base_13a1182/practice/native_client/observed/ch01_01/independent_review/scope_guard.stdout.txt",
+      "destination": "evidence/historical_episode/native_20261022/independent_review/scope_guard.stdout.txt",
+      "size_bytes": 73,
+      "sha256": "50b99be52fc8d0b7cd03fece46e7337d64a06972e7a9c3ffe4987295f41ffd0d",
+      "copy": "BYTE_IDENTICAL"
+    },
+    {
+      "source": "companion_materials/base_13a1182/practice/native_client/observed/ch01_01/independent_review/routing.py",
+      "destination": "evidence/historical_episode/native_20261022/independent_review/routing.py",
+      "size_bytes": 1044,
+      "sha256": "dac968f4738761cc85a6b71f0d7265a2d8d1860f122cd22576a9645bc9139fe7",
+      "copy": "BYTE_IDENTICAL"
+    },
+    {
+      "source": "companion_materials/base_13a1182/practice/native_client/observed/ch01_01/independent_review/routing.diff",
+      "destination": "evidence/historical_episode/native_20261022/independent_review/routing.diff",
+      "size_bytes": 1063,
+      "sha256": "bad13adf6caee6e1527b837af53392ffb7ba88f023254e6e0cfb4c8abdc146a4",
+      "copy": "BYTE_IDENTICAL"
+    },
+    {
+      "source": "companion_materials/base_13a1182/practice/native_client/observed/ch01_01/independent_review/original_acceptance.command.json",
+      "destination": "evidence/historical_episode/native_20261022/independent_review/original_acceptance.command.json",
+      "size_bytes": 482,
+      "sha256": "6e4883d60b73799ae47577fc325733a72a80b5e7de0aa99240a0a08e0146233f",
+      "copy": "BYTE_IDENTICAL"
+    },
+    {
+      "source": "companion_materials/base_13a1182/practice/native_client/observed/ch01_01/starting_files/repo/AGENTS.md",
+      "destination": "evidence/historical_episode/native_20261022/starting_files/repo/AGENTS.md",
+      "size_bytes": 8038,
+      "sha256": "9ff8ff050502e69432140c9162cf32567174943d54099e67fd5ef61eb96c5c6c",
+      "copy": "BYTE_IDENTICAL"
+    },
+    {
+      "source": "companion_materials/base_13a1182/practice/native_client/observed/ch01_01/starting_files/repo/src/treasury/routing.py",
+      "destination": "evidence/historical_episode/native_20261022/starting_files/repo/src/treasury/routing.py",
+      "size_bytes": 671,
+      "sha256": "39c5afc8888b748c8e96147f1bc143839dedfe73963bf5675f3e8ebf4978457a",
+      "copy": "BYTE_IDENTICAL"
+    },
+    {
+      "source": "companion_materials/base_13a1182/practice/native_client/observed/ch01_01/starting_files/reader_side/intent/INT-001.md",
+      "destination": "evidence/historical_episode/native_20261022/starting_files/reader_side/intent/INT-001.md",
+      "size_bytes": 993,
+      "sha256": "209ee2f218448d83178bd02fd5947cf68b021657a72b38e682e4a895fa102947",
+      "copy": "BYTE_IDENTICAL"
+    },
+    {
+      "source": "companion_materials/base_13a1182/practice/native_client/observed/ch01_01/starting_files/reader_side/acceptance/test_routing.py",
+      "destination": "evidence/historical_episode/native_20261022/starting_files/reader_side/acceptance/test_routing.py",
+      "size_bytes": 1207,
+      "sha256": "6e5aa5706dd989bdbbeec9374a84d13c41cf6f36e23a5e5d2762a3b16e551c9b",
+      "copy": "BYTE_IDENTICAL"
+    },
+    {
+      "source": "companion_materials/base_13a1182/validation/D16_DUAL_ROUTE_METAL_REPORT.md",
+      "destination": "evidence/historical_episode/D16_DUAL_ROUTE_METAL_REPORT.md",
+      "size_bytes": 3428,
+      "sha256": "26f35be7d391aa96c0b8b2f95aa01a9e51fcef4368a9c4a75a24bc182591b37e",
+      "copy": "BYTE_IDENTICAL"
+    }
+  ],
+  "omitted_large_source_records": [
+    {
+      "source": "companion_materials/base_13a1182/practice/native_client/observed/ch01_01/attempt_01/OUTCOME.json",
+      "size_bytes": 473641,
+      "sha256": "23871bbcbfe878882b6587b410db80b452f42ba06fa2d8b463508ac80ef0e4e8",
+      "reason": "Large receipt duplicates complete starting-tree manifest; summary OUTCOME and raw native session retained."
+    },
+    {
+      "source": "companion_materials/base_13a1182/practice/native_client/observed/ch01_01/attempt_01/RECEIPT.json",
+      "size_bytes": 466431,
+      "sha256": "d2dd11005914d21a21b4169aa1865ddd31c2f0ad4d391f495b88e84ed73323e7",
+      "reason": "Large receipt duplicates complete starting-tree manifest; summary OUTCOME and raw native session retained."
+    },
+    {
+      "source": "companion_materials/base_13a1182/practice/native_client/observed/ch01_01/attempt_02/RECEIPT.json",
+      "size_bytes": 467008,
+      "sha256": "ae74f4b3dcbb077a790788e2189adeb285eddf332921bcd239fd2ce79aeb71ff",
+      "reason": "Large receipt duplicates complete starting-tree manifest; summary OUTCOME and raw native session retained."
+    }
+  ]
+}

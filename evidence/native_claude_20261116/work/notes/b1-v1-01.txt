@@ -1,0 +1,9 @@
+Observation: native run 01 completed (claude-sonnet-5-5, 0.116 USD reported). Changed only routing.py and DOSSIER.md.
+Two shell commands were denied by the client profile (PYTHONPATH=... prefix); the worker switched to an allowed
+pytest invocation and reported the denial honestly. Diff: TypeError for non-strings, only InvalidOperation
+converted to REJECTED, finiteness and positivity before the ordered comparison, EUR 5,000 boundary unchanged,
+legacy 10,000 note treated as an unapproved proposal.
+Independent: start.py check B1 (all) 12/12 passed; continue B1 CONTEXT_HANDOFF_READY; operator probe
+work/evidence/operator/b1-v1-boundary-probe.json shows an injected RuntimeError propagates and 5000.00 -> HUMAN_REVIEW.
+Decision: ACCEPT this candidate for B1-API/v1 scope. Next: extend B1 to v2 with the owner grammar decision.
+Limit: AI operator; acceptance is technical within the fictional case, not a human owner's approval.

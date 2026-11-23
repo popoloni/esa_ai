@@ -1,0 +1,41 @@
+{
+  "initial_public_record": {
+    "reservation_id": 1,
+    "trusted_member_id": "member-14",
+    "asset_id": "lathe-2",
+    "starts_at": "2025-05-16T13:00:00Z",
+    "ends_at": "2025-05-16T14:00:00Z",
+    "idempotency_key": "original"
+  },
+  "after_migration": {
+    "reservation_id": 1,
+    "trusted_member_id": "member-14",
+    "asset_id": "lathe-2",
+    "starts_at": "2025-05-16T13:00:00Z",
+    "ends_at": "2025-05-16T14:00:00Z",
+    "idempotency_key": "original"
+  },
+  "same_identity_replay": {
+    "status": 200,
+    "code": "confirmed",
+    "reservation_id": 1,
+    "replayed": true
+  },
+  "changed_payload": {
+    "status": 409,
+    "code": "idempotency-key-reused",
+    "reservation_id": null,
+    "replayed": false
+  },
+  "adjacent_new_request": {
+    "status": 201,
+    "code": "confirmed",
+    "reservation_id": 2,
+    "replayed": false
+  },
+  "legacy_rows_preserved": 1,
+  "historical_tables": [
+    "reservations"
+  ],
+  "history_check": "Exact original column signature and rows; no reference-specific archive table name."
+}

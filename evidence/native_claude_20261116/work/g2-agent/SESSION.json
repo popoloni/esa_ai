@@ -1,0 +1,92 @@
+{
+  "schema": "esa-agent-session/v1",
+  "created_at_utc": "2026-11-16T22:13:37.465742+00:00",
+  "mission": "G2",
+  "stage": "implement",
+  "candidate": "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g2",
+  "entry": {
+    "schema": "esa-full-mission/v1",
+    "release": "ESA-Series-Handbook-Review-5-20261116",
+    "mission": "G2",
+    "mode": "LEARNER",
+    "contract": "RES-001/v1 + G2-OD-01 + G2-OD-02",
+    "module": "booking.py",
+    "lineage": {
+      "mission": "G1",
+      "source_sha256": "48d2daa0e45965088f42ddf307ece4e0f5e8a2330415ee575819a8421d6119cc",
+      "source_path": "/tmp/claude-0/-home-claude/d057aace-8777-55bd-9632-220f8c64181c/scratchpad/build/agentic-ai-5.0/work/g1/booking.py",
+      "handoff_status": "SCOPED_HANDOFF_READY",
+      "stored_snapshot": "prior/booking.py",
+      "copied_parent_demonstration": null
+    },
+    "human_acceptance": "PENDING",
+    "dependency_sha256": {
+      "legacy_g1.py": "bb3ec4063f41eb10ad6a0850b9fa3d40da7badb4bcff19a38fdab3c80ea4efba",
+      "legacy_g1_json.py": "d5b98f73120fb70ccfe6c8366e19f64ac8b311d54684e872f2ca3c7d6813b191",
+      "legacy_g1_recorded.py": "cedfaf4d936232b94eb7220d0d0594e2e919b75eff6f5dcd8a8690582ff569ce"
+    },
+    "prior_sha256": {
+      "prior/parent-handoff.json": "585bd3dca6f320cd4950a304d9b1d0e59da5d59ed4ce96b8b972706cab98fac5",
+      "prior/parent-entry.json": "a99629f417a2dd4bf904a3e30209667e666275e8a2209594f71bda97e595ddd9",
+      "prior/booking.py": "48d2daa0e45965088f42ddf307ece4e0f5e8a2330415ee575819a8421d6119cc"
+    },
+    "recorded_at_utc": "2026-11-16T22:13:37.118993+00:00",
+    "command": [
+      "/usr/local/bin/python3",
+      "companion/start.py",
+      "advance",
+      "G2",
+      "--from-candidate",
+      "work/g1",
+      "--dest",
+      "work/g2"
+    ]
+  },
+  "integration_role": null,
+  "integration_manifest_sha256": null,
+  "task_contract": "RES-001/v1 + G2-OD-01 + G2-OD-02",
+  "api": null,
+  "editable_paths": [
+    "booking.py",
+    "DOSSIER.md"
+  ],
+  "before": {
+    "AGENTS.md": "494bf71b3ee5f7454d62a1de19f11b9ab5f1bce70a706c46bd232840118e99ab",
+    "DOSSIER.md": "b3dad53e8826ba4da728b82761ed637d38f0f1c2eb41168f72947b2609d29a9b",
+    "READER_ENTRY.json": "2f8deb16d11e5c724bda9f7968b7c85d7f67a502108c00fe95c905e84abb033e",
+    "booking.py": "48d2daa0e45965088f42ddf307ece4e0f5e8a2330415ee575819a8421d6119cc",
+    "docs/G2-OD-02.md": "6760602fa7acb3523365062dcb61885e3ac603233e1e3cd6dbd92b3a19876462",
+    "docs/contract.md": "76ffefaa7a20e1a3047b0885be0332cfddf86362e6514fa7cfad151106f68dcd",
+    "legacy_g1.py": "bb3ec4063f41eb10ad6a0850b9fa3d40da7badb4bcff19a38fdab3c80ea4efba",
+    "legacy_g1_json.py": "d5b98f73120fb70ccfe6c8366e19f64ac8b311d54684e872f2ca3c7d6813b191",
+    "legacy_g1_recorded.py": "cedfaf4d936232b94eb7220d0d0594e2e919b75eff6f5dcd8a8690582ff569ce",
+    "prior/booking.py": "48d2daa0e45965088f42ddf307ece4e0f5e8a2330415ee575819a8421d6119cc",
+    "prior/parent-entry.json": "a99629f417a2dd4bf904a3e30209667e666275e8a2209594f71bda97e595ddd9",
+    "prior/parent-handoff.json": "585bd3dca6f320cd4950a304d9b1d0e59da5d59ed4ce96b8b972706cab98fac5",
+    "tests/test_g2.py": "c804bb7328ba7f8846a03beaed296c4430e5de143e233c8ff9f3170bcc9d0c53"
+  },
+  "protected_sha256": {
+    "AGENTS.md": "494bf71b3ee5f7454d62a1de19f11b9ab5f1bce70a706c46bd232840118e99ab",
+    "READER_ENTRY.json": "2f8deb16d11e5c724bda9f7968b7c85d7f67a502108c00fe95c905e84abb033e",
+    "docs/G2-OD-02.md": "6760602fa7acb3523365062dcb61885e3ac603233e1e3cd6dbd92b3a19876462",
+    "docs/contract.md": "76ffefaa7a20e1a3047b0885be0332cfddf86362e6514fa7cfad151106f68dcd",
+    "legacy_g1.py": "bb3ec4063f41eb10ad6a0850b9fa3d40da7badb4bcff19a38fdab3c80ea4efba",
+    "legacy_g1_json.py": "d5b98f73120fb70ccfe6c8366e19f64ac8b311d54684e872f2ca3c7d6813b191",
+    "legacy_g1_recorded.py": "cedfaf4d936232b94eb7220d0d0594e2e919b75eff6f5dcd8a8690582ff569ce",
+    "prior/booking.py": "48d2daa0e45965088f42ddf307ece4e0f5e8a2330415ee575819a8421d6119cc",
+    "prior/parent-entry.json": "a99629f417a2dd4bf904a3e30209667e666275e8a2209594f71bda97e595ddd9",
+    "prior/parent-handoff.json": "585bd3dca6f320cd4950a304d9b1d0e59da5d59ed4ce96b8b972706cab98fac5",
+    "tests/test_g2.py": "c804bb7328ba7f8846a03beaed296c4430e5de143e233c8ff9f3170bcc9d0c53"
+  },
+  "max_runs": 3,
+  "wall_seconds_per_run": 900,
+  "session_seconds_from_first_launch": 2400,
+  "session_clock_scope": "Wall time from first native launch across follow-ups; manual work before launch and later review remain operator recorded.",
+  "requested_tool_commands_per_run": 40,
+  "tool_limit_enforced_by_adapter": false,
+  "token_or_spend_limit": "Not enforced or measured by this adapter; configure the client/account before use.",
+  "runtime": "Real installed coding client selected at launch (Codex CLI or Claude Code); no model responses are simulated.",
+  "security_scope": "Host/client permissions plus post-run file integrity checks; adapter is not an OS sandbox.",
+  "human_acceptance": "PENDING",
+  "model_run": false
+}

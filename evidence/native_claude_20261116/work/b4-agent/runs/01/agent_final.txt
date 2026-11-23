@@ -1,0 +1,25 @@
+I implemented `inspect_ledger`, `diagnose` and `recovery_plan` in `incident.py`, and all 7 tests in `tests/test_b4.py` pass. `cost_summary` is re-exported from `operations.py`. I changed only `incident.py` and `DOSSIER.md`.
+
+**Acceptance example:** diagnosing a wrong ledger (default v1 policy, no `anchor` record) against the expected one (active BR-001/v2, anchor present) gives:
+- Status `WRONG_LEDGER`, with issues `STATE_PATH_MISMATCH`, `ACTIVE_POLICY_MISMATCH` and `ANCHOR_MISSING`.
+- Both files byte-identical afterwards.
+- This holds even though decision `old` has the same `decision_id` in both ledgers. Shared IDs are listed but never count as lineage.
+
+Selecting the expected ledger on both sides gives `EXPECTED_LEDGER_SELECTED` with no issues.
+
+**What each function does:**
+- **`inspect_ledger`:** opens the file read-only and raises `FileNotFoundError` for a missing path without creating it. It checks the application ID and schema version, and compares the file's SHA-256 before and after reading.
+- **`diagnose`:** reports path, policy and anchor mismatches. The anchor check only looks for the key in the selected ledger's decisions.
+- **`recovery_plan`:** returns `restore_configuration_to` set to the resolved expected path, with `automatic_merge` and `production_authorized` both False. It also returns `preserve_ledgers`, `reconciliation="PENDING_OWNER_DECISION"` and the replay, probe and restart steps. It adds a compatibility alias, `restore_state_binding_to`.
+
+**Commands and results:**
+- `python -m unittest discover -s tests -p test_b4.py -v`: 7 tests, OK. I did no before-run; the stub plainly raised `NotImplementedError`.
+- `sha256sum` of `ledger.py`, `routing.py` and `operations.py` matches `READER_ENTRY.json`. I only hashed `READER_ENTRY.json`, not edited it.
+- No corrections were needed. One shell heredoc was blocked by a safety check, so I wrote `incident.py` with the file-write tool instead.
+
+**Uncertainty:**
+- Human acceptance is still PENDING, and I did not run protected acceptance or continuation.
+- I did not test WAL or concurrent writers, or corrupted ledgers beyond the application-ID and version checks.
+- The anchor check does not compare the anchor's payload or decision ID.
+- `git status` from the parent directory showed modified files under `../../companion/`. I didn't touch them, and they are outside this workspace.
+- What to do with records written to the wrong ledger is not decided. It needs the owner, conflict analysis and separate evidence. `DOSSIER.md` records this as ASK, along with the accept/reject decisions and the handoff.

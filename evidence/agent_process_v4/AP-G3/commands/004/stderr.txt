@@ -1,0 +1,96 @@
+test_cancel_releases_slot_without_erasing_history (test_g3.Cancellation.test_cancel_releases_slot_without_erasing_history) ... ERROR
+test_migration_preserves_old_public_record (test_g3.Cancellation.test_migration_preserves_old_public_record) ... ERROR
+test_missing_id_is_not_found (test_g3.Cancellation.test_missing_id_is_not_found) ... ERROR
+test_other_member_cannot_cancel (test_g3.Cancellation.test_other_member_cannot_cancel) ... ERROR
+test_repeat_with_current_version_is_idempotent (test_g3.Cancellation.test_repeat_with_current_version_is_idempotent) ... ERROR
+test_retry_original_operation_does_not_revive_cancelled_row (test_g3.Cancellation.test_retry_original_operation_does_not_revive_cancelled_row) ... ERROR
+test_stale_version_cannot_change_state (test_g3.Cancellation.test_stale_version_cannot_change_state) ... ERROR
+
+======================================================================
+ERROR: test_cancel_releases_slot_without_erasing_history (test_g3.Cancellation.test_cancel_releases_slot_without_erasing_history)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G3/workspace/tests/test_g3.py", line 15, in setUp
+    booking.init_db(self.db)
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G3/workspace/booking.py", line 189, in init_db
+    _check_current(connection, tables, indexes)
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G3/workspace/booking.py", line 155, in _check_current
+    raise _mapping_required("version 2 current table is missing")
+ValueError: version 2 current table is missing; owner mapping required
+
+======================================================================
+ERROR: test_migration_preserves_old_public_record (test_g3.Cancellation.test_migration_preserves_old_public_record)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G3/workspace/tests/test_g3.py", line 15, in setUp
+    booking.init_db(self.db)
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G3/workspace/booking.py", line 189, in init_db
+    _check_current(connection, tables, indexes)
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G3/workspace/booking.py", line 155, in _check_current
+    raise _mapping_required("version 2 current table is missing")
+ValueError: version 2 current table is missing; owner mapping required
+
+======================================================================
+ERROR: test_missing_id_is_not_found (test_g3.Cancellation.test_missing_id_is_not_found)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G3/workspace/tests/test_g3.py", line 15, in setUp
+    booking.init_db(self.db)
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G3/workspace/booking.py", line 189, in init_db
+    _check_current(connection, tables, indexes)
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G3/workspace/booking.py", line 155, in _check_current
+    raise _mapping_required("version 2 current table is missing")
+ValueError: version 2 current table is missing; owner mapping required
+
+======================================================================
+ERROR: test_other_member_cannot_cancel (test_g3.Cancellation.test_other_member_cannot_cancel)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G3/workspace/tests/test_g3.py", line 15, in setUp
+    booking.init_db(self.db)
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G3/workspace/booking.py", line 189, in init_db
+    _check_current(connection, tables, indexes)
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G3/workspace/booking.py", line 155, in _check_current
+    raise _mapping_required("version 2 current table is missing")
+ValueError: version 2 current table is missing; owner mapping required
+
+======================================================================
+ERROR: test_repeat_with_current_version_is_idempotent (test_g3.Cancellation.test_repeat_with_current_version_is_idempotent)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G3/workspace/tests/test_g3.py", line 15, in setUp
+    booking.init_db(self.db)
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G3/workspace/booking.py", line 189, in init_db
+    _check_current(connection, tables, indexes)
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G3/workspace/booking.py", line 155, in _check_current
+    raise _mapping_required("version 2 current table is missing")
+ValueError: version 2 current table is missing; owner mapping required
+
+======================================================================
+ERROR: test_retry_original_operation_does_not_revive_cancelled_row (test_g3.Cancellation.test_retry_original_operation_does_not_revive_cancelled_row)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G3/workspace/tests/test_g3.py", line 15, in setUp
+    booking.init_db(self.db)
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G3/workspace/booking.py", line 189, in init_db
+    _check_current(connection, tables, indexes)
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G3/workspace/booking.py", line 155, in _check_current
+    raise _mapping_required("version 2 current table is missing")
+ValueError: version 2 current table is missing; owner mapping required
+
+======================================================================
+ERROR: test_stale_version_cannot_change_state (test_g3.Cancellation.test_stale_version_cannot_change_state)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G3/workspace/tests/test_g3.py", line 15, in setUp
+    booking.init_db(self.db)
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G3/workspace/booking.py", line 189, in init_db
+    _check_current(connection, tables, indexes)
+  File "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G3/workspace/booking.py", line 155, in _check_current
+    raise _mapping_required("version 2 current table is missing")
+ValueError: version 2 current table is missing; owner mapping required
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.011s
+
+FAILED (errors=7)

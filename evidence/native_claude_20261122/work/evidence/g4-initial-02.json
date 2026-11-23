@@ -1,0 +1,154 @@
+{
+  "schema": "esa-full-mission-check/v1",
+  "mission": "G4",
+  "release": "Engineering-Software-with-Agentic-AI-Review-5.2-20261117",
+  "contract": "OPS-G4/v3",
+  "candidate_sha256_before": "4675a173bfd4da1c62abcee573be6273ef196a1c759fc89ecf2b8156eb8ffcd8",
+  "protected_input_sha256": {
+    "docs/contract.md": "0edc7998494e571035acf19d27deb310cfeeedb6dfc7b62f5cf6218fa6407fc8",
+    "tests/test_g4.py": "7f2247596e269a5e66d919dde9ac3b21097ef02495359340e6af0d765f78751b",
+    "booking.py": "c0b3857de28f86624e329cd1dcfbc4d9c52af3691e78e84b60f66bfcfffbb887",
+    "g4_fixture.py": "8abd3fde352bd083a739002fd36a59fcef0bb0814c80c687f9ea527baf61c613",
+    "reference_g3.py": "ad89e1350b80d674b30f8fd97927107adb77e2df625805d7a0a49cb8837b5b17",
+    "docs/G4-OD-01.md": "17afc2eb9ae699c20edb609367db95078fe3fce8f4681ab658fbe5bca86a8ce9",
+    "docs/G4-SCHEMA-MAP.json": "f3e716053d5bf80f16562c275da10c2f4a1aa5acaa1ce31a9ff9a257f9f35ee3",
+    "reservation_report.py": "d3aa8fff9219cdf977a00c50a3c797cb38b0d3cf84270c70d1eb2b83a17d7645",
+    "reservation_cli.py": "481178182a46a05f62f3580c722220471f8ccff40375169dec7457ad9a04a5c1",
+    "prior/parent-handoff.json": "9ea5f1b0f91576c0c497d9a3ffa8243c5af935519c807a04c5a5691ac7db4a81",
+    "prior/parent-entry.json": "899113a49878c5eec179d06397cd05f4fbf120731955dd527d8e869e347cb14b",
+    "prior/integration-acceptance.json": "2b69ab566d1ff120d651b6cd46cf3c861502480e9b1ce4728f620d42d8c27c40",
+    "prior/booking.py": "c0b3857de28f86624e329cd1dcfbc4d9c52af3691e78e84b60f66bfcfffbb887",
+    "prior/parent-check-artifacts/DEMONSTRATION.json": "ec5675da02bb99574ed6ae05bffe08dd7431f852d7cd579042ed7e1a98e3ab1c",
+    "prior/parent-check-artifacts/reservations.sqlite": "64e6f1159dbd64c6f94584a2dea0cba02ff54466ea32f2a311621726731b7323",
+    "prior/parent-check-artifacts/continuation.json": "296004eb2bfb595e339317891b3b8958694306bf8db5dd75be76dc94bf27e237",
+    "prior/integration/reservation_cli.py": "481178182a46a05f62f3580c722220471f8ccff40375169dec7457ad9a04a5c1",
+    "prior/integration/reservation_report.py": "d3aa8fff9219cdf977a00c50a3c797cb38b0d3cf84270c70d1eb2b83a17d7645",
+    "prior/integration/booking.py": "c0b3857de28f86624e329cd1dcfbc4d9c52af3691e78e84b60f66bfcfffbb887"
+  },
+  "candidate_path": "/home/claude/work/live22/agentic-ai-5.2/work/g4",
+  "human_acceptance": "PENDING",
+  "model_run": false,
+  "scope": "Executable local teaching controls; no human reader performance or production authority.",
+  "integration": {
+    "source_sha256": {
+      "booking.py": "c0b3857de28f86624e329cd1dcfbc4d9c52af3691e78e84b60f66bfcfffbb887",
+      "reservation_report.py": "d3aa8fff9219cdf977a00c50a3c797cb38b0d3cf84270c70d1eb2b83a17d7645",
+      "reservation_cli.py": "481178182a46a05f62f3580c722220471f8ccff40375169dec7457ad9a04a5c1"
+    },
+    "receipt_sha256": "2b69ab566d1ff120d651b6cd46cf3c861502480e9b1ce4728f620d42d8c27c40",
+    "bundle_sha256": "58a0bb7ff5543b6995f8b2dc3ddfa3a021a6b8064a2dfb8acc0312ba62e2ed30"
+  },
+  "groups": {
+    "contract": {
+      "command": [
+        "/usr/local/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_g4.py",
+        "-v"
+      ],
+      "elapsed_process_seconds": 0.16829444199993304,
+      "timeout_seconds": 30,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "test_active_overlap_is_detected_not_repaired (test_g4.OperationalEvidence.test_active_overlap_is_detected_not_repaired) ... ERROR\ntest_all_attempts_count_toward_accepted_outcome_cost (test_g4.OperationalEvidence.test_all_attempts_count_toward_accepted_outcome_cost) ... ERROR\ntest_cancelled_row_does_not_create_false_alarm (test_g4.OperationalEvidence.test_cancelled_row_does_not_create_false_alarm) ... ERROR\ntest_clean_storage_is_observed_without_mutation (test_g4.OperationalEvidence.test_clean_storage_is_observed_without_mutation) ... ERROR\ntest_failed_attempts_remain_in_the_cost_numerator (test_g4.OperationalEvidence.test_failed_attempts_remain_in_the_cost_numerator) ... ERROR\ntest_invalid_cost_or_time_is_refused (test_g4.OperationalEvidence.test_invalid_cost_or_time_is_refused) ... \n  test_invalid_cost_or_time_is_refused (test_g4.OperationalEvidence.test_invalid_cost_or_time_is_refused) (value='NaN') ... ERROR\n  test_invalid_cost_or_time_is_refused (test_g4.OperationalEvidence.test_invalid_cost_or_time_is_refused) (value='Infinity') ... ERROR\n  test_invalid_cost_or_time_is_refused (test_g4.OperationalEvidence.test_invalid_cost_or_time_is_refused) (value='-1') ... ERROR\ntest_missing_path_is_not_created (test_g4.OperationalEvidence.test_missing_path_is_not_created) ... ERROR\ntest_nonnumeric_cost_and_time_raise_value_error (test_g4.OperationalEvidence.test_nonnumeric_cost_and_time_raise_value_error) ... \n  test_nonnumeric_cost_and_time_raise_value_error (test_g4.OperationalEvidence.test_nonnumeric_cost_and_time_raise_value_error) (field='cost_eur') ... ERROR\n  test_nonnumeric_cost_and_time_raise_value_error (test_g4.OperationalEvidence.test_nonnumeric_cost_and_time_raise_value_error) (field='minutes') ... ERROR\ntest_nonnumeric_cost_and_time_raise_value_error (test_g4.OperationalEvidence.test_nonnumeric_cost_and_time_raise_value_error) ... ERROR\ntest_reference_and_native_current_layouts_are_refused (test_g4.OperationalEvidence.test_reference_and_native_current_layouts_are_refused) ... ERROR\ntest_reference_and_recorded_current_layouts_are_refused (test_g4.OperationalEvidence.test_reference_and_recorded_current_layouts_are_refused) ... ERROR\ntest_reference_schema_remains_explicitly_supported (test_g4.OperationalEvidence.test_reference_schema_remains_explicitly_supported) ... ERROR\ntest_version_number_alone_does_not_authorize_unknown_schema (test_g4.OperationalEvidence.test_version_number_alone_does_not_authorize_unknown_schema) ... ERROR\ntest_zero_accepted_is_not_zero_unit_cost (test_g4.OperationalEvidence.test_zero_accepted_is_not_zero_unit_cost) ... ERROR\n\n======================================================================\nERROR: test_active_overlap_is_detected_not_repaired (test_g4.OperationalEvidence.test_active_overlap_is_detected_not_repaired)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g4/tests/test_g4.py\", line 20, in test_active_overlap_is_detected_not_repaired\n    before=self.db.read_bytes();result=diagnose(self.db)\n                                       ~~~~~~~~^^^^^^^^^\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g4/operations.py\", line 2, in diagnose\n    raise NotImplementedError(\"Implement read-only diagnosis\")\nNotImplementedError: Implement read-only diagnosis\n\n======================================================================\nERROR: test_all_attempts_count_toward_accepted_outcome_cost (test_g4.OperationalEvidence.test_all_attempts_count_toward_accepted_outcome_cost)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g4/tests/test_g4.py\", line 33, in test_all_attempts_count_toward_accepted_outcome_cost\n    r=cost_summary([{\"cost_eur\":\"2.20\",\"minutes\":\"12\"},{\"cost_eur\":\"0.80\",\"minutes\":\"8\"}],1)\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g4/operations.py\", line 4, in cost_summary\n    raise NotImplementedError(\"Count all attempts against accepted outcomes\")\nNotImplementedError: Count all attempts against accepted outcomes\n\n======================================================================\nERROR: test_cancelled_row_does_not_create_false_alarm (test_g4.OperationalEvidence.test_cancelled_row_does_not_create_false_alarm)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g4/tests/test_g4.py\", line 27, in test_cancelled_row_does_not_create_false_alarm\n    self.assertEqual(diagnose(self.db)[\"active_overlap_pairs\"],[])\n                     ~~~~~~~~^^^^^^^^^\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g4/operations.py\", line 2, in diagnose\n    raise NotImplementedError(\"Implement read-only diagnosis\")\nNotImplementedError: Implement read-only diagnosis\n\n======================================================================\nERROR: test_clean_storage_is_observed_without_mutation (test_g4.OperationalEvidence.test_clean_storage_is_observed_without_mutation)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g4/tests/test_g4.py\", line 13, in test_clean_storage_is_observed_without_mutation\n    before=self.db.read_bytes();result=diagnose(self.db)\n                                       ~~~~~~~~^^^^^^^^^\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g4/operations.py\", line 2, in diagnose\n    raise NotImplementedError(\"Implement read-only diagnosis\")\nNotImplementedError: Implement read-only diagnosis\n\n======================================================================\nERROR: test_failed_attempts_remain_in_the_cost_numerator (test_g4.OperationalEvidence.test_failed_attempts_remain_in_the_cost_numerator)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g4/tests/test_g4.py\", line 56, in test_failed_attempts_remain_in_the_cost_numerator\n    result = cost_summary([\n        {\"cost_eur\": \"2.20\", \"minutes\": \"12\", \"status\": \"FAILED\"},\n        {\"cost_eur\": \"0.80\", \"minutes\": \"8\", \"status\": \"ACCEPTED\"}], 1)\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g4/operations.py\", line 4, in cost_summary\n    raise NotImplementedError(\"Count all attempts against accepted outcomes\")\nNotImplementedError: Count all attempts against accepted outcomes\n\n======================================================================\nERROR: test_invalid_cost_or_time_is_refused (test_g4.OperationalEvidence.test_invalid_cost_or_time_is_refused) (value='NaN')\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g4/tests/test_g4.py\", line 43, in test_invalid_cost_or_time_is_refused\n    with self.subTest(value=value),self.assertRaises(ValueError):cost_summary([{\"cost_eur\":value,\"minutes\":1}],1)\n                                                                 ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g4/operations.py\", line 4, in cost_summary\n    raise NotImplementedError(\"Count all attempts against accepted outcomes\")\nNotImplementedError: Count all attempts against accepted outcomes\n\n======================================================================\nERROR: test_invalid_cost_or_time_is_refused (test_g4.OperationalEvidence.test_invalid_cost_or_time_is_refused) (value='Infinity')\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g4/tests/test_g4.py\", line 43, in test_invalid_cost_or_time_is_refused\n    with self.subTest(value=value),self.assertRaises(ValueError):cost_summary([{\"cost_eur\":value,\"minutes\":1}],1)\n                                                                 ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g4/operations.py\", line 4, in cost_summary\n    raise NotImplementedError(\"Count all attempts against accepted outcomes\")\nNotImplementedError: Count all attempts against accepted outcomes\n\n======================================================================\nERROR: test_invalid_cost_or_time_is_refused (test_g4.OperationalEvidence.test_invalid_cost_or_time_is_refused) (value='-1')\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g4/tests/test_g4.py\", line 43, in test_invalid_cost_or_time_is_refused\n    with self.subTest(value=value),self.assertRaises(ValueError):cost_summary([{\"cost_eur\":value,\"minutes\":1}],1)\n                                                                 ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g4/operations.py\", line 4, in cost_summary\n    raise NotImplementedError(\"Count all attempts against accepted outcomes\")\nNotImplementedError: Count all attempts against accepted outcomes\n\n======================================================================\nERROR: test_missing_path_is_not_created (test_g4.OperationalEvidence.test_missing_path_is_not_created)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g4/tests/test_g4.py\", line 30, in test_missing_path_is_not_created\n    with self.assertRaises((FileNotFoundError,sqlite3.OperationalError)):diagnose(missing)\n                                                                         ~~~~~~~~^^^^^^^^^\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g4/operations.py\", line 2, in diagnose\n    raise NotImplementedError(\"Implement read-only diagnosis\")\nNotImplementedError: Implement read-only diagnosis\n\n======================================================================\nERROR: test_nonnumeric_cost_and_time_raise_value_error (test_g4.OperationalEvidence.test_nonnumeric_cost_and_time_raise_value_error) (field='cost_eur')\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g4/tests/test_g4.py\", line 50, in test_nonnumeric_cost_and_time_raise_value_error\n    cost_summary([values], 1)\n    ~~~~~~~~~~~~^^^^^^^^^^^^^\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g4/operations.py\", line 4, in cost_summary\n    raise NotImplementedError(\"Count all attempts against accepted outcomes\")\nNotImplementedError: Count all attempts against accepted outcomes\n\n======================================================================\nERROR: test_nonnumeric_cost_and_time_raise_value_error (test_g4.OperationalEvidence.test_nonnumeric_cost_and_time_raise_value_error) (field='minutes')\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g4/tests/test_g4.py\", line 50, in test_nonnumeric_cost_and_time_raise_value_error\n    cost_summary([values], 1)\n    ~~~~~~~~~~~~^^^^^^^^^^^^^\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g4/operations.py\", line 4, in cost_summary\n    raise NotImplementedError(\"Count all attempts against accepted outcomes\")\nNotImplementedError: Count all attempts against accepted outcomes\n\n======================================================================\nERROR: test_nonnumeric_cost_and_time_raise_value_error (test_g4.OperationalEvidence.test_nonnumeric_cost_and_time_raise_value_error)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g4/tests/test_g4.py\", line 51, in test_nonnumeric_cost_and_time_raise_value_error\n    positive = cost_summary([{\"cost_eur\": \"1.25\", \"minutes\": \"2\"}], 1)\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g4/operations.py\", line 4, in cost_summary\n    raise NotImplementedError(\"Count all attempts against accepted outcomes\")\nNotImplementedError: Count all attempts against accepted outcomes\n\n======================================================================\nERROR: test_reference_and_native_current_layouts_are_refused (test_g4.OperationalEvidence.test_reference_and_native_current_layouts_are_refused)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g4/tests/test_g4.py\", line 96, in test_reference_and_native_current_layouts_are_refused\n    self._competing_current_layouts_are_refused(\"native\")\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g4/tests/test_g4.py\", line 92, in _competing_current_layouts_are_refused\n    diagnose(p)\n    ~~~~~~~~^^^\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g4/operations.py\", line 2, in diagnose\n    raise NotImplementedError(\"Implement read-only diagnosis\")\nNotImplementedError: Implement read-only diagnosis\n\n======================================================================\nERROR: test_reference_and_recorded_current_layouts_are_refused (test_g4.OperationalEvidence.test_reference_and_recorded_current_layouts_are_refused)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g4/tests/test_g4.py\", line 99, in test_reference_and_recorded_current_layouts_are_refused\n    self._competing_current_layouts_are_refused(\"recorded\")\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g4/tests/test_g4.py\", line 92, in _competing_current_layouts_are_refused\n    diagnose(p)\n    ~~~~~~~~^^^\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g4/operations.py\", line 2, in diagnose\n    raise NotImplementedError(\"Implement read-only diagnosis\")\nNotImplementedError: Implement read-only diagnosis\n\n======================================================================\nERROR: test_reference_schema_remains_explicitly_supported (test_g4.OperationalEvidence.test_reference_schema_remains_explicitly_supported)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g4/tests/test_g4.py\", line 71, in test_reference_schema_remains_explicitly_supported\n    self.assertEqual(diagnose(p)[\"active_overlap_pairs\"],[[1,2]])\n                     ~~~~~~~~^^^\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g4/operations.py\", line 2, in diagnose\n    raise NotImplementedError(\"Implement read-only diagnosis\")\nNotImplementedError: Implement read-only diagnosis\n\n======================================================================\nERROR: test_version_number_alone_does_not_authorize_unknown_schema (test_g4.OperationalEvidence.test_version_number_alone_does_not_authorize_unknown_schema)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g4/tests/test_g4.py\", line 82, in test_version_number_alone_does_not_authorize_unknown_schema\n    diagnose(p)\n    ~~~~~~~~^^^\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g4/operations.py\", line 2, in diagnose\n    raise NotImplementedError(\"Implement read-only diagnosis\")\nNotImplementedError: Implement read-only diagnosis\n\n======================================================================\nERROR: test_zero_accepted_is_not_zero_unit_cost (test_g4.OperationalEvidence.test_zero_accepted_is_not_zero_unit_cost)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g4/tests/test_g4.py\", line 38, in test_zero_accepted_is_not_zero_unit_cost\n    r=cost_summary([{\"cost_eur\":\"1\",\"minutes\":\"5\"}],0)\n  File \"/home/claude/work/live22/agentic-ai-5.2/work/g4/operations.py\", line 4, in cost_summary\n    raise NotImplementedError(\"Count all attempts against accepted outcomes\")\nNotImplementedError: Count all attempts against accepted outcomes\n\n----------------------------------------------------------------------\nRan 13 tests in 0.075s\n\nFAILED (errors=17)\n",
+      "timed_out": false,
+      "tests_run": 13,
+      "expected_tests": 13,
+      "methods_passed": 0,
+      "methods_failed": [],
+      "methods_errored": [
+        "test_active_overlap_is_detected_not_repaired",
+        "test_all_attempts_count_toward_accepted_outcome_cost",
+        "test_cancelled_row_does_not_create_false_alarm",
+        "test_clean_storage_is_observed_without_mutation",
+        "test_failed_attempts_remain_in_the_cost_numerator",
+        "test_invalid_cost_or_time_is_refused",
+        "test_missing_path_is_not_created",
+        "test_nonnumeric_cost_and_time_raise_value_error",
+        "test_reference_and_native_current_layouts_are_refused",
+        "test_reference_and_recorded_current_layouts_are_refused",
+        "test_reference_schema_remains_explicitly_supported",
+        "test_version_number_alone_does_not_authorize_unknown_schema",
+        "test_zero_accepted_is_not_zero_unit_cost"
+      ],
+      "status": "FAILED"
+    }
+  },
+  "tests_run": 13,
+  "candidate_sha256_after": "4675a173bfd4da1c62abcee573be6273ef196a1c759fc89ecf2b8156eb8ffcd8",
+  "inputs_unchanged": true,
+  "status": "CHECKS_FAILED",
+  "recorded_at_utc": "2026-11-22T17:54:52.460594+00:00",
+  "command": [
+    "/usr/local/bin/python3",
+    "companion/start.py",
+    "check",
+    "G4",
+    "--candidate",
+    "work/g4",
+    "--output",
+    "work/evidence/g4-initial-02.json"
+  ],
+  "verification_progress": {
+    "schema": "esa-verification-progress/v1",
+    "derivation": "CURRENT_RECEIPT_FIELDS_ONLY_NO_ADDITIONAL_EXECUTION",
+    "source_fields_sha256": "d4fd378922a634ce482d87270771e756284e216d0cbf919189b24ce8e03f449c",
+    "work_order": "mission_G4",
+    "evidence_profile": "persistent_effect",
+    "profile_basis": "The named mission work order.",
+    "phase": "mission",
+    "stages": {
+      "startup": {
+        "status": "PASS",
+        "evidence": [
+          "schema",
+          "mission",
+          "candidate_path"
+        ],
+        "reason": "The intended runner accepted the entry identity and emitted this check receipt. This does not establish candidate import."
+      },
+      "integrity": {
+        "status": "PASS",
+        "evidence": [
+          "inputs_unchanged",
+          "candidate_sha256_before",
+          "candidate_sha256_after"
+        ],
+        "reason": "The recorded before/after comparison found inputs unchanged."
+      },
+      "contract": {
+        "status": "FAIL",
+        "evidence": [
+          "groups.contract"
+        ],
+        "reason": "Status uses each selected group and any contract-specific supplemental probe; an import placeholder is not behavioral evidence. A candidate stack frame or known protected assertion supports reached behavior; a method count alone does not. Groups within this stage may retain multiple failures.",
+        "behavior_reached": true
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "evidence": [],
+        "reason": "No continuation or consumer/process observation is present."
+      },
+      "artifact": {
+        "status": "NOT_RUN",
+        "evidence": [],
+        "reason": "This receipt has no separate archive/extraction gate. Local demonstration hashes alone do not establish release fitness."
+      },
+      "authorization": {
+        "status": "NOT_RUN",
+        "evidence": [
+          "human_acceptance"
+        ],
+        "reason": "No owner acceptance or release authorization is recorded. Passing checks do not supply that decision."
+      }
+    },
+    "first_failed_stage": "contract",
+    "last_observed_stage": "contract",
+    "limits": "A stage label interprets the retained fields; it is not an independent attestation. NOT_APPLICABLE needs an explicit scope exclusion; absence alone remains NOT_RUN."
+  }
+}

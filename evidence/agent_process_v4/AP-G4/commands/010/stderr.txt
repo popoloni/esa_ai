@@ -1,0 +1,7 @@
+test_persistent_wal_is_included_without_source_writes (__main__.WalProbes.test_persistent_wal_is_included_without_source_writes) ... ok
+test_wal_only_commit_invalidates_observation (__main__.WalProbes.test_wal_only_commit_invalidates_observation) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.007s
+
+OK

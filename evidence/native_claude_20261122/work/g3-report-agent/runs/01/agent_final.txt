@@ -1,0 +1,23 @@
+I implemented `build_report` in `reservation_report.py` and wrote `CONTRIBUTION_A.md`. The three tests in `tests/test_integration_a.py` pass (run with `python -B -m unittest discover -s tests -p test_integration_a.py`).
+
+**Changed files**
+- `reservation_report.py` was a stub and now holds the implementation.
+- `CONTRIBUTION_A.md` is new. It has the acceptance example (confirmed record, cancelled record, absent ID, missing storage, unchanged database bytes), the design, and the limits of what was checked.
+- `INTEGRATION_ROLE.json` shows as untracked in git. I did not touch it, and it was already there when I started.
+- I did not touch `booking.py`, the docs, the tests or `reservation_cli.py`. I did not commit, and I did not look at any other worktree.
+
+**What `build_report` does**
+- It calls `booking.get_reservation`. If that returns nothing, it returns `{"found": False, "reservation": None, "current": None}`.
+- Otherwise it calls `booking.reservation_status` and returns `found: True`, the record as stored, and `current` with only `state` and `version`.
+- It contains no SQL, no `init_db`, no writes and no exception handling, so a missing database raises `sqlite3.OperationalError` and nothing is created.
+- The two reads are separate calls, so the result is not a single concurrent snapshot, as the contract says.
+
+**Observations**
+- I added one case the contract doesn't cover. If a record exists but its status read then returns nothing, `build_report` raises `RuntimeError` instead of inventing a state. This can't happen in the current booking API, since deletion isn't supported. Say if you would rather it behave differently.
+- The A component test has no fake dependencies. It uses the real `booking` API on temporary SQLite files.
+- The first attempt to write the files with shell heredocs was blocked, so I used the file tool. That left no side effects.
+
+**Integration assumptions for the operator**
+- `reservation_cli.py` (Contribution B) will import `reservation_report.build_report` and call it with `(path, reservation_id)`.
+- The CLI maps `found` to exit 0 and absent to exit 3. It turns storage errors, including this function's `OperationalError`, into exit 2 with an error on stderr.
+- The A component test does not show that the combined package works. That still needs the real CLI, run in an extracted package on a confirmed record, after cancellation, with an absent ID and with missing storage. I have not run any of those.

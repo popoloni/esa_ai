@@ -1,0 +1,26 @@
+I implemented `evaluate_batch` in `intake.py`, and all 12 supplied tests now pass, including 6 subtests. Before my edit, all 18 test cases failed because the function was a stub. I changed no test and ran no protected acceptance.
+
+**Changed files:** `intake.py` and `DOSSIER.md` only.
+
+**Commands (3 of the 40 allowed):**
+- A read-only inspection of the docs, code and tests.
+- `python3 -m pytest -q tests`, before and after the edit.
+- A `git status` check.
+
+**Acceptance example:** two requests, a provider that always raises `ProviderUnavailable`, `max_attempts=3` and `max_calls=2`. It must make exactly 2 provider calls, both for request "a", and defer both requests. The test `test_global_call_budget_stops_new_calls` covers this and passes.
+
+**What `evaluate_batch` does, from `docs/contract.md`:**
+- **Duplicate IDs:** it checks the whole batch first and raises `ValueError` with a zero-call receipt.
+- **Invalid amounts:** these are marked REJECTED with no provider call.
+- **Retries:** only `ProviderUnavailable` is retried, within both call bounds.
+- **Invalid responses:** a response with the wrong shape, ID or class raises `ProviderProtocolError` with no retry.
+- **Other provider errors:** these are re-raised as the same object.
+- **Receipts:** every raised exception carries copies of the receipt, attempts, records and call count, including records completed earlier.
+- **Payment:** `payment_authorized` is always False.
+
+**Remaining uncertainty:**
+- **Record layout:** the contract doesn't specify the record and attempt field layout beyond what the tests check. I chose one, and the owner hasn't approved it. It is listed in `DOSSIER.md`.
+- **Untested inputs:** a request missing a key raises a bare `KeyError` with no receipt. I didn't handle unhashable IDs or odd bound values.
+- **Proposals:** the task mentions "the three proposals" but none were supplied. `DOSSIER.md` says so instead of inventing ACCEPT/REJECT/ASK verdicts.
+- **Unrelated changes:** `git status` shows modified files under `../../companion/` that I didn't touch or examine.
+- **Contract limits:** wall-clock limits on blocking calls and durable idempotency (B3) are outside this contract. Human acceptance is still PENDING.

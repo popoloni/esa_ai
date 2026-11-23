@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Eight practical missions, local checks and recorded agent tours for Engineering Software with Agentic AI."><title>Operate an agent, then check its work · Engineering Software with Agentic AI</title><link rel="stylesheet" href="../../assets/companion.css"></head><body><a class="skip" href="#main">Skip to content</a><header class="sitehead"><div><a class="brand" href="../../index.html">Engineering Software with Agentic AI<span>Practical companion · version 5.6</span></a><nav aria-label="Main navigation"><a href="../../index.html">Start</a><a href="../../missions/index.html">Missions</a><a href="README.html">Agent guide</a><a href="../../traces/index.html">Recorded tours</a><a href="../series/READING_THE_SERIES.html">Four volumes</a></nav></div></header><main id="main"><article data-source-sha256="81241a2057ba70a536ed0d420c5f6b0dd54943cb088bcd734bff387012dc6e54"><p class="docmeta meta"><a href="README.md">Markdown source</a> · Companion 5.6 · 2026-11-22</p><h1 id="operate-an-agent-then-check-its-work">Operate an agent, then check its work</h1>
+<p>The primary practice route is a live coding agent working on your retained candidate. You supply the contract and allowed scope, observe its operations, decide what it should do next, and run the protected acceptance check yourself. The agent may run development checks. Its completion message is a claim to review.</p>
+<p>The reviewer of companion 5.3 reported three live Claude Code launches on its Opus 5.5 default: G1 question, G1 implementation and B1 v1. G1 passed its slice and handed off, and B1 returned a context handoff. The client reported USD 0.98 across these launches.</p>
+<p>For companion 5.5, the reviewer extended an accepted 5.3 B1 candidate and reported one live Claude Code launch on the resulting v2. Using claude-opus-5-5, the candidate passed 18 of 18 checks and was accepted with a handoff. The reviewer reported USD 0.53 for that launch. Edition 5.6 was checked offline.</p>
+<p><strong>Native-client evidence carried into edition 5.6.</strong> An AI operator completed all eight missions and all twelve required stages with Claude Code 2.1.330 on 22 November 2026 using companion 5.2. G4 passed 13/13 and its handoff on the original G3 lineage after <code>advance G4</code> supplied the owner mapping G4-OD-01. The native evidence and earlier attempts remain in <code>evidence/native_claude_20261122/</code>. See the <a href="NATIVE_RUN_20261122.html">22 November run</a> and the <a href="NATIVE_RUN_20261116.html">earlier 16 November run</a>. Human proficiency and native Codex mission completion remain unverified. Edition 5.3 checked local syntax on Codex CLI 0.172.0-alpha.2. The 17 November attempt on 0.167.0-alpha.4 stopped during startup. The recorded AP tours below come from ChatGPT Work coding workers. Choose a trace tour if you want an immediately inspectable recorded case. For live work, first inspect your installed client, then retain its actual events and independent checks as described below.</p>
+<p>The standard-library <code>agent_session.py</code> adapter prepares the task and captures the native Codex CLI or Claude Code events, stderr, final response and before/after files emitted during your session. The packaged AP tours use separate ChatGPT Work coding-worker recordings; each tour points to the available command records and their capture limits.</p>
+<p>Run every command below from the folder containing <code>START_HERE.html</code>: <code>book/</code> in the full archive.</p>
+<p>The book uses <strong>Claude Code</strong> in its printed <code>run</code> commands. To perform the same missions with <strong>Codex CLI</strong>, use <code>--client codex</code> and remove the Claude-only <code>--max-budget-usd</code> option. Preparation, candidate scope, protected checks and operator decisions stay the same. The <a href="CODEX_QUICKSTART.html">Codex quickstart</a> gives the complete first B1 session and the client-specific coverage command. Keep separate working copies when comparing clients so one client’s implementation cannot substitute for the other’s work.</p>
+<h2 id="before-a-live-run">Before a live run</h2>
+<p>The local mission tools require Python 3.10 or later with its standard SQLite module. G3 integration also requires Git for local contribution worktrees; it does not require a remote repository or push.</p>
+<p>Use an installed, authenticated Codex CLI in a disposable working copy. Review your account’s model, usage and spending settings before starting. In print mode Claude Code stops when its estimated spend reaches the per-launch budget. A call can cross that amount, and the estimate can differ from the bill. <a href="https://code.claude.com/docs/en/cli-reference">Claude Code CLI reference</a> For Codex, use the spending controls available to your account. The adapter does not impose a Codex dollar limit. Follow the <a href="https://developers.openai.com/codex/noninteractive">official noninteractive-mode documentation</a> for current client setup and event semantics. Record the installed version:</p>
+<pre class="bash"><code>python3 companion/start.py doctor
+python3 companion/agent_session.py inspect-client --client codex \
+  --output work/client-inspection-codex
+codex login status</code></pre>
+<p><code>inspect-client</code> records the local version and supported command options. It makes no model call; <code>CLIENT_SYNTAX_AVAILABLE_LIVE_NOT_TESTED</code> means only that the required syntax is present. Authentication and a completed mission are separate observations. Keep the existing client permissions and configuration while diagnosing a setup failure.</p>
+<p>The launch uses <code>codex exec --json --sandbox workspace-write</code> with an explicit candidate directory. It inherits the installed client’s configuration and approval policy; the adapter does not change authentication, request extra writable directories or bypass approvals. Review effective permissions in your client and host. Neither the task text nor the file-hash comparison creates an OS sandbox. Do not put credentials or unrelated source in the teaching workspace. The task does not require network access or dependency installation.</p>
+<p>If the client exits before emitting model events, inspect <code>stderr.txt</code> and its runtime configuration before retrying. A read-only client state directory is a setup failure; it does not establish anything about the candidate’s behavior. Preserve the failed run and candidate snapshots while correcting the setup.</p>
+<h3 id="claude-code-as-the-native-client">Claude Code as the native client</h3>
+<p>Edition 5.1 adds Claude Code as a second client. Every printed <code>run</code> command accepts <code>--client claude</code> in place of <code>--client codex</code>; preparation, snapshots, scope checks, decisions and the coverage collector are unchanged.</p>
+<pre class="bash"><code>python3 companion/agent_session.py inspect-client --client claude \
+  --output work/client-inspection-claude
+python3 companion/agent_session.py run \
+  --session work/b1-agent-v1 --client claude \
+  --model claude-sonnet-5-5 --max-budget-usd 5</code></pre>
+<p>The book’s printed <code>run</code> commands omit <code>--model</code>. Without it the client uses its own default model, and the session records the model it observes. In the 22 November record, eleven stages requested <code>claude-sonnet-5-5</code> and the G1 question stage used the client default. Select an available model when repeating a comparison.</p>
+<p>The launch uses <code>claude --print --output-format stream-json --verbose</code> from the candidate directory with this profile:</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Setting</th>
+<th style="text-align: left;">Value</th>
+<th style="text-align: left;">Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>--tools</code></td>
+<td style="text-align: left;"><code>Read,Edit,Write,Glob,Grep,Bash</code></td>
+<td style="text-align: left;">No web, subagent, notebook or other built-in tools</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>--allowedTools</code></td>
+<td style="text-align: left;"><code>Bash(python3:*)</code>, <code>Bash(ls:*)</code>, read-only <code>git</code>, and similar prefixes</td>
+<td style="text-align: left;">Other shell commands are denied and reported in the final event, with the exception in the next row</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>--permission-mode</code></td>
+<td style="text-align: left;"><code>acceptEdits</code></td>
+<td style="text-align: left;">File edits inside the working directory are accepted without a prompt. The client also auto-approves some file-system commands there: in the 16 November run, <code>rm -rf __pycache__</code> ran in the G3 CLI worktree without appearing as a denial</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>--strict-mcp-config</code> with an empty <code>--mcp-config</code>, <code>--no-chrome</code></td>
+<td style="text-align: left;">no servers</td>
+<td style="text-align: left;">The worker cannot reach your connectors, memory or browser</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>--disable-slash-commands</code>, <code>--setting-sources project</code></td>
+<td style="text-align: left;">no skills, no user settings</td>
+<td style="text-align: left;">Your personal configuration does not enter the task</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>--no-session-persistence</code></td>
+<td style="text-align: left;">on</td>
+<td style="text-align: left;">The client keeps no resumable conversation</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>--max-budget-usd</code></td>
+<td style="text-align: left;">5 by default</td>
+<td style="text-align: left;">Client-enforced spend ceiling for that launch</td>
+</tr>
+</tbody>
+</table>
+<p>These are client settings, not an operating-system sandbox: an allowed <code>python3</code> command can still reach any path your account can. The post-run snapshot comparison remains the scope check. Claude Code’s built-in plugins are still loaded; one of them can deliver <code>AGENTS.md</code> automatically, so check in the events which instruction file the worker actually read.</p>
+<p>A Claude Code attempt counts as a completed turn only when its final <code>result</code> event has <code>subtype: success</code> and <code>is_error: false</code>, at least one assistant text message exists, the process exits 0 and no file outside the declared scope changed. The model identity is read from the <code>model</code> field of the <code>init</code> event and from each assistant <code>message.model</code>; <code>total_cost_usd</code> and <code>permission_denials</code> from the final event are copied into <code>RESULT.json</code>. <code>agent_final.txt</code> holds the final <code>result</code> text.</p>
+<p>The recorder binds events to the selected client: Claude’s <code>result</code> cannot complete a Codex launch, and Codex’s <code>turn.completed</code> cannot complete a Claude launch. <code>NATIVE_CLIENT_PROTOCOL_MISMATCH</code> preserves the mixed or unexpected stream for review. New captures also retain hashes of the native stream, stderr and final response when present; the collector checks those bindings.</p>
+<h2 id="prepare-inspect-run-decide">Prepare, inspect, run, decide</h2>
+<p>For B1 v1, after the mission creates <code>work/b1</code>:</p>
+<pre class="bash"><code>python3 companion/agent_session.py prepare B1 --api v1 \
+  --candidate work/b1 --output work/agent-b1-v1</code></pre>
+<p>Read <code>work/agent-b1-v1/task.txt</code>. Check the candidate path, authority, permitted edit and stop conditions against your own acceptance example. Then launch:</p>
+<pre class="bash"><code>python3 companion/agent_session.py run \
+  --session work/agent-b1-v1 --client codex</code></pre>
+<p>Inspect <code>runs/01/native_events.jsonl</code>, <code>stderr.txt</code>, <code>agent_final.txt</code> if emitted, and <code>RESULT.json</code>. Before/after snapshots preserve a candidate even if the client times out. Absence of events or usage means unavailable evidence, not a zero-cost successful run. A nonzero exit can leave useful code that still needs checking. Do not restart blindly and lose that state.</p>
+<p>You may append <code>--model MODEL_ID</code>, replacing <code>MODEL_ID</code> with the exact identifier available in your installed client and account. The invocation records that requested identifier. The result records a model identity only when a native metadata field supplies it; the agent’s own prose is insufficient. When the client exposes no model metadata, retain the value as unknown and keep any separately captured client/provider identity evidence with the session.</p>
+<p><code>NATIVE_TURN_COMPLETED_REVIEW_REQUIRED</code> requires a valid native stream with an agent message, a completed turn, a successful process exit and no changed file outside the declared edit scope. An empty stream, a lone thread identifier, malformed JSON or an error event cannot produce that result. It establishes a completed client turn; the operator still checks the product and records the acceptance decision independently.</p>
+<p>Write a decision note naming the observation, scope, next instruction and limit. Keep the run decision (continue, correct or stop) separate from the candidate verdict (accept, reject or ask). You can retain it with:</p>
+<pre class="bash"><code>python3 companion/agent_session.py decide \
+  --session work/agent-b1-v1 --operator &quot;your name&quot; \
+  --operator-kind human --decision continue \
+  --note-file work/next-decision.txt</code></pre>
+<p>An AI facilitator must identify <code>--operator-kind AI</code>. This command records the statement and binds it to the current candidate files, session specification and latest retained result; it does not establish its truth or the person’s authority. Changing files after that decision requires new checks and a new decision. A bounded correction can be sent using <code>run --session ... --task-file ...</code>. Each launch opens a fresh native session with retained candidate files and the explicit next task; this adapter does not claim to resume a hidden conversation. Include the applicable context and earlier observation in that next task. Native events identify the actual client thread where available.</p>
+<p>Implementation allows at most three launches within the work order’s declared implementation minutes, counted from the first launch across follow-ups. Each launch has a default 900-second wall limit clipped to that remaining allowance. B1 v2 uses its separate 20-minute implementation allowance. G1’s pre-owner question stage permits one launch within ten minutes; its later implementation stage has the normal 25-minute allowance. Record manual work before launch and later review separately. The mission’s total session time is a planning target, not an observed completion time. The requested 40-command allowance is an instruction; the adapter does not enforce the client’s internal tool count. After a limit, preserve state and assess scope. Protected-file changes require review even if the client exits successfully.</p>
+<p>Run the mission’s printed <code>start.py check</code> and <code>start.py continue</code> commands on the exact candidate. Retain both receipts and the agent record. If a printed receipt name is already taken, for example by a check run before the agent, keep that file and add <code>-02</code>, <code>-03</code> and so on; the ledger takes the most recently recorded attempt as the gate and lists the others as superseded. Advance from that candidate to the next mission; never substitute a reference unnoticed.</p>
+<h3 id="count-the-client-you-actually-ran">Count the client you actually ran</h3>
+<p>From your working copy, collect Codex’s twelve required stages with:</p>
+<pre class="bash"><code>python3 companion/agent_sessions/collect_native.py \
+  --workspace-root . --client codex \
+  --output work/evidence/native-codex-coverage.json</code></pre>
+<p>Use <code>--client claude</code> for Claude Code. Omitting <code>--client</code> retains an aggregate inventory that may contain both clients. Every report includes separate <code>client_coverage</code> counts. A successful Claude capture never counts as Codex coverage. The filter selects the most recent attempt by that client for each stage while retaining the other attempts for inspection.</p>
+<p>Completion and identity remain separate: a native turn can complete even when the JSON stream omits a model identifier. Such a run keeps <code>observed_model_ids: []</code>; a requested <code>--model</code> is not substituted for observed metadata. The coverage report then keeps the identity requirement open. <code>publication_ready</code> remains false: the collector verifies local capture consistency, while the protected checks, operator authority and publication decision have separate evidence.</p>
+<h2 id="the-two-special-transitions">The two special transitions</h2>
+<p><strong>G1:</strong> write your own acceptance example and questions before seeing the owner response. Prepare <code>G1 --stage question</code>; the agent can write <code>AGENT_QUESTIONS.md</code> and <code>AGENT_PLAN.md</code>, preserving your original. The preparation snapshots your original questions. Only after you record your question and run <code>start.py clarify</code> may you prepare a separate <code>G1 --stage implement</code> session. The supplied response is part of the fictional case, not a live owner’s approval. Preparing question practice after exposing that answer is refused.</p>
+<p><strong>B1:</strong> preserve the accepted v1 directory. <code>start.py extend B1</code> creates a new v2 candidate with the owner’s grammar decision. Prepare <code>B1 --api v2</code> for that candidate; the adapter refuses a version mismatch. The old receipt remains true about the old scope and bytes. It does not certify the expanded interface.</p>
+<p>G2–G4 and B2–B4 use <code>prepare MISSION --candidate ... --output ...</code> after the printed <code>advance</code> command. Their module and lineage come from <code>READER_ENTRY.json</code>. Read the current supplied decisions, including any explicit migration mapping.</p>
+<p><strong>G3 integration roles:</strong> first use <code>companion/integration.py prepare</code> as described in <code>companion/integration_assets/README.md</code>. Prepare each resulting role explicitly:</p>
+<pre class="bash"><code>python3 companion/agent_session.py prepare G3 --role report \
+  --candidate work/g3-integration/worktrees/report \
+  --output work/agent-g3-report
+
+python3 companion/agent_session.py prepare G3 --role cli \
+  --candidate work/g3-integration/worktrees/cli \
+  --output work/agent-g3-cli</code></pre>
+<p>Preparation checks each role against its fixed source/note scope, prepared worktree, baseline and shared contract. Omitting the role, requesting the other role, widening its metadata or changing the shared contract is refused before a task is prepared. Each role has its own session record and allowance; this adapter does not aggregate elapsed time or spend across multiple role sessions. Keep the combined mission ledger separately. After combination, advance the accepted integrated workspace to G4. Preparation verifies a carried integration receipt and its source identities when one is present.</p>
+<h2 id="rehearse-from-a-retained-trace">Rehearse from a retained trace</h2>
+<p>Without a live client, study a recording in stages:</p>
+<pre class="bash"><code>python3 companion/agent_session.py trace --task AP-G1 \
+  --output work/trace-g1</code></pre>
+<p>The tool displays an observation and asks for your next action. Write your reason before revealing what happened:</p>
+<pre class="bash"><code>python3 companion/agent_session.py trace --session work/trace-g1 \
+  --decision-file work/my-next-action.txt</code></pre>
+<p>Repeat for each stop. The record retains your decisions before each reveal. This is an exposure-order teaching aid; the full archive remains inspectable. Completion records your decisions about a saved run. The adapter does not assess their correctness or establish that you operated a live agent. Manual implementation likewise exercises engineering and checks; record that route honestly.</p>
+<p>Each trace session binds one exact tour version. Its state contains the tour identity and progress, without copying future outcomes. A short or missing decision cannot advance a reveal. If the tour changes, preserve the old session and start a fresh one; earlier decisions are not silently attached to new text. Observation locators are shown with the question. Outcome locators are shown only after the corresponding decision is retained. <code>TOUR_PROVENANCE.json</code> records the catalogue and source-file hashes.</p>
+<h3 id="primary-mission-tours">Primary mission tours</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Task identifier</th>
+<th style="text-align: left;">Mission</th>
+<th style="text-align: left;">Main disposition to practise</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>AP-G1</code></td>
+<td style="text-align: left;">G1</td>
+<td style="text-align: left;">Ask about an unspecified outcome before implementing it</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>AP-G2</code></td>
+<td style="text-align: left;">G2</td>
+<td style="text-align: left;">Resolve operator scope and mapping gaps; distinguish a checker defect</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>AP-G3</code></td>
+<td style="text-align: left;">G3</td>
+<td style="text-align: left;">Preserve historical meaning while adding authorized cancellation</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>AP-G4</code></td>
+<td style="text-align: left;">G4</td>
+<td style="text-align: left;">Distinguish a verification-fixture error from a product defect</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>AP-B1-V1</code></td>
+<td style="text-align: left;">B1 v1</td>
+<td style="text-align: left;">Bound the repair and request independent acceptance</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>AP-B1-V2</code></td>
+<td style="text-align: left;">B1 v2</td>
+<td style="text-align: left;">Retain the old scope and select the complete current gate</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>AP-B2</code></td>
+<td style="text-align: left;">B2</td>
+<td style="text-align: left;">Distinguish the coding agent from the scripted product Provider</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>AP-B3</code></td>
+<td style="text-align: left;">B3</td>
+<td style="text-align: left;">Separate replay, recomputation and a new policy decision</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>AP-B4</code></td>
+<td style="text-align: left;">B4</td>
+<td style="text-align: left;">Clarify a consumer interface without inventing restoration authority</td>
+</tr>
+</tbody>
+</table>
+<p>Three focused tours examine integration, design and security decisions:</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Task identifier</th>
+<th style="text-align: left;">Focus</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>AP-INTEGRATION</code></td>
+<td style="text-align: left;">Review the real report/CLI composition and extracted artifact before G4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>AP-DESIGN</code></td>
+<td style="text-align: left;">Select and interpret a discriminating prototype before adding a dependency seam</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>AP-SECURITY</code></td>
+<td style="text-align: left;">Separate agent abstention, application-tool denials and host isolation</td>
+</tr>
+</tbody>
+</table>
+<p>Use the same <code>trace --task IDENTIFIER --output NEW_DIRECTORY</code> command for any row. Distinguish the source of a failure before choosing a correction: G2 includes an operator task correction and a checker correction; B4 includes a missing consumer contract; G4 includes an agent-authored verification-fixture correction, with the product source unchanged.</p>
+<h2 id="evidence-map">Evidence map</h2>
+<p>The <code>evidence/agent_process_v4/AP-*/</code> recordings retain named task messages, submitted commands with outputs and snapshots, worker reports and separate operator decisions/checks. Worker <code>SESSION.json</code> files name the operator, authority and capture limits; the integration group has its own setup, manifest and numbered operator receipts. Follow the exact source locators given by each tour.</p>
+<h2 id="check-the-adapter-without-launching-a-client">Check the adapter without launching a client</h2>
+<p>Run <code>python3 -B companion/agent_sessions/verify_adapter.py --output work/adapter-controls</code> with a new output directory. It uses disposable candidates and the retained G3/G4 fixtures to check preparation, role boundaries, carried source identities and every trace’s decision/reveal sequence. These local controls use automated fixture decisions and do not launch a model.</p>
+</article></main><footer class="foot"><p>Enrico Papalini · Edition 5.6 · 2026-11-22</p><p><a href="../../NOTICE.html">Rights and notices</a> · <a href="../../NATIVE_STATUS.json">Native-client status</a> · <a href="../../MANIFEST.json">Package manifest</a> · <a href="https://github.com/popoloni/esa_ai">Companion repository</a></p></footer></body></html>

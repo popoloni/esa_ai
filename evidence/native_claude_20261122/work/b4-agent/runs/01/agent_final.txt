@@ -1,0 +1,18 @@
+I implemented `inspect_ledger`, `diagnose` and `recovery_plan` in `incident.py`, and `python -m unittest tests.test_b4` now passes all 7 tests. Before the change, 6 of the 7 failed with `NotImplementedError`, so the missing behavior was reproduced.
+
+**Changed files:** `incident.py` and `DOSSIER.md`. `ledger.py`, `routing.py` and `operations.py` still match the `READER_ENTRY.json` hashes. I did not change the docs, tests, `prior/` or `READER_ENTRY.json`.
+
+**Acceptance example:** diagnosing a fresh wrong ledger against the expected one returns `WRONG_LEDGER` with exactly `STATE_PATH_MISMATCH`, `ACTIVE_POLICY_MISMATCH` and `ANCHOR_MISSING`. Both files stay byte-identical, and the shared decision ID for "old" is not treated as proof of the same ledger. Diagnosing the expected ledger against itself returns `EXPECTED_LEDGER_SELECTED` with no issues.
+
+**Behavior:**
+- **Inspection:** it opens the database read-only, checks the application ID and schema version, and raises `FileNotFoundError` for a missing path without creating it.
+- **Recovery plan:** it is proposal-only. It sets `restore_configuration_to` to the resolved expected path, `automatic_merge` and `production_authorized` to false, and reconciliation to `PENDING_OWNER_DECISION`. It preserves both ledgers and lists the replay, disposable-copy probe and restart checks.
+
+**Commands:** about 6 of the 40 allowed. A heredoc write of `incident.py` was blocked by the tool's safety check, and I rewrote the file with the edit tool instead.
+
+**Remaining uncertainty:**
+- `inspect_ledger` does not run the full record-integrity checks that `PolicyStore` does, because that would initialize or write the file.
+- `diagnose` reports the expected ledger's own policy and anchor but does not judge them.
+- The wrong-database, unsupported-schema, WAL-mode and corrupted-file paths were not tested.
+- No document lists the "three proposals" that `DOSSIER.md`'s Decide section refers to. I assumed them to be state-based diagnosis, a proposal-only recovery plan, and wrong-ledger reconciliation. I marked the first two ACCEPT and the third ASK, so please correct them if they differ.
+- Human acceptance is still `PENDING`. Protected acceptance and continuation are left to you.

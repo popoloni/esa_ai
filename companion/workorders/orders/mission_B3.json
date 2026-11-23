@@ -1,0 +1,92 @@
+{
+  "id": "mission_B3",
+  "schema_version": 1,
+  "evidence_profile": "persistent_effect",
+  "expect": {
+    "outcome": "Preserve recorded decisions through policy change and migration.",
+    "authority": {
+      "owner": "Treasury policy owner and ledger maintainer",
+      "source": "companion/contracts/B3.md",
+      "version": "HISTORY-API/v1 + MIGRATION/v1",
+      "status": "TEACHING_CONTRACT"
+    },
+    "acceptance": [
+      "Replay keeps the saved answer; conflicts preserve history; reevaluation creates a linked ID; migration requires original evidence and commits atomically."
+    ]
+  },
+  "delegate": {
+    "editable_paths": [
+      "ledger.py",
+      "DOSSIER.md"
+    ],
+    "protected_paths": [
+      "docs/",
+      "tests/",
+      "READER_ENTRY.json",
+      "prior/",
+      "routing.py"
+    ],
+    "budget": {
+      "max_attempts": 3,
+      "implementation_minutes": 40,
+      "check_timeout_seconds": 30,
+      "max_external_calls": 0
+    },
+    "stop_conditions": [
+      "Missing historical provenance, conflicting identity or unavailable policy mapping.",
+      "Protected inputs change or the declared attempt/time budget is spent."
+    ]
+  },
+  "observe": {
+    "checks": [
+      {
+        "id": "b3.check",
+        "stage": "contract",
+        "method": "command",
+        "argv": [
+          "python3",
+          "companion/start.py",
+          "check",
+          "B3",
+          "--candidate",
+          "work/b3",
+          "--output",
+          "work/evidence/b3-first.json"
+        ],
+        "expected": "Selected public checks pass on unchanged inputs."
+      },
+      {
+        "id": "b3.continue",
+        "stage": "integration",
+        "method": "command",
+        "argv": [
+          "python3",
+          "companion/start.py",
+          "continue",
+          "B3",
+          "--candidate",
+          "work/b3",
+          "--output",
+          "work/evidence/b3-handoff.json"
+        ],
+        "expected": "Current candidate completes its scoped continuation; inspect retained observations."
+      }
+    ],
+    "receipt_fields": [
+      "candidate_sha256_before",
+      "groups",
+      "inputs_unchanged",
+      "verification_progress",
+      "human_acceptance"
+    ]
+  },
+  "decide": {
+    "owner": "Learner reviewer; Treasury policy owner and ledger maintainer for a changed rule.",
+    "object": "B3 candidate, identified bytes and its scoped handoff.",
+    "allowed_decisions": [
+      "ACCEPT",
+      "REJECT",
+      "ASK"
+    ]
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "id": "chapter_05",
+  "schema_version": 1,
+  "evidence_profile": "new_capability",
+  "expect": {
+    "outcome": "Compare direct and supplied-provider explanation designs while preserving the agreed routing view.",
+    "authority": {
+      "owner": "Design reviewer; presentation owner for changed view semantics.",
+      "source": "Presentation contract in Chapters 3 and 5; BR-001/v1 for routing meaning.",
+      "version": "Presentation teaching contract/v1",
+      "status": "TEACHING_CONTRACT"
+    },
+    "acceptance": [
+      "Preserve route, reason, supplied policy version and separate payment authority; reject unknown route vocabulary."
+    ]
+  },
+  "delegate": {
+    "editable_paths": [
+      "prototype/view.py",
+      "reports/design-comparison.md"
+    ],
+    "protected_paths": [
+      "approved_context/",
+      "source_evidence/",
+      "contracts/",
+      "tests/"
+    ],
+    "budget": {
+      "max_attempts": 2,
+      "implementation_minutes": 30,
+      "check_timeout_seconds": 30,
+      "max_external_calls": 0
+    },
+    "stop_conditions": [
+      "Required authority or source evidence is missing.",
+      "Declared budget is spent or a proposed edit crosses protected scope."
+    ]
+  },
+  "observe": {
+    "checks": [
+      {
+        "id": "chapter_05.review",
+        "stage": "contract",
+        "method": "review",
+        "argv": [],
+        "expected": "Independent contract examples through each composition; fake-provider preservation; unknown-route refusal."
+      }
+    ],
+    "receipt_fields": [
+      "candidate_identity",
+      "authority_version",
+      "actual_checks",
+      "reached_stage",
+      "remaining_question"
+    ]
+  },
+  "decide": {
+    "owner": "Design reviewer; presentation owner for changed view semantics.",
+    "object": "A proposed design decision and bounded prototype.",
+    "allowed_decisions": [
+      "ACCEPT",
+      "REJECT",
+      "ASK"
+    ]
+  }
+}

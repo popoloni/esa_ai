@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Eight practical missions, local checks and recorded agent tours for Engineering Software with Agentic AI."><title>Keep memory useful when a contract changes · Engineering Software with Agentic AI</title><link rel="stylesheet" href="../../assets/companion.css"></head><body><a class="skip" href="#main">Skip to content</a><header class="sitehead"><div><a class="brand" href="../../index.html">Engineering Software with Agentic AI<span>Practical companion · version 5.6</span></a><nav aria-label="Main navigation"><a href="../../index.html">Start</a><a href="../../missions/index.html">Missions</a><a href="../agent_sessions/README.html">Agent guide</a><a href="../../traces/index.html">Recorded tours</a><a href="../series/READING_THE_SERIES.html">Four volumes</a></nav></div></header><main id="main"><article data-source-sha256="3fde2d919a2e32cd2cac6d1e39505a6d7660635f04b5e0d517cab84d978beaaa"><p class="docmeta meta"><a href="README.md">Markdown source</a> · Companion 5.6 · 2026-11-22</p><h1 id="keep-memory-useful-when-a-contract-changes">Keep memory useful when a contract changes</h1>
+<p>This optional B1 lab makes an external memory lifecycle executable: propose a claim, bind its source and observation, obtain a separately declared promotion, retrieve it within a current scope, and revoke it when contrary evidence arrives. It adds no mission and changes no existing contract. Python 3.10 or later and the standard library are sufficient; no model account, network call or vector store is used.</p>
+<p>Memory here means retained records supplied to a later task. Updating them does not change model weights. Passing this lab’s checks does not establish that a person learned the decision, retained it later or transferred it to a new task.</p>
+<h2 id="run-the-whole-example">Run the whole example</h2>
+<p>From the package root, alongside <code>companion/</code> and <code>evidence/</code>:</p>
+<pre class="bash"><code>python3 companion/memory/demo.py --output work/memory-b1</code></pre>
+<p>Choose a fresh directory for another attempt. The command executes the supplied B1 reference functions, creates a local authority fixture, exercises the ledger through its real CLI, and saves every invocation, result and ledger event. <code>work/memory-b1/RESULTS.json</code> gives the observed checks and their limits.</p>
+<p>The <a href="../../evidence/memory_lab_20261116/recorded_01/RESULTS.json">retained demonstration receipt</a> provides an inspectable execution of the same lab. The separate <a href="../../evidence/handbook_memory_20261116/reject_correct_01/CASE_GUIDE.html">actual development case</a> shows an independently found ledger defect, an AI operator’s REJECT, a bounded repair and the recheck. It is distinct from the deliberately wrong memory card used below.</p>
+<p>All producer and approver identities in this demonstration are labelled <code>automated_control</code>. The wrong approved card is deliberately planted to test revocation. It is not an agent error or a human approval. The ledger’s query time is set two hours after fixture creation to exercise an expiry; this does not claim that the demonstration waited for two hours.</p>
+<h2 id="one-business-rule-two-api-scopes">One business rule, two API scopes</h2>
+<p><a href="../context/BR-001.html">BR-001/v1</a> classifies a finite positive amount below EUR 5,000 into <code>STANDARD_QUEUE</code>, and equality or a larger amount into <code>HUMAN_REVIEW</code>. The classification does not authorize a payment.</p>
+<p><a href="../contracts/B1_API.html">B1-API/v1</a> accepts Decimal-supported textual forms such as <code>1e3</code>. The separately created <a href="../contracts/B1_API_V2.html">B1-API/v2</a> candidate requires the owner’s explicit ASCII monetary-text grammar. It rejects exponent notation and permits a leading plus sign within the length and numeric rules. Both versions still return <code>policy_version=BR-001/v1</code>; the unchanged business identifier alone cannot select the correct API memory.</p>
+<p>The query therefore names four dimensions independently:</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Scope</th>
+<th style="text-align: left;">Value used in this lab</th>
+<th style="text-align: left;">What a mismatch means</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Task</td>
+<td style="text-align: left;"><code>B1-grammar-check</code></td>
+<td style="text-align: left;">The card was prepared for a different decision.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Component</td>
+<td style="text-align: left;"><code>treasury.routing.assess</code></td>
+<td style="text-align: left;">Another component may have different obligations.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Contract/API</td>
+<td style="text-align: left;"><code>B1-API/v1</code> or <code>B1-API/v2</code></td>
+<td style="text-align: left;">The lexical rules are not interchangeable.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Schema/shape</td>
+<td style="text-align: left;"><code>RoutingDecision(route,reason,policy_version)</code></td>
+<td style="text-align: left;">A changed output shape needs a new review.</td>
+</tr>
+</tbody>
+</table>
+<p>The schema string describes the fields in the supplied API; it does not invent a new product contract. The ledger record itself has the separate technical format identifier <code>agent-memory-record/v1</code>.</p>
+<h2 id="inspect-the-decisions-that-changed-retrieval">Inspect the decisions that changed retrieval</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Observation</th>
+<th style="text-align: left;">What the demonstration establishes</th>
+<th style="text-align: left;">Retained receipt</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">A source-backed proposal exists but has no promotion</td>
+<td style="text-align: left;">Proposal storage alone does not make it retrievable.</td>
+<td style="text-align: left;"><code>receipts/pending_not_retrieved.json</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">A caller claims an owner identity without a matching local grant</td>
+<td style="text-align: left;">Promotion is refused; the proposal remains.</td>
+<td style="text-align: left;"><code>receipts/promote_B1-V1-EXPONENT_wrong_actor.json</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">An approval names the wrong record digest</td>
+<td style="text-align: left;">Approval cannot transfer to different bytes.</td>
+<td style="text-align: left;"><code>receipts/promote_B1-V1-EXPONENT_wrong_hash.json</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">An approved v1 exponent card meets its v1 query</td>
+<td style="text-align: left;">The applicable card is returned with provenance.</td>
+<td style="text-align: left;"><code>receipts/v1_retrieval.json</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">The query changes to v2</td>
+<td style="text-align: left;">The v1 card is excluded by scope; its history stays approved.</td>
+<td style="text-align: left;"><code>receipts/v1_excluded_from_v2.json</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">A card has expired at the declared query time</td>
+<td style="text-align: left;">It is excluded, without rewriting its historical status.</td>
+<td style="text-align: left;"><code>receipts/expired_excluded.json</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">A current v2 card fits the scope and validity interval</td>
+<td style="text-align: left;">It is retrieved.</td>
+<td style="text-align: left;"><code>receipts/v2_retrieval.json</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">The response budget is too small for a complete card</td>
+<td style="text-align: left;">The card is omitted, with a count; its provenance is not truncated.</td>
+<td style="text-align: left;"><code>receipts/small_output_budget.json</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">A deliberately wrong v2 card says all leading-plus inputs are rejected</td>
+<td style="text-align: left;">The actual reference probe of <code>+4999.99</code> returns <code>STANDARD_QUEUE</code>, contradicting that claim.</td>
+<td style="text-align: left;"><code>observations/plus_counterevidence.json</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">A revocation cites the wrong counterevidence digest</td>
+<td style="text-align: left;">Invalidation is refused until the reference is bound correctly.</td>
+<td style="text-align: left;"><code>receipts/wrong_counterevidence_refused.json</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">The declared owner control revokes the false card</td>
+<td style="text-align: left;">The card stays in history as <code>revoked</code> and is absent from retrieval.</td>
+<td style="text-align: left;"><code>receipts/after_contradiction.json</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">A corrected version is proposed</td>
+<td style="text-align: left;">It needs a new promotion; it does not inherit the revoked card’s approval.</td>
+<td style="text-align: left;"><code>receipts/correction_pending.json</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">A bound source copy changes</td>
+<td style="text-align: left;">Its card is excluded despite its earlier approval.</td>
+<td style="text-align: left;"><code>receipts/changed_source_excluded.json</code></td>
+</tr>
+</tbody>
+</table>
+<p>The reference probes preserve their actual code hashes and returned values. They are observations about supplied reference code, not acceptance results for your learner candidate. The v1 exponent case is an applicability boundary; the false v2 plus-sign claim is a contradiction. Treating both as “stale memory” would hide the different next actions.</p>
+<h2 id="what-a-memory-card-retains">What a memory card retains</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Field group</th>
+<th style="text-align: left;">Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Identity and type</td>
+<td style="text-align: left;">Record ID, record version, <code>fact</code>/<code>procedure</code>/<code>decision</code>, claim, claim-content digest and complete-record digest.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Scope</td>
+<td style="text-align: left;">Exact task, component, contract/API and output shape. Wildcard scope is refused.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Producer</td>
+<td style="text-align: left;">Declared producer ID and kind: human, model agent or automated control.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Authority and observations</td>
+<td style="text-align: left;">Separate source and evidence references, each with path, SHA-256 and locator.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Dates</td>
+<td style="text-align: left;">Actual proposal event time, declared last-check time, valid-from time and expiry.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Promotion</td>
+<td style="text-align: left;">Declared actor, matching local grant, authority source, exact record digest, and the decision file’s path and digest.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Revisit conditions</td>
+<td style="text-align: left;">Contract, component or shape changes; changed source/evidence/approval identity; contradiction; expiry.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">State and correction</td>
+<td style="text-align: left;"><code>proposed</code>, <code>approved</code> or <code>revoked</code>, retained invalidation evidence, and an explicit predecessor for a corrected version.</td>
+</tr>
+</tbody>
+</table>
+<p>A file digest proves that retrieved bytes match the bytes previously referenced. It does not prove that the source is authoritative, that a claim follows from it, or that the observation discriminates the claim. The deliberately wrong approved control card makes that limitation visible. A real reviewer must read the authority, claim and observation together before promotion.</p>
+<h2 id="reuse-the-cli-without-rerunning-the-demonstration">Reuse the CLI without rerunning the demonstration</h2>
+<p>Inspect a retained card and its computed state:</p>
+<pre class="bash"><code>python3 companion/memory/ledger.py \
+  --workspace . --ledger work/memory-b1/events.jsonl \
+  inspect --record-id B1-V2-PLUS-WRONG</code></pre>
+<p>The current record is <code>revoked</code>; the proposal, approval and invalidation remain in <code>events.jsonl</code>. <code>B1-V1-EXPONENT</code> is still historically <code>approved</code>.</p>
+<p>For an identical dated query, copy <code>retrieval_as_of</code> from <code>RESULTS.json</code> into <code>MEMORY_AS_OF</code>. In a POSIX shell:</p>
+<pre class="bash"><code>MEMORY_AS_OF=$(python3 -c &quot;import json; print(json.load(open(&#39;work/memory-b1/RESULTS.json&#39;))[&#39;retrieval_as_of&#39;])&quot;)
+python3 companion/memory/ledger.py \
+  --workspace . --ledger work/memory-b1/events.jsonl \
+  retrieve --task B1-grammar-check \
+  --component treasury.routing.assess --contract B1-API/v2 \
+  --schema &#39;RoutingDecision(route,reason,policy_version)&#39; \
+  --at &quot;$MEMORY_AS_OF&quot; --limit 2 --max-bytes 12000</code></pre>
+<p>Retrieval first checks state, exact scope, dates, source/evidence/approval identities and the declared grant. Only then does it order applicable cards by last-check date, version and ID. Recency cannot authorize a different scope. The limit bounds complete records and the UTF-8 byte budget bounds the entire JSON response. An empty result means that no complete applicable card was returned; inspect the exclusion and budget counts before concluding that the ledger contains no history.</p>
+<p>For your own experiment, create a new ledger with <code>init --policy FILE</code>, then use <code>propose --record FILE</code>. Use the generated proposal files as schema examples. Promotion requires a separate decision file binding the record digest and all reviewed source/evidence references. <code>promote</code> and <code>invalidate</code> also require an explicit actor ID and kind. See <code>ledger.py --help</code> and each subcommand’s <code>--help</code> for the complete interface. Do not reuse the demonstration’s declared owner identity as evidence of actual approval.</p>
+<h2 id="keep-the-boundaries-visible">Keep the boundaries visible</h2>
+<p>The application appends JSONL events and refuses an existing record ID. A correction creates a new ID and next version linked to a revoked predecessor. An exclusive writer lock prevents cooperating application writers from interleaving. Each event binds the previous event digest, and the demonstration detects an altered event in a separate copy. These controls are not append-only filesystem enforcement: the file owner can rewrite the ledger and recompute the chain. A production service needs its own authenticated identities, authorization, retention controls and appropriate audit storage.</p>
+<p>The local authority file is itself hash-bound and grants exact scopes. Actor names on the CLI remain declarations. An agent running as the same OS user can claim a name or edit files; the ledger does not turn a text label into verified owner authority. The same declared producer cannot promote its own record even if its name has a grant; the program cannot detect a forged alternative identity. Keep actual promotion outside the proposing agent’s permitted actions and enforce that separation in the real runtime.</p>
+<p>A broken or partially written event chain stops processing. Preserve the original bytes and inspect the last verified event before an authorized recovery to a separate file. The lab does not silently drop a damaged tail, overwrite history or claim to provide transactional recovery after a filesystem failure.</p>
+<p>The lab refuses a proposal with no observed evidence, a structured <code>instruction_override</code> type, and a proposal explicitly labelled <code>secret</code>. The secret fixture contains only a synthetic marker. Refusal events keep the reason and input-file digest, not the submitted claim. These closed-schema checks are not a general secret scanner or prompt-injection defense. A malicious instruction disguised as a fact still requires content review. Retrieved text must not override the current task, source authority or tool permissions.</p>
+<h2 id="use-the-memory-in-an-agent-task">Use the memory in an agent task</h2>
+<p><a href="TASK.html">TASK.md</a> supplies bounded prompts for retrieval, citation and a proposed update. They are instructions for a future run, not a claim that an agent has executed this lab. The proposer must stop for the actual authorized reviewer; it cannot approve its own memory by borrowing the demo actor name.</p>
+<p>To evaluate learning, ask a person to predict retrieval and the next action before running the controls, retain the assisted attempt, then reduce support. Use a later retention check and an unexposed structural transfer task separately. Ledger checks measure the workflow’s behavior; those human observations measure learning. The book’s Chapter 12 develops that distinction.</p>
+<p>The <a href="../series/READING_THE_SERIES.html">three-volume reading guide</a> points to the deeper memory and human-learning treatments in <em>Non-Deterministic Software Engineering</em>, second edition.</p>
+</article></main><footer class="foot"><p>Enrico Papalini · Edition 5.6 · 2026-11-22</p><p><a href="../../NOTICE.html">Rights and notices</a> · <a href="../../NATIVE_STATUS.json">Native-client status</a> · <a href="../../MANIFEST.json">Package manifest</a> · <a href="https://github.com/popoloni/esa_ai">Companion repository</a></p></footer></body></html>

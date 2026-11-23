@@ -1,0 +1,10 @@
+{
+  "at_utc": "2026-11-16T15:43:28.316311+00:00",
+  "kind": "operator-task-scope-correction",
+  "source": "AI recording facilitator /root",
+  "observation": "Worker reported prompt exclusion contradicting supplied G2-OD-01 and paused before implementation.",
+  "decision": "Authorize the supplied existing G2-OD-01 scope and retain original error.",
+  "observed_agent_implementation_error": false,
+  "correction_cycles_used": 1,
+  "followup_prompt": "prompt_02.txt"
+}

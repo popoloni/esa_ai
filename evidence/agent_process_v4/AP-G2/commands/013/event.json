@@ -1,0 +1,50 @@
+{
+  "task": "AP-G2",
+  "event": 13,
+  "argv": [
+    "python3",
+    "-"
+  ],
+  "cwd": "/workspace/scratch/c02668b5f4f9/ESA_v4_Agent_Process_20261116/book/evidence/agent_process_v4/AP-G2/workspace",
+  "started_at_utc": "2026-11-16T15:46:43.921411+00:00",
+  "elapsed_seconds": 0.032275,
+  "returncode": 0,
+  "timeout": false,
+  "before": {
+    "AGENTS.md": "494bf71b3ee5f7454d62a1de19f11b9ab5f1bce70a706c46bd232840118e99ab",
+    "DOSSIER.md": "71da2ef4a62562baab7d46c93e4156d75bac5c97810395d4f3e62af369474644",
+    "READER_ENTRY.json": "5a94b59e1de2ef4cae5889837fa8c3fdb1b89c9b85a8c39081c1a186e0e296b8",
+    "booking.py": "cedfaf4d936232b94eb7220d0d0594e2e919b75eff6f5dcd8a8690582ff569ce",
+    "docs/G2-OD-02.md": "6760602fa7acb3523365062dcb61885e3ac603233e1e3cd6dbd92b3a19876462",
+    "docs/contract.md": "76ffefaa7a20e1a3047b0885be0332cfddf86362e6514fa7cfad151106f68dcd",
+    "legacy_g1.py": "bb3ec4063f41eb10ad6a0850b9fa3d40da7badb4bcff19a38fdab3c80ea4efba",
+    "legacy_g1_json.py": "d5b98f73120fb70ccfe6c8366e19f64ac8b311d54684e872f2ca3c7d6813b191",
+    "legacy_g1_recorded.py": "cedfaf4d936232b94eb7220d0d0594e2e919b75eff6f5dcd8a8690582ff569ce",
+    "prior/booking.py": "cedfaf4d936232b94eb7220d0d0594e2e919b75eff6f5dcd8a8690582ff569ce",
+    "prior/parent-entry.json": "839701804c16447342bd660c76cab06a1cfbfd85994880f43b09d94129a3a35d",
+    "prior/parent-handoff.json": "80f61f70cedfba697b16e86969d0f8e5a26421178a2f6a2236ff9c7741ad2057",
+    "tests/test_g2.py": "6fac846759f6cac2014cc40a481c7a52a1296f0d24531f3c9c421f580929d790"
+  },
+  "after": {
+    "AGENTS.md": "494bf71b3ee5f7454d62a1de19f11b9ab5f1bce70a706c46bd232840118e99ab",
+    "DOSSIER.md": "71da2ef4a62562baab7d46c93e4156d75bac5c97810395d4f3e62af369474644",
+    "READER_ENTRY.json": "5a94b59e1de2ef4cae5889837fa8c3fdb1b89c9b85a8c39081c1a186e0e296b8",
+    "booking.py": "f283f8f0e2c4814b5429ca99589e358afbc8f41cd9254c95aa55daa13ae24ec5",
+    "docs/G2-OD-02.md": "6760602fa7acb3523365062dcb61885e3ac603233e1e3cd6dbd92b3a19876462",
+    "docs/contract.md": "76ffefaa7a20e1a3047b0885be0332cfddf86362e6514fa7cfad151106f68dcd",
+    "legacy_g1.py": "bb3ec4063f41eb10ad6a0850b9fa3d40da7badb4bcff19a38fdab3c80ea4efba",
+    "legacy_g1_json.py": "d5b98f73120fb70ccfe6c8366e19f64ac8b311d54684e872f2ca3c7d6813b191",
+    "legacy_g1_recorded.py": "cedfaf4d936232b94eb7220d0d0594e2e919b75eff6f5dcd8a8690582ff569ce",
+    "prior/booking.py": "cedfaf4d936232b94eb7220d0d0594e2e919b75eff6f5dcd8a8690582ff569ce",
+    "prior/parent-entry.json": "839701804c16447342bd660c76cab06a1cfbfd85994880f43b09d94129a3a35d",
+    "prior/parent-handoff.json": "80f61f70cedfba697b16e86969d0f8e5a26421178a2f6a2236ff9c7741ad2057",
+    "tests/test_g2.py": "6fac846759f6cac2014cc40a481c7a52a1296f0d24531f3c9c421f580929d790"
+  },
+  "changed_files": [
+    "booking.py"
+  ],
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "recorder_sha256": "58781a554cf89bb7a5c5fbc673825901820002e6036095198a2c062aa3e0126f",
+  "scope": "Actual submitted subprocess and workspace snapshots. This recorder is not a complete native-client trace or an OS sandbox."
+}

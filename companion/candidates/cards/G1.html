@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Eight practical missions, local checks and recorded agent tours for Engineering Software with Agentic AI."><title>G1 proposal cards · Engineering Software with Agentic AI</title><link rel="stylesheet" href="../../../assets/companion.css"></head><body><a class="skip" href="#main">Skip to content</a><header class="sitehead"><div><a class="brand" href="../../../index.html">Engineering Software with Agentic AI<span>Practical companion · version 5.6</span></a><nav aria-label="Main navigation"><a href="../../../index.html">Start</a><a href="../../../missions/index.html">Missions</a><a href="../../agent_sessions/README.html">Agent guide</a><a href="../../../traces/index.html">Recorded tours</a><a href="../../series/READING_THE_SERIES.html">Four volumes</a></nav></div></header><main id="main"><article data-source-sha256="03d59ed5ec101299d504a3a2383bb3de2f8195cf0e017e930549860dca84dd5c"><p class="docmeta meta"><a href="G1.md">Markdown source</a> · Companion 5.6 · 2026-11-22</p><h1>G1 proposal cards</h1>
+<h2 id="g1-p01">G1-P01</h2>
+<p>The persistence boundary is the public record, so I kept storage layout behind that interface. A row identifier locates a JSON representation of the five request fields; each read reconstructs a new mapping with the identifier added. This makes an alternative physical layout possible while keeping callers unchanged. Please judge the returned fields and the process-boundary observation together.</p>
+<p><em>Artifact: reserve: the write transaction after constructing payload and opening the connection.</em></p>
+<pre class="python"><code>try:
+    cursor = connection.execute(
+        &quot;INSERT INTO bookings_v2 (payload) VALUES (?)&quot;,
+                                (json.dumps(payload),))
+    identifier = cursor.lastrowid
+    connection.commit()
+finally:
+    connection.close()
+return Outcome(201, &quot;confirmed&quot;, identifier)</code></pre>
+<h2 id="g1-p02">G1-P02</h2>
+<p>The three public operations share a path-keyed record registry. Initialization establishes the database location, and writes make the complete record immediately available to subsequent lookups. That arrangement keeps the first increment small and avoids introducing a larger persistence abstraction. The local scenarios exercise creation and retrieval through the public functions; the same interface remains available for the next increment.</p>
+<p><em>Artifact: The module registry and reserve; get_reservation reads this same registry.</em></p>
+<pre class="python"><code>_records = {}
+def reserve(path, **request):
+    identifier = len(_records.setdefault(str(path), {})) + 1
+    _records[str(path)][identifier] = {&quot;reservation_id&quot;:
+        identifier, **request}
+    return Outcome(201, &quot;confirmed&quot;, identifier)</code></pre>
+<h2 id="g1-p03">G1-P03</h2>
+<p>I separated an empty lookup from unavailable storage at the connection boundary. The read opens an existing database and lets storage errors reach its caller; an initialized store can still report that the requested identifier is absent. The URI construction also needs scrutiny for filenames containing reserved characters. No initialization or recovery step is hidden inside this read.</p>
+<p><em>Artifact: get_reservation: the unknown-record branch; the helper supplies its read-only URI.</em></p>
+<pre class="python"><code>if row is None:
+    return None
+def _readonly_uri(path):
+    return Path(path).resolve().as_uri() + &quot;?mode=ro&quot;</code></pre>
+</article></main><footer class="foot"><p>Enrico Papalini · Edition 5.6 · 2026-11-22</p><p><a href="../../../NOTICE.html">Rights and notices</a> · <a href="../../../NATIVE_STATUS.json">Native-client status</a> · <a href="../../../MANIFEST.json">Package manifest</a> · <a href="https://github.com/popoloni/esa_ai">Companion repository</a></p></footer></body></html>

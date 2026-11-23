@@ -1,1 +1,0 @@
-{"task_id": "synthesis", "response_written": true}

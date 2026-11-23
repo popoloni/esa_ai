@@ -1,0 +1,54 @@
+{
+  "checked_on": "2026-11-02",
+  "pin": "2026-07-28",
+  "previous_pin": "2025-11-25",
+  "pin_reason": "The new full review edition uses the final stateless revision. Client, server, metadata, cache fields, source identifiers and captured messages were migrated together. Historical captures retain their original pin.",
+  "sources": [
+    {
+      "key": "MCP-LIFECYCLE",
+      "url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/lifecycle",
+      "supports": "Per-request version and capabilities, no initialize handshake; server/discover is mandatory; unsupported version uses -32022."
+    },
+    {
+      "key": "MCP-BASE",
+      "url": "https://modelcontextprotocol.io/specification/2026-07-28/basic",
+      "supports": "Required _meta protocolVersion/clientCapabilities; optional clientInfo; resultType in results."
+    },
+    {
+      "key": "MCP-STDIO",
+      "url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/stdio",
+      "supports": "Newline JSON-RPC on stdin/stdout; diagnostics on stderr; optional discovery probe and EOF shutdown."
+    },
+    {
+      "key": "MCP-TOOLS",
+      "url": "https://modelcontextprotocol.io/specification/2026-07-28/server/tools",
+      "supports": "Unknown tool is protocol error; tool input validation/business errors use isError in a result; annotations are not enforcement."
+    },
+    {
+      "key": "MCP-SCHEMA",
+      "url": "https://modelcontextprotocol.io/specification/2026-07-28/schema",
+      "supports": "DiscoverResult and ListToolsResult include resultType, ttlMs and cacheScope; RequestMetaObject defines request fields."
+    },
+    {
+      "key": "MCP-CHANGES",
+      "url": "https://modelcontextprotocol.io/specification/2026-07-28/changelog",
+      "supports": "Final revision changes; initialization removal, per-request metadata, discovery, cache fields."
+    },
+    {
+      "key": "LINUX-CHMOD",
+      "url": "https://man7.org/linux/man-pages/man2/chmod.2.html",
+      "supports": "Changing mode requires owner identity or CAP_FOWNER; an ordinary owner can restore its own mode bits."
+    },
+    {
+      "key": "LINUX-CAP",
+      "url": "https://man7.org/linux/man-pages/man7/capabilities.7.html",
+      "supports": "Capability sets and privileged DAC/identity operations."
+    },
+    {
+      "key": "LINUX-NNP",
+      "url": "https://man7.org/linux/man-pages/man2/PR_SET_NO_NEW_PRIVS.2const.html",
+      "supports": "no_new_privs prevents execve from conferring additional privileges and is inherited."
+    }
+  ],
+  "quote_policy": "Paraphrase and pointers; no extended quotations."
+}

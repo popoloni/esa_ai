@@ -1,0 +1,51 @@
+name: Validate approved ESA companion
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  package-and-doctor:
+    name: Package and doctor (${{ matrix.os }})
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify approved package bytes
+        run: python3 verify_package.py
+      - name: Verify local companion prerequisites
+        run: python3 companion/start.py doctor
+
+  macos-examples:
+    name: macOS examples and release compatibility
+    runs-on: macos-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run deterministic companion examples
+        run: python3 companion/verify.py --output "$RUNNER_TEMP/esa-full-practice"
+      - name: Verify issued candidate compatibility
+        run: python3 companion/curriculum/verify_release_compatibility.py --output "$RUNNER_TEMP/esa-release-compatibility"
+      - name: Upload macOS validation evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: macos-companion-validation
+          path: |
+            ${{ runner.temp }}/esa-full-practice
+            ${{ runner.temp }}/esa-release-compatibility
+          if-no-files-found: warn

@@ -1,0 +1,8 @@
+Observation: native run 01 completed (claude-sonnet-5-5, 0.133 USD reported). Changed intake.py and DOSSIER.md only.
+Two shell commands were denied by the client (a loop and a heredoc write); the worker used the Write tool instead.
+Independent: check B2 12/12; continue B2 SCOPED_HANDOFF_READY. Operator probe work/evidence/operator/b2-provider-probe.json:
+an unexpected provider exception keeps its identity and carries the earlier completed record and call count;
+an extra response field and a non-string class raise ProviderProtocolError after one counted call, without retry.
+These calls are the scripted product provider, not the coding agent's model calls.
+Decision: ACCEPT for INTAKE/v1 scope and advance to B3.
+Limit: AI operator; deterministic local provider only; no durable idempotency until B3.

@@ -1,0 +1,745 @@
+{
+  "at_utc": "2026-11-22T17:38:02.048399+00:00",
+  "client": "claude",
+  "exit_code": 0,
+  "timed_out": false,
+  "permission_denials": [
+    {
+      "event_line": 800,
+      "value": {
+        "tool_name": "Bash",
+        "tool_use_id": "toolu_01KF9uXMTwyjeqLHVg4oT2XL",
+        "tool_input": {
+          "command": "python3 - <<'E'\ns=open('ledger.py').read()\na='''            current = self._policy(self.active_policy())\n            record[\"decision\"] = outcome(payload, current)\n            return'''\nassert a in s\ns=s.replace(a,'            return')\nb='    raise NotImplementedError(\"Implement the explicit legacy migration\")\\n'\nassert b in s\ns=s.replace(b,'')\nopen('ledger.py','w').write(s)\nE\npython3 -m unittest tests.test_b3 2>&1 | tail -8\npython3 - <<'E'\nimport sys;sys.path.insert(0,'.')\nimport ledger,tempfile,pathlib,sqlite3\nfrom tests.test_b3 import CATALOG,PAYLOAD\nd=pathlib.Path(tempfile.mkdtemp())\ns=ledger.PolicyStore(d/\"a.db\",CATALOG)\nfor amt in [\"+1.00\",\"1.00\\n\",\"\uff11\",\"1234567890123\",\"1.234\",\"-0\",\"007.5\"]:\n    try:print(repr(amt),s.decide(\"k\"+str(abs(hash(amt))),{**PAYLOAD,\"amount_eur\":amt})[\"record\"][\"decision\"][\"route\"])\n    except ledger.HistoryError as e:print(repr(amt),e.code)\ns.decide(\"o\",PAYLOAD);s.activate(\"BR-001/v2\")\ntry:s.decide(\"o\",PAYLOAD,\"BR-001/v2\")\nexcept ledger.HistoryError as e:print(e.code)\nprint(s.decide(\"o\",PAYLOAD,\"BR-001/v1\")[\"status\"], s.decide(\"n\",PAYLOAD)[\"record\"][\"decision\"][\"route\"])\nE"
+        }
+      }
+    }
+  ],
+  "reported_cost_usd": [
+    0.14641560000000003
+  ],
+  "elapsed_seconds": 33.257857,
+  "event_count": 801,
+  "malformed_native_event_lines": [],
+  "changed_files": [
+    "DOSSIER.md",
+    "ledger.py"
+  ],
+  "scope_changes_requiring_review": [],
+  "before": {
+    "AGENTS.md": "49b3fbbe06c9cd034e9cd97d6fb0a9c087a2f6b739169ae7f58af24735b2063c",
+    "DOSSIER.md": "279a980934093f6a456ab88e0c3ec15bacb98aa4683f53141c2d7211ea0f4af3",
+    "READER_ENTRY.json": "0ad05047101af63a1715751040488c1a59662e806dfad4d6ef27c05294caea81",
+    "docs/contract.md": "a3868114a71b664dfe907ffb90b61ddac6d6b7c039ede34708f9e3c20900eecb",
+    "docs/policy_catalog.json": "9c1b4078c49e118f1001d138484bd9b046ab595935e16b63ea160d619068c7ab",
+    "ledger.py": "62a6590b25b9236cc9acde0ca7c0fd2beb3b720224a996d773946fd1b5b4967a",
+    "prior/intake.py": "d078ca5b06de61638ce653eac0b7419c3f6246181a1b50a96d8f84d480672f0c",
+    "prior/parent-check-artifacts/DEMONSTRATION.json": "b875b177c608eacec6a5ed802f13c82fd0b055c90ca267053799aada98bdb082",
+    "prior/parent-check-artifacts/classification.json": "30deefb1e6adb6a37e4dbc20df5b00c652b9585e4e652cf335595868daa35e7b",
+    "prior/parent-entry.json": "d6a518a900326a687dc101fefd462701f13d7d0f9ef2f1854cfc3dda4824009f",
+    "prior/parent-handoff.json": "dddb54b8aadf7cc5f7c1b28e9eb68a514b7b27d032c67e6cdc08e28959adf954",
+    "routing.py": "e8fdab89acfa5d28041c74a5d2dcf9801fb0e85324dcc160013a56cf63f89cfd",
+    "tests/test_b3.py": "2b5ee5579c42106260fb3515b5f72b6ce017a7cb333f26159de1ebbfa5c6e2de"
+  },
+  "after": {
+    "AGENTS.md": "49b3fbbe06c9cd034e9cd97d6fb0a9c087a2f6b739169ae7f58af24735b2063c",
+    "DOSSIER.md": "60bfd6faceb0f62d72b9c858dc17d7049214620b49e42a85cf127d7d68ca1115",
+    "READER_ENTRY.json": "0ad05047101af63a1715751040488c1a59662e806dfad4d6ef27c05294caea81",
+    "docs/contract.md": "a3868114a71b664dfe907ffb90b61ddac6d6b7c039ede34708f9e3c20900eecb",
+    "docs/policy_catalog.json": "9c1b4078c49e118f1001d138484bd9b046ab595935e16b63ea160d619068c7ab",
+    "ledger.py": "8e87f6bd508a9372b40be2c004ef22b6c912830765fadac55b9896018d4799dc",
+    "prior/intake.py": "d078ca5b06de61638ce653eac0b7419c3f6246181a1b50a96d8f84d480672f0c",
+    "prior/parent-check-artifacts/DEMONSTRATION.json": "b875b177c608eacec6a5ed802f13c82fd0b055c90ca267053799aada98bdb082",
+    "prior/parent-check-artifacts/classification.json": "30deefb1e6adb6a37e4dbc20df5b00c652b9585e4e652cf335595868daa35e7b",
+    "prior/parent-entry.json": "d6a518a900326a687dc101fefd462701f13d7d0f9ef2f1854cfc3dda4824009f",
+    "prior/parent-handoff.json": "dddb54b8aadf7cc5f7c1b28e9eb68a514b7b27d032c67e6cdc08e28959adf954",
+    "routing.py": "e8fdab89acfa5d28041c74a5d2dcf9801fb0e85324dcc160013a56cf63f89cfd",
+    "tests/test_b3.py": "2b5ee5579c42106260fb3515b5f72b6ce017a7cb333f26159de1ebbfa5c6e2de"
+  },
+  "thread_ids": [
+    "4db4e151-0ff6-4d83-960e-7a2259f6bf72"
+  ],
+  "usage_events": [
+    {
+      "duration_api_ms": 31885,
+      "stop_reason": "end_turn",
+      "session_id": "4db4e151-0ff6-4d83-960e-7a2259f6bf72",
+      "total_cost_usd": 0.14641560000000003,
+      "usage": {
+        "input_tokens": 16,
+        "cache_creation_input_tokens": 21181,
+        "cache_read_input_tokens": 147296,
+        "output_tokens": 4693,
+        "output_tokens_details": {
+          "thinking_tokens": 360
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 21181,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 820,
+            "cache_read_input_tokens": 25884,
+            "cache_creation_input_tokens": 1534,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 1534
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard",
+        "fallback_credit": null
+      },
+      "modelUsage": {
+        "claude-sonnet-5-5": {
+          "inputTokens": 16,
+          "outputTokens": 4693,
+          "cacheReadInputTokens": 147296,
+          "cacheCreationInputTokens": 21181,
+          "webSearchRequests": 0,
+          "costUSD": 0.14641560000000003,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 64000,
+          "thinkingTokens": 360,
+          "cacheCreationEphemeral5mInputTokens": 0,
+          "cacheCreationEphemeral1hInputTokens": 21181,
+          "canonicalModel": "claude-sonnet-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "permission_denials": [
+        {
+          "tool_name": "Bash",
+          "tool_use_id": "toolu_01KF9uXMTwyjeqLHVg4oT2XL",
+          "tool_input": {
+            "command": "python3 - <<'E'\ns=open('ledger.py').read()\na='''            current = self._policy(self.active_policy())\n            record[\"decision\"] = outcome(payload, current)\n            return'''\nassert a in s\ns=s.replace(a,'            return')\nb='    raise NotImplementedError(\"Implement the explicit legacy migration\")\\n'\nassert b in s\ns=s.replace(b,'')\nopen('ledger.py','w').write(s)\nE\npython3 -m unittest tests.test_b3 2>&1 | tail -8\npython3 - <<'E'\nimport sys;sys.path.insert(0,'.')\nimport ledger,tempfile,pathlib,sqlite3\nfrom tests.test_b3 import CATALOG,PAYLOAD\nd=pathlib.Path(tempfile.mkdtemp())\ns=ledger.PolicyStore(d/\"a.db\",CATALOG)\nfor amt in [\"+1.00\",\"1.00\\n\",\"\uff11\",\"1234567890123\",\"1.234\",\"-0\",\"007.5\"]:\n    try:print(repr(amt),s.decide(\"k\"+str(abs(hash(amt))),{**PAYLOAD,\"amount_eur\":amt})[\"record\"][\"decision\"][\"route\"])\n    except ledger.HistoryError as e:print(repr(amt),e.code)\ns.decide(\"o\",PAYLOAD);s.activate(\"BR-001/v2\")\ntry:s.decide(\"o\",PAYLOAD,\"BR-001/v2\")\nexcept ledger.HistoryError as e:print(e.code)\nprint(s.decide(\"o\",PAYLOAD,\"BR-001/v1\")[\"status\"], s.decide(\"n\",PAYLOAD)[\"record\"][\"decision\"][\"route\"])\nE"
+          }
+        }
+      ],
+      "terminal_reason": "completed",
+      "fast_mode_state": "off",
+      "fast_mode_disabled_reason": "sdk_opt_in_required",
+      "subagent_stats": {
+        "spawned": 0,
+        "requested": {
+          "background": 0,
+          "foreground": 0,
+          "unset": 0
+        },
+        "started_in_background": 0,
+        "max_depth": 0,
+        "spawned_by_subagents": 0,
+        "completed": 0,
+        "failed": 0,
+        "killed": {
+          "parent": 0,
+          "user": 0,
+          "system": 0
+        },
+        "refused": {
+          "depth_limit": 0,
+          "concurrency_limit": 0,
+          "budget": 0
+        },
+        "by_type": {}
+      },
+      "safety_stops": 0,
+      "is_error": false,
+      "num_turns": 10,
+      "subtype": "success",
+      "api_error_status": null,
+      "result": "I fixed two defects in `ledger.py` and updated `DOSSIER.md`. The supplied suite now passes (10 tests OK). It had 1 failure and 2 errors before the edits.\n\n**Acceptance example:** `decide(\"original\", 4000.00)` under BR-001/v1 gives `STANDARD_QUEUE`. After `activate(\"BR-001/v2\")`, the same retry returns `REPLAYED` with a record identical to the original. The row counts in `decisions` and `audit_events` don't change. A fresh ID with the same payload now gives `HUMAN_REVIEW`.\n\n**Corrections:**\n1. **Retry after a policy change.** `PolicyStore._decide` re-ran the outcome under the active policy when it found an existing key. That overwrote the stored decision, so a retry after activating v2 returned the wrong result. I removed that step, so the stored record comes back unchanged. This fixed the failing test.\n2. **Legacy migration.** `migrate_legacy` started with `raise NotImplementedError`, which made the rest of the function unreachable. I removed that line. The existing body already validates provenance, policy and outcome, runs in one transaction, and leaves `legacy_decisions` untouched. This fixed both migration test errors.\n\nI also ran a throwaway probe against a temporary database. It rejected `+1.00`, a trailing newline, a fullwidth digit, 13 integer digits and 3 fractional digits. It accepted `007.5`. Under `-I`, `-0` was accepted and routed to `REJECTED`. An explicit v2 under an old v1 ID raised `IDEMPOTENCY_CONFLICT`.\n\n**Limits:**\n- I tested only the one supplied legacy fixture shape. The migration failure paths (ambiguous policy, outcome mismatch, wrong schema) are checked by reading the code only.\n- I did not test concurrency or a crash mid-migration.\n- The task mentions \"three proposals\", but none were in the workspace, so I made no ACCEPT/REJECT/ASK ruling on them. The dossier says so; please supply them if you expect a ruling.\n- I found no conflict between the docs and no missing rule for this increment, so I didn't need to stop and ask.\n- Human acceptance is not given. I made no network calls and installed nothing.\n\nChanged files: `ledger.py` and `DOSSIER.md`. I used 5 tool commands in this run, out of the 40 allowed.",
+      "ttft_ms": 1131,
+      "type": "result",
+      "duration_ms": 32527,
+      "uuid": "efb0ab9d-bf67-4617-994a-2ce77aa8db74",
+      "begun_message_ids": [
+        "msg_011ChJNasWpVikwkZHrjBdid",
+        "msg_011ChJNaxCrKhm9ZxiYrYf4k",
+        "msg_011ChJNb4267xY7iS3W2YvAn",
+        "msg_011ChJNbD6oGH1cGF6d2ax8N",
+        "msg_011ChJNbcM2qxhh9tFkgyJLT",
+        "msg_011ChJNbkoGsMhVjUYgj8GSA",
+        "msg_011ChJNc799W47AWXhbDEBP4",
+        "msg_011ChJNcsqxyzkzNeAfR8VA1"
+      ],
+      "ttft_stream_ms": 534,
+      "time_to_request_ms": 127,
+      "time_to_request_phases_ms": {
+        "other": 8,
+        "system_prompt": 51,
+        "resume_other": 1,
+        "process_user_input": 4,
+        "input_attachments": 10,
+        "input_hooks": 4,
+        "conversation_append": 0,
+        "tool_pool_refresh": 0,
+        "init_message": 4,
+        "init_frame_send": 1,
+        "engine_pickup": 1,
+        "loop_entry": 6,
+        "message_prep": 2,
+        "model_config_wait": 0,
+        "autocompact": 2,
+        "request_announcements": 9,
+        "query_setup": 1,
+        "model_gates": 0,
+        "tool_schema_build": 9,
+        "message_normalization": 3,
+        "client_creation": 4,
+        "request_build": 7
+      },
+      "turn_start_resume_kind": "none",
+      "process_turn_index": 0,
+      "time_to_request_loop_lag_ms": 77,
+      "time_to_request_cpu_ms": 110,
+      "time_to_request_major_faults": 0,
+      "process_rss_mib_turn_start": 211,
+      "process_anon_mib_turn_start": 132,
+      "process_rss_mib_result": 236,
+      "process_anon_mib_result": 141,
+      "process_peak_rss_mib": 239,
+      "process_cpu_ms_turn": 1493,
+      "process_wall_ms_turn": 32526,
+      "tool_pool_build_count": 3,
+      "tool_pool_build_lapsed_count": 1,
+      "tool_pool_moved_at_lapse_count": 0,
+      "tool_pool_limit_ms": 30000,
+      "process_cpu_ms_streaming": 846,
+      "process_wall_ms_streaming": 24103,
+      "main_stream_count": 8,
+      "main_stream_event_count": 753,
+      "main_stream_chunk_count": 170,
+      "process_turn_states": {
+        "main_stream": {
+          "cpu_ms": 846,
+          "wall_ms": 24103,
+          "entries": 8
+        },
+        "tool": {
+          "cpu_ms": 145,
+          "wall_ms": 425,
+          "entries": 7
+        },
+        "first_event_wait": {
+          "cpu_ms": 268,
+          "wall_ms": 7749,
+          "entries": 8
+        },
+        "before_first_request": {
+          "cpu_ms": 109,
+          "wall_ms": 127,
+          "entries": 1
+        },
+        "between_requests": {
+          "cpu_ms": 110,
+          "wall_ms": 108,
+          "entries": 7
+        },
+        "after_last_request": {
+          "cpu_ms": 15,
+          "wall_ms": 14,
+          "entries": 1
+        }
+      },
+      "input_attachments_detail": {
+        "slowest_producer": "artifact_opening_prefetch",
+        "slowest_producer_ms": 3,
+        "cpu_ms": 11,
+        "major_faults": 0,
+        "setup_ms": 0,
+        "prompt_producers_ms": 0,
+        "ambient_start_ms": 4,
+        "ambient_wait_ms": 2,
+        "render_ms": 1,
+        "producers": 42,
+        "token_counts": 0
+      },
+      "tool_schema_build_detail": {
+        "betas_ms": 0,
+        "waits_ms": 1,
+        "placement_ms": 1,
+        "render_ms": 6,
+        "after_ms": 1,
+        "other_ms": 0,
+        "tools": 6,
+        "new_schemas": 6
+      },
+      "message_normalization_detail": {
+        "before_ms": 0,
+        "normalize_ms": 2,
+        "images_ms": 0,
+        "post_process_ms": 1,
+        "after_ms": 0,
+        "other_ms": 0,
+        "messages": 10,
+        "wire_messages": 2
+      },
+      "request_build_detail": {
+        "records_ms": 0,
+        "system_ms": 2,
+        "headers_ms": 1,
+        "cache_break_record_ms": 0,
+        "plans_ms": 2,
+        "retry_setup_ms": 0,
+        "sent_build_ms": 2,
+        "record_attempt_ms": 0,
+        "other_ms": 0,
+        "sent_build_safety_context_ms": 0,
+        "sent_build_cache_breakpoints_ms": 1,
+        "sent_build_surrogate_scan_ms": 0
+      },
+      "first_content_frame_ms": 535,
+      "time_to_request_from_spawn_ms": 715909,
+      "warm_spare_claimed": false,
+      "flag_fetch_kick": "started_in_init_warm",
+      "time_origin_ms": 1795369048793.9937,
+      "queued_turn_count": 0,
+      "result_index": 0,
+      "model_usage_since_last_result": {
+        "claude-sonnet-5-5": {
+          "inputTokens": 16,
+          "outputTokens": 4693,
+          "cacheReadInputTokens": 147296,
+          "cacheCreationInputTokens": 21181,
+          "webSearchRequests": 0,
+          "costUSD": 0.14641560000000003,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 64000,
+          "thinkingTokens": 360,
+          "cacheCreationEphemeral5mInputTokens": 0,
+          "cacheCreationEphemeral1hInputTokens": 21181,
+          "canonicalModel": "claude-sonnet-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "process_start_tuning": 0
+    }
+  ],
+  "native_observations": {
+    "protocol_client": "claude",
+    "unexpected_protocol_lines": [],
+    "completed_turn_lines": [
+      800
+    ],
+    "failed_turn_or_error_lines": [],
+    "agent_message_lines": [
+      217,
+      795
+    ],
+    "tool_operation_lines": [
+      23,
+      47,
+      58,
+      85,
+      203,
+      233,
+      249,
+      370,
+      650
+    ],
+    "model_observations": [
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 3,
+        "field": "model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 23,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 47,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 58,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 71,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 85,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 98,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 203,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 217,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 233,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 249,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 370,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 384,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 650,
+        "field": "message.model"
+      },
+      {
+        "value": "claude-sonnet-5-5",
+        "event_line": 795,
+        "field": "message.model"
+      }
+    ],
+    "usage_observations": [
+      {
+        "event_line": 23,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 3574,
+          "cache_read_input_tokens": 6237,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 3574
+          },
+          "output_tokens": 16,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 47,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 637,
+          "cache_read_input_tokens": 9811,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 637
+          },
+          "output_tokens": 16,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 58,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 637,
+          "cache_read_input_tokens": 9811,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 637
+          },
+          "output_tokens": 16,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 71,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 11690,
+          "cache_read_input_tokens": 10448,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 11690
+          },
+          "output_tokens": 3,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 85,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 11690,
+          "cache_read_input_tokens": 10448,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 11690
+          },
+          "output_tokens": 3,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 98,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1364,
+          "cache_read_input_tokens": 22138,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1364
+          },
+          "output_tokens": 3,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 203,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1364,
+          "cache_read_input_tokens": 22138,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1364
+          },
+          "output_tokens": 3,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 217,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 874,
+          "cache_read_input_tokens": 23502,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 874
+          },
+          "output_tokens": 30,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 233,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 874,
+          "cache_read_input_tokens": 23502,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 874
+          },
+          "output_tokens": 30,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 249,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 874,
+          "cache_read_input_tokens": 23502,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 874
+          },
+          "output_tokens": 30,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 370,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 524,
+          "cache_read_input_tokens": 24376,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 524
+          },
+          "output_tokens": 20,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 384,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 984,
+          "cache_read_input_tokens": 24900,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 984
+          },
+          "output_tokens": 4,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 650,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 984,
+          "cache_read_input_tokens": 24900,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 984
+          },
+          "output_tokens": 4,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 795,
+        "field": "message.usage",
+        "value": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 1534,
+          "cache_read_input_tokens": 25884,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1534
+          },
+          "output_tokens": 756,
+          "service_tier": "standard",
+          "inference_geo": "global",
+          "speed": "standard"
+        }
+      },
+      {
+        "event_line": 800,
+        "field": "usage",
+        "value": {
+          "input_tokens": 16,
+          "cache_creation_input_tokens": 21181,
+          "cache_read_input_tokens": 147296,
+          "output_tokens": 4693,
+          "output_tokens_details": {
+            "thinking_tokens": 360
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 21181,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "global",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 820,
+              "cache_read_input_tokens": 25884,
+              "cache_creation_input_tokens": 1534,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 1534
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "fallback_credit": null
+        }
+      }
+    ],
+    "permission_denials": [
+      {
+        "event_line": 800,
+        "value": {
+          "tool_name": "Bash",
+          "tool_use_id": "toolu_01KF9uXMTwyjeqLHVg4oT2XL",
+          "tool_input": {
+            "command": "python3 - <<'E'\ns=open('ledger.py').read()\na='''            current = self._policy(self.active_policy())\n            record[\"decision\"] = outcome(payload, current)\n            return'''\nassert a in s\ns=s.replace(a,'            return')\nb='    raise NotImplementedError(\"Implement the explicit legacy migration\")\\n'\nassert b in s\ns=s.replace(b,'')\nopen('ledger.py','w').write(s)\nE\npython3 -m unittest tests.test_b3 2>&1 | tail -8\npython3 - <<'E'\nimport sys;sys.path.insert(0,'.')\nimport ledger,tempfile,pathlib,sqlite3\nfrom tests.test_b3 import CATALOG,PAYLOAD\nd=pathlib.Path(tempfile.mkdtemp())\ns=ledger.PolicyStore(d/\"a.db\",CATALOG)\nfor amt in [\"+1.00\",\"1.00\\n\",\"\uff11\",\"1234567890123\",\"1.234\",\"-0\",\"007.5\"]:\n    try:print(repr(amt),s.decide(\"k\"+str(abs(hash(amt))),{**PAYLOAD,\"amount_eur\":amt})[\"record\"][\"decision\"][\"route\"])\n    except ledger.HistoryError as e:print(repr(amt),e.code)\ns.decide(\"o\",PAYLOAD);s.activate(\"BR-001/v2\")\ntry:s.decide(\"o\",PAYLOAD,\"BR-001/v2\")\nexcept ledger.HistoryError as e:print(e.code)\nprint(s.decide(\"o\",PAYLOAD,\"BR-001/v1\")[\"status\"], s.decide(\"n\",PAYLOAD)[\"record\"][\"decision\"][\"route\"])\nE"
+          }
+        }
+      }
+    ],
+    "reported_cost_observations": [
+      {
+        "event_line": 800,
+        "field": "total_cost_usd",
+        "value": 0.14641560000000003
+      }
+    ],
+    "thread_ids": [
+      "4db4e151-0ff6-4d83-960e-7a2259f6bf72"
+    ]
+  },
+  "requested_model": "claude-sonnet-5-5",
+  "capture_sha256": {
+    "native_events.jsonl": "db0ed250208e2e706cd7184a205f3a5c408b8a3ecddff5ff3fa2ead490b0c2b7",
+    "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "agent_final.txt": "d5080d0bdd882f153d965e2d51de6f9e7dbd03ec7c0c7d737427ba0ef5bad1a8"
+  },
+  "observed_model_ids": [
+    "claude-sonnet-5-5"
+  ],
+  "model_identity_observed": true,
+  "native_completion_event_observed": true,
+  "native_turn_completed": true,
+  "status": "NATIVE_TURN_COMPLETED_REVIEW_REQUIRED",
+  "acceptance": "NOT_ESTABLISHED",
+  "scope_note": "Native events retained as emitted; absence of usage is unknown, not zero."
+}

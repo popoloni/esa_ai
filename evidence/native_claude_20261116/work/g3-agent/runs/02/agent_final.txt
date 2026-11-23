@@ -1,0 +1,25 @@
+`tests.test_g3` now passes: 7 tests, OK. A database created by the retained G2 code still migrates.
+
+**Changed files:** I edited only `booking.py` and `DOSSIER.md`. I added a "Run 02" section to the dossier and left the earlier run-01 text in place. Git showed nothing for this directory, so I can't confirm the diff with it.
+
+**Commands and outcomes**
+1. I first reproduced the failure. `python3 -m unittest tests.test_g3` gave 7 errors, all in `setUp`, with `ValueError: unsupported schema version 2`.
+2. I added a branch to `init_db` for a version-2 database holding a single `reservations` table with exactly the fixture's seven columns.
+   - **Mapping:** It maps columns by name into `reservations_v2` with state `active` and version 1. IDs and the six public fields are preserved.
+   - **Validation and transaction:** It reuses the existing legacy validation and runs in the same transaction.
+   - **Fingerprint:** It recomputes the fingerprint instead of copying `request_hash`. The legacy hash uses different JSON separators, so copying it would break replay.
+   - **Source table:** It leaves the source `reservations` table unmodified.
+3. Re-running `python3 -m unittest tests.test_g3` gave 7 tests, OK.
+4. I ran a scratch script outside the workspace, with one reservation per layout.
+   - **Retained G2:** A database made by `prior/booking.py` migrated twice. The six-field record was equal and the status was `{active, 1}`. Replaying the original request returned id 1 with `replayed=True`.
+   - **Fixture:** A database made by `legacy_booking` gave the same results.
+   - **Unknown layout:** A version-2 database with an unknown `reservations(id, x)` table was refused with "owner mapping required", and `user_version` stayed 2.
+
+**Remaining uncertainty**
+- I only exercised one row per layout. Multi-row fixtures and invalid or overlapping fixture rows rely on the shared validation and were not tested.
+- A database holding both the fixture table and `reservations_v2` was not tested. That layout falls through to the existing refusal.
+- I did not test concurrent cancels.
+- Owner-before-version check order in `cancel` is still my choice, because the contract doesn't rank the outcomes. It needs your confirmation.
+- I saw no human approval. Treating the fixture as a G2 source rests on your correction.
+
+I used about 9 tool commands, within the 40 allowed.

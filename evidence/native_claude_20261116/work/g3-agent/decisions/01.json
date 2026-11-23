@@ -1,0 +1,8 @@
+{
+  "at_utc": "2026-11-16T22:18:01.729474+00:00",
+  "operator": "Claude (claude-opus-5-5), AI operator in the author's review session",
+  "operator_kind": "AI",
+  "decision": "correct",
+  "note": "Observation: native run 01 completed (claude-sonnet-5-5, 0.246 USD reported, 85 s). Changed booking.py and DOSSIER.md.\nIt implemented schema 3, reservation_status, owner/version-checked cancel in BEGIN IMMEDIATE, and migration of its\nown retained G2 representation (reservations_v2). All 7 protected methods fail in setUp: the protected fixture\nlegacy_booking.py creates the reference G2 layout (reservations with request_hash, user_version 2), which the\ncandidate refuses as an unapproved representation. The worker stopped instead of inventing a mapping.\ncheck G3: CHECKS_FAILED (7); continue G3: HANDOFF_BLOCKED.\nDiagnosis: operator task omission, not an agent defect. Part V (p. 205) states that the AP-G3 task required both\nthe retained G2 schema and the supplied historical fixture; the generic adapter task I launched did not say so.\nThe work order lists legacy_booking.py as a protected input, and RES-002/v1 requires migrating existing G2 rows.\nDecision: CORRECT. Bounded follow-up run 02 with the AP-G3 wording: migrate the retained schema and also satisfy\nthe supplied legacy G2 fixture, without substituting one for the other. Everything else stays as implemented.\nLimit: AI operator; this correction is the operator's reading of the printed work order, not a new owner rule.\n",
+  "meaning": "Recorded operator statement; this tool does not certify its authority or correctness."
+}

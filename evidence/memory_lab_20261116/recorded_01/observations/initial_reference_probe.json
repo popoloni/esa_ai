@@ -1,0 +1,39 @@
+{
+  "cases": [
+    {
+      "api": "B1-API/v1",
+      "input": "1e3",
+      "result": {
+        "policy_version": "BR-001/v1",
+        "reason": "BELOW_LIMIT",
+        "route": "STANDARD_QUEUE"
+      }
+    },
+    {
+      "api": "B1-API/v2",
+      "input": "4000",
+      "result": {
+        "policy_version": "BR-001/v1",
+        "reason": "BELOW_LIMIT",
+        "route": "STANDARD_QUEUE"
+      }
+    },
+    {
+      "api": "B1-API/v2",
+      "input": "1e3",
+      "result": {
+        "policy_version": "BR-001/v1",
+        "reason": "INVALID_AMOUNT",
+        "route": "REJECTED"
+      }
+    }
+  ],
+  "limit": "These probes use the supplied reference functions. They are not a model-produced implementation or human acceptance.",
+  "observed_at_utc": "2026-11-16T20:40:07.512421Z",
+  "origin": "EXECUTED_REFERENCE_CONTROL_NO_MODEL_OR_HUMAN",
+  "schema": "b1-memory-observation/v1",
+  "source_sha256": {
+    "companion/solutions/B1/routing.py": "1437ec85a33cb73acb6b198a5cb55ce782ef72662429d0b1059af2e739f76503",
+    "companion/solutions/B1/routing_v2.py": "ba10df386844e218864d0016088f8ed742554eac1fab7d1b0aa4af56bf9cc55d"
+  }
+}
